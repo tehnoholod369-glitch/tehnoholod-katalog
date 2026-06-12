@@ -1,0 +1,197 @@
+<!-- ====== МУЛЬТИСПЛИТЫ ИП «ТехноХолод» · из мастер-таблицы ====== -->
+<div class="tms">
+ <div class="tms-wrap">
+  <header class="tms-hd">
+   <div class="tms-ey">Каталог · ИП «ТехноХолод»</div>
+   <h2 class="tms-h2">Мультисплит-системы</h2>
+   <p class="tms-sub">Один наружный блок — несколько комнат. 24 наружных модуля и 39 внутренних блоков, 4 бренда. Соберите систему в конфигураторе или выберите компоненты в каталоге. Монтаж под ключ, гарантия до 3 лет.</p>
+  </header>
+
+  <!-- ===== КОНФИГУРАТОР ===== -->
+  <div class="tms-cfg">
+   <div class="tms-cfg-hd"><span class="tms-badge">Конфигуратор</span><b>Соберите систему и узнайте цену</b></div>
+   <div class="tms-step"><span class="tms-num">1</span>Бренд и наружный модуль
+    <div class="tms-row">
+     <select id="msBrand" class="tms-sel"></select>
+     <select id="msOut" class="tms-sel tms-sel-w"></select>
+    </div>
+    <div id="msOutInfo" class="tms-outinfo"></div>
+   </div>
+   <div class="tms-step"><span class="tms-num">2</span>Внутренние блоки по комнатам
+    <div id="msSlots" class="tms-slots"></div>
+    <div id="msHint" class="tms-hint"></div>
+   </div>
+   <div class="tms-total">
+    <div class="tms-tbreak" id="msBreak"></div>
+    <div class="tms-tsum"><span>Итого комплект:</span><b id="msSum">—</b></div>
+    <a class="tms-buy" id="msBuy" href="tel:+77000369369">Заказать систему / консультация: +7 (700) 036-93-69</a>
+   </div>
+   <p class="tms-note">Расчёт ориентировочный: учитываются цены компонентов. Финальную совместимость и стоимость монтажа подтвердит менеджер.</p>
+  </div>
+
+  <!-- ===== КАТАЛОГ КОМПОНЕНТОВ ===== -->
+  <div class="tms-cat">
+   <h3 class="tms-h3">Все компоненты</h3>
+   <div class="tms-filters" id="msFilters">
+    <span class="tms-fl">Бренд:</span>
+    <button class="tms-chip is-on" data-b="all">Все</button>
+    <button class="tms-chip" data-b="AUX">AUX</button>
+    <button class="tms-chip" data-b="Midea">Midea</button>
+    <button class="tms-chip" data-b="AERONIK">AERONIK</button>
+    <button class="tms-chip" data-b="CHERBROOKE">CHERBROOKE</button>
+   </div>
+   <h4 class="tms-sec">Наружные модули</h4>
+   <div class="tms-grid" id="msGridOut"></div>
+   <h4 class="tms-sec">Внутренние блоки</h4>
+   <div class="tms-grid" id="msGridIn"></div>
+  </div>
+
+  <div class="tms-foot"><a class="tms-call" href="tel:+77000369369">Подберём систему под ваши комнаты: +7 (700) 036-93-69</a></div>
+ </div>
+</div>
+
+<style>
+.tms{--ac:#FA0101;--dk:#15171a;--mut:#6b7280;--bd:#e8eaed;--bg:#f6f7f9;font-family:'TildaSans',Arial,sans-serif;color:var(--dk);padding:40px 18px;box-sizing:border-box}
+.tms *{box-sizing:border-box}
+.tms-wrap{max-width:1080px;margin:0 auto}
+.tms-ey{color:var(--ac);font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px}
+.tms-h2{font-size:30px;font-weight:800;margin:0 0 8px}
+.tms-sub{color:var(--mut);font-size:15px;margin:0 0 26px;max-width:720px;line-height:1.5}
+.tms-cfg{border:1px solid var(--bd);border-radius:18px;padding:22px 22px 18px;background:#fff;box-shadow:0 6px 24px rgba(250,1,1,.06);margin-bottom:40px}
+.tms-cfg-hd{display:flex;align-items:center;gap:10px;font-size:18px;margin-bottom:16px}
+.tms-badge{background:var(--ac);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em}
+.tms-step{margin:14px 0;font-weight:700;font-size:15px}
+.tms-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--dk);color:#fff;font-size:13px;margin-right:8px}
+.tms-row{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.tms-sel{appearance:none;font-family:inherit;font-size:14px;font-weight:600;color:var(--dk);background:#fff;border:1px solid var(--bd);border-radius:10px;padding:11px 14px;cursor:pointer;min-width:130px}
+.tms-sel-w{flex:1;min-width:240px}
+.tms-sel:focus{outline:none;border-color:var(--ac)}
+.tms-outinfo{margin-top:10px;font-weight:500;font-size:13px;color:var(--mut)}
+.tms-outinfo b{color:var(--dk)}
+.tms-slots{display:flex;flex-direction:column;gap:9px;margin-top:10px}
+.tms-slot{display:flex;align-items:center;gap:10px;font-weight:500}
+.tms-slot-lbl{font-size:13px;color:var(--mut);min-width:88px}
+.tms-slot select{flex:1;appearance:none;font-family:inherit;font-size:13.5px;color:var(--dk);background:#fff;border:1px solid var(--bd);border-radius:9px;padding:9px 12px;cursor:pointer}
+.tms-hint{margin-top:10px;font-size:13px;font-weight:600}
+.tms-hint.warn{color:#b8860b}.tms-hint.ok{color:#1f8f4e}
+.tms-total{margin-top:18px;border-top:1px dashed var(--bd);padding-top:16px}
+.tms-tbreak{font-size:13px;color:var(--mut);margin-bottom:8px;white-space:pre-line;line-height:1.6}
+.tms-tsum{display:flex;align-items:baseline;justify-content:space-between;font-size:16px;margin-bottom:14px}
+.tms-tsum b{font-size:26px;font-weight:800;color:var(--ac)}
+.tms-buy{display:block;text-align:center;background:var(--ac);color:#fff;font-weight:700;font-size:15px;text-decoration:none;padding:13px;border-radius:11px;transition:.15s}
+.tms-buy:hover{filter:brightness(.92)}
+.tms-note{font-size:12px;color:var(--mut);margin:12px 0 0;line-height:1.45}
+.tms-cat{margin-top:8px}
+.tms-h3{font-size:22px;font-weight:800;margin:0 0 14px}
+.tms-filters{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.tms-fl{font-size:13px;color:var(--mut);font-weight:600;margin-right:2px}
+.tms-chip{appearance:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;border:1px solid var(--bd);background:#fff;color:var(--dk);padding:7px 14px;border-radius:20px;transition:.15s}
+.tms-chip.is-on{background:var(--ac);border-color:var(--ac);color:#fff}
+.tms-sec{font-size:15px;font-weight:800;margin:22px 0 12px;color:var(--dk)}
+.tms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.tms-card{border:1px solid var(--bd);border-radius:14px;background:#fff;overflow:hidden;display:flex;flex-direction:column;transition:.15s}
+.tms-card:hover{box-shadow:0 6px 18px rgba(0,0,0,.07);transform:translateY(-2px)}
+.tms-cimg{height:150px;background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tms-cimg img{width:100%;height:100%;object-fit:contain;padding:8px}
+.tms-cb{padding:12px 13px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tms-cbrand{font-size:11px;font-weight:700;color:var(--ac);letter-spacing:.04em;text-transform:uppercase}
+.tms-cname{font-size:13.5px;font-weight:600;line-height:1.35;flex:1}
+.tms-cpills{display:flex;flex-wrap:wrap;gap:5px}
+.tms-cpill{font-size:11px;font-weight:600;color:var(--mut);background:var(--bg);border-radius:6px;padding:3px 7px}
+.tms-cprice{font-size:16px;font-weight:800;margin-top:2px}
+.tms-cstock{font-size:11.5px;font-weight:600;color:#1f8f4e}
+.tms-cstock.muted{color:var(--mut)}
+.tms-foot{margin-top:30px;text-align:center}
+.tms-call{color:var(--ac);font-weight:700;text-decoration:none;font-size:15px}
+@media(max-width:560px){.tms-h2{font-size:24px}.tms-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}.tms-slot{flex-wrap:wrap}.tms-slot-lbl{min-width:auto}}
+</style>
+
+<script>
+(function(){
+ var OUTDOOR=[{"brand": "AUX", "art": "AM5-H42/4DR1B", "name": "Наружный модуль AUX Free Match AM5-H42/4DR1B, 42 000 BTU", "btu": 42000, "area": 120, "refrig": "R410A", "price": "1 060 170 ₸", "pn": 1060170, "img": "https://aux-air.ru/erc/2023/02/10/95f8ad3c09e98245a5c3d949b6b902a76213b6b7.png", "stock": "В наличии", "instock": true, "ports": 5}, {"brand": "AUX", "art": "AM2-H14/4DR3", "name": "Наружный модуль AUX Free Match AM2-H14/4DR3, 14 000 BTU", "btu": 14000, "area": 45, "refrig": "R32", "price": "337 739 ₸", "pn": 337739, "img": "https://aux-air.ru/erc/2023/02/10/11c86910300413ff4badfa44a31b06d1a095a278.png", "stock": "Под заказ", "instock": false, "ports": 2}, {"brand": "AUX", "art": "AM2-H18/4DR3", "name": "Наружный модуль AUX Free Match AM2-H18/4DR3, 18 000 BTU", "btu": 18000, "area": 55, "refrig": "R32", "price": "367 206 ₸", "pn": 367206, "img": "https://aux-air.ru/erc/2023/02/10/11c86910300413ff4badfa44a31b06d1a095a278.png", "stock": "В наличии", "instock": true, "ports": 2}, {"brand": "AUX", "art": "AM3-H21/4DR3", "name": "Наружный модуль AUX Free Match AM3-H21/4DR3, 21 000 BTU", "btu": 21000, "area": 65, "refrig": "R32", "price": "474 875 ₸", "pn": 474875, "img": "https://aux-air.ru/erc/2023/02/10/03ec8ce8445e7d8b3b6e97bd2b0d0b485dababe1.png", "stock": "Под заказ", "instock": false, "ports": 3}, {"brand": "AUX", "art": "AM3-H27/4DR3", "name": "Наружный модуль AUX Free Match AM3-H27/4DR3, 27 000 BTU", "btu": 27000, "area": 80, "refrig": "R32", "price": "477 141 ₸", "pn": 477141, "img": "https://aux-air.ru/erc/2023/02/10/03ec8ce8445e7d8b3b6e97bd2b0d0b485dababe1.png", "stock": "В наличии", "instock": true, "ports": 3}, {"brand": "AUX", "art": "AM4-H36/4DR3", "name": "Наружный модуль AUX Free Match AM4-H36/4DR3, 36 000 BTU", "btu": 36000, "area": 110, "refrig": "R32", "price": "723 079 ₸", "pn": 723079, "img": "https://aux-air.ru/erc/2023/02/10/95f8ad3c09e98245a5c3d949b6b902a76213b6b7.png", "stock": "Под заказ", "instock": false, "ports": 4}, {"brand": "AUX", "art": "AM5-H42/4DR3", "name": "Наружный модуль AUX Free Match AM5-H42/4DR3, 42 000 BTU", "btu": 42000, "area": 130, "refrig": "R32", "price": "1 060 170 ₸", "pn": 1060170, "img": "https://aux-air.ru/erc/2023/02/10/95f8ad3c09e98245a5c3d949b6b902a76213b6b7.png", "stock": "Под заказ", "instock": false, "ports": 5}, {"brand": "AERONIK", "art": "ASO-14HMZK1(GWHD(14)NK6NO)", "name": "Кондиционер AERONIK ASO-14HMZK1(GWHD(14)NK6NO), 14000 BTU, до 42 м²", "btu": 14000, "area": 42, "refrig": "R32", "price": "295 492 ₸", "pn": 295492, "img": "__IMGBASE__/Realcon_AERONIK_11.jpg", "stock": "Под заказ", "instock": false, "ports": null}, {"brand": "AERONIK", "art": "ASO-18HMZK1(GWHD(18)NK6NO)", "name": "Кондиционер AERONIK ASO-18HMZK1(GWHD(18)NK6NO), 18000 BTU, до 55 м²", "btu": 18000, "area": 55, "refrig": "R32", "price": "320 471 ₸", "pn": 320471, "img": "__IMGBASE__/Realcon_AERONIK_12.jpg", "stock": "Под заказ", "instock": false, "ports": null}, {"brand": "AERONIK", "art": "ASO-24HMZK1(GWHD(24)NK6NO)", "name": "Кондиционер AERONIK ASO-24HMZK1(GWHD(24)NK6NO), 24000 BTU, до 72 м²", "btu": 24000, "area": 72, "refrig": "R32", "price": "464 257 ₸", "pn": 464257, "img": "__IMGBASE__/Realcon_AERONIK_12.jpg", "stock": "В наличии", "instock": true, "ports": null}, {"brand": "AERONIK", "art": "ASO-28HMZK1(GWHD(28)NK6NO)", "name": "Кондиционер AERONIK ASO-28HMZK1(GWHD(28)NK6NO), 28000 BTU, до 85 м²", "btu": 28000, "area": 85, "refrig": "R32", "price": "477 661 ₸", "pn": 477661, "img": "__IMGBASE__/Realcon_AERONIK_12.jpg", "stock": "В наличии", "instock": true, "ports": null}, {"brand": "AERONIK", "art": "ASO-36HMZK(GWHD(36)NK6NO)", "name": "Кондиционер AERONIK ASO-36HMZK(GWHD(36)NK6NO), 36000 BTU, до 108 м²", "btu": 36000, "area": 108, "refrig": "R32", "price": "695 776 ₸", "pn": 695776, "img": "__IMGBASE__/Realcon_AERONIK_12.jpg", "stock": "В наличии", "instock": true, "ports": null}, {"brand": "AERONIK", "art": "ASO-42HMZK(GWHD(42)NK6NO)", "name": "Кондиционер AERONIK ASO-42HMZK(GWHD(42)NK6NO), 42000 BTU, до 125 м²", "btu": 42000, "area": 125, "refrig": "R32", "price": "800 569 ₸", "pn": 800569, "img": "__IMGBASE__/Realcon_AERONIK_12.jpg", "stock": "В наличии", "instock": true, "ports": null}, {"brand": "CHERBROOKE", "art": "AOI2-14U4RK", "name": "Кондиционер CHERBROOKE AOI2-14U4RK, 14000 BTU, до 40 м²", "btu": 14000, "area": 40, "refrig": "R32", "price": "290 617 ₸", "pn": 290617, "img": "__IMGBASE__/Realcon_CHERBROOKE_05.jpg", "stock": "Под заказ", "instock": false, "ports": 2}, {"brand": "CHERBROOKE", "art": "AOI2-18U4RK", "name": "Кондиционер CHERBROOKE AOI2-18U4RK, 18000 BTU, до 51 м²", "btu": 18000, "area": 51, "refrig": "R32", "price": "306 458 ₸", "pn": 306458, "img": "__IMGBASE__/Realcon_CHERBROOKE_05.jpg", "stock": "Под заказ", "instock": false, "ports": 2}, {"brand": "CHERBROOKE", "art": "AOI3-21U4RK", "name": "Кондиционер CHERBROOKE AOI3-21U4RK, 21000 BTU, до 60 м²", "btu": 21000, "area": 60, "refrig": "R32", "price": "438 668 ₸", "pn": 438668, "img": "__IMGBASE__/Realcon_CHERBROOKE_05.jpg", "stock": "Под заказ", "instock": false, "ports": 3}, {"brand": "CHERBROOKE", "art": "AOI4-27U4RK", "name": "Кондиционер CHERBROOKE AOI4-27U4RK, 27000 BTU, до 77 м²", "btu": 27000, "area": 77, "refrig": "R32", "price": "494 720 ₸", "pn": 494720, "img": "__IMGBASE__/Realcon_CHERBROOKE_06.jpg", "stock": "Под заказ", "instock": false, "ports": 4}, {"brand": "CHERBROOKE", "art": "AOI5-36U4RK", "name": "Кондиционер CHERBROOKE AOI5-36U4RK, 36000 BTU, до 103 м²", "btu": 36000, "area": 103, "refrig": "R32", "price": "650 082 ₸", "pn": 650082, "img": "__IMGBASE__/Realcon_CHERBROOKE_06.jpg", "stock": "Под заказ", "instock": false, "ports": 5}, {"brand": "CHERBROOKE", "art": "AOI5-42U4RK", "name": "Кондиционер CHERBROOKE AOI5-42U4RK, 42000 BTU, до 120 м²", "btu": 42000, "area": 120, "refrig": "R32", "price": "882 820 ₸", "pn": 882820, "img": "__IMGBASE__/Realcon_CHERBROOKE_06.jpg", "stock": "Под заказ", "instock": false, "ports": 5}, {"brand": "Midea", "art": "M2OE-18HFN8-Q", "name": "Кондиционер Midea Наружный блок Мультисплит- Система Free-Match M2OE-18HFN8-Q, 18000 BTU, до 50 м²", "btu": 18000, "area": 50, "refrig": "R32", "price": "395 880 ₸", "pn": 395880, "img": "https://midea.com.kz/wp-content/uploads/2023/03/Kartinka.png", "stock": "В наличии", "instock": true, "ports": 2}, {"brand": "Midea", "art": "M3OG-21HFN8-Q", "name": "Кондиционер Midea Наружный блок Мультисплит- Система Free-Match M3OG-21HFN8-Q, 21000 BTU, до 60 м²", "btu": 21000, "area": 60, "refrig": "R32", "price": "479 880 ₸", "pn": 479880, "img": "https://midea.com.kz/wp-content/uploads/2023/03/Kartinka.png", "stock": "В наличии", "instock": true, "ports": 3}, {"brand": "Midea", "art": "M3OA-27HFN8-Q", "name": "Кондиционер Midea Наружный блок Мультисплит- Система Free-Match M3OA-27HFN8-Q, 27000 BTU, до 75 м²", "btu": 27000, "area": 75, "refrig": "R32", "price": "542 280 ₸", "pn": 542280, "img": "https://midea.com.kz/wp-content/uploads/2017/08/m2of.jpg", "stock": "В наличии", "instock": true, "ports": 3}, {"brand": "Midea", "art": "M4OB-36HFN8-Q", "name": "Кондиционер Midea Наружный блок Мультисплит- Система Free-Match M4OB-36HFN8-Q, 36000 BTU, до 95 м²", "btu": 36000, "area": 95, "refrig": "R32", "price": "821 880 ₸", "pn": 821880, "img": "https://midea.com.kz/wp-content/uploads/2017/08/m4oe-28hrfn1-535x305.jpg", "stock": "Под заказ", "instock": false, "ports": 4}, {"brand": "Midea", "art": "M5OE-42HFN8-Q", "name": "Кондиционер Midea Наружный блок Мультисплит- Система Free-Match M5OE-42HFN8-Q, 42000 BTU, до 120 м²", "btu": 42000, "area": 120, "refrig": "R32", "price": "995 880 ₸", "pn": 995880, "img": "https://midea.com.kz/wp-content/uploads/2023/03/Kartinka.png", "stock": "Под заказ", "instock": false, "ports": 5}];
+ var INDOOR=[{"brand": "AUX", "art": "AMWM-H09/4R3A(HA)", "name": "Кондиционер AUX Free Match R32 DC инвертор AMWM-H09/4R3A(HA), 9 000 BTU, до 30 м²", "btu": 9000, "area": 30, "refrig": "R32", "price": "78 698 ₸", "pn": 78698, "img": "https://aux-air.ru/erc/2022/12/07/afb6bf199d8ea2ef2b76f33eff017a64d9828000.png", "stock": "В наличии", "instock": true, "case": "Настенный"}, {"brand": "AUX", "art": "AMWM-H12/4R3A(HA)", "name": "Кондиционер AUX Free Match R32 DC инвертор AMWM-H12/4R3A(HA), 12 000 BTU, до 40 м²", "btu": 12000, "area": 40, "refrig": "R32", "price": "85 145 ₸", "pn": 85145, "img": "https://aux-air.ru/erc/2022/12/07/afb6bf199d8ea2ef2b76f33eff017a64d9828000.png", "stock": "В наличии", "instock": true, "case": "Настенный"}, {"brand": "AUX", "art": "AMCA-H12/4R1", "name": "Кондиционер AUX Free Match R410A DC инвертор AMCA-H12/4R1, 12 000 BTU, до 40 м²", "btu": 12000, "area": 40, "refrig": "R410A", "price": "173 403 ₸", "pn": 173403, "img": "https://aux-air.ru/erc/2023/06/27/71e068a12f470fced7e3ff351fc8a100c83c7ab6.png", "stock": "В наличии", "instock": true, "case": "Кассетный"}, {"brand": "AUX", "art": "AMSD-H09/4R1", "name": "Кондиционер AUX Free Match R410A DC инвертор AMSD-H09/4R1, 9 000 BTU, до 30 м²", "btu": 9000, "area": 30, "refrig": "R410A", "price": "165 960 ₸", "pn": 165960, "img": "https://aux-air.ru/erc/2023/06/27/3eeb68653a60a8c3cce77bb5d00c31ba0b935590.png", "stock": "В наличии", "instock": true, "case": "Канальный"}, {"brand": "AUX", "art": "AMSD-H12/4R1", "name": "Кондиционер AUX Free Match R410A DC инвертор AMSD-H12/4R1, 12 000 BTU, до 40 м²", "btu": 12000, "area": 40, "refrig": "R410A", "price": "163 139 ₸", "pn": 163139, "img": "https://aux-air.ru/erc/2023/06/27/3eeb68653a60a8c3cce77bb5d00c31ba0b935590.png", "stock": "В наличии", "instock": true, "case": "Канальный"}, {"brand": "AUX", "art": "AMWM-H07/4R3C(HA）", "name": "Кондиционер AUX Free Match R32 DC инвертор AMWM-H07/4R3C(HA）, 7 000 BTU, до 25 м²", "btu": 7000, "area": 25, "refrig": "R32", "price": "78 202 ₸", "pn": 78202, "img": "https://aux-air.ru/erc/2022/12/07/afb6bf199d8ea2ef2b76f33eff017a64d9828000.png", "stock": "В наличии", "instock": true, "case": "Настенный"}, {"brand": "AUX", "art": "AMWM-H09/4R3C(HA）", "name": "Кондиционер AUX Free Match R32 DC инвертор AMWM-H09/4R3C(HA）, 9 000 BTU, до 30 м²", "btu": 9000, "area": 30, "refrig": "R32", "price": "81 601 ₸", "pn": 81601, "img": "https://aux-air.ru/erc/2022/12/07/afb6bf199d8ea2ef2b76f33eff017a64d9828000.png", "stock": "В наличии", "instock": true, "case": "Настенный"}, {"brand": "AUX", "art": "AMWM-H12/4R3C(HA)", "name": "Кондиционер AUX Free Match R32 DC инвертор AMWM-H12/4R3C(HA), 12 000 BTU, до 40 м²", "btu": 12000, "area": 40, "refrig": "R32", "price": "83 868 ₸", "pn": 83868, "img": "https://aux-air.ru/erc/2022/12/07/afb6bf199d8ea2ef2b76f33eff017a64d9828000.png", "stock": "В наличии", "instock": true, "case": "Настенный"}, {"brand": "AUX", "art": "AMWM-H18/4R3C(HA)", "name": "Кондиционер AUX Free Match R32 DC инвертор AMWM-H18/4R3C(HA), 18 000 BTU, до 50 м²", "btu": 18000, "area": 50, "refrig": "R32", "price": "102 002 ₸", "pn": 102002, "img": "https://aux-air.ru/erc/2022/12/07/afb6bf199d8ea2ef2b76f33eff017a64d9828000.png", "stock": "В наличии", "instock": true, "case": "Настенный"}, {"brand": "AUX", "art": "AMWM-H24/4R3A(HA)", "name": "Кондиционер AUX Free Match R32 DC инвертор AMWM-H24/4R3A(HA), 24 000 BTU, до 70 м²", "btu": 24000, "area": 70, "refrig": "R32", "price": "136 002 ₸", "pn": 136002, "img": "https://aux-air.ru/erc/2022/12/07/afb6bf199d8ea2ef2b76f33eff017a64d9828000.png", "stock": "Под заказ", "instock": false, "case": "Настенный"}, {"brand": "AUX", "art": "AMCA-H09/4R3YAA", "name": "Кондиционер AUX Free Match R32 DC инвертор AMCA-H09/4R3YAA, 9 000 BTU, до 40 м²", "btu": 9000, "area": 40, "refrig": "R32", "price": "165 469 ₸", "pn": 165469, "img": "https://aux-air.ru/erc/2023/06/27/71e068a12f470fced7e3ff351fc8a100c83c7ab6.png", "stock": "Под заказ", "instock": false, "case": "Кассетный"}, {"brand": "AUX", "art": "AMCA-H12/4R3YAA", "name": "Кондиционер AUX Free Match R32 DC инвертор AMCA-H12/4R3YAA, 12 000 BTU, до 55 м²", "btu": 12000, "area": 55, "refrig": "R32", "price": "173 403 ₸", "pn": 173403, "img": "https://aux-air.ru/erc/2023/06/27/71e068a12f470fced7e3ff351fc8a100c83c7ab6.png", "stock": "Под заказ", "instock": false, "case": "Кассетный"}, {"brand": "AUX", "art": "AMCA-H18/4R3YAA", "name": "Кондиционер AUX Free Match R32 DC инвертор AMCA-H18/4R3YAA, 18 000 BTU, до 80 м²", "btu": 18000, "area": 80, "refrig": "R32", "price": "188 136 ₸", "pn": 188136, "img": "https://aux-air.ru/erc/2023/06/27/71e068a12f470fced7e3ff351fc8a100c83c7ab6.png", "stock": "Под заказ", "instock": false, "case": "Кассетный"}, {"brand": "AUX", "art": "AMCA-H24-4R3YAB", "name": "Кондиционер AUX Free Match R32 DC инвертор AMCA-H24-4R3YAB,  BTU", "btu": 0, "area": 0, "refrig": "R32", "price": "274 271 ₸", "pn": 274271, "img": "https://aux-air.ru/erc/2023/06/27/71e068a12f470fced7e3ff351fc8a100c83c7ab6.png", "stock": "Под заказ", "instock": false, "case": "Кассетный"}, {"brand": "AUX", "art": "AMSD-H07/4R3AA", "name": "Кондиционер AUX Free Match R32 DC инвертор AMSD-H07/4R3AA, 7 000 BTU, до 25 м²", "btu": 7000, "area": 25, "refrig": "R32", "price": "179 070 ₸", "pn": 179070, "img": "https://aux-air.ru/erc/2023/06/27/3eeb68653a60a8c3cce77bb5d00c31ba0b935590.png", "stock": "Под заказ", "instock": false, "case": "Канальный"}, {"brand": "AUX", "art": "AMSD-H09/4R3AA", "name": "Кондиционер AUX Free Match R32 DC инвертор AMSD-H09/4R3AA, 9 000 BTU, до 30 м²", "btu": 9000, "area": 30, "refrig": "R32", "price": "196 069 ₸", "pn": 196069, "img": "https://aux-air.ru/erc/2023/06/27/3eeb68653a60a8c3cce77bb5d00c31ba0b935590.png", "stock": "Под заказ", "instock": false, "case": "Канальный"}, {"brand": "AUX", "art": "AUMD-H12/NDR3", "name": "Кондиционер AUX Free Match R32 DC инвертор AUMD-H12/NDR3, 12 000 BTU, до 40 м²", "btu": 12000, "area": 40, "refrig": "R32", "price": "204 004 ₸", "pn": 204004, "img": "https://aux-air.ru/erc/2023/06/27/3eeb68653a60a8c3cce77bb5d00c31ba0b935590.png", "stock": "Под заказ", "instock": false, "case": "Канальный"}, {"brand": "AUX", "art": "AUMD-H18/NDR3", "name": "Кондиционер AUX Free Match R32 DC инвертор AUMD-H18/NDR3, 18 000 BTU, до 55 м²", "btu": 18000, "area": 55, "refrig": "R32", "price": "217 603 ₸", "pn": 217603, "img": "https://aux-air.ru/erc/2023/06/27/3eeb68653a60a8c3cce77bb5d00c31ba0b935590.png", "stock": "Под заказ", "instock": false, "case": "Канальный"}, {"brand": "AUX", "art": "AUMD-H24/NDR3", "name": "Кондиционер AUX Free Match R32 DC инвертор AUMD-H24/NDR3, 24 000 BTU, до 80 м²", "btu": 24000, "area": 80, "refrig": "R32", "price": "266 338 ₸", "pn": 266338, "img": "https://aux-air.ru/erc/2023/06/27/3eeb68653a60a8c3cce77bb5d00c31ba0b935590.png", "stock": "Под заказ", "instock": false, "case": "Канальный"}, {"brand": "AERONIK", "art": "ASI-09 ILK4", "name": "Кондиционер AERONIK ASI-09 ILK4, 9000 BTU, до 26 м²", "btu": 9000, "area": 26, "refrig": "R32", "price": "71 178 ₸", "pn": 71178, "img": "__IMGBASE__/Realcon_AERONIK_12.jpg", "stock": "В наличии", "instock": true, "case": "Внутренний блок"}, {"brand": "AERONIK", "art": "ASI-12 ILK4", "name": "Кондиционер AERONIK ASI-12 ILK4, 12000 BTU, до 34 м²", "btu": 12000, "area": 34, "refrig": "R32", "price": "78 826 ₸", "pn": 78826, "img": "__IMGBASE__/Realcon_AERONIK_12.jpg", "stock": "В наличии", "instock": true, "case": "Внутренний блок"}, {"brand": "AERONIK", "art": "ASI-07 ILK3", "name": "Кондиционер AERONIK ASI-07 ILK3, 7000 BTU, до 21 м²", "btu": 7000, "area": 21, "refrig": "R32", "price": "69 456 ₸", "pn": 69456, "img": "__IMGBASE__/Realcon_AERONIK_13.jpg", "stock": "В наличии", "instock": true, "case": "Внутренний блок"}, {"brand": "AERONIK", "art": "ASI-09 ILK3", "name": "Кондиционер AERONIK ASI-09 ILK3, 9000 BTU, до 27 м²", "btu": 9000, "area": 27, "refrig": "R32", "price": "73 721 ₸", "pn": 73721, "img": "__IMGBASE__/Realcon_AERONIK_14.jpg", "stock": "В наличии", "instock": true, "case": "Внутренний блок"}, {"brand": "AERONIK", "art": "ASI-12 ILK3", "name": "Кондиционер AERONIK ASI-12 ILK3, 12000 BTU, до 36 м²", "btu": 12000, "area": 36, "refrig": "R32", "price": "85 906 ₸", "pn": 85906, "img": "__IMGBASE__/Realcon_AERONIK_14.jpg", "stock": "В наличии", "instock": true, "case": "Внутренний блок"}, {"brand": "AERONIK", "art": "ASI-18 ILK3", "name": "Кондиционер AERONIK ASI-18 ILK3, 18000 BTU, до 54 м²", "btu": 18000, "area": 54, "refrig": "R32", "price": "109 057 ₸", "pn": 109057, "img": "__IMGBASE__/Realcon_AERONIK_14.jpg", "stock": "В наличии", "instock": true, "case": "Внутренний блок"}, {"brand": "AERONIK", "art": "ASI-24 ILK3", "name": "Кондиционер AERONIK ASI-24 ILK3, 24000 BTU, до 72 м²", "btu": 24000, "area": 72, "refrig": "R32", "price": "140 740 ₸", "pn": 140740, "img": "__IMGBASE__/Realcon_AERONIK_14.jpg", "stock": "В наличии", "instock": true, "case": "Внутренний блок"}, {"brand": "Midea", "art": "CB1-09HRFN8-I", "name": "Кондиционер Midea Внутренний блок Мультисплит- система BREEZELESS CB1-09HRFN8-I, 9000 BTU, до 25 м²", "btu": 9000, "area": 25, "refrig": "R32", "price": "107 880 ₸", "pn": 107880, "img": "https://midea.com.kz/wp-content/uploads/2023/07/breez-3-416x416-1.jpg", "stock": "В наличии", "instock": true, "case": "Настенный"}, {"brand": "Midea", "art": "CB1-12HRFN8-I", "name": "Кондиционер Midea Внутренний блок Мультисплит- система BREEZELESS CB1-12HRFN8-I, 12000 BTU, до 35 м²", "btu": 12000, "area": 35, "refrig": "R32", "price": "113 880 ₸", "pn": 113880, "img": "https://midea.com.kz/wp-content/uploads/2023/07/breez-3-416x416-1.jpg", "stock": "В наличии", "instock": true, "case": "Настенный"}, {"brand": "Midea", "art": "MSAX-09N8D0 -C", "name": "Кондиционер Midea Внутренний блок Мультисплит- система Aurora 3 MSAX-09N8D0 -C, 9000 BTU, до 25 м²", "btu": 9000, "area": 25, "refrig": "R32", "price": "86 280 ₸", "pn": 86280, "img": "https://midea.com.kz/wp-content/uploads/2023/01/aurora3-1-416x416-1.jpg", "stock": "В наличии", "instock": true, "case": "Настенный"}, {"brand": "Midea", "art": "MSAX-12N8D0 -C", "name": "Кондиционер Midea Внутренний блок Мультисплит- система Aurora 3 MSAX-12N8D0 -C, 12000 BTU, до 35 м²", "btu": 12000, "area": 35, "refrig": "R32", "price": "105 480 ₸", "pn": 105480, "img": "https://midea.com.kz/wp-content/uploads/2023/01/aurora3-1-416x416-1.jpg", "stock": "В наличии", "instock": true, "case": "Настенный"}, {"brand": "Midea", "art": "MSAX-24N8D0 -C", "name": "Кондиционер Midea Внутренний блок Мультисплит- система Aurora 3 MSAX-24N8D0 -C, 24000 BTU, до 65 м²", "btu": 24000, "area": 65, "refrig": "R32", "price": "166 680 ₸", "pn": 166680, "img": "https://midea.com.kz/wp-content/uploads/2023/01/aurora3-1-416x416-1.jpg", "stock": "Под заказ", "instock": false, "case": "Настенный"}, {"brand": "Midea", "art": "XT-09N8D6-G (Gold)", "name": "Кондиционер Midea Внутренний блок Мультисплит- система XT XT-09N8D6-G (Gold), 9000 BTU, до 25 м²", "btu": 9000, "area": 25, "refrig": "R32", "price": "135 480 ₸", "pn": 135480, "img": "https://midea.com.kz/wp-content/uploads/2023/01/penrose-1-416x416-1.jpg", "stock": "Под заказ", "instock": false, "case": "Настенный"}, {"brand": "Midea", "art": "XT-12N8D6-G (Gold)", "name": "Кондиционер Midea Внутренний блок Мультисплит- система XT XT-12N8D6-G (Gold), 12000 BTU, до 35 м²", "btu": 12000, "area": 35, "refrig": "R32", "price": "152 280 ₸", "pn": 152280, "img": "https://midea.com.kz/wp-content/uploads/2023/01/penrose-1-416x416-1.jpg", "stock": "В наличии", "instock": true, "case": "Настенный"}, {"brand": "Midea", "art": "XT-09N8D6-BM (Black)", "name": "Кондиционер Midea Внутренний блок Мультисплит- система XT XT-09N8D6-BM (Black), 9000 BTU, до 25 м²", "btu": 9000, "area": 25, "refrig": "R32", "price": "135 480 ₸", "pn": 135480, "img": "https://midea.com.kz/wp-content/uploads/2023/01/penrose-1-416x416-1.jpg", "stock": "Под заказ", "instock": false, "case": "Настенный"}, {"brand": "Midea", "art": "XT-12N8D6-BM (Black)", "name": "Кондиционер Midea Внутренний блок Мультисплит- система XT XT-12N8D6-BM (Black), 12000 BTU, до 35 м²", "btu": 12000, "area": 35, "refrig": "R32", "price": "152 280 ₸", "pn": 152280, "img": "https://midea.com.kz/wp-content/uploads/2023/01/penrose-1-416x416-1.jpg", "stock": "В наличии", "instock": true, "case": "Настенный"}, {"brand": "Midea", "art": "AB-12NXD0-M", "name": "Кондиционер Midea Внутренний блок Мультисплит- система Aurora 2 AB-12NXD0-M, 12000 BTU, до 35 м²", "btu": 12000, "area": 35, "refrig": "R32", "price": "83 880 ₸", "pn": 83880, "img": "https://midea.com.kz/wp-content/uploads/2023/03/2-535x364.png", "stock": "В наличии", "instock": true, "case": "Настенный"}, {"brand": "Midea", "art": "MA-12N1D0", "name": "Кондиционер Midea Внутренний блок Мультисплит- система Blanc MA-12N1D0, 12000 BTU, до 35 м²", "btu": 12000, "area": 35, "refrig": "R32", "price": "67 080 ₸", "pn": 67080, "img": "https://midea.com.kz/wp-content/uploads/2019/08/1.jpeg", "stock": "Под заказ", "instock": false, "case": "Настенный"}, {"brand": "Midea", "art": "MTI-12FNXD0-Q", "name": "Кондиционер Midea Внутренний блок Мультисплит- система канальный MTI-12FNXD0-Q, 12000 BTU, до 35 м²", "btu": 12000, "area": 35, "refrig": "R32", "price": "171 480 ₸", "pn": 171480, "img": "https://midea.com.kz/wp-content/uploads/2023/04/Kartinka-1.jpg", "stock": "Под заказ", "instock": false, "case": "Канальный"}, {"brand": "Midea", "art": "MTI-18FNXD0-Q", "name": "Кондиционер Midea Внутренний блок Мультисплит- система канальный MTI-18FNXD0-Q, 18000 BTU, до 50 м²", "btu": 18000, "area": 50, "refrig": "R32", "price": "179 880 ₸", "pn": 179880, "img": "https://midea.com.kz/wp-content/uploads/2023/04/Kartinka-1.jpg", "stock": "В наличии", "instock": true, "case": "Канальный"}];
+ var PH='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="210" height="150"><rect width="210" height="150" fill="#f0f1f3"/><text x="105" y="80" font-family="Arial" font-size="12" fill="#aab" text-anchor="middle">фото уточняется</text></svg>');
+ function rub(n){return (n||0).toLocaleString('ru-RU').replace(/,/g,' ')+' ₸';}
+ function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+ // конфигуратор: только AUX/Midea, R32
+ var CFG_BR=['AUX','Midea'];
+ var brandSel=document.getElementById('msBrand'),
+     outSel=document.getElementById('msOut'),
+     outInfo=document.getElementById('msOutInfo'),
+     slots=document.getElementById('msSlots'),
+     hint=document.getElementById('msHint'),
+     brk=document.getElementById('msBreak'),
+     sumEl=document.getElementById('msSum');
+ CFG_BR.forEach(function(b){var o=document.createElement('option');o.value=b;o.textContent=b;brandSel.appendChild(o);});
+ function outModules(brand){return OUTDOOR.filter(function(m){return m.brand===brand&&m.refrig==='R32'&&m.ports;}).sort(function(a,b){return a.ports-b.ports||a.pn-b.pn;});}
+ function inUnits(brand){return INDOOR.filter(function(u){return u.brand===brand&&u.refrig==='R32';}).sort(function(a,b){return a.btu-b.btu;});}
+ function fillOut(){
+   var br=brandSel.value; outSel.innerHTML='';
+   outModules(br).forEach(function(m){var o=document.createElement('option');o.value=m.art;o.textContent=m.art+' · '+m.ports+' комн. · до '+m.area+' м² · '+rub(m.pn);outSel.appendChild(o);});
+   buildSlots();
+ }
+ function curOut(){var br=brandSel.value;return outModules(br).filter(function(m){return m.art===outSel.value;})[0];}
+ function buildSlots(){
+   var m=curOut(); slots.innerHTML='';
+   if(!m){outInfo.textContent='';return;}
+   outInfo.innerHTML='Наружный блок <b>'+esc(m.art)+'</b>: до <b>'+m.ports+'</b> комнат, общая мощность ~<b>'+m.btu.toLocaleString('ru-RU')+' BTU</b>, хладагент '+m.refrig+'.';
+   var units=inUnits(brandSel.value);
+   for(var i=0;i<m.ports;i++){
+     var row=document.createElement('div');row.className='tms-slot';
+     var lbl='<span class="tms-slot-lbl">Комната '+(i+1)+(i<2?'':' (опц.)')+'</span>';
+     var opts='<option value="">— не нужна —</option>';
+     units.forEach(function(u){opts+='<option value="'+esc(u.art)+'">'+esc(u.case)+' · '+u.btu+' BTU · до '+u.area+' м² · '+rub(u.pn)+'</option>';});
+     row.innerHTML=lbl+'<select data-slot="'+i+'">'+opts+'</select>';
+     slots.appendChild(row);
+   }
+   slots.querySelectorAll('select').forEach(function(s){s.addEventListener('change',recalc);});
+   recalc();
+ }
+ function recalc(){
+   var m=curOut(); if(!m){sumEl.textContent='—';brk.textContent='';return;}
+   var units=inUnits(brandSel.value), chosen=[];
+   slots.querySelectorAll('select').forEach(function(s){if(s.value){var u=units.filter(function(x){return x.art===s.value;})[0];if(u)chosen.push(u);}});
+   var sumBtu=chosen.reduce(function(a,u){return a+u.btu;},0);
+   var total=m.pn+chosen.reduce(function(a,u){return a+u.pn;},0);
+   var lines=['Наружный модуль '+m.art+' — '+rub(m.pn)];
+   chosen.forEach(function(u){lines.push(u.case+' '+u.btu+' BTU ('+u.art+') — '+rub(u.pn));});
+   brk.textContent=lines.join('\n');
+   sumEl.textContent=chosen.length?rub(total):'—';
+   if(chosen.length<2){hint.className='tms-hint warn';hint.textContent='Выберите минимум 2 внутренних блока (мультисплит рассчитан на 2+ комнаты).';}
+   else if(sumBtu>m.btu){hint.className='tms-hint warn';hint.textContent='Суммарная мощность блоков ('+sumBtu.toLocaleString('ru-RU')+' BTU) превышает модуль ('+m.btu.toLocaleString('ru-RU')+' BTU) — уточните комплект у менеджера.';}
+   else {hint.className='tms-hint ok';hint.textContent='✓ Комплект сбалансирован: '+chosen.length+' блок(а/ов), '+sumBtu.toLocaleString('ru-RU')+' из '+m.btu.toLocaleString('ru-RU')+' BTU.';}
+ }
+ brandSel.addEventListener('change',fillOut);
+ outSel.addEventListener('change',buildSlots);
+ fillOut();
+
+ // каталог
+ function card(p){
+   var pills='';
+   if(p.ports) pills+='<span class="tms-cpill">'+p.ports+' комн.</span>';
+   if(p.case) pills+='<span class="tms-cpill">'+esc(p.case)+'</span>';
+   if(p.btu) pills+='<span class="tms-cpill">'+p.btu+' BTU</span>';
+   if(p.area) pills+='<span class="tms-cpill">до '+p.area+' м²</span>';
+   pills+='<span class="tms-cpill">'+p.refrig+'</span>';
+   return '<div class="tms-card" data-b="'+esc(p.brand)+'"><div class="tms-cimg"><img loading="lazy" src="'+(p.img||PH)+'" onerror="this.onerror=null;this.src=\''+PH+'\'" alt="'+esc(p.name)+'"></div>'+
+     '<div class="tms-cb"><div class="tms-cbrand">'+esc(p.brand)+'</div><div class="tms-cname">'+esc(p.name)+'</div>'+
+     '<div class="tms-cpills">'+pills+'</div><div class="tms-cprice">'+(p.price||'—')+'</div>'+
+     '<div class="tms-cstock'+(p.instock?'':' muted')+'">'+esc(p.stock)+'</div></div></div>';
+ }
+ var go=document.getElementById('msGridOut'), gi=document.getElementById('msGridIn');
+ function render(bf){
+   var o=OUTDOOR.filter(function(p){return bf==='all'||p.brand===bf;});
+   var i=INDOOR.filter(function(p){return bf==='all'||p.brand===bf;});
+   go.innerHTML=o.map(card).join('')||'<p style="color:#888">Нет позиций.</p>';
+   gi.innerHTML=i.map(card).join('')||'<p style="color:#888">Нет позиций.</p>';
+ }
+ document.querySelectorAll('#msFilters .tms-chip').forEach(function(c){
+   c.addEventListener('click',function(){
+     document.querySelectorAll('#msFilters .tms-chip').forEach(function(x){x.classList.remove('is-on');});
+     c.classList.add('is-on'); render(c.getAttribute('data-b'));
+   });
+ });
+ render('all');
+})();
+</script>
+<!-- ====== КОНЕЦ блока мультисплитов ====== -->
