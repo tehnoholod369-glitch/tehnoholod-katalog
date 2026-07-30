@@ -184,10 +184,14 @@
  box.querySelector('.tc-spec').innerHTML=(p.specs||[]).map(function(s){return '<tr><td>'+s[0]+'</td><td>'+s[1]+'</td></tr>'}).join('');
  modal.classList.add('open');
  }
+ var HSLUG='kaminy';
  grid.addEventListener('click',function(e){var c=e.target.closest('.tc-card');if(c){var p=DATA[+c.getAttribute('data-i')];open(p);
- if(p.ns&&history.replaceState)history.replaceState(null,'','#'+p.ns);}});
- function openByHash(){var hs=decodeURIComponent((location.hash||'').replace(/^#/,'')).trim();if(!hs)return;
- var p=DATA.filter(function(x){return x.ns===hs})[0];if(p){st.q=hs.toLowerCase();q.value=hs;render();open(p);}}
+ if(p.ns&&history.replaceState)history.replaceState(null,'','#'+HSLUG+'/'+p.ns);}});
+ // адрес вида #kaminy/НС-1657217 — слаг раздела читает хаб, код товара читаем мы
+ function openByHash(){var hs=decodeURIComponent((location.hash||'').replace(/^#/,'')).trim();
+ if(!hs)return; var parts=hs.split('/'); var sku=(parts.length>1?parts[1]:parts[0]).trim();
+ if(!/^(НС|HC)-/i.test(sku))return;
+ var p=DATA.filter(function(x){return x.ns===sku})[0];if(p){st.q=sku.toLowerCase();q.value=sku;render();open(p);}}
  window.addEventListener('hashchange',openByHash);
  box.querySelector('.tc-mclose').onclick=function(){modal.classList.remove('open');};
  modal.addEventListener('click',function(e){if(e.target===modal)modal.classList.remove('open');});
