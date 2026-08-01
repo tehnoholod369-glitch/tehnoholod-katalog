@@ -184,22 +184,11 @@
   box.querySelector('.tc-spec').innerHTML=(p.specs||[]).map(function(s){return '<tr><td>'+s[0]+'</td><td>'+s[1]+'</td></tr>'}).join('');
   modal.classList.add('open');
  }
- var HSLUG='pushki', HKEY='ns';
- grid.addEventListener('click',function(e){var c=e.target.closest('.tc-card');if(c){var p=DATA[+c.getAttribute('data-i')];open(p);
- var id=p[HKEY]; if(id&&history.replaceState)history.replaceState(null,'','#'+HSLUG+'/'+id);}});
- // адрес вида #pushki/<код> — слаг раздела читает хаб, код товара читаем мы
- function openByHash(){var hs=decodeURIComponent((location.hash||'').replace(/^#/,'')).trim();
- if(!hs)return; var parts=hs.split('/'); if(parts.length<2)return; var sku=parts.slice(1).join('/').trim(); if(!sku)return;
- var p=DATA.filter(function(x){return String(x[HKEY]||'')===sku})[0]; if(!p)return;
- var qi=document.getElementById('tcQ')||box.querySelector('.tc-search');
- if(qi){qi.value=sku;st.q=sku.toLowerCase();render();}
- open(p);}
- window.addEventListener('hashchange',openByHash);
+ grid.addEventListener('click',function(e){var c=e.target.closest('.tc-card');if(c)open(DATA[+c.getAttribute('data-i')]);});
  box.querySelector('.tc-mclose').onclick=function(){modal.classList.remove('open');};
  modal.addEventListener('click',function(e){if(e.target===modal)modal.classList.remove('open');});
  document.addEventListener('keydown',function(e){if(e.key==='Escape')modal.classList.remove('open');});
  render();
- openByHash();
 })();
 </script>
 <!-- ====== КОНЕЦ КАТАЛОГА «Тепловые пушки и теплогенераторы» ====== -->
