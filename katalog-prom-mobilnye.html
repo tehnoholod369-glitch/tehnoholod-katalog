@@ -1,10 +1,10 @@
-<!-- ====== КАТАЛОГ «Промышленные мобильные кондиционеры» ИП «ТехноХолод» · из PIM/КАТАЛОГИ_ПО_ГРУППАМ · собрано 30.07.2026 ====== -->
+<!-- ====== КАТАЛОГ «Промышленные мобильные кондиционеры» ИП «ТехноХолод» · из PIM/КАТАЛОГИ_ПО_ГРУППАМ · собрано 01.08.2026 ====== -->
 <div class="tcat prommobilnye">
  <div class="tc-wrap">
   <header class="tc-hd">
    <div class="tc-ey">Каталог · ИП «ТехноХолод»</div>
    <h2 class="tc-h2">Промышленные мобильные кондиционеры</h2>
-   <p class="tc-sub">5 моделей Ballu Heavy Pro: мобильные моноблоки 15 000–85 000 BTU для строительных площадок, цехов, автомастерских, серверных и бытовок. Монтаж не требуется. Под заказ, доставка по Казахстану.</p>
+   <p class="tc-sub">5 моделей Ballu Heavy Pro: мобильные моноблоки 15 000–85 000 BTU для строительных площадок, цехов, автомастерских, серверных и бытовок. Монтаж не требуется. Доставка по Казахстану.</p>
   </header>
   <div class="tc-toolbar">
    <input class="tc-search" type="search" placeholder="Поиск: бренд, модель, код НС…">
@@ -25,7 +25,7 @@
   <div class="tc-empty">Ничего не найдено. Измените фильтры или поиск.</div>
   <div class="tc-more-wrap"><button class="tc-more">Показать ещё</button></div>
   <div class="tc-foot"><a class="tc-call" href="tel:+77000369369">Подберём под вашу задачу: +7 (700) 036-93-69</a></div>
-  <div class="tc-note">Цены указаны в тенге и действуют на 30.07.2026. Наличие уточняется у поставщика — поставка под заказ. Характеристики — по данным производителя.</div>
+  <div class="tc-note">Цены указаны в тенге и действуют на 01.08.2026. Наличие уточняется у поставщика — поставка под заказ. Характеристики — по данным производителя.</div>
  </div>
  <div class="tc-modal"><div class="tc-mbox"><button class="tc-mclose">×</button>
   <div class="tc-mgrid"><div><div class="tc-mimg"><img src="" alt=""></div><div class="tc-mgal"></div></div>
@@ -183,22 +183,11 @@
   box.querySelector('.tc-spec').innerHTML=(p.specs||[]).map(function(s){return '<tr><td>'+s[0]+'</td><td>'+s[1]+'</td></tr>'}).join('');
   modal.classList.add('open');
  }
- var HSLUG='prom-mobilnye', HKEY='ns';
- grid.addEventListener('click',function(e){var c=e.target.closest('.tc-card');if(c){var p=DATA[+c.getAttribute('data-i')];open(p);
- var id=p[HKEY]; if(id&&history.replaceState)history.replaceState(null,'','#'+HSLUG+'/'+id);}});
- // адрес вида #prom-mobilnye/<код> — слаг раздела читает хаб, код товара читаем мы
- function openByHash(){var hs=decodeURIComponent((location.hash||'').replace(/^#/,'')).trim();
- if(!hs)return; var parts=hs.split('/'); if(parts.length<2)return; var sku=parts.slice(1).join('/').trim(); if(!sku)return;
- var p=DATA.filter(function(x){return String(x[HKEY]||'')===sku})[0]; if(!p)return;
- var qi=document.getElementById('tcQ')||box.querySelector('.tc-search');
- if(qi){qi.value=sku;st.q=sku.toLowerCase();render();}
- open(p);}
- window.addEventListener('hashchange',openByHash);
+ grid.addEventListener('click',function(e){var c=e.target.closest('.tc-card');if(c)open(DATA[+c.getAttribute('data-i')]);});
  box.querySelector('.tc-mclose').onclick=function(){modal.classList.remove('open');};
  modal.addEventListener('click',function(e){if(e.target===modal)modal.classList.remove('open');});
  document.addEventListener('keydown',function(e){if(e.key==='Escape')modal.classList.remove('open');});
  render();
- openByHash();
 })();
 </script>
 <!-- ====== КОНЕЦ КАТАЛОГА «Промышленные мобильные кондиционеры» ====== -->
