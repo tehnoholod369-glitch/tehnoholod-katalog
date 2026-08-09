@@ -95,7 +95,7 @@
 .tcat .tc-foot{display:flex;justify-content:center;margin-top:26px}
 .tcat .tc-call{font-size:15px;font-weight:600;text-decoration:none;border-radius:30px;padding:13px 26px;background:#fff;color:var(--dk);border:1.5px solid var(--bd)}
 .tcat .tc-call:hover{border-color:var(--ac);color:var(--ac)}
-.tcat .tc-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(20,23,26,.55);padding:24px;overflow:auto}
+.tcat .tc-modal{display:none;position:fixed;inset:0;z-index:100000;background:rgba(20,23,26,.55);padding:24px;overflow:auto}
 .tcat .tc-modal.open{display:flex;align-items:flex-start;justify-content:center}
 .tcat .tc-mbox{position:relative;background:#fff;border-radius:18px;max-width:880px;width:100%;margin:auto;padding:28px}
 .tcat .tc-mclose{position:absolute;top:10px;right:16px;border:none;background:none;font-size:32px;cursor:pointer;color:#9aa0a8}
@@ -124,13 +124,13 @@
 .tcat .tc-th.is-on{border-color:#0a66c2}
 
 /* UX-2026-08-05 — карточка во весь экран, крупные фото, фильтр наличия */
-.tcat .tc-modal{padding:20px}
+.tcat .tc-modal{padding:20px;z-index:100000}
 .tcat .tc-mbox{max-width:1280px;padding:30px 32px 34px}
 .tcat .tc-mclose{background:rgba(255,255,255,.92);border-radius:50%;width:42px;height:42px;line-height:1;font-size:30px;color:#6b7178;z-index:3}
 .tcat .tc-mgrid{grid-template-columns:1.05fr .95fr;gap:30px;align-items:start}
 .tcat .tc-mimg{position:relative;background:#fff;border:1px solid var(--bd);height:clamp(320px,56vh,620px);padding:18px;cursor:zoom-in}
 .tcat .tc-mzoom{position:absolute;right:12px;bottom:12px;font-size:12px;font-weight:600;color:#6b7178;background:rgba(255,255,255,.9);border:1px solid var(--bd);border-radius:20px;padding:5px 12px;pointer-events:none}
-.tcat .tc-lb{display:none;position:fixed;inset:0;z-index:10000;background:rgba(10,12,14,.94);align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+.tcat .tc-lb{display:none;position:fixed;inset:0;z-index:100001;background:rgba(10,12,14,.94);align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
 .tcat .tc-lb.open{display:flex}
 .tcat .tc-lb img{max-width:96vw;max-height:92vh;object-fit:contain}
 .tcat .tc-lbclose{position:absolute;top:14px;right:18px;border:none;background:rgba(255,255,255,.14);color:#fff;font-size:30px;line-height:1;width:46px;height:46px;border-radius:50%;cursor:pointer}
