@@ -212,10 +212,15 @@
  box.appendChild(lb);
  var lbImg=lb.querySelector('img'),lbList=[],lbIdx=0;
  function lbShow(i){if(!lbList.length)return;lbIdx=(i+lbList.length)%lbList.length;
-   // ссылка производителя может не открыться (хотлинк закрыт) — тогда
-   // показываем наше локальное фото, а не пустой экран
-   lbImg.onerror=function(){lbImg.onerror=null;var f=(window.__tcImgs&&(window.__tcImgs[lbIdx]||window.__tcImgs[0]))||'';if(f)lbImg.src=f;};
-   lbImg.src=lbList[lbIdx];
+   // Сначала показываем то, что точно есть — наше локальное фото; оригинал
+   // производителя подменяем только после успешной предзагрузки (часть сайтов
+   // закрывает хотлинк и отдаёт пустую картинку, onerror при этом не срабатывает).
+   var local=(window.__tcImgs&&(window.__tcImgs[lbIdx]||window.__tcImgs[0]))||'';
+   var url=lbList[lbIdx];
+   lbImg.src=local||url;
+   if(url&&url!==local){var probe=new Image();var want=url;
+     probe.onload=function(){if(probe.naturalWidth>0&&lbList[lbIdx]===want)lbImg.src=want;};
+     probe.src=url;}
    var one=lbList.length<2;lb.querySelector('.tc-lbprev').style.display=one?'none':'';lb.querySelector('.tc-lbnext').style.display=one?'none':'';}
  function lbOpen(){var cur=box.querySelector('.tc-mimg img').src;
    var hi=window.__tcHi&&window.__tcHi.length?window.__tcHi:null;
