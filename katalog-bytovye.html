@@ -22,6 +22,7 @@
      <button class="tc-chip" data-f="area" data-v="0-25">до 25 м²</button><button class="tc-chip" data-f="area" data-v="26-35">26–35 м²</button>
      <button class="tc-chip" data-f="area" data-v="36-60">36–60 м²</button><button class="tc-chip" data-f="area" data-v="61-9999">60+ м²</button></div>
    <div class="tc-frow"><span class="tc-fl">Прочее</span>
+     <button class="tc-chip tc-chipstock" data-f="stock" data-v="in">Только в наличии</button>
      <button class="tc-chip" data-f="inv" data-v="inv">Инвертор</button><button class="tc-chip" data-f="inv" data-v="onoff">ON/OFF</button>
      <button class="tc-chip" data-f="fresh" data-v="1">С притоком уличного воздуха</button>
      <button class="tc-reset" id="tcReset">Сбросить</button></div>
@@ -33,7 +34,7 @@
   <div class="tc-foot"><a class="tc-call" href="tel:+77000369369">Не нашли нужное? Подберём по площади: +7 700 036 93 69</a></div>
  </div>
  <div class="tc-modal" id="tcModal"><div class="tc-mbox"><button class="tc-mclose" id="tcClose">×</button>
-  <div class="tc-mgrid"><div><div class="tc-mimg"><img id="tcMI" src="" alt=""></div><div class="tc-mthumbs" id="tcMTh"></div></div>
+  <div class="tc-mgrid"><div><div class="tc-mimg"><img id="tcMI" src="" alt=""><span class="tc-mzoom">Нажмите, чтобы увеличить</span></div><div class="tc-mthumbs" id="tcMTh"></div></div>
    <div class="tc-minfo"><div class="tc-tags"><span class="tc-tag" id="tcMB"></span><span class="tc-tag tc-tag2" id="tcMC"></span></div>
     <h3 id="tcMN"></h3><div class="tc-mprice"><span id="tcMP"></span><span class="tc-st" id="tcMS"></span></div>
     <p id="tcMD"></p><ul class="tc-ben" id="tcMBen"></ul><table class="tc-spec" id="tcMSpec"></table>
@@ -121,6 +122,27 @@
 .tcat .tc-th{width:64px;height:48px;object-fit:contain;background:#f6f7f9;border:2px solid transparent;border-radius:8px;padding:4px;cursor:pointer}
 .tcat .tc-th:hover{border-color:#c9d3e0}
 .tcat .tc-th.is-on{border-color:#0a66c2}
+
+/* UX-2026-08-05 — карточка во весь экран, крупные фото, фильтр наличия */
+.tcat .tc-modal{padding:20px}
+.tcat .tc-mbox{max-width:1280px;padding:30px 32px 34px}
+.tcat .tc-mclose{background:rgba(255,255,255,.92);border-radius:50%;width:42px;height:42px;line-height:1;font-size:30px;color:#6b7178;z-index:3}
+.tcat .tc-mgrid{grid-template-columns:1.05fr .95fr;gap:30px;align-items:start}
+.tcat .tc-mimg{position:relative;background:#fff;border:1px solid var(--bd);height:clamp(320px,56vh,620px);padding:18px;cursor:zoom-in}
+.tcat .tc-mzoom{position:absolute;right:12px;bottom:12px;font-size:12px;font-weight:600;color:#6b7178;background:rgba(255,255,255,.9);border:1px solid var(--bd);border-radius:20px;padding:5px 12px;pointer-events:none}
+.tcat .tc-lb{display:none;position:fixed;inset:0;z-index:10000;background:rgba(10,12,14,.94);align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+.tcat .tc-lb.open{display:flex}
+.tcat .tc-lb img{max-width:96vw;max-height:92vh;object-fit:contain}
+.tcat .tc-lbclose{position:absolute;top:14px;right:18px;border:none;background:rgba(255,255,255,.14);color:#fff;font-size:30px;line-height:1;width:46px;height:46px;border-radius:50%;cursor:pointer}
+.tcat .tc-lbnav{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(255,255,255,.14);color:#fff;font-size:34px;line-height:1;width:52px;height:52px;border-radius:50%;cursor:pointer}
+.tcat .tc-lbprev{left:16px}.tcat .tc-lbnext{right:16px}
+.tcat .tc-chipstock::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#1f8f4e;margin-right:7px;vertical-align:middle}
+.tcat .tc-chipstock.is-on::before{background:#fff}
+@media(max-width:900px){.tcat .tc-modal{padding:0}
+ .tcat .tc-mbox{max-width:none;width:100%;min-height:100vh;margin:0;border-radius:0;padding:16px 14px 30px}
+ .tcat .tc-mgrid{grid-template-columns:1fr;gap:18px}
+ .tcat .tc-mimg{height:min(62vh,430px)}
+ .tcat .tc-lbnav{width:44px;height:44px;font-size:28px}}
 </style>
 <script>
 (function(){
@@ -130,7 +152,7 @@
   if(b[2]){return '<img class="tc-bimg" src="'+b[2]+'" alt="'+n.replace(/"/g,'&quot;')+'">';}
   return txt;}
  var box=document.querySelector('.tcat'),grid=document.getElementById('tcGrid'),empty=document.getElementById('tcEmpty'),cnt=document.getElementById('tcCount'),moreBtn=document.getElementById('tcMore');
- var st={brand:'all',case:'all',area:'all',inv:'',fresh:false,q:'',sort:'pop'},shown=PAGE,filtered=[];
+ var st={brand:'all',case:'all',area:'all',inv:'',fresh:false,stock:'',q:'',sort:'pop'},shown=PAGE,filtered=[];
  function ph(){return 'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="220" height="180"><rect width="220" height="180" fill="#f0f1f3"/><text x="110" y="95" font-family="Arial" font-size="13" fill="#bfc4cc" text-anchor="middle">фото добавим</text></svg>');}
  function inArea(a){if(st.area==='all')return true;var p=st.area.split('-');return a>=+p[0]&&a<=+p[1];}
  function match(p){
@@ -139,6 +161,7 @@
   if(!inArea(p.area))return false;
   if(st.inv&&p.inv!==st.inv)return false;
   if(st.fresh&&!p.fresh)return false;
+  if(st.stock==='in'&&p.sc!=='ok')return false;
   if(st.q){var s=(p.name+' '+p.brand+' '+p.art).toLowerCase();if(s.indexOf(st.q)<0)return false;}
   return true;
  }
@@ -165,7 +188,7 @@
  }
  box.querySelectorAll('.tc-chip').forEach(function(ch){ch.addEventListener('click',function(){
    var f=ch.getAttribute('data-f'),v=ch.getAttribute('data-v');
-   if(f==='inv'||f==='fresh'){var on=ch.classList.toggle('is-on');if(f==='fresh')st.fresh=on;else st.inv=on?v:'';
+   if(f==='inv'||f==='fresh'||f==='stock'){var on=ch.classList.toggle('is-on');if(f==='fresh')st.fresh=on;else st.inv=on?v:'';
      if(f==='inv'&&on)box.querySelectorAll('.tc-chip[data-f=inv]').forEach(function(o){if(o!==ch)o.classList.remove('is-on')});render();return;}
    st[f]=v;box.querySelectorAll('.tc-chip[data-f="'+f+'"]').forEach(function(o){o.classList.remove('is-on')});ch.classList.add('is-on');render();
  });});
@@ -186,7 +209,7 @@
   var ms=document.getElementById('tcMS');ms.textContent=p.stock;ms.className='tc-st '+p.sc;
   document.getElementById('tcMD').textContent=p.desc||'';
   document.getElementById('tcMBen').innerHTML=(p.benefits||[]).map(function(b){return '<li>'+b+'</li>'}).join('');
-  var im=document.getElementById('tcMI');im.onerror=function(){im.onerror=null;im.src=ph();};im.src=p.img;var th=document.getElementById('tcMTh');if(th){var gs=(p.imgs&&p.imgs.length>1)?p.imgs:[];th.innerHTML=gs.map(function(u,k){return '<img class="tc-th'+(k===0?' is-on':'')+'" src="'+u+'" alt="" loading="lazy">';}).join('');th.onclick=function(e){var t=e.target.closest('.tc-th');if(!t)return;im.onerror=null;im.src=t.getAttribute('src');[].forEach.call(th.children,function(c){c.className='tc-th';});t.className='tc-th is-on';};}
+  window.__tcImgs=(p.imgs&&p.imgs.length)?p.imgs.slice():(p.img?[p.img]:[]);var im=document.getElementById('tcMI');im.onerror=function(){im.onerror=null;im.src=ph();};im.src=p.img;var th=document.getElementById('tcMTh');if(th){var gs=(p.imgs&&p.imgs.length>1)?p.imgs:[];th.innerHTML=gs.map(function(u,k){return '<img class="tc-th'+(k===0?' is-on':'')+'" src="'+u+'" alt="" loading="lazy">';}).join('');th.onclick=function(e){var t=e.target.closest('.tc-th');if(!t)return;im.onerror=null;im.src=t.getAttribute('src');[].forEach.call(th.children,function(c){c.className='tc-th';});t.className='tc-th is-on';};}
   document.getElementById('tcMSpec').innerHTML=(p.specs||[]).map(function(s){return '<tr><td>'+s[0]+'</td><td>'+s[1]+'</td></tr>'}).join('');
   var dc=document.getElementById('tcMDoc');if(dc){if(p.manual){dc.href=p.manual;dc.style.display='';}else{dc.removeAttribute('href');dc.style.display='none';}}
   modal.classList.add('open');
@@ -195,6 +218,27 @@
  document.getElementById('tcClose').onclick=function(){modal.classList.remove('open');};
  modal.addEventListener('click',function(e){if(e.target===modal)modal.classList.remove('open');});
  document.addEventListener('keydown',function(e){if(e.key==='Escape')modal.classList.remove('open');});
+
+ /* UX-2026-08-05 — просмотр фото в максимальном размере */
+ var lb=document.createElement('div');lb.className='tc-lb';
+ lb.innerHTML='<button class="tc-lbclose" aria-label="Закрыть">\u00d7</button><button class="tc-lbnav tc-lbprev" aria-label="Предыдущее фото">\u2039</button><img src="" alt=""><button class="tc-lbnav tc-lbnext" aria-label="Следующее фото">\u203a</button>';
+ (document.querySelector('.tcat')||document.body).appendChild(lb);
+ var lbImg=lb.querySelector('img'),lbList=[],lbIdx=0;
+ function lbShow(i){if(!lbList.length)return;lbIdx=(i+lbList.length)%lbList.length;lbImg.src=lbList[lbIdx];
+  var one=lbList.length<2;lb.querySelector('.tc-lbprev').style.display=one?'none':'';lb.querySelector('.tc-lbnext').style.display=one?'none':'';}
+ function lbOpen(){var cur=document.getElementById('tcMI').src;lbList=(window.__tcImgs&&window.__tcImgs.length)?window.__tcImgs:[cur];
+  var k=lbList.indexOf(cur);lbShow(k<0?0:k);lb.classList.add('open');document.body.style.overflow='hidden';}
+ function lbClose(){lb.classList.remove('open');document.body.style.overflow='';}
+ var mimg=document.querySelector('.tc-mimg');if(mimg)mimg.addEventListener('click',lbOpen);
+ lb.addEventListener('click',function(e){
+  if(e.target.closest('.tc-lbnext')){lbShow(lbIdx+1);return;}
+  if(e.target.closest('.tc-lbprev')){lbShow(lbIdx-1);return;}
+  if(e.target===lb||e.target.closest('.tc-lbclose'))lbClose();});
+ document.addEventListener('keydown',function(e){
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape'){lbClose();e.stopPropagation();}
+  if(e.key==='ArrowRight')lbShow(lbIdx+1);
+  if(e.key==='ArrowLeft')lbShow(lbIdx-1);},true);
  render();
 })();
 </script>
