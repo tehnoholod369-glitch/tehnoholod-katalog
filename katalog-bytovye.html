@@ -188,7 +188,7 @@
  }
  box.querySelectorAll('.tc-chip').forEach(function(ch){ch.addEventListener('click',function(){
    var f=ch.getAttribute('data-f'),v=ch.getAttribute('data-v');
-   if(f==='inv'||f==='fresh'||f==='stock'){var on=ch.classList.toggle('is-on');if(f==='fresh')st.fresh=on;else st.inv=on?v:'';
+   if(f==='inv'||f==='fresh'||f==='stock'){var on=ch.classList.toggle('is-on');if(f==='fresh')st.fresh=on;else st[f]=on?v:'';
      if(f==='inv'&&on)box.querySelectorAll('.tc-chip[data-f=inv]').forEach(function(o){if(o!==ch)o.classList.remove('is-on')});render();return;}
    st[f]=v;box.querySelectorAll('.tc-chip[data-f="'+f+'"]').forEach(function(o){o.classList.remove('is-on')});ch.classList.add('is-on');render();
  });});
