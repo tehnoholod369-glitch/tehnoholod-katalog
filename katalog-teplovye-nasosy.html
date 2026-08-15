@@ -198,8 +198,8 @@
   var mr=box.querySelector('.tc-mrassr');mr.textContent=p.rassr?('В рассрочку: '+p.rassr):'';mr.style.display=p.rassr?'':'none';
   var md=box.querySelector('.tc-mdeliv');
   if(md){var _pn=p.pn||0;
-    md.textContent=(_pn>0&&_pn<20000)
-      ? 'Самовывоз со склада в Алматы или доставка по тарифу перевозчика. Бесплатная доставка по Алматы — от 20 000 ₸ в заказе.'
+    md.textContent=(_pn>0&&_pn<100000)
+      ? 'Самовывоз со склада в Алматы или доставка по тарифу перевозчика. Бесплатная доставка по Алматы — от 100 000 ₸ в заказе.'
       : 'Бесплатная доставка по Алматы. По Казахстану — транспортной компанией.';}
   box.querySelector('.tc-md').textContent=p.desc||'';
   var im=box.querySelector('.tc-mimg img');im.onerror=function(){im.onerror=null;im.src=ph();};im.src=p.img||ph();
