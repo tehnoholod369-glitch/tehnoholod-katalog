@@ -37,7 +37,7 @@
   <div class="tc-mgrid"><div><div class="tc-mimg"><img id="tcMI" src="" alt=""><span class="tc-mzoom">Нажмите, чтобы увеличить</span></div><div class="tc-mthumbs" id="tcMTh"></div></div>
    <div class="tc-minfo"><div class="tc-tags"><span class="tc-tag" id="tcMB"></span><span class="tc-tag tc-tag2" id="tcMC"></span></div>
     <h3 id="tcMN"></h3><div class="tc-mprice"><span id="tcMP"></span><span class="tc-st" id="tcMS"></span></div>
-    <p id="tcMD"></p><ul class="tc-ben" id="tcMBen"></ul><table class="tc-spec" id="tcMSpec"></table>
+    <div class="tc-mdeliv" id="tcMDeliv"></div><p id="tcMD"></p><ul class="tc-ben" id="tcMBen"></ul><table class="tc-spec" id="tcMSpec"></table>
     <a class="tc-doc" id="tcMDoc" href="#" target="_blank" rel="noopener nofollow" style="display:none">Инструкция производителя (PDF)</a>
     <a class="tc-buy" id="tcMBuy" href="tel:+77000369369">Заказать / консультация: +7 700 036 93 69</a></div></div></div></div>
 </div>
@@ -143,6 +143,9 @@
  .tcat .tc-mgrid{grid-template-columns:1fr;gap:18px}
  .tcat .tc-mimg{height:min(62vh,430px)}
  .tcat .tc-lbnav{width:44px;height:44px;font-size:28px}}
+
+/* DELIV-2026-08-15 — условия доставки под ценой */
+.tcat .tc-mdeliv{font-size:12.5px;line-height:1.45;color:#6b7178;background:#f6f7f9;border-radius:10px;padding:8px 11px;margin:0 0 12px}
 </style>
 <script>
 (function(){
@@ -207,7 +210,7 @@
   var mc=document.getElementById('tcMC');mc.textContent=p.case||'';mc.style.display=p.case?'':'none';
   document.getElementById('tcMN').textContent=p.name;document.getElementById('tcMP').textContent=p.price||'';
   var ms=document.getElementById('tcMS');ms.textContent=p.stock;ms.className='tc-st '+p.sc;
-  document.getElementById('tcMD').textContent=p.desc||'';
+  document.getElementById('tcMD').textContent=p.desc||'';var _md=document.getElementById('tcMDeliv');if(_md){var _pn=p.pn||0;_md.textContent=(_pn>0&&_pn<20000)?'Самовывоз со склада в Алматы или доставка по тарифу перевозчика. Бесплатная доставка по Алматы — от 20 000 ₸ в заказе.':'Бесплатная доставка по Алматы. По Казахстану — транспортной компанией.';}
   document.getElementById('tcMBen').innerHTML=(p.benefits||[]).map(function(b){return '<li>'+b+'</li>'}).join('');
   window.__tcImgs=(p.imgs&&p.imgs.length)?p.imgs.slice():(p.img?[p.img]:[]);var im=document.getElementById('tcMI');im.onerror=function(){im.onerror=null;im.src=ph();};im.src=p.img;var th=document.getElementById('tcMTh');if(th){var gs=(p.imgs&&p.imgs.length>1)?p.imgs:[];th.innerHTML=gs.map(function(u,k){return '<img class="tc-th'+(k===0?' is-on':'')+'" src="'+u+'" alt="" loading="lazy">';}).join('');th.onclick=function(e){var t=e.target.closest('.tc-th');if(!t)return;im.onerror=null;im.src=t.getAttribute('src');[].forEach.call(th.children,function(c){c.className='tc-th';});t.className='tc-th is-on';};}
   document.getElementById('tcMSpec').innerHTML=(p.specs||[]).map(function(s){return '<tr><td>'+s[0]+'</td><td>'+s[1]+'</td></tr>'}).join('');

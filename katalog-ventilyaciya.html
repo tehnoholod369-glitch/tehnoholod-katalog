@@ -34,6 +34,7 @@
    <div class="tc-minfo"><div class="tc-tags"><span class="tc-tag tc-mb"></span><span class="tc-tag tc-tag2 tc-mc"></span></div>
     <h3 class="tc-mn"></h3><div class="tc-mprice"><span class="tc-mp"></span><span class="tc-st tc-ms"></span></div>
     <div class="tc-mrassr"></div>
+    <div class="tc-mdeliv"></div>
     <p class="tc-md"></p><table class="tc-spec"></table>
     <a class="tc-buy" href="tel:+77000369369">Заказать / консультация: +7 700 036 93 69</a></div></div></div></div>
 </div>
@@ -102,6 +103,7 @@
 .tcat .tc-tag2{color:#2b6cb0;background:#e8f0fb}
 .tcat .tc-mprice{font-size:23px;font-weight:800;margin:8px 0 4px;display:flex;align-items:center;gap:10px}
 .tcat .tc-mrassr{font-size:13.5px;color:var(--mut);margin:0 0 12px}
+.tcat .tc-mdeliv{font-size:12.5px;line-height:1.45;color:var(--mut);background:#f6f7f9;border-radius:10px;padding:8px 11px;margin:0 0 12px}
 .tcat .tc-minfo p{font-size:14px;line-height:1.55;color:#3a3f47;margin:0 0 12px}
 .tcat .tc-spec{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px}
 .tcat .tc-spec td{padding:6px 8px;border-bottom:1px solid #f1f2f4}
@@ -196,6 +198,11 @@
   box.querySelector('.tc-mp').textContent=p.price||'Цена по запросу';
   var ms=box.querySelector('.tc-ms');ms.textContent=p.stock;ms.className='tc-st tc-ms '+p.sc;
   var mr=box.querySelector('.tc-mrassr');mr.textContent=p.rassr?('В рассрочку: '+p.rassr):'';mr.style.display=p.rassr?'':'none';
+  var md=box.querySelector('.tc-mdeliv');
+  if(md){var _pn=p.pn||0;
+    md.textContent=(_pn>0&&_pn<20000)
+      ? 'Самовывоз со склада в Алматы или доставка по тарифу перевозчика. Бесплатная доставка по Алматы — от 20 000 ₸ в заказе.'
+      : 'Бесплатная доставка по Алматы. По Казахстану — транспортной компанией.';}
   box.querySelector('.tc-md').textContent=p.desc||'';
   var im=box.querySelector('.tc-mimg img');im.onerror=function(){im.onerror=null;im.src=ph();};im.src=p.img||ph();
   var gal=box.querySelector('.tc-mgal'), list=(p.imgs&&p.imgs.length>1)?p.imgs:[];
