@@ -1,4 +1,4 @@
-<!-- ====== КАТАЛОГ «Камины и очаги» ИП «ТехноХолод» · из PIM/КАТАЛОГИ_ПО_ГРУППАМ · собрано 15.08.2026 ====== -->
+<!-- ====== КАТАЛОГ «Камины и очаги» ИП «ТехноХолод» · из PIM/КАТАЛОГИ_ПО_ГРУППАМ · собрано 16.08.2026 ====== -->
 <div class="tcat kaminy">
  <div class="tc-wrap">
   <header class="tc-hd">
@@ -27,7 +27,7 @@
   <div class="tc-empty">Ничего не найдено. Измените фильтры или поиск.</div>
   <div class="tc-more-wrap"><button class="tc-more">Показать ещё</button></div>
   <div class="tc-foot"><a class="tc-call" href="tel:+77000369369">Подберём под вашу задачу: +7 700 036 93 69</a></div>
-  <div class="tc-note">Цены указаны в тенге и действуют на 15.08.2026. Наличие и срок поставки подтверждаем при заказе. Характеристики — по данным производителя.</div>
+  <div class="tc-note">Цены указаны в тенге и действуют на 16.08.2026. Наличие и срок поставки подтверждаем при заказе. Характеристики — по данным производителя.</div>
  </div>
  <div class="tc-modal"><div class="tc-mbox"><button class="tc-mclose">×</button>
   <div class="tc-mgrid"><div><div class="tc-mimg"><img src="" alt=""><span class="tc-mzoom">Нажмите, чтобы увеличить</span></div><div class="tc-mgal"></div></div>
@@ -139,13 +139,14 @@
  var grid=box.querySelector('.tc-grid'),empty=box.querySelector('.tc-empty'),cnt=box.querySelector('.tc-count'),
      moreBtn=box.querySelector('.tc-more'),q=box.querySelector('.tc-search'),sortSel=box.querySelector('.tc-sort'),
      resetBtn=box.querySelector('.tc-reset'),modal=box.querySelector('.tc-modal');
- var DEF={brand:'all',type:'all',num:'all',ten:'',wifi:false,color:'',stock:'',q:'',sort:'rec'};
+ var DEF={brand:'all',type:'all',constr:'all',num:'all',ten:'',wifi:false,color:'',stock:'',q:'',sort:'rec'};
  var st=Object.assign({},DEF),shown=PAGE,filtered=[];
  function ph(){return 'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="220" height="180"><rect width="220" height="180" fill="#f0f1f3"/><text x="110" y="95" font-family="Arial" font-size="13" fill="#bfc4cc" text-anchor="middle">фото уточняется</text></svg>');}
  function inNum(v){if(st.num==='all')return true;var p=st.num.split('-');return v>=+p[0]&&v<=+p[1];}
  function match(p){
   if(st.brand!=='all'&&p.brand!==st.brand)return false;
   if(st.type!=='all'&&p.type!==st.type)return false;
+  if(st.constr!=='all'&&p.constr!==st.constr)return false;
   if(!inNum(p.num))return false;
   if(st.ten&&p.ten!==st.ten)return false;
   if(st.color&&p.color!==st.color)return false;
