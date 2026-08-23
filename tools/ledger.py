@@ -7,7 +7,11 @@
 набор одноразовых чатов. Здесь лежит то, что переживает конец сессии.
 
 Устройство — журнал событий, только дозапись (append-only):
-  otdel-prodazh/ledger/events.jsonl   одна строка = одно событие
+  <данные отдела>/ledger/events.jsonl   одна строка = одно событие
+
+Где именно — решает otdel_data_dir(): переменная TEHNOHOLOD_OTDEL, соседний приватный
+репозиторий ../tehnoholod-otdel-prodazh, иначе папка otdel-prodazh этого репозитория.
+Репозиторий каталога публичный, а в журнале персональные данные клиентов.
 Состояние сделки не хранится, а вычисляется проигрыванием событий. Значит его
 нельзя рассинхронизировать, а любую цифру в отчёте можно проследить до события.
 Правка задним числом — не редактирование строки, а новое событие-исправление.
@@ -23,6 +27,7 @@
   vopros      вопрос/просьба владельцу по сделке (или без сделки)
   probel      пробел ассортимента: клиент просил — в каталоге нет
   zametka     свободная заметка в историю сделки
+  gde         где лежат журнал, отчёты и кейсы
   list        список сделок с текущим этапом
   show        полная история сделки
   report      сводка для начальника отдела продаж (день/неделя/всё)
@@ -42,9 +47,36 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LEDGER_DIR = os.path.join(ROOT, "otdel-prodazh", "ledger")
+
+
+def otdel_data_dir():
+    """Где лежат данные отдела: журнал сделок, отчёты, разборы обращений.
+
+    Порядок поиска — от явного к умолчанию:
+      1. переменная окружения TEHNOHOLOD_OTDEL;
+      2. соседний приватный репозиторий ../tehnoholod-otdel-prodazh;
+      3. папка otdel-prodazh в этом репозитории.
+
+    Разделение нужно потому, что репозиторий каталога публичный: его отдаёт jsDelivr, так
+    витрина получает фотографии. В журнале лежат имена, телефоны и адреса клиентов, в
+    отчётах — сделки поимённо. Пока приватного репозитория нет, данные живут здесь и не
+    коммитятся (.gitignore); как только он появится рядом, инструменты найдут его сами.
+    """
+    env = os.environ.get("TEHNOHOLOD_OTDEL")
+    if env:
+        return os.path.abspath(os.path.expanduser(env))
+    sosed = os.path.join(os.path.dirname(ROOT), "tehnoholod-otdel-prodazh")
+    if os.path.isdir(sosed):
+        return sosed
+    return os.path.join(ROOT, "otdel-prodazh")
+
+
+OTDEL_DIR = otdel_data_dir()
+LEDGER_DIR = os.path.join(OTDEL_DIR, "ledger")
+OTCHETY_DIR = os.path.join(OTDEL_DIR, "otchety")
 EVENTS_PATH = os.path.join(LEDGER_DIR, "events.jsonl")
-PRIMER_PATH = EVENTS_PATH + ".primer"
+# Заготовка журнала всегда лежит в публичном репозитории: это шаблон, а не данные.
+PRIMER_PATH = os.path.join(ROOT, "otdel-prodazh", "ledger", "events.jsonl.primer")
 
 # Казахстан с 01.03.2024 живёт в одном часовом поясе UTC+5
 TZ = timezone(timedelta(hours=5), "Алматы")
@@ -356,6 +388,20 @@ def cmd_kp_json(a):
     return 0
 
 
+def cmd_gde(a):
+    """Где лежат данные отдела. Спрашивать, а не догадываться: путь зависит от того,
+    завёл ли владелец приватный репозиторий."""
+    est = os.path.exists(EVENTS_PATH)
+    print("данные отдела  %s" % OTDEL_DIR)
+    print("журнал сделок  %s%s" % (EVENTS_PATH, "" if est else "   (ещё не заведён)"))
+    print("отчёты         %s" % OTCHETY_DIR)
+    print("кейсы          %s" % os.path.join(OTDEL_DIR, "keysy"))
+    if OTDEL_DIR == os.path.join(ROOT, "otdel-prodazh"):
+        print("\nЭто папка публичного репозитория: данные не коммитятся и не бэкапятся. "
+              "Приватный репозиторий рядом или TEHNOHOLOD_OTDEL снимут оба ограничения.")
+    return 0
+
+
 def cmd_stage(a):
     if a.to not in STAGES:
         print("Этап «%s» неизвестен. Допустимые: %s" % (a.to, ", ".join(STAGES)),
@@ -533,7 +579,7 @@ def cmd_report(a):
         return 0
 
     print("СВОДКА ОТДЕЛА ПРОДАЖ %s · сформирована %s" % (label.upper(), now_iso()[:16]))
-    print("Источник цифр: otdel-prodazh/ledger/events.jsonl, событий всего %d" % len(events))
+    print("Источник цифр: %s, событий всего %d" % (EVENTS_PATH, len(events)))
     print()
     print("Движение %s:" % label)
     print("  новых обращений      %d" % len(novye))
@@ -629,6 +675,8 @@ def main(argv=None):
     k.add_argument("--fajl", help="путь или ссылка на файл КП")
     k.add_argument("--text")
 
+    sub.add_parser("gde", help="где лежат журнал, отчёты и кейсы")
+
     kj = sub.add_parser("kp-json", help="вход для навыка kp-generator из подбора")
     kj.add_argument("--deal", required=True)
     kj.add_argument("--pos", action="append", metavar="SKU=ШТ",
@@ -686,7 +734,8 @@ def main(argv=None):
     r.add_argument("--json", action="store_true")
 
     a = p.parse_args(argv)
-    handlers = {"lead": cmd_lead, "podbor": cmd_podbor, "kp": cmd_kp, "kp-json": cmd_kp_json, "stage": cmd_stage,
+    handlers = {"lead": cmd_lead, "podbor": cmd_podbor, "kp": cmd_kp, "kp-json": cmd_kp_json, "gde": cmd_gde,
+                "stage": cmd_stage,
                 "vopros": cmd_vopros, "otvet": cmd_otvet, "probel": cmd_probel,
                 "zametka": cmd_zametka, "otpravleno": cmd_otpravleno,
                 "list": cmd_list, "show": cmd_show, "report": cmd_report}

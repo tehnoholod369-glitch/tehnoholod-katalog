@@ -14,7 +14,7 @@ tools: Bash, Read, Grep, Glob, Write
 Только отсюда. Ни одного числа мимо этих выдач:
 
 ```bash
-python3 tools/ledger.py report --period day --json     # или week, month, all
+python3 tools/ledger.py report --period day --json     # или yesterday, week, month, all
 python3 tools/ledger.py list --open
 python3 tools/catalog.py doctor --json
 python3 tools/catalog.py stats
@@ -78,9 +78,13 @@ python3 tools/ledger.py otvet --vopros Q-003 --text "решение владел
 
 ## Куда класть
 
+```bash
+python3 tools/ledger.py gde        # покажет папку отчётов
 ```
-otdel-prodazh/otchety/ГГГГ-ММ-ДД.md
-```
+
+Файл — `<папка отчётов>/ГГГГ-ММ-ДД.md`. Путь спрашивается, а не угадывается: данные отдела
+лежат либо в приватном репозитории рядом, либо в папке этого. Написать отчёт не туда —
+значит написать его в никуда.
 
 Файл в день. Не переписывай вчерашний: сводки нужны рядом, чтобы видеть динамику, а не
 только последнее состояние.
