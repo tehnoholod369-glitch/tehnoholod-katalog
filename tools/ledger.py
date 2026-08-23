@@ -43,6 +43,7 @@ from datetime import datetime, timedelta, timezone
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LEDGER_DIR = os.path.join(ROOT, "otdel-prodazh", "ledger")
 EVENTS_PATH = os.path.join(LEDGER_DIR, "events.jsonl")
+PRIMER_PATH = EVENTS_PATH + ".primer"
 
 # Казахстан с 01.03.2024 живёт в одном часовом поясе UTC+5
 TZ = timezone(timedelta(hours=5), "Алматы")
@@ -89,6 +90,12 @@ def read_events():
 
 def append_event(ev):
     os.makedirs(LEDGER_DIR, exist_ok=True)
+    # Журнала нет — значит клон свежий: он в git не хранится, там имена и адреса клиентов,
+    # а репозиторий публичный. Заводим его из заготовки, чтобы шапка не потерялась.
+    if not os.path.exists(EVENTS_PATH) and os.path.exists(PRIMER_PATH):
+        with open(PRIMER_PATH, encoding="utf-8") as src, \
+             open(EVENTS_PATH, "w", encoding="utf-8") as dst:
+            dst.write(src.read())
     ev.setdefault("ts", now_iso())
     with open(EVENTS_PATH, "a", encoding="utf-8") as fh:
         fh.write(json.dumps(ev, ensure_ascii=False, sort_keys=True) + "\n")

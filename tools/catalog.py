@@ -340,6 +340,13 @@ def _matches(rec, a):
         val = rec["kw_heat"] or rec["kw_cool"]
         if val is None or not (a.kw * (1 - a.tol) <= val <= a.kw * (1 + a.tol) * 1.6):
             return False
+    if getattr(a, "compressor", None):
+        # Витрина уже несёт машинное поле inv/onoff, и оно совпадает с ТТХ «Тип» на всех
+        # позициях, где заполнено и то и другое. Незаполненное — не годится: опросный лист
+        # спрашивает про инвертор прямо, отвечать догадкой нельзя.
+        want = "inv" if a.compressor == "инвертор" else "onoff"
+        if rec.get("inverter") != want:
+            return False
     if a.heat_to is not None:
         val = rec.get("heat_to_c")
         # Нужен обогрев до −20 → годится только техника с границей −20 и ниже.
@@ -382,6 +389,8 @@ def _brief(rec):
         tail.append("%g BTU" % rec["btu"])
     if rec["kw_heat"] and not rec["btu"]:
         tail.append("%g кВт" % rec["kw_heat"])
+    if rec.get("inverter"):
+        tail.append("инвертор" if rec["inverter"] == "inv" else "On/Off")
     if rec.get("heat_to_c") is not None:
         tail.append("обогрев до %g °C" % rec["heat_to_c"])
     if rec.get("noise_min_db") is not None:
@@ -390,32 +399,68 @@ def _brief(rec):
     return line + "\n" + " " * 35 + " · ".join(tail)
 
 
+def _power_step(rows, a):
+    """Позиции того же шага мощности, что и запрос.
+
+    Фильтр намеренно пропускает технику до 1,6× запроса: брать слабее нельзя, а запас
+    сверху бывает оправдан. Но тройку «дешевле · рабочий · лучше» так набирать нельзя —
+    иначе рядом окажутся 8000 BTU за 40 тыс и 12000 BTU за миллион, и сравнивать их
+    клиенту нечем. Возвращает (пул, границы шага) или (все строки, None), если внутри
+    шага меньше трёх позиций.
+    """
+    if a.btu is not None:
+        key, target, unit = (lambda r: r["btu"]), a.btu, "BTU"
+    elif a.kw is not None:
+        key, target, unit = (lambda r: r["kw_heat"] or r["kw_cool"]), a.kw, "кВт"
+    elif a.area is not None:
+        key, target, unit = (lambda r: r["area_m2"]), a.area, "м²"
+    else:
+        return rows, None
+    lo, hi = target * (1 - a.tol), target * (1 + a.tol)
+    step = [r for r in rows if key(r) is not None and lo <= key(r) <= hi]
+    if len(step) < 3:
+        return rows, None
+    return step, (lo, hi, unit)
+
+
 def cmd_find(a):
     rows = [r for r in load() if _matches(r, a)]
     rows.sort(key=lambda r: _sort_key(r, a))
     total = len(rows)
+    step_band = None
+    in_step = None
     if getattr(a, "spread", False) and total >= 3:
         # Регламент требует три варианта: дешевле · рабочий · лучше. Сортировка по цене
         # показывает только нижний край выдачи, и эксперт видит одни самые дешёвые модели.
-        by_price = sorted([r for r in rows if r["price_kzt"]], key=lambda r: r["price_kzt"])
+        pool, step_band = _power_step(rows, a)
+        by_price = sorted([r for r in pool if r["price_kzt"]], key=lambda r: r["price_kzt"])
         if len(by_price) >= 3:
             rows = [by_price[0], by_price[len(by_price) // 2], by_price[-1]]
-            total = len(by_price)
+            in_step = len(by_price)
+        else:
+            rows = rows[:a.limit]
     else:
         rows = rows[:a.limit]
     if a.json:
         keys = ("id", "group", "brand", "name", "art", "type", "price_kzt", "price_text",
                 "stock", "instock", "area_m2", "btu", "kw_cool", "kw_heat", "airflow_m3h",
-                "heat_to_c", "noise_min_db", "img")
-        print(json.dumps({"najdeno": total, "pokazano": len(rows),
-                          "pozicii": [{k: r[k] for k in keys} for r in rows]},
-                         ensure_ascii=False, indent=1))
+                "heat_to_c", "noise_min_db", "inverter", "img")
+        out = {"najdeno": total, "pokazano": len(rows)}
+        if step_band:
+            out["shag_moshchnosti"] = "%g–%g %s" % step_band
+            out["v_shage"] = in_step
+        out["pozicii"] = [{k: r[k] for k in keys} for r in rows]
+        print(json.dumps(out, ensure_ascii=False, indent=1))
         return 0
     if not rows:
         print("Найдено: 0. По этому запросу в каталоге позиций нет — это «нет данных», "
               "а не повод предложить модель по памяти.")
         return 0
-    print("Найдено: %d, показано: %d\n" % (total, len(rows)))
+    if step_band:
+        print("Найдено: %d, из них в шаге %g–%g %s: %d, показано: %d\n"
+              % ((total,) + step_band + (in_step, len(rows))))
+    else:
+        print("Найдено: %d, показано: %d\n" % (total, len(rows)))
     for r in rows:
         print(_brief(r))
         print()
@@ -572,6 +617,8 @@ def main(argv=None):
     f.add_argument("--price-max", type=float, dest="price_max")
     f.add_argument("--price-min", type=float, dest="price_min")
     f.add_argument("--instock", action="store_true", help="только то, что в наличии")
+    f.add_argument("--compressor", choices=["инвертор", "onoff"],
+                   help="тип компрессора: инвертор или On/Off")
     f.add_argument("--heat-to", type=float, dest="heat_to", metavar="C",
                    help="обогрев работает до этой уличной температуры и ниже, например -20")
     f.add_argument("--max-noise", type=float, dest="max_noise", metavar="ДБ",
