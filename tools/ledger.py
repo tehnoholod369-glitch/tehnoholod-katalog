@@ -18,6 +18,7 @@
   lead        завести обращение
   podbor      записать подбор оборудования (SKU из каталога)
   kp          записать выставленное КП
+  kp-json     собрать вход для навыка kp-generator из подбора по сделке
   stage       перевести сделку на другой этап
   vopros      вопрос/просьба владельцу по сделке (или без сделки)
   probel      пробел ассортимента: клиент просил — в каталоге нет
@@ -225,11 +226,20 @@ def cmd_podbor(a):
     return 0
 
 
+def _catalog():
+    """Каталог через catalog.py, а не чтением файла индекса.
+
+    Индекс в git не хранится, и на свежем клоне его нет. Читая файл напрямую, проверка
+    молча пропускала любой SKU — то есть охраняла ровно до первого нового клона.
+    catalog.load() индекс соберёт, если его нет или он старше витрины.
+    """
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import catalog
+    return catalog.load()
+
+
 def _unknown_skus(skus):
-    index_path = os.path.join(ROOT, "data", "catalog-index.json")
-    if not os.path.exists(index_path):
-        return []
-    ids = {r["id"] for r in json.load(open(index_path, encoding="utf-8"))}
+    ids = {r["id"] for r in _catalog()}
     return [s for s in skus if s not in ids]
 
 
@@ -238,6 +248,101 @@ def cmd_kp(a):
                   "summa": a.summa, "nds": a.nds, "montazh": a.montazh,
                   "fajl": a.fajl, "text": a.text})
     print("КП записано в %s на %s" % (a.deal, money(a.summa)))
+    return 0
+
+
+def _parse_pair(raw, what):
+    if "=" not in raw:
+        print("%s пишется как «значение=число», получено: %s" % (what, raw), file=sys.stderr)
+        raise SystemExit(2)
+    left, right = raw.rsplit("=", 1)
+    # Справа либо цена, либо «цена*количество»: монтаж считается на блок, а блоков в
+    # заявке обычно несколько — без количества КП занижает работы во столько же раз.
+    right = right.replace(" ", "").replace(",", ".").replace("×", "*").replace("х", "*")
+    qty = 1
+    if "*" in right:
+        right, raw_qty = right.split("*", 1)
+        try:
+            qty = int(raw_qty)
+        except ValueError:
+            print("Количество после «*» не число: %s" % raw, file=sys.stderr)
+            raise SystemExit(2)
+    try:
+        return left.strip(), int(float(right)), qty
+    except ValueError:
+        print("Не число справа от «=»: %s" % raw, file=sys.stderr)
+        raise SystemExit(2)
+
+
+def cmd_kp_json(a):
+    """Собрать вход для навыка kp-generator из подбора по сделке.
+
+    Своего генератора КП у отдела нет и не будет: он есть в навыке `kp-generator`, и
+    второй считал бы НДС по-своему. Здесь только сборка контракта — названия и цены
+    берутся из каталога, заказчик и объект из события `lead`. Руками в КП не попадает
+    ни одна цифра, кроме стоимости работ, которой в каталоге нет.
+    """
+    events = [e for e in read_events() if e.get("deal") == a.deal]
+    if not events:
+        print("Сделки %s в журнале нет." % a.deal, file=sys.stderr)
+        return 2
+    lead = next((e for e in events if e["type"] == "lead"), {})
+    podbory = [e for e in events if e["type"] == "podbor"]
+
+    # У позиции количество пишется справа от «=», как «SKU=4», поэтому цена там же и есть
+    # количество: разбираем как «значение=число» и берём число за штуки.
+    pairs = [(sku, qty) for sku, qty, _ in (_parse_pair(x, "Позиция") for x in (a.pos or []))]
+    if not pairs:
+        if not podbory:
+            print("По сделке нет ни подбора, ни явных --pos: собирать КП не из чего.",
+                  file=sys.stderr)
+            return 2
+        # Без --pos берётся последний подбор по одной штуке: подбор — это варианты на
+        # выбор, а не спецификация. Количество всё равно называет человек.
+        pairs = [(sku, 1) for sku in podbory[-1]["skus"]]
+
+    by_id = {r["id"]: r for r in _catalog()}
+    equipment, bez_ceny = [], []
+    for sku, qty in pairs:
+        rec = by_id.get(sku)
+        if rec is None:
+            print("Нет в каталоге: %s" % sku, file=sys.stderr)
+            return 2
+        if not rec["price_kzt"]:
+            bez_ceny.append(sku)
+            continue
+        equipment.append({"name": rec["name"], "qty": qty, "price": rec["price_kzt"]})
+    if bez_ceny:
+        # Правило 4П: цену не достраиваем. Позиция без цены в КП не идёт вообще.
+        print("Без цены в каталоге, в КП не включены: %s" % ", ".join(bez_ceny),
+              file=sys.stderr)
+    if not equipment and not a.rabota:
+        print("В КП не осталось ни одной строки.", file=sys.stderr)
+        return 2
+
+    out = {
+        "customer": lead.get("client"),
+        "object": lead.get("city") or lead.get("need"),
+        "price_includes_vat": True,   # решение владельца 23.08.2026: прайсы уже с НДС
+        "vat_rate": 0.16,
+        "equipment": equipment,
+        "install": [{"name": n, "qty": q, "price": p}
+                    for n, p, q in (_parse_pair(x, "Работа") for x in (a.rabota or []))],
+        "_sdelka": a.deal,
+    }
+    text = json.dumps(out, ensure_ascii=False, indent=2)
+    if a.out:
+        with open(a.out, "w", encoding="utf-8") as fh:
+            fh.write(text + "\n")
+        print("Вход для kp-generator: %s" % a.out)
+        print("Дальше: python3 ~/.claude/skills/synced/kp-generator/scripts/kp_calc.py "
+              "--in %s" % a.out)
+    else:
+        print(text)
+    if not out["install"]:
+        print("\nМонтажа в КП нет. Клиент просил «с установкой» — добавьте "
+              "--rabota \"Монтаж …=цена\", иначе КП отвечает не на тот вопрос.",
+              file=sys.stderr)
     return 0
 
 
@@ -514,6 +619,15 @@ def main(argv=None):
     k.add_argument("--fajl", help="путь или ссылка на файл КП")
     k.add_argument("--text")
 
+    kj = sub.add_parser("kp-json", help="вход для навыка kp-generator из подбора")
+    kj.add_argument("--deal", required=True)
+    kj.add_argument("--pos", action="append", metavar="SKU=ШТ",
+                    help="позиция и количество; без этого берётся последний подбор по 1 шт")
+    kj.add_argument("--rabota", action="append", metavar="НАЗВАНИЕ=ЦЕНА[*ШТ]",
+                    help="монтаж, выезд, комплект — то, чего в каталоге нет; "
+                         "монтаж считается на блок, количество пишется как =45000*4")
+    kj.add_argument("--out", help="куда положить JSON; без него — на экран")
+
     s = with_by(sub.add_parser("stage", help="сменить этап"))
     s.add_argument("--deal", required=True)
     s.add_argument("--to", required=True, help="|".join(STAGES))
@@ -561,7 +675,7 @@ def main(argv=None):
     r.add_argument("--json", action="store_true")
 
     a = p.parse_args(argv)
-    handlers = {"lead": cmd_lead, "podbor": cmd_podbor, "kp": cmd_kp, "stage": cmd_stage,
+    handlers = {"lead": cmd_lead, "podbor": cmd_podbor, "kp": cmd_kp, "kp-json": cmd_kp_json, "stage": cmd_stage,
                 "vopros": cmd_vopros, "otvet": cmd_otvet, "probel": cmd_probel,
                 "zametka": cmd_zametka, "otpravleno": cmd_otpravleno,
                 "list": cmd_list, "show": cmd_show, "report": cmd_report}

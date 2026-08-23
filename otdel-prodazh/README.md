@@ -163,10 +163,17 @@ python3 tools/ledger.py lead --by dispetcher --source whatsapp \
     --need "кондиционер в спальню 18 м², тихий, с обогревом" --budget 250000
 python3 tools/ledger.py podbor --deal D-20260822-001 --by ekspert-split \
     --sku bytovye:DTXS-09K3XA41A --text "9000 BTU при 18 м², запас на южную сторону"
+python3 tools/ledger.py kp-json --deal D-20260822-001 --pos "bytovye:DTXS-09K3XA41A=1" \
+    --rabota "Монтаж сплит-системы, базовый комплект=45000" --out kp.json
 python3 tools/ledger.py kp --deal D-20260822-001 --by raschetchik --summa 268000
 python3 tools/ledger.py stage --deal D-20260822-001 --to выигран --why "цена и срок монтажа"
 python3 tools/ledger.py report --period week
 ```
+
+`kp-json` — мост к навыку `kp-generator`, а не второй генератор КП: собирает его входной
+контракт, подставляя названия и цены из каталога, заказчика и объект из события `lead`.
+Руками задаются только работы — монтажа и выезда в каталоге нет. Считает деньги и оформляет
+документ всё равно `kp-generator`: два генератора неизбежно разойдутся в НДС.
 
 Защиты в реестре стоят там, где ИИ обычно врёт: подбор с несуществующим SKU не запишется
 (проверка по индексу каталога), закрытие сделки без причины не запишется, «нет подходящего»
