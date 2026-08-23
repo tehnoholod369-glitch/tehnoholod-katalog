@@ -319,26 +319,62 @@ def _parse_pair(raw, what):
 PRAYS_MONTAZHA = os.path.join(ROOT, "otdel-prodazh", "prays-montazha.json")
 
 
-def raboty_po_prajsu(blokov):
+def raboty_po_prajsu(blokov, gruppa="split", km=None):
     """Работы по монтажу из прайса, а не руками.
 
     Руками набранная цена рано или поздно разойдётся с прайсом, и разойдётся молча.
     Возвращает (позиции с суммой, позиции-ставки). Ставка — это инсталляция трассы:
     метраж заранее неизвестен, он зависит от места наружного блока, поэтому строка идёт
     ценой за метр и в итог не входит.
+
+    Неутверждённый раздел прайса не подставляется: цену работ нельзя выставить клиенту,
+    пока владелец её не решил. Предложение по рынку в файле лежит, но КП его не возьмёт.
     """
     if not os.path.exists(PRAYS_MONTAZHA):
         return [], []
     with open(PRAYS_MONTAZHA, encoding="utf-8") as fh:
         prays = json.load(fh)
+    razdel = prays.get(gruppa)
+    if razdel is None:
+        raise SystemExit("В прайсе нет раздела «%s». Есть: %s"
+                         % (gruppa, ", ".join(k for k in prays if not k.startswith("_"))))
+    if not razdel.get("utverzhdeno"):
+        raise SystemExit(
+            "Раздел прайса «%s» не утверждён владельцем — в КП он не подставляется.\n"
+            "В файле лежит предложение по рынку: %s"
+            % (gruppa, razdel.get("_predlozhenie", "см. otdel-prodazh/prays-montazha.json")))
+
     poz, stavki = [], []
-    for klyuch, r in prays.get("split", {}).items():
+    for klyuch, r in razdel.items():
+        if klyuch.startswith("_") or klyuch == "utverzhdeno" or not isinstance(r, dict):
+            continue
         if r.get("po_zameru"):
             stavki.append({"name": r["name"], "rate": r["price"], "unit": r["unit"]})
-        else:
+        elif r.get("price"):
             poz.append({"name": r["name"], "qty": blokov if r.get("na_blok") else 1,
                         "price": r["price"]})
+
+    if km is not None:
+        poz += vyezd_po_prajsu(prays, km)
     return poz, stavki
+
+
+def vyezd_po_prajsu(prays, km):
+    """Выезд по зонам. До 30 км он включён — строка с нулём в КП не печатается, она бы
+    только заставила клиента искать подвох."""
+    v = prays.get("vyezd", {})
+    if not v.get("utverzhdeno"):
+        return []
+    for zona in v.get("zony", []):
+        if zona["do_km"] is None or km <= zona["do_km"]:
+            if not zona.get("price"):
+                if zona["price"] is None:
+                    raise SystemExit(
+                        "%d км — это зона «%s», цены в прайсе нет: считается отдельно."
+                        % (km, zona["name"]))
+                return []
+            return [{"name": zona["name"], "qty": 1, "price": zona["price"]}]
+    return []
 
 
 def cmd_kp_json(a):
@@ -399,7 +435,7 @@ def cmd_kp_json(a):
         "_sdelka": a.deal,
     }
     if a.montazh:
-        poz, stavki = raboty_po_prajsu(a.montazh)
+        poz, stavki = raboty_po_prajsu(a.montazh, a.gruppa_rabot, a.km)
         if not poz and not stavki:
             print("Нет прайса монтажа: %s" % PRAYS_MONTAZHA, file=sys.stderr)
             return 2
@@ -716,6 +752,10 @@ def main(argv=None):
     kj.add_argument("--montazh", type=int, metavar="БЛОКОВ",
                     help="подставить работы из otdel-prodazh/prays-montazha.json "
                          "на указанное число блоков")
+    kj.add_argument("--gruppa-rabot", dest="gruppa_rabot", default="split",
+                    help="раздел прайса работ: split, poluprom, multisplit… (по умолч. split)")
+    kj.add_argument("--km", type=int,
+                    help="расстояние до объекта от базы, км — подставит выезд по зонам")
     kj.add_argument("--rabota", action="append", metavar="НАЗВАНИЕ=ЦЕНА[*ШТ]",
                     help="монтаж, выезд, комплект — то, чего в каталоге нет; "
                          "монтаж считается на блок, количество пишется как =45000*4")
