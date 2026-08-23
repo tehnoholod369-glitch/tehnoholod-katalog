@@ -173,14 +173,18 @@ def main(argv=None):
 
     print("\nПереехало. Проверка: python3 tools/ledger.py gde")
     print("""
-Осталось создать репозиторий на GitHub — **приватным** — и отправить туда:
+Осталось создать репозиторий на GitHub — **приватным** — и отправить туда данные.
+
+Если стоит gh (GitHub CLI) — одна команда, она делает и то и другое:
+
+  gh repo create {imya} --private --source {cel} --push
+
+Если gh нет — руками, два шага:
 
   1. https://github.com/new  →  имя {imya}  →  Private  →  Create
      (без README, без .gitignore: они уже есть)
 
-  2. git -C {cel} remote add origin https://github.com/<ваш-логин>/{imya}.git
-     git -C {cel} branch -M main
-     git -C {cel} push -u origin main
+  2. python3 tools/pereezd-otdela.py --push https://github.com/<ваш-логин>/{imya}.git
 
 Публичным этот репозиторий не делать никогда: в нём персональные данные клиентов.
 """.format(imya=IMYA, cel=CEL))
