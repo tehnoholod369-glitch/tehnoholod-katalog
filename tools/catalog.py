@@ -169,6 +169,22 @@ def _normalize(group, raw, seq):
                           "Теплоотдача", "Мощность"))
     airflow = _num(_first(specs, "Производительность", "Приток воздуха", "Расход воздуха"))
 
+    # «Обогрев до» лежит диапазоном «-15 ~ +24 °C» — нужна нижняя граница по улице.
+    heat_to = None
+    raw_heat = _first(specs, "Обогрев до")
+    if raw_heat:
+        nums = [float(x.replace(",", ".")) for x in re.findall(r"-?\d+(?:[.,]\d+)?", raw_heat)]
+        if nums:
+            heat_to = min(nums)
+
+    # «Шум внутр. блока» — ряд по скоростям «21/26/31/34 дБ(А)». Сравнивать надо минимум.
+    noise_min = None
+    raw_noise = _first(specs, "Шум внутр. блока", "Уровень шума")
+    if raw_noise:
+        nums = [float(x.replace(",", ".")) for x in re.findall(r"\d+(?:[.,]\d+)?", raw_noise)]
+        if nums:
+            noise_min = min(nums)
+
     stock = str(raw.get("stock") or "").strip()
     instock = raw.get("instock")
     if instock is None:
@@ -195,6 +211,8 @@ def _normalize(group, raw, seq):
         "kw_cool": kw_cool,
         "kw_heat": kw_heat,
         "airflow_m3h": airflow,
+        "heat_to_c": heat_to,
+        "noise_min_db": noise_min,
         "wifi": raw.get("wifi") if isinstance(raw.get("wifi"), bool) else None,
         "img": raw.get("img"),
         "imgs": imgs,
@@ -322,6 +340,16 @@ def _matches(rec, a):
         val = rec["kw_heat"] or rec["kw_cool"]
         if val is None or not (a.kw * (1 - a.tol) <= val <= a.kw * (1 + a.tol) * 1.6):
             return False
+    if a.heat_to is not None:
+        val = rec.get("heat_to_c")
+        # Нужен обогрев до −20 → годится только техника с границей −20 и ниже.
+        # Нет данных о границе — позиция не годится: обещать обогрев вслепую нельзя.
+        if val is None or val > a.heat_to:
+            return False
+    if a.max_noise is not None:
+        val = rec.get("noise_min_db")
+        if val is None or val > a.max_noise:
+            return False
     if a.q:
         hay = " ".join(filter(None, [
             rec["name"], rec["brand"], rec["art"] or "", rec["type"] or "",
@@ -354,6 +382,10 @@ def _brief(rec):
         tail.append("%g BTU" % rec["btu"])
     if rec["kw_heat"] and not rec["btu"]:
         tail.append("%g кВт" % rec["kw_heat"])
+    if rec.get("heat_to_c") is not None:
+        tail.append("обогрев до %g °C" % rec["heat_to_c"])
+    if rec.get("noise_min_db") is not None:
+        tail.append("от %g дБ" % rec["noise_min_db"])
     del bits
     return line + "\n" + " " * 35 + " · ".join(tail)
 
@@ -362,10 +394,19 @@ def cmd_find(a):
     rows = [r for r in load() if _matches(r, a)]
     rows.sort(key=lambda r: _sort_key(r, a))
     total = len(rows)
-    rows = rows[:a.limit]
+    if getattr(a, "spread", False) and total >= 3:
+        # Регламент требует три варианта: дешевле · рабочий · лучше. Сортировка по цене
+        # показывает только нижний край выдачи, и эксперт видит одни самые дешёвые модели.
+        by_price = sorted([r for r in rows if r["price_kzt"]], key=lambda r: r["price_kzt"])
+        if len(by_price) >= 3:
+            rows = [by_price[0], by_price[len(by_price) // 2], by_price[-1]]
+            total = len(by_price)
+    else:
+        rows = rows[:a.limit]
     if a.json:
         keys = ("id", "group", "brand", "name", "art", "type", "price_kzt", "price_text",
-                "stock", "instock", "area_m2", "btu", "kw_cool", "kw_heat", "airflow_m3h", "img")
+                "stock", "instock", "area_m2", "btu", "kw_cool", "kw_heat", "airflow_m3h",
+                "heat_to_c", "noise_min_db", "img")
         print(json.dumps({"najdeno": total, "pokazano": len(rows),
                           "pozicii": [{k: r[k] for k in keys} for r in rows]},
                          ensure_ascii=False, indent=1))
@@ -531,6 +572,12 @@ def main(argv=None):
     f.add_argument("--price-max", type=float, dest="price_max")
     f.add_argument("--price-min", type=float, dest="price_min")
     f.add_argument("--instock", action="store_true", help="только то, что в наличии")
+    f.add_argument("--heat-to", type=float, dest="heat_to", metavar="C",
+                   help="обогрев работает до этой уличной температуры и ниже, например -20")
+    f.add_argument("--max-noise", type=float, dest="max_noise", metavar="ДБ",
+                   help="шум на минимальной скорости не выше, дБ(А)")
+    f.add_argument("--spread", action="store_true",
+                   help="три варианта вместо списка: дешевле · рабочий · лучше")
     f.add_argument("--sort", choices=["default", "price", "area"], default="default")
     f.add_argument("--limit", type=int, default=20)
     f.add_argument("--json", action="store_true")
