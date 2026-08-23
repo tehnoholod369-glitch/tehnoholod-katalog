@@ -176,8 +176,17 @@ python3 tools/ledger.py gde
 
 ```bash
 python3 tools/pereezd-otdela.py            # что и куда поедет
-python3 tools/pereezd-otdela.py --sdelat   # выполнить
+python3 tools/pereezd-otdela.py --sdelat   # выполнить: перенести, git init, коммит
+python3 tools/pereezd-otdela.py --push https://github.com/<логин>/tehnoholod-otdel-prodazh.git
+python3 tools/pereezd-otdela.py --arhiv otdel.zip   # упаковать данные
 ```
+
+Репозиторий на GitHub скрипт не создаёт — это делает владелец учётной записи, и правильно,
+что не может никто другой. `--push` привязывает уже созданный и отправляет.
+
+`--arhiv` нужен, пока репозитория нет: журнал существует в одном экземпляре, и вместе с
+диском умирает история всех сделок. В архиве персональные данные клиентов — в публичные
+места не класть.
 
 ```bash
 python3 tools/ledger.py lead --by dispetcher --source whatsapp \

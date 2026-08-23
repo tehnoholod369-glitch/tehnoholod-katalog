@@ -14,6 +14,8 @@
 
   python3 tools/pereezd-otdela.py            # показать план, ничего не трогая
   python3 tools/pereezd-otdela.py --sdelat   # выполнить
+  python3 tools/pereezd-otdela.py --push https://github.com/логин/tehnoholod-otdel-prodazh.git
+  python3 tools/pereezd-otdela.py --arhiv otdel.zip   # упаковать данные для переноса
 
 Сам репозиторий на GitHub скрипт не создаёт: это делает владелец учётной записи. Команду
 он печатает в конце.
@@ -24,8 +26,10 @@ import os
 import shutil
 import subprocess
 import sys
+import zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
 CEL = os.path.join(os.path.dirname(ROOT), "tehnoholod-otdel-prodazh")
 IMYA = "tehnoholod-otdel-prodazh"
 PAPKI = ["ledger", "otchety", "keysy"]
@@ -70,10 +74,66 @@ def est_chto_perevozit():
     return out
 
 
+def sdelat_arhiv(put):
+    """Упаковать данные отдела. Пока приватного репозитория нет, это единственный способ
+    их сохранить: журнал живёт в одном экземпляре, и вместе с диском умирает история
+    всех сделок."""
+    from ledger import OTDEL_DIR   # единый ответ на «где лежат данные отдела»
+    if not os.path.isdir(OTDEL_DIR):
+        print("Данных отдела нет: %s" % OTDEL_DIR, file=sys.stderr)
+        return 2
+    n = 0
+    with zipfile.ZipFile(put, "w", zipfile.ZIP_DEFLATED) as z:
+        for papka in PAPKI:
+            src = os.path.join(OTDEL_DIR, papka)
+            if not os.path.isdir(src):
+                continue
+            for name in sorted(os.listdir(src)):
+                polnyj = os.path.join(src, name)
+                if not os.path.isfile(polnyj):
+                    continue
+                z.write(polnyj, os.path.join(papka, name))
+                n += 1
+    print("Архив: %s — файлов %d, %d байт" % (put, n, os.path.getsize(put)))
+    print("Внутри персональные данные клиентов. Не класть в публичные места.")
+    return 0
+
+
+def otpravit(url):
+    """Привязать созданный владельцем приватный репозиторий и отправить туда данные."""
+    if not os.path.isdir(os.path.join(CEL, ".git")):
+        print("В %s нет git-репозитория. Сначала: python3 tools/pereezd-otdela.py --sdelat"
+              % CEL, file=sys.stderr)
+        return 2
+    est = subprocess.run(["git", "remote"], cwd=CEL, capture_output=True, text=True)
+    if "origin" in est.stdout.split():
+        subprocess.run(["git", "remote", "set-url", "origin", url], cwd=CEL, check=True)
+    else:
+        subprocess.run(["git", "remote", "add", "origin", url], cwd=CEL, check=True)
+    subprocess.run(["git", "branch", "-M", "main"], cwd=CEL, check=True)
+    r = subprocess.run(["git", "push", "-u", "origin", "main"], cwd=CEL)
+    if r.returncode != 0:
+        print("Отправить не удалось. Проверьте, что репозиторий создан и он приватный.",
+              file=sys.stderr)
+        return r.returncode
+    print("Отправлено. Проверьте на GitHub, что репозиторий помечен Private.")
+    return 0
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description="Переезд данных отдела в приватный репозиторий")
     p.add_argument("--sdelat", action="store_true", help="выполнить, а не показать план")
+    p.add_argument("--push", metavar="URL",
+                   help="привязать уже созданный на GitHub приватный репозиторий и отправить")
+    p.add_argument("--arhiv", metavar="ФАЙЛ.zip",
+                   help="упаковать данные отдела в архив — перенести на другую машину "
+                        "или просто сохранить, пока репозитория нет")
     a = p.parse_args(argv)
+
+    if a.arhiv:
+        return sdelat_arhiv(a.arhiv)
+    if a.push:
+        return otpravit(a.push)
 
     fajly = est_chto_perevozit()
     print("Куда: %s" % CEL)
