@@ -170,20 +170,30 @@ def parse_ts(s):
         return datetime.now(TZ)
 
 
-def within(ts, since):
-    return since is None or parse_ts(ts) >= since
+def within(ts, bounds):
+    since, until = bounds if bounds else (None, None)
+    t = parse_ts(ts)
+    return (since is None or t >= since) and (until is None or t < until)
 
 
-def period_start(period):
+def period_bounds(period):
+    """Границы периода: (с, по). Верхняя нужна «вчера» — сводка собирается утром.
+
+    Отчёт «за сегодня», запущенный в 8 утра по расписанию, показывает пустой день и
+    выглядит так, будто отдел встал. Правильный вопрос утром — что было вчера.
+    """
     now = datetime.now(TZ)
+    midnight = now.replace(hour=0, minute=0, second=0, microsecond=0)
     if period == "day":
-        return now.replace(hour=0, minute=0, second=0, microsecond=0)
+        return midnight, None
+    if period == "yesterday":
+        return midnight - timedelta(days=1), midnight
     if period == "week":
         start = now - timedelta(days=now.weekday())
-        return start.replace(hour=0, minute=0, second=0, microsecond=0)
+        return start.replace(hour=0, minute=0, second=0, microsecond=0), None
     if period == "month":
-        return now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
-    return None
+        return now.replace(day=1, hour=0, minute=0, second=0, microsecond=0), None
+    return None, None
 
 
 def money(v):
@@ -411,7 +421,7 @@ def cmd_list(a):
         rows = [d for d in rows if d["stage"] in a.stage]
     if a.open:
         rows = [d for d in rows if d["stage"] not in FINAL_STAGES]
-    since = period_start(a.period) if a.period else None
+    since = period_bounds(a.period) if a.period else None
     if since:
         rows = [d for d in rows if within(d["updated"], since)]
     rows.sort(key=lambda d: d["updated"], reverse=True)
@@ -463,8 +473,8 @@ def cmd_show(a):
 def cmd_report(a):
     events = read_events()
     deals = deals_state(events)
-    since = period_start(a.period)
-    label = {"day": "за сегодня", "week": "за неделю",
+    since = period_bounds(a.period)
+    label = {"day": "за сегодня", "yesterday": "за вчера", "week": "за неделю",
              "month": "за месяц", "all": "за всё время"}[a.period]
 
     period_events = [e for e in events if within(e["ts"], since)]
@@ -662,7 +672,7 @@ def main(argv=None):
     ls = sub.add_parser("list", help="список сделок")
     ls.add_argument("--stage", action="append")
     ls.add_argument("--open", action="store_true", help="только незакрытые")
-    ls.add_argument("--period", choices=["day", "week", "month", "all"])
+    ls.add_argument("--period", choices=["day", "yesterday", "week", "month", "all"])
     ls.add_argument("--json", action="store_true")
 
     sh = sub.add_parser("show", help="история сделки")
@@ -670,7 +680,8 @@ def main(argv=None):
     sh.add_argument("--json", action="store_true")
 
     r = sub.add_parser("report", help="сводка для начальника отдела продаж")
-    r.add_argument("--period", choices=["day", "week", "month", "all"], default="day")
+    r.add_argument("--period", choices=["day", "yesterday", "week", "month", "all"],
+                   default="day")
     r.add_argument("--stale", type=int, default=3, help="сколько дней без движения считать зависанием")
     r.add_argument("--json", action="store_true")
 
