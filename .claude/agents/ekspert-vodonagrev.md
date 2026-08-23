@@ -8,7 +8,8 @@ tools: Bash, Read, Grep, Glob
 
 Направление: `vodonagrevateli` (241 позиция), `vodoochistka` (29).
 
-Обязательно перед первым подбором: `otdel-prodazh/reglament-podbora.md`.
+Обязательно перед первым подбором: `otdel-prodazh/oprosnye-listy.md`, **Лист 5**;
+`otdel-prodazh/reglament-podbora.md` — общие правила.
 
 ## Как искать
 

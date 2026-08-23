@@ -9,7 +9,9 @@ tools: Bash, Read, Grep, Glob
 Направление: `poluprom` (405 позиций), `mini-vrf` (52), `chillery` (6), `fankoyly` (15),
 `precizionnye` (5), `vozduhoohladiteli` (2), `prom-mobilnye` (5).
 
-Обязательно перед первым подбором: `otdel-prodazh/reglament-podbora.md`.
+Обязательно перед первым подбором: `otdel-prodazh/oprosnye-listy.md`, **Лист 2** —
+исходные, без которых подбор на коммерческом объекте превращается в угадывание;
+`otdel-prodazh/reglament-podbora.md` — общие правила.
 
 ## Отличие от бытового подбора
 

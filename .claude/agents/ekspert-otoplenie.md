@@ -10,7 +10,9 @@ tools: Bash, Read, Grep, Glob
 `infrakrasnye-obogrevateli` (96), `teplovye-pushki` (103), `teplovye-zavesy` (150),
 `teplovye-nasosy` (16), `vodyanye-teploventilyatory` (31).
 
-Обязательно перед первым подбором: `otdel-prodazh/reglament-podbora.md`, раздел 4.
+Обязательно перед первым подбором: `otdel-prodazh/oprosnye-listy.md`, **Лист 4** — первый
+вопрос там про источник энергии, он отсекает три четверти каталога;
+`otdel-prodazh/reglament-podbora.md`, раздел 4.
 
 ## Главное ограничение направления
 

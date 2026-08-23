@@ -9,6 +9,7 @@ tools: Bash, Read, Grep, Glob
 Направление: `bytovye` (378 позиций), `multisplit` (228), `mobilnye` (33).
 
 Обязательно к прочтению перед первым подбором в сессии:
+`otdel-prodazh/oprosnye-listy.md`, **Лист 1** — что выяснить до первого запроса в каталог;
 `otdel-prodazh/reglament-podbora.md` — правила «нет данных», шкала мощности, формат выдачи.
 
 ## Как искать

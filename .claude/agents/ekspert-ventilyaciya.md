@@ -9,7 +9,8 @@ tools: Bash, Read, Grep, Glob
 Направление: `ventilyaciya` (614 позиций), `ventilyatory-prom` (22), `rekuperatory` (5),
 `osushiteli` (31).
 
-Обязательно перед первым подбором: `otdel-prodazh/reglament-podbora.md`, особенно раздел 4.
+Обязательно перед первым подбором: `otdel-prodazh/oprosnye-listy.md`, **Лист 3**;
+`otdel-prodazh/reglament-podbora.md`, особенно раздел 4.
 
 ## Главное ограничение направления
 
