@@ -172,6 +172,7 @@ def sobrat_html(dan, raschet, rek, nomer, data, logo):
         telefon += " · " + rek["telefon_dopolnitelnyj"]
 
     return TEMPLATE.format(
+        stil=STIL,
         nomer=nomer,
         data=po_russki(data),
         do=po_russki(do),
@@ -254,67 +255,71 @@ def sobrat_text(dan, raschet, rek, nomer, data):
     return "\n".join(L)
 
 
+STIL = """
+  @page { size: A4; margin: 14mm 14mm 12mm; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 10pt/1.4 "Segoe UI", Arial, sans-serif; color: #1b1b1b; }
+  .list { max-width: 182mm; margin: 0 auto; padding: 6mm 0; }
+  header { display: flex; align-items: center; gap: 14px;
+            border-bottom: 2px solid #1B7FD4; padding-bottom: 10px; }
+  .logo { width: 54px; height: 54px; }
+  .firma { font-size: 15pt; font-weight: 700; letter-spacing: .2px; }
+  .firma small { display: block; font-size: 8.5pt; font-weight: 400; color: #555;
+                  letter-spacing: 0; margin-top: 2px; }
+  .nomer { margin-left: auto; text-align: right; font-size: 9.5pt; color: #555; }
+  .nomer b { display: block; font-size: 12pt; color: #1b1b1b; }
+  h1 { font-size: 14pt; margin: 13px 0 3px; }
+  .komu { margin: 8px 0 12px; }
+  .komu div { margin: 2px 0; }
+  .komu span { display: inline-block; min-width: 74px; color: #666; }
+  h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: .6px;
+        color: #1B7FD4; margin: 14px 0 5px; }
+  table.poz { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  table.poz col.c-n { width: 22px; }
+  table.poz col.c-kol { width: 52px; }
+  table.poz col.c-cena { width: 78px; }
+  table.poz col.c-sum { width: 96px; }
+  table.poz th { font-size: 8.5pt; text-transform: uppercase; letter-spacing: .4px;
+                  color: #777; font-weight: 600; text-align: right;
+                  border-bottom: 1px solid #ddd; padding: 0 0 5px; }
+  table.poz th:nth-child(2) { text-align: left; }
+  table.poz td { padding: 6px 0; border-bottom: 1px solid #eee; vertical-align: top; }
+  td.n { color: #999; }
+  td.nz { padding-right: 10px; }
+  td.kol, td.cena, td.sum { text-align: right; white-space: nowrap; padding-left: 12px; }
+  td.sum { font-weight: 600; }
+  td.utoch { font-weight: 400; color: #C0392B; font-style: italic; }
+  .itogo-razdel { text-align: right; margin: 8px 0 0; }
+  .itogo-razdel .nds { display: block; font-size: 9pt; color: #666; }
+  .primech { margin: 6px 0 0; font-size: 9.5pt; color: #555; }
+  .itog { margin-top: 14px; border-top: 2px solid #E8402A; padding-top: 8px;
+           display: flex; align-items: baseline; }
+  .itog .p { font-size: 11pt; font-weight: 700; text-transform: uppercase;
+              letter-spacing: .5px; max-width: 105mm; line-height: 1.25; }
+  .itog .s { margin-left: auto; text-align: right; }
+  .itog .s b { font-size: 16pt; }
+  .itog .s span { display: block; font-size: 9pt; color: #666; }
+  dl { display: grid; grid-template-columns: 58mm 1fr; gap: 4px 10px; margin: 6px 0 0; }
+  dt { color: #666; }
+  dd { margin: 0; }
+  dd.utoch { color: #C0392B; font-style: italic; }
+  ul { margin: 0; padding-left: 16px; }
+  li { margin: 1px 0; }
+  footer { margin-top: 16px; border-top: 1px solid #ddd; padding-top: 8px;
+            font-size: 8.5pt; color: #555; line-height: 1.5; }
+  footer b { color: #1b1b1b; font-size: 9.5pt; }
+  /* Условия и подвал не рвутся по странице: реквизиты, оторванные от подписи, читаются
+     как чужой лист. КП длиной в две страницы это допускает, разрыв посреди — нет. */
+  dl, footer, .itog { break-inside: avoid; page-break-inside: avoid; }
+  @media print { .list { padding: 0; } }
+"""
+
+
 TEMPLATE = """<!doctype html>
 <html lang="ru"><head><meta charset="utf-8">
 <title>{nomer}</title>
 <style>
-  @page {{ size: A4; margin: 14mm 14mm 12mm; }}
-  * {{ box-sizing: border-box; }}
-  body {{ margin: 0; font: 10pt/1.4 "Segoe UI", Arial, sans-serif; color: #1b1b1b; }}
-  .list {{ max-width: 182mm; margin: 0 auto; padding: 6mm 0; }}
-  header {{ display: flex; align-items: center; gap: 14px;
-            border-bottom: 2px solid #1B7FD4; padding-bottom: 10px; }}
-  .logo {{ width: 54px; height: 54px; }}
-  .firma {{ font-size: 15pt; font-weight: 700; letter-spacing: .2px; }}
-  .firma small {{ display: block; font-size: 8.5pt; font-weight: 400; color: #555;
-                  letter-spacing: 0; margin-top: 2px; }}
-  .nomer {{ margin-left: auto; text-align: right; font-size: 9.5pt; color: #555; }}
-  .nomer b {{ display: block; font-size: 12pt; color: #1b1b1b; }}
-  h1 {{ font-size: 14pt; margin: 13px 0 3px; }}
-  .komu {{ margin: 8px 0 12px; }}
-  .komu div {{ margin: 2px 0; }}
-  .komu span {{ display: inline-block; min-width: 74px; color: #666; }}
-  h2 {{ font-size: 10.5pt; text-transform: uppercase; letter-spacing: .6px;
-        color: #1B7FD4; margin: 14px 0 5px; }}
-  table.poz {{ width: 100%; border-collapse: collapse; table-layout: fixed; }}
-  table.poz col.c-n {{ width: 22px; }}
-  table.poz col.c-kol {{ width: 52px; }}
-  table.poz col.c-cena {{ width: 78px; }}
-  table.poz col.c-sum {{ width: 96px; }}
-  table.poz th {{ font-size: 8.5pt; text-transform: uppercase; letter-spacing: .4px;
-                  color: #777; font-weight: 600; text-align: right;
-                  border-bottom: 1px solid #ddd; padding: 0 0 5px; }}
-  table.poz th:nth-child(2) {{ text-align: left; }}
-  table.poz td {{ padding: 6px 0; border-bottom: 1px solid #eee; vertical-align: top; }}
-  td.n {{ color: #999; }}
-  td.nz {{ padding-right: 10px; }}
-  td.kol, td.cena, td.sum {{ text-align: right; white-space: nowrap; padding-left: 12px; }}
-  td.sum {{ font-weight: 600; }}
-  td.utoch {{ font-weight: 400; color: #C0392B; font-style: italic; }}
-  .itogo-razdel {{ text-align: right; margin: 8px 0 0; }}
-  .itogo-razdel .nds {{ display: block; font-size: 9pt; color: #666; }}
-  .primech {{ margin: 6px 0 0; font-size: 9.5pt; color: #555; }}
-  .itog {{ margin-top: 14px; border-top: 2px solid #E8402A; padding-top: 8px;
-           display: flex; align-items: baseline; }}
-  .itog .p {{ font-size: 11pt; font-weight: 700; text-transform: uppercase;
-              letter-spacing: .5px; max-width: 105mm; line-height: 1.25; }}
-  .itog .s {{ margin-left: auto; text-align: right; }}
-  .itog .s b {{ font-size: 16pt; }}
-  .itog .s span {{ display: block; font-size: 9pt; color: #666; }}
-  dl {{ display: grid; grid-template-columns: 58mm 1fr; gap: 4px 10px; margin: 6px 0 0; }}
-  dt {{ color: #666; }}
-  dd {{ margin: 0; }}
-  dd.utoch {{ color: #C0392B; font-style: italic; }}
-  ul {{ margin: 0; padding-left: 16px; }}
-  li {{ margin: 1px 0; }}
-  footer {{ margin-top: 16px; border-top: 1px solid #ddd; padding-top: 8px;
-            font-size: 8.5pt; color: #555; line-height: 1.5; }}
-  footer b {{ color: #1b1b1b; font-size: 9.5pt; }}
-  /* Условия и подвал не рвутся по странице: реквизиты, оторванные от подписи, читаются
-     как чужой лист. КП длиной в две страницы это допускает, разрыв посреди — нет. */
-  dl, footer, .itog {{ break-inside: avoid; page-break-inside: avoid; }}
-  @media print {{ .list {{ padding: 0; }} }}
-</style></head><body>
+{stil}</style></head><body>
 <div class="list">
 
 <header>
