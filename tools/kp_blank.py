@@ -121,7 +121,10 @@ def sobrat_html(dan, raschet, rek, nomer, data, logo):
          'Назвать её заранее нельзя: она зависит от длины трассы, места наружного '
          'блока и доступа к нему.</p>'))
 
+    # Оплата за оборудование и за монтаж идёт по-разному, поэтому поле принимает список.
     oplata = u.get("oplata") or NET
+    if isinstance(oplata, list):
+        oplata = "<ul>%s</ul>" % "".join("<li>%s</li>" % x for x in oplata)
     postavka = u.get("srok_postavki") or NET
     ne_vhodit = "".join("<li>%s</li>" % x for x in u["ne_vhodit"])
     telefon = rek["telefon"]
@@ -145,6 +148,7 @@ def sobrat_html(dan, raschet, rek, nomer, data, logo):
         itog_nds=dengi(itog_nds),
         srok_dney=u["srok_deystviya_dney"],
         oplata=oplata,
+        oplata_klass="" if u.get("oplata") else "utoch",
         postavka=postavka,
         garantiya_ob=u["garantiya_oborudovanie"],
         garantiya_mo=u["garantiya_montazh"],
@@ -193,7 +197,15 @@ def sobrat_text(dan, raschet, rek, nomer, data):
     do = data + timedelta(days=u["srok_deystviya_dney"])
     L += ["", "%s: %s, в том числе НДС 16 %% — %s"
           % (itog, dengi(raschet["grand_total"]), dengi(raschet["grand_total_vat"])),
-          "", "Предложение действует до %s" % po_russki(do),
+          "", "Предложение действует до %s" % po_russki(do)]
+    oplata = u.get("oplata")
+    if isinstance(oplata, list):
+        L.append("Оплата: " + "; ".join(oplata) + ".")
+    elif oplata:
+        L.append("Оплата: %s." % oplata)
+    else:
+        L.append("Порядок оплаты — %s." % NET)
+    L += [
           "Гарантия на оборудование — %s." % u["garantiya_oborudovanie"],
           "Гарантия на монтаж — %s." % u["garantiya_montazh"],
           "", "%s, %s, %s" % (rek["kompaniya"], rek["telefon"], rek["sajt"])]
@@ -292,7 +304,7 @@ TEMPLATE = """<!doctype html>
 <dl>
   <dt>Срок действия предложения</dt><dd>{srok_dney} календарных дней, до {do}</dd>
   <dt>Срок поставки</dt><dd class="utoch">{postavka}</dd>
-  <dt>Порядок оплаты</dt><dd class="utoch">{oplata}</dd>
+  <dt>Порядок оплаты</dt><dd class="{oplata_klass}">{oplata}</dd>
   <dt>Гарантия на оборудование</dt><dd>{garantiya_ob}</dd>
   <dt>Гарантия на монтажные работы</dt><dd>{garantiya_mo}</dd>
   <dt>Не входит в предложение</dt><dd><ul>{ne_vhodit}</ul></dd>
