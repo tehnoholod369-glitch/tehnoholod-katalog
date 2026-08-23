@@ -59,7 +59,8 @@ STAGES = [
 ]
 FINAL_STAGES = {"выигран", "проигран"}
 
-EVENT_TYPES = ["lead", "podbor", "kp", "stage", "vopros", "probel", "zametka", "otvet"]
+EVENT_TYPES = ["lead", "podbor", "kp", "stage", "vopros", "probel", "zametka",
+               "otvet", "otpravleno"]
 
 
 # --------------------------------------------------------------------------- #
@@ -116,6 +117,7 @@ def deals_state(events):
             "client": None, "contact": None, "source": None, "city": None,
             "need": None, "budget": None, "skus": [], "kp_summa": None,
             "voprosy": [], "probely": [], "sobytij": 0, "itog_prichina": None,
+            "otpravleno": 0, "s_pravkami": 0,
         })
         d["updated"] = ev["ts"]
         d["sobytij"] += 1
@@ -146,6 +148,10 @@ def deals_state(events):
                     q["otvet"] = ev.get("text")
         elif t == "probel":
             d["probely"].append(ev)
+        elif t == "otpravleno":
+            d["otpravleno"] += 1
+            if ev.get("pravki"):
+                d["s_pravkami"] += 1
     return deals
 
 
@@ -265,6 +271,17 @@ def cmd_probel(a):
     return 0
 
 
+def cmd_otpravleno(a):
+    """Ответ ушёл клиенту. Правки — единственный честный материал для улучшения ролей."""
+    append_event({"type": "otpravleno", "deal": a.deal, "by": a.by,
+                  "kanal": a.kanal, "pravki": a.pravki, "chto": a.chto})
+    if a.pravki:
+        print("Записано: ответ отправлен с правкой — %s" % a.pravki)
+    else:
+        print("Записано: ответ отправлен без правок")
+    return 0
+
+
 def cmd_zametka(a):
     append_event({"type": "zametka", "deal": a.deal, "by": a.by, "text": a.text})
     print("Заметка записана в %s" % a.deal)
@@ -350,6 +367,10 @@ def cmd_report(a):
     for d in otkrytye:
         po_etapam[d["stage"]] = po_etapam.get(d["stage"], 0) + 1
 
+    otpravleno = [e for e in period_events if e.get("type") == "otpravleno"]
+    bez_pravok = [e for e in otpravleno if not e.get("pravki")]
+    pravki = [e for e in otpravleno if e.get("pravki")]
+
     otvechennye = {e.get("vopros") for e in events if e.get("type") == "otvet"}
     voprosy = [e for e in events
                if e.get("type") == "vopros" and e.get("id") not in otvechennye]
@@ -371,6 +392,10 @@ def cmd_report(a):
         "vyigrano": len(vyigrano), "summa_vyigrannyh": summa_win,
         "proigrano": len(proigrano),
         "otkrytyh_sdelok": len(otkrytye), "po_etapam": po_etapam,
+        "otvetov_otpravleno": len(otpravleno),
+        "bez_pravok": len(bez_pravok),
+        "dolya_bez_pravok": (round(100.0 * len(bez_pravok) / len(otpravleno))
+                             if otpravleno else None),
         "voprosov_bez_otveta": len(voprosy),
         "zavisshih_sdelok": len(zavisshie), "porog_zavisaniya_dney": a.stale,
         "probelov_assortimenta": len(probely),
@@ -380,6 +405,8 @@ def cmd_report(a):
         data["zavisshie"] = zavisshie
         data["probely"] = probely
         data["prichiny_proigryshey"] = [e.get("why") for e in proigrano]
+        data["pravki"] = [{"deal": e.get("deal"), "by": e.get("by"),
+                           "pravka": e.get("pravki")} for e in pravki]
         print(json.dumps(data, ensure_ascii=False, indent=1))
         return 0
 
@@ -394,6 +421,13 @@ def cmd_report(a):
     if kp_events:
         print("  конверсия КП→сделка  %.0f %%" % (100.0 * len(vyigrano) / len(kp_events)))
     print()
+    if otpravleno:
+        print("Качество ответов %s:" % label)
+        print("  отправлено          %d" % len(otpravleno))
+        print("  ушло без правок     %d (%d %%)"
+              % (len(bez_pravok), round(100.0 * len(bez_pravok) / len(otpravleno))))
+        print("  главная метрика — эта доля. Растёт — роли обучаются, падает — что-то сломали")
+        print()
     print("Воронка на сейчас — открытых сделок %d:" % len(otkrytye))
     for st in STAGES:
         if po_etapam.get(st):
@@ -413,6 +447,12 @@ def cmd_report(a):
         for d in zavisshie:
             print("  %s  %-20s этап %-12s с %s"
                   % (d["deal"], (d["client"] or "нет данных")[:20], d["stage"], d["updated"][:10]))
+        print()
+    if pravki:
+        print("Что правили перед отправкой — %d:" % len(pravki))
+        for e in pravki:
+            print("  %s  %s" % (e.get("deal"), e.get("pravki")))
+        print("  Повторяется одно и то же → это строчка в регламент, а не случайность.")
         print()
     if probely:
         svod = {}
@@ -488,6 +528,12 @@ def main(argv=None):
     pr.add_argument("--gruppa", help="группа техники")
     pr.add_argument("--text")
 
+    op = with_by(sub.add_parser("otpravleno", help="ответ ушёл клиенту"))
+    op.add_argument("--deal", required=True)
+    op.add_argument("--kanal", help="whatsapp | почта | звонок")
+    op.add_argument("--pravki", help="что человек исправил перед отправкой; без флага — ушло как есть")
+    op.add_argument("--chto", help="о чём был ответ: подбор, цена, наличие, срок")
+
     z = with_by(sub.add_parser("zametka", help="заметка в историю сделки"))
     z.add_argument("--deal", required=True)
     z.add_argument("--text", required=True)
@@ -510,7 +556,8 @@ def main(argv=None):
     a = p.parse_args(argv)
     handlers = {"lead": cmd_lead, "podbor": cmd_podbor, "kp": cmd_kp, "stage": cmd_stage,
                 "vopros": cmd_vopros, "otvet": cmd_otvet, "probel": cmd_probel,
-                "zametka": cmd_zametka, "list": cmd_list, "show": cmd_show, "report": cmd_report}
+                "zametka": cmd_zametka, "otpravleno": cmd_otpravleno,
+                "list": cmd_list, "show": cmd_show, "report": cmd_report}
     return handlers[a.cmd](a)
 
 
