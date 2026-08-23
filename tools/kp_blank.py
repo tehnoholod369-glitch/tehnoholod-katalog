@@ -92,6 +92,20 @@ def stroki_html(pozicii, pustaya_podpis):
     return "\n".join(out)
 
 
+def stavki_html(stavki, s_nomera=1):
+    """Строки с ценой за единицу, но без количества: инсталляция трассы считается по
+    метражу, а метраж известен только после замера. Такая строка печатается ставкой и в
+    итог не входит — иначе итог был бы неполным, но выглядел бы окончательным."""
+    if not stavki:
+        return ""
+    out = []
+    for i, r in enumerate(stavki, s_nomera):
+        out.append('<tr><td class="n">%d.</td><td class="nz">%s</td>'
+                   '<td class="sum utoch" colspan="3">%s/%s · по замеру</td></tr>'
+                   % (i, r["name"], dengi(r["rate"]), r.get("unit", "ед")))
+    return "\n".join(out)
+
+
 def uslovie_html(v):
     """Условие бывает одной строкой, а бывает несколькими: за оборудование и за монтаж
     платят по-разному, срок со склада и под заказ тоже разный. Пустое — «требует
@@ -119,6 +133,12 @@ def sobrat_html(dan, raschet, rek, nomer, data, logo):
     itog_summa = raschet["grand_total"]
     itog_nds = raschet["grand_total_vat"]
 
+    stavki = dan.get("install_rates") or []
+    stavki_stroki = stavki_html(stavki, len(raschet["install"]) + 1)
+    # Итог без строк по замеру окончательным называть нельзя.
+    if stavki:
+        itog_podpis += ", БЕЗ СТРОК ПО ЗАМЕРУ"
+
     # Раздел «Монтаж» печатается всегда, даже когда цены нет. Убрать его — значит
     # молча ответить не на тот вопрос: клиент просил предложение с установкой.
     montazh_blok = """
@@ -126,11 +146,13 @@ def sobrat_html(dan, raschet, rek, nomer, data, logo):
   <table class="poz">
     <colgroup><col class="c-n"><col><col class="c-kol"><col class="c-cena"><col class="c-sum"></colgroup>
     <thead><tr><th></th><th>Наименование</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr></thead>
-    <tbody>%s</tbody>
+    <tbody>%s%s</tbody>
   </table>
   %s""" % (
         stroki_html(raschet["install"],
-                    "Монтаж и пусконаладка оборудования по спецификации выше"),
+                    "Монтаж и пусконаладка оборудования по спецификации выше")
+        if (raschet["install"] or not stavki) else "",
+        stavki_stroki,
         ('<p class="itogo-razdel">Итого монтаж и пусконаладка: <b>%s</b>'
              '<span class="nds">в том числе НДС 16 %% — %s</span></p>'
              % (dengi(raschet["install_totals"]["gross"]),
@@ -138,7 +160,9 @@ def sobrat_html(dan, raschet, rek, nomer, data, logo):
          if est_montazh else
          '<p class="primech">Стоимость монтажа определяется после осмотра объекта. '
          'Назвать её заранее нельзя: она зависит от длины трассы, места наружного '
-         'блока и доступа к нему.</p>'))
+         'блока и доступа к нему.</p>')
+        + ('<p class="primech">Метраж трассы определяется на замере и в итог выше не '
+           'входит.</p>' if stavki else ''))
 
     oplata, oplata_klass = uslovie_html(u.get("oplata"))
     postavka, postavka_klass = uslovie_html(u.get("srok_postavki"))
@@ -210,6 +234,12 @@ def sobrat_text(dan, raschet, rek, nomer, data):
     else:
         L.append("Стоимость монтажа определяется после осмотра объекта.")
         itog = "ИТОГО ПО ОБОРУДОВАНИЮ"
+    stavki = dan.get("install_rates") or []
+    for r in stavki:
+        L.append("%s — %s/%s, метраж по замеру, в итог не входит"
+                 % (r["name"], dengi(r["rate"]), r.get("unit", "ед")))
+    if stavki:
+        itog += ", без строк по замеру"
     u = rek["usloviya"]
     do = data + timedelta(days=u["srok_deystviya_dney"])
     L += ["", "%s: %s, в том числе НДС 16 %% — %s"
@@ -230,11 +260,11 @@ TEMPLATE = """<!doctype html>
 <style>
   @page {{ size: A4; margin: 14mm 14mm 12mm; }}
   * {{ box-sizing: border-box; }}
-  body {{ margin: 0; font: 10.5pt/1.45 "Segoe UI", Arial, sans-serif; color: #1b1b1b; }}
+  body {{ margin: 0; font: 10pt/1.4 "Segoe UI", Arial, sans-serif; color: #1b1b1b; }}
   .list {{ max-width: 182mm; margin: 0 auto; padding: 6mm 0; }}
   header {{ display: flex; align-items: center; gap: 14px;
             border-bottom: 2px solid #1B7FD4; padding-bottom: 10px; }}
-  .logo {{ width: 58px; height: 58px; }}
+  .logo {{ width: 54px; height: 54px; }}
   .firma {{ font-size: 15pt; font-weight: 700; letter-spacing: .2px; }}
   .firma small {{ display: block; font-size: 8.5pt; font-weight: 400; color: #555;
                   letter-spacing: 0; margin-top: 2px; }}
@@ -267,7 +297,7 @@ TEMPLATE = """<!doctype html>
   .itog {{ margin-top: 14px; border-top: 2px solid #E8402A; padding-top: 8px;
            display: flex; align-items: baseline; }}
   .itog .p {{ font-size: 11pt; font-weight: 700; text-transform: uppercase;
-              letter-spacing: .5px; }}
+              letter-spacing: .5px; max-width: 105mm; line-height: 1.25; }}
   .itog .s {{ margin-left: auto; text-align: right; }}
   .itog .s b {{ font-size: 16pt; }}
   .itog .s span {{ display: block; font-size: 9pt; color: #666; }}

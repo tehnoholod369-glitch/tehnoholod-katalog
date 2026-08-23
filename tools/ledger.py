@@ -316,6 +316,31 @@ def _parse_pair(raw, what):
         raise SystemExit(2)
 
 
+PRAYS_MONTAZHA = os.path.join(ROOT, "otdel-prodazh", "prays-montazha.json")
+
+
+def raboty_po_prajsu(blokov):
+    """Работы по монтажу из прайса, а не руками.
+
+    Руками набранная цена рано или поздно разойдётся с прайсом, и разойдётся молча.
+    Возвращает (позиции с суммой, позиции-ставки). Ставка — это инсталляция трассы:
+    метраж заранее неизвестен, он зависит от места наружного блока, поэтому строка идёт
+    ценой за метр и в итог не входит.
+    """
+    if not os.path.exists(PRAYS_MONTAZHA):
+        return [], []
+    with open(PRAYS_MONTAZHA, encoding="utf-8") as fh:
+        prays = json.load(fh)
+    poz, stavki = [], []
+    for klyuch, r in prays.get("split", {}).items():
+        if r.get("po_zameru"):
+            stavki.append({"name": r["name"], "rate": r["price"], "unit": r["unit"]})
+        else:
+            poz.append({"name": r["name"], "qty": blokov if r.get("na_blok") else 1,
+                        "price": r["price"]})
+    return poz, stavki
+
+
 def cmd_kp_json(a):
     """Собрать вход для навыка kp-generator из подбора по сделке.
 
@@ -370,8 +395,16 @@ def cmd_kp_json(a):
         "equipment": equipment,
         "install": [{"name": n, "qty": q, "price": p}
                     for n, p, q in (_parse_pair(x, "Работа") for x in (a.rabota or []))],
+        "install_rates": [],
         "_sdelka": a.deal,
     }
+    if a.montazh:
+        poz, stavki = raboty_po_prajsu(a.montazh)
+        if not poz and not stavki:
+            print("Нет прайса монтажа: %s" % PRAYS_MONTAZHA, file=sys.stderr)
+            return 2
+        out["install"] = poz + out["install"]
+        out["install_rates"] = stavki
     text = json.dumps(out, ensure_ascii=False, indent=2)
     if a.out:
         with open(a.out, "w", encoding="utf-8") as fh:
@@ -382,9 +415,8 @@ def cmd_kp_json(a):
     else:
         print(text)
     if not out["install"]:
-        print("\nМонтажа в КП нет. Клиент просил «с установкой» — добавьте "
-              "--rabota \"Монтаж …=цена\", иначе КП отвечает не на тот вопрос.",
-              file=sys.stderr)
+        print("\nМонтажа в КП нет. Клиент просил «с установкой» — добавьте --montazh N "
+              "по числу блоков, иначе КП отвечает не на тот вопрос.", file=sys.stderr)
     return 0
 
 
@@ -681,6 +713,9 @@ def main(argv=None):
     kj.add_argument("--deal", required=True)
     kj.add_argument("--pos", action="append", metavar="SKU=ШТ",
                     help="позиция и количество; без этого берётся последний подбор по 1 шт")
+    kj.add_argument("--montazh", type=int, metavar="БЛОКОВ",
+                    help="подставить работы из otdel-prodazh/prays-montazha.json "
+                         "на указанное число блоков")
     kj.add_argument("--rabota", action="append", metavar="НАЗВАНИЕ=ЦЕНА[*ШТ]",
                     help="монтаж, выезд, комплект — то, чего в каталоге нет; "
                          "монтаж считается на блок, количество пишется как =45000*4")
