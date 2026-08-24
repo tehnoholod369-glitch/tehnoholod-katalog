@@ -197,7 +197,7 @@
                 </div>
                 <div style="position:absolute; top:8px; right:8px; font-size:11px; font-weight:700; color:{{ c.stockFg }}; background:{{ c.stockBg }}; border-radius:5px; padding:3px 8px;">{{ c.stock }}</div>
                 <sc-if value="{{ c.isPick }}" hint-placeholder-val="{{ false }}">
-                  <div style="position:absolute; top:8px; left:8px; font-size:11px; font-weight:700; color:#fff; background:#0872D3; border-radius:5px; padding:3px 8px;">Наш выбор</div>
+                  <div title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж." style="position:absolute; top:8px; left:8px; font-size:11px; font-weight:700; color:#fff; background:#0872D3; border-radius:5px; padding:3px 8px; cursor:help;">Наш выбор</div>
                 </sc-if>
               </div>
               <div style="flex:1; min-width:0; display:flex; flex-direction:column;">
@@ -247,6 +247,7 @@
           </div>
         </sc-if>
 
+        <sc-if value="{{ hasGroupText }}" hint-placeholder-val="{{ true }}">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px; margin-top:20px;">
           <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700;">Что важно знать про эту группу</div>
           <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">{{ groupFacts }}</div>
@@ -258,13 +259,9 @@
           </div>
         </div>
 
+        </sc-if>
         <div style="background:#E6F2FD; border-radius:12px; padding:16px 20px; margin-top:16px; font-size:14px; color:#071C3B; line-height:1.55;">Не нашли модель? Напишите площадь помещения в WhatsApp — подберём и посчитаем с доставкой: <b>+7 700 036 93 69</b></div>
         <div style="font-size:13px; color:#8593A6; margin-top:14px; line-height:1.6;">{{ footNote }}</div>
-        <div style="background:#071C3B; color:#fff; border-radius:12px; padding:18px 20px; margin-top:16px;">
-          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">ЧТО ЭТА СТРАНИЦА ОТДАЁТ ПОИСКОВИКУ</div>
-          <div style="font-size:14px; color:#CBDCEC; line-height:1.6; margin-top:8px;"><b style="color:#fff;">Заголовок:</b> {{ seoTitle }}</div>
-          <div style="font-size:14px; color:#CBDCEC; line-height:1.6; margin-top:4px;"><b style="color:#fff;">Описание:</b> {{ seoMeta }}</div>
-        </div>
       </div>
     </div>
   </div>
@@ -904,7 +901,10 @@ class Component extends DCLogic {
       } : null,
       {
         key: "pick", activeLabel: s.onlyPick ? "Наш выбор" : "",
-        title: "Отбор", note: picks.length ? "Список ведёт владелец" : "Пока по данным: в наличии, с фото и артикулом",
+        // Формулировка намеренно не обещает статистику продаж: «Наш выбор» — это наша
+        // рекомендация. Метка «хит продаж» появится только с реальным учётом продаж
+        // (решение владельца 24.08.2026, см. 00_ГДЕ_ПРАВДА.md §9).
+        title: "Отбор", note: picks.length ? "Рекомендуем сами: в наличии и проверены на объектах" : "Пока по данным: в наличии, с фото и артикулом",
         options: [
           this.chip(!s.onlyPick, "Все", () => this.setState({ onlyPick: false, shown: 12 })),
           this.chip(s.onlyPick, "Наш выбор", () => this.setState({ onlyPick: true, shown: 12 }))
@@ -1030,6 +1030,9 @@ class Component extends DCLogic {
       }),
       crumbSub: s.sub === "all" ? "" : " → " + s.sub,
       groupHref: "Каталог - выдача.dc.html?g=" + s.group,
+      // блок «Что важно знать» прячем целиком, если для группы нет текста:
+      // заголовок над пустотой выглядит как недоделка (groups.json заполняется отдельно)
+      hasGroupText: !!(txt.facts || txt.brandsLine || (txt.tips && txt.tips.length)),
       groupTitle: txt.h1 || meta.title,
       groupSub: txt.intro || "",
       groupFacts: txt.facts || "",
