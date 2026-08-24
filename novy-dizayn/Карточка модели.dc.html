@@ -93,7 +93,7 @@
           </div>
         </div>
 
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); gap:28px; margin-top:16px; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr)); gap:28px; margin-top:16px; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px;">
           <div>
             <div onClick="{{ openZoom }}" title="Открыть фото в полном размере" style="position:relative; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:12px; height:370px; display:flex; align-items:center; justify-content:center; padding:18px; cursor:zoom-in;">
               <sc-if value="{{ hasPhoto }}" hint-placeholder-val="{{ false }}">
@@ -148,7 +148,7 @@
             </div>
 
             <sc-if value="{{ hasFacts }}" hint-placeholder-val="{{ true }}">
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:16px;">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr)); gap:10px; margin-top:16px;">
               <sc-for list="{{ facts }}" as="f" hint-placeholder-count="4">
                 <div style="border:1px solid #DCE5F0; border-radius:8px; padding:12px 14px;">
                   <div style="font-size:14px; font-weight:600;">{{ f.v }}</div>
@@ -175,7 +175,7 @@
           </div>
 
           <sc-if value="{{ isSpecs }}" hint-placeholder-val="{{ true }}">
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:0 40px; margin-top:18px;">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:0 40px; margin-top:18px;">
               <sc-for list="{{ specs }}" as="s" hint-placeholder-count="12">
                 <div style="display:flex; justify-content:space-between; gap:16px; padding:10px 0; border-bottom:1px solid #E9EFF7; font-size:14px;">
                   <span style="color:#5A6675;">{{ s.k }}</span>
@@ -198,7 +198,7 @@
           </sc-if>
 
           <sc-if value="{{ isMount }}" hint-placeholder-val="{{ false }}">
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:18px;">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:18px;">
               <div style="background:#E6F2FD; border-radius:12px; padding:18px 20px;">
                 <div style="font-size:16px; font-weight:700; color:#071C3B;">{{ mount.t1 }}</div>
                 <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">{{ mount.a }}</div>
@@ -215,7 +215,7 @@
           </sc-if>
 
           <sc-if value="{{ isDocs }}" hint-placeholder-val="{{ false }}">
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin-top:18px;">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:18px;">
               <div>
                 <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700;">Документы</div>
                 <div style="display:flex; flex-direction:column; gap:8px; margin-top:12px;">
@@ -254,7 +254,7 @@
 
           <sc-if value="{{ isPower }}" hint-placeholder-val="{{ false }}">
             <div style="margin-top:18px;">
-              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; align-items:start;">
+              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:20px; align-items:start;">
                 <div>
                   <div style="font-size:15px; font-weight:700;">Сколько работает кондиционер</div>
                   <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-top:12px;">
@@ -296,7 +296,7 @@
           </sc-if>
 
           <sc-if value="{{ isWarranty }}" hint-placeholder-val="{{ false }}">
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:18px;">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:18px;">
               <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
                 <div style="font-size:16px; font-weight:700;">{{ warrantyTitle }}</div>
                 <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">{{ warrantyText }} — по условиям производителя, при соблюдении руководства по эксплуатации.</div>
@@ -312,14 +312,6 @@
             </div>
           </sc-if>
         </div>
-
-        <div style="background:#071C3B; color:#fff; border-radius:16px; padding:26px 28px; margin-top:20px;">
-          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">ЧТО ЭТА СТРАНИЦА ОТДАЁТ ПОИСКОВИКУ</div>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; margin-top:16px; font-size:14px; line-height:1.65;">
-            <div>
-              <div style="font-weight:700; margin-bottom:6px;">Адрес модели</div>
-              <div style="color:#CBDCEC; font-family:ui-monospace,monospace; font-size:13px; word-break:break-all;">{{ url }}</div>
-            </div>
             <div>
               <div style="font-weight:700; margin-bottom:6px;">Заголовок и canonical</div>
               <div style="color:#CBDCEC;">{{ seoTitle }}</div>
@@ -343,7 +335,7 @@
                 <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px; max-width:760px;">{{ analogsNote }}</div>
               </div>
             </div>
-            <div ref="{{ analogRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-top:16px;">
+            <div ref="{{ analogRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr)); gap:14px; margin-top:16px;">
               <sc-for list="{{ analogs }}" as="a" hint-placeholder-count="4">
                 <div onClick="{{ a.open }}" style="border:1px solid #DCE5F0; border-radius:12px; padding:14px; cursor:pointer; display:flex; flex-direction:column;">
                   <div style="height:110px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:8px;">
@@ -371,7 +363,7 @@
               </div>
               <a href="{{ accAllHref }}" style="font-size:13px; font-weight:700; color:#0872D3;">{{ accAllLabel }}</a>
             </div>
-            <div ref="{{ accRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; margin-top:16px;">
+            <div ref="{{ accRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr)); gap:14px; margin-top:16px;">
               <sc-for list="{{ accessories }}" as="a" hint-placeholder-count="4">
                 <div style="border:1px solid #DCE5F0; border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:8px;">
                   <a href="{{ a.href }}" style="display:block; height:96px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:8px;">
@@ -401,7 +393,7 @@
               <div style="font-size:13px; color:#5A6675; line-height:1.4;">рейтинг компании в Google<br /><span style="color:#0872D3; font-weight:600;">Смотреть отзывы →</span></div>
             </a>
           </div>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin-top:16px;">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:14px; margin-top:16px;">
             <div style="background:#F3F7FB; border-radius:12px; padding:16px 18px;">
               <div style="font-size:14px; font-weight:700;">Купили эту модель?</div>
               <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">Напишите пару строк в WhatsApp — опубликуем с вашим именем и датой покупки. Отзыв привязывается к артикулу.</div>
@@ -424,7 +416,7 @@
             <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Другие модели {{ brand }}</h2>
             <a href="{{ groupHref }}" style="font-size:14px; font-weight:700; color:#0872D3;">Вся группа →</a>
           </div>
-          <div ref="{{ relRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-top:14px;">
+          <div ref="{{ relRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr)); gap:14px; margin-top:14px;">
             <sc-for list="{{ related }}" as="r" hint-placeholder-count="4">
               <div onClick="{{ r.open }}" style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:14px; cursor:pointer; display:flex; flex-direction:column;">
                 <div style="height:120px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:8px;">
@@ -767,7 +759,11 @@ class Component extends DCLogic {
       pills: it.pl || [],
       price: it.pt || "Цена по запросу",
       priceColor: it.pt ? "#E11A13" : "#5A6675",
-      priceNote: it.pt ? "цена с НДС" : "считаем по запросу — позиция под заказ",
+      // про наличие здесь молчать: «нет цены» и «нет на складе» — разные вещи.
+      // Было «считаем по запросу — позиция под заказ», и у Ballu BHC-H15T18-PS страница
+      // спорила сама с собой: строкой выше «В наличии», строкой ниже «под заказ».
+      // Наличие показывает своя плашка, из поля мастера.
+      priceNote: it.pt ? "цена с НДС" : "считаем по запросу",
       hasInstallment: !!monthlyBase,
       installment: monthlyBase ? "Рассрочка 12 мес — " + this.fmt(monthlyBase / 12) + " ₸/мес · Kaspi, ForteBank, Halyk" : "",
       mountNote: ["mobilnye", "prom-mobilnye", "teplovye-pushki", "osushiteli"].indexOf(s.group) >= 0
