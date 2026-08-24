@@ -1,4 +1,4 @@
 {
   "_комментарий": "Бренды, которые видны в фильтре сразу. Порядок в списке = порядок на витрине. Остальные скрыты под «Ещё N». Правьте этот файл — код менять не нужно.",
-  "priority": ["TCL", "Ballu", "Haier", "MDV", "Midea", "GREE", "Electrolux"]
+  "priority": ["TCL", "Electrolux", "Ballu", "GREE", "DITREEX", "LG", "Samsung", "Royal Thermo"]
 }
