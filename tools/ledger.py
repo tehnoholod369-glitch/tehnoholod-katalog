@@ -437,7 +437,10 @@ def cmd_kp_json(a):
     if a.montazh:
         poz, stavki = raboty_po_prajsu(a.montazh, a.gruppa_rabot, a.km)
         if not poz and not stavki:
-            print("Нет прайса монтажа: %s" % PRAYS_MONTAZHA, file=sys.stderr)
+            print("В разделе «%s» нет фиксированной цены монтажа — только после "
+                  "замера объекта. В КП строку монтажа не добавляй, назови клиенту "
+                  "срок и человека, который приедет мерить." % a.gruppa_rabot,
+                  file=sys.stderr)
             return 2
         out["install"] = poz + out["install"]
         out["install_rates"] = stavki
