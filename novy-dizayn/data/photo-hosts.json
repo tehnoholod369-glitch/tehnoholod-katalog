@@ -1,0 +1,31 @@
+{
+ "totalFiles": 7020,
+ "external": 106,
+ "local": 6914,
+ "cdn": 0,
+ "gallery": 7020,
+ "hosts": {
+  "www.royal-thermo.ru": 46,
+  "www.lg.com": 18,
+  "images.breez.ru": 6,
+  "images.samsung.com": 6,
+  "cdn1-1.ddc.kz": 4,
+  "aws-obg-image-lb-3.tcl.com": 4,
+  "aws-obg-image-lb-5.tcl.com": 3,
+  "ddc.kz": 3,
+  "aws-obg-image-lb-2.tcl.com": 3,
+  "aws-obg-image-lb-4.tcl.com": 2,
+  "static.tildacdn.com": 2,
+  "midea.com.kz": 2,
+  "rkcdn.ru": 2,
+  "cdn.mircli.ru": 1,
+  "mhi-aircond.ru": 1,
+  "super-climate.by": 1,
+  "podbor.tehnoholod369.kz": 1,
+  "gree.com.ru": 1
+ },
+ "multisplitNoPhoto": 4,
+ "multisplitSingle": 224,
+ "multisplitExternal": 0,
+ "ventExternalMain": 0
+}

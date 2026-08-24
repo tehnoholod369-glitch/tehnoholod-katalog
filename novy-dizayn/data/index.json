@@ -1,0 +1,688 @@
+{
+ "updated": "2026-08-24",
+ "groups": [
+  {
+   "slug": "bytovye",
+   "title": "Бытовые сплит-системы",
+   "count": 378,
+   "brands": 18,
+   "brandList": [
+    "AERONIK",
+    "Ballu",
+    "CHERBROOKE",
+    "DITREEX",
+    "Electrolux",
+    "FUNAI",
+    "GREE",
+    "Haier",
+    "Hisense",
+    "LG",
+    "MDV",
+    "Midea",
+    "Mitsubishi Heavy",
+    "ROYAL CLIMA",
+    "Samsung",
+    "TCL",
+    "THAICON",
+    "Toshiba"
+   ],
+   "inStock": 336,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Настенные",
+     "n": 377
+    },
+    {
+     "name": "Оконные",
+     "n": 1
+    }
+   ]
+  },
+  {
+   "slug": "chillery",
+   "title": "Чиллеры",
+   "count": 6,
+   "brands": 2,
+   "brandList": [
+    "AUX",
+    "GREE"
+   ],
+   "inStock": 5,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Чиллеры",
+     "n": 6
+    }
+   ]
+  },
+  {
+   "slug": "fankoyly",
+   "title": "Фанкойлы",
+   "count": 15,
+   "brands": 1,
+   "brandList": [
+    "GREE"
+   ],
+   "inStock": 14,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Канальные",
+     "n": 8
+    },
+    {
+     "name": "Напольные",
+     "n": 7
+    }
+   ]
+  },
+  {
+   "slug": "infrakrasnye-obogrevateli",
+   "title": "Инфракрасные обогреватели",
+   "count": 96,
+   "brands": 3,
+   "brandList": [
+    "Ballu",
+    "DITREEX",
+    "ROYAL CLIMA"
+   ],
+   "inStock": 51,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Электрические",
+     "n": 79
+    },
+    {
+     "name": "Газовые",
+     "n": 16
+    },
+    {
+     "name": "Конвекторы электрические",
+     "n": 1
+    }
+   ]
+  },
+  {
+   "slug": "kaminy",
+   "title": "Камины и электроочаги",
+   "count": 128,
+   "brands": 3,
+   "brandList": [
+    "Electrolux",
+    "Firelight",
+    "Royal Thermo"
+   ],
+   "inStock": 21,
+   "acc": 5,
+   "subs": [
+    {
+     "name": "Каминокомплекты",
+     "n": 52
+    },
+    {
+     "name": "Биокамины",
+     "n": 38
+    },
+    {
+     "name": "Электроочаги 2D",
+     "n": 14
+    },
+    {
+     "name": "Тумбы с биокамином",
+     "n": 13
+    },
+    {
+     "name": "Электроочаги 3D паровые",
+     "n": 6
+    },
+    {
+     "name": "Аксессуары",
+     "n": 5
+    }
+   ]
+  },
+  {
+   "slug": "mini-vrf",
+   "title": "Мини-VRF и мультизональные системы",
+   "count": 52,
+   "brands": 2,
+   "brandList": [
+    "AUX",
+    "GREE"
+   ],
+   "inStock": 45,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Наружные блоки VRF, 380 В",
+     "n": 15
+    },
+    {
+     "name": "Канальные внутренние блоки",
+     "n": 15
+    },
+    {
+     "name": "Кассетные внутренние блоки",
+     "n": 9
+    },
+    {
+     "name": "Наружные блоки мини-VRF, 220 В",
+     "n": 6
+    },
+    {
+     "name": "Настенные внутренние блоки",
+     "n": 4
+    },
+    {
+     "name": "Консольные внутренние блоки",
+     "n": 3
+    }
+   ]
+  },
+  {
+   "slug": "mobilnye",
+   "title": "Мобильные кондиционеры",
+   "count": 33,
+   "brands": 6,
+   "brandList": [
+    "Ballu",
+    "Electrolux",
+    "GREE",
+    "Midea",
+    "ROYAL CLIMA",
+    "SHUFT"
+   ],
+   "inStock": 15,
+   "acc": 1,
+   "subs": [
+    {
+     "name": "Мобильные",
+     "n": 32
+    },
+    {
+     "name": "Аксессуары",
+     "n": 1
+    }
+   ]
+  },
+  {
+   "slug": "multisplit",
+   "title": "Мультисплит-системы",
+   "count": 228,
+   "brands": 11,
+   "brandList": [
+    "AERONIK",
+    "AUX",
+    "CHERBROOKE",
+    "DITREEX",
+    "GREE",
+    "Haier",
+    "Hisense",
+    "MDV",
+    "Midea",
+    "ROYAL CLIMA",
+    "THAICON"
+   ],
+   "inStock": 115,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Внутренние блоки",
+     "n": 150
+    },
+    {
+     "name": "Наружные блоки",
+     "n": 78
+    }
+   ]
+  },
+  {
+   "slug": "obogrevateli",
+   "title": "Конвекторы и обогреватели",
+   "count": 34,
+   "brands": 2,
+   "brandList": [
+    "ROYAL CLIMA",
+    "ZILON"
+   ],
+   "inStock": 34,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Конвекторы электрические",
+     "n": 22
+    },
+    {
+     "name": "Радиаторы масляные",
+     "n": 11
+    },
+    {
+     "name": "Тепловентиляторы электрические",
+     "n": 1
+    }
+   ]
+  },
+  {
+   "slug": "osushiteli",
+   "title": "Осушители воздуха",
+   "count": 31,
+   "brands": 2,
+   "brandList": [
+    "Ballu",
+    "ROYAL CLIMA"
+   ],
+   "inStock": 12,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Бытовые",
+     "n": 16
+    },
+    {
+     "name": "Сушильные мультикомплексы",
+     "n": 5
+    },
+    {
+     "name": "Полупромышленные",
+     "n": 5
+    },
+    {
+     "name": "Промышленные",
+     "n": 5
+    }
+   ]
+  },
+  {
+   "slug": "poluprom",
+   "title": "Полупромышленные",
+   "count": 405,
+   "brands": 14,
+   "brandList": [
+    "AERONIK",
+    "AUX",
+    "Ballu",
+    "CHERBROOKE",
+    "DITREEX",
+    "FUNAI",
+    "GREE",
+    "Haier",
+    "LG",
+    "Midea",
+    "ROYAL CLIMA",
+    "Samsung",
+    "TCL",
+    "THAICON"
+   ],
+   "inStock": 292,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Кассетные",
+     "n": 140
+    },
+    {
+     "name": "Канальные",
+     "n": 139
+    },
+    {
+     "name": "Напольно-потолочные",
+     "n": 94
+    },
+    {
+     "name": "Колонные",
+     "n": 29
+    },
+    {
+     "name": "Консольные",
+     "n": 3
+    }
+   ]
+  },
+  {
+   "slug": "precizionnye",
+   "title": "Прецизионные кондиционеры",
+   "count": 5,
+   "brands": 1,
+   "brandList": [
+    "GREE"
+   ],
+   "inStock": 5,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Прецизионный",
+     "n": 5
+    }
+   ]
+  },
+  {
+   "slug": "prom-mobilnye",
+   "title": "Промышленные мобильные",
+   "count": 5,
+   "brands": 1,
+   "brandList": [
+    "Ballu"
+   ],
+   "inStock": 0,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Промышленные мобильные",
+     "n": 5
+    }
+   ]
+  },
+  {
+   "slug": "radiatory",
+   "title": "Радиаторы отопления",
+   "count": 454,
+   "brands": 1,
+   "brandList": [
+    "Royal Thermo"
+   ],
+   "inStock": 159,
+   "acc": 10,
+   "subs": [
+    {
+     "name": "Секционные",
+     "n": 171
+    },
+    {
+     "name": "Трубчатые",
+     "n": 152
+    },
+    {
+     "name": "С нижним подключением",
+     "n": 121
+    },
+    {
+     "name": "Комплектующие",
+     "n": 10
+    }
+   ]
+  },
+  {
+   "slug": "rekuperatory",
+   "title": "Рекуператоры",
+   "count": 5,
+   "brands": 1,
+   "brandList": [
+    "GREE"
+   ],
+   "inStock": 5,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Рекуператоры",
+     "n": 5
+    }
+   ]
+  },
+  {
+   "slug": "teplovye-nasosy",
+   "title": "Тепловые насосы",
+   "count": 16,
+   "brands": 1,
+   "brandList": [
+    "Haier"
+   ],
+   "inStock": 0,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Воздух-вода",
+     "n": 16
+    }
+   ]
+  },
+  {
+   "slug": "teplovye-pushki",
+   "title": "Тепловые пушки",
+   "count": 103,
+   "brands": 3,
+   "brandList": [
+    "Ballu",
+    "POWERAIR by ZILON",
+    "ROYAL CLIMA"
+   ],
+   "inStock": 64,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Электрические",
+     "n": 58
+    },
+    {
+     "name": "Газовые",
+     "n": 17
+    },
+    {
+     "name": "Дизельные прямого нагрева",
+     "n": 14
+    },
+    {
+     "name": "Дизельные непрямого нагрева",
+     "n": 8
+    },
+    {
+     "name": "Теплогенераторы подвесные",
+     "n": 4
+    },
+    {
+     "name": "Теплогенераторы мобильные",
+     "n": 2
+    }
+   ]
+  },
+  {
+   "slug": "teplovye-zavesy",
+   "title": "Тепловые завесы",
+   "count": 150,
+   "brands": 4,
+   "brandList": [
+    "Ballu",
+    "DITREEX",
+    "ROYAL CLIMA",
+    "ZILON"
+   ],
+   "inStock": 50,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Электрические",
+     "n": 95
+    },
+    {
+     "name": "Водяные",
+     "n": 41
+    },
+    {
+     "name": "Без нагрева",
+     "n": 14
+    }
+   ]
+  },
+  {
+   "slug": "ventilyaciya",
+   "title": "Вентиляция",
+   "count": 878,
+   "brands": 8,
+   "brandList": [
+    "Ballu",
+    "COMPACTAIR by ZILON",
+    "Electrolux",
+    "FUNAI",
+    "MDV",
+    "ROYAL CLIMA",
+    "Royal Thermo",
+    "SHUFT"
+   ],
+   "inStock": 336,
+   "acc": 268,
+   "subs": [
+    {
+     "name": "Аксессуары вентиляции",
+     "n": 268
+    },
+    {
+     "name": "Приточно-вытяжные установки",
+     "n": 222
+    },
+    {
+     "name": "Приточные установки",
+     "n": 89
+    },
+    {
+     "name": "Канальные прямоугольные",
+     "n": 80
+    },
+    {
+     "name": "Канальные круглые",
+     "n": 71
+    },
+    {
+     "name": "Вытяжные бытовые",
+     "n": 56
+    },
+    {
+     "name": "Осевые",
+     "n": 46
+    },
+    {
+     "name": "Кухонные",
+     "n": 31
+    },
+    {
+     "name": "Крышные",
+     "n": 15
+    }
+   ]
+  },
+  {
+   "slug": "ventilyatory-prom",
+   "title": "Промышленные вентиляторы",
+   "count": 22,
+   "brands": 1,
+   "brandList": [
+    "Ballu"
+   ],
+   "inStock": 10,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Вентиляторы",
+     "n": 16
+    },
+    {
+     "name": "Воздушные рукава",
+     "n": 6
+    }
+   ]
+  },
+  {
+   "slug": "vodonagrevateli",
+   "title": "Водонагреватели",
+   "count": 241,
+   "brands": 5,
+   "brandList": [
+    "Ballu",
+    "Electrolux",
+    "PHILIPS",
+    "ROYAL CLIMA",
+    "Royal Thermo"
+   ],
+   "inStock": 180,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Накопительные",
+     "n": 185
+    },
+    {
+     "name": "Проточные",
+     "n": 30
+    },
+    {
+     "name": "Газовые колонки",
+     "n": 26
+    }
+   ]
+  },
+  {
+   "slug": "vodoochistka",
+   "title": "Водоочистка и фильтры",
+   "count": 29,
+   "brands": 2,
+   "brandList": [
+    "DITREEX",
+    "PHILIPS"
+   ],
+   "inStock": 27,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Системы обратного осмоса",
+     "n": 14
+    },
+    {
+     "name": "Фильтры магистральные",
+     "n": 7
+    },
+    {
+     "name": "Фильтры для душа и стиральной машины",
+     "n": 4
+    },
+    {
+     "name": "Пурифайеры",
+     "n": 3
+    },
+    {
+     "name": "Системы ультрафильтрации",
+     "n": 1
+    }
+   ]
+  },
+  {
+   "slug": "vodyanye-teploventilyatory",
+   "title": "Водяные тепловентиляторы",
+   "count": 31,
+   "brands": 2,
+   "brandList": [
+    "Ballu",
+    "ZILON"
+   ],
+   "inStock": 15,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Водяные тепловентиляторы",
+     "n": 30
+    },
+    {
+     "name": "Дестратификаторы",
+     "n": 1
+    }
+   ]
+  },
+  {
+   "slug": "vozduhoohladiteli",
+   "title": "Воздухоохладители",
+   "count": 2,
+   "brands": 1,
+   "brandList": [
+    "DITREEX"
+   ],
+   "inStock": 2,
+   "acc": 0,
+   "subs": [
+    {
+     "name": "Испарительные",
+     "n": 2
+    }
+   ]
+  }
+ ]
+}

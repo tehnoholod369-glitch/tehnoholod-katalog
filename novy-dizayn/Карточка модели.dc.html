@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+</style>
+<script src="./photo-base.js"></script>
+<script src="./cart.js"></script>
+<script src="./search.js"></script>
+<script src="./mobile-bar.js"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+7 700 036 93 69</a>
+    </div>
+  </div>
+
+  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1280px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="Главная.dc.html"><img src="assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="Каталог - выдача.dc.html" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <button type="button" data-th-search aria-label="Поиск по каталогу" style="flex:1; min-width:200px; display:flex; align-items:center; gap:8px; border:2px solid #0872D3; background:#fff; border-radius:8px; padding:9px 14px; color:#8593A6; font-size:15px; text-align:left; cursor:pointer;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>Поиск по модели или артикулу
+      </button>
+      <a href="Корзина и оформление.dc.html" style="display:flex; align-items:center; gap:7px; background:{{ cartBg }}; color:{{ cartFg }}; border-radius:8px; padding:10px 14px; font-size:15px; font-weight:700;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M3 4h2.2l2.4 11.2h10.1" /><path d="M6.6 7.6h14L18.7 14H8" /><circle cx="9.5" cy="19" r="1.4" /><circle cx="17.5" cy="19" r="1.4" /></svg>{{ cartLabel }}
+      </a>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <sc-if value="{{ zoomOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeZoom }}" style="position:fixed; inset:0; background:rgba(7,28,59,0.92); z-index:60; display:flex; flex-direction:column; padding:20px; cursor:zoom-out;">
+      <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap; color:#fff; flex:none;">
+        <div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#7FC4F2;">{{ brand }} · {{ skuLabel }}</div>
+          <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:600; margin-top:2px;">{{ zoomCounter }}</div>
+        </div>
+        <div style="margin-left:auto; display:flex; gap:10px; align-items:center;">
+          <a href="{{ zoomSrc }}" target="_blank" rel="noreferrer" onClick="{{ stop }}" style="border:1px solid rgba(255,255,255,0.45); color:#fff; border-radius:8px; padding:8px 14px; font-size:13px; font-weight:600;">Открыть оригинал</a>
+          <div onClick="{{ closeZoom }}" style="border:1px solid rgba(255,255,255,0.45); color:#fff; border-radius:8px; padding:8px 14px; font-size:13px; font-weight:600; cursor:pointer;">Закрыть ✕</div>
+        </div>
+      </div>
+      <div ref="{{ zoomRef }}" style="flex:1; min-height:0; display:flex; align-items:center; justify-content:center; gap:16px; margin-top:16px;">
+        <sc-if value="{{ zoomMulti }}" hint-placeholder-val="{{ false }}">
+          <div onClick="{{ zoomPrev }}" style="flex:none; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.14); color:#fff; display:flex; align-items:center; justify-content:center; font-size:20px; cursor:pointer;">‹</div>
+        </sc-if>
+        <img data-url="{{ zoomSrc }}" alt="{{ name }}" style="max-width:100%; max-height:100%; object-fit:contain; display:block;" />
+        <sc-if value="{{ zoomMulti }}" hint-placeholder-val="{{ false }}">
+          <div onClick="{{ zoomNext }}" style="flex:none; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.14); color:#fff; display:flex; align-items:center; justify-content:center; font-size:20px; cursor:pointer;">›</div>
+        </sc-if>
+      </div>
+      <div style="flex:none; text-align:center; font-size:12px; color:#9FB0C4; margin-top:12px;">{{ zoomHint }}</div>
+    </div>
+  </sc-if>
+
+  <div style="max-width:1280px; margin:0 auto; padding:18px 24px 64px 24px;">
+
+    <sc-if value="{{ loading }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:60px 24px; text-align:center; font-size:16px; color:#5A6675;">Загружаем данные модели…</div>
+    </sc-if>
+
+    <sc-if value="{{ ready }}" hint-placeholder-val="{{ false }}">
+      <div>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;">
+          <div style="font-size:13px; color:#8593A6;">
+            <a href="Главная.dc.html">Главная</a> → <a href="Каталог - выдача.dc.html">Каталог</a> → <span>{{ dirLabel }}</span> → <a href="{{ groupHref }}">{{ groupTitle }}</a> → <span style="color:#18212F;">{{ short }}</span>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <div onClick="{{ prev }}" style="border:1px solid #DCE5F0; background:#fff; border-radius:8px; padding:7px 12px; font-size:13px; font-weight:600; color:#5A6675; cursor:pointer;">← Предыдущая</div>
+            <div onClick="{{ next }}" style="border:1px solid #DCE5F0; background:#fff; border-radius:8px; padding:7px 12px; font-size:13px; font-weight:600; color:#5A6675; cursor:pointer;">Следующая →</div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); gap:28px; margin-top:16px; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px;">
+          <div>
+            <div onClick="{{ openZoom }}" title="Открыть фото в полном размере" style="position:relative; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:12px; height:370px; display:flex; align-items:center; justify-content:center; padding:18px; cursor:zoom-in;">
+              <sc-if value="{{ hasPhoto }}" hint-placeholder-val="{{ false }}">
+                <img ref="{{ photoRef }}" alt="{{ name }}" style="width:100%; height:100%; object-fit:contain; display:block;" />
+              </sc-if>
+              <sc-if value="{{ noPhoto }}" hint-placeholder-val="{{ false }}">
+                <span style="font-size:13px; color:#8593A6;">Фото уточняется — пришлём по запросу</span>
+              </sc-if>
+              <sc-if value="{{ hasPhoto }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute; right:12px; bottom:12px; display:flex; align-items:center; gap:6px; background:rgba(7,28,59,0.82); color:#fff; border-radius:8px; padding:6px 10px; font-size:12px; font-weight:600; pointer-events:none;">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" style="display:block;"><circle cx="10.5" cy="10.5" r="6.5" /><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6" /></svg>
+                  Открыть крупно
+                </div>
+              </sc-if>
+            </div>
+            <div ref="{{ galRef }}" style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;">
+              <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="4">
+                <div onClick="{{ t.pick }}" onDoubleClick="{{ openZoom }}" title="Клик — выбрать, двойной клик — открыть крупно" style="width:74px; height:58px; border:2px solid {{ t.border }}; border-radius:8px; background:#F9FBFE; display:flex; align-items:center; justify-content:center; padding:4px; cursor:pointer;">
+                  <img data-url="{{ t.url }}" alt="" style="width:100%; height:100%; object-fit:contain; display:block;" />
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <div style="font-size:13px; font-weight:700; color:#0872D3; letter-spacing:0.06em;">{{ brand }}</div>
+              <div style="font-size:13px; color:{{ skuFg }}; font-family:ui-monospace,monospace;">{{ skuLabel }}</div>
+              <div style="font-size:12px; font-weight:700; color:{{ stockFg }}; background:{{ stockBg }}; border-radius:5px; padding:4px 9px;">{{ stock }}</div>
+            </div>
+            <h1 style="margin:12px 0 0 0; font-size:26px; font-weight:700; line-height:1.28; letter-spacing:-0.015em;">{{ name }}</h1>
+
+            <div style="display:flex; gap:7px; flex-wrap:wrap; margin-top:14px;">
+              <sc-for list="{{ pills }}" as="p" hint-placeholder-count="4">
+                <div style="background:#F3F7FB; border-radius:6px; padding:6px 11px; font-size:13px; font-weight:600; color:#2C3846;">{{ p }}</div>
+              </sc-for>
+            </div>
+
+            <div style="background:#F3F7FB; border-radius:12px; padding:20px; margin-top:18px;">
+              <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;">
+                <div style="font-size:32px; font-weight:700; color:{{ priceColor }}; font-variant-numeric:tabular-nums; letter-spacing:-0.02em;">{{ price }}</div>
+                <div style="font-size:13px; color:#5A6675;">{{ priceNote }}</div>
+              </div>
+              <sc-if value="{{ hasInstallment }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:14px; color:#2C3846; margin-top:6px;">{{ installment }}</div>
+              </sc-if>
+              <div style="font-size:14px; color:#5A6675; margin-top:4px;">{{ mountNote }}</div>
+              <div style="display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;">
+                <a href="{{ ctaHref }}" onClick="{{ ctaClick }}" style="flex:1; min-width:150px; background:{{ ctaBg }}; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700; cursor:pointer;">{{ cta }}</a>
+                <a href="https://wa.me/77000369369" style="flex:1; min-width:130px; border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px; text-align:center; font-size:16px; font-weight:700;">WhatsApp</a>
+              </div>
+            </div>
+
+            <sc-if value="{{ hasFacts }}" hint-placeholder-val="{{ true }}">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:16px;">
+              <sc-for list="{{ facts }}" as="f" hint-placeholder-count="4">
+                <div style="border:1px solid #DCE5F0; border-radius:8px; padding:12px 14px;">
+                  <div style="font-size:14px; font-weight:600;">{{ f.v }}</div>
+                  <div style="font-size:12px; color:#8593A6; margin-top:2px;">{{ f.k }}</div>
+                  <div style="font-size:12px; color:#5A6675; line-height:1.45; margin-top:5px;">{{ f.hint }}</div>
+                </div>
+              </sc-for>
+            </div>
+            </sc-if>
+
+            <div style="display:flex; gap:16px; margin-top:16px; flex-wrap:wrap; font-size:13px; color:#5A6675;">
+              <div>Доставка по Казахстану</div>
+              <div>{{ mount.strip }}</div>
+              <div>{{ warrantyStrip }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:20px;">
+          <div style="display:flex; flex-wrap:wrap; gap:0 26px; border-bottom:2px solid #DCE5F0; font-size:15px; font-weight:600;">
+            <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+              <div onClick="{{ t.pick }}" style="padding-bottom:12px; margin-bottom:-2px; border-bottom:3px solid {{ t.line }}; color:{{ t.fg }}; cursor:pointer;">{{ t.label }}</div>
+            </sc-for>
+          </div>
+
+          <sc-if value="{{ isSpecs }}" hint-placeholder-val="{{ true }}">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:0 40px; margin-top:18px;">
+              <sc-for list="{{ specs }}" as="s" hint-placeholder-count="12">
+                <div style="display:flex; justify-content:space-between; gap:16px; padding:10px 0; border-bottom:1px solid #E9EFF7; font-size:14px;">
+                  <span style="color:#5A6675;">{{ s.k }}</span>
+                  <b style="text-align:right; color:{{ s.color }};">
+                    <sc-if value="{{ s.isText }}" hint-placeholder-val="{{ true }}">
+                      <span>{{ s.v }}</span>
+                    </sc-if>
+                    <sc-if value="{{ s.isLink }}" hint-placeholder-val="{{ false }}">
+                      <a href="{{ s.href }}" target="_blank" rel="noreferrer" style="color:#0872D3;">{{ s.v }}</a>
+                    </sc-if>
+                  </b>
+                </div>
+              </sc-for>
+            </div>
+            <div style="font-size:13px; color:#8593A6; margin-top:14px; line-height:1.6;">Характеристики — по данным производителя из мастер-таблицы. Незаполненные поля выводятся как «нет данных» и не домысливаются.</div>
+          </sc-if>
+
+          <sc-if value="{{ isDesc }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size:16px; line-height:1.7; color:#2C3846; margin-top:18px; max-width:920px; text-wrap:pretty;">{{ desc }}</div>
+          </sc-if>
+
+          <sc-if value="{{ isMount }}" hint-placeholder-val="{{ false }}">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:18px;">
+              <div style="background:#E6F2FD; border-radius:12px; padding:18px 20px;">
+                <div style="font-size:16px; font-weight:700; color:#071C3B;">{{ mount.t1 }}</div>
+                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">{{ mount.a }}</div>
+              </div>
+              <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+                <div style="font-size:16px; font-weight:700;">{{ mount.t2 }}</div>
+                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">{{ mount.b }}</div>
+              </div>
+              <div style="background:{{ mount.bg }}; border-radius:12px; padding:18px 20px;">
+                <div style="font-size:16px; font-weight:700; color:{{ mount.fg }};">{{ mount.t3 }}</div>
+                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">{{ mount.c }} <a href="Услуги - монтаж, сервис, гарантия.dc.html">{{ mount.link }}</a></div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isDocs }}" hint-placeholder-val="{{ false }}">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin-top:18px;">
+              <div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700;">Документы</div>
+                <div style="display:flex; flex-direction:column; gap:8px; margin-top:12px;">
+                  <sc-for list="{{ docs }}" as="d" hint-placeholder-count="2">
+                    <div style="display:flex; align-items:center; gap:12px; border:1px solid #DCE5F0; border-radius:10px; padding:12px 14px;">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0872D3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5z" /><path d="M14 3v4.5h4.5" /><path d="M9 13h6M9 16.5h4" /></svg>
+                      <div style="flex:1; min-width:0;">
+                        <div style="font-size:14px; font-weight:600;">{{ d.title }}</div>
+                        <div style="font-size:12px; color:#8593A6; margin-top:2px;">{{ d.note }}</div>
+                        <sc-if value="{{ d.hasHref }}" hint-placeholder-val="{{ false }}">
+                          <a href="{{ d.href }}" target="_blank" rel="noreferrer" style="font-size:12px; font-weight:700; color:#0872D3;">Открыть PDF →</a>
+                        </sc-if>
+                      </div>
+                      <div style="font-size:12px; font-weight:700; color:{{ d.fg }}; background:{{ d.bg }}; border-radius:5px; padding:4px 9px; white-space:nowrap;">{{ d.state }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+              <div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700;">Видеообзор</div>
+                <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
+                  <a href="{{ videoHref }}" target="_blank" rel="noreferrer" style="margin-top:12px; border:1px solid #DCE5F0; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center; color:#0A4EA7;" style-hover="border-color:#0872D3; background:#F5FAFF;">
+                    <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#0872D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
+                    <div style="font-size:15px; font-weight:700;">Смотреть обзор модели</div>
+                    <div style="font-size:13px; color:#5A6675;">Откроется в новой вкладке</div>
+                  </a>
+                </sc-if>
+                <div style="display:{{ videoStubDisplay }}; margin-top:12px; border:2px dashed #B9DBF7; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center;">
+                  <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#0872D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
+                  <div style="font-size:14px; font-weight:600; color:#2C3846;">Место под видео с вашего канала</div>
+                  <div style="font-size:13px; color:#5A6675; line-height:1.5; max-width:300px;">Пришлите ссылку на обзор — встрою плеер. Канал: <a href="https://www.youtube.com/@Tehnoholod369" target="_blank" rel="noreferrer">@Tehnoholod369</a></div>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isPower }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:18px;">
+              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; align-items:start;">
+                <div>
+                  <div style="font-size:15px; font-weight:700;">Сколько работает кондиционер</div>
+                  <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-top:12px;">
+                    <span style="font-size:14px; color:#5A6675;">Часов в сутки</span>
+                    <b style="font-size:16px; color:#0A4EA7;">{{ power.hoursLabel }}</b>
+                  </div>
+                  <input type="range" min="2" max="24" step="1" value="{{ power.hours }}" onInput="{{ power.onHours }}" style="width:100%; margin-top:8px; accent-color:#0872D3;" />
+                  <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-top:16px;">
+                    <span style="font-size:14px; color:#5A6675;">Тариф на электричество</span>
+                    <b style="font-size:16px; color:#0A4EA7;">{{ power.tariffLabel }}</b>
+                  </div>
+                  <input type="range" min="15" max="60" step="1" value="{{ power.tariff }}" onInput="{{ power.onTariff }}" style="width:100%; margin-top:8px; accent-color:#0872D3;" />
+                  <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:10px;">{{ power.seer }}</div>
+                </div>
+
+                <div style="background:#071C3B; color:#fff; border-radius:12px; padding:22px;">
+                  <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">ЗА СЕЗОН ОХЛАЖДЕНИЯ</div>
+                  <div style="font-family:'Montserrat',sans-serif; font-size:32px; font-weight:800; letter-spacing:-0.02em; margin-top:10px;">{{ power.cost }}</div>
+                  <div style="font-size:14px; color:#CBDCEC; margin-top:4px;">{{ power.kwh }} за три месяца</div>
+                  <sc-if value="{{ power.save }}" hint-placeholder-val="{{ false }}">
+                    <div style="border-top:1px solid rgba(255,255,255,0.16); margin-top:16px; padding-top:14px;">
+                      <div style="font-size:13px; color:#9FB0C4;">Обычный ON/OFF в том же режиме</div>
+                      <div style="font-size:20px; font-weight:700; margin-top:4px;">{{ power.costBase }}</div>
+                      <div style="font-size:14px; color:#7BE3B0; font-weight:600; margin-top:6px;">Экономия за сезон — {{ power.save }}</div>
+                    </div>
+                  </sc-if>
+                </div>
+              </div>
+
+              <sc-if value="{{ power.payback }}" hint-placeholder-val="{{ false }}">
+                <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:16px;">
+                  <div style="font-size:15px; font-weight:700; color:#071C3B;">Когда окупится переплата за инвертор</div>
+                  <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:6px;">{{ power.payback }}</div>
+                </div>
+              </sc-if>
+
+              <div style="font-size:13px; color:#8593A6; line-height:1.6; margin-top:14px;">{{ power.note }}</div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isWarranty }}" hint-placeholder-val="{{ false }}">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:18px;">
+              <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+                <div style="font-size:16px; font-weight:700;">{{ warrantyTitle }}</div>
+                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">{{ warrantyText }} — по условиям производителя, при соблюдении руководства по эксплуатации.</div>
+              </div>
+              <div style="background:#E6F2FD; border-radius:12px; padding:18px 20px;">
+                <div style="font-size:16px; font-weight:700; color:#071C3B;">Наша ответственность — качество работ</div>
+                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">12 месяцев на монтажные работы лицензированной бригады при условии сезонного обслуживания раз в год. За само оборудование отвечает производитель. <a href="Услуги - монтаж, сервис, гарантия.dc.html">Что покрывается →</a></div>
+              </div>
+              <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+                <div style="font-size:16px; font-weight:700;">Сервис</div>
+                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">{{ serviceNote }} <a href="Услуги - монтаж, сервис, гарантия.dc.html">Записаться на ТО →</a></div>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="background:#071C3B; color:#fff; border-radius:16px; padding:26px 28px; margin-top:20px;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">ЧТО ЭТА СТРАНИЦА ОТДАЁТ ПОИСКОВИКУ</div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; margin-top:16px; font-size:14px; line-height:1.65;">
+            <div>
+              <div style="font-weight:700; margin-bottom:6px;">Адрес модели</div>
+              <div style="color:#CBDCEC; font-family:ui-monospace,monospace; font-size:13px; word-break:break-all;">{{ url }}</div>
+            </div>
+            <div>
+              <div style="font-weight:700; margin-bottom:6px;">Заголовок и canonical</div>
+              <div style="color:#CBDCEC;">{{ seoTitle }}</div>
+            </div>
+            <div>
+              <div style="font-weight:700; margin-bottom:6px;">Разметка Product / Offer</div>
+              <div style="color:#CBDCEC;">brand · sku · price · priceCurrency KZT · availability · image · description</div>
+            </div>
+            <div>
+              <div style="font-weight:700; margin-bottom:6px;">Фид Merchant</div>
+              <div style="color:#CBDCEC;">Тот же артикул и цена — из мастер-таблицы, один источник для сайта и фида.</div>
+            </div>
+          </div>
+        </div>
+
+        <sc-if value="{{ hasAnalogs }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
+            <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+              <div>
+                <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Аналоги других брендов</h2>
+                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px; max-width:760px;">{{ analogsNote }}</div>
+              </div>
+            </div>
+            <div ref="{{ analogRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-top:16px;">
+              <sc-for list="{{ analogs }}" as="a" hint-placeholder-count="4">
+                <div onClick="{{ a.open }}" style="border:1px solid #DCE5F0; border-radius:12px; padding:14px; cursor:pointer; display:flex; flex-direction:column;">
+                  <div style="height:110px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:8px;">
+                    <img data-url="{{ a.img }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:contain; display:block;" />
+                  </div>
+                  <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:10px;">
+                    <div style="font-size:11px; font-weight:700; color:#0872D3; letter-spacing:0.06em;">{{ a.brand }}</div>
+                    <div style="font-size:11px; font-weight:700; color:{{ a.stockFg }};">{{ a.stock }}</div>
+                  </div>
+                  <div style="font-size:13px; font-weight:600; line-height:1.35; margin-top:5px;">{{ a.name }}</div>
+                  <div style="font-size:17px; font-weight:700; font-variant-numeric:tabular-nums; margin-top:8px;">{{ a.price }}</div>
+                  <div style="font-size:12px; color:{{ a.diffFg }}; margin-top:2px;">{{ a.diff }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ hasAcc }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
+            <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+              <div>
+                <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Сопутствующие товары</h2>
+                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px; max-width:760px;">{{ accNote }}</div>
+              </div>
+              <a href="{{ accAllHref }}" style="font-size:13px; font-weight:700; color:#0872D3;">{{ accAllLabel }}</a>
+            </div>
+            <div ref="{{ accRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; margin-top:16px;">
+              <sc-for list="{{ accessories }}" as="a" hint-placeholder-count="4">
+                <div style="border:1px solid #DCE5F0; border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:8px;">
+                  <a href="{{ a.href }}" style="display:block; height:96px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:8px;">
+                    <img data-url="{{ a.img }}" alt="{{ a.name }}" loading="lazy" style="max-width:100%; max-height:100%; object-fit:contain; display:block;" />
+                  </a>
+                  <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <div style="font-size:11px; font-weight:700; color:#0872D3; letter-spacing:0.06em;">{{ a.brand }}</div>
+                    <div style="font-size:11px; font-weight:700; color:{{ a.stockFg }};">{{ a.stock }}</div>
+                  </div>
+                  <a href="{{ a.href }}" style="font-size:13px; font-weight:600; line-height:1.35; color:#18212F;">{{ a.name }}</a>
+                  <div style="font-size:16px; font-weight:700; font-variant-numeric:tabular-nums;">{{ a.price }}</div>
+                  <div onClick="{{ a.add }}" style="border:1px solid {{ a.btnBorder }}; background:{{ a.btnBg }}; color:{{ a.btnFg }}; border-radius:8px; padding:8px 12px; font-size:13px; font-weight:700; text-align:center; cursor:pointer; margin-top:auto;">{{ a.btnLabel }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+            <div>
+              <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Отзывы</h2>
+              <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="Отзывы клиентов.dc.html">Все отзывы о компании →</a> Отзывов на эту модель пока нет — мы не покупаем и не пишем их сами.</div>
+            </div>
+            <a href="https://share.google/ambLW5DS0ZdmtfS68" target="_blank" rel="noreferrer" style="display:flex; align-items:center; gap:10px; background:#F3F7FB; border-radius:12px; padding:12px 16px;">
+              <div style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; color:#18212F;">5,0</div>
+              <div style="font-size:13px; color:#5A6675; line-height:1.4;">рейтинг компании в Google<br /><span style="color:#0872D3; font-weight:600;">Смотреть отзывы →</span></div>
+            </a>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin-top:16px;">
+            <div style="background:#F3F7FB; border-radius:12px; padding:16px 18px;">
+              <div style="font-size:14px; font-weight:700;">Купили эту модель?</div>
+              <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">Напишите пару строк в WhatsApp — опубликуем с вашим именем и датой покупки. Отзыв привязывается к артикулу.</div>
+              <a href="https://wa.me/77000369369" style="display:inline-block; font-size:13px; font-weight:700; color:#0872D3; margin-top:8px;">Оставить отзыв →</a>
+            </div>
+            <div style="background:#F3F7FB; border-radius:12px; padding:16px 18px;">
+              <div style="font-size:14px; font-weight:700;">Что вместо отзывов</div>
+              <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">Пока их мало, работают монтажи с датой и городом: там видно, что модель реально ставили.</div>
+              <a href="Наши работы - портфолио.dc.html" style="display:inline-block; font-size:13px; font-weight:700; color:#0872D3; margin-top:8px;">Наши работы →</a>
+            </div>
+            <div style="background:#FFF6E9; border-radius:12px; padding:16px 18px;">
+              <div style="font-size:14px; font-weight:700; color:#7A4A00;">Честно о рейтинге</div>
+              <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">Звёзд у товаров нет — оценок по моделям в базе не существует. Рисовать «4,8» из воздуха не будем: рейтинг без отзывов виден сразу.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:24px;">
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+            <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Другие модели {{ brand }}</h2>
+            <a href="{{ groupHref }}" style="font-size:14px; font-weight:700; color:#0872D3;">Вся группа →</a>
+          </div>
+          <div ref="{{ relRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-top:14px;">
+            <sc-for list="{{ related }}" as="r" hint-placeholder-count="4">
+              <div onClick="{{ r.open }}" style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:14px; cursor:pointer; display:flex; flex-direction:column;">
+                <div style="height:120px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:8px;">
+                  <img data-url="{{ r.img }}" alt="{{ r.name }}" loading="lazy" style="width:100%; height:100%; object-fit:contain; display:block;" />
+                </div>
+                <div style="font-size:11px; font-weight:700; color:#0872D3; letter-spacing:0.06em; margin-top:10px;">{{ r.brand }}</div>
+                <div style="font-size:13px; font-weight:600; line-height:1.35; margin-top:4px;">{{ r.name }}</div>
+                <div style="font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; margin-top:8px;">{{ r.price }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { group: "bytovye", idx: 0, items: null, details: null, index: null, loading: true, photo: 0, tab: 0, zoom: false };
+  photoRef = React.createRef();
+  zoomRef = React.createRef();
+  galRef = React.createRef();
+  relRef = React.createRef();
+  analogRef = React.createRef();
+  accRef = React.createRef();
+
+  fmt(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009"); }
+  num(t) { const d = String(t || "").replace(/[^\d]/g, ""); return d ? +d : 0; }
+  ph(u) { return (window.photoUrl ? window.photoUrl(u) : String(u || "")); }
+
+  // дробное число всегда требует родительного единственного: «6,4 сезона», а не «сезонов»
+  seasonWord(n) {
+    if (n % 1 !== 0) return "сезона";
+    const a = n % 10, b = n % 100;
+    if (a === 1 && b !== 11) return "сезон";
+    if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return "сезона";
+    return "сезонов";
+  }
+
+  componentDidMount() {
+    const p = new URLSearchParams(location.search);
+    const group = p.get("g") || "bytovye";
+    const idx = Math.max(0, parseInt(p.get("i") || "0", 10) || 0);
+    fetch("data/index.json").then(r => r.ok ? r.json() : null).then(index => this.setState({ index })).catch(() => {});
+    this.load(group, idx, p.get("sl") || "");
+    this.__onCart = () => this.setState({ cartN: window.CART ? window.CART.count() : 0 });
+    window.addEventListener("th-cart", this.__onCart);
+    this.__onCart();
+  }
+
+  componentWillUnmount() { window.removeEventListener("th-cart", this.__onCart); }
+
+  load(group, idx, sl) {
+    this.setState({ loading: true, group, idx, photo: 0 });
+    Promise.all([
+      fetch("data/" + group + ".json").then(r => r.ok ? r.json() : []),
+      fetch("data/details/" + group + ".json").then(r => r.ok ? r.json() : [])
+    ]).then(([items, details]) => {
+      // ключ sl устойчив к пересборке данных, номер в массиве — нет
+      let i = idx;
+      if (sl) {
+        const found = items.findIndex(x => x.sl === sl);
+        if (found >= 0) i = found;
+      }
+      this.setState({ items, details, idx: Math.min(i, Math.max(0, items.length - 1)), loading: false });
+    }).catch(() => this.setState({ items: [], details: [], loading: false }));
+  }
+
+  go(idx) {
+    const items = this.state.items || [];
+    if (!items.length) return;
+    const next = (idx + items.length) % items.length;
+    this.setState({ idx: next, photo: 0, tab: 0 });
+    const url = location.pathname + "?g=" + this.state.group + "&i=" + next;
+    history.replaceState(null, "", url);
+  }
+
+  // не подставляем src, пока не известно, где лежит файл — иначе лишний 404 на CDN
+  photoReady() {
+    if (window.PHOTO_LOCAL_SET) return true;
+    if (!this.__waitPhoto) {
+      this.__waitPhoto = true;
+      (window.PHOTO_READY || Promise.resolve()).then(() => this.forceUpdate());
+    }
+    return false;
+  }
+
+  syncPhotos() {
+    if (!this.photoReady()) return;
+    const item = (this.state.items || [])[this.state.idx];
+    const det = (this.state.details || [])[this.state.idx];
+    if (item) {
+      const gal = (det && det.gl && det.gl.length ? det.gl : (item.i ? [item.i] : []));
+      const main = this.ph(gal[Math.min(this.state.photo, gal.length - 1)]);
+      const el = this.photoRef.current;
+      if (el && main && el.getAttribute("src") !== main) el.setAttribute("src", main);
+    }
+    const fallback = el => {
+      const parent = el.parentNode;
+      const clear = () => {
+        el.style.display = "block";
+        if (parent) parent.querySelectorAll("[data-nophoto]").forEach(n => n.remove());
+      };
+      clear();
+      el.onload = clear;
+      el.onerror = () => {
+        // одна попытка со вторым хранилищем, прежде чем показывать заглушку
+        const alt = window.photoAlt ? window.photoAlt(el.getAttribute("src")) : "";
+        if (alt && !el.dataset.triedAlt) { el.dataset.triedAlt = "1"; el.setAttribute("src", alt); return; }
+        const box = el.parentNode;
+        if (!box || box.querySelector("[data-nophoto]")) return;
+        el.style.display = "none";
+        const note = document.createElement("div");
+        note.setAttribute("data-nophoto", "1");
+        note.style.cssText = "font-size:11px;line-height:1.4;color:#8593A6;text-align:center;padding:8px;";
+        note.textContent = "Фото уточняется";
+        box.appendChild(note);
+      };
+    };
+    if (item) {
+      const el = this.photoRef.current;
+      if (el) fallback(el);
+    }
+    [this.galRef.current, this.relRef.current, this.zoomRef.current, this.analogRef.current, this.accRef.current].forEach(box => {
+      if (!box) return;
+      box.querySelectorAll("img[data-url]").forEach(el => {
+        const u = el.getAttribute("data-url");
+        if (u && u.indexOf("{{") < 0 && el.getAttribute("src") !== u) { fallback(el); el.setAttribute("src", u); }
+      });
+    });
+  }
+
+  componentDidUpdate() { this.syncPhotos(); }
+
+  renderVals() {
+    const s = this.state;
+    // названия групп берём из данных: захардкоженный список не знал о новых группах
+    const fromIndex = {};
+    ((s.index && s.index.groups) || []).forEach(g => { fromIndex[g.slug] = g.title; });
+    const titles = Object.assign({
+      bytovye: "Бытовые сплит-системы", poluprom: "Полупромышленные", mobilnye: "Мобильные кондиционеры",
+      "prom-mobilnye": "Промышленные мобильные", vodonagrevateli: "Водонагреватели", radiatory: "Радиаторы отопления",
+      kaminy: "Камины и электроочаги", "teplovye-pushki": "Тепловые пушки", "ventilyatory-prom": "Промышленные вентиляторы"
+    }, fromIndex);
+    // монтаж у каждой группы свой: пушке не нужна трасса, бойлеру — вакуумирование
+    const RED = { bg: "#FDECEA", fg: "#C21610" }, GREY = { bg: "#F3F7FB", fg: "#18212F" };
+    const MOUNT = {
+      bytovye: { tab: "Монтаж", strip: "Монтаж 1–3 дня", t1: "Что входит в монтаж", a: "Замер, установка внутреннего и наружного блоков, вакуумирование контура, пусконаладка, вывоз мусора. Срок 1–3 дня после доставки.", t2: "Что считается отдельно", b: "Трасса и соединительный комплект, штробление, кронштейны нестандартной длины, высотные работы.", t3: "Стоимость монтажа", c: "Называем после замера: зависит от длины трассы, этажа и доступа к наружному блоку.", link: "Условия монтажа →", bg: RED.bg, fg: RED.fg },
+      poluprom: { tab: "Монтаж", strip: "Монтаж по графику объекта", t1: "Что входит в монтаж", a: "Замер на объекте, установка блоков, вакуумирование, подключение к электрике, пусконаладка и инструктаж персонала.", t2: "Что нужно от объекта", b: "Подвесной потолок с запасом 25–35 см для кассетных, место под воздуховоды для канальных, отдельная линия питания — часть моделей работает от 380 В.", t3: "Стоимость монтажа", c: "Считаем по объекту: число блоков, длина трасс, работа на высоте и в действующем зале влияют на смету.", link: "Условия монтажа →", bg: RED.bg, fg: RED.fg },
+      mobilnye: { tab: "Установка", strip: "Монтаж не требуется", t1: "Монтаж не требуется", a: "Моноблок ставится в комнате, гибкий воздуховод выводится в окно через уплотнитель в комплекте. Включается в обычную розетку.", t2: "Что нужно учесть", b: "Место у окна и плотное уплотнение проёма: иначе горячий воздух возвращается обратно и охлаждение падает. Компрессор стоит в комнате — слышно заметнее сплит-системы.", t3: "Дренаж конденсата", c: "У части моделей есть бак, у части нужен постоянный отвод конденсата в слив.", link: "Вопросы по эксплуатации →", bg: GREY.bg, fg: GREY.fg },
+      "prom-mobilnye": { tab: "Установка", strip: "Монтаж не требуется", t1: "Монтаж не требуется", a: "Моноблок на шасси перевозится по объекту, воздуховод выводится наружу или в вытяжной канал.", t2: "Что нужно от объекта", b: "Подключение: старшие модели работают от 380 В, нужна отдельная линия. Для серверной — круглогодичный режим на холод и отвод конденсата.", t3: "Пусконаладка", c: "Выезд и настройка режима под задачу объекта — стройка, цех, серверная.", link: "Условия сервиса →", bg: GREY.bg, fg: GREY.fg },
+      vodonagrevateli: { tab: "Установка", strip: "Установка по договорённости", t1: "Что входит в установку", a: "Крепление на стену, врезка в водопровод, установка предохранительного клапана, подключение к электрике, первый пуск и проверка на протечки.", t2: "Что считается отдельно", b: "Замена подводки, установка фильтра грубой очистки, отдельная линия питания для мощных проточных моделей.", t3: "Внимание", c: "Проточному водонагревателю нужна мощная электросеть — в старых домах это ограничение. Газовую колонку подключает только специалист с допуском на газ.", link: "Условия монтажа →", bg: RED.bg, fg: RED.fg },
+      radiatory: { tab: "Установка", strip: "Установка по договорённости", t1: "Что входит в установку", a: "Разметка и крепление кронштейнов, навеска радиатора, подключение к системе отопления, установка кранов и воздухоотводчика, опрессовка.", t2: "Что считается отдельно", b: "Монтажный комплект и кронштейны, перенос стояка, замена подводки, слив и заполнение системы.", t3: "Внимание", c: "Для центрального отопления и автономной системы нужны разные модели по рабочему давлению — проверяем до заказа.", link: "Условия монтажа →", bg: RED.bg, fg: RED.fg },
+      kaminy: { tab: "Установка", strip: "Установка по договорённости", t1: "Что входит в установку", a: "Сборка портала, установка очага, подключение к розетке, проверка режимов пламени и обогрева.", t2: "Что нужно учесть", b: "Портал подбирается под конкретный очаг — размеры не универсальны. Биокамину нужен вентилируемый объём помещения: это открытое пламя.", t3: "Важно про обогрев", c: "Электроочаг даёт до 2 кВт — это интерьерный прибор с функцией обогрева, а не система отопления.", link: "Условия монтажа →", bg: RED.bg, fg: RED.fg },
+      "teplovye-pushki": { tab: "Подключение", strip: "Монтаж не требуется", t1: "Монтаж не требуется", a: "Пушка ставится на пол или подвешивается на кронштейн, включается и выходит на режим за минуты.", t2: "Что нужно от объекта", b: "Мощные модели требуют 380 В и отдельной линии питания. Дизельным нужен приток свежего воздуха и отвод продуктов сгорания у моделей непрямого нагрева.", t3: "Важно", c: "Для постоянного отопления пушка дорога в эксплуатации — это временное решение на стройку, сушку и аварийный обогрев.", link: "Вопросы по подбору →", bg: RED.bg, fg: RED.fg },
+      "ventilyatory-prom": { tab: "Монтаж", strip: "Монтаж по графику объекта", t1: "Что входит в монтаж", a: "Крепление вентилятора, врезка в воздуховод или проём, подключение к электрике и автоматике, пусконаладка.", t2: "Что считается отдельно", b: "Воздуховоды, переходники, обратные клапаны, виброразвязка, шумоглушители, частотный преобразователь.", t3: "Внимание", c: "Подбор идёт по расходу воздуха и сопротивлению сети, а не по диаметру. Мощные модели требуют трёхфазного питания.", link: "Условия монтажа →", bg: RED.bg, fg: RED.fg },
+      ventilyaciya: { tab: "Монтаж", strip: "Монтаж по графику объекта", t1: "Что входит в монтаж", a: "Установка агрегата, подключение к воздуховодам, электрике и автоматике, балансировка расходов, пусконаладка и инструктаж.", t2: "Что считается отдельно", b: "Проект разводки, воздуховоды и фасонные части, решётки и диффузоры, шумоглушители, кровельные работы для крышных установок.", t3: "Внимание", c: "Расход воздуха считается по числу людей и назначению помещения, а не по метражу. Под канальную схему нужно место над потолком.", link: "Условия монтажа →", bg: RED.bg, fg: RED.fg },
+      "teplovye-zavesy": { tab: "Монтаж", strip: "Монтаж 1–3 дня", t1: "Что входит в монтаж", a: "Крепление над проёмом или сбоку, подключение к электрике, для водяных — врезка в контур отопления, пусконаладка.", t2: "Что считается отдельно", b: "Кронштейны нестандартной длины, трубная подводка и краны для водяных моделей, пульт и термостат, высотные работы.", t3: "Внимание", c: "Завеса должна перекрывать проём полностью — главный параметр это ширина, а не мощность обогрева.", link: "Условия монтажа →", bg: RED.bg, fg: RED.fg },
+      osushiteli: { tab: "Установка", strip: "Монтаж не требуется", t1: "Монтаж не требуется", a: "Бытовой осушитель ставится на пол и включается в розетку. Промышленные и канальные модели монтируются стационарно.", t2: "Что нужно учесть", b: "Постоянный отвод конденсата в слив, иначе бак придётся опорожнять вручную. Для бассейна нужна модель во влагозащищённом исполнении.", t3: "Важно", c: "Осушитель убирает влагу, но не приносит свежий воздух — вентиляцию он не заменяет.", link: "Вопросы по подбору →", bg: RED.bg, fg: RED.fg },
+      "infrakrasnye-obogrevateli": { tab: "Монтаж", strip: "Установка по договорённости", t1: "Что входит в монтаж", a: "Крепление на потолок, стену или подвес на тросах, подключение к электрике, для газовых — подсоединение баллона или газовой линии.", t2: "Что считается отдельно", b: "Кронштейны и подвесы, терморегулятор, отдельная линия питания, редуктор и шланг для газовых моделей.", t3: "Внимание", c: "Высота подвеса задана производителем: ниже — жарко, выше — не греет. Газовым нужен приток воздуха в помещение.", link: "Условия монтажа →", bg: RED.bg, fg: RED.fg },
+      "vodyanye-teploventilyatory": { tab: "Монтаж", strip: "Монтаж по графику объекта", t1: "Что входит в монтаж", a: "Крепление на стену или подвес под потолок, врезка в контур отопления, подключение электропитания вентилятора, пусконаладка.", t2: "Что считается отдельно", b: "Трубная подводка, краны и балансировочный клапан, термостат, кронштейны, высотные работы.", t3: "Внимание", c: "Нужна действующая система отопления с теплоносителем — автономно прибор не работает. Расчёт идёт по объёму помещения и температуре теплоносителя.", link: "Условия монтажа →", bg: RED.bg, fg: RED.fg }
+    };
+    const items = s.items || [];
+    const cartN = s.cartN || (window.CART ? window.CART.count() : 0);
+    const it = items[s.idx];
+    if (s.loading || !it) {
+      return { loading: true, ready: false, groupTitle: titles[s.group] || "Каталог",
+               cartLabel: cartN ? "Корзина · " + cartN : "Корзина",
+               cartBg: cartN ? "#0872D3" : "#E6F2FD", cartFg: cartN ? "#fff" : "#0A4EA7" };
+    }
+
+    // корзина общая для всех страниц: состояние читаем из неё, а не держим своё
+    const inCart = !!(window.CART && it.sl && window.CART.has(it.sl));
+
+    // сопутствующие своей группы: сначала того же бренда, дальше остальные
+    const accAll = items.filter(x => x.acc && x.sl !== it.sl);
+    const sameBrand = accAll.filter(x => x.b && it.b && x.b === it.b);
+    const accSameBrand = sameBrand.length > 0;
+    const accList = (accSameBrand ? sameBrand : accAll)
+      .slice()
+      .sort((a, b) => (/налич/i.test(b.st || "") ? 1 : 0) - (/налич/i.test(a.st || "") ? 1 : 0)
+        || (a.p || 9e9) - (b.p || 9e9))
+      .slice(0, 8);
+    const accSub = (accList[0] && accList[0].sub) || "";
+
+    const det = (s.details || [])[s.idx] || { d: "", gl: [] };
+    const gal = det.gl && det.gl.length ? det.gl : (it.i ? [it.i] : []);
+    const inStock = /налич/i.test(it.st);
+    const specs = it.sp || [];
+    const specMap = {};
+    specs.forEach(x => { specMap[x[0]] = x[1]; });
+
+    const sku = it.s || "артикул уточняется";
+    const short = it.n.length > 46 ? it.n.slice(0, 46) + "…" : it.n;
+
+    // срок гарантии в данных лежит под разными ключами: «Гарантия», «Гарантия на бак»
+    const wKeyFound = Object.keys(specMap).find(k => /^гарантия/i.test(String(k).trim()) && specMap[k]);
+    const wKey = wKeyFound ? String(wKeyFound).trim() : "";
+    const wVal = wKey ? String(specMap[wKeyFound]).trim() : "";
+    const wLabel = !!(wKey && wVal);
+    const factKeys = ["Площадь помещения", "Мощность охлаждения", "Класс энергоэффективности", "Хладагент", "Объём", "Мощность", "Тип", "Гарантия"];
+    // пояснения простым языком для полей, где клиент чаще всего не понимает разницу
+    const HINT_RULES = [
+      [/^тип$|компрессор/i, v => /инверт/i.test(v)
+        ? "Держит температуру плавно, не выключаясь: тише, экономичнее, компрессор живёт дольше. Дороже при покупке."
+        : /on\/off/i.test(v) ? "Работает как выключатель: набрал температуру — отключился, остыло — включился. Дешевле, но шумнее и перепады температуры заметнее." : ""],
+      [/^класс защиты/i, v => /ipx?[45]/i.test(v)
+        ? "Защита от брызг воды, но не от струи и погружения."
+        : /ipx?[67]/i.test(v) ? "Защита от струи воды — можно ставить во влажных помещениях." : ""],
+      [/^класс$|энергоэффектив/i, () => "Чем больше плюсов, тем меньше расход электричества при той же мощности."],
+      [/хладагент|фреон/i, v => /r32/i.test(v)
+        ? "Современный газ: эффективнее и безопаснее для природы, чем R410A. Смешивать их при заправке нельзя."
+        : /r410/i.test(v) ? "Проверенный газ прошлого поколения. Дозаправка возможна только тем же составом." : ""],
+      [/^wi-?fi$/i, v => /^да$|встроен/i.test(v)
+        ? "Управление с телефона из коробки, докупать ничего не нужно."
+        : /модуль|опци/i.test(v) ? "Модуль покупается отдельно — уточните цену перед заказом." : ""],
+      [/приток/i, v => /^да$/i.test(v)
+        ? "Берёт воздух с улицы, а не перегоняет комнатный: можно не открывать окно."
+        : /до \d+\s*%/i.test(v) ? "Приток есть, но частичный — как дополнение к проветриванию." : ""]
+    ];
+    const hintFor = (k, v) => {
+      const r = HINT_RULES.find(p => p[0].test(String(k).trim()));
+      return r ? (r[1](String(v)) || "") : "";
+    };
+    // ключи по факту данных: «Тип», «Класс», «Площадь» — а не человеческие названия
+    const FACT_ORDER = [/^площадь/i, /^btu$|мощность/i, /^тип$|компрессор/i, /^класс/i, /хладагент/i, /^объём/i, /^wi-?fi$/i, /приток/i, /гарантия/i];
+    const seenFact = {};
+    const facts = FACT_ORDER
+      .map(re => (it.sp || []).find(row => re.test(String(row[0]).trim()) && String(row[1] || "").trim()))
+      .filter(row => row && !seenFact[row[0]] && (seenFact[row[0]] = 1))
+      .filter(row => !/^нет$|^-$/i.test(String(row[1]).trim()))
+      .map(row => ({ k: row[0], v: row[1], hint: hintFor(row[0], row[1]) }))
+      // без пояснения плашка дублирует пилюлю выше — оставляем только те, что объясняют
+      .filter(f => f.hint)
+      .slice(0, 4);
+
+    const monthlyBase = this.num(it.r) || (it.p ? it.p * 1.175 : 0);
+    // расход электричества считаем только там, где есть мощность и класс — иначе вкладки нет
+    // мощность бывает и в кВт, и в ваттах; класс — с кириллической «А» и комбинированный «A++/A+»
+    const kwOf = t => {
+      const s2 = String(t);
+      const kw = s2.match(/([\d.,]+)\s*кВт/i);
+      if (kw) return +kw[1].replace(",", ".");
+      const w = s2.match(/([\d.,]+)\s*Вт/i);
+      return w ? +w[1].replace(",", ".") / 1000 : 0;
+    };
+    const coolKw = kwOf(specMap["Мощность (охлаждение)"] || "");
+    const cls = String(specMap["Класс"] || "").trim().split("/")[0].trim().replace(/А/g, "A");
+    const seerRaw = specMap["SEER"] ? +String(specMap["SEER"]).replace(",", ".").replace(/[^\d.]/g, "") : 0;
+    // SEER по классу — типовые значения европейской шкалы, когда точное число не указано
+    const SEER_BY_CLASS = { "A+++": 8.5, "A++": 6.1, "A+": 5.6, "A": 3.2, "B": 3.0, "C": 2.8 };
+    const seer = seerRaw || SEER_BY_CLASS[cls] || 0;
+    const isAC = ["bytovye", "poluprom", "mobilnye", "prom-mobilnye"].indexOf(s.group) >= 0;
+    const canPower = isAC && coolKw > 0 && seer > 0;
+
+    const tabLabels = ["Характеристики", "Описание", (MOUNT[s.group] || MOUNT.bytovye).tab, "Документы и видео", "Гарантия и сервис"]
+      .concat(canPower ? ["Расход электричества"] : []);
+    const tabs = tabLabels.map((label, i) => ({
+      label,
+      line: s.tab === i ? "#0872D3" : "transparent",
+      fg: s.tab === i ? "#18212F" : "#8593A6",
+      pick: () => this.setState({ tab: i })
+    }));
+
+    // аналоги: тот же подтип и близкая мощность, но другой бренд — с разницей в цене
+    const btuOf = x => { const p = (x.pl || []).find(v => /BTU/i.test(String(v))); return p ? +String(p).replace(/[^\d]/g, "") : 0; };
+    const myBtu = btuOf(it);
+    const money = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009") + " ₸";
+    // тип компрессора у аналога должен совпадать: инвертор и ON/OFF — разная цена и ресурс
+    const compOf = x => {
+      const t = (x.inv || "") + " " + (x.pl || []).join(" ") + " " + (x.sp || []).map(v => v.join(" ")).join(" ");
+      if (/инверт/i.test(t)) return "inv";
+      if (/on\/off/i.test(t)) return "onoff";
+      return "";
+    };
+    const myComp = compOf(it);
+    const volOf = x => {
+      const row = (x.sp || []).find(v => /^объ[её]м/i.test(String(v[0]).trim()));
+      if (!row) return 0;
+      const m = String(row[1]).match(/(\d+)\s*(?:л|литр)/i);
+      return m ? +m[1] : 0;
+    };
+    const myVol = volOf(it);
+    const analogs = items
+      .map((x, i) => ({ x, i }))
+      .filter(o => o.i !== s.idx && o.x.b !== it.b && o.x.sub === it.sub && o.x.p
+        && (!myComp || !compOf(o.x) || compOf(o.x) === myComp)
+        // у бойлеров близость определяет объём бака, а не мощность: 500 л и 10 л — не аналоги
+        && (!myVol || !volOf(o.x) || Math.abs(volOf(o.x) - myVol) <= myVol * 0.35)
+        && (!myBtu || !btuOf(o.x) || Math.abs(btuOf(o.x) - myBtu) <= myBtu * 0.15))
+      .sort((a, b) => a.x.p - b.x.p)
+      .slice(0, 4)
+      .map(o => {
+        const diff = it.p ? o.x.p - it.p : 0;
+        return {
+          brand: o.x.b,
+          name: o.x.n.length > 54 ? o.x.n.slice(0, 54) + "…" : o.x.n,
+          img: this.ph(o.x.i),
+          price: o.x.pt || "по запросу",
+          stock: /налич/i.test(o.x.st || "") ? "В наличии" : "Под заказ",
+          stockFg: /налич/i.test(o.x.st || "") ? "#0E9F6E" : "#B25200",
+          diff: !it.p ? "" : diff === 0 ? "та же цена" : diff < 0 ? "дешевле на " + money(-diff) : "дороже на " + money(diff),
+          diffFg: diff < 0 ? "#0E9F6E" : diff > 0 ? "#5A6675" : "#5A6675",
+          open: () => this.go(o.i)
+        };
+      });
+
+    const related = items
+      .map((x, i) => ({ x, i }))
+      .filter(o => o.i !== s.idx && o.x.b === it.b)
+      .slice(0, 4)
+      .map(o => ({
+        brand: o.x.b,
+        name: o.x.n.length > 52 ? o.x.n.slice(0, 52) + "…" : o.x.n,
+        img: this.ph(o.x.i),
+        price: o.x.pt || "Цена по запросу",
+        open: () => this.go(o.i)
+      }));
+
+    return {
+      loading: false,
+      ready: true,
+      groupTitle: titles[s.group] || "Каталог",
+      groupHref: "Каталог - выдача.dc.html?g=" + s.group,
+      dirLabel: (["radiatory","teplovye-pushki","teplovye-zavesy","infrakrasnye-obogrevateli","vodyanye-teploventilyatory","kaminy"].indexOf(s.group) >= 0 ? "Отопление"
+        : ["ventilyaciya","ventilyatory-prom","osushiteli"].indexOf(s.group) >= 0 ? "Вентиляция"
+        : s.group === "vodonagrevateli" ? "Водонагрев" : "Кондиционирование"),
+      short,
+      brand: it.b,
+      sku,
+      skuLabel: it.s ? "арт. " + it.s : "артикул уточняется",
+      skuFg: it.s ? "#8593A6" : "#B25200",
+      name: it.n,
+      stock: it.st || "уточняется",
+      stockFg: inStock ? "#0E9F6E" : "#B25200",
+      stockBg: inStock ? "#E7F7F0" : "#FFF1E3",
+      pills: it.pl || [],
+      price: it.pt || "Цена по запросу",
+      priceColor: it.pt ? "#E11A13" : "#5A6675",
+      priceNote: it.pt ? "цена с НДС" : "считаем по запросу — позиция под заказ",
+      hasInstallment: !!monthlyBase,
+      installment: monthlyBase ? "Рассрочка 12 мес — " + this.fmt(monthlyBase / 12) + " ₸/мес · Kaspi, ForteBank, Halyk" : "",
+      mountNote: ["mobilnye", "prom-mobilnye", "teplovye-pushki", "osushiteli"].indexOf(s.group) >= 0
+        ? "Монтаж не требуется — прибор работает сразу после подключения."
+        : ["vodonagrevateli", "radiatory", "kaminy", "infrakrasnye-obogrevateli", "vodyanye-teploventilyatory"].indexOf(s.group) >= 0
+          ? "Установка и подключение считаются отдельно от цены прибора."
+          : "Монтаж под ключ считается отдельно — оборудование ≠ монтаж ≠ комплект.",
+      // сопутствующие: аксессуары и комплектующие своей группы, сначала того же бренда.
+      // Совместимость по данным не подтверждена — так и написано в подписи, не обещаем.
+      hasAcc: accList.length > 0,
+      accRef: this.accRef,
+      accNote: accSameBrand
+        ? "Фильтры, приводы и комплектующие " + (it.b || "того же бренда")
+          + " из этой группы каталога. Совместимость с конкретной моделью уточните у менеджера — в данных поставщика она не указана."
+        : "Комплектующие из этой группы каталога. Совместимость с конкретной моделью уточните у менеджера — в данных поставщика она не указана.",
+      accAllHref: "Каталог - выдача.dc.html?g=" + s.group + "&sub=" + encodeURIComponent(accSub),
+      accAllLabel: "Все сопутствующие →",
+      accessories: accList.map(x => ({
+        name: x.n, brand: x.b, img: this.ph(x.i),
+        price: x.pt || "Цена по запросу",
+        stock: /налич/i.test(x.st || "") ? "в наличии" : "под заказ",
+        stockFg: /налич/i.test(x.st || "") ? "#0E9F6E" : "#B25200",
+        href: "Карточка модели.dc.html?g=" + s.group + "&sl=" + encodeURIComponent(x.sl || ""),
+        btnLabel: !x.p ? "Уточнить цену" : (window.CART && window.CART.has(x.sl) ? "В корзине ✓" : "В корзину"),
+        btnBg: !x.p ? "#fff" : (window.CART && window.CART.has(x.sl) ? "#E7F7F0" : "#E6F2FD"),
+        btnFg: !x.p ? "#B25200" : (window.CART && window.CART.has(x.sl) ? "#0B6B45" : "#0A4EA7"),
+        btnBorder: !x.p ? "#F3D2AC" : (window.CART && window.CART.has(x.sl) ? "#BFE6D4" : "#B9DBF7"),
+        add: () => {
+          if (!x.p) {
+            location.href = "https://wa.me/77000369369?text=" + encodeURIComponent(
+              "Здравствуйте! Прошу цену: " + (x.b ? x.b + " " : "") + x.n + ".");
+            return;
+          }
+          if (!window.CART) return;
+          if (window.CART.has(x.sl)) location.href = "Корзина и оформление.dc.html";
+          else window.CART.add(Object.assign({}, x, { g: s.group }), 1);
+        }
+      })),
+      cta: !it.pt ? "Запросить цену" : (inCart ? "В корзине — оформить" : "В корзину"),
+      ctaBg: !it.pt ? "#0872D3" : (inCart ? "#0E9F6E" : "#0872D3"),
+      ctaHref: !it.pt
+        ? "https://wa.me/77000369369?text=" + encodeURIComponent(
+            "Здравствуйте! Прошу цену: " + (it.b ? it.b + " " : "") + it.n + (it.s ? " (арт. " + it.s + ")" : "") + ".")
+        : "Корзина и оформление.dc.html",
+      // кладём в корзину прямо здесь: уход на страницу заказа — уже следующий шаг клиента
+      ctaClick: e => {
+        if (!it.pt || inCart || !window.CART) return;
+        e.preventDefault();
+        window.CART.add(Object.assign({}, it, { g: s.group }), 1);
+      },
+      cartLabel: cartN ? "Корзина · " + cartN : "Корзина",
+      cartBg: cartN ? "#0872D3" : "#E6F2FD",
+      cartFg: cartN ? "#fff" : "#0A4EA7",
+      facts,
+      hasFacts: facts.length > 0,
+      hasPhoto: gal.length > 0,
+      noPhoto: gal.length === 0,
+      zoomOpen: s.zoom && gal.length > 0,
+      zoomRef: this.zoomRef,
+      zoomSrc: this.ph(gal[Math.min(s.photo, Math.max(0, gal.length - 1))]),
+      zoomMulti: gal.length > 1,
+      zoomCounter: gal.length > 1 ? "Фото " + (Math.min(s.photo, gal.length - 1) + 1) + " из " + gal.length : "Фото товара",
+      zoomHint: gal.length > 1
+        ? "Стрелки — следующее фото. Клик по фону закрывает. «Открыть оригинал» — файл в исходном размере от производителя."
+        : "Клик по фону закрывает. «Открыть оригинал» — файл в исходном размере от производителя.",
+      openZoom: () => { if (gal.length) this.setState({ zoom: true }); },
+      closeZoom: () => this.setState({ zoom: false }),
+      stop: e => e.stopPropagation(),
+      zoomPrev: e => { e.stopPropagation(); this.setState({ photo: (s.photo - 1 + gal.length) % gal.length }); },
+      zoomNext: e => { e.stopPropagation(); this.setState({ photo: (s.photo + 1) % gal.length }); },
+      photoRef: this.photoRef,
+      galRef: this.galRef,
+      relRef: this.relRef,
+      thumbs: gal.length > 1 ? gal.map((url, i) => ({
+        url: this.ph(url),
+        border: s.photo === i ? "#0872D3" : "#DCE5F0",
+        pick: () => this.setState({ photo: i })
+      })) : [],
+      tabs,
+      isSpecs: s.tab === 0,
+      isDesc: s.tab === 1,
+      isMount: s.tab === 2,
+      mountTab: MOUNT[s.group] ? MOUNT[s.group].tab : "Монтаж",
+      mount: MOUNT[s.group] || MOUNT.bytovye,
+      isDocs: s.tab === 3,
+      isWarranty: s.tab === 4,
+      isPower: s.tab === 5,
+      // ссылки (видеообзор, инструкция) живут на вкладке «Документы и видео» —
+      // в таблице характеристик они дублировались и занимали место настоящих ТТХ
+      specs: specs.filter(x => !/^https?:\/\//i.test(String(x[1] || "")))
+        .map(x => ({
+          k: x[0],
+          v: x[1] || "нет данных",
+          href: "",
+          isLink: false,
+          isText: true,
+          color: x[1] ? "#18212F" : "#8593A6"
+        })),
+      desc: det.d || "Описание для этой позиции пока не заполнено — уточним характеристики по паспорту производителя.",
+      warranty: wLabel ? wVal : "срок уточняется",
+      warrantyText: wLabel ? wVal : "Срок уточняется",
+      warrantyTitle: wKey || "Гарантия на оборудование",
+      // в строке над характеристиками — гарантия производителя, а не наша карта на монтаж
+      warrantyStrip: (wLabel ? wKey + " " + wVal : "Гарантия производителя")
+        + " — сервисные центры " + (it.b || "бренда"),
+      serviceNote: "Обслуживание в сервисных центрах, сертифицированных на работу с оборудованием " + (it.b || "этого бренда")
+        + ": так сохраняется гарантия производителя. Выезд лицензированной бригады по Алматы и области.",
+      // ссылка на инструкцию и обзор приходит из данных, если она там есть
+      hasVideo: !!det.vd,
+      videoStubDisplay: det.vd ? "none" : "flex",
+      videoHref: det.vd || "",
+      manualHref: det.mn || "",
+      hasManual: !!det.mn,
+      docs: [
+        det.mn
+          ? { title: "Руководство по эксплуатации", note: "PDF на русском", state: "есть", fg: "#0E9F6E", bg: "#E7F7F0", href: det.mn, hasHref: true }
+          : { title: "Руководство по эксплуатации", note: "PDF на русском", state: "нужен файл", fg: "#B25200", bg: "#FFF1E3", href: "", hasHref: false },
+        { title: "Сервис-карта 369", note: "номер продажи, дата монтажа, активация по QR", state: "есть", fg: "#0E9F6E", bg: "#E7F7F0" }
+      ],
+      url: "katalog.tehnoholod369.kz/" + s.group + "/" + (it.sl || "model"),
+      seoTitle: (it.s ? it.b + " " + it.s : it.n.slice(0, 60)) + " — купить в Алматы, цена и характеристики | ИП «ТехноХолод»",
+      canPower,
+      power: (() => {
+        if (!canPower) return {};
+        const hours = s.hours || 6;              // часов работы в сутки
+        const days = 90;                         // сезон охлаждения в Алматы, ориентировочно
+        const tariff = s.tariff || 28;           // ₸ за кВт·ч — уточняется владельцем
+        const kwhSeason = Math.round(coolKw / seer * hours * days);
+        const cost = Math.round(kwhSeason * tariff);
+        // сравнение с ON/OFF того же класса мощности: SEER 3.2 против фактического
+        const baseSeer = 3.2;
+        const kwhBase = Math.round(coolKw / baseSeer * hours * days);
+        const costBase = Math.round(kwhBase * tariff);
+        const save = costBase - cost;
+        // окупаемость: разница в цене к ближайшему ON/OFF-аналогу той же мощности
+        const onoffs = items.filter(x => x.p && compOf(x) === "onoff" && btuOf(x) && Math.abs(btuOf(x) - myBtu) <= myBtu * 0.15);
+        const cheapestOnoff = onoffs.sort((a, b) => a.p - b.p)[0];
+        const priceGap = (cheapestOnoff && it.p) ? it.p - cheapestOnoff.p : 0;
+        const years = (save > 0 && priceGap > 0) ? Math.round(priceGap / save * 10) / 10 : 0;
+        return {
+          hours,
+          hoursLabel: hours + " ч в сутки",
+          onHours: e => this.setState({ hours: +e.target.value }),
+          tariff,
+          tariffLabel: tariff + " ₸/кВт·ч",
+          onTariff: e => this.setState({ tariff: +e.target.value }),
+          seer: seerRaw ? "SEER " + seer + " — из паспорта модели" : "SEER " + seer + " — типовое значение для класса " + cls,
+          kwh: this.fmt(kwhSeason) + " кВт·ч",
+          cost: this.fmt(cost) + " ₸",
+          costBase: this.fmt(costBase) + " ₸",
+          save: save > 0 ? this.fmt(save) + " ₸" : "",
+          isInverter: myComp === "inv",
+          payback: years > 0
+            ? "Этот кондиционер дороже сопоставимого ON/OFF на " + this.fmt(priceGap) + " ₸. При таком режиме работы разница возвращается за " + String(years).replace(".", ",") + " " + this.seasonWord(years) + "."
+            : "",
+          note: "Расчёт ориентировочный: сезон охлаждения принят за 90 дней, реальный расход зависит от жары, площади и настроек. Тариф поставьте свой — он у каждого дома свой."
+        };
+      })(),
+      related,
+      hasRelated: related.length > 0,
+      analogs,
+      hasAnalogs: analogs.length > 0,
+      analogsNote: analogs.length
+        ? (myVol ? "Тот же объём бака" : myComp === "inv" ? "Только инверторные" : myComp === "onoff" ? "Только ON/OFF" : "Тот же тип")
+          + ", близкая мощность, другие бренды. Цены — из каталога, разница считается к текущей модели."
+        : "",
+      analogRef: this.analogRef,
+      prev: () => this.go(s.idx - 1),
+      next: () => this.go(s.idx + 1)
+    };
+  }
+}
+</script>
+</body>
+</html>
