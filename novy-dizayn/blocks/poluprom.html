@@ -1,0 +1,254 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · объекты по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · счёт и договор</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+7 700 036 93 69</a>
+    </div>
+  </div>
+
+  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1280px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/novy-glavnaya"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/novy-katalog?g=poluprom" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="/b2b" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">Для юрлиц</a>
+    </div>
+  </div>
+
+  <div style="max-width:1280px; margin:0 auto; padding:20px 24px 72px 24px;">
+    <div style="font-size:13px; color:#8593A6;"><a href="/novy-glavnaya">Главная</a> → <a href="/novy-katalog">Каталог</a> → <span style="color:#18212F;">Полупромышленное оборудование</span></div>
+
+    <div style="background:linear-gradient(125deg,#071C3B,#0A4EA7 78%); color:#fff; border-radius:16px; padding:36px; margin-top:12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:28px; align-items:center;">
+      <div>
+        <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#7FC4F2;">ДЛЯ МАГАЗИНОВ, ОФИСОВ И ПРОИЗВОДСТВ</div>
+        <h1 style="margin:14px 0 0 0; font-size:clamp(21px,5.6vw,36px); font-weight:800; line-height:1.12; letter-spacing:-0.025em;">Полупромышленный климат: кассетные, канальные, колонные системы</h1>
+        <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px;">Оборудование на площади, где бытовой сплит не справляется: торговые залы, опенспейсы, серверные, цеха. Подбираем по теплопритокам объекта, а не по метражу «на глаз».</div>
+        <div style="display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;">
+          <a href="/novy-katalog?g=poluprom" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">{{ ctaLabel }}</a>
+          <a href="/b2b" style="border:2px solid rgba(255,255,255,0.55); color:#fff; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Запросить прайс</a>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); border-radius:12px; padding:22px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#7FC4F2;">ЧТО В КАТАЛОГЕ</div>
+        <div style="display:flex; flex-direction:column; gap:11px; margin-top:14px; font-size:14px;">
+          <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+            <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;">
+              <span style="color:#9FB0C4;">{{ s.k }}</span><b style="text-align:right; font-variant-numeric:tabular-nums;">{{ s.v }}</b>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;">
+      <h2 style="margin:0; font-size:26px; font-weight:800; letter-spacing:-0.018em;">Типы систем и когда какая нужна</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:16px;">
+        <sc-for list="{{ types }}" as="t" hint-placeholder-count="4">
+          <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px; display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+              <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">{{ t.title }}</div>
+              <div style="font-size:12px; font-weight:700; color:#0A4EA7; background:#E6F2FD; border-radius:5px; padding:4px 9px; font-variant-numeric:tabular-nums; white-space:nowrap;">{{ t.count }}</div>
+            </div>
+            <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:10px;">{{ t.text }}</div>
+            <div style="background:#F3F7FB; border-radius:10px; padding:12px 14px; margin-top:12px;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#8593A6;">ГДЕ СТАВИТЬ</div>
+              <div style="font-size:14px; color:#2C3846; line-height:1.5; margin-top:4px;">{{ t.where }}</div>
+            </div>
+            <div style="font-size:13px; color:#B25200; line-height:1.5; margin-top:10px;">{{ t.limit }}</div>
+            <a href="{{ t.href }}" style="font-size:13px; font-weight:700; color:#0872D3; margin-top:12px;">Смотреть позиции →</a>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
+      <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px;">
+        <div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">ПОДБОР ПО ОБЪЕКТУ</div>
+          <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Какой объект нужно охладить?</h2>
+        </div>
+        <div style="font-size:14px; color:#5A6675;">Расчёт предварительный — точный делаем на объекте</div>
+      </div>
+
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:16px;">
+        <sc-for list="{{ objects }}" as="o" hint-placeholder-count="5">
+          <div onClick="{{ o.pick }}" style="border:1px solid {{ o.border }}; background:{{ o.bg }}; color:{{ o.fg }}; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600; cursor:pointer;">{{ o.label }}</div>
+        </sc-for>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:20px; margin-top:20px; align-items:start;">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px;">
+            <div style="font-size:14px; font-weight:600;">Площадь объекта</div>
+            <div style="font-size:17px; font-weight:700; color:#0A4EA7; font-variant-numeric:tabular-nums;">{{ areaLabel }}</div>
+          </div>
+          <input type="range" min="30" max="600" step="10" value="{{ area }}" onInput="{{ onArea }}" style="width:100%; margin-top:10px;" />
+          <div style="font-size:13px; color:#5A6675; line-height:1.6; margin-top:10px;">{{ objectNote }}</div>
+        </div>
+
+        <div style="background:#071C3B; color:#fff; border-radius:12px; padding:22px;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">ПРЕДВАРИТЕЛЬНЫЙ РАСЧЁТ</div>
+          <div style="display:flex; flex-wrap:wrap; gap:20px 30px; margin-top:14px;">
+            <div>
+              <div style="font-size:13px; color:#9FB0C4;">Требуемая мощность</div>
+              <div style="font-family:'Montserrat',sans-serif; font-size:28px; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-0.02em;">{{ kwLabel }}</div>
+            </div>
+            <div>
+              <div style="font-size:13px; color:#9FB0C4;">Рекомендуемая схема</div>
+              <div style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700; margin-top:4px;">{{ scheme }}</div>
+            </div>
+          </div>
+          <div style="font-size:14px; color:#CBDCEC; line-height:1.6; margin-top:12px;">{{ explain }}</div>
+          <a href="https://wa.me/77000369369" style="display:block; background:#0872D3; color:#fff; border-radius:8px; padding:13px; text-align:center; font-size:15px; font-weight:700; margin-top:16px;">Отправить параметры объекта</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:16px; margin-top:20px;">
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:24px;">
+        <div style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700;">Как ведём объект</div>
+        <div style="display:flex; flex-direction:column; gap:14px; margin-top:14px;">
+          <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div style="width:26px; height:26px; border-radius:50%; background:#E6F2FD; color:#0A4EA7; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; flex:none;">{{ st.n }}</div>
+              <div>
+                <div style="font-size:15px; font-weight:600;">{{ st.title }}</div>
+                <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:3px;">{{ st.text }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="background:#FDECEA; border:1px solid #F8CBBE; border-radius:16px; padding:24px;">
+        <div style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700; color:#C21610;">Что удорожает объект — говорим заранее</div>
+        <div style="display:flex; flex-direction:column; gap:9px; margin-top:12px; font-size:14px; color:#2C3846; line-height:1.55;">
+          <div>· Кассетным блокам нужен подвесной потолок и место над ним — если потолка нет, схема меняется.</div>
+          <div>· Канальные требуют места под воздуховоды и проекта разводки.</div>
+          <div>· Трёхфазное питание есть не на каждом объекте: подключение считается отдельно.</div>
+          <div>· Работа на высоте и в действующем зале — ночные смены и допуски, это влияет на смету.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { items: null, object: "Магазин или торговый зал", area: 120 };
+
+  componentDidMount() {
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/poluprom.json").then(r => r.ok ? r.json() : []).then(items => this.setState({ items })).catch(() => this.setState({ items: [] }));
+  }
+
+  fmt(n) { return String(n).replace(".", ","); }
+
+  renderVals() {
+    const s = this.state;
+    const items = s.items || [];
+    const has = t => items.filter(x => (x.t + " " + x.n).toLowerCase().indexOf(t) >= 0).length;
+    const cnt = n => items.length ? n + " моделей" : "загружаем";
+
+    const inStock = items.filter(x => /налич/i.test(x.st)).length;
+    const brands = Array.from(new Set(items.map(x => x.b))).filter(Boolean).length;
+    const priced = items.filter(x => x.p);
+    const minPrice = priced.length ? Math.min.apply(null, priced.map(x => x.p)) : 0;
+
+    const href = "/novy-katalog?g=poluprom";
+
+    const objects = ["Магазин или торговый зал", "Офис, опенспейс", "Кафе или ресторан", "Серверная", "Цех или склад"].map(o => ({
+      label: o,
+      pick: () => this.setState({ object: o }),
+      border: s.object === o ? "#0872D3" : "#DCE5F0",
+      bg: s.object === o ? "#E6F2FD" : "#fff",
+      fg: s.object === o ? "#0A4EA7" : "#5A6675"
+    }));
+
+    const load = {
+      "Магазин или торговый зал": { w: 100, note: "Витрины, освещение и поток людей дают заметный теплоприток — берём 100 Вт на м² и распределяем несколько блоков по залу, чтобы не дуло в кассира и покупателей." },
+      "Офис, опенспейс": { w: 90, note: "Компьютеры и люди: 90 Вт на м². Важнее не мощность, а распределение потока — иначе часть сотрудников мёрзнет, а часть жалуется на духоту." },
+      "Кафе или ресторан": { w: 120, note: "Кухня, гости и оборудование: 120 Вт на м². Зал и кухню считаем раздельно — на кухне обычная система долго не живёт." },
+      "Серверная": { w: 400, note: "Оборудование работает круглосуточно: 400 Вт на м² и выше по фактической нагрузке стоек. Нужна круглогодичная работа на холод и резервирование." },
+      "Цех или склад": { w: 80, note: "Высокие потолки и большой объём: 80 Вт на м², но решает не площадь, а объём и тепловыделение оборудования. Часто выгоднее канальная схема или несколько колонных." }
+    };
+
+    const conf = load[s.object];
+    const kw = Math.ceil(s.area * conf.w / 100) / 10;
+    const scheme = s.area <= 60 ? "1 блок" : s.area <= 150 ? "2–3 блока" : s.area <= 300 ? "3–5 блоков или канальная система" : "мультизональная система (VRF)";
+
+    return {
+      ctaLabel: items.length ? "Все " + items.length + " моделей" : "Открыть каталог",
+      stats: [
+        { k: "Позиций в группе", v: items.length || "—" },
+        { k: "Из них в наличии", v: inStock || "—" },
+        { k: "Брендов", v: brands || "—" },
+        { k: "Цены от", v: minPrice ? String(minPrice).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009") + " ₸" : "по запросу" }
+      ],
+      types: [
+        {
+          title: "Кассетные", count: cnt(has("кассет")),
+          text: "Встраиваются в подвесной потолок, раздают воздух в четыре стороны. Виден только декоративный экран.",
+          where: "Магазины, офисы, кафе с потолком «армстронг»",
+          limit: "Нужен подвесной потолок и 25–35 см запаса над ним",
+          href
+        },
+        {
+          title: "Канальные", count: cnt(has("канальн")),
+          text: "Полностью скрыты за потолком, воздух подаётся через решётки. Можно организовать приток свежего воздуха.",
+          where: "Квартиры с дизайнерским ремонтом, офисы, рестораны",
+          limit: "Требуется проект разводки воздуховодов",
+          href
+        },
+        {
+          title: "Напольно-потолочные", count: cnt(has("потолочн")),
+          text: "Ставятся под потолок или у пола, поток идёт вдоль поверхности. Не требуют подвесного потолка.",
+          where: "Помещения без запаса по высоте, вытянутые залы",
+          limit: "Блок виден в интерьере",
+          href
+        },
+        {
+          title: "Колонные", count: cnt(has("колонн")),
+          text: "Мощные напольные блоки на большой объём, ставятся у стены. Быстро охлаждают зал.",
+          where: "Торговые залы, холлы, производственные помещения",
+          limit: "Занимают место в помещении, шумнее кассетных",
+          href
+        }
+      ],
+      objects,
+      area: s.area,
+      areaLabel: s.area + " м²",
+      onArea: e => this.setState({ area: +e.target.value }),
+      objectNote: conf.note,
+      kwLabel: this.fmt(kw) + " кВт",
+      scheme,
+      explain: "Для объекта «" + s.object.toLowerCase() + "» площадью " + s.area + " м² при нагрузке " + conf.w + " Вт на м² нужно около " + this.fmt(kw) + " кВт холода. Точная мощность зависит от остекления, высоты потолков и оборудования — считаем на выезде.",
+      steps: [
+        { n: "1", title: "Выезд и обмеры", text: "Смотрим объект, замеряем, уточняем электрику и место под трассы. Для тендера — по спецификации без выезда." },
+        { n: "2", title: "Схема и спецификация", text: "Считаем мощность и количество блоков, даём спецификацию с ценами и сроками поставки." },
+        { n: "3", title: "Поставка и монтаж", text: "Отгружаем партиями под график работ, монтируем лицензированными бригадами, при необходимости ночными смены." },
+        { n: "4", title: "Сдача и сервис", text: "Пусконаладка, инструктаж персонала, «Сервис-карта 369» и договор на обслуживание." }
+      ]
+    };
+  }
+}
+</script>
