@@ -247,7 +247,10 @@ class Component extends DCLogic {
     // цена и наличие сверяются с мастером при каждом открытии корзины
     if (window.CART) {
       window.CART.refresh().then(res => {
-        const changes = (res.changes || []).map(c =>
+        // ключ именно changed — так его отдаёт CART.refresh(). Здесь стояло res.changes,
+        // всегда undefined: плашка «Пока заказ ждал, данные изменились» не показывалась
+        // никогда, чем бы цена ни кончилась.
+        const changes = (res.changed || []).map(c =>
           c.what === "цена изменилась" ? c.n + ": цена была " + c.was + ", стала " + c.now
           : c.what === "наличие изменилось" ? c.n + ": было «" + c.was + "», стало «" + c.now + "»"
           : c.n + ": " + c.what);

@@ -13,6 +13,13 @@
  */
 (function () {
   var KEY = "th_cart_v1";
+  // Адрес данных здесь АБСОЛЮТНЫЙ и намеренно. Сборщик блоков (собрать_блоки_tilda.py)
+  // переписывает fetch("data/...") только в теле страницы — внутрь .js он не заглядывает.
+  // Относительный путь на Tilda вёл в tehnoholod369.kz/data/…, там 404, и сверка цен
+  // молча не работала: корзина показывала цену на момент добавления и её же отправляла
+  // в WhatsApp. Хранилище то же, что у страниц: raw (jsDelivr держит кэш @main до 12 часов,
+  // для цен и остатков это заметная задержка). Менять адрес — вместе с RAW в сборщике.
+  var DATA = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/";
   var mem = null;
 
   function read() {
@@ -101,14 +108,18 @@
       var names = Object.keys(groups);
       if (!names.length) return Promise.resolve({ list: list, changed: [] });
       return Promise.all(names.map(function (g) {
-        return fetch("data/" + g + ".json").then(function (r) { return r.ok ? r.json() : []; })
-          .then(function (items) { return { g: g, items: items }; })
-          .catch(function () { return { g: g, items: [] }; });
+        return fetch(DATA + g + ".json").then(function (r) {
+          return r.ok ? r.json().then(function (items) { return { g: g, items: items, ok: true }; })
+                      : { g: g, items: [], ok: false };
+        }).catch(function () { return { g: g, items: [], ok: false }; });
       })).then(function (packs) {
-        var byGroup = {};
-        packs.forEach(function (p) { byGroup[p.g] = p.items; });
+        var byGroup = {}, loaded = {};
+        packs.forEach(function (p) { byGroup[p.g] = p.items; loaded[p.g] = p.ok; });
         var changed = [];
         var next = list.map(function (x) {
+          // группа не загрузилась — молчим. Сказать «позиции больше нет в каталоге»
+          // из-за оборванной сети значит соврать клиенту про его же заказ.
+          if (!loaded[x.g]) return x;
           var items = byGroup[x.g] || [];
           var cur = null;
           for (var i = 0; i < items.length; i++) {
