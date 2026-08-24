@@ -49,7 +49,7 @@
 
     <div style="background:linear-gradient(120deg,#071C3B,#0A4EA7 75%); color:#fff; border-radius:16px; padding:38px; margin-top:12px;">
       <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#7FC4F2;">УСЛУГИ ИП «ТЕХНОХОЛОД»</div>
-      <h1 style="margin:14px 0 0 0; font-size:38px; font-weight:800; line-height:1.1; letter-spacing:-0.025em; max-width:760px;">Монтаж под ключ, сервис и понятная зона ответственности</h1>
+      <h1 style="margin:14px 0 0 0; font-size:clamp(21px,5.6vw,38px); font-weight:800; line-height:1.1; letter-spacing:-0.025em; max-width:760px;">Монтаж под ключ, сервис и понятная зона ответственности</h1>
       <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px; max-width:640px;">За качество работ отвечаем письменно — 12 месяцев. Гарантию на оборудование даёт производитель, обслуживание в его сертифицированных центрах. Оборудование, соединительный комплект и работы всегда идут отдельными строками — вы видите, за что платите.</div>
       <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
         <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Вызвать замерщика</a>
@@ -64,7 +64,7 @@
     </div>
 
     <sc-if value="{{ isMount }}" hint-placeholder-val="{{ true }}">
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; margin-top:22px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:22px;">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
           <div style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700; color:#0A4EA7;">Входит в монтаж под ключ</div>
           <div style="display:flex; flex-direction:column; gap:10px; margin-top:14px;">
@@ -92,7 +92,7 @@
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:26px; margin-top:16px;">
         <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Как проходит установка</div>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:18px; margin-top:18px;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr)); gap:18px; margin-top:18px;">
           <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
             <div>
               <div style="display:flex; align-items:center; gap:10px;">
@@ -113,7 +113,7 @@
     </sc-if>
 
     <sc-if value="{{ isService }}" hint-placeholder-val="{{ false }}">
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:22px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:22px;">
         <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px;">
             <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">{{ s.title }}</div>
@@ -128,7 +128,7 @@
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:26px; margin-top:16px;">
         <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Когда пора вызывать мастера</div>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:16px;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:16px; margin-top:16px;">
           <sc-for list="{{ symptoms }}" as="s" hint-placeholder-count="4">
             <div style="background:#F3F7FB; border-radius:10px; padding:16px 18px;">
               <div style="font-size:15px; font-weight:600;">{{ s.q }}</div>
@@ -140,7 +140,7 @@
     </sc-if>
 
     <sc-if value="{{ isWarranty }}" hint-placeholder-val="{{ false }}">
-      <div style="background:#071C3B; color:#fff; border-radius:16px; padding:30px; margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px; align-items:center;">
+      <div style="background:#071C3B; color:#fff; border-radius:16px; padding:30px; margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:28px; align-items:center;">
         <div>
           <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">КАРТА ОБСЛУЖИВАНИЯ</div>
           <div style="font-family:'Montserrat',sans-serif; font-size:28px; font-weight:800; margin-top:10px; letter-spacing:-0.02em; line-height:1.15;">Сервис-карта 369</div>
@@ -163,7 +163,7 @@
         <div style="font-size:15px; color:#2C3846; line-height:1.65; margin-top:8px; max-width:940px;">Гарантия на монтаж действует при прохождении сезонного обслуживания раз в год. Причина простая: забитый фильтр и грязный теплообменник выводят из строя исправно установленную систему, и отличить это от ошибки монтажа потом невозможно. ТО фиксируется в карте — напомним сами, когда подойдёт срок.</div>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:16px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr)); gap:16px; margin-top:16px;">
         <sc-for list="{{ warrantySteps }}" as="w" hint-placeholder-count="4">
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:20px;">
             <div style="width:30px; height:30px; border-radius:50%; background:#E6F2FD; color:#0A4EA7; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700;">{{ w.n }}</div>
@@ -173,7 +173,7 @@
         </sc-for>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:16px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:16px; margin-top:16px;">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
           <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Гарантия на оборудование — производителя</div>
           <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Срок устанавливает производитель, он указан в карточке модели и в её паспорте. Гарантийный ремонт выполняют сервисные центры, сертифицированные на этот бренд: обращение в сторонний сервис аннулирует гарантию. Мы помогаем оформить обращение и передать оборудование в нужный центр.</div>
@@ -189,7 +189,7 @@
       </div>
     </sc-if>
 
-    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:26px;">
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:26px;">
       <div>
         <div style="font-family:'Montserrat',sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Вызвать замерщика или мастера</div>
         <div style="font-size:15px; color:#5A6675; line-height:1.6; margin-top:10px;">Оставьте имя, номер и адрес объекта. Перезвоним в рабочее время, подскажем срок и назовём стоимость после замера.</div>
