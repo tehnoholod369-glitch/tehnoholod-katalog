@@ -491,7 +491,7 @@
   {
    "slug": "ventilyaciya",
    "title": "Вентиляция",
-   "count": 877,
+   "count": 876,
    "brands": 9,
    "brandList": [
     "Ballu",
@@ -504,7 +504,7 @@
     "Royal Thermo",
     "SHUFT"
    ],
-   "inStock": 341,
+   "inStock": 340,
    "acc": 279,
    "subs": [
     {
@@ -517,7 +517,7 @@
     },
     {
      "name": "Приточные установки",
-     "n": 89
+     "n": 88
     },
     {
      "name": "Канальные прямоугольные",

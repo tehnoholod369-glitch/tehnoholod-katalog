@@ -55,7 +55,6 @@
           </div>
 
           <div style="font-size:15px; color:#2C3846; line-height:1.7; margin-top:14px; max-width:900px; text-wrap:pretty;">{{ c.about }}</div>
-          <div style="font-size:15px; color:#5A6675; line-height:1.7; margin-top:8px; max-width:900px;">{{ c.facts }}</div>
 
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px; margin-top:16px;">
             <sc-for list="{{ c.groups }}" as="g" hint-placeholder-count="3">
@@ -247,7 +246,6 @@ class Component extends DCLogic {
         logoH: this.logoBox(n).h,
         logoRef: this.logoRefs[n],
         about: ABOUT[n] || "Описание бренда не заполнено — ниже только то, что есть в каталоге: состав линейки, наличие и цены.",
-        facts: src[n].facts,
         geo: GEO[n] || "",
         hasGeo: !!GEO[n],
         href: src[n].top === "multisplit"
@@ -258,8 +256,10 @@ class Component extends DCLogic {
         groups: (src[n].groups || []).slice(0, 12).map(g => ({
           title: g.t.charAt(0).toUpperCase() + g.t.slice(1),
           // 25.08.2026, решение владельца: точные остатки с витрины убраны —
-          // они не статичны и устаревают между пересборками. Три состояния.
-          sub: (!g.st ? "под заказ" : g.st >= (g.n || 0) ? "в наличии" : "частично в наличии") + (g.note ? " · " + g.note : ""),
+          // они не статичны и устаревают между пересборками. Два состояния:
+          // «в наличии» подкреплено кликом — ссылка ниже открывает выдачу
+          // с фильтром stock=in, человек видит ровно те позиции.
+          sub: (g.st ? "в наличии" : "под заказ") + (g.note ? " · " + g.note : ""),
           subColor: g.st ? "#0E9F6E" : "#5A6675",
           href: g.slug === "multisplit"
             ? "/multisplit?brand=" + encodeURIComponent(n)
