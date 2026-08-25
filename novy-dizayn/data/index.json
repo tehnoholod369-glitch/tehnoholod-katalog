@@ -405,23 +405,6 @@
    ]
   },
   {
-   "slug": "rekuperatory",
-   "title": "Рекуператоры",
-   "count": 5,
-   "brands": 1,
-   "brandList": [
-    "GREE"
-   ],
-   "inStock": 5,
-   "acc": 0,
-   "subs": [
-    {
-     "name": "Рекуператоры",
-     "n": 5
-    }
-   ]
-  },
-  {
    "slug": "teplovye-nasosy",
    "title": "Тепловые насосы",
    "count": 16,
@@ -508,19 +491,20 @@
   {
    "slug": "ventilyaciya",
    "title": "Вентиляция",
-   "count": 872,
-   "brands": 8,
+   "count": 877,
+   "brands": 9,
    "brandList": [
     "Ballu",
     "COMPACTAIR by ZILON",
     "Electrolux",
     "FUNAI",
+    "GREE",
     "MDV",
     "ROYAL CLIMA",
     "Royal Thermo",
     "SHUFT"
    ],
-   "inStock": 336,
+   "inStock": 341,
    "acc": 279,
    "subs": [
     {
@@ -558,6 +542,10 @@
     {
      "name": "Крышные",
      "n": 15
+    },
+    {
+     "name": "Рекуператоры",
+     "n": 5
     }
    ]
   },
