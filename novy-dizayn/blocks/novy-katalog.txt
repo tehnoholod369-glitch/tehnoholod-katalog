@@ -550,9 +550,9 @@ class Component extends DCLogic {
     // ТТХ, начинающееся на «Объём», и уезжал в чужие группы с подписью про семью
     // из 2–4 человек: в камины (49 биокаминов, «Объём топливного блока»), в осушители
     // (24 бака для конденсата, все в одной полосе — выбора нет) и в дизельные пушки (22).
-    const VOL_GROUPS = ["vodonagrevateli"];
+    const BOILER_GROUPS = ["vodonagrevateli"];
     const volOf = x => {
-      if (VOL_GROUPS.indexOf(s.group) < 0) return 0;
+      if (BOILER_GROUPS.indexOf(s.group) < 0) return 0;
       const row = (x.sp || []).find(v => /^объ[её]м/i.test(String(v[0])));
       // только поле «Объём»: у проточных и колонок бака нет, а «л/мин» парсится как литраж
       if (!row) return 0;
@@ -845,6 +845,10 @@ class Component extends DCLogic {
     });
 
     const heatOf = x => {
+      // «мокрый/сухой ТЭН» — язык водонагревателей: сухой не контактирует с водой.
+      // У тепловой завесы (58 позиций) и ИК-обогревателя (11) ТЭН тоже есть, но он
+      // греет воздух, и подпись про накипь там ложь. Фасет остаётся у бойлеров (25.08.2026)
+      if (BOILER_GROUPS.indexOf(s.group) < 0) return "";
       const row = (x.sp || []).find(v => /тэн|нагрев/i.test(String(v[0])));
       const val = row ? String(row[1]) : "";
       if (/сухой/i.test(val)) return "Сухой ТЭН";
