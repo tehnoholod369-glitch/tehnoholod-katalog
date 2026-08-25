@@ -475,7 +475,10 @@ class Component extends DCLogic {
     };
     const compCount = { inv: 0, onoff: 0 };
     items.forEach(x => { const c = compOf(x); if (c) compCount[c]++; });
-    const hasComp = compCount.inv + compCount.onoff > 0;
+    // фильтр нужен, только если есть из чего выбирать: в мультисплите все 228 позиций
+    // инверторные, и пилюля «ON/OFF» стояла с пустым счётчиком — клик вёл в пустую выдачу
+    // (25.08.2026)
+    const hasComp = compCount.inv > 0 && compCount.onoff > 0;
 
     // хладагент и класс энергоэффективности читаем из ТТХ как есть; позиция без данных в фильтр не попадает
     const REF_CANON = { R32: "R32", R290: "R290", R410A: "R410A", R134A: "R134a", R407C: "R407C", R22: "R22", R454B: "R454B", R448A: "R448A" };
@@ -1022,6 +1025,10 @@ class Component extends DCLogic {
       .map(k => ({ k: k, n: facRef.filter(x => refOf(x) === k).length })).filter(o => o.n > 0 || s.ref === o.k);
     const effCount = EFF_ORDER.filter(k => items.some(x => effOf(x) === k))
       .map(k => ({ k: k, n: facEff.filter(x => effOf(x) === k).length })).filter(o => o.n > 0 || s.eff === o.k);
+    // тот же порог, что у прочих фасетов: у водонагревателей класс заполнен всего у 8 позиций
+    // из 241 — фильтр по нему прячет 233 модели и выглядит как поломка выдачи (25.08.2026)
+    const refEnough = items.filter(x => refOf(x)).length >= MIN_FACET;
+    const effEnough = items.filter(x => effOf(x)).length >= MIN_FACET;
 
     if (s.sort === "asc") list = list.slice().sort((a, b) => (a.x.p || 9e9) - (b.x.p || 9e9));
     else if (s.sort === "desc") list = list.slice().sort((a, b) => (b.x.p || 0) - (a.x.p || 0));
@@ -1195,14 +1202,14 @@ class Component extends DCLogic {
           this.chip(s.comp === "onoff", "ON/OFF", () => this.setState({ comp: "onoff", shown: 12 }), String(compCount.onoff))
         ]
       } : null,
-      refCount.length > 1 ? {
+      (refCount.length > 1 && refEnough) ? {
         key: "ref", activeLabel: s.ref === "all" ? "" : s.ref,
         title: "Хладагент", note: "R32 и R290 — современные, с низким парниковым потенциалом. Позиции без данных в фильтр не попадают",
         options: [this.chip(s.ref === "all", "Любой", () => this.setState({ ref: "all", shown: 12 }))].concat(
           refCount.map(o => this.chip(s.ref === o.k, o.k, () => this.setState({ ref: o.k, shown: 12 }), String(o.n)))
         )
       } : null,
-      effCount.length > 1 ? {
+      (effCount.length > 1 && effEnough) ? {
         key: "eff", activeLabel: s.eff === "all" ? "" : s.eff,
         title: "Класс энергоэффективности", note: "По классу в режиме охлаждения. Чем больше плюсов, тем ниже счёт за электричество. Позиции без данных в фильтр не попадают",
         options: [this.chip(s.eff === "all", "Любой", () => this.setState({ eff: "all", shown: 12 }))].concat(

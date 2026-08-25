@@ -1,9 +1,9 @@
 {
- "totalFiles": 6994,
+ "totalFiles": 7007,
  "external": 92,
- "local": 6902,
+ "local": 6915,
  "cdn": 0,
- "gallery": 6994,
+ "gallery": 7007,
  "hosts": {
   "www.royal-thermo.ru": 55,
   "www.lg.com": 14,
@@ -13,8 +13,8 @@
   "aws-obg-image-lb-5.tcl.com": 3,
   "aws-obg-image-lb-4.tcl.com": 2,
   "ddc.kz": 1,
-  "gree.com.ru": 1,
   "podbor.tehnoholod369.kz": 1,
+  "gree.com.ru": 1,
   "aws-obg-image-lb-2.tcl.com": 1
  },
  "multisplitNoPhoto": 4,
