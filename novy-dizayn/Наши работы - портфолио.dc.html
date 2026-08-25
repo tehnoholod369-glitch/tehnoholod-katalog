@@ -104,6 +104,7 @@
       </sc-for>
     </div>
 
+    <sc-if value="{{ editMode }}" hint-placeholder-val="{{ false }}">
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
       <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Как заполнить эту страницу</div>
       <div style="font-size:15px; color:#5A6675; line-height:1.65; margin-top:10px; max-width:940px;">Перетащите фото монтажа прямо в рамку карточки — оно сохранится. К каждому объекту нужны четыре факта: город, месяц и год, что установили и площадь помещения. Пустые поля не показываются — карточка с двумя фактами выглядит законченной, а не недоделанной.</div>
@@ -139,6 +140,8 @@
     </div>
   </div>
 </div>
+
+</sc-if>
 
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
@@ -295,6 +298,9 @@ class Component extends DCLogic {
       w.hasLink = !!w.link.has;
     });
 
+    // режим правки: владелец открывает страницу с ?edit=1 и видит заготовки и подсказки
+    const edit = /(?:^|[?&])edit=1(?:&|$)/.test(location.search);
+
     return {
       linkRef: this.linkRef,
       filters: names.map(n => ({
@@ -304,7 +310,13 @@ class Component extends DCLogic {
         bg: f === n ? "#E6F2FD" : "#fff",
         fg: f === n ? "#0A4EA7" : "#5A6675"
       })),
-      works: all.filter(w => f === "Все" || w.kind === f)
+      // Заготовки «объект добавим» — рабочий материал владельца, а не витрина:
+      // 26.08.2026 их видел клиент на живой странице, вместе с инструкцией
+      // «Как заполнить эту страницу». Показываем и то и другое только по ?edit=1.
+      editMode: edit,
+      works: all
+        .filter(w => edit || !/добавим/i.test(String(w.date || "")))
+        .filter(w => f === "Все" || w.kind === f)
     };
   }
 }
