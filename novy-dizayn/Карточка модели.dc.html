@@ -279,6 +279,7 @@
                       <div style="font-size:13px; color:#9FB0C4;">Обычный ON/OFF в том же режиме</div>
                       <div style="font-size:20px; font-weight:700; margin-top:4px;">{{ power.costBase }}</div>
                       <div style="font-size:14px; color:#7BE3B0; font-weight:600; margin-top:6px;">Экономия за сезон — {{ power.save }}</div>
+                      <div style="font-size:12px; color:#9FB0C4; line-height:1.5; margin-top:8px;">{{ power.baseNote }}</div>
                     </div>
                   </sc-if>
                 </div>
@@ -899,7 +900,12 @@ class Component extends DCLogic {
         const costBase = Math.round(kwhBase * tariff);
         const save = costBase - cost;
         // окупаемость: разница в цене к ближайшему ON/OFF-аналогу той же мощности
-        const onoffs = items.filter(x => x.p && compOf(x) === "onoff" && btuOf(x) && Math.abs(btuOf(x) - myBtu) <= myBtu * 0.15);
+        // И ТОГО ЖЕ КОНСТРУКТИВА. Без последнего условия кассетный инвертор сравнивался
+        // с настенным ON/OFF, и в «переплату за инвертор» попадала разница между
+        // кассетой и настенником: у 14 полупромышленных карточек из 21 эталон был
+        // другого типа, а окупаемость выходила под 14 сезонов (26.08.2026)
+        const onoffs = items.filter(x => x.p && compOf(x) === "onoff" && x.sub === it.sub
+          && btuOf(x) && Math.abs(btuOf(x) - myBtu) <= myBtu * 0.15);
         const cheapestOnoff = onoffs.sort((a, b) => a.p - b.p)[0];
         const priceGap = (cheapestOnoff && it.p) ? it.p - cheapestOnoff.p : 0;
         const years = (save > 0 && priceGap > 0) ? Math.round(priceGap / save * 10) / 10 : 0;
@@ -915,6 +921,10 @@ class Component extends DCLogic {
           cost: this.fmt(cost) + " ₸",
           costBase: this.fmt(costBase) + " ₸",
           save: save > 0 ? this.fmt(save) + " ₸" : "",
+          // без этой строки «экономия за сезон» читалась как сравнение с конкретным
+          // прибором, хотя это расчёт по типовой эффективности: SEER у неинверторных
+          // моделей в паспортах не публикуют, в наших данных его нет ни у одной
+          baseNote: "Для сравнения принят SEER 3,2 — типовая эффективность неинверторной модели: в паспортах ON/OFF этот показатель не указывают.",
           isInverter: myComp === "inv",
           payback: years > 0
             ? "Этот кондиционер дороже сопоставимого ON/OFF на " + this.fmt(priceGap) + " ₸. При таком режиме работы разница возвращается за " + String(years).replace(".", ",") + " " + this.seasonWord(years) + "."

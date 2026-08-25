@@ -480,10 +480,13 @@ class Component extends DCLogic {
     const brands = new Set();
     idx.forEach(g => (g.brandList || []).forEach(b => brands.add(b)));
     const tail = (n, one, few, many) => this.plural(n, one, few, many).replace(String(n) + " ", "");
+    // 25.08.2026, решение владельца: точные остатки на витрину не выводим —
+    // они не статичны и устаревают между пересборками. Вместо «из них в наличии»
+    // считаем группы: это состав каталога, а не обещание остатка.
     return total
       ? [
           { v: this.fmt(total), k: tail(total, "позиция", "позиции", "позиций") + " в каталоге" },
-          { v: this.fmt(stock), k: "из них в наличии" },
+          { v: this.fmt(idx.length), k: tail(idx.length, "группа", "группы", "групп") + " техники" },
           { v: this.fmt(brands.size), k: tail(brands.size, "бренд", "бренда", "брендов") }
         ]
       : [{ v: "—", k: "загружаем каталог" }, { v: "—", k: "" }, { v: "—", k: "" }];
@@ -509,14 +512,11 @@ class Component extends DCLogic {
   ventLink() { return this.dirLink(["ventilyaciya", "osushiteli", "ventilyatory-prom", "rekuperatory"]); }
   heatLink() { return this.dirLink(["radiatory", "teplovye-pushki", "teplovye-zavesy", "infrakrasnye-obogrevateli", "vodyanye-teploventilyatory", "kaminy", "obogrevateli", "teplovye-nasosy"]); }
 
-  // позиции и наличие по направлению: те же группы, что в чипах карточки
+  // 25.08.2026, решение владельца: числа позиций и остатков с карточек
+  // направлений убраны — как на /brendy. Раньше здесь считалось
+  // «1 051 позиция · 760 в наличии →» из index.json по группам направления.
   dirLink(slugs) {
-    let n = 0, st = 0;
-    for (const s of slugs) { const g = this.g(s); if (g) { n += g.count; st += g.inStock || 0; } }
-    // разряды и здесь: у направлений счёт четырёхзначный («1051 позиция» вместо «1 051»)
-    if (!n) return "В каталог →";
-    const слово = this.plural(n, "позиция", "позиции", "позиций").replace(String(n) + " ", "");
-    return this.fmt(n) + " " + слово + " · " + this.fmt(st) + " в наличии →";
+    return "В каталог →";
   }
 
   renderVals() {
@@ -687,7 +687,9 @@ class Component extends DCLogic {
       brands: ((this.state && this.state.brands) || []).filter(b => b.st > 0).map(b => ({
         name: b.b,
         href: "Бренды.dc.html?b=" + encodeURIComponent(b.b),
-        sub: b.st ? b.st + " в наличии" : b.n + " позиций",
+        // 25.08.2026: точное число остатков убрано; в полосу попадают только
+        // бренды с наличием (фильтр st > 0 выше), состояние — словом
+        sub: "в наличии",
         group: this.groupTitle(b.g),
         // логотип дополняет название, а не заменяет: мелкий значок бренд не опознаёт
         // словесный знак (шире 2:1) заменяет название, эмблема идёт значком рядом с ним
