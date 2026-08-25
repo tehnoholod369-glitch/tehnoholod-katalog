@@ -606,7 +606,19 @@ class Component extends DCLogic {
     const det = (s.details || [])[s.idx] || { d: "", gl: [] };
     const gal = det.gl && det.gl.length ? det.gl : (it.i ? [it.i] : []);
     const inStock = /налич/i.test(it.st);
-    const specs = it.sp || [];
+    // Габариты в мастере идут в пяти порядках осей — Ш×В×Г (313 значений), Ш×Г×В (158),
+    // Д×В×Г (34), Г×В×Д (13), Д×Г×В (8). Соседние карточки одной серии выглядели
+    // по-разному, а в сравнении один и тот же корпус попадал в «различия» (26.08.2026).
+    // Приводим к Ш×В×Г: числа те же, меняется порядок и подпись; «Д» и «Ш» — одна ось.
+    const normDims = v => {
+      const m = String(v).match(/^\s*([ГВДШ])×([ГВДШ])×([ГВДШ])\s+(\d+(?:[.,]\d+)?)×(\d+(?:[.,]\d+)?)×(\d+(?:[.,]\d+)?)(.*)$/);
+      if (!m) return v;
+      const map = {};
+      [m[1], m[2], m[3]].forEach((ax, i) => { map[ax === "Д" ? "Ш" : ax] = m[4 + i]; });
+      if (!map["Ш"] || !map["В"] || !map["Г"]) return v;
+      return "Ш×В×Г " + map["Ш"] + "×" + map["В"] + "×" + map["Г"] + (m[7] || "");
+    };
+    const specs = (it.sp || []).map(x => [x[0], normDims(x[1])]);
     const specMap = {};
     specs.forEach(x => { specMap[x[0]] = x[1]; });
 

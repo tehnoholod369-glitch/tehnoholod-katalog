@@ -292,10 +292,24 @@ class Component extends DCLogic {
       diff: new Set(chosen.map(o => o.it.st)).size > 1
     };
 
+    // Габариты в мастере записаны в пяти порядках осей: Ш×В×Г (313 значений),
+    // Ш×Г×В (158), Д×В×Г (34), Г×В×Д (13), Д×Г×В (8). Из-за этого один и тот же блок
+    // у двух моделей выглядел по-разному и попадал в «различия»: «Г×В×Д 190×255×698»
+    // против «Д×В×Г 698×255×190» — это один корпус (26.08.2026). Приводим к Ш×В×Г:
+    // числа не трогаем, меняем только порядок и подпись; «Д» и «Ш» — одна ось.
+    const normDims = v => {
+      const m = String(v).match(/^\s*([ГВДШ])×([ГВДШ])×([ГВДШ])\s+(\d+(?:[.,]\d+)?)×(\d+(?:[.,]\d+)?)×(\d+(?:[.,]\d+)?)(.*)$/);
+      if (!m) return String(v);
+      const map = {};
+      [m[1], m[2], m[3]].forEach((ax, i) => { map[ax === "Д" ? "Ш" : ax] = m[4 + i]; });
+      if (!map["Ш"] || !map["В"] || !map["Г"]) return String(v);
+      return "Ш×В×Г " + map["Ш"] + "×" + map["В"] + "×" + map["Г"] + (m[7] || "");
+    };
+
     const specRows = keys.map(k => {
       const vals = chosen.map(o => {
         const row = (o.it.sp || []).find(x => x[0] === k);
-        return row && row[1] ? row[1] : "нет данных";
+        return row && row[1] ? normDims(row[1]) : "нет данных";
       });
       const differs = new Set(vals).size > 1;
       // ссылку на обзор показываем ссылкой, а не адресом: в данных теперь чистый URL
@@ -315,7 +329,11 @@ class Component extends DCLogic {
     });
 
     const allRows = [priceRow, stockRow].concat(specRows);
-    const rows = s.onlyDiff ? allRows.filter(r => r.diff) : allRows;
+    // «Только различия» имеет смысл с двух моделей. С одной различий нет по определению,
+    // и фильтр прятал всю таблицу: на экране оставалась строка «Цена» и подпись
+    // «совпадающих скрыто 23» — выглядело как поломка выдачи (26.08.2026)
+    const diffMode = s.onlyDiff && chosen.length > 1;
+    const rows = diffMode ? allRows.filter(r => r.diff) : allRows;
 
     const label = it => {
       const tail = it.s || it.nb || it.n;
@@ -361,9 +379,11 @@ class Component extends DCLogic {
       cardCols: "repeat(auto-fit,minmax(230px,1fr))",
       rowCols: cols,
       rows,
-      rowsNote: s.onlyDiff
+      rowsNote: diffMode
         ? "Показаны только строки с различиями" + (allRows.length - rows.length > 0 ? ": совпадающих скрыто " + (allRows.length - rows.length) + "." : ".")
-        : "Показаны все характеристики, различия подсвечены.",
+        : (chosen.length < 2
+            ? "Показаны все характеристики модели. Различия подсветим, когда добавите вторую."
+            : "Показаны все характеристики, различия подсвечены."),
       toggleDiff: () => this.setState({ onlyDiff: !s.onlyDiff }),
       diffLabel: s.onlyDiff ? "Только различия" : "Все характеристики",
       diffBorder: s.onlyDiff ? "#0872D3" : "#DCE5F0",
