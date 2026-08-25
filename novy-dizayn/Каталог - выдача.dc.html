@@ -277,10 +277,19 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  state = {
+  // Один список ключей фасетов на три места: старт, смена группы и «Сбросить».
+  // Раньше он был переписан трижды — новый фасет забывали сбросить, и он тянулся
+  // за пользователем в другую группу (25.08.2026)
+  facetKeys = ["brand", "price", "comp", "ref", "eff", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "stock"];
+  facetsOff() {
+    const o = { feat: "", calcFit: 0, q: "" };
+    (this.facetKeys || []).forEach(k => { o[k] = "all"; });
+    return o;
+  }
+  state = Object.assign({
     index: null, updated: "", group: "bytovye", sub: "all", items: null, loading: true, picks: [], onlyPick: false,
-    brand: "all", price: "all", comp: "all", ref: "all", eff: "all", area: "all", seg: "all", power: "all", motor: "all", duct: "all", cold: "all", ip: "all", noise: "all", press: "all", air: "all", vol: "all", heat: "all", feat: "", stock: "all", calcFit: 0, q: "", sort: "rec", view: "grid", shown: 12
-  };
+    sort: "rec", view: "grid", shown: 12
+  }, this.facetsOff());
   gridRef = React.createRef();
 
   fmt(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009"); }
@@ -319,7 +328,7 @@ class Component extends DCLogic {
   }
 
   loadGroup(slug, sub) {
-    this.setState({ loading: true, items: null, shown: 12, sub: sub || "all", brand: "all", price: "all", comp: "all", ref: "all", eff: "all", area: "all", seg: "all", power: "all", motor: "all", duct: "all", cold: "all", ip: "all", noise: "all", press: "all", air: "all", vol: "all", heat: "all", feat: "", stock: "all", calcFit: 0, q: "" });
+    this.setState(Object.assign({ loading: true, items: null, shown: 12, sub: sub || "all" }, this.facetsOff()));
     fetch("data/" + slug + ".json", {cache:"no-cache"})
       .then(r => r.ok ? r.json() : [])
       .then(items => { this.setState({ items, loading: false, sub: this.pendingSub || "all" }); this.pendingSub = null; })
@@ -348,8 +357,10 @@ class Component extends DCLogic {
   wrapFilters(list) {
     // на телефоне панель фильтров стоит НАД выдачей: шесть раскрытых секций
     // отодвигали первую карточку почти на экран вниз, поэтому там всё свёрнуто
+    // размер очага для каминов раскрыт сразу — это первый вопрос покупателя,
+    // как расход воздуха у вентиляции и литраж у бойлера (25.08.2026)
     const OPEN_BY_DEFAULT = window.innerWidth >= 860
-      ? ["brand", "area", "air", "vol", "heat", "price"] : [];
+      ? ["brand", "area", "air", "vol", "heat", "diag", "fireline", "dry", "price"] : [];
     const open = this.state.openF || {};
     const shownAll = this.state.moreF || {};
     return list.filter(Boolean).map(g => {
@@ -540,13 +551,21 @@ class Component extends DCLogic {
     });
     const subList = s.sub === "all" ? baseList : baseList.filter(x => x.sub === s.sub);
 
-    // литраж и тип нагрева — как на сайте Ballu: главные критерии выбора бойлера
+    // литраж и тип нагрева — как на сайте Ballu: главные критерии выбора бойлера.
+    // 25.08.2026: фасет привязан к водонагревателям явно. До этого он ловил ЛЮБОЕ поле
+    // ТТХ, начинающееся на «Объём», и уезжал в чужие группы с подписью про семью
+    // из 2–4 человек: в камины (49 биокаминов, «Объём топливного блока»), в осушители
+    // (24 бака для конденсата, все в одной полосе — выбора нет) и в дизельные пушки (22).
+    const VOL_GROUPS = ["vodonagrevateli"];
     const volOf = x => {
+      if (VOL_GROUPS.indexOf(s.group) < 0) return 0;
       const row = (x.sp || []).find(v => /^объ[её]м/i.test(String(v[0])));
       // только поле «Объём»: у проточных и колонок бака нет, а «л/мин» парсится как литраж
       if (!row) return 0;
-      const m = String(row[1]).match(/(\d+)\s*(?:л|литр)/i);
-      return m ? +m[1] : 0;
+      // число читаем целиком, вместе с дробной частью: «0,48 л» — это 0,48 л, а не 48 л.
+      // Прежняя \d+ брала цифры ПОСЛЕ запятой: 0,9 → «9 л», 1,72 → «72 л» (25.08.2026)
+      const m = String(row[1]).match(/(\d+(?:[.,]\d+)?)\s*(?:л|литр)/i);
+      return m ? parseFloat(m[1].replace(",", ".")) : 0;
     };
     const VOL_BANDS = [["до 15 л", 1, 15], ["30 л", 16, 39], ["50 л", 40, 65], ["80 л", 66, 90], ["100 л+", 91, 9999]];
     const volList = subList.map(volOf).filter(Boolean);
@@ -559,6 +578,11 @@ class Component extends DCLogic {
     const airOf = x => {
       const row = (x.sp || []).find(v => /производительн|расход возд/i.test(String(v[0])));
       const raw = row ? String(row[1]) : "";
+      // литры воздухом не считают: у водонагревателя «Производительность» — это 10 л/мин,
+      // у осушителя — 30 л/сут, у фильтра — 180 л/сут. Без этой проверки все трое попадали
+      // в фильтр расхода воздуха как «до 200 м³/ч» (25.08.2026). Голое число оставляем:
+      // у фанкойлов и завес единица вынесена в название колонки
+      if (/(л|лит)\s*\/\s*(мин|сут|ч)/i.test(raw)) return 0;
       const nums = (raw.match(/\d[\d\s]*/g) || []).map(n => +n.replace(/\s/g, "")).filter(n => n > 0);
       if (nums.length) return Math.max.apply(null, nums);
       const p = (x.pl || []).find(v => /м³\/ч/.test(String(v)));
@@ -663,6 +687,63 @@ class Component extends DCLogic {
     const noiseOf = x => { const v = numIn(specOf(x, /уровень шума/i)); return v > 0 ? v : 0; };
     const pressOf = x => { const v = numIn(specOf(x, /напор/i)); return v > 0 ? v : 0; };
 
+    // ─── Фасеты каминов (25.08.2026) ───────────────────────────────────────────
+    // В группе два разных товара, и «размер» у них меряется по-разному: у электрических
+    // это диагональ экрана, у биокаминов — длина линии огня. Поэтому два фасета, а не один.
+    // Все они помечены only: ["kaminy"] — признаки вроде «Режим обогрева» и «Цвет корпуса»
+    // встречаются и в других группах, где значат другое.
+    const diagOf = x => {
+      const v = specOf(x, /^диагональ/i);
+      // «Отсутствует» у паровых очагов — это не размер, а его отсутствие: в фильтр не идут
+      return /отсутств/i.test(v) ? 0 : numIn(v);
+    };
+    const fireLineOf = x => numIn(specOf(x, /^линия огня/i));
+    // главный признак осушителя (л/сут) и дизельной пушки (л) — оба поля раньше
+    // читал фасет расхода воздуха и показывал их как м³/ч (25.08.2026)
+    const dryOf = x => numIn(specOf(x, /^производительность осушения/i));
+    const fuelOf = x => numIn(specOf(x, /^объ[её]м топливного бака/i));
+    const burnOf = x => numIn(specOf(x, /^время горения/i));
+    // формулировки в мастере разные и местами зеркальные («Напольная / Настенная» и
+    // «Настенная / Напольная» — одно и то же). Сводим к семи понятным вариантам
+    const mountOf = x => {
+      const v = specOf(x, /^вид установки/i).toLowerCase();
+      if (!v) return "";
+      if (/напольная\s*\/\s*настенная|настенная\s*\/\s*напольная/.test(v)) return "Напольная или настенная";
+      if (/в нишу|встраиваем/.test(v)) return "Встраиваемая в нишу";
+      if (/в портал/.test(v)) return "В портал";
+      if (/пристенн/.test(v)) return "Пристенная";
+      if (/настольн/.test(v)) return "Настольная";
+      if (/напольн/.test(v)) return "Напольная";
+      if (/настенн/.test(v)) return "Настенная";
+      return "";
+    };
+    // греет или только показывает пламя — отсекающий вопрос, а не пожелание.
+    // Паровые очаги идут как «Без нагрева» — это их паспортное значение, не пропуск
+    const warmOf = x => {
+      const el = specOf(x, /^тип нагревательного элемента/i);
+      if (/без нагрева/i.test(el)) return "Только пламя";
+      if (/^да$/i.test(specOf(x, /^режим обогрева/i)) || el) return "С обогревом";
+      return "";
+    };
+    const glassOf = x => {
+      const v = specOf(x, /^защитное стекло/i).toLowerCase();
+      if (/^да$|есть/.test(v)) return "Есть";
+      if (/^нет$/.test(v)) return "Нет";
+      return "";
+    };
+    // 23 формулировки цвета в мастере сводим к пяти. Порядок проверок важен:
+    // «Белый дуб с золотой патиной» — это дерево, а не белый
+    const colorOf = x => {
+      const v = specOf(x, /^цвет корпуса/i).toLowerCase();
+      if (!v) return "";
+      if (/дуб|венге|каштан|дерев|шпон/.test(v)) return "Под дерево";
+      if (/нерж|сталь|серебр/.test(v)) return "Сталь";
+      if (/графит|сер/.test(v)) return "Графит и серый";
+      if (/бел/.test(v)) return "Белый";
+      if (/ч[её]рн/.test(v)) return "Чёрный";
+      return "";
+    };
+
     const VALUE_FACETS = [
       { key: "recup", title: "Рекуперация", of: recupOf,
         order: ["Пластинчатый", "Мембранный", "Роторный", "Керамический", "Тип не указан"],
@@ -679,7 +760,19 @@ class Component extends DCLogic {
       { key: "duct", title: "Типоразмер воздуховода", of: ductOf, order: [],
         note: "Диаметр по обозначению модели. Позиции без данных в фильтр не попадают" },
       { key: "ip", title: "Класс защиты IP", of: ipOf, order: [],
-        note: "Влажные помещения и наружная установка. Позиции без данных в фильтр не попадают" }
+        note: "Влажные помещения и наружная установка. Позиции без данных в фильтр не попадают" },
+      { key: "mount", title: "Вид установки", of: mountOf, only: ["kaminy"],
+        order: ["Пристенная", "Встраиваемая в нишу", "В портал", "Настенная", "Напольная", "Напольная или настенная", "Настольная"],
+        note: "Как камин встаёт в комнате. Позиции без данных в фильтр не попадают" },
+      { key: "warm", title: "Обогрев", of: warmOf, only: ["kaminy"],
+        order: ["С обогревом", "Только пламя"],
+        note: "Обогрев у камина дополнительный, а не основной. «Только пламя» — декоративный режим без нагрева. Позиции без данных в фильтр не попадают" },
+      { key: "glass", title: "Защитное стекло", of: glassOf, only: ["kaminy"],
+        order: ["Есть", "Нет"],
+        note: "Стекло закрывает открытое пламя — важно, если в доме дети или животные. Позиции без данных в фильтр не попадают" },
+      { key: "color", title: "Цвет", of: colorOf, only: ["kaminy"],
+        order: ["Чёрный", "Белый", "Графит и серый", "Под дерево", "Сталь"],
+        note: "Цвет корпуса или портала по данным производителя. Позиции без данных в фильтр не попадают" }
     ];
     const BAND_FACETS = [
       { key: "noise", title: "Уровень шума", of: noiseOf,
@@ -695,11 +788,30 @@ class Component extends DCLogic {
         note: "Нижняя граница по паспорту: «−30 °С и ниже» включает и те, что держат −40. Позиции без данных в фильтр не попадают" },
       { key: "press", title: "Макс. напор", of: pressOf,
         bands: [["до 300 Па", 1, 300], ["300–600 Па", 301, 600], ["600–1000 Па", 601, 1000], ["1000 Па+", 1001, 99999]],
-        note: "Чем длиннее воздуховод и больше поворотов, тем выше нужен напор. Позиции без данных в фильтр не попадают" }
+        note: "Чем длиннее воздуховод и больше поворотов, тем выше нужен напор. Позиции без данных в фильтр не попадают" },
+      { key: "diag", title: "Диагональ очага", of: diagOf, only: ["kaminy"],
+        bands: [["до 30 дюймов", 1, 29], ["30–40 дюймов", 30, 40], ["42–50 дюймов", 41, 50], ["60 дюймов и больше", 51, 999]],
+        note: "Размер экрана с пламенем — по нему очаг подбирают под нишу или портал. У биокаминов экрана нет, они в этот фильтр не попадают" },
+      { key: "fireline", title: "Длина линии огня", of: fireLineOf, only: ["kaminy"],
+        bands: [["до 25 см", 1, 25], ["25–45 см", 26, 45], ["45 см и больше", 46, 999]],
+        note: "Размер пламени у биокамина: чем длиннее линия огня, тем крупнее очаг и заметнее пламя. Позиции без данных в фильтр не попадают" },
+      { key: "dry", title: "Производительность осушения", of: dryOf, only: ["osushiteli"],
+        bands: [["до 20 л/сут", 1, 20], ["20–40 л/сут", 21, 40], ["40–80 л/сут", 41, 80], ["80 л/сут и больше", 81, 99999]],
+        note: "Сколько литров влаги осушитель убирает за сутки по паспорту. Позиции без данных в фильтр не попадают" },
+      { key: "fuel", title: "Объём топливного бака", of: fuelOf, only: ["teplovye-pushki"],
+        bands: [["до 20 л", 1, 20], ["20–50 л", 21, 50], ["50 л и больше", 51, 9999]],
+        note: "Только дизельные: чем больше бак, тем реже дозаправка. Позиции без данных в фильтр не попадают" },
+      { key: "burn", title: "Время горения", of: burnOf, only: ["kaminy"],
+        bands: [["2 ч и меньше", 1, 2], ["2–3 ч", 2.1, 3], ["больше 3 ч", 3.1, 99]],
+        note: "На сколько хватает одной заправки биотопливом по паспорту. Позиции без данных в фильтр не попадают" }
     ];
     const MIN_FACET = 10;
     const EXTRA = [];
+    // фасет, объявленный для конкретных групп, в чужие не заходит: признак с тем же
+    // именем в другой группе значит другое (25.08.2026 — см. историю фасета «Объём бака»)
+    const facetOff = f => f.only && f.only.indexOf(s.group) < 0;
     VALUE_FACETS.forEach(f => {
+      if (facetOff(f)) return;
       const tally = {};
       subList.forEach(x => { const v = f.of(x); if (v) tally[v] = (tally[v] || 0) + 1; });
       const keys = Object.keys(tally);
@@ -712,6 +824,7 @@ class Component extends DCLogic {
       EXTRA.push({ key: f.key, title: f.title, note: f.note, kind: "value", of: f.of, keys, anyLabel: f.anyLabel });
     });
     BAND_FACETS.forEach(f => {
+      if (facetOff(f)) return;
       const has = f.has || (x => f.of(x) > 0);
       if (subList.filter(has).length < MIN_FACET) return;
       const bands = f.bands
@@ -720,6 +833,12 @@ class Component extends DCLogic {
       if (bands.length < 2) return;
       EXTRA.push({ key: f.key, title: f.title, note: f.note, kind: "band", of: f.of, bands });
     });
+    // порядок в панели задаём явно, а не тем, в каком массиве объявлен фасет:
+    // размер — первый вопрос покупателя, цвет — последний
+    const FACET_ORDER = ["diag", "fireline", "dry", "mount", "warm", "glass", "burn",
+      "recup", "seg", "fuel", "power", "motor", "duct", "noise", "cold", "press", "ip", "color"];
+    const facetRank = k => { const i = FACET_ORDER.indexOf(k); return i < 0 ? 99 : i; };
+    EXTRA.sort((a, b) => facetRank(a.key) - facetRank(b.key));
     // общий предикат: skip исключает фасет, для которого сейчас считаем его же счётчики
     const extraOk = (it, skip) => EXTRA.every(f => {
       if (f.key === skip) return true;
@@ -1240,7 +1359,7 @@ class Component extends DCLogic {
       onSearch: e => this.setState({ q: e.target.value, shown: 12 }),
       onSort: e => this.setState({ sort: e.target.value }),
       toggleView: () => this.setState({ view: grid ? "list" : "grid" }),
-      reset: () => this.setState({ sub: "all", brand: "all", price: "all", comp: "all", ref: "all", eff: "all", seg: "all", power: "all", motor: "all", duct: "all", cold: "all", ip: "all", noise: "all", press: "all", area: "all", air: "all", vol: "all", heat: "all", feat: "", stock: "all", calcFit: 0, q: "", sort: "rec", shown: 12, onlyPick: false }),
+      reset: () => this.setState(Object.assign({ sub: "all", sort: "rec", shown: 12, onlyPick: false }, this.facetsOff())),
       showMore: () => this.setState({ shown: s.shown + 12 }),
       filterGroups,
       cards,
