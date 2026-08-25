@@ -269,13 +269,30 @@ class Component extends DCLogic {
       ]
     };
 
-    const rooms = { 25: "Спальня, детская, кабинет", 35: "Гостиная, студия, офис", 50: "Гостиная, офис, магазин" };
+    // Комнаты — по фактической площади, а не по точному ключу: у чёрной серии
+    // типоразмеры 10/13/18, и площадь у них 28 и 38 м², а не 25 и 35
+    const roomsFor = a => a <= 30 ? "Спальня, детская, кабинет"
+      : (a <= 40 ? "Гостиная, студия, офис" : "Гостиная, офис, магазин");
+
+    // Цену и площадь берём из мастера по артикулу. Числа в списке выше остаются
+    // страховкой на случай, если данные не загрузились: без них лендинг — второй
+    // источник правды. 26.08.2026 у чёрных FR10 и FR13 здесь стояли 25 и 35 м²,
+    // а в мастере 28 и 38 — цены пока совпадали, но разойтись могли так же молча.
+    const master = {};
+    (this.state.bytovye || []).forEach(x => { if (x.s) master[String(x.s).trim().toUpperCase()] = x; });
+    const fromMaster = m => {
+      const x = master[m.sku.toUpperCase()];
+      if (!x) return m;
+      const pill = (x.pl || []).find(v => /м²/.test(String(v)));
+      const a = pill ? parseInt(String(pill).replace(/[^\d]/g, ""), 10) : 0;
+      return { sku: m.sku, area: a || m.area, price: x.p || m.price, photo: m.photo };
+    };
 
     this.__zoomOpen = !!zoomSrc;
-    const models = sets[color].map((m, i) => ({
+    const models = sets[color].map(fromMaster).map((m, i) => ({
       sku: m.sku,
       title: "до " + m.area + " м²",
-      rooms: rooms[m.area],
+      rooms: roomsFor(m.area),
       price: this.fmt(m.price) + " ₸",
       monthly: "рассрочка 12 мес — " + this.fmt(m.price * 1.175 / 12) + " ₸/мес",
       href: this.cardHref(m.sku),
