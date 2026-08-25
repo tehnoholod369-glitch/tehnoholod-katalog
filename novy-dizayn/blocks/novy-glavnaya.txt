@@ -452,7 +452,7 @@ class Component extends DCLogic {
 
   cnt(slug) {
     const g = this.g(slug);
-    return g ? String(g.count) : "—";
+    return g ? this.fmt(g.count) : "—";
   }
 
   plural(n, one, few, many) {
@@ -461,6 +461,11 @@ class Component extends DCLogic {
     if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return n + " " + few;
     return n + " " + many;
   }
+
+  // Разряды в числах. На Главной они стояли только у цен (одна строка), а счётчики
+  // печатались голыми: в герое было «3347 позиций в каталоге». На остальных страницах
+  // редизайна разрядка есть везде — приводим к общему виду. Тонкий пробел, как в каталоге.
+  fmt(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, " "); }
 
   heroStats() {
     const idx = (this.state && this.state.idx) || [];
@@ -471,9 +476,9 @@ class Component extends DCLogic {
     const tail = (n, one, few, many) => this.plural(n, one, few, many).replace(String(n) + " ", "");
     return total
       ? [
-          { v: String(total), k: tail(total, "позиция", "позиции", "позиций") + " в каталоге" },
-          { v: String(stock), k: "из них в наличии" },
-          { v: String(brands.size), k: tail(brands.size, "бренд", "бренда", "брендов") }
+          { v: this.fmt(total), k: tail(total, "позиция", "позиции", "позиций") + " в каталоге" },
+          { v: this.fmt(stock), k: "из них в наличии" },
+          { v: this.fmt(brands.size), k: tail(brands.size, "бренд", "бренда", "брендов") }
         ]
       : [{ v: "—", k: "загружаем каталог" }, { v: "—", k: "" }, { v: "—", k: "" }];
   }
@@ -483,7 +488,7 @@ class Component extends DCLogic {
     const g = this.g(slug);
     return {
       label,
-      count: g ? String(g.count) : "",
+      count: g ? this.fmt(g.count) : "",
       href: "/novy-katalog?g=" + slug,
       subs: g && (g.subs || []).length > 1
         ? g.subs.filter(s => s.name.toLowerCase() !== label.toLowerCase()).slice(0, 5).map(s => ({
@@ -502,7 +507,10 @@ class Component extends DCLogic {
   dirLink(slugs) {
     let n = 0, st = 0;
     for (const s of slugs) { const g = this.g(s); if (g) { n += g.count; st += g.inStock || 0; } }
-    return n ? this.plural(n, "позиция", "позиции", "позиций") + " · " + st + " в наличии →" : "В каталог →";
+    // разряды и здесь: у направлений счёт четырёхзначный («1051 позиция» вместо «1 051»)
+    if (!n) return "В каталог →";
+    const слово = this.plural(n, "позиция", "позиции", "позиций").replace(String(n) + " ", "");
+    return this.fmt(n) + " " + слово + " · " + this.fmt(st) + " в наличии →";
   }
 
   renderVals() {
