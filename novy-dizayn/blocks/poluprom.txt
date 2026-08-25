@@ -167,9 +167,16 @@ class Component extends DCLogic {
     const s = this.state;
     const items = s.items || [];
     const has = t => items.filter(x => (x.t + " " + x.n).toLowerCase().indexOf(t) >= 0).length;
-    const cnt = n => items.length ? n + " моделей" : "загружаем";
+    // «94 моделей» вместо «94 модели» — склонение считаем, а не приписываем (26.08.2026)
+    const cnt = n => {
+      if (!items.length) return "загружаем";
+      const a = n % 10, b = n % 100;
+      const w = (a === 1 && b !== 11) ? "модель"
+        : (a >= 2 && a <= 4 && (b < 10 || b >= 20)) ? "модели" : "моделей";
+      return n + " " + w;
+    };
 
-    const inStock = items.filter(x => /налич/i.test(x.st)).length;
+    const kinds = Array.from(new Set(items.map(x => x.sub))).filter(Boolean).length;
     const brands = Array.from(new Set(items.map(x => x.b))).filter(Boolean).length;
     const priced = items.filter(x => x.p);
     const minPrice = priced.length ? Math.min.apply(null, priced.map(x => x.p)) : 0;
@@ -198,9 +205,12 @@ class Component extends DCLogic {
 
     return {
       ctaLabel: items.length ? "Все " + items.length + " моделей" : "Открыть каталог",
+      // «Из них в наличии 292» убрано 26.08.2026: решение владельца 25.08.2026 —
+      // точные остатки на витрину не выводим, они устаревают между пересборками.
+      // На их месте — число конструктивов: это состав группы, а не обещание склада.
       stats: [
         { k: "Позиций в группе", v: items.length || "—" },
-        { k: "Из них в наличии", v: inStock || "—" },
+        { k: "Конструктивов", v: kinds || "—" },
         { k: "Брендов", v: brands || "—" },
         { k: "Цены от", v: minPrice ? String(minPrice).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009") + " ₸" : "по запросу" }
       ],
@@ -231,6 +241,16 @@ class Component extends DCLogic {
           text: "Мощные напольные блоки на большой объём, ставятся у стены. Быстро охлаждают зал.",
           where: "Торговые залы, холлы, производственные помещения",
           limit: "Занимают место в помещении, шумнее кассетных",
+          href
+        },
+        {
+          // Пятый конструктив добавлен 26.08.2026: три позиции считались в «Позициях
+          // в группе», но карточки не имели, и сумма по карточкам не сходилась с итогом.
+          // Текст по факту данных: AERONIK ASI-COHMZ, 9000–18000 BTU, все под заказ.
+          title: "Консольные", count: cnt(has("консольн")),
+          text: "Компактные блоки под потолок или к полу на небольшую площадь — переходное решение между бытовым сплитом и напольно-потолочным. В каталоге AERONIK на 9000–18 000 BTU.",
+          where: "Небольшие залы, кабинеты, подсобные помещения",
+          limit: "Позиции идут под заказ — уточняйте срок поставки",
           href
         }
       ],
