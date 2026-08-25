@@ -179,7 +179,7 @@
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:20px 22px; margin-bottom:16px;">
             <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:10px;">
               <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Подбор по площади</div>
-              <div style="font-size:13px; color:#5A6675;">35 Вт на м³ при потолке 2,7 м, два человека, немного техники</div>
+              <div style="font-size:13px; color:#5A6675;">100 Вт на м² — базовая нагрузка, как на странице расчёта. Солнце, верхний этаж и кухню учитываем там</div>
             </div>
             <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;">
               <sc-for list="{{ calcOptions }}" as="a" hint-placeholder-count="6">
@@ -1031,9 +1031,12 @@ class Component extends DCLogic {
     // подбор по площади: живёт в разделе кондиционирования, где он и нужен
     const CALC = [20, 25, 35, 50, 70, 100];
     const calcArea = s.calcArea || 25;
-    // одна формула на весь сайт: 35 Вт на м³ при потолке 2,7 м плюс 400 Вт на двух человек и немного техники.
-    // Раньше здесь было 100 Вт/м², и результат расходился со страницей расчёта
-    const calcKwNum = Math.ceil((calcArea * 2.7 * 35 + 400) / 100) / 10;
+    // Одна формула на весь сайт — 100 Вт на м² (решение владельца 26.08.2026,
+    // СТАБИЛЬНОЕ/05_Опросные_листы.md §9). Здесь оставалась старая: 35 Вт на м³
+    // при потолке 2,7 м плюс 400 Вт, и на 25 м² каталог показывал 2,8 кВт против
+    // 2,5 кВт на странице расчёта. Поправки (солнце, этаж, кухня) живут там же,
+    // здесь берём базовую нагрузку без них — так и подписано.
+    const calcKwNum = Math.round(calcArea * 100) / 1000;
     const calcCls = calcArea <= 20 ? "07" : calcArea <= 27 ? "09" : calcArea <= 38 ? "12"
       : calcArea <= 55 ? "18" : calcArea <= 72 ? "24" : calcArea <= 88 ? "30" : "36";
     const calcStockN = items.filter(x => {

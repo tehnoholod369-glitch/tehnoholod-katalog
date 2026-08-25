@@ -63,11 +63,12 @@
             <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#8593A6;">ПОСЛЕ СТАТЬИ</div>
             <div style="font-size:13px; color:#0A4EA7; font-weight:600; margin-top:6px; line-height:1.5;">{{ a.next }}</div>
           </div>
-          <div style="font-size:14px; font-weight:700; color:#0872D3; margin-top:14px;">Читать →</div>
+          <div style="font-size:14px; font-weight:700; color:{{ a.ctaFg }}; margin-top:14px;">{{ a.cta }}</div>
         </div>
       </sc-for>
     </div>
 
+    <sc-if value="{{ editMode }}" hint-placeholder-val="{{ false }}">
     <div style="background:#071C3B; color:#fff; border-radius:16px; padding:28px; margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:26px; align-items:center;">
       <div>
         <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">ЗАЧЕМ ЭТОТ РАЗДЕЛ</div>
@@ -82,6 +83,7 @@
         </div>
       </div>
     </div>
+    </sc-if>
 
     <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; align-items:center;">
       <div>
@@ -122,7 +124,14 @@ class Component extends DCLogic {
     const rubricNames = ["Все", "Выбор", "Эксплуатация", "Монтаж"];
     const rubric = this.state.rubric;
 
+    // Статей ещё нет: кнопка «Читать →» на живой странице никуда не вела — восемь
+    // кликов в пустоту (26.08.2026). Пока у карточки нет адреса, честно пишем
+    // «готовим статью». Служебный блок «Зачем этот раздел» — материал владельца,
+    // клиенту он не нужен: прячем под ?edit=1, как заготовки в портфолио.
+    const edit = /(?:^|[?&])edit=1(?:&|$)/.test(location.search);
+
     return {
+      editMode: edit,
       rubrics: rubricNames.map(r => ({
         label: r,
         pick: () => this.setState({ rubric: r }),
@@ -132,7 +141,10 @@ class Component extends DCLogic {
       })),
       articles: all
         .filter(a => rubric === "Все" || a.rubric === rubric)
-        .map(a => Object.assign({}, a, tags[a.rubric]))
+        .map(a => Object.assign({}, a, tags[a.rubric], {
+          cta: a.href ? "Читать →" : "Готовим статью",
+          ctaFg: a.href ? "#0872D3" : "#8593A6"
+        }))
     };
   }
 }
