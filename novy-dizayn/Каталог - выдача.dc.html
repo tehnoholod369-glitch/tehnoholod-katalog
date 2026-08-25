@@ -644,10 +644,30 @@ class Component extends DCLogic {
       if (q <= 3000) return "Для офиса и заведения";
       return "Для производства";
     };
+    // Рекуперация. Тип теплообменника заполнен по страницам производителей
+    // (справочник 51 серии, 25.08.2026) — это паспортная характеристика, не вывод.
+    // Формулировки в мастере разные: «Пластинчатый алюминиевый», «Мембранный
+    // пластинчатый», «Пластинчатый рекуператор» — сводим к четырём классам.
+    const recupOf = x => {
+      const v = specOf(x, /тип рекуператора/i).toLowerCase();
+      // у пяти GREE из подкатегории «Рекуператоры» колонки с типом теплообменника
+      // в мастере нет. Рекуперация у них есть по классу изделия — так и пишем,
+      // а тип не выдумываем
+      if (!v) return /рекуператор/i.test(String(x.t || "")) ? "Тип не указан" : "";
+      if (/ротор/.test(v)) return "Роторный";
+      if (/мембран|энтальп/.test(v)) return "Мембранный";
+      if (/керамич/.test(v)) return "Керамический";
+      if (/пластинч/.test(v)) return "Пластинчатый";
+      return "Тип не указан";
+    };
     const noiseOf = x => { const v = numIn(specOf(x, /уровень шума/i)); return v > 0 ? v : 0; };
     const pressOf = x => { const v = numIn(specOf(x, /напор/i)); return v > 0 ? v : 0; };
 
     const VALUE_FACETS = [
+      { key: "recup", title: "Рекуперация", of: recupOf,
+        order: ["Пластинчатый", "Мембранный", "Роторный", "Керамический", "Тип не указан"],
+        anyLabel: "Есть рекуперация",
+        note: "Рекуператор забирает тепло уходящего воздуха и отдаёт приточному — зимой это прямая экономия на отоплении. Мембранный сохраняет и влажность. Позиции без данных в фильтр не попадают" },
       { key: "seg", title: "Куда ставится", of: segOf,
         order: ["Для дома", "Для офиса и заведения", "Для производства"],
         note: "Наш ориентир по расходу воздуха и питанию, а не паспортная характеристика. Позиции без данных в фильтр не попадают" },
@@ -689,7 +709,7 @@ class Component extends DCLogic {
         if (ia >= 0 || ib >= 0) return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
         return tally[b] - tally[a];
       });
-      EXTRA.push({ key: f.key, title: f.title, note: f.note, kind: "value", of: f.of, keys });
+      EXTRA.push({ key: f.key, title: f.title, note: f.note, kind: "value", of: f.of, keys, anyLabel: f.anyLabel });
     });
     BAND_FACETS.forEach(f => {
       const has = f.has || (x => f.of(x) > 0);
@@ -706,7 +726,7 @@ class Component extends DCLogic {
       const cur = s[f.key] || "all";
       if (cur === "all") return true;
       const v = f.of(it);
-      if (f.kind === "value") return v === cur;
+      if (f.kind === "value") return cur === "__any" ? !!v : v === cur;
       const b = f.bands.find(x => x.k === cur);
       return !!(b && !isNaN(v) && v !== 0 && v >= b.lo && v <= b.hi);
     });
@@ -1005,6 +1025,10 @@ class Component extends DCLogic {
           key: f.key, title: f.title, note: f.note,
           activeLabel: cur === "all" ? "" : cur,
           options: [this.chip(cur === "all", "Любой", () => this.setState({ [f.key]: "all", shown: 12 }))].concat(
+            f.anyLabel ? [this.chip(cur === "__any", f.anyLabel,
+              () => this.setState({ [f.key]: "__any", shown: 12 }),
+              String(pool.filter(x => f.of(x)).length))] : []
+          ).concat(
             opts.filter(o => o.n > 0 || cur === o.k)
               .map(o => this.chip(cur === o.k, o.k, () => this.setState({ [f.key]: o.k, shown: 12 }), String(o.n)))
           )
