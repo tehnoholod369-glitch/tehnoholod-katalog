@@ -285,7 +285,7 @@ class Component extends DCLogic {
   };
 
   componentDidMount() {
-    fetch('data/proektnye.json').then(r => r.json()).then(d => {
+    fetch('data/proektnye.json', {cache:"no-cache"}).then(r => r.json()).then(d => {
       this.setState({ data: d, group: this.props.defaultGroup || 'vrf' });
     }).catch(() => this.setState({ data: { groups: [] } }));
     if (this.props.stockOnly) this.setState({ stock: true });
