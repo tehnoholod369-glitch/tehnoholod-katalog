@@ -1,24 +1,25 @@
 {
- "totalFiles": 6923,
- "external": 80,
- "local": 6843,
+ "totalFiles": 8068,
+ "external": 6978,
+ "local": 1090,
  "cdn": 0,
- "gallery": 6923,
+ "gallery": 8068,
  "hosts": {
+  "img.tehnoholod369.kz": 6898,
   "www.royal-thermo.ru": 43,
   "www.lg.com": 14,
   "images.breez.ru": 6,
-  "images.samsung.com": 4,
   "aws-obg-image-lb-3.tcl.com": 4,
+  "images.samsung.com": 4,
   "aws-obg-image-lb-5.tcl.com": 3,
   "aws-obg-image-lb-4.tcl.com": 2,
-  "ddc.kz": 1,
   "gree.com.ru": 1,
+  "aws-obg-image-lb-2.tcl.com": 1,
   "podbor.tehnoholod369.kz": 1,
-  "aws-obg-image-lb-2.tcl.com": 1
+  "ddc.kz": 1
  },
  "multisplitNoPhoto": 4,
  "multisplitSingle": 224,
- "multisplitExternal": 0,
- "ventExternalMain": 0
+ "multisplitExternal": 224,
+ "ventExternalMain": 687
 }

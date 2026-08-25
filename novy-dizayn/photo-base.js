@@ -10,7 +10,14 @@
  * После заливки папок img и img-dobor в GitHub достаточно заменить содержимое
  * data/photo-local.json на [] — всё уйдёт на CDN, правок в коде не нужно.
  */
-window.PHOTO_CDN = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/";
+// 26.08.2026: переехали с jsDelivr на своё хранилище. jsDelivr не отдаёт файлы
+// из репозитория крупнее 50 МБ («403 Package size exceeded»), а фото каталога —
+// 596 МБ в 8836 файлах: у первого посетителя редкой карточки вместо снимка
+// стояло «Фото уточняется». img.tehnoholod369.kz — проект Netlify tehnoholod-img,
+// подключённый к тому же репозиторию, поэтому относительные пути в данных
+// («img/bytovye/…») остались как были. Скрипты по-прежнему идут с jsDelivr:
+// raw отдаёт .js с nosniff, и браузер молча их не выполняет.
+window.PHOTO_CDN = "https://img.tehnoholod369.kz/";
 window.PHOTO_LOCAL = "uploads/";
 window.PHOTO_LOCAL_SET = null;
 
