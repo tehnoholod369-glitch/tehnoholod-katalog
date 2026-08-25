@@ -245,9 +245,24 @@ class Component extends DCLogic {
 
   componentDidMount() {
     // только хеш: query-параметры адреса заняты хостом превью, их переписывать нельзя
-    const key = String(location.hash || "").replace("#", "");
-    const i = this.TABS.indexOf(key);
-    if (i > 0) this.setState({ screen: i });
+    const применить = () => {
+      const key = String(location.hash || "").replace("#", "");
+      const i = this.TABS.indexOf(key);
+      if (i > 0 && this.state.screen !== i) this.setState({ screen: i });
+    };
+    применить();
+    // 26.08.2026: на Tilda прямая ссылка /kontakty#kontakty открывала первый экран —
+    // «Расчёт мощности» вместо контактов. Локально та же страница отрабатывала верно.
+    // Причина: страница-хозяин дописывает адрес уже после загрузки, и в момент
+    // монтирования хеша ещё нет. Поэтому проверяем повторно и слушаем смену адреса.
+    setTimeout(применить, 300);
+    setTimeout(применить, 1200);
+    window.addEventListener("hashchange", применить);
+    this.__снятьХеш = () => window.removeEventListener("hashchange", применить);
+  }
+
+  componentWillUnmount() {
+    if (this.__снятьХеш) this.__снятьХеш();
   }
 
   // вкладку видно в адресе: ссылку на контакты можно дать напрямую

@@ -58,7 +58,7 @@
     <sc-if value="{{ isPodbor }}" hint-placeholder-val="{{ true }}">
       <div>
         <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">Расчёт мощности кондиционера</h1>
-        <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6; max-width:820px;">Быстрый выбор класса есть в каталоге — он считает по площади при потолке 2,7 м. Здесь расчёт точный: объём помещения, солнечная сторона, люди и техника. Нужен для нестандартных помещений; окончательную мощность подтверждаем при замере.</div>
+        <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6; max-width:820px;">Считаем так же, как наш подбор: 100 Вт на квадратный метр с поправками на солнечную сторону, верхний этаж и кухню или технику. Окончательную мощность подтверждаем при замере.</div>
         <div style="margin-top:12px;"><a href="Каталог - выдача.dc.html?g=bytovye" style="font-size:14px; font-weight:700; color:#0872D3;">Быстрый подбор в каталоге →</a></div>
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:20px; margin-top:20px; align-items:start;">
@@ -71,14 +71,6 @@
                 <div style="font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; color:#0A4EA7;">{{ areaLabel }}</div>
               </div>
               <input type="range" min="8" max="120" step="1" value="{{ area }}" onInput="{{ onArea }}" style="width:100%; margin-top:10px;" />
-            </div>
-
-            <div style="margin-top:18px;">
-              <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px;">
-                <div style="font-size:14px; font-weight:600;">Высота потолка</div>
-                <div style="font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; color:#0A4EA7;">{{ heightLabel }}</div>
-              </div>
-              <input type="range" min="240" max="400" step="5" value="{{ height }}" onInput="{{ onHeight }}" style="width:100%; margin-top:10px;" />
             </div>
 
             <sc-for list="{{ choices }}" as="c" hint-placeholder-count="4">
@@ -107,7 +99,7 @@
                 </div>
               </div>
               <div style="font-size:14px; color:#CBDCEC; line-height:1.6; margin-top:14px;">{{ explain }}</div>
-              <a href="Каталог - выдача.dc.html?g=bytovye" style="display:block; background:#0872D3; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700; margin-top:18px;">Показать модели класса {{ classShort }}</a>
+              <a href="Каталог - выдача.dc.html?g=bytovye" style="display:block; background:#0872D3; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700; margin-top:18px;">{{ modelsLabel }}</a>
               <a href="{{ calcHref }}" target="_blank" rel="noreferrer" style="display:block; border:2px solid rgba(255,255,255,0.5); color:#fff; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700; margin-top:10px;">Отправить расчёт в WhatsApp</a>
             </div>
 
@@ -120,12 +112,12 @@
                   </div>
                 </sc-for>
               </div>
-              <div style="font-size:13px; color:#5A6675; line-height:1.6; margin-top:12px;">Базовая формула — 35 Вт на кубометр объёма, плюс теплопритоки от людей и техники, плюс поправка на солнечную сторону. Запас берём вверх: недостаточная мощность заставляет компрессор работать без остановки.</div>
+              <div style="font-size:13px; color:#5A6675; line-height:1.6; margin-top:12px;">Базовая формула — 100 Вт на квадратный метр; солнечная сторона ×1,2, верхний этаж ×1,1, кухня или много техники ×1,2. Перевод в BTU — ×3,412, класс — ближайший больший из ряда. Запас берём вверх: недостаточная мощность заставляет компрессор работать без остановки.</div>
             </div>
 
             <div style="background:#FDECEA; border:1px solid #F8CBBE; border-radius:16px; padding:20px 22px;">
               <div style="font-size:15px; font-weight:700; color:#C21610;">Чего этот расчёт не знает</div>
-              <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">Остекления в пол, угловой квартиры, последнего этажа под крышей, серверной с постоянной нагрузкой. В таких случаях мощность считаем на замере — иначе кондиционер либо не справится, либо вы переплатите за лишний класс.</div>
+              <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">Остекления в пол, угловой квартиры, серверной с постоянной нагрузкой. В таких случаях мощность считаем на замере — иначе кондиционер либо не справится, либо вы переплатите за лишний класс.</div>
             </div>
           </div>
         </div>
@@ -252,16 +244,31 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  state = { screen: 0, area: 25, height: 270, sun: "Обычная", people: 2, tech: "Немного" };
+  state = { screen: 0, area: 25, sun: "Обычная / север", floor: "Не последний", tech: "Нет" };
 
   // на трёх экранах живёт три раздела — открываем тот, на который дана ссылка, а не всегда первый
   TABS = ["podbor", "dostavka", "kontakty"];
 
   componentDidMount() {
     // только хеш: query-параметры адреса заняты хостом превью, их переписывать нельзя
-    const key = String(location.hash || "").replace("#", "");
-    const i = this.TABS.indexOf(key);
-    if (i > 0) this.setState({ screen: i });
+    const применить = () => {
+      const key = String(location.hash || "").replace("#", "");
+      const i = this.TABS.indexOf(key);
+      if (i > 0 && this.state.screen !== i) this.setState({ screen: i });
+    };
+    применить();
+    // 26.08.2026: на Tilda прямая ссылка /kontakty#kontakty открывала первый экран —
+    // «Расчёт мощности» вместо контактов. Локально та же страница отрабатывала верно.
+    // Причина: страница-хозяин дописывает адрес уже после загрузки, и в момент
+    // монтирования хеша ещё нет. Поэтому проверяем повторно и слушаем смену адреса.
+    setTimeout(применить, 300);
+    setTimeout(применить, 1200);
+    window.addEventListener("hashchange", применить);
+    this.__снятьХеш = () => window.removeEventListener("hashchange", применить);
+  }
+
+  componentWillUnmount() {
+    if (this.__снятьХеш) this.__снятьХеш();
   }
 
   // вкладку видно в адресе: ссылку на контакты можно дать напрямую
@@ -292,17 +299,20 @@ class Component extends DCLogic {
       pick: () => this.goScreen(i)
     }));
 
-    const volume = s.area * (s.height / 100);
-    const base = volume * 35;
-    const sunFactor = { "Север": 30, "Обычная": 35, "Юг, много солнца": 40 }[s.sun];
-    const baseSun = volume * sunFactor;
-    const peopleW = Math.max(0, s.people - 1) * 100;
-    const techW = { "Нет": 0, "Немного": 300, "Много техники": 600 }[s.tech];
-    const total = baseSun + peopleW + techW;
+    // формула боевого подбора podbor.tehnoholod369.kz — решение владельца 26.08.2026, 05_Опросные_листы.md §6
+    const baseW = s.area * 100;
+    const sunK = s.sun === "Юг, много солнца" ? 1.2 : 1;
+    const floorK = s.floor === "Верхний этаж" ? 1.1 : 1;
+    const techK = s.tech === "Кухня или много техники" ? 1.2 : 1;
+    const total = baseW * sunK * floorK * techK;
     const kw = Math.ceil(total / 100) / 10;
+    const req = Math.round(total * 3.412);
 
-    const cls = kw <= 2.2 ? "07" : kw <= 2.8 ? "09" : kw <= 3.7 ? "12" : kw <= 5.4 ? "18" : kw <= 7.2 ? "24" : "36";
-    const btu = { "07": "7 000", "09": "9 000", "12": "12 000", "18": "18 000", "24": "24 000", "36": "36 000" }[cls];
+    const CLASSES = [7000, 9000, 12000, 18000, 24000, 36000, 48000, 60000];
+    const clsBtu = CLASSES.find(c => c >= req);
+    const overload = !clsBtu;
+    const cls = clsBtu ? { 7000: "07", 9000: "09", 12000: "12", 18000: "18", 24000: "24", 36000: "36", 48000: "48", 60000: "60" }[clsBtu] : "60+";
+    const btu = clsBtu ? this.fmt(clsBtu) : "60 000+";
 
     const chooser = (title, key, options) => ({
       title,
@@ -315,17 +325,6 @@ class Component extends DCLogic {
       }))
     });
 
-    const peopleChoices = {
-      title: "Сколько людей обычно в помещении",
-      options: [1, 2, 3, 5].map(n => ({
-        label: n === 5 ? "5 и больше" : String(n),
-        pick: () => this.setState({ people: n }),
-        border: s.people === n ? "#0872D3" : "#DCE5F0",
-        bg: s.people === n ? "#E6F2FD" : "#fff",
-        fg: s.people === n ? "#0A4EA7" : "#5A6675"
-      }))
-    };
-
     return {
       nav,
       isPodbor: s.screen === 0,
@@ -333,30 +332,33 @@ class Component extends DCLogic {
       isContacts: s.screen === 2,
 
       area: s.area,
-      height: s.height,
       areaLabel: s.area + " м²",
-      heightLabel: (s.height / 100).toFixed(1).replace(".", ",") + " м",
       onArea: e => this.setState({ area: +e.target.value }),
-      onHeight: e => this.setState({ height: +e.target.value }),
       choices: [
-        chooser("Окна и солнце", "sun", ["Север", "Обычная", "Юг, много солнца"]),
-        peopleChoices,
-        chooser("Техника: компьютеры, кухня, оборудование", "tech", ["Нет", "Немного", "Много техники"])
+        chooser("Окна и солнце", "sun", ["Обычная / север", "Юг, много солнца"]),
+        chooser("Этаж", "floor", ["Не последний", "Верхний этаж"]),
+        chooser("Кухня и техника", "tech", ["Нет", "Кухня или много техники"])
       ],
 
       kwLabel: String(kw).replace(".", ",") + " кВт",
       calcHref: "https://wa.me/77000369369?text=" + encodeURIComponent(
-        "Расчёт по подбору. Площадь " + s.area + " м², потолок " + (s.height / 100).toFixed(1).replace(".", ",")
-        + " м. Нужен класс " + cls + " (" + btu + " BTU)."),
-      classLabel: cls + " · " + btu + " BTU",
-      classShort: cls,
-      explain: "Для помещения " + s.area + " м² при потолке " + (s.height / 100).toFixed(1).replace(".", ",") + " м нужен кондиционер класса " + cls + ". Меньший класс будет работать без остановки и не выйдет на комфортную температуру в жару.",
+        "Расчёт по подбору. Площадь " + s.area + " м²"
+        + (sunK > 1 ? ", солнечная сторона" : "") + (floorK > 1 ? ", верхний этаж" : "") + (techK > 1 ? ", кухня/техника" : "")
+        + ". " + (overload ? "Нагрузка " + this.fmt(req) + " BTU — выше бытового ряда, нужен расчёт на замере."
+                           : "Нужен класс " + cls + " (" + btu + " BTU).")),
+      classLabel: overload ? "60 000+ BTU" : cls + " · " + btu + " BTU",
+      modelsLabel: overload ? "Показать варианты в каталоге" : "Показать модели класса " + cls,
+      explain: overload
+        ? "Для помещения " + s.area + " м² с выбранными условиями нагрузка выше 60 000 BTU — одним бытовым блоком её не закрыть. Нужна мультисплит- или полупромышленная система, мощность посчитаем на замере."
+        : "Для помещения " + s.area + " м² нужен кондиционер класса " + cls + ". Меньший класс будет работать без остановки и не выйдет на комфортную температуру в жару.",
       breakdown: [
-        { k: "Объём помещения", v: volume.toFixed(1).replace(".", ",") + " м³" },
-        { k: "Базовая нагрузка (" + sunFactor + " Вт/м³)", v: this.fmt(baseSun) + " Вт" },
-        { k: "Люди", v: this.fmt(peopleW) + " Вт" },
-        { k: "Техника", v: this.fmt(techW) + " Вт" },
-        { k: "Итого с округлением вверх", v: String(kw).replace(".", ",") + " кВт" }
+        { k: "Базовая нагрузка (" + s.area + " м² × 100 Вт/м²)", v: this.fmt(baseW) + " Вт" },
+        { k: "Поправки", v: (sunK > 1 || floorK > 1 || techK > 1)
+            ? [sunK > 1 ? "солнце ×1,2" : "", floorK > 1 ? "этаж ×1,1" : "", techK > 1 ? "техника ×1,2" : ""].filter(Boolean).join(" · ")
+            : "нет" },
+        { k: "Итого мощность холода", v: this.fmt(total) + " Вт" },
+        { k: "В BTU (×3,412)", v: this.fmt(req) + " BTU" },
+        { k: "Класс — ближайший больший", v: btu + " BTU" }
       ],
 
       delivery: [
