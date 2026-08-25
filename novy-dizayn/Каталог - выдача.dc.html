@@ -613,14 +613,14 @@ class Component extends DCLogic {
       const m = specOf(x, /класс защиты|пылевлагозащит/i).toUpperCase().replace(/\s+/g, "").match(/IPX?\d\d?/);
       return m ? m[0] : "";
     };
-    // мороз: берём нижнюю границу рабочего диапазона — «-30 °С … 50 °С»
+    // Мороз: нижняя граница рабочего диапазона — «-30 °С … 50 °С».
+    // Возвращаем САМО число, а не ступень. Ступени, придуманные на глаз, врут:
+    // 25.08.2026 подпись «до −30 °С и ниже» накрывала 79 позиций, рассчитанных
+    // всего до −25 °С — обещание на 5 градусов больше паспорта. Границы в данных
+    // ровно такие: −40, −30, −25, −20, −10, +1, +5.
     const coldOf = x => {
       const nums = (specOf(x, /рабочая температур/i).match(/-?\d+/g) || []).map(Number);
-      if (!nums.length) return "";
-      const lo = Math.min.apply(null, nums);
-      if (lo >= 0) return "только в тепле";
-      if (lo >= -20) return "до −20 °С";
-      return "до −30 °С и ниже";
+      return nums.length ? Math.min.apply(null, nums) : NaN;
     };
     // Ø у круглых канальных зашит в название модели — это соглашение производителя,
     // а не отдельное поле. Берём только стандартный ряд, чтобы не поймать случайное число
@@ -658,9 +658,6 @@ class Component extends DCLogic {
         note: "EC тише и экономичнее, держит плавную регулировку оборотов. Позиции без данных в фильтр не попадают" },
       { key: "duct", title: "Типоразмер воздуховода", of: ductOf, order: [],
         note: "Диаметр по обозначению модели. Позиции без данных в фильтр не попадают" },
-      { key: "cold", title: "Рабочая температура", of: coldOf,
-        order: ["только в тепле", "до −20 °С", "до −30 °С и ниже"],
-        note: "Нижняя граница рабочего диапазона — важно для улицы и неотапливаемых помещений. Позиции без данных в фильтр не попадают" },
       { key: "ip", title: "Класс защиты IP", of: ipOf, order: [],
         note: "Влажные помещения и наружная установка. Позиции без данных в фильтр не попадают" }
     ];
@@ -668,6 +665,14 @@ class Component extends DCLogic {
       { key: "noise", title: "Уровень шума", of: noiseOf,
         bands: [["до 35 дБ", 1, 35], ["35–45 дБ", 36, 45], ["45–55 дБ", 46, 55], ["55 дБ+", 56, 999]],
         note: "Тише 35 дБ — можно ставить в спальне. Позиции без данных в фильтр не попадают" },
+      // пороговый фасет: «−30 °С и ниже» показывает и те, что держат −40. Так думает
+      // покупатель («мне нужно до −30»), и ни одна подпись не обещает лишнего.
+      // Полосы пересекаются намеренно — это не разбиение, а порог.
+      { key: "cold", title: "Рабочая температура", of: coldOf,
+        has: x => !isNaN(coldOf(x)),
+        bands: [["−40 °С", -999, -40], ["−30 °С и ниже", -999, -30], ["−25 °С и ниже", -999, -25],
+                ["−20 °С и ниже", -999, -20], ["только выше нуля", 0, 999]],
+        note: "Нижняя граница по паспорту: «−30 °С и ниже» включает и те, что держат −40. Позиции без данных в фильтр не попадают" },
       { key: "press", title: "Макс. напор", of: pressOf,
         bands: [["до 300 Па", 1, 300], ["300–600 Па", 301, 600], ["600–1000 Па", 601, 1000], ["1000 Па+", 1001, 99999]],
         note: "Чем длиннее воздуховод и больше поворотов, тем выше нужен напор. Позиции без данных в фильтр не попадают" }
@@ -687,9 +692,10 @@ class Component extends DCLogic {
       EXTRA.push({ key: f.key, title: f.title, note: f.note, kind: "value", of: f.of, keys });
     });
     BAND_FACETS.forEach(f => {
-      if (subList.filter(x => f.of(x)).length < MIN_FACET) return;
+      const has = f.has || (x => f.of(x) > 0);
+      if (subList.filter(has).length < MIN_FACET) return;
       const bands = f.bands
-        .map(b => ({ k: b[0], lo: b[1], hi: b[2], n: subList.filter(x => { const v = f.of(x); return v >= b[1] && v <= b[2]; }).length }))
+        .map(b => ({ k: b[0], lo: b[1], hi: b[2], n: subList.filter(x => has(x) && f.of(x) >= b[1] && f.of(x) <= b[2]).length }))
         .filter(b => b.n > 0);
       if (bands.length < 2) return;
       EXTRA.push({ key: f.key, title: f.title, note: f.note, kind: "band", of: f.of, bands });
@@ -702,7 +708,7 @@ class Component extends DCLogic {
       const v = f.of(it);
       if (f.kind === "value") return v === cur;
       const b = f.bands.find(x => x.k === cur);
-      return !!(b && v && v >= b.lo && v <= b.hi);
+      return !!(b && !isNaN(v) && v !== 0 && v >= b.lo && v <= b.hi);
     });
 
     const heatOf = x => {
