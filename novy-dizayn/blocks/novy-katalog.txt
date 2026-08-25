@@ -1037,8 +1037,11 @@ class Component extends DCLogic {
     // 2,5 кВт на странице расчёта. Поправки (солнце, этаж, кухня) живут там же,
     // здесь берём базовую нагрузку без них — так и подписано.
     const calcKwNum = Math.round(calcArea * 100) / 1000;
-    const calcCls = calcArea <= 20 ? "07" : calcArea <= 27 ? "09" : calcArea <= 38 ? "12"
-      : calcArea <= 55 ? "18" : calcArea <= 72 ? "24" : calcArea <= 88 ? "30" : "36";
+    // класс считается из того же ряда, что и на странице расчёта, с допуском -5 %.
+    // Лестница была зашита руками и содержала класс «30», которого в ряду BTU нет.
+    const CALC_CLASSES = [7000, 9000, 12000, 18000, 24000, 36000, 48000, 60000];
+    const calcClsBtu = CALC_CLASSES.find(c => c >= calcArea * 341.2 * 0.95) || 60000;
+    const calcCls = String(calcClsBtu / 1000).padStart(2, "0");
     const calcStockN = items.filter(x => {
       if (!/налич/i.test(x.st || "")) return false;
       const a = areaOf(x);

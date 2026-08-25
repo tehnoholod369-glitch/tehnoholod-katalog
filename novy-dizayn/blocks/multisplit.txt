@@ -433,7 +433,8 @@ class Component extends DCLogic {
     if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return n + " " + few;
     return n + " " + many;
   }
-  needBtu(area) { return Math.round(area * 341); }
+  // та же база, что и в подборе: 100 Вт/м² x 3,412 = 341,2 BTU на м²
+  needBtu(area) { return Math.round(area * 341.2); }
   clsOf(btu) { return btu <= 7500 ? "07" : btu <= 10000 ? "09" : btu <= 14000 ? "12" : btu <= 20000 ? "18" : "24"; }
 
   chip(active, label, pick, sub) {
@@ -452,7 +453,9 @@ class Component extends DCLogic {
 
   pickIndoor(pool, type, btu) {
     const byType = pool.filter(x => x.t === type && x.btu > 0);
-    const fit = byType.filter(x => x.btu >= btu).sort((a, b) => a.btu - b.btu || (a.p || 9e9) - (b.p || 9e9));
+    // допуск -5 %, как в подборе: иначе комната 27 м² получает 12 000 там,
+    // где подбор той же комнате даёт 9 000
+    const fit = byType.filter(x => x.btu >= btu * 0.95).sort((a, b) => a.btu - b.btu || (a.p || 9e9) - (b.p || 9e9));
     if (fit.length) {
       // все исполнения того же класса мощности — цвет и дизайн выбирает клиент
       const cls = fit[0].btu;
