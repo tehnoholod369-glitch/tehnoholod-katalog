@@ -147,10 +147,10 @@ class Component extends DCLogic {
 
   componentDidMount() {
     // связка с каталогом: ищем модель, которую ставили, по артикулу или названию
-    fetch("data/index.json").then(r => r.json()).then(d => {
+    fetch("data/index.json", {cache:"no-cache"}).then(r => r.json()).then(d => {
       const slugs = (d.groups || []).map(g => g.slug);
       return Promise.all(slugs.map(s =>
-        fetch("data/" + s + ".json").then(r => r.ok ? r.json() : []).then(items => items.map((x, i) => Object.assign({ g: s, gi: i }, x)))
+        fetch("data/" + s + ".json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []).then(items => items.map((x, i) => Object.assign({ g: s, gi: i }, x)))
       ));
     }).then(parts => this.setState({ catalog: [].concat.apply([], parts) })).catch(() => this.setState({ catalog: [] }));
   }

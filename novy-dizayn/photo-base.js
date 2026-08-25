@@ -14,7 +14,10 @@ window.PHOTO_CDN = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-
 window.PHOTO_LOCAL = "uploads/";
 window.PHOTO_LOCAL_SET = null;
 
-window.PHOTO_READY = fetch("data/photo-local.json")
+window.PHOTO_LOCAL_LIST = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/photo-local.json";
+// путь абсолютный по тому же правилу, что в cart.js и search.js:
+// относительный на Tilda ведёт в tehnoholod369.kz/data/ и всегда 404
+window.PHOTO_READY = fetch(window.PHOTO_LOCAL_LIST, {cache:"no-cache"})
   .then(function (r) { return r.ok ? r.json() : []; })
   .then(function (list) {
     var set = Object.create(null);

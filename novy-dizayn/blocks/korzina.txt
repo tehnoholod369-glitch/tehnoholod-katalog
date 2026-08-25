@@ -231,7 +231,7 @@ class Component extends DCLogic {
   componentDidMount() {
     this.syncFromCart();
     // названия групп берём из данных: захардкоженный список устаревает при новой группе
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json").then(r => r.ok ? r.json() : null).then(d => {
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(d => {
       const titles = {};
       ((d && d.groups) || []).forEach(g => { titles[g.slug] = g.title; });
       this.setState({ titles });

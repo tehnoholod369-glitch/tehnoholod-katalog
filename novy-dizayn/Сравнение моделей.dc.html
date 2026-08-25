@@ -170,14 +170,14 @@ class Component extends DCLogic {
   fmt(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009"); }
 
   componentDidMount() {
-    fetch("data/index.json").then(r => r.json())
+    fetch("data/index.json", {cache:"no-cache"}).then(r => r.json())
       .then(d => { this.setState({ index: d.groups || d }); this.loadGroup("bytovye"); })
       .catch(() => this.setState({ items: [] }));
   }
 
   loadGroup(slug) {
     this.setState({ group: slug, items: null, picked: [], q: "" });
-    fetch("data/" + slug + ".json").then(r => r.ok ? r.json() : [])
+    fetch("data/" + slug + ".json", {cache:"no-cache"}).then(r => r.ok ? r.json() : [])
       .then(items => this.setState({ items }))
       .catch(() => this.setState({ items: [] }));
   }

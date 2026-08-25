@@ -158,7 +158,7 @@ class Component extends DCLogic {
   state = { items: null, object: "Магазин или торговый зал", area: 120 };
 
   componentDidMount() {
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/poluprom.json").then(r => r.ok ? r.json() : []).then(items => this.setState({ items })).catch(() => this.setState({ items: [] }));
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/poluprom.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []).then(items => this.setState({ items })).catch(() => this.setState({ items: [] }));
   }
 
   fmt(n) { return String(n).replace(".", ","); }

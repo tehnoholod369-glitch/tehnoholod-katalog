@@ -11,6 +11,11 @@
  * перерисовку компонентов DC.
  */
 (function () {
+  // Адрес данных абсолютный и намеренно: сборщик блоков переписывает
+  // fetch("data/…") только в теле страницы, внутрь .js он не заглядывает.
+  // Относительный путь на Tilda вёл в tehnoholod369.kz/data/ — там 404.
+  // Тот же урок, что с cart.js 25.08.2026. Менять — вместе с RAW в сборщике.
+  var DATA = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/";
   var ID = "th-search-layer";
   var IDX = null;      // {fields, rows}
   var LOADING = null;
@@ -19,7 +24,7 @@
   function loadIndex() {
     if (IDX) return Promise.resolve(IDX);
     if (LOADING) return LOADING;
-    LOADING = fetch("data/search-index.json")
+    LOADING = fetch(DATA + "search-index.json", {cache:"no-cache"})
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) {
         if (!d || !d.rows) return null;
@@ -29,7 +34,7 @@
         return IDX;
       })
       .catch(function () { return null; });
-    fetch("data/index.json").then(function (r) { return r.ok ? r.json() : null; })
+    fetch(DATA + "index.json", {cache:"no-cache"}).then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) {
         TITLES = {};
         ((d && d.groups) || []).forEach(function (g) { TITLES[g.slug] = g.title; });

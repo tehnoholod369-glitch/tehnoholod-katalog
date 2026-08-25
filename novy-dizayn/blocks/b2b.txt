@@ -175,7 +175,7 @@ class Component extends DCLogic {
   state = { open: 0, copied: false, idx: null };
 
   componentDidMount() {
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json").then(r => r.ok ? r.json() : null).then(d => this.setState({ idx: d })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(d => this.setState({ idx: d })).catch(() => {});
   }
 
   renderVals() {

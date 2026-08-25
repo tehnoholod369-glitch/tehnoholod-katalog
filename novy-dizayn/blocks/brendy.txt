@@ -94,12 +94,12 @@ class Component extends DCLogic {
     // с Главной приходят по ?b=<бренд> — открываем нужную карточку, а не общий список
     const q = new URLSearchParams(window.location.search).get("b");
     if (q) this.setState({ picked: q });
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-cards.json").then(r => r.ok ? r.json() : null).then(cards => this.setState({ cards })).catch(() => {});
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logos.json").then(r => r.ok ? r.json() : null).then(logos => this.setState({ logos })).catch(() => {});
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json").then(r => r.ok ? r.json() : null).then(d => this.setState({ idx: d && d.groups, updated: (d && d.updated) || "" })).catch(() => {});
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-priority.json").then(r => r.ok ? r.json() : null).then(p => this.setState({ priority: (p && p.priority) || [] })).catch(() => {});
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logo-ratio.json").then(r => r.ok ? r.json() : null).then(ratio => this.setState({ ratio: ratio || {} })).catch(() => {});
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logo-scale.json").then(r => r.ok ? r.json() : null).then(s => this.setState({ logoScale: (s && s.scale) || {} })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-cards.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(cards => this.setState({ cards })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logos.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(logos => this.setState({ logos })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(d => this.setState({ idx: d && d.groups, updated: (d && d.updated) || "" })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-priority.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(p => this.setState({ priority: (p && p.priority) || [] })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logo-ratio.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(ratio => this.setState({ ratio: ratio || {} })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logo-scale.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(s => this.setState({ logoScale: (s && s.scale) || {} })).catch(() => {});
   }
 
   componentDidUpdate() {

@@ -279,7 +279,7 @@
 class Component extends DCLogic {
   state = {
     index: null, updated: "", group: "bytovye", sub: "all", items: null, loading: true, picks: [], onlyPick: false,
-    brand: "all", price: "all", comp: "all", ref: "all", eff: "all", area: "all", air: "all", vol: "all", heat: "all", feat: "", stock: "all", calcFit: 0, q: "", sort: "rec", view: "grid", shown: 12
+    brand: "all", price: "all", comp: "all", ref: "all", eff: "all", area: "all", seg: "all", power: "all", motor: "all", duct: "all", cold: "all", ip: "all", noise: "all", press: "all", air: "all", vol: "all", heat: "all", feat: "", stock: "all", calcFit: 0, q: "", sort: "rec", view: "grid", shown: 12
   };
   gridRef = React.createRef();
 
@@ -309,18 +309,18 @@ class Component extends DCLogic {
     const wantBrand = p.get("brand");
     if (wantBrand) this.pendingBrand = wantBrand;
     this.pendingStock = p.get("stock") || "";
-    fetch("data/groups.json").then(r => r.ok ? r.json() : {}).then(texts => this.setState({ texts })).catch(() => {});
-    fetch("data/brand-priority.json").then(r => r.ok ? r.json() : null).then(brandPrio => this.setState({ brandPrio })).catch(() => {});
-    fetch("data/picks.json").then(r => r.ok ? r.json() : null).then(p => this.setState({ picks: (p && p.skus) || [] })).catch(() => {});
-    fetch("data/index.json")
+    fetch("data/groups.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : {}).then(texts => this.setState({ texts })).catch(() => {});
+    fetch("data/brand-priority.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(brandPrio => this.setState({ brandPrio })).catch(() => {});
+    fetch("data/picks.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(p => this.setState({ picks: (p && p.skus) || [] })).catch(() => {});
+    fetch("data/index.json", {cache:"no-cache"})
       .then(r => r.json())
       .then(idx => { this.setState({ index: idx.groups || idx, updated: idx.updated || "", group }); this.loadGroup(group, sub || "all"); })
       .catch(() => this.setState({ loading: false, items: [] }));
   }
 
   loadGroup(slug, sub) {
-    this.setState({ loading: true, items: null, shown: 12, sub: sub || "all", brand: "all", price: "all", comp: "all", ref: "all", eff: "all", area: "all", air: "all", vol: "all", heat: "all", feat: "", stock: "all", calcFit: 0, q: "" });
-    fetch("data/" + slug + ".json")
+    this.setState({ loading: true, items: null, shown: 12, sub: sub || "all", brand: "all", price: "all", comp: "all", ref: "all", eff: "all", area: "all", seg: "all", power: "all", motor: "all", duct: "all", cold: "all", ip: "all", noise: "all", press: "all", air: "all", vol: "all", heat: "all", feat: "", stock: "all", calcFit: 0, q: "" });
+    fetch("data/" + slug + ".json", {cache:"no-cache"})
       .then(r => r.ok ? r.json() : [])
       .then(items => { this.setState({ items, loading: false, sub: this.pendingSub || "all" }); this.pendingSub = null; })
       .catch(() => this.setState({ items: [], loading: false }));
@@ -564,12 +564,146 @@ class Component extends DCLogic {
       const p = (x.pl || []).find(v => /м³\/ч/.test(String(v)));
       return p ? +String(p).replace(/[^\d]/g, "") : 0;
     };
-    const AIR_BANDS = [["до 350 м³/ч", 1, 350], ["350–800 м³/ч", 351, 800], ["800–1500 м³/ч", 801, 1500], ["1500–3000 м³/ч", 1501, 3000], ["3000 м³/ч+", 3001, 999999]];
+    // семь полос вместо пяти: прежняя верхняя «3000 м³/ч+» держала 136 позиций и тянулась
+    // до 25 500 м³/ч — тому, кому нужно 4 000, и тому, кому 25 000, выдача показывала одно
+    // и то же. Границы подобраны по фактическому разбросу каталога (25.08.2026).
+    const AIR_BANDS = [["до 200 м³/ч", 1, 200], ["200–500 м³/ч", 201, 500], ["500–1000 м³/ч", 501, 1000], ["1000–2000 м³/ч", 1001, 2000], ["2000–5000 м³/ч", 2001, 5000], ["5000–10 000 м³/ч", 5001, 10000], ["10 000 м³/ч+", 10001, 999999]];
     const airList = subList.map(airOf).filter(Boolean);
     const airCount = {
       n: airList.length >= 10 ? airList.length : 0,
       bands: AIR_BANDS.map(b => ({ k: b[0], lo: b[1], hi: b[2], n: subList.filter(x => { const v = airOf(x); return v >= b[1] && v <= b[2]; }).length })).filter(b => b.n > 0)
     };
+
+    // ─── Фасеты вентиляции (25.08.2026) ────────────────────────────────────────
+    // Одно описание на фильтр: отсюда берут и счётчики, и фильтрация, и панель.
+    // Фильтр показывается, только если данных хватает — не меньше 10 позиций
+    // и не меньше двух разных значений. Иначе фильтр обещает выбор, которого нет.
+    // Отдельного фильтра «Тип оборудования» нет намеренно: поле `t` один в один
+    // повторяет подкатегорию, а она уже выбирается выше. Один признак — один орган.
+    const specOf = (x, re) => {
+      const row = (x.sp || []).find(v => re.test(String(v[0])));
+      return row ? String(row[1] || "").trim() : "";
+    };
+    const numIn = t => { const m = String(t).match(/-?\d+(?:[.,]\d+)?/); return m ? parseFloat(m[0].replace(",", ".")) : 0; };
+
+    // три фазы есть не у всех — это отсекающий вопрос, а не пожелание.
+    // Две тонкости, обе стоили охвата вдвое (проверено на данных 25.08.2026):
+    //  · «Энергопотребление / ток» в ТТХ нередко стоит РАНЬШЕ «Электропитания»,
+    //    и поиск «первой подходящей строки» читал амперы вместо вольт — 156 позиций
+    //    вместо 409. Поэтому «Электропитание» спрашиваем отдельно и первым;
+    //  · значение записано как «230,1,50» и «380,3,50» — это вольты, фазы, герцы.
+    //    Ловить «380» подстрокой ненадёжно, берём первое число как напряжение.
+    const powerOf = x => {
+      const v = specOf(x, /^электропитани/i) || specOf(x, /энергопотреблени/i);
+      if (!v) return "";
+      const n = numIn(v);
+      if (n >= 340) return "380 В (три фазы)";
+      if (n >= 180 && n <= 260) return "220 В (одна фаза)";
+      return "";
+    };
+    // «АС» в данных встречается кириллицей — приводим, иначе теряем часть позиций
+    const motorOf = x => {
+      const v = specOf(x, /тип двигател/i).toUpperCase().replace(/А/g, "A").replace(/С/g, "C");
+      if (/^EC\b/.test(v)) return "EC";
+      if (/^DC\b/.test(v)) return "DC";
+      if (/^AC\b/.test(v)) return "AC";
+      return "";
+    };
+    const ipOf = x => {
+      const m = specOf(x, /класс защиты|пылевлагозащит/i).toUpperCase().replace(/\s+/g, "").match(/IPX?\d\d?/);
+      return m ? m[0] : "";
+    };
+    // мороз: берём нижнюю границу рабочего диапазона — «-30 °С … 50 °С»
+    const coldOf = x => {
+      const nums = (specOf(x, /рабочая температур/i).match(/-?\d+/g) || []).map(Number);
+      if (!nums.length) return "";
+      const lo = Math.min.apply(null, nums);
+      if (lo >= 0) return "только в тепле";
+      if (lo >= -20) return "до −20 °С";
+      return "до −30 °С и ниже";
+    };
+    // Ø у круглых канальных зашит в название модели — это соглашение производителя,
+    // а не отдельное поле. Берём только стандартный ряд, чтобы не поймать случайное число
+    const DUCT_SIZES = [100, 125, 150, 160, 200, 250, 315, 355, 400, 450, 500, 560, 630];
+    const ductOf = x => {
+      // \w в JS не покрывает кириллицу — «канальн\w*» на «Канальный» не сработает
+      if (!/канальн.*кругл/i.test(String(x.t || ""))) return "";
+      const name = (x.nb || x.n || "") + " " + (x.s || "");
+      const hit = (name.match(/\d{3}/g) || []).map(Number).filter(d => DUCT_SIZES.indexOf(d) >= 0);
+      return hit.length ? "Ø" + hit[0] : "";
+    };
+    // ⚠️ ВЫВОД, а не паспортная характеристика: в данных поставщика поле «Область
+    // применения» заполнено у 16 % и вразнобой. Считаем по типу, расходу и питанию,
+    // и честно пишем об этом в подсказке фильтра.
+    const segOf = x => {
+      if (/вытяжной бытовой/i.test(String(x.t || ""))) return "Для дома";
+      if (powerOf(x) === "380 В (три фазы)") return "Для производства";
+      const q = airOf(x);
+      if (!q) return "";
+      if (q <= 500) return "Для дома";
+      if (q <= 3000) return "Для офиса и заведения";
+      return "Для производства";
+    };
+    const noiseOf = x => { const v = numIn(specOf(x, /уровень шума/i)); return v > 0 ? v : 0; };
+    const pressOf = x => { const v = numIn(specOf(x, /напор/i)); return v > 0 ? v : 0; };
+
+    const VALUE_FACETS = [
+      { key: "seg", title: "Куда ставится", of: segOf,
+        order: ["Для дома", "Для офиса и заведения", "Для производства"],
+        note: "Наш ориентир по расходу воздуха и питанию, а не паспортная характеристика. Позиции без данных в фильтр не попадают" },
+      { key: "power", title: "Электропитание", of: powerOf,
+        order: ["220 В (одна фаза)", "380 В (три фазы)"],
+        note: "Трёхфазное питание есть не везде — проверьте щиток до заказа. Позиции без данных в фильтр не попадают" },
+      { key: "motor", title: "Тип двигателя", of: motorOf, order: ["EC", "DC", "AC"],
+        note: "EC тише и экономичнее, держит плавную регулировку оборотов. Позиции без данных в фильтр не попадают" },
+      { key: "duct", title: "Типоразмер воздуховода", of: ductOf, order: [],
+        note: "Диаметр по обозначению модели. Позиции без данных в фильтр не попадают" },
+      { key: "cold", title: "Рабочая температура", of: coldOf,
+        order: ["только в тепле", "до −20 °С", "до −30 °С и ниже"],
+        note: "Нижняя граница рабочего диапазона — важно для улицы и неотапливаемых помещений. Позиции без данных в фильтр не попадают" },
+      { key: "ip", title: "Класс защиты IP", of: ipOf, order: [],
+        note: "Влажные помещения и наружная установка. Позиции без данных в фильтр не попадают" }
+    ];
+    const BAND_FACETS = [
+      { key: "noise", title: "Уровень шума", of: noiseOf,
+        bands: [["до 35 дБ", 1, 35], ["35–45 дБ", 36, 45], ["45–55 дБ", 46, 55], ["55 дБ+", 56, 999]],
+        note: "Тише 35 дБ — можно ставить в спальне. Позиции без данных в фильтр не попадают" },
+      { key: "press", title: "Макс. напор", of: pressOf,
+        bands: [["до 300 Па", 1, 300], ["300–600 Па", 301, 600], ["600–1000 Па", 601, 1000], ["1000 Па+", 1001, 99999]],
+        note: "Чем длиннее воздуховод и больше поворотов, тем выше нужен напор. Позиции без данных в фильтр не попадают" }
+    ];
+    const MIN_FACET = 10;
+    const EXTRA = [];
+    VALUE_FACETS.forEach(f => {
+      const tally = {};
+      subList.forEach(x => { const v = f.of(x); if (v) tally[v] = (tally[v] || 0) + 1; });
+      const keys = Object.keys(tally);
+      if (keys.length < 2 || subList.filter(x => f.of(x)).length < MIN_FACET) return;
+      keys.sort((a, b) => {
+        const ia = f.order.indexOf(a), ib = f.order.indexOf(b);
+        if (ia >= 0 || ib >= 0) return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+        return tally[b] - tally[a];
+      });
+      EXTRA.push({ key: f.key, title: f.title, note: f.note, kind: "value", of: f.of, keys });
+    });
+    BAND_FACETS.forEach(f => {
+      if (subList.filter(x => f.of(x)).length < MIN_FACET) return;
+      const bands = f.bands
+        .map(b => ({ k: b[0], lo: b[1], hi: b[2], n: subList.filter(x => { const v = f.of(x); return v >= b[1] && v <= b[2]; }).length }))
+        .filter(b => b.n > 0);
+      if (bands.length < 2) return;
+      EXTRA.push({ key: f.key, title: f.title, note: f.note, kind: "band", of: f.of, bands });
+    });
+    // общий предикат: skip исключает фасет, для которого сейчас считаем его же счётчики
+    const extraOk = (it, skip) => EXTRA.every(f => {
+      if (f.key === skip) return true;
+      const cur = s[f.key] || "all";
+      if (cur === "all") return true;
+      const v = f.of(it);
+      if (f.kind === "value") return v === cur;
+      const b = f.bands.find(x => x.k === cur);
+      return !!(b && v && v >= b.lo && v <= b.hi);
+    });
 
     const heatOf = x => {
       const row = (x.sp || []).find(v => /тэн|нагрев/i.test(String(v[0])));
@@ -662,6 +796,7 @@ class Component extends DCLogic {
         if (!band || !v || v < band.lo || v > band.hi) return false;
       }
       if (s.heat !== "all" && heatOf(it) !== s.heat) return false;
+      if (!extraOk(it)) return false;
       if (s.calcFit) {
         const a = areaOf(it);
         if (!a || a < s.calcFit * 0.9 || a > s.calcFit * 1.35) return false;
@@ -709,6 +844,7 @@ class Component extends DCLogic {
         if (!band || !v || v < band.lo || v > band.hi) return false;
       }
       if (skip !== "heat" && s.heat !== "all" && heatOf(it) !== s.heat) return false;
+      if (!extraOk(it, skip)) return false;
       if (s.calcFit) {
         const a = areaOf(it);
         if (!a || a < s.calcFit * 0.9 || a > s.calcFit * 1.35) return false;
@@ -832,7 +968,7 @@ class Component extends DCLogic {
       { key: "brand", title: "Бренд", note: "", options: brandOptions, limit: Math.max(prio.filter(b => sortedBrands.indexOf(b) >= 0).length + 1, 8), activeLabel: s.brand === "all" ? "" : s.brand },
       airCount.n ? {
         key: "air", activeLabel: s.air === "all" ? "" : s.air,
-        title: "Расход воздуха", note: "Норма для офиса — 60 м³/ч на человека. Позиции без данных в фильтр не попадают",
+        title: "Расход воздуха", note: "Вентиляцию подбирают по расходу, а не по площади. Позиции без данных в фильтр не попадают",
         options: [this.chip(s.air === "all", "Любой", () => this.setState({ air: "all", shown: 12 }))].concat(
           airCount.bands.map(b => this.chip(s.air === b.k, b.k, () => this.setState({ air: b.k, shown: 12 }), String(b.n)))
         )
@@ -851,6 +987,23 @@ class Component extends DCLogic {
           heatCount.map(h => this.chip(s.heat === h.k, h.k, () => this.setState({ heat: h.k, shown: 12 }), String(h.n)))
         )
       } : null,
+      // фасеты вентиляции: счётчики считаем предикатом matches со skip самого фасета,
+      // иначе числа на пилюлях не сойдутся с выдачей
+      ...EXTRA.map(f => {
+        const cur = s[f.key] || "all";
+        const pool = subList.filter(x => matches(x, f.key));
+        const opts = f.kind === "value"
+          ? f.keys.map(k => ({ k, n: pool.filter(x => f.of(x) === k).length }))
+          : f.bands.map(b => ({ k: b.k, n: pool.filter(x => { const v = f.of(x); return v >= b.lo && v <= b.hi; }).length }));
+        return {
+          key: f.key, title: f.title, note: f.note,
+          activeLabel: cur === "all" ? "" : cur,
+          options: [this.chip(cur === "all", "Любой", () => this.setState({ [f.key]: "all", shown: 12 }))].concat(
+            opts.filter(o => o.n > 0 || cur === o.k)
+              .map(o => this.chip(cur === o.k, o.k, () => this.setState({ [f.key]: o.k, shown: 12 }), String(o.n)))
+          )
+        };
+      }),
       hasArea ? {
         key: "area", activeLabel: s.area === "all" ? "" : s.area,
         title: "Площадь помещения", note: AREA_NOTE[s.group] || "По паспорту производителя",
@@ -1057,7 +1210,7 @@ class Component extends DCLogic {
       onSearch: e => this.setState({ q: e.target.value, shown: 12 }),
       onSort: e => this.setState({ sort: e.target.value }),
       toggleView: () => this.setState({ view: grid ? "list" : "grid" }),
-      reset: () => this.setState({ sub: "all", brand: "all", price: "all", comp: "all", ref: "all", eff: "all", area: "all", air: "all", vol: "all", heat: "all", feat: "", stock: "all", calcFit: 0, q: "", sort: "rec", shown: 12, onlyPick: false }),
+      reset: () => this.setState({ sub: "all", brand: "all", price: "all", comp: "all", ref: "all", eff: "all", seg: "all", power: "all", motor: "all", duct: "all", cold: "all", ip: "all", noise: "all", press: "all", area: "all", air: "all", vol: "all", heat: "all", feat: "", stock: "all", calcFit: 0, q: "", sort: "rec", shown: 12, onlyPick: false }),
       showMore: () => this.setState({ shown: s.shown + 12 }),
       filterGroups,
       cards,

@@ -463,7 +463,7 @@ class Component extends DCLogic {
     const p = new URLSearchParams(location.search);
     const group = p.get("g") || "bytovye";
     const idx = Math.max(0, parseInt(p.get("i") || "0", 10) || 0);
-    fetch("data/index.json").then(r => r.ok ? r.json() : null).then(index => this.setState({ index })).catch(() => {});
+    fetch("data/index.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(index => this.setState({ index })).catch(() => {});
     this.load(group, idx, p.get("sl") || "");
     this.__onCart = () => this.setState({ cartN: window.CART ? window.CART.count() : 0 });
     window.addEventListener("th-cart", this.__onCart);
@@ -475,8 +475,8 @@ class Component extends DCLogic {
   load(group, idx, sl) {
     this.setState({ loading: true, group, idx, photo: 0 });
     Promise.all([
-      fetch("data/" + group + ".json").then(r => r.ok ? r.json() : []),
-      fetch("data/details/" + group + ".json").then(r => r.ok ? r.json() : [])
+      fetch("data/" + group + ".json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []),
+      fetch("data/details/" + group + ".json", {cache:"no-cache"}).then(r => r.ok ? r.json() : [])
     ]).then(([items, details]) => {
       // ключ sl устойчив к пересборке данных, номер в массиве — нет
       let i = idx;

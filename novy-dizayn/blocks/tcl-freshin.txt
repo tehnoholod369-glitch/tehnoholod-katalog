@@ -243,7 +243,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     this.syncPhotos();
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json").then(r => r.ok ? r.json() : []).then(bytovye => this.setState({ bytovye })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []).then(bytovye => this.setState({ bytovye })).catch(() => {});
   }
   componentDidUpdate() { this.syncPhotos(); }
 

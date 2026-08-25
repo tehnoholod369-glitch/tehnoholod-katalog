@@ -141,10 +141,10 @@ class Component extends DCLogic {
 
   componentDidMount() {
     // связка с каталогом: ищем модель, которую ставили, по артикулу или названию
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json").then(r => r.json()).then(d => {
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"}).then(r => r.json()).then(d => {
       const slugs = (d.groups || []).map(g => g.slug);
       return Promise.all(slugs.map(s =>
-        fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/" + s + ".json").then(r => r.ok ? r.json() : []).then(items => items.map((x, i) => Object.assign({ g: s, gi: i }, x)))
+        fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/" + s + ".json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []).then(items => items.map((x, i) => Object.assign({ g: s, gi: i }, x)))
       ));
     }).then(parts => this.setState({ catalog: [].concat.apply([], parts) })).catch(() => this.setState({ catalog: [] }));
   }

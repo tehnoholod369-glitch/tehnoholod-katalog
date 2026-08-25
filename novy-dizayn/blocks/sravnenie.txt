@@ -164,14 +164,14 @@ class Component extends DCLogic {
   fmt(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009"); }
 
   componentDidMount() {
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json").then(r => r.json())
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"}).then(r => r.json())
       .then(d => { this.setState({ index: d.groups || d }); this.loadGroup("bytovye"); })
       .catch(() => this.setState({ items: [] }));
   }
 
   loadGroup(slug) {
     this.setState({ group: slug, items: null, picked: [], q: "" });
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/" + slug + ".json").then(r => r.ok ? r.json() : [])
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/" + slug + ".json", {cache:"no-cache"}).then(r => r.ok ? r.json() : [])
       .then(items => this.setState({ items }))
       .catch(() => this.setState({ items: [] }));
   }

@@ -152,7 +152,7 @@ class Component extends DCLogic {
   state = { idx: null, gaps: null, photo: null, proekt: null, exp: null };
 
   componentDidMount() {
-    const get = (f, k) => fetch("data/" + f).then(r => r.ok ? r.json() : null)
+    const get = (f, k) => fetch("data/" + f, {cache:"no-cache"}).then(r => r.ok ? r.json() : null)
       .then(d => this.setState({ [k]: d })).catch(() => {});
     get("index.json", "idx"); get("gaps.json", "gaps"); get("photo-hosts.json", "photo");
     get("proektnye.json", "proekt"); get("export-state.json", "exp");

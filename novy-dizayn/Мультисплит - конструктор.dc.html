@@ -365,10 +365,10 @@ class Component extends DCLogic {
   componentDidMount() {
     const want = new URLSearchParams(location.search).get("brand");
     if (want) this.setState({ brand: want });
-    fetch("data/multisplit-constructor.json").then(r => r.ok ? r.json() : null).then(data => this.setState({ data })).catch(() => {});
-    fetch("data/split-prices.json").then(r => r.ok ? r.json() : null).then(prices => this.setState({ prices })).catch(() => {});
-    fetch("data/brand-logos.json").then(r => r.ok ? r.json() : null).then(logos => this.setState({ logos })).catch(() => {});
-    fetch("data/brand-logo-ratio.json").then(r => r.ok ? r.json() : null).then(logoRatio => this.setState({ logoRatio })).catch(() => {});
+    fetch("data/multisplit-constructor.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(data => this.setState({ data })).catch(() => {});
+    fetch("data/split-prices.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(prices => this.setState({ prices })).catch(() => {});
+    fetch("data/brand-logos.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(logos => this.setState({ logos })).catch(() => {});
+    fetch("data/brand-logo-ratio.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(logoRatio => this.setState({ logoRatio })).catch(() => {});
   }
 
   componentDidUpdate() {
