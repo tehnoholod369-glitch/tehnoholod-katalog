@@ -26,6 +26,15 @@
     .th-filters-toggle { display:flex; }
     .th-filters-body.th-closed { display:none; }
   }
+  /* Та же беда у навигации: четыре направления и тринадцать групп на телефоне
+     переносятся в столбик и съедают 564 px — больше половины первого экрана
+     (замерено 26.08.2026 на 375 px). Прячем обе полосы за строку с текущим
+     разделом; на десктопе они на месте, там места хватает. */
+  .th-nav-toggle { display:none; }
+  @media (max-width: 860px) {
+    .th-nav-toggle { display:flex; }
+    .th-nav-body.th-closed { display:none; }
+  }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js"></script>
@@ -63,6 +72,12 @@
     </div>
   </div>
 
+  <div onClick="{{ toggleMobNav }}" class="th-nav-toggle" style="background:#071C3B; color:#fff; padding:12px 24px; align-items:center; justify-content:space-between; gap:12px; cursor:pointer; border-bottom:1px solid #0A4EA7;">
+    <span style="font-size:14px; font-weight:700;">{{ mobNavLabel }}</span>
+    <span style="font-size:12px; opacity:0.75;">{{ mobNavCaret }}</span>
+  </div>
+
+  <div class="th-nav-body {{ mobNavClass }}">
   <div style="background:#071C3B; border-bottom:1px solid #0A4EA7;">
     <div style="max-width:1320px; margin:0 auto; padding:0 24px; display:flex; gap:2px; flex-wrap:wrap;">
       <sc-for list="{{ dirTabs }}" as="d" hint-placeholder-count="4">
@@ -86,6 +101,7 @@
         </div>
       </sc-for>
     </div>
+  </div>
   </div>
 
   <sc-if value="{{ hasSubs }}" hint-placeholder-val="{{ false }}">
@@ -297,7 +313,7 @@ class Component extends DCLogic {
   }
   state = Object.assign({
     index: null, updated: "", group: "bytovye", sub: "all", items: null, loading: true, picks: [], onlyPick: false,
-    sort: "rec", view: "grid", shown: 12, mobFilters: false
+    sort: "rec", view: "grid", shown: 12, mobFilters: false, mobNav: false
   }, this.facetsOff());
   gridRef = React.createRef();
 
@@ -337,7 +353,8 @@ class Component extends DCLogic {
   }
 
   loadGroup(slug, sub) {
-    this.setState(Object.assign({ loading: true, items: null, shown: 12, sub: sub || "all" }, this.facetsOff()));
+    // выбрал раздел — список разделов на телефоне сворачиваем: он своё отработал
+    this.setState(Object.assign({ loading: true, items: null, shown: 12, sub: sub || "all", mobNav: false }, this.facetsOff()));
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/" + slug + ".json", {cache:"no-cache"})
       .then(r => r.ok ? r.json() : [])
       .then(items => { this.setState({ items, loading: false, sub: this.pendingSub || "all" }); this.pendingSub = null; })
@@ -1501,6 +1518,7 @@ class Component extends DCLogic {
         };
       }),
       crumbSub: s.sub === "all" ? "" : " → " + s.sub,
+      mobNavLabel: (DIRS.find(d => d.key === curDir) || DIRS[0]).label + " → " + (txt.h1 || meta.title),
       groupHref: "/novy-katalog?g=" + s.group,
       // блок «Что важно знать» прячем целиком, если для группы нет текста:
       // заголовок над пустотой выглядит как недоделка (groups.json заполняется отдельно)
@@ -1523,6 +1541,11 @@ class Component extends DCLogic {
       // счёт выбранного показываем прямо на кнопке: свёрнутая панель не должна
       // прятать тот факт, что выдача уже сужена фильтром
       toggleMobFilters: () => this.setState({ mobFilters: !s.mobFilters }),
+      // строка вместо двух полос показывает, где посетитель сейчас находится:
+      // свёрнутая навигация не должна выглядеть как её отсутствие
+      toggleMobNav: () => this.setState({ mobNav: !s.mobNav }),
+      mobNavClass: s.mobNav ? "" : "th-closed",
+      mobNavCaret: s.mobNav ? "▴ свернуть" : "▾ все разделы",
       mobFiltersClass: s.mobFilters ? "" : "th-closed",
       mobFiltersCaret: s.mobFilters ? "▴" : "▾",
       mobFiltersLabel: s.mobFilters
