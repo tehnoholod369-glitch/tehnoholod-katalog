@@ -23,6 +23,15 @@
      У живой /brendy вылета нет, там раскладка на flex-wrap; приводим каталог к тому же. */
   .th-cat-grid { display:grid; grid-template-columns:minmax(200px,244px) minmax(0,1fr); gap:20px; margin-top:20px; align-items:start; }
   @media (max-width: 860px) { .th-cat-grid { grid-template-columns:1fr; } }
+  /* На телефоне панель стоит НАД выдачей, и каждая новая группа фасетов отодвигает
+     первую карточку вниз: у радиаторов и каминов это 10–13 свёрнутых строк, до товара
+     2059 px — два с половиной экрана (замерено 26.08.2026). Прячем тело панели за одну
+     строку «Фильтры», на десктопе всё как было. */
+  .th-filters-toggle { display:none; }
+  @media (max-width: 860px) {
+    .th-filters-toggle { display:flex; }
+    .th-filters-body.th-closed { display:none; }
+  }
 </style>
 <script src="./photo-base.js"></script>
 <script src="./cart.js"></script>
@@ -127,6 +136,11 @@
           <div style="font-size:15px; font-weight:700;">Фильтры</div>
           <div onClick="{{ reset }}" style="font-size:13px; color:#0872D3; font-weight:600; cursor:pointer;">Сбросить</div>
         </div>
+        <div onClick="{{ toggleMobFilters }}" class="th-filters-toggle" style="align-items:center; justify-content:space-between; gap:10px; border:1px solid #DCE5F0; background:#F9FBFE; border-radius:10px; padding:11px 14px; margin-top:12px; cursor:pointer;">
+          <span style="font-size:14px; font-weight:700; color:#0A4EA7;">{{ mobFiltersLabel }}</span>
+          <span style="font-size:12px; color:#8593A6;">{{ mobFiltersCaret }}</span>
+        </div>
+        <div class="th-filters-body {{ mobFiltersClass }}">
         <sc-for list="{{ filterGroups }}" as="g" hint-placeholder-count="3">
           <div style="border-top:1px solid #E9EFF7; padding-top:12px; margin-top:12px;">
             <div onClick="{{ g.toggle }}" style="display:flex; align-items:center; justify-content:space-between; gap:8px; cursor:pointer;">
@@ -147,6 +161,7 @@
             </div>
           </div>
         </sc-for>
+        </div>
       </div>
 
       <div>
@@ -280,7 +295,7 @@ class Component extends DCLogic {
   // Один список ключей фасетов на три места: старт, смена группы и «Сбросить».
   // Раньше он был переписан трижды — новый фасет забывали сбросить, и он тянулся
   // за пользователем в другую группу (25.08.2026)
-  facetKeys = ["brand", "price", "comp", "ref", "eff", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "watt", "sect", "height", "stock"];
+  facetKeys = ["brand", "price", "comp", "ref", "eff", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "watt", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "thermo", "stock"];
   facetsOff() {
     const o = { feat: "", calcFit: 0, q: "" };
     (this.facetKeys || []).forEach(k => { o[k] = "all"; });
@@ -288,7 +303,7 @@ class Component extends DCLogic {
   }
   state = Object.assign({
     index: null, updated: "", group: "bytovye", sub: "all", items: null, loading: true, picks: [], onlyPick: false,
-    sort: "rec", view: "grid", shown: 12
+    sort: "rec", view: "grid", shown: 12, mobFilters: false
   }, this.facetsOff());
   gridRef = React.createRef();
 
@@ -766,6 +781,61 @@ class Component extends DCLogic {
     const heightOf = x => numIn(specOf(x, /^высота$/i));
     const sectOf = x => numIn(specOf(x, /^количество секций/i));
 
+    // ─── Фасеты бойлеров, завес, пушек и ИК (26.08.2026) ──────────────────────
+    // Поля лежали в мастере и не использовались. Формулировки поставщика приводим
+    // к общему виду; всё, что не опознали, в фильтр не попадает.
+    const tankOf = x => {
+      const v = specOf(x, /^покрытие бака/i).toLowerCase();
+      if (/нержав/.test(v)) return "Нержавеющая сталь";
+      if (/эмал/.test(v)) return "Эмаль";
+      return "";
+    };
+    // «Инверторное + Wi-Fi» — это верхний класс бойлеров, его и выделяем отдельно
+    const ctrlOf = x => {
+      const v = specOf(x, /^управление$/i).toLowerCase();
+      if (/инвертор/.test(v)) return "Инверторное с Wi-Fi";
+      if (/электрон|сенсор/.test(v)) return "Электронное";
+      if (/механ/.test(v)) return "Механическое";
+      return "";
+    };
+    // в поле «Монтаж» смешаны ориентация и крепление («Вертикальное/Горизонтальное,
+    // Настенная»). Берём только ориентацию — без неё бойлер не встанет в узкую нишу
+    const orientOf = x => {
+      const v = specOf(x, /^монтаж$/i).toLowerCase();
+      if (/напольн/.test(v) && !/настенн/.test(v)) return "Напольный";
+      if (/горизонтальн/.test(v)) return "Вертикально или горизонтально";
+      if (/вертикальн/.test(v)) return "Только вертикально";
+      return "";
+    };
+    const waveOf = x => {
+      const v = specOf(x, /^тип волны/i).toLowerCase();
+      if (/длинн/.test(v)) return "Длинные волны";
+      if (/средн/.test(v)) return "Средние волны";
+      if (/коротк/.test(v)) return "Короткие волны";
+      return "";
+    };
+    const installOf = x => {
+      const v = specOf(x, /^установка$/i).toLowerCase();
+      if (!v) return "";
+      if (/универсальн/.test(v)) return "Универсальная";
+      if (/напольн/.test(v) && /настенн/.test(v)) return "Напольная или настенная";
+      if (/потолочн/.test(v)) return "Потолочная";
+      if (/подвесн/.test(v)) return "Подвесная";
+      if (/напольн/.test(v)) return "Напольная";
+      if (/настенн/.test(v)) return "Настенная";
+      if (/горизонтальн/.test(v)) return "Горизонтальная";
+      return "";
+    };
+    // у пушек в поле «Термостат» и тип, и его отсутствие: покупателю важно само наличие
+    const thermoOf = x => {
+      const v = specOf(x, /^термостат$/i).toLowerCase();
+      if (!v) return "";
+      if (/отсутств|^нет/.test(v)) return "Нет";
+      if (/опци|доп\./.test(v)) return "Опцией";
+      if (/механ|электрон|встроен|^да/.test(v)) return "Есть";
+      return "";
+    };
+
     const glassOf = x => {
       const v = specOf(x, /^защитное стекло/i).toLowerCase();
       if (/^да$|есть/.test(v)) return "Есть";
@@ -811,6 +881,24 @@ class Component extends DCLogic {
       { key: "glass", title: "Защитное стекло", of: glassOf, only: ["kaminy"],
         order: ["Есть", "Нет"],
         note: "Стекло закрывает открытое пламя — важно, если в доме дети или животные. Позиции без данных в фильтр не попадают" },
+      { key: "tank", title: "Покрытие бака", of: tankOf, only: ["vodonagrevateli"],
+        order: ["Нержавеющая сталь", "Эмаль"],
+        note: "Нержавейка дороже и служит дольше, эмаль дешевле и требовательнее к воде. Позиции без данных в фильтр не попадают" },
+      { key: "ctrl", title: "Управление", of: ctrlOf, only: ["vodonagrevateli"],
+        order: ["Механическое", "Электронное", "Инверторное с Wi-Fi"],
+        note: "Механика проще и дешевле в ремонте, инверторные модели греют экономнее и управляются с телефона. Позиции без данных в фильтр не попадают" },
+      { key: "orient", title: "Положение при монтаже", of: orientOf, only: ["vodonagrevateli"],
+        order: ["Только вертикально", "Вертикально или горизонтально", "Напольный"],
+        note: "Горизонтальная установка нужна, когда бак прячут под потолок или в узкую нишу. Позиции без данных в фильтр не попадают" },
+      { key: "wave", title: "Тип волны", of: waveOf, only: ["infrakrasnye-obogrevateli"],
+        order: ["Длинные волны", "Средние волны", "Короткие волны"],
+        note: "Длинные волны мягче — для жилых комнат; короткие греют жёстче и берут высокие потолки и улицу. Позиции без данных в фильтр не попадают" },
+      { key: "install", title: "Установка", of: installOf, only: ["infrakrasnye-obogrevateli", "teplovye-zavesy"],
+        order: ["Универсальная", "Потолочная", "Подвесная", "Настенная", "Напольная", "Напольная или настенная", "Горизонтальная"],
+        note: "Как прибор крепится на месте. Позиции без данных в фильтр не попадают" },
+      { key: "thermo", title: "Термостат", of: thermoOf, only: ["teplovye-pushki"],
+        order: ["Есть", "Опцией", "Нет"],
+        note: "С термостатом пушка сама держит температуру и не жжёт топливо впустую. Позиции без данных в фильтр не попадают" },
       { key: "mezh", title: "Межосевое расстояние", of: mezhOf, only: ["radiatory"],
         order: ["200 мм", "300 мм", "350 мм", "500 мм"],
         note: "Расстояние между центрами подводок — по нему радиатор встаёт на место старого. У трубчатых моделей поставщик его не указывает, они в фильтр не попадают" },
@@ -898,7 +986,8 @@ class Component extends DCLogic {
     // порядок в панели задаём явно, а не тем, в каком массиве объявлен фасет:
     // размер — первый вопрос покупателя, цвет — последний
     const FACET_ORDER = ["diag", "fireline", "dry", "mezh", "watt", "conn", "sect", "height", "mat",
-      "mount", "warm", "glass", "burn", "recup", "seg", "fuel", "power", "motor", "duct",
+      "tank", "ctrl", "orient", "wave", "mount", "warm", "glass", "burn", "recup", "seg",
+      "install", "thermo", "fuel", "power", "motor", "duct",
       "noise", "cold", "press", "ip", "color", "colorRad"];
     const facetRank = k => { const i = FACET_ORDER.indexOf(k); return i < 0 ? 99 : i; };
     EXTRA.sort((a, b) => facetRank(a.key) - facetRank(b.key));
@@ -1180,6 +1269,9 @@ class Component extends DCLogic {
       b === "all" ? String(exceptBrand.length) : String(brandCount[b] || 0)
     ));
 
+    // сколько фильтров реально сужают выдачу: ключи фасетов плюс «Возможности» и «Наш выбор»
+    const activeFilters = (this.facetKeys || []).filter(k => s[k] && s[k] !== "all").length
+      + (s.feat ? 1 : 0) + (s.onlyPick ? 1 : 0);
     const filterGroups = this.wrapFilters([
       // в группе один бренд — выбирать не из чего: «Все 444 / Royal Thermo 444» это
       // не фильтр, а строка-пустышка. Так у семи групп, включая радиаторы (26.08.2026)
@@ -1434,6 +1526,14 @@ class Component extends DCLogic {
       onSort: e => this.setState({ sort: e.target.value }),
       toggleView: () => this.setState({ view: grid ? "list" : "grid" }),
       reset: () => this.setState(Object.assign({ sub: "all", sort: "rec", shown: 12, onlyPick: false }, this.facetsOff())),
+      // счёт выбранного показываем прямо на кнопке: свёрнутая панель не должна
+      // прятать тот факт, что выдача уже сужена фильтром
+      toggleMobFilters: () => this.setState({ mobFilters: !s.mobFilters }),
+      mobFiltersClass: s.mobFilters ? "" : "th-closed",
+      mobFiltersCaret: s.mobFilters ? "▴" : "▾",
+      mobFiltersLabel: s.mobFilters
+        ? "Скрыть фильтры"
+        : (activeFilters ? this.plural(activeFilters, "фильтр выбран", "фильтра выбрано", "фильтров выбрано") : "Показать фильтры"),
       showMore: () => this.setState({ shown: s.shown + 12 }),
       filterGroups,
       cards,
