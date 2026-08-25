@@ -256,11 +256,14 @@
                     <b style="font-size:16px; color:#0A4EA7;">{{ power.hoursLabel }}</b>
                   </div>
                   <input type="range" min="2" max="24" step="1" value="{{ power.hours }}" onInput="{{ power.onHours }}" style="width:100%; margin-top:8px; accent-color:#0872D3;" />
-                  <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-top:16px;">
-                    <span style="font-size:14px; color:#5A6675;">Тариф на электричество</span>
-                    <b style="font-size:16px; color:#0A4EA7;">{{ power.tariffLabel }}</b>
+                  <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:16px;">
+                    <span style="font-size:14px; color:#5A6675;">Ваш тариф, ₸ за кВт·ч</span>
+                    <span style="display:flex; align-items:center; gap:6px;">
+                      <input type="number" inputmode="decimal" min="1" max="300" step="0.01" value="{{ power.tariff }}" onInput="{{ power.onTariff }}" style="width:96px; border:1px solid #DCE5F0; border-radius:8px; padding:8px 10px; font-family:inherit; font-size:16px; font-weight:700; color:#0A4EA7; text-align:right;" />
+                      <span style="font-size:14px; color:#5A6675;">₸</span>
+                    </span>
                   </div>
-                  <input type="range" min="15" max="60" step="1" value="{{ power.tariff }}" onInput="{{ power.onTariff }}" style="width:100%; margin-top:8px; accent-color:#0872D3;" />
+                  <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:8px;">{{ power.tariffNote }}</div>
                   <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:10px;">{{ power.seer }}</div>
                 </div>
 
@@ -896,7 +899,12 @@ class Component extends DCLogic {
         if (!canPower) return {};
         const hours = s.hours || 6;              // часов работы в сутки
         const days = 90;                         // сезон охлаждения в Алматы, ориентировочно
-        const tariff = s.tariff || 28;           // ₸ за кВт·ч — уточняется владельцем
+        // Тариф вводится руками — цифра у каждого своя, в квитанции. За базу берём
+        // основной тариф для быта по Алматы: 35,37 ₸/кВт·ч с НДС, действует с 05.06.2026
+        // (филиал АО «Алатау Жарық Компаниясы» — «ЭнергоСбыт», esalmaty.kz/ru/home-tariffs).
+        // При дифференцированном учёте ступени другие — 32,10 / 42,42 / 53,04 ₸ с НДС,
+        // поэтому число не зашиваем намертво, а показываем и даём переписать.
+        const tariff = s.tariff > 0 ? s.tariff : 35.37;
         const kwhSeason = Math.round(coolKw / seer * hours * days);
         const cost = Math.round(kwhSeason * tariff);
         // сравнение с ON/OFF того же класса мощности: SEER 3.2 против фактического
@@ -919,8 +927,14 @@ class Component extends DCLogic {
           hoursLabel: hours + " ч в сутки",
           onHours: e => this.setState({ hours: +e.target.value }),
           tariff,
-          tariffLabel: tariff + " ₸/кВт·ч",
-          onTariff: e => this.setState({ tariff: +e.target.value }),
+          tariffLabel: String(tariff).replace(".", ",") + " ₸/кВт·ч",
+          tariffNote: "По умолчанию — основной тариф для быта в Алматы: 35,37 ₸/кВт·ч с НДС, с 05.06.2026. "
+            + "При дифференцированном учёте ступени 32,10 / 42,42 / 53,04 ₸ — поставьте своё число из квитанции.",
+          // пустое поле не должно обнулять расчёт: до ввода считаем по тарифу Алматы
+          onTariff: e => {
+            const v = parseFloat(String(e.target.value).replace(",", "."));
+            this.setState({ tariff: v > 0 ? v : 0 });
+          },
           seer: seerRaw ? "SEER " + seer + " — из паспорта модели" : "SEER " + seer + " — типовое значение для класса " + cls,
           kwh: this.fmt(kwhSeason) + " кВт·ч",
           cost: this.fmt(cost) + " ₸",

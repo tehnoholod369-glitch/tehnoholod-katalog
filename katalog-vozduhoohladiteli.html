@@ -1,4 +1,4 @@
-<!-- ====== КАТАЛОГ «Воздухоохладители испарительные» ИП «ТехноХолод» · из PIM/КАТАЛОГИ_ПО_ГРУППАМ · собрано 25.08.2026 ====== -->
+<!-- ====== КАТАЛОГ «Воздухоохладители испарительные» ИП «ТехноХолод» · из PIM/КАТАЛОГИ_ПО_ГРУППАМ · собрано 26.08.2026 ====== -->
 <div class="tcat vozduhoohladiteli">
  <div class="tc-wrap">
   <header class="tc-hd">
@@ -26,7 +26,7 @@
   <div class="tc-empty">Ничего не найдено. Измените фильтры или поиск.</div>
   <div class="tc-more-wrap"><button class="tc-more">Показать ещё</button></div>
   <div class="tc-foot"><a class="tc-call" href="tel:+77000369369">Подберём под вашу задачу: +77 000 369 369</a></div>
-  <div class="tc-note">Цены указаны в тенге и действуют на 25.08.2026. Наличие и срок поставки подтверждаем при заказе. Характеристики — по данным производителя.</div>
+  <div class="tc-note">Цены указаны в тенге и действуют на 26.08.2026. Наличие и срок поставки подтверждаем при заказе. Характеристики — по данным производителя.</div>
  </div>
  <div class="tc-modal"><div class="tc-mbox"><button class="tc-mclose">×</button>
   <div class="tc-mgrid"><div><div class="tc-mimg"><img src="" alt=""><span class="tc-mzoom">Нажмите, чтобы увеличить</span></div><div class="tc-mgal"></div></div>
@@ -165,7 +165,7 @@
   var pills=(p.pills||[]).map(function(x){return '<span class="tc-pill">'+x+'</span>'}).join('');
   return '<div class="tc-card" data-i="'+i+'"><div class="tc-imgbox"><span class="tc-st '+p.sc+'">'+p.stock+'</span>'+
    '<img loading="lazy" referrerpolicy="no-referrer" src="'+(p.img||ph())+'" alt="'+p.name.replace(/"/g,'&quot;')+'" onerror="this.onerror=null;this.src=\''+ph()+'\'"></div>'+
-   '<div class="tc-cb"><div class="tc-brand">'+p.brand+'</div><div class="tc-name">'+p.name+'</div>'+
+   '<div class="tc-cb">'+(p.brand?'<div class="tc-brand">'+p.brand+'</div>':'')+'<div class="tc-name">'+p.name+'</div>'+
    (pills?'<div class="tc-pills">'+pills+'</div>':'')+'<div class="tc-price">'+(p.price||'Цена по запросу')+'</div><div class="tc-cta">Подробнее →</div></div></div>';
  }
  function render(reset){
@@ -192,7 +192,7 @@
    box.querySelectorAll('.tc-chip[data-v=all]').forEach(function(o){o.classList.add('is-on')});render();
  });
  function open(p){
-  box.querySelector('.tc-mb').textContent=p.brand;
+  var mb=box.querySelector('.tc-mb');mb.textContent=p.brand||'';mb.style.display=p.brand?'':'none';
   box.querySelector('.tc-mc').textContent=p.type||'';
   box.querySelector('.tc-mn').textContent=p.name;
   box.querySelector('.tc-mp').textContent=p.price||'Цена по запросу';
