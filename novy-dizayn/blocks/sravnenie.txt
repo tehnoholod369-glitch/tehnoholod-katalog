@@ -309,7 +309,11 @@ class Component extends DCLogic {
     });
 
     const allRows = [priceRow, stockRow].concat(specRows);
-    const rows = s.onlyDiff ? allRows.filter(r => r.diff) : allRows;
+    // «Только различия» имеет смысл с двух моделей. С одной различий нет по определению,
+    // и фильтр прятал всю таблицу: на экране оставалась строка «Цена» и подпись
+    // «совпадающих скрыто 23» — выглядело как поломка выдачи (26.08.2026)
+    const diffMode = s.onlyDiff && chosen.length > 1;
+    const rows = diffMode ? allRows.filter(r => r.diff) : allRows;
 
     const label = it => {
       const tail = it.s || it.nb || it.n;
@@ -355,9 +359,11 @@ class Component extends DCLogic {
       cardCols: "repeat(auto-fit,minmax(230px,1fr))",
       rowCols: cols,
       rows,
-      rowsNote: s.onlyDiff
+      rowsNote: diffMode
         ? "Показаны только строки с различиями" + (allRows.length - rows.length > 0 ? ": совпадающих скрыто " + (allRows.length - rows.length) + "." : ".")
-        : "Показаны все характеристики, различия подсвечены.",
+        : (chosen.length < 2
+            ? "Показаны все характеристики модели. Различия подсветим, когда добавите вторую."
+            : "Показаны все характеристики, различия подсвечены."),
       toggleDiff: () => this.setState({ onlyDiff: !s.onlyDiff }),
       diffLabel: s.onlyDiff ? "Только различия" : "Все характеристики",
       diffBorder: s.onlyDiff ? "#0872D3" : "#DCE5F0",
