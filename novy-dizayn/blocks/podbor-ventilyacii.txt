@@ -9,10 +9,8 @@
     min-height:100vh;padding:26px 16px 60px;display:flex;justify-content:center;}
   .wrap{width:100%;max-width:860px;}
   .head{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
-  .mark{width:46px;height:46px;border-radius:50%;flex:none;
-    background:conic-gradient(from 200deg,var(--blue) 0 40%,#fff 40% 50%,var(--red) 50% 90%,var(--orange) 90% 100%);
-    box-shadow:0 6px 18px rgba(31,127,212,.28);position:relative;}
-  .mark::after{content:"\2744";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:20px;text-shadow:0 1px 2px rgba(0,0,0,.25);}
+  .mark{height:46px;width:auto;flex:none;display:block;}
+  
   .bname{font-family:'Unbounded',sans-serif;font-weight:800;font-size:18px;}
   .bname span{color:var(--blue-d);} .bname b{color:var(--red);}
   .tag{font-size:12px;color:var(--muted);margin-top:1px;}
@@ -93,10 +91,11 @@
 <div class="wrap">
 
   <div class="head">
-    <div class="mark"></div>
+    <img class="mark" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»"
+         onerror="this.style.display='none'">
     <div>
       <div class="bname">ИП <span>«Техно</span><b>Холод»</b></div>
-      <div class="tag">Алматы · +7 700 036 93 69 · tehnoholod369@gmail.com</div>
+      <div class="tag">Алматы · +77 000 369 369 · tehnoholod369@gmail.com</div>
     </div>
   </div>
 
@@ -217,7 +216,7 @@
 
   <div class="foot">
     ИП «ТехноХолод» · Истигечев Вячеслав Викторович · ИИН/БИН 770313000379<br>
-    050000, г. Алматы, Турксибский р-н, мкр Алтай-1, д. 29/1, оф. 43 · +7 700 036 93 69 · tehnoholod369@gmail.com<br>
+    050000, г. Алматы, Турксибский р-н, мкр Алтай-1, д. 29/1, оф. 43 · +77 000 369 369 · tehnoholod369@gmail.com<br>
     <span id="buildline"></span>
   </div>
 </div>
