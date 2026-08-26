@@ -48,7 +48,7 @@
       Приточные и приточно-вытяжные установки, канальные и осевые вентиляторы, кухонные и крышные,
       рекуператоры и аксессуары. Подбираем по расходу воздуха и площади, считаем монтаж,
       обслуживаем после установки.
-      <span id="vt-svodka"></span>
+      <span id="vt-svodka" data-svodka="ventilyaciya"></span>
     </div>
 
     <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
@@ -62,55 +62,55 @@
       <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Приточно-вытяжные установки">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Приточно-вытяжные установки</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">С рекуперацией тепла: свежий воздух без потери тепла зимой.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="Приточно-вытяжные установки"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Приточно-вытяжные установки"></span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Приточные установки">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Приточные установки</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Подача свежего воздуха с улицы, с нагревом и фильтрацией.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="Приточные установки"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Приточные установки"></span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Канальные прямоугольные">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Канальные прямоугольные</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">В прямоугольный воздуховод — для приточных и вытяжных систем.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="Канальные прямоугольные"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Канальные прямоугольные"></span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Канальные круглые">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Канальные круглые</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">В круглый воздуховод, компактнее в стеснённых узлах.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="Канальные круглые"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Канальные круглые"></span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Вытяжные бытовые">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Вытяжные бытовые</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Для санузлов и небольших помещений.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="Вытяжные бытовые"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Вытяжные бытовые"></span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Осевые">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Осевые</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Большой расход при малом напоре — вытяжка без длинных трасс.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="Осевые"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Осевые"></span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Кухонные">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Кухонные</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Для кухонных зон и вытяжных зонтов.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="Кухонные"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Кухонные"></span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Крышные">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Крышные</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Устанавливаются на кровле, для зданий и цехов.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="Крышные"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Крышные"></span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Рекуператоры">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Рекуператоры</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Возвращают тепло вытяжного воздуха приточному.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="Рекуператоры"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Рекуператоры"></span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=ventilyatory-prom">
