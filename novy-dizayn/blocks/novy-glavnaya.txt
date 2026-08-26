@@ -145,7 +145,7 @@
 
         <a href="/novy-katalog?g=bytovye" style="display:block; border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700;">Подобрать по площади в каталоге</a>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
-          <a href="https://share.google/ambLW5DS0ZdmtfS68" target="_blank" rel="noreferrer" style="background:#E6F2FD; color:#071C3B; border-radius:999px; padding:7px 12px; font-size:13px; font-weight:600;">★ Отзывы в Google</a>
+          <a href="https://maps.google.com/?cid=6985295064906783345" target="_blank" rel="noreferrer" style="background:#E6F2FD; color:#071C3B; border-radius:999px; padding:7px 12px; font-size:13px; font-weight:600;">★ Отзывы в Google</a>
           <a href="/uslugi" style="background:#E6F2FD; color:#071C3B; border-radius:999px; padding:7px 12px; font-size:13px; font-weight:600;">Гарантия производителя</a>
           <a href="/uslugi" style="background:#E6F2FD; color:#071C3B; border-radius:999px; padding:7px 12px; font-size:13px; font-weight:600;">Монтаж 1–3 дня</a>
         </div>
@@ -634,7 +634,7 @@ class Component extends DCLogic {
           icon: this.brandIcon('<rect x="3" y="3" width="18" height="18" rx="5" fill="#E1306C"/><rect x="7" y="7" width="10" height="10" rx="5" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="#fff"/>') },
         { label: "YouTube", href: "https://www.youtube.com/@Tehnoholod369",
           icon: this.brandIcon('<rect x="2.5" y="5.5" width="19" height="13" rx="3.5" fill="#FF0000"/><path d="M10.3 9.4l5 2.6-5 2.6z" fill="#fff"/>') },
-        { label: "Google", href: "https://share.google/ambLW5DS0ZdmtfS68",
+        { label: "Google", href: "https://maps.google.com/?cid=6985295064906783345",
           icon: this.brandIcon('<path d="M21.4 12.2c0-.7-.1-1.2-.2-1.8H12v3.5h5.3c-.1.9-.7 2.2-1.9 3l2.9 2.2c1.8-1.6 2.9-4 2.9-6.9z" fill="#4285F4"/><path d="M12 21.5c2.6 0 4.8-.9 6.3-2.4l-2.9-2.2c-.8.5-1.9.9-3.4.9-2.7 0-5-1.8-5.8-4.2l-3 2.3A9.5 9.5 0 0 0 12 21.5z" fill="#34A853"/><path d="M6.2 13.6a5.8 5.8 0 0 1 0-3.6l-3-2.3a9.5 9.5 0 0 0 0 8.2z" fill="#FBBC05"/><path d="M12 5.9c1.5 0 2.7.5 3.6 1.3l2.6-2.5A9.4 9.4 0 0 0 3.2 7.7l3 2.3C7 7.7 9.3 5.9 12 5.9z" fill="#EA4335"/>') },
         { label: "2ГИС", href: "https://2gis.kz/almaty/firm/70000001115210880",
           icon: this.brandIcon('<circle cx="12" cy="12" r="9.2" fill="#39B54A"/><path d="M9.4 9.1c0-1.3 1.2-2.2 2.7-2.2 1.5 0 2.6.9 2.6 2.1 0 1-.6 1.7-1.9 2.6-1.2.9-1.9 1.5-2.1 2.2h4.2v1.9H9.2c0-1.9.8-3 2.3-4.1 1-.8 1.3-1.1 1.3-1.6 0-.5-.4-.8-1-.8-.6 0-1 .4-1 1.1z" fill="#fff"/>') },

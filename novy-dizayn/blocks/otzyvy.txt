@@ -95,7 +95,7 @@
           <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Отзыв занимает минуту и помогает следующему покупателю выбрать без риска. Напишите как есть: и что понравилось, и что стоит улучшить — второе для нас полезнее.</div>
         </div>
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="https://share.google/ambLW5DS0ZdmtfS68" target="_blank" rel="noreferrer" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Отзыв в Google</a>
+          <a href="https://g.page/r/CXHaDhPawPBgEAE/review" target="_blank" rel="noreferrer" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Отзыв в Google</a>
           <a href="https://2gis.kz/almaty/firm/70000001115210880" target="_blank" rel="noreferrer" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Отзыв в 2ГИС</a>
         </div>
       </div>
@@ -126,7 +126,7 @@ class Component extends DCLogic {
       // (26.08.2026). Ведём читателя туда, где цифра живая.
       platforms: [
         {
-          name: "Google", href: "https://share.google/ambLW5DS0ZdmtfS68",
+          name: "Google", href: "https://maps.google.com/?cid=6985295064906783345",
           tag: "проверяемая оценка", tagFg: "#0E9F6E", tagBg: "#E7F7F0", border: "#B9DBF7",
           hasScore: false, score: "", scoreNote: "",
           text: "Отзывы клиентов с фото объектов и датами. Каждый привязан к аккаунту автора — удалить или переписать его нельзя. Текущую оценку смотрите там же: на сайте мы её не дублируем, чтобы не показывать вчерашнюю цифру.",
