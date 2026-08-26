@@ -205,7 +205,7 @@
           <div style="font-size:15px; color:#2C3846; margin-top:10px; line-height:1.55;">Инверторные сплит-системы на 25–50 м² с фильтрацией уличного воздуха, Wi-Fi и гарантией производителя. Установка в Алматы и области.</div>
           <div style="display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;">
             <a href="/tcl-freshin" style="background:#E11A13; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">{{ promoPrice }}</a>
-            <a href="/sravnenie" style="border:2px solid #E11A13; color:#C21610; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Сравнить модели</a>
+            <a href="/freshin-sravnenie" style="border:2px solid #E11A13; color:#C21610; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Сравнить модели</a>
           </div>
         </div>
         <div style="display:flex; justify-content:center;">

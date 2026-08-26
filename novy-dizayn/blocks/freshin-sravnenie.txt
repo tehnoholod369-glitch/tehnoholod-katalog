@@ -1,0 +1,176 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+  .fr-tbl { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .fr-tbl th, .fr-tbl td { padding: 11px 12px; text-align: left; border-bottom: 1px solid #E3EBF4; white-space: nowrap; }
+  .fr-tbl th { font-family: "Montserrat", sans-serif; font-weight: 700; color: #071C3B; background: #F3F7FB; }
+  .fr-tbl tr:last-child td { border-bottom: 0; }
+  .fr-num { font-variant-numeric: tabular-nums; }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/novy-glavnaya"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/novy-katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
+    <div style="font-size:13px; color:#8593A6;"><a href="/novy-glavnaya">Главная</a> → <a href="/tcl-freshin">TCL FreshIN 3.0</a> → <span style="color:#18212F;">Сравнение моделей</span></div>
+
+    <h1 style="margin:14px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em;">Как выбрать TCL FreshIN 3.0: сравнение всех девяти исполнений</h1>
+
+    <div style="font-size:16px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:860px;">
+      Все FreshIN 3.0 — это кондиционер с притоком свежего воздуха с улицы: окно открывать не нужно.
+      Фильтрация, Wi-Fi, голосовое управление, самоочистка и инверторный компрессор одинаковы у всех.
+      Различаются <b>мощность, рекомендуемая площадь, цвет корпуса и цена</b>.
+    </div>
+
+    <div style="background:#FFF6E6; border:1px solid #F5D08A; border-radius:12px; padding:16px 18px; margin-top:18px; max-width:860px;">
+      <div style="font-weight:700; color:#7A4A00; font-size:15px;">Главное, что стоит знать до выбора цвета</div>
+      <div style="font-size:15px; color:#4A3410; line-height:1.6; margin-top:6px;">
+        Чёрная серия — это <b>не тот же аппарат в другом корпусе</b>, а отдельный ряд мощностей.
+        Вместо 9 000 и 12 000 BTU в ней 10 000 и 13 000, площадь и потребление тоже другие.
+        Белая и серебристая серии между собой совпадают по технике и различаются только ценой.
+      </div>
+    </div>
+
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Все девять исполнений рядом</h2>
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; margin-top:14px; overflow-x:auto;">
+      <table class="fr-tbl">
+        <thead>
+          <tr>
+            <th>Модель</th><th>Цвет</th><th>Площадь</th><th>BTU</th>
+            <th>Охлаждение</th><th>Класс</th><th>Цена</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><b>TAC-FR09HSV/P7W</b></td><td>белый</td><td class="fr-num">до 25 м²</td><td class="fr-num">9 000</td><td class="fr-num">2,80 кВт</td><td>A+++</td><td class="fr-num"><b>323 942 ₸</b></td></tr>
+          <tr><td><b>TAC-FR09HSV/P7S</b></td><td>серебристый</td><td class="fr-num">до 25 м²</td><td class="fr-num">9 000</td><td class="fr-num">2,80 кВт</td><td>A+++</td><td class="fr-num"><b>340 992 ₸</b></td></tr>
+          <tr><td><b>TAC-FR10HSV/P7B</b></td><td>чёрный</td><td class="fr-num">до 28 м²</td><td class="fr-num">10 000</td><td class="fr-num">2,90 кВт</td><td>A+++</td><td class="fr-num"><b>340 992 ₸</b></td></tr>
+          <tr><td><b>TAC-FR12HSV/P7W</b></td><td>белый</td><td class="fr-num">до 35 м²</td><td class="fr-num">12 000</td><td class="fr-num">3,65 кВт</td><td>A+++</td><td class="fr-num"><b>340 992 ₸</b></td></tr>
+          <tr><td><b>TAC-FR12HSV/P7S</b></td><td>серебристый</td><td class="fr-num">до 35 м²</td><td class="fr-num">12 000</td><td class="fr-num">3,65 кВт</td><td>A+++</td><td class="fr-num"><b>375 092 ₸</b></td></tr>
+          <tr><td><b>TAC-FR13HSV/P7B</b></td><td>чёрный</td><td class="fr-num">до 38 м²</td><td class="fr-num">13 000</td><td class="fr-num">3,85 кВт</td><td>A+++</td><td class="fr-num"><b>383 617 ₸</b></td></tr>
+          <tr><td><b>TAC-FR18HSV/P7W</b></td><td>белый</td><td class="fr-num">до 50 м²</td><td class="fr-num">18 000</td><td class="fr-num">5,40 кВт</td><td>A+++</td><td class="fr-num"><b>392 142 ₸</b></td></tr>
+          <tr><td><b>TAC-FR18HSV/P7S</b></td><td>серебристый</td><td class="fr-num">до 50 м²</td><td class="fr-num">18 000</td><td class="fr-num">5,40 кВт</td><td>A+++</td><td class="fr-num"><b>409 192 ₸</b></td></tr>
+          <tr><td><b>TAC-FR18HSV/P7B</b></td><td>чёрный</td><td class="fr-num">до 50 м²</td><td class="fr-num">18 000</td><td class="fr-num">5,57 кВт</td><td>A+++</td><td class="fr-num"><b>426 242 ₸</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:13px; color:#8593A6; margin-top:10px; line-height:1.6;">
+      Цены розничные, действуют на дату сборки страницы. Доступна рассрочка. Наличие уточняйте —
+      актуальное показано в <a href="/novy-katalog">каталоге</a>.
+    </div>
+
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Какую взять под вашу комнату</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin-top:14px;">
+
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:18px;">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Спальня, детская, кабинет</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:4px;">до 25–28 м²</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:10px;">
+          <b>FR09</b> — в белом или серебристом корпусе. В чёрном ближайший — <b>FR10</b>, он немного мощнее и берёт до 28 м².
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:18px;">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Гостиная, кухня-студия, офис</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:4px;">до 35–38 м²</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:10px;">
+          <b>FR12</b> — белый или серебристый. В чёрном — <b>FR13</b> на 13 000 BTU и до 38 м².
+        </div>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:18px;">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Просторная гостиная, студия</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:4px;">до 50 м²</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:10px;">
+          <b>FR18</b> — есть во всех трёх цветах. Это единственный размер, где корпус действительно
+          не меняет ни площадь, ни класс.
+        </div>
+      </div>
+
+    </div>
+
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:16px; max-width:860px;">
+      <div style="font-size:15px; color:#2C3846; line-height:1.65;">
+        <b>Берите на размер больше</b>, если комната на солнечной стороне, это кухня, высокие потолки
+        или панорамные окна, либо людей регулярно много. Площадь в таблице — ориентир для обычной
+        комнаты; точный расчёт делаем по замеру. Сомневаетесь — напишите площадь и особенности,
+        подберём.
+      </div>
+    </div>
+
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Что одинаково у всех девяти</h2>
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:20px; margin-top:14px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:10px 28px; font-size:15px; color:#2C3846; line-height:1.6;">
+        <div>· Приток свежего воздуха с улицы — без открывания окна</div>
+        <div>· Многоступенчатая очистка QuadruPuri</div>
+        <div>· Датчик качества воздуха VOC</div>
+        <div>· Мягкий обдув Gentle Breeze</div>
+        <div>· Самоочистка со стерилизацией при 58 °C</div>
+        <div>· Wi-Fi, приложение TCL Home, голосовое управление</div>
+        <div>· DC-инверторный компрессор, класс A+++</div>
+        <div>· Обогрев до −20 °C, охлаждение до +53 °C</div>
+        <div>· Трасса до 25 м, перепад высот до 10 м</div>
+        <div>· Питание 220–240 В, 50 Гц, одна фаза</div>
+      </div>
+      <div style="font-size:13px; color:#8593A6; margin-top:14px; line-height:1.6;">
+        Гарантия — по паспорту модели: срок указывает производитель, мы его не назначаем.
+      </div>
+    </div>
+
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Чем именно отличается чёрная серия</h2>
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; margin-top:14px; overflow-x:auto;">
+      <table class="fr-tbl">
+        <thead><tr><th>Параметр</th><th>Белый и серебристый</th><th>Чёрный</th></tr></thead>
+        <tbody>
+          <tr><td>Младшая модель</td><td>FR09 · 9 000 BTU · до 25 м²</td><td>FR10 · 10 000 BTU · до 28 м²</td></tr>
+          <tr><td>Средняя модель</td><td>FR12 · 12 000 BTU · до 35 м²</td><td>FR13 · 13 000 BTU · до 38 м²</td></tr>
+          <tr><td>Старшая модель</td><td>FR18 · 18 000 BTU · до 50 м²</td><td>FR18 · 18 000 BTU · до 50 м²</td></tr>
+          <tr><td>SEER младшей модели</td><td class="fr-num">9,00</td><td class="fr-num">7,60</td></tr>
+          <tr><td>Охлаждение старшей FR18</td><td class="fr-num">5,40 кВт</td><td class="fr-num">5,57 кВт</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Не уверены, какая подойдёт?</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь комнаты и этаж — подберём модель и посчитаем монтаж. Подбор бесплатный.</div>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/tcl-freshin" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Про серию FreshIN</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
