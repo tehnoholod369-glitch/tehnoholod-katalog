@@ -27,8 +27,8 @@
 
   <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
     <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
-      <a href="/novy-glavnaya"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
-      <a href="/novy-katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
       </a>
       <div style="flex:1; min-width:200px; display:flex; align-items:center; gap:8px; border:2px solid #0872D3; border-radius:8px; padding:9px 14px; color:#8593A6; font-size:15px;">
@@ -39,7 +39,7 @@
   </div>
 
   <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
-    <div style="font-size:13px; color:#8593A6;"><a href="/novy-glavnaya">Главная</a> → <span style="color:#18212F;">Монтаж, сервис и зона ответственности</span></div>
+    <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <span style="color:#18212F;">Монтаж, сервис и зона ответственности</span></div>
 
     <div style="background:linear-gradient(120deg,#071C3B,#0A4EA7 75%); color:#fff; border-radius:16px; padding:38px; margin-top:12px;">
       <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#7FC4F2;">УСЛУГИ ИП «ТЕХНОХОЛОД»</div>

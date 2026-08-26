@@ -31,8 +31,8 @@
 
   <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
     <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
-      <a href="/novy-glavnaya"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
-      <a href="/novy-katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
       </a>
       <div style="flex:1;"></div>
@@ -41,7 +41,7 @@
   </div>
 
   <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
-    <div style="font-size:13px; color:#8593A6;"><a href="/novy-glavnaya">Главная</a> → <a href="/tcl-freshin">TCL FreshIN 3.0</a> → <span style="color:#18212F;">Сравнение моделей</span></div>
+    <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <a href="/tcl-freshin">TCL FreshIN 3.0</a> → <span style="color:#18212F;">Сравнение моделей</span></div>
 
     <h1 style="margin:14px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em;">Как выбрать TCL FreshIN 3.0: сравнение всех девяти исполнений</h1>
 
@@ -84,7 +84,7 @@
     </div>
     <div style="font-size:13px; color:#8593A6; margin-top:10px; line-height:1.6;">
       Цены розничные, действуют на дату сборки страницы. Доступна рассрочка. Наличие уточняйте —
-      актуальное показано в <a href="/novy-katalog">каталоге</a>.
+      актуальное показано в <a href="/katalog">каталоге</a>.
     </div>
 
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Какую взять под вашу комнату</h2>

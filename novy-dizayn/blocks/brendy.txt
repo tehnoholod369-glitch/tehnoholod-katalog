@@ -26,8 +26,8 @@
 
   <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
     <div style="max-width:1280px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
-      <a href="/novy-glavnaya"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
-      <a href="/novy-katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
       </a>
       <div style="flex:1;"></div>
@@ -36,7 +36,7 @@
   </div>
 
   <div style="max-width:1280px; margin:0 auto; padding:18px 24px 72px 24px;">
-    <div style="font-size:13px; color:#8593A6;"><a href="/novy-glavnaya">Главная</a> → <span style="color:#18212F;">Бренды</span></div>
+    <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <span style="color:#18212F;">Бренды</span></div>
 
     <h1 style="margin:12px 0 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.02em;">Бренды климатической техники в Алматы</h1>
     <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6; max-width:820px;">Что в наличии — привезём и установим быстро, остальное возим под заказ; монтаж и обслуживание делаем сами. Наличие — по каталогу на {{ updated }}.</div>
@@ -77,7 +77,7 @@
       <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:6px;">В каталоге {{ brandsTotal }} — от TCL и Midea до SHUFT и DITREEX. Напишите модель или задачу, подберём из того, что есть в наличии, либо привезём под заказ.</div>
       <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
         <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:12px 20px; font-size:15px; font-weight:700;">Написать в WhatsApp</a>
-        <a href="/novy-katalog" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:10px 20px; font-size:15px; font-weight:700;">Открыть каталог</a>
+        <a href="/katalog" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:10px 20px; font-size:15px; font-weight:700;">Открыть каталог</a>
       </div>
     </div>
   </div>
@@ -250,7 +250,7 @@ class Component extends DCLogic {
         hasGeo: !!GEO[n],
         href: src[n].top === "multisplit"
           ? "/multisplit?brand=" + encodeURIComponent(n)
-          : "/novy-katalog?g=" + src[n].top + "&brand=" + encodeURIComponent(n),
+          : "/katalog?g=" + src[n].top + "&brand=" + encodeURIComponent(n),
         // подпись описывает ровно то, что откроется: одна группа, а не весь бренд
         linkLabel: n + " в группе «" + ((src[n].groups || [])[0] || {}).t + "» →",
         groups: (src[n].groups || []).slice(0, 12).map(g => ({
@@ -263,7 +263,7 @@ class Component extends DCLogic {
           subColor: g.st ? "#0E9F6E" : "#5A6675",
           href: g.slug === "multisplit"
             ? "/multisplit?brand=" + encodeURIComponent(n)
-            : "/novy-katalog?g=" + g.slug + "&brand=" + encodeURIComponent(n) + (g.st ? "&stock=in" : "")
+            : "/katalog?g=" + g.slug + "&brand=" + encodeURIComponent(n) + (g.st ? "&stock=in" : "")
         }))
       }))
     };

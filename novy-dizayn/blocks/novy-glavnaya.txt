@@ -100,7 +100,7 @@
         <h1 style="margin:14px 0 0 0; font-size:clamp(21px,5.6vw,40px); font-weight:800; line-height:1.08; letter-spacing:-0.025em;">Кондиционеры, вентиляция, отопление и водонагреватели</h1>
         <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px; max-width:460px;">Прямые поставки, монтаж под ключ в Алматы и области, доставка по Казахстану. Гарантия производителя на оборудование, 12 месяцев на наши работы, рассрочка.</div>
         <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
-          <a href="/novy-katalog" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Перейти в каталог</a>
+          <a href="/katalog" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Перейти в каталог</a>
         </div>
         <div style="display:flex; gap:26px; margin-top:30px; flex-wrap:wrap; font-size:14px; color:#CBDCEC;">
           <sc-for list="{{ heroStats }}" as="h" hint-placeholder-count="3">
@@ -143,7 +143,7 @@
           <div style="font-size:12px; color:#5A6675; line-height:1.45; margin-top:8px;">{{ leadNote }}</div>
         </div>
 
-        <a href="/novy-katalog?g=bytovye" style="display:block; border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700;">Подобрать по площади в каталоге</a>
+        <a href="/katalog?g=bytovye" style="display:block; border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700;">Подобрать по площади в каталоге</a>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
           <a href="https://maps.google.com/?cid=6985295064906783345" target="_blank" rel="noreferrer" style="background:#E6F2FD; color:#071C3B; border-radius:999px; padding:7px 12px; font-size:13px; font-weight:600;">★ Отзывы в Google</a>
           <a href="/uslugi" style="background:#E6F2FD; color:#071C3B; border-radius:999px; padding:7px 12px; font-size:13px; font-weight:600;">Гарантия производителя</a>
@@ -357,7 +357,7 @@ class Component extends DCLogic {
       subs: (d.subs || []).map(s => ({
         label: s.label, n: s.n,
         // мультисплит ведёт в конструктор, а не в выдачу: у него свой сценарий выбора
-        href: s.href || ("/novy-katalog?g=" + s.slug + (s.sub ? "&sub=" + encodeURIComponent(s.sub) : ""))
+        href: s.href || ("/katalog?g=" + s.slug + (s.sub ? "&sub=" + encodeURIComponent(s.sub) : ""))
       })),
       // итог направления здесь не считаем: он приходит из directionsList (dirLink по index.json),
       // а ключ link из этого объекта перетирал бы его пустой строкой
@@ -492,12 +492,12 @@ class Component extends DCLogic {
     return {
       label,
       count: g ? this.fmt(g.count) : "",
-      href: "/novy-katalog?g=" + slug,
+      href: "/katalog?g=" + slug,
       subs: g && (g.subs || []).length > 1
         ? g.subs.filter(s => s.name.toLowerCase() !== label.toLowerCase()).slice(0, 5).map(s => ({
             label: s.name,
             n: s.n,
-            href: "/novy-katalog?g=" + slug + "&sub=" + encodeURIComponent(s.name)
+            href: "/katalog?g=" + slug + "&sub=" + encodeURIComponent(s.name)
           }))
         : []
     };
@@ -612,12 +612,12 @@ class Component extends DCLogic {
           " под объект — VRF, чиллеры, фанкойлы и ПВУ: состав и цена по проекту" : "";
       })(),
       footCatalog: [
-        { label: "Бытовые кондиционеры", href: "/novy-katalog?g=bytovye" },
-        { label: "Полупромышленные", href: "/novy-katalog?g=poluprom" },
+        { label: "Бытовые кондиционеры", href: "/katalog?g=bytovye" },
+        { label: "Полупромышленные", href: "/katalog?g=poluprom" },
         { label: "Мультисплит-системы", href: "/multisplit" },
-        { label: "Мобильные", href: "/novy-katalog?g=mobilnye" },
-        { label: "Водонагреватели", href: "/novy-katalog?g=vodonagrevateli" },
-        { label: "Радиаторы отопления", href: "/novy-katalog?g=radiatory" }
+        { label: "Мобильные", href: "/katalog?g=mobilnye" },
+        { label: "Водонагреватели", href: "/katalog?g=vodonagrevateli" },
+        { label: "Радиаторы отопления", href: "/katalog?g=radiatory" }
       ],
       footClient: [
         { label: "Расчёт мощности", href: "/kontakty#podbor" },
@@ -648,11 +648,11 @@ class Component extends DCLogic {
         return n ? this.plural(n, "позиция", "позиции", "позиций") + " → " : "Смотреть →";
       })(),
       navStrip: [
-        { label: "Кондиционирование", href: "/novy-katalog?g=bytovye" },
+        { label: "Кондиционирование", href: "/katalog?g=bytovye" },
         { label: "Проектные системы", href: "/proekt" },
-        { label: "Отопление", href: "/novy-katalog?g=radiatory" },
-        { label: "Вентиляция", href: "/novy-katalog?g=ventilyaciya" },
-        { label: "Водонагрев", href: "/novy-katalog?g=vodonagrevateli" },
+        { label: "Отопление", href: "/katalog?g=radiatory" },
+        { label: "Вентиляция", href: "/katalog?g=ventilyaciya" },
+        { label: "Водонагрев", href: "/katalog?g=vodonagrevateli" },
         { label: "Доставка и оплата", href: "/kontakty#dostavka" },
         { label: "Монтаж и сервис", href: "/uslugi" },
         { label: "Отзывы", href: "/otzyvy" },
@@ -692,10 +692,10 @@ class Component extends DCLogic {
         noLogo: !(LOGOS[b.b] && (RATIO[b.b] || 0) >= 2)
       })),
       directionsList: this.orderDirs([
-        { key: "climate", title: "Кондиционирование", tint: "#E6F2FD", sub: "Бытовые, полупром, мультисплит, мобильные", link: this.dirLink(["bytovye", "poluprom", "multisplit", "mobilnye", "prom-mobilnye", "vozduhoohladiteli"]), href: "/novy-katalog?g=bytovye", color: "#0872D3", linkColor: "#0872D3", icon: this.icon(P.snow, "#0872D3", 22) },
-        { key: "heat", title: "Отопление", tint: "#FDECEA", sub: "Радиаторы, пушки, завесы, ИК-обогреватели, камины", link: this.heatLink(), href: "/novy-katalog?g=radiatory", color: "#F75B06", linkColor: "#0872D3", icon: this.icon(P.flame, "#F75B06", 22) },
-        { key: "vent", title: "Вентиляция", tint: "#EAF6FE", sub: "Приточные установки, рекуператоры, вентиляторы, осушители", link: this.ventLink(), href: "/novy-katalog?g=ventilyaciya", color: "#0F96E6", linkColor: "#0872D3", icon: this.icon(P.wind, "#0F96E6", 22) },
-        { key: "water", title: "Водонагрев", tint: "#E8EEFA", sub: "Накопительные, проточные, газовые колонки", link: this.dirLink(["vodonagrevateli", "vodoochistka"]), href: "/novy-katalog?g=vodonagrevateli", color: "#0A4EA7", linkColor: "#0872D3", icon: this.icon(P.drop, "#0A4EA7", 22) }
+        { key: "climate", title: "Кондиционирование", tint: "#E6F2FD", sub: "Бытовые, полупром, мультисплит, мобильные", link: this.dirLink(["bytovye", "poluprom", "multisplit", "mobilnye", "prom-mobilnye", "vozduhoohladiteli"]), href: "/katalog?g=bytovye", color: "#0872D3", linkColor: "#0872D3", icon: this.icon(P.snow, "#0872D3", 22) },
+        { key: "heat", title: "Отопление", tint: "#FDECEA", sub: "Радиаторы, пушки, завесы, ИК-обогреватели, камины", link: this.heatLink(), href: "/katalog?g=radiatory", color: "#F75B06", linkColor: "#0872D3", icon: this.icon(P.flame, "#F75B06", 22) },
+        { key: "vent", title: "Вентиляция", tint: "#EAF6FE", sub: "Приточные установки, рекуператоры, вентиляторы, осушители", link: this.ventLink(), href: "/katalog?g=ventilyaciya", color: "#0F96E6", linkColor: "#0872D3", icon: this.icon(P.wind, "#0F96E6", 22) },
+        { key: "water", title: "Водонагрев", tint: "#E8EEFA", sub: "Накопительные, проточные, газовые колонки", link: this.dirLink(["vodonagrevateli", "vodoochistka"]), href: "/katalog?g=vodonagrevateli", color: "#0A4EA7", linkColor: "#0872D3", icon: this.icon(P.drop, "#0A4EA7", 22) }
       ]),
 
       articles: [
