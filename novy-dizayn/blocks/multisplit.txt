@@ -74,6 +74,9 @@
               </div>
             </sc-for>
           </div>
+          <sc-if value="{{ mdManual }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ mdManual }}" target="_blank" rel="noopener" style="display:block; margin-top:12px; font-size:13px; color:#0872D3; text-decoration:none;">Инструкция по эксплуатации (PDF) →</a>
+          </sc-if>
           <div onClick="{{ closeModal }}" style="background:#0872D3; color:#fff; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700; margin-top:16px; cursor:pointer;">Закрыть</div>
         </div>
       </div>
@@ -827,6 +830,7 @@ class Component extends DCLogic {
       mdName: md ? md.n : "",
       mdNoPhoto: !!(md && !md.i),
       mdPhotoNote: md && md.i ? "1 фото из 3 — второй ракурс и пульт пришлём по запросу" : "",
+      mdManual: md && md.man ? md.man : "",
       mdRows: md ? [
         { k: "Тип блока", v: md.t || "нет данных", c: md.t ? "#18212F" : "#B25200" },
         { k: "Мощность", v: md.btu ? md.btu + " BTU" : "нет данных", c: md.btu ? "#18212F" : "#B25200" },
@@ -834,7 +838,10 @@ class Component extends DCLogic {
         { k: "Хладагент", v: md.gas || "нет данных", c: md.gas ? "#18212F" : "#B25200" },
         { k: "Цвет корпуса", v: md.c || "в каталоге не указан", c: md.c ? "#18212F" : "#B25200" },
         { k: "Серия", v: md.ser || "не указана", c: md.ser ? "#18212F" : "#B25200" },
-        { k: "Габариты, вес", v: "уточним при расчёте", c: "#B25200" },
+        // 26.08.2026: строка была зашита текстом и данные не читала вовсе, хотя
+        // габариты и вес лежат в мастере и доезжают до собранной страницы.
+        { k: "Габариты, вес", v: [md.dim, md.wt].filter(Boolean).join(" · ") || "уточним при расчёте",
+          c: (md.dim || md.wt) ? "#18212F" : "#B25200" },
         { k: "Наличие", v: md.st || "нет данных", c: md.ok ? "#0E9F6E" : "#B25200" },
         { k: "Цена блока", v: md.pt || "по запросу", c: md.pt ? "#18212F" : "#B25200" }
       ] : [],
