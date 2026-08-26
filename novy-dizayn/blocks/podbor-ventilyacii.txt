@@ -87,7 +87,7 @@
     .model{page-break-inside:avoid;}
   }
 </style>
-<style>.t-body .wrap,.t-body .card,.t-body .head,.t-body .foot,.wrap,.card,.head,.foot{min-width:0;max-width:100%;overflow-wrap:anywhere;}</style>
+<style>.t-body .wrap,.wrap{min-width:0;max-width:min(860px,100%);margin-left:auto;margin-right:auto;}.t-body .card,.t-body .head,.t-body .foot,.card,.head,.foot{min-width:0;max-width:100%;overflow-wrap:anywhere;}</style>
 <div class="wrap">
 
   <div class="head">
