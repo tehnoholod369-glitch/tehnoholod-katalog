@@ -301,7 +301,7 @@
               </div>
               <div style="background:#E6F2FD; border-radius:12px; padding:18px 20px;">
                 <div style="font-size:16px; font-weight:700; color:#071C3B;">Наша ответственность — качество работ</div>
-                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">12 месяцев на монтажные работы лицензированной бригады при условии сезонного обслуживания раз в год. За само оборудование отвечает производитель. <a href="/uslugi">Что покрывается →</a></div>
+                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">12 месяцев на монтажные работы сертифицированной бригады при условии сезонного обслуживания раз в год. За само оборудование отвечает производитель. <a href="/uslugi">Что покрывается →</a></div>
               </div>
               <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
                 <div style="font-size:16px; font-weight:700;">Сервис</div>
@@ -891,7 +891,7 @@ class Component extends DCLogic {
       warrantyStrip: (wLabel ? wKey + " " + wVal : "Гарантия производителя")
         + " — сервисные центры " + (it.b || "бренда"),
       serviceNote: "Обслуживание в сервисных центрах, сертифицированных на работу с оборудованием " + (it.b || "этого бренда")
-        + ": так сохраняется гарантия производителя. Выезд лицензированной бригады по Алматы и области.",
+        + ": так сохраняется гарантия производителя. Выезд сертифицированной бригады по Алматы и области.",
       // ссылка на инструкцию и обзор приходит из данных, если она там есть
       hasVideo: !!det.vd,
       videoStubDisplay: det.vd ? "none" : "flex",

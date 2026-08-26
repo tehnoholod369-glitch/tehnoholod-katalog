@@ -1,5 +1,11 @@
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,7 +17,7 @@
   a { color: #0A4EA7; text-decoration: none; }
   a:hover { color: #0872D3; }
 </style>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+<script src="./mobile-bar.js"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -26,8 +32,8 @@
 
   <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
     <div style="max-width:1280px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
-      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
-      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+      <a href="Главная.dc.html"><img src="assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="Каталог - выдача.dc.html" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
       </a>
       <div style="flex:1;"></div>
@@ -36,7 +42,7 @@
   </div>
 
   <div style="max-width:1280px; margin:0 auto; padding:18px 24px 72px 24px;">
-    <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <span style="color:#18212F;">Бренды</span></div>
+    <div style="font-size:13px; color:#8593A6;"><a href="Главная.dc.html">Главная</a> → <span style="color:#18212F;">Бренды</span></div>
 
     <h1 style="margin:12px 0 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.02em;">Бренды климатической техники в Алматы</h1>
     <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6; max-width:820px;">Что в наличии — привезём и установим быстро, остальное возим под заказ; монтаж и обслуживание делаем сами. Наличие — по каталогу на {{ updated }}.</div>
@@ -77,7 +83,7 @@
       <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:6px;">В каталоге {{ brandsTotal }} — от TCL и Midea до SHUFT и DITREEX. Напишите модель или задачу, подберём из того, что есть в наличии, либо привезём под заказ.</div>
       <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
         <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:12px 20px; font-size:15px; font-weight:700;">Написать в WhatsApp</a>
-        <a href="/katalog" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:10px 20px; font-size:15px; font-weight:700;">Открыть каталог</a>
+        <a href="Каталог - выдача.dc.html" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:10px 20px; font-size:15px; font-weight:700;">Открыть каталог</a>
       </div>
     </div>
   </div>
@@ -93,12 +99,12 @@ class Component extends DCLogic {
     // с Главной приходят по ?b=<бренд> — открываем нужную карточку, а не общий список
     const q = new URLSearchParams(window.location.search).get("b");
     if (q) this.setState({ picked: q });
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-cards.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(cards => this.setState({ cards })).catch(() => {});
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logos.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(logos => this.setState({ logos })).catch(() => {});
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(d => this.setState({ idx: d && d.groups, updated: (d && d.updated) || "" })).catch(() => {});
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-priority.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(p => this.setState({ priority: (p && p.priority) || [] })).catch(() => {});
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logo-ratio.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(ratio => this.setState({ ratio: ratio || {} })).catch(() => {});
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logo-scale.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(s => this.setState({ logoScale: (s && s.scale) || {} })).catch(() => {});
+    fetch("data/brand-cards.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(cards => this.setState({ cards })).catch(() => {});
+    fetch("data/brand-logos.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(logos => this.setState({ logos })).catch(() => {});
+    fetch("data/index.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(d => this.setState({ idx: d && d.groups, updated: (d && d.updated) || "" })).catch(() => {});
+    fetch("data/brand-priority.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(p => this.setState({ priority: (p && p.priority) || [] })).catch(() => {});
+    fetch("data/brand-logo-ratio.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(ratio => this.setState({ ratio: ratio || {} })).catch(() => {});
+    fetch("data/brand-logo-scale.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(s => this.setState({ logoScale: (s && s.scale) || {} })).catch(() => {});
   }
 
   componentDidUpdate() {
@@ -186,19 +192,19 @@ class Component extends DCLogic {
     };
     const GEO = {
       "SHUFT": "Вентиляционное оборудование SHUFT в наличии в Алматы, остальное возим под заказ. Подбор по расходу воздуха и сопротивлению сети, монтаж и пусконаладка — по городу и области.",
-      "MDV": "Системы MDV в наличии в Алматы: сплит-системы и комплекты мультисплита. Монтаж сертифицированной бригадой, гарантия на работы 12 месяцев.",
+      "MDV": "Системы MDV в наличии в Алматы: сплит-системы и комплекты мультисплита. Монтаж лицензированной бригадой, гарантия на работы 12 месяцев.",
       "GREE": "Кондиционеры GREE в наличии в Алматы — установка в течение 1–3 дней после доставки. Доставка по городу, области и Казахстану.",
       "LG": "Кондиционеры LG в наличии в Алматы. Монтаж под ключ, гарантийное обслуживание в сертифицированных сервисных центрах бренда.",
       "Samsung": "Кондиционеры Samsung в наличии в Алматы, монтаж под ключ по городу и области. Гарантийный ремонт — в сертифицированных центрах бренда.",
       "THAICON": "Сплит-системы THAICON в наличии в Алматы. Монтаж 1–3 дня после доставки, доставка по Казахстану.",
       "Midea": "Техника Midea в наличии в Алматы. Подбор по площади помещения, монтаж под ключ, доставка по городу и области.",
       "AERONIK": "Сплит-системы AERONIK в наличии в Алматы: монтаж под ключ, доставка по городу, области и Казахстану.",
-      "AUX": "Кондиционеры AUX в наличии в Алматы, в том числе блоки для мультисплит-комплектов. Монтаж сертифицированной бригадой.",
+      "AUX": "Кондиционеры AUX в наличии в Алматы, в том числе блоки для мультисплит-комплектов. Монтаж лицензированной бригадой.",
       "CHERBROOKE": "Сплит-системы CHERBROOKE в наличии в Алматы. Монтаж под ключ, гарантия на работы 12 месяцев.",
       "TCL": "Линейка TCL FreshIN в наличии в Алматы. Монтаж включает вывод канала свежего воздуха — работа сложнее обычной установки, считаем после замера.",
       "DITREEX": "Кондиционеры DITREEX в наличии в Алматы: доставка по городу и области, монтаж 1–3 дня после доставки.",
       "Royal Thermo": "Радиаторы Royal Thermo в наличии в Алматы — самовывоз или доставка по городу и области. Количество секций считаем по теплопотерям помещения, монтаж и комплектующие — отдельной строкой.",
-      "Ballu": "Что в наличии в Алматы — отгружаем в день обращения, по Казахстану отправляем транспортной компанией. Монтаж сплит-систем и завес — сертифицированной бригадой, гарантия на работы 12 месяцев.",
+      "Ballu": "Что в наличии в Алматы — отгружаем в день обращения, по Казахстану отправляем транспортной компанией. Монтаж сплит-систем и завес — лицензированной бригадой, гарантия на работы 12 месяцев.",
       "Haier": "Полупромышленные системы Haier держим в наличии в Алматы: для объекта это значит запуск без ожидания поставки. Выезд на замер, подбор по теплопритокам и монтаж под ключ — по городу и области.",
       "ROYAL CLIMA": "Обогреватели и вентиляция ROYAL CLIMA в наличии в Алматы, доставка по городу и области.",
       "COMPACTAIR by ZILON": "Установки COMPACTAIR подбираем под помещение: расход воздуха, напор и место монтажа считаем до заказа. Алматы и область, отправка по Казахстану транспортной компанией.",
@@ -249,8 +255,8 @@ class Component extends DCLogic {
         geo: GEO[n] || "",
         hasGeo: !!GEO[n],
         href: src[n].top === "multisplit"
-          ? "/multisplit?brand=" + encodeURIComponent(n)
-          : "/katalog?g=" + src[n].top + "&brand=" + encodeURIComponent(n),
+          ? "Мультисплит - конструктор.dc.html?brand=" + encodeURIComponent(n)
+          : "Каталог - выдача.dc.html?g=" + src[n].top + "&brand=" + encodeURIComponent(n),
         // подпись описывает ровно то, что откроется: одна группа, а не весь бренд
         linkLabel: n + " в группе «" + ((src[n].groups || [])[0] || {}).t + "» →",
         groups: (src[n].groups || []).slice(0, 12).map(g => ({
@@ -262,11 +268,13 @@ class Component extends DCLogic {
           sub: (g.st ? "в наличии" : "под заказ") + (g.note ? " · " + g.note : ""),
           subColor: g.st ? "#0E9F6E" : "#5A6675",
           href: g.slug === "multisplit"
-            ? "/multisplit?brand=" + encodeURIComponent(n)
-            : "/katalog?g=" + g.slug + "&brand=" + encodeURIComponent(n) + (g.st ? "&stock=in" : "")
+            ? "Мультисплит - конструктор.dc.html?brand=" + encodeURIComponent(n)
+            : "Каталог - выдача.dc.html?g=" + g.slug + "&brand=" + encodeURIComponent(n) + (g.st ? "&stock=in" : "")
         }))
       }))
     };
   }
 }
 </script>
+</body>
+</html>
