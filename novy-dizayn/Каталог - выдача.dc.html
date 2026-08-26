@@ -328,9 +328,9 @@ class Component extends DCLogic {
 
   plural(n, one, few, many) {
     const a = n % 10, b = n % 100;
-    if (a === 1 && b !== 11) return n + " " + one;
-    if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return n + " " + few;
-    return n + " " + many;
+    if (a === 1 && b !== 11) return this.fmt(n) + " " + one;
+    if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return this.fmt(n) + " " + few;
+    return this.fmt(n) + " " + many;
   }
 
   componentWillUnmount() { window.removeEventListener("th-cart", this.__onCart); }
@@ -1043,8 +1043,11 @@ class Component extends DCLogic {
     // 2,5 кВт на странице расчёта. Поправки (солнце, этаж, кухня) живут там же,
     // здесь берём базовую нагрузку без них — так и подписано.
     const calcKwNum = Math.round(calcArea * 100) / 1000;
-    const calcCls = calcArea <= 20 ? "07" : calcArea <= 27 ? "09" : calcArea <= 38 ? "12"
-      : calcArea <= 55 ? "18" : calcArea <= 72 ? "24" : calcArea <= 88 ? "30" : "36";
+    // класс считается из того же ряда, что и на странице расчёта, с допуском -5 %.
+    // Лестница была зашита руками и содержала класс «30», которого в ряду BTU нет.
+    const CALC_CLASSES = [7000, 9000, 12000, 18000, 24000, 36000, 48000, 60000];
+    const calcClsBtu = CALC_CLASSES.find(c => c >= calcArea * 341.2 * 0.95) || 60000;
+    const calcCls = String(calcClsBtu / 1000).padStart(2, "0");
     const calcStockN = items.filter(x => {
       if (!/налич/i.test(x.st || "")) return false;
       const a = areaOf(x);
@@ -1410,7 +1413,7 @@ class Component extends DCLogic {
       },
       {
         key: "stock", activeLabel: s.stock === "all" ? "" : (s.stock === "in" ? "В наличии" : "Под заказ"),
-        title: "Наличие", note: "По складу на дату выгрузки",
+        title: "Наличие", note: "«В наличии» — есть в Алматы на дату выгрузки. «Под заказ» — привозим в срок поставки",
         options: [
           this.chip(s.stock === "all", "Всё", () => this.setState({ stock: "all", shown: 12 })),
           this.chip(s.stock === "in", "В наличии", () => this.setState({ stock: "in", shown: 12 })),
@@ -1577,7 +1580,11 @@ class Component extends DCLogic {
             + (meta.count - (meta.acc || 0)) + ", в наличии " + meta.inStock
             + ((meta.acc || 0) ? " · плюс " + meta.acc + " сопутствующих" : ""),
       dateNote: s.updated ? "Цены и остатки — выгрузка от " + String(s.updated).split("-").reverse().join(".") : "",
-      footNote: "В каталоге " + total + " позиций в " + groups.length + " группах. Наличие — по складу на дату выгрузки, рассрочка рассчитана на 12 месяцев.",
+      // «склад» про нас с витрины убран (решение владельца 25.08.2026), дату выгрузки
+      // печатает dateNote выше. Заодно склонение и разряды: было «3502 позиций».
+      footNote: "В каталоге " + this.plural(total, "позиция", "позиции", "позиций")
+        + " в " + this.plural(groups.length, "группе", "группах", "группах")
+        + ". Рассрочка рассчитана на 12 месяцев.",
       gridCols: grid ? "repeat(auto-fit,minmax(250px,1fr))" : "minmax(0,1fr)",
       cardDir: grid ? "column" : "row",
       photoW: grid ? "100%" : "200px",
