@@ -310,18 +310,6 @@
             </div>
           </sc-if>
         </div>
-            <div>
-              <div style="font-weight:700; margin-bottom:6px;">Заголовок и canonical</div>
-              <div style="color:#CBDCEC;">{{ seoTitle }}</div>
-            </div>
-            <div>
-              <div style="font-weight:700; margin-bottom:6px;">Разметка Product / Offer</div>
-              <div style="color:#CBDCEC;">brand · sku · price · priceCurrency KZT · availability · image · description</div>
-            </div>
-            <div>
-              <div style="font-weight:700; margin-bottom:6px;">Фид Merchant</div>
-              <div style="color:#CBDCEC;">Тот же артикул и цена — из мастер-таблицы, один источник для сайта и фида.</div>
-            </div>
           </div>
         </div>
 
@@ -592,8 +580,16 @@ class Component extends DCLogic {
     // корзина общая для всех страниц: состояние читаем из неё, а не держим своё
     const inCart = !!(window.CART && it.sl && window.CART.has(it.sl));
 
-    // сопутствующие своей группы: сначала того же бренда, дальше остальные
-    const accAll = items.filter(x => x.acc && x.sl !== it.sl);
+    // сопутствующие своей группы: сначала того же бренда, дальше остальные.
+    // Аксессуар, который сам называет тип прибора, показываем только этому типу:
+    // «Дымоход для колонок Turbo» — комплектующее газовой колонки, у электрического
+    // бойлера дымохода не бывает. Совместимости в данных поставщика нет, поэтому
+    // берём то, что аксессуар говорит о себе сам, а связь не додумываем.
+    const ACC_ONLY_FOR = [[/дымоход|коаксиальн|для колонок|газов/i, /газов|колонк/i]];
+    const accForeign = x => ACC_ONLY_FOR.some(
+      ([inName, forType]) => inName.test(x.n || "")
+        && !forType.test((it.t || "") + " " + (it.sub || "") + " " + (it.n || "")));
+    const accAll = items.filter(x => x.acc && x.sl !== it.sl && !accForeign(x));
     const sameBrand = accAll.filter(x => x.b && it.b && x.b === it.b);
     const accSameBrand = sameBrand.length > 0;
     const accList = (accSameBrand ? sameBrand : accAll)

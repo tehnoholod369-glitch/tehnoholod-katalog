@@ -26,7 +26,7 @@
     "THAICON",
     "Toshiba"
    ],
-   "inStock": 336,
+   "inStock": 331,
    "acc": 0,
    "subs": [
     {
@@ -88,7 +88,7 @@
     "DITREEX",
     "ROYAL CLIMA"
    ],
-   "inStock": 51,
+   "inStock": 52,
    "acc": 0,
    "subs": [
     {
@@ -108,27 +108,31 @@
   {
    "slug": "kaminy",
    "title": "Камины и электроочаги",
-   "count": 107,
+   "count": 148,
    "brands": 3,
    "brandList": [
     "Electrolux",
     "Firelight",
     "Royal Thermo"
    ],
-   "inStock": 20,
-   "acc": 5,
+   "inStock": 22,
+   "acc": 6,
    "subs": [
     {
      "name": "Каминокомплекты",
-     "n": 44
+     "n": 66
     },
     {
      "name": "Биокамины",
-     "n": 35
+     "n": 41
     },
     {
      "name": "Электроочаги 2D",
-     "n": 14
+     "n": 16
+    },
+    {
+     "name": "Тумбы с биокамином",
+     "n": 13
     },
     {
      "name": "Электроочаги 3D паровые",
@@ -136,24 +140,20 @@
     },
     {
      "name": "Аксессуары",
-     "n": 5
-    },
-    {
-     "name": "Тумбы с биокамином",
-     "n": 3
+     "n": 6
     }
    ]
   },
   {
    "slug": "mini-vrf",
    "title": "Мини-VRF и мультизональные системы",
-   "count": 52,
+   "count": 56,
    "brands": 2,
    "brandList": [
     "AUX",
     "GREE"
    ],
-   "inStock": 45,
+   "inStock": 49,
    "acc": 0,
    "subs": [
     {
@@ -166,15 +166,15 @@
     },
     {
      "name": "Кассетные внутренние блоки",
-     "n": 9
+     "n": 10
+    },
+    {
+     "name": "Настенные внутренние блоки",
+     "n": 7
     },
     {
      "name": "Наружные блоки мини-VRF, 220 В",
      "n": 6
-    },
-    {
-     "name": "Настенные внутренние блоки",
-     "n": 4
     },
     {
      "name": "Консольные внутренние блоки",
@@ -226,7 +226,7 @@
     "ROYAL CLIMA",
     "THAICON"
    ],
-   "inStock": 115,
+   "inStock": 108,
    "acc": 0,
    "subs": [
     {
@@ -321,7 +321,7 @@
     "TCL",
     "THAICON"
    ],
-   "inStock": 292,
+   "inStock": 287,
    "acc": 0,
    "subs": [
     {
@@ -354,7 +354,7 @@
    "brandList": [
     "GREE"
    ],
-   "inStock": 5,
+   "inStock": 4,
    "acc": 0,
    "subs": [
     {
@@ -388,7 +388,7 @@
    "brandList": [
     "Royal Thermo"
    ],
-   "inStock": 159,
+   "inStock": 161,
    "acc": 10,
    "subs": [
     {
@@ -436,7 +436,7 @@
     "POWERAIR by ZILON",
     "ROYAL CLIMA"
    ],
-   "inStock": 64,
+   "inStock": 63,
    "acc": 0,
    "subs": [
     {
@@ -468,7 +468,7 @@
   {
    "slug": "teplovye-zavesy",
    "title": "Тепловые завесы",
-   "count": 150,
+   "count": 148,
    "brands": 4,
    "brandList": [
     "Ballu",
@@ -481,7 +481,7 @@
    "subs": [
     {
      "name": "Электрические",
-     "n": 95
+     "n": 93
     },
     {
      "name": "Водяные",
@@ -496,7 +496,7 @@
   {
    "slug": "uvlazhniteli",
    "title": "Промышленные увлажнители",
-   "count": 89,
+   "count": 96,
    "brands": 4,
    "brandList": [
     "CAREL",
@@ -505,11 +505,11 @@
     "ROYAL CLIMA"
    ],
    "inStock": 0,
-   "acc": 11,
+   "acc": 13,
    "subs": [
     {
      "name": "Увлажнитель паровой электродный",
-     "n": 39
+     "n": 44
     },
     {
      "name": "Увлажнитель паровой с ТЭН",
@@ -517,7 +517,7 @@
     },
     {
      "name": "Комплектующие",
-     "n": 11
+     "n": 13
     },
     {
      "name": "Увлажнитель ультразвуковой",
@@ -549,7 +549,7 @@
     "Royal Thermo",
     "SHUFT"
    ],
-   "inStock": 340,
+   "inStock": 342,
    "acc": 299,
    "subs": [
     {
@@ -602,7 +602,7 @@
    "brandList": [
     "Ballu"
    ],
-   "inStock": 10,
+   "inStock": 13,
    "acc": 0,
    "subs": [
     {
@@ -618,7 +618,7 @@
   {
    "slug": "vodonagrevateli",
    "title": "Водонагреватели",
-   "count": 241,
+   "count": 242,
    "brands": 5,
    "brandList": [
     "Ballu",
@@ -627,12 +627,12 @@
     "ROYAL CLIMA",
     "Royal Thermo"
    ],
-   "inStock": 180,
+   "inStock": 178,
    "acc": 1,
    "subs": [
     {
      "name": "Накопительные",
-     "n": 185
+     "n": 186
     },
     {
      "name": "Проточные",
@@ -651,15 +651,21 @@
   {
    "slug": "vodoochistka",
    "title": "Водоочистка и фильтры",
-   "count": 29,
-   "brands": 2,
+   "count": 46,
+   "brands": 4,
    "brandList": [
     "DITREEX",
-    "PHILIPS"
+    "Hidrotek",
+    "PHILIPS",
+    "Vontron"
    ],
-   "inStock": 27,
-   "acc": 0,
+   "inStock": 44,
+   "acc": 17,
    "subs": [
+    {
+     "name": "Комплектующие для водоочистки",
+     "n": 17
+    },
     {
      "name": "Системы обратного осмоса",
      "n": 14
