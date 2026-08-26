@@ -305,7 +305,7 @@ class Component extends DCLogic {
   // Один список ключей фасетов на три места: старт, смена группы и «Сбросить».
   // Раньше он был переписан трижды — новый фасет забывали сбросить, и он тянулся
   // за пользователем в другую группу (25.08.2026)
-  facetKeys = ["brand", "price", "comp", "ref", "eff", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "watt", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "thermo", "stock"];
+  facetKeys = ["brand", "price", "comp", "ref", "eff", "btu", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "watt", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "thermo", "stock"];
   facetsOff() {
     const o = { feat: "", calcFit: 0, q: "" };
     (this.facetKeys || []).forEach(k => { o[k] = "all"; });
@@ -340,6 +340,10 @@ class Component extends DCLogic {
     // площадь из подбора на главной: полосу выбираем ту, что накрывает значение
     const wantArea = +(p.get("area") || 0) || 0;
     if (wantArea) this.pendingArea = wantArea;
+    // класс из подбора: страница расчёта зовёт «показать модели класса 18» и передаёт
+    // сюда 18000. Полосу под это число фасет выбирает сам.
+    const wantBtu = +(p.get("btu") || 0) || 0;
+    if (wantBtu) this.pendingBtu = wantBtu;
     const wantBrand = p.get("brand");
     if (wantBrand) this.pendingBrand = wantBrand;
     this.pendingStock = p.get("stock") || "";
@@ -715,6 +719,14 @@ class Component extends DCLogic {
     };
     const noiseOf = x => { const v = numIn(specOf(x, /уровень шума/i)); return v > 0 ? v : 0; };
     const pressOf = x => { const v = numIn(specOf(x, /напор/i)); return v > 0 ? v : 0; };
+    // Класс мощности кондиционера. У мультисплита пилюли «BTU» нет, а строка ТТХ есть
+    // (227 из 228) — поэтому пилюля, иначе ТТХ. Цифры вынимаем без numIn: он читает
+    // «9 000» как 9, а разряды в мастере встречаются.
+    const btuOf = x => {
+      const pill = (x.pl || []).find(v => /BTU/i.test(String(v)));
+      const d = String(pill || specOf(x, /BTU/i) || "").replace(/[^\d]/g, "");
+      return d ? +d : 0;
+    };
 
     // ─── Фасеты каминов (25.08.2026) ───────────────────────────────────────────
     // В группе два разных товара, и «размер» у них меряется по-разному: у электрических
@@ -927,6 +939,16 @@ class Component extends DCLogic {
         note: "Цвет корпуса или портала по данным производителя. Позиции без данных в фильтр не попадают" }
     ];
     const BAND_FACETS = [
+      // Класс — первое, чем покупатель называет кондиционер («нужна девятка»).
+      // Границы взяты у мультисплит-конструктора (clsOf), вверх продолжены серединами
+      // ряда 24-36-48-60: 8 000 и 13 000 BTU — это соседние значения одного класса,
+      // а не свои классы. Группы без BTU фасет не увидят: общий порог MIN_FACET.
+      { key: "btu", title: "Класс мощности", of: btuOf,
+        bands: [["07 · 7 000 BTU", 1, 7500], ["09 · 9 000 BTU", 7501, 10000],
+                ["12 · 12 000 BTU", 10001, 14000], ["18 · 18 000 BTU", 14001, 20000],
+                ["24 · 24 000 BTU", 20001, 30000], ["36 · 36 000 BTU", 30001, 42000],
+                ["48 · 48 000 BTU", 42001, 54000], ["60 · 60 000 BTU", 54001, 999999]],
+        note: "Класс — привычная маркировка мощности: 09 — это 9 000 BTU, около 2,6 кВт холода. Ориентир — 100 Вт на м² при потолке 2,7 м, точнее считает расчёт мощности. Позиции без данных в фильтр не попадают" },
       { key: "noise", title: "Уровень шума", of: noiseOf,
         bands: [["до 35 дБ", 1, 35], ["35–45 дБ", 36, 45], ["45–55 дБ", 46, 55], ["55 дБ+", 56, 999]],
         note: "Тише 35 дБ — можно ставить в спальне. Позиции без данных в фильтр не попадают" },
@@ -996,12 +1018,23 @@ class Component extends DCLogic {
     });
     // порядок в панели задаём явно, а не тем, в каком массиве объявлен фасет:
     // размер — первый вопрос покупателя, цвет — последний
-    const FACET_ORDER = ["diag", "fireline", "dry", "mezh", "watt", "conn", "sect", "height", "mat",
+    const FACET_ORDER = ["btu", "diag", "fireline", "dry", "mezh", "watt", "conn", "sect", "height", "mat",
       "tank", "ctrl", "orient", "wave", "mount", "warm", "glass", "burn", "recup", "seg",
       "install", "thermo", "fuel", "power", "motor", "duct",
       "noise", "cold", "press", "ip", "color", "colorRad"];
     const facetRank = k => { const i = FACET_ORDER.indexOf(k); return i < 0 ? 99 : i; };
     EXTRA.sort((a, b) => facetRank(a.key) - facetRank(b.key));
+    // класс из подбора ставим ЗДЕСЬ, а не рядом с площадью: полосы классов живут
+    // в EXTRA, а он объявлен ниже по функции — обращение раньше валит рендер.
+    if (this.pendingBtu && items.length) {
+      const f = EXTRA.find(x => x.key === "btu");
+      const want = this.pendingBtu;
+      if (f) {
+        this.pendingBtu = 0;
+        const hit = f.bands.find(b => want >= b.lo && want <= b.hi);
+        if (hit && s.btu !== hit.k) setTimeout(() => this.setState({ btu: hit.k, shown: 12 }), 0);
+      }
+    }
     // общий предикат: skip исключает фасет, для которого сейчас считаем его же счётчики
     const extraOk = (it, skip) => EXTRA.every(f => {
       if (f.key === skip) return true;
@@ -1527,8 +1560,16 @@ class Component extends DCLogic {
       mobNavLabel: (DIRS.find(d => d.key === curDir) || DIRS[0]).label + " → " + (txt.h1 || meta.title),
       groupHref: "/katalog?g=" + s.group,
       // блок «Что важно знать» прячем целиком, если для группы нет текста:
-      // заголовок над пустотой выглядит как недоделка (groups.json заполняется отдельно)
-      hasGroupText: !!(txt.facts || txt.brandsLine || (txt.tips && txt.tips.length)),
+      // заголовок над пустотой выглядит как недоделка (groups.json заполняется отдельно).
+      // И прячем под ЛЮБЫМ фильтром: сводка посчитана по всей группе, а рядом с
+      // отфильтрованной выдачей читается как про неё. 26.08.2026 под брендом Samsung
+      // страница писала «приток свежего воздуха — у 13 моделей», хотя у Samsung его нет
+      // ни у одной модели: 13 — это TCL FreshIN 9, MDV NOVA 2 и Electrolux Crystal Air 2
+      // по всей группе. Пересчитать готовый текст из groups.json под фильтр нельзя,
+      // поэтому прячем, а не пересчитываем.
+      hasGroupText: !!(txt.facts || txt.brandsLine || (txt.tips && txt.tips.length))
+        && s.sub === "all" && !s.q && !s.onlyPick
+        && (this.facetKeys || []).every(k => (s[k] || "all") === "all"),
       groupTitle: txt.h1 || meta.title,
       groupSub: txt.intro || "",
       groupFacts: txt.facts || "",
