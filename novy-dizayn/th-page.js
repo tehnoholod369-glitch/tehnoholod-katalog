@@ -49,8 +49,32 @@
       return r.text();
     })
     .then(function (html) {
-      if (html.indexOf("<x-dc") < 0) throw new Error("в блоке " + page + ".txt нет <x-dc> — файл неполный");
+      // Блоки бывают двух видов:
+      //  · страницы редизайна — внутри <x-dc>, их собирает support.js;
+      //  · обычный HTML со своими скриптами — например калькулятор вентиляции,
+      //    он собирается build_vent_calc.py и шаблонизатора не использует.
+      // 26.08.2026: раньше отсутствие <x-dc> считалось битым файлом, и страница
+      //             /podbor-ventilyacii показывала запасной текст вместо калькулятора.
+      var сДвижком = html.indexOf("<x-dc") >= 0;
+      if (!html.trim()) throw new Error("блок " + page + ".txt пуст");
       box.innerHTML = html;
+
+      if (!сДвижком) {
+        // Инлайн-скрипты innerHTML тоже не выполняет — пересоздаём ВСЕ по порядку.
+        var все = [].slice.call(box.querySelectorAll("script"));
+        (function дальше(i) {
+          if (i >= все.length) return;
+          var стар = все[i], нов = document.createElement("script");
+          for (var k = 0; k < стар.attributes.length; k++) {
+            нов.setAttribute(стар.attributes[k].name, стар.attributes[k].value);
+          }
+          if (стар.src) { нов.onload = нов.onerror = function () { дальше(i + 1); }; }
+          нов.text = стар.text;
+          стар.parentNode.replaceChild(нов, стар);
+          if (!стар.src) дальше(i + 1);
+        })(0);
+        return;
+      }
 
       // src-скрипты innerHTML не выполняет: вынимаем и вешаем заново
       var tags = [].slice.call(box.querySelectorAll("script[src]"));
