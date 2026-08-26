@@ -18,7 +18,7 @@
   <div class="tc-filters">
    <div class="tc-frow"><span class="tc-fl">Бренд</span><button class="tc-chip is-on" data-f="brand" data-v="all">Все</button><button class="tc-chip" data-f="brand" data-v="Royal Thermo">Royal Thermo</button></div>
    <div class="tc-frow"><span class="tc-fl">Тип</span><button class="tc-chip is-on" data-f="type" data-v="all">Все</button><button class="tc-chip" data-f="type" data-v="Секционный">Секционный</button><button class="tc-chip" data-f="type" data-v="Трубчатый">Трубчатый</button><button class="tc-chip" data-f="type" data-v="Нижнее подключение">Нижнее подключение</button><button class="tc-chip" data-f="type" data-v="Комплектующие">Комплектующие</button></div>
-   <div class="tc-frow"><span class="tc-fl">Теплоотдача</span><button class="tc-chip is-on" data-f="num" data-v="all">Любая</button><button class="tc-chip" data-f="num" data-v="1-700">до 700 Вт</button><button class="tc-chip" data-f="num" data-v="701-1200">700–1200 Вт</button><button class="tc-chip" data-f="num" data-v="1201-2000">1200–2000 Вт</button><button class="tc-chip" data-f="num" data-v="2001-3000">2000–3000 Вт</button><button class="tc-chip" data-f="num" data-v="3001-9999999">3000+ Вт</button></div>
+   <div class="tc-frow"><span class="tc-fl">Теплоотдача</span><button class="tc-chip is-on" data-f="num" data-v="all">Любая</button><button class="tc-chip" data-f="num" data-v="0-700">до 700 Вт</button><button class="tc-chip" data-f="num" data-v="700-1200">700–1200 Вт</button><button class="tc-chip" data-f="num" data-v="1200-2000">1200–2000 Вт</button><button class="tc-chip" data-f="num" data-v="2000-3000">2000–3000 Вт</button><button class="tc-chip" data-f="num" data-v="3000-9999999">3000+ Вт</button></div>
    <div class="tc-frow"><span class="tc-fl">Наличие</span><button class="tc-chip tc-chipstock" data-f="stock" data-v="in">Только в наличии</button></div>
    <div class="tc-frow"><span class="tc-fl">Прочее</span><button class="tc-chip" data-f="color" data-v="белый">Белый</button><button class="tc-chip" data-f="color" data-v="чёрный">Чёрный матовый</button><button class="tc-reset">Сбросить</button></div>
   </div>
@@ -142,8 +142,8 @@
  var DEF={brand:'all',type:'all',constr:'all',num:'all',num2:'all',ten:'',wifi:false,color:'',stock:'',q:'',sort:'rec'};
  var st=Object.assign({},DEF),shown=PAGE,filtered=[];
  function ph(){return 'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="220" height="180"><rect width="220" height="180" fill="#f0f1f3"/><text x="110" y="95" font-family="Arial" font-size="13" fill="#bfc4cc" text-anchor="middle">фото уточняется</text></svg>');}
- function inNum(v){if(st.num==='all')return true;var p=st.num.split('-');return v>=+p[0]&&v<=+p[1];}
- function inNum2(v){if(st.num2==='all')return true;var p=st.num2.split('-');return v>=+p[0]&&v<=+p[1];}
+ function inNum(v){if(st.num==='all')return true;var p=st.num.split('-');return v>+p[0]&&v<=+p[1];}
+ function inNum2(v){if(st.num2==='all')return true;var p=st.num2.split('-');return v>+p[0]&&v<=+p[1];}
  function match(p){
   if(st.brand!=='all'&&p.brand!==st.brand)return false;
   if(st.type!=='all'&&p.type!==st.type)return false;
