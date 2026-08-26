@@ -94,7 +94,8 @@
     <img class="mark" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»"
          onerror="this.style.display='none'">
     <div>
-      <div class="bname">ИП <span>«Техно</span><b>Холод»</b></div>
+      <!-- Название не дублируем: оно уже есть в самом логотипе (владелец, 26.08.2026).
+           Пока слева стоял безымянный кружок, подпись была нужна. -->
       <div class="tag">Алматы · +77 000 369 369 · tehnoholod369@gmail.com</div>
     </div>
   </div>

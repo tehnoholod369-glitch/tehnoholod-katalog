@@ -139,15 +139,17 @@
  var grid=box.querySelector('.tc-grid'),empty=box.querySelector('.tc-empty'),cnt=box.querySelector('.tc-count'),
      moreBtn=box.querySelector('.tc-more'),q=box.querySelector('.tc-search'),sortSel=box.querySelector('.tc-sort'),
      resetBtn=box.querySelector('.tc-reset'),modal=box.querySelector('.tc-modal');
- var DEF={brand:'all',type:'all',constr:'all',num:'all',ten:'',wifi:false,color:'',stock:'',q:'',sort:'rec'};
+ var DEF={brand:'all',type:'all',constr:'all',num:'all',num2:'all',ten:'',wifi:false,color:'',stock:'',q:'',sort:'rec'};
  var st=Object.assign({},DEF),shown=PAGE,filtered=[];
  function ph(){return 'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="220" height="180"><rect width="220" height="180" fill="#f0f1f3"/><text x="110" y="95" font-family="Arial" font-size="13" fill="#bfc4cc" text-anchor="middle">фото уточняется</text></svg>');}
  function inNum(v){if(st.num==='all')return true;var p=st.num.split('-');return v>=+p[0]&&v<=+p[1];}
+ function inNum2(v){if(st.num2==='all')return true;var p=st.num2.split('-');return v>=+p[0]&&v<=+p[1];}
  function match(p){
   if(st.brand!=='all'&&p.brand!==st.brand)return false;
   if(st.type!=='all'&&p.type!==st.type)return false;
   if(st.constr!=='all'&&p.constr!==st.constr)return false;
   if(!inNum(p.num))return false;
+  if(!inNum2(p.num2||0))return false;
   if(st.ten&&p.ten!==st.ten)return false;
   if(st.color&&p.color!==st.color)return false;
   if(st.wifi&&!p.wifi)return false;

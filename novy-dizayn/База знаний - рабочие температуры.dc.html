@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+  .th-scroll { overflow-x:auto; }
+</style>
+<script src="./mobile-bar.js"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="Главная.dc.html"><img src="assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="Каталог - выдача.dc.html" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div style="max-width:900px; margin:0 auto; padding:18px 24px 72px 24px;">
+    <div style="font-size:13px; color:#8593A6;"><a href="Главная.dc.html">Главная</a> → <a href="База знаний.dc.html">База знаний</a> → <span style="color:#18212F;">До какой температуры работает кондиционер</span></div>
+
+    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px;">
+      <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#0E9F6E; background:#E7F7F0; border-radius:5px; padding:4px 9px;">Эксплуатация</div>
+      <div style="font-size:12px; color:#8593A6;">4 минуты · обновлено {{ updated }}</div>
+    </div>
+
+    <h1 style="margin:10px 0 0 0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em; line-height:1.2;">До какой температуры работает кондиционер</h1>
+    <div style="font-size:17px; color:#5A6675; margin-top:12px; line-height:1.6;">У кондиционера две границы, и их часто путают. Верхняя — до какой жары он держит холод. Нижняя — до какого мороза он ещё греет. Обе стоят в паспорте модели и в характеристиках каждой карточки нашего каталога.</div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:22px;">
+      <div style="background:#071C3B; color:#fff; border-radius:16px; padding:24px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">ЖАРА В АЛМАТЫ</div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:30px; font-weight:800; margin-top:8px;">+41,7 °C</div>
+        <div style="font-size:14px; color:#CBDCEC; line-height:1.6; margin-top:6px;">абсолютный максимум за всю историю наблюдений, 31 июля 1983 года. Средняя температура июля — +23,8 °C.</div>
+      </div>
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:24px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">ОХЛАЖДЕНИЕ У НАШИХ МОДЕЛЕЙ</div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:30px; font-weight:800; margin-top:8px; color:#0A4EA7;">{{ coolRange }}</div>
+        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">{{ coolNote }}</div>
+      </div>
+    </div>
+
+    <h2 style="margin:28px 0 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">По морозу разброс большой</h2>
+    <div style="font-size:16px; color:#2C3846; line-height:1.7; margin-top:10px;">Вот что стоит в паспортах бытовых сплит-систем нашего каталога прямо сейчас. {{ noHeatNote }}</div>
+
+    <div class="th-scroll" style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:20px; margin-top:14px;">
+      <sc-for list="{{ heatRows }}" as="r" hint-placeholder-count="6">
+        <div style="display:flex; align-items:center; gap:12px; padding:7px 0;">
+          <div style="width:112px; flex:none; font-size:15px; font-weight:700; font-variant-numeric:tabular-nums;">{{ r.label }}</div>
+          <div style="flex:1; min-width:60px; background:#E9EFF7; border-radius:6px; height:16px; overflow:hidden;">
+            <div style="width:{{ r.width }}; height:16px; background:{{ r.color }};"></div>
+          </div>
+          <div style="width:64px; flex:none; text-align:right; font-size:14px; color:#5A6675; font-variant-numeric:tabular-nums;">{{ r.n }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:24px; margin-top:22px;">
+      <h2 style="margin:0; font-size:20px; font-weight:800; letter-spacing:-0.015em;">Что это значит для Алматы</h2>
+      <div style="font-size:16px; color:#2C3846; line-height:1.7; margin-top:10px;">
+        Средняя температура января здесь <b>−4,7 °C</b>, и большую часть зимы модель с границей
+        −15 °C работает спокойно. Но абсолютный минимум в городе доходил до <b>−37,7 °C</b>,
+        и в морозную неделю кондиционер, рассчитанный на −7 или −10, просто перестанет греть.
+        Это не поломка, а его паспортный предел.
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:14px; margin-top:16px;">
+        <div style="background:#fff; border-radius:12px; padding:16px 18px;">
+          <div style="font-size:14px; font-weight:700;">Только на лето</div>
+          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:5px;">Нижняя граница вам безразлична — смотрите на площадь и цену.</div>
+        </div>
+        <div style="background:#fff; border-radius:12px; padding:16px 18px;">
+          <div style="font-size:14px; font-weight:700;">Подстраховать межсезонье</div>
+          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:5px;">Берите от −15 °C: этого хватает, пока не дали отопление и после того, как отключили.</div>
+        </div>
+        <div style="background:#fff; border-radius:12px; padding:16px 18px;">
+          <div style="font-size:14px; font-weight:700;">Рассчитываете на мороз</div>
+          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:5px;">{{ coldLine }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#FFF9F2; border:1px solid #F3D9BE; border-radius:16px; padding:24px; margin-top:22px;">
+      <h2 style="margin:0; font-size:20px; font-weight:800; letter-spacing:-0.015em;">Чего кондиционер не делает</h2>
+      <div style="font-size:16px; color:#2C3846; line-height:1.7; margin-top:10px;">
+        Он не заменяет отопление. Даже модель с границей −30 °C в сильный мороз отдаёт меньше тепла,
+        чем в ноль: чем холоднее на улице, тем меньше тепла ей есть откуда взять. В квартире
+        с холодными окнами это заметно сразу. Кондиционер хорош как быстрый дополнительный обогрев
+        в межсезонье и как страховка — но не как единственный источник тепла зимой.
+      </div>
+    </div>
+
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:22px;">
+      <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:800; color:#071C3B;">Куда дальше</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;">
+        <a href="Каталог - выдача.dc.html?g=bytovye" style="background:#0872D3; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">Бытовые сплит-системы</a>
+        <a href="Подбор, доставка и контакты.dc.html" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Расчёт мощности по площади</a>
+        <a href="https://wa.me/77000369369" style="border:2px solid #DCE5F0; color:#2C3846; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Спросить в WhatsApp</a>
+      </div>
+      <div style="font-size:13px; color:#5A6675; line-height:1.6; margin-top:14px;">Рабочий диапазон конкретной модели — в её карточке, строки «Обогрев до» и «Охлаждение до». Где производитель их не указал, стоит «нет данных»: мы такие поля не заполняем по аналогии.</div>
+    </div>
+
+    <div style="font-size:13px; color:#8593A6; line-height:1.6; margin-top:18px;">{{ dataNote }}</div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { bytovye: null, updated: "" };
+
+  componentDidMount() {
+    fetch("data/bytovye.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []).then(bytovye => this.setState({ bytovye })).catch(() => {});
+    fetch("data/index.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(i => this.setState({ updated: (i && i.updated) || "" })).catch(() => {});
+  }
+
+  spec(x, rx) {
+    const row = (x.sp || []).find(v => rx.test(String(v[0])));
+    return row ? String(row[1] || "").trim() : "";
+  }
+
+  plural(n, one, few, many) {
+    const a = n % 10, b = n % 100;
+    if (a === 1 && b !== 11) return n + " " + one;
+    if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return n + " " + few;
+    return n + " " + many;
+  }
+
+  renderVals() {
+    // Таблица собирается из каталога при открытии страницы: числа не разойдутся
+    // с карточками после ближайшей выгрузки (26.08.2026)
+    const все = (this.state.bytovye || []).filter(x => !x.acc);
+
+    const нижняя = x => {
+      const v = this.spec(x, /^обогрев до/i);
+      if (!v || /уточн/i.test(v)) return null;
+      const m = String(v).match(/-?\d+/);
+      return m ? +m[0] : null;
+    };
+    const верхняя = x => {
+      const v = this.spec(x, /^охлаждение до/i);
+      if (!v || /уточн/i.test(v)) return 0;
+      const m = String(v).match(/\d+/);
+      return m ? +m[0] : 0;
+    };
+
+    const счёт = {};
+    let сДанными = 0;
+    все.forEach(x => {
+      const n = нижняя(x);
+      if (n === null) return;
+      сДанными++;
+      счёт[n] = (счёт[n] || 0) + 1;
+    });
+    const ключи = Object.keys(счёт).map(Number).sort((a, b) => a - b);
+    const макс = ключи.length ? Math.max.apply(null, ключи.map(k => счёт[k])) : 1;
+
+    const heatRows = ключи.map(k => ({
+      label: (k > 0 ? "+" : "") + String(k).replace("-", "−") + " °C",
+      n: счёт[k],
+      width: Math.max(3, Math.round(счёт[k] / макс * 100)) + "%",
+      // модели, которые держат −20 и ниже, выделяем: именно их выбирают под мороз
+      color: k <= -20 ? "#0872D3" : "#9FB8D4"
+    }));
+
+    const морозных = ключи.filter(k => k <= -20).reduce((n, k) => n + счёт[k], 0);
+    const верх = все.map(верхняя).filter(v => v > 0);
+    const безДанных = все.length - сДанными;
+
+    return {
+      updated: this.state.updated || "выгрузку каталога",
+      heatRows,
+      noHeatNote: сДанными
+        ? "Всего с указанной нижней границей — " + this.plural(сДанными, "модель", "модели", "моделей")
+          + (безДанных ? "; у остальных " + безДанных + " производитель её не указал, и в карточке стоит «нет данных»." : ".")
+        : "Данные загружаются.",
+      coolRange: верх.length ? "+" + Math.min.apply(null, верх) + "…+" + Math.max.apply(null, верх) + " °C" : "нет данных",
+      coolNote: верх.length
+        ? "Столько заявляют производители по верхней границе охлаждения. Исторический максимум города это перекрывает: в самое жаркое лето кондиционер работает в своём диапазоне, а не на пределе."
+        : "Как только производители пришлют данные, диапазон появится здесь.",
+      coldLine: морозных
+        ? "Смотрите модели от −20 °C и ниже — таких в каталоге " + морозных + "."
+        : "Моделей с границей −20 °C и ниже сейчас в каталоге нет.",
+      dataNote: "Числа и таблица считаются из каталога при каждом открытии страницы — по той же выгрузке, "
+        + "что и цены. Климат Алматы: средняя температура января −4,7 °C, июля +23,8 °C, "
+        + "абсолютный минимум −37,7 °C, максимум +41,7 °C (Википедия, «Климат Алма-Аты»)."
+    };
+  }
+}
+</script>
+</body>
+</html>
