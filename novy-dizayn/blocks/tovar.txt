@@ -387,8 +387,8 @@
               <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> Отзывов на эту модель пока нет — мы не покупаем и не пишем их сами.</div>
             </div>
             <a href="https://share.google/ambLW5DS0ZdmtfS68" target="_blank" rel="noreferrer" style="display:flex; align-items:center; gap:10px; background:#F3F7FB; border-radius:12px; padding:12px 16px;">
-              <div style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; color:#18212F;">5,0</div>
-              <div style="font-size:13px; color:#5A6675; line-height:1.4;">рейтинг компании в Google<br /><span style="color:#0872D3; font-weight:600;">Смотреть отзывы →</span></div>
+              <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#18212F;">Google</div>
+              <div style="font-size:13px; color:#5A6675; line-height:1.4;">отзывы и текущая оценка компании<br /><span style="color:#0872D3; font-weight:600;">Смотреть отзывы →</span></div>
             </a>
           </div>
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:14px; margin-top:16px;">
