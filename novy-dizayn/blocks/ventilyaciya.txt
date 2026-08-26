@@ -179,11 +179,11 @@
   </div>
 </div>
 
-<!-- Счётчики берутся из data/index.json внешним скриптом vt-counts.js.
+<!-- Счётчики берутся из data/index.json внешним скриптом dir-counts.js.
      Встроенный код здесь не работает: th-page.js вставляет блок через innerHTML
      и оживляет только скрипты со ссылкой, а написанные прямо в блоке с x-dc — нет.
      Проверено 27.08.2026 на живой странице: разметка собралась, все 13 чисел
      остались пустыми. Теги в комментарии не пишем — путают проверки блока. -->
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/vt-counts.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js"></script>
 
 </x-dc>

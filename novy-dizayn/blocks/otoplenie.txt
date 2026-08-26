@@ -180,9 +180,9 @@
   </div>
 </div>
 
-<!-- Счётчики берутся из data/index.json внешним скриптом vt-counts.js.
+<!-- Счётчики берутся из data/index.json внешним скриптом dir-counts.js.
      Написанный прямо здесь код не выполнится: th-page.js вставляет блок через
      innerHTML и оживляет только скрипты со ссылкой. Проверено 27.08.2026. -->
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/vt-counts.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js"></script>
 
 </x-dc>
