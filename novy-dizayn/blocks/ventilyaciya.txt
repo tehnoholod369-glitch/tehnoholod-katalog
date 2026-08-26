@@ -179,42 +179,11 @@
   </div>
 </div>
 
-<script>
-// Числа берём из данных каталога, а не вписываем в текст: страница /ventilyaciya
-// прежнего сайта два месяца утверждала «позиций по вентиляции пока нет», когда их
-// было 896 — потому что цифры лежали в конфиге генератора и там же устарели.
-// Если данные не пришли — пусто, а не старое число: «нет данных» лучше догадки.
-(function () {
-  function число(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " "); }
-  fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", { cache: "no-cache" })
-    .then(function (r) { return r.json(); })
-    .then(function (d) {
-      var по = {};
-      (d.groups || []).forEach(function (g) { по[g.slug] = g; });
-      var вент = по["ventilyaciya"];
-      if (вент) {
-        var св = document.getElementById("vt-svodka");
-        if (св) св.textContent = " В каталоге " + число(вент.count) + " позиций от "
-          + вент.brands + " производителей.";
-      }
-      var подгр = {};
-      ((вент && вент.subs) || []).forEach(function (s) { подгр[s.name] = s.n; });
-      document.querySelectorAll("[data-sub]").forEach(function (el) {
-        var n = подгр[el.getAttribute("data-sub")];
-        if (n) el.textContent = число(n);
-      });
-      document.querySelectorAll("[data-sub2]").forEach(function (el) {
-        var сумма = el.getAttribute("data-sub2").split("|")
-          .reduce(function (a, имя) { return a + (подгр[имя] || 0); }, 0);
-        if (сумма) el.textContent = число(сумма);
-      });
-      document.querySelectorAll("[data-group]").forEach(function (el) {
-        var g = по[el.getAttribute("data-group")];
-        if (g) el.textContent = число(g.count);
-      });
-    })
-    .catch(function () { /* данных нет — числа остаются пустыми, это честнее неверных */ });
-})();
-</script>
+<!-- Счётчики берутся из data/index.json внешним скриптом vt-counts.js.
+     Встроенный код здесь не работает: th-page.js вставляет блок через innerHTML
+     и оживляет только скрипты со ссылкой, а написанные прямо в блоке с x-dc — нет.
+     Проверено 27.08.2026 на живой странице: разметка собралась, все 13 чисел
+     остались пустыми. Теги в комментарии не пишем — путают проверки блока. -->
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/vt-counts.js"></script>
 
 </x-dc>
