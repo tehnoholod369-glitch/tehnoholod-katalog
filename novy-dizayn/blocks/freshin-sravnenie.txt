@@ -129,7 +129,7 @@
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Что одинаково у всех девяти</h2>
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:20px; margin-top:14px;">
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:10px 28px; font-size:15px; color:#2C3846; line-height:1.6;">
-        <div>· Приток свежего воздуха с улицы — без открывания окна</div>
+        <div>· Приток свежего воздуха с улицы до 60 м³/ч — без открывания окна</div>
         <div>· Многоступенчатая очистка QuadruPuri</div>
         <div>· Датчик качества воздуха VOC</div>
         <div>· Мягкий обдув Gentle Breeze</div>
@@ -163,6 +163,7 @@
       <div>
         <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Не уверены, какая подойдёт?</div>
         <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь комнаты и этаж — подберём модель и посчитаем монтаж. Подбор бесплатный.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
       </div>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
         <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
