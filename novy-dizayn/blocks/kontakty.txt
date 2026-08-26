@@ -72,7 +72,7 @@
                 <div style="font-size:14px; font-weight:600;">Высота потолка</div>
                 <div style="font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; color:#0A4EA7;">{{ heightLabel }}</div>
               </div>
-              <input type="range" min="240" max="400" step="5" value="{{ height }}" onInput="{{ onHeight }}" style="width:100%; margin-top:10px;" />
+              <input type="range" min="270" max="400" step="5" value="{{ height }}" onInput="{{ onHeight }}" style="width:100%; margin-top:10px;" />
             </div>
 
             <sc-for list="{{ choices }}" as="c" hint-placeholder-count="4">
@@ -101,7 +101,7 @@
                 </div>
               </div>
               <div style="font-size:14px; color:#CBDCEC; line-height:1.6; margin-top:14px;">{{ explain }}</div>
-              <a href="/katalog?g=bytovye" style="display:block; background:#0872D3; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700; margin-top:18px;">{{ modelsLabel }}</a>
+              <a href="{{ modelsHref }}" style="display:block; background:#0872D3; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700; margin-top:18px;">{{ modelsLabel }}</a>
               <a href="{{ calcHref }}" target="_blank" rel="noreferrer" style="display:block; border:2px solid rgba(255,255,255,0.5); color:#fff; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700; margin-top:10px;">Отправить расчёт в WhatsApp</a>
             </div>
 
@@ -310,7 +310,9 @@ class Component extends DCLogic {
     const floorA = s.floor === "Верхний этаж" ? 0.1 : 0;
     const techA = s.tech === "Кухня или много техники" ? 0.2 : 0;
     const total = baseW * heightK * (1 + sunA + floorA + techA);
-    const kw = Math.ceil(total / 100) / 10;
+    // кВт в шапке — ровно то же число, что «Итого» в разборе ниже: округление
+    // вверх до 0,1 кВт показывало «3,8 кВт» над строкой «3 750 Вт» в одном блоке.
+    const kw = Math.round(total / 10) / 100;
     const req = Math.round(total * 3.412);
 
     const CLASSES = [7000, 9000, 12000, 18000, 24000, 36000, 48000, 60000];
@@ -358,7 +360,14 @@ class Component extends DCLogic {
         + ". " + (overload ? "Нагрузка " + this.fmt(req) + " BTU — выше бытового ряда, нужен расчёт на замере."
                            : "Нужен класс " + cls + " (" + btu + " BTU).")),
       classLabel: overload ? "60 000+ BTU" : cls + " · " + btu + " BTU",
-      modelsLabel: overload ? "Показать варианты в каталоге" : "Показать модели класса " + cls,
+      modelsLabel: overload ? "Показать полупромышленные системы" : "Показать модели класса " + cls,
+      // кнопка обещает класс — значит и ведёт в выдачу этого класса. Каталог фильтрует
+      // по площади обслуживания модели: площадь класса = BTU / 341,2 (та же база 100 Вт/м²),
+      // полосу под это значение он подбирает сам. Нагрузку выше бытового ряда бытовая
+      // выдача не закрывает — там честнее сразу полупром.
+      modelsHref: overload
+        ? "/poluprom"
+        : "/katalog?g=bytovye&area=" + Math.floor(clsBtu / 341.2),
       explain: overload
         ? "Для помещения " + s.area + " м² с выбранными условиями нагрузка выше 60 000 BTU — одним бытовым блоком её не закрыть. Нужна мультисплит- или полупромышленная система, мощность посчитаем на замере."
         : "Для помещения " + s.area + " м² нужен кондиционер класса " + cls + ". Меньший класс будет работать без остановки и не выйдет на комфортную температуру в жару.",
