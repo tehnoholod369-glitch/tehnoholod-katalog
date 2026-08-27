@@ -170,7 +170,7 @@
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:16px; margin-top:16px;">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
           <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Гарантия на оборудование — производителя</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Срок устанавливает производитель, он указан в карточке модели и в её паспорте. Гарантийный ремонт выполняют сервисные центры, сертифицированные на этот бренд: обращение в сторонний сервис аннулирует гарантию. Мы помогаем оформить обращение и передать оборудование в нужный центр.</div>
+          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Срок устанавливает производитель, он указан в карточке модели и в её паспорте. Гарантийный ремонт выполняют сервисные центры, сертифицированные на этот бренд: обращение в сторонний сервис аннулирует гарантию. Поможем оформить обращение и доведём его до решения. Само оборудование в сервисный центр мы не перевозим — порядок передачи подскажем при обращении.</div>
         </div>
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
           <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Гарантия на монтаж — от бригады</div>
