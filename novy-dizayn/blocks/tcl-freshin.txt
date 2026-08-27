@@ -46,7 +46,7 @@
   <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
     <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <a href="/katalog">Каталог</a> → <a href="/katalog?g=bytovye">Бытовые кондиционеры</a> → <span style="color:#18212F;">TCL FreshIN 3.0</span></div>
 
-    <div style="background:linear-gradient(125deg,#071C3B,#0A4EA7 72%,#0872D3); color:#fff; border-radius:16px; padding:36px; margin-top:12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; align-items:center;">
+    <div style="background:linear-gradient(125deg,#071C3B,#0A4EA7 72%,#0872D3); color:#fff; border-radius:16px; padding:36px; margin-top:12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:30px; align-items:center;">
       <div>
         <div style="display:inline-block; background:#E11A13; border-radius:6px; padding:5px 10px; font-size:12px; font-weight:700; letter-spacing:0.08em;">НОВИНКА 2026</div>
         <h1 style="margin:14px 0 0 0; font-size:clamp(21px,5.6vw,38px); font-weight:800; line-height:1.1; letter-spacing:-0.025em;">TCL FreshIN 3.0 — кондиционер, который приносит воздух с улицы</h1>
@@ -69,7 +69,7 @@
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:20px;">
       <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">В ЧЁМ РАЗНИЦА</div>
       <h2 style="margin:8px 0 0 0; font-size:26px; font-weight:800; letter-spacing:-0.018em;">Обычный кондиционер против приточного</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:18px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:18px;">
         <div style="background:#F3F7FB; border-radius:12px; padding:20px;">
           <div style="font-size:15px; font-weight:700; color:#5A6675;">Обычная сплит-система</div>
           <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Гоняет по кругу один и тот же воздух: охлаждает, но не проветривает. К вечеру в закрытой спальне растёт CO₂ — отсюда духота и тяжёлая голова при работающем кондиционере.</div>
@@ -93,7 +93,7 @@
         </div>
         <div style="font-size:14px; color:#5A6675;">Данные производителя · подтверждаются в карточке модели</div>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:16px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:16px;">
         <sc-for list="{{ tech }}" as="t" hint-placeholder-count="6">
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px;">
             <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0872D3;">{{ t.tag }}</div>
@@ -117,7 +117,7 @@
         </div>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin-top:18px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:16px; margin-top:18px;">
         <sc-for list="{{ models }}" as="m" hint-placeholder-count="3">
           <div style="border:1px solid #DCE5F0; border-radius:12px; padding:18px;">
             <div ref="{{ m.boxRef }}" style="background:#F9FBFE; border:1px solid #E9EFF7; border-radius:10px; height:170px; display:flex; align-items:center; justify-content:center; padding:12px; font-size:12px; color:#8593A6; text-align:center;">
@@ -146,7 +146,7 @@
       <div style="font-size:13px; color:#5A6675; margin-top:14px; line-height:1.6;">Цены — на оборудование. Соединительный комплект с медными трубами входит в поставку. Монтаж считается отдельно — стоимость называем после замера.</div>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; margin-top:20px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:20px;">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px;">
         <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Видеообзор</div>
         <div style="margin-top:12px; border:2px dashed #B9DBF7; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center;">
@@ -172,7 +172,7 @@
       <div style="display:flex; flex-direction:column; gap:10px; margin-top:16px;">
         <sc-for list="{{ faq }}" as="f" hint-placeholder-count="5">
           <div onClick="{{ f.toggle }}" style="border:1px solid #DCE5F0; border-radius:10px; padding:15px 17px; cursor:pointer;">
-            <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start;">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:12px; align-items:flex-start;">
               <div style="font-size:15px; font-weight:600; line-height:1.4;">{{ f.q }}</div>
               <div style="font-size:19px; color:#0872D3; font-weight:700; line-height:1;">{{ f.sign }}</div>
             </div>
@@ -184,7 +184,7 @@
       </div>
     </div>
 
-    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; align-items:center;">
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
       <div>
         <div style="font-family:'Montserrat',sans-serif; font-size:24px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Не уверены, какой класс нужен?</div>
         <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Скажите площадь помещения — посчитаем мощность и назовём цену вместе с монтажом. Если приток вам не нужен, честно предложим модель дешевле.</div>

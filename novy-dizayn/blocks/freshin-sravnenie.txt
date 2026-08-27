@@ -88,7 +88,7 @@
     </div>
 
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Какую взять под вашу комнату</h2>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin-top:14px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:14px; margin-top:14px;">
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:18px;">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Спальня, детская, кабинет</div>
@@ -128,7 +128,7 @@
 
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Что одинаково у всех девяти</h2>
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:20px; margin-top:14px;">
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:10px 28px; font-size:15px; color:#2C3846; line-height:1.6;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:10px 28px; font-size:15px; color:#2C3846; line-height:1.6;">
         <div>· Приток свежего воздуха с улицы до 60 м³/ч — без открывания окна</div>
         <div>· Многоступенчатая очистка QuadruPuri</div>
         <div>· Датчик качества воздуха VOC</div>
@@ -159,7 +159,7 @@
       </table>
     </div>
 
-    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; align-items:center;">
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
       <div>
         <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Не уверены, какая подойдёт?</div>
         <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь комнаты и этаж — подберём модель и посчитаем монтаж. Подбор бесплатный.</div>

@@ -58,7 +58,7 @@
 
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Водонагреватели</h2>
     <div style="font-size:15px; color:#5A6675; margin-top:6px;">Ballu, Electrolux, Royal Thermo, ROYAL CLIMA и PHILIPS — <span class="vt-n" data-group="vodonagrevateli"></span> позиций.</div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin-top:14px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:14px; margin-top:14px;">
 
       <a class="vt-card" href="/katalog?g=vodonagrevateli&sub=Накопительные">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Накопительные</div>
@@ -88,7 +88,7 @@
 
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Водоочистка и фильтры</h2>
     <div style="font-size:15px; color:#5A6675; margin-top:6px;">DITREEX, Hidrotek, Vontron и PHILIPS — <span class="vt-n" data-group="vodoochistka"></span> позиций.</div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin-top:14px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:14px; margin-top:14px;">
 
       <a class="vt-card" href="/katalog?g=vodoochistka&sub=Системы обратного осмоса">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Системы обратного осмоса</div>
@@ -139,7 +139,7 @@
       </div>
     </div>
 
-    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; align-items:center;">
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
       <div>
         <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Подобрать объём и мощность</div>
         <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите, сколько точек разбора и сколько человек в доме — посчитаем объём бака и предложим варианты.</div>
@@ -154,9 +154,7 @@
   </div>
 </div>
 
-<!-- Счётчики берутся из data/index.json внешним скриптом dir-counts.js.
-     Написанный прямо здесь код не выполнится: th-page.js вставляет блок через
-     innerHTML и оживляет только скрипты со ссылкой. Проверено 27.08.2026. -->
+
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js"></script>
 
 </x-dc>

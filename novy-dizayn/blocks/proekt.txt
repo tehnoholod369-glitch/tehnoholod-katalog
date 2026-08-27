@@ -52,7 +52,7 @@
         <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#7FC4F2;">ЧТО ЕСТЬ В ПОДБОРЕ</div>
         <div style="display:flex; flex-direction:column; gap:11px; margin-top:14px; font-size:14px;">
           <sc-for list="{{ stats }}" as="s" hint-placeholder-count="5">
-            <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;">
               <span style="color:#9FB0C4;">{{ s.k }}</span><b style="text-align:right; font-variant-numeric:tabular-nums;">{{ s.v }}</b>
             </div>
           </sc-for>
@@ -374,11 +374,6 @@ class Component extends DCLogic {
     const needsList = ['Есть проект', 'Нужен расчёт', 'Нужен монтаж', 'Нужна пусконаладка', 'Нужен сервис по регламенту'];
 
     return {
-      // Сводка должна сходиться с итогом: 52 + 21 + 205 = 278, а в подборе 288 —
-      // прецизионные (5) и рекуператоры (5) в плитках не показывались, и разница
-      // в 10 позиций висела необъяснённой (26.08.2026).
-      // Точное число «в наличии» убрано: решение владельца 25.08.2026 — остатки
-      // на витрину не выводим, они устаревают между пересборками.
       stats: [
         { k: 'Позиций в подборе', v: all ? num(all) : 'нет данных' },
         { k: 'VRF-системы', v: cnt('vrf') || 'нет данных' },

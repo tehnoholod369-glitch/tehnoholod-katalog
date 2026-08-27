@@ -38,7 +38,7 @@
   <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
     <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <span style="color:#18212F;">База знаний</span></div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin-top:12px; align-items:end;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:12px; align-items:end;">
       <div>
         <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">База знаний</h1>
         <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">Разбираемся в климатической технике до покупки: как выбрать мощность, чем приток отличается от проветривания, что делать с фильтрами. Коротко и без продающих обещаний.</div>
@@ -50,11 +50,11 @@
       </div>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; margin-top:22px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:22px;">
       <sc-for list="{{ articles }}" as="a" hint-placeholder-count="6">
         <a href="{{ a.href }}" style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px; display:flex; flex-direction:column; color:inherit;">
           <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-            <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:{{ a.tagFg }}; background:{{ a.tagBg }}; border-radius:5px; padding:4px 9px;">{{ a.rubric }}</div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:{{ a.tagFg }}; background:{{ a.tagBg }}; border-radius:5px; padding:4px 9px;">{{ a.rubric }}</div>
             <div style="font-size:12px; color:#8593A6;">{{ a.read }}</div>
           </div>
           <div style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700; line-height:1.3; margin-top:12px;">{{ a.title }}</div>
@@ -69,7 +69,7 @@
     </div>
 
     <sc-if value="{{ editMode }}" hint-placeholder-val="{{ false }}">
-    <div style="background:#071C3B; color:#fff; border-radius:16px; padding:28px; margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:26px; align-items:center;">
+    <div style="background:#071C3B; color:#fff; border-radius:16px; padding:28px; margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:26px; align-items:center;">
       <div>
         <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">ЗАЧЕМ ЭТОТ РАЗДЕЛ</div>
         <div style="font-family:'Montserrat',sans-serif; font-size:24px; font-weight:800; margin-top:8px; letter-spacing:-0.015em; line-height:1.2;">Каждая статья ведёт в каталог, а каждая карточка — в статью</div>
@@ -77,15 +77,15 @@
       </div>
       <div style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.18); border-radius:12px; padding:20px;">
         <div style="display:flex; flex-direction:column; gap:12px; font-size:14px;">
-          <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;"><span style="color:#9FB0C4;">Статей сейчас</span><b style="font-variant-numeric:tabular-nums;">7</b></div>
-          <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;"><span style="color:#9FB0C4;">Рубрик</span><b>3: выбор, эксплуатация, монтаж</b></div>
-          <div style="display:flex; justify-content:space-between; gap:14px;"><span style="color:#9FB0C4;">Что даёт</span><b>трафик по вопросам, а не по бренду</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;"><span style="color:#9FB0C4;">Статей сейчас</span><b style="font-variant-numeric:tabular-nums;">7</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;"><span style="color:#9FB0C4;">Рубрик</span><b>3: выбор, эксплуатация, монтаж</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px;"><span style="color:#9FB0C4;">Что даёт</span><b>трафик по вопросам, а не по бренду</b></div>
         </div>
       </div>
     </div>
     </sc-if>
 
-    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; align-items:center;">
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
       <div>
         <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Не нашли ответ?</div>
         <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите вопрос в WhatsApp — ответим и, если вопрос частый, добавим статью в базу знаний.</div>
@@ -129,10 +129,6 @@ class Component extends DCLogic {
     const rubricNames = ["Все", "Выбор", "Эксплуатация", "Монтаж"];
     const rubric = this.state.rubric;
 
-    // Статей ещё нет: кнопка «Читать →» на живой странице никуда не вела — восемь
-    // кликов в пустоту (26.08.2026). Пока у карточки нет адреса, честно пишем
-    // «готовим статью». Служебный блок «Зачем этот раздел» — материал владельца,
-    // клиенту он не нужен: прячем под ?edit=1, как заготовки в портфолио.
     const edit = /(?:^|[?&])edit=1(?:&|$)/.test(location.search);
 
     return {

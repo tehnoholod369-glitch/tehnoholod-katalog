@@ -57,7 +57,7 @@
     </div>
 
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Что поставляем</h2>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin-top:14px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:14px; margin-top:14px;">
 
       <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Приточно-вытяжные установки">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Приточно-вытяжные установки</div>
@@ -149,7 +149,7 @@
     </div>
 
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Как подбираем</h2>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:14px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:14px; margin-top:14px;">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:18px;">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:16px; color:#071C3B;">1. Считаем расход воздуха</div>
         <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">По площади и назначению помещения. Быстрый расчёт — в <a href="https://tehnoholod369.kz/podbor-ventilyacii">калькуляторе</a>, он же покажет подходящие установки.</div>
@@ -164,7 +164,7 @@
       </div>
     </div>
 
-    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; align-items:center;">
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
       <div>
         <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Нужна вентиляция под объект?</div>
         <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь, назначение помещения и этаж — подберём и посчитаем с монтажом.</div>
@@ -179,11 +179,7 @@
   </div>
 </div>
 
-<!-- Счётчики берутся из data/index.json внешним скриптом dir-counts.js.
-     Встроенный код здесь не работает: th-page.js вставляет блок через innerHTML
-     и оживляет только скрипты со ссылкой, а написанные прямо в блоке с x-dc — нет.
-     Проверено 27.08.2026 на живой странице: разметка собралась, все 13 чисел
-     остались пустыми. Теги в комментарии не пишем — путают проверки блока. -->
+
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js"></script>
 
 </x-dc>

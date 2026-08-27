@@ -171,7 +171,7 @@
           <sc-if value="{{ isSpecs }}" hint-placeholder-val="{{ true }}">
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:0 40px; margin-top:18px;">
               <sc-for list="{{ specs }}" as="s" hint-placeholder-count="12">
-                <div style="display:flex; justify-content:space-between; gap:16px; padding:10px 0; border-bottom:1px solid #E9EFF7; font-size:14px;">
+                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:16px; padding:10px 0; border-bottom:1px solid #E9EFF7; font-size:14px;">
                   <span style="color:#5A6675;">{{ s.k }}</span>
                   <b style="text-align:right; color:{{ s.color }};">
                     <sc-if value="{{ s.isText }}" hint-placeholder-val="{{ true }}">
@@ -184,7 +184,7 @@
                 </div>
               </sc-for>
             </div>
-            <div style="font-size:13px; color:#8593A6; margin-top:14px; line-height:1.6;">Характеристики — по данным производителя из мастер-таблицы. Незаполненные поля выводятся как «нет данных» и не домысливаются.</div>
+            <div style="font-size:13px; color:#8593A6; margin-top:14px; line-height:1.6;">Характеристики — по данным производителя. Если параметра нет в документации, мы его не указываем.</div>
           </sc-if>
 
           <sc-if value="{{ isDesc }}" hint-placeholder-val="{{ false }}">
@@ -251,12 +251,12 @@
               <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:20px; align-items:start;">
                 <div>
                   <div style="font-size:15px; font-weight:700;">Сколько работает кондиционер</div>
-                  <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-top:12px;">
+                  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:baseline; gap:12px; margin-top:12px;">
                     <span style="font-size:14px; color:#5A6675;">Часов в сутки</span>
                     <b style="font-size:16px; color:#0A4EA7;">{{ power.hoursLabel }}</b>
                   </div>
                   <input type="range" min="2" max="24" step="1" value="{{ power.hours }}" onInput="{{ power.onHours }}" style="width:100%; margin-top:8px; accent-color:#0872D3;" />
-                  <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:16px;">
+                  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:center; gap:12px; margin-top:16px;">
                     <span style="font-size:14px; color:#5A6675;">Ваш тариф, ₸ за кВт·ч</span>
                     <span style="display:flex; align-items:center; gap:6px;">
                       <input type="number" inputmode="decimal" min="1" max="300" step="0.01" value="{{ power.tariff }}" onInput="{{ power.onTariff }}" style="width:96px; border:1px solid #DCE5F0; border-radius:8px; padding:8px 10px; font-family:inherit; font-size:16px; font-weight:700; color:#0A4EA7; text-align:right;" />
@@ -328,8 +328,8 @@
                     <img data-url="{{ a.img }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:contain; display:block;" />
                   </div>
                   <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:10px;">
-                    <div style="font-size:11px; font-weight:700; color:#0872D3; letter-spacing:0.06em;">{{ a.brand }}</div>
-                    <div style="font-size:11px; font-weight:700; color:{{ a.stockFg }};">{{ a.stock }}</div>
+                    <div style="font-size:12px; font-weight:700; color:#0872D3; letter-spacing:0.06em;">{{ a.brand }}</div>
+                    <div style="font-size:12px; font-weight:700; color:{{ a.stockFg }};">{{ a.stock }}</div>
                   </div>
                   <div style="font-size:13px; font-weight:600; line-height:1.35; margin-top:5px;">{{ a.name }}</div>
                   <div style="font-size:17px; font-weight:700; font-variant-numeric:tabular-nums; margin-top:8px;">{{ a.price }}</div>
@@ -356,8 +356,8 @@
                     <img data-url="{{ a.img }}" alt="{{ a.name }}" loading="lazy" style="max-width:100%; max-height:100%; object-fit:contain; display:block;" />
                   </a>
                   <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                    <div style="font-size:11px; font-weight:700; color:#0872D3; letter-spacing:0.06em;">{{ a.brand }}</div>
-                    <div style="font-size:11px; font-weight:700; color:{{ a.stockFg }};">{{ a.stock }}</div>
+                    <div style="font-size:12px; font-weight:700; color:#0872D3; letter-spacing:0.06em;">{{ a.brand }}</div>
+                    <div style="font-size:12px; font-weight:700; color:{{ a.stockFg }};">{{ a.stock }}</div>
                   </div>
                   <a href="{{ a.href }}" style="font-size:13px; font-weight:600; line-height:1.35; color:#18212F;">{{ a.name }}</a>
                   <div style="font-size:16px; font-weight:700; font-variant-numeric:tabular-nums;">{{ a.price }}</div>
@@ -408,7 +408,7 @@
                 <div style="height:120px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:8px;">
                   <img data-url="{{ r.img }}" alt="{{ r.name }}" loading="lazy" style="width:100%; height:100%; object-fit:contain; display:block;" />
                 </div>
-                <div style="font-size:11px; font-weight:700; color:#0872D3; letter-spacing:0.06em; margin-top:10px;">{{ r.brand }}</div>
+                <div style="font-size:12px; font-weight:700; color:#0872D3; letter-spacing:0.06em; margin-top:10px;">{{ r.brand }}</div>
                 <div style="font-size:13px; font-weight:600; line-height:1.35; margin-top:4px;">{{ r.name }}</div>
                 <div style="font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; margin-top:8px;">{{ r.price }}</div>
               </div>
@@ -520,7 +520,7 @@ class Component extends DCLogic {
         el.style.display = "none";
         const note = document.createElement("div");
         note.setAttribute("data-nophoto", "1");
-        note.style.cssText = "font-size:11px;line-height:1.4;color:#8593A6;text-align:center;padding:8px;";
+        note.style.cssText = "font-size:12px;line-height:1.4;color:#8593A6;text-align:center;padding:8px;";
         note.textContent = "Фото уточняется";
         box.appendChild(note);
       };
