@@ -45,7 +45,7 @@
   <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
     <div style="font-size:13px; color:#8593A6;"><a href="Главная.dc.html">Главная</a> → <span style="color:#18212F;">Отзывы</span></div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin-top:12px; align-items:start;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:12px; align-items:start;">
       <div>
         <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">Отзывы о нашей работе</h1>
         <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">Мы не пишем отзывы за клиентов. Оценку компании не переносим на сайт текстом, который нельзя проверить: ниже — площадки, где отзыв оставляет сам человек под своим аккаунтом. Единственное, что оцениваем у себя, — работу конкретной бригады: этого не показывает ни одна площадка.</div>
@@ -56,12 +56,12 @@
       </div>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:22px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:22px;">
       <sc-for list="{{ platforms }}" as="p" hint-placeholder-count="3">
         <a href="{{ p.href }}" target="_blank" rel="noreferrer" style="background:#fff; border:1px solid {{ p.border }}; border-radius:16px; padding:24px; display:flex; flex-direction:column; color:#18212F;">
           <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
             <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">{{ p.name }}</div>
-            <div style="font-size:11px; font-weight:700; color:{{ p.tagFg }}; background:{{ p.tagBg }}; border-radius:5px; padding:4px 9px;">{{ p.tag }}</div>
+            <div style="font-size:12px; font-weight:700; color:{{ p.tagFg }}; background:{{ p.tagBg }}; border-radius:5px; padding:4px 9px;">{{ p.tag }}</div>
           </div>
           <sc-if value="{{ p.hasScore }}" hint-placeholder-val="{{ false }}">
             <div style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-top:14px;">
@@ -83,19 +83,21 @@
         </div>
         <a href="Наши работы - портфолио.dc.html" style="font-size:14px; font-weight:700; color:#0872D3;">Смотреть объекты →</a>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:18px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:16px; margin-top:18px;">
         <sc-for list="{{ proofs }}" as="pr" hint-placeholder-count="4">
           <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
             <div style="font-size:15px; font-weight:700;">{{ pr.title }}</div>
             <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">{{ pr.text }}</div>
-            <a href="{{ pr.href }}" style="font-size:13px; font-weight:700; color:#0872D3; display:inline-block; margin-top:8px;">{{ pr.link }}</a>
+            <sc-if value="{{ pr.href }}" hint-placeholder-val="{{ true }}">
+              <a href="{{ pr.href }}" style="font-size:13px; font-weight:700; color:#0872D3; display:inline-block; margin-top:8px;">{{ pr.link }}</a>
+            </sc-if>
           </div>
         </sc-for>
       </div>
     </div>
 
     <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:28px; margin-top:16px;">
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; align-items:center;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
         <div>
           <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Уже покупали у нас? Оставьте отзыв</div>
           <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Отзыв занимает минуту и помогает следующему покупателю выбрать без риска. Напишите как есть: и что понравилось, и что стоит улучшить — второе для нас полезнее.</div>
@@ -155,11 +157,8 @@ class Component extends DCLogic {
       ],
       proofs: [
         { title: "Объекты с датами", text: "Портфолио монтажей: город, месяц, оборудование. Из карточки объекта можно перейти к той же модели в каталоге.", href: "Наши работы - портфолио.dc.html", link: "Наши работы →" },
-        // Единственное исключение из правила «отзывы не держим у себя»: оценку
-        // отдельной бригады не показывает ни Google, ни 2ГИС — там оценка одна
-        // на всю компанию. Поэтому там она и остаётся, а бригады оцениваются здесь,
-        // с открыто названной модерацией (решение владельца 26.08.2026).
-        { title: "Оценки бригад", text: "Отзыв о конкретной бригаде площадки не показывают — там оценка одна на всю компанию. Эти отзывы держим у себя и открыто пишем, что модерируем их.", href: "Бригады.dc.html", link: "Бригады и оценки →" },
+        { title: "Оценки бригад", text: "Отзыв о конкретной бригаде площадки не показывают — там оценка одна на всю компанию. Эти отзывы держим у себя и открыто пишем, что модерируем их.", },  // ссылка на /brigady снята 27.08.2026: страницы ещё нет (404).
+        // Вернуть при заведении страницы: href на страницу бригад и текст ссылки.
         { title: "Зона ответственности", text: "Что покрывает гарантия производителя, что — наши монтажные работы, и что не покрывает ни то, ни другое. Написано до покупки, а не после.", href: "Услуги - монтаж, сервис, гарантия.dc.html", link: "Гарантия и сервис →" },
         { title: "Реквизиты и договор", text: "ИИН/БИН, работа с НДС, счёт и договор поставки. Проверить компанию можно по открытым реестрам.", href: "B2B и госзакупки.dc.html", link: "Реквизиты →" },
         { title: "Честные пробелы в данных", text: "Где у нас нет фото, артикула или цены — так и написано «нет данных». Мы не подставляем правдоподобное вместо неизвестного.", href: "Каталог - выдача.dc.html", link: "Смотреть каталог →" }

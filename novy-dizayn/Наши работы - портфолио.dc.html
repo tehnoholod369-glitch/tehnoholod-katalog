@@ -46,7 +46,7 @@
   <div style="max-width:1280px; margin:0 auto; padding:20px 24px 72px 24px;">
     <div style="font-size:13px; color:#8593A6;"><a href="Главная.dc.html">Главная</a> → <span style="color:#18212F;">Наши работы</span></div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin-top:12px; align-items:end;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:12px; align-items:end;">
       <div>
         <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">Наши работы</h1>
         <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">Объекты, где мы ставили оборудование: город, дата, что установлено. Без стоковых картинок — только собственные фото с монтажей.</div>
@@ -58,23 +58,23 @@
       </div>
     </div>
 
-    <div ref="{{ linkRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; margin-top:22px;">
+    <div ref="{{ linkRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:18px; margin-top:22px;">
       <sc-for list="{{ works }}" as="w" hint-placeholder-count="6">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; overflow:hidden; display:flex; flex-direction:column;">
           <div style="position:relative; height:230px; background:#F9FBFE;">
             <image-slot id="{{ w.slotId }}" shape="rect" placeholder="{{ w.slotHint }}"></image-slot>
             <div style="position:absolute; top:12px; left:12px; display:flex; gap:6px; flex-wrap:wrap; pointer-events:none;">
-              <div style="background:rgba(7,28,59,0.86); color:#fff; border-radius:6px; padding:5px 9px; font-size:11px; font-weight:700; letter-spacing:0.04em;">{{ w.city }}</div>
-              <div style="background:rgba(255,255,255,0.94); color:#18212F; border-radius:6px; padding:5px 9px; font-size:11px; font-weight:700;">{{ w.date }}</div>
+              <div style="background:rgba(7,28,59,0.86); color:#fff; border-radius:6px; padding:5px 9px; font-size:12px; font-weight:700; letter-spacing:0.04em;">{{ w.city }}</div>
+              <div style="background:rgba(255,255,255,0.94); color:#18212F; border-radius:6px; padding:5px 9px; font-size:12px; font-weight:700;">{{ w.date }}</div>
             </div>
           </div>
           <div style="padding:20px; display:flex; flex-direction:column; flex:1;">
-            <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">{{ w.kind }}</div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">{{ w.kind }}</div>
             <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; line-height:1.3; margin-top:8px;">{{ w.title }}</div>
             <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">{{ w.text }}</div>
             <div style="display:flex; flex-direction:column; gap:7px; margin-top:14px;">
               <sc-for list="{{ w.rows }}" as="r" hint-placeholder-count="3">
-                <div style="display:flex; justify-content:space-between; gap:12px; border-bottom:1px solid #E9EFF7; padding-bottom:6px; font-size:13px;">
+                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:12px; border-bottom:1px solid #E9EFF7; padding-bottom:6px; font-size:13px;">
                   <span style="color:#5A6675;">{{ r.k }}</span><b style="text-align:right; color:{{ r.color }};">{{ r.v }}</b>
                 </div>
               </sc-for>
@@ -87,13 +87,13 @@
                 </div>
                 <div style="flex:1; min-width:0;">
                   <div style="display:flex; align-items:center; gap:7px; flex-wrap:wrap;">
-                    <div style="font-size:10px; font-weight:700; letter-spacing:0.06em; color:#0A4EA7;">ХОЧУ ТАКОЙ ЖЕ</div>
-                    <div style="font-size:10px; font-weight:700; color:{{ w.link.stockFg }}; background:{{ w.link.stockBg }}; border-radius:4px; padding:2px 6px;">{{ w.link.stock }}</div>
+                    <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#0A4EA7;">ХОЧУ ТАКОЙ ЖЕ</div>
+                    <div style="font-size:12px; font-weight:700; color:{{ w.link.stockFg }}; background:{{ w.link.stockBg }}; border-radius:4px; padding:2px 6px;">{{ w.link.stock }}</div>
                   </div>
                   <div style="font-size:13px; font-weight:600; line-height:1.35; margin-top:4px;">{{ w.link.name }}</div>
                   <div style="display:flex; align-items:baseline; gap:8px; margin-top:4px;">
                     <div style="font-size:15px; font-weight:700; color:{{ w.link.priceFg }}; font-variant-numeric:tabular-nums;">{{ w.link.price }}</div>
-                    <div style="font-size:11px; font-weight:700; color:#0872D3;">в каталоге →</div>
+                    <div style="font-size:12px; font-weight:700; color:#0872D3;">в каталоге →</div>
                   </div>
                 </div>
               </a>
@@ -112,7 +112,7 @@
         <div style="font-size:14px; font-weight:700; color:#0A4EA7;">Главное — назовите модель или артикул</div>
         <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:6px;">По ней объект связывается с каталогом: под кейсом появляется карточка «Хочу такой же» с фото, ценой и наличием. Клиент из портфолио попадает сразу в покупку, а не в тупик. Ищется и по артикулу («TAC-FR09HSV/P7W»), и по названию модели («TCL FreshIN 3.0»). Если модели нет в каталоге, блок просто не покажется.</div>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:16px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:14px; margin-top:16px;">
         <div style="background:#F3F7FB; border-radius:12px; padding:16px 18px;">
           <div style="font-size:14px; font-weight:700;">Что снимать</div>
           <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">Готовый внутренний блок на стене, аккуратную трассу, наружный блок на кронштейнах. Общий план помещения — не крупный план коробки.</div>
@@ -128,7 +128,7 @@
       </div>
     </div>
 
-    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; align-items:center;">
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
       <div>
         <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Хотите так же на своём объекте?</div>
         <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Пришлите площадь помещения и фото стены, где планируете блок — скажем, что подойдёт, и назовём стоимость после замера.</div>
@@ -310,9 +310,6 @@ class Component extends DCLogic {
         bg: f === n ? "#E6F2FD" : "#fff",
         fg: f === n ? "#0A4EA7" : "#5A6675"
       })),
-      // Заготовки «объект добавим» — рабочий материал владельца, а не витрина:
-      // 26.08.2026 их видел клиент на живой странице, вместе с инструкцией
-      // «Как заполнить эту страницу». Показываем и то и другое только по ?edit=1.
       editMode: edit,
       works: all
         .filter(w => edit || !/добавим/i.test(String(w.date || "")))

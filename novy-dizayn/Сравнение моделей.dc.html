@@ -70,7 +70,7 @@
         <div style="display:flex; flex-direction:column; gap:8px; margin-top:14px;">
           <sc-for list="{{ suggestions }}" as="sg" hint-placeholder-count="5">
             <div onClick="{{ sg.add }}" style="display:flex; align-items:center; gap:12px; border:1px solid #DCE5F0; border-radius:10px; padding:11px 14px; cursor:pointer;">
-              <div style="font-size:11px; font-weight:700; color:#0872D3; letter-spacing:0.06em; min-width:74px;">{{ sg.brand }}</div>
+              <div style="font-size:12px; font-weight:700; color:#0872D3; letter-spacing:0.06em; min-width:74px;">{{ sg.brand }}</div>
               <div style="flex:1; min-width:0; font-size:14px; font-weight:600; line-height:1.35;">{{ sg.name }}</div>
               <div style="font-size:14px; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap;">{{ sg.price }}</div>
               <div style="font-size:13px; font-weight:700; color:#0872D3; white-space:nowrap;">{{ sg.action }}</div>
@@ -97,8 +97,8 @@
         <div ref="{{ gridRef }}" style="display:grid; grid-template-columns:{{ cardCols }}; gap:16px; margin-top:18px;">
           <sc-for list="{{ picked }}" as="p" hint-placeholder-count="2">
             <div style="background:#fff; border:2px solid {{ p.border }}; border-radius:14px; padding:18px; display:flex; flex-direction:column;">
-              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
-                <div style="font-size:11px; font-weight:700; color:#0872D3; letter-spacing:0.06em;">{{ p.brand }}</div>
+              <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:flex-start; gap:10px;">
+                <div style="font-size:12px; font-weight:700; color:#0872D3; letter-spacing:0.06em;">{{ p.brand }}</div>
                 <div onClick="{{ p.remove }}" style="font-size:13px; color:#8593A6; cursor:pointer;">Убрать</div>
               </div>
               <div style="height:150px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:10px; display:flex; align-items:center; justify-content:center; padding:10px; margin-top:10px;">
@@ -108,7 +108,7 @@
               <div style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:600; line-height:1.35; margin-top:4px;">{{ p.name }}</div>
               <div style="display:flex; align-items:baseline; gap:8px; margin-top:10px;">
                 <div style="font-size:20px; font-weight:700; font-variant-numeric:tabular-nums;">{{ p.price }}</div>
-                <div style="font-size:11px; font-weight:700; color:{{ p.stockFg }}; background:{{ p.stockBg }}; border-radius:5px; padding:3px 7px;">{{ p.stock }}</div>
+                <div style="font-size:12px; font-weight:700; color:{{ p.stockFg }}; background:{{ p.stockBg }}; border-radius:5px; padding:3px 7px;">{{ p.stock }}</div>
               </div>
               <sc-if value="{{ p.isBest }}" hint-placeholder-val="{{ false }}">
                 <div style="background:#E7F7F0; color:#0E9F6E; border-radius:8px; padding:8px 10px; font-size:12px; font-weight:700; margin-top:10px;">Оптимально по цене за м²</div>
@@ -354,7 +354,7 @@ class Component extends DCLogic {
           verdict += " По цене за квадратный метр охлаждаемой площади выгоднее " + label(chosen[bestIdx].it) + ".";
         }
         verdictNote = isFinite(perM2[bestIdx]) && coolingGroup
-          ? "Вывод считается по цене и площади из мастер-таблицы, а не по «лучшести»: подсвечены только строки, где модели действительно расходятся. Если разница в цене меньше стоимости монтажа — выбирайте по наличию, чтобы не ждать поставку."
+          ? "Вывод считается по цене и площади, а не по «лучшести»: подсвечены только строки, где модели действительно расходятся. Если разница в цене меньше стоимости монтажа — выбирайте по наличию, чтобы не ждать поставку."
           : "Сравниваем по цене и характеристикам: удельная цена за квадратный метр для этой группы не считается — ориентируйтесь на подсвеченные различия в таблице выше.";
       } else {
         verdict = "У части позиций цена по запросу — сравнить по деньгам не получится, пока не подтвердим стоимость.";
@@ -362,7 +362,7 @@ class Component extends DCLogic {
       }
     }
 
-    const cols = "minmax(200px,1.1fr) " + chosen.map(() => "minmax(120px,1fr)").join(" ");
+    const cols = "minmax(200px,1.1fr) " + chosen.map(() => "minmax(min(120px,100%),1fr)").join(" ");
 
     return {
       groupTabs,
@@ -376,7 +376,7 @@ class Component extends DCLogic {
       hasPicked: chosen.length > 0,
       picked,
       gridRef: this.gridRef,
-      cardCols: "repeat(auto-fit,minmax(230px,1fr))",
+      cardCols: "repeat(auto-fit,minmax(min(230px,100%),1fr))",
       rowCols: cols,
       rows,
       rowsNote: diffMode

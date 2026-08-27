@@ -62,7 +62,7 @@
 
           <div style="font-size:15px; color:#2C3846; line-height:1.7; margin-top:14px; max-width:900px; text-wrap:pretty;">{{ c.about }}</div>
 
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px; margin-top:16px;">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr)); gap:10px; margin-top:16px;">
             <sc-for list="{{ c.groups }}" as="g" hint-placeholder-count="3">
               <a href="{{ g.href }}" style="border:1px solid #DCE5F0; border-radius:10px; padding:12px 14px; display:flex; flex-direction:column; gap:2px; color:#18212F;">
                 <span style="font-size:14px; font-weight:700;">{{ g.title }}</span>
@@ -156,12 +156,6 @@ class Component extends DCLogic {
   renderVals() {
     const src = this.state.cards || {};
     const logos = this.state.logos || {};
-    // Абзац «о бренде». Правило (решение владельца 24.08.2026): происхождение и год
-    // основания указываем ТОЛЬКО там, где подтверждено первоисточником. Где официальная
-    // версия расходится с проверкой (AERONIK, Royal Thermo, ROYAL CLIMA, SHUFT, FUNAI,
-    // Toshiba, Ballu) — не спорим с ней, но и не пересказываем: пишем о линейке и
-    // задачах, без утверждений о стране и годе. Разбор — «Единый источник данных»,
-    // БРЕНДЫ_проверенные_факты_24.08.2026.md.
     const ABOUT = {
       "TCL": "TCL начинала в 1981 году с производства аудиокассет, кондиционерами занялась только к концу 1990-х — сегодня это десять заводов и более 30 млн кондиционеров в год. У нас это полупромышленные и бытовые сплит-системы, а ключевая линейка — FreshIN с притоком уличного воздуха: кондиционер не перегоняет комнатный воздух, а подаёт свежий без открытого окна.",
       "Electrolux": "Electrolux — шведский концерн, основанный в 1919 году слиянием двух стокгольмских фирм; одна из них начинала с керосиновых ламп для маяков, первый абсорбционный холодильник вышел в 1925-м. У нас это водонагреватели, бытовые сплит-системы и мобильные кондиционеры, камины и электроочаги, вентиляция. Линейка бойлеров закрывает и компактные модели под раковину, и баки на семью.",
@@ -261,10 +255,6 @@ class Component extends DCLogic {
         linkLabel: n + " в группе «" + ((src[n].groups || [])[0] || {}).t + "» →",
         groups: (src[n].groups || []).slice(0, 12).map(g => ({
           title: g.t.charAt(0).toUpperCase() + g.t.slice(1),
-          // 25.08.2026, решение владельца: точные остатки с витрины убраны —
-          // они не статичны и устаревают между пересборками. Два состояния:
-          // «в наличии» подкреплено кликом — ссылка ниже открывает выдачу
-          // с фильтром stock=in, человек видит ровно те позиции.
           sub: (g.st ? "в наличии" : "под заказ") + (g.note ? " · " + g.note : ""),
           subColor: g.st ? "#0E9F6E" : "#5A6675",
           href: g.slug === "multisplit"

@@ -11,10 +11,6 @@
  * перерисовку компонентов DC.
  */
 (function () {
-  // Адрес данных абсолютный и намеренно: сборщик блоков переписывает
-  // fetch("data/…") только в теле страницы, внутрь .js он не заглядывает.
-  // Относительный путь на Tilda вёл в tehnoholod369.kz/data/ — там 404.
-  // Тот же урок, что с cart.js 25.08.2026. Менять — вместе с RAW в сборщике.
   var DATA = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/";
   var ID = "th-search-layer";
   var IDX = null;      // {fields, rows}
@@ -150,7 +146,7 @@
         + '<span style="text-align:right;flex:none">'
         + '<span style="display:block;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums">'
         + (r[f.p] ? money(r[f.p]) : "по запросу") + '</span>'
-        + '<span style="display:block;font-size:11px;font-weight:600;margin-top:3px;color:'
+        + '<span style="display:block;font-size:12px;font-weight:600;margin-top:3px;color:'
         + (inStock ? "#0E9F6E" : "#B25200") + '">' + (inStock ? "в наличии" : "под заказ") + '</span>'
         + '</span></a>';
     }).join("");

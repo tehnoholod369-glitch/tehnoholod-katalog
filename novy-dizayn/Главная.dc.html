@@ -12,7 +12,7 @@
 <meta name="description" content="Каталог климатической техники с ценами и наличием: кондиционеры, вентиляция, отопление, водонагреватели. Монтаж под ключ в Алматы и области, доставка по Казахстану, работаем с НДС." />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="ИП «ТехноХолод» — климатическая техника в Алматы" />
-<meta property="og:description" content="Кондиционеры, вентиляция, отопление и водонагреватели: цены и наличие из мастер-таблицы, монтаж под ключ, доставка по Казахстану." />
+<meta property="og:description" content="Кондиционеры, вентиляция, отопление и водонагреватели: актуальные цены и наличие, монтаж под ключ, доставка по Казахстану." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -163,14 +163,14 @@
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:20px; display:flex; flex-direction:column; gap:9px; color:#18212F;">
           <div ref="{{ d.previewRef }}" style="position:relative; background:#F9FBFE; border-radius:12px; height:124px; display:flex; align-items:center; justify-content:center; padding:8px; overflow:hidden;">
             <sc-if value="{{ d.season }}" hint-placeholder-val="{{ false }}">
-              <div style="position:absolute; top:10px; left:10px; z-index:1; font-size:11px; font-weight:700; letter-spacing:0.06em; color:#fff; background:{{ d.seasonBg }}; border-radius:5px; padding:4px 9px;">{{ d.season }}</div>
+              <div style="position:absolute; top:10px; left:10px; z-index:1; font-size:12px; font-weight:700; letter-spacing:0.06em; color:#fff; background:{{ d.seasonBg }}; border-radius:5px; padding:4px 9px;">{{ d.season }}</div>
             </sc-if>
             <img data-url="{{ d.heroImg }}" alt="{{ d.heroName }}" style="max-width:100%; max-height:100%; object-fit:contain; display:block; opacity:{{ d.heroOpacity }}; transition:opacity 320ms ease;" />
           </div>
           <a href="{{ d.href }}" style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#18212F;">{{ d.title }}</a>
           <div style="display:flex; flex-wrap:wrap; gap:5px;">
             <sc-for list="{{ d.subs }}" as="t" hint-placeholder-count="4">
-              <a href="{{ t.href }}" style="border:1px solid #DCE5F0; background:#fff; border-radius:6px; padding:4px 9px; font-size:12px; font-weight:600; color:#2C3846; display:flex; align-items:baseline; gap:5px;" style-hover="border-color:#0872D3; color:#0A4EA7;"><span>{{ t.label }}</span><span style="font-size:11px; color:#8593A6; font-variant-numeric:tabular-nums;">{{ t.n }}</span></a>
+              <a href="{{ t.href }}" style="border:1px solid #DCE5F0; background:#fff; border-radius:6px; padding:4px 9px; font-size:12px; font-weight:600; color:#2C3846; display:flex; align-items:baseline; gap:5px;" style-hover="border-color:#0872D3; color:#0A4EA7;"><span>{{ t.label }}</span><span style="font-size:12px; color:#8593A6; font-variant-numeric:tabular-nums;">{{ t.n }}</span></a>
             </sc-for>
           </div>
           <a href="{{ d.href }}" style="font-size:13px; font-weight:700; color:{{ d.linkColor }}; margin-top:auto;">{{ d.link }}</a>
@@ -211,7 +211,7 @@
           <div style="font-size:15px; color:#2C3846; margin-top:10px; line-height:1.55;">Инверторные сплит-системы на 25–50 м² с фильтрацией уличного воздуха, Wi-Fi и гарантией производителя. Установка в Алматы и области.</div>
           <div style="display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;">
             <a href="TCL FreshIN 3.0 - лендинг.dc.html" style="background:#E11A13; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">{{ promoPrice }}</a>
-            <a href="Сравнение моделей.dc.html" style="border:2px solid #E11A13; color:#C21610; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Сравнить модели</a>
+            <a href="Сравнение FreshIN.dc.html" style="border:2px solid #E11A13; color:#C21610; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Сравнить модели</a>
           </div>
         </div>
         <div style="display:flex; justify-content:center;">
@@ -261,9 +261,9 @@
       </div>
       <div style="background:#F3F7FB; border-radius:12px; padding:20px;">
         <div style="display:flex; flex-direction:column; gap:10px; font-size:14px;">
-          <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid #E9EFF7; padding-bottom:8px;"><span style="color:#5A6675;">Налогообложение</span><b>работаем с НДС</b></div>
-          <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid #E9EFF7; padding-bottom:8px;"><span style="color:#5A6675;">Документы</span><b>счёт, договор, счёт-фактура</b></div>
-          <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid #E9EFF7; padding-bottom:8px;"><span style="color:#5A6675;">ИИН/БИН</span><b style="font-variant-numeric:tabular-nums;">770313000379</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid #E9EFF7; padding-bottom:8px;"><span style="color:#5A6675;">Налогообложение</span><b>работаем с НДС</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid #E9EFF7; padding-bottom:8px;"><span style="color:#5A6675;">Документы</span><b>счёт, договор, счёт-фактура</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid #E9EFF7; padding-bottom:8px;"><span style="color:#5A6675;">ИИН/БИН</span><b style="font-variant-numeric:tabular-nums;">770313000379</b></div>
           <div style="display:flex; justify-content:space-between; gap:14px;"><span style="color:#5A6675;">Форма оплаты</span><b>счёт, Kaspi, рассрочка</b></div>
         </div>
       </div>
@@ -480,9 +480,6 @@ class Component extends DCLogic {
     const brands = new Set();
     idx.forEach(g => (g.brandList || []).forEach(b => brands.add(b)));
     const tail = (n, one, few, many) => this.plural(n, one, few, many).replace(String(n) + " ", "");
-    // 25.08.2026, решение владельца: точные остатки на витрину не выводим —
-    // они не статичны и устаревают между пересборками. Вместо «из них в наличии»
-    // считаем группы: это состав каталога, а не обещание остатка.
     return total
       ? [
           { v: this.fmt(total), k: tail(total, "позиция", "позиции", "позиций") + " в каталоге" },
@@ -512,9 +509,6 @@ class Component extends DCLogic {
   ventLink() { return this.dirLink(["ventilyaciya", "osushiteli", "ventilyatory-prom", "rekuperatory"]); }
   heatLink() { return this.dirLink(["radiatory", "teplovye-pushki", "teplovye-zavesy", "infrakrasnye-obogrevateli", "vodyanye-teploventilyatory", "kaminy", "obogrevateli", "teplovye-nasosy"]); }
 
-  // 25.08.2026, решение владельца: числа позиций и остатков с карточек
-  // направлений убраны — как на /brendy. Раньше здесь считалось
-  // «1 051 позиция · 760 в наличии →» из index.json по группам направления.
   dirLink(slugs) {
     return "В каталог →";
   }
@@ -630,6 +624,7 @@ class Component extends DCLogic {
         { label: "Монтаж и сервис", href: "Услуги - монтаж, сервис, гарантия.dc.html" },
         { label: "Доставка и оплата", href: "Подбор, доставка и контакты.dc.html#dostavka" },
         { label: "Рассрочка", href: "Подбор, доставка и контакты.dc.html#dostavka" },
+        { label: "Возврат и обмен", href: "https://tehnoholod369.kz/vozvrat" },
         { label: "Сервис-карта 369", href: "Услуги - монтаж, сервис, гарантия.dc.html" },
         { label: "База знаний", href: "База знаний.dc.html" }
       ],

@@ -58,7 +58,7 @@
         <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#7FC4F2;">ЧТО В КАТАЛОГЕ</div>
         <div style="display:flex; flex-direction:column; gap:11px; margin-top:14px; font-size:14px;">
           <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
-            <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;">
               <span style="color:#9FB0C4;">{{ s.k }}</span><b style="text-align:right; font-variant-numeric:tabular-nums;">{{ s.v }}</b>
             </div>
           </sc-for>
@@ -104,7 +104,7 @@
 
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:20px; margin-top:20px; align-items:start;">
         <div>
-          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px;">
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:baseline; gap:12px;">
             <div style="font-size:14px; font-weight:600;">Площадь объекта</div>
             <div style="font-size:17px; font-weight:700; color:#0A4EA7; font-variant-numeric:tabular-nums;">{{ areaLabel }}</div>
           </div>
@@ -211,9 +211,6 @@ class Component extends DCLogic {
 
     return {
       ctaLabel: items.length ? "Все " + items.length + " моделей" : "Открыть каталог",
-      // «Из них в наличии 292» убрано 26.08.2026: решение владельца 25.08.2026 —
-      // точные остатки на витрину не выводим, они устаревают между пересборками.
-      // На их месте — число конструктивов: это состав группы, а не обещание склада.
       stats: [
         { k: "Позиций в группе", v: items.length || "—" },
         { k: "Конструктивов", v: kinds || "—" },

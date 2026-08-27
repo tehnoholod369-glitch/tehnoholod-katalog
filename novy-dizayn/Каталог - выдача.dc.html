@@ -113,10 +113,10 @@
   <sc-if value="{{ hasSubs }}" hint-placeholder-val="{{ false }}">
     <div style="background:#F9FBFE; border-bottom:1px solid #DCE5F0;">
       <div style="max-width:1320px; margin:0 auto; padding:10px 24px; display:flex; gap:7px; flex-wrap:wrap; align-items:center;">
-        <span style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6; margin-right:4px;">Подкатегории</span>
+        <span style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6; margin-right:4px;">Подкатегории</span>
         <sc-for list="{{ subTabs }}" as="t" hint-placeholder-count="4">
           <div onClick="{{ t.pick }}" style="border:1px solid {{ t.border }}; background:{{ t.bg }}; color:{{ t.fg }}; border-radius:999px; padding:6px 13px; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:6px;">
-            <span>{{ t.label }}</span><span style="font-size:11px; color:{{ t.countFg }}; font-variant-numeric:tabular-nums;">{{ t.count }}</span>
+            <span>{{ t.label }}</span><span style="font-size:12px; color:{{ t.countFg }}; font-variant-numeric:tabular-nums;">{{ t.count }}</span>
           </div>
         </sc-for>
       </div>
@@ -162,18 +162,18 @@
             <div onClick="{{ g.toggle }}" style="display:flex; align-items:center; justify-content:space-between; gap:8px; cursor:pointer;">
               <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">{{ g.title }}</div>
               <div style="display:flex; align-items:center; gap:7px;">
-                <span style="font-size:11px; font-weight:700; color:#0A4EA7;">{{ g.active }}</span>
-                <span style="font-size:11px; color:#8593A6;">{{ g.caret }}</span>
+                <span style="font-size:12px; font-weight:700; color:#0A4EA7;">{{ g.active }}</span>
+                <span style="font-size:12px; color:#8593A6;">{{ g.caret }}</span>
               </div>
             </div>
             <div style="display:{{ g.body }};">
                 <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:9px;">
                   <sc-for list="{{ g.options }}" as="o" hint-placeholder-count="4">
-                    <div onClick="{{ o.pick }}" style="border:1px solid {{ o.border }}; background:{{ o.bg }}; color:{{ o.fg }}; border-radius:6px; padding:6px 10px; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:5px;"><span>{{ o.label }}</span><span style="font-size:11px; color:#8593A6; font-variant-numeric:tabular-nums;">{{ o.sub }}</span></div>
+                    <div onClick="{{ o.pick }}" style="border:1px solid {{ o.border }}; background:{{ o.bg }}; color:{{ o.fg }}; border-radius:6px; padding:6px 10px; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:5px;"><span>{{ o.label }}</span><span style="font-size:12px; color:#8593A6; font-variant-numeric:tabular-nums;">{{ o.sub }}</span></div>
                   </sc-for>
                 </div>
                 <div onClick="{{ g.expand }}" style="font-size:12px; font-weight:600; color:#0872D3; margin-top:8px; cursor:pointer;">{{ g.more }}</div>
-                <div style="font-size:11px; color:#B25200; margin-top:6px; line-height:1.4;">{{ g.note }}</div>
+                <div style="font-size:12px; color:#B25200; margin-top:6px; line-height:1.4;">{{ g.note }}</div>
             </div>
           </div>
         </sc-for>
@@ -233,27 +233,27 @@
                 <div style="height:{{ photoH }}; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:10px; overflow:hidden;">
                   <img data-url="{{ c.img }}" alt="{{ c.name }}" loading="lazy" style="width:100%; height:100%; object-fit:contain; display:block;" />
                 </div>
-                <div style="position:absolute; top:8px; right:8px; font-size:11px; font-weight:700; color:{{ c.stockFg }}; background:{{ c.stockBg }}; border-radius:5px; padding:3px 8px;">{{ c.stock }}</div>
+                <div style="position:absolute; top:8px; right:8px; font-size:12px; font-weight:700; color:{{ c.stockFg }}; background:{{ c.stockBg }}; border-radius:5px; padding:3px 8px;">{{ c.stock }}</div>
                 <sc-if value="{{ c.isPick }}" hint-placeholder-val="{{ false }}">
-                  <div title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж." style="position:absolute; top:8px; left:8px; font-size:11px; font-weight:700; color:#fff; background:#0872D3; border-radius:5px; padding:3px 8px; cursor:help;">Наш выбор</div>
+                  <div title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж." style="position:absolute; top:8px; left:8px; font-size:12px; font-weight:700; color:#fff; background:#0872D3; border-radius:5px; padding:3px 8px; cursor:help;">Наш выбор</div>
                 </sc-if>
               </div>
               <div style="flex:1; min-width:0; display:flex; flex-direction:column;">
-                <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; color:#0872D3;">{{ c.brand }}</div>
+                <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#0872D3;">{{ c.brand }}</div>
                 <div style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:600; line-height:1.35; margin-top:6px;">{{ c.name }}</div>
                 <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:9px;">
                   <sc-for list="{{ c.badges }}" as="b" hint-placeholder-count="2">
-                    <div style="background:{{ b.bg }}; color:{{ b.fg }}; border-radius:5px; padding:4px 8px; font-size:11px; font-weight:700;">{{ b.t }}</div>
+                    <div style="background:{{ b.bg }}; color:{{ b.fg }}; border-radius:5px; padding:4px 8px; font-size:12px; font-weight:700;">{{ b.t }}</div>
                   </sc-for>
                 </div>
                 <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:6px;">
                   <sc-for list="{{ c.pills }}" as="p" hint-placeholder-count="3">
-                    <div style="background:#F3F7FB; border-radius:5px; padding:4px 8px; font-size:11px; font-weight:600; color:#2C3846;">{{ p }}</div>
+                    <div style="background:#F3F7FB; border-radius:5px; padding:4px 8px; font-size:12px; font-weight:600; color:#2C3846;">{{ p }}</div>
                   </sc-for>
                 </div>
                 <div style="margin-top:12px; display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;">
                   <div style="font-size:20px; font-weight:700; font-variant-numeric:tabular-nums; color:{{ c.priceColor }};">{{ c.price }}</div>
-                  <div style="font-size:11px; color:#8593A6;">{{ c.priceNote }}</div>
+                  <div style="font-size:12px; color:#8593A6;">{{ c.priceNote }}</div>
                 </div>
                 <div style="font-size:12px; color:#5A6675; margin-top:2px;">{{ c.monthly }}</div>
               </div>
@@ -290,7 +290,7 @@
           <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700;">Что важно знать про эту группу</div>
           <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">{{ groupFacts }}</div>
           <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:4px;">{{ groupBrands }}</div>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; margin-top:14px;">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:12px; margin-top:14px;">
             <sc-for list="{{ groupTips }}" as="t" hint-placeholder-count="3">
               <div style="background:#F3F7FB; border-radius:10px; padding:14px 16px; font-size:14px; color:#2C3846; line-height:1.55;">{{ t }}</div>
             </sc-for>
@@ -454,7 +454,7 @@ class Component extends DCLogic {
         el.style.display = "none";
         const note = document.createElement("div");
         note.setAttribute("data-nophoto", "1");
-        note.style.cssText = "font-size:11px;line-height:1.4;color:#8593A6;text-align:center;padding:8px;";
+        note.style.cssText = "font-size:12px;line-height:1.4;color:#8593A6;text-align:center;padding:8px;";
         note.textContent = "Фото уточняется";
         box.appendChild(note);
       };
@@ -464,7 +464,6 @@ class Component extends DCLogic {
 
   componentDidUpdate() { this.syncPhotos(); }
 
-  // «Наш выбор»: список владельца, а пока он пуст — резервный признак по данным
   isPick(it, picks) {
     if (picks && picks.length) return it.s && picks.indexOf(it.s) >= 0;
     return !!(it.s && it.i && it.p && /налич/i.test(it.st || ""));
@@ -569,9 +568,6 @@ class Component extends DCLogic {
       this.pendingArea = 0;
       if (hit && s.area !== hit) setTimeout(() => this.setState({ area: hit, shown: 12 }), 0);
     }
-    // 23.08.2026, решение владельца: аксессуары и комплектующие не идут в общий список
-    // наравне с оборудованием. Их показывает отдельная подкатегория и блок «Сопутствующие»
-    // в карточке модели.
     const isAccSub = name => /аксессуар|комплектующ/i.test(String(name || ""));
     const accMode = isAccSub(s.sub);
 
@@ -1096,11 +1092,6 @@ class Component extends DCLogic {
     // подбор по площади: живёт в разделе кондиционирования, где он и нужен
     const CALC = [20, 25, 35, 50, 70, 100];
     const calcArea = s.calcArea || 25;
-    // Одна формула на весь сайт — 100 Вт на м² (решение владельца 26.08.2026,
-    // СТАБИЛЬНОЕ/05_Опросные_листы.md §9). Здесь оставалась старая: 35 Вт на м³
-    // при потолке 2,7 м плюс 400 Вт, и на 25 м² каталог показывал 2,8 кВт против
-    // 2,5 кВт на странице расчёта. Поправки (солнце, этаж, кухня) живут там же,
-    // здесь берём базовую нагрузку без них — так и подписано.
     const calcKwNum = Math.round(calcArea * 100) / 1000;
     // класс считается из того же ряда, что и на странице расчёта, с допуском -5 %.
     // Лестница была зашита руками и содержала класс «30», которого в ряду BTU нет.
@@ -1470,9 +1461,6 @@ class Component extends DCLogic {
       } : null,
       {
         key: "pick", activeLabel: s.onlyPick ? "Наш выбор" : "",
-        // Формулировка намеренно не обещает статистику продаж: «Наш выбор» — это наша
-        // рекомендация. Метка «хит продаж» появится только с реальным учётом продаж
-        // (решение владельца 24.08.2026, см. 00_ГДЕ_ПРАВДА.md §9).
         title: "Отбор", note: picks.length ? "Рекомендуем сами: в наличии и проверены на объектах" : "Пока по данным: в наличии, с фото и артикулом",
         options: [
           this.chip(!s.onlyPick, "Все", () => this.setState({ onlyPick: false, shown: 12 })),
@@ -1656,12 +1644,10 @@ class Component extends DCLogic {
             + (meta.count - (meta.acc || 0)) + ", в наличии " + meta.inStock
             + ((meta.acc || 0) ? " · плюс " + meta.acc + " сопутствующих" : ""),
       dateNote: s.updated ? "Цены и остатки — выгрузка от " + String(s.updated).split("-").reverse().join(".") : "",
-      // «склад» про нас с витрины убран (решение владельца 25.08.2026), дату выгрузки
-      // печатает dateNote выше. Заодно склонение и разряды: было «3502 позиций».
       footNote: "В каталоге " + this.plural(total, "позиция", "позиции", "позиций")
         + " в " + this.plural(groups.length, "группе", "группах", "группах")
         + ". Рассрочка рассчитана на 12 месяцев.",
-      gridCols: grid ? "repeat(auto-fit,minmax(250px,1fr))" : "minmax(0,1fr)",
+      gridCols: grid ? "repeat(auto-fit,minmax(min(250px,100%),1fr))" : "minmax(0,1fr)",
       cardDir: grid ? "column" : "row",
       photoW: grid ? "100%" : "200px",
       photoH: grid ? "170px" : "150px",

@@ -62,11 +62,11 @@
             <div style="font-size:13px; color:#2C3846; line-height:1.5;">{{ c }}</div>
           </sc-for>
         </div>
-        <div style="font-size:12px; color:#8593A6; margin-top:8px; line-height:1.5;">Цены и остатки берутся из мастер-таблицы при каждом открытии корзины — в заказ уйдут актуальные.</div>
+        <div style="font-size:12px; color:#8593A6; margin-top:8px; line-height:1.5;">Цены и наличие обновляются при каждом открытии корзины — в заказ уйдут актуальные.</div>
       </div>
     </sc-if>
 
-    <div style="display:grid; grid-template-columns:minmax(0,1.6fr) minmax(280px,1fr); gap:20px; margin-top:20px; align-items:start;">
+    <div style="display:grid; grid-template-columns:minmax(0,1.6fr) minmax(min(280px,100%),1fr); gap:20px; margin-top:20px; align-items:start;">
       <div style="display:flex; flex-direction:column; gap:14px;">
 
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
@@ -84,9 +84,9 @@
                 </div>
                 <div style="flex:1; min-width:200px;">
                   <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                    <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; color:#0872D3;">{{ i.brand }}</div>
-                    <div style="font-size:11px; color:#8593A6; font-family:ui-monospace,monospace;">{{ i.sku }}</div>
-                    <div style="font-size:11px; font-weight:700; color:{{ i.stockFg }}; background:{{ i.stockBg }}; border-radius:5px; padding:3px 7px;">{{ i.stock }}</div>
+                    <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#0872D3;">{{ i.brand }}</div>
+                    <div style="font-size:12px; color:#8593A6; font-family:ui-monospace,monospace;">{{ i.sku }}</div>
+                    <div style="font-size:12px; font-weight:700; color:{{ i.stockFg }}; background:{{ i.stockBg }}; border-radius:5px; padding:3px 7px;">{{ i.stock }}</div>
                   </div>
                   <a href="{{ i.href }}" style="display:block; font-family:'Montserrat',sans-serif; font-size:15px; font-weight:600; line-height:1.35; margin-top:6px; color:#18212F;">{{ i.name }}</a>
                   <div style="font-size:13px; color:#5A6675; margin-top:4px;">{{ i.spec }}</div>
@@ -157,14 +157,14 @@
 
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
           <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#8593A6;">КОНТАКТЫ ДЛЯ ЗАКАЗА</div>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; margin-top:14px;">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); gap:10px; margin-top:14px;">
             <input type="text" placeholder="Имя" value="{{ fName }}" onInput="{{ onName }}" style="border:1px solid {{ nameBorder }}; border-radius:8px; padding:13px 14px; font-size:15px; outline:none; color:#18212F;" />
             <input type="tel" placeholder="Телефон или WhatsApp" value="{{ fPhone }}" onInput="{{ onPhone }}" style="border:1px solid {{ phoneBorder }}; border-radius:8px; padding:13px 14px; font-size:15px; outline:none; color:#18212F;" />
             <input type="text" placeholder="Город" value="{{ fCity }}" onInput="{{ onCity }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-size:15px; outline:none; color:#18212F;" />
             <input type="text" placeholder="Адрес и площадь помещения" value="{{ fAddress }}" onInput="{{ onAddress }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-size:15px; outline:none; color:#18212F;" />
           </div>
           <sc-if value="{{ isCompany }}" hint-placeholder-val="{{ false }}">
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; margin-top:10px;">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); gap:10px; margin-top:10px;">
               <input type="text" placeholder="Организация" value="{{ fCompany }}" onInput="{{ onCompany }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-size:15px; outline:none; color:#18212F;" />
               <input type="text" placeholder="ИИН/БИН для счёта" value="{{ fBin }}" onInput="{{ onBin }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-size:15px; outline:none; color:#18212F;" />
             </div>
@@ -177,17 +177,17 @@
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:24px; position:sticky; top:16px;">
         <div style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700;">Итого</div>
         <div style="display:flex; flex-direction:column; gap:11px; margin-top:16px;">
-          <div style="display:flex; justify-content:space-between; gap:14px; font-size:14px;"><span style="color:#5A6675;">Оборудование, {{ totalQty }} шт.</span><b style="font-variant-numeric:tabular-nums;">{{ equipTotal }}</b></div>
-          <div style="display:flex; justify-content:space-between; gap:14px; font-size:14px;"><span style="color:#5A6675;">в том числе НДС</span><span style="color:#5A6675; font-variant-numeric:tabular-nums;">{{ vat }}</span></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:14px;"><span style="color:#5A6675;">Оборудование, {{ totalQty }} шт.</span><b style="font-variant-numeric:tabular-nums;">{{ equipTotal }}</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:14px;"><span style="color:#5A6675;">в том числе НДС</span><span style="color:#5A6675; font-variant-numeric:tabular-nums;">{{ vat }}</span></div>
           <sc-if value="{{ hasByRequest }}" hint-placeholder-val="{{ false }}">
-            <div style="display:flex; justify-content:space-between; gap:14px; font-size:14px;"><span style="color:#5A6675;">Позиции без цены</span><b style="color:#B25200;">{{ byRequestLine }}</b></div>
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:14px;"><span style="color:#5A6675;">Позиции без цены</span><b style="color:#B25200;">{{ byRequestLine }}</b></div>
           </sc-if>
-          <div style="display:flex; justify-content:space-between; gap:14px; font-size:14px;"><span style="color:#5A6675;">Соединительный комплект</span><b style="color:#B25200;">{{ kitLine }}</b></div>
-          <div style="display:flex; justify-content:space-between; gap:14px; font-size:14px;"><span style="color:#5A6675;">Монтаж под ключ</span><b style="color:#B25200;">{{ mountLine }}</b></div>
-          <div style="display:flex; justify-content:space-between; gap:14px; font-size:14px;"><span style="color:#5A6675;">Доставка</span><b>{{ deliveryLine }}</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:14px;"><span style="color:#5A6675;">Соединительный комплект</span><b style="color:#B25200;">{{ kitLine }}</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:14px;"><span style="color:#5A6675;">Монтаж под ключ</span><b style="color:#B25200;">{{ mountLine }}</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:14px;"><span style="color:#5A6675;">Доставка</span><b>{{ deliveryLine }}</b></div>
         </div>
         <div style="border-top:2px solid #E9EFF7; margin-top:14px; padding-top:14px;">
-          <div style="display:flex; justify-content:space-between; gap:14px; align-items:baseline;">
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; align-items:baseline;">
             <span style="font-size:15px; font-weight:600;">К оплате за оборудование</span>
             <b style="font-size:24px; font-variant-numeric:tabular-nums; color:#E11A13;">{{ equipTotal }}</b>
           </div>

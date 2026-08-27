@@ -58,7 +58,7 @@
         <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#7FC4F2;">ЧТО ЕСТЬ В ПОДБОРЕ</div>
         <div style="display:flex; flex-direction:column; gap:11px; margin-top:14px; font-size:14px;">
           <sc-for list="{{ stats }}" as="s" hint-placeholder-count="5">
-            <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;">
               <span style="color:#9FB0C4;">{{ s.k }}</span><b style="text-align:right; font-variant-numeric:tabular-nums;">{{ s.v }}</b>
             </div>
           </sc-for>
@@ -380,11 +380,6 @@ class Component extends DCLogic {
     const needsList = ['Есть проект', 'Нужен расчёт', 'Нужен монтаж', 'Нужна пусконаладка', 'Нужен сервис по регламенту'];
 
     return {
-      // Сводка должна сходиться с итогом: 52 + 21 + 205 = 278, а в подборе 288 —
-      // прецизионные (5) и рекуператоры (5) в плитках не показывались, и разница
-      // в 10 позиций висела необъяснённой (26.08.2026).
-      // Точное число «в наличии» убрано: решение владельца 25.08.2026 — остатки
-      // на витрину не выводим, они устаревают между пересборками.
       stats: [
         { k: 'Позиций в подборе', v: all ? num(all) : 'нет данных' },
         { k: 'VRF-системы', v: cnt('vrf') || 'нет данных' },
@@ -469,7 +464,7 @@ class Component extends DCLogic {
       sentNote: 'Запрос по объекту «' + (this.state.f.kind || 'нет данных') + '»' +
         (this.state.f.city ? ', ' + this.state.f.city : '') +
         (this.state.spec.length ? ', ' + this.state.spec.length + ' позиц. в списке' : ', состав подбираем сами') +
-        '. Инженер связывается по указанному контакту и запрашивает планировки, если их не было.',
+        '. Заявка открыта в WhatsApp — проверьте, что сообщение ушло. Инженер связывается по указанному контакту и запрашивает планировки, если их не было.',
       reset: () => this.setState({ sent: false }),
 
       f: this.state.f,
@@ -487,10 +482,34 @@ class Component extends DCLogic {
       onName: e => this.setField('name', e.target.value),
       onContact: e => this.setField('contact', e.target.value),
       onNote: e => this.setField('note', e.target.value),
-      submit: () => { if (this.state.f.contact.trim()) this.setState({ sent: true }); },
+      // Форма показывала «ЗАПРОС ОТПРАВЛЕН», но никуда не отправляла: единственным
+      // действием было sent:true. Заявка уходит в WhatsApp — тем же приёмом, что
+      // и вызов замерщика на /uslugi. «Отправлено» ставим только после отправки.
+      submit: () => {
+        const f = this.state.f;
+        if (!f.contact.trim()) return;
+        const parts = [
+          f.kind ? "Объект: " + f.kind : "",
+          f.city ? "Город: " + f.city : "",
+          f.area ? "Площадь: " + f.area + " м²" : "",
+          f.term ? "Срок: " + f.term : "",
+          this.state.needs.length ? "Нужно: " + this.state.needs.join(", ") : "",
+          f.name ? "Имя: " + f.name : "",
+          "Контакт: " + f.contact.trim(),
+          f.note ? "Примечание: " + f.note : "",
+          this.state.spec.length
+            ? "Позиции: " + this.state.spec.map(x => x.m + " x" + x.qty).join("; ")
+            : "Состав подбираем сами"
+        ].filter(Boolean);
+        const href = "https://wa.me/77000369369?text=" +
+          encodeURIComponent("Запрос спецификации. " + parts.join(". ") + ".");
+        const w = window.open(href, "_blank", "noreferrer");
+        if (!w) { location.href = href; }
+        this.setState({ sent: true });
+      },
       submitBg: this.state.f.contact.trim() ? '#0872D3' : '#9FB0C4',
       submitLabel: this.state.f.contact.trim() ? 'Отправить запрос' : 'Укажите телефон или почту',
-      formHint: 'Отправка не создаёт заказ и не фиксирует цену: сначала спецификация, потом счёт. Прикрепить планировки и ТЗ можно ответом на письмо инженера.',
+      formHint: 'Запрос открывается в WhatsApp готовым текстом — останется нажать «отправить». Отправка не создаёт заказ и не фиксирует цену: сначала спецификация, потом счёт. Планировки и ТЗ можно приложить там же, в переписке.',
 
       steps: [
         { n: 'ШАГ 1', title: 'Данные объекта', text: 'Тип, площадь, зонирование, режим работы. Если есть проект — берём его; если нет, считаем сами.' },

@@ -54,11 +54,11 @@
       <div style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.18); border-radius:12px; padding:22px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#7FC4F2;">КОРОТКО О НАС</div>
         <div style="display:flex; flex-direction:column; gap:11px; margin-top:14px; font-size:14px;">
-          <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;"><span style="color:#9FB0C4;">Налогообложение</span><b>работаем с НДС</b></div>
-          <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;"><span style="color:#9FB0C4;">Документы</span><b>счёт, договор, счёт-фактура</b></div>
-          <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;"><span style="color:#9FB0C4;">Обмен документами</span><b>ЭДО</b></div>
-          <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;"><span style="color:#9FB0C4;">Каталог</span><b>{{ catalogLine }}</b></div>
-          <div style="display:flex; justify-content:space-between; gap:14px;"><span style="color:#9FB0C4;">Монтаж</span><b>сертифицированные бригады, гарантия 12 мес</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;"><span style="color:#9FB0C4;">Налогообложение</span><b>работаем с НДС</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;"><span style="color:#9FB0C4;">Документы</span><b>счёт, договор, счёт-фактура</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;"><span style="color:#9FB0C4;">Обмен документами</span><b>ЭДО</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;"><span style="color:#9FB0C4;">Каталог</span><b>{{ catalogLine }}</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px;"><span style="color:#9FB0C4;">Монтаж</span><b>сертифицированные бригады, гарантия 12 мес</b></div>
         </div>
       </div>
     </div>
@@ -68,6 +68,9 @@
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px;">
           <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">{{ o.title }}</div>
           <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">{{ o.text }}</div>
+          <sc-if value="{{ o.hasLink }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ o.href }}" style="font-size:13px; font-weight:700; color:#0872D3; display:inline-block; margin-top:10px;">{{ o.link }}</a>
+          </sc-if>
         </div>
       </sc-for>
     </div>
@@ -83,7 +86,7 @@
         </div>
         <div style="display:flex; flex-direction:column; gap:10px; margin-top:16px;">
           <sc-for list="{{ req }}" as="r" hint-placeholder-count="6">
-            <div style="display:flex; justify-content:space-between; gap:16px; border-bottom:1px solid #E9EFF7; padding-bottom:9px; font-size:14px;">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:16px; border-bottom:1px solid #E9EFF7; padding-bottom:9px; font-size:14px;">
               <span style="color:#5A6675;">{{ r.k }}</span><b style="text-align:right; font-variant-numeric:tabular-nums;">{{ r.v }}</b>
             </div>
           </sc-for>
@@ -153,7 +156,7 @@
         <div style="display:flex; flex-direction:column; gap:10px; margin-top:14px;">
           <sc-for list="{{ faq }}" as="f" hint-placeholder-count="4">
             <div onClick="{{ f.toggle }}" style="border:1px solid #DCE5F0; border-radius:10px; padding:14px 16px; cursor:pointer;">
-              <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start;">
+              <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:12px; align-items:flex-start;">
                 <div style="font-size:15px; font-weight:600; line-height:1.4;">{{ f.q }}</div>
                 <div style="font-size:18px; color:#0872D3; font-weight:700; line-height:1;">{{ f.sign }}</div>
               </div>
@@ -250,7 +253,8 @@ class Component extends DCLogic {
       offers: [
         { title: "Счёт и закрывающие документы", text: "Счёт на оплату, договор поставки, накладная, счёт-фактура. Обмен через ЭДО — подписываем электронно, без курьеров и ожидания оригиналов. Работаем с НДС — вычет проходит без вопросов." },
         { title: "Поставка на объект", text: "Доставка по Алматы и в любой город Казахстана. Отгрузка партиями под график работ, а не «всё сразу на склад»." },
-        { title: "Монтаж сертифицированными бригадами", text: "Установка, пусконаладка, сдача объекта. 12 месяцев на монтажные работы; на оборудование — гарантия производителя, её срок в паспорте изделия." },
+        { title: "Монтаж сертифицированными бригадами", text: "Установка, пусконаладка, сдача объекта. 12 месяцев на монтажные работы; на оборудование — гарантия производителя, её срок в паспорте изделия.", hasLink: false },  // ссылка на /brigady снята 27.08.2026: страницы в Tilda ещё нет (404).
+          // Вернуть при заведении страницы: hasLink, href на страницу бригад и текст ссылки.
         { title: "Подбор по ТТХ, а не по картинке", text: "Считаем мощность под помещение и назначение, предлагаем аналог, если позиции нет в наличии. Инвертор и ON/OFF не смешиваем." }
       ],
       tender: [
