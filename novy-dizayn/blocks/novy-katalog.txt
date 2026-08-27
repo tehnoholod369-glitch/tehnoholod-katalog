@@ -192,12 +192,12 @@
                 <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:700; margin-top:2px; font-variant-numeric:tabular-nums;">{{ calcKw }}</div>
               </div>
               <div>
-                <div style="font-size:12px; color:#8593A6; font-weight:600;">Класс модели</div>
+                <div style="font-size:12px; color:#8593A6; font-weight:600;">{{ calcClassLabel }}</div>
                 <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:700; margin-top:2px;">{{ calcClass }}</div>
               </div>
               <div>
-                <div style="font-size:12px; color:#8593A6; font-weight:600;">В наличии в этой группе</div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:700; margin-top:2px; color:#0E9F6E; font-variant-numeric:tabular-nums;">{{ calcStock }}</div>
+                <div style="font-size:12px; color:#8593A6; font-weight:600;">Подходит в этой группе</div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:700; margin-top:2px; color:#0E9F6E; font-variant-numeric:tabular-nums;">{{ calcFit }}</div>
               </div>
               <div style="margin-left:auto; display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
                 <a href="/kontakty#podbor" style="font-size:13px; font-weight:700; color:#0872D3;">Уточнить расчёт: потолок, солнце, техника →</a>
@@ -1103,10 +1103,16 @@ class Component extends DCLogic {
     // группа без фасета мощности (таких мало и они мелкие) — ведём полосой площади,
     // она у подбора есть всегда: showCalc требует hasArea.
     const calcKey = calcBand ? calcFacet.key : "area";
-    const calcSet = calcBand
-      || Object.keys(AREA_BANDS).find(k => calcArea >= AREA_BANDS[k][0] && calcArea <= AREA_BANDS[k][1]) || "";
-    const calcStockN = items.filter(x => {
-      if (!/налич/i.test(x.st || "")) return false;
+    // Полосы площади — это разбиение ПАСПОРТНОЙ площади моделей, а не запрос
+    // покупателя. Полоса, в которую попал сам запрос, набита моделями слабее него:
+    // 27.08.2026 на 100 м² подбор в промышленных мобильных звал «до 70» и «до 85 м²»,
+    // а тянет такую площадь только «до 110». Берём полосу, где лежит САМАЯ МАЛЕНЬКАЯ
+    // достаточная модель — она и хватает, и дешевле остальных достаточных.
+    const calcAreaFit = areas.filter(a => a >= calcArea).sort((a, b) => a - b)[0] || 0;
+    const calcSet = calcBand || (calcAreaFit
+      ? (Object.keys(AREA_BANDS).find(k => calcAreaFit >= AREA_BANDS[k][0] && calcAreaFit <= AREA_BANDS[k][1]) || "")
+      : "");
+    const calcFitN = items.filter(x => {
       if (calcKey === "area") {
         const a = areaOf(x), b = AREA_BANDS[calcSet];
         return !!(a && b && a >= b[0] && a <= b[1]);
@@ -1548,13 +1554,19 @@ class Component extends DCLogic {
         fg: calcArea === a ? "#0A4EA7" : "#5A6675"
       })),
       calcKw: String(calcKwNum).replace(".", ",") + " кВт",
-      calcClass: calcCls + " (" + (parseInt(calcCls, 10) * 1000) + " BTU)",
-      calcStock: this.plural(calcStockN, "модель", "модели", "моделей"),
-      calcOn: !!calcSet && s[calcKey] === calcSet && s.stock === "in",
-      calcOnNote: "Показаны модели " + (calcKey === "btu" ? "класса " + calcCls : calcSet) + " в наличии",
-      calcOff: () => this.setState({ [calcKey]: "all", stock: "all", shown: 12 }),
-      // тот же предикат, что в счётчике: пилюля фасета зажигается, и её видно чем сбросить
-      calcApply: () => this.setState({ stock: "in", shown: 12, area: "all", [calcKey]: calcSet }),
+      calcClassLabel: calcKey === "btu" ? "Класс модели"
+        : calcKey === "coolkw" ? "Мощность модели" : "Модель на площадь",
+      calcClass: calcKey === "btu" ? calcCls + " (" + (parseInt(calcCls, 10) * 1000) + " BTU)"
+        : calcKey === "coolkw" ? (calcSet || "нет данных")
+        : (calcAreaFit ? "до " + calcAreaFit + " м²" : "нет данных"),
+      calcFit: this.plural(calcFitN, "модель", "модели", "моделей"),
+      calcOn: !!calcSet && s[calcKey] === calcSet,
+      calcOnNote: "Показаны модели " + (calcKey === "btu" ? "класса " + calcCls : calcSet),
+      // тот же предикат, что в счётчике: пилюля фасета зажигается, и её видно чем сбросить.
+      // Фильтр наличия кнопка больше не ставит: в группе целиком под заказ он давал
+      // пустую выдачу, а обещание «подходит N» — про мощность, не про склад.
+      calcOff: () => this.setState({ [calcKey]: "all", shown: 12 }),
+      calcApply: () => { if (calcSet) this.setState({ shown: 12, area: "all", [calcKey]: calcSet }); },
       dirLabel: (DIRS.find(d => d.key === curDir) || DIRS[0]).label,
       groupTabs,
       hasSubs: !s.loading && (meta.subs || []).length > 1 && baseList.length > 0,

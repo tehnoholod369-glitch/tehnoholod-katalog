@@ -61,8 +61,8 @@
 
   function href(row, f) {
     var g = row[f.g];
-    if (g === "multisplit") return "Мультисплит - конструктор.dc.html";
-    return "Карточка модели.dc.html?g=" + encodeURIComponent(g) + "&sl=" + encodeURIComponent(row[f.sl]);
+    if (g === "multisplit") return "/multisplit";
+    return "/tovar?g=" + encodeURIComponent(g) + "&sl=" + encodeURIComponent(row[f.sl]);
   }
 
   function money(n) {
