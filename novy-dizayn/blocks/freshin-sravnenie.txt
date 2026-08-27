@@ -62,25 +62,25 @@
 
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Все девять исполнений рядом</h2>
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; margin-top:14px; overflow-x:auto;">
-      <table class="fr-tbl">
-        <thead>
-          <tr>
-            <th>Модель</th><th>Цвет</th><th>Площадь</th><th>BTU</th>
-            <th>Охлаждение</th><th>Класс</th><th>Цена</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><b>TAC-FR09HSV/P7W</b></td><td>белый</td><td class="fr-num">до 25 м²</td><td class="fr-num">9 000</td><td class="fr-num">2,80 кВт</td><td>A+++</td><td class="fr-num"><b>323 942 ₸</b></td></tr>
-          <tr><td><b>TAC-FR09HSV/P7S</b></td><td>серебристый</td><td class="fr-num">до 25 м²</td><td class="fr-num">9 000</td><td class="fr-num">2,80 кВт</td><td>A+++</td><td class="fr-num"><b>340 992 ₸</b></td></tr>
-          <tr><td><b>TAC-FR10HSV/P7B</b></td><td>чёрный</td><td class="fr-num">до 28 м²</td><td class="fr-num">10 000</td><td class="fr-num">2,90 кВт</td><td>A+++</td><td class="fr-num"><b>340 992 ₸</b></td></tr>
-          <tr><td><b>TAC-FR12HSV/P7W</b></td><td>белый</td><td class="fr-num">до 35 м²</td><td class="fr-num">12 000</td><td class="fr-num">3,65 кВт</td><td>A+++</td><td class="fr-num"><b>340 992 ₸</b></td></tr>
-          <tr><td><b>TAC-FR12HSV/P7S</b></td><td>серебристый</td><td class="fr-num">до 35 м²</td><td class="fr-num">12 000</td><td class="fr-num">3,65 кВт</td><td>A+++</td><td class="fr-num"><b>375 092 ₸</b></td></tr>
-          <tr><td><b>TAC-FR13HSV/P7B</b></td><td>чёрный</td><td class="fr-num">до 38 м²</td><td class="fr-num">13 000</td><td class="fr-num">3,85 кВт</td><td>A+++</td><td class="fr-num"><b>383 617 ₸</b></td></tr>
-          <tr><td><b>TAC-FR18HSV/P7W</b></td><td>белый</td><td class="fr-num">до 50 м²</td><td class="fr-num">18 000</td><td class="fr-num">5,40 кВт</td><td>A+++</td><td class="fr-num"><b>392 142 ₸</b></td></tr>
-          <tr><td><b>TAC-FR18HSV/P7S</b></td><td>серебристый</td><td class="fr-num">до 50 м²</td><td class="fr-num">18 000</td><td class="fr-num">5,40 кВт</td><td>A+++</td><td class="fr-num"><b>409 192 ₸</b></td></tr>
-          <tr><td><b>TAC-FR18HSV/P7B</b></td><td>чёрный</td><td class="fr-num">до 50 м²</td><td class="fr-num">18 000</td><td class="fr-num">5,57 кВт</td><td>A+++</td><td class="fr-num"><b>426 242 ₸</b></td></tr>
-        </tbody>
-      </table>
+      <sc-raw-table class="fr-tbl">
+        <sc-raw-thead>
+          <sc-raw-tr>
+            <sc-raw-th>Модель</sc-raw-th><sc-raw-th>Цвет</sc-raw-th><sc-raw-th>Площадь</sc-raw-th><sc-raw-th>BTU</sc-raw-th>
+            <sc-raw-th>Охлаждение</sc-raw-th><sc-raw-th>Класс</sc-raw-th><sc-raw-th>Цена</sc-raw-th>
+          </sc-raw-tr>
+        </sc-raw-thead>
+        <sc-raw-tbody>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR09HSV/P7W</b></sc-raw-td><sc-raw-td>белый</sc-raw-td><sc-raw-td class="fr-num">до 25 м²</sc-raw-td><sc-raw-td class="fr-num">9 000</sc-raw-td><sc-raw-td class="fr-num">2,80 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>323 942 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR09HSV/P7S</b></sc-raw-td><sc-raw-td>серебристый</sc-raw-td><sc-raw-td class="fr-num">до 25 м²</sc-raw-td><sc-raw-td class="fr-num">9 000</sc-raw-td><sc-raw-td class="fr-num">2,80 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>340 992 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR10HSV/P7B</b></sc-raw-td><sc-raw-td>чёрный</sc-raw-td><sc-raw-td class="fr-num">до 28 м²</sc-raw-td><sc-raw-td class="fr-num">10 000</sc-raw-td><sc-raw-td class="fr-num">2,90 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>340 992 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR12HSV/P7W</b></sc-raw-td><sc-raw-td>белый</sc-raw-td><sc-raw-td class="fr-num">до 35 м²</sc-raw-td><sc-raw-td class="fr-num">12 000</sc-raw-td><sc-raw-td class="fr-num">3,65 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>340 992 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR12HSV/P7S</b></sc-raw-td><sc-raw-td>серебристый</sc-raw-td><sc-raw-td class="fr-num">до 35 м²</sc-raw-td><sc-raw-td class="fr-num">12 000</sc-raw-td><sc-raw-td class="fr-num">3,65 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>375 092 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR13HSV/P7B</b></sc-raw-td><sc-raw-td>чёрный</sc-raw-td><sc-raw-td class="fr-num">до 38 м²</sc-raw-td><sc-raw-td class="fr-num">13 000</sc-raw-td><sc-raw-td class="fr-num">3,85 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>383 617 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR18HSV/P7W</b></sc-raw-td><sc-raw-td>белый</sc-raw-td><sc-raw-td class="fr-num">до 50 м²</sc-raw-td><sc-raw-td class="fr-num">18 000</sc-raw-td><sc-raw-td class="fr-num">5,40 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>392 142 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR18HSV/P7S</b></sc-raw-td><sc-raw-td>серебристый</sc-raw-td><sc-raw-td class="fr-num">до 50 м²</sc-raw-td><sc-raw-td class="fr-num">18 000</sc-raw-td><sc-raw-td class="fr-num">5,40 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>409 192 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR18HSV/P7B</b></sc-raw-td><sc-raw-td>чёрный</sc-raw-td><sc-raw-td class="fr-num">до 50 м²</sc-raw-td><sc-raw-td class="fr-num">18 000</sc-raw-td><sc-raw-td class="fr-num">5,57 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>426 242 ₸</b></sc-raw-td></sc-raw-tr>
+        </sc-raw-tbody>
+      </sc-raw-table>
     </div>
     <div style="font-size:13px; color:#8593A6; margin-top:10px; line-height:1.6;">
       Цены розничные, действуют на дату сборки страницы. Доступна рассрочка. Наличие уточняйте —
@@ -147,16 +147,16 @@
 
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Чем именно отличается чёрная серия</h2>
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; margin-top:14px; overflow-x:auto;">
-      <table class="fr-tbl">
-        <thead><tr><th>Параметр</th><th>Белый и серебристый</th><th>Чёрный</th></tr></thead>
-        <tbody>
-          <tr><td>Младшая модель</td><td>FR09 · 9 000 BTU · до 25 м²</td><td>FR10 · 10 000 BTU · до 28 м²</td></tr>
-          <tr><td>Средняя модель</td><td>FR12 · 12 000 BTU · до 35 м²</td><td>FR13 · 13 000 BTU · до 38 м²</td></tr>
-          <tr><td>Старшая модель</td><td>FR18 · 18 000 BTU · до 50 м²</td><td>FR18 · 18 000 BTU · до 50 м²</td></tr>
-          <tr><td>SEER младшей модели</td><td class="fr-num">9,00</td><td class="fr-num">7,60</td></tr>
-          <tr><td>Охлаждение старшей FR18</td><td class="fr-num">5,40 кВт</td><td class="fr-num">5,57 кВт</td></tr>
-        </tbody>
-      </table>
+      <sc-raw-table class="fr-tbl">
+        <sc-raw-thead><sc-raw-tr><sc-raw-th>Параметр</sc-raw-th><sc-raw-th>Белый и серебристый</sc-raw-th><sc-raw-th>Чёрный</sc-raw-th></sc-raw-tr></sc-raw-thead>
+        <sc-raw-tbody>
+          <sc-raw-tr><sc-raw-td>Младшая модель</sc-raw-td><sc-raw-td>FR09 · 9 000 BTU · до 25 м²</sc-raw-td><sc-raw-td>FR10 · 10 000 BTU · до 28 м²</sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td>Средняя модель</sc-raw-td><sc-raw-td>FR12 · 12 000 BTU · до 35 м²</sc-raw-td><sc-raw-td>FR13 · 13 000 BTU · до 38 м²</sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td>Старшая модель</sc-raw-td><sc-raw-td>FR18 · 18 000 BTU · до 50 м²</sc-raw-td><sc-raw-td>FR18 · 18 000 BTU · до 50 м²</sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td>SEER младшей модели</sc-raw-td><sc-raw-td class="fr-num">9,00</sc-raw-td><sc-raw-td class="fr-num">7,60</sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td>Охлаждение старшей FR18</sc-raw-td><sc-raw-td class="fr-num">5,40 кВт</sc-raw-td><sc-raw-td class="fr-num">5,57 кВт</sc-raw-td></sc-raw-tr>
+        </sc-raw-tbody>
+      </sc-raw-table>
     </div>
 
     <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">

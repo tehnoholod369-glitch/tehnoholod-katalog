@@ -108,38 +108,38 @@
       </div>
 
       <div style="overflow-x:auto; margin-top:16px;">
-        <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:720px;">
-          <thead>
-            <tr style="text-align:left; color:#8593A6; font-size:12px; letter-spacing:0.06em;">
-              <th style="padding:8px 10px 8px 0; font-weight:700;">МОДЕЛЬ</th>
-              <th style="padding:8px 10px; font-weight:700;">{{ capHeader }}</th>
-              <th style="padding:8px 10px; font-weight:700;">ЭЛЕКТРОПИТАНИЕ</th>
-              <th style="padding:8px 10px; font-weight:700;">СТАТУС</th>
-              <th style="padding:8px 0 8px 10px; font-weight:700;"></th>
-            </tr>
-          </thead>
-          <tbody>
+        <sc-raw-table style="width:100%; border-collapse:collapse; font-size:14px; min-width:720px;">
+          <sc-raw-thead>
+            <sc-raw-tr style="text-align:left; color:#8593A6; font-size:12px; letter-spacing:0.06em;">
+              <sc-raw-th style="padding:8px 10px 8px 0; font-weight:700;">МОДЕЛЬ</sc-raw-th>
+              <sc-raw-th style="padding:8px 10px; font-weight:700;">{{ capHeader }}</sc-raw-th>
+              <sc-raw-th style="padding:8px 10px; font-weight:700;">ЭЛЕКТРОПИТАНИЕ</sc-raw-th>
+              <sc-raw-th style="padding:8px 10px; font-weight:700;">СТАТУС</sc-raw-th>
+              <sc-raw-th style="padding:8px 0 8px 10px; font-weight:700;"></sc-raw-th>
+            </sc-raw-tr>
+          </sc-raw-thead>
+          <sc-raw-tbody>
             <sc-for list="{{ rows }}" as="r" hint-placeholder-count="8">
-              <tr style="border-top:1px solid #EDF2F8;">
-                <td style="padding:12px 10px 12px 0; vertical-align:top;">
+              <sc-raw-tr style="border-top:1px solid #EDF2F8;">
+                <sc-raw-td style="padding:12px 10px 12px 0; vertical-align:top;">
                   <div style="font-weight:700; color:#18212F;">{{ r.m }}</div>
                   <div style="font-size:12px; color:#8593A6; margin-top:3px;">{{ r.sub }}</div>
-                </td>
-                <td style="padding:12px 10px; vertical-align:top; font-variant-numeric:tabular-nums;">
+                </sc-raw-td>
+                <sc-raw-td style="padding:12px 10px; vertical-align:top; font-variant-numeric:tabular-nums;">
                   <div>{{ r.cap }}</div>
                   <div style="font-size:12px; color:#8593A6; margin-top:3px;">{{ r.area }}</div>
-                </td>
-                <td style="padding:12px 10px; vertical-align:top; color:#5A6675;">{{ r.pw }}</td>
-                <td style="padding:12px 10px; vertical-align:top;">
+                </sc-raw-td>
+                <sc-raw-td style="padding:12px 10px; vertical-align:top; color:#5A6675;">{{ r.pw }}</sc-raw-td>
+                <sc-raw-td style="padding:12px 10px; vertical-align:top;">
                   <span style="font-size:12px; font-weight:700; border-radius:5px; padding:4px 9px; white-space:nowrap; background:{{ r.stBg }}; color:{{ r.stFg }};">{{ r.stLabel }}</span>
-                </td>
-                <td style="padding:12px 0 12px 10px; vertical-align:top; text-align:right;">
+                </sc-raw-td>
+                <sc-raw-td style="padding:12px 0 12px 10px; vertical-align:top; text-align:right;">
                   <div onClick="{{ r.add }}" style="display:inline-block; border:1px solid {{ r.addBorder }}; background:{{ r.addBg }}; color:{{ r.addFg }}; border-radius:8px; padding:8px 14px; font-size:13px; font-weight:700; cursor:pointer; white-space:nowrap;">{{ r.addLabel }}</div>
-                </td>
-              </tr>
+                </sc-raw-td>
+              </sc-raw-tr>
             </sc-for>
-          </tbody>
-        </table>
+          </sc-raw-tbody>
+        </sc-raw-table>
       </div>
       <div style="font-size:13px; color:#8593A6; margin-top:14px;">{{ rowsNote }}</div>
     </div>
@@ -195,7 +195,7 @@
               </label>
               <label style="display:block;">
                 <span style="font-size:13px; font-weight:600; color:#5A6675;">Площадь, м²</span>
-                <input value="{{ f.area }}" onInput="{{ onArea }}" placeholder="нет данных" style="width:100%; box-sizing:border-box; margin-top:6px; border:1px solid #DCE5F0; border-radius:8px; padding:11px 12px; font-size:15px;" />
+                <input value="{{ f.area }}" onInput="{{ onArea }}" placeholder="например, 450" style="width:100%; box-sizing:border-box; margin-top:6px; border:1px solid #DCE5F0; border-radius:8px; padding:11px 12px; font-size:15px;" />
               </label>
               <label style="display:block;">
                 <span style="font-size:13px; font-weight:600; color:#5A6675;">Срок запуска</span>
@@ -388,9 +388,12 @@ class Component extends DCLogic {
       dataNote: d && d.updated
         ? 'Состав и наличие на ' + d.updated + '. Позиции под заказ привозим под объект.' +
           (d.alsoInCatalog
+            // «из N позиций» — родительный падеж, верен при любом N; числительное
+            // без существительного после «есть N» тоже не требует склонения.
+            // Прежнее «Все 292 позиций есть» ломало согласование на числах не на 5–20.
             ? (all === d.alsoInCatalog
-                ? ' Все ' + all + ' позиций подбора есть и в каталоге — там их можно купить штукой по цене.'
-                : ' Из ' + all + ' позиций подбора ' + d.alsoInCatalog + ' моделей есть и в каталоге — там их можно купить штукой по цене.')
+                ? ' В каталоге есть каждая из ' + all + ' позиций подбора — там их можно купить штукой по цене.'
+                : ' Из ' + all + ' позиций подбора в каталоге есть ' + d.alsoInCatalog + ' — их можно купить штукой по цене.')
               + ((all - d.alsoInCatalog) > 0
                  ? ' Остальные ' + (all - d.alsoInCatalog) + ' считаются только под объект.' : '')
             : '')
