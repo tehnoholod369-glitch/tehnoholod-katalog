@@ -23,7 +23,7 @@
       <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
       <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
       <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+7 700 036 93 69</a>
     </div>
   </div>
 

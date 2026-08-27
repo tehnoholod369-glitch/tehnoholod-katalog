@@ -21,7 +21,7 @@
     <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
       <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
       <span style="opacity:0.85;">Монтаж под ключ · гарантия производителя на оборудование</span>
-      <a href="tel:+77000369369" style="margin-left:auto; color:#fff; font-weight:700;">+77 000 369 369</a>
+      <a href="tel:+77000369369" style="margin-left:auto; color:#fff; font-weight:700;">+7 700 036 93 69</a>
     </div>
   </div>
 
