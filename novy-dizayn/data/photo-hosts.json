@@ -1,14 +1,13 @@
 {
- "totalFiles": 8208,
- "external": 7111,
+ "totalFiles": 8194,
+ "external": 7097,
  "local": 1097,
  "cdn": 0,
- "gallery": 8208,
+ "gallery": 8194,
  "hosts": {
-  "img.tehnoholod369.kz": 6988,
-  "www.royal-thermo.ru": 107,
+  "img.tehnoholod369.kz": 6984,
+  "www.royal-thermo.ru": 98,
   "www.lg.com": 14,
-  "ddc.kz": 1,
   "podbor.tehnoholod369.kz": 1
  },
  "multisplitNoPhoto": 4,
