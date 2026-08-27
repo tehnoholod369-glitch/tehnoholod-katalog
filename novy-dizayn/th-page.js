@@ -43,6 +43,28 @@
       + 'или +77 000 369 369.</div>';
   }
 
+  // На «/» с 14.06.2026 висит <style id="th-blue2red"> из старой Главной:
+  //   #allrecords a, a { color:#FA0101 !important }
+  // Правило перекрашивает ВСЕ ссылки страницы, и !important бьёт даже inline-цвета
+  // редизайна: 27.08.2026 на живой Главной так покраснели 85 элементов из 192 —
+  // заголовки направлений, чипы подкатегорий, «В каталог →» и текст на синей кнопке
+  // «Перейти в каталог». Утверждённый макет при этом не менялся, его перекрывали сверху.
+  // Снимаем перекраску только на страницах редизайна — больше её нигде нет, старым
+  // страницам она не мешает (там свои классы со своими цветами).
+  function снятьПерекраску() {
+    try {
+      var стили = [].slice.call(document.querySelectorAll("style"));
+      стили.forEach(function (s) {
+        var t = s.textContent || "";
+        if (/#allrecords\s+a/.test(t) && /#FA0101\s*!important/i.test(t)) {
+          s.parentNode && s.parentNode.removeChild(s);
+        }
+      });
+      var подпись = document.getElementById("th-blue2red");
+      if (подпись && подпись.parentNode) подпись.parentNode.removeChild(подпись);
+    } catch (e) { /* перекраски нет — и хорошо */ }
+  }
+
   fetch(RAW + encodeURIComponent(page) + ".txt", { cache: "no-cache" })
     .then(function (r) {
       if (!r.ok) throw new Error("блок " + page + ".txt отдал " + r.status);
@@ -58,6 +80,7 @@
       var сДвижком = html.indexOf("<x-dc") >= 0;
       if (!html.trim()) throw new Error("блок " + page + ".txt пуст");
       box.innerHTML = html;
+      снятьПерекраску();
 
       if (!сДвижком) {
         // Инлайн-скрипты innerHTML тоже не выполняет — пересоздаём ВСЕ по порядку.
