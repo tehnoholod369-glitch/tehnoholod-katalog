@@ -98,7 +98,7 @@
       <div style="background:linear-gradient(125deg,#071C3B,#0A4EA7 70%,#0872D3); color:#fff; border-radius:16px; padding:38px;">
         <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#7FC4F2;">КЛИМАТИЧЕСКАЯ ТЕХНИКА ДЛЯ ДОМА И БИЗНЕСА</div>
         <h1 style="margin:14px 0 0 0; font-size:clamp(21px,5.6vw,40px); font-weight:800; line-height:1.08; letter-spacing:-0.025em;">Кондиционеры, вентиляция, отопление и водонагреватели</h1>
-        <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px; max-width:460px;">Прямые поставки, монтаж под ключ в Алматы и области, доставка по Казахстану. Гарантия производителя на оборудование, 12 месяцев на наши работы, рассрочка.</div>
+        <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px; max-width:460px;">Прямые поставки, монтаж под ключ в Алматы и области, доставка по Казахстану. Гарантия производителя на оборудование, гарантия бригады на монтаж — в «Сервис-карте 369», рассрочка.</div>
         <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
           <a href="/katalog" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Перейти в каталог</a>
         </div>

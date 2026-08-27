@@ -20,7 +20,7 @@
     <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
       <span style="opacity:0.85;">Алматы · выезд по области</span>
       <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
-      <span style="margin-left:auto; opacity:0.85;">Гарантия 12 месяцев на монтажные работы</span>
+      <span style="margin-left:auto; opacity:0.85;">Сервис-карта 369 — на каждом монтаже</span>
       <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
     </div>
   </div>
@@ -42,11 +42,11 @@
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:12px; align-items:start;">
       <div>
         <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">Кто приедет на монтаж</h1>
-        <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">На страницах сайта мы пишем «монтаж сертифицированными бригадами». Это не фигура речи: у каждой бригады есть номер сертификата, по нему принимается претензия и видно дату работ. Здесь тот же список, что и в нашем реестре — с оценками клиентов, которые уже принимали у них работу.</div>
+        <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">На страницах сайта мы пишем «монтаж сертифицированными бригадами». Это не фигура речи: у каждой бригады есть номер сертификата, она даёт гарантию на свои работы, а каждый монтаж фиксируется в «Сервис-карте 369» — кто ставил и когда. Здесь тот же список, что и в нашем реестре, с оценками клиентов.</div>
       </div>
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#8593A6;">ПОЧЕМУ НОМЕР, А НЕ ИМЯ И ТЕЛЕФОН</div>
-        <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">Гарантию 12 месяцев на работы даём мы, а не бригада отдельно. Поэтому и заявку принимаем мы: у вас остаётся один ответственный на весь заказ, а не «звоните тому, кто ставил». Номер сертификата — то, по чему бригада опознаётся в наряде, в Сервис-карте 369 и в претензии.</div>
+        <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">До заказа бригада на витрине — это номер, специализация и оценки: так выбирают по работе, а не по знакомому имени. После монтажа у вас в «Сервис-карте 369» остаются имя и контакт монтажника — гарантия бригады привязана к ним. Заявку принимаем мы: одна точка входа, и обращение по номеру карты уходит той бригаде, которая ставила.</div>
       </div>
     </div>
 
@@ -59,12 +59,12 @@
           <a href="/otzyvy" style="font-size:13px; font-weight:700; color:#0872D3; display:inline-block; margin-top:8px;">Отзывы о компании →</a>
         </div>
         <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Оценка бригады — только здесь</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Ни Google, ни 2ГИС не оценивают отдельную бригаду — там оценка одна на всю компанию. Поэтому оценки бригад больше негде держать, кроме как у себя.</div>
+          <div style="font-size:15px; font-weight:700;">В рейтинг идут только подтверждённые оценки</div>
+          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Оценка засчитывается бригаде, когда по монтажу заполнена «Сервис-карта 369» — то есть монтаж подтверждён документом, а не словами. Отзывы без карты публикуются с пометкой, но в цифру рейтинга не входят.</div>
         </div>
         <div style="background:#FFF7E6; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700; color:#8A5A00;">Мы их модерируем — и говорим об этом</div>
-          <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:6px;">Отзыв появляется после проверки человеком. Значит, эта страница слабее независимой площадки по доказательности, и мы не выдаём её за независимую. Оценка всегда идёт с числом отзывов: «4,8» само по себе ничего не значит, «4,8 · 12 оценок» — уже кое-что.</div>
+          <div style="font-size:15px; font-weight:700; color:#8A5A00;">Цифру показываем после {{ pubMinLabel }}</div>
+          <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:6px;">Средняя из одной-двух оценок — лотерея, а не рейтинг. Пока подтверждённых оценок меньше {{ pubMinLabel }}, пишем «рейтинг накапливается» — и это честнее, чем красивая цифра на пустом месте. Негатив не удаляем: чистим только оскорбления, спам и чужие персональные данные.</div>
         </div>
       </div>
     </div>
@@ -95,23 +95,21 @@
     <sc-if value="{{ hasAny }}" hint-placeholder-val="{{ true }}">
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:20px 24px; margin-top:18px;">
-      <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:10px;">
-        <span style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">Направление</span>
-      </div>
+      <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">Направление</div>
       <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
         <sc-for list="{{ dirChips }}" as="d" hint-placeholder-count="4">
           <div onClick="{{ d.pick }}" style="border:1px solid {{ d.border }}; background:{{ d.bg }}; color:{{ d.fg }}; border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:6px;">
-            <span>{{ d.label }}</span><span style="font-size:12px; color:{{ d.countFg }}; font-variant-numeric:tabular-nums;">{{ d.count }}</span>
+            <span>{{ d.label }}</span><span style="font-size:11px; color:{{ d.countFg }}; font-variant-numeric:tabular-nums;">{{ d.count }}</span>
           </div>
         </sc-for>
       </div>
 
       <sc-if value="{{ manyCities }}" hint-placeholder-val="{{ true }}">
-        <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6; margin-top:16px;">Город</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6; margin-top:16px;">Город</div>
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
           <sc-for list="{{ cityChips }}" as="g" hint-placeholder-count="3">
             <div onClick="{{ g.pick }}" style="border:1px solid {{ g.border }}; background:{{ g.bg }}; color:{{ g.fg }}; border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:6px;">
-              <span>{{ g.label }}</span><span style="font-size:12px; color:{{ g.countFg }}; font-variant-numeric:tabular-nums;">{{ g.count }}</span>
+              <span>{{ g.label }}</span><span style="font-size:11px; color:{{ g.countFg }}; font-variant-numeric:tabular-nums;">{{ g.count }}</span>
             </div>
           </sc-for>
         </div>
@@ -144,7 +142,7 @@
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#0B6B45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M20 6 9 17l-5-5" /></svg>
                 <span style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:#0B6B45; font-variant-numeric:tabular-nums; letter-spacing:0.01em;">{{ c.cert }}</span>
               </div>
-              <div style="font-size:12px; color:#8593A6; margin-top:5px;">сертификация ИП «ТехноХолод», реестр «Сервис-карта 369»</div>
+              <div style="font-size:11px; color:#8593A6; margin-top:5px;">сертификация ИП «ТехноХолод», реестр «Сервис-карта 369»</div>
               <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700; line-height:1.3; margin-top:10px;">{{ c.dirLine }}</div>
             </div>
             <div style="text-align:right; flex:none;">
@@ -152,23 +150,27 @@
                 <div style="font-family:'Montserrat',sans-serif; font-size:30px; font-weight:800; letter-spacing:-0.02em; line-height:1;">{{ c.rating }}</div>
                 <div style="font-size:12px; color:#5A6675; margin-top:4px; white-space:nowrap;">{{ c.votesLabel }}</div>
               </sc-if>
+              <sc-if value="{{ c.accruing }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:12px; font-weight:700; color:#0A4EA7; background:#E6F2FD; border:1px solid #B9DBF7; border-radius:6px; padding:6px 10px; white-space:nowrap;">Рейтинг накапливается</div>
+                <div style="font-size:11px; color:#8593A6; margin-top:4px; white-space:nowrap;">{{ c.accruingNote }}</div>
+              </sc-if>
               <sc-if value="{{ c.noRating }}" hint-placeholder-val="{{ false }}">
                 <div style="font-size:12px; font-weight:700; color:#B25200; background:#FFF1E3; border:1px solid #F3D2AC; border-radius:6px; padding:6px 10px; white-space:nowrap;">Пока нет оценок</div>
               </sc-if>
             </div>
           </div>
 
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr)); gap:10px; margin-top:16px;">
-            <sc-for list="{{ c.facts }}" as="f" hint-placeholder-count="2">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-top:16px;">
+            <sc-for list="{{ c.facts }}" as="f" hint-placeholder-count="3">
               <div style="background:#F3F7FB; border-radius:10px; padding:11px 13px;">
-                <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ f.k }}</div>
+                <div style="font-size:11px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ f.k }}</div>
                 <div style="font-size:14px; color:#18212F; line-height:1.45; margin-top:3px;">{{ f.v }}</div>
               </div>
             </sc-for>
           </div>
 
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
-            <a href="{{ c.callHref }}" style="background:#0872D3; color:#fff; border-radius:8px; padding:12px 18px; font-size:15px; font-weight:700;">Вызвать эту бригаду</a>
+            <a href="{{ c.callHref }}" style="background:#0872D3; color:#fff; border-radius:8px; padding:12px 18px; font-size:15px; font-weight:700;">Хочу эту бригаду</a>
             <div onClick="{{ c.toggle }}" style="border:1px solid #DCE5F0; color:#2C3846; border-radius:8px; padding:11px 18px; font-size:15px; font-weight:600; cursor:pointer;">{{ c.toggleLabel }}</div>
           </div>
 
@@ -181,8 +183,16 @@
 
               <sc-for list="{{ c.reviews }}" as="r" hint-placeholder-count="2">
                 <div style="background:#F9FBFE; border:1px solid #E8EEF6; border-radius:12px; padding:14px 16px; margin-bottom:10px;">
-                  <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px;">
-                    <div style="font-size:14px; font-weight:700;">{{ r.name }}</div>
+                  <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+                    <div style="display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;">
+                      <div style="font-size:14px; font-weight:700;">{{ r.name }}</div>
+                      <sc-if value="{{ r.verified }}" hint-placeholder-val="{{ false }}">
+                        <span style="font-size:11px; font-weight:700; color:#0B6B45; background:#E7F7F0; border-radius:4px; padding:2px 7px;">✓ монтаж по карте 369</span>
+                      </sc-if>
+                      <sc-if value="{{ r.plain }}" hint-placeholder-val="{{ false }}">
+                        <span style="font-size:11px; color:#8593A6;">без подтверждения покупки</span>
+                      </sc-if>
+                    </div>
                     <div style="font-size:12px; color:#8593A6; white-space:nowrap; font-variant-numeric:tabular-nums;">{{ r.date }}</div>
                   </div>
                   <div style="font-size:13px; font-weight:700; color:#B25200; margin-top:4px;">{{ r.stars }}</div>
@@ -197,13 +207,14 @@
                 </sc-if>
                 <sc-if value="{{ c.formOpen }}" hint-placeholder-val="{{ true }}">
                   <div style="font-size:15px; font-weight:700;">Принимали работу этой бригады? Оцените</div>
-                  <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:5px;">Телефон не спрашиваем и не храним — для отзыва он не нужен.</div>
+                  <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:5px;">Телефон не спрашиваем и не храним. Укажите номер «Сервис-карты 369» — тогда оценка войдёт в рейтинг как подтверждённая.</div>
                   <div style="display:flex; gap:7px; flex-wrap:wrap; margin-top:12px;">
                     <sc-for list="{{ c.scoreButtons }}" as="s" hint-placeholder-count="5">
                       <div onClick="{{ s.pick }}" style="border:1px solid {{ s.border }}; background:{{ s.bg }}; color:{{ s.fg }}; border-radius:8px; padding:8px 14px; font-size:14px; font-weight:700; cursor:pointer;">{{ s.label }}</div>
                     </sc-for>
                   </div>
                   <input type="text" placeholder="Как вас зовут" value="{{ c.formName }}" onInput="{{ c.onName }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#18212F; outline:none; margin-top:10px; background:#fff;" />
+                  <input type="text" placeholder="Номер Сервис-карты 369 (если есть) — 369-…" value="{{ c.formCard }}" onInput="{{ c.onCard }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#18212F; outline:none; margin-top:8px; background:#fff;" />
                   <textarea placeholder="Что делали, как приехали, что понравилось и что нет" value="{{ c.formText }}" onInput="{{ c.onText }}" rows="3" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#18212F; outline:none; margin-top:8px; resize:vertical; background:#fff;"></textarea>
                   <div onClick="{{ c.send }}" style="background:{{ c.sendBg }}; color:#fff; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700; margin-top:10px; cursor:{{ c.sendCursor }};">{{ c.sendLabel }}</div>
                 </sc-if>
@@ -218,15 +229,28 @@
     </sc-if>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:16px;">
-      <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Что закрывает наша гарантия на работы</h2>
-      <div style="font-size:15px; color:#5A6675; line-height:1.65; margin-top:8px; max-width:940px;">12 месяцев на монтаж: герметичность соединений, крепления, дренаж, пусконаладка. Гарантию на само оборудование даёт производитель, её срок — в карточке модели и в паспорте изделия. Претензию принимаем по номеру «Сервис-карты 369»: по нему видно дату работ и бригаду.</div>
+      <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Кто за что отвечает</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:14px;">
+        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+          <div style="font-size:15px; font-weight:700;">Оборудование — производитель</div>
+          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Срок гарантии — в карточке модели и в паспорте изделия. Гарантийный ремонт — в сертифицированных центрах бренда.</div>
+        </div>
+        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+          <div style="font-size:15px; font-weight:700;">Монтаж — бригада</div>
+          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Герметичность, крепления, дренаж, пусконаладка. Срок гарантии — в карточке бригады; чинит тот же, кто ставил.</div>
+        </div>
+        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+          <div style="font-size:15px; font-weight:700;">Сопровождение — мы</div>
+          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">«Сервис-карта 369» фиксирует, что куплено, когда установлено и кем. По её номеру принимаем обращение и направляем его нужной стороне: заводской случай — в сервисный центр, монтажный — бригаде, которая ставила.</div>
+        </div>
+      </div>
       <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
         <a href="/uslugi" style="background:#0872D3; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">Зона ответственности</a>
         <a href="/portfolio" style="border:1px solid #DCE5F0; color:#2C3846; border-radius:8px; padding:12px 20px; font-size:15px; font-weight:600;">Наши работы</a>
       </div>
     </div>
 
-    <div style="font-size:13px; color:#8593A6; line-height:1.6; margin-top:18px;">Оценки бригад собраны нами и проходят модерацию — это не независимая площадка, и мы её так не называем. Оценку компании смотрите в Google и 2ГИС, ссылки на странице «Отзывы».</div>
+    <div style="font-size:13px; color:#8593A6; line-height:1.6; margin-top:18px;">Оценки бригад собраны нами и проходят модерацию — это не независимая площадка, и мы её так не называем. В рейтинг входят только оценки, подтверждённые «Сервис-картой 369». Оценку компании смотрите в Google и 2ГИС, ссылки на странице «Отзывы».</div>
   </div>
 </div>
 
@@ -276,7 +300,7 @@ class Component extends DCLogic {
     }
   }
 
-  /** Фильтр держим и в адресе тоже: ссылку на «вентиляционные бригады» должно быть
+  /** Фильтр держим и в адресе: ссылку на «вентиляционные бригады» должно быть
    *  можно послать клиенту, а не только нажать самому. */
   setFilter(patch) {
     this.setState(patch);
@@ -290,7 +314,6 @@ class Component extends DCLogic {
     } catch (_) {}
   }
 
-  /** «1 оценка · 2 оценки · 5 оценок» — иначе число рядом с оценкой читается как опечатка. */
   votesLabel(n) {
     const d100 = n % 100, d10 = n % 10;
     if (d100 >= 11 && d100 <= 14) { return n + " оценок"; }
@@ -310,7 +333,6 @@ class Component extends DCLogic {
   /** «5» вместо «5,0» рядом с «4,8» читается как другая шкала. Всегда один знак. */
   ratingLabel(x) { return x.toFixed(1).replace(".", ","); }
 
-  /** Приёмник отдаёт ISO (по нему сортируются отзывы), покупателю показываем ДД.ММ.ГГГГ. */
   dateLabel(iso) {
     const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso || ""));
     return m ? m[3] + "." + m[2] + "." + m[1] : String(iso || "");
@@ -322,21 +344,21 @@ class Component extends DCLogic {
       : { bg: "#fff", fg: "#2C3846", border: "#DCE5F0", countFg: "#8593A6" };
   }
 
-  form(cert) { return this.state.form[cert] || { score: 0, name: "", text: "" }; }
+  form(cert) { return this.state.form[cert] || { score: 0, name: "", card: "", text: "" }; }
 
   setForm(cert, patch) {
     this.setState({ form: Object.assign({}, this.state.form,
       { [cert]: Object.assign({}, this.form(cert), patch) }) });
   }
 
-  /** Отправка отзыва. Рапортуем об отправке только рядом с настоящей отправкой:
-   *  sendBeacon, а если он не сработал — fetch. Гейт витрины проверяет именно это. */
+  /** Отправка отзыва. Рапорт об отправке — только рядом с настоящей отправкой:
+   *  sendBeacon, а если он не сработал — fetch. Гейт витрины проверяет это. */
   sendReview(cert) {
     const f = this.form(cert);
     if (!(f.score >= 1 && f.score <= 5) || f.text.trim().length < 2) { return; }
     const body = new URLSearchParams({
       kind: "review", brigada: cert, score: String(f.score),
-      name: f.name.trim(), text: f.text.trim(),
+      name: f.name.trim(), text: f.text.trim(), karta: f.card.trim(),
       src: (document.referrer || "").slice(0, 180) || "direct",
       ses: (() => { try { let s = sessionStorage.getItem("th_ses");
         if (!s) { s = Math.random().toString(36).slice(2, 10); sessionStorage.setItem("th_ses", s); }
@@ -360,13 +382,15 @@ class Component extends DCLogic {
     const all = (d && d.brigady) || [];
     const loading = !d && !this.state.failed;
     const dir = this.state.dir, city = this.state.city;
+    // Порог публикации рейтинга живёт в приёмнике (PUB_MIN) — здесь только подпись.
+    const pubMin = (d && d.pubMin) || 5;
 
     const list = all.filter(c =>
       (!dir || (c.dirs || []).indexOf(dir) >= 0) &&
       (!city || c.region === city));
 
     // Фишки строим только по тому, что реально есть в реестре: направление,
-    // по которому нет ни одной бригады, — это обещание фильтра без содержимого.
+    // по которому нет ни одной бригады, — обещание фильтра без содержимого.
     const dirSeen = [];
     all.forEach(c => (c.dirs || []).forEach((k, i) => {
       const label = (c.dirLabels || [])[i];
@@ -390,6 +414,7 @@ class Component extends DCLogic {
       hasAny: all.length > 0,
       nothingFound: all.length > 0 && list.length === 0,
       manyCities: citySeen.length > 1,
+      pubMinLabel: this.votesLabel(pubMin).replace(/^\d+\s*/, pubMin + " "),
       crewsTitle: list.length ? this.crewsWord(list.length) + (dir || city ? " по фильтру" : " в реестре")
                               : "Бригады",
       updatedNote: d && d.updated ? "реестр на " + this.dateLabel(d.updated) : "",
@@ -413,29 +438,35 @@ class Component extends DCLogic {
         const f = this.form(c.cert);
         const ready = f.score >= 1 && f.text.trim().length >= 2;
         const facts = [
-          c.city  ? { k: "ВЫЕЗД", v: c.city + (c.zone ? " " + c.zone : "") } : null,
-          c.since ? { k: "РАБОТАЕТ С НАМИ", v: "с " + c.since + " года" }    : null
+          c.city     ? { k: "ВЫЕЗД", v: c.city + (c.zone ? " " + c.zone : "") } : null,
+          c.warranty ? { k: "ГАРАНТИЯ НА МОНТАЖ", v: c.warranty + " мес — даёт бригада" } : null,
+          c.since    ? { k: "В СЕТИ", v: "с " + c.since + " года" } : null
         ].filter(Boolean);
 
         return {
           cert: c.cert,
           dirLine: (c.dirLabels || []).join(" · ") || "Направление уточняется",
           cardBorder: open ? "#B9DBF7" : "#DCE5F0",
-          hasRating: c.votes > 0,
-          noRating: c.votes === 0,
+          hasRating: c.rating !== null,
+          accruing: !!c.accruing,
+          accruingNote: "уже " + this.votesLabel(c.votes) + " из " + pubMin,
+          noRating: c.rating === null && !c.accruing,
           rating: c.rating === null ? "" : this.ratingLabel(c.rating),
           votesLabel: this.votesLabel(c.votes),
           facts: facts,
 
+          // Пожелание, а не бронь: заявка уходит нам, бригаду назначаем мы —
+          // с учётом пожелания. Телефона бригады на странице нет.
           callHref: "https://wa.me/77000369369?text=" + encodeURIComponent(
-            "Здравствуйте! Прошу назначить на монтаж бригаду " + c.cert + "."),
+            "Здравствуйте! На монтаж хочу бригаду " + c.cert + "."),
 
           open: open,
           toggle: () => this.setState({ open: Object.assign({}, this.state.open, { [c.cert]: !open }) }),
-          toggleLabel: open ? "Свернуть" : (c.votes > 0 ? "Отзывы и оценка" : "Оставить отзыв"),
+          toggleLabel: open ? "Свернуть" : (c.reviewsTotal > 0 ? "Отзывы" : "Оставить отзыв"),
 
           reviews: (c.reviews || []).map(r => ({
             name: r.name, date: this.dateLabel(r.date), text: r.text,
+            verified: !!r.v, plain: !r.v,
             stars: "★".repeat(r.score) + "☆".repeat(5 - r.score)
           })),
           noReviews: (c.reviews || []).length === 0,
@@ -443,6 +474,7 @@ class Component extends DCLogic {
           formSent: sent,
           formOpen: !sent,
           formName: f.name,
+          formCard: f.card,
           formText: f.text,
           scoreButtons: [1, 2, 3, 4, 5].map(n => ({
             label: "★ " + n,
@@ -452,6 +484,7 @@ class Component extends DCLogic {
             border: f.score === n ? "#0872D3" : "#DCE5F0"
           })),
           onName: e => this.setForm(c.cert, { name: e.target.value }),
+          onCard: e => this.setForm(c.cert, { card: e.target.value }),
           onText: e => this.setForm(c.cert, { text: e.target.value }),
           send: () => this.sendReview(c.cert),
           sendBg: ready ? "#0872D3" : "#8FB6E4",
