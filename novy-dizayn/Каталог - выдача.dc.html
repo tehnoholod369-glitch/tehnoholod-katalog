@@ -311,9 +311,9 @@ class Component extends DCLogic {
   // Один список ключей фасетов на три места: старт, смена группы и «Сбросить».
   // Раньше он был переписан трижды — новый фасет забывали сбросить, и он тянулся
   // за пользователем в другую группу (25.08.2026)
-  facetKeys = ["brand", "price", "comp", "ref", "eff", "btu", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "watt", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "thermo", "stock"];
+  facetKeys = ["brand", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "watt", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "thermo", "stock"];
   facetsOff() {
-    const o = { feat: "", calcFit: 0, q: "" };
+    const o = { feat: "", q: "" };
     (this.facetKeys || []).forEach(k => { o[k] = "all"; });
     return o;
   }
@@ -582,10 +582,6 @@ class Component extends DCLogic {
       if (s.stock === "in" && !/налич/i.test(it.st)) return false;
       if (s.stock === "order" && /налич/i.test(it.st)) return false;
       if (needle && (it.n + " " + it.b).toLowerCase().indexOf(needle) < 0) return false;
-      if (s.calcFit) {
-        const a = areaOf(it);
-        if (!a || a < s.calcFit * 0.9 || a > s.calcFit * 1.35) return false;
-      }
       return true;
     });
     const subList = s.sub === "all" ? baseList : baseList.filter(x => x.sub === s.sub);
@@ -728,10 +724,25 @@ class Component extends DCLogic {
     // Класс мощности кондиционера. У мультисплита пилюли «BTU» нет, а строка ТТХ есть
     // (227 из 228) — поэтому пилюля, иначе ТТХ. Цифры вынимаем без numIn: он читает
     // «9 000» как 9, а разряды в мастере встречаются.
+    // Мощность охлаждения в киловаттах. Ватты в этом поле тоже встречаются
+    // («600 Вт» у Ballu Eco Cool), поэтому единицы читаем, а не угадываем.
+    const coolKwOf = x => {
+      const row = (x.sp || []).find(v => /мощност/i.test(String(v[0])) && /охлажд/i.test(String(v[0]) + String(v[1])));
+      const raw = row ? String(row[1])
+        : ((x.pl || []).find(v => /квт/i.test(String(v)) && /охлажд/i.test(String(v))) || "");
+      const n = numIn(raw);
+      if (!n) return 0;
+      return /квт/i.test(raw) ? n : (/вт/i.test(raw) ? n / 1000 : n);
+    };
     const btuOf = x => {
       const pill = (x.pl || []).find(v => /BTU/i.test(String(v)));
       const d = String(pill || specOf(x, /BTU/i) || "").replace(/[^\d]/g, "");
-      return d ? +d : 0;
+      if (d) return +d;
+      // У мобильных BTU нет ни в пилюле, ни в ТТХ, а класс в маркировке есть (BPAC-07).
+      // 3 412 BTU на киловатт — это перевод единиц, а не оценка: 2,05 кВт = 6 995 BTU,
+      // ровно класс 07. Без этого 25 мобильных не попадали в фильтр по классу.
+      const kw = coolKwOf(x);
+      return kw > 0 ? Math.round(kw * 3412) : 0;
     };
 
     // ─── Фасеты каминов (25.08.2026) ───────────────────────────────────────────
@@ -949,12 +960,20 @@ class Component extends DCLogic {
       // Границы взяты у мультисплит-конструктора (clsOf), вверх продолжены серединами
       // ряда 24-36-48-60: 8 000 и 13 000 BTU — это соседние значения одного класса,
       // а не свои классы. Группы без BTU фасет не увидят: общий порог MIN_FACET.
-      { key: "btu", title: "Класс мощности", of: btuOf,
+      { key: "btu", title: "Класс мощности", of: btuOf, keep: true,
+        only: ["bytovye", "multisplit", "poluprom", "mobilnye"],
         bands: [["07 · 7 000 BTU", 1, 7500], ["09 · 9 000 BTU", 7501, 10000],
                 ["12 · 12 000 BTU", 10001, 14000], ["18 · 18 000 BTU", 14001, 20000],
                 ["24 · 24 000 BTU", 20001, 30000], ["36 · 36 000 BTU", 30001, 42000],
                 ["48 · 48 000 BTU", 42001, 54000], ["60 · 60 000 BTU", 54001, 999999]],
         note: "Класс — привычная маркировка мощности: 09 — это 9 000 BTU, около 2,6 кВт холода. Ориентир — 100 Вт на м² при потолке 2,7 м, точнее считает расчёт мощности. Позиции без данных в фильтр не попадают" },
+      // Эти группы меряют мощность киловаттами, а не классами: у мини-VRF доходит
+      // до 101 кВт, у чиллеров до 145 — в ряду BTU это всё один класс «60».
+      { key: "coolkw", title: "Мощность охлаждения", of: coolKwOf, keep: true,
+        only: ["mini-vrf", "fankoyly", "teplovye-nasosy", "chillery"],
+        bands: [["до 5 кВт", 0.1, 5], ["5–10 кВт", 5.01, 10], ["10–20 кВт", 10.01, 20],
+                ["20–50 кВт", 20.01, 50], ["50 кВт и больше", 50.01, 99999]],
+        note: "Паспортная мощность холода. Ориентир по площади — 100 Вт на м² при потолке 2,7 м. Позиции без данных в фильтр не попадают" },
       { key: "noise", title: "Уровень шума", of: noiseOf,
         bands: [["до 35 дБ", 1, 35], ["35–45 дБ", 36, 45], ["45–55 дБ", 46, 55], ["55 дБ+", 56, 999]],
         note: "Тише 35 дБ — можно ставить в спальне. Позиции без данных в фильтр не попадают" },
@@ -1015,16 +1034,23 @@ class Component extends DCLogic {
     BAND_FACETS.forEach(f => {
       if (facetOff(f)) return;
       const has = f.has || (x => f.of(x) > 0);
-      if (subList.filter(has).length < MIN_FACET) return;
+      // keep: фасет живёт по всей группе, а не по отфильтрованному набору. Иначе он
+      // исчезает под чужим фильтром, а вместе с ним перестаёт действовать и его
+      // собственное значение: в мобильных «в наличии» оставляло 15 позиций, порог
+      // MIN_FACET не набирался, класс переставал фильтровать — кнопка подбора
+      // показывала 15 моделей вместо обещанных четырёх. Фасет площади так и устроен:
+      // hasArea считается по всей группе.
+      const pool = f.keep ? items : subList;
+      if (pool.filter(has).length < MIN_FACET) return;
       const bands = f.bands
-        .map(b => ({ k: b[0], lo: b[1], hi: b[2], n: subList.filter(x => has(x) && f.of(x) >= b[1] && f.of(x) <= b[2]).length }))
+        .map(b => ({ k: b[0], lo: b[1], hi: b[2], n: pool.filter(x => has(x) && f.of(x) >= b[1] && f.of(x) <= b[2]).length }))
         .filter(b => b.n > 0);
       if (bands.length < 2) return;
       EXTRA.push({ key: f.key, title: f.title, note: f.note, kind: "band", of: f.of, bands });
     });
     // порядок в панели задаём явно, а не тем, в каком массиве объявлен фасет:
     // размер — первый вопрос покупателя, цвет — последний
-    const FACET_ORDER = ["btu", "diag", "fireline", "dry", "mezh", "watt", "conn", "sect", "height", "mat",
+    const FACET_ORDER = ["btu", "coolkw", "diag", "fireline", "dry", "mezh", "watt", "conn", "sect", "height", "mat",
       "tank", "ctrl", "orient", "wave", "mount", "warm", "glass", "burn", "recup", "seg",
       "install", "thermo", "fuel", "power", "motor", "duct",
       "noise", "cold", "press", "ip", "color", "colorRad"];
@@ -1081,10 +1107,27 @@ class Component extends DCLogic {
     const CALC_CLASSES = [7000, 9000, 12000, 18000, 24000, 36000, 48000, 60000];
     const calcClsBtu = CALC_CLASSES.find(c => c >= calcArea * 341.2 * 0.95) || 60000;
     const calcCls = String(calcClsBtu / 1000).padStart(2, "0");
+    // Кнопка «Показать подходящие» ставит ВИДИМЫЙ фильтр — класс мощности, а где
+    // класс не язык группы (мини-VRF, фанкойлы, насосы) — киловатты. Было своё
+    // скрытое окно 0,9–1,35 по площади: чипа оно не зажигало, «сбросить» его можно
+    // было только своей же кнопкой, и панель писала класс 09, а показывала и 12.
+    const calcFacet = EXTRA.find(f => f.key === "btu") || EXTRA.find(f => f.key === "coolkw") || null;
+    const calcVal = calcFacet && calcFacet.key === "coolkw" ? calcKwNum : calcClsBtu;
+    const calcBand = calcFacet
+      ? ((calcFacet.bands.find(b => calcVal >= b.lo && calcVal <= b.hi) || {}).k || "") : "";
+    // группа без фасета мощности (таких мало и они мелкие) — ведём полосой площади,
+    // она у подбора есть всегда: showCalc требует hasArea.
+    const calcKey = calcBand ? calcFacet.key : "area";
+    const calcSet = calcBand
+      || Object.keys(AREA_BANDS).find(k => calcArea >= AREA_BANDS[k][0] && calcArea <= AREA_BANDS[k][1]) || "";
     const calcStockN = items.filter(x => {
       if (!/налич/i.test(x.st || "")) return false;
-      const a = areaOf(x);
-      return a && a >= calcArea * 0.9 && a <= calcArea * 1.35;
+      if (calcKey === "area") {
+        const a = areaOf(x), b = AREA_BANDS[calcSet];
+        return !!(a && b && a >= b[0] && a <= b[1]);
+      }
+      const v = calcFacet.of(x), b = calcFacet.bands.find(z => z.k === calcSet);
+      return !!(b && v && v >= b.lo && v <= b.hi);
     }).length;
 
     const areaCount = {};
@@ -1154,10 +1197,6 @@ class Component extends DCLogic {
       }
       if (s.heat !== "all" && heatOf(it) !== s.heat) return false;
       if (!extraOk(it)) return false;
-      if (s.calcFit) {
-        const a = areaOf(it);
-        if (!a || a < s.calcFit * 0.9 || a > s.calcFit * 1.35) return false;
-      }
       if (s.area !== "all") {
         const b = AREA_BANDS[s.area];
         const a = areaOf(it);
@@ -1202,10 +1241,6 @@ class Component extends DCLogic {
       }
       if (skip !== "heat" && s.heat !== "all" && heatOf(it) !== s.heat) return false;
       if (!extraOk(it, skip)) return false;
-      if (s.calcFit) {
-        const a = areaOf(it);
-        if (!a || a < s.calcFit * 0.9 || a > s.calcFit * 1.35) return false;
-      }
       if (skip !== "area" && s.area !== "all") {
         const b = AREA_BANDS[s.area];
         const a = areaOf(it);
@@ -1525,7 +1560,7 @@ class Component extends DCLogic {
       showCalc: curDir === "climate" && hasArea,
       calcOptions: CALC.map(a => ({
         label: a + " м²",
-        pick: () => this.setState({ calcArea: a, calcFit: 0 }),
+        pick: () => this.setState({ calcArea: a }),
         border: calcArea === a ? "#0872D3" : "#DCE5F0",
         bg: calcArea === a ? "#E6F2FD" : "#fff",
         fg: calcArea === a ? "#0A4EA7" : "#5A6675"
@@ -1533,11 +1568,11 @@ class Component extends DCLogic {
       calcKw: String(calcKwNum).replace(".", ",") + " кВт",
       calcClass: calcCls + " (" + (parseInt(calcCls, 10) * 1000) + " BTU)",
       calcStock: this.plural(calcStockN, "модель", "модели", "моделей"),
-      calcOn: !!s.calcFit,
-      calcOnNote: s.calcFit ? "Показаны модели под " + s.calcFit + " м² в наличии" : "",
-      calcOff: () => this.setState({ calcFit: 0, shown: 12 }),
-      // применяем тот же предикат, что в счётчике: полоса AREA_BANDS шире и пускает слабые блоки
-      calcApply: () => this.setState({ calcFit: calcArea, area: "all", stock: "in", shown: 12 }),
+      calcOn: !!calcSet && s[calcKey] === calcSet && s.stock === "in",
+      calcOnNote: "Показаны модели " + (calcKey === "btu" ? "класса " + calcCls : calcSet) + " в наличии",
+      calcOff: () => this.setState({ [calcKey]: "all", stock: "all", shown: 12 }),
+      // тот же предикат, что в счётчике: пилюля фасета зажигается, и её видно чем сбросить
+      calcApply: () => this.setState({ stock: "in", shown: 12, area: "all", [calcKey]: calcSet }),
       dirLabel: (DIRS.find(d => d.key === curDir) || DIRS[0]).label,
       groupTabs,
       hasSubs: !s.loading && (meta.subs || []).length > 1 && baseList.length > 0,
