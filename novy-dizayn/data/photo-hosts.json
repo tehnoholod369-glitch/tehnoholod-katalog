@@ -1,16 +1,16 @@
 {
- "totalFiles": 8338,
- "external": 7241,
+ "totalFiles": 8348,
+ "external": 7251,
  "local": 1097,
  "cdn": 0,
- "gallery": 8338,
+ "gallery": 8348,
  "hosts": {
-  "img.tehnoholod369.kz": 7226,
+  "img.tehnoholod369.kz": 7236,
   "www.lg.com": 14,
   "podbor.tehnoholod369.kz": 1
  },
  "multisplitNoPhoto": 4,
  "multisplitSingle": 224,
  "multisplitExternal": 224,
- "ventExternalMain": 687
+ "ventExternalMain": 694
 }
