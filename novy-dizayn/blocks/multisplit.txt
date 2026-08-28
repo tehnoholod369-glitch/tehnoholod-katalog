@@ -10,7 +10,6 @@
   h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
   a { color: #0A4EA7; text-decoration: none; }
   a:hover { color: #0872D3; }
-  input[type=range] { accent-color: #0872D3; }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
@@ -23,7 +22,7 @@
       <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
       <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
       <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+7 700 036 93 69</a>
     </div>
   </div>
 
@@ -131,12 +130,13 @@
 
               <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:baseline; gap:12px; margin-top:14px;">
                 <div style="font-size:13px; font-weight:600; color:#5A6675;">Площадь</div>
-                <span style="display:flex; align-items:baseline; gap:6px; font-size:15px; font-weight:700; color:#0A4EA7;">
+                <span style="display:flex; align-items:center; gap:6px; font-size:15px; font-weight:700; color:#0A4EA7;">
+                  <span onClick="{{ r.areaMinus }}" role="button" aria-label="Меньше на 1 м²" style="width:44px; height:44px; flex:none; display:flex; align-items:center; justify-content:center; border:1px solid #DCE5F0; background:#F5F8FC; border-radius:10px; font-size:20px; cursor:pointer; user-select:none;">−</span>
                   <input type="text" inputmode="numeric" autocomplete="off" aria-label="Площадь комнаты в квадратных метрах" value="{{ r.areaRaw }}" onInput="{{ r.onAreaText }}" onBlur="{{ r.onAreaBlur }}" style="width:74px; box-sizing:border-box; text-align:right; border:1px solid #DCE5F0; border-radius:8px; padding:11px 10px; font-family:inherit; font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; color:#0A4EA7; outline:none;" />
+                  <span onClick="{{ r.areaPlus }}" role="button" aria-label="Больше на 1 м²" style="width:44px; height:44px; flex:none; display:flex; align-items:center; justify-content:center; border:1px solid #DCE5F0; background:#F5F8FC; border-radius:10px; font-size:20px; cursor:pointer; user-select:none;">+</span>
                   <span>м²</span>
                 </span>
               </div>
-              <input type="range" min="8" max="80" step="1" value="{{ r.area }}" onInput="{{ r.onArea }}" aria-label="Площадь комнаты, ползунок" style="width:100%; margin-top:8px;" />
 
               <div onClick="{{ r.open }}" title="Открыть блок крупно" style="display:flex; gap:14px; align-items:center; margin-top:12px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:10px; padding:12px; cursor:pointer;" style-hover="border-color:#0872D3; background:#F5FAFF;">
                 <div style="width:92px; height:74px; flex:none; background:#fff; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:6px; overflow:hidden; text-align:center;">
@@ -453,6 +453,15 @@ class Component extends DCLogic {
     };
   }
 
+  // Кнопка шага правит и число, и показанное в поле: иначе после «−» в поле
+  // осталось бы прежнее, набранное руками.
+  шагКомнаты(i, д) {
+    const было = this.state.rooms[i];
+    if (!было) return;
+    const v = Math.min(80, Math.max(8, было.area + д));
+    this.setRoom(i, { area: v, areaRaw: String(v) });
+  }
+
   setRoom(i, patch) {
     this.setState({ rooms: this.state.rooms.map((r, k) => k === i ? Object.assign({}, r, patch) : r) });
   }
@@ -530,10 +539,8 @@ class Component extends DCLogic {
         weak: !!(pick && !pick.exact),
         area: r.area,
         areaRaw: r.areaRaw !== undefined ? r.areaRaw : String(r.area),
-        onArea: e => {
-          const v = +e.target.value;
-          this.setRoom(i, { area: v, areaRaw: String(v) });
-        },
+        areaMinus: () => this.шагКомнаты(i, -1),
+        areaPlus: () => this.шагКомнаты(i, 1),
         onAreaText: e => {
           const raw = e.target.value;
           const n = parseFloat(String(raw).replace(",", ".").replace(/\s/g, ""));

@@ -26,7 +26,7 @@
 (function () {
   "use strict";
   var ТЕЛЕФОН_МАШИНЕ = "+77000369369";      // для tel: и wa.me
-  var ТЕЛЕФОН_ЛЮДЯМ  = "+77 000 369 369";   // единый формат витрины
+  var ТЕЛЕФОН_ЛЮДЯМ  = "+7 700 036 93 69";   // единый формат витрины
   var CDN = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/";
 
   // 1. Старая шапка убирается: она fixed и заняла бы место под новой.

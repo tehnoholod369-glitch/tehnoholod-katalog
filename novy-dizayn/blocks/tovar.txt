@@ -251,11 +251,11 @@
               <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:20px; align-items:start;">
                 <div>
                   <div style="font-size:15px; font-weight:700;">Сколько работает кондиционер</div>
-                  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:baseline; gap:12px; margin-top:12px;">
+                  
+                  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:center; gap:12px; margin-top:12px;">
                     <span style="font-size:14px; color:#5A6675;">Часов в сутки</span>
-                    <b style="font-size:16px; color:#0A4EA7;">{{ power.hoursLabel }}</b>
+                    <input type="number" inputmode="numeric" min="2" max="24" step="1" value="{{ power.hours }}" onInput="{{ power.onHours }}" aria-label="Часов работы в сутки" style="width:96px; border:1px solid #DCE5F0; border-radius:8px; padding:8px 10px; font-family:inherit; font-size:16px; font-weight:700; color:#0A4EA7; text-align:right;" />
                   </div>
-                  <input type="range" min="2" max="24" step="1" value="{{ power.hours }}" onInput="{{ power.onHours }}" style="width:100%; margin-top:8px; accent-color:#0872D3;" />
                   <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:center; gap:12px; margin-top:16px;">
                     <span style="font-size:14px; color:#5A6675;">Ваш тариф, ₸ за кВт·ч</span>
                     <span style="display:flex; align-items:center; gap:6px;">
@@ -1014,7 +1014,12 @@ class Component extends DCLogic {
         return {
           hours,
           hoursLabel: hours + " ч в сутки",
-          onHours: e => this.setState({ hours: +e.target.value }),
+          // пустое поле числом не считаем: у ползунка такого состояния не было,
+          // а у поля есть — иначе «часов в сутки» уехало бы в 0 и расчёт обнулился
+          onHours: e => {
+            const n = parseInt(e.target.value, 10);
+            if (isFinite(n)) this.setState({ hours: Math.min(24, Math.max(2, n)) });
+          },
           tariff,
           tariffLabel: String(tariff).replace(".", ",") + " ₸/кВт·ч",
           tariffNote: "По умолчанию — основной тариф для быта в Алматы: 35,37 ₸/кВт·ч с НДС, с 05.06.2026. "
