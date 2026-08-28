@@ -24,7 +24,7 @@
       <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
       <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
       <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+7 700 036 93 69</a>
     </div>
   </div>
 
@@ -538,7 +538,88 @@ class Component extends DCLogic {
     });
   }
 
-  componentDidUpdate() { this.syncPhotos(); }
+  componentDidUpdate() { this.syncPhotos(); this.syncSeo(); }
+
+  /**
+   * Заголовок, описание, canonical и микроразметка — под конкретный товар.
+   *
+   * Зачем. Страница /tovar одна на все 3 500 товаров, и Tilda отдаёт её статикой:
+   * 28.08.2026 краулер видел здесь 55 знаков текста, ноль микроразметки и один
+   * и тот же <title> «Карточка товара — ИП «ТехноХолод», Алматы» у каждой позиции.
+   * Для поиска это дубли, а для Merchant Center — страница без цены.
+   *
+   * Что делаем. После отрисовки подставляем в <head> данные показанной позиции:
+   * title, description, canonical на её адрес и JSON-LD Product + Offer с ценой,
+   * валютой и наличием. Google выполняет скрипты страницы и это видит.
+   *
+   * ⚠️ Это НЕ заменяет серверный HTML: Tilda его дать не может. Пока цена приходит
+   * только после рендера, офферы фида остаются на /tproduct/, где она в HTML
+   * от сервера. Прежде чем переводить их сюда — проверить на одной позиции,
+   * что Merchant Center видит цену.
+   */
+  syncSeo() {
+    try {
+      const s = this.state;
+      const it = (s.items || [])[s.idx];
+      if (!it || !it.n) return;
+      const адрес = location.origin + "/tovar?g=" + encodeURIComponent(s.group || "")
+                  + "&sl=" + encodeURIComponent(it.sl || "");
+      const имя = it.n;
+      const цена = it.p || 0;
+      const вНаличии = /налич/i.test(it.st || "");
+
+      const заголовок = (it.s ? it.b + " " + it.s : имя.slice(0, 60))
+                      + " — купить в Алматы, цена и характеристики | ИП «ТехноХолод»";
+      if (document.title !== заголовок) document.title = заголовок;
+
+      const поставить = (селектор, создать, атрибут, значение) => {
+        let el = document.head.querySelector(селектор);
+        if (!el) { el = создать(); document.head.appendChild(el); }
+        if (el.getAttribute(атрибут) !== значение) el.setAttribute(атрибут, значение);
+        return el;
+      };
+      // описание: что это, сколько стоит и есть ли в наличии — без обещаний
+      const описание = имя + (цена ? ". Цена " + цена.toLocaleString("ru-RU") + " ₸ с НДС." : ".")
+                     + " " + (вНаличии ? "В наличии в Алматы." : "Под заказ.")
+                     + " Доставка по Казахстану, монтаж под ключ.";
+      поставить('meta[name="description"]',
+                () => { const m = document.createElement("meta"); m.setAttribute("name", "description"); return m; },
+                "content", описание);
+      поставить('link[rel="canonical"]',
+                () => { const l = document.createElement("link"); l.setAttribute("rel", "canonical"); return l; },
+                "href", адрес);
+
+      // JSON-LD: цену и наличие пишем только когда они есть — иначе поле не выводим
+      const данные = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": имя,
+        "brand": { "@type": "Brand", "name": it.b || "" },
+        "url": адрес
+      };
+      if (it.s) данные.sku = it.s;
+      if (it.i) данные.image = it.i.indexOf("http") === 0 ? it.i : (location.origin + "/" + String(it.i).replace(/^\//, ""));
+      if (цена) {
+        данные.offers = {
+          "@type": "Offer",
+          "price": String(цена),
+          "priceCurrency": "KZT",
+          "availability": вНаличии ? "https://schema.org/InStock" : "https://schema.org/BackOrder",
+          "url": адрес,
+          "itemCondition": "https://schema.org/NewCondition"
+        };
+      }
+      let ld = document.getElementById("th-ld-product");
+      if (!ld) {
+        ld = document.createElement("script");
+        ld.type = "application/ld+json";
+        ld.id = "th-ld-product";
+        document.head.appendChild(ld);
+      }
+      const текст = JSON.stringify(данные);
+      if (ld.textContent !== текст) ld.textContent = текст;
+    } catch (e) { /* SEO-обвязка не должна ронять карточку */ }
+  }
 
   renderVals() {
     const s = this.state;
