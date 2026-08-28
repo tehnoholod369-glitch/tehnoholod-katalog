@@ -1,0 +1,92 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+</style>
+<div class="thgeo">
+<h1>Тихий кондиционер для спальни — модели от 22 дБ</h1>
+<p>Для спальни смотрят на шум внутреннего блока на минимальной скорости.
+Ниже — модели, у которых производитель заявляет 22 дБ(А) и тише: это уровень
+шелеста листвы, спать он не мешает. Все позиции есть в наличии в Алматы,
+цены — от <span class="thgeo-pmin">128 200</span> ₸.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog">Весь каталог</a>
+</div>
+<h2>Самые тихие модели в наличии</h2>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Модель</th><th>Бренд</th><th>Шум, дБ(А)</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/821516211414-kondicioner-gree-lomo-inv-gwh18qd-k6dnb4i-18000-btu-do-50-m">Кондиционер Lomo Inv. GWH18QD-K6DNB4I</a></td><td>GREE</td><td>16 дБ(А)</td><td class="thgeo-p" data-art="GWH18QD-K6DNB4I">401 700 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/365119025854-kondicioner-hisense-vision-pro-2-0-superior-dc-inverter-as-1">Кондиционер VISION PRO 2.0 SUPERIOR DC Inverter AS-13UW4RXVQH02</a></td><td>Hisense</td><td>18/20/22/27/30/31/33 дБ(А)</td><td class="thgeo-p" data-art="AS-13UW4RXVQH02">401 500 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/278410767644-kondicioner-electrolux-crystal-air-super-dc-eacs-i-10hfa-n8-">Кондиционер Crystal Air Super DC EACS/I-10HFA/N8_V2</a></td><td>Electrolux</td><td>18 дБ</td><td class="thgeo-p" data-art="EACS/I-10HFA/N8_V2">425 615 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/260569385684-kondicioner-electrolux-crystal-air-super-dc-eacs-i-13hfa-n8-">Кондиционер Crystal Air Super DC EACS/I-13HFA/N8_V2</a></td><td>Electrolux</td><td>18 дБ</td><td class="thgeo-p" data-art="EACS/I-13HFA/N8_V2">467 802 ₸</td></tr>
+<tr><td>Кондиционер VISION PRO 2.0 CARBON SUPERIOR DC Inverter AS-13UW4RXVQH02(B)</td><td>Hisense</td><td>18/20/22/27/30/31/33 дБ(А)</td><td class="thgeo-p" data-art="AS-13UW4RXVQH02">464 200 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/595498696904-kondicioner-lg-procool-dual-invertor-b12ts-12000-btu-do-35-m">Кондиционер ProCOOL DUAL Invertor B12TS</a></td><td>LG</td><td>Минимальный уровень шума 19 дБ (поканальная разбивка SH/H/M/L/SL на странице отсутствует)</td><td class="thgeo-p" data-art="B12TS">287 500 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/492308832764-kondicioner-lg-artcool-mirror-invertor-ac09bk-9000-btu-do-25">Кондиционер ARTCOOL MIRROR INVERTOR AC09BK</a></td><td>LG</td><td>Охлаждение SH/H/M/L/SL: 19 / 27 / 35 / 41 дБ(A); Нагрев SH/H/M/L/SL: 45 / 41 / 35 / 27 дБ(A)</td><td class="thgeo-p" data-art="AC09BK">366 250 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/830732628354-kondicioner-ballu-tessey-dc-bsti-07hn8-ik-7000-btu-do-20-m">Кондиционер Tessey DC BSTI-07HN8/IK</a></td><td>Ballu</td><td>20 дБ</td><td class="thgeo-p" data-art="BSTI-07HN8/IK">141 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/123568053164-kondicioner-ballu-tessey-dc-bsti-09hn8-ik-9000-btu-do-25-m">Кондиционер Tessey DC BSTI-09HN8/IK</a></td><td>Ballu</td><td>20 дБ</td><td class="thgeo-p" data-art="BSTI-09HN8/IK">158 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/724458572934-royal-clima-perfetto-inverter-rci-pfd24hn">Кондиционер PERFETTO Inverter RCI-PFD24HN</a></td><td>ROYAL CLIMA</td><td>20/22,5/27/29/31/33/36 дБ(А)</td><td class="thgeo-p" data-art="RCI-PFD24HN">194 700 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/639406055354-kondicioner-funai-sensei-rac-sn20hp-d04-7000-btu-do-20-5-m">Кондиционер SENSEI RAC-SN20HP.D04</a></td><td>FUNAI</td><td>21/26/31/34 дБ(А)</td><td class="thgeo-p" data-art="RAC-SN20HP.D04">131 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/524486963144-kondicioner-funai-shogun-rac-sg20hp-d01-8000-btu-do-22-5-m">Кондиционер SHOGUN RAC-SG20HP.D01</a></td><td>FUNAI</td><td>21/26/30/32 дБ(А)</td><td class="thgeo-p" data-art="RAC-SG20HP.D01">135 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/152991425204-royal-clima-gloria-inverter-rci-gle22hn">Кондиционер GLORIA Inverter RCI-GLE22HN</a></td><td>ROYAL CLIMA</td><td>21/23/25/28/30/31/33 дБ(А)</td><td class="thgeo-p" data-art="RCI-GLE22HN">170 900 ₸</td></tr>
+</tbody>
+</table>
+</div>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">28.08.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Что делает кондиционер тихим</h2>
+<p>Инверторный компрессор не включается и не выключается рывками, а держит
+мощность плавно — именно поэтому инверторы тише. Ночной режим снижает
+обороты вентилятора. Важно и место установки: блок над изголовьем слышно
+сильнее, чем сбоку, а поток воздуха не должен идти на спящего.
+Цифра в таблице — минимальный уровень по паспорту; на максимальной скорости
+любой кондиционер шумит заметно громче.</p>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
+производителя, срок в паспорте изделия; гарантия на монтаж — бригады, срок в её карточке
+и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад,
+напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
+возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Какой кондиционер самый тихий для спальни?</summary><p>Ориентир — 22 дБ(А) и тише на минимальной скорости внутреннего блока. В наличии 26 таких моделей, цены от 128 200 ₸. Например: Кондиционер Lomo Inv. GWH18QD-K6DNB4I — 401 700 ₸; Кондиционер VISION PRO 2.0 SUPERIOR DC Inverter AS-13UW4RXVQH02 — 401 500 ₸; Кондиционер Crystal Air Super DC EACS/I-10HFA/N8_V2 — 425 615 ₸.</p></details>
+<details class="thgeo-faq"><summary>Что влияет на выбор кроме этого параметра?</summary><p>Тип компрессора (инвертор тише), наличие ночного режима и место установки: блок не вешают над изголовьем и не направляют поток на спящего.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
+<details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Тихие кондиционеры в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "GREE Кондиционер Lomo Inv. GWH18QD-K6DNB4I", "url": "https://tehnoholod369.kz/tproduct/821516211414-kondicioner-gree-lomo-inv-gwh18qd-k6dnb4i-18000-btu-do-50-m"}, {"@type": "ListItem", "position": 2, "name": "Hisense Кондиционер VISION PRO 2.0 SUPERIOR DC Inverter AS-13UW4RXVQH02", "url": "https://tehnoholod369.kz/tproduct/365119025854-kondicioner-hisense-vision-pro-2-0-superior-dc-inverter-as-1"}, {"@type": "ListItem", "position": 3, "name": "Electrolux Кондиционер Crystal Air Super DC EACS/I-10HFA/N8_V2", "url": "https://tehnoholod369.kz/tproduct/278410767644-kondicioner-electrolux-crystal-air-super-dc-eacs-i-10hfa-n8-"}, {"@type": "ListItem", "position": 4, "name": "Electrolux Кондиционер Crystal Air Super DC EACS/I-13HFA/N8_V2", "url": "https://tehnoholod369.kz/tproduct/260569385684-kondicioner-electrolux-crystal-air-super-dc-eacs-i-13hfa-n8-"}, {"@type": "ListItem", "position": 5, "name": "LG Кондиционер ProCOOL DUAL Invertor B12TS", "url": "https://tehnoholod369.kz/tproduct/595498696904-kondicioner-lg-procool-dual-invertor-b12ts-12000-btu-do-35-m"}, {"@type": "ListItem", "position": 6, "name": "LG Кондиционер ARTCOOL MIRROR INVERTOR AC09BK", "url": "https://tehnoholod369.kz/tproduct/492308832764-kondicioner-lg-artcool-mirror-invertor-ac09bk-9000-btu-do-25"}, {"@type": "ListItem", "position": 7, "name": "Ballu Кондиционер Tessey DC BSTI-07HN8/IK", "url": "https://tehnoholod369.kz/tproduct/830732628354-kondicioner-ballu-tessey-dc-bsti-07hn8-ik-7000-btu-do-20-m"}, {"@type": "ListItem", "position": 8, "name": "Ballu Кондиционер Tessey DC BSTI-09HN8/IK", "url": "https://tehnoholod369.kz/tproduct/123568053164-kondicioner-ballu-tessey-dc-bsti-09hn8-ik-9000-btu-do-25-m"}, {"@type": "ListItem", "position": 9, "name": "ROYAL CLIMA Кондиционер PERFETTO Inverter RCI-PFD24HN", "url": "https://tehnoholod369.kz/tproduct/724458572934-royal-clima-perfetto-inverter-rci-pfd24hn"}, {"@type": "ListItem", "position": 10, "name": "FUNAI Кондиционер SENSEI RAC-SN20HP.D04", "url": "https://tehnoholod369.kz/tproduct/639406055354-kondicioner-funai-sensei-rac-sn20hp-d04-7000-btu-do-20-5-m"}, {"@type": "ListItem", "position": 11, "name": "FUNAI Кондиционер SHOGUN RAC-SG20HP.D01", "url": "https://tehnoholod369.kz/tproduct/524486963144-kondicioner-funai-shogun-rac-sg20hp-d01-8000-btu-do-22-5-m"}, {"@type": "ListItem", "position": 12, "name": "ROYAL CLIMA Кондиционер GLORIA Inverter RCI-GLE22HN", "url": "https://tehnoholod369.kz/tproduct/152991425204-royal-clima-gloria-inverter-rci-gle22hn"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Какой кондиционер самый тихий для спальни?", "acceptedAnswer": {"@type": "Answer", "text": "Ориентир — 22 дБ(А) и тише на минимальной скорости внутреннего блока. В наличии 26 таких моделей, цены от 128 200 ₸. Например: Кондиционер Lomo Inv. GWH18QD-K6DNB4I — 401 700 ₸; Кондиционер VISION PRO 2.0 SUPERIOR DC Inverter AS-13UW4RXVQH02 — 401 500 ₸; Кондиционер Crystal Air Super DC EACS/I-10HFA/N8_V2 — 425 615 ₸."}}, {"@type": "Question", "name": "Что влияет на выбор кроме этого параметра?", "acceptedAnswer": {"@type": "Answer", "text": "Тип компрессора (инвертор тише), наличие ночного режима и место установки: блок не вешают над изголовьем и не направляют поток на спящего."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json"];
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
+  })).then(function(all){
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    if(min){var el=document.querySelector(".thgeo-pmin");
+      if(el)el.textContent=min.toLocaleString("ru-RU").replace(/\u202f/g,"\u00a0");}
+  });
+})();
+</script>

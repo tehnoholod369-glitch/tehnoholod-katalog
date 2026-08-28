@@ -1,0 +1,93 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+</style>
+<div class="thgeo">
+<h1>Кондиционер на комнату 25 м² — какой выбрать</h1>
+<p>Для комнаты около 25 м² берут класс 09 — это 9000 BTU. Ниже — модели этого
+класса, которые есть в наличии в Алматы, от <span class="thgeo-pmin">115 875</span> ₸. Площадь в таблице — как её указывает
+производитель; запас нужен, если комната солнечная, с большим окном или техникой.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog">Весь каталог</a>
+</div>
+<h2>Модели в наличии на 24–27 м²</h2>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/508772860674-kondicioner-ditreex-on-off-dtxs-09k3xa41a-9000-btu-do-25-m">Кондиционер ON/OFF DTXS-09K3XA41A</a></td><td>DITREEX</td><td>25 м²</td><td class="thgeo-p" data-art="DTXS-09K3XA41A">115 875 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/504313408044-kondicioner-mdv-iera-mdsae-07hrn8-mdoae-07hn8">Кондиционер iERA MDSAE-07HRN8</a></td><td>MDV</td><td>25 м²</td><td class="thgeo-p" data-art="MDSAE-07HRN8">123 750 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/225144482064-kondicioner-midea-aurora-3-msab-09hrn8-9000-btu-do-25-m">Кондиционер AURORA 3 MSAB-09HRN8</a></td><td>Midea</td><td>25 м²</td><td class="thgeo-p" data-art="MSAB-09HRN8">124 875 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/462147938254-kondicioner-cherbrooke-asa-09-hr4k1-aoa-09-hr4k1-9000-btu-do">Кондиционер ASA-09 HR4K1/AOA-09 HR4K1</a></td><td>CHERBROOKE</td><td>27 м²</td><td class="thgeo-p" data-art="ASA-09 HR4K1/AOA-09 HR4K1">124 900 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/477291057104-kondicioner-thaicon-comfort-tl-rwc25-nr-tl-roc25-nr-9000-btu">Кондиционер Comfort+ TL-RWC25-NR / TL-ROC25-NR</a></td><td>THAICON</td><td>26 м²</td><td class="thgeo-p" data-art="TL-RWC25-NR / TL-ROC25-NR">133 250 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/489907876094-kondicioner-mdv-iera-mdsae-09hrn8-mdoae-09hn8">Кондиционер iERA MDSAE-09HRN8</a></td><td>MDV</td><td>25 м²</td><td class="thgeo-p" data-art="MDSAE-09HRN8">135 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/744365080714-kondicioner-midea-aurora-2-msaa-09hrn8-9000-btu-do-25-m">Кондиционер AURORA 2 MSAA-09HRN8</a></td><td>Midea</td><td>25 м²</td><td class="thgeo-p" data-art="MSAA-09HRN8">137 375 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/978844238624-kondicioner-ballu-olympio-pro-bso-09hn8-ik-9000-btu-do-25-m">Кондиционер Olympio Pro BSO-09HN8/IK</a></td><td>Ballu</td><td>25 м²</td><td class="thgeo-p" data-art="BSO-09HN8/IK">140 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/491566594034-kondicioner-ditreex-inverter-dtxs-09d6xac1a-9000-btu-do-26-m">Кондиционер Inverter DTXS-09D6XAC1A</a></td><td>DITREEX</td><td>26 м²</td><td class="thgeo-p" data-art="DTXS-09D6XAC1A">151 410 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/584060289744-kondicioner-toshiba-on-off-ras-09u2khs-ee-9000-btu-do-25-m">Кондиционер ON/OFF RAS-09U2KHS-EE</a></td><td>Toshiba</td><td>25 м²</td><td class="thgeo-p" data-art="RAS-09U2KHS-EE">152 500 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/627827722604-kondicioner-aeronik-asi-09hs5-aso-09hms5-9000-btu-do-27-m">Кондиционер ASI-09HS5/ASO-09HMS5</a></td><td>AERONIK</td><td>27 м²</td><td class="thgeo-p" data-art="ASI-09HS5/ASO-09HMS5">153 900 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/422620782724-kondicioner-thaicon-balance-inv-tl-rwb25-vr-tl-rob25-vr-9000">Кондиционер Balance inv TL-RWB25-VR / TL-ROB25-VR</a></td><td>THAICON</td><td>26 м²</td><td class="thgeo-p" data-art="TL-RWB25-VR / TL-ROB25-VR">156 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/157435073884-kondicioner-nastennyy-gree-09-eva-r410-klass-a-gwh09alaxa-k3">Кондиционер настенный -09: Eva R410 класс A GWH09ALAXA-K3NNA1B (комплектуется медными трубами)</a></td><td>GREE</td><td>25 м²</td><td class="thgeo-p" data-art="GWH09ALAXA-K3NNA1B">156 251 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/123568053164-kondicioner-ballu-tessey-dc-bsti-09hn8-ik-9000-btu-do-25-m">Кондиционер Tessey DC BSTI-09HN8/IK</a></td><td>Ballu</td><td>25 м²</td><td class="thgeo-p" data-art="BSTI-09HN8/IK">158 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/311625034454-kondicioner-nastennyy-gree-09-bora-r410a-klass-a-gwh09aaaxa-">Кондиционер настенный -09: Bora R410A класс A GWH09AAAXA-K3NNA1A (без соединительной инсталляции)</a></td><td>GREE</td><td>26 м²</td><td class="thgeo-p" data-art="GWH09AAAXA-K3NNA1A">162 503 ₸</td></tr>
+</tbody>
+</table>
+</div>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">28.08.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Почему именно класс 09</h2>
+<p>Классы считают по BTU: 07 — до ~20 м², 09 — до ~25 м², 12 — до ~35 м².
+Для 25 м² класс 07 будет работать без остановки и не справится в жару,
+а класс 12 — переплата и частые включения-выключения. Запас берут, когда
+комната на солнечной стороне, окно панорамное, потолок выше 3 м или
+в комнате греется техника. Точный расчёт делаем по опросному листу:
+<a href="https://tehnoholod369.kz/kontakty#podbor">заявка на подбор</a>.</p>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
+производителя, срок в паспорте изделия; гарантия на монтаж — бригады, срок в её карточке
+и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад,
+напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
+возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Какой кондиционер нужен на 25 м²?</summary><p>Класс 09 (9000 BTU) — базовый ориентир для комнаты около 25 м². В наличии 63 таких моделей, цены от 115 875 ₸. Например: Кондиционер ON/OFF DTXS-09K3XA41A — 115 875 ₸; Кондиционер iERA MDSAE-07HRN8 — 123 750 ₸; Кондиционер AURORA 3 MSAB-09HRN8 — 124 875 ₸.</p></details>
+<details class="thgeo-faq"><summary>Что влияет на выбор кроме этого параметра?</summary><p>Высота потолка, сторона света, площадь остекления, число людей и техника в комнате. На кухне и в серверной запас берут всегда — там есть свой источник тепла.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
+<details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Кондиционеры на 25 м² в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DITREEX Кондиционер ON/OFF DTXS-09K3XA41A", "url": "https://tehnoholod369.kz/tproduct/508772860674-kondicioner-ditreex-on-off-dtxs-09k3xa41a-9000-btu-do-25-m"}, {"@type": "ListItem", "position": 2, "name": "MDV Кондиционер iERA MDSAE-07HRN8", "url": "https://tehnoholod369.kz/tproduct/504313408044-kondicioner-mdv-iera-mdsae-07hrn8-mdoae-07hn8"}, {"@type": "ListItem", "position": 3, "name": "Midea Кондиционер AURORA 3 MSAB-09HRN8", "url": "https://tehnoholod369.kz/tproduct/225144482064-kondicioner-midea-aurora-3-msab-09hrn8-9000-btu-do-25-m"}, {"@type": "ListItem", "position": 4, "name": "CHERBROOKE Кондиционер ASA-09 HR4K1/AOA-09 HR4K1", "url": "https://tehnoholod369.kz/tproduct/462147938254-kondicioner-cherbrooke-asa-09-hr4k1-aoa-09-hr4k1-9000-btu-do"}, {"@type": "ListItem", "position": 5, "name": "THAICON Кондиционер Comfort+ TL-RWC25-NR / TL-ROC25-NR", "url": "https://tehnoholod369.kz/tproduct/477291057104-kondicioner-thaicon-comfort-tl-rwc25-nr-tl-roc25-nr-9000-btu"}, {"@type": "ListItem", "position": 6, "name": "MDV Кондиционер iERA MDSAE-09HRN8", "url": "https://tehnoholod369.kz/tproduct/489907876094-kondicioner-mdv-iera-mdsae-09hrn8-mdoae-09hn8"}, {"@type": "ListItem", "position": 7, "name": "Midea Кондиционер AURORA 2 MSAA-09HRN8", "url": "https://tehnoholod369.kz/tproduct/744365080714-kondicioner-midea-aurora-2-msaa-09hrn8-9000-btu-do-25-m"}, {"@type": "ListItem", "position": 8, "name": "Ballu Кондиционер Olympio Pro BSO-09HN8/IK", "url": "https://tehnoholod369.kz/tproduct/978844238624-kondicioner-ballu-olympio-pro-bso-09hn8-ik-9000-btu-do-25-m"}, {"@type": "ListItem", "position": 9, "name": "DITREEX Кондиционер Inverter DTXS-09D6XAC1A", "url": "https://tehnoholod369.kz/tproduct/491566594034-kondicioner-ditreex-inverter-dtxs-09d6xac1a-9000-btu-do-26-m"}, {"@type": "ListItem", "position": 10, "name": "Toshiba Кондиционер ON/OFF RAS-09U2KHS-EE", "url": "https://tehnoholod369.kz/tproduct/584060289744-kondicioner-toshiba-on-off-ras-09u2khs-ee-9000-btu-do-25-m"}, {"@type": "ListItem", "position": 11, "name": "AERONIK Кондиционер ASI-09HS5/ASO-09HMS5", "url": "https://tehnoholod369.kz/tproduct/627827722604-kondicioner-aeronik-asi-09hs5-aso-09hms5-9000-btu-do-27-m"}, {"@type": "ListItem", "position": 12, "name": "THAICON Кондиционер Balance inv TL-RWB25-VR / TL-ROB25-VR", "url": "https://tehnoholod369.kz/tproduct/422620782724-kondicioner-thaicon-balance-inv-tl-rwb25-vr-tl-rob25-vr-9000"}, {"@type": "ListItem", "position": 13, "name": "GREE Кондиционер настенный -09: Eva R410 класс A GWH09ALAXA-K3NNA1B (комплектуется медными трубами)", "url": "https://tehnoholod369.kz/tproduct/157435073884-kondicioner-nastennyy-gree-09-eva-r410-klass-a-gwh09alaxa-k3"}, {"@type": "ListItem", "position": 14, "name": "Ballu Кондиционер Tessey DC BSTI-09HN8/IK", "url": "https://tehnoholod369.kz/tproduct/123568053164-kondicioner-ballu-tessey-dc-bsti-09hn8-ik-9000-btu-do-25-m"}, {"@type": "ListItem", "position": 15, "name": "GREE Кондиционер настенный -09: Bora R410A класс A GWH09AAAXA-K3NNA1A (без соединительной инсталляции)", "url": "https://tehnoholod369.kz/tproduct/311625034454-kondicioner-nastennyy-gree-09-bora-r410a-klass-a-gwh09aaaxa-"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Какой кондиционер нужен на 25 м²?", "acceptedAnswer": {"@type": "Answer", "text": "Класс 09 (9000 BTU) — базовый ориентир для комнаты около 25 м². В наличии 63 таких моделей, цены от 115 875 ₸. Например: Кондиционер ON/OFF DTXS-09K3XA41A — 115 875 ₸; Кондиционер iERA MDSAE-07HRN8 — 123 750 ₸; Кондиционер AURORA 3 MSAB-09HRN8 — 124 875 ₸."}}, {"@type": "Question", "name": "Что влияет на выбор кроме этого параметра?", "acceptedAnswer": {"@type": "Answer", "text": "Высота потолка, сторона света, площадь остекления, число людей и техника в комнате. На кухне и в серверной запас берут всегда — там есть свой источник тепла."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json"];
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
+  })).then(function(all){
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    if(min){var el=document.querySelector(".thgeo-pmin");
+      if(el)el.textContent=min.toLocaleString("ru-RU").replace(/\u202f/g,"\u00a0");}
+  });
+})();
+</script>
