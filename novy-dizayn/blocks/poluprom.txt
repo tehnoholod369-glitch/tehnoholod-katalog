@@ -99,10 +99,14 @@
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:20px; margin-top:20px; align-items:start;">
         <div>
           <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:baseline; gap:12px;">
-            <div style="font-size:14px; font-weight:600;">Площадь объекта</div>
-            <div style="font-size:17px; font-weight:700; color:#0A4EA7; font-variant-numeric:tabular-nums;">{{ areaLabel }}</div>
+            <label style="font-size:14px; font-weight:600;" for="poluprom-area">Площадь объекта</label>
+            <span style="display:flex; align-items:baseline; gap:6px; font-size:17px; font-weight:700; color:#0A4EA7;">
+              <input id="poluprom-area" type="text" inputmode="numeric" autocomplete="off" aria-label="Площадь объекта в квадратных метрах" value="{{ areaRaw }}" onInput="{{ onAreaText }}" onBlur="{{ onAreaBlur }}" style="width:86px; box-sizing:border-box; text-align:right; border:1px solid #DCE5F0; border-radius:8px; padding:11px 10px; font-family:inherit; font-size:17px; font-weight:700; font-variant-numeric:tabular-nums; color:#0A4EA7; outline:none;" />
+              <span>м²</span>
+            </span>
           </div>
-          <input type="range" min="30" max="600" step="10" value="{{ area }}" onInput="{{ onArea }}" style="width:100%; margin-top:10px;" />
+          
+          <input type="range" min="30" max="600" step="1" value="{{ area }}" onInput="{{ onArea }}" aria-label="Площадь объекта, ползунок" style="width:100%; margin-top:10px;" />
           <div style="font-size:13px; color:#5A6675; line-height:1.6; margin-top:10px;">{{ objectNote }}</div>
         </div>
 
@@ -155,7 +159,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  state = { items: null, object: "Магазин или торговый зал", area: 120 };
+  state = { items: null, object: "Магазин или торговый зал", area: 120, areaRaw: "120" };
 
   componentDidMount() {
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/poluprom.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []).then(items => this.setState({ items })).catch(() => this.setState({ items: [] }));
@@ -253,8 +257,19 @@ class Component extends DCLogic {
       ],
       objects,
       area: s.area,
-      areaLabel: s.area + " м²",
-      onArea: e => this.setState({ area: +e.target.value }),
+      areaRaw: s.areaRaw,
+      onArea: e => {
+        const v = +e.target.value;
+        this.setState({ area: v, areaRaw: String(v) });
+      },
+      onAreaText: e => {
+        const raw = e.target.value;
+        const n = parseFloat(String(raw).replace(",", ".").replace(/\s/g, ""));
+        this.setState(isFinite(n)
+          ? { areaRaw: raw, area: Math.min(600, Math.max(30, Math.round(n))) }
+          : { areaRaw: raw });
+      },
+      onAreaBlur: () => this.setState(st => ({ areaRaw: String(st.area) })),
       objectNote: conf.note,
       kwLabel: this.fmt(kw) + " кВт",
       scheme,

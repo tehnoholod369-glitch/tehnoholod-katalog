@@ -131,9 +131,12 @@
 
               <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:baseline; gap:12px; margin-top:14px;">
                 <div style="font-size:13px; font-weight:600; color:#5A6675;">Площадь</div>
-                <div style="font-size:15px; font-weight:700; color:#0A4EA7; font-variant-numeric:tabular-nums;">{{ r.areaLabel }}</div>
+                <span style="display:flex; align-items:baseline; gap:6px; font-size:15px; font-weight:700; color:#0A4EA7;">
+                  <input type="text" inputmode="numeric" autocomplete="off" aria-label="Площадь комнаты в квадратных метрах" value="{{ r.areaRaw }}" onInput="{{ r.onAreaText }}" onBlur="{{ r.onAreaBlur }}" style="width:74px; box-sizing:border-box; text-align:right; border:1px solid #DCE5F0; border-radius:8px; padding:11px 10px; font-family:inherit; font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; color:#0A4EA7; outline:none;" />
+                  <span>м²</span>
+                </span>
               </div>
-              <input type="range" min="8" max="80" step="1" value="{{ r.area }}" onInput="{{ r.onArea }}" style="width:100%; margin-top:8px;" />
+              <input type="range" min="8" max="80" step="1" value="{{ r.area }}" onInput="{{ r.onArea }}" aria-label="Площадь комнаты, ползунок" style="width:100%; margin-top:8px;" />
 
               <div onClick="{{ r.open }}" title="Открыть блок крупно" style="display:flex; gap:14px; align-items:center; margin-top:12px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:10px; padding:12px; cursor:pointer;" style-hover="border-color:#0872D3; background:#F5FAFF;">
                 <div style="width:92px; height:74px; flex:none; background:#fff; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:6px; overflow:hidden; text-align:center;">
@@ -526,8 +529,19 @@ class Component extends DCLogic {
         typeLabel: type === "Внутренний блок" ? "тип уточняется" : type,
         weak: !!(pick && !pick.exact),
         area: r.area,
-        areaLabel: r.area + " м²",
-        onArea: e => this.setRoom(i, { area: +e.target.value }),
+        areaRaw: r.areaRaw !== undefined ? r.areaRaw : String(r.area),
+        onArea: e => {
+          const v = +e.target.value;
+          this.setRoom(i, { area: v, areaRaw: String(v) });
+        },
+        onAreaText: e => {
+          const raw = e.target.value;
+          const n = parseFloat(String(raw).replace(",", ".").replace(/\s/g, ""));
+          this.setRoom(i, isFinite(n)
+            ? { areaRaw: raw, area: Math.min(80, Math.max(8, Math.round(n))) }
+            : { areaRaw: raw });
+        },
+        onAreaBlur: () => this.setRoom(i, { areaRaw: String(this.state.rooms[i].area) }),
         types: types.map(t => this.chip(type === t, t === "Внутренний блок" ? "тип уточняется" : t, () => this.setRoom(i, { type: t, sku: null }))),
         hasVariants: variants.length > 1,
         variantsLabel: variants.length > 1
