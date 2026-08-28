@@ -49,7 +49,7 @@
       <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
       <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
       <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+7 700 036 93 69</a>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
     </div>
   </div>
 
@@ -292,7 +292,7 @@
         </div>
 
         </sc-if>
-        <div style="background:#E6F2FD; border-radius:12px; padding:16px 20px; margin-top:16px; font-size:14px; color:#071C3B; line-height:1.55;">Не нашли модель? Напишите площадь помещения в WhatsApp — подберём и посчитаем с доставкой: <b>+7 700 036 93 69</b></div>
+        <div style="background:#E6F2FD; border-radius:12px; padding:16px 20px; margin-top:16px; font-size:14px; color:#071C3B; line-height:1.55;">Не нашли модель? Напишите площадь помещения в WhatsApp — подберём и посчитаем с доставкой: <b>+77 000 369 369</b></div>
         <div style="font-size:13px; color:#8593A6; margin-top:14px; line-height:1.6;">{{ footNote }}</div>
       </div>
     </div>
@@ -305,7 +305,7 @@ class Component extends DCLogic {
   // Один список ключей фасетов на три места: старт, смена группы и «Сбросить».
   // Раньше он был переписан трижды — новый фасет забывали сбросить, и он тянулся
   // за пользователем в другую группу (25.08.2026)
-  facetKeys = ["brand", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "watt", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "thermo", "stock"];
+  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "watt", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "thermo", "stock"];
   facetsOff() {
     const o = { feat: "", q: "" };
     (this.facetKeys || []).forEach(k => { o[k] = "all"; });
@@ -569,6 +569,7 @@ class Component extends DCLogic {
     const baseList = items.filter(it => {
       if (!accMode && it.acc) return false;
       if (s.brand !== "all" && it.b !== s.brand) return false;
+      if (s.ser !== "all" && it.ser !== s.ser) return false;
       if (s.stock === "in" && !/налич/i.test(it.st)) return false;
       if (s.stock === "order" && /налич/i.test(it.st)) return false;
       if (needle && (it.n + " " + it.b).toLowerCase().indexOf(needle) < 0) return false;
@@ -1201,6 +1202,7 @@ class Component extends DCLogic {
       if (s.sub !== "all" && it.sub !== s.sub) return false;
       if (s.onlyPick && !this.isPick(it, picks)) return false;
       if (s.brand !== "all" && it.b !== s.brand) return false;
+      if (s.ser !== "all" && it.ser !== s.ser) return false;
       if (s.comp !== "all" && compOf(it) !== s.comp) return false;
       if (s.ref !== "all" && refOf(it) !== s.ref) return false;
       if (s.eff !== "all" && effOf(it) !== s.eff) return false;
@@ -1243,6 +1245,7 @@ class Component extends DCLogic {
       if (skip !== "sub" && s.sub !== "all" && it.sub !== s.sub) return false;
       if (s.onlyPick && !this.isPick(it, picks)) return false;
       if (skip !== "brand" && s.brand !== "all" && it.b !== s.brand) return false;
+      if (skip !== "ser" && s.ser !== "all" && it.ser !== s.ser) return false;
       if (skip !== "comp" && s.comp !== "all" && compOf(it) !== s.comp) return false;
       if (skip !== "ref" && s.ref !== "all" && refOf(it) !== s.ref) return false;
       if (skip !== "eff" && s.eff !== "all" && effOf(it) !== s.eff) return false;
@@ -1283,14 +1286,14 @@ class Component extends DCLogic {
     const fac = skip => items.filter(it => matches(it, skip));
     const facSub = fac("sub"), facArea = fac("area"), facBrand = fac("brand"), facPrice = fac("price");
     const facVol = fac("vol"), facHeat = fac("heat");
-    const facRef = fac("ref"), facEff = fac("eff");
+    const facRef = fac("ref"), facEff = fac("eff"); const facSer = fac("ser");
     Object.keys(AREA_BANDS).forEach(k => {
       const b = AREA_BANDS[k];
       areaCount[k] = facArea.filter(x => { const a = areaOf(x); return a && a >= b[0] && a <= b[1]; }).length;
     });
     volCount.bands.forEach(b => { b.n = facVol.filter(x => { const v = volOf(x); return v >= b.lo && v <= b.hi; }).length; });
     heatCount.forEach(h => { h.n = facHeat.filter(x => heatOf(x) === h.k).length; });
-    this.__fac = { sub: facSub, area: facArea, brand: facBrand, price: facPrice, ref: facRef, eff: facEff };
+    this.__fac = { sub: facSub, area: facArea, brand: facBrand, price: facPrice, ref: facRef, eff: facEff, ser: facSer };
     // ключи фасета — по всей группе, счётчики — по набору без самого фасета
     const refCount = Array.from(new Set(items.map(refOf).filter(Boolean))).sort()
       .map(k => ({ k: k, n: facRef.filter(x => refOf(x) === k).length })).filter(o => o.n > 0 || s.ref === o.k);
@@ -1385,12 +1388,32 @@ class Component extends DCLogic {
       b === "all" ? String(exceptBrand.length) : String(brandCount[b] || 0)
     ));
 
+    // Серия: счётчик по набору без самой серии, пустые значения в фильтр не идут.
+    const serCount = {};
+    (this.__fac.ser || []).forEach(x => { if (x.ser) serCount[x.ser] = (serCount[x.ser] || 0) + 1; });
+    const serList = (meta.serList || []).filter(v => serCount[v] > 0 || v === s.ser);
+    const serOptions = serList.length < 2 ? [] : ["all"].concat(serList).map(v => this.chip(
+      s.ser === v,
+      v === "all" ? "Все" : v,
+      () => this.setState({ ser: v, shown: 12 }),
+      v === "all" ? String((this.__fac.ser || []).length) : String(serCount[v] || 0)
+    ));
+
     // сколько фильтров реально сужают выдачу: ключи фасетов плюс «Возможности» и «Наш выбор»
     const activeFilters = (this.facetKeys || []).filter(k => s[k] && s[k] !== "all").length
       + (s.feat ? 1 : 0) + (s.onlyPick ? 1 : 0);
     const filterGroups = this.wrapFilters([
       // в группе один бренд — выбирать не из чего: «Все 444 / Royal Thermo 444» это
       // не фильтр, а строка-пустышка. Так у семи групп, включая радиаторы (26.08.2026)
+      // Серия. Список считает gen_site_data.py и кладёт в index.json: правило
+      // («заполнено у 70 % позиций группы, значений 2–25, каждое покрывает хотя бы
+      // два товара») живёт в одном месте, а не переписано здесь второй раз.
+      // У бытовых сплитов и водонагревателей serList пуст намеренно: 223 и 53 серии
+      // кнопками не разложить, там нужен другой контрол.
+      serOptions.length < 3 ? null :
+      { key: "ser", title: "Серия", note: "Линейка производителя: внутри серии модели различаются мощностью",
+        options: serOptions, limit: 8,
+        activeLabel: s.ser === "all" ? "" : s.ser },
       sortedBrands.length < 2 ? null :
       { key: "brand", title: "Бренд", note: "", options: brandOptions, limit: Math.max(prio.filter(b => sortedBrands.indexOf(b) >= 0).length + 1, 8), activeLabel: s.brand === "all" ? "" : s.brand },
       airCount.n ? {

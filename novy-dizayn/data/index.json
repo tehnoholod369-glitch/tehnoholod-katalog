@@ -28,6 +28,7 @@
    ],
    "inStock": 336,
    "acc": 0,
+   "serList": [],
    "subs": [
     {
      "name": "Настенные",
@@ -50,6 +51,10 @@
    ],
    "inStock": 5,
    "acc": 0,
+   "serList": [
+    "ACMH (модульный чиллер)",
+    "Чиллеры"
+   ],
    "subs": [
     {
      "name": "Чиллеры",
@@ -67,6 +72,10 @@
    ],
    "inStock": 14,
    "acc": 0,
+   "serList": [
+    "Канальные фанкойлы",
+    "Напольные фанкойлы"
+   ],
    "subs": [
     {
      "name": "Канальные",
@@ -90,6 +99,7 @@
    ],
    "inStock": 52,
    "acc": 0,
+   "serList": [],
    "subs": [
     {
      "name": "Электрические",
@@ -117,6 +127,7 @@
    ],
    "inStock": 22,
    "acc": 6,
+   "serList": [],
    "subs": [
     {
      "name": "Каминокомплекты",
@@ -155,6 +166,11 @@
    ],
    "inStock": 49,
    "acc": 0,
+   "serList": [
+    "ARV7-ME",
+    "GMV",
+    "GMV Slim (мини-VRF)"
+   ],
    "subs": [
     {
      "name": "Наружные блоки VRF, 380 В",
@@ -197,6 +213,20 @@
    ],
    "inStock": 15,
    "acc": 1,
+   "serList": [
+    "Ballu Aura",
+    "Ballu Eclipse Black",
+    "Ballu Orbis",
+    "Ballu Platinum X4",
+    "Ballu Smart Inverter EVO",
+    "Ballu Smart Pro",
+    "Ballu Velure",
+    "Electrolux Arizona",
+    "Electrolux Cool Power",
+    "Electrolux Ice Column",
+    "Electrolux Loft",
+    "SHUFT Frigo"
+   ],
    "subs": [
     {
      "name": "Мобильные",
@@ -228,6 +258,7 @@
    ],
    "inStock": 115,
    "acc": 0,
+   "serList": [],
    "subs": [
     {
      "name": "Внутренние блоки",
@@ -250,6 +281,18 @@
    ],
    "inStock": 34,
    "acc": 0,
+   "serList": [
+    "ASTORIA Elettronico",
+    "ASTORIA Meccanico",
+    "ATRI Econo",
+    "FIORI Meccanico",
+    "FRESCO",
+    "PARMA",
+    "PIEMONTE",
+    "RIBERA Econo",
+    "SIENA",
+    "АТЛЕТ 2.0"
+   ],
    "subs": [
     {
      "name": "Конвекторы электрические",
@@ -277,6 +320,18 @@
    ],
    "inStock": 12,
    "acc": 0,
+   "serList": [
+    "Comfort",
+    "Heavy Duty Plus",
+    "Heavy Industrial",
+    "Home Express",
+    "Neo",
+    "RIVIERA",
+    "Sand Hill",
+    "Scandinavia",
+    "Smart Duty Wi-Fi",
+    "YAMANEKO"
+   ],
    "subs": [
     {
      "name": "Бытовые",
@@ -323,6 +378,7 @@
    ],
    "inStock": 292,
    "acc": 0,
+   "serList": [],
    "subs": [
     {
      "name": "Кассетные",
@@ -356,6 +412,7 @@
    ],
    "inStock": 4,
    "acc": 0,
+   "serList": [],
    "subs": [
     {
      "name": "Прецизионный",
@@ -373,6 +430,7 @@
    ],
    "inStock": 0,
    "acc": 0,
+   "serList": [],
    "subs": [
     {
      "name": "Промышленные мобильные",
@@ -390,6 +448,7 @@
    ],
    "inStock": 161,
    "acc": 10,
+   "serList": [],
    "subs": [
     {
      "name": "Секционные",
@@ -419,6 +478,11 @@
    ],
    "inStock": 0,
    "acc": 0,
+   "serList": [
+    "Haier Super Aqua",
+    "Haier Super Aqua HE",
+    "Haier Super Aqua S"
+   ],
    "subs": [
     {
      "name": "Воздух-вода",
@@ -438,6 +502,7 @@
    ],
    "inStock": 63,
    "acc": 0,
+   "serList": [],
    "subs": [
     {
      "name": "Электрические",
@@ -478,6 +543,25 @@
    ],
    "inStock": 50,
    "acc": 0,
+   "serList": [
+    "ATLAS",
+    "Basic",
+    "Basic Professional Standard",
+    "Business Solution",
+    "Ditreex RM",
+    "HEATGUARD",
+    "High Professional Standard",
+    "High Professional Standard 2",
+    "High Professional Standard Plus",
+    "Medium",
+    "Medium Professional Standard",
+    "Medium Professional Standard Plus",
+    "STELLA",
+    "ULTRA",
+    "ULTRA2",
+    "Привратник",
+    "Привратник Графит"
+   ],
    "subs": [
     {
      "name": "Электрические",
@@ -506,6 +590,13 @@
    ],
    "inStock": 0,
    "acc": 13,
+   "serList": [
+    "ES",
+    "HeaterSteam",
+    "HumiSteam X-plus",
+    "RHE",
+    "humiSonic"
+   ],
    "subs": [
     {
      "name": "Увлажнитель паровой электродный",
@@ -551,6 +642,7 @@
    ],
    "inStock": 342,
    "acc": 299,
+   "serList": [],
    "subs": [
     {
      "name": "Аксессуары вентиляции",
@@ -604,6 +696,11 @@
    ],
    "inStock": 13,
    "acc": 0,
+   "serList": [
+    "BIF",
+    "BIF-X",
+    "BIF-XD"
+   ],
    "subs": [
     {
      "name": "Вентиляторы",
@@ -629,6 +726,7 @@
    ],
    "inStock": 178,
    "acc": 1,
+   "serList": [],
    "subs": [
     {
      "name": "Накопительные",
@@ -661,6 +759,19 @@
    ],
    "inStock": 44,
    "acc": 17,
+   "serList": [
+    "Комплектующие",
+    "Настенные системы в корпусе",
+    "Настольные системы в корпусе",
+    "Ниточные",
+    "Пурифайеры",
+    "Серия CF (SnowBug) полупоротный крепеж",
+    "Серия QL резьбовой крепеж",
+    "Системы безкорпусные",
+    "Системы фильтрации",
+    "Фильтры для ванной",
+    "Фильтры магистральные"
+   ],
    "subs": [
     {
      "name": "Комплектующие для водоочистки",
@@ -699,6 +810,18 @@
    ],
    "inStock": 15,
    "acc": 0,
+   "serList": [
+    "W2-C",
+    "W2-LN",
+    "W2-SF",
+    "W2-XL",
+    "W3-LN",
+    "W3-S",
+    "W4-D",
+    "W4-S",
+    "Архивные позиции",
+    "Экватор"
+   ],
    "subs": [
     {
      "name": "Водяные тепловентиляторы",
@@ -720,6 +843,7 @@
    ],
    "inStock": 2,
    "acc": 0,
+   "serList": [],
    "subs": [
     {
      "name": "Испарительные",
