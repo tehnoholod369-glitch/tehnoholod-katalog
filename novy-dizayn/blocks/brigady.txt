@@ -344,6 +344,8 @@ class Component extends DCLogic {
       : { bg: "#fff", fg: "#2C3846", border: "#DCE5F0", countFg: "#8593A6" };
   }
 
+  cap(s) { s = String(s || ""); return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
+
   form(cert) { return this.state.form[cert] || { score: 0, name: "", card: "", text: "" }; }
 
   setForm(cert, patch) {
@@ -440,7 +442,13 @@ class Component extends DCLogic {
         const facts = [
           c.city     ? { k: "ВЫЕЗД", v: c.city + (c.zone ? " " + c.zone : "") } : null,
           c.warranty ? { k: "ГАРАНТИЯ НА МОНТАЖ", v: c.warranty + " мес — даёт бригада" } : null,
-          c.since    ? { k: "В СЕТИ", v: "с " + c.since + " года" } : null
+          c.since    ? { k: "В СЕТИ", v: "с " + c.since + " года" } : null,
+          // Языки и оснащение приходят из реестра только у одобренных бригад:
+          // при сертификации владелец сверил анкету (оснащение — по фото
+          // инструмента) — поэтому подпись «подтверждено» здесь честная.
+          c.langs && c.langs.length ? { k: "ЯЗЫКИ", v: this.cap(c.langs.join(", ")) } : null,
+          c.osn && c.osn.length ? { k: "ОСНАЩЕНИЕ",
+            v: this.cap(c.osn.join(" · ")) + " — подтверждено при сертификации" } : null
         ].filter(Boolean);
 
         return {
