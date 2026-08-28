@@ -161,11 +161,16 @@
               </div>
             </div>
             <div style="display:{{ g.body }};">
+                <div style="display:{{ g.searchBox }}; align-items:center; gap:7px; border:1px solid #DCE5F0; border-radius:7px; padding:6px 10px; margin-top:9px;">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#8593A6" stroke-width="1.8" stroke-linecap="round" style="display:block; flex:none;"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+                  <input type="search" placeholder="{{ g.placeholder }}" value="{{ g.sq }}" onInput="{{ g.onQuery }}" style="flex:1; min-width:0; border:none; outline:none; font-family:inherit; font-size:14px; color:#18212F; background:transparent; padding:2px 0;" />
+                </div>
                 <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:9px;">
                   <sc-for list="{{ g.options }}" as="o" hint-placeholder-count="4">
                     <div onClick="{{ o.pick }}" style="border:1px solid {{ o.border }}; background:{{ o.bg }}; color:{{ o.fg }}; border-radius:6px; padding:6px 10px; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:5px;"><span>{{ o.label }}</span><span style="font-size:12px; color:#8593A6; font-variant-numeric:tabular-nums;">{{ o.sub }}</span></div>
                   </sc-for>
                 </div>
+                <div style="font-size:12px; color:#8593A6; margin-top:8px;">{{ g.nores }}</div>
                 <div onClick="{{ g.expand }}" style="font-size:12px; font-weight:600; color:#0872D3; margin-top:8px; cursor:pointer;">{{ g.more }}</div>
                 <div style="font-size:12px; color:#B25200; margin-top:6px; line-height:1.4;">{{ g.note }}</div>
             </div>
@@ -307,7 +312,7 @@ class Component extends DCLogic {
   // за пользователем в другую группу (25.08.2026)
   facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "watt", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "thermo", "stock"];
   facetsOff() {
-    const o = { feat: "", q: "" };
+    const o = { feat: "", q: "", qF: {} };
     (this.facetKeys || []).forEach(k => { o[k] = "all"; });
     return o;
   }
@@ -393,20 +398,35 @@ class Component extends DCLogic {
       ? ["brand", "area", "air", "vol", "heat", "diag", "fireline", "dry", "mezh", "watt", "price"] : [];
     const open = this.state.openF || {};
     const shownAll = this.state.moreF || {};
+    const queries = this.state.qF || {};
+    // «ё» и регистр покупателя не должны решать, найдётся серия или нет
+    const norm = v => String(v == null ? "" : v).toLowerCase().replace(/ё/g, "е").trim();
     return list.filter(Boolean).map(g => {
       const key = g.key || g.title;
       const isOpen = open[key] === undefined ? OPEN_BY_DEFAULT.indexOf(key) >= 0 : !!open[key];
       const all = g.options || [];
       const limit = g.limit || 99;
+      const sq = g.search ? (queries[key] || "") : "";
+      const head = (sq && all.length && all[0] && all[0].label === "Все") ? [all[0]] : [];
+      const hit = sq
+        ? all.filter((o, i) => !(i === 0 && head.length) && norm(o.label).indexOf(norm(sq)) >= 0)
+        : all;
+      const shownOpts = head.concat(sq ? hit : []);
+      const listNow = sq ? shownOpts : all;
       // не сворачиваем, когда прячется меньше трёх: клик ради одного чипа — лишнее трение
-      const cut = !shownAll[key] && all.length > limit + 2;
+      const cut = !shownAll[key] && listNow.length > limit + 2;
       return Object.assign({}, g, {
         // скрываем через display, а не условным рендером: sc-if внутри sc-for не переоткрывался
         body: isOpen ? "block" : "none",
         caret: isOpen ? "▴" : "▾",
         active: g.activeLabel || "",
-        options: cut ? all.slice(0, limit) : all,
-        more: cut ? "Ещё " + (all.length - limit) : (shownAll[key] && all.length > limit ? "Свернуть список" : ""),
+        searchBox: g.search ? "flex" : "none",
+        placeholder: g.placeholder || "Найти",
+        sq: sq,
+        onQuery: e => this.setState({ qF: Object.assign({}, queries, { [key]: e.target.value }) }),
+        nores: (sq && hit.length === 0) ? ("Ничего не нашлось: «" + sq + "»") : "",
+        options: cut ? listNow.slice(0, limit) : listNow,
+        more: cut ? "Ещё " + (listNow.length - limit) : (shownAll[key] && listNow.length > limit ? "Свернуть список" : ""),
         expand: () => this.setState({ moreF: Object.assign({}, shownAll, { [key]: !shownAll[key] }) }),
         toggle: () => this.setState(prev => {
           const cur = prev.openF || {};
@@ -1425,13 +1445,15 @@ class Component extends DCLogic {
       // в группе один бренд — выбирать не из чего: «Все 444 / Royal Thermo 444» это
       // не фильтр, а строка-пустышка. Так у семи групп, включая радиаторы (26.08.2026)
       // Серия. Список считает gen_site_data.py и кладёт в index.json: правило
-      // («заполнено у 70 % позиций группы, значений 2–25, каждое покрывает хотя бы
+      // («заполнено у 70 % позиций группы, значений от двух, каждое покрывает хотя бы
       // два товара») живёт в одном месте, а не переписано здесь второй раз.
-      // У бытовых сплитов и водонагревателей serList пуст намеренно: 223 и 53 серии
-      // кнопками не разложить, там нужен другой контрол.
+      // С тринадцати значений кнопки перестают быть выбором: у бытовых сплитов
+      // серий 95, у водонагревателей 45 — «Ещё 87» это не фильтр, а список глазами.
+      // Тогда над чипами встаёт строка поиска, а сам список остаётся свёрнутым.
       serOptions.length < 3 ? null :
       { key: "ser", title: "Серия", note: "Линейка производителя: внутри серии модели различаются мощностью",
-        options: serOptions, limit: 8,
+        options: serOptions, limit: serOptions.length > 13 ? 12 : 8,
+        search: serOptions.length > 13, placeholder: "Найти серию",
         activeLabel: s.ser === "all" ? "" : s.ser },
       sortedBrands.length < 2 ? null :
       { key: "brand", title: "Бренд", note: "", options: brandOptions, limit: Math.max(prio.filter(b => sortedBrands.indexOf(b) >= 0).length + 1, 8), activeLabel: s.brand === "all" ? "" : s.brand },
