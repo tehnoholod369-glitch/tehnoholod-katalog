@@ -1,0 +1,92 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+</style>
+<div class="thgeo">
+<h2>Мульти-сплит системы в Алматы</h2>
+<p>Один наружный блок на несколько комнат: 228 позиций от 11 брендов —
+наружные модули и внутренние блоки разных типов (AERONIK, AUX, CHERBROOKE, DITREEX, GREE, Haier и другие).
+Цены — от <span class="thgeo-pmin">55 000</span> ₸, оборудование в наличии в Алматы.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog">Весь каталог</a>
+</div>
+<h2>Примеры блоков и модулей в наличии</h2>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Модель</th><th>Бренд</th><th>Параметр</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/483366343124-kondicioner-mdv-integra-pro-mdsai2-07hrfn8-mdoai2-07hfn8">Внутренний блок INTEGRA PRO MDSAI2-07HRFN8-M (настенный (внутр. блок))</a></td><td>MDV</td><td></td><td class="thgeo-p" data-art="MDSAI2-07HRFN8">55 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/389020353994-kondicioner-mdv-integra-pro-mdsai2-09hrfn8-mdoai2-09hfn8">Внутренний блок INTEGRA PRO MDSAI2-09HRFN8-M (настенный (внутр. блок))</a></td><td>MDV</td><td></td><td class="thgeo-p" data-art="MDSAI2-09HRFN8">62 500 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/197953512714-kondicioner-aeronik-asi-07-ilk3-7000-btu-do-21-m">Кондиционер ASI-07 ILK3</a></td><td>AERONIK</td><td></td><td class="thgeo-p" data-art="ASI-07 ILK3">77 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/578965570074-kondicioner-aeronik-asi-09-ilk4-9000-btu-do-26-m">Кондиционер ASI-09 ILK4</a></td><td>AERONIK</td><td></td><td class="thgeo-p" data-art="ASI-09 ILK4">78 700 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/665374206674-vnutrenniy-blok-ditreex-dtxm-09k6xac1-i-9000-btu-do-26-m-nas">Внутренний блок DTXM-09K6XAC1/I</a></td><td>DITREEX</td><td></td><td class="thgeo-p" data-art="DTXM-09K6XAC1/I">80 469 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/177503351484-kondicioner-aux-free-match-r32-dc-invertor-amwm-h07-4r3c-ha-">Кондиционер Free Match R32 DC инвертор AMWM-H07/4R3C(HA）</a></td><td>AUX</td><td></td><td class="thgeo-p" data-art="AMWM-H07/4R3C(HA）">81 460 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/354392949904-thaicon-tl-rwp20-fr-7000-btu-do-21-m">TL-RWP20-FR</a></td><td>THAICON</td><td></td><td class="thgeo-p" data-art="TL-RWP20-FR">81 900 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/676377010604-kondicioner-aux-free-match-r32-dc-invertor-amwm-h09-4r3a-ha-">Кондиционер Free Match R32 DC инвертор AMWM-H09/4R3A(HA)</a></td><td>AUX</td><td></td><td class="thgeo-p" data-art="AMWM-H09/4R3A(HA)">81 978 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/241129563384-vnutrenniy-blok-gree-gwh07qa-k6dnb2d-7000-btu-do-20-m-nasten">Внутренний блок GWH07QA-K6DNB2D</a></td><td>GREE</td><td></td><td class="thgeo-p" data-art="GWH07QA-K6DNB2D">83 688 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/183290282744-thaicon-tl-rwp25-fr-9000-btu-do-27-m">TL-RWP25-FR</a></td><td>THAICON</td><td></td><td class="thgeo-p" data-art="TL-RWP25-FR">88 400 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/240193914604-royal-clima-felicita-multi-flexi-eu-erp-rci-fc09hn">Кондиционер FELICITA MULTI FLEXI EU ERP RCI-FC09HN</a></td><td>ROYAL CLIMA</td><td></td><td class="thgeo-p" data-art="RCI-FC09HN">89 200 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/211336252434-vnutrenniy-blok-ditreex-dtxm-12k6xac1-i-12000-btu-do-34-m-na">Внутренний блок DTXM-12K6XAC1/I</a></td><td>DITREEX</td><td></td><td class="thgeo-p" data-art="DTXM-12K6XAC1/I">92 700 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/735279333074-royal-clima-venturo-nero-multi-flexi-eu-erp-rci-vt09hn">Кондиционер VENTURO NERO MULTI FLEXI EU ERP RCI-VT09HN</a></td><td>ROYAL CLIMA</td><td></td><td class="thgeo-p" data-art="RCI-VT09HN">105 100 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/716076180564-vnutrenniy-blok-gree-gwh12qc-k6dnb6d-12000-btu-do-34-m-naste">Внутренний блок GWH12QC-K6DNB6D</a></td><td>GREE</td><td></td><td class="thgeo-p" data-art="GWH12QC-K6DNB6D">110 468 ₸</td></tr>
+</tbody>
+</table>
+</div>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">28.08.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Когда мульти-сплит выгоднее</h2>
+<p>Мульти-сплит берут, когда на фасаде нет места под несколько наружных блоков
+или их запрещает управляющая компания: один модуль обслуживает 2–5 комнат.
+Внутренние блоки можно смешивать — настенные, кассетные, канальные.
+Ограничение: при поломке наружного модуля перестают работать все комнаты сразу,
+а суммарная мощность внутренних блоков ограничена моделью наружного.
+Собрать комплект — в <a href="https://tehnoholod369.kz/multisplit">конструкторе мульти-сплита</a>.</p>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
+производителя, срок в паспорте изделия; гарантия на монтаж — бригады, срок в её карточке
+и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад,
+напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
+возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Сколько стоит мульти-сплит в Алматы?</summary><p>В каталоге 228 моделей от 11 брендов, цены от 55 000 ₸. Самые доступные позиции из наличия: Внутренний блок INTEGRA PRO MDSAI2-07HRFN8-M (настенный (внутр. блок)) — 55 000 ₸; Внутренний блок INTEGRA PRO MDSAI2-09HRFN8-M (настенный (внутр. блок)) — 62 500 ₸; Кондиционер ASI-07 ILK3 — 77 000 ₸. Точная цена каждой модели — на её странице в каталоге.</p></details>
+<details class="thgeo-faq"><summary>Как подобрать модель?</summary><p>Считаем по комнатам: сумма мощностей внутренних блоков не должна превышать предел наружного модуля, а типы блоков можно смешивать — настенные, кассетные, канальные. Собрать комплект и увидеть цену можно в конструкторе мульти-сплита на сайте.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
+<details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Мульти-сплит системы в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "MDV Внутренний блок INTEGRA PRO MDSAI2-07HRFN8-M (настенный (внутр. блок))", "url": "https://tehnoholod369.kz/tproduct/483366343124-kondicioner-mdv-integra-pro-mdsai2-07hrfn8-mdoai2-07hfn8"}, {"@type": "ListItem", "position": 2, "name": "MDV Внутренний блок INTEGRA PRO MDSAI2-09HRFN8-M (настенный (внутр. блок))", "url": "https://tehnoholod369.kz/tproduct/389020353994-kondicioner-mdv-integra-pro-mdsai2-09hrfn8-mdoai2-09hfn8"}, {"@type": "ListItem", "position": 3, "name": "AERONIK Кондиционер ASI-07 ILK3", "url": "https://tehnoholod369.kz/tproduct/197953512714-kondicioner-aeronik-asi-07-ilk3-7000-btu-do-21-m"}, {"@type": "ListItem", "position": 4, "name": "AERONIK Кондиционер ASI-09 ILK4", "url": "https://tehnoholod369.kz/tproduct/578965570074-kondicioner-aeronik-asi-09-ilk4-9000-btu-do-26-m"}, {"@type": "ListItem", "position": 5, "name": "DITREEX Внутренний блок DTXM-09K6XAC1/I", "url": "https://tehnoholod369.kz/tproduct/665374206674-vnutrenniy-blok-ditreex-dtxm-09k6xac1-i-9000-btu-do-26-m-nas"}, {"@type": "ListItem", "position": 6, "name": "AUX Кондиционер Free Match R32 DC инвертор AMWM-H07/4R3C(HA）", "url": "https://tehnoholod369.kz/tproduct/177503351484-kondicioner-aux-free-match-r32-dc-invertor-amwm-h07-4r3c-ha-"}, {"@type": "ListItem", "position": 7, "name": "THAICON TL-RWP20-FR", "url": "https://tehnoholod369.kz/tproduct/354392949904-thaicon-tl-rwp20-fr-7000-btu-do-21-m"}, {"@type": "ListItem", "position": 8, "name": "AUX Кондиционер Free Match R32 DC инвертор AMWM-H09/4R3A(HA)", "url": "https://tehnoholod369.kz/tproduct/676377010604-kondicioner-aux-free-match-r32-dc-invertor-amwm-h09-4r3a-ha-"}, {"@type": "ListItem", "position": 9, "name": "GREE Внутренний блок GWH07QA-K6DNB2D", "url": "https://tehnoholod369.kz/tproduct/241129563384-vnutrenniy-blok-gree-gwh07qa-k6dnb2d-7000-btu-do-20-m-nasten"}, {"@type": "ListItem", "position": 10, "name": "THAICON TL-RWP25-FR", "url": "https://tehnoholod369.kz/tproduct/183290282744-thaicon-tl-rwp25-fr-9000-btu-do-27-m"}, {"@type": "ListItem", "position": 11, "name": "ROYAL CLIMA Кондиционер FELICITA MULTI FLEXI EU ERP RCI-FC09HN", "url": "https://tehnoholod369.kz/tproduct/240193914604-royal-clima-felicita-multi-flexi-eu-erp-rci-fc09hn"}, {"@type": "ListItem", "position": 12, "name": "DITREEX Внутренний блок DTXM-12K6XAC1/I", "url": "https://tehnoholod369.kz/tproduct/211336252434-vnutrenniy-blok-ditreex-dtxm-12k6xac1-i-12000-btu-do-34-m-na"}, {"@type": "ListItem", "position": 13, "name": "ROYAL CLIMA Кондиционер VENTURO NERO MULTI FLEXI EU ERP RCI-VT09HN", "url": "https://tehnoholod369.kz/tproduct/735279333074-royal-clima-venturo-nero-multi-flexi-eu-erp-rci-vt09hn"}, {"@type": "ListItem", "position": 14, "name": "GREE Внутренний блок GWH12QC-K6DNB6D", "url": "https://tehnoholod369.kz/tproduct/716076180564-vnutrenniy-blok-gree-gwh12qc-k6dnb6d-12000-btu-do-34-m-naste"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит мульти-сплит в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "В каталоге 228 моделей от 11 брендов, цены от 55 000 ₸. Самые доступные позиции из наличия: Внутренний блок INTEGRA PRO MDSAI2-07HRFN8-M (настенный (внутр. блок)) — 55 000 ₸; Внутренний блок INTEGRA PRO MDSAI2-09HRFN8-M (настенный (внутр. блок)) — 62 500 ₸; Кондиционер ASI-07 ILK3 — 77 000 ₸. Точная цена каждой модели — на её странице в каталоге."}}, {"@type": "Question", "name": "Как подобрать модель?", "acceptedAnswer": {"@type": "Answer", "text": "Считаем по комнатам: сумма мощностей внутренних блоков не должна превышать предел наружного модуля, а типы блоков можно смешивать — настенные, кассетные, канальные. Собрать комплект и увидеть цену можно в конструкторе мульти-сплита на сайте."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/multisplit.json"];
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
+  })).then(function(all){
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    if(min){var el=document.querySelector(".thgeo-pmin");
+      if(el)el.textContent=min.toLocaleString("ru-RU").replace(/\u202f/g,"\u00a0");}
+  });
+})();
+</script>

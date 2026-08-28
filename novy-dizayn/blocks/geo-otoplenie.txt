@@ -1,0 +1,89 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+</style>
+<div class="thgeo">
+<h2>Отопление и обогреватели в Алматы</h2>
+<p>Радиаторы, конвекторы, инфракрасные обогреватели, тепловые пушки и завесы —
+856 позиций от 6 брендов, в том числе Ballu, DITREEX, POWERAIR by ZILON, ROYAL CLIMA, Royal Thermo, ZILON и другие.
+Цены — от <span class="thgeo-pmin">9 100</span> ₸, техника в наличии в Алматы.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog">Весь каталог</a>
+</div>
+<h2>Примеры оборудования в наличии</h2>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Модель</th><th>Бренд</th><th>Мощность / размер</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/590590995934-rfh-cm500dc-bl">RFH-CM500DC-BL</a></td><td>ROYAL CLIMA</td><td>0,5 кВт</td><td class="thgeo-p" data-art="RFH-CM500DC-BL">9 100 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/761686986994-ballu-bkn-3">BKN-3</a></td><td>Ballu</td><td>2,2 кВт</td><td class="thgeo-p" data-art="BKN-3">11 300 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/205666976454-ballu-bks-3">BKS-3</a></td><td>Ballu</td><td>2,2 кВт</td><td class="thgeo-p" data-art="BKS-3">11 300 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/783723761334-rhb-c2">RHB-C2</a></td><td>ROYAL CLIMA</td><td>Пушка тепловая электрическая</td><td class="thgeo-p" data-art="RHB-C2">14 029 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/129890276654-radiator-revolution-a-350-4-sekc">Радиатор Revolution А 350 — 4 секц.</a></td><td>Royal Thermo</td><td>4 секц.</td><td class="thgeo-p" data-art="RTRA335004">20 581 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/410859438674-radiator-revolution-a-500-4-sekc">Радиатор Revolution А 500 — 4 секц.</a></td><td>Royal Thermo</td><td>4 секц.</td><td class="thgeo-p" data-art="RTRA350004">21 712 ₸</td></tr>
+<tr><td>ZHC-1000 A2.0</td><td>ZILON</td><td>1 кВт</td><td class="thgeo-p" data-art="A2.0">22 600 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/453833925034-ztv-3-n1">ZTV-3 N1</a></td><td>POWERAIR by ZILON</td><td>Пушка тепловая электрическая</td><td class="thgeo-p" data-art="ZTV-3">27 490 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/995192074464-ndm-20j">NDM-20J</a></td><td>DITREEX</td><td>2 кВт</td><td class="thgeo-p" data-art="NDM-20J">29 458 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/641663323874-ztv-5-n1">ZTV-5 N1</a></td><td>POWERAIR by ZILON</td><td>Пушка тепловая электрическая</td><td class="thgeo-p" data-art="ZTV-5">41 380 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/834904628794-rm-1006s-d-y">RM-1006S-D/Y</a></td><td>DITREEX</td><td>3 кВт</td><td class="thgeo-p" data-art="RM-1006S-D/Y">77 662 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/437470610034-hp-30-003w">HP-30.003W</a></td><td>ZILON</td><td>до 42 кВт</td><td class="thgeo-p" data-art="HP-30.003W">205 230 ₸</td></tr>
+</tbody>
+</table>
+</div>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">28.08.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Что под какую задачу</h2>
+<p>Радиаторы — основное отопление от котла или теплосети; мощность секции
+подбирают по площади комнаты. Конвекторы и ИК-обогреватели — дополнительный
+и сезонный обогрев, работают от розетки. Тепловые пушки греют стройплощадки,
+склады и цеха, бывают электрические, дизельные и газовые. Тепловые завесы
+ставят над входом, чтобы тёплый воздух не уходил при открытой двери.</p>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
+производителя, срок в паспорте изделия; гарантия на монтаж — бригады, срок в её карточке
+и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад,
+напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
+возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Сколько стоит отопительное оборудование в Алматы?</summary><p>В каталоге 856 моделей от 6 брендов, цены от 9 100 ₸. Самые доступные позиции из наличия: RFH-CM500DC-BL — 9 100 ₸; BKN-3 — 11 300 ₸; BKS-3 — 11 300 ₸. Точная цена каждой модели — на её странице в каталоге.</p></details>
+<details class="thgeo-faq"><summary>Как подобрать модель?</summary><p>Радиаторы — основное отопление от котла или теплосети, конвекторы и ИК-обогреватели — дополнительный обогрев от розетки, тепловые пушки — стройплощадки и склады, тепловые завесы — отсечка холода над входной дверью. Ориентир по мощности для жилой комнаты — около 100 Вт на квадратный метр.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
+<details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Отопительное оборудование в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ROYAL CLIMA RFH-CM500DC-BL", "url": "https://tehnoholod369.kz/tproduct/590590995934-rfh-cm500dc-bl"}, {"@type": "ListItem", "position": 2, "name": "Ballu BKN-3", "url": "https://tehnoholod369.kz/tproduct/761686986994-ballu-bkn-3"}, {"@type": "ListItem", "position": 3, "name": "Ballu BKS-3", "url": "https://tehnoholod369.kz/tproduct/205666976454-ballu-bks-3"}, {"@type": "ListItem", "position": 4, "name": "ROYAL CLIMA RHB-C2", "url": "https://tehnoholod369.kz/tproduct/783723761334-rhb-c2"}, {"@type": "ListItem", "position": 5, "name": "Royal Thermo Радиатор Revolution А 350 — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/129890276654-radiator-revolution-a-350-4-sekc"}, {"@type": "ListItem", "position": 6, "name": "Royal Thermo Радиатор Revolution А 500 — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/410859438674-radiator-revolution-a-500-4-sekc"}, {"@type": "ListItem", "position": 7, "name": "POWERAIR by ZILON ZTV-3 N1", "url": "https://tehnoholod369.kz/tproduct/453833925034-ztv-3-n1"}, {"@type": "ListItem", "position": 8, "name": "DITREEX NDM-20J", "url": "https://tehnoholod369.kz/tproduct/995192074464-ndm-20j"}, {"@type": "ListItem", "position": 9, "name": "POWERAIR by ZILON ZTV-5 N1", "url": "https://tehnoholod369.kz/tproduct/641663323874-ztv-5-n1"}, {"@type": "ListItem", "position": 10, "name": "DITREEX RM-1006S-D/Y", "url": "https://tehnoholod369.kz/tproduct/834904628794-rm-1006s-d-y"}, {"@type": "ListItem", "position": 11, "name": "ZILON HP-30.003W", "url": "https://tehnoholod369.kz/tproduct/437470610034-hp-30-003w"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит отопительное оборудование в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "В каталоге 856 моделей от 6 брендов, цены от 9 100 ₸. Самые доступные позиции из наличия: RFH-CM500DC-BL — 9 100 ₸; BKN-3 — 11 300 ₸; BKS-3 — 11 300 ₸. Точная цена каждой модели — на её странице в каталоге."}}, {"@type": "Question", "name": "Как подобрать модель?", "acceptedAnswer": {"@type": "Answer", "text": "Радиаторы — основное отопление от котла или теплосети, конвекторы и ИК-обогреватели — дополнительный обогрев от розетки, тепловые пушки — стройплощадки и склады, тепловые завесы — отсечка холода над входной дверью. Ориентир по мощности для жилой комнаты — около 100 Вт на квадратный метр."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/radiatory.json","https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/obogrevateli.json","https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/teplovye-pushki.json","https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/teplovye-zavesy.json","https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/infrakrasnye-obogrevateli.json","https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/vodyanye-teploventilyatory.json"];
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
+  })).then(function(all){
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    if(min){var el=document.querySelector(".thgeo-pmin");
+      if(el)el.textContent=min.toLocaleString("ru-RU").replace(/\u202f/g,"\u00a0");}
+  });
+})();
+</script>
