@@ -39,7 +39,6 @@
     "ARTCOOL Gallery Premium",
     "ARTCOOL MIRROR INVERTOR",
     "ATTICA NERO",
-    "AURORA",
     "AURORA 2",
     "AURORA 3",
     "AirFit Deluxe",
@@ -76,12 +75,6 @@
     "Haier Spirit DC",
     "Haier Spirit ON/OFF",
     "Haier Stellar HP -20С",
-    "INFINI LOFT",
-    "INFINI Nordic",
-    "INFINI Uvpro",
-    "INTEGRA",
-    "INTEGRA PRO",
-    "INTEGRA PRO BLACK",
     "Invertor Pro",
     "KADZOKU",
     "LG ARTCOOL Objet Collection",
@@ -91,9 +84,7 @@
     "Monaco Super DC",
     "Muse",
     "NEO Classic A",
-    "NOVA 3-IN-1",
     "ON/OFF",
-    "OP SMART",
     "Olympio Pro",
     "Onix Super DC (Black Mirror)",
     "PANDORA",
@@ -114,7 +105,6 @@
     "Wind Free Mass GEO Freeze Wash",
     "Xtreme Wi-Fi Full DC inverter",
     "ZOOM DC Inverter",
-    "iERA",
     "Серия BORA Inverter",
     "Сплит системы (HS5) серия SUPER",
     "Сплит системы инверторные ( IU3) серия (Antivirus) (НОВИНКА!)",
@@ -186,14 +176,14 @@
   {
    "slug": "infrakrasnye-obogrevateli",
    "title": "Инфракрасные обогреватели",
-   "count": 96,
+   "count": 97,
    "brands": 3,
    "brandList": [
     "Ballu",
     "DITREEX",
     "ROYAL CLIMA"
    ],
-   "inStock": 52,
+   "inStock": 53,
    "acc": 0,
    "serList": [],
    "subs": [
@@ -203,7 +193,7 @@
     },
     {
      "name": "Газовые",
-     "n": 16
+     "n": 17
     },
     {
      "name": "Конвекторы электрические",
@@ -710,7 +700,7 @@
   {
    "slug": "teplovye-zavesy",
    "title": "Тепловые завесы",
-   "count": 148,
+   "count": 150,
    "brands": 4,
    "brandList": [
     "Ballu",
@@ -742,7 +732,7 @@
    "subs": [
     {
      "name": "Электрические",
-     "n": 93
+     "n": 95
     },
     {
      "name": "Водяные",
