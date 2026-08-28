@@ -1293,6 +1293,25 @@ class Component extends DCLogic {
     });
     volCount.bands.forEach(b => { b.n = facVol.filter(x => { const v = volOf(x); return v >= b.lo && v <= b.hi; }).length; });
     heatCount.forEach(h => { h.n = facHeat.filter(x => heatOf(x) === h.k).length; });
+    // Счётчик пилюли обязан считаться по тому же набору, что и выдача, иначе чип
+    // обещает одно, а клик даёт другое. 28.08.2026: «Wi-Fi встроенный» на бытовых
+    // показывал 42 при ЛЮБОМ выборе — счёт шёл по всей группе и даже включал
+    // аксессуары, которых в выдаче нет. С брендом GREE, Midea или Ballu клик по
+    // этой пилюле уводил в пустую выдачу. То же было у «Типа компрессора»
+    // и у «Расхода воздуха».
+    // Видимость самого фасета оставляем групповой (W, F, hasComp, airCount.n):
+    // иначе фильтр исчезает под чужим выбором, и снять его становится нечем.
+    // Меняются только числа на пилюлях и показ пилюли с нулём.
+    const facFeat = fac("feat"), facComp = fac("comp"), facAir = fac("air");
+    const Wc = { yes: facFeat.filter(x => wifiState(x) === "yes").length,
+                 opt: facFeat.filter(x => wifiState(x) === "opt").length,
+                 no: facFeat.filter(x => wifiState(x) === "no").length };
+    const Fc = { yes: facFeat.filter(x => freshState(x) === "yes").length,
+                 opt: facFeat.filter(x => freshState(x) === "opt").length,
+                 part: facFeat.filter(x => freshState(x) === "part").length };
+    const compShown = { inv: facComp.filter(x => compOf(x) === "inv").length,
+                        onoff: facComp.filter(x => compOf(x) === "onoff").length };
+    airCount.bands.forEach(b => { b.n = facAir.filter(x => { const v = airOf(x); return v >= b.lo && v <= b.hi; }).length; });
     this.__fac = { sub: facSub, area: facArea, brand: facBrand, price: facPrice, ref: facRef, eff: facEff, ser: facSer };
     // ключи фасета — по всей группе, счётчики — по набору без самого фасета
     const refCount = Array.from(new Set(items.map(refOf).filter(Boolean))).sort()
@@ -1420,7 +1439,8 @@ class Component extends DCLogic {
         key: "air", activeLabel: s.air === "all" ? "" : s.air,
         title: "Расход воздуха", note: "Вентиляцию подбирают по расходу, а не по площади. Позиции без данных в фильтр не попадают",
         options: [this.chip(s.air === "all", "Любой", () => this.setState({ air: "all", shown: 12 }))].concat(
-          airCount.bands.map(b => this.chip(s.air === b.k, b.k, () => this.setState({ air: b.k, shown: 12 }), String(b.n)))
+          airCount.bands.filter(b => b.n > 0 || s.air === b.k)
+            .map(b => this.chip(s.air === b.k, b.k, () => this.setState({ air: b.k, shown: 12 }), String(b.n)))
         )
       } : null,
       volCount.n ? {
@@ -1486,21 +1506,19 @@ class Component extends DCLogic {
           "Позиции без данных в фильтр не попадают"
         ].filter(Boolean).join(". "),
         options: [this.chip(!s.feat, "Все", () => this.setState({ feat: "", shown: 12 }))]
-          .concat(F.yes ? [this.chip(s.feat === "fresh", "Приток воздуха", () => this.setState({ feat: "fresh", shown: 12 }), String(F.yes))] : [])
-          .concat(F.part ? [this.chip(s.feat === "freshpart", "Приток ограниченный", () => this.setState({ feat: "freshpart", shown: 12 }), String(F.part))] : [])
-          .concat(F.opt ? [this.chip(s.feat === "freshopt", "Приток опцией", () => this.setState({ feat: "freshopt", shown: 12 }), String(F.opt))] : [])
-          .concat(W.yes ? [this.chip(s.feat === "wifi", "Wi-Fi встроенный", () => this.setState({ feat: "wifi", shown: 12 }), String(W.yes))] : [])
-          .concat(W.opt ? [this.chip(s.feat === "wifiopt", "Wi-Fi модулем", () => this.setState({ feat: "wifiopt", shown: 12 }), String(W.opt))] : [])
-          .concat(W.no ? [this.chip(s.feat === "nowifi", "Без Wi-Fi", () => this.setState({ feat: "nowifi", shown: 12 }), String(W.no))] : [])
+          .concat((Fc.yes || s.feat === "fresh") ? [this.chip(s.feat === "fresh", "Приток воздуха", () => this.setState({ feat: "fresh", shown: 12 }), String(Fc.yes))] : [])
+          .concat((Fc.part || s.feat === "freshpart") ? [this.chip(s.feat === "freshpart", "Приток ограниченный", () => this.setState({ feat: "freshpart", shown: 12 }), String(Fc.part))] : [])
+          .concat((Fc.opt || s.feat === "freshopt") ? [this.chip(s.feat === "freshopt", "Приток опцией", () => this.setState({ feat: "freshopt", shown: 12 }), String(Fc.opt))] : [])
+          .concat((Wc.yes || s.feat === "wifi") ? [this.chip(s.feat === "wifi", "Wi-Fi встроенный", () => this.setState({ feat: "wifi", shown: 12 }), String(Wc.yes))] : [])
+          .concat((Wc.opt || s.feat === "wifiopt") ? [this.chip(s.feat === "wifiopt", "Wi-Fi модулем", () => this.setState({ feat: "wifiopt", shown: 12 }), String(Wc.opt))] : [])
+          .concat((Wc.no || s.feat === "nowifi") ? [this.chip(s.feat === "nowifi", "Без Wi-Fi", () => this.setState({ feat: "nowifi", shown: 12 }), String(Wc.no))] : [])
       } : null,
       hasComp ? {
         key: "comp", activeLabel: s.comp === "all" ? "" : (s.comp === "inv" ? "Инвертор" : "ON/OFF"),
         title: "Тип компрессора", note: "Инвертор тише и экономичнее, ON/OFF дешевле при покупке",
-        options: [
-          this.chip(s.comp === "all", "Любой", () => this.setState({ comp: "all", shown: 12 })),
-          this.chip(s.comp === "inv", "Инвертор", () => this.setState({ comp: "inv", shown: 12 }), String(compCount.inv)),
-          this.chip(s.comp === "onoff", "ON/OFF", () => this.setState({ comp: "onoff", shown: 12 }), String(compCount.onoff))
-        ]
+        options: [this.chip(s.comp === "all", "Любой", () => this.setState({ comp: "all", shown: 12 }))]
+          .concat((compShown.inv || s.comp === "inv") ? [this.chip(s.comp === "inv", "Инвертор", () => this.setState({ comp: "inv", shown: 12 }), String(compShown.inv))] : [])
+          .concat((compShown.onoff || s.comp === "onoff") ? [this.chip(s.comp === "onoff", "ON/OFF", () => this.setState({ comp: "onoff", shown: 12 }), String(compShown.onoff))] : [])
       } : null,
       (refCount.length > 1 && refEnough) ? {
         key: "ref", activeLabel: s.ref === "all" ? "" : s.ref,

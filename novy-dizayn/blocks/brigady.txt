@@ -21,7 +21,7 @@
       <span style="opacity:0.85;">Алматы · выезд по области</span>
       <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
       <span style="margin-left:auto; opacity:0.85;">Сервис-карта 369 — на каждом монтаже</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+7 700 036 93 69</a>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
     </div>
   </div>
 
@@ -79,7 +79,7 @@
         <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">Это сбой на нашей стороне, а не признак того, что бригад нет. Напишите нам — назначим бригаду и назовём её номер в ответе.</div>
         <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;">
           <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">Написать в WhatsApp</a>
-          <a href="tel:+77000369369" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">+7 700 036 93 69</a>
+          <a href="tel:+77000369369" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">+77 000 369 369</a>
         </div>
       </div>
     </sc-if>
@@ -95,21 +95,21 @@
     <sc-if value="{{ hasAny }}" hint-placeholder-val="{{ true }}">
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:20px 24px; margin-top:18px;">
-      <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">Направление</div>
+      <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">Направление</div>
       <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
         <sc-for list="{{ dirChips }}" as="d" hint-placeholder-count="4">
           <div onClick="{{ d.pick }}" style="border:1px solid {{ d.border }}; background:{{ d.bg }}; color:{{ d.fg }}; border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:6px;">
-            <span>{{ d.label }}</span><span style="font-size:11px; color:{{ d.countFg }}; font-variant-numeric:tabular-nums;">{{ d.count }}</span>
+            <span>{{ d.label }}</span><span style="font-size:12px; color:{{ d.countFg }}; font-variant-numeric:tabular-nums;">{{ d.count }}</span>
           </div>
         </sc-for>
       </div>
 
       <sc-if value="{{ manyCities }}" hint-placeholder-val="{{ true }}">
-        <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6; margin-top:16px;">Город</div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6; margin-top:16px;">Город</div>
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
           <sc-for list="{{ cityChips }}" as="g" hint-placeholder-count="3">
             <div onClick="{{ g.pick }}" style="border:1px solid {{ g.border }}; background:{{ g.bg }}; color:{{ g.fg }}; border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:6px;">
-              <span>{{ g.label }}</span><span style="font-size:11px; color:{{ g.countFg }}; font-variant-numeric:tabular-nums;">{{ g.count }}</span>
+              <span>{{ g.label }}</span><span style="font-size:12px; color:{{ g.countFg }}; font-variant-numeric:tabular-nums;">{{ g.count }}</span>
             </div>
           </sc-for>
         </div>
@@ -142,17 +142,17 @@
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#0B6B45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M20 6 9 17l-5-5" /></svg>
                 <span style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:#0B6B45; font-variant-numeric:tabular-nums; letter-spacing:0.01em;">{{ c.cert }}</span>
               </div>
-              <div style="font-size:11px; color:#8593A6; margin-top:5px;">сертификация ИП «ТехноХолод», реестр «Сервис-карта 369»</div>
+              <div style="font-size:12px; color:#8593A6; margin-top:5px;">сертификация ИП «ТехноХолод», реестр «Сервис-карта 369»</div>
               <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700; line-height:1.3; margin-top:10px;">{{ c.dirLine }}</div>
             </div>
             <div style="text-align:right; flex:none;">
               <sc-if value="{{ c.hasRating }}" hint-placeholder-val="{{ true }}">
-                <div style="font-family:'Montserrat',sans-serif; font-size:30px; font-weight:800; letter-spacing:-0.02em; line-height:1;">{{ c.rating }}</div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; letter-spacing:-0.02em; line-height:1;">{{ c.rating }}</div>
                 <div style="font-size:12px; color:#5A6675; margin-top:4px; white-space:nowrap;">{{ c.votesLabel }}</div>
               </sc-if>
               <sc-if value="{{ c.accruing }}" hint-placeholder-val="{{ false }}">
                 <div style="font-size:12px; font-weight:700; color:#0A4EA7; background:#E6F2FD; border:1px solid #B9DBF7; border-radius:6px; padding:6px 10px; white-space:nowrap;">Рейтинг накапливается</div>
-                <div style="font-size:11px; color:#8593A6; margin-top:4px; white-space:nowrap;">{{ c.accruingNote }}</div>
+                <div style="font-size:12px; color:#8593A6; margin-top:4px; white-space:nowrap;">{{ c.accruingNote }}</div>
               </sc-if>
               <sc-if value="{{ c.noRating }}" hint-placeholder-val="{{ false }}">
                 <div style="font-size:12px; font-weight:700; color:#B25200; background:#FFF1E3; border:1px solid #F3D2AC; border-radius:6px; padding:6px 10px; white-space:nowrap;">Пока нет оценок</div>
@@ -163,7 +163,7 @@
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-top:16px;">
             <sc-for list="{{ c.facts }}" as="f" hint-placeholder-count="3">
               <div style="background:#F3F7FB; border-radius:10px; padding:11px 13px;">
-                <div style="font-size:11px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ f.k }}</div>
+                <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ f.k }}</div>
                 <div style="font-size:14px; color:#18212F; line-height:1.45; margin-top:3px;">{{ f.v }}</div>
               </div>
             </sc-for>
@@ -187,10 +187,10 @@
                     <div style="display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;">
                       <div style="font-size:14px; font-weight:700;">{{ r.name }}</div>
                       <sc-if value="{{ r.verified }}" hint-placeholder-val="{{ false }}">
-                        <span style="font-size:11px; font-weight:700; color:#0B6B45; background:#E7F7F0; border-radius:4px; padding:2px 7px;">✓ монтаж по карте 369</span>
+                        <span style="font-size:12px; font-weight:700; color:#0B6B45; background:#E7F7F0; border-radius:4px; padding:2px 7px;">✓ монтаж по карте 369</span>
                       </sc-if>
                       <sc-if value="{{ r.plain }}" hint-placeholder-val="{{ false }}">
-                        <span style="font-size:11px; color:#8593A6;">без подтверждения покупки</span>
+                        <span style="font-size:12px; color:#8593A6;">без подтверждения покупки</span>
                       </sc-if>
                     </div>
                     <div style="font-size:12px; color:#8593A6; white-space:nowrap; font-variant-numeric:tabular-nums;">{{ r.date }}</div>

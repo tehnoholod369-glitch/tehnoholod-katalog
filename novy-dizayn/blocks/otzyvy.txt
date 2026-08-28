@@ -21,7 +21,7 @@
       <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
       <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
       <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+7 700 036 93 69</a>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
     </div>
   </div>
 
@@ -103,7 +103,7 @@
       <div style="font-size:15px; color:#5A6675; line-height:1.65; margin-top:8px; max-width:940px;">Напишите нам до отзыва — почти всё решается за день. Претензии по монтажу принимаем по номеру «Сервис-карты 369»: по нему видно дату работ и бригаду. По оборудованию — оформляем обращение в сервисный центр производителя и сопровождаем его.</div>
       <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
         <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">Написать в WhatsApp</a>
-        <a href="tel:+77000369369" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">+7 700 036 93 69</a>
+        <a href="tel:+77000369369" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">+77 000 369 369</a>
         <a href="/uslugi" style="border:1px solid #DCE5F0; color:#2C3846; border-radius:8px; padding:12px 20px; font-size:15px; font-weight:600;">Зона ответственности</a>
       </div>
     </div>
@@ -145,6 +145,10 @@ class Component extends DCLogic {
       ],
       proofs: [
         { title: "Объекты с датами", text: "Портфолио монтажей: город, месяц, оборудование. Из карточки объекта можно перейти к той же модели в каталоге.", href: "/portfolio", link: "Наши работы →" },
+        // «Оценки бригад» снималась 28.08.2026 утром («по бригадам пока погоди»);
+        // тем же днём решение отменено — «доступ дан делай», /brigady заведена в Tilda
+        // и проверена живьём, карточка возвращена.
+        { title: "Оценки бригад", text: "Кто приедет на монтаж: номер сертификата, специализация и оценки клиентов по каждой бригаде. В рейтинг идут только отзывы, подтверждённые «Сервис-картой 369».", href: "/brigady", link: "Бригады и оценки →" },
         { title: "Зона ответственности", text: "Что покрывает гарантия производителя, что — гарантия бригады на монтаж, и что не покрывает ни то, ни другое. Написано до покупки, а не после.", href: "/uslugi", link: "Гарантия и сервис →" },
         { title: "Реквизиты и договор", text: "ИИН/БИН, работа с НДС, счёт и договор поставки. Проверить компанию можно по открытым реестрам.", href: "/b2b", link: "Реквизиты →" }
       ]

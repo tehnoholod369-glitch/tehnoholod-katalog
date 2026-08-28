@@ -20,7 +20,7 @@
     <div style="max-width:1280px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
       <span style="opacity:0.85;">Алматы · объекты по Казахстану</span>
       <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · счёт и договор</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+7 700 036 93 69</a>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
     </div>
   </div>
 
@@ -115,11 +115,11 @@
           <div style="display:flex; flex-wrap:wrap; gap:20px 30px; margin-top:14px;">
             <div>
               <div style="font-size:13px; color:#9FB0C4;">Требуемая мощность</div>
-              <div style="font-family:'Montserrat',sans-serif; font-size:28px; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-0.02em;">{{ kwLabel }}</div>
+              <div style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-0.02em;">{{ kwLabel }}</div>
             </div>
             <div>
               <div style="font-size:13px; color:#9FB0C4;">Рекомендуемая схема</div>
-              <div style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700; margin-top:4px;">{{ scheme }}</div>
+              <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; margin-top:4px;">{{ scheme }}</div>
             </div>
           </div>
           <div style="font-size:14px; color:#CBDCEC; line-height:1.6; margin-top:12px;">{{ explain }}</div>
@@ -130,7 +130,7 @@
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:16px; margin-top:20px;">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:24px;">
-        <div style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700;">Как ведём объект</div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Как ведём объект</div>
         <div style="display:flex; flex-direction:column; gap:14px; margin-top:14px;">
           <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
             <div style="display:flex; gap:12px; align-items:flex-start;">
@@ -144,7 +144,7 @@
         </div>
       </div>
       <div style="background:#FDECEA; border:1px solid #F8CBBE; border-radius:16px; padding:24px;">
-        <div style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700; color:#C21610;">Что удорожает объект — говорим заранее</div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#C21610;">Что удорожает объект — говорим заранее</div>
         <div style="display:flex; flex-direction:column; gap:9px; margin-top:12px; font-size:14px; color:#2C3846; line-height:1.55;">
           <div>· Кассетным блокам нужен подвесной потолок и место над ним — если потолка нет, схема меняется.</div>
           <div>· Канальные требуют места под воздуховоды и проекта разводки.</div>
@@ -179,7 +179,11 @@ class Component extends DCLogic {
   renderVals() {
     const s = this.state;
     const items = s.items || [];
-    const has = t => items.filter(x => (x.t + " " + x.n).toLowerCase().indexOf(t) >= 0).length;
+    // Считаем по РАЗДЕЛУ выдачи (поле sub), а не по вхождению слова в тип и название:
+    // «колонн» ловило и «колонный/напольный», и слово «колонный», случайно попавшее
+    // в заголовок консольной модели. Раздел — то же поле, по которому фильтрует выдача,
+    // поэтому число на плитке и число в выдаче теперь не могут разойтись (28.08.2026).
+    const has = t => items.filter(x => (x.sub || "") === t).length;
     // «94 моделей» вместо «94 модели» — склонение считаем, а не приписываем (26.08.2026)
     const cnt = n => {
       if (!items.length) return "загружаем";
@@ -195,6 +199,9 @@ class Component extends DCLogic {
     const minPrice = priced.length ? Math.min.apply(null, priced.map(x => x.p)) : 0;
 
     const href = "/katalog?g=poluprom";
+    // Плитки вели на общий адрес без фильтра: нажимаешь «Кассетные» — открывается
+    // весь полупром вперемешку. Выдача принимает раздел параметром sub (28.08.2026).
+    const разделHref = имя => href + "&sub=" + encodeURIComponent(имя);
 
     const objects = ["Магазин или торговый зал", "Офис, опенспейс", "Кафе или ресторан", "Серверная", "Цех или склад"].map(o => ({
       label: o,
@@ -226,42 +233,42 @@ class Component extends DCLogic {
       ],
       types: [
         {
-          title: "Кассетные", count: cnt(has("кассет")),
+          title: "Кассетные", count: cnt(has("Кассетные")),
           text: "Встраиваются в подвесной потолок, раздают воздух в четыре стороны. Виден только декоративный экран.",
           where: "Магазины, офисы, кафе с потолком «армстронг»",
           limit: "Нужен подвесной потолок и 25–35 см запаса над ним",
-          href
+          href: разделHref("Кассетные")
         },
         {
-          title: "Канальные", count: cnt(has("канальн")),
+          title: "Канальные", count: cnt(has("Канальные")),
           text: "Полностью скрыты за потолком, воздух подаётся через решётки. Можно организовать приток свежего воздуха.",
           where: "Квартиры с дизайнерским ремонтом, офисы, рестораны",
           limit: "Требуется проект разводки воздуховодов",
-          href
+          href: разделHref("Канальные")
         },
         {
-          title: "Напольно-потолочные", count: cnt(has("потолочн")),
+          title: "Напольно-потолочные", count: cnt(has("Напольно-потолочные")),
           text: "Ставятся под потолок или у пола, поток идёт вдоль поверхности. Не требуют подвесного потолка.",
           where: "Помещения без запаса по высоте, вытянутые залы",
           limit: "Блок виден в интерьере",
-          href
+          href: разделHref("Напольно-потолочные")
         },
         {
-          title: "Колонные", count: cnt(has("колонн")),
+          title: "Колонные", count: cnt(has("Колонные")),
           text: "Мощные напольные блоки на большой объём, ставятся у стены. Быстро охлаждают зал.",
           where: "Торговые залы, холлы, производственные помещения",
           limit: "Занимают место в помещении, шумнее кассетных",
-          href
+          href: разделHref("Колонные")
         },
         {
           // Пятый конструктив добавлен 26.08.2026: три позиции считались в «Позициях
           // в группе», но карточки не имели, и сумма по карточкам не сходилась с итогом.
           // Текст по факту данных: AERONIK ASI-COHMZ, 9000–18000 BTU, все под заказ.
-          title: "Консольные", count: cnt(has("консольн")),
+          title: "Консольные", count: cnt(has("Консольные")),
           text: "Компактные блоки под потолок или к полу на небольшую площадь — переходное решение между бытовым сплитом и напольно-потолочным. В каталоге AERONIK на 9000–18 000 BTU.",
           where: "Небольшие залы, кабинеты, подсобные помещения",
           limit: "Позиции идут под заказ — уточняйте срок поставки",
-          href
+          href: разделHref("Консольные")
         }
       ],
       objects,

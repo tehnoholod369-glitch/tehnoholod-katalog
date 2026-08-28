@@ -21,7 +21,7 @@
       <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
       <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
       <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+7 700 036 93 69</a>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
     </div>
   </div>
 
@@ -60,7 +60,7 @@
     <sc-if value="{{ isMount }}" hint-placeholder-val="{{ true }}">
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:22px;">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700; color:#0A4EA7;">Входит в монтаж под ключ</div>
+          <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0A4EA7;">Входит в монтаж под ключ</div>
           <div style="display:flex; flex-direction:column; gap:10px; margin-top:14px;">
             <sc-for list="{{ included }}" as="i" hint-placeholder-count="6">
               <div style="display:flex; gap:10px; align-items:flex-start; font-size:15px; line-height:1.5;">
@@ -71,7 +71,7 @@
           </div>
         </div>
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700; color:#C21610;">Считается отдельной строкой</div>
+          <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#C21610;">Считается отдельной строкой</div>
           <div style="display:flex; flex-direction:column; gap:10px; margin-top:14px;">
             <sc-for list="{{ extra }}" as="e" hint-placeholder-count="6">
               <div style="display:flex; gap:10px; align-items:flex-start; font-size:15px; line-height:1.5;">
@@ -137,7 +137,7 @@
       <div style="background:#071C3B; color:#fff; border-radius:16px; padding:30px; margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:28px; align-items:center;">
         <div>
           <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">КАРТА ОБСЛУЖИВАНИЯ</div>
-          <div style="font-family:'Montserrat',sans-serif; font-size:28px; font-weight:800; margin-top:10px; letter-spacing:-0.02em; line-height:1.15;">Сервис-карта 369</div>
+          <div style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; margin-top:10px; letter-spacing:-0.02em; line-height:1.15;">Сервис-карта 369</div>
           <div style="font-size:16px; color:#CBDCEC; line-height:1.6; margin-top:12px;">Карта не заменяет гарантию производителя и не расширяет её. Она фиксирует факты: что куплено, когда установлено, какой бригадой, куда обращаться. По номеру мы находим вашу продажу в реестре — даже если карта потерялась.</div>
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
             <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.22); border-radius:8px; padding:9px 14px; font-size:14px; font-weight:600;">Формат A6, печать 300 dpi</div>
@@ -176,6 +176,7 @@
           <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Гарантия на монтаж — от бригады</div>
           <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Покрывает герметичность соединений, крепления, дренаж, пусконаладку — чинит тот же, кто ставил. Срок гарантии бригады записан в «Сервис-карте 369». Это ответственность за работы, а не за само оборудование — за него отвечает производитель.</div>
           
+          <a href="/brigady" style="font-size:13px; font-weight:700; color:#0872D3; display:inline-block; margin-top:10px;">Кто приедет: бригады и оценки →</a>
         </div>
         <div style="background:#F3F7FB; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
           <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Что не относится к нашим работам</div>
@@ -188,7 +189,7 @@
       <div>
         <div style="font-family:'Montserrat',sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Вызвать замерщика или мастера</div>
         <div style="font-size:15px; color:#5A6675; line-height:1.6; margin-top:10px;">Оставьте имя, номер и адрес объекта. Перезвоним в рабочее время, подскажем срок и назовём стоимость после замера.</div>
-        <div style="font-size:14px; color:#5A6675; line-height:1.7; margin-top:14px;">Телефон и WhatsApp: <b style="color:#18212F;">+7 700 036 93 69</b><br />Дополнительный: <b style="color:#18212F;">+7 700 033 66 99</b></div>
+        <div style="font-size:14px; color:#5A6675; line-height:1.7; margin-top:14px;">Телефон и WhatsApp: <b style="color:#18212F;">+77 000 369 369</b><br />Дополнительный: <b style="color:#18212F;">+77 000 33 66 99</b></div>
       </div>
       <div style="display:flex; flex-direction:column; gap:10px;">
         <input type="text" placeholder="Имя" value="{{ fName }}" onInput="{{ onName }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#18212F;" />

@@ -1,0 +1,89 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:nth-child(2){white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+</style>
+<div class="thgeo">
+<h1>Кондиционеры в Алматы — купить с установкой</h1>
+<p>В каталоге ИП «ТехноХолод» — 378 моделей настенных сплит-систем от 18 брендов,
+в том числе AERONIK, Ballu, CHERBROOKE, DITREEX, Electrolux, FUNAI, GREE, Haier и другие. Цены — от <span class="thgeo-pmin">108 150</span> ₸,
+техника в наличии в Алматы, монтаж выполняют сертифицированные бригады, возможна рассрочка.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog">Весь каталог</a>
+</div>
+<h2>Примеры моделей в наличии — по классам мощности</h2>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Класс</th><th>Модель</th><th>Тип</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td>07 (до 20 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/786603364364-kondicioner-ditreex-on-off-dtxs-07k6xa61a-7000-btu-do-20-m">Кондиционер ON/OFF DTXS-07K6XA61A</a> · DITREEX</td><td>ON/OFF</td><td class="thgeo-p" data-art="DTXS-07K6XA61A">108 150 ₸</td></tr>
+<tr><td>07 (до 20 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/496250926144-kondicioner-midea-aurora-3-msab-07hrn8-7000-btu-do-20-m">Кондиционер AURORA 3 MSAB-07HRN8</a> · Midea</td><td>ON/OFF</td><td class="thgeo-p" data-art="MSAB-07HRN8">117 375 ₸</td></tr>
+<tr><td>07 (до 22 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/305429024914-kondicioner-cherbrooke-asa-07-hr4k1-aoa-07-hr4k1-7000-btu-do">Кондиционер ASA-07 HR4K1/AOA-07 HR4K1</a> · CHERBROOKE</td><td>ON/OFF</td><td class="thgeo-p" data-art="ASA-07 HR4K1/AOA-07 HR4K1">117 900 ₸</td></tr>
+<tr><td>09 (до 25 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/508772860674-kondicioner-ditreex-on-off-dtxs-09k3xa41a-9000-btu-do-25-m">Кондиционер ON/OFF DTXS-09K3XA41A</a> · DITREEX</td><td>ON/OFF</td><td class="thgeo-p" data-art="DTXS-09K3XA41A">115 875 ₸</td></tr>
+<tr><td>09 (до 25 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/225144482064-kondicioner-midea-aurora-3-msab-09hrn8-9000-btu-do-25-m">Кондиционер AURORA 3 MSAB-09HRN8</a> · Midea</td><td>ON/OFF</td><td class="thgeo-p" data-art="MSAB-09HRN8">124 875 ₸</td></tr>
+<tr><td>09 (до 27 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/462147938254-kondicioner-cherbrooke-asa-09-hr4k1-aoa-09-hr4k1-9000-btu-do">Кондиционер ASA-09 HR4K1/AOA-09 HR4K1</a> · CHERBROOKE</td><td>ON/OFF</td><td class="thgeo-p" data-art="ASA-09 HR4K1/AOA-09 HR4K1">124 900 ₸</td></tr>
+<tr><td>12 (до 35 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/684285974774-kondicioner-tcl-elite-on-off-eli12onf-12000-btu-do-35-m">Кондиционер Elite On/Off ELI12ONF</a> · TCL</td><td>ON/OFF</td><td class="thgeo-p" data-art="ELI12ONF">139 990 ₸</td></tr>
+<tr><td>12 (до 35 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/947516309124-kondicioner-midea-aurora-3-msab-12hrn8-12000-btu-do-35-m">Кондиционер AURORA 3 MSAB-12HRN8</a> · Midea</td><td>ON/OFF</td><td class="thgeo-p" data-art="MSAB-12HRN8">149 875 ₸</td></tr>
+<tr><td>12 (до 35 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/658427008914-kondicioner-ditreex-on-off-dtxs-12k6xa61b-12000-btu-do-35-m">Кондиционер ON/OFF DTXS-12K6XA61B</a> · DITREEX</td><td>ON/OFF</td><td class="thgeo-p" data-art="DTXS-12K6XA61B">150 380 ₸</td></tr>
+<tr><td>18 (до 50 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/683535897194-kondicioner-ditreex-on-off-dtxs-18k3xa41d-18000-btu-do-50-m">Кондиционер ON/OFF DTXS-18K3XA41D</a> · DITREEX</td><td>ON/OFF</td><td class="thgeo-p" data-art="DTXS-18K3XA41D">235 355 ₸</td></tr>
+<tr><td>18 (до 50 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/775361545784-kondicioner-midea-aurora-3-msab-18hrn8-18000-btu-do-50-m">Кондиционер AURORA 3 MSAB-18HRN8</a> · Midea</td><td>ON/OFF</td><td class="thgeo-p" data-art="MSAB-18HRN8">244 875 ₸</td></tr>
+<tr><td>18 (до 55 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/881605276464-kondicioner-mdv-iera-mdsae-18hrn8-mdoae-18hn8">Кондиционер iERA MDSAE-18HRN8</a> · MDV</td><td>ON/OFF</td><td class="thgeo-p" data-art="MDSAE-18HRN8">262 500 ₸</td></tr>
+<tr><td>24 (до 65 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/503319445284-kondicioner-ditreex-on-off-dtxs-24k6xa61d-24000-btu-do-65-m">Кондиционер ON/OFF DTXS-24K6XA61D</a> · DITREEX</td><td>ON/OFF</td><td class="thgeo-p" data-art="DTXS-24K6XA61D">281 248 ₸</td></tr>
+<tr><td>24 (до 61 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/913823675324-kondicioner-nastennyy-gree-24-eva-r410-klass-a-gwh24aldxe-k3">Кондиционер настенный -24: Eva R410 класс A GWH24ALDXE-K3NNA1A (комплектуется медными трубами)</a> · GREE</td><td>ON/OFF</td><td class="thgeo-p" data-art="GWH24ALDXE-K3NNA1A">350 000 ₸</td></tr>
+<tr><td>24 (до 70 м²)</td><td><a href="https://tehnoholod369.kz/tproduct/290928942224-kondicioner-mdv-iera-mdsae-24hrn8-mdoae-24hn8">Кондиционер iERA MDSAE-24HRN8</a> · MDV</td><td>ON/OFF</td><td class="thgeo-p" data-art="MDSAE-24HRN8">356 250 ₸</td></tr>
+</tbody>
+</table>
+</div>
+<p class="thgeo-note">Показаны самые доступные модели каждого класса из наличия, по данным каталога
+от <span class="thgeo-date">28.08.2026</span>; цены на странице обновляются автоматически.
+Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Как выбрать мощность</h2>
+<p>Ориентир — класс мощности по площади: 07 — до ~20 м², 09 — до ~25 м², 12 — до ~35 м²,
+18 — до ~50 м², 24 — до ~70 м². Солнечная сторона, большие окна, техника и высокие потолки
+требуют запаса — точный расчёт сделаем по опросному листу.
+Подбор по параметрам — в <a href="https://podbor.tehnoholod369.kz/">калькуляторе подбора</a>
+или через <a href="https://tehnoholod369.kz/kontakty#podbor">заявку на подбор</a>.</p>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
+производителя, срок в паспорте изделия; гарантия на монтаж — бригады, срок в её карточке
+и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад,
+напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану, возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Сколько стоит кондиционер в Алматы?</summary><p>В каталоге цены от 108 150 ₸ за настенную сплит-систему класса 07. Инверторные модели — от 141 990 ₸. Точная цена каждой модели — на её странице в каталоге.</p></details>
+<details class="thgeo-faq"><summary>Какой кондиционер выбрать на комнату 25 м²?</summary><p>Ориентир для стандартной комнаты — класс 09 (9000 BTU). Например: Кондиционер ON/OFF DTXS-09K3XA41A — 115 875 ₸; Кондиционер AURORA 3 MSAB-09HRN8 — 124 875 ₸; Кондиционер ASA-09 HR4K1/AOA-09 HR4K1 — 124 900 ₸. Точный подбор зависит от этажа, окон и техники в комнате — посчитаем по опросному листу.</p></details>
+<details class="thgeo-faq"><summary>Инвертор или ON/OFF — что лучше?</summary><p>Инвертор плавно меняет мощность: тише, экономичнее, точнее держит температуру, дороже при покупке. ON/OFF включается и выключается целиком: проще и дешевле. Для спальни и постоянной работы обычно берут инвертор, для дачи и редких включений — ON/OFF.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на кондиционер и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
+<details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Кондиционеры в наличии в Алматы — примеры моделей по классам мощности", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DITREEX Кондиционер ON/OFF DTXS-07K6XA61A", "url": "https://tehnoholod369.kz/tproduct/786603364364-kondicioner-ditreex-on-off-dtxs-07k6xa61a-7000-btu-do-20-m"}, {"@type": "ListItem", "position": 2, "name": "Midea Кондиционер AURORA 3 MSAB-07HRN8", "url": "https://tehnoholod369.kz/tproduct/496250926144-kondicioner-midea-aurora-3-msab-07hrn8-7000-btu-do-20-m"}, {"@type": "ListItem", "position": 3, "name": "CHERBROOKE Кондиционер ASA-07 HR4K1/AOA-07 HR4K1", "url": "https://tehnoholod369.kz/tproduct/305429024914-kondicioner-cherbrooke-asa-07-hr4k1-aoa-07-hr4k1-7000-btu-do"}, {"@type": "ListItem", "position": 4, "name": "DITREEX Кондиционер ON/OFF DTXS-09K3XA41A", "url": "https://tehnoholod369.kz/tproduct/508772860674-kondicioner-ditreex-on-off-dtxs-09k3xa41a-9000-btu-do-25-m"}, {"@type": "ListItem", "position": 5, "name": "Midea Кондиционер AURORA 3 MSAB-09HRN8", "url": "https://tehnoholod369.kz/tproduct/225144482064-kondicioner-midea-aurora-3-msab-09hrn8-9000-btu-do-25-m"}, {"@type": "ListItem", "position": 6, "name": "CHERBROOKE Кондиционер ASA-09 HR4K1/AOA-09 HR4K1", "url": "https://tehnoholod369.kz/tproduct/462147938254-kondicioner-cherbrooke-asa-09-hr4k1-aoa-09-hr4k1-9000-btu-do"}, {"@type": "ListItem", "position": 7, "name": "TCL Кондиционер Elite On/Off ELI12ONF", "url": "https://tehnoholod369.kz/tproduct/684285974774-kondicioner-tcl-elite-on-off-eli12onf-12000-btu-do-35-m"}, {"@type": "ListItem", "position": 8, "name": "Midea Кондиционер AURORA 3 MSAB-12HRN8", "url": "https://tehnoholod369.kz/tproduct/947516309124-kondicioner-midea-aurora-3-msab-12hrn8-12000-btu-do-35-m"}, {"@type": "ListItem", "position": 9, "name": "DITREEX Кондиционер ON/OFF DTXS-12K6XA61B", "url": "https://tehnoholod369.kz/tproduct/658427008914-kondicioner-ditreex-on-off-dtxs-12k6xa61b-12000-btu-do-35-m"}, {"@type": "ListItem", "position": 10, "name": "DITREEX Кондиционер ON/OFF DTXS-18K3XA41D", "url": "https://tehnoholod369.kz/tproduct/683535897194-kondicioner-ditreex-on-off-dtxs-18k3xa41d-18000-btu-do-50-m"}, {"@type": "ListItem", "position": 11, "name": "Midea Кондиционер AURORA 3 MSAB-18HRN8", "url": "https://tehnoholod369.kz/tproduct/775361545784-kondicioner-midea-aurora-3-msab-18hrn8-18000-btu-do-50-m"}, {"@type": "ListItem", "position": 12, "name": "MDV Кондиционер iERA MDSAE-18HRN8", "url": "https://tehnoholod369.kz/tproduct/881605276464-kondicioner-mdv-iera-mdsae-18hrn8-mdoae-18hn8"}, {"@type": "ListItem", "position": 13, "name": "DITREEX Кондиционер ON/OFF DTXS-24K6XA61D", "url": "https://tehnoholod369.kz/tproduct/503319445284-kondicioner-ditreex-on-off-dtxs-24k6xa61d-24000-btu-do-65-m"}, {"@type": "ListItem", "position": 14, "name": "GREE Кондиционер настенный -24: Eva R410 класс A GWH24ALDXE-K3NNA1A (комплектуется медными трубами)", "url": "https://tehnoholod369.kz/tproduct/913823675324-kondicioner-nastennyy-gree-24-eva-r410-klass-a-gwh24aldxe-k3"}, {"@type": "ListItem", "position": 15, "name": "MDV Кондиционер iERA MDSAE-24HRN8", "url": "https://tehnoholod369.kz/tproduct/290928942224-kondicioner-mdv-iera-mdsae-24hrn8-mdoae-24hn8"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит кондиционер в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "В каталоге цены от 108 150 ₸ за настенную сплит-систему класса 07. Инверторные модели — от 141 990 ₸. Точная цена каждой модели — на её странице в каталоге."}}, {"@type": "Question", "name": "Какой кондиционер выбрать на комнату 25 м²?", "acceptedAnswer": {"@type": "Answer", "text": "Ориентир для стандартной комнаты — класс 09 (9000 BTU). Например: Кондиционер ON/OFF DTXS-09K3XA41A — 115 875 ₸; Кондиционер AURORA 3 MSAB-09HRN8 — 124 875 ₸; Кондиционер ASA-09 HR4K1/AOA-09 HR4K1 — 124 900 ₸. Точный подбор зависит от этажа, окон и техники в комнате — посчитаем по опросному листу."}}, {"@type": "Question", "name": "Инвертор или ON/OFF — что лучше?", "acceptedAnswer": {"@type": "Answer", "text": "Инвертор плавно меняет мощность: тише, экономичнее, точнее держит температуру, дороже при покупке. ON/OFF включается и выключается целиком: проще и дешевле. Для спальни и постоянной работы обычно берут инвертор, для дачи и редких включений — ON/OFF."}}, {"@type": "Question", "name": "Кто даёт гарантию на кондиционер и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script>
+(function(){
+  fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json",{cache:"no-cache"}).then(function(r){return r.json()}).then(function(d){
+    var by={};d.forEach(function(x){if(x.s)by[x.s]=x});
+    var min=null;
+    d.forEach(function(x){if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    if(min){var el=document.querySelector(".thgeo-pmin");
+      if(el)el.textContent=min.toLocaleString("ru-RU").replace(/\u202f/g,"\u00a0");}
+  }).catch(function(){});
+})();
+</script>

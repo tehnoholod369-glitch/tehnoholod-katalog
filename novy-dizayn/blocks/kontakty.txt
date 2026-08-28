@@ -21,7 +21,7 @@
       <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
       <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
       <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+7 700 036 93 69</a>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
     </div>
   </div>
 
@@ -56,7 +56,7 @@
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:20px; margin-top:20px; align-items:start;">
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px;">
-            <div style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700;">Параметры помещения</div>
+            <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Параметры помещения</div>
 
             <div style="margin-top:20px;">
               <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:baseline; gap:12px;">
@@ -195,8 +195,8 @@
             <div style="display:flex; flex-direction:column; gap:16px;">
               <div>
                 <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#8593A6;">ТЕЛЕФОН И WHATSAPP</div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:24px; font-weight:700; margin-top:6px;"><a href="tel:+77000369369" style="color:#18212F;">+7 700 036 93 69</a></div>
-                <div style="font-size:16px; font-weight:600; margin-top:4px;"><a href="tel:+77000336699" style="color:#5A6675;">+7 700 033 66 99</a></div>
+                <div style="font-family:'Montserrat',sans-serif; font-size:24px; font-weight:700; margin-top:6px;"><a href="tel:+77000369369" style="color:#18212F;">+77 000 369 369</a></div>
+                <div style="font-size:16px; font-weight:600; margin-top:4px;"><a href="tel:+77000336699" style="color:#5A6675;">+77 000 33 66 99</a></div>
               </div>
               <div>
                 <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#8593A6;">ПОЧТА</div>
@@ -256,7 +256,10 @@ class Component extends DCLogic {
   // areaRaw и heightRaw — то, что набрано в поле, как есть. Держим отдельно от
   // числа: если показывать в поле зажатое значение, «1» по пути к «12» превратится
   // под пальцем в «8», а «2,» при наборе «2,9» — в «2».
-  state = { screen: 0, area: 25, areaRaw: "25", height: 270, heightRaw: "2,7",
+  // screen 2 — контакты. Страница живёт по адресу /kontakty, и открывать по нему
+  // «Расчёт мощности» значит обманывать адрес: покупатель шёл за телефоном.
+  // Ссылки на калькулятор и доставку дают хеш явно (#podbor, #dostavka).
+  state = { screen: 2, area: 25, areaRaw: "25", height: 270, heightRaw: "2,7",
             sun: "Обычная / север", floor: "Не последний", tech: "Нет" };
 
   // на трёх экранах живёт три раздела — открываем тот, на который дана ссылка, а не всегда первый
@@ -267,7 +270,10 @@ class Component extends DCLogic {
     const применить = () => {
       const key = String(location.hash || "").replace("#", "");
       const i = this.TABS.indexOf(key);
-      if (i > 0 && this.state.screen !== i) this.setState({ screen: i });
+      // i >= 0, а не i > 0: пока подбор был экраном по умолчанию, ссылка #podbor
+      // совпадала с состоянием и разницы не было. Теперь по умолчанию контакты,
+      // и с прежним стражем #podbor не открывал бы ничего.
+      if (i >= 0 && this.state.screen !== i) this.setState({ screen: i });
     };
     применить();
     // 26.08.2026: на Tilda прямая ссылка /kontakty#kontakty открывала первый экран —
