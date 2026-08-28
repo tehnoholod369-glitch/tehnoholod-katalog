@@ -30,7 +30,7 @@
       <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
       <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
       <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+7 700 036 93 69</a>
     </div>
   </div>
 
@@ -120,7 +120,7 @@
           <a href="tel:+77000369369" style="display:flex; align-items:center; gap:12px; background:#071C3B; color:#fff; border-radius:12px; padding:14px 18px;">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M6.5 3.5h3l1.5 4-2 1.4a12 12 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z" /></svg>
             <span style="display:flex; flex-direction:column;">
-              <span style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700;">+77 000 369 369</span>
+              <span style="font-family:'Montserrat',sans-serif; font-size:19px; font-weight:700;">+7 700 036 93 69</span>
               <span style="font-size:12px; color:#9FB0C4;">Позвонить — ответим на вопросы по подбору</span>
             </span>
           </a>
@@ -273,7 +273,7 @@
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:14px; margin-top:16px;">
         <sc-for list="{{ articles }}" as="a" hint-placeholder-count="4">
-          <a href="/baza-znaniy" style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:18px; display:flex; flex-direction:column; gap:8px; color:#18212F;">
+          <a href="{{ a.href }}" style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:18px; display:flex; flex-direction:column; gap:8px; color:#18212F;">
             <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:600; line-height:1.35;">{{ a.title }}</div>
             <div style="font-size:13px; color:#5A6675; line-height:1.5;">{{ a.sub }}</div>
             <div style="font-size:13px; font-weight:700; color:#0872D3; margin-top:auto;">Читать →</div>
@@ -305,7 +305,7 @@
       </div>
       <div>
         <div style="font-size:15px; font-weight:700;">Контакты</div>
-        <div style="font-size:13px; color:#9FB0C4; line-height:1.9; margin-top:8px;"><a href="tel:+77000369369" style="color:#fff;">+77 000 369 369</a><br /><a href="tel:+77000336699" style="color:#fff;">+77 000 33 66 99</a><br /><a href="mailto:tehnoholod369@gmail.com" style="color:#9FB0C4;">tehnoholod369@gmail.com</a></div>
+        <div style="font-size:13px; color:#9FB0C4; line-height:1.9; margin-top:8px;"><a href="tel:+77000369369" style="color:#fff;">+7 700 036 93 69</a><br /><a href="tel:+77000336699" style="color:#fff;">+7 700 033 66 99</a><br /><a href="mailto:tehnoholod369@gmail.com" style="color:#9FB0C4;">tehnoholod369@gmail.com</a></div>
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
           <sc-for list="{{ socials }}" as="s" hint-placeholder-count="6">
             <a href="{{ s.href }}" target="_blank" rel="noreferrer" title="{{ s.label }}" style="width:34px; height:34px; border-radius:9px; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center;">{{ s.icon }}</a>
@@ -693,11 +693,13 @@ class Component extends DCLogic {
         { key: "water", title: "Водонагрев", tint: "#E8EEFA", sub: "Накопительные, проточные, газовые колонки", link: this.dirLink(["vodonagrevateli", "vodoochistka"]), href: "/katalog?g=vodonagrevateli", color: "#0A4EA7", linkColor: "#0872D3", icon: this.icon(P.drop, "#0A4EA7", 22) }
       ]),
 
+      // href у каждой карточки — адрес самой статьи. До 28.08.2026 все четыре вели
+      // на /baza-znaniy: карточка обещала конкретный разбор, а открывалось оглавление.
       articles: [
-        { title: "Как работает кондиционер с притоком", sub: "Принцип работы приточной сплит-системы на примере TCL FreshIN 3.0" },
-        { title: "Как выбрать мощность по площади", sub: "BTU, квадратные метры и расчёт класса под вашу комнату" },
-        { title: "Бризер или кондиционер с притоком", sub: "Два решения для свежего воздуха — что выбрать" },
-        { title: "Почему душно даже с кондиционером", sub: "Причины духоты и как её убрать притоком свежего воздуха" }
+        { title: "Как работает кондиционер с притоком", sub: "Принцип работы приточной сплит-системы на примере TCL FreshIN 3.0", href: "/kak-rabotaet-konditsioner-s-pritokom" },
+        { title: "Как выбрать мощность по площади", sub: "BTU, квадратные метры и расчёт класса под вашу комнату", href: "/kak-vybrat-moshchnost-konditsionera" },
+        { title: "Бризер или кондиционер с притоком", sub: "Два решения для свежего воздуха — что выбрать", href: "/brizer-ili-konditsioner-s-pritokom" },
+        { title: "Почему душно даже с кондиционером", sub: "Причины духоты и как её убрать притоком свежего воздуха", href: "/pochemu-dushno-doma-s-konditsionerom" }
       ]
     };
   }
