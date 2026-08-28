@@ -206,6 +206,92 @@
                 <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">{{ mount.c }} <a href="/uslugi">{{ mount.link }}</a></div>
               </div>
             </div>
+
+            <sc-if value="{{ showCrews }}" hint-placeholder-val="{{ true }}">
+              <div style="border:1px solid #DCE5F0; border-radius:12px; padding:18px 20px; margin-top:18px;">
+                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#071C3B;">Кто смонтирует</div>
+                <div style="font-size:14px; line-height:1.6; color:#5A6675; margin-top:6px;">{{ crewsIntro }}</div>
+
+                <sc-if value="{{ crewsLoading }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:14px; color:#8593A6; margin-top:14px;">Загружаем реестр бригад…</div>
+                </sc-if>
+
+                <sc-if value="{{ crewsFailed }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:14px; color:#B25200; line-height:1.6; margin-top:14px;">Реестр бригад сейчас не загрузился — это сбой связи, а не отсутствие бригад. Напишите нам, подберём бригаду вручную: <a href="https://wa.me/77000369369" style="color:#0872D3; font-weight:700;">+77 000 369 369</a>.</div>
+                </sc-if>
+
+                <sc-if value="{{ hasCrewCities }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-size:13px; font-weight:700; letter-spacing:0.05em; color:#8593A6; margin-top:16px;">ШАГ 2 — ГОРОД МОНТАЖА</div>
+                  <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
+                    <sc-for list="{{ crewCities }}" as="g" hint-placeholder-count="3">
+                      <div onClick="{{ g.pick }}" style="border:1px solid {{ g.border }}; background:{{ g.bg }}; color:{{ g.fg }}; border-radius:999px; padding:8px 15px; font-size:14px; font-weight:600; cursor:pointer;">{{ g.label }}</div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ crewsNone }}" hint-placeholder-val="{{ false }}">
+                  <div style="background:#FFF1E3; border-radius:10px; padding:14px 16px; margin-top:12px; font-size:14px; color:#2C3846; line-height:1.6;">Сертифицированной бригады на эту технику в реестре пока нет — набор идёт. Монтаж всё равно организуем: подберём и проверим монтажника перед выездом, гарантию на работу зафиксируем в заявке. <a href="https://wa.me/77000369369" style="color:#0872D3; font-weight:700;">Написать нам</a>.</div>
+                </sc-if>
+
+                <sc-if value="{{ crewsNoCity }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:12px;">Выберите город — покажем бригады, которые ставят именно эту технику, с их ценами и гарантией.</div>
+                </sc-if>
+
+                <sc-if value="{{ crewsEmpty }}" hint-placeholder-val="{{ false }}">
+                  <div style="background:#FFF1E3; border-radius:10px; padding:14px 16px; margin-top:12px; font-size:14px; color:#2C3846; line-height:1.6;">В этом городе сертифицированной бригады на эту технику у нас пока нет. Заявку примем — найдём и проверим монтажника перед выездом: <a href="https://wa.me/77000369369" style="color:#0872D3; font-weight:700;">написать нам</a>.</div>
+                </sc-if>
+
+                <sc-for list="{{ crewList }}" as="b" hint-placeholder-count="2">
+                  <div style="border:1px solid #DCE5F0; border-radius:12px; padding:15px 17px; margin-top:12px;">
+                    <div style="display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap; justify-content:space-between;">
+                      <div>
+                        <div style="font-size:16px; font-weight:700; color:#071C3B;">{{ b.cert }}</div>
+                        <div style="font-size:13px; color:#5A6675; margin-top:3px;">{{ b.zoneLine }}</div>
+                      </div>
+                      <div style="font-size:13px; font-weight:700; color:{{ b.ratingFg }}; background:{{ b.ratingBg }}; border-radius:8px; padding:6px 11px; white-space:nowrap;">{{ b.ratingLine }}</div>
+                    </div>
+
+                    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+                      <sc-for list="{{ b.facts }}" as="f" hint-placeholder-count="3">
+                        <div style="background:#F3F7FB; border-radius:8px; padding:7px 11px; font-size:13px; color:#2C3846;">{{ f.v }}</div>
+                      </sc-for>
+                    </div>
+
+                    <sc-if value="{{ b.hasPrices }}" hint-placeholder-val="{{ true }}">
+                      <div style="border-top:1px solid #EEF3F9; margin-top:12px; padding-top:11px;">
+                        <sc-for list="{{ b.prices }}" as="p" hint-placeholder-count="2">
+                          <div style="display:flex; gap:12px; justify-content:space-between; align-items:baseline; margin-top:7px;">
+                            <div style="flex:1; min-width:0;">
+                              <div style="font-size:14px; color:#18212F;">{{ p.naz }}</div>
+                              <sc-if value="{{ p.hasHint }}" hint-placeholder-val="{{ false }}">
+                                <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:2px;">{{ p.hint }}</div>
+                              </sc-if>
+                            </div>
+                            <div style="text-align:right; white-space:nowrap;">
+                              <div style="font-size:15px; font-weight:700; color:#18212F;">{{ p.val }}</div>
+                              <div style="font-size:11px; color:#8593A6; margin-top:2px;">{{ p.date }}</div>
+                            </div>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+
+                    <sc-if value="{{ b.noPrices }}" hint-placeholder-val="{{ false }}">
+                      <div style="font-size:13px; color:#8593A6; line-height:1.55; margin-top:11px;">{{ b.noPricesNote }}</div>
+                    </sc-if>
+
+                    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:13px;">
+                      <a href="{{ b.waHref }}" style="background:#0872D3; color:#fff; border-radius:8px; padding:11px 17px; font-size:14px; font-weight:700;">Хочу эту бригаду</a>
+                      <a href="{{ b.profileHref }}" style="border:1px solid #DCE5F0; color:#2C3846; border-radius:8px; padding:10px 17px; font-size:14px; font-weight:600;">Профиль и отзывы →</a>
+                    </div>
+                  </div>
+                </sc-for>
+
+                <sc-if value="{{ crewsShown }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:12px; color:#8593A6; line-height:1.6; margin-top:14px;">{{ crewsFooter }}</div>
+                </sc-if>
+              </div>
+            </sc-if>
           </sc-if>
 
           <sc-if value="{{ isDocs }}" hint-placeholder-val="{{ false }}">
@@ -426,7 +512,8 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  state = { group: "bytovye", idx: 0, items: null, details: null, index: null, loading: true, photo: 0, tab: 0, zoom: false };
+  state = { group: "bytovye", idx: 0, items: null, details: null, index: null, loading: true, photo: 0, tab: 0, zoom: false,
+            crewCity: "", crewData: null, crewFailed: false };
   photoRef = React.createRef();
   zoomRef = React.createRef();
   galRef = React.createRef();
@@ -435,6 +522,32 @@ class Component extends DCLogic {
   accRef = React.createRef();
 
   fmt(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009"); }
+
+  PRIEMNIK = "https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec";
+
+  loadCrews(group) {
+    if (!group || this.__crewGroup === group) { return; }
+    this.__crewGroup = group;
+    fetch(this.PRIEMNIK + "?data=brigady&group=" + encodeURIComponent(group), { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (!d || !d.brigady) { this.setState({ crewFailed: true }); return; }
+        // Город берём из прошлого выбора, но только если в нём есть кто-то
+        // по ЭТОЙ группе: иначе человек увидит пустоту и решит, что бригад нет.
+        let city = this.state.crewCity;
+        if (!city) { try { city = localStorage.getItem("th_city") || ""; } catch (_) {} }
+        if (city && !d.brigady.some(b => b.region === city)) { city = ""; }
+        this.setState({ crewData: d, crewFailed: false, crewCity: city });
+      })
+      // Пустой экран молча не показываем: пустота читается как «бригад нет»,
+      // а это неправда — это сбой связи (та же логика, что на /brigady).
+      .catch(() => this.setState({ crewFailed: true }));
+  }
+
+  pickCity(code) {
+    try { localStorage.setItem("th_city", code); } catch (_) {}
+    this.setState({ crewCity: code });
+  }
   num(t) { const d = String(t || "").replace(/[^\d]/g, ""); return d ? +d : 0; }
   ph(u) { return (window.photoUrl ? window.photoUrl(u) : String(u || "")); }
 
@@ -859,6 +972,25 @@ class Component extends DCLogic {
         open: () => this.go(o.i)
       }));
 
+    // ── Кто смонтирует: бригады под этот товар и выбранный город ──────────────
+    const mountable = !!(m && m.brigada);
+    // Запрос уходит только на вкладке монтажа: на «Характеристиках» он не нужен,
+    // а лишняя задержка на карточке стоит дороже, чем один клик.
+    if (mountable && curTab === "mount") { setTimeout(() => this.loadCrews(s.group), 0); }
+
+    const cd = s.crewData;
+    const crewAll = (cd && cd.brigady) || [];
+    const cityList = [];
+    crewAll.forEach(b => {
+      const hit = cityList.find(x => x.key === b.region);
+      if (hit) { hit.n++; } else { cityList.push({ key: b.region, label: b.city, n: 1 }); }
+    });
+    cityList.sort((a, b) => b.n - a.n);
+    const crewCity = s.crewCity || "";
+    const inCity = crewCity ? crewAll.filter(b => b.region === crewCity) : [];
+    const priced = inCity.filter(b => (b.groupPrices || []).length > 0);
+    const showPrices = priced.length >= ((cd && cd.pricesMin) || 2);
+
     return {
       loading: false,
       ready: true,
@@ -966,6 +1098,70 @@ class Component extends DCLogic {
       mount: m || {},
       // блок «гарантия на монтаж» — только там, где мы действительно монтируем
       hasBrigada: !!(m && m.brigada),
+
+      showCrews: mountable,
+      crewsIntro: "Монтаж выполняет сертифицированная бригада — она же даёт на него гарантию. "
+                + "Показываем тех, кто ставит именно эту технику в вашем городе, с их ценами.",
+      crewsLoading: mountable && !cd && !s.crewFailed,
+      crewsFailed: mountable && !!s.crewFailed && !cd,
+      hasCrewCities: cityList.length > 0,
+      // Реестр ответил, но бригад по этой технике нет ни одной: заголовок без
+      // содержания читается как поломка, поэтому состояние проговариваем словами.
+      crewsNone: !!cd && crewAll.length === 0,
+      crewsNoCity: !!cd && crewAll.length > 0 && !crewCity,
+      crewsEmpty: !!cd && !!crewCity && inCity.length === 0,
+      crewsShown: !!crewCity && inCity.length > 0,
+      crewsFooter: showPrices
+        ? "Цены названы самими бригадами и действуют на дату рядом с ценой; что входит — в описании работы. "
+        + "Итог по объекту бригада называет после замера. Если на объекте называют другую сумму или предлагают "
+        + "своё оборудование мимо нас — сообщите: +77 000 369 369."
+        : "Цену на эту работу пока подтвердила одна бригада — сравнивать не с чем, поэтому не показываем. "
+        + "Стоимость назовём при подтверждении заявки. Если на объекте называют другую сумму или предлагают "
+        + "своё оборудование мимо нас — сообщите: +77 000 369 369.",
+
+      crewCities: cityList.map(x => ({
+        label: x.label + " · " + x.n,
+        border: crewCity === x.key ? "#0872D3" : "#DCE5F0",
+        bg: crewCity === x.key ? "#E6F2FD" : "#fff",
+        fg: crewCity === x.key ? "#0A4EA7" : "#2C3846",
+        pick: () => this.pickCity(x.key)
+      })),
+
+      crewList: inCity.map(b => {
+        const facts = [
+          b.warranty ? { v: "Гарантия на монтаж " + b.warranty + " мес — даёт бригада" } : null,
+          b.since ? { v: "В сети с " + b.since + " года" } : null,
+          (b.langs || []).length ? { v: "Языки: " + b.langs.join(", ") } : null,
+          (b.osn || []).length ? { v: "Оснащение: " + b.osn.join(" · ") } : null
+        ].filter(Boolean);
+        const prices = showPrices ? (b.groupPrices || []) : [];
+        return {
+          cert: b.cert,
+          zoneLine: b.city + (b.zone ? " · " + b.zone : ""),
+          ratingLine: b.rating !== null ? "★ " + b.rating + " · " + b.votes
+                    : (b.accruing ? "Рейтинг накапливается" : "Пока нет оценок"),
+          ratingFg: b.rating !== null ? "#0E7C4A" : "#B25200",
+          ratingBg: b.rating !== null ? "#E7F7F0" : "#FFF1E3",
+          facts: facts,
+          hasPrices: prices.length > 0,
+          prices: prices.map(x => ({
+            naz: x.naz,
+            hasHint: !!x.hint,
+            hint: x.hint || "",
+            val: x.poObj ? "по объекту" : this.fmt(x.cena) + " \u20B8" + (x.ed ? " / " + x.ed : ""),
+            date: "цена от " + x.date
+          })),
+          noPrices: prices.length === 0,
+          noPricesNote: (b.groupPrices || []).length === 0
+            ? "Цену на эту работу бригада пока не подтвердила — назовём при согласовании заявки."
+            : "Цену показываем, когда её назовут минимум две бригады: одну сравнивать не с чем.",
+          // Пожелание, а не бронь: бригаду назначаем мы, но с учётом выбора клиента.
+          waHref: "https://wa.me/77000369369?text=" + encodeURIComponent(
+            "Здравствуйте! " + (it.b ? it.b + " " : "") + it.n
+            + (it.s ? " (арт. " + it.s + ")" : "") + ". На монтаж хочу бригаду " + b.cert + "."),
+          profileHref: "/brigady?gorod=" + b.region + "#" + b.cert
+        };
+      }),
       isDocs: curTab === "docs",
       isWarranty: curTab === "warranty",
       isPower: curTab === "power",

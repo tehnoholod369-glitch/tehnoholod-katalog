@@ -169,6 +169,19 @@
             </sc-for>
           </div>
 
+          <sc-if value="{{ c.hasSkills }}" hint-placeholder-val="{{ true }}">
+            <div style="border:1px solid #DCE5F0; border-radius:10px; padding:13px 15px; margin-top:14px;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">ЧТО ДЕЛАЕТ ЭТА БРИГАДА</div>
+              <sc-for list="{{ c.skills }}" as="s" hint-placeholder-count="2">
+                <div style="margin-top:9px;">
+                  <div style="font-size:13px; font-weight:700; color:#18212F;">{{ s.title }}</div>
+                  <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:2px;">{{ s.items }}</div>
+                </div>
+              </sc-for>
+              <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:11px;">{{ c.skillsNote }}</div>
+            </div>
+          </sc-if>
+
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
             <a href="{{ c.callHref }}" style="background:#0872D3; color:#fff; border-radius:8px; padding:12px 18px; font-size:15px; font-weight:700;">Хочу эту бригаду</a>
             <div onClick="{{ c.toggle }}" style="border:1px solid #DCE5F0; color:#2C3846; border-radius:8px; padding:11px 18px; font-size:15px; font-weight:600; cursor:pointer;">{{ c.toggleLabel }}</div>
@@ -462,6 +475,13 @@ class Component extends DCLogic {
           rating: c.rating === null ? "" : this.ratingLabel(c.rating),
           votesLabel: this.votesLabel(c.votes),
           facts: facts,
+
+          // Расшифровка компетенций: не самоописание из анкеты, а список работ,
+          // на которые бригада сама назвала цену. Назвал цену — делаешь работу;
+          // перестал делать — убрал строку в «Моих ценах», и она исчезла отсюда.
+          hasSkills: !!(c.skills && c.skills.length),
+          skills: (c.skills || []).map(s => ({ title: s.title, items: (s.items || []).join(" · ") })),
+          skillsNote: "Список собран из подтверждённых цен бригады: назвала цену — значит делает эту работу.",
 
           // Пожелание, а не бронь: заявка уходит нам, бригаду назначаем мы —
           // с учётом пожелания. Телефона бригады на странице нет.
