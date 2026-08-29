@@ -4,7 +4,7 @@
   {
    "slug": "bytovye",
    "title": "Бытовые сплит-системы",
-   "count": 378,
+   "count": 381,
    "brands": 18,
    "brandList": [
     "AERONIK",
@@ -97,6 +97,7 @@
     "Pular NEW",
     "SENSEI",
     "SHOGUN",
+    "SILVER CRYSTAL SUPER DC Inverter",
     "SRK-ZTL-W",
     "SensAIR",
     "Smartline DC",
@@ -118,7 +119,7 @@
    "subs": [
     {
      "name": "Настенные",
-     "n": 377
+     "n": 380
     },
     {
      "name": "Оконные",
@@ -357,7 +358,7 @@
   {
    "slug": "multisplit",
    "title": "Мультисплит-системы",
-   "count": 228,
+   "count": 233,
    "brands": 11,
    "brandList": [
     "AERONIK",
@@ -372,8 +373,8 @@
     "ROYAL CLIMA",
     "THAICON"
    ],
-   "inStock": 115,
-   "acc": 0,
+   "inStock": 120,
+   "acc": 5,
    "serList": [],
    "subs": [
     {
@@ -383,6 +384,10 @@
     {
      "name": "Наружные блоки",
      "n": 78
+    },
+    {
+     "name": "Комплектующие",
+     "n": 5
     }
    ]
   },
