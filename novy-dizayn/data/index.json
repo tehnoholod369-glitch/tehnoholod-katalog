@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-29",
+ "updated": "2026-08-30",
  "groups": [
   {
    "slug": "bytovye",
@@ -794,7 +794,7 @@
   {
    "slug": "ventilyaciya",
    "title": "Вентиляция",
-   "count": 912,
+   "count": 922,
    "brands": 9,
    "brandList": [
     "Ballu",
@@ -807,8 +807,8 @@
     "Royal Thermo",
     "SHUFT"
    ],
-   "inStock": 347,
-   "acc": 299,
+   "inStock": 356,
+   "acc": 309,
    "serList": [
     "AIRTUBE",
     "AR",
@@ -916,7 +916,7 @@
    "subs": [
     {
      "name": "Аксессуары вентиляции",
-     "n": 299
+     "n": 309
     },
     {
      "name": "Приточно-вытяжные установки",
