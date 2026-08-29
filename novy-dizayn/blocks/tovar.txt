@@ -189,22 +189,6 @@
 
           <sc-if value="{{ isDesc }}" hint-placeholder-val="{{ false }}">
             <div style="font-size:16px; line-height:1.7; color:#2C3846; margin-top:18px; max-width:920px; text-wrap:pretty;">{{ desc }}</div>
-            <sc-if value="{{ rv.has }}" hint-placeholder-val="{{ false }}">
-              <div style="margin-top:28px; max-width:920px;">
-                <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;">
-                  <div style="font-size:18px; font-weight:700; color:#18212F;">Отзывы покупателей</div>
-                  <div style="font-size:15px; font-weight:700; color:#B25200;"><span style="color:#E8A33D;">&#9733;</span> {{ rv.rating }}</div>
-                  <div style="font-size:14px; color:#8593A6;">{{ rv.otzyvLabel }} на Kaspi.kz, обновлено {{ rv.dt }}</div>
-                </div>
-                <sc-for list="{{ rv.list }}" as="o" hint-placeholder-count="3">
-                  <div style="margin-top:12px; padding:14px 16px; background:#F7F9FC; border:1px solid #E5EAF1; border-radius:12px;">
-                    <div style="font-size:13px; color:#8593A6;"><span style="color:#E8A33D;">{{ o.stars }}</span> &middot; {{ o.a }} &middot; {{ o.d }}</div>
-                    <div style="font-size:15px; line-height:1.6; color:#2C3846; margin-top:6px; text-wrap:pretty;">{{ o.t }}</div>
-                  </div>
-                </sc-for>
-                <a href="{{ rv.url }}" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; font-size:15px; font-weight:600; color:#0E9F6E; text-decoration:none;">Все отзывы на карточке товара в Kaspi.kz &rarr;</a>
-              </div>
-            </sc-if>
           </sc-if>
 
           <sc-if value="{{ isMount }}" hint-placeholder-val="{{ false }}">
@@ -476,27 +460,48 @@
           <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;">
             <div>
               <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Отзывы</h2>
-              <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> Отзывов на эту модель пока нет — мы не покупаем и не пишем их сами.</div>
+              <sc-if value="{{ rv.none }}" hint-placeholder-val="{{ true }}">
+                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> Отзывов на эту модель пока нет — мы не покупаем и не пишем их сами.</div>
+              </sc-if>
+              <sc-if value="{{ rv.has }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> <span style="color:#B25200; font-weight:700;"><span style="color:#E8A33D;">&#9733;</span> {{ rv.rating }}</span> &middot; {{ rv.otzyvLabel }} покупателей этой модели на Kaspi.kz — публикуем как есть, обновлено {{ rv.dt }}.</div>
+              </sc-if>
             </div>
             <a href="https://maps.google.com/?cid=6985295064906783345" target="_blank" rel="noreferrer" style="display:flex; align-items:center; gap:10px; background:#F3F7FB; border-radius:12px; padding:12px 16px;">
               <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#18212F;">Google</div>
               <div style="font-size:13px; color:#5A6675; line-height:1.4;">отзывы и текущая оценка компании<br /><span style="color:#0872D3; font-weight:600;">Смотреть отзывы →</span></div>
             </a>
           </div>
+          <sc-if value="{{ rv.has }}" hint-placeholder-val="{{ false }}">
+            <sc-for list="{{ rv.list }}" as="o" hint-placeholder-count="3">
+              <div style="margin-top:12px; padding:14px 16px; background:#F7F9FC; border:1px solid #E5EAF1; border-radius:12px;">
+                <div style="font-size:13px; color:#8593A6;"><span style="color:#E8A33D;">{{ o.stars }}</span> &middot; {{ o.a }} &middot; {{ o.d }}</div>
+                <div style="font-size:15px; line-height:1.6; color:#2C3846; margin-top:6px; text-wrap:pretty;">{{ o.t }}</div>
+              </div>
+            </sc-for>
+            <a href="{{ rv.url }}" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; font-size:14px; font-weight:700; color:#0872D3; text-decoration:none;">Все отзывы на карточке товара в Kaspi.kz &rarr;</a>
+          </sc-if>
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:14px; margin-top:16px;">
             <div style="background:#F3F7FB; border-radius:12px; padding:16px 18px;">
               <div style="font-size:14px; font-weight:700;">Купили эту модель?</div>
               <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">Напишите пару строк в WhatsApp — опубликуем с вашим именем и датой покупки. Отзыв привязывается к артикулу.</div>
               <a href="https://wa.me/77000369369" style="display:inline-block; font-size:13px; font-weight:700; color:#0872D3; margin-top:8px;">Оставить отзыв →</a>
             </div>
-            <div style="background:#F3F7FB; border-radius:12px; padding:16px 18px;">
-              <div style="font-size:14px; font-weight:700;">Что вместо отзывов</div>
-              <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">Пока их мало, работают монтажи с датой и городом: там видно, что модель реально ставили.</div>
-              <a href="/portfolio" style="display:inline-block; font-size:13px; font-weight:700; color:#0872D3; margin-top:8px;">Наши работы →</a>
-            </div>
+            <sc-if value="{{ rv.none }}" hint-placeholder-val="{{ true }}">
+              <div style="background:#F3F7FB; border-radius:12px; padding:16px 18px;">
+                <div style="font-size:14px; font-weight:700;">Что вместо отзывов</div>
+                <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">Пока их мало, работают монтажи с датой и городом: там видно, что модель реально ставили.</div>
+                <a href="/portfolio" style="display:inline-block; font-size:13px; font-weight:700; color:#0872D3; margin-top:8px;">Наши работы →</a>
+              </div>
+            </sc-if>
             <div style="background:#FFF6E9; border-radius:12px; padding:16px 18px;">
               <div style="font-size:14px; font-weight:700; color:#7A4A00;">Честно о рейтинге</div>
-              <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">Звёзд у товаров нет — оценок по моделям в базе не существует. Рисовать «4,8» из воздуха не будем: рейтинг без отзывов виден сразу.</div>
+              <sc-if value="{{ rv.none }}" hint-placeholder-val="{{ true }}">
+                <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">Звёзд у товаров нет — оценок по моделям в базе не существует. Рисовать «4,8» из воздуха не будем: рейтинг без отзывов виден сразу.</div>
+              </sc-if>
+              <sc-if value="{{ rv.has }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">Звёзды выше — не наши: их поставили покупатели этой модели на Kaspi.kz после выкупа. Сами себе оценок не рисуем, проверить можно по ссылке на карточку.</div>
+              </sc-if>
             </div>
           </div>
         </div>
@@ -1214,7 +1219,8 @@ class Component extends DCLogic {
           : (k % 10 >= 2 && k % 10 <= 4 && (k % 100 < 10 || k % 100 >= 20)) ? "отзыва" : "отзывов";
         return {
           has: !!(n && r.url),
-          rating: String(r.rating || "").replace(".", ","),
+          rating: (Math.round((r.rating || 0) * 10) / 10).toFixed(1).replace(".", ","),
+          none: !(n && r.url),
           otzyvLabel: (r.count || n) + " " + word(r.count || n),
           url: r.url || "",
           dt: r.dt || "",
