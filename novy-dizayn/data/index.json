@@ -176,14 +176,14 @@
   {
    "slug": "infrakrasnye-obogrevateli",
    "title": "Инфракрасные обогреватели",
-   "count": 97,
+   "count": 98,
    "brands": 3,
    "brandList": [
     "Ballu",
     "DITREEX",
     "ROYAL CLIMA"
    ],
-   "inStock": 53,
+   "inStock": 54,
    "acc": 0,
    "serList": [],
    "subs": [
@@ -193,7 +193,7 @@
     },
     {
      "name": "Газовые",
-     "n": 17
+     "n": 18
     },
     {
      "name": "Конвекторы электрические",
@@ -204,7 +204,7 @@
   {
    "slug": "kaminy",
    "title": "Камины и электроочаги",
-   "count": 148,
+   "count": 151,
    "brands": 3,
    "brandList": [
     "Electrolux",
@@ -247,7 +247,7 @@
    "subs": [
     {
      "name": "Каминокомплекты",
-     "n": 66
+     "n": 69
     },
     {
      "name": "Биокамины",
