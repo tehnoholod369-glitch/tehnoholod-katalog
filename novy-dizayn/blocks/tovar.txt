@@ -189,6 +189,22 @@
 
           <sc-if value="{{ isDesc }}" hint-placeholder-val="{{ false }}">
             <div style="font-size:16px; line-height:1.7; color:#2C3846; margin-top:18px; max-width:920px; text-wrap:pretty;">{{ desc }}</div>
+            <sc-if value="{{ rv.has }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:28px; max-width:920px;">
+                <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;">
+                  <div style="font-size:18px; font-weight:700; color:#18212F;">Отзывы покупателей</div>
+                  <div style="font-size:15px; font-weight:700; color:#B25200;"><span style="color:#E8A33D;">&#9733;</span> {{ rv.rating }}</div>
+                  <div style="font-size:14px; color:#8593A6;">{{ rv.otzyvLabel }} на Kaspi.kz, обновлено {{ rv.dt }}</div>
+                </div>
+                <sc-for list="{{ rv.list }}" as="o" hint-placeholder-count="3">
+                  <div style="margin-top:12px; padding:14px 16px; background:#F7F9FC; border:1px solid #E5EAF1; border-radius:12px;">
+                    <div style="font-size:13px; color:#8593A6;"><span style="color:#E8A33D;">{{ o.stars }}</span> &middot; {{ o.a }} &middot; {{ o.d }}</div>
+                    <div style="font-size:15px; line-height:1.6; color:#2C3846; margin-top:6px; text-wrap:pretty;">{{ o.t }}</div>
+                  </div>
+                </sc-for>
+                <a href="{{ rv.url }}" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; font-size:15px; font-weight:600; color:#0E9F6E; text-decoration:none;">Все отзывы на карточке товара в Kaspi.kz &rarr;</a>
+              </div>
+            </sc-if>
           </sc-if>
 
           <sc-if value="{{ isMount }}" hint-placeholder-val="{{ false }}">
@@ -1191,6 +1207,23 @@ class Component extends DCLogic {
       videoHref: det.vd || "",
       manualHref: det.mn || "",
       hasManual: !!det.mn,
+      rv: (() => {
+        const r = det.rv || {};
+        const n = (r.list || []).length;
+        const word = k => (k % 10 === 1 && k % 100 !== 11) ? "отзыв"
+          : (k % 10 >= 2 && k % 10 <= 4 && (k % 100 < 10 || k % 100 >= 20)) ? "отзыва" : "отзывов";
+        return {
+          has: !!(n && r.url),
+          rating: String(r.rating || "").replace(".", ","),
+          otzyvLabel: (r.count || n) + " " + word(r.count || n),
+          url: r.url || "",
+          dt: r.dt || "",
+          list: (r.list || []).map(v => ({
+            a: v.a || "Покупатель", d: v.d || "", t: v.t || "",
+            stars: "\u2605".repeat(Math.max(1, Math.min(5, v.r || 5)))
+          }))
+        };
+      })(),
       docs: [
         det.mn
           ? { title: "Руководство по эксплуатации", note: "PDF на русском", state: "есть", fg: "#0E9F6E", bg: "#E7F7F0", href: det.mn, hasHref: true }

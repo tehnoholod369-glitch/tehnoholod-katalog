@@ -169,6 +169,13 @@
             </sc-for>
           </div>
 
+          <sc-if value="{{ c.trusted }}" hint-placeholder-val="{{ true }}">
+            <div style="display:inline-flex; align-items:center; gap:6px; background:#E7F7F0; border:1px solid #BFE6D4; border-radius:6px; padding:5px 10px; margin-top:12px;">
+              <span style="font-size:13px; font-weight:700; color:#0B6B45;">✓ Проверенная бригада</span>
+            </div>
+            <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:6px;">Оснащение, гарантия и опыт проверены ИП «ТехноХолод» перед допуском к заказам. Оценка ниже — от клиентов, её мы не ставим.</div>
+          </sc-if>
+
           <sc-if value="{{ c.hasSkills }}" hint-placeholder-val="{{ true }}">
             <div style="border:1px solid #DCE5F0; border-radius:10px; padding:13px 15px; margin-top:14px;">
               <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">ЧТО ДЕЛАЕТ ЭТА БРИГАДА</div>
@@ -179,6 +186,25 @@
                 </div>
               </sc-for>
               <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:11px;">{{ c.skillsNote }}</div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ c.hasPhotos }}" hint-placeholder-val="{{ true }}">
+            <div style="border:1px solid #DCE5F0; border-radius:10px; padding:13px 15px; margin-top:14px;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">РАБОТЫ ЭТОЙ БРИГАДЫ</div>
+              <sc-for list="{{ c.photos }}" as="g" hint-placeholder-count="2">
+                <div style="margin-top:11px;">
+                  <div style="font-size:13px; font-weight:700; color:#18212F;">{{ g.title }}</div>
+                  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(104px,1fr)); gap:8px; margin-top:7px;">
+                    <sc-for list="{{ g.items }}" as="p" hint-placeholder-count="3">
+                      <a href="{{ p.url }}" target="_blank" rel="noopener" style="display:block;">
+                        <img src="{{ p.url }}" alt="{{ p.alt }}" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; background:#F3F7FB; display:block;">
+                      </a>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+              <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:11px;">{{ c.photosNote }}</div>
             </div>
           </sc-if>
 
@@ -476,12 +502,26 @@ class Component extends DCLogic {
           votesLabel: this.votesLabel(c.votes),
           facts: facts,
 
-          // Расшифровка компетенций: не самоописание из анкеты, а список работ,
-          // на которые бригада сама назвала цену. Назвал цену — делаешь работу;
-          // перестал делать — убрал строку в «Моих ценах», и она исчезла отсюда.
+          trusted: !!c.trusted,
+
           hasSkills: !!(c.skills && c.skills.length),
           skills: (c.skills || []).map(s => ({ title: s.title, items: (s.items || []).join(" · ") })),
           skillsNote: "Список собран из подтверждённых цен бригады: назвала цену — значит делает эту работу.",
+
+          // Работы бригады по видам: кадры прислала она, проверили и
+          // опубликовали мы. Привязка к БЛОКУ работ, а не к отдельной работе:
+          // монтаж 9k и 12k на снимке неотличимы, а сплит, кассета, приточка
+          // и бойлер различаются радикально. Приёмник отдаёт только блоки,
+          // где кадры есть, — пустых вкладок тут не бывает по построению.
+          hasPhotos: !!(c.photos && c.photos.length),
+          photos: (c.photos || []).map(g => ({
+            title: g.title,
+            items: (g.items || []).map(p => ({
+              url: p.url,
+              alt: p.caption || (g.title + " — работа бригады " + c.cert)
+            }))
+          })),
+          photosNote: "Кадры присланы бригадой и проверены нами перед публикацией.",
 
           // Пожелание, а не бронь: заявка уходит нам, бригаду назначаем мы —
           // с учётом пожелания. Телефона бригады на странице нет.
