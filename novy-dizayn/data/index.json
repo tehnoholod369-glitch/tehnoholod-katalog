@@ -794,7 +794,7 @@
   {
    "slug": "ventilyaciya",
    "title": "Вентиляция",
-   "count": 896,
+   "count": 912,
    "brands": 9,
    "brandList": [
     "Ballu",
@@ -807,7 +807,7 @@
     "Royal Thermo",
     "SHUFT"
    ],
-   "inStock": 342,
+   "inStock": 347,
    "acc": 299,
    "serList": [
     "AIRTUBE",
@@ -842,6 +842,8 @@
     "IRFD-B VIM",
     "IRFE VIM",
     "IRFE-B EC",
+    "ONEAIR ASP-100",
+    "ONEAIR ASP-200",
     "PRIMO",
     "PRIMO 3.0",
     "PRIMO 4.0",
@@ -862,6 +864,7 @@
     "SUNSET",
     "Star PVS",
     "Stellar VR",
+    "Swift",
     "TEMPLE",
     "TORNADO",
     "TRIDENT",
@@ -883,6 +886,7 @@
     "UniMAX-P VWL EC",
     "UniMAX-P VWL-A",
     "UniMAX-P VWR-A",
+    "UniMAX-Р VWR EC",
     "Universe ERVX",
     "Universe RVX",
     "VENTMIX",
@@ -920,7 +924,7 @@
     },
     {
      "name": "Приточные установки",
-     "n": 88
+     "n": 104
     },
     {
      "name": "Канальные прямоугольные",
