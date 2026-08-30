@@ -336,7 +336,7 @@ class Component extends DCLogic {
     })).sort((a, b) => (b.key === hot ? 1 : 0) - (a.key === hot ? 1 : 0));
   }
 
-  previewRefs = { climate: React.createRef(), heat: React.createRef(), vent: React.createRef(), water: React.createRef() };
+  previewRefs = { climate: React.createRef(), heat: React.createRef(), vent: React.createRef(), water: React.createRef(), power: React.createRef() };
 
   seasonKey() {
     const m = new Date().getMonth() + 1;
@@ -516,7 +516,10 @@ class Component extends DCLogic {
       snow: '<path d="M12 2v20M4.2 6.5l15.6 11M19.8 6.5L4.2 17.5"/><path d="M12 6.6l2.4-2.4M12 6.6L9.6 4.2M12 17.4l2.4 2.4M12 17.4l-2.4 2.4M6.6 9.3L3.4 8.4M6.6 14.7l-3.2.9M17.4 9.3l3.2-.9M17.4 14.7l3.2.9"/>',
       wind: '<circle cx="12" cy="12" r="2.1"/><path d="M12 9.9V5.4a2.6 2.6 0 1 1 2.6 2.6H12M14.1 12h4.5a2.6 2.6 0 1 1-2.6 2.6V12M12 14.1v4.5a2.6 2.6 0 1 1-2.6-2.6H12M9.9 12H5.4a2.6 2.6 0 1 1 2.6-2.6V12"/>',
       flame: '<path d="M12 2.6c3.4 4.2 5.2 6.7 5.2 9.6a5.2 5.2 0 0 1-10.4 0c0-2.1 1-3.5 2.4-5"/><path d="M12 20a2.6 2.6 0 0 0 2.6-2.6c0-1.4-.9-2.2-2.6-4.2-1.7 2-2.6 2.8-2.6 4.2A2.6 2.6 0 0 0 12 20z"/>',
-      drop: '<path d="M12 3.2c2.9 3.7 5.2 6.8 5.2 9.7a5.2 5.2 0 0 1-10.4 0c0-2.9 2.3-6 5.2-9.7z"/><path d="M9.6 13.4a2.4 2.4 0 0 0 2.4 2.4"/>'
+      drop: '<path d="M12 3.2c2.9 3.7 5.2 6.8 5.2 9.7a5.2 5.2 0 0 1-10.4 0c0-2.9 2.3-6 5.2-9.7z"/><path d="M9.6 13.4a2.4 2.4 0 0 0 2.4 2.4"/>',
+      // 30.08.2026: направление «Автономное питание». Молния, а не батарея:
+      // в направлении не только накопители, но и панели с зарядными устройствами.
+      bolt: '<path d="M13 2.6 4.8 13.4h6L11 21.4l8.2-10.8h-6z"/>'
     };
 
 
@@ -588,6 +591,16 @@ class Component extends DCLogic {
           items: [
             this.mi("Водонагреватели и бойлеры", "vodonagrevateli"),
             this.mi("Водоочистка и фильтры", "vodoochistka")
+          ]
+        },
+        {
+          // 30.08.2026: шестое направление. Не климатическое — поэтому отдельным
+          // пунктом, а не подразделом: покупатель зарядной станции не пойдёт
+          // искать её под «Отоплением». Группа одна, подкатегории подтянутся
+          // из данных сами (mi() берёт subs из index.json).
+          title: "Автономное питание", color: "#1F9D55", icon: this.icon(P.bolt, "#1F9D55", 22),
+          items: [
+            this.mi("Зарядные станции и солнечные панели", "avtonomnoe-pitanie")
           ]
         },
         {
@@ -712,7 +725,10 @@ class Component extends DCLogic {
         { key: "climate", title: "Кондиционирование", tint: "#E6F2FD", sub: "Бытовые, полупром, мультисплит, мобильные", link: this.dirLink(["bytovye", "poluprom", "multisplit", "mobilnye", "prom-mobilnye", "vozduhoohladiteli"]), href: "/katalog?g=bytovye", color: "#0872D3", linkColor: "#0872D3", icon: this.icon(P.snow, "#0872D3", 22) },
         { key: "heat", title: "Отопление", tint: "#FDECEA", sub: "Радиаторы, пушки, завесы, ИК-обогреватели, камины", link: this.heatLink(), href: "/katalog?g=radiatory", color: "#F75B06", linkColor: "#0872D3", icon: this.icon(P.flame, "#F75B06", 22) },
         { key: "vent", title: "Вентиляция", tint: "#EAF6FE", sub: "Приточные установки, рекуператоры, вентиляторы, осушители", link: this.ventLink(), href: "/katalog?g=ventilyaciya", color: "#0F96E6", linkColor: "#0872D3", icon: this.icon(P.wind, "#0F96E6", 22) },
-        { key: "water", title: "Водонагрев и водоочистка", tint: "#E8EEFA", sub: "Накопительные, проточные, газовые колонки, фильтры и осмос", link: this.dirLink(["vodonagrevateli", "vodoochistka"]), href: "/katalog?g=vodonagrevateli", color: "#0A4EA7", linkColor: "#0872D3", icon: this.icon(P.drop, "#0A4EA7", 22) }
+        { key: "water", title: "Водонагрев и водоочистка", tint: "#E8EEFA", sub: "Накопительные, проточные, газовые колонки, фильтры и осмос", link: this.dirLink(["vodonagrevateli", "vodoochistka"]), href: "/katalog?g=vodonagrevateli", color: "#0A4EA7", linkColor: "#0872D3", icon: this.icon(P.drop, "#0A4EA7", 22) },
+        // 30.08.2026: шестое направление EcoFlow. Не климатическое — своя карточка,
+        // а не строка внутри чужой: покупатель зарядной станции не ищет её в отоплении.
+        { key: "power", title: "Автономное питание", tint: "#E8F6EE", sub: "Зарядные станции, солнечные панели, батареи, повербанки", link: this.dirLink(["avtonomnoe-pitanie"]), href: "/katalog?g=avtonomnoe-pitanie", color: "#1F9D55", linkColor: "#0872D3", icon: this.icon(P.bolt, "#1F9D55", 22) }
       ]),
 
       // href у каждой карточки — адрес самой статьи. До 28.08.2026 все четыре вели
