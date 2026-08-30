@@ -30,9 +30,9 @@
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tproduct/817879508364-shuft-frigo-sfpac-07-kf-n6">мобильный Frigo SFPAC-07 KF/N6</a></td><td>SHUFT</td><td></td><td class="thgeo-p" data-art="KF/N6">144 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/817879508364-shuft-frigo-sfpac-07-kf-n6">мобильный Frigo SFPAC-07 KF/N6</a></td><td>SHUFT</td><td>—</td><td class="thgeo-p" data-art="KF/N6">144 990 ₸</td></tr>
 <tr><td><a href="https://tehnoholod369.kz/tproduct/672058161334-ballu-orbis-bpac-07-or-n6">мобильный Orbis BPAC-07 OR/N6</a></td><td>Ballu</td><td>18 м²</td><td class="thgeo-p" data-art="OR/N6">147 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tproduct/124217713944-shuft-frigo-sfpac-09-kf-n6">мобильный Frigo SFPAC-09 KF/N6</a></td><td>SHUFT</td><td></td><td class="thgeo-p" data-art="KF/N6">157 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/124217713944-shuft-frigo-sfpac-09-kf-n6">мобильный Frigo SFPAC-09 KF/N6</a></td><td>SHUFT</td><td>—</td><td class="thgeo-p" data-art="KF/N6">157 990 ₸</td></tr>
 <tr><td><a href="https://tehnoholod369.kz/tproduct/901388978934-electrolux-arizona-eacm-09-az-n6">мобильный Arizona EACM-09 AZ/N6</a></td><td>Electrolux</td><td>24 м²</td><td class="thgeo-p" data-art="AZ/N6">165 990 ₸</td></tr>
 <tr><td><a href="https://tehnoholod369.kz/tproduct/353721699354-ballu-orbis-bpac-09-or-n6">мобильный Orbis BPAC-09 OR/N6</a></td><td>Ballu</td><td>23 м²</td><td class="thgeo-p" data-art="OR/N6">169 990 ₸</td></tr>
 <tr><td><a href="https://tehnoholod369.kz/tproduct/559474373594-ballu-aura-bpac-09-cps-n1">мобильный Aura BPAC-09 CP/N1</a></td><td>Ballu</td><td>24 м²</td><td class="thgeo-p" data-art="CP/N1">178 990 ₸</td></tr>

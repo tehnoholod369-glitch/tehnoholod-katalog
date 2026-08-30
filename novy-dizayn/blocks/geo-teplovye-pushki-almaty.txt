@@ -32,8 +32,8 @@
 <tbody>
 <tr><td><a href="https://tehnoholod369.kz/tproduct/761686986994-ballu-bkn-3">BKN-3</a></td><td>Ballu</td><td>2,2 кВт</td><td class="thgeo-p" data-art="BKN-3">11 300 ₸</td></tr>
 <tr><td><a href="https://tehnoholod369.kz/tproduct/205666976454-ballu-bks-3">BKS-3</a></td><td>Ballu</td><td>2,2 кВт</td><td class="thgeo-p" data-art="BKS-3">11 300 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tproduct/783723761334-rhb-c2">RHB-C2</a></td><td>ROYAL CLIMA</td><td></td><td class="thgeo-p" data-art="RHB-C2">14 029 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tproduct/968852801104-rhb-c3">RHB-C3</a></td><td>ROYAL CLIMA</td><td></td><td class="thgeo-p" data-art="RHB-C3">18 379 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/783723761334-rhb-c2">RHB-C2</a></td><td>ROYAL CLIMA</td><td>—</td><td class="thgeo-p" data-art="RHB-C2">14 029 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/968852801104-rhb-c3">RHB-C3</a></td><td>ROYAL CLIMA</td><td>—</td><td class="thgeo-p" data-art="RHB-C3">18 379 ₸</td></tr>
 <tr><td><a href="https://tehnoholod369.kz/tproduct/731863861204-ballu-bkn-5">BKN-5</a></td><td>Ballu</td><td>3 кВт</td><td class="thgeo-p" data-art="BKN-5">18 900 ₸</td></tr>
 <tr><td><a href="https://tehnoholod369.kz/tproduct/405089901934-ballu-bks-5">BKS-5</a></td><td>Ballu</td><td>3 кВт</td><td class="thgeo-p" data-art="BKS-5">18 900 ₸</td></tr>
 <tr><td><a href="https://tehnoholod369.kz/tproduct/174743010824-ballu-bkr-5">BKR-5</a></td><td>Ballu</td><td>3 кВт</td><td class="thgeo-p" data-art="BKR-5">20 200 ₸</td></tr>
@@ -42,9 +42,9 @@
 <tr><td><a href="https://tehnoholod369.kz/tproduct/511282311114-ballu-bkx-3">BKX-3</a></td><td>Ballu</td><td>2 кВт</td><td class="thgeo-p" data-art="BKX-3">21 990 ₸</td></tr>
 <tr><td><a href="https://tehnoholod369.kz/tproduct/626016508424-ballu-bhp-pe2-2">BHP-PE2-2</a></td><td>Ballu</td><td>2 кВт</td><td class="thgeo-p" data-art="BHP-PE2-2">22 100 ₸</td></tr>
 <tr><td><a href="https://tehnoholod369.kz/tproduct/966728820314-ballu-bhp-pe2-3">BHP-PE2-3</a></td><td>Ballu</td><td>3 кВт</td><td class="thgeo-p" data-art="BHP-PE2-3">25 200 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tproduct/453833925034-ztv-3-n1">ZTV-3 N1</a></td><td>POWERAIR by ZILON</td><td></td><td class="thgeo-p" data-art="ZTV-3">27 490 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tproduct/641663323874-ztv-5-n1">ZTV-5 N1</a></td><td>POWERAIR by ZILON</td><td></td><td class="thgeo-p" data-art="ZTV-5">41 380 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tproduct/885525858514-ztv-9-n1">ZTV-9 N1</a></td><td>POWERAIR by ZILON</td><td></td><td class="thgeo-p" data-art="ZTV-9">78 710 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/453833925034-ztv-3-n1">ZTV-3 N1</a></td><td>POWERAIR by ZILON</td><td>—</td><td class="thgeo-p" data-art="ZTV-3">27 490 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/641663323874-ztv-5-n1">ZTV-5 N1</a></td><td>POWERAIR by ZILON</td><td>—</td><td class="thgeo-p" data-art="ZTV-5">41 380 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/885525858514-ztv-9-n1">ZTV-9 N1</a></td><td>POWERAIR by ZILON</td><td>—</td><td class="thgeo-p" data-art="ZTV-9">78 710 ₸</td></tr>
 </tbody>
 </table>
 </div>

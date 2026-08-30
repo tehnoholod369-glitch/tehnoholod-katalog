@@ -45,7 +45,7 @@
 <tr><td><a href="https://tehnoholod369.kz/tproduct/135063477034-ballu-bhc-ce-6t">BHC-CE-6T</a></td><td>Ballu</td><td>6 кВт</td><td class="thgeo-p" data-art="BHC-CE-6T">88 400 ₸</td></tr>
 <tr><td><a href="https://tehnoholod369.kz/tproduct/745524081014-ballu-bhc-l08-s05">BHC-L08-S05</a></td><td>Ballu</td><td>5 кВт</td><td class="thgeo-p" data-art="BHC-L08-S05">94 990 ₸</td></tr>
 <tr><td><a href="https://tehnoholod369.kz/tproduct/852368875724-rm-1008s-d-y">RM-1008S-D/Y</a></td><td>DITREEX</td><td>4 кВт</td><td class="thgeo-p" data-art="RM-1008S-D/Y">101 764 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tproduct/870887685174-rm-1215s2-3d-y">RM-1215S2-3D/Y</a></td><td>DITREEX</td><td></td><td class="thgeo-p" data-art="RM-1215S2-3D/Y">141 250 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/870887685174-rm-1215s2-3d-y">RM-1215S2-3D/Y</a></td><td>DITREEX</td><td>—</td><td class="thgeo-p" data-art="RM-1215S2-3D/Y">141 250 ₸</td></tr>
 </tbody>
 </table>
 </div>
