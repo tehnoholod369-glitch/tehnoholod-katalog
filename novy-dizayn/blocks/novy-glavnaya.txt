@@ -325,7 +325,7 @@ class Component extends DCLogic {
   promoRef = React.createRef();
   brandsRef = React.createRef();
 
-  // сезон впереди: с мая по сентябрь охлаждение, с октября по апрель тепло
+  // сезон впереди: с марта по июль охлаждение, с августа по февраль тепло
   orderDirs(list) {
     const hot = this.seasonKey();
     return list.map(d => Object.assign({}, d, this.dirData(d.key), {
@@ -338,10 +338,9 @@ class Component extends DCLogic {
 
   previewRefs = { climate: React.createRef(), heat: React.createRef(), vent: React.createRef(), water: React.createRef() };
 
-  // сезон: с мая по сентябрь впереди охлаждение, с октября по апрель — тепло
   seasonKey() {
     const m = new Date().getMonth() + 1;
-    return (m >= 5 && m <= 9) ? "climate" : "heat";
+    return (m >= 3 && m <= 7) ? "climate" : "heat";
   }
 
   // одно крупное фото + кликабельные подкатегории + наличие цифрой
@@ -570,11 +569,22 @@ class Component extends DCLogic {
             this.mi("Приточные и приточно-вытяжные установки", "ventilyaciya"),
             this.mi("Промышленные вентиляторы", "ventilyatory-prom"),
             this.mi("Осушители воздуха", "osushiteli"),
-            this.mi("Рекуператоры", "rekuperatory")
+            // 96 позиций увлажнителей не было ни в меню, ни в карточке направления:
+            // группа есть в index.json, а ссылки на неё не вело ниоткуда.
+            // У обоих лидеров влажность — свой раздел: «Системы регулирования
+            // влажности» у БРИЗа, «Увлажнители, очистители и рециркуляторы» у Русклимата.
+            this.mi("Промышленные увлажнители", "uvlazhniteli"),
+            // рекуператоры — подкатегория вентиляции, отдельной группы нет:
+            // прежний адрес ?g=rekuperatory открывал пустую выдачу
+            { label: "Рекуператоры", count: "5", href: "/katalog?g=ventilyaciya&sub=" + encodeURIComponent("Рекуператоры"), subs: [] }
           ]
         },
         {
-          title: "Водонагрев", color: "#0A4EA7", icon: this.icon(P.drop, "#0A4EA7", 22),
+          // очистка воды — не нагрев воды: покупатель фильтра не станет искать его
+          // под словом «Водонагрев». У Русклимата «Фильтры для очистки воды», у БРИЗа
+          // «Системы водоочистки» вынесены отдельными разделами; у нас их 46 позиций
+          // против 242 — на отдельное направление мало, поэтому названы оба слова.
+          title: "Водонагрев и водоочистка", color: "#0A4EA7", icon: this.icon(P.drop, "#0A4EA7", 22),
           items: [
             this.mi("Водонагреватели и бойлеры", "vodonagrevateli"),
             this.mi("Водоочистка и фильтры", "vodoochistka")
@@ -605,13 +615,18 @@ class Component extends DCLogic {
         return n ? "плюс " + this.plural(n, "позиция", "позиции", "позиций") +
           " под объект — VRF, чиллеры, фанкойлы и ПВУ: состав и цена по проекту" : "";
       })(),
+      // по две ссылки на каждое из четырёх направлений. До 30.08.2026 из шести
+      // ссылок четыре вели в кондиционирование, хотя отопление (1 037 позиций)
+      // и вентиляция (1 077) в каталоге не меньше кондиционирования (1 063).
       footCatalog: [
         { label: "Бытовые кондиционеры", href: "/katalog?g=bytovye" },
         { label: "Полупромышленные", href: "/katalog?g=poluprom" },
-        { label: "Мультисплит-системы", href: "/multisplit" },
-        { label: "Мобильные", href: "/katalog?g=mobilnye" },
+        { label: "Радиаторы отопления", href: "/katalog?g=radiatory" },
+        { label: "Тепловые завесы", href: "/katalog?g=teplovye-zavesy" },
+        { label: "Приточные установки", href: "/katalog?g=ventilyaciya" },
+        { label: "Осушители воздуха", href: "/katalog?g=osushiteli" },
         { label: "Водонагреватели", href: "/katalog?g=vodonagrevateli" },
-        { label: "Радиаторы отопления", href: "/katalog?g=radiatory" }
+        { label: "Водоочистка и фильтры", href: "/katalog?g=vodoochistka" }
       ],
       footClient: [
         { label: "Расчёт мощности", href: "/kontakty#podbor" },
@@ -644,10 +659,13 @@ class Component extends DCLogic {
       })(),
       navStrip: [
         { label: "Кондиционирование", href: "/katalog?g=bytovye" },
-        { label: "Проектные системы", href: "/proekt" },
         { label: "Отопление", href: "/katalog?g=radiatory" },
         { label: "Вентиляция", href: "/katalog?g=ventilyaciya" },
-        { label: "Водонагрев", href: "/katalog?g=vodonagrevateli" },
+        { label: "Водонагрев и водоочистка", href: "/katalog?g=vodonagrevateli" },
+        // проектные системы стоят после четырёх бытовых направлений, а не вторыми:
+        // их выбирает проектировщик, а не частный покупатель. Так же у Русклимата —
+        // «Системы промышленного кондиционирования» 22-я из 26 категорий каталога.
+        { label: "Проектные системы", href: "/proekt" },
         { label: "Доставка и оплата", href: "/kontakty#dostavka" },
         { label: "Монтаж и сервис", href: "/uslugi" },
         { label: "Отзывы", href: "/otzyvy" },
@@ -690,7 +708,7 @@ class Component extends DCLogic {
         { key: "climate", title: "Кондиционирование", tint: "#E6F2FD", sub: "Бытовые, полупром, мультисплит, мобильные", link: this.dirLink(["bytovye", "poluprom", "multisplit", "mobilnye", "prom-mobilnye", "vozduhoohladiteli"]), href: "/katalog?g=bytovye", color: "#0872D3", linkColor: "#0872D3", icon: this.icon(P.snow, "#0872D3", 22) },
         { key: "heat", title: "Отопление", tint: "#FDECEA", sub: "Радиаторы, пушки, завесы, ИК-обогреватели, камины", link: this.heatLink(), href: "/katalog?g=radiatory", color: "#F75B06", linkColor: "#0872D3", icon: this.icon(P.flame, "#F75B06", 22) },
         { key: "vent", title: "Вентиляция", tint: "#EAF6FE", sub: "Приточные установки, рекуператоры, вентиляторы, осушители", link: this.ventLink(), href: "/katalog?g=ventilyaciya", color: "#0F96E6", linkColor: "#0872D3", icon: this.icon(P.wind, "#0F96E6", 22) },
-        { key: "water", title: "Водонагрев", tint: "#E8EEFA", sub: "Накопительные, проточные, газовые колонки", link: this.dirLink(["vodonagrevateli", "vodoochistka"]), href: "/katalog?g=vodonagrevateli", color: "#0A4EA7", linkColor: "#0872D3", icon: this.icon(P.drop, "#0A4EA7", 22) }
+        { key: "water", title: "Водонагрев и водоочистка", tint: "#E8EEFA", sub: "Накопительные, проточные, газовые колонки, фильтры и осмос", link: this.dirLink(["vodonagrevateli", "vodoochistka"]), href: "/katalog?g=vodonagrevateli", color: "#0A4EA7", linkColor: "#0872D3", icon: this.icon(P.drop, "#0A4EA7", 22) }
       ]),
 
       // href у каждой карточки — адрес самой статьи. До 28.08.2026 все четыре вели

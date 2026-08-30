@@ -1357,7 +1357,7 @@ class Component extends DCLogic {
       { key: "climate", label: "Кондиционирование", slugs: ["bytovye", "poluprom", "mobilnye", "prom-mobilnye", "vozduhoohladiteli"], plus: ["multisplit"] },
       { key: "heat", label: "Отопление", slugs: ["radiatory", "teplovye-pushki", "teplovye-zavesy", "infrakrasnye-obogrevateli", "vodyanye-teploventilyatory", "kaminy", "obogrevateli", "teplovye-nasosy"] },
       { key: "vent", label: "Вентиляция", slugs: ["ventilyaciya", "ventilyatory-prom", "osushiteli", "rekuperatory"] },
-      { key: "water", label: "Водонагрев", slugs: ["vodonagrevateli", "vodoochistka"] },
+      { key: "water", label: "Водонагрев и водоочистка", slugs: ["vodonagrevateli", "vodoochistka"] },
       { key: "proekt", label: "VRF, фанкойлы, чиллеры", slugs: ["mini-vrf", "fankoyly", "chillery", "precizionnye"] }
     ];
     const dirOf = slug => (DIRS.find(d => d.slugs.indexOf(slug) >= 0) || DIRS[0]).key;
