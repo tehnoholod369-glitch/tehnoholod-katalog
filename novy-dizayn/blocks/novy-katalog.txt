@@ -233,6 +233,9 @@
                   <img data-url="{{ c.img }}" alt="{{ c.name }}" loading="lazy" style="width:100%; height:100%; object-fit:contain; display:block;" />
                 </div>
                 <div style="position:absolute; top:8px; right:8px; font-size:12px; font-weight:700; color:{{ c.stockFg }}; background:{{ c.stockBg }}; border-radius:5px; padding:3px 8px;">{{ c.stock }}</div>
+                <sc-if value="{{ c.isHit }}" hint-placeholder-val="{{ false }}">
+                  <div title="{{ c.hitTitle }}" style="position:absolute; top:8px; left:8px; font-size:12px; font-weight:700; color:#fff; background:#0A4EA7; border-radius:5px; padding:3px 8px; cursor:help;">Хит продаж</div>
+                </sc-if>
                 <sc-if value="{{ c.isPick }}" hint-placeholder-val="{{ false }}">
                   <div title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж." style="position:absolute; top:8px; left:8px; font-size:12px; font-weight:700; color:#fff; background:#0872D3; border-radius:5px; padding:3px 8px; cursor:help;">Наш выбор</div>
                 </sc-if>
@@ -321,7 +324,7 @@ class Component extends DCLogic {
   }
   state = Object.assign({
     index: null, updated: "", group: "bytovye", sub: "all", items: null, loading: true, picks: [], onlyPick: false,
-    sale: {}, onlySale: false,
+    sale: {}, onlySale: false, prio: [], prioQuota: 2, hits: {},
     sort: "rec", view: "grid", shown: 12, mobFilters: false, mobNav: false
   }, this.facetsOff());
   gridRef = React.createRef();
@@ -360,6 +363,9 @@ class Component extends DCLogic {
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-priority.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(brandPrio => this.setState({ brandPrio })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/picks.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(p => this.setState({ picks: (p && p.skus) || [] })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/akcii.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(a => this.setState({ sale: (a && a.items) || {} })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/hits.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(h => this.setState({ hits: (h && h.items) || {} })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/prioritet.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null)
+      .then(p => this.setState({ prio: (p && p.order) || [], prioQuota: (p && p.quota) || 2 })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"})
       .then(r => r.json())
       .then(idx => { this.setState({ index: idx.groups || idx, updated: idx.updated || "", group }); this.loadGroup(group, sub || "all"); })
@@ -491,6 +497,51 @@ class Component extends DCLogic {
   saleOf(it) {
     const m = this.state.sale || {};
     return (it && it.s && m[it.s]) || null;
+  }
+
+  hitOf(it) {
+    const m = this.state.hits || {};
+    return (it && it.s && m[it.s]) || null;
+  }
+
+  // Приоритет внимания — КВОТА, а не вес. Вес переставляет всю выдачу: 30.08.2026
+  // двенадцать спеццен заняли первую страницу из 381 модели, и покупатель видел
+  // только TCL и Hisense. Квота даёт приоритетным ровно два места на первом экране
+  // (третье и восьмое), остальные десять остаются за релевантностью.
+  // Работает только в сортировке «Сначала рекомендуемые»: выбрал покупатель порядок
+  // по цене — он ищет конкретное, и вмешиваться туда нельзя.
+  poPrioritetu(list, s) {
+    const order = this.state.prio || [];
+    if (s.sort !== "rec" || !order.length || list.length < 6) return list;
+    const квота = this.state.prioQuota || 2;
+    const МЕСТА = [2, 7];
+    const верх = {};
+    // Сколько мест на первом экране бренд занял сам. Поднимать четвёртую карточку
+    // бренда, у которого уже три, бессмысленно: 30.08.2026 в радиаторах Royal Thermo
+    // держал 4 места из 12 по релевантности, и вмешательство добавляло к ним ещё две.
+    // Приоритет должен показывать то, чего покупатель иначе не увидит.
+    const брендов = {};
+    list.slice(0, 12).forEach(o => {
+      if (!o.x) return;
+      if (o.x.s) верх[o.x.s] = 1;
+      брендов[o.x.b] = (брендов[o.x.b] || 0) + 1;
+    });
+    const индексы = [];
+    for (let i = 0; i < order.length && индексы.length < квота; i++) {
+      if (верх[order[i]]) continue;
+      const j = list.findIndex(o => o.x && o.x.s === order[i]);
+      if (j < 0) continue;
+      const b = list[j].x.b;
+      if ((брендов[b] || 0) >= 3) continue;
+      брендов[b] = (брендов[b] || 0) + 1;
+      индексы.push(j);
+    }
+    if (!индексы.length) return list;
+    const взятые = индексы.map(j => list[j]);
+    const out = list.slice();
+    индексы.slice().sort((a, b) => b - a).forEach(j => out.splice(j, 1));
+    взятые.forEach((эл, n) => out.splice(Math.min(МЕСТА[n], out.length), 0, эл));
+    return out;
   }
 
   recScore(it, picks) {
@@ -1359,6 +1410,8 @@ class Component extends DCLogic {
     else if (s.sort === "desc") list = list.slice().sort((a, b) => (b.x.p || 0) - (a.x.p || 0));
     else list = list.slice().sort((a, b) => this.recScore(b.x, picks) - this.recScore(a.x, picks));
 
+    list = this.poPrioritetu(list, s);
+
     const visible = list.slice(0, s.shown);
     const grid = s.view === "grid";
 
@@ -1641,6 +1694,14 @@ class Component extends DCLogic {
         cta: it.pt ? "Открыть карточку →" : "Запросить цену →",
         pickScore: this.isPick(it, picks) ? this.recScore(it, picks) : -1,
         isPick: false,
+        // Хит и «Наш выбор» на одной карточке не показываем: две плашки об одном
+        // товаре читаются как шум. Хит сильнее — он про факт продаж, а не про мнение.
+        isHit: !!this.hitOf(it),
+        hitTitle: (function (hit) {
+          if (!hit) return "";
+          const хвост = hit.till ? " Действует до " + hit.till + "." : "";
+          return "Часто покупают у нас в Алматы. Отмечено ИП «ТехноХолод» по опыту продаж." + хвост;
+        })(this.hitOf(it)),
         // Спеццена. Текст в подсказке — тот, что владелец написал в АКЦИИ.csv:
         // объяснение, ПОЧЕМУ цена такая. Ни «было», ни процента скидки в нём быть
         // не может — это проверяет акции.py перед тем, как позиция сюда попадёт.
@@ -1660,7 +1721,9 @@ class Component extends DCLogic {
       // метка должна выделять меньшинство: на узкой выдаче не ставим вовсе
       .slice(0, Math.min(3, Math.floor(list.length / 4)))
       .map(o => o.i);
-    const cards = cards0.map((c, i) => Object.assign({}, c, { isPick: topIdx.indexOf(i) >= 0 }));
+    const cards = cards0.map((c, i) => Object.assign({}, c, {
+      isPick: topIdx.indexOf(i) >= 0 && !c.isHit
+    }));
 
     const total = groups.reduce((n, g) => n + g.count, 0);
 

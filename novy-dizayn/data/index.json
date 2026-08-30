@@ -63,7 +63,7 @@
   {
    "slug": "bytovye",
    "title": "Бытовые сплит-системы",
-   "count": 382,
+   "count": 381,
    "brands": 18,
    "brandList": [
     "AERONIK",
@@ -85,7 +85,7 @@
     "THAICON",
     "Toshiba"
    ],
-   "inStock": 340,
+   "inStock": 339,
    "acc": 0,
    "serList": [
     "AG Full DC inverter",
@@ -178,7 +178,7 @@
    "subs": [
     {
      "name": "Настенные",
-     "n": 381
+     "n": 380
     },
     {
      "name": "Оконные",

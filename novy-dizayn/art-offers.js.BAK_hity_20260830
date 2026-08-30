@@ -27,15 +27,9 @@
  *      <span data-pick-name>
  *      <span data-pick-price>
  *
- * Две метки, два разных утверждения — не путать:
- *   «Хит продаж» — это часто покупают. Назначает ВЛАДЕЛЕЦ в PIM/ХИТЫ_ПРОДАЖ.csv,
- *      скрипт хиты.py проверяет и кладёт в data/hits.json (решение владельца
- *      30.08.2026). Своей статистики продаж пока нет: владелец знает продажи
- *      по заказам и является источником сам. Появится оцифрованная статистика —
- *      источником станет она, а реестр останется способом переопределить руками.
- *   «Наш выбор» — это МЫ рекомендуем. Считается по данным или по picks.json,
- *      правило то же, что на странице выдачи.
- * Хит есть в группе — показываем его и метку «Хит продаж»; нет — «Наш выбор».
+ * ⚠️ «Хит продаж» этим скриптом НЕ ставится и ставиться не будет: для такой метки
+ * нужна статистика продаж, которой у нас нет. Метка называется «Наш выбор» и
+ * означает нашу рекомендацию — так же, как в каталоге (picks.json, 00_ГДЕ_ПРАВДА.md §9).
  */
 (function () {
   var RAW = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/";
@@ -90,9 +84,8 @@
     цены.forEach(function (e) { группы[e.getAttribute("data-price-from")] = 1; });
     пики.forEach(function (e) { группы[e.getAttribute("data-pick")] = 1; });
 
-    Promise.all([взять("index.json"), взять("picks.json"), взять("hits.json")])
-      .then(function (общее) {
-      var idx = общее[0], p = общее[1], hits = общее[2] || {};
+    Promise.all([взять("index.json"), взять("picks.json")]).then(function (общее) {
+      var idx = общее[0], p = общее[1];
       var skus = (p && p.skus) || [];
 
       var дата = idx && idx.updated;
@@ -115,12 +108,7 @@
               .forEach(function (e) { e.textContent = число(мин) + " ₸"; });
           }
 
-          var хиты = ((hits.byGroup || {})[slug] || []);
-          var хит = null;
-          for (var h = 0; h < хиты.length && !хит; h++) {
-            хит = items.filter(function (x) { return x.s === хиты[h] && x.p; })[0] || null;
-          }
-          var it = хит || лучший(items, skus);
+          var it = лучший(items, skus);
           if (!it) return;
           пики.filter(function (e) { return e.getAttribute("data-pick") === slug; })
             .forEach(function (a) {
@@ -132,13 +120,6 @@
                 if (!el || !знач) return;
                 if (атр) el.setAttribute(атр, знач); else el.textContent = знач;
               };
-              // подпись метки и всплывающая подсказка. Формулировки разные намеренно:
-              // «часто покупают» — утверждение о продажах, «мы отобрали» — о нашем мнении
-              уст("[data-pick-tag]", хит ? "Хит продаж" : "Наш выбор");
-              a.setAttribute("title", хит
-                ? "Часто покупают у нас в Алматы. Отмечено ИП «ТехноХолод» по опыту продаж."
-                : "Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными "
-                  + "характеристиками. Это наш выбор, а не статистика продаж.");
               уст("[data-pick-brand]", it.b);
               уст("[data-pick-name]", it.nb || it.n);
               уст("[data-pick-price]", it.pt || (it.p ? число(it.p) + " ₸" : ""));
