@@ -1,0 +1,92 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+</style>
+<div class="thgeo">
+<h1>Радиаторы отопления в Алматы — биметалл и алюминий</h1>
+<p>Секционные, трубчатые и радиаторы с нижним подключением — 444 позиций
+от 1 брендов (Royal Thermo и другие). Цены — от
+<span class="thgeo-pmin">20 581</span> ₸, в наличии в Алматы.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog">Весь каталог</a>
+</div>
+<h2>Модели в наличии</h2>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/129890276654-radiator-revolution-a-350-4-sekc">Радиатор Revolution А 350 — 4 секц.</a></td><td>Royal Thermo</td><td>7 м2</td><td class="thgeo-p" data-art="RTRA335004">20 581 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/410859438674-radiator-revolution-a-500-4-sekc">Радиатор Revolution А 500 — 4 секц.</a></td><td>Royal Thermo</td><td>9 м2</td><td class="thgeo-p" data-art="RTRA350004">21 712 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/496925159114-radiator-revolution-b-350-4-sekc">Радиатор Revolution B 350 — 4 секц.</a></td><td>Royal Thermo</td><td>6 м2</td><td class="thgeo-p" data-art="RTRB335004">23 295 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/292703723244-radiator-indigo-a-500-4-sekc">Радиатор INDIGO A 500 — 4 секц.</a></td><td>Royal Thermo</td><td>9 м2</td><td class="thgeo-p" data-art="RTIA3050004">24 200 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/913253244624-radiator-revolution-b-500-4-sekc">Радиатор Revolution B 500 — 4 секц.</a></td><td>Royal Thermo</td><td>8 м²</td><td class="thgeo-p" data-art="RTRB350004">24 200 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/147879647034-radiator-indigo-b-500-4-sekc">Радиатор INDIGO B 500 — 4 секц.</a></td><td>Royal Thermo</td><td>10 м²</td><td class="thgeo-p" data-art="RTIB3050004">27 818 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/218078965564-radiator-biliner-b-350-belyy-4-sekc">Радиатор BILINER B 350 Белый — 4 секц.</a></td><td>Royal Thermo</td><td>6 м2</td><td class="thgeo-p" data-art="RTBW335004">27 826 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/922802842374-radiator-biliner-b-500-belyy-4-sekc">Радиатор BILINER B 500 Белый — 4 секц.</a></td><td>Royal Thermo</td><td>9 м2</td><td class="thgeo-p" data-art="RTBW350004">29 057 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/546128445674-radiator-biliner-b-350-chernyy-4-sekc">Радиатор BILINER B 350 Чёрный — 4 секц.</a></td><td>Royal Thermo</td><td>6 м2</td><td class="thgeo-p" data-art="RTBB335004">30 781 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/987922012694-radiator-biliner-b-350-serebristyy-4-sekc">Радиатор BILINER B 350 Серебристый — 4 секц.</a></td><td>Royal Thermo</td><td>6 м2</td><td class="thgeo-p" data-art="RTBS335004">30 781 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/183514799264-radiator-revolution-a-350-6-sekc">Радиатор Revolution А 350 — 6 секц.</a></td><td>Royal Thermo</td><td>10 м2</td><td class="thgeo-p" data-art="RTRA335006">30 872 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/124468399324-radiator-biliner-b-500-chernyy-4-sekc">Радиатор BILINER B 500 Чёрный — 4 секц.</a></td><td>Royal Thermo</td><td>9 м2</td><td class="thgeo-p" data-art="RTBB350004">31 766 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/366078951304-radiator-biliner-b-500-serebristyy-4-sekc">Радиатор BILINER B 500 Серебристый — 4 секц.</a></td><td>Royal Thermo</td><td>9 м2</td><td class="thgeo-p" data-art="RTBS350004">31 766 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/973574656774-radiator-revolution-a-500-6-sekc">Радиатор Revolution А 500 — 6 секц.</a></td><td>Royal Thermo</td><td>13 м2</td><td class="thgeo-p" data-art="RTRA350006">32 568 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/615700283244-radiator-revolution-b-350-6-sekc">Радиатор Revolution B 350 — 6 секц.</a></td><td>Royal Thermo</td><td>9 м2</td><td class="thgeo-p" data-art="RTRB335006">34 943 ₸</td></tr>
+</tbody>
+</table>
+</div>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">30.08.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Биметалл или алюминий</h2>
+<p>Биметаллический держит давление и не боится качества теплоносителя — это выбор
+для многоэтажки с центральным отоплением. Алюминиевый легче и дешевле, лучше
+отдаёт тепло, но чувствителен к составу воды: его берут в частный дом с автономным
+контуром. Число секций считают от площади — ориентир 100 Вт на 1 м² при потолке
+до 3 м, дальше поправка на угловую комнату и остекление.</p>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
+производителя, срок в паспорте изделия; гарантия на монтаж — бригады, срок в её карточке
+и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад,
+напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
+возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Сколько стоит радиатор отопления в Алматы?</summary><p>В каталоге 444 моделей от 1 брендов, цены от 20 581 ₸. Самые доступные позиции из наличия: Радиатор Revolution А 350 — 4 секц. — 20 581 ₸; Радиатор Revolution А 500 — 4 секц. — 21 712 ₸; Радиатор Revolution B 350 — 4 секц. — 23 295 ₸. Точная цена каждой модели — на её странице в каталоге.</p></details>
+<details class="thgeo-faq"><summary>Как подобрать модель?</summary><p>Сначала тип по системе: в многоэтажку с центральным отоплением — биметалл, в частный дом с автономным контуром можно алюминий. Число секций — от площади: ориентир 100 Вт на 1 м² при потолке до 3 м.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
+<details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Радиаторы отопления в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Royal Thermo Радиатор Revolution А 350 — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/129890276654-radiator-revolution-a-350-4-sekc"}, {"@type": "ListItem", "position": 2, "name": "Royal Thermo Радиатор Revolution А 500 — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/410859438674-radiator-revolution-a-500-4-sekc"}, {"@type": "ListItem", "position": 3, "name": "Royal Thermo Радиатор Revolution B 350 — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/496925159114-radiator-revolution-b-350-4-sekc"}, {"@type": "ListItem", "position": 4, "name": "Royal Thermo Радиатор INDIGO A 500 — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/292703723244-radiator-indigo-a-500-4-sekc"}, {"@type": "ListItem", "position": 5, "name": "Royal Thermo Радиатор Revolution B 500 — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/913253244624-radiator-revolution-b-500-4-sekc"}, {"@type": "ListItem", "position": 6, "name": "Royal Thermo Радиатор INDIGO B 500 — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/147879647034-radiator-indigo-b-500-4-sekc"}, {"@type": "ListItem", "position": 7, "name": "Royal Thermo Радиатор BILINER B 350 Белый — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/218078965564-radiator-biliner-b-350-belyy-4-sekc"}, {"@type": "ListItem", "position": 8, "name": "Royal Thermo Радиатор BILINER B 500 Белый — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/922802842374-radiator-biliner-b-500-belyy-4-sekc"}, {"@type": "ListItem", "position": 9, "name": "Royal Thermo Радиатор BILINER B 350 Чёрный — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/546128445674-radiator-biliner-b-350-chernyy-4-sekc"}, {"@type": "ListItem", "position": 10, "name": "Royal Thermo Радиатор BILINER B 350 Серебристый — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/987922012694-radiator-biliner-b-350-serebristyy-4-sekc"}, {"@type": "ListItem", "position": 11, "name": "Royal Thermo Радиатор Revolution А 350 — 6 секц.", "url": "https://tehnoholod369.kz/tproduct/183514799264-radiator-revolution-a-350-6-sekc"}, {"@type": "ListItem", "position": 12, "name": "Royal Thermo Радиатор BILINER B 500 Чёрный — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/124468399324-radiator-biliner-b-500-chernyy-4-sekc"}, {"@type": "ListItem", "position": 13, "name": "Royal Thermo Радиатор BILINER B 500 Серебристый — 4 секц.", "url": "https://tehnoholod369.kz/tproduct/366078951304-radiator-biliner-b-500-serebristyy-4-sekc"}, {"@type": "ListItem", "position": 14, "name": "Royal Thermo Радиатор Revolution А 500 — 6 секц.", "url": "https://tehnoholod369.kz/tproduct/973574656774-radiator-revolution-a-500-6-sekc"}, {"@type": "ListItem", "position": 15, "name": "Royal Thermo Радиатор Revolution B 350 — 6 секц.", "url": "https://tehnoholod369.kz/tproduct/615700283244-radiator-revolution-b-350-6-sekc"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит радиатор отопления в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "В каталоге 444 моделей от 1 брендов, цены от 20 581 ₸. Самые доступные позиции из наличия: Радиатор Revolution А 350 — 4 секц. — 20 581 ₸; Радиатор Revolution А 500 — 4 секц. — 21 712 ₸; Радиатор Revolution B 350 — 4 секц. — 23 295 ₸. Точная цена каждой модели — на её странице в каталоге."}}, {"@type": "Question", "name": "Как подобрать модель?", "acceptedAnswer": {"@type": "Answer", "text": "Сначала тип по системе: в многоэтажку с центральным отоплением — биметалл, в частный дом с автономным контуром можно алюминий. Число секций — от площади: ориентир 100 Вт на 1 м² при потолке до 3 м."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/radiatory.json"];
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
+  })).then(function(all){
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    if(min){var el=document.querySelector(".thgeo-pmin");
+      if(el)el.textContent=min.toLocaleString("ru-RU").replace(/\u202f/g,"\u00a0");}
+  });
+})();
+</script>

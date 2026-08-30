@@ -1,0 +1,92 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+</style>
+<div class="thgeo">
+<h1>Мобильные кондиционеры в Алматы — без монтажа</h1>
+<p>Напольные кондиционеры, которым не нужен монтаж: воздуховод выводится в окно,
+прибор переставляется между комнатами. 32 моделей от 6 брендов, цены — от
+<span class="thgeo-pmin">144 990</span> ₸, в наличии в Алматы.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog">Весь каталог</a>
+</div>
+<h2>Модели в наличии</h2>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/817879508364-shuft-frigo-sfpac-07-kf-n6">мобильный Frigo SFPAC-07 KF/N6</a></td><td>SHUFT</td><td></td><td class="thgeo-p" data-art="KF/N6">144 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/672058161334-ballu-orbis-bpac-07-or-n6">мобильный Orbis BPAC-07 OR/N6</a></td><td>Ballu</td><td>18 м²</td><td class="thgeo-p" data-art="OR/N6">147 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/124217713944-shuft-frigo-sfpac-09-kf-n6">мобильный Frigo SFPAC-09 KF/N6</a></td><td>SHUFT</td><td></td><td class="thgeo-p" data-art="KF/N6">157 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/901388978934-electrolux-arizona-eacm-09-az-n6">мобильный Arizona EACM-09 AZ/N6</a></td><td>Electrolux</td><td>24 м²</td><td class="thgeo-p" data-art="AZ/N6">165 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/353721699354-ballu-orbis-bpac-09-or-n6">мобильный Orbis BPAC-09 OR/N6</a></td><td>Ballu</td><td>23 м²</td><td class="thgeo-p" data-art="OR/N6">169 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/559474373594-ballu-aura-bpac-09-cps-n1">мобильный Aura BPAC-09 CP/N1</a></td><td>Ballu</td><td>24 м²</td><td class="thgeo-p" data-art="CP/N1">178 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/448886878164-rm-ts28ch-e">мобильный RM-TS28CH-E</a></td><td>ROYAL CLIMA</td><td>20 м²</td><td class="thgeo-p" data-art="RM-TS28CH-E">182 500 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/845477658844-rm-mt28ch-e">мобильный RM-MT28CH-E</a></td><td>ROYAL CLIMA</td><td>20 м²</td><td class="thgeo-p" data-art="RM-MT28CH-E">183 900 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/826263775934-electrolux-eacm-13-cl-n3">мобильный EACM-13 CL/N3</a></td><td>Electrolux</td><td>32 м²</td><td class="thgeo-p" data-art="CL/N3">185 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/971547773174-kondicioner-midea-mobilnyy-kondicionery-mppda-09crn7-9000-bt">мобильный Мобильный кондиционер MPPDA-09CRN7</a></td><td>Midea</td><td>25 м²</td><td class="thgeo-p" data-art="MPPDA-09CRN7">187 375 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/568838924054-electrolux-arizona-eacm-12-az-n6">мобильный Arizona EACM-12 AZ/N6</a></td><td>Electrolux</td><td>30 м²</td><td class="thgeo-p" data-art="AZ/N6">195 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/423339324024-electrolux-eacm-11-cl-n3">мобильный EACM-11 CL/N3</a></td><td>Electrolux</td><td>27 м²</td><td class="thgeo-p" data-art="CL/N3">205 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/184189703334-ballu-aura-bpac-12-cps-n1">мобильный Aura BPAC-12 CP/N1</a></td><td>Ballu</td><td>30 м²</td><td class="thgeo-p" data-art="CP/N1">225 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/187916665374-electrolux-arizona-eacm-14-az-n6">мобильный Arizona EACM-14 AZ/N6</a></td><td>Electrolux</td><td>35 м²</td><td class="thgeo-p" data-art="AZ/N6">225 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/347772449634-rm-cr39hh-e">мобильный RM-CR39HH-E</a></td><td>ROYAL CLIMA</td><td>27 м²</td><td class="thgeo-p" data-art="RM-CR39HH-E">307 000 ₸</td></tr>
+</tbody>
+</table>
+</div>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">30.08.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Когда мобильный уместен, а когда нет</h2>
+<p>Он выручает там, где сплит поставить нельзя: съёмная квартира, фасад под охраной,
+серверная на время. Плата за мобильность — шум компрессора прямо в комнате и потери
+через воздуховод: при равной мощности мобильный охлаждает хуже сплита и потребляет
+больше. Окно под воздуховод придётся приоткрыть, на створку ставят заглушку —
+иначе тёплый воздух возвращается обратно.</p>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
+производителя, срок в паспорте изделия; гарантия на монтаж — бригады, срок в её карточке
+и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад,
+напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
+возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Сколько стоит мобильный кондиционер в Алматы?</summary><p>В каталоге 32 моделей от 6 брендов, цены от 144 990 ₸. Самые доступные позиции из наличия: мобильный Frigo SFPAC-07 KF/N6 — 144 990 ₸; мобильный Orbis BPAC-07 OR/N6 — 147 990 ₸; мобильный Frigo SFPAC-09 KF/N6 — 157 990 ₸. Точная цена каждой модели — на её странице в каталоге.</p></details>
+<details class="thgeo-faq"><summary>Как подобрать модель?</summary><p>По площади, как у сплита, но с запасом: часть холода теряется через воздуховод. И честно оцените шум — компрессор стоит в самой комнате.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
+<details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Мобильные кондиционеры в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SHUFT мобильный Frigo SFPAC-07 KF/N6", "url": "https://tehnoholod369.kz/tproduct/817879508364-shuft-frigo-sfpac-07-kf-n6"}, {"@type": "ListItem", "position": 2, "name": "Ballu мобильный Orbis BPAC-07 OR/N6", "url": "https://tehnoholod369.kz/tproduct/672058161334-ballu-orbis-bpac-07-or-n6"}, {"@type": "ListItem", "position": 3, "name": "SHUFT мобильный Frigo SFPAC-09 KF/N6", "url": "https://tehnoholod369.kz/tproduct/124217713944-shuft-frigo-sfpac-09-kf-n6"}, {"@type": "ListItem", "position": 4, "name": "Electrolux мобильный Arizona EACM-09 AZ/N6", "url": "https://tehnoholod369.kz/tproduct/901388978934-electrolux-arizona-eacm-09-az-n6"}, {"@type": "ListItem", "position": 5, "name": "Ballu мобильный Orbis BPAC-09 OR/N6", "url": "https://tehnoholod369.kz/tproduct/353721699354-ballu-orbis-bpac-09-or-n6"}, {"@type": "ListItem", "position": 6, "name": "Ballu мобильный Aura BPAC-09 CP/N1", "url": "https://tehnoholod369.kz/tproduct/559474373594-ballu-aura-bpac-09-cps-n1"}, {"@type": "ListItem", "position": 7, "name": "ROYAL CLIMA мобильный RM-TS28CH-E", "url": "https://tehnoholod369.kz/tproduct/448886878164-rm-ts28ch-e"}, {"@type": "ListItem", "position": 8, "name": "ROYAL CLIMA мобильный RM-MT28CH-E", "url": "https://tehnoholod369.kz/tproduct/845477658844-rm-mt28ch-e"}, {"@type": "ListItem", "position": 9, "name": "Electrolux мобильный EACM-13 CL/N3", "url": "https://tehnoholod369.kz/tproduct/826263775934-electrolux-eacm-13-cl-n3"}, {"@type": "ListItem", "position": 10, "name": "Midea мобильный Мобильный кондиционер MPPDA-09CRN7", "url": "https://tehnoholod369.kz/tproduct/971547773174-kondicioner-midea-mobilnyy-kondicionery-mppda-09crn7-9000-bt"}, {"@type": "ListItem", "position": 11, "name": "Electrolux мобильный Arizona EACM-12 AZ/N6", "url": "https://tehnoholod369.kz/tproduct/568838924054-electrolux-arizona-eacm-12-az-n6"}, {"@type": "ListItem", "position": 12, "name": "Electrolux мобильный EACM-11 CL/N3", "url": "https://tehnoholod369.kz/tproduct/423339324024-electrolux-eacm-11-cl-n3"}, {"@type": "ListItem", "position": 13, "name": "Ballu мобильный Aura BPAC-12 CP/N1", "url": "https://tehnoholod369.kz/tproduct/184189703334-ballu-aura-bpac-12-cps-n1"}, {"@type": "ListItem", "position": 14, "name": "Electrolux мобильный Arizona EACM-14 AZ/N6", "url": "https://tehnoholod369.kz/tproduct/187916665374-electrolux-arizona-eacm-14-az-n6"}, {"@type": "ListItem", "position": 15, "name": "ROYAL CLIMA мобильный RM-CR39HH-E", "url": "https://tehnoholod369.kz/tproduct/347772449634-rm-cr39hh-e"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит мобильный кондиционер в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "В каталоге 32 моделей от 6 брендов, цены от 144 990 ₸. Самые доступные позиции из наличия: мобильный Frigo SFPAC-07 KF/N6 — 144 990 ₸; мобильный Orbis BPAC-07 OR/N6 — 147 990 ₸; мобильный Frigo SFPAC-09 KF/N6 — 157 990 ₸. Точная цена каждой модели — на её странице в каталоге."}}, {"@type": "Question", "name": "Как подобрать модель?", "acceptedAnswer": {"@type": "Answer", "text": "По площади, как у сплита, но с запасом: часть холода теряется через воздуховод. И честно оцените шум — компрессор стоит в самой комнате."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/mobilnye.json"];
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
+  })).then(function(all){
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    if(min){var el=document.querySelector(".thgeo-pmin");
+      if(el)el.textContent=min.toLocaleString("ru-RU").replace(/\u202f/g,"\u00a0");}
+  });
+})();
+</script>
