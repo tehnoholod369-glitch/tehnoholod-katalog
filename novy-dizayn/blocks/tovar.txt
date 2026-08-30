@@ -1155,7 +1155,8 @@ class Component extends DCLogic {
       crewList: inCity.map(b => {
         const facts = [
           b.warranty ? { v: "Гарантия на монтаж " + b.warranty + " мес — даёт бригада" } : null,
-          b.forma ? { v: b.forma + (b.docs ? " · " + b.docs : "") } : null,
+          b.forma ? { v: b.forma + (b.nds ? " · " + b.nds : "")
+                         + (b.docs ? " · " + b.docs : "") } : null,
           b.el ? { v: "Электрика: допуск " + b.el.gr + " группы"
                       + (b.el.v ? ", " + b.el.v : "") } : null,
           b.since ? { v: "В сети с " + b.since + " года" } : null,
