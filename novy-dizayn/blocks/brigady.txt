@@ -487,7 +487,14 @@ class Component extends DCLogic {
           // инструмента) — поэтому подпись «подтверждено» здесь честная.
           c.langs && c.langs.length ? { k: "ЯЗЫКИ", v: this.cap(c.langs.join(", ")) } : null,
           c.osn && c.osn.length ? { k: "ОСНАЩЕНИЕ",
-            v: this.cap(c.osn.join(" · ")) + " — подтверждено при сертификации" } : null
+            v: this.cap(c.osn.join(" · ")) + " — подтверждено при сертификации" } : null,
+          c.forma ? { k: "ОФОРМЛЕНИЕ",
+            v: c.forma + (c.docs ? " · " + c.docs : "") } : null,
+          // Допуск по электробезопасности приходит ТОЛЬКО действующий: приёмник
+          // сравнивает срок с сегодняшним днём и просроченный не отдаёт вовсе.
+          c.el ? { k: "ЭЛЕКТРИКА",
+            v: "допуск " + c.el.gr + " группы" + (c.el.v ? ", " + c.el.v : "")
+               + (c.el.till ? ", действует до " + this.dateLabel(c.el.till) : "") } : null
         ].filter(Boolean);
 
         return {
