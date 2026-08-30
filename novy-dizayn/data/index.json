@@ -2,6 +2,65 @@
  "updated": "2026-08-30",
  "groups": [
   {
+   "slug": "avtonomnoe-pitanie",
+   "title": "avtonomnoe-pitanie",
+   "count": 46,
+   "brands": 1,
+   "brandList": [
+    "EcoFlow"
+   ],
+   "inStock": 26,
+   "acc": 12,
+   "serList": [
+    "EcoFlow DELTA",
+    "EcoFlow GLACIER",
+    "EcoFlow RAPID",
+    "EcoFlow RIVER",
+    "EcoFlow TRAIL",
+    "EcoFlow WAVE",
+    "Аксессуары EcoFlow",
+    "Солнечные панели EcoFlow"
+   ],
+   "subs": [
+    {
+     "name": "Зарядная станция",
+     "n": 14
+    },
+    {
+     "name": "Аксессуары",
+     "n": 12
+    },
+    {
+     "name": "Дополнительная батарея",
+     "n": 4
+    },
+    {
+     "name": "Солнечная панель",
+     "n": 4
+    },
+    {
+     "name": "Повербанк",
+     "n": 4
+    },
+    {
+     "name": "Зарядное устройство",
+     "n": 3
+    },
+    {
+     "name": "Портативный холодильник",
+     "n": 3
+    },
+    {
+     "name": "Портативный кондиционер",
+     "n": 1
+    },
+    {
+     "name": "Инвертор",
+     "n": 1
+    }
+   ]
+  },
+  {
    "slug": "bytovye",
    "title": "Бытовые сплит-системы",
    "count": 381,
@@ -184,7 +243,7 @@
     "DITREEX",
     "ROYAL CLIMA"
    ],
-   "inStock": 54,
+   "inStock": 53,
    "acc": 0,
    "serList": [],
    "subs": [
@@ -212,7 +271,7 @@
     "Firelight",
     "Royal Thermo"
    ],
-   "inStock": 25,
+   "inStock": 19,
    "acc": 6,
    "serList": [
     "Allira",
@@ -439,7 +498,7 @@
     "FUNAI",
     "ROYAL CLIMA"
    ],
-   "inStock": 12,
+   "inStock": 11,
    "acc": 0,
    "serList": [
     "Comfort",
@@ -618,7 +677,7 @@
    "brandList": [
     "Royal Thermo"
    ],
-   "inStock": 161,
+   "inStock": 156,
    "acc": 10,
    "serList": [],
    "subs": [
@@ -672,7 +731,7 @@
     "POWERAIR by ZILON",
     "ROYAL CLIMA"
    ],
-   "inStock": 63,
+   "inStock": 58,
    "acc": 0,
    "serList": [],
    "subs": [
@@ -713,7 +772,7 @@
     "ROYAL CLIMA",
     "ZILON"
    ],
-   "inStock": 50,
+   "inStock": 44,
    "acc": 0,
    "serList": [
     "ATLAS",
@@ -812,7 +871,7 @@
     "Royal Thermo",
     "SHUFT"
    ],
-   "inStock": 356,
+   "inStock": 352,
    "acc": 309,
    "serList": [
     "AIRTUBE",
@@ -969,7 +1028,7 @@
    "brandList": [
     "Ballu"
    ],
-   "inStock": 13,
+   "inStock": 10,
    "acc": 0,
    "serList": [
     "BIF",
@@ -999,7 +1058,7 @@
     "ROYAL CLIMA",
     "Royal Thermo"
    ],
-   "inStock": 178,
+   "inStock": 164,
    "acc": 1,
    "serList": [
     "ARTE MODERNO",

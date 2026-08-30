@@ -236,6 +236,9 @@
                 <sc-if value="{{ c.isPick }}" hint-placeholder-val="{{ false }}">
                   <div title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж." style="position:absolute; top:8px; left:8px; font-size:12px; font-weight:700; color:#fff; background:#0872D3; border-radius:5px; padding:3px 8px; cursor:help;">Наш выбор</div>
                 </sc-if>
+                <sc-if value="{{ c.isSale }}" hint-placeholder-val="{{ false }}">
+                  <div title="{{ c.saleTitle }}" style="position:absolute; bottom:8px; left:8px; font-size:12px; font-weight:700; color:#fff; background:#B25200; border-radius:5px; padding:3px 8px; cursor:help;">Спеццена</div>
+                </sc-if>
               </div>
               <div style="flex:1; min-width:0; display:flex; flex-direction:column;">
                 <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#0872D3;">{{ c.brand }}</div>
@@ -318,6 +321,7 @@ class Component extends DCLogic {
   }
   state = Object.assign({
     index: null, updated: "", group: "bytovye", sub: "all", items: null, loading: true, picks: [], onlyPick: false,
+    sale: {}, onlySale: false,
     sort: "rec", view: "grid", shown: 12, mobFilters: false, mobNav: false
   }, this.facetsOff());
   gridRef = React.createRef();
@@ -355,6 +359,7 @@ class Component extends DCLogic {
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/groups.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : {}).then(texts => this.setState({ texts })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-priority.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(brandPrio => this.setState({ brandPrio })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/picks.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(p => this.setState({ picks: (p && p.skus) || [] })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/akcii.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(a => this.setState({ sale: (a && a.items) || {} })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"})
       .then(r => r.json())
       .then(idx => { this.setState({ index: idx.groups || idx, updated: idx.updated || "", group }); this.loadGroup(group, sub || "all"); })
@@ -481,6 +486,11 @@ class Component extends DCLogic {
   isPick(it, picks) {
     if (picks && picks.length) return it.s && picks.indexOf(it.s) >= 0;
     return !!(it.s && it.i && it.p && /налич/i.test(it.st || ""));
+  }
+
+  saleOf(it) {
+    const m = this.state.sale || {};
+    return (it && it.s && m[it.s]) || null;
   }
 
   recScore(it, picks) {
@@ -1221,6 +1231,7 @@ class Component extends DCLogic {
       if (!accMode && it.acc) return false;
       if (s.sub !== "all" && it.sub !== s.sub) return false;
       if (s.onlyPick && !this.isPick(it, picks)) return false;
+      if (s.onlySale && !this.saleOf(it)) return false;
       if (s.brand !== "all" && it.b !== s.brand) return false;
       if (s.ser !== "all" && it.ser !== s.ser) return false;
       if (s.comp !== "all" && compOf(it) !== s.comp) return false;
@@ -1264,6 +1275,7 @@ class Component extends DCLogic {
       if (!accMode && it.acc) return false;
       if (skip !== "sub" && s.sub !== "all" && it.sub !== s.sub) return false;
       if (s.onlyPick && !this.isPick(it, picks)) return false;
+      if (s.onlySale && !this.saleOf(it)) return false;
       if (skip !== "brand" && s.brand !== "all" && it.b !== s.brand) return false;
       if (skip !== "ser" && s.ser !== "all" && it.ser !== s.ser) return false;
       if (skip !== "comp" && s.comp !== "all" && compOf(it) !== s.comp) return false;
@@ -1440,7 +1452,10 @@ class Component extends DCLogic {
 
     // сколько фильтров реально сужают выдачу: ключи фасетов плюс «Возможности» и «Наш выбор»
     const activeFilters = (this.facetKeys || []).filter(k => s[k] && s[k] !== "all").length
-      + (s.feat ? 1 : 0) + (s.onlyPick ? 1 : 0);
+      + (s.feat ? 1 : 0) + (s.onlyPick ? 1 : 0) + (s.onlySale ? 1 : 0);
+    // сколько спеццен в этой группе: чипа «Спеццена» нет там, где спеццен нет —
+    // кнопка «Спеццена 0» это не фильтр, а обещание, за которым ничего не стоит
+    const saleCount = items.filter(x => this.saleOf(x)).length;
     const filterGroups = this.wrapFilters([
       // в группе один бренд — выбирать не из чего: «Все 444 / Royal Thermo 444» это
       // не фильтр, а строка-пустышка. Так у семи групп, включая радиаторы (26.08.2026)
@@ -1557,12 +1572,14 @@ class Component extends DCLogic {
         )
       } : null,
       {
-        key: "pick", activeLabel: s.onlyPick ? "Наш выбор" : "",
+        key: "pick", activeLabel: s.onlyPick ? "Наш выбор" : (s.onlySale ? "Спеццена" : ""),
         title: "Отбор", note: picks.length ? "Рекомендуем сами: в наличии и проверены на объектах" : "Пока по данным: в наличии, с фото и артикулом",
         options: [
-          this.chip(!s.onlyPick, "Все", () => this.setState({ onlyPick: false, shown: 12 })),
-          this.chip(s.onlyPick, "Наш выбор", () => this.setState({ onlyPick: true, shown: 12 }))
-        ]
+          this.chip(!s.onlyPick && !s.onlySale, "Все", () => this.setState({ onlyPick: false, onlySale: false, shown: 12 })),
+          this.chip(s.onlyPick, "Наш выбор", () => this.setState({ onlyPick: true, onlySale: false, shown: 12 }))
+        ].concat(saleCount ? [
+          this.chip(s.onlySale, "Спеццена", () => this.setState({ onlySale: true, onlyPick: false, shown: 12 }), String(saleCount))
+        ] : [])
       },
       {
         key: "stock", activeLabel: s.stock === "all" ? "" : (s.stock === "in" ? "В наличии" : "Под заказ"),
@@ -1623,7 +1640,16 @@ class Component extends DCLogic {
         monthly: monthlyBase ? "рассрочка 12 мес — " + this.fmt(monthlyBase / 12) + " ₸/мес" : "",
         cta: it.pt ? "Открыть карточку →" : "Запросить цену →",
         pickScore: this.isPick(it, picks) ? this.recScore(it, picks) : -1,
-        isPick: false
+        isPick: false,
+        // Спеццена. Текст в подсказке — тот, что владелец написал в АКЦИИ.csv:
+        // объяснение, ПОЧЕМУ цена такая. Ни «было», ни процента скидки в нём быть
+        // не может — это проверяет акции.py перед тем, как позиция сюда попадёт.
+        isSale: !!this.saleOf(it),
+        saleTitle: (function (sale) {
+          if (!sale) return "";
+          const хвост = sale.till ? " Действует до " + sale.till + "." : "";
+          return "Специальная цена ИП «ТехноХолод». " + sale.why + "." + хвост;
+        })(this.saleOf(it))
       };
     });
 
