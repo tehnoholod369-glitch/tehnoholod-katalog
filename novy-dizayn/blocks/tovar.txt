@@ -141,15 +141,17 @@
               </div>
             </div>
 
-            <sc-if value="{{ vy.has }}" hint-placeholder-val="{{ false }}">
-              <a href="{{ vy.href }}" style="display:block; background:{{ vy.bg }}; border:1px solid {{ vy.br }}; border-radius:12px; padding:14px 16px; margin-top:12px; text-decoration:none;">
-                <div style="font-size:15px; font-weight:700; color:#18212F;">{{ vy.title }}</div>
-                <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:4px;">{{ vy.note }}</div>
-                <sc-if value="{{ vy.hasStock }}" hint-placeholder-val="{{ true }}">
-                  <div style="font-size:12px; color:#5A6675; margin-top:4px;">{{ vy.stock }}</div>
-                </sc-if>
-                <div style="font-size:13px; font-weight:700; color:#0872D3; margin-top:8px;">{{ vy.label }}</div>
-              </a>
+            <sc-if value="{{ hasVy }}" hint-placeholder-val="{{ false }}">
+              <sc-for list="{{ vy }}" as="v" hint-placeholder-count="1">
+                <a href="{{ v.href }}" style="display:block; background:{{ v.bg }}; border:1px solid {{ v.br }}; border-radius:12px; padding:14px 16px; margin-top:12px; text-decoration:none;">
+                  <div style="font-size:15px; font-weight:700; color:#18212F;">{{ v.title }}</div>
+                  <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:4px;">{{ v.note }}</div>
+                  <sc-if value="{{ v.hasStock }}" hint-placeholder-val="{{ true }}">
+                    <div style="font-size:12px; color:#5A6675; margin-top:4px;">{{ v.stock }}</div>
+                  </sc-if>
+                  <div style="font-size:13px; font-weight:700; color:#0872D3; margin-top:8px;">{{ v.label }}</div>
+                </a>
+              </sc-for>
             </sc-if>
 
             <sc-if value="{{ hasFacts }}" hint-placeholder-val="{{ true }}">
@@ -508,7 +510,7 @@
                 <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> <span style="color:#B25200; font-weight:700;"><span style="color:#E8A33D;">&#9733;</span> {{ rv.rating }}</span> &middot; {{ rv.otzyvLabel }} покупателей этой модели на Kaspi.kz — публикуем как есть, обновлено {{ rv.dt }}.</div>
               </sc-if>
               <sc-if value="{{ rv.fromTwin }}" hint-placeholder-val="{{ false }}">
-                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> <span style="color:#B25200; font-weight:700;"><span style="color:#E8A33D;">&#9733;</span> {{ rv.rating }}</span> &middot; {{ rv.otzyvLabel }} на Kaspi.kz: {{ rv.srcNote }}. Публикуем как есть, обновлено {{ rv.dt }}.</div>
+                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> <span style="color:#B25200; font-weight:700;"><span style="color:#E8A33D;">&#9733;</span> {{ rv.rating }}</span> &middot; {{ rv.otzyvLabel }} на Kaspi.kz. {{ rv.srcNote }}. Публикуем как есть, обновлено {{ rv.dt }}.</div>
               </sc-if>
             </div>
             <a href="https://maps.google.com/?cid=6985295064906783345" target="_blank" rel="noreferrer" style="display:flex; align-items:center; gap:10px; background:#F3F7FB; border-radius:12px; padding:12px 16px;">
@@ -621,6 +623,14 @@ class Component extends DCLogic {
   ph(u) { return (window.photoUrl ? window.photoUrl(u) : String(u || "")); }
 
   // дробное число всегда требует родительного единственного: «6,4 сезона», а не «сезонов»
+  // «серебристый» → «в серебристом», «белый» → «в белом». Список цветов у нас
+  // закрытый и короткий, поэтому правило простое, а не морфология целиком.
+  вПредложном(цвет) {
+    const v = String(цвет || "").trim().toLowerCase();
+    if (/ый$|ий$/.test(v)) { return v.replace(/ый$|ий$/, "ом"); }
+    return v;
+  }
+
   seasonWord(n) {
     if (n % 1 !== 0) return "сезона";
     const a = n % 10, b = n % 100;
@@ -1323,8 +1333,16 @@ class Component extends DCLogic {
           none: !(n && r.url),
           own: !!(n && r.url) && !src,
           fromTwin: !!(n && r.url) && !!src,
-          srcNote: src ? "отзывы на выпуск " + src.year + " года (" + src.model
-            + ") — это тот же аппарат, отличается год выпуска и артикул" : "",
+          // Источник называется прямо, и рядом — всё, чем он отличается.
+          // «отзывы на серебристый 2026», которых никто не писал, быть не должно.
+          srcNote: src ? (() => {
+            const d = src.diff || {};
+            const части = [];
+            if (d["год"]) { части.push("выпуска " + d["год"] + " года"); }
+            if (d["цвет"]) { части.push("в " + this.вПредложном(d["цвет"]) + " корпусе"); }
+            const чем = части.length ? части.join(" ") : "другого исполнения";
+            return "Написаны на " + src.model + " — это та же модель " + чем;
+          })() : "",
           otzyvLabel: (r.count || n) + " " + word(r.count || n),
           url: r.url || "",
           dt: r.dt || "",
@@ -1335,32 +1353,40 @@ class Component extends DCLogic {
         };
       })(),
       vy: (() => {
-        const rec = (s.vypuski || {})[it.s || ""];
-        if (!rec) { return { has: false }; }
-        const twin = (s.items || []).find(x => x.s === rec.twin);
-        const своя = it.p || 0, чужая = (twin && twin.p) || 0;
-        const дешевле = чужая && своя && чужая < своя;
-        const разница = чужая && своя ? Math.abs(своя - чужая) : 0;
+        // Связей у позиции бывает несколько сразу: тот же аппарат прошлого года
+        // И он же в другом цвете. Поэтому список плашек, а не одна.
+        const список = (s.vypuski || {})[it.s || ""] || [];
         const деньги = n => n.toLocaleString("ru-RU").replace(/\u00a0/g, " ") + " ₸";
-        return {
-          has: true,
-          // Заголовок называет главное: это тот же аппарат, отличается год.
-          title: чужая
-            ? "Тот же аппарат, выпуск " + rec.twinYear + " года — " + деньги(чужая)
-            : "Тот же аппарат есть выпуском " + rec.twinYear + " года",
-          note: "Отличается " + (rec.diff || "год выпуска и артикул")
-            + ": характеристики совпадают."
-            + (разница ? (дешевле ? " Дешевле на " : " Дороже на ") + деньги(разница) + "." : ""),
-          stock: twin ? (twin.st || "") : "",
-          hasStock: !!(twin && twin.st),
-          href: "/tovar?g=" + (rec.group || s.group)
-            + "&sl=" + encodeURIComponent(rec.sl || ""),
-          label: "Смотреть выпуск " + rec.twinYear + " года →",
-          // Дешевле — подсвечиваем: это выгода покупателя, а не наша реклама.
-          bg: дешевле ? "#E7F7F0" : "#F3F7FB",
-          br: дешевле ? "#9FDCC2" : "#DCE5F0"
-        };
+        return список.map(rec => {
+          const twin = (s.items || []).find(x => x.s === rec.twin);
+          const своя = it.p || 0, чужая = (twin && twin.p) || 0;
+          const дешевле = чужая && своя && чужая < своя;
+          const разница = чужая && своя ? Math.abs(своя - чужая) : 0;
+          const цвет = rec.kind === "цвет";
+          // «в белом» читается лучше, чем «исполнение белый»; год остаётся годом.
+          const вЦвете = "в " + this.вПредложном(rec.twinLabel);
+          // При цвете запятая не нужна: «Тот же аппарат в белом». При годе нужна:
+          // «Тот же аппарат, выпуск 2025 года».
+          const чем = цвет ? " " + вЦвете : ", выпуск " + rec.twinLabel + " года";
+          return {
+            title: чужая ? "Тот же аппарат" + чем + " — " + деньги(чужая)
+                         : "Тот же аппарат есть" + чем,
+            note: "Отличается " + (rec.diff || (цвет ? "только цвет корпуса" : "год выпуска и артикул"))
+              + ": характеристики совпадают."
+              + (разница ? (дешевле ? " Дешевле на " : " Дороже на ") + деньги(разница) + "." : ""),
+            stock: twin ? (twin.st || "") : "",
+            hasStock: !!(twin && twin.st),
+            href: "/tovar?g=" + (rec.group || s.group)
+              + "&sl=" + encodeURIComponent(rec.sl || ""),
+            label: цвет ? "Смотреть " + вЦвете + " →"
+                        : "Смотреть выпуск " + rec.twinLabel + " года →",
+            // Дешевле — подсвечиваем: это выгода покупателя, а не наша реклама.
+            bg: дешевле ? "#E7F7F0" : "#F3F7FB",
+            br: дешевле ? "#9FDCC2" : "#DCE5F0"
+          };
+        });
       })(),
+      hasVy: (((s.vypuski || {})[it.s || ""]) || []).length > 0,
       docs: [
         det.mn
           ? { title: "Руководство по эксплуатации", note: "PDF на русском", state: "есть", fg: "#0E9F6E", bg: "#E7F7F0", href: det.mn, hasHref: true }

@@ -316,7 +316,7 @@ class Component extends DCLogic {
   // Один список ключей фасетов на три места: старт, смена группы и «Сбросить».
   // Раньше он был переписан трижды — новый фасет забывали сбросить, и он тянулся
   // за пользователем в другую группу (25.08.2026)
-  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "watt", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "pit", "thermo", "stock"];
+  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "colorAc", "watt", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "pit", "thermo", "stock"];
   facetsOff() {
     const o = { feat: "", q: "", qF: {} };
     (this.facetKeys || []).forEach(k => { o[k] = "all"; });
@@ -1012,6 +1012,23 @@ class Component extends DCLogic {
       return "";
     };
 
+    // Третья читалка цвета — для сплитов. Своя, потому что наборы значений разные:
+    // у каминов «серебристый» это «Сталь» (там сталь и есть материал портала),
+    // а у кондиционера серебристый — цвет пластика, и путать их нельзя.
+    // Регистр в мастере гуляет («Чёрный» и «чёрный» рядом), поэтому сводим сами.
+    const colorAcOf = x => {
+      const v = specOf(x, /^цвет/i).toLowerCase();
+      if (!v) return "";
+      if (/бел/.test(v)) return "Белый";
+      if (/ч[её]рн/.test(v)) return "Чёрный";
+      if (/серебр/.test(v)) return "Серебристый";
+      if (/золот/.test(v)) return "Золотистый";
+      if (/син/.test(v)) return "Тёмно-синий";
+      if (/красн/.test(v)) return "Красный";
+      if (/сер/.test(v)) return "Серый";
+      return "";
+    };
+
     const VALUE_FACETS = [
       { key: "bar", title: "Макс. рабочее давление", of: barOf, only: ["radiatory"],
         order: ["20 бар", "25 бар", "30 бар"],
@@ -1079,7 +1096,13 @@ class Component extends DCLogic {
         note: "Цвет по данным производителя" },
       { key: "color", title: "Цвет", of: colorOf, only: ["kaminy"],
         order: ["Чёрный", "Белый", "Графит и серый", "Под дерево", "Сталь"],
-        note: "Цвет корпуса или портала по данным производителя" }
+        note: "Цвет корпуса или портала по данным производителя" },
+      // Цвет внутреннего блока — то, что видно в комнате, и покупатель об этом
+      // спрашивает. Оговорка про заполненность обязательна: у части моделей
+      // производитель цвет не указал, и они в подборе по цвету не покажутся.
+      { key: "colorAc", title: "Цвет", of: colorAcOf, only: ["bytovye"],
+        order: ["Белый", "Чёрный", "Серебристый", "Золотистый", "Тёмно-синий", "Красный"],
+        note: "Цвет внутреннего блока по данным производителя. У части моделей он не указан — такие модели в подборе по цвету не показываются" }
     ];
     const BAND_FACETS = [
       // Класс — первое, чем покупатель называет кондиционер («нужна девятка»).
