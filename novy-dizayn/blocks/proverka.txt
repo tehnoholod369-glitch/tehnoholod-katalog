@@ -1,0 +1,214 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+  /* Поле номера: моноширинное и крупное — номер сверяют с бумагой символ в символ,
+     а на телефоне это делают одной рукой. Кнопка 48 px, как остальные на витрине. */
+  .th-pv-inp { width:100%; box-sizing:border-box; border:1px solid #C9D6E4; border-radius:10px;
+    padding:14px 15px; font-size:19px; font-family:ui-monospace,Consolas,monospace;
+    letter-spacing:0.06em; text-transform:uppercase; background:#fff; }
+  .th-pv-btn { width:100%; margin-top:10px; min-height:48px; border:0; border-radius:10px;
+    background:#0872D3; color:#fff; font-size:16px; font-weight:700; font-family:inherit; cursor:pointer; }
+  .th-pv-btn[disabled] { background:#9BB8D6; cursor:default; }
+  .th-pv-row { display:grid; grid-template-columns:minmax(140px,38%) 1fr; gap:10px 16px;
+    padding:11px 0; border-top:1px solid #EEF2F7; font-size:15px; line-height:1.5; }
+  .th-pv-k { color:#5A6675; }
+  .th-pv-v { font-weight:600; }
+  @media (max-width:520px) { .th-pv-row { grid-template-columns:1fr; gap:2px; } }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div style="max-width:820px; margin:0 auto; padding:18px 24px 72px 24px;">
+    <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <a href="/brigady">Бригады</a> → <span style="color:#18212F;">Проверка сертификата</span></div>
+
+    <div style="margin-top:12px;">
+      <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">Проверка сертификата</h1>
+      <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">ИП «ТехноХолод» допускает к заказам только проверенные бригады. Введите номер с бланка или из «Сервис-карты 369» — покажем, действует ли он и что подтверждает. Номер бригады выглядит как <b>369-BR-02-001</b>, именной номер мастера — <b>369-M-02-001</b>.</div>
+    </div>
+
+    
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:18px 16px; margin-top:20px;">
+      <label for="th-pv-cert" style="display:block; font-size:13px; font-weight:600; color:#5A6675;">Номер сертификата</label>
+      <input id="th-pv-cert" class="th-pv-inp" type="text" value="{{ cert }}" onInput="{{ onCert }}" placeholder="369-BR-02-001" autocomplete="off" spellcheck="false" style="margin-top:6px;" />
+      <button type="button" class="th-pv-btn" onClick="{{ onCheck }}" disabled="{{ busy }}">{{ btnText }}</button>
+    </div>
+
+    
+    <sc-if value="{{ hasResult }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:18px 16px; margin-top:14px;">
+        <div style="display:flex; gap:10px; align-items:center; font-weight:800; font-size:17px; border-radius:10px; padding:12px 14px; color:{{ plashFg }}; background:{{ plashBg }};">{{ plash }}</div>
+
+        <div style="font-size:13px; color:#5A6675; margin-top:12px;">Номер: <span style="font-family:ui-monospace,Consolas,monospace; font-size:15px; letter-spacing:0.06em; color:#18212F;">{{ shownCert }}</span></div>
+
+        <sc-if value="{{ hasRows }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:8px;">
+            <sc-for list="{{ rows }}" as="r" hint-placeholder-count="4">
+              <div class="th-pv-row"><div class="th-pv-k">{{ r.k }}</div><div class="th-pv-v">{{ r.v }}</div></div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ trusted }}" hint-placeholder-val="{{ true }}">
+          <div style="display:inline-block; margin-top:14px; background:#E6F2FD; color:#0C447C; border-radius:999px; padding:6px 12px; font-size:13px; font-weight:700;">✓ Проверена ИП «ТехноХолод» перед допуском к заказам</div>
+        </sc-if>
+
+        <sc-if value="{{ hasHint }}" hint-placeholder-val="{{ true }}">
+          <div style="font-size:14px; color:#5A6675; margin-top:14px; line-height:1.6;">{{ hint }}</div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:18px 16px; margin-top:14px;">
+      <h2 style="margin:0 0 8px; font-size:18px; font-weight:800;">Что означает этот номер</h2>
+      <div style="font-size:15px; color:#5A6675; line-height:1.65;">
+        Номер получает бригада, которую мы проверили перед допуском к заказам: сверили оснащение по фото инструмента, направления и виды работ, срок её гарантии на монтаж. Сертификат — это <b>наш допуск</b>, а не лицензия и не разрешительный документ: обучение у производителя, разряд и квалификационные удостоверения он не подтверждает.<br /><br />
+        Гарантию на монтаж даёт бригада, гарантию на оборудование — производитель, а обращение принимаем мы и передаём тому, чей это случай. Рейтинг бригады складывается только из оценок клиентов по подтверждённым монтажам и публикуется после пяти оценок — <a href="/brigady">смотрите на странице бригад</a>.<br /><br />
+        Если сертификат не действует, а бригада приехала — напишите нам в <a href="https://wa.me/77000369369">WhatsApp</a> или позвоните <a href="tel:+77000369369">+77 000 369 369</a> до начала работ.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  // Приёмник заявок — тот же, что у страницы бригад. Второго адреса не заводим.
+  PRIEMNIK = "https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec";
+
+  state = { cert: "", busy: false, res: null, err: "" };
+
+  componentDidMount() {
+    // Номер приходит из QR на бланке: ?cert=369-BR-02-001. Тогда проверяем сразу,
+    // не заставляя человека набирать то, что он уже поднёс камерой.
+    let из_url = "";
+    try {
+      const p = new URLSearchParams(location.search);
+      из_url = p.get("cert") || p.get("check") || "";
+    } catch (e) {}
+    if (из_url) {
+      this.setState({ cert: this.norm(из_url) });
+      this.check(this.norm(из_url));
+    }
+  }
+
+  /** Номер как его вводит человек. Правило одно с приёмником (нормНомер):
+   *  пробел вместо дефиса и длинное тире из автозамены не должны ломать поиск. */
+  norm(v) {
+    return String(v || "").toUpperCase()
+      .replace(/[‐-―−]/g, "-")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-|-$/g, "");
+  }
+
+  onCert(e) {
+    this.setState({ cert: e && e.target ? e.target.value : "" });
+  }
+
+  onCheck() {
+    const n = this.norm(this.state.cert);
+    if (!n) return;
+    this.setState({ cert: n });
+    this.check(n);
+  }
+
+  check(номер) {
+    this.setState({ busy: true, err: "", res: null });
+    fetch(this.PRIEMNIK + "?check=" + encodeURIComponent(номер), { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => this.setState({ res: d, busy: false, err: d ? "" : "нет ответа" }))
+      // Связи нет — говорим об этом прямо. Молчащая кнопка читается как
+      // «сертификат недействителен», а это разные вещи.
+      .catch(() => this.setState({ busy: false, err: "нет ответа" }));
+  }
+
+  dateRu(iso) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso || ""));
+    return m ? (m[3] + "." + m[2] + "." + m[1]) : (iso || "");
+  }
+
+  renderVals() {
+    const d = this.state.res;
+    const rows = [];
+    let plash = "", plashBg = "#EEF3F9", plashFg = "#5A6675", hint = "", trusted = false;
+
+    if (this.state.err) {
+      plash = "Не удалось проверить";
+      hint = "Связь с реестром прервалась. Повторите попытку или напишите нам в WhatsApp +77 000 369 369.";
+    } else if (d && d.ok) {
+      trusted = !!(d.valid && d.trusted);
+      if (d.valid) { plash = "✓ Сертификат действует"; plashBg = "#E8F6EC"; plashFg = "#1B6B34"; }
+      else { plash = "Сертификат не действует"; plashBg = "#FDECEA"; plashFg = "#A3251B"; }
+
+      const add = (k, v) => { if (v) rows.push({ k: k, v: String(v) }); };
+      add("Кто", d.type === "мастер" ? "Мастер" : "Бригада");
+      if (d.type === "мастер") { add("Фамилия и инициалы", d.fio); add("В составе бригады", d.brigada); }
+      add("Город", d.city);
+      add("Выезд", d.zone);
+      add("Направления", (d.dirLabels || []).join(", "));
+      add("Квалификация", d.qual);
+      add("Электробезопасность", d.eb);
+      add("Высота", d.height);
+      add("Гарантия бригады на монтаж", d.warranty ? (d.warranty + " мес.") : "");
+      add("Работает с", d.since);
+      add("Сертификат выдан", this.dateRu(d.issued));
+      add("Проверено", d.checked ? (this.dateRu(d.checked) + (d.checkedDays != null ? " · " + d.checkedDays + " дн. назад" : "")) : "");
+      add("Действующий бланк", d.issue ? ("выпуск " + d.issue + (d.issueDate ? " от " + this.dateRu(d.issueDate) : "")) : "");
+      // Сертификаты производителей приёмник отдаёт только после того, как мы
+      // видели документы. Поэтому «предъявлены нам» — факт, а не пересказ.
+      if (d.certs && d.certs.list) add("Сертификаты производителей", d.certs.list + " · предъявлены нам " + this.dateRu(d.certs.checked));
+      add("Делает", (d.skills || []).map(s => s.title).join(", "));
+      if (!d.valid) hint = d.status || "";
+    } else if (d && !d.ok) {
+      plash = "Номер не найден";
+      hint = (d.reason || "") + ". Проверьте номер на бланке. Если он написан верно, напишите нам в WhatsApp +77 000 369 369 — разберёмся.";
+    }
+
+    return {
+      cert: this.state.cert,
+      busy: !!this.state.busy,
+      btnText: this.state.busy ? "Проверяем…" : "Проверить",
+      hasResult: !!(plash),
+      shownCert: (d && d.cert) ? d.cert : this.norm(this.state.cert),
+      plash: plash, plashBg: plashBg, plashFg: plashFg,
+      rows: rows, hasRows: rows.length > 0,
+      trusted: trusted,
+      hint: hint, hasHint: !!hint,
+      onCert: (e) => this.onCert(e),
+      onCheck: () => this.onCheck()
+    };
+  }
+}
+</script>

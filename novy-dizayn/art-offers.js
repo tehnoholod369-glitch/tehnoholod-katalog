@@ -20,6 +20,12 @@
  *
  * Разметка:
  *   <span data-price-from="bytovye"></span>     — минимальная цена по группе
+ *   <span data-price-from="ventilyaciya|Приточные установки"></span>
+ *                                               — то же, но по подкатегории:
+ *      вторая часть пишется той же строкой, что в ссылке плитки ?g=…&sub=…
+ *   Аксессуары в «от» не идут (поле acc): минимум по всей группе — это цена
+ *      запчасти, а не товара. Замер 31.08.2026: мультисплит «от 12 500 ₸» —
+ *      Wi-Fi модуль MDV, вентиляция «от 4 317 ₸» — ручной привод SHUFT.
  *   <span data-price-date></span>               — дата пересборки данных
  *   <a data-pick="bytovye" href="...">          — карточка рекомендованной модели,
  *      <img data-pick-img>                        href подставляется сам
@@ -81,14 +87,21 @@
     return "https://img.tehnoholod369.kz/" + String(u).replace(/^\/+/, "");
   }
 
+  // Значение атрибута — «bytovye» или «ventilyaciya|Приточные установки».
+  // Вторая часть сужает «от» до подкатегории, и пишется она той же строкой,
+  // что в ссылке плитки ?g=…&sub=…: число под ссылкой и то, что по ней
+  // откроется, обязаны совпадать, иначе страница обещает не то.
+  function слаг(v) { return String(v || "").split("|")[0].trim(); }
+  function подкат(v) { var ч = String(v || "").split("|"); return ч.length > 1 ? ч[1].trim() : ""; }
+
   function заполнить() {
     var цены = [].slice.call(document.querySelectorAll("[data-price-from]"));
     var пики = [].slice.call(document.querySelectorAll("[data-pick]"));
     if (!цены.length && !пики.length) return;
 
     var группы = {};
-    цены.forEach(function (e) { группы[e.getAttribute("data-price-from")] = 1; });
-    пики.forEach(function (e) { группы[e.getAttribute("data-pick")] = 1; });
+    цены.forEach(function (e) { группы[слаг(e.getAttribute("data-price-from"))] = 1; });
+    пики.forEach(function (e) { группы[слаг(e.getAttribute("data-pick"))] = 1; });
 
     Promise.all([взять("index.json"), взять("picks.json"), взять("hits.json")])
       .then(function (общее) {
@@ -108,21 +121,32 @@
         взять(slug + ".json").then(function (items) {
           if (!items || !items.length) return;
 
-          var сцен = items.filter(function (it) { return it.p; });
-          if (сцен.length) {
-            var мин = Math.min.apply(null, сцен.map(function (it) { return it.p; }));
-            цены.filter(function (e) { return e.getAttribute("data-price-from") === slug; })
-              .forEach(function (e) { e.textContent = число(мин) + " ₸"; });
-          }
+          // Аксессуары из «от» исключаются. Минимум по всей группе — это цена
+          // запчасти, а не товара: в мультисплите Wi-Fi модуль за 12 500 ₸,
+          // в вентиляции ручной привод за 4 317 ₸ (замер 31.08.2026). Та же
+          // грабля, что «цена внутреннего блока ≠ цена комплекта».
+          var товар = items.filter(function (it) { return it.p && !it.acc; });
+
+          цены.filter(function (e) { return слаг(e.getAttribute("data-price-from")) === slug; })
+            .forEach(function (e) {
+              var sub = подкат(e.getAttribute("data-price-from"));
+              var годные = sub ? товар.filter(function (it) { return it.sub === sub; }) : товар;
+              // нет данных — место остаётся пустым, а не показывает цену соседней
+              // подкатегории: пустое место честнее неверного числа
+              if (!годные.length) return;
+              var мин = Math.min.apply(null, годные.map(function (it) { return it.p; }));
+              e.textContent = число(мин) + " ₸";
+            });
 
           var хиты = ((hits.byGroup || {})[slug] || []);
           var хит = null;
           for (var h = 0; h < хиты.length && !хит; h++) {
             хит = items.filter(function (x) { return x.s === хиты[h] && x.p; })[0] || null;
           }
-          var it = хит || лучший(items, skus);
+          // рекомендуем товар, а не аксессуар: статья ведёт к покупке техники
+          var it = хит || лучший(товар, skus);
           if (!it) return;
-          пики.filter(function (e) { return e.getAttribute("data-pick") === slug; })
+          пики.filter(function (e) { return слаг(e.getAttribute("data-pick")) === slug; })
             .forEach(function (a) {
               if (a.tagName === "A") {
                 a.setAttribute("href", "/tovar?g=" + slug + "&sl=" + encodeURIComponent(it.sl || ""));
