@@ -1,0 +1,112 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+.thgeo-also{margin-top:26px}
+.thgeo-also p{font-size:14px;line-height:2;color:#5a6676}
+</style>
+<div class="thgeo">
+<h1>Приточные установки в Алматы</h1>
+<p>Приточная установка забирает воздух с улицы, фильтрует, зимой подогревает
+и подаёт в комнату — без открытого окна, сквозняка и уличного шума.
+В наличии в Алматы, цены от <span class="thgeo-pmin" data-min-art="ASP-80">114 990</span> ₸. Монтаж считается по объекту:
+нужно отверстие в стене, место под установку и вывод питания.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog">Весь каталог</a>
+</div>
+<h2>Приточные установки в наличии</h2>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Модель</th><th>Бренд</th><th>Производительность</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td>ONEAIR ASP-80</td><td>Ballu</td><td>80 м³/ч</td><td class="thgeo-p" data-art="ASP-80">114 990 ₸</td></tr>
+<tr><td>ONEAIR ASP-100</td><td>Ballu</td><td>125 м³/ч</td><td class="thgeo-p" data-art="ASP-100">203 390 ₸</td></tr>
+<tr><td>ONEAIR ASP-100W</td><td>Ballu</td><td>125 м³/ч</td><td class="thgeo-p" data-art="ASP-100W">203 390 ₸</td></tr>
+<tr><td>ONEAIR ASP-200S</td><td>Ballu</td><td>200 м³/ч</td><td class="thgeo-p" data-art="ASP-200S">327 590 ₸</td></tr>
+<tr><td>ONEAIR ASP-200SP</td><td>Ballu</td><td>200 м³/ч</td><td class="thgeo-p" data-art="ASP-200SP">327 590 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/268863632574-ustanovka-pritochnaya-airtube-315">приточная AIRTUBE 315</a></td><td>SHUFT</td><td>1300 м³/ч</td><td class="thgeo-p" data-art="AIRTUBE 315">348 567 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/770002502804-ustanovka-pritochnaya-kompaktnaya-monoblochnaya-cau-2000-1-w">приточная компактная моноблочная CAU 2000/1-W VIM</a></td><td>SHUFT</td><td>2000 м³/ч</td><td class="thgeo-p" data-art="2000/1-W">699 320 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/981006459414-zpw-2000-14-l1">ZPW 2000 / 14 L1</a></td><td>COMPACTAIR by ZILON</td><td>1540 м³/ч</td><td class="thgeo-p" data-art="ZPW 2000 / 14 L1">768 824 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/198576203184-zpw-2000-14-l3">ZPW 2000 / 14 L3</a></td><td>COMPACTAIR by ZILON</td><td>1620 м³/ч</td><td class="thgeo-p" data-art="ZPW 2000 / 14 L3">770 253 ₸</td></tr>
+<tr><td>приточная компактная моноблочная CAU 2000/1-12</td><td>SHUFT</td><td>2000 м³/ч</td><td class="thgeo-p" data-art="CAU 2000/1-12">819 110 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/390627293044-zpw-3000-27-l1">ZPW 3000 / 27 L1</a></td><td>COMPACTAIR by ZILON</td><td>2600 м³/ч</td><td class="thgeo-p" data-art="ZPW 3000 / 27 L1">1 101 958 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/685348492654-zpw-3000-27-l3">ZPW 3000 / 27 L3</a></td><td>COMPACTAIR by ZILON</td><td>2790 м³/ч</td><td class="thgeo-p" data-art="ZPW 3000 / 27 L3">1 103 511 ₸</td></tr>
+<tr><td>приточная ECO-SLIM 1100-15</td><td>SHUFT</td><td>1300 м³/ч</td><td class="thgeo-p" data-art="ECO-SLIM 1100-15">1 189 974 ₸</td></tr>
+<tr><td>приточная компактная моноблочная CAU 4000/3-22</td><td>SHUFT</td><td>4000 м³/ч</td><td class="thgeo-p" data-art="CAU 4000/3-22">1 232 757 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/670645742364-zpw-4000-41-l3">ZPW 4000 / 41 L3</a></td><td>COMPACTAIR by ZILON</td><td>3740 м³/ч</td><td class="thgeo-p" data-art="ZPW 4000 / 41 L3">1 406 581 ₸</td></tr>
+</tbody>
+</table>
+</div>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">01.09.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Как подобрать производительность</h2>
+<p>Ориентир — 30 м³/ч на человека: спальня на двоих закрывается установкой
+от 60 м³/ч, гостиная с гостями требует больше. Второй ограничитель — шум:
+на максимальной скорости установка слышна, поэтому берут с запасом
+и держат на средней. Зимой важен подогрев: без него в комнату пойдёт
+уличный воздух как есть.</p>
+<h2>Чем это отличается от бризера и проветривателя</h2>
+<p>Разница в фильтрации и подогреве, а не в названии. Подробный разбор —
+в статье <a href="https://tehnoholod369.kz/pritochnaya-ventilyaciya">«Приточная вентиляция
+в квартиру»</a>: там же таблица по мощности, шуму и фильтрам.</p>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
+производителя, срок в паспорте изделия; гарантия на монтаж — бригады, срок в её карточке
+и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад,
+напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
+возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Сколько стоит приточная установка в Алматы?</summary><p>Цена зависит от производительности, класса фильтров и наличия подогрева. В наличии 47 таких моделей, цены от 114 990 ₸. Например: ONEAIR ASP-80 — 114 990 ₸; ONEAIR ASP-100 — 203 390 ₸; ONEAIR ASP-100W — 203 390 ₸.</p></details>
+<details class="thgeo-faq"><summary>Что влияет на выбор кроме этого параметра?</summary><p>Число людей в комнате, допустимый уровень шума, нужен ли зимний подогрев и есть ли где разместить установку и вывести питание.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
+<details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+<nav class="thgeo-also" aria-label="Другие подборки"><h2>Другие подборки</h2><p><a href="https://tehnoholod369.kz/kondicionery-almaty">Кондиционеры</a> · <a href="https://tehnoholod369.kz/ventilyaciya">Вентиляция</a> · <a href="https://tehnoholod369.kz/vodonagrevateli">Водонагреватели</a> · <a href="https://tehnoholod369.kz/poluprom">Полупромышленные кондиционеры</a> · <a href="https://tehnoholod369.kz/multisplit">Мульти-сплит системы</a> · <a href="https://tehnoholod369.kz/otoplenie">Отопление и обогреватели</a> · <a href="https://tehnoholod369.kz/teplovye-zavesy-almaty">Тепловые завесы</a> · <a href="https://tehnoholod369.kz/teplovye-pushki-almaty">Тепловые пушки</a> · <a href="https://tehnoholod369.kz/radiatory-otopleniya-almaty">Радиаторы отопления</a> · <a href="https://tehnoholod369.kz/mobilnye-kondicionery-almaty">Мобильные кондиционеры</a> · <a href="https://tehnoholod369.kz/osushiteli-vozduha-almaty">Осушители воздуха</a> · <a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">Кондиционер на комнату 25 м²</a> · <a href="https://tehnoholod369.kz/kondicioner-do-200000">Кондиционер до 200 000 ₸</a> · <a href="https://tehnoholod369.kz/tihiy-kondicioner">Тихий кондиционер для спальни</a> · <a href="https://tehnoholod369.kz/kondicioner-obogrev-zimoy">Кондиционер для обогрева зимой</a> · <a href="https://tehnoholod369.kz/kanalnye-kondicionery-almaty">Канальные кондиционеры</a> · <a href="https://tehnoholod369.kz/kassetnye-kondicionery-almaty">Кассетные кондиционеры</a> · <a href="https://tehnoholod369.kz/kondicioner-na-35-kvm">Кондиционер на комнату 35 м²</a> · <a href="https://tehnoholod369.kz/ustanovka-kondicionera-talgar">Установка кондиционера в Талгаре</a> · <a href="https://tehnoholod369.kz/ustanovka-kondicionera-otegen-batyr">Установка кондиционера в Отеген батыре</a> · <a href="https://tehnoholod369.kz/ustanovka-kondicionera-burundai">Установка кондиционера в Бурундае</a> · <a href="https://tehnoholod369.kz/kaminy-almaty">Камины и электроочаги</a> · <a href="https://tehnoholod369.kz/vrf-sistemy-almaty">VRF и мини-VRF системы</a> · <a href="https://tehnoholod369.kz/kondicionery-dlya-ofisa">Кондиционеры для офиса</a> · <a href="https://tehnoholod369.kz/napolno-potolochnye-kondicionery-almaty">Напольно-потолочные кондиционеры</a> · <a href="https://tehnoholod369.kz/pritochno-vytyazhnye-ustanovki-almaty">Приточно-вытяжные установки с рекуперацией</a> · <a href="https://tehnoholod369.kz/vytyazhnye-ventilyatory-almaty">Вытяжные вентиляторы</a> · <a href="https://tehnoholod369.kz/invertornyy-kondicioner-almaty">Инверторные кондиционеры</a> · <a href="https://tehnoholod369.kz/kondicioner-s-wifi">Кондиционеры с Wi-Fi</a> · <a href="https://tehnoholod369.kz/kondicioner-na-50-kvm">Кондиционер на комнату 50 м²</a> · <a href="https://tehnoholod369.kz/kondicioner-do-300000">Кондиционеры до 300 000 ₸</a></p></nav>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Приточные установки в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SHUFT приточная AIRTUBE 315", "url": "https://tehnoholod369.kz/tproduct/268863632574-ustanovka-pritochnaya-airtube-315"}, {"@type": "ListItem", "position": 2, "name": "SHUFT приточная компактная моноблочная CAU 2000/1-W VIM", "url": "https://tehnoholod369.kz/tproduct/770002502804-ustanovka-pritochnaya-kompaktnaya-monoblochnaya-cau-2000-1-w"}, {"@type": "ListItem", "position": 3, "name": "COMPACTAIR by ZILON ZPW 2000 / 14 L1", "url": "https://tehnoholod369.kz/tproduct/981006459414-zpw-2000-14-l1"}, {"@type": "ListItem", "position": 4, "name": "COMPACTAIR by ZILON ZPW 2000 / 14 L3", "url": "https://tehnoholod369.kz/tproduct/198576203184-zpw-2000-14-l3"}, {"@type": "ListItem", "position": 5, "name": "COMPACTAIR by ZILON ZPW 3000 / 27 L1", "url": "https://tehnoholod369.kz/tproduct/390627293044-zpw-3000-27-l1"}, {"@type": "ListItem", "position": 6, "name": "COMPACTAIR by ZILON ZPW 3000 / 27 L3", "url": "https://tehnoholod369.kz/tproduct/685348492654-zpw-3000-27-l3"}, {"@type": "ListItem", "position": 7, "name": "COMPACTAIR by ZILON ZPW 4000 / 41 L3", "url": "https://tehnoholod369.kz/tproduct/670645742364-zpw-4000-41-l3"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит приточная установка в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "Цена зависит от производительности, класса фильтров и наличия подогрева. В наличии 47 таких моделей, цены от 114 990 ₸. Например: ONEAIR ASP-80 — 114 990 ₸; ONEAIR ASP-100 — 203 390 ₸; ONEAIR ASP-100W — 203 390 ₸."}}, {"@type": "Question", "name": "Что влияет на выбор кроме этого параметра?", "acceptedAnswer": {"@type": "Answer", "text": "Число людей в комнате, допустимый уровень шума, нужен ли зимний подогрев и есть ли где разместить установку и вывести питание."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/ventilyaciya.json"];
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
+  })).then(function(all){
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    // «Цены от …» в абзаце — цена КОНКРЕТНОЙ модели, самой доступной из тех,
+    // что подходят под фильтр страницы. Минимум по всей группе сюда брать нельзя:
+    // на «кондиционер на 25 м²» он подставил бы модель на 7 000 BTU, которая
+    // эти 25 м² не закрывает, — страница обещала бы не то (31.08.2026).
+    document.querySelectorAll(".thgeo-pmin").forEach(function(el){
+      var a=el.getAttribute("data-min-art"), x=a?by[a]:null, v=(x&&x.p)?x.p:null;
+      if(v===null){
+        [].forEach.call(document.querySelectorAll(".thgeo-p"),function(td){
+          var y=by[td.getAttribute("data-art")];
+          if(y&&y.p&&(v===null||y.p<v))v=y.p;
+        });
+      }
+      if(v)el.textContent=v.toLocaleString("ru-RU").replace(/ /g," ");
+    });
+  });
+})();
+</script>

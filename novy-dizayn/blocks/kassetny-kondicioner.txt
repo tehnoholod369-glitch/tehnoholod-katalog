@@ -111,7 +111,7 @@
     <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
       <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Монтаж</span>
       <span style="color:#8593A6;">6 минут чтения</span>
-      <span style="color:#8593A6;">Обновлено 31.08.2026</span>
+      <span style="color:#8593A6;">Обновлено 01.09.2026</span>
     </div>
 
     <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Кассетный кондиционер: потолочный на 4 стороны для офиса и магазина</h1>
@@ -175,12 +175,13 @@
       <p>Кассетный кондиционер — правильный выбор для:</p>
       <ul><li>Офисов open space 30–100 м² с одним центральным блоком.</li><li>Магазинов, ресторанов, кафе — равномерная температура во всём зале.</li><li>Переговорных, лобби, ресепшн — тихо и без выделения на потолке.</li><li>Спортзалов и фитнес-центров — усиленный поток на большой площади.</li></ul>
       <p>Для квартиры или небольшой комнаты — оставайтесь на настенном сплите. Для скрытого монтажа с несколькими зонами — канальный или VRF.</p>
-      <p>Посмотреть модели: <a href="/katalog?g=poluprom&amp;sub=%D0%9A%D0%B0%D1%81%D1%81%D0%B5%D1%82%D0%BD%D1%8B%D0%B5">кассетные кондиционеры</a>. Приедем на объект, посчитаем нагрузку и подберём кассету с правильной раздачей воздуха — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж силами проверенной бригады по Алматы и области.</p>
+      <p>Посмотреть модели: <a href="/katalog?g=poluprom&amp;sub=%D0%9A%D0%B0%D1%81%D1%81%D0%B5%D1%82%D0%BD%D1%8B%D0%B5">кассетные кондиционеры</a>. Приедем на объект, посчитаем нагрузку и подберём кассету с правильной раздачей воздуха — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж силами проверенной бригады по Алматы.</p>
       <p>Читайте также: <a href="https://tehnoholod369.kz/multisplit">«Мультисплит-система»</a>, <a href="https://tehnoholod369.kz/kanalny-kondicioner">«Канальный кондиционер»</a>, <a href="https://tehnoholod369.kz/vrf">«VRF-система для офиса»</a>.</p>
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=poluprom&amp;brand=AUX&amp;sub=%D0%9A%D0%B0%D1%81%D1%81%D0%B5%D1%82%D0%BD%D1%8B%D0%B5&amp;stock=in"><div class="art-card__t">AUX · Кассетные</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">15 моделей</span> →</div></a>
       <a class="art-card" href="/katalog?g=poluprom&amp;sub=%D0%9A%D0%B0%D1%81%D1%81%D0%B5%D1%82%D0%BD%D1%8B%D0%B5"><div class="art-card__t">Полупромышленные · Кассетные</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-sub="poluprom|Кассетные"></span> →</div></a>
+      <a class="art-card" href="/kassetnye-kondicionery-almaty"><div class="art-card__t">Кассетные кондиционеры в Алматы</div><div class="art-card__s">Что есть в наличии и сколько стоит.</div><div class="art-card__go">Открыть раздел →</div></a>
       </div>
       <h2>Частые вопросы</h2>
       <div class="art-q"><div class="art-q__q">Насколько шумит кассетный кондиционер?</div><div class="art-q__a">На минимальной скорости 30–35 дБ (тише сплита). На максимальной — 40–45 дБ. В переговорной на минималке — не мешает совещанию.</div></div>
@@ -227,7 +228,7 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Кассетный кондиционер: потолочный на 4 стороны для офиса и магазина", "description": "Кассетный кондиционер: как работает, где ставят, отличия от настенного. Подбор для офиса, магазина, ресторана в Алматы. Плюсы, минусы, монтаж.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/kassetny-kondicioner"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz"}, "dateModified": "2026-08-31"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Кассетный кондиционер: потолочный на 4 стороны для офиса и магазина", "description": "Кассетный кондиционер: как работает, где ставят, отличия от настенного. Подбор для офиса, магазина, ресторана в Алматы. Плюсы, минусы, монтаж.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/kassetny-kondicioner"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz"}, "dateModified": "2026-09-01"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Кассетный кондиционер: потолочный на 4 стороны для офиса и магазина", "item": "https://tehnoholod369.kz/kassetny-kondicioner"}]}</script>
 <script type="application/ld+json">
 {

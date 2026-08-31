@@ -1,0 +1,114 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+.thgeo-also{margin-top:26px}
+.thgeo-also p{font-size:14px;line-height:2;color:#5a6676}
+</style>
+<div class="thgeo">
+<h1>Приточно-вытяжные установки с рекуперацией в Алматы</h1>
+<p>Приточно-вытяжная установка делает обе половины работы: подаёт свежий
+воздух и удаляет отработанный, а рекуператор при этом забирает тепло
+у вытяжного потока и отдаёт приточному. В наличии в Алматы, цены от <span class="thgeo-pmin" data-min-art="ERW-60X">293 000</span> ₸. Под неё нужны воздуховоды
+и место под установку — обычно за подвесным потолком.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog">Весь каталог</a>
+</div>
+<h2>Установки в наличии</h2>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Модель</th><th>Бренд</th><th>Производительность</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/305244729064-erw-60x">ERW-60X</a></td><td>FUNAI</td><td>60 м³/ч</td><td class="thgeo-p" data-art="ERW-60X">293 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/808487895084-erw-150x-p">ERW-150X.P</a></td><td>FUNAI</td><td>150 м³/ч</td><td class="thgeo-p" data-art="ERW-150X.P">402 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/609874087584-erw-150x-d">ERW-150X.D</a></td><td>FUNAI</td><td>150 м³/ч</td><td class="thgeo-p" data-art="ERW-150X.D">402 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/334277390824-ustanovka-pritochno-vytyazhnaya-shuft-star-pvs-450">приточно-вытяжная Star PVS-450</a></td><td>SHUFT</td><td>450 м³/ч</td><td class="thgeo-p" data-art="PVS-450">571 339 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/308151876304-ustanovka-pritochno-vytyazhnaya-shuft-star-pvs-650">приточно-вытяжная Star PVS-650</a></td><td>SHUFT</td><td>650 м³/ч</td><td class="thgeo-p" data-art="PVS-650">666 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/355325787024-rcs-200-p-3-0">RCS-200-P 3.0</a></td><td>ROYAL CLIMA</td><td>200 м³/ч</td><td class="thgeo-p" data-art="RCS-200-P">689 724 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/267303433964-rcs-250-p">RCS-250-P</a></td><td>ROYAL CLIMA</td><td>230 м³/ч</td><td class="thgeo-p" data-art="RCS-250-P">718 936 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/586728057114-rcs-300-p-3-0">RCS-300-P 3.0</a></td><td>ROYAL CLIMA</td><td>280 м³/ч</td><td class="thgeo-p" data-art="RCS-300-P">749 700 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/698368825894-rcs-350-p">RCS-350-P</a></td><td>ROYAL CLIMA</td><td>342 м³/ч</td><td class="thgeo-p" data-art="RCS-350-P">805 253 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/188371340854-ustanovka-pritochno-vytyazhnaya-shuft-universe-rvx-600-inv">приточно-вытяжная Universe RVX-600 inv</a></td><td>SHUFT</td><td>600 м³/ч</td><td class="thgeo-p" data-art="RVX-600">1 008 165 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/421534329944-ustanovka-pritochno-vytyazhnaya-shuft-star-pvs-1100">приточно-вытяжная Star PVS-1100</a></td><td>SHUFT</td><td>1100 м³/ч</td><td class="thgeo-p" data-art="PVS-1100">1 124 800 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/130169836894-zpvp-800-he">ZPVP 800 HE</a></td><td>COMPACTAIR by ZILON</td><td>810 м³/ч</td><td class="thgeo-p" data-art="ZPVP 800 HE">1 653 347 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/394794774874-zpvp-450-vel">ZPVP 450 VEL</a></td><td>COMPACTAIR by ZILON</td><td>460 м³/ч</td><td class="thgeo-p" data-art="ZPVP 450 VEL">1 821 287 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/102479787744-zpvp-450-hw">ZPVP 450 HW</a></td><td>COMPACTAIR by ZILON</td><td>420 м³/ч</td><td class="thgeo-p" data-art="ZPVP 450 HW">2 092 242 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/743039980234-zpvp-800-hw">ZPVP 800 HW</a></td><td>COMPACTAIR by ZILON</td><td>810 м³/ч</td><td class="thgeo-p" data-art="ZPVP 800 HW">2 152 402 ₸</td></tr>
+</tbody>
+</table>
+</div>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">01.09.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Когда нужна именно приточно-вытяжная</h2>
+<p>Когда помещений несколько и вытяжка через санузел уже не справляется:
+квартира с ремонтом, дом, офис. Одна установка обслуживает всю площадь,
+воздуховоды разводятся по комнатам. Если задача — свежий воздух в одну
+комнату, дешевле <a href="https://tehnoholod369.kz/pritochnaya-ustanovka-almaty">приточная
+установка</a>.</p>
+<h2>Что даёт рекуперация</h2>
+<p>Зимой выбрасываемый воздух уносит тепло: рекуператор возвращает его
+часть обратно, и калорифер тратит меньше. Насколько именно — зависит
+от типа теплообменника и температуры на улице; разбор с числами —
+в статье <a href="https://tehnoholod369.kz/rekuperator">«Рекуператор: что это и зачем
+зимой в Алматы»</a>.</p>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
+производителя, срок в паспорте изделия; гарантия на монтаж — бригады, срок в её карточке
+и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад,
+напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
+возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Сколько стоит приточно-вытяжная установка в Алматы?</summary><p>Цена зависит от производительности и типа рекуператора; воздуховоды считаются отдельно. В наличии 51 таких моделей, цены от 293 000 ₸. Например: ERW-60X — 293 000 ₸; ERW-150X.P — 402 000 ₸; ERW-150X.D — 402 000 ₸.</p></details>
+<details class="thgeo-faq"><summary>Что влияет на выбор кроме этого параметра?</summary><p>Площадь и число помещений, высота подвесного потолка под установку и воздуховоды, требуемый воздухообмен и допустимый шум.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
+<details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+<nav class="thgeo-also" aria-label="Другие подборки"><h2>Другие подборки</h2><p><a href="https://tehnoholod369.kz/kondicionery-almaty">Кондиционеры</a> · <a href="https://tehnoholod369.kz/ventilyaciya">Вентиляция</a> · <a href="https://tehnoholod369.kz/vodonagrevateli">Водонагреватели</a> · <a href="https://tehnoholod369.kz/poluprom">Полупромышленные кондиционеры</a> · <a href="https://tehnoholod369.kz/multisplit">Мульти-сплит системы</a> · <a href="https://tehnoholod369.kz/otoplenie">Отопление и обогреватели</a> · <a href="https://tehnoholod369.kz/teplovye-zavesy-almaty">Тепловые завесы</a> · <a href="https://tehnoholod369.kz/teplovye-pushki-almaty">Тепловые пушки</a> · <a href="https://tehnoholod369.kz/radiatory-otopleniya-almaty">Радиаторы отопления</a> · <a href="https://tehnoholod369.kz/mobilnye-kondicionery-almaty">Мобильные кондиционеры</a> · <a href="https://tehnoholod369.kz/osushiteli-vozduha-almaty">Осушители воздуха</a> · <a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">Кондиционер на комнату 25 м²</a> · <a href="https://tehnoholod369.kz/kondicioner-do-200000">Кондиционер до 200 000 ₸</a> · <a href="https://tehnoholod369.kz/tihiy-kondicioner">Тихий кондиционер для спальни</a> · <a href="https://tehnoholod369.kz/kondicioner-obogrev-zimoy">Кондиционер для обогрева зимой</a> · <a href="https://tehnoholod369.kz/kanalnye-kondicionery-almaty">Канальные кондиционеры</a> · <a href="https://tehnoholod369.kz/kassetnye-kondicionery-almaty">Кассетные кондиционеры</a> · <a href="https://tehnoholod369.kz/kondicioner-na-35-kvm">Кондиционер на комнату 35 м²</a> · <a href="https://tehnoholod369.kz/ustanovka-kondicionera-talgar">Установка кондиционера в Талгаре</a> · <a href="https://tehnoholod369.kz/ustanovka-kondicionera-otegen-batyr">Установка кондиционера в Отеген батыре</a> · <a href="https://tehnoholod369.kz/ustanovka-kondicionera-burundai">Установка кондиционера в Бурундае</a> · <a href="https://tehnoholod369.kz/kaminy-almaty">Камины и электроочаги</a> · <a href="https://tehnoholod369.kz/vrf-sistemy-almaty">VRF и мини-VRF системы</a> · <a href="https://tehnoholod369.kz/kondicionery-dlya-ofisa">Кондиционеры для офиса</a> · <a href="https://tehnoholod369.kz/napolno-potolochnye-kondicionery-almaty">Напольно-потолочные кондиционеры</a> · <a href="https://tehnoholod369.kz/pritochnaya-ustanovka-almaty">Приточные установки</a> · <a href="https://tehnoholod369.kz/vytyazhnye-ventilyatory-almaty">Вытяжные вентиляторы</a> · <a href="https://tehnoholod369.kz/invertornyy-kondicioner-almaty">Инверторные кондиционеры</a> · <a href="https://tehnoholod369.kz/kondicioner-s-wifi">Кондиционеры с Wi-Fi</a> · <a href="https://tehnoholod369.kz/kondicioner-na-50-kvm">Кондиционер на комнату 50 м²</a> · <a href="https://tehnoholod369.kz/kondicioner-do-300000">Кондиционеры до 300 000 ₸</a></p></nav>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Приточно-вытяжные установки в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "FUNAI ERW-60X", "url": "https://tehnoholod369.kz/tproduct/305244729064-erw-60x"}, {"@type": "ListItem", "position": 2, "name": "FUNAI ERW-150X.P", "url": "https://tehnoholod369.kz/tproduct/808487895084-erw-150x-p"}, {"@type": "ListItem", "position": 3, "name": "FUNAI ERW-150X.D", "url": "https://tehnoholod369.kz/tproduct/609874087584-erw-150x-d"}, {"@type": "ListItem", "position": 4, "name": "SHUFT приточно-вытяжная Star PVS-450", "url": "https://tehnoholod369.kz/tproduct/334277390824-ustanovka-pritochno-vytyazhnaya-shuft-star-pvs-450"}, {"@type": "ListItem", "position": 5, "name": "SHUFT приточно-вытяжная Star PVS-650", "url": "https://tehnoholod369.kz/tproduct/308151876304-ustanovka-pritochno-vytyazhnaya-shuft-star-pvs-650"}, {"@type": "ListItem", "position": 6, "name": "ROYAL CLIMA RCS-200-P 3.0", "url": "https://tehnoholod369.kz/tproduct/355325787024-rcs-200-p-3-0"}, {"@type": "ListItem", "position": 7, "name": "ROYAL CLIMA RCS-250-P", "url": "https://tehnoholod369.kz/tproduct/267303433964-rcs-250-p"}, {"@type": "ListItem", "position": 8, "name": "ROYAL CLIMA RCS-300-P 3.0", "url": "https://tehnoholod369.kz/tproduct/586728057114-rcs-300-p-3-0"}, {"@type": "ListItem", "position": 9, "name": "ROYAL CLIMA RCS-350-P", "url": "https://tehnoholod369.kz/tproduct/698368825894-rcs-350-p"}, {"@type": "ListItem", "position": 10, "name": "SHUFT приточно-вытяжная Universe RVX-600 inv", "url": "https://tehnoholod369.kz/tproduct/188371340854-ustanovka-pritochno-vytyazhnaya-shuft-universe-rvx-600-inv"}, {"@type": "ListItem", "position": 11, "name": "SHUFT приточно-вытяжная Star PVS-1100", "url": "https://tehnoholod369.kz/tproduct/421534329944-ustanovka-pritochno-vytyazhnaya-shuft-star-pvs-1100"}, {"@type": "ListItem", "position": 12, "name": "COMPACTAIR by ZILON ZPVP 800 HE", "url": "https://tehnoholod369.kz/tproduct/130169836894-zpvp-800-he"}, {"@type": "ListItem", "position": 13, "name": "COMPACTAIR by ZILON ZPVP 450 VEL", "url": "https://tehnoholod369.kz/tproduct/394794774874-zpvp-450-vel"}, {"@type": "ListItem", "position": 14, "name": "COMPACTAIR by ZILON ZPVP 450 HW", "url": "https://tehnoholod369.kz/tproduct/102479787744-zpvp-450-hw"}, {"@type": "ListItem", "position": 15, "name": "COMPACTAIR by ZILON ZPVP 800 HW", "url": "https://tehnoholod369.kz/tproduct/743039980234-zpvp-800-hw"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит приточно-вытяжная установка в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "Цена зависит от производительности и типа рекуператора; воздуховоды считаются отдельно. В наличии 51 таких моделей, цены от 293 000 ₸. Например: ERW-60X — 293 000 ₸; ERW-150X.P — 402 000 ₸; ERW-150X.D — 402 000 ₸."}}, {"@type": "Question", "name": "Что влияет на выбор кроме этого параметра?", "acceptedAnswer": {"@type": "Answer", "text": "Площадь и число помещений, высота подвесного потолка под установку и воздуховоды, требуемый воздухообмен и допустимый шум."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/ventilyaciya.json"];
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
+  })).then(function(all){
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    // «Цены от …» в абзаце — цена КОНКРЕТНОЙ модели, самой доступной из тех,
+    // что подходят под фильтр страницы. Минимум по всей группе сюда брать нельзя:
+    // на «кондиционер на 25 м²» он подставил бы модель на 7 000 BTU, которая
+    // эти 25 м² не закрывает, — страница обещала бы не то (31.08.2026).
+    document.querySelectorAll(".thgeo-pmin").forEach(function(el){
+      var a=el.getAttribute("data-min-art"), x=a?by[a]:null, v=(x&&x.p)?x.p:null;
+      if(v===null){
+        [].forEach.call(document.querySelectorAll(".thgeo-p"),function(td){
+          var y=by[td.getAttribute("data-art")];
+          if(y&&y.p&&(v===null||y.p<v))v=y.p;
+        });
+      }
+      if(v)el.textContent=v.toLocaleString("ru-RU").replace(/ /g," ");
+    });
+  });
+})();
+</script>

@@ -111,7 +111,7 @@
     <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
       <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Выбор</span>
       <span style="color:#8593A6;">5 минут чтения</span>
-      <span style="color:#8593A6;">Обновлено 31.08.2026</span>
+      <span style="color:#8593A6;">Обновлено 01.09.2026</span>
     </div>
 
     <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Вытяжка в ванной и кухне: как выбрать и не ошибиться</h1>
@@ -169,12 +169,13 @@
       <ol><li><b>Перекрыли шахту вентилятором.</b> Ставят вентилятор прямо в отверстие шахты — он тянет только на своей мощности, но перекрывает естественную тягу для остальной квартиры (кухня перестаёт тянуть). Решение: <b>отверстие в шахте должно оставаться свободным</b>, вентилятор ставится сбоку или ниже.</li><li><b>Забыли обратный клапан.</b> Через месяц из ванной начинает пахнуть соседской готовкой или сигаретами.</li><li><b>Длинный гибкий воздуховод для кухонной вытяжки.</b> Каждый метр гибкого воздуховода снижает производительность на 10–15%. Лучше жёсткий пластик или сталь.</li><li><b>Слишком мощная вытяжка на кухне без притока.</b> Мощная вытяжка тянет 500+ м³/ч. Если приточки нет, дверь в кухню будет захлопываться, а окна свистеть. Решение: приточный клапан или бризер.</li></ol>
       <h2>Вывод</h2>
       <p>Вытяжка нужна во всех помещениях с влагой и запахами — ванная, санузел, кухня. Мощность считается по объёму комнаты и кратности воздухообмена. Обязательно с обратным клапаном (без него будет тянуть от соседей). Для ванной — датчик влажности и таймер, для кухни — жёсткий воздуховод и запас по производительности.</p>
-      <p>Посмотреть модели: <a href="/katalog?g=ventilyaciya&amp;sub=%D0%92%D1%8B%D1%82%D1%8F%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D1%8B%D0%B5">вытяжные вентиляторы</a>. Приедем на замер и подберём — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж по Алматы и области.</p>
+      <p>Посмотреть модели: <a href="/katalog?g=ventilyaciya&amp;sub=%D0%92%D1%8B%D1%82%D1%8F%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D1%8B%D0%B5">вытяжные вентиляторы</a>. Приедем на замер и подберём — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж по Алматы.</p>
       <p>Читайте также: <a href="https://tehnoholod369.kz/pritochnaya-ventilyaciya">«Приточная вентиляция в квартиру»</a>, <a href="https://tehnoholod369.kz/osushitel">«Осушитель воздуха»</a>, <a href="https://tehnoholod369.kz/svezhii-vozduh-zimoi">«Свежий воздух зимой»</a>.</p>
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=ventilyaciya&amp;brand=Royal%20Thermo&amp;sub=%D0%92%D1%8B%D1%82%D1%8F%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D1%8B%D0%B5&amp;stock=in"><div class="art-card__t">Royal Thermo · Вытяжные бытовые</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">38 моделей</span> →</div></a>
       <a class="art-card" href="/katalog?g=ventilyaciya&amp;sub=%D0%92%D1%8B%D1%82%D1%8F%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D1%8B%D0%B5"><div class="art-card__t">Вентиляция · Вытяжные бытовые</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-sub="ventilyaciya|Вытяжные бытовые"></span> →</div></a>
+      <a class="art-card" href="/vytyazhnye-ventilyatory-almaty"><div class="art-card__t">Вытяжные вентиляторы в Алматы</div><div class="art-card__s">Для ванной и кухни, что есть сейчас.</div><div class="art-card__go">Открыть раздел →</div></a>
       </div>
       <h2>Частые вопросы</h2>
       <div class="art-q"><div class="art-q__q">Зачем вытяжка в ванной, если есть шахта?</div><div class="art-q__a">Шахта работает на естественной тяге, которая летом почти нулевая. Механическая вытяжка тянет всегда с постоянной производительностью.</div></div>
@@ -221,7 +222,7 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Вытяжка в ванной и кухне: как выбрать и не ошибиться", "description": "Как рассчитать мощность вытяжки для ванной и кухни, чем отличаются осевые и центробежные, чек-клапан. Модели и монтаж в Алматы.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/vytyazhka"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz"}, "dateModified": "2026-08-31"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Вытяжка в ванной и кухне: как выбрать и не ошибиться", "description": "Как рассчитать мощность вытяжки для ванной и кухни, чем отличаются осевые и центробежные, чек-клапан. Модели и монтаж в Алматы.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/vytyazhka"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz"}, "dateModified": "2026-09-01"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Вытяжка в ванной и кухне: как выбрать и не ошибиться", "item": "https://tehnoholod369.kz/vytyazhka"}]}</script>
 <script type="application/ld+json">
 {

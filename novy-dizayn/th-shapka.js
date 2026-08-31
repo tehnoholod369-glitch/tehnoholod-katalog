@@ -50,6 +50,16 @@
     ["https://tehnoholod369.kz/ustanovka-kondicionera-otegen-batyr", "Установка кондиционера в Отеген батыре"],
     ["https://tehnoholod369.kz/ustanovka-kondicionera-burundai", "Установка кондиционера в Бурундае"],
     ["https://tehnoholod369.kz/kaminy-almaty", "Камины и электроочаги"],
+    ["https://tehnoholod369.kz/vrf-sistemy-almaty", "VRF и мини-VRF системы"],
+    ["https://tehnoholod369.kz/kondicionery-dlya-ofisa", "Кондиционеры для офиса"],
+    ["https://tehnoholod369.kz/napolno-potolochnye-kondicionery-almaty", "Напольно-потолочные кондиционеры"],
+    ["https://tehnoholod369.kz/pritochnaya-ustanovka-almaty", "Приточные установки"],
+    ["https://tehnoholod369.kz/pritochno-vytyazhnye-ustanovki-almaty", "Приточно-вытяжные установки с рекуперацией"],
+    ["https://tehnoholod369.kz/vytyazhnye-ventilyatory-almaty", "Вытяжные вентиляторы"],
+    ["https://tehnoholod369.kz/invertornyy-kondicioner-almaty", "Инверторные кондиционеры"],
+    ["https://tehnoholod369.kz/kondicioner-s-wifi", "Кондиционеры с Wi-Fi"],
+    ["https://tehnoholod369.kz/kondicioner-na-50-kvm", "Кондиционер на комнату 50 м²"],
+    ["https://tehnoholod369.kz/kondicioner-do-300000", "Кондиционеры до 300 000 ₸"],
   ];
   /* GEO-ПОДБОРКИ-КОНЕЦ */
 

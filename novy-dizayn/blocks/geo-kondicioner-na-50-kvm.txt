@@ -1,0 +1,108 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+.thgeo-also{margin-top:26px}
+.thgeo-also p{font-size:14px;line-height:2;color:#5a6676}
+</style>
+<div class="thgeo">
+<h1>Кондиционер на комнату 50 м² — какой выбрать</h1>
+<p>Для помещения около 50 м² берут класс 18 — это 18 000 BTU. Ниже — модели
+этого класса в наличии в Алматы, от <span class="thgeo-pmin" data-min-art="DTXS-18K3XA41D">218 752</span> ₸. На такой площади уже важно,
+как расположен блок: один кондиционер не продувает две комнаты через проём.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog">Весь каталог</a>
+</div>
+<h2>Модели в наличии на 46–55 м²</h2>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/683535897194-kondicioner-ditreex-on-off-dtxs-18k3xa41d-18000-btu-do-50-m">Кондиционер ON/OFF DTXS-18K3XA41D</a></td><td>DITREEX</td><td>50 м²</td><td class="thgeo-p" data-art="DTXS-18K3XA41D">218 752 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/881605276464-kondicioner-mdv-iera-mdsae-18hrn8-mdoae-18hn8">Кондиционер iERA MDSAE-18HRN8</a></td><td>MDV</td><td>55 м²</td><td class="thgeo-p" data-art="MDSAE-18HRN8">262 500 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/775361545784-kondicioner-midea-aurora-3-msab-18hrn8-18000-btu-do-50-m">Кондиционер AURORA 3 MSAB-18HRN8</a></td><td>Midea</td><td>50 м²</td><td class="thgeo-p" data-art="MSAB-18HRN8">262 900 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/251377326484-kondicioner-ditreex-inverter-dtxs-18d6xac1c-18000-btu-do-50-">Кондиционер Inverter DTXS-18D6XAC1C</a></td><td>DITREEX</td><td>50 м²</td><td class="thgeo-p" data-art="DTXS-18D6XAC1C">268 830 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/851213905674-royal-clima-gloria-rc-gl55hn">Кондиционер GLORIA RC-GL55HN</a></td><td>ROYAL CLIMA</td><td>53,7 м²</td><td class="thgeo-p" data-art="RC-GL55HN">280 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/401986148004-kondicioner-nastennyy-gree-18-eva-r410-klass-a-gwh18alcxd-k3">Кондиционер настенный -18: Eva R410 класс A GWH18ALCXD-K3NNA1B (комплектуется медными трубами)</a></td><td>GREE</td><td>48 м²</td><td class="thgeo-p" data-art="GWH18ALCXD-K3NNA1B">281 248 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/901203374564-kondicioner-gree-fairy-gwh18accxd-k3nna1b-18000-btu-do-48-m">Кондиционер Fairy GWH18ACCXD-K3NNA1B</a></td><td>GREE</td><td>48 м²</td><td class="thgeo-p" data-art="GWH18ACCXD-K3NNA1B">283 128 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/617451921404-kondicioner-thaicon-balance-tl-rwb50-nr-tl-rob50-nr-17000-bt">Кондиционер Balance TL-RWB50-NR / TL-ROB50-NR</a></td><td>THAICON</td><td>50 м²</td><td class="thgeo-p" data-art="TL-RWB50-NR / TL-ROB50-NR">285 350 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/723073327394-kondicioner-ballu-olympio-pro-bso-18hn8-ik-18000-btu-do-50-m">Кондиционер Olympio Pro BSO-18HN8/IK</a></td><td>Ballu</td><td>50 м²</td><td class="thgeo-p" data-art="BSO-18HN8/IK">285 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/669011869264-kondicioner-midea-xtreme-mega-18hrfn8-18000-btu-do-50-m">Кондиционер Xtreme MEGA-18HRFN8</a></td><td>Midea</td><td>50 м²</td><td class="thgeo-p" data-art="MEGA-18HRFN8">293 900 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/720631057224-kondicioner-ballu-tessey-dc-bsti-18hn8-ik-18000-btu-do-50-m">Кондиционер Tessey DC BSTI-18HN8/IK</a></td><td>Ballu</td><td>50 м²</td><td class="thgeo-p" data-art="BSTI-18HN8/IK">295 990 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/863627655454-royal-clima-pandora-rc-pd55hn">Кондиционер PANDORA RC-PD55HN</a></td><td>ROYAL CLIMA</td><td>55 м²</td><td class="thgeo-p" data-art="RC-PD55HN">301 800 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/953340137094-kondicioner-funai-sensei-rac-sn55hp-d04-19000-btu-do-55-m">Кондиционер SENSEI RAC-SN55HP.D04</a></td><td>FUNAI</td><td>55 м²</td><td class="thgeo-p" data-art="RAC-SN55HP.D04">302 700 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/520729059354-kondicioner-funai-kadzoku-rac-kd55hp-d01-19000-btu-do-55-m">Кондиционер KADZOKU RAC-KD55HP.D01</a></td><td>FUNAI</td><td>55 м²</td><td class="thgeo-p" data-art="RAC-KD55HP.D01">308 900 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/261640476054-kondicioner-aeronik-asi-18hs5-aso-18hms5-18000-btu-do-54-m">Кондиционер ASI-18HS5/ASO-18HMS5</a></td><td>AERONIK</td><td>54 м²</td><td class="thgeo-p" data-art="ASI-18HS5/ASO-18HMS5">310 500 ₸</td></tr>
+</tbody>
+</table>
+</div>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">01.09.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Когда 50 м² — это не один кондиционер</h2>
+<p>Класс 18 рассчитан на одно помещение. Если это студия или две комнаты
+через проём, воздух не дойдёт до дальнего угла: мощности хватит, а раздачи —
+нет. В таких случаях ставят два блока меньшей мощности или мультисплит
+с одним наружным блоком — <a href="https://tehnoholod369.kz/multisplit">конструктор мультисплита</a>
+покажет комбинации. Для зала с высоким потолком считают по объёму,
+а не по площади.</p>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
+производителя, срок в паспорте изделия; гарантия на монтаж — бригады, срок в её карточке
+и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад,
+напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
+возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Какой кондиционер нужен на 50 м²?</summary><p>Класс 18 (18 000 BTU) — базовый ориентир для помещения около 50 м². В наличии 64 таких моделей, цены от 218 752 ₸. Например: Кондиционер ON/OFF DTXS-18K3XA41D — 218 752 ₸; Кондиционер iERA MDSAE-18HRN8 — 262 500 ₸; Кондиционер AURORA 3 MSAB-18HRN8 — 262 900 ₸.</p></details>
+<details class="thgeo-faq"><summary>Что влияет на выбор кроме этого параметра?</summary><p>Планировка: одна комната или несколько через проём, высота потолка, остекление и сторона света. Для студии часто выгоднее мультисплит.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
+<details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+<nav class="thgeo-also" aria-label="Другие подборки"><h2>Другие подборки</h2><p><a href="https://tehnoholod369.kz/kondicionery-almaty">Кондиционеры</a> · <a href="https://tehnoholod369.kz/ventilyaciya">Вентиляция</a> · <a href="https://tehnoholod369.kz/vodonagrevateli">Водонагреватели</a> · <a href="https://tehnoholod369.kz/poluprom">Полупромышленные кондиционеры</a> · <a href="https://tehnoholod369.kz/multisplit">Мульти-сплит системы</a> · <a href="https://tehnoholod369.kz/otoplenie">Отопление и обогреватели</a> · <a href="https://tehnoholod369.kz/teplovye-zavesy-almaty">Тепловые завесы</a> · <a href="https://tehnoholod369.kz/teplovye-pushki-almaty">Тепловые пушки</a> · <a href="https://tehnoholod369.kz/radiatory-otopleniya-almaty">Радиаторы отопления</a> · <a href="https://tehnoholod369.kz/mobilnye-kondicionery-almaty">Мобильные кондиционеры</a> · <a href="https://tehnoholod369.kz/osushiteli-vozduha-almaty">Осушители воздуха</a> · <a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">Кондиционер на комнату 25 м²</a> · <a href="https://tehnoholod369.kz/kondicioner-do-200000">Кондиционер до 200 000 ₸</a> · <a href="https://tehnoholod369.kz/tihiy-kondicioner">Тихий кондиционер для спальни</a> · <a href="https://tehnoholod369.kz/kondicioner-obogrev-zimoy">Кондиционер для обогрева зимой</a> · <a href="https://tehnoholod369.kz/kanalnye-kondicionery-almaty">Канальные кондиционеры</a> · <a href="https://tehnoholod369.kz/kassetnye-kondicionery-almaty">Кассетные кондиционеры</a> · <a href="https://tehnoholod369.kz/kondicioner-na-35-kvm">Кондиционер на комнату 35 м²</a> · <a href="https://tehnoholod369.kz/ustanovka-kondicionera-talgar">Установка кондиционера в Талгаре</a> · <a href="https://tehnoholod369.kz/ustanovka-kondicionera-otegen-batyr">Установка кондиционера в Отеген батыре</a> · <a href="https://tehnoholod369.kz/ustanovka-kondicionera-burundai">Установка кондиционера в Бурундае</a> · <a href="https://tehnoholod369.kz/kaminy-almaty">Камины и электроочаги</a> · <a href="https://tehnoholod369.kz/vrf-sistemy-almaty">VRF и мини-VRF системы</a> · <a href="https://tehnoholod369.kz/kondicionery-dlya-ofisa">Кондиционеры для офиса</a> · <a href="https://tehnoholod369.kz/napolno-potolochnye-kondicionery-almaty">Напольно-потолочные кондиционеры</a> · <a href="https://tehnoholod369.kz/pritochnaya-ustanovka-almaty">Приточные установки</a> · <a href="https://tehnoholod369.kz/pritochno-vytyazhnye-ustanovki-almaty">Приточно-вытяжные установки с рекуперацией</a> · <a href="https://tehnoholod369.kz/vytyazhnye-ventilyatory-almaty">Вытяжные вентиляторы</a> · <a href="https://tehnoholod369.kz/invertornyy-kondicioner-almaty">Инверторные кондиционеры</a> · <a href="https://tehnoholod369.kz/kondicioner-s-wifi">Кондиционеры с Wi-Fi</a> · <a href="https://tehnoholod369.kz/kondicioner-do-300000">Кондиционеры до 300 000 ₸</a></p></nav>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Кондиционеры на 50 м² в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DITREEX Кондиционер ON/OFF DTXS-18K3XA41D", "url": "https://tehnoholod369.kz/tproduct/683535897194-kondicioner-ditreex-on-off-dtxs-18k3xa41d-18000-btu-do-50-m"}, {"@type": "ListItem", "position": 2, "name": "MDV Кондиционер iERA MDSAE-18HRN8", "url": "https://tehnoholod369.kz/tproduct/881605276464-kondicioner-mdv-iera-mdsae-18hrn8-mdoae-18hn8"}, {"@type": "ListItem", "position": 3, "name": "Midea Кондиционер AURORA 3 MSAB-18HRN8", "url": "https://tehnoholod369.kz/tproduct/775361545784-kondicioner-midea-aurora-3-msab-18hrn8-18000-btu-do-50-m"}, {"@type": "ListItem", "position": 4, "name": "DITREEX Кондиционер Inverter DTXS-18D6XAC1C", "url": "https://tehnoholod369.kz/tproduct/251377326484-kondicioner-ditreex-inverter-dtxs-18d6xac1c-18000-btu-do-50-"}, {"@type": "ListItem", "position": 5, "name": "ROYAL CLIMA Кондиционер GLORIA RC-GL55HN", "url": "https://tehnoholod369.kz/tproduct/851213905674-royal-clima-gloria-rc-gl55hn"}, {"@type": "ListItem", "position": 6, "name": "GREE Кондиционер настенный -18: Eva R410 класс A GWH18ALCXD-K3NNA1B (комплектуется медными трубами)", "url": "https://tehnoholod369.kz/tproduct/401986148004-kondicioner-nastennyy-gree-18-eva-r410-klass-a-gwh18alcxd-k3"}, {"@type": "ListItem", "position": 7, "name": "GREE Кондиционер Fairy GWH18ACCXD-K3NNA1B", "url": "https://tehnoholod369.kz/tproduct/901203374564-kondicioner-gree-fairy-gwh18accxd-k3nna1b-18000-btu-do-48-m"}, {"@type": "ListItem", "position": 8, "name": "THAICON Кондиционер Balance TL-RWB50-NR / TL-ROB50-NR", "url": "https://tehnoholod369.kz/tproduct/617451921404-kondicioner-thaicon-balance-tl-rwb50-nr-tl-rob50-nr-17000-bt"}, {"@type": "ListItem", "position": 9, "name": "Ballu Кондиционер Olympio Pro BSO-18HN8/IK", "url": "https://tehnoholod369.kz/tproduct/723073327394-kondicioner-ballu-olympio-pro-bso-18hn8-ik-18000-btu-do-50-m"}, {"@type": "ListItem", "position": 10, "name": "Midea Кондиционер Xtreme MEGA-18HRFN8", "url": "https://tehnoholod369.kz/tproduct/669011869264-kondicioner-midea-xtreme-mega-18hrfn8-18000-btu-do-50-m"}, {"@type": "ListItem", "position": 11, "name": "Ballu Кондиционер Tessey DC BSTI-18HN8/IK", "url": "https://tehnoholod369.kz/tproduct/720631057224-kondicioner-ballu-tessey-dc-bsti-18hn8-ik-18000-btu-do-50-m"}, {"@type": "ListItem", "position": 12, "name": "ROYAL CLIMA Кондиционер PANDORA RC-PD55HN", "url": "https://tehnoholod369.kz/tproduct/863627655454-royal-clima-pandora-rc-pd55hn"}, {"@type": "ListItem", "position": 13, "name": "FUNAI Кондиционер SENSEI RAC-SN55HP.D04", "url": "https://tehnoholod369.kz/tproduct/953340137094-kondicioner-funai-sensei-rac-sn55hp-d04-19000-btu-do-55-m"}, {"@type": "ListItem", "position": 14, "name": "FUNAI Кондиционер KADZOKU RAC-KD55HP.D01", "url": "https://tehnoholod369.kz/tproduct/520729059354-kondicioner-funai-kadzoku-rac-kd55hp-d01-19000-btu-do-55-m"}, {"@type": "ListItem", "position": 15, "name": "AERONIK Кондиционер ASI-18HS5/ASO-18HMS5", "url": "https://tehnoholod369.kz/tproduct/261640476054-kondicioner-aeronik-asi-18hs5-aso-18hms5-18000-btu-do-54-m"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Какой кондиционер нужен на 50 м²?", "acceptedAnswer": {"@type": "Answer", "text": "Класс 18 (18 000 BTU) — базовый ориентир для помещения около 50 м². В наличии 64 таких моделей, цены от 218 752 ₸. Например: Кондиционер ON/OFF DTXS-18K3XA41D — 218 752 ₸; Кондиционер iERA MDSAE-18HRN8 — 262 500 ₸; Кондиционер AURORA 3 MSAB-18HRN8 — 262 900 ₸."}}, {"@type": "Question", "name": "Что влияет на выбор кроме этого параметра?", "acceptedAnswer": {"@type": "Answer", "text": "Планировка: одна комната или несколько через проём, высота потолка, остекление и сторона света. Для студии часто выгоднее мультисплит."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json"];
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
+  })).then(function(all){
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    // «Цены от …» в абзаце — цена КОНКРЕТНОЙ модели, самой доступной из тех,
+    // что подходят под фильтр страницы. Минимум по всей группе сюда брать нельзя:
+    // на «кондиционер на 25 м²» он подставил бы модель на 7 000 BTU, которая
+    // эти 25 м² не закрывает, — страница обещала бы не то (31.08.2026).
+    document.querySelectorAll(".thgeo-pmin").forEach(function(el){
+      var a=el.getAttribute("data-min-art"), x=a?by[a]:null, v=(x&&x.p)?x.p:null;
+      if(v===null){
+        [].forEach.call(document.querySelectorAll(".thgeo-p"),function(td){
+          var y=by[td.getAttribute("data-art")];
+          if(y&&y.p&&(v===null||y.p<v))v=y.p;
+        });
+      }
+      if(v)el.textContent=v.toLocaleString("ru-RU").replace(/ /g," ");
+    });
+  });
+})();
+</script>
