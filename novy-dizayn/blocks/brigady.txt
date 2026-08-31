@@ -173,6 +173,14 @@
             <div style="display:inline-flex; align-items:center; gap:6px; background:#E7F7F0; border:1px solid #BFE6D4; border-radius:6px; padding:5px 10px; margin-top:12px;">
               <span style="font-size:13px; font-weight:700; color:#0B6B45;">✓ Проверена временем</span>
             </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
+              <sc-for list="{{ c.vremyaFacts }}" as="v" hint-placeholder-count="2">
+                <div style="background:#F3F7FB; border-radius:8px; padding:8px 12px;">
+                  <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ v.k }}</div>
+                  <div style="font-size:15px; font-weight:700; color:#18212F; margin-top:2px;">{{ v.v }}</div>
+                </div>
+              </sc-for>
+            </div>
             <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:6px;">{{ c.vremyaNote }}</div>
           </sc-if>
 
@@ -521,11 +529,17 @@ class Component extends DCLogic {
           facts: facts,
 
           vremya: !!c.vremya,
-          vremyaNote: c.vremya
-            ? [c.vremya.let_ >= 1 ? "на рынке " + c.vremya.let_ + " " + this.letWord(c.vremya.let_) : "",
-               c.vremya.montazhey >= 1 ? c.vremya.montazhey + " " + this.mWord(c.vremya.montazhey) + " с картой 369" : ""]
-              .filter(Boolean).join(" · ") + ". Оценка ниже — от клиентов, её мы не ставим."
-            : "",
+          // Две графы, как просил владелец: годы и монтажи по отдельности —
+          // это разные факты, и складывать их в одну строку значит прятать,
+          // какой именно из них сработал.
+          vremyaFacts: c.vremya
+            ? [c.vremya.let_ >= 1
+                 ? { k: "НА РЫНКЕ", v: c.vremya.let_ + " " + this.letWord(c.vremya.let_) } : null,
+               c.vremya.montazhey >= 1
+                 ? { k: "МОНТАЖЕЙ С КАРТОЙ 369", v: c.vremya.montazhey + " шт" } : null
+              ].filter(Boolean)
+            : [],
+          vremyaNote: "Оценка ниже — от клиентов, её мы не ставим.",
 
           hasSkills: !!(c.skills && c.skills.length),
           skills: (c.skills || []).map(s => ({ title: s.title, items: (s.items || []).join(" · ") })),
