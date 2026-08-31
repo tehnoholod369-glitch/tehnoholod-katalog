@@ -12,6 +12,7 @@
   a:hover { color: #0872D3; }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/lead.js?v=b25fa228"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -109,7 +110,7 @@
               </div>
               <div style="font-size:14px; color:#CBDCEC; line-height:1.6; margin-top:14px;">{{ explain }}</div>
               <a href="{{ modelsHref }}" style="display:block; background:#0872D3; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700; margin-top:18px;">{{ modelsLabel }}</a>
-              <a href="{{ calcHref }}" target="_blank" rel="noreferrer" style="display:block; border:2px solid rgba(255,255,255,0.5); color:#fff; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700; margin-top:10px;">Отправить расчёт в WhatsApp</a>
+              <a href="{{ calcHref }}" onClick="{{ onCalcSend }}" target="_blank" rel="noreferrer" style="display:block; border:2px solid rgba(255,255,255,0.5); color:#fff; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700; margin-top:10px;">Отправить расчёт в WhatsApp</a>
             </div>
 
             <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
@@ -226,10 +227,11 @@
             <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Написать нам</div>
             <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Ответим в рабочее время. Если вопрос по гарантии — укажите номер «Сервис-карты 369».</div>
             <div style="display:flex; flex-direction:column; gap:10px; margin-top:16px;">
-              <input type="text" placeholder="Имя" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#18212F;" />
-              <input type="tel" placeholder="Телефон или WhatsApp" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#18212F;" />
-              <textarea placeholder="Вопрос: площадь помещения, модель или номер карты" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#18212F; min-height:110px; resize:vertical;"></textarea>
-              <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700;">Отправить</a>
+              <input type="text" placeholder="Имя" value="{{ askName }}" onInput="{{ onAskName }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#18212F;" />
+              <input type="tel" placeholder="Телефон или WhatsApp" value="{{ askPhone }}" onInput="{{ onAskPhone }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#18212F;" />
+              <textarea placeholder="Вопрос: площадь помещения, модель или номер карты" value="{{ askText }}" onInput="{{ onAskText }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#18212F; min-height:110px; resize:vertical;"></textarea>
+              <a href="{{ askHref }}" onClick="{{ onAskSend }}" target="_blank" rel="noreferrer" style="background:{{ askBg }}; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700;">{{ askLabel }}</a>
+              <div style="font-size:12px; color:#8593A6; line-height:1.5;">{{ askNote }}</div>
             </div>
           </div>
         </div>
@@ -260,7 +262,11 @@ class Component extends DCLogic {
   // «Расчёт мощности» значит обманывать адрес: покупатель шёл за телефоном.
   // Ссылки на калькулятор и доставку дают хеш явно (#podbor, #dostavka).
   state = { screen: 2, area: 25, areaRaw: "25", height: 270, heightRaw: "2,7",
-            sun: "Обычная / север", floor: "Не последний", tech: "Нет" };
+            sun: "Обычная / север", floor: "Не последний", tech: "Нет",
+            // Форма «Написать нам» до 31.08.2026 не была привязана к состоянию
+            // вовсе: поля стояли без value/onInput, кнопка вела на пустой чат.
+            // Человек писал вопрос, жал «Отправить» — и текст исчезал.
+            ask: { name: "", phone: "", text: "" }, askSent: false, askSending: false };
 
   // на трёх экранах живёт три раздела — открываем тот, на который дана ссылка, а не всегда первый
   TABS = ["podbor", "dostavka", "kontakty"];
@@ -389,6 +395,26 @@ class Component extends DCLogic {
     const cls = clsBtu ? { 7000: "07", 9000: "09", 12000: "12", 18000: "18", 24000: "24", 36000: "36", 48000: "48", 60000: "60" }[clsBtu] : "60+";
     const btu = clsBtu ? this.fmt(clsBtu) : "60 000+";
 
+    // Текст расчёта собираем один раз: он уходит и в WhatsApp, и (без контактов)
+    // в «События» приёмника — чтобы было видно, по каким площадям считают.
+    const расчётТекст = "Расчёт по подбору. Площадь " + s.area + " м²"
+      + ", потолок " + (s.height / 100).toFixed(1).replace(".", ",") + " м"
+      + (sunA ? ", солнечная сторона" : "") + (floorA ? ", верхний этаж" : "") + (techA ? ", кухня/техника" : "")
+      + ". " + (overload ? "Нагрузка " + this.fmt(req) + " BTU — выше бытового ряда, нужен расчёт на замере."
+                         : "Нужен класс " + cls + " (" + btu + " BTU).");
+
+    const ask = this.state.ask || { name: "", phone: "", text: "" };
+    const setAsk = k => e => this.setState({ ask: Object.assign({}, ask, { [k]: e.target.value }) });
+    const частиВопроса = [
+      ask.name ? "Имя: " + ask.name : "",
+      ask.phone ? "Телефон: " + ask.phone : "",
+      ask.text ? "Вопрос: " + ask.text : ""
+    ].filter(Boolean);
+    const вопросТекст = частиВопроса.length ? "Вопрос с сайта. " + частиВопроса.join(". ") + "." : "";
+    // Отправляем, если есть чем ответить (телефон или имя) и есть что спросить.
+    const можноОтправить = !!(String(ask.phone || "").trim() || String(ask.name || "").trim())
+      && !!String(ask.text || "").trim();
+
     const chooser = (title, key, options) => ({
       title,
       options: options.map(o => ({
@@ -435,12 +461,52 @@ class Component extends DCLogic {
       ],
 
       kwLabel: String(kw).replace(".", ",") + " кВт",
-      calcHref: "https://wa.me/77000369369?text=" + encodeURIComponent(
-        "Расчёт по подбору. Площадь " + s.area + " м²"
-        + ", потолок " + (s.height / 100).toFixed(1).replace(".", ",") + " м"
-        + (sunA ? ", солнечная сторона" : "") + (floorA ? ", верхний этаж" : "") + (techA ? ", кухня/техника" : "")
-        + ". " + (overload ? "Нагрузка " + this.fmt(req) + " BTU — выше бытового ряда, нужен расчёт на замере."
-                           : "Нужен класс " + cls + " (" + btu + " BTU).")),
+      calcHref: "https://wa.me/77000369369?text=" + encodeURIComponent(расчётТекст),
+      // Контактов здесь не спрашиваем, значит это не заявка, а событие: пишем
+      // площадь, потолок, поправки и класс — по ним видно, с каким запросом
+      // приходят. Переход в WhatsApp не задерживаем, ответа не ждём.
+      onCalcSend: () => {
+        if (!window.TH_LEAD) { return; }
+        window.TH_LEAD.event({
+          channel: "подбор на /kontakty", ev: "расчёт отправлен в WhatsApp",
+          val: overload ? "выше бытового ряда" : cls + " · " + btu + " BTU",
+          area: s.area, height: (s.height / 100).toFixed(1).replace(".", ","),
+          corr: [sunA ? "солнце" : "", floorA ? "верхний этаж" : "", techA ? "кухня/техника" : ""]
+            .filter(Boolean).join(", ")
+        });
+      },
+
+      // ── форма «Написать нам» ───────────────────────────────────────────────
+      askName: ask.name,
+      askPhone: ask.phone,
+      askText: ask.text,
+      onAskName: setAsk("name"),
+      onAskPhone: setAsk("phone"),
+      onAskText: setAsk("text"),
+      askHref: "https://wa.me/77000369369" + (вопросТекст ? "?text=" + encodeURIComponent(вопросТекст) : ""),
+      onAskSend: e => {
+        if (this.state.askSending) { e.preventDefault(); return; }
+        // Пустое обращение не отправляем: строка без контакта и без вопроса
+        // ничем не поможет, а кнопка бы отрапортовала о принятой заявке.
+        if (!можноОтправить || !window.TH_LEAD) { return; }
+        e.preventDefault();
+        this.setState({ askSending: true });
+        window.TH_LEAD.submit({
+          channel: "сайт · вопрос с /kontakty",
+          name: ask.name,
+          phone: ask.phone,
+          contact: ask.phone ? "" : ask.name,
+          comment: ask.text
+        }, вопросТекст).then(ok => this.setState({ askSending: false, askSent: ok }))
+          .catch(() => this.setState({ askSending: false }));
+      },
+      askBg: this.state.askSending ? "#9FB0C4" : "#0872D3",
+      askLabel: this.state.askSending ? "Отправляем…"
+        : this.state.askSent ? "Вопрос принят — открыть WhatsApp"
+        : "Отправить",
+      askNote: this.state.askSent
+        ? "Вопрос у нас: ответим в рабочее время. Если WhatsApp не открылся — напишите сами, текст уже готов."
+        : "Нажимая кнопку, вы соглашаетесь на обработку данных для ответа на обращение.",
       classLabel: overload ? "60 000+ BTU" : cls + " · " + btu + " BTU",
       modelsLabel: overload ? "Показать полупромышленные системы" : "Показать модели класса " + cls,
       // кнопка обещает класс — значит и ведёт в выдачу ровно этого класса: каталог
