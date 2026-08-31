@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
 
 <x-dc>
 <helmet>
@@ -15,7 +15,7 @@
   .vt-n { font-variant-numeric: tabular-nums; font-weight:800; color:#0A4EA7; }
   .vt-go { display:block; margin-top:10px; font-size:13px; font-weight:700; color:#0872D3; }
 </style>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -180,6 +180,6 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
 
 </x-dc>
