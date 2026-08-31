@@ -58,104 +58,14 @@
       </div>
     </div>
 
-    
-    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:20px;">
-      <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">КАК ЭТО БУДЕТ УСТРОЕНО</div>
-      <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Факты вместо «отличного состояния»</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:16px; margin-top:18px;">
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Состояние — по пунктам, а не прозой</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Продавец отвечает на вопросы списком: год выпуска, хладагент, откачивали ли фреон при демонтаже, сколько раз переустанавливался, был ли ремонт. «Не знаю» — нормальный ответ, он так и будет написан.</div>
-        </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Фото: чем больше, тем быстрее продадите</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Объявление без фотографий тоже опубликуем — просто в карточке будет честно сказано, что снимков нет, и в списке она встанет ниже. Полезнее всего кадр шильдика наружного блока: на нём модель и год. Единственное, чего не примем, — каталожная картинка вместо снимка: это уже не «фото нет», а чужой аппарат вместо вашего.</div>
-        </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Видно, что подтверждено, а что со слов</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Если аппарат покупали у нас, мы отметим то, что знаем из своих записей: дату покупки, кто ставил, записанные обслуживания. Всё остальное помечено как слова продавца.</div>
-        </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Монтаж — платная услуга</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Купленный здесь аппарат может поставить наша бригада по своему прайсу. Гарантия бригады покрывает монтаж, а не технику. Сервис-карта 369 на б/у не выдаётся.</div>
-        </div>
+    <a href="/pravila-obyavleniy" style="display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; margin-top:20px; color:#18212F;">
+      <div style="flex:1; min-width:260px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">ПРАВИЛА РАЗДЕЛА</div>
+        <h2 style="margin:6px 0 0 0; font-family:'Montserrat',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.015em;">Как это работает</h2>
+        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Что спрашиваем у продавца и почему · что поднимает объявление в списке · как подать за четыре шага · как идёт связь и кто за что отвечает.</div>
       </div>
-    </div>
-
-    
-    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:16px;">
-      <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">ЧТО ЗДЕСЬ БУДЕТ</div>
-      <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Климатическая техника — та же, что в нашем каталоге</h2>
-      <div style="font-size:15px; color:#2C3846; line-height:1.65; margin-top:10px; max-width:820px;">Принимаем объявления по своему профилю: по нему мы можем задать продавцу верные вопросы и проверить, что ответы не противоречат друг другу. Чужую бытовую технику не берём — не разбираемся в ней настолько, чтобы отвечать за качество объявления.</div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:16px; margin-top:18px;">
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Кондиционеры</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Настенные сплит-системы и мультисплиты, кассетные, канальные, напольно-потолочные, колонные, мобильные и оконные — снятые при замене, с квартир и с объектов.</div>
-        </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Обогреватели и конвекторы</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Электрические конвекторы, инфракрасные обогреватели, тепловентиляторы, тепловые завесы.</div>
-        </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Водонагреватели</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Накопительные и проточные — чаще всего появляются при ремонте санузла.</div>
-        </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Вентиляция</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Приточные установки, канальные вентиляторы, рекуператоры — обычно с объектов, после реконструкции.</div>
-        </div>
-      </div>
-      <div style="font-size:14px; color:#5A6675; line-height:1.65; margin-top:16px; max-width:820px;"><b>Три случая, из которых берётся техника:</b> хозяин меняет старый аппарат на новый; бригада сняла аппарат на объекте и он остался у неё; аппарат побывал в гарантийном ремонте — такое объявление обязано говорить, что именно чинили.<br /><br /><b>Нерабочую технику тоже можно</b> — на запчасти. Объявление будет прямо помечено «не работает», и цена у него своя.<br /><br /><b>Чего здесь не будет:</b> каталожных картинок вместо снимка вашего аппарата и техники не по нашему профилю. За отсутствие фотографии или незнание года мы объявление не снимаем — это видно в карточке, и решает покупатель.</div>
-    </div>
-
-    
-    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:16px;">
-      <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">ЧТО ПОДНИМАЕТ ОБЪЯВЛЕНИЕ В СПИСКЕ</div>
-      <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Выше стоит то, что снимает вопросы покупателя</h2>
-      <div style="font-size:15px; color:#2C3846; line-height:1.65; margin-top:10px; max-width:820px;">Место в списке считается само, по заполненности объявления: <b>чем больше полей отвечено, тем выше</b>. Но веса у полей разные — больше даёт то, без чего покупатель не может решиться.</div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:16px; margin-top:18px;">
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Весит больше всего</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Год выпуска · хладагент (R32, R410A или R22) · откачивали ли фреон при демонтаже · можно ли посмотреть аппарат в работе до снятия <b>или</b> проверен ли он на стенде · гарантия продавца — есть и на какой срок · фотография шильдика наружного блока.</div>
-        </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Весит средне</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Предпродажная подготовка — что именно сделано · продавец может смонтировать сам · модель и мощность · тип корпуса · комплектность: оба блока, пульт, документы · сколько раз переустанавливался · был ли ремонт и что чинили · снимки блоков.</div>
-        </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Весит немного</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Как пользовались и обслуживали, причина продажи, дополнительные снимки, кадры дефектов крупно. Не мелочи для покупателя, но и не то, из-за чего он откажется.</div>
-        </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Подтверждённое весит больше сказанного</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Если аппарат покупали у нас, часть полей мы подтверждаем своими записями — дату покупки, кто ставил, записанные обслуживания. При прочих равных такое объявление стоит выше: в нём меньше слов и больше проверяемого.</div>
-        </div>
-      </div>
-      <div style="font-size:14px; color:#5A6675; line-height:1.65; margin-top:16px; max-width:820px;"><b>Стенд, подготовка, гарантия и монтаж — сильные ответы, и вот почему.</b> Аппарат, который уже снят, в работе не покажешь: проверка на стенде — единственное, что заменяет этот показ. Предпродажная подготовка и гарантия продавца означают, что часть риска он взял на себя, а не переложил на покупателя. Так у монтажной бригады появляется честный способ стоять выше частного объявления — за сделанную работу, а не за оплату места.<br /><br /><b>Живое выше забытого.</b> Раз в месяц мы спрашиваем продавца, продаётся ли аппарат. Ответил — объявление остаётся; промолчал девять дней — уходит из списка, но не удаляется: вернуть можно одним сообщением.<br /><br /><b>Что на место не влияет:</b> цена — дешевле не значит выше, иначе список превратился бы в гонку вниз; длина описания, заглавные буквы и значки; платного поднятия нет.<br /><br /><b>Заполнять наугад бессмысленно.</b> Несовпадение вскроется на первом же вопросе покупателя, а объявление с неверными данными мы снимаем. «Не знаю» — нормальный ответ: он просто не добавляет веса и ничем не грозит.</div>
-    </div>
-
-    
-    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:16px;">
-      <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">СВЯЗЬ И ОТВЕТСТВЕННОСТЬ</div>
-      <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Переписка идёт через нас, отвечает за товар продавец</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:16px; margin-top:18px;">
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Номеров телефонов в объявлениях не будет</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Ни продавца, ни покупателя. Вопрос вы задаёте нам, мы передаём его продавцу и возвращаем ответ. Так ни одна сторона не получает поток звонков от посредников, а переписка остаётся в одном месте — к ней можно вернуться.<br /><br />Телефон, ник или ссылка в тексте объявления либо на фотографии — объявление не публикуется. Без этого правила доска за неделю превращается в список номеров.</div>
-        </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">За товар и за сделку отвечает продавец</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Мы площадка: собираем объявления, храним их и передаём сообщения. Технику мы не продаём, не держим у себя, не проверяем, оплату не принимаем и за расхождение аппарата с описанием не отвечаем — это ответственность того, кто продаёт.<br /><br />Гарантия, указанная в объявлении, — <b>обещание продавца</b>, а не наше. Наше отдельно помечено: это записи о покупке у нас.</div>
-        </div>
-      </div>
-    </div>
-
-    
-    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:16px;">
-      <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">ЧЕГО МЫ НЕ ДЕЛАЕМ</div>
-      <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Мы площадка, а не продавец</h2>
-      <div style="font-size:15px; color:#2C3846; line-height:1.7; margin-top:12px; max-width:820px;">Не продаём эту технику, не проверяем её, не гарантируем состояние, не принимаем оплату и не отвечаем за сделку — она проходит между покупателем и продавцом. Значка «проверено» здесь не будет ни на одном объявлении: мы можем подтвердить только то, что записано у нас, и отметим это отдельной строкой.<br /><br />Гарантия производителя на б/у технику не переносится сама собой — этот вопрос решается с сервисным центром бренда, а не с нами.</div>
-    </div>
+      <div style="font-size:14px; font-weight:700; color:#fff; background:#0872D3; border-radius:8px; padding:12px 18px; white-space:nowrap;">Читать →</div>
+    </a>
 
     <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:28px; margin-top:16px;">
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">

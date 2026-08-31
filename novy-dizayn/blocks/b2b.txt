@@ -106,6 +106,20 @@
           <div style="font-size:12px; color:#8593A6; line-height:1.5;">Отвечаем в рабочее время. Если позиции нет в наличии — сразу назовём срок поставки, а не «уточняем».</div>
         </div>
       </div>
+
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">ФИЗЛИЦАМ — УДАЛЁННАЯ ОПЛАТА</div>
+        <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Оплата переводом, без визита в магазин</h2>
+        <div style="font-size:15px; color:#5A6675; line-height:1.6; margin-top:10px;">Частным покупателям принимаем удалённую оплату через приложения банков:</div>
+        <div style="display:flex; flex-direction:column; gap:9px; margin-top:14px; font-size:14px; color:#2C3846;">
+          <div>· Kaspi.kz</div>
+          <div>· Halyk (Homebank)</div>
+          <div>· ForteBank</div>
+          <div>· Банк ЦентрКредит (БЦК)</div>
+        </div>
+        <div style="font-size:13px; color:#5A6675; margin-top:14px; line-height:1.6;">Реквизиты для перевода пришлёт менеджер в WhatsApp после подтверждения заказа. Для физлиц доступна и рассрочка.</div>
+        <a href="https://wa.me/77000369369" style="display:block; background:#0872D3; color:#fff; border-radius:8px; padding:13px; text-align:center; font-size:15px; font-weight:700; margin-top:16px;">Написать в WhatsApp</a>
+      </div>
     </div>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">

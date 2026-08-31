@@ -29,7 +29,7 @@
 <div class="thgeo-cta">
 <a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
 <a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
-<a class="tg2" href="https://tehnoholod369.kz/katalog?g=radiatory">Весь каталог</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog">Весь каталог</a>
 
 </div>
 <h2>Примеры оборудования в наличии</h2>
@@ -56,7 +56,7 @@
 </table>
 </div>
 <div class="thgeo-rev"><div class="thgeo-rev__t">Отзыв покупателя</div><div class="thgeo-rev__q">«Отапливает хорошо, тепло. Легкий, мобильный обогреватель и экономичный.»</div><div class="thgeo-rev__a">★★★★★ Ольга · 21.04.2026 — о модели LQ-H002F. Всего отзывов на Kaspi.kz: 9, средняя оценка 5.0.</div></div>
-<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">01.09.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog?g=radiatory">каталоге</a>.</p>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">01.09.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
 <!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
 <h2>Что под какую задачу</h2>
 <p>Радиаторы — основное отопление от котла или теплосети; мощность секции
