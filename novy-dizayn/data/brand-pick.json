@@ -1,0 +1,481 @@
+{
+ "generated": "2026-08-31",
+ "by_group": {
+  "avtonomnoe-pitanie": {
+   "brand": "EcoFlow",
+   "url": "/novy-katalog?g=avtonomnoe-pitanie&brand=EcoFlow&stock=in",
+   "n": 34,
+   "st": 14
+  },
+  "bytovye": {
+   "brand": "TCL",
+   "url": "/novy-katalog?g=bytovye&brand=TCL&stock=in",
+   "n": 10,
+   "st": 10
+  },
+  "chillery": {
+   "brand": "GREE",
+   "url": "/novy-katalog?g=chillery&brand=GREE&stock=in",
+   "n": 4,
+   "st": 4
+  },
+  "fankoyly": {
+   "brand": "GREE",
+   "url": "/novy-katalog?g=fankoyly&brand=GREE&stock=in",
+   "n": 15,
+   "st": 14
+  },
+  "infrakrasnye-obogrevateli": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=infrakrasnye-obogrevateli&brand=Ballu&stock=in",
+   "n": 91,
+   "st": 51
+  },
+  "kaminy": {
+   "brand": "Royal Thermo",
+   "url": "/novy-katalog?g=kaminy&brand=Royal%20Thermo&stock=in",
+   "n": 34,
+   "st": 7
+  },
+  "mini-vrf": {
+   "brand": "AUX",
+   "url": "/novy-katalog?g=mini-vrf&brand=AUX&stock=in",
+   "n": 15,
+   "st": 10
+  },
+  "mobilnye": {
+   "brand": "Electrolux",
+   "url": "/novy-katalog?g=mobilnye&brand=Electrolux&stock=in",
+   "n": 9,
+   "st": 5
+  },
+  "multisplit": {
+   "brand": "AERONIK",
+   "url": "/novy-katalog?g=multisplit&brand=AERONIK&stock=in",
+   "n": 13,
+   "st": 11
+  },
+  "obogrevateli": {
+   "brand": "ROYAL CLIMA",
+   "url": "/novy-katalog?g=obogrevateli&brand=ROYAL%20CLIMA&stock=in",
+   "n": 31,
+   "st": 31
+  },
+  "osushiteli": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=osushiteli&brand=Ballu&stock=in",
+   "n": 30,
+   "st": 11
+  },
+  "poluprom": {
+   "brand": "AUX",
+   "url": "/novy-katalog?g=poluprom&brand=AUX&stock=in",
+   "n": 46,
+   "st": 19
+  },
+  "precizionnye": {
+   "brand": "GREE",
+   "url": "/novy-katalog?g=precizionnye&brand=GREE&stock=in",
+   "n": 4,
+   "st": 4
+  },
+  "radiatory": {
+   "brand": "Royal Thermo",
+   "url": "/novy-katalog?g=radiatory&brand=Royal%20Thermo&stock=in",
+   "n": 444,
+   "st": 148
+  },
+  "teplovye-pushki": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=teplovye-pushki&brand=Ballu&stock=in",
+   "n": 90,
+   "st": 52
+  },
+  "teplovye-zavesy": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=teplovye-zavesy&brand=Ballu&stock=in",
+   "n": 133,
+   "st": 39
+  },
+  "ventilyaciya": {
+   "brand": "SHUFT",
+   "url": "/novy-katalog?g=ventilyaciya&brand=SHUFT&stock=in",
+   "n": 380,
+   "st": 71
+  },
+  "ventilyatory-prom": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=ventilyatory-prom&brand=Ballu&stock=in",
+   "n": 19,
+   "st": 9
+  },
+  "vodonagrevateli": {
+   "brand": "Electrolux",
+   "url": "/novy-katalog?g=vodonagrevateli&brand=Electrolux&stock=in",
+   "n": 47,
+   "st": 34
+  },
+  "vodoochistka": {
+   "brand": "DITREEX",
+   "url": "/novy-katalog?g=vodoochistka&brand=DITREEX&stock=in",
+   "n": 23,
+   "st": 23
+  },
+  "vodyanye-teploventilyatory": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=vodyanye-teploventilyatory&brand=Ballu&stock=in",
+   "n": 26,
+   "st": 14
+  }
+ },
+ "by_sub": {
+  "avtonomnoe-pitanie|Зарядное устройство": {
+   "brand": "EcoFlow",
+   "url": "/novy-katalog?g=avtonomnoe-pitanie&brand=EcoFlow&sub=%D0%97%D0%B0%D1%80%D1%8F%D0%B4%D0%BD%D0%BE%D0%B5%20%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%BE&stock=in",
+   "n": 3,
+   "st": 3
+  },
+  "avtonomnoe-pitanie|Повербанк": {
+   "brand": "EcoFlow",
+   "url": "/novy-katalog?g=avtonomnoe-pitanie&brand=EcoFlow&sub=%D0%9F%D0%BE%D0%B2%D0%B5%D1%80%D0%B1%D0%B0%D0%BD%D0%BA&stock=in",
+   "n": 4,
+   "st": 4
+  },
+  "avtonomnoe-pitanie|Портативный холодильник": {
+   "brand": "EcoFlow",
+   "url": "/novy-katalog?g=avtonomnoe-pitanie&brand=EcoFlow&sub=%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9%20%D1%85%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA&stock=in",
+   "n": 3,
+   "st": 3
+  },
+  "avtonomnoe-pitanie|Солнечная панель": {
+   "brand": "EcoFlow",
+   "url": "/novy-katalog?g=avtonomnoe-pitanie&brand=EcoFlow&sub=%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C&stock=in",
+   "n": 4,
+   "st": 2
+  },
+  "bytovye|Настенные": {
+   "brand": "TCL",
+   "url": "/novy-katalog?g=bytovye&brand=TCL&sub=%D0%9D%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 10,
+   "st": 10
+  },
+  "chillery|Чиллеры": {
+   "brand": "GREE",
+   "url": "/novy-katalog?g=chillery&brand=GREE&sub=%D0%A7%D0%B8%D0%BB%D0%BB%D0%B5%D1%80%D1%8B&stock=in",
+   "n": 4,
+   "st": 4
+  },
+  "fankoyly|Канальные": {
+   "brand": "GREE",
+   "url": "/novy-katalog?g=fankoyly&brand=GREE&sub=%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 8,
+   "st": 7
+  },
+  "fankoyly|Напольные": {
+   "brand": "GREE",
+   "url": "/novy-katalog?g=fankoyly&brand=GREE&sub=%D0%9D%D0%B0%D0%BF%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 7,
+   "st": 7
+  },
+  "infrakrasnye-obogrevateli|Газовые": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=infrakrasnye-obogrevateli&brand=Ballu&sub=%D0%93%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5&stock=in",
+   "n": 17,
+   "st": 11
+  },
+  "infrakrasnye-obogrevateli|Электрические": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=infrakrasnye-obogrevateli&brand=Ballu&sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5&stock=in",
+   "n": 74,
+   "st": 40
+  },
+  "kaminy|Биокамины": {
+   "brand": "Firelight",
+   "url": "/novy-katalog?g=kaminy&brand=Firelight&sub=%D0%91%D0%B8%D0%BE%D0%BA%D0%B0%D0%BC%D0%B8%D0%BD%D1%8B&stock=in",
+   "n": 23,
+   "st": 6
+  },
+  "kaminy|Каминокомплекты": {
+   "brand": "БЕЗ МАРКИ",
+   "url": "/novy-katalog?g=kaminy&brand=%D0%91%D0%95%D0%97%20%D0%9C%D0%90%D0%A0%D0%9A%D0%98&sub=%D0%9A%D0%B0%D0%BC%D0%B8%D0%BD%D0%BE%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82%D1%8B&stock=in",
+   "n": 3,
+   "st": 3
+  },
+  "kaminy|Электроочаги 2D": {
+   "brand": "Electrolux",
+   "url": "/novy-katalog?g=kaminy&brand=Electrolux&sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BE%D1%87%D0%B0%D0%B3%D0%B8%202D&stock=in",
+   "n": 8,
+   "st": 3
+  },
+  "kaminy|Электроочаги 3D паровые": {
+   "brand": "Royal Thermo",
+   "url": "/novy-katalog?g=kaminy&brand=Royal%20Thermo&sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BE%D1%87%D0%B0%D0%B3%D0%B8%203D%20%D0%BF%D0%B0%D1%80%D0%BE%D0%B2%D1%8B%D0%B5&stock=in",
+   "n": 6,
+   "st": 4
+  },
+  "mini-vrf|Канальные внутренние блоки": {
+   "brand": "GREE",
+   "url": "/novy-katalog?g=mini-vrf&brand=GREE&sub=%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8&stock=in",
+   "n": 15,
+   "st": 14
+  },
+  "mini-vrf|Кассетные внутренние блоки": {
+   "brand": "GREE",
+   "url": "/novy-katalog?g=mini-vrf&brand=GREE&sub=%D0%9A%D0%B0%D1%81%D1%81%D0%B5%D1%82%D0%BD%D1%8B%D0%B5%20%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8&stock=in",
+   "n": 10,
+   "st": 9
+  },
+  "mini-vrf|Консольные внутренние блоки": {
+   "brand": "GREE",
+   "url": "/novy-katalog?g=mini-vrf&brand=GREE&sub=%D0%9A%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8&stock=in",
+   "n": 3,
+   "st": 3
+  },
+  "mini-vrf|Наружные блоки VRF, 380 В": {
+   "brand": "AUX",
+   "url": "/novy-katalog?g=mini-vrf&brand=AUX&sub=%D0%9D%D0%B0%D1%80%D1%83%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%20VRF%2C%20380%20%D0%92&stock=in",
+   "n": 15,
+   "st": 10
+  },
+  "mini-vrf|Наружные блоки мини-VRF, 220 В": {
+   "brand": "GREE",
+   "url": "/novy-katalog?g=mini-vrf&brand=GREE&sub=%D0%9D%D0%B0%D1%80%D1%83%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%20%D0%BC%D0%B8%D0%BD%D0%B8-VRF%2C%20220%20%D0%92&stock=in",
+   "n": 6,
+   "st": 6
+  },
+  "mini-vrf|Настенные внутренние блоки": {
+   "brand": "GREE",
+   "url": "/novy-katalog?g=mini-vrf&brand=GREE&sub=%D0%9D%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8&stock=in",
+   "n": 7,
+   "st": 7
+  },
+  "mobilnye|Мобильные": {
+   "brand": "Electrolux",
+   "url": "/novy-katalog?g=mobilnye&brand=Electrolux&sub=%D0%9C%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 9,
+   "st": 5
+  },
+  "multisplit|Внутренние блоки": {
+   "brand": "AERONIK",
+   "url": "/novy-katalog?g=multisplit&brand=AERONIK&sub=%D0%92%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D0%B5%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8&stock=in",
+   "n": 7,
+   "st": 7
+  },
+  "multisplit|Наружные блоки": {
+   "brand": "AERONIK",
+   "url": "/novy-katalog?g=multisplit&brand=AERONIK&sub=%D0%9D%D0%B0%D1%80%D1%83%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8&stock=in",
+   "n": 6,
+   "st": 4
+  },
+  "obogrevateli|Конвекторы электрические": {
+   "brand": "ROYAL CLIMA",
+   "url": "/novy-katalog?g=obogrevateli&brand=ROYAL%20CLIMA&sub=%D0%9A%D0%BE%D0%BD%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%8B%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5&stock=in",
+   "n": 19,
+   "st": 19
+  },
+  "obogrevateli|Радиаторы масляные": {
+   "brand": "ROYAL CLIMA",
+   "url": "/novy-katalog?g=obogrevateli&brand=ROYAL%20CLIMA&sub=%D0%A0%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80%D1%8B%20%D0%BC%D0%B0%D1%81%D0%BB%D1%8F%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 11,
+   "st": 11
+  },
+  "osushiteli|Бытовые": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=osushiteli&brand=Ballu&sub=%D0%91%D1%8B%D1%82%D0%BE%D0%B2%D1%8B%D0%B5&stock=in",
+   "n": 15,
+   "st": 6
+  },
+  "osushiteli|Полупромышленные": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=osushiteli&brand=Ballu&sub=%D0%9F%D0%BE%D0%BB%D1%83%D0%BF%D1%80%D0%BE%D0%BC%D1%8B%D1%88%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 5,
+   "st": 3
+  },
+  "osushiteli|Сушильные мультикомплексы": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=osushiteli&brand=Ballu&sub=%D0%A1%D1%83%D1%88%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D1%8B&stock=in",
+   "n": 5,
+   "st": 2
+  },
+  "poluprom|Канальные": {
+   "brand": "AUX",
+   "url": "/novy-katalog?g=poluprom&brand=AUX&sub=%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 17,
+   "st": 8
+  },
+  "poluprom|Кассетные": {
+   "brand": "AUX",
+   "url": "/novy-katalog?g=poluprom&brand=AUX&sub=%D0%9A%D0%B0%D1%81%D1%81%D0%B5%D1%82%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 15,
+   "st": 5
+  },
+  "poluprom|Колонные": {
+   "brand": "Midea",
+   "url": "/novy-katalog?g=poluprom&brand=Midea&sub=%D0%9A%D0%BE%D0%BB%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 5,
+   "st": 5
+  },
+  "poluprom|Консольные": {
+   "brand": "Haier",
+   "url": "/novy-katalog?g=poluprom&brand=Haier&sub=%D0%9A%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 3,
+   "st": 3
+  },
+  "poluprom|Напольно-потолочные": {
+   "brand": "AUX",
+   "url": "/novy-katalog?g=poluprom&brand=AUX&sub=%D0%9D%D0%B0%D0%BF%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE-%D0%BF%D0%BE%D1%82%D0%BE%D0%BB%D0%BE%D1%87%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 13,
+   "st": 5
+  },
+  "precizionnye|Прецизионный": {
+   "brand": "GREE",
+   "url": "/novy-katalog?g=precizionnye&brand=GREE&sub=%D0%9F%D1%80%D0%B5%D1%86%D0%B8%D0%B7%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9&stock=in",
+   "n": 4,
+   "st": 4
+  },
+  "radiatory|С нижним подключением": {
+   "brand": "Royal Thermo",
+   "url": "/novy-katalog?g=radiatory&brand=Royal%20Thermo&sub=%D0%A1%20%D0%BD%D0%B8%D0%B6%D0%BD%D0%B8%D0%BC%20%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC&stock=in",
+   "n": 121,
+   "st": 6
+  },
+  "radiatory|Секционные": {
+   "brand": "Royal Thermo",
+   "url": "/novy-katalog?g=radiatory&brand=Royal%20Thermo&sub=%D0%A1%D0%B5%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 171,
+   "st": 142
+  },
+  "teplovye-pushki|Газовые": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=teplovye-pushki&brand=Ballu&sub=%D0%93%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5&stock=in",
+   "n": 13,
+   "st": 10
+  },
+  "teplovye-pushki|Дизельные непрямого нагрева": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=teplovye-pushki&brand=Ballu&sub=%D0%94%D0%B8%D0%B7%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BD%D0%B5%D0%BF%D1%80%D1%8F%D0%BC%D0%BE%D0%B3%D0%BE%20%D0%BD%D0%B0%D0%B3%D1%80%D0%B5%D0%B2%D0%B0&stock=in",
+   "n": 8,
+   "st": 4
+  },
+  "teplovye-pushki|Дизельные прямого нагрева": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=teplovye-pushki&brand=Ballu&sub=%D0%94%D0%B8%D0%B7%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BF%D1%80%D1%8F%D0%BC%D0%BE%D0%B3%D0%BE%20%D0%BD%D0%B0%D0%B3%D1%80%D0%B5%D0%B2%D0%B0&stock=in",
+   "n": 14,
+   "st": 6
+  },
+  "teplovye-pushki|Электрические": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=teplovye-pushki&brand=Ballu&sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5&stock=in",
+   "n": 49,
+   "st": 32
+  },
+  "teplovye-zavesy|Водяные": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=teplovye-zavesy&brand=Ballu&sub=%D0%92%D0%BE%D0%B4%D1%8F%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 41,
+   "st": 8
+  },
+  "teplovye-zavesy|Электрические": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=teplovye-zavesy&brand=Ballu&sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5&stock=in",
+   "n": 80,
+   "st": 31
+  },
+  "ventilyaciya|Вытяжные бытовые": {
+   "brand": "Royal Thermo",
+   "url": "/novy-katalog?g=ventilyaciya&brand=Royal%20Thermo&sub=%D0%92%D1%8B%D1%82%D1%8F%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D1%8B%D0%B5&stock=in",
+   "n": 38,
+   "st": 26
+  },
+  "ventilyaciya|Канальные круглые": {
+   "brand": "SHUFT",
+   "url": "/novy-katalog?g=ventilyaciya&brand=SHUFT&sub=%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D1%8B%D0%B5&stock=in",
+   "n": 71,
+   "st": 25
+  },
+  "ventilyaciya|Канальные прямоугольные": {
+   "brand": "SHUFT",
+   "url": "/novy-katalog?g=ventilyaciya&brand=SHUFT&sub=%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BF%D1%80%D1%8F%D0%BC%D0%BE%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 80,
+   "st": 25
+  },
+  "ventilyaciya|Осевые": {
+   "brand": "SHUFT",
+   "url": "/novy-katalog?g=ventilyaciya&brand=SHUFT&sub=%D0%9E%D1%81%D0%B5%D0%B2%D1%8B%D0%B5&stock=in",
+   "n": 46,
+   "st": 9
+  },
+  "ventilyaciya|Приточно-вытяжные установки": {
+   "brand": "COMPACTAIR by ZILON",
+   "url": "/novy-katalog?g=ventilyaciya&brand=COMPACTAIR%20by%20ZILON&sub=%D0%9F%D1%80%D0%B8%D1%82%D0%BE%D1%87%D0%BD%D0%BE-%D0%B2%D1%8B%D1%82%D1%8F%D0%B6%D0%BD%D1%8B%D0%B5%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8&stock=in",
+   "n": 72,
+   "st": 25
+  },
+  "ventilyaciya|Приточные установки": {
+   "brand": "COMPACTAIR by ZILON",
+   "url": "/novy-katalog?g=ventilyaciya&brand=COMPACTAIR%20by%20ZILON&sub=%D0%9F%D1%80%D0%B8%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B5%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8&stock=in",
+   "n": 39,
+   "st": 37
+  },
+  "ventilyaciya|Рекуператоры": {
+   "brand": "GREE",
+   "url": "/novy-katalog?g=ventilyaciya&brand=GREE&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B&stock=in",
+   "n": 5,
+   "st": 5
+  },
+  "ventilyatory-prom|Вентиляторы": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=ventilyatory-prom&brand=Ballu&sub=%D0%92%D0%B5%D0%BD%D1%82%D0%B8%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D1%8B&stock=in",
+   "n": 13,
+   "st": 8
+  },
+  "vodonagrevateli|Газовые колонки": {
+   "brand": "Royal Thermo",
+   "url": "/novy-katalog?g=vodonagrevateli&brand=Royal%20Thermo&sub=%D0%93%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BA%D0%B8&stock=in",
+   "n": 8,
+   "st": 6
+  },
+  "vodonagrevateli|Накопительные": {
+   "brand": "Electrolux",
+   "url": "/novy-katalog?g=vodonagrevateli&brand=Electrolux&sub=%D0%9D%D0%B0%D0%BA%D0%BE%D0%BF%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 32,
+   "st": 21
+  },
+  "vodonagrevateli|Проточные": {
+   "brand": "Electrolux",
+   "url": "/novy-katalog?g=vodonagrevateli&brand=Electrolux&sub=%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 11,
+   "st": 10
+  },
+  "vodoochistka|Пурифайеры": {
+   "brand": "DITREEX",
+   "url": "/novy-katalog?g=vodoochistka&brand=DITREEX&sub=%D0%9F%D1%83%D1%80%D0%B8%D1%84%D0%B0%D0%B9%D0%B5%D1%80%D1%8B&stock=in",
+   "n": 3,
+   "st": 3
+  },
+  "vodoochistka|Системы обратного осмоса": {
+   "brand": "DITREEX",
+   "url": "/novy-katalog?g=vodoochistka&brand=DITREEX&sub=%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B%20%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BE%D1%81%D0%BC%D0%BE%D1%81%D0%B0&stock=in",
+   "n": 9,
+   "st": 9
+  },
+  "vodoochistka|Фильтры для душа и стиральной машины": {
+   "brand": "DITREEX",
+   "url": "/novy-katalog?g=vodoochistka&brand=DITREEX&sub=%D0%A4%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D1%83%D1%88%D0%B0%20%D0%B8%20%D1%81%D1%82%D0%B8%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D1%8B&stock=in",
+   "n": 4,
+   "st": 4
+  },
+  "vodoochistka|Фильтры магистральные": {
+   "brand": "DITREEX",
+   "url": "/novy-katalog?g=vodoochistka&brand=DITREEX&sub=%D0%A4%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D1%8B%20%D0%BC%D0%B0%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 7,
+   "st": 7
+  },
+  "vodyanye-teploventilyatory|Водяные тепловентиляторы": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=vodyanye-teploventilyatory&brand=Ballu&sub=%D0%92%D0%BE%D0%B4%D1%8F%D0%BD%D1%8B%D0%B5%20%D1%82%D0%B5%D0%BF%D0%BB%D0%BE%D0%B2%D0%B5%D0%BD%D1%82%D0%B8%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D1%8B&stock=in",
+   "n": 25,
+   "st": 14
+  }
+ }
+}

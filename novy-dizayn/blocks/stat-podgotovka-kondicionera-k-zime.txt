@@ -1,0 +1,76 @@
+<style>
+.thart{max-width:860px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#18212f;line-height:1.62;font-size:17px}
+.thart h1{font-size:clamp(23px,5.4vw,34px);line-height:1.18;margin:0 0 14px;color:#071c3b}
+.thart h2{font-size:clamp(19px,3.6vw,25px);margin:32px 0 10px;color:#071c3b}
+.thart h3{font-size:clamp(17px,3vw,20px);margin:22px 0 8px;color:#071c3b}
+.thart p{margin:0 0 14px}
+.thart ul,.thart ol{margin:0 0 16px;padding-left:22px}
+.thart li{margin:0 0 7px}
+.thart a{color:#0a4ea7}
+.thart blockquote{margin:16px 0;padding:12px 16px;background:#e6f2fd;border-left:3px solid #0872d3;border-radius:0 8px 8px 0}
+.thart blockquote p:last-child{margin:0}
+.thart-tw{overflow-x:auto;margin:0 0 18px}
+.thart table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
+.thart th,.thart td{border:1px solid #dae3ee;padding:8px 11px;text-align:left;vertical-align:top}
+.thart th{background:#eef3f9;font-weight:600}
+.thart details{border:1px solid #dae3ee;border-radius:10px;padding:12px 14px;margin:0 0 9px;background:#fff}
+.thart summary{cursor:pointer;font-weight:600;color:#071c3b}
+.thart details p{margin:9px 0 0}
+.thart-cat{border:1px solid #b9dbf7;background:#f4f9ff;border-radius:14px;padding:18px 18px 6px;margin:26px 0}
+.thart-cat__t{font-weight:700;font-size:18px;color:#071c3b;margin:0 0 12px}
+.thart-card{display:block;background:#fff;border:1px solid #dae3ee;border-radius:10px;padding:13px 15px;margin:0 0 12px;text-decoration:none;color:#18212f}
+.thart-card b{display:block;color:#0a4ea7;font-size:16px}
+.thart-card span{display:block;color:#5a6b80;font-size:14px;margin-top:3px}
+.thart-cta{background:#e6f2fd;border:1px solid #b9dbf7;border-radius:14px;padding:20px;margin:26px 0}
+.thart-cta b{display:block;font-size:18px;color:#071c3b;margin:0 0 6px}
+.thart-cta a.wa{display:inline-block;margin-top:10px;background:#0872d3;color:#fff;border-radius:8px;padding:12px 20px;text-decoration:none;font-weight:700}
+.thart-also{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 0}
+.thart-also a{background:#eef3f9;border-radius:8px;padding:9px 13px;text-decoration:none;color:#0a4ea7;font-size:15px}
+</style><div class="thart"><h1>Подготовка кондиционера к зиме: чеклист из 6 шагов</h1><p>Короткий ответ: <b>перед зимой кондиционер нужно почистить и законсервировать, а если планируете греться им зимой — проверить режим обогрева и при необходимости установить зимний комплект.</b> Это продлевает срок службы техники на годы и экономит на ремонте. Ниже — пошаговый чеклист, разделённый на то, что можно сделать самому, и то, что стоит доверить мастеру.</p>
+<h2>Зачем вообще готовить кондиционер к зиме</h2>
+<p>За лето во внутреннем блоке скапливается пыль, в фильтрах — грязь, в поддоне — влага. Если оставить всё как есть на зиму:</p>
+<ul><li><b>Плесень и запах.</b> Влажная среда + грязь = идеальные условия для грибка. Весной кондиционер «запахнет».</li><li><b>Снижение эффективности.</b> Забитые фильтры заставляют компрессор работать с перегрузкой — растёт расход электричества.</li><li><b>Поломка компрессора.</b> Если зимой запустить кондиционер на охлаждение при минусовой температуре без подготовки — компрессор может выйти из строя.</li></ul>
+<p>Правильная подготовка занимает 1–2 часа и стоит недорого, но экономит тысячи на ремонте.</p>
+<h2>Чеклист: 6 шагов</h2>
+<h3>Шаг 1. Почистить фильтры (самостоятельно, 10 минут)</h3>
+<p>Снимите переднюю панель внутреннего блока, достаньте фильтры и промойте их тёплой водой с мягким моющим средством. Дайте полностью высохнуть и поставьте обратно. Делать это нужно раз в 1–2 месяца в сезон.</p>
+<h3>Шаг 2. Очистить внутренний блок (лучше мастеру)</h3>
+<p>Пыль и грязь оседают не только на фильтрах, но и на теплообменнике и крыльчатке. Глубокая чистка с антибактериальной обработкой — это работа мастера со специальным оборудованием. Рекомендуется 1–2 раза в год.</p>
+<h3>Шаг 3. Проверить дренаж</h3>
+<p>Убедитесь, что конденсат свободно уходит по дренажной трубке. Если трубка забита — зимой вода замёрзнет и может повредить систему.</p>
+<h3>Шаг 4. Проверить режим обогрева (если будете греться)</h3>
+<p>Если планируете использовать кондиционер зимой для обогрева — включите режим Heat и убедитесь, что он работает корректно. Инверторные модели (например, TCL FreshIN 3.0) штатно греют до −10…−15 °C.</p>
+<h3>Шаг 5. Установить зимний комплект (если нужно)</h3>
+<p>Зимний комплект (подогрев картера компрессора и дренажа) нужен, если:</p>
+<ul><li>кондиционер будет работать на охлаждение при температуре ниже +5 °C (например, в серверных, офисах с техникой);</li><li>вы живёте в регионе с морозами ниже −15 °C и хотите стабильный обогрев.</li></ul>
+<p>Для обычной квартиры в Алматы, где кондиционер зимой либо отдыхает, либо греет в мягкие морозы, зимний комплект чаще всего не обязателен — уточните у мастера.</p>
+<h3>Шаг 6. Законсервировать на зиму (если не будете использовать)</h3>
+<p>Если кондиционер зимой не используется:</p>
+<ol><li>Включите режим вентиляции (Fan) на 2–3 часа, чтобы полностью просушить внутренний блок от влаги.</li><li>Отключите питание (автомат в щитке).</li><li>Закройте наружный блок защитным кожухом от снега и наледи (или убедитесь, что над ним есть козырёк).</li></ol>
+<h2>Что можно сделать самому, а что доверить мастеру</h2>
+<div class="thart-tw"><table><thead><tr><th>Работа</th><th>Сам</th><th>Мастер</th></tr></thead><tbody><tr><td>Промыть фильтры</td><td>✅</td><td>—</td></tr><tr><td>Просушить блок (режим Fan)</td><td>✅</td><td>—</td></tr><tr><td>Отключить питание</td><td>✅</td><td>—</td></tr><tr><td>Глубокая чистка с антибактериальной обработкой</td><td>—</td><td>✅</td></tr><tr><td>Проверка фреона и герметичности</td><td>—</td><td>✅</td></tr><tr><td>Установка зимнего комплекта</td><td>—</td><td>✅</td></tr><tr><td>Диагностика компрессора</td><td>—</td><td>✅</td></tr></tbody></table></div>
+<h2>Сколько стоит подготовка к зиме</h2>
+<p>Профилактическая чистка и диагностика кондиционера в Алматы стоит в среднем <b>8 000–15 000 тг</b> за один блок (цена зависит от модели и степени загрязнения). Это раз в год — копейки по сравнению с ремонтом компрессора, который обходится в 50 000–150 000 тг.</p>
+<div class="thart-cat"><div class="thart-cat__t">Что посмотреть в каталоге</div><a class="thart-card" href="/novy-katalog?g=bytovye&amp;brand=TCL&amp;stock=in"><b>TCL · Бытовые сплит-системы — 10 моделей</b><span>Смотреть модели →</span></a><a class="thart-card" href="/novy-katalog?g=bytovye"><b>Бытовые сплит-системы — 381 модель в каталоге</b><span>Весь раздел без фильтра по бренду →</span></a><a class="thart-card" href="/uslugi"><b>Uslugi</b><span>Открыть →</span></a></div><h2>Вывод</h2>
+<p>Подготовка кондиционера к зиме — это 6 простых шагов, из которых половину вы делаете сами за полчаса, а половину доверяете мастеру раз в год. Это продлевает жизнь технике, убирает запах и экономит на дорогом ремонте.</p>
+<p>Если кондиционер давно не обслуживался или появился запах — запишитесь на чистку. А если выбираете новый кондиционер, обратите внимание на <a href="https://tehnoholod369.kz/tcl-freshin">TCL FreshIN 3.0</a> — он работает круглый год и требует минимум обслуживания.</p>
+<h2>Часто задаваемые вопросы</h2>
+<details><summary>Нужно ли отключать кондиционер на зиму?</summary><p>Если не используете зимой — да, лучше законсервировать: просушить блок, отключить питание и защитить наружный блок. Если греетесь — оставляйте включённым.</p></details>
+<details><summary>Как часто нужно чистить кондиционер?</summary><p>Фильтры — раз в 1–2 месяца в сезон. Глубокая чистка с антибактериальной обработкой — 1–2 раза в год.</p></details>
+<details><summary>Почему кондиционер пахнет после зимы?</summary><p>Из-за влаги и грязи, оставшихся в блоке. Решение — глубокая чистка с антибактериальной обработкой перед сезоном.</p></details>
+<details><summary>Что такое зимний комплект и нужен ли он?</summary><p>Это подогрев картера компрессора и дренажа. Нужен, если кондиционер работает на охлаждение при минусовой температуре или в сильные морозы. Для обычной квартиры чаще не обязателен.</p></details>
+<details><summary>Сколько стоит чистка кондиционера в Алматы?</summary><p>В среднем 8 000–15 000 тг за блок, в зависимости от модели и загрязнения.</p></details>
+<p><i>Записаться на чистку и подготовку кондиционера к зиме — <a href="https://wa.me/77000369369">напишите в WhatsApp</a>. Выезд мастера по Алматы и области, гарантия на работы.</i></p>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Нужно ли отключать кондиционер на зиму?","acceptedAnswer":{"@type":"Answer","text":"Если не используете зимой — да, лучше законсервировать: просушить блок, отключить питание и защитить наружный блок. Если греетесь — оставляйте включённым."}},
+    {"@type":"Question","name":"Как часто нужно чистить кондиционер?","acceptedAnswer":{"@type":"Answer","text":"Фильтры — раз в 1–2 месяца в сезон. Глубокая чистка с антибактериальной обработкой — 1–2 раза в год."}},
+    {"@type":"Question","name":"Почему кондиционер пахнет после зимы?","acceptedAnswer":{"@type":"Answer","text":"Из-за влаги и грязи, оставшихся в блоке. Решение — глубокая чистка с антибактериальной обработкой перед сезоном."}},
+    {"@type":"Question","name":"Что такое зимний комплект и нужен ли он?","acceptedAnswer":{"@type":"Answer","text":"Это подогрев картера компрессора и дренажа. Нужен, если кондиционер работает на охлаждение при минусовой температуре или в сильные морозы. Для обычной квартиры чаще не обязателен."}},
+    {"@type":"Question","name":"Сколько стоит чистка кондиционера в Алматы?","acceptedAnswer":{"@type":"Answer","text":"В среднем 8 000–15 000 тг за блок, в зависимости от модели и загрязнения."}}
+  ]
+}
+</script><div class="thart-cta"><b>Подобрать под вашу задачу</b><div>Напишите площадь помещения — подберём модель и посчитаем монтаж. Монтаж выполняет проверенная бригада; гарантия на оборудование — производителя, на монтаж — бригады.</div><div style="margin-top:8px">Телефон и WhatsApp: <a href="tel:+77000369369">+77 000 369 369</a></div><a class="wa" href="https://wa.me/77000369369">Написать в WhatsApp</a></div><h2>Читайте дальше</h2><nav class="thart-also"><a href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy">Обогрев кондиционером зимой в Алматы: расчёт</a><a href="https://tehnoholod369.kz/kondicioner-ili-obogrevatel">Кондиционер или обогреватель: что выгоднее зимой в Алматы</a><a href="https://tehnoholod369.kz/kogda-deshevle-kupit-kondicioner">Когда дешевле купить кондиционер в Казахстане</a></nav></div><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Подготовка кондиционера к зиме: чеклист из 6 шагов", "description": "Как правильно подготовить кондиционер к зиме: чистка, консервация, зимний комплект. Пошаговый чеклист + что можно сделать самому, а что доверить мастеру.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/podgotovka-kondicionera-k-zime"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz"}, "dateModified": "2026-08-31"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Подготовка кондиционера к зиме: чеклист из 6 шагов", "item": "https://tehnoholod369.kz/podgotovka-kondicionera-k-zime"}]}</script>
