@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
 
 <x-dc>
 <helmet>
@@ -14,10 +14,10 @@
   a:hover { color: #0872D3; }
   input, textarea { font-family: inherit; }
 </style>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=c89278d9"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -215,7 +215,9 @@ class Component extends DCLogic {
     mount: true, kit: true,
     delivery: "Алматы, до адреса",
     payment: "Kaspi или перевод",
-    name: "", phone: "", city: "", address: "", company: "", bin: "", comment: ""
+    name: "", phone: "", city: "", address: "", company: "", bin: "", comment: "",
+    // номер заказа приходит из приёмника после отправки; пока пусто — заказ не отправлен
+    orderNo: "", sending: false
   };
   boxRefs = {};
 
@@ -378,7 +380,13 @@ class Component extends DCLogic {
       onComment: e => this.setState({ comment: e.target.value }),
       nameBorder: !form.name || form.name.length > 1 ? "#DCE5F0" : "#E11A13",
       phoneBorder: !form.phone || phoneOk ? "#DCE5F0" : "#E11A13",
-      formNote: ready
+      // После отправки на том же месте показываем номер: отдельную плашку заводить
+      // не стали — человек смотрит именно сюда, когда нажал кнопку.
+      formNote: s.orderNo
+        ? "Заказ " + s.orderNo + " принят — он уже у нас в системе. Номер пригодится "
+          + "при вопросах по заказу, доставке и возврату."
+        : s.sending ? "Отправляем заказ…"
+        : ready
         ? "Всё заполнено — заказ уйдёт в WhatsApp составом, останется нажать «Отправить»."
         : "Имя и телефон нужны, чтобы перезвонить и подтвердить наличие. Остальное — по желанию.",
 
@@ -397,10 +405,28 @@ class Component extends DCLogic {
 
       submitLabel: !items.length ? "Добавьте позиции из каталога"
         : !ready ? "Заполните имя и телефон"
+        : s.sending ? "Отправляем…"
         : isCompany ? "Запросить счёт" : "Отправить заказ в WhatsApp",
+      // href оставлен запасным путём: если JS-обработчик не сработает, ссылка
+      // всё равно откроет WhatsApp с составом — просто без номера.
       orderHref: ready && cart ? cart.orderHref(form) : "",
       orderTarget: ready ? "_blank" : "",
-      orderClick: e => { if (!ready) e.preventDefault(); },
+      // Заказ сперва уходит в приёмник и получает номер, потом открывается WhatsApp.
+      // Окно открываем ДО ожидания ответа: открытое после await блокируется
+      // как попап. Приёмник не ответил — уходим без номера, продажу не теряем.
+      orderClick: e => {
+        if (!ready || s.sending) { e.preventDefault(); return; }
+        e.preventDefault();
+        const w = window.open("", "_blank");
+        this.setState({ sending: true });
+        const done = (no) => {
+          this.setState({ sending: false, orderNo: no || "" });
+          const href = cart.orderHref(form, no);
+          if (w) { w.location.href = href; } else { window.location.href = href; }
+        };
+        if (cart && cart.submitOrder) { cart.submitOrder(form).then(done).catch(() => done("")); }
+        else { done(""); }
+      },
       orderBg: ready ? "#0872D3" : "#8FB6E4",
       orderCursor: ready ? "pointer" : "not-allowed",
       preview: cart && items.length ? cart.orderText(form) : ""

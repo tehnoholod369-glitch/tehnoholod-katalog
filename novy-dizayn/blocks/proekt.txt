@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
 
 <x-dc>
 <helmet>
@@ -12,6 +12,7 @@
   a:hover { color: #0872D3; }
   input, select, textarea { font-family: inherit; }
 </style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/lead.js?v=b25fa228"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -498,10 +499,30 @@ class Component extends DCLogic {
             ? "Позиции: " + this.state.spec.map(x => x.m + " x" + x.qty).join("; ")
             : "Состав подбираем сами"
         ].filter(Boolean);
-        const href = "https://wa.me/77000369369?text=" +
-          encodeURIComponent("Запрос спецификации. " + parts.join(". ") + ".");
-        const w = window.open(href, "_blank", "noreferrer");
-        if (!w) { location.href = href; }
+        const text = "Запрос спецификации. " + parts.join(". ") + ".";
+        // С 31.08.2026 запрос ещё и пишется в приёмник: WhatsApp фиксирует
+        // обращение, только если человек дожал отправку в мессенджере, а до тех
+        // пор проектный запрос — самый дорогой из всех — не оставлял следа.
+        // Контакт здесь бывает и почтой — телефонной колонке она не подходит,
+        // поэтому непохожее на номер уходит в поле contact, а lead.js кладёт его
+        // в комментарий. Строка в листе появляется в обоих случаях.
+        const digits = f.contact.replace(/\D/g, "");
+        const isPhone = digits.length >= 10;
+        if (window.TH_LEAD) {
+          window.TH_LEAD.submit({
+            channel: "сайт · проектные системы",
+            name: f.name,
+            phone: isPhone ? f.contact.trim() : "",
+            contact: isPhone ? "" : f.contact.trim(),
+            city: f.city, room: f.kind, area: f.area,
+            comment: parts.join(". "),
+            install: this.state.needs.join(", ")
+          }, text);
+        } else {
+          const href = "https://wa.me/77000369369?text=" + encodeURIComponent(text);
+          const w = window.open(href, "_blank", "noreferrer");
+          if (!w) { location.href = href; }
+        }
         this.setState({ sent: true });
       },
       submitBg: this.state.f.contact.trim() ? '#0872D3' : '#9FB0C4',

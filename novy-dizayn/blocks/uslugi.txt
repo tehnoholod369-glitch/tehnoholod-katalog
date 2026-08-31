@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
 
 <x-dc>
 <helmet>
@@ -11,7 +11,8 @@
   a { color: #0A4EA7; text-decoration: none; }
   a:hover { color: #0872D3; }
 </style>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/lead.js?v=b25fa228"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -195,8 +196,8 @@
         <input type="text" placeholder="Имя" value="{{ fName }}" onInput="{{ onName }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#18212F;" />
         <input type="tel" placeholder="+7 (___) ___-__-__" value="{{ fPhone }}" onInput="{{ onPhone }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#18212F;" />
         <input type="text" placeholder="Адрес объекта и площадь помещения" value="{{ fAddr }}" onInput="{{ onAddr }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#18212F;" />
-        <a href="{{ formHref }}" target="_blank" rel="noreferrer" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700;">Отправить заявку</a>
-        <div style="font-size:12px; color:#8593A6; line-height:1.5;">Нажимая кнопку, вы соглашаетесь на обработку данных для расчёта и связи по заявке.</div>
+        <a href="{{ formHref }}" onClick="{{ onSend }}" target="_blank" rel="noreferrer" style="background:{{ sendBg }}; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700;">{{ sendLabel }}</a>
+        <div style="font-size:12px; color:#8593A6; line-height:1.5;">{{ sendNote }}</div>
       </div>
     </div>
 
@@ -206,7 +207,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  state = { tab: 0, form: { name: "", phone: "", addr: "" } };
+  state = { tab: 0, form: { name: "", phone: "", addr: "" }, sent: false, sending: false };
 
   renderVals() {
     // поля заявки уходят в текст сообщения WhatsApp, иначе введённое теряется
@@ -216,10 +217,29 @@ class Component extends DCLogic {
       f.phone ? "Телефон: " + f.phone : "",
       f.addr ? "Объект: " + f.addr : ""
     ].filter(Boolean);
+    const text = "Заявка на замер. " + filled.join(". ") + ".";
     const formHref = filled.length
-      ? "https://wa.me/77000369369?text=" + encodeURIComponent("Заявка на замер. " + filled.join(". ") + ".")
+      ? "https://wa.me/77000369369?text=" + encodeURIComponent(text)
       : "https://wa.me/77000369369";
     const setField = k => e => this.setState({ form: Object.assign({}, f, { [k]: e.target.value }) });
+
+    // Заявка пишется в приёмник, а не только уходит в WhatsApp: до 31.08.2026
+    // заполненная и брошенная форма не оставляла следа нигде. Ссылка в href
+    // остаётся запасным путём — если обработчик не сработает, WhatsApp откроется
+    // с тем же текстом. Телефон обязателен: без него приёмник уводит обращение
+    // в «События», и рапортовать о принятой заявке было бы неправдой.
+    const canSend = !!String(f.phone || "").trim();
+    const onSend = e => {
+      if (this.state.sending) { e.preventDefault(); return; }
+      if (!canSend || !window.TH_LEAD) { return; }
+      e.preventDefault();
+      this.setState({ sending: true });
+      window.TH_LEAD.submit({
+        channel: "сайт · вызов замерщика",
+        name: f.name, phone: f.phone, comment: f.addr ? "Объект: " + f.addr : ""
+      }, text).then(ok => this.setState({ sending: false, sent: ok }))
+        .catch(() => this.setState({ sending: false }));
+    };
 
     const labels = ["Монтаж под ключ", "Сервис и обслуживание", "Гарантия и Сервис-карта 369"];
     const tabs = labels.map((label, i) => ({
@@ -238,6 +258,14 @@ class Component extends DCLogic {
       onPhone: setField("phone"),
       onAddr: setField("addr"),
       formHref,
+      onSend,
+      sendBg: this.state.sending ? "#9FB0C4" : "#0872D3",
+      sendLabel: this.state.sending ? "Отправляем…"
+        : this.state.sent ? "Заявка принята — открыть WhatsApp"
+        : "Отправить заявку",
+      sendNote: this.state.sent
+        ? "Заявка у нас: перезвоним в рабочее время. Если WhatsApp не открылся — напишите сами, текст уже готов."
+        : "Нажимая кнопку, вы соглашаетесь на обработку данных для расчёта и связи по заявке.",
       isMount: this.state.tab === 0,
       isService: this.state.tab === 1,
       isWarranty: this.state.tab === 2,

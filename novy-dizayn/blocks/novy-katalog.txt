@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
 
 <x-dc>
 <helmet>
@@ -36,10 +36,10 @@
     .th-nav-body.th-closed { display:none; }
   }
 </style>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=c89278d9"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -316,7 +316,7 @@ class Component extends DCLogic {
   // Один список ключей фасетов на три места: старт, смена группы и «Сбросить».
   // Раньше он был переписан трижды — новый фасет забывали сбросить, и он тянулся
   // за пользователем в другую группу (25.08.2026)
-  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "watt", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "thermo", "stock"];
+  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "watt", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "pit", "thermo", "stock"];
   facetsOff() {
     const o = { feat: "", q: "", qF: {} };
     (this.facetKeys || []).forEach(k => { o[k] = "all"; });
@@ -947,6 +947,12 @@ class Component extends DCLogic {
       if (/коротк/.test(v)) return "Короткие волны";
       return "";
     };
+    const pitOf = x => {
+      const v = (x.sub || "").toLowerCase();
+      if (/газов/.test(v)) return "Газовые";
+      if (/электрическ/.test(v)) return "Электрические";   // ловит и «Конвекторы электрические»
+      return "";
+    };
     const installOf = x => {
       const v = specOf(x, /^установка$/i).toLowerCase();
       if (!v) return "";
@@ -1029,6 +1035,9 @@ class Component extends DCLogic {
       { key: "orient", title: "Положение при монтаже", of: orientOf, only: ["vodonagrevateli"],
         order: ["Только вертикально", "Вертикально или горизонтально", "Напольный"],
         note: "Горизонтальная установка нужна, когда бак прячут под потолок или в узкую нишу. Позиции без данных в фильтр не попадают" },
+      { key: "pit", title: "Питание", of: pitOf, only: ["infrakrasnye-obogrevateli"],
+        order: ["Электрические", "Газовые"],
+        note: "Газовому нужен баллон или газовая линия и приток воздуха в помещение; электрическому — розетка. Позиции без данных в фильтр не попадают" },
       { key: "wave", title: "Тип волны", of: waveOf, only: ["infrakrasnye-obogrevateli"],
         order: ["Длинные волны", "Средние волны", "Короткие волны"],
         note: "Длинные волны мягче — для жилых комнат; короткие греют жёстче и берут высокие потолки и улицу. Позиции без данных в фильтр не попадают" },
