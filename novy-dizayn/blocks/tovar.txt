@@ -229,12 +229,35 @@
                   </div>
                 </sc-if>
 
+                <sc-if value="{{ showSort }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:12px;">
+                    <div style="font-size:13px; color:#8593A6;">Порядок:</div>
+                    <sc-for list="{{ sortChips }}" as="ss" hint-placeholder-count="2">
+                      <div onClick="{{ ss.pick }}" style="border:1px solid {{ ss.border }}; background:{{ ss.bg }}; color:{{ ss.fg }}; border-radius:999px; padding:6px 13px; font-size:13px; font-weight:600; cursor:pointer;">{{ ss.label }}</div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+
                 <sc-if value="{{ crewsNone }}" hint-placeholder-val="{{ false }}">
                   <div style="background:#FFF1E3; border-radius:10px; padding:14px 16px; margin-top:12px; font-size:14px; color:#2C3846; line-height:1.6;">Сертифицированной бригады на эту технику в реестре пока нет — набор идёт. Монтаж всё равно организуем: подберём и проверим монтажника перед выездом, гарантию на работу зафиксируем в заявке. <a href="https://wa.me/77000369369" style="color:#0872D3; font-weight:700;">Написать нам</a>.</div>
                 </sc-if>
 
+                <sc-if value="{{ hasCrewCities }}" hint-placeholder-val="{{ true }}">
+                  <div onClick="{{ toggleDocs }}" style="display:inline-flex; align-items:center; gap:9px; border:1px solid {{ docsBorder }}; background:{{ docsBg }}; border-radius:10px; padding:10px 14px; margin-top:12px; cursor:pointer;">
+                    <div style="width:18px; height:18px; border-radius:4px; border:2px solid {{ docsMark }}; background:{{ docsFill }}; flex:none;"></div>
+                    <div>
+                      <div style="font-size:14px; font-weight:600; color:#18212F;">Нужны закрывающие документы</div>
+                      <div style="font-size:12px; color:#5A6675; line-height:1.5; margin-top:2px;">Договор и акт для юрлица или объекта. Частному заказу это не нужно.</div>
+                    </div>
+                  </div>
+                </sc-if>
+
                 <sc-if value="{{ crewsNoCity }}" hint-placeholder-val="{{ false }}">
                   <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:12px;">Выберите город — покажем бригады, которые ставят именно эту технику, с их ценами и гарантией.</div>
+                </sc-if>
+
+                <sc-if value="{{ crewsNoDocs }}" hint-placeholder-val="{{ false }}">
+                  <div style="background:#FFF1E3; border-radius:10px; padding:14px 16px; margin-top:12px; font-size:14px; color:#2C3846; line-height:1.6;">В этом городе бригад, выдающих договор и акт, у нас пока нет. Снимите галочку, чтобы увидеть остальных, или <a href="https://wa.me/77000369369" style="color:#0872D3; font-weight:700;">напишите нам</a> — подберём под ваши документы отдельно.</div>
                 </sc-if>
 
                 <sc-if value="{{ crewsEmpty }}" hint-placeholder-val="{{ false }}">
@@ -259,20 +282,15 @@
 
                     <sc-if value="{{ b.hasPrices }}" hint-placeholder-val="{{ true }}">
                       <div style="border-top:1px solid #EEF3F9; margin-top:12px; padding-top:11px;">
-                        <sc-for list="{{ b.prices }}" as="p" hint-placeholder-count="2">
-                          <div style="display:flex; gap:12px; justify-content:space-between; align-items:baseline; margin-top:7px;">
-                            <div style="flex:1; min-width:0;">
-                              <div style="font-size:14px; color:#18212F;">{{ p.naz }}</div>
-                              <sc-if value="{{ p.hasHint }}" hint-placeholder-val="{{ false }}">
-                                <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:2px;">{{ p.hint }}</div>
-                              </sc-if>
-                            </div>
-                            <div style="text-align:right; white-space:nowrap;">
-                              <div style="font-size:15px; font-weight:700; color:#18212F;">{{ p.val }}</div>
-                              <div style="font-size:11px; color:#8593A6; margin-top:2px;">{{ p.date }}</div>
-                            </div>
+                        <div style="display:flex; gap:12px; justify-content:space-between; align-items:baseline;">
+                          <div style="flex:1; min-width:0;">
+                            <div style="font-size:14px; color:#18212F;">{{ b.otLabel }}</div>
+                            <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:2px;">{{ b.otNote }}</div>
                           </div>
-                        </sc-for>
+                          <div style="text-align:right; white-space:nowrap;">
+                            <div style="font-size:16px; font-weight:700; color:#18212F;">{{ b.otVal }}</div>
+                          </div>
+                        </div>
                       </div>
                     </sc-if>
 
@@ -371,8 +389,14 @@
 
               <sc-if value="{{ power.payback }}" hint-placeholder-val="{{ false }}">
                 <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:16px;">
-                  <div style="font-size:15px; font-weight:700; color:#071C3B;">Сравнение с ближайшим ON/OFF из каталога</div>
+                  <div style="font-size:15px; font-weight:700; color:#071C3B;">{{ power.paybackTitle }}</div>
                   <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:6px;">{{ power.payback }}</div>
+                  <sc-if value="{{ power.payback2 }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">{{ power.payback2 }}</div>
+                  </sc-if>
+                  <sc-if value="{{ power.paybackNote }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-size:13px; color:#5A6B80; line-height:1.6; margin-top:8px;">{{ power.paybackNote }}</div>
+                  </sc-if>
                 </div>
               </sc-if>
 
@@ -535,7 +559,7 @@
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
   state = { group: "bytovye", idx: 0, items: null, details: null, index: null, loading: true, photo: 0, tab: 0, zoom: false,
-            crewCity: "", crewData: null, crewFailed: false };
+            crewCity: "", crewData: null, crewFailed: false, crewSort: "rating", crewDocs: false };
   photoRef = React.createRef();
   zoomRef = React.createRef();
   galRef = React.createRef();
@@ -570,6 +594,9 @@ class Component extends DCLogic {
     try { localStorage.setItem("th_city", code); } catch (_) {}
     this.setState({ crewCity: code });
   }
+  // Сортировка списка бригад: по рейтингу (по умолчанию) или сначала дешевле.
+  // Сортируем на клиенте — данные уже здесь, лишний запрос к приёмнику не нужен.
+  pickSort(k) { this.setState({ crewSort: k }); }
   num(t) { const d = String(t || "").replace(/[^\d]/g, ""); return d ? +d : 0; }
   ph(u) { return (window.photoUrl ? window.photoUrl(u) : String(u || "")); }
 
@@ -599,15 +626,19 @@ class Component extends DCLogic {
     this.setState({ loading: true, group, idx, photo: 0 });
     Promise.all([
       fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/" + group + ".json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []),
-      fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/details/" + group + ".json", {cache:"no-cache"}).then(r => r.ok ? r.json() : [])
-    ]).then(([items, details]) => {
+      fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/details/" + group + ".json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []),
+      // эталон притока лежит в служебном файле: бризеры — в другой группе,
+      // а карточка грузит только свою. Файл маленький, ошибка загрузки не ломает
+      // страницу: без него сравнение просто останется прежним (31.08.2026)
+      fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/split-prices.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : {}).catch(() => ({}))
+    ]).then(([items, details, aux]) => {
       // ключ sl устойчив к пересборке данных, номер в массиве — нет
       let i = idx;
       if (sl) {
         const found = items.findIndex(x => x.sl === sl);
         if (found >= 0) i = found;
       }
-      this.setState({ items, details, idx: Math.min(i, Math.max(0, items.length - 1)), loading: false });
+      this.setState({ items, details, aux, idx: Math.min(i, Math.max(0, items.length - 1)), loading: false });
     }).catch(() => this.setState({ items: [], details: [], loading: false }));
   }
 
@@ -1005,9 +1036,24 @@ class Component extends DCLogic {
     });
     cityList.sort((a, b) => b.n - a.n);
     const crewCity = s.crewCity || "";
-    const inCity = crewCity ? crewAll.filter(b => b.region === crewCity) : [];
-    const priced = inCity.filter(b => (b.groupPrices || []).length > 0);
+    const inCityAll = crewCity ? crewAll.filter(b => b.region === crewCity) : [];
+    const inCity = s.crewDocs ? inCityAll.filter(b => b.docsOk) : inCityAll;
+    const priced = inCity.filter(b => b.ot && (b.ot.cena || b.ot.poObj));
     const showPrices = priced.length >= ((cd && cd.pricesMin) || 2);
+    // Порядок: по рейтингу (как отдал приёмник) или сначала дешевле. Бригады
+    // без цены и «по объекту» уходят вниз — сравнивать у них нечего, а наверх
+    // они попали бы просто потому, что молчат.
+    const crewSort = s.crewSort || "rating";
+    const inCitySorted = (showPrices && crewSort === "cena")
+      ? inCity.slice().sort((x, y) => {
+          const xc = x.ot && x.ot.cena ? x.ot.cena : null;
+          const yc = y.ot && y.ot.cena ? y.ot.cena : null;
+          if (xc === null && yc === null) { return 0; }
+          if (xc === null) { return 1; }
+          if (yc === null) { return -1; }
+          return xc - yc;
+        })
+      : inCity;
 
     return {
       loading: false,
@@ -1122,7 +1168,7 @@ class Component extends DCLogic {
 
       showCrews: mountable,
       crewsIntro: "Монтаж выполняет сертифицированная бригада — она же даёт на него гарантию. "
-                + "Показываем тех, кто ставит именно эту технику в вашем городе, с их ценами.",
+                + "Показываем тех, кто ставит именно эту технику в вашем городе, с ценой на монтаж от каждой и рейтингом от клиентов.",
       crewsLoading: mountable && !cd && !s.crewFailed,
       crewsFailed: mountable && !!s.crewFailed && !cd,
       hasCrewCities: cityList.length > 0,
@@ -1130,7 +1176,15 @@ class Component extends DCLogic {
       // содержания читается как поломка, поэтому состояние проговариваем словами.
       crewsNone: !!cd && crewAll.length === 0,
       crewsNoCity: !!cd && crewAll.length > 0 && !crewCity,
-      crewsEmpty: !!cd && !!crewCity && inCity.length === 0,
+      crewsEmpty: !!cd && !!crewCity && inCityAll.length === 0,
+      // Разные состояния: «в городе никого» и «никого С ДОКУМЕНТАМИ» — второе
+      // лечится снятием галочки, и сказать об этом надо прямо.
+      crewsNoDocs: !!cd && !!crewCity && inCityAll.length > 0 && inCity.length === 0,
+      toggleDocs: () => this.setState({ crewDocs: !s.crewDocs }),
+      docsBorder: s.crewDocs ? "#0872D3" : "#DCE5F0",
+      docsBg: s.crewDocs ? "#E6F2FD" : "#fff",
+      docsMark: s.crewDocs ? "#0872D3" : "#B9C6D6",
+      docsFill: s.crewDocs ? "#0872D3" : "transparent",
       crewsShown: !!crewCity && inCity.length > 0,
       crewsDopusk: "Подключение к электросети выполняет мастер с действующим допуском по "
                  + "электробезопасности — группа и срок проверки знаний указаны в карточке бригады. "
@@ -1143,6 +1197,19 @@ class Component extends DCLogic {
         + "Стоимость назовём при подтверждении заявки. Если на объекте называют другую сумму или предлагают "
         + "своё оборудование мимо нас — сообщите: +77 000 369 369.",
 
+      // Переключатель порядка показываем только когда цены вообще есть:
+      // «сначала дешевле» без цен — кнопка, которая ничего не меняет.
+      showSort: showPrices,
+      sortChips: [
+        { key: "rating", label: "Сначала с рейтингом" },
+        { key: "cena", label: "Сначала дешевле" }
+      ].map(o => ({
+        label: o.label,
+        border: crewSort === o.key ? "#0872D3" : "#DCE5F0",
+        bg: crewSort === o.key ? "#E6F2FD" : "#fff",
+        fg: crewSort === o.key ? "#0A4EA7" : "#2C3846",
+        pick: () => this.pickSort(o.key)
+      })),
       crewCities: cityList.map(x => ({
         label: x.label + " · " + x.n,
         border: crewCity === x.key ? "#0872D3" : "#DCE5F0",
@@ -1151,7 +1218,7 @@ class Component extends DCLogic {
         pick: () => this.pickCity(x.key)
       })),
 
-      crewList: inCity.map(b => {
+      crewList: inCitySorted.map(b => {
         const facts = [
           b.warranty ? { v: "Гарантия на монтаж " + b.warranty + " мес — даёт бригада" } : null,
           b.forma ? { v: b.forma + (b.nds ? " · " + b.nds : "")
@@ -1162,7 +1229,7 @@ class Component extends DCLogic {
           (b.langs || []).length ? { v: "Языки: " + b.langs.join(", ") } : null,
           (b.osn || []).length ? { v: "Оснащение: " + b.osn.join(" · ") } : null
         ].filter(Boolean);
-        const prices = showPrices ? (b.groupPrices || []) : [];
+        const ot = showPrices ? (b.ot || null) : null;
         return {
           cert: b.cert,
           zoneLine: b.city + (b.zone ? " · " + b.zone : ""),
@@ -1171,16 +1238,14 @@ class Component extends DCLogic {
           ratingFg: b.rating !== null ? "#0E7C4A" : "#B25200",
           ratingBg: b.rating !== null ? "#E7F7F0" : "#FFF1E3",
           facts: facts,
-          hasPrices: prices.length > 0,
-          prices: prices.map(x => ({
-            naz: x.naz,
-            hasHint: !!x.hint,
-            hint: x.hint || "",
-            val: x.poObj ? "по объекту" : this.fmt(x.cena) + " \u20B8" + (x.ed ? " / " + x.ed : ""),
-            date: "цена от " + x.date
-          })),
-          noPrices: prices.length === 0,
-          noPricesNote: (b.groupPrices || []).length === 0
+          hasPrices: !!ot,
+          otLabel: "Монтаж, стандартная установка",
+          otVal: ot && ot.cena ? "от " + this.fmt(ot.cena) + " ₸" : "по объекту",
+          otNote: ot && ot.cena
+            ? "цена бригады; итог зависит от трассы и доступа"
+            : "бригада считает по объекту",
+          noPrices: !ot,
+          noPricesNote: !(b.ot && (b.ot.cena || b.ot.poObj))
             ? "Цену на эту работу бригада пока не подтвердила — назовём при согласовании заявки."
             : "Цену показываем, когда её назовут минимум две бригады: одну сравнивать не с чем.",
           // Пожелание, а не бронь: бригаду назначаем мы, но с учётом выбора клиента.
@@ -1271,8 +1336,32 @@ class Component extends DCLogic {
         const onoffs = items.filter(x => x.p && compOf(x) === "onoff" && x.sub === it.sub
           && btuOf(x) && Math.abs(btuOf(x) - myBtu) <= myBtu * 0.15);
         const cheapestOnoff = onoffs.sort((a, b) => a.p - b.p)[0];
-        const priceGap = (cheapestOnoff && it.p) ? it.p - cheapestOnoff.p : 0;
-        const years = (save > 0 && priceGap > 0) ? Math.round(priceGap / save * 10) / 10 : 0;
+        const hasFresh = (it.sp || []).some(r => r && /приток/i.test(String(r[0]))
+          && /^да\b/i.test(String(r[1] || "").trim()));
+        const briz = (hasFresh && s.aux && s.aux.pritok && s.aux.pritok.p) ? s.aux.pritok : null;
+        // Второй эталон — инвертор ТОГО ЖЕ класса энергоэффективности и без притока
+        // (владелец, 31.08.2026). Одного сравнения с ON/OFF мало: в разницу попадает
+        // и инвертор, и приток разом. Две строки разводят это по отдельности —
+        // «самое дешёвое решение вообще» и «то же самое при равной эффективности».
+        const specVal = (x, rx) => {
+          const row = (x.sp || []).find(r => r && rx.test(String(r[0]).trim()));
+          return row ? String(row[1]).trim() : "";
+        };
+        const myCls = specVal(it, /^класс/i) || specVal(it, /энергоэфф/i);
+        const sameClassInv = briz ? items.filter(x => x.p && compOf(x) === "inv"
+            && x.sub === it.sub && x.sl !== it.sl
+            && btuOf(x) && Math.abs(btuOf(x) - myBtu) <= myBtu * 0.15
+            && !((x.sp || []).some(r => r && /приток/i.test(String(r[0])) && /^да\b/i.test(String(r[1] || "").trim())))
+            && myCls && (specVal(x, /^класс/i) || specVal(x, /энергоэфф/i)) === myCls)
+          .sort((a, b) => a.p - b.p)[0] : null;
+        const baseCost = cheapestOnoff ? cheapestOnoff.p + (briz ? briz.p : 0) : 0;
+        const baseCost2 = sameClassInv ? sameClassInv.p + (briz ? briz.p : 0) : 0;
+        const priceGap2 = (sameClassInv && it.p) ? it.p - baseCost2 : 0;
+        const priceGap = (cheapestOnoff && it.p) ? it.p - baseCost : 0;
+        // Окупаемость электричеством показываем только там, где сравниваем прибор
+        // с прибором: у связки со вторым мотором свой расход, и делить разницу
+        // на экономию от инвертора значило бы считать неизвестное известным.
+        const years = (!briz && save > 0 && priceGap > 0) ? Math.round(priceGap / save * 10) / 10 : 0;
         return {
           hours,
           hoursLabel: hours + " ч в сутки",
@@ -1304,7 +1393,32 @@ class Component extends DCLogic {
           // называем эталон поимённо и честно говорим, из чего складывается разница:
           // ON/OFF того же бренда в каталоге нашёлся только у 4 моделей из 45,
           // у остальных в «переплату» входит ещё и разница брендов (26.08.2026)
-          payback: years > 0
+          // Вторая строка — при равной эффективности. Именно она отвечает на вопрос
+          // «сколько стоит сам приток»: компрессор у обеих моделей одного класса.
+          payback2: (briz && sameClassInv)
+            ? "При равной эффективности: " + sameClassInv.b
+              + (sameClassInv.s ? " " + sameClassInv.s : "") + " (инвертор, класс " + myCls
+              + ") плюс тот же бризер — вместе " + this.fmt(baseCost2) + " ₸, "
+              + (priceGap2 > 0 ? "эта модель дороже на " + this.fmt(priceGap2) + " ₸."
+                               : "эта модель дешевле на " + this.fmt(-priceGap2) + " ₸.")
+            : "",
+          paybackNote: (briz && cheapestOnoff)
+            ? "Сколько кубов в час даёт встроенный приток, изготовитель не публикует, поэтому по производительности мы приборы не равняем."
+              + (sameClassInv ? "" : " Инвертора того же класса и мощности без притока в каталоге нет, поэтому вторая строка не показана.")
+            : "",
+          // заголовок блока называет то, с чем сравниваем: иначе связка
+          // «кондиционер + приточка» стояла бы под шапкой «ближайший ON/OFF»
+          paybackTitle: briz && cheapestOnoff
+            ? "Сравнение со связкой «кондиционер + приточка»"
+            : "Сравнение с ближайшим ON/OFF из каталога",
+          payback: briz && cheapestOnoff
+            ? "Дешевле всего собрать то же самое так: " + cheapestOnoff.b
+              + (cheapestOnoff.s ? " " + cheapestOnoff.s : "") + " (ON/OFF) плюс бризер "
+              + briz.model + " на " + briz.flow + " м³/ч — вместе " + this.fmt(baseCost) + " ₸, "
+              + (priceGap > 0 ? "эта модель дороже на " + this.fmt(priceGap) + " ₸"
+                              : "эта модель дешевле на " + this.fmt(-priceGap) + " ₸")
+              + ". Но там неинверторный компрессор, так что в разницу входит не только приток."
+            : years > 0
             ? "Сравнили с " + cheapestOnoff.b + (cheapestOnoff.s ? " " + cheapestOnoff.s : "")
               + " — это ON/OFF того же конструктива и мощности из нашего каталога, он дешевле на "
               + this.fmt(priceGap) + " ₸. При таком режиме работы разница возвращается за "
