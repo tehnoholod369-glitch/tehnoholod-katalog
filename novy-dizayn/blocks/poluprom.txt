@@ -195,7 +195,11 @@ class Component extends DCLogic {
 
     const kinds = Array.from(new Set(items.map(x => x.sub))).filter(Boolean).length;
     const brands = Array.from(new Set(items.map(x => x.b))).filter(Boolean).length;
-    const priced = items.filter(x => x.p);
+    // !x.acc — то же правило, что на Главной: цена «от» считается по ОБОРУДОВАНИЮ.
+    // Сейчас аксессуаров с ценой в полупроме нет и число не меняется, но условие
+    // ставится заранее: заведут один расходник — и «от» уедет на его цену, как это
+    // случилось на Главной с фильтрами TCL FreshIN (9 000 ₸ вместо 323 942 ₸).
+    const priced = items.filter(x => x.p && !x.acc);
     const minPrice = priced.length ? Math.min.apply(null, priced.map(x => x.p)) : 0;
 
     const href = "/katalog?g=poluprom";

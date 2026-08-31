@@ -7,6 +7,10 @@
 .thgeo-cta .tg1{background:#0e7d3f;color:#fff}
 .thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
 .thgeo-tw{overflow-x:auto}
+.thgeo-rev{background:#f4f9ff;border:1px solid #cfe3f7;border-radius:12px;padding:14px 16px;margin:14px 0}
+.thgeo-rev__t{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0a4ea7}
+.thgeo-rev__q{font-size:16px;line-height:1.55;margin-top:6px}
+.thgeo-rev__a{font-size:13px;color:#5a6b80;margin-top:8px}
 .thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
 .thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
 .thgeo td:first-child{white-space:normal}
@@ -27,6 +31,7 @@
 <a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
 <a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=bytovye">Весь каталог</a>
+<a class="tg2" href="https://podbor.tehnoholod369.kz/">Подобрать по площади</a>
 </div>
 <h2>Модели в наличии на 33–38 м²</h2>
 <div class="thgeo-tw">
@@ -51,6 +56,7 @@
 </tbody>
 </table>
 </div>
+
 <p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">01.09.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog?g=bytovye">каталоге</a>.</p>
 <!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
 <h2>Класс 12 и когда его мало</h2>

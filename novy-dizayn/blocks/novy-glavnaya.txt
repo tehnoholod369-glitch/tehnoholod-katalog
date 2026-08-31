@@ -556,7 +556,12 @@ class Component extends DCLogic {
       cartLabel: (this.state.cartN || 0) ? "Корзина · " + this.state.cartN : "Корзина",
       // цена хита сезона — минимум по серии из data/bytovye.json; нет данных — нет числа
       promoPrice: (() => {
-        const list = (this.state.bytovye || []).filter(x => /freshin/i.test(x.n || "") && x.p);
+        // !x.acc обязателен: в серии есть сменные фильтры (HEPA 9 000 ₸, HEPA+уголь
+        // 10 000 ₸), и без этого условия кнопка обещала «от 9 000 ₸» за кондиционер,
+        // который стоит от 323 942 ₸ — расходник вместо аппарата, разница в 36 раз.
+        // Правило проекта: аксессуары в общую выдачу наравне с оборудованием не идут,
+        // признак — поле acc. Нашёл владелец на витрине 31.08.2026.
+        const list = (this.state.bytovye || []).filter(x => /freshin/i.test(x.n || "") && x.p && !x.acc);
         if (!list.length) return "Подробнее о серии";
         const min = Math.min.apply(null, list.map(x => x.p));
         return "от " + String(min).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009") + " ₸ · подробнее";
