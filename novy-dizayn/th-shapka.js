@@ -60,6 +60,10 @@
     ["https://tehnoholod369.kz/kondicioner-s-wifi", "Кондиционеры с Wi-Fi"],
     ["https://tehnoholod369.kz/kondicioner-na-50-kvm", "Кондиционер на комнату 50 м²"],
     ["https://tehnoholod369.kz/kondicioner-do-300000", "Кондиционеры до 300 000 ₸"],
+    ["https://tehnoholod369.kz/nakopitelnyy-vodonagrevatel-almaty", "Накопительные водонагреватели"],
+    ["https://tehnoholod369.kz/protochnyy-vodonagrevatel-almaty", "Проточные водонагреватели"],
+    ["https://tehnoholod369.kz/radiatory-sekcionnye-almaty", "Секционные радиаторы отопления"],
+    ["https://tehnoholod369.kz/konvektory-almaty", "Электрические конвекторы"],
   ];
   /* GEO-ПОДБОРКИ-КОНЕЦ */
 

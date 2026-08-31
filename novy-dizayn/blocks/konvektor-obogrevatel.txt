@@ -170,6 +170,7 @@
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=obogrevateli&amp;brand=ROYAL%20CLIMA&amp;sub=%D0%9A%D0%BE%D0%BD%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%8B%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5&amp;stock=in"><div class="art-card__t">ROYAL CLIMA · Конвекторы электрические</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">19 моделей</span> →</div></a>
       <a class="art-card" href="/katalog?g=obogrevateli&amp;sub=%D0%9A%D0%BE%D0%BD%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%8B%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5"><div class="art-card__t">Конвекторы и обогреватели · Конвекторы электрические</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-sub="obogrevateli|Конвекторы электрические"></span> →</div></a>
+      <a class="art-card" href="/konvektory-almaty"><div class="art-card__t">Электрические конвекторы</div><div class="art-card__s">Тихий обогрев с термостатом, что есть в наличии.</div><div class="art-card__go">Открыть раздел →</div></a>
       </div>
       <a class="art-pick" data-pick="obogrevateli" href="/katalog?g=obogrevateli"
          title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">

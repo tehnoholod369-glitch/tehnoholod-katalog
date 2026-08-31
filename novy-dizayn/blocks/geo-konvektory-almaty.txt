@@ -1,0 +1,109 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+.thgeo-also{margin-top:26px}
+.thgeo-also p{font-size:14px;line-height:2;color:#5a6676}
+</style>
+<div class="thgeo">
+<h1>Электрические конвекторы в Алматы</h1>
+<p>Конвектор греет воздух без вентилятора и раскалённой спирали: тихо,
+без запаха горячей пыли и с термостатом, который держит температуру сам.
+В наличии в Алматы, цены от <span class="thgeo-pmin" data-min-art="REC-RE1000M">21 000</span> ₸. Вешается на стену
+или ставится на ножки — переносится между комнатами.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog?g=obogrevateli">Весь каталог</a>
+</div>
+<h2>Конвекторы в наличии</h2>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Модель</th><th>Бренд</th><th>Мощность</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-re1000m">REC-RE1000M</a></td><td>ROYAL CLIMA</td><td>1 кВт</td><td class="thgeo-p" data-art="REC-RE1000M">21 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-ae1000m">REC-AE1000M</a></td><td>ROYAL CLIMA</td><td>1 кВт</td><td class="thgeo-p" data-art="REC-AE1000M">21 600 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=zilon-a2-0">ZHC-1000 A2.0</a></td><td>ZILON</td><td>1 кВт</td><td class="thgeo-p" data-art="A2.0">22 600 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-re1500m">REC-RE1500M</a></td><td>ROYAL CLIMA</td><td>1,5 кВт</td><td class="thgeo-p" data-art="REC-RE1500M">26 200 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-ae1500m">REC-AE1500M</a></td><td>ROYAL CLIMA</td><td>1,5 кВт</td><td class="thgeo-p" data-art="REC-AE1500M">27 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=zilon-a2-0-2">ZHC-1500 A2.0</a></td><td>ZILON</td><td>1,5 (1,5/0,75)</td><td class="thgeo-p" data-art="A2.0">27 500 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-fr1500m">REC-FR1500M</a></td><td>ROYAL CLIMA</td><td>1,5 кВт</td><td class="thgeo-p" data-art="REC-FR1500M">29 050 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-a1500m">REC-A1500M</a></td><td>ROYAL CLIMA</td><td>1,5 кВт</td><td class="thgeo-p" data-art="REC-A1500M">29 600 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-frbr1000m">REC-FRBR1000M</a></td><td>ROYAL CLIMA</td><td>1 кВт</td><td class="thgeo-p" data-art="REC-FRBR1000M">29 600 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-frwg1000m">REC-FRWG1000M</a></td><td>ROYAL CLIMA</td><td>1 кВт</td><td class="thgeo-p" data-art="REC-FRWG1000M">29 600 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-at1000m">REC-AT1000M</a></td><td>ROYAL CLIMA</td><td>1 кВт</td><td class="thgeo-p" data-art="REC-AT1000M">30 800 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-re2000m">REC-RE2000M</a></td><td>ROYAL CLIMA</td><td>2 кВт</td><td class="thgeo-p" data-art="REC-RE2000M">31 488 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-frbr1500m">REC-FRBR1500M</a></td><td>ROYAL CLIMA</td><td>1,5 кВт</td><td class="thgeo-p" data-art="REC-FRBR1500M">32 800 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-frwg1500m">REC-FRWG1500M</a></td><td>ROYAL CLIMA</td><td>1,5 кВт</td><td class="thgeo-p" data-art="REC-FRWG1500M">32 800 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=zilon-a2-0-3">ZHC-2000 A2.0</a></td><td>ZILON</td><td>2 (2/1)</td><td class="thgeo-p" data-art="A2.0">34 100 ₸</td></tr>
+</tbody>
+</table>
+</div>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">01.09.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog?g=obogrevateli">каталоге</a>.</p>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Как выбрать мощность</h2>
+<p>Ориентир для утеплённой комнаты — 1 кВт на 10 м² при потолке 2,7 м.
+Для углового помещения, первого этажа или плохо утеплённой стены берут
+запас. Конвектор мощнее нужного не греет сильнее — он просто реже
+включается, поэтому запас безопаснее нехватки.</p>
+<p>Сравнение с другими обогревателями — в статье <a href="https://tehnoholod369.kz/konvektor-obogrevatel">
+«Конвектор или обогреватель»</a>.</p>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
+производителя, срок в паспорте изделия; гарантия на монтаж — бригады, срок в её карточке
+и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад,
+напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
+возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Сколько стоит электрический конвектор в Алматы?</summary><p>Цена зависит от мощности и типа управления — механический термостат дешевле электронного. В наличии 22 таких моделей, цены от 21 000 ₸. Например: REC-RE1000M — 21 000 ₸; REC-AE1000M — 21 600 ₸; ZHC-1000 A2.0 — 22 600 ₸.</p></details>
+<details class="thgeo-faq"><summary>Что влияет на выбор кроме этого параметра?</summary><p>Площадь и утепление комнаты, нужен ли настенный монтаж или ножки, и выдержит ли розеточная линия нагрузку при постоянной работе.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
+<details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+<nav class="thgeo-also" aria-label="Другие подборки"><h2>Другие подборки</h2><p><a href="https://tehnoholod369.kz/kondicionery-almaty">Кондиционеры</a> · <a href="https://tehnoholod369.kz/ventilyaciya">Вентиляция</a> · <a href="https://tehnoholod369.kz/vodonagrevateli">Водонагреватели</a> · <a href="https://tehnoholod369.kz/poluprom">Полупромышленные кондиционеры</a> · <a href="https://tehnoholod369.kz/multisplit">Мульти-сплит системы</a> · <a href="https://tehnoholod369.kz/otoplenie">Отопление и обогреватели</a> · <a href="https://tehnoholod369.kz/teplovye-zavesy-almaty">Тепловые завесы</a> · <a href="https://tehnoholod369.kz/teplovye-pushki-almaty">Тепловые пушки</a> · <a href="https://tehnoholod369.kz/radiatory-otopleniya-almaty">Радиаторы отопления</a> · <a href="https://tehnoholod369.kz/mobilnye-kondicionery-almaty">Мобильные кондиционеры</a> · <a href="https://tehnoholod369.kz/osushiteli-vozduha-almaty">Осушители воздуха</a> · <a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">Кондиционер на комнату 25 м²</a> · <a href="https://tehnoholod369.kz/kondicioner-do-200000">Кондиционер до 200 000 ₸</a> · <a href="https://tehnoholod369.kz/tihiy-kondicioner">Тихий кондиционер для спальни</a> · <a href="https://tehnoholod369.kz/kondicioner-obogrev-zimoy">Кондиционер для обогрева зимой</a></p></nav>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Электрические конвекторы в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ROYAL CLIMA REC-RE1000M", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=royal-clima-rec-re1000m"}, {"@type": "ListItem", "position": 2, "name": "ROYAL CLIMA REC-AE1000M", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=royal-clima-rec-ae1000m"}, {"@type": "ListItem", "position": 3, "name": "ZILON ZHC-1000 A2.0", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=zilon-a2-0"}, {"@type": "ListItem", "position": 4, "name": "ROYAL CLIMA REC-RE1500M", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=royal-clima-rec-re1500m"}, {"@type": "ListItem", "position": 5, "name": "ROYAL CLIMA REC-AE1500M", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=royal-clima-rec-ae1500m"}, {"@type": "ListItem", "position": 6, "name": "ZILON ZHC-1500 A2.0", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=zilon-a2-0-2"}, {"@type": "ListItem", "position": 7, "name": "ROYAL CLIMA REC-FR1500M", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=royal-clima-rec-fr1500m"}, {"@type": "ListItem", "position": 8, "name": "ROYAL CLIMA REC-A1500M", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=royal-clima-rec-a1500m"}, {"@type": "ListItem", "position": 9, "name": "ROYAL CLIMA REC-FRBR1000M", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=royal-clima-rec-frbr1000m"}, {"@type": "ListItem", "position": 10, "name": "ROYAL CLIMA REC-FRWG1000M", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=royal-clima-rec-frwg1000m"}, {"@type": "ListItem", "position": 11, "name": "ROYAL CLIMA REC-AT1000M", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=royal-clima-rec-at1000m"}, {"@type": "ListItem", "position": 12, "name": "ROYAL CLIMA REC-RE2000M", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=royal-clima-rec-re2000m"}, {"@type": "ListItem", "position": 13, "name": "ROYAL CLIMA REC-FRBR1500M", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=royal-clima-rec-frbr1500m"}, {"@type": "ListItem", "position": 14, "name": "ROYAL CLIMA REC-FRWG1500M", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=royal-clima-rec-frwg1500m"}, {"@type": "ListItem", "position": 15, "name": "ZILON ZHC-2000 A2.0", "url": "https://tehnoholod369.kz/tovar?g=obogrevateli&sl=zilon-a2-0-3"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит электрический конвектор в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "Цена зависит от мощности и типа управления — механический термостат дешевле электронного. В наличии 22 таких моделей, цены от 21 000 ₸. Например: REC-RE1000M — 21 000 ₸; REC-AE1000M — 21 600 ₸; ZHC-1000 A2.0 — 22 600 ₸."}}, {"@type": "Question", "name": "Что влияет на выбор кроме этого параметра?", "acceptedAnswer": {"@type": "Answer", "text": "Площадь и утепление комнаты, нужен ли настенный монтаж или ножки, и выдержит ли розеточная линия нагрузку при постоянной работе."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/obogrevateli.json"];
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
+  })).then(function(all){
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    // «Цены от …» в абзаце — цена КОНКРЕТНОЙ модели, самой доступной из тех,
+    // что подходят под фильтр страницы. Минимум по всей группе сюда брать нельзя:
+    // на «кондиционер на 25 м²» он подставил бы модель на 7 000 BTU, которая
+    // эти 25 м² не закрывает, — страница обещала бы не то (31.08.2026).
+    document.querySelectorAll(".thgeo-pmin").forEach(function(el){
+      var a=el.getAttribute("data-min-art"), x=a?by[a]:null, v=(x&&x.p)?x.p:null;
+      if(v===null){
+        [].forEach.call(document.querySelectorAll(".thgeo-p"),function(td){
+          var y=by[td.getAttribute("data-art")];
+          if(y&&y.p&&(v===null||y.p<v))v=y.p;
+        });
+      }
+      if(v)el.textContent=v.toLocaleString("ru-RU").replace(/ /g," ");
+    });
+  });
+})();
+</script>

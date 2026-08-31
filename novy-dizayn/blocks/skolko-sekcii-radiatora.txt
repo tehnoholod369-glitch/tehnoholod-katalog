@@ -156,6 +156,7 @@
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=radiatory&amp;brand=Royal%20Thermo&amp;sub=%D0%A1%D0%B5%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5&amp;stock=in"><div class="art-card__t">Royal Thermo · Секционные</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">171 модель</span> →</div></a>
       <a class="art-card" href="/katalog?g=radiatory&amp;sub=%D0%A1%D0%B5%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5"><div class="art-card__t">Радиаторы отопления · Секционные</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-sub="radiatory|Секционные"></span> →</div></a>
+      <a class="art-card" href="/radiatory-sekcionnye-almaty"><div class="art-card__t">Секционные радиаторы в Алматы</div><div class="art-card__s">Биметалл и алюминий, расчёт секций.</div><div class="art-card__go">Открыть раздел →</div></a>
       </div>
       <a class="art-pick" data-pick="radiatory" href="/katalog?g=radiatory"
          title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
