@@ -13,6 +13,10 @@
  */
 (function () {
   var KEY = "th_cart_v1";
+  // Приёмник заявок: тот же /exec, что у отзывов на /brigady и у карточки модели.
+  // Второго адреса не заводим — при смене развёртывания менять в одном месте.
+  var EXEC = "https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec";
+
   var DATA = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/";
   var mem = null;
 
@@ -138,10 +142,14 @@
     },
 
     /** Текст заказа для WhatsApp: состав, суммы и контакты одной строкой на позицию. */
-    orderText: function (form) {
+    orderText: function (form, number) {
       form = form || {};
       var list = read();
       var lines = [];
+      // Номер первой строкой: по нему заказ находится и у нас, и у клиента.
+      // Нет номера (приёмник не ответил) — просто не пишем: заказ уходит как раньше,
+      // терять продажу из-за недоступности таблицы нельзя.
+      if (number) { lines.push("Заказ " + number); }
       lines.push(form.company ? "Запрос счёта с сайта." : "Заказ с сайта.");
       list.forEach(function (x, n) {
         var q = x.q || 1;
@@ -169,8 +177,53 @@
       return lines.join("\n");
     },
 
-    orderHref: function (form) {
-      return "https://wa.me/77000369369?text=" + encodeURIComponent(CART.orderText(form));
+    orderHref: function (form, number) {
+      return "https://wa.me/77000369369?text=" + encodeURIComponent(CART.orderText(form, number));
+    },
+
+    /** Отправляет заказ в приёмник и обещает номер TH369-ГГММ-NNNN.
+     *
+     *  Зачем: до 30.08.2026 заказ уходил только в WhatsApp. Состав клиент получал,
+     *  а у нас не оставалось ничего — ни строки в таблице, ни номера, который
+     *  можно назвать при возврате. Брошенная корзина не оставляла следа вовсе.
+     *
+     *  Content-Type: text/plain — намеренно. Это «простой» запрос, браузер
+     *  не делает preflight (Apps Script на OPTIONS не отвечает), а doPost
+     *  приёмника уже разбирает JSON из тела.
+     *
+     *  Ошибка сети или таблицы возвращает пустой номер, а не исключение:
+     *  заказ должен уйти в WhatsApp в любом случае. */
+    submitOrder: function (form) {
+      form = form || {};
+      var items = read().map(function (x) {
+        return {
+          art: x.s || "", name: x.n || "", brand: x.b || "",
+          group: x.g || "", sub: x.sub || "",
+          qty: x.q || 1, price: x.p || 0
+        };
+      });
+      if (!items.length) { return Promise.resolve(""); }
+      var payload = {
+        kind: "order", channel: form.company ? "сайт (счёт юрлицу)" : "сайт",
+        name: form.name || "", phone: form.phone || "", city: form.city || "",
+        comment: [form.comment, form.address ? "Адрес: " + form.address : "",
+                  form.company ? "Организация: " + form.company : "",
+                  form.bin ? "ИИН/БИН: " + form.bin : "",
+                  form.delivery ? "Доставка: " + form.delivery : "",
+                  form.payment ? "Оплата: " + form.payment : "",
+                  form.mount ? "Нужен монтаж" : "", form.kit ? "Нужен комплект" : ""]
+                 .filter(Boolean).join("; "),
+        items: items,
+        src: (typeof location !== "undefined" ? location.pathname : ""),
+        ua: (typeof navigator !== "undefined" ? navigator.userAgent : "")
+      };
+      return fetch(EXEC, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      }).then(function (r) { return r.json(); })
+        .then(function (d) { return (d && d.number) ? d.number : ""; })
+        .catch(function () { return ""; });
     }
   };
 
