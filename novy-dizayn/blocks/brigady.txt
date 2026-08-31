@@ -169,11 +169,11 @@
             </sc-for>
           </div>
 
-          <sc-if value="{{ c.trusted }}" hint-placeholder-val="{{ true }}">
+          <sc-if value="{{ c.vremya }}" hint-placeholder-val="{{ true }}">
             <div style="display:inline-flex; align-items:center; gap:6px; background:#E7F7F0; border:1px solid #BFE6D4; border-radius:6px; padding:5px 10px; margin-top:12px;">
-              <span style="font-size:13px; font-weight:700; color:#0B6B45;">✓ Проверенная бригада</span>
+              <span style="font-size:13px; font-weight:700; color:#0B6B45;">✓ Проверена временем</span>
             </div>
-            <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:6px;">Оснащение, гарантия и опыт проверены ИП «ТехноХолод» перед допуском к заказам. Оценка ниже — от клиентов, её мы не ставим.</div>
+            <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:6px;">{{ c.vremyaNote }}</div>
           </sc-if>
 
           <sc-if value="{{ c.hasSkills }}" hint-placeholder-val="{{ true }}">
@@ -385,6 +385,16 @@ class Component extends DCLogic {
 
   cap(s) { s = String(s || ""); return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
 
+  letWord(n) { const a = n % 10, b = n % 100;
+    if (a === 1 && b !== 11) return "год";
+    if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return "года";
+    return "лет"; }
+
+  mWord(n) { const a = n % 10, b = n % 100;
+    if (a === 1 && b !== 11) return "монтаж";
+    if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return "монтажа";
+    return "монтажей"; }
+
   form(cert) { return this.state.form[cert] || { score: 0, name: "", card: "", text: "" }; }
 
   setForm(cert, patch) {
@@ -510,7 +520,12 @@ class Component extends DCLogic {
           votesLabel: this.votesLabel(c.votes),
           facts: facts,
 
-          trusted: !!c.trusted,
+          vremya: !!c.vremya,
+          vremyaNote: c.vremya
+            ? [c.vremya.let_ >= 1 ? "на рынке " + c.vremya.let_ + " " + this.letWord(c.vremya.let_) : "",
+               c.vremya.montazhey >= 1 ? c.vremya.montazhey + " " + this.mWord(c.vremya.montazhey) + " с картой 369" : ""]
+              .filter(Boolean).join(" · ") + ". Оценка ниже — от клиентов, её мы не ставим."
+            : "",
 
           hasSkills: !!(c.skills && c.skills.length),
           skills: (c.skills || []).map(s => ({ title: s.title, items: (s.items || []).join(" · ") })),
