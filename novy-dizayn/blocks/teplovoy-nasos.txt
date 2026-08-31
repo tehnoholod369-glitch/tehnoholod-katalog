@@ -164,7 +164,8 @@
       <p>Читайте также: <a href="https://tehnoholod369.kz/kak-vybrat-radiator">«Как выбрать радиатор отопления»</a>, <a href="https://tehnoholod369.kz/konvektor-obogrevatel">«Конвектор или обогреватель»</a>.</p>
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
-      <a class="art-card" href="/katalog?g=teplovye-nasosy"><div class="art-card__t">Тепловые насосы</div><div class="art-card__s">под заказ, привозим под расчёт</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="teplovye-nasosy"></span> →</div></a>
+      <a class="art-card" href="/katalog?g=teplovye-nasosy"><div class="art-card__t">Тепловые насосы</div><div class="art-card__s">Под заказ — цены и характеристики моделей смотрите в каталоге.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="teplovye-nasosy"></span> →</div></a>
+      <a class="art-card" href="/otoplenie"><div class="art-card__t">Отопление</div><div class="art-card__s">Радиаторы, конвекторы и обогрев — что есть сегодня.</div><div class="art-card__go">Открыть раздел →</div></a>
       </div>
       <h2>Частые вопросы</h2>
       <div class="art-q"><div class="art-q__q">Работает ли тепловой насос в −25 °C в Алматы?</div><div class="art-q__a">Да. Современные инверторные модели сохраняют работоспособность до −25…−28 °C с COP около 1,8–2. В самые холодные дни включается встроенный ТЭН для догрева.</div></div>

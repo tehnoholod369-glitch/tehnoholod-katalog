@@ -143,6 +143,7 @@
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=ventilyaciya&amp;brand=COMPACTAIR%20by%20ZILON&amp;sub=%D0%9F%D1%80%D0%B8%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B5%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8&amp;stock=in"><div class="art-card__t">COMPACTAIR by ZILON · Приточные установки</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">39 моделей</span> →</div></a>
       <a class="art-card" href="/katalog?g=ventilyaciya&amp;sub=%D0%9F%D1%80%D0%B8%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B5%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8"><div class="art-card__t">Вентиляция · Приточные установки</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-sub="ventilyaciya|Приточные установки"></span> →</div></a>
+      <a class="art-card" href="/tcl-freshin"><div class="art-card__t">TCL FreshIN 3.0</div><div class="art-card__s">Кондиционер с подачей свежего воздуха с улицы.</div><div class="art-card__go">Открыть раздел →</div></a>
       </div>
       <h2>Частые вопросы</h2>
       <div class="art-q"><div class="art-q__q">Обычный кондиционер подаёт свежий воздух?</div><div class="art-q__a">Нет. Обычный кондиционер охлаждает или нагревает воздух, который уже есть в комнате, и гоняет его по кругу. Свежий воздух с улицы подают только модели с функцией притока.</div></div>

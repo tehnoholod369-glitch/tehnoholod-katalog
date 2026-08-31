@@ -43,6 +43,13 @@
     ["https://tehnoholod369.kz/kondicioner-do-200000", "Кондиционер до 200 000 ₸"],
     ["https://tehnoholod369.kz/tihiy-kondicioner", "Тихий кондиционер для спальни"],
     ["https://tehnoholod369.kz/kondicioner-obogrev-zimoy", "Кондиционер для обогрева зимой"],
+    ["https://tehnoholod369.kz/kanalnye-kondicionery-almaty", "Канальные кондиционеры"],
+    ["https://tehnoholod369.kz/kassetnye-kondicionery-almaty", "Кассетные кондиционеры"],
+    ["https://tehnoholod369.kz/kondicioner-na-35-kvm", "Кондиционер на комнату 35 м²"],
+    ["https://tehnoholod369.kz/ustanovka-kondicionera-talgar", "Установка кондиционера в Талгаре"],
+    ["https://tehnoholod369.kz/ustanovka-kondicionera-otegen-batyr", "Установка кондиционера в Отеген батыре"],
+    ["https://tehnoholod369.kz/ustanovka-kondicionera-burundai", "Установка кондиционера в Бурундае"],
+    ["https://tehnoholod369.kz/kaminy-almaty", "Камины и электроочаги"],
   ];
   /* GEO-ПОДБОРКИ-КОНЕЦ */
 

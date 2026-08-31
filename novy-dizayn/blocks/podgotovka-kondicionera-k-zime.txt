@@ -153,6 +153,7 @@
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=bytovye&amp;brand=TCL&amp;stock=in"><div class="art-card__t">TCL</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">10 моделей</span> →</div></a>
       <a class="art-card" href="/katalog?g=bytovye"><div class="art-card__t">Бытовые сплит-системы</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="bytovye"></span> →</div></a>
+      <a class="art-card" href="/uslugi"><div class="art-card__t">Монтаж и сервис</div><div class="art-card__s">Что делает бригада и как считается работа.</div><div class="art-card__go">Открыть раздел →</div></a>
       </div>
       <a class="art-pick" data-pick="bytovye" href="/katalog?g=bytovye"
          title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">

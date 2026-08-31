@@ -178,6 +178,7 @@
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=multisplit&amp;brand=AERONIK&amp;stock=in"><div class="art-card__t">AERONIK</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">13 моделей</span> →</div></a>
       <a class="art-card" href="/katalog?g=multisplit"><div class="art-card__t">Мультисплит-системы</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="multisplit"></span> →</div></a>
+      <a class="art-card" href="/multisplit"><div class="art-card__t">Мультисплит</div><div class="art-card__s">Один наружный блок на несколько комнат.</div><div class="art-card__go">Открыть раздел →</div></a>
       </div>
       <h2>Частые вопросы</h2>
       <div class="art-q"><div class="art-q__q">Можно ли поставить внутренний блок мультисплита в санузел?</div><div class="art-q__a">Нет, там повышенная влажность. Кондиционер греется и конденсат может протекать в электрику. Только жилые комнаты, кабинеты, кухни.</div></div>

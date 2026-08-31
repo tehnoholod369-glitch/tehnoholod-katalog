@@ -1,0 +1,108 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+.thgeo-also{margin-top:26px}
+.thgeo-also p{font-size:14px;line-height:2;color:#5a6676}
+</style>
+<div class="thgeo">
+<h1>Кассетные кондиционеры в Алматы</h1>
+<p>Кассетный встраивается в подвесной потолок, наружу выходит только панель
+60×60 или 90×90 см, а воздух раздаётся на четыре стороны — поэтому его ставят
+в офисы open space, магазины и залы. В наличии в Алматы, цены от <span class="thgeo-pmin" data-min-art="TL-MC25-FR / TMCP-01">187 850</span> ₸. Декоративная панель у части
+моделей идёт отдельной позицией — уточняйте комплект при заказе.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog">Весь каталог</a>
+</div>
+<h2>Кассетные модели в наличии</h2>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/988623347164-thaicon-tl-mc25-fr-tmcp-01-9000-btu-do-27-m">TL-MC25-FR / TMCP-01</a></td><td>THAICON</td><td>27 м²</td><td class="thgeo-p" data-art="TL-MC25-FR / TMCP-01">187 850 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/798527691284-thaicon-tl-mc35-fr-tmcp-01-12000-btu-do-36-m">TL-MC35-FR / TMCP-01</a></td><td>THAICON</td><td>36 м²</td><td class="thgeo-p" data-art="TL-MC35-FR / TMCP-01">207 350 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/269111367234-konditsioner-tcl-lcac-kassetnii-tcc-18ch">Кондиционер LCAC кассетный TCC-18CHRA/UI(04) + TCC-18HRA/UO-L(04) + панель MBQ8-LCFA</a></td><td>TCL</td><td>53 м²</td><td class="thgeo-p" data-art="TCC-18CHRA/UI(04) + TCC-18HRA/UO-L(04) + панель MBQ8-LCFA">325 850 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/788147402394-kondicioner-midea-kassetnye-mca3-12hrn1-q-12000-btu-do-35-m">Кондиционер Кассетные MCA3-12HRN1-Q</a></td><td>Midea</td><td>35 м²</td><td class="thgeo-p" data-art="MCA3-12HRN1-Q">325 900 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/578464533954-kondicioner-aux-lcac-r410a-on-off-alca-h18-4r1y-18-000-btu-d">Кондиционер LCAC R410A ON/OFF ALCA-H18/4R1Y</a></td><td>AUX</td><td>55 м²</td><td class="thgeo-p" data-art="ALCA-H18/4R1Y">356 588 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/271338514514-kondicioner-ballu-universal-iii-c-18hn1-kassetnyy-18000-btu-">Кондиционер UNIVERSAL III C-18HN1 кассетный</a></td><td>Ballu</td><td>53 м²</td><td class="thgeo-p" data-art="BLC_C-18HN1_21Y">361 119 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/282343443374-kondicioner-cherbrooke-auk-18hr4sc1-aua-18h4sl1-18000-btu-do">Кондиционер AUK-18HR4SC1/AUA-18H4SL1</a></td><td>CHERBROOKE</td><td>55 м²</td><td class="thgeo-p" data-art="AUK-18HR4SC1/AUA-18H4SL1">367 900 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/466606728714-kondicioner-midea-kassetnye-mca3-18hrn1-q-18000-btu-do-50-m">Кондиционер Кассетные MCA3-18HRN1-Q</a></td><td>Midea</td><td>50 м²</td><td class="thgeo-p" data-art="MCA3-18HRN1-Q">375 900 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/444155771784-kondicioner-aeronik-asi-akh35r1-b-s-inv-aso-aguhn35r1-inv-12">Кондиционер ASI-AKH35R1/B-S INV/ ASO-AGUHN35R1/INV</a></td><td>AERONIK</td><td>36 м²</td><td class="thgeo-p" data-art="ASI-AKH35R1/B-S INV/ ASO-AGUHN35R1/INV">402 300 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/880772714594-kondicioner-ditreex-kassetnyy-dch-18n1dv7-18000-btu-do-50-m">Кондиционер кассетный DCH-18N1DV7</a></td><td>DITREEX</td><td>50 м²</td><td class="thgeo-p" data-art="DCH-18N1DV7">412 502 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/414341783694-kondicioner-haier-kassetnyy-super-match-ab25s2sc2fa-9000-btu">Кондиционер кассетный Super Match AB25S2SC2FA</a></td><td>Haier</td><td>25 м²</td><td class="thgeo-p" data-art="AB25S2SC2FA">413 271 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/133197150294-kondicioner-haier-kassetnyy-eco-ab50s1lc1fa-18000-btu-do-49-">Кондиционер кассетный ECO AB50S1LC1FA</a></td><td>Haier</td><td>49 м²</td><td class="thgeo-p" data-art="AB50S1LC1FA">418 579 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/296402347084-kondicioner-kassetnyy-gree-18-inverter-r32-gud50t1-b-s-gud50">Кондиционер кассетный -18 Inverter R32: GUD50T1/B-S/GUD50W1/NhB-S (без соединительной инсталляции)</a></td><td>GREE</td><td>50 м²</td><td class="thgeo-p" data-art="GUD50T1/B-S/GUD50W1/NhB-S">432 265 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/936442783974-royal-clima-esperto-es-c-24hrcx">Кондиционер ESPERTO ES-C 24HRCX</a></td><td>ROYAL CLIMA</td><td>70,3 м²</td><td class="thgeo-p" data-art="ES-C 24HRCX">447 300 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tproduct/418993303714-kondicioner-aux-lcac-r410a-on-off-alca-h24-4r1y-24-000-btu-d">Кондиционер LCAC R410A ON/OFF ALCA-H24/4R1Y</a></td><td>AUX</td><td>70 м²</td><td class="thgeo-p" data-art="ALCA-H24/4R1Y">448 958 ₸</td></tr>
+</tbody>
+</table>
+</div>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">31.08.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Что нужно проверить до заказа</h2>
+<p>Под кассету нужен запас подвесного потолка от 30 см и место строго
+по центру зоны — сдвиг к стене ломает равномерность раздачи, ради которой
+её и ставят. Дренаж почти всегда идёт через встроенную помпу, она поднимает
+конденсат вверх. Для комнаты меньше 15 м² и потолка выше 3,5 м кассета
+не подходит: поток будет дуть на людей.</p>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
+производителя, срок в паспорте изделия; гарантия на монтаж — бригады, срок в её карточке
+и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад,
+напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
+возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Сколько стоит кассетный кондиционер в Алматы?</summary><p>Цена зависит от мощности и размера панели; у части моделей панель считается отдельно. В наличии 101 таких моделей, цены от 187 850 ₸. Например: TL-MC25-FR / TMCP-01 — 187 850 ₸; TL-MC35-FR / TMCP-01 — 207 350 ₸; Кондиционер LCAC кассетный TCC-18CHRA/UI(04) + TCC-18HRA/UO-L(04) + панель MBQ8-LCFA — 325 850 ₸.</p></details>
+<details class="thgeo-faq"><summary>Что влияет на выбор кроме этого параметра?</summary><p>Высота подвесного потолка, положение относительно рабочих мест, доступ для обслуживания и наличие дренажной помпы.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
+<details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+<nav class="thgeo-also" aria-label="Другие подборки"><h2>Другие подборки</h2><p><a href="https://tehnoholod369.kz/kondicionery-almaty">Кондиционеры</a> · <a href="https://tehnoholod369.kz/ventilyaciya">Вентиляция</a> · <a href="https://tehnoholod369.kz/vodonagrevateli">Водонагреватели</a> · <a href="https://tehnoholod369.kz/poluprom">Полупромышленные кондиционеры</a> · <a href="https://tehnoholod369.kz/multisplit">Мульти-сплит системы</a> · <a href="https://tehnoholod369.kz/otoplenie">Отопление и обогреватели</a> · <a href="https://tehnoholod369.kz/teplovye-zavesy-almaty">Тепловые завесы</a> · <a href="https://tehnoholod369.kz/teplovye-pushki-almaty">Тепловые пушки</a> · <a href="https://tehnoholod369.kz/radiatory-otopleniya-almaty">Радиаторы отопления</a> · <a href="https://tehnoholod369.kz/mobilnye-kondicionery-almaty">Мобильные кондиционеры</a> · <a href="https://tehnoholod369.kz/osushiteli-vozduha-almaty">Осушители воздуха</a> · <a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">Кондиционер на комнату 25 м²</a> · <a href="https://tehnoholod369.kz/kondicioner-do-200000">Кондиционер до 200 000 ₸</a> · <a href="https://tehnoholod369.kz/tihiy-kondicioner">Тихий кондиционер для спальни</a> · <a href="https://tehnoholod369.kz/kondicioner-obogrev-zimoy">Кондиционер для обогрева зимой</a> · <a href="https://tehnoholod369.kz/kanalnye-kondicionery-almaty">Канальные кондиционеры</a> · <a href="https://tehnoholod369.kz/kondicioner-na-35-kvm">Кондиционер на комнату 35 м²</a> · <a href="https://tehnoholod369.kz/ustanovka-kondicionera-talgar">Установка кондиционера в Талгаре</a> · <a href="https://tehnoholod369.kz/ustanovka-kondicionera-otegen-batyr">Установка кондиционера в Отеген батыре</a> · <a href="https://tehnoholod369.kz/ustanovka-kondicionera-burundai">Установка кондиционера в Бурундае</a> · <a href="https://tehnoholod369.kz/kaminy-almaty">Камины и электроочаги</a></p></nav>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Кассетные кондиционеры в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "THAICON TL-MC25-FR / TMCP-01", "url": "https://tehnoholod369.kz/tproduct/988623347164-thaicon-tl-mc25-fr-tmcp-01-9000-btu-do-27-m"}, {"@type": "ListItem", "position": 2, "name": "THAICON TL-MC35-FR / TMCP-01", "url": "https://tehnoholod369.kz/tproduct/798527691284-thaicon-tl-mc35-fr-tmcp-01-12000-btu-do-36-m"}, {"@type": "ListItem", "position": 3, "name": "TCL Кондиционер LCAC кассетный TCC-18CHRA/UI(04) + TCC-18HRA/UO-L(04) + панель MBQ8-LCFA", "url": "https://tehnoholod369.kz/tproduct/269111367234-konditsioner-tcl-lcac-kassetnii-tcc-18ch"}, {"@type": "ListItem", "position": 4, "name": "Midea Кондиционер Кассетные MCA3-12HRN1-Q", "url": "https://tehnoholod369.kz/tproduct/788147402394-kondicioner-midea-kassetnye-mca3-12hrn1-q-12000-btu-do-35-m"}, {"@type": "ListItem", "position": 5, "name": "AUX Кондиционер LCAC R410A ON/OFF ALCA-H18/4R1Y", "url": "https://tehnoholod369.kz/tproduct/578464533954-kondicioner-aux-lcac-r410a-on-off-alca-h18-4r1y-18-000-btu-d"}, {"@type": "ListItem", "position": 6, "name": "Ballu Кондиционер UNIVERSAL III C-18HN1 кассетный", "url": "https://tehnoholod369.kz/tproduct/271338514514-kondicioner-ballu-universal-iii-c-18hn1-kassetnyy-18000-btu-"}, {"@type": "ListItem", "position": 7, "name": "CHERBROOKE Кондиционер AUK-18HR4SC1/AUA-18H4SL1", "url": "https://tehnoholod369.kz/tproduct/282343443374-kondicioner-cherbrooke-auk-18hr4sc1-aua-18h4sl1-18000-btu-do"}, {"@type": "ListItem", "position": 8, "name": "Midea Кондиционер Кассетные MCA3-18HRN1-Q", "url": "https://tehnoholod369.kz/tproduct/466606728714-kondicioner-midea-kassetnye-mca3-18hrn1-q-18000-btu-do-50-m"}, {"@type": "ListItem", "position": 9, "name": "AERONIK Кондиционер ASI-AKH35R1/B-S INV/ ASO-AGUHN35R1/INV", "url": "https://tehnoholod369.kz/tproduct/444155771784-kondicioner-aeronik-asi-akh35r1-b-s-inv-aso-aguhn35r1-inv-12"}, {"@type": "ListItem", "position": 10, "name": "DITREEX Кондиционер кассетный DCH-18N1DV7", "url": "https://tehnoholod369.kz/tproduct/880772714594-kondicioner-ditreex-kassetnyy-dch-18n1dv7-18000-btu-do-50-m"}, {"@type": "ListItem", "position": 11, "name": "Haier Кондиционер кассетный Super Match AB25S2SC2FA", "url": "https://tehnoholod369.kz/tproduct/414341783694-kondicioner-haier-kassetnyy-super-match-ab25s2sc2fa-9000-btu"}, {"@type": "ListItem", "position": 12, "name": "Haier Кондиционер кассетный ECO AB50S1LC1FA", "url": "https://tehnoholod369.kz/tproduct/133197150294-kondicioner-haier-kassetnyy-eco-ab50s1lc1fa-18000-btu-do-49-"}, {"@type": "ListItem", "position": 13, "name": "GREE Кондиционер кассетный -18 Inverter R32: GUD50T1/B-S/GUD50W1/NhB-S (без соединительной инсталляции)", "url": "https://tehnoholod369.kz/tproduct/296402347084-kondicioner-kassetnyy-gree-18-inverter-r32-gud50t1-b-s-gud50"}, {"@type": "ListItem", "position": 14, "name": "ROYAL CLIMA Кондиционер ESPERTO ES-C 24HRCX", "url": "https://tehnoholod369.kz/tproduct/936442783974-royal-clima-esperto-es-c-24hrcx"}, {"@type": "ListItem", "position": 15, "name": "AUX Кондиционер LCAC R410A ON/OFF ALCA-H24/4R1Y", "url": "https://tehnoholod369.kz/tproduct/418993303714-kondicioner-aux-lcac-r410a-on-off-alca-h24-4r1y-24-000-btu-d"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит кассетный кондиционер в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "Цена зависит от мощности и размера панели; у части моделей панель считается отдельно. В наличии 101 таких моделей, цены от 187 850 ₸. Например: TL-MC25-FR / TMCP-01 — 187 850 ₸; TL-MC35-FR / TMCP-01 — 207 350 ₸; Кондиционер LCAC кассетный TCC-18CHRA/UI(04) + TCC-18HRA/UO-L(04) + панель MBQ8-LCFA — 325 850 ₸."}}, {"@type": "Question", "name": "Что влияет на выбор кроме этого параметра?", "acceptedAnswer": {"@type": "Answer", "text": "Высота подвесного потолка, положение относительно рабочих мест, доступ для обслуживания и наличие дренажной помпы."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/poluprom.json"];
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
+  })).then(function(all){
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    // «Цены от …» в абзаце — цена КОНКРЕТНОЙ модели, самой доступной из тех,
+    // что подходят под фильтр страницы. Минимум по всей группе сюда брать нельзя:
+    // на «кондиционер на 25 м²» он подставил бы модель на 7 000 BTU, которая
+    // эти 25 м² не закрывает, — страница обещала бы не то (31.08.2026).
+    document.querySelectorAll(".thgeo-pmin").forEach(function(el){
+      var a=el.getAttribute("data-min-art"), x=a?by[a]:null, v=(x&&x.p)?x.p:null;
+      if(v===null){
+        [].forEach.call(document.querySelectorAll(".thgeo-p"),function(td){
+          var y=by[td.getAttribute("data-art")];
+          if(y&&y.p&&(v===null||y.p<v))v=y.p;
+        });
+      }
+      if(v)el.textContent=v.toLocaleString("ru-RU").replace(/ /g," ");
+    });
+  });
+})();
+</script>

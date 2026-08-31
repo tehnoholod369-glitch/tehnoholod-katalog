@@ -86,7 +86,7 @@
     "Toshiba",
     "БЕЗ МАРКИ"
    ],
-   "inStock": 341,
+   "inStock": 334,
    "acc": 2,
    "serList": [
     "AG Full DC inverter",
@@ -339,43 +339,89 @@
   {
    "slug": "mini-vrf",
    "title": "Мини-VRF и мультизональные системы",
-   "count": 56,
-   "brands": 2,
+   "count": 148,
+   "brands": 4,
    "brandList": [
     "AUX",
-    "GREE"
+    "Electrolux",
+    "GREE",
+    "SHUFT"
    ],
-   "inStock": 49,
+   "inStock": 91,
    "acc": 0,
    "serList": [
     "ARV7-ME",
+    "EHZX",
+    "ERXY3",
+    "ESVMC4",
+    "ESVMC4-SF",
+    "ESVMCP",
+    "ESVMCP-SF",
+    "ESVMD-SF",
+    "ESVMO-SF",
+    "ESVMO-SF-A",
+    "ESVMU-SF",
+    "ESVMW-SF",
     "GMV",
-    "GMV Slim (мини-VRF)"
+    "GMV Slim (мини-VRF)",
+    "SHZX"
    ],
    "subs": [
     {
-     "name": "Наружные блоки VRF, 380 В",
-     "n": 15
-    },
-    {
      "name": "Канальные внутренние блоки",
-     "n": 15
+     "n": 28
     },
     {
      "name": "Кассетные внутренние блоки",
-     "n": 10
+     "n": 27
+    },
+    {
+     "name": "Наружный блок VRF",
+     "n": 25
     },
     {
      "name": "Настенные внутренние блоки",
-     "n": 7
+     "n": 19
+    },
+    {
+     "name": "Наружные блоки VRF, 380 В",
+     "n": 15
     },
     {
      "name": "Наружные блоки мини-VRF, 220 В",
      "n": 6
     },
     {
+     "name": "Блок управления DX-KIT",
+     "n": 6
+    },
+    {
+     "name": "Напольно-потолочный внутренний блок",
+     "n": 5
+    },
+    {
+     "name": "Пульт управления",
+     "n": 5
+    },
+    {
+     "name": "Декоративная панель",
+     "n": 4
+    },
+    {
      "name": "Консольные внутренние блоки",
      "n": 3
+    },
+    {
+     "name": "Комплект: кассетный блок с панелью",
+     "n": 2
+    },
+    {
+     "name": "Разветвитель",
+     "n": 2
+    },
+    {
+     "name": "Напольный внутренний блок",
+     "n": 1
     }
    ]
   },
@@ -437,7 +483,7 @@
     "ROYAL CLIMA",
     "THAICON"
    ],
-   "inStock": 120,
+   "inStock": 113,
    "acc": 5,
    "serList": [],
    "subs": [
@@ -561,7 +607,7 @@
     "TCL",
     "THAICON"
    ],
-   "inStock": 295,
+   "inStock": 289,
    "acc": 0,
    "serList": [
     "360 CST WindFree",
