@@ -29,6 +29,24 @@
   var ТЕЛЕФОН_ЛЮДЯМ  = "+77 000 369 369";   // единый формат витрины (§13, 25.08.2026)
   var CDN = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/";
 
+  // Посадочные страницы для подвала. Список переписывает gen_geo_landing.py
+  // из PAGES — руками не править, разъедется с блоками.
+  /* GEO-ПОДБОРКИ-НАЧАЛО */
+  var ПОДБОРКИ = [
+    ["https://tehnoholod369.kz/kondicionery-almaty", "Кондиционеры"],
+    ["https://tehnoholod369.kz/teplovye-zavesy-almaty", "Тепловые завесы"],
+    ["https://tehnoholod369.kz/teplovye-pushki-almaty", "Тепловые пушки"],
+    ["https://tehnoholod369.kz/radiatory-otopleniya-almaty", "Радиаторы отопления"],
+    ["https://tehnoholod369.kz/mobilnye-kondicionery-almaty", "Мобильные кондиционеры"],
+    ["https://tehnoholod369.kz/osushiteli-vozduha-almaty", "Осушители воздуха"],
+    ["https://tehnoholod369.kz/kondicioner-na-25-kvm", "Кондиционер на комнату 25 м²"],
+    ["https://tehnoholod369.kz/kondicioner-do-200000", "Кондиционер до 200 000 ₸"],
+    ["https://tehnoholod369.kz/tihiy-kondicioner", "Тихий кондиционер для спальни"],
+    ["https://tehnoholod369.kz/kondicioner-obogrev-zimoy", "Кондиционер для обогрева зимой"],
+  ];
+  /* GEO-ПОДБОРКИ-КОНЕЦ */
+
+
   // 1. Старая шапка убирается: она fixed и заняла бы место под новой.
   function убратьСтарую() {
     var с = document.createElement("style");
@@ -91,6 +109,19 @@
     return o;
   }
 
+  // Вторая строка подвала: путь из карточки /tproduct/ в разделы.
+  // До 31.08.2026 с карточки нельзя было попасть ни на одну посадочную —
+  // они жили только в карте сайта.
+  function строкаПодборок() {
+    if (!ПОДБОРКИ.length) return "";
+    var s = '<div style="max-width:1240px;margin:12px auto 0;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;line-height:1.7;">'
+      + '<span style="color:#6B7C93;">Подборки:</span>';
+    for (var i = 0; i < ПОДБОРКИ.length; i++) {
+      s += '<a href="' + ПОДБОРКИ[i][0] + '" style="color:#9FB0C4;text-decoration:none;">' + ПОДБОРКИ[i][1] + '</a>';
+    }
+    return s + '</div>';
+  }
+
   function подвал() {
     var o = document.createElement("div");
     o.setAttribute("data-th-podval", "1");
@@ -104,7 +135,7 @@
       + '<a href="/vozvrat" style="color:#9FB0C4;text-decoration:none;">Возврат и обмен</a>'
       + '<span style="margin-left:auto;">ИП «ТехноХолод» · Алматы · '
       + '<a href="tel:' + ТЕЛЕФОН_МАШИНЕ + '" style="color:#fff;text-decoration:none;font-weight:700;">' + ТЕЛЕФОН_ЛЮДЯМ + '</a></span>'
-      + '</div></div>';
+      + '</div>' + строкаПодборок() + '</div>';
     return o;
   }
 
