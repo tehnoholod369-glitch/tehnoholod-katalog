@@ -1,0 +1,243 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art { max-width: 780px; }
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/baza-znaniy">База знаний</a> → <span style="color:#18212F;">Канальный кондиционер</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Монтаж</span>
+      <span style="color:#8593A6;">6 минут чтения</span>
+      <span style="color:#8593A6;">Обновлено 31.08.2026</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Канальный кондиционер: скрытое кондиционирование квартиры и дома</h1>
+
+    <div style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Канальный кондиционер: как работает, когда его брать вместо сплитов, монтаж и высота потолка. Подбор для квартиры и коттеджа в Алматы.
+    </div>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">канальный кондиционер — внутренний блок прячется за подвесным потолком, а воздух подаётся в комнаты через воздуховоды и решётки. Один блок на 3–5 комнат, в интерьере видны только аккуратные решётки. Ставят в квартирах с ремонтом «под ключ», коттеджах и офисах, где важен вид без наружных панелей. Требует подвесного потолка минимум 25–30 см и планирования на этапе ремонта.** Ниже — как работает, кому подходит, сравнение с мультисплитом и сплитами.</div></div>
+      <h2>Что такое канальный кондиционер</h2>
+      <p>Канальный кондиционер — это внутренний блок, полностью скрытый в конструкции потолка. Внешне видны только 2–3 приточные решётки (там, где выходит холодный/тёплый воздух) и 1 обратная решётка (забор воздуха).</p>
+      <p>Наружный блок такой же, как у обычного сплита — 1 штука на дом.</p>
+      <p><b>Принцип работы:</b></p>
+      <ol><li>Внутренний блок забирает воздух из комнаты через обратную решётку.</li><li>Охлаждает или нагревает его.</li><li>Через сеть воздуховодов (гибких или жёстких) подаёт в разные комнаты через приточные решётки.</li></ol>
+      <p><b>Внешний вид:</b> в комнате — только 1–2 плоских решётки на потолке. Никаких пластиковых панелей на стенах, никаких видимых блоков.</p>
+      <p>Смотрите модели: <a href="/katalog?g=poluprom&amp;sub=%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5">канальные кондиционеры в каталоге</a>.</p>
+      <h2>Когда стоит ставить канальный</h2>
+      <p><b>✅ Дизайнерский ремонт квартиры или коттеджа.</b> Плоские решётки в потолке не портят стены и панно, не нужно вписывать белые прямоугольники в интерьер.</p>
+      <p><b>✅ Панорамные окна на всю стену.</b> Настенный сплит некуда повесить — только на смежную стену, что даёт неудачную циркуляцию. Канальный решает вопрос.</p>
+      <p><b>✅ Несколько комнат от одного блока.</b> Один канальный 5–10 кВт кондиционирует 3–5 комнат общей площадью до 100–150 м².</p>
+      <p><b>✅ Коммерческие помещения.</b> Кафе, магазин, офис open space — единая температура во всём объёме через несколько решёток.</p>
+      <p><b>✅ Есть подвесной потолок минимум 25–30 см.</b> Без него внутренний блок физически некуда встроить.</p>
+      <h2>Когда канальный НЕ подходит</h2>
+      <p><b>❌ Готовая квартира без подвесных потолков.</b> Опустить потолки на 30 см задним числом — редко имеет смысл. Проще поставить сплиты.</p>
+      <p><b>❌ Индивидуальный режим для каждой комнаты.</b> Канальный держит одну температуру во всей зоне. Если жена спит при +20 °C, а муж — при +24 °C в соседней комнате, канальный не подходит без сложной системы зонального регулирования.</p>
+      <p><b>❌ Квартира 1 комната.</b> Дорого и избыточно — обычный сплит проще и дешевле.</p>
+      <p><b>❌ Мало места на балконе для наружного блока.</b> Канальный на 100 м² требует наружного блока весом 60–80 кг — нужно место для монтажа.</p>
+      <h2>Как считается мощность</h2>
+      <p><b>Правило:</b> 100 Вт на м² при среднем утеплении квартиры в Алматы. Для верхнего этажа — 120 Вт/м².</p>
+      <p><b>Учитывайте только те комнаты, куда выведете воздуховоды.</b> Если ставите канальный на «общественную зону» (гостиная + кухня + прихожая = 45 м²), а спальни — на отдельные сплиты, считайте только эту зону.</p>
+      <h3>Готовые сборки</h3>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Помещение</sc-raw-th><sc-raw-th>Площадь</sc-raw-th><sc-raw-th>Мощность</sc-raw-th><sc-raw-th>Комментарий</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Студия 40–50 м²</sc-raw-td><sc-raw-td>40–50 м²</sc-raw-td><sc-raw-td>4–5 кВт</sc-raw-td><sc-raw-td>2–3 решётки</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Квартира 80 м² (без спален)</sc-raw-td><sc-raw-td>80 м²</sc-raw-td><sc-raw-td>7–8 кВт</sc-raw-td><sc-raw-td>4 решётки</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Дом 120 м²</sc-raw-td><sc-raw-td>120 м²</sc-raw-td><sc-raw-td>10–12 кВт</sc-raw-td><sc-raw-td>5–6 решёток, зональное регулирование</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Офис open space 200 м²</sc-raw-td><sc-raw-td>200 м²</sc-raw-td><sc-raw-td>18–20 кВт</sc-raw-td><sc-raw-td>8–10 решёток, 2 блока</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Кафе 100 м²</sc-raw-td><sc-raw-td>100 м²</sc-raw-td><sc-raw-td>12 кВт</sc-raw-td><sc-raw-td>5 решёток, увеличенный запас на посетителей</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p><b>Посетители греют помещение.</b> В кафе, магазине, офисе на 20+ человек добавляйте 15–20% к расчётной мощности — тепло от людей и техники.</p>
+      <h2>Требования к монтажу</h2>
+      <p><b>Высота подвесного потолка.</b> Внутренний блок высотой 20–30 см + место для воздуховодов сверху. Итого — потолок опускается на <b>25–40 см</b> от бетонного перекрытия. Планируйте на этапе ремонта.</p>
+      <p><b>Воздуховоды.</b> Круглые гибкие (гофрированные, диаметр 15–20 см) или прямоугольные жёсткие. Прячутся над подвесным потолком.</p>
+      <p><b>Решётки.</b> Приточные — там, куда должен идти воздух (обычно 1 на комнату). Обратная — центральная, часто в коридоре.</p>
+      <p><b>Дренаж.</b> Конденсат отводится наружу через трубку с уклоном. Если по проекту не идёт самотёком — ставят дренажную помпу.</p>
+      <p><b>Питание.</b> Внутренний блок канального обычно требует 220 В. Наружный — 220 В (до 7 кВт) или 380 В (свыше).</p>
+      <p><b>Расстояние между внутренним и наружным блоком</b> — обычно до 30–50 м медных труб. Уточняется по инструкции конкретной модели.</p>
+      <h2>Канальный vs мультисплит vs 3 обычных сплита</h2>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Параметр</sc-raw-th><sc-raw-th>Канальный</sc-raw-th><sc-raw-th>Мультисплит</sc-raw-th><sc-raw-th>3 сплита</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Видимость в интерьере</sc-raw-td><sc-raw-td><b>Только решётки</b></sc-raw-td><sc-raw-td>Настенные блоки</sc-raw-td><sc-raw-td>Настенные блоки</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Наружный блок на фасаде</sc-raw-td><sc-raw-td>1</sc-raw-td><sc-raw-td>1</sc-raw-td><sc-raw-td>3</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Индивидуальная температура по комнатам</sc-raw-td><sc-raw-td>Нет (или с зональной системой +30–50%)</sc-raw-td><sc-raw-td>Ограниченно</sc-raw-td><sc-raw-td><b>Да</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Стоимость оборудования</sc-raw-td><sc-raw-td>Средняя-высокая</sc-raw-td><sc-raw-td>Средняя-высокая</sc-raw-td><sc-raw-td>Базовая</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Стоимость монтажа</sc-raw-td><sc-raw-td><b>Высокая</b> (воздуховоды, решётки)</sc-raw-td><sc-raw-td>Средняя</sc-raw-td><sc-raw-td>Базовая</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Требует подвесной потолок</sc-raw-td><sc-raw-td><b>Да</b> (25–40 см)</sc-raw-td><sc-raw-td>Нет</sc-raw-td><sc-raw-td>Нет</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Обслуживание</sc-raw-td><sc-raw-td>Раз в год чистка блока и воздуховодов</sc-raw-td><sc-raw-td>Обычная чистка</sc-raw-td><sc-raw-td>Обычная чистка</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Ремонт при поломке</sc-raw-td><sc-raw-td>Все комнаты без охлаждения</sc-raw-td><sc-raw-td>Все комнаты без охлаждения</sc-raw-td><sc-raw-td>Только 1 комната</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Срок службы</sc-raw-td><sc-raw-td>10–15 лет</sc-raw-td><sc-raw-td>10–12 лет</sc-raw-td><sc-raw-td>10–12 лет</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p><b>Итого:</b> канальный — красивее, дороже, требует ремонта под него.</p>
+      <h2>Зональное регулирование</h2>
+      <p>Если хочется разной температуры в разных комнатах — на канальный ставят <b>систему зональных заслонок</b>. В каждый воздуховод врезается моторизованная заслонка + датчик температуры в комнате. Заслонка открывается/закрывается по потребности зоны.</p>
+      <p><b>Плюсы:</b> одна система, разные температуры в разных зонах.</p>
+      <p><b>Минусы:</b> удорожает проект на 30–50%, требует более мощного вентилятора внутреннего блока (чтоб не глох при закрытых заслонках).</p>
+      <p><b>Выгодно</b> для дома 3–5 комнат, где важно точное регулирование. Для квартиры 2 комнаты чаще проще ставить 2 отдельных сплита.</p>
+      <h2>Обслуживание</h2>
+      <p><b>Раз в год:</b></p>
+      <ul><li>Чистка внутреннего блока (радиатор, вентилятор).</li><li>Чистка воздуховодов (пыль, конденсат) — специальные щётки или разборка узлов.</li><li>Чистка/замена фильтров (стандартных и опциональных антибактериальных).</li><li>Проверка дренажа — засор трубки = потоп на подвесном потолке.</li></ul>
+      <p><b>Раз в 3–5 лет:</b></p>
+      <ul><li>Проверка уровня фреона в наружном контуре.</li><li>Профилактика компрессора.</li></ul>
+      <p>Стоимость обслуживания канального — на 20–30% выше обычного сплита из-за площади и сложности разборки.</p>
+      <h2>Частые ошибки</h2>
+      <ol><li><b>Купили канальный, но забыли о потолке.</b> Ремонт готов, потолок ровный, а канальный не встаёт. Планировать всегда на этапе черновой отделки.</li><li><b>Одна решётка на всю квартиру.</b> Циркуляция плохая, в дальних комнатах душно. Нужно 1 приточка на каждую комнату 15+ м².</li><li><b>Экономят на воздуховодах.</b> Тонкие гофро-трубки без изоляции — на них выпадает конденсат, потом капает на подвесной потолок и портит его. Всегда с теплоизоляцией.</li><li><b>Не поставили обратный клапан на дренаж.</b> Зимой холодный воздух с улицы идёт по трубке дренажа, промораживает — весной трещины и потоп.</li><li><b>Не учли шум вентилятора.</b> Внутренний блок канального шумит больше, чем обычный сплит (40–50 дБ). В спальне — вешать ближе к коридору, не над кроватью.</li></ol>
+      <h2>Вывод</h2>
+      <p>Канальный кондиционер — правильный выбор для:</p>
+      <ul><li>Квартир и домов с планируемым ремонтом «под ключ».</li><li>Панорамных окон и открытых планировок.</li><li>Кафе, магазинов, офисов, где важен единый интерьер.</li></ul>
+      <p>Для готовых квартир без подвесных потолков — оставайтесь на обычных сплитах или мультисплите.</p>
+      <p>Посмотреть модели: <a href="/katalog?g=poluprom&amp;sub=%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5">канальные кондиционеры</a>. Приедем на объект, посчитаем расчёты воздуховодов и подберём систему под ваш проект — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж силами проверенной бригады по Алматы и области.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/multisplit">«Мультисплит-система»</a>, <a href="https://tehnoholod369.kz/kassetny-kondicioner">«Кассетный кондиционер»</a>, <a href="https://tehnoholod369.kz/vrf">«VRF-система для офиса»</a>.</p>
+      <h2>Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=poluprom&amp;brand=AUX&amp;sub=%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&amp;stock=in"><div class="art-card__t">AUX · Канальные</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">17 моделей</span> →</div></a>
+      <a class="art-card" href="/katalog?g=poluprom&amp;sub=%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5"><div class="art-card__t">Полупромышленные · Канальные</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-sub="poluprom|Канальные"></span> →</div></a>
+      </div>
+      <h2>Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Можно ли сделать канальный кондиционер задним числом, если ремонт уже готов?</div><div class="art-q__a">Можно, если есть достаточно высокий потолок (2,7–3 м). Опустить на 25–30 см — потери, но приемлемо. Если потолки 2,5 м — не имеет смысла.</div></div>
+      <div class="art-q"><div class="art-q__q">Насколько сильно шумит внутренний блок канального?</div><div class="art-q__a">40–55 дБ в зависимости от режима. Слышимо в тихой квартире. Планируйте блок над коридором или кладовой, не над кроватью.</div></div>
+      <div class="art-q"><div class="art-q__q">Работает ли канальный на обогрев зимой?</div><div class="art-q__a">Да, все современные канальные системы TCL — на охлаждение и обогрев (тепловой насос). При морозах ниже −15 °C эффективность падает — как у любого сплита. В Алматы работает круглый год.</div></div>
+      <div class="art-q"><div class="art-q__q">Можно ли объединить канальный с приточной вентиляцией?</div><div class="art-q__a">Да, есть каналки с функцией подмеса свежего воздуха (специальная приточка + канальный). Стоят дороже, но избавляют от необходимости отдельной системы вентиляции.</div></div>
+      <div class="art-q"><div class="art-q__q">Сколько служит канальный кондиционер?</div><div class="art-q__a">Наружный блок — 10–12 лет. Внутренний блок и воздуховоды — 15+ лет при правильном обслуживании. Обычно за 15 лет меняют наружный, оставляя воздуховоды.</div></div>
+    </div>
+
+    
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Посчитаем проект и монтаж</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Пришлите планировку и площадь — вернём расчёт с составом оборудования.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/katalog?g=poluprom" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards">
+        <a class="art-card" href="https://tehnoholod369.kz/kassetny-kondicioner"><div class="art-card__t">Кассетный кондиционер: потолочный на 4 стороны для офиса и магазина</div><div class="art-card__s">Кассетный кондиционер: как работает, где ставят, отличия от настенного. Подбор для офиса, магазина, ресторана </div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kondicioner-ili-obogrevatel"><div class="art-card__t">Кондиционер или обогреватель: что выгоднее зимой в Алматы</div><div class="art-card__s">Сравниваем кондиционер и обогреватель по цене, расходу электричества и комфорту. Расчёт для Алматы — что выгод</div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Канальный кондиционер: скрытое кондиционирование квартиры и дома", "description": "Канальный кондиционер: как работает, когда его брать вместо сплитов, монтаж и высота потолка. Подбор для квартиры и коттеджа в Алматы.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/kanalny-kondicioner"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz"}, "dateModified": "2026-08-31"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Канальный кондиционер: скрытое кондиционирование квартиры и дома", "item": "https://tehnoholod369.kz/kanalny-kondicioner"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Можно ли сделать канальный кондиционер, если ремонт уже готов?","acceptedAnswer":{"@type":"Answer","text":"Можно, если потолки 2,7–3 м — опустить на 25–30 см. Если потолки 2,5 м — не имеет смысла, потери высоты слишком большие."}},
+    {"@type":"Question","name":"Насколько шумит внутренний блок канального?","acceptedAnswer":{"@type":"Answer","text":"40–55 дБ в зависимости от режима. Планируйте блок над коридором или кладовой, не над кроватью в спальне."}},
+    {"@type":"Question","name":"Работает ли канальный на обогрев зимой?","acceptedAnswer":{"@type":"Answer","text":"Да, все современные канальные системы TCL работают на охлаждение и обогрев. В Алматы — круглый год. При морозах ниже −15 °C эффективность падает, как у любого сплита."}},
+    {"@type":"Question","name":"Можно ли объединить канальный с приточной вентиляцией?","acceptedAnswer":{"@type":"Answer","text":"Да, есть каналки с функцией подмеса свежего воздуха. Стоят дороже, но избавляют от отдельной системы вентиляции."}},
+    {"@type":"Question","name":"Сколько служит канальный кондиционер?","acceptedAnswer":{"@type":"Answer","text":"Наружный блок — 10–12 лет. Внутренний блок и воздуховоды — 15+ лет при правильном обслуживании."}}
+  ]
+}
+</script>
+</x-dc>

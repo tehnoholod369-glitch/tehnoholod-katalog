@@ -242,6 +242,18 @@
       </div>
       <div style="font-size:14px; font-weight:700; color:#fff; background:#0872D3; border-radius:8px; padding:12px 18px; white-space:nowrap;">{{ proektLink }}</div>
     </a>
+    
+    <a href="/ucenka" style="display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px; background:#FFF6E9; border:1px solid #F3D9B0; border-radius:16px; padding:22px 24px; margin-top:16px; color:#18212F;">
+      <div style="flex:1; min-width:260px;">
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#B25200;">УЦЕНЁННЫЙ ТОВАР</div>
+          <div style="font-size:12px; font-weight:700; color:#B25200; background:#FBE7CE; border-radius:5px; padding:4px 9px;">раздел в разработке</div>
+        </div>
+        <h2 style="margin:6px 0 0 0; font-family:'Montserrat',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.015em;">Новая техника с повреждённой упаковкой или царапиной — дешевле</h2>
+        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Собираем раздел штучных позиций: у каждой будет описан дефект и снят на фото именно тот аппарат, который вы купите. Ищете конкретную модель — напишите, скажем, есть ли на неё уценённый экземпляр.</div>
+      </div>
+      <div style="font-size:14px; font-weight:700; color:#fff; background:#B25200; border-radius:8px; padding:12px 18px; white-space:nowrap;">Что это →</div>
+    </a>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:26px;">
       <div>
@@ -262,6 +274,19 @@
         </div>
       </div>
     </div>
+
+    
+    <a href="/obyavleniya-bu" style="display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; margin-top:16px; color:#18212F;">
+      <div style="flex:1; min-width:260px;">
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#0872D3;">Б/У ОБОРУДОВАНИЕ</div>
+          <div style="font-size:12px; font-weight:700; color:#0A4EA7; background:#E6F2FD; border-radius:5px; padding:4px 9px;">раздел в разработке</div>
+        </div>
+        <h2 style="margin:6px 0 0 0; font-family:'Montserrat',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.015em;">Объявления от владельцев и монтажных бригад</h2>
+        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Готовим доску: технику здесь будут продавать её хозяева, а не мы — состояние не проверяем и в сделке не участвуем. Уже хотите продать? Разместим бесплатно, как только раздел откроется.</div>
+      </div>
+      <div style="font-size:14px; font-weight:700; color:#fff; background:#0872D3; border-radius:8px; padding:12px 18px; white-space:nowrap;">Подробнее →</div>
+    </a>
 
     <div style="margin-top:34px;">
       <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:14px;">

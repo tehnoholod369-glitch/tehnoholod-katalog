@@ -1,0 +1,245 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art { max-width: 780px; }
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/baza-znaniy">База знаний</a> → <span style="color:#18212F;">Конвектор или обогреватель</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Выбор</span>
+      <span style="color:#8593A6;">5 минут чтения</span>
+      <span style="color:#8593A6;">Обновлено 31.08.2026</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Конвектор или обогреватель: что выбрать для квартиры и дома</h1>
+
+    <div style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Электрический конвектор, тепловентилятор, масляный радиатор или ИК-панель — что реально греет и экономит электричество. Сравнение и советы.
+    </div>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">для постоянного отопления комнаты или дачи выбирайте электрический конвектор — он экономичный, тихий и безопасный. Для быстрого прогрева нужен тепловентилятор, для локального тепла у рабочего места — масляный радиатор.** Универсального победителя нет — всё зависит от задачи. Разберём.</div></div>
+      <h2>О чём вообще речь</h2>
+      <p>В обычной речи «обогреватель» — это любой электрический прибор для нагрева воздуха. Их четыре основных типа:</p>
+      <ol><li><b>Электрический конвектор</b> — плоская панель, нагревает воздух через внутренний ТЭН, тёплый воздух идёт вверх естественной конвекцией.</li><li><b>Масляный радиатор</b> — секции с маслом внутри, нагреваются от ТЭНа и отдают тепло.</li><li><b>Тепловентилятор</b> — вентилятор гонит воздух через раскалённую спираль.</li><li><b>Инфракрасный обогреватель</b> — греет не воздух, а предметы и людей вокруг.</li></ol>
+      <p>У каждого свои сильные и слабые стороны.</p>
+      <h2>Сравнение: главное в одной таблице</h2>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Параметр</sc-raw-th><sc-raw-th>Конвектор</sc-raw-th><sc-raw-th>Масляный</sc-raw-th><sc-raw-th>Тепловентилятор</sc-raw-th><sc-raw-th>ИК-обогреватель</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Скорость нагрева</sc-raw-td><sc-raw-td>средняя</sc-raw-td><sc-raw-td>медленная</sc-raw-td><sc-raw-td><b>быстрая</b></sc-raw-td><sc-raw-td>быстрая (греет людей, не воздух)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Экономичность</sc-raw-td><sc-raw-td><b>высокая</b></sc-raw-td><sc-raw-td>средняя</sc-raw-td><sc-raw-td>низкая</sc-raw-td><sc-raw-td>средняя</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Шум</sc-raw-td><sc-raw-td><b>тихо</b></sc-raw-td><sc-raw-td><b>тихо</b></sc-raw-td><sc-raw-td>шумит</sc-raw-td><sc-raw-td><b>тихо</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Безопасность</sc-raw-td><sc-raw-td><b>высокая</b></sc-raw-td><sc-raw-td>средняя (горячий корпус)</sc-raw-td><sc-raw-td>низкая (сушит воздух, сжигает пыль)</sc-raw-td><sc-raw-td>средняя</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Сушит воздух</sc-raw-td><sc-raw-td>нет</sc-raw-td><sc-raw-td>нет</sc-raw-td><sc-raw-td><b>сильно</b></sc-raw-td><sc-raw-td>нет</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Цена</sc-raw-td><sc-raw-td>средняя</sc-raw-td><sc-raw-td>низкая</sc-raw-td><sc-raw-td><b>низкая</b></sc-raw-td><sc-raw-td>средняя-высокая</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Для постоянного отопления</sc-raw-td><sc-raw-td><b>да</b></sc-raw-td><sc-raw-td>да</sc-raw-td><sc-raw-td>нет</sc-raw-td><sc-raw-td>да</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Для быстрого прогрева</sc-raw-td><sc-raw-td>нет</sc-raw-td><sc-raw-td>нет</sc-raw-td><sc-raw-td><b>да</b></sc-raw-td><sc-raw-td>да</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <h2>Электрический конвектор: универсал для постоянного отопления</h2>
+      <p><b>Как работает:</b> внутри ТЭН нагревает воздух, тёплый воздух поднимается вверх, холодный снизу подтягивается на его место. Работает бесшумно.</p>
+      <p><b>Плюсы:</b></p>
+      <ul><li>Плоский и лёгкий, крепится на стену как радиатор.</li><li>Точный термостат — держит температуру ±0,1 °C, автоматически включается и выключается.</li><li>Не сушит воздух, не сжигает кислород.</li><li>Безопасен — корпус нагревается умеренно, можно поставить в детскую.</li><li>Не боится опрокидывания (защита в современных моделях).</li><li>Экономичный: при поддержании температуры реально работает 20–30% времени.</li></ul>
+      <p><b>Минусы:</b> прогревает комнату медленнее тепловентилятора — за 20–40 минут против 3–5.</p>
+      <p><b>Кому подходит:</b> для дачи, гаража, дополнительного отопления в квартире, для отопления частного дома, где нет газа и котла. Это <b>лучший выбор для постоянного использования</b>.</p>
+      <p>Посмотреть модели: <a href="/katalog?g=obogrevateli&amp;sub=%D0%9A%D0%BE%D0%BD%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%8B%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5">электрические конвекторы</a>.</p>
+      <h2>Масляный радиатор: старая классика</h2>
+      <p><b>Как работает:</b> ТЭН нагревает масло внутри секций, масло отдаёт тепло металлу, металл — воздуху. Долго нагревается, но и долго остывает.</p>
+      <p><b>Плюсы:</b></p>
+      <ul><li>Дешёвый (одна из самых низких цен среди обогревателей).</li><li>Тихий.</li><li>Не сушит воздух.</li><li>Продолжает греть 20–30 минут после отключения — за счёт остывающего масла.</li></ul>
+      <p><b>Минусы:</b></p>
+      <ul><li>Тяжёлый и громоздкий (10–20 кг).</li><li>Горячий корпус — опасно для детей и животных.</li><li>Долго прогревает комнату.</li><li>Занимает место на полу.</li></ul>
+      <p><b>Кому подходит:</b> для локального использования у рабочего стола, для нечастого включения — например, погреться в дачном домике на выходных. Не лучший вариант для постоянного отопления.</p>
+      <p>Посмотреть модели: <a href="/katalog?g=obogrevateli&amp;sub=%D0%A0%D0%B0%D0%B4%D0%B8%D0%B0%D1%82%D0%BE%D1%80%D1%8B%20%D0%BC%D0%B0%D1%81%D0%BB%D1%8F%D0%BD%D1%8B%D0%B5">масляные радиаторы</a>.</p>
+      <h2>Тепловентилятор: быстрый прогрев</h2>
+      <p><b>Как работает:</b> вентилятор дует через нагревательную спираль или керамический элемент. Мгновенно даёт тёплый поток.</p>
+      <p><b>Плюсы:</b></p>
+      <ul><li>Прогревает маленькую комнату за 5–10 минут.</li><li>Дешёвый и компактный.</li><li>Можно направить поток в нужную сторону.</li></ul>
+      <p><b>Минусы:</b></p>
+      <ul><li>Сильно сушит воздух.</li><li>Шумит.</li><li>Сжигает пыль (запах при первом включении, вредно для аллергиков).</li><li>Не для постоянного использования.</li></ul>
+      <p><b>Кому подходит:</b> быстро прогреть ванную утром, разогреть машину зимой, кратковременно погреть в гараже. Постоянно на нём отапливаться — вредно и дорого.</p>
+      <h2>Инфракрасный обогреватель: греет не воздух</h2>
+      <p><b>Как работает:</b> нагревает не воздух, а поверхности — пол, стены, мебель, людей. Ощущение «тёплого солнца» даже когда воздух холодный.</p>
+      <p><b>Плюсы:</b></p>
+      <ul><li>Быстро создаёт ощущение тепла.</li><li>Не гоняет пыль (нет вентилятора).</li><li>Экономичен для локального обогрева (греет только там, куда направлен).</li><li>Хорошо работает на верандах, в гаражах, на террасах — там, где воздух не удержать.</li></ul>
+      <p><b>Минусы:</b></p>
+      <ul><li>Работает только пока включён (воздух не запасает тепло).</li><li>Не подходит для равномерного прогрева большой закрытой комнаты.</li><li>Потолочные модели требуют высоты потолка от 2,4 м.</li></ul>
+      <p><b>Кому подходит:</b> локальное отопление рабочего места, обогрев террас и веранд, обогрев в помещениях с плохим утеплением. Подробно — в статье <a href="https://tehnoholod369.kz/ik-obogrevatel">«Инфракрасный обогреватель: плюсы и минусы»</a>.</p>
+      <h2>Что выбрать под вашу задачу</h2>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Задача</sc-raw-th><sc-raw-th>Решение</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Основное отопление дачи или частного дома</sc-raw-td><sc-raw-td><b>Конвектор</b> (несколько штук, по расчёту)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Дополнительное отопление комнаты в квартире</sc-raw-td><sc-raw-td><b>Конвектор</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Локально согреть рабочее место</sc-raw-td><sc-raw-td><b>Масляный радиатор</b> или <b>ИК-панель</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Быстро прогреть ванную/гараж</sc-raw-td><sc-raw-td><b>Тепловентилятор</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Обогрев террасы или беседки</sc-raw-td><sc-raw-td><b>ИК-обогреватель</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Отопление детской</sc-raw-td><sc-raw-td><b>Конвектор</b> (безопасный корпус)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Экономия электричества</sc-raw-td><sc-raw-td><b>Конвектор</b> с электронным термостатом</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <h2>Сколько стоит электричество</h2>
+      <p>Все электрические обогреватели одинаково «эффективны» — 1 кВт·ч электричества превращается в 1 кВт·ч тепла. Разница в <b>экономии времени работы</b>: конвектор с точным термостатом работает 20–30% времени, тепловентилятор без термостата — 90%. При тарифе в Алматы около 27 тг/кВт·ч (средний тариф, уточняйте по своему счётчику) и обогревателе на 1,5 кВт:</p>
+      <ul><li><b>Конвектор</b> (работает 25% времени): 1,5 × 0,25 × 24 × 27 = ~245 тг/сутки</li><li><b>Тепловентилятор</b> (работает 90% времени): 1,5 × 0,9 × 24 × 27 = ~875 тг/сутки</li></ul>
+      <p>Разница в <b>3,5 раза</b> только за счёт термостата. Тариф уточняйте по вашему счётчику — цифры выше приблизительные.</p>
+      <h2>Вывод</h2>
+      <p>Для постоянного отопления — <b>электрический конвектор</b>. Это самый экономичный, безопасный и тихий вариант. Для быстрого прогрева — тепловентилятор, но только на короткое время. Масляный радиатор — устаревшая, но недорогая классика для нечастого использования. ИК-обогреватель — специализированное решение для террас, веранд и локального обогрева.</p>
+      <p>Все модели можно посмотреть в разделе <a href="/katalog?g=obogrevateli">«Конвекторы и обогреватели»</a>. Если сомневаетесь — <a href="https://wa.me/77000369369">напишите в WhatsApp</a>, подскажем, что подойдёт под ваше помещение. Гарантия, рассрочка Kaspi/Halyk/Forte, доставка по Алматы и области.</p>
+      <h2>Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=obogrevateli&amp;brand=ROYAL%20CLIMA&amp;sub=%D0%9A%D0%BE%D0%BD%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%8B%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5&amp;stock=in"><div class="art-card__t">ROYAL CLIMA · Конвекторы электрические</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">19 моделей</span> →</div></a>
+      <a class="art-card" href="/katalog?g=obogrevateli&amp;sub=%D0%9A%D0%BE%D0%BD%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D1%8B%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5"><div class="art-card__t">Конвекторы и обогреватели · Конвекторы электрические</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-sub="obogrevateli|Конвекторы электрические"></span> →</div></a>
+      </div>
+      <a class="art-pick" data-pick="obogrevateli" href="/katalog?g=obogrevateli"
+         title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
+        <img class="art-pick__img" data-pick-img alt="" />
+        <div class="art-pick__b">
+          <div class="art-pick__tag" data-pick-tag>Наш выбор</div>
+          <div class="art-pick__brand" data-pick-brand></div>
+          <div class="art-pick__name" data-pick-name></div>
+          <div class="art-pick__price" data-pick-price></div>
+        </div>
+        <div class="art-pick__go">Открыть карточку →</div>
+      </a>
+      <h2>Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Что дешевле в эксплуатации — конвектор или масляный радиатор?</div><div class="art-q__a">Конвектор — за счёт точного термостата он держит температуру, включаясь только 20–30% времени. Масляный тоже с термостатом, но грубее — обычно работает 40–50% времени.</div></div>
+      <div class="art-q"><div class="art-q__q">Какой обогреватель самый безопасный для детской?</div><div class="art-q__a">Электрический конвектор — корпус нагревается умеренно, есть защита от опрокидывания и перегрева, не гоняет пыль и не пересушивает воздух.</div></div>
+      <div class="art-q"><div class="art-q__q">Может ли обогреватель заменить центральное отопление?</div><div class="art-q__a">Да, если правильно рассчитать мощность (100 Вт на 1 м² для квартиры, 130 Вт для частного дома). На дом 60 м² нужно 3–4 конвектора по 1,5–2 кВт.</div></div>
+      <div class="art-q"><div class="art-q__q">Что лучше для дачи — конвектор или тепловентилятор?</div><div class="art-q__a">Конвектор — для постоянного отопления, тепловентилятор — только чтобы быстро прогреть с приезда. Идеально — оба.</div></div>
+      <div class="art-q"><div class="art-q__q">Сушит ли конвектор воздух?</div><div class="art-q__a">Нет. Конвектор не сжигает пыль и не «пересушивает» воздух — влажность падает только из-за того, что в тёплом воздухе меньше относительная влажность. Это касается любого отопления, включая центральное.</div></div>
+    </div>
+
+    
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Подберём модель под вашу задачу</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь комнаты и этаж — пришлём подбор и цену с монтажом.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/katalog?g=obogrevateli" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards">
+        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kondicioner-ili-obogrevatel"><div class="art-card__t">Кондиционер или обогреватель: что выгоднее зимой в Алматы</div><div class="art-card__s">Сравниваем кондиционер и обогреватель по цене, расходу электричества и комфорту. Расчёт для Алматы — что выгод</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kogda-deshevle-kupit-kondicioner"><div class="art-card__t">Когда дешевле купить кондиционер: сезонность цен в Казахстане</div><div class="art-card__s">В какое время года кондиционеры дешевле всего и когда выгоднее покупать. Разбор сезонности цен в Казахстане + </div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Конвектор или обогреватель: что выбрать для квартиры и дома", "description": "Электрический конвектор, тепловентилятор, масляный радиатор или ИК-панель — что реально греет и экономит электричество. Сравнение и советы.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/konvektor-obogrevatel"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz"}, "dateModified": "2026-08-31"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Конвектор или обогреватель: что выбрать для квартиры и дома", "item": "https://tehnoholod369.kz/konvektor-obogrevatel"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Что дешевле в эксплуатации — конвектор или масляный радиатор?","acceptedAnswer":{"@type":"Answer","text":"Конвектор — за счёт точного термостата он держит температуру, включаясь только 20–30% времени. Масляный тоже с термостатом, но грубее — обычно работает 40–50% времени."}},
+    {"@type":"Question","name":"Какой обогреватель самый безопасный для детской?","acceptedAnswer":{"@type":"Answer","text":"Электрический конвектор — корпус нагревается умеренно, есть защита от опрокидывания и перегрева, не гоняет пыль и не пересушивает воздух."}},
+    {"@type":"Question","name":"Может ли обогреватель заменить центральное отопление?","acceptedAnswer":{"@type":"Answer","text":"Да, если правильно рассчитать мощность (100 Вт на 1 м² для квартиры, 130 Вт для частного дома). На дом 60 м² нужно 3–4 конвектора по 1,5–2 кВт."}},
+    {"@type":"Question","name":"Что лучше для дачи — конвектор или тепловентилятор?","acceptedAnswer":{"@type":"Answer","text":"Конвектор — для постоянного отопления, тепловентилятор — только чтобы быстро прогреть с приезда. Идеально — оба."}},
+    {"@type":"Question","name":"Сушит ли конвектор воздух?","acceptedAnswer":{"@type":"Answer","text":"Нет. Конвектор не сжигает пыль и не пересушивает воздух — влажность падает только из-за того, что в тёплом воздухе меньше относительная влажность. Это касается любого отопления, включая центральное."}}
+  ]
+}
+</script>
+</x-dc>

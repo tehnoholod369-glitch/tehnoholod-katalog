@@ -1,0 +1,242 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art { max-width: 780px; }
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/baza-znaniy">База знаний</a> → <span style="color:#18212F;">Мультисплит-система</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Выбор</span>
+      <span style="color:#8593A6;">6 минут чтения</span>
+      <span style="color:#8593A6;">Обновлено 31.08.2026</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Мультисплит-система: один внешний блок на несколько комнат</h1>
+
+    <div style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Мультисплит: как работает, когда выгоднее нескольких сплитов, ограничения. Подбор для квартиры 2–4 комнаты в Алматы. Плюсы, минусы, цены.
+    </div>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">мультисплит — это один наружный блок и от 2 до 5 внутренних, каждый в своей комнате. Ставят, когда нельзя вешать несколько наружных блоков на фасад (запрет УК, исторический дом, узкий балкон) или ради эстетики. По деньгам мультисплит на 3 комнаты дороже трёх обычных сплитов на 15–30%, но экономит место на фасаде и электричество на общей автоматике.** Ниже — как выбрать, где ошибаются, сравнение с обычными сплитами.</div></div>
+      <h2>Что такое мультисплит</h2>
+      <p>Классический сплит = 1 наружный блок + 1 внутренний. Три комнаты — три пары блоков и три отверстия во внешней стене.</p>
+      <p>Мультисплит = 1 наружный блок + 2–5 внутренних. Один комплект коммуникаций (фреон, дренаж, электрика) распределяется между всеми внутренними блоками через тройники.</p>
+      <p><b>Внутренние блоки могут быть разными:</b></p>
+      <ul><li>Настенные (обычные, самые распространённые).</li><li>Кассетные (потолочные, для больших комнат/офисов).</li><li>Канальные (спрятанные в потолок с воздуховодами).</li><li>Напольно-потолочные.</li></ul>
+      <p>Мешать типы можно в одной системе — например, 3 настенных + 1 кассетный.</p>
+      <p>Смотрите модели: <a href="/katalog?g=multisplit">мультисплит-системы TCL в каталоге</a>.</p>
+      <h2>Когда мультисплит имеет смысл</h2>
+      <p><b>✅ Управляющая компания запрещает наружные блоки на фасаде.</b> Один блок на балконе или в специально отведённом месте — единственный способ поставить кондиционер в квартире.</p>
+      <p><b>✅ Дизайн важнее денег.</b> На дорогом фасаде 3 наружных блока смотрятся неаккуратно. Один — эстетичнее.</p>
+      <p><b>✅ Историческое здание.</b> Многие исторические дома не позволяют вешать блоки на фасад — только на крышу или во двор.</p>
+      <p><b>✅ Ограничение по месту.</b> Узкий балкон, где физически нет места для трёх блоков.</p>
+      <p><b>✅ Общее управление.</b> Умный дом, единый пульт, единая настройка сценариев — на мультисплит проще.</p>
+      <h2>Когда мультисплит НЕ нужен</h2>
+      <p><b>❌ Обычная квартира без ограничений от УК.</b> Три обычных сплита выйдут на 20–30% дешевле мультисплита с той же мощностью.</p>
+      <p><b>❌ Планируете кондиционировать по очереди.</b> Мультисплит не даёт экономии, если работает только 1 внутренний блок из 3 — наружный всё равно тратит энергию на компрессор.</p>
+      <p><b>❌ Нужна разная температура в разных комнатах в один момент.</b> Часть мультисплит-систем не позволяет одновременно работать одному блоку на охлаждение, а другому на нагрев. Требуется система инверторного типа с раздельным управлением (дороже).</p>
+      <p><b>❌ Одна из комнат — очень большая (30+ м²).</b> Мультисплит хорош для комнат 12–25 м². Большая комната — лучше отдельный сплит нужной мощности.</p>
+      <h2>Ограничения по мощности</h2>
+      <p>Наружный блок мультисплит имеет общую мощность, которая распределяется между внутренними. Внутренние блоки НЕ должны в сумме превышать мощность наружного больше чем на 30%.</p>
+      <h3>Пример подбора</h3>
+      <p><b>Квартира 3 комнаты:</b></p>
+      <ul><li>Спальня 15 м² → 1,5 кВт (сплит на 5)</li><li>Гостиная 25 м² → 2,5 кВт (сплит на 9)</li><li>Детская 12 м² → 1,2 кВт (сплит на 5)</li></ul>
+      <p>Сумма — 5,2 кВт. Наружный блок мультисплит нужен на <b>5–6 кВт (сплит на 18–20 в маркировке)</b>.</p>
+      <h3>Готовые сборки</h3>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Квартира</sc-raw-th><sc-raw-th>Внешний блок</sc-raw-th><sc-raw-th>Внутренние блоки</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>2 комнаты (15+20 м²)</sc-raw-td><sc-raw-td>4,5–5 кВт</sc-raw-td><sc-raw-td>2 настенных (1,5+2,5 кВт)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>3 комнаты (12+15+20 м²)</sc-raw-td><sc-raw-td>6–7 кВт</sc-raw-td><sc-raw-td>3 настенных</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>3 комнаты + гостиная</sc-raw-td><sc-raw-td>8 кВт</sc-raw-td><sc-raw-td>4 внутренних (3 настенных + 1 канальный)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>4 комнаты 15–25 м²</sc-raw-td><sc-raw-td>9–10 кВт</sc-raw-td><sc-raw-td>4 настенных</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <h2>Сравнение: мультисплит vs 3 обычных сплита</h2>
+      <p>Условно, для 3 комнат по 1,5–2,5 кВт:</p>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Параметр</sc-raw-th><sc-raw-th>Мультисплит на 3 комнаты</sc-raw-th><sc-raw-th>3 обычных сплита</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Стоимость оборудования</sc-raw-td><sc-raw-td>+15–25%</sc-raw-td><sc-raw-td>Базовая</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Стоимость монтажа</sc-raw-td><sc-raw-td>На 20–30% выше (сложнее разводка)</sc-raw-td><sc-raw-td>Базовая</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Отверстия во внешней стене</sc-raw-td><sc-raw-td>1 (или 0 — через балкон)</sc-raw-td><sc-raw-td>3</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Наружных блоков на фасаде</sc-raw-td><sc-raw-td>1</sc-raw-td><sc-raw-td>3</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Внутренние помещения — гибкость типа</sc-raw-td><sc-raw-td><b>Разные типы (настенный + канальный)</b></sc-raw-td><sc-raw-td>Только настенные</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Разная температура одновременно</sc-raw-td><sc-raw-td>Обычно только режим (все охлаждают / все греют)</sc-raw-td><sc-raw-td><b>Каждый сам по себе</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Работа при 1 блоке</sc-raw-td><sc-raw-td>Компрессор всё равно на полную мощность</sc-raw-td><sc-raw-td>Одиночный сплит экономнее</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Ремонт наружного</sc-raw-td><sc-raw-td>Все внутренние блоки не работают</sc-raw-td><sc-raw-td>Только 1 сплит в ремонте</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Срок службы</sc-raw-td><sc-raw-td>10–12 лет</sc-raw-td><sc-raw-td>10–12 лет</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p><b>Вывод:</b> мультисплит выигрывает по эстетике и логистике монтажа. Обычные сплиты — по цене и надёжности («один сломался — другие работают»).</p>
+      <h2>Как правильно рассчитать нагрузку</h2>
+      <p><b>Правило:</b> 100 Вт на м² для квартиры со средним утеплением, +20% для комнат с большим окном на юг, +30% для верхнего этажа под крышей.</p>
+      <p><b>Учитывайте всю квартиру, а не самую большую комнату.</b> Наружный блок должен потянуть все внутренние работающие одновременно.</p>
+      <p><b>Дополнительная мощность:</b> если планируете использовать все блоки одновременно в жару — берите наружный блок с запасом 15–20%. Если знаете, что 2 из 4 комнат почти всегда не используются — можно ставить наружный блок в 1,3× общей мощности активных.</p>
+      <h2>Про инверторный компрессор</h2>
+      <p><b>Мультисплит всегда покупайте инверторный.</b> Причина: инверторный компрессор плавно меняет мощность, чтобы точно распределить холод/тепло между работающими внутренними блоками. Он-офф компрессор на мультисплите циклирует, режимы «всё-ничего» — комфорт страдает.</p>
+      <p>Все современные мультисплит-системы TCL — инверторные.</p>
+      <h2>Монтаж: что важно знать</h2>
+      <p><b>Прокладка магистрали.</b> Каждый внутренний блок соединяется с наружным своей парой медных труб (жидкость + газ). Магистраль идёт по стенам за декоративный короб или под потолком за подвесным.</p>
+      <p><b>Длина трассы.</b> Обычно до 25–30 м на каждый внутренний блок. Свыше — проверять по инструкции конкретной модели.</p>
+      <p><b>Перепад высот.</b> Наружный и внутренний блок могут быть на разной высоте (обычно до 10 м).</p>
+      <p><b>Дренаж.</b> У каждого внутреннего блока — свой дренажный шланг. Часто выводится в общий стояк или на улицу.</p>
+      <p><b>Один монтаж — все блоки сразу.</b> Мультисплит нельзя монтировать поэтапно (сегодня 1 блок, через год 2-й) — фреон в системе общий, каждый новый блок = разрыв контура, вакуумирование, дозаправка. Сразу планируйте всё.</p>
+      <p><b>Стоимость монтажа мультисплита в среднем на 30% выше</b> монтажа одиночного сплита с расчёта на 1 внутренний блок.</p>
+      <h2>Частые ошибки</h2>
+      <ol><li><b>Купили мультисплит и думают, что «сэкономят на розетках».</b> Расход электричества у мультисплит на 3 блока такой же, как у 3 отдельных сплитов при одинаковой нагрузке.</li><li><b>Наружный блок слабый.</b> Три внутренних на 2,5 кВт каждый и наружный на 5 кВт — недобор мощности, ни один блок не выйдет на паспортные характеристики.</li><li><b>Смешали фирмы.</b> Внутренние блоки одной марки, наружный другой — не совместимы даже теоретически. Всегда полная система одного бренда.</li><li><b>Планируют монтаж «по частям».</b> Мультисплит нельзя развивать постепенно — либо сразу всё, либо обычные сплиты по отдельности.</li></ol>
+      <h2>Вывод</h2>
+      <p>Мультисплит — правильный выбор, когда:</p>
+      <ul><li>УК запрещает наружные блоки на фасаде;</li><li>нужна эстетика единого блока;</li><li>планируете разные типы внутренних (настенный + канальный + кассетный) в одной системе;</li><li>готовы к более сложному и дорогому монтажу.</li></ul>
+      <p>В обычной квартире без ограничений — 3 обычных сплита дешевле и надёжнее.</p>
+      <p>Посмотреть модели: <a href="/katalog?g=multisplit">мультисплит-системы</a>. Приедем на замер, посчитаем нагрузку по каждой комнате и подберём оптимальный комплект — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж силами проверенной бригады по Алматы и области.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/kanalny-kondicioner">«Канальный кондиционер»</a>, <a href="https://tehnoholod369.kz/kassetny-kondicioner">«Кассетный кондиционер»</a>, <a href="https://tehnoholod369.kz/vrf">«VRF-система для офиса»</a>.</p>
+      <h2>Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=multisplit&amp;brand=AERONIK&amp;stock=in"><div class="art-card__t">AERONIK</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">13 моделей</span> →</div></a>
+      <a class="art-card" href="/katalog?g=multisplit"><div class="art-card__t">Мультисплит-системы</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="multisplit"></span> →</div></a>
+      </div>
+      <h2>Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Можно ли поставить внутренний блок мультисплита в санузел?</div><div class="art-q__a">Нет, там повышенная влажность. Кондиционер греется и конденсат может протекать в электрику. Только жилые комнаты, кабинеты, кухни.</div></div>
+      <div class="art-q"><div class="art-q__q">Что делать, если в одной комнате нужно охлаждать, а в другой греть в один момент?</div><div class="art-q__a">Нужна мультисплит-система с одновременной работой на охлаждение и нагрев — они есть (тип «heat recovery»), но стоят на 40–60% дороже. Часто проще поставить отдельный сплит на 1 из комнат.</div></div>
+      <div class="art-q"><div class="art-q__q">Насколько шумит внешний блок мультисплита?</div><div class="art-q__a">На 3–5 дБ громче обычного сплита той же мощности. Для большинства инверторных TCL — 48–55 дБ на расстоянии 1 м. На балконе или на крыше — незаметно.</div></div>
+      <div class="art-q"><div class="art-q__q">Мультисплит и умный дом — как это дружит?</div><div class="art-q__a">Многие модели TCL совместимы с Wi-Fi модулями и приложениями. Можно управлять с телефона, задавать сценарии по температуре, времени, присутствию.</div></div>
+      <div class="art-q"><div class="art-q__q">Как ремонтируется мультисплит?</div><div class="art-q__a">Внутренний блок — как обычный сплит (замена мотора, платы, чистка). Наружный — сложнее, часто нужен вакуум всей системы. Один сервис = час-два простоя всех блоков.</div></div>
+    </div>
+
+    
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Посчитаем проект и монтаж</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Пришлите планировку и площадь — вернём расчёт с составом оборудования.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/katalog?g=multisplit" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards">
+        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kondicioner-ili-obogrevatel"><div class="art-card__t">Кондиционер или обогреватель: что выгоднее зимой в Алматы</div><div class="art-card__s">Сравниваем кондиционер и обогреватель по цене, расходу электричества и комфорту. Расчёт для Алматы — что выгод</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kogda-deshevle-kupit-kondicioner"><div class="art-card__t">Когда дешевле купить кондиционер: сезонность цен в Казахстане</div><div class="art-card__s">В какое время года кондиционеры дешевле всего и когда выгоднее покупать. Разбор сезонности цен в Казахстане + </div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Мультисплит-система: один внешний блок на несколько комнат", "description": "Мультисплит: как работает, когда выгоднее нескольких сплитов, ограничения. Подбор для квартиры 2–4 комнаты в Алматы. Плюсы, минусы, цены.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/multisplit-sistema"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz"}, "dateModified": "2026-08-31"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Мультисплит-система: один внешний блок на несколько комнат", "item": "https://tehnoholod369.kz/multisplit-sistema"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Можно ли поставить внутренний блок мультисплита в санузел?","acceptedAnswer":{"@type":"Answer","text":"Нет, из-за влажности. Кондиционер греется и конденсат может протекать в электрику. Только жилые комнаты, кабинеты, кухни."}},
+    {"@type":"Question","name":"Что делать, если в одной комнате нужно охлаждать, а в другой греть одновременно?","acceptedAnswer":{"@type":"Answer","text":"Нужна мультисплит-система с одновременной работой на охлаждение и нагрев (heat recovery). Стоят на 40–60% дороже. Часто проще поставить отдельный сплит на 1 комнату."}},
+    {"@type":"Question","name":"Насколько шумит внешний блок мультисплита?","acceptedAnswer":{"@type":"Answer","text":"На 3–5 дБ громче обычного сплита той же мощности. Для инверторных TCL — 48–55 дБ на расстоянии 1 м."}},
+    {"@type":"Question","name":"Мультисплит и умный дом — как это дружит?","acceptedAnswer":{"@type":"Answer","text":"Многие модели TCL совместимы с Wi-Fi модулями и приложениями. Управление с телефона, сценарии по температуре, времени, присутствию."}},
+    {"@type":"Question","name":"Как ремонтируется мультисплит?","acceptedAnswer":{"@type":"Answer","text":"Внутренний блок — как обычный сплит. Наружный — сложнее, часто нужен вакуум всей системы. Ремонт наружного = час-два простоя всех блоков."}}
+  ]
+}
+</script>
+</x-dc>

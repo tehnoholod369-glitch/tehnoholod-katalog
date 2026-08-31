@@ -1,0 +1,265 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art { max-width: 780px; }
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/baza-znaniy">База знаний</a> → <span style="color:#18212F;">Электрокамин в квартире</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Выбор</span>
+      <span style="color:#8593A6;">6 минут чтения</span>
+      <span style="color:#8593A6;">Обновлено 31.08.2026</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Электрокамин в квартире: как выбрать и чем отличается от био</h1>
+
+    <div style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Электрокамин, биокамин или декоративный портал — что выбрать в квартиру. Реалистичность пламени, обогрев, безопасность, цена. Алматы.
+    </div>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">в квартире без дымохода реальный камин поставить нельзя. Есть три альтернативы: электрокамин (имитация огня + обогрев, работает от розетки), биокамин (живой огонь на биоэтаноле, без дыма и дымохода) и декоративный портал (только внешний вид, без огня и обогрева). Электрокамин — практичный вариант, биокамин — атмосфера и живое пламя, портал — дизайнерский элемент.** Ниже — сравнение, безопасность, что подходит вашему интерьеру.</div></div>
+      <h2>Почему настоящий камин в квартире не поставить</h2>
+      <p>Обычный дровяной или газовый камин требует:</p>
+      <ul><li>Дымоход с тягой (в квартире выше 1 этажа сделать нельзя — общая вентшахта не подойдёт).</li><li>Разрешение управляющей компании и надзорных органов.</li><li>Огнеупорный пол и стены.</li><li>Место для хранения дров и вывоза золы.</li></ul>
+      <p>В частном доме это решаемо. В городской квартире — нет. Поэтому используют одну из трёх альтернатив.</p>
+      <h2>Три варианта в квартиру</h2>
+      <h3>1. Электрокамин</h3>
+      <p>Имитирует пламя с помощью LED-подсветки, отражателей и подсвеченного пара (у 3D-моделей). Внутри — обогреватель мощностью 1–2 кВт.</p>
+      <p><b>Плюсы:</b></p>
+      <ul><li>Работает от обычной розетки 220 В.</li><li>Обогревает комнату 15–25 м² (реальная функция).</li><li>Безопасен: нет открытого огня, корпус тёплый, а не горячий.</li><li>Можно включать одну подсветку — «камин без обогрева» летом.</li><li>Нет запаха, дыма, золы.</li><li>От компактных настольных моделей до встраиваемых 3D-электрокаминов — цены в каталоге.</li></ul>
+      <p><b>Минусы:</b></p>
+      <ul><li>Пламя — имитация. Даже топовые модели с 3D-паром выглядят «электрически» при близком рассмотрении.</li><li>Издаёт лёгкий шум вентилятора при работе обогрева.</li></ul>
+      <h3>2. Биокамин</h3>
+      <p>Работает на биоэтаноле (топливо из растительного сырья). Настоящий живой огонь, но без дыма, копоти и продуктов горения — сгорает в CO₂ и водяной пар (немного).</p>
+      <p><b>Плюсы:</b></p>
+      <ul><li>Живой огонь — атмосфера настоящего камина.</li><li>Дымоход не нужен.</li><li>Стильный дизайн: настольные, настенные, напольные, островные модели.</li><li>Прогрев небольшой комнаты — как побочный эффект.</li></ul>
+      <p><b>Минусы:</b></p>
+      <ul><li>Топливо (биоэтанол) — расходник, 1 л = 2–4 часа горения, стоит 1 000–2 500 тг за литр.</li><li>Требует <b>обязательного проветривания</b> — сжигает кислород и выделяет CO₂. Комнату 20 м² биокамин мощностью 3 кВт «съедает» за 2–3 часа при закрытых окнах.</li><li>Нельзя тушить водой (только специальной крышкой, идёт в комплекте).</li><li>Опасность при неаккуратной заправке (нельзя доливать в горячий очаг).</li><li>Не альтернатива отоплению — только эмоция.</li></ul>
+      <h3>3. Декоративный портал (фальш-камин)</h3>
+      <p>Просто корпус в стиле камина, без огня и без обогрева. Внутри — свечи, дрова для вида, зеркало, ниша для книг.</p>
+      <p><b>Плюсы:</b></p>
+      <ul><li>Дёшево (10 000–80 000 тг).</li><li>Абсолютно безопасно.</li><li>Часть интерьера, не требует ухода.</li></ul>
+      <p><b>Минусы:</b></p>
+      <ul><li>Ни огня, ни тепла — только внешний вид.</li><li>Может быстро надоесть без «живого» элемента.</li></ul>
+      <h2>Сравнение</h2>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Параметр</sc-raw-th><sc-raw-th>Электрокамин</sc-raw-th><sc-raw-th>Биокамин</sc-raw-th><sc-raw-th>Портал</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Живой огонь</sc-raw-td><sc-raw-td>нет</sc-raw-td><sc-raw-td><b>да</b></sc-raw-td><sc-raw-td>нет</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Обогрев</sc-raw-td><sc-raw-td><b>да</b>, 1–2 кВт</sc-raw-td><sc-raw-td>символический</sc-raw-td><sc-raw-td>нет</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Дымоход</sc-raw-td><sc-raw-td>не нужен</sc-raw-td><sc-raw-td>не нужен</sc-raw-td><sc-raw-td>не нужен</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Расходники</sc-raw-td><sc-raw-td>нет</sc-raw-td><sc-raw-td>биоэтанол</sc-raw-td><sc-raw-td>нет</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Безопасность</sc-raw-td><sc-raw-td><b>высокая</b></sc-raw-td><sc-raw-td>средняя</sc-raw-td><sc-raw-td><b>высокая</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Запах</sc-raw-td><sc-raw-td>нет</sc-raw-td><sc-raw-td>лёгкий (спирт)</sc-raw-td><sc-raw-td>нет</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Время работы</sc-raw-td><sc-raw-td>круглосуточно</sc-raw-td><sc-raw-td>2–5 часов на заправку</sc-raw-td><sc-raw-td>—</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Цена</sc-raw-td><sc-raw-td>3 000–500 000 тг</sc-raw-td><sc-raw-td>30 000–400 000 тг</sc-raw-td><sc-raw-td>10 000–80 000 тг</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p>Смотрите модели: <a href="/katalog?g=kaminy">камины в каталоге</a> — 145 позиций (электро, био, настенные, порталы).</p>
+      <h2>Как реалистично выглядит электрокамин</h2>
+      <p>Три поколения имитации:</p>
+      <p><b>LED-подсветка + пластиковые дрова.</b> Самый простой вариант. Похоже на камин, если не приглядываться. Бюджетные модели.</p>
+      <p><b>LED + ткань + отражатели.</b> Ткань колышется от вентилятора, тень имитирует пламя. Реалистичность средняя, хорошо смотрится издалека.</p>
+      <p><b>3D-эффект с водяным паром.</b> Ультразвуковой парогенератор создаёт «дым», подсвеченный LED. С 1,5–2 метров — почти неотличимо от настоящего огня. Дороже прочих типов, нужен раз в 2–4 недели заливать дистиллированную воду.</p>
+      <h2>Куда встраивается</h2>
+      <p><b>Пристенные (напольные).</b> Ставятся у стены. Подходят для больших гостиных, стилизуют под классический камин.</p>
+      <p><b>Настенные (плоские, «зеркальные»).</b> Крепятся на стену, глубина 15–25 см. Не занимают пол, современный минимализм.</p>
+      <p><b>Встраиваемые в мебель или стену.</b> Ставятся в нишу или в декоративный портал. Требуют планирования — на этапе ремонта.</p>
+      <p><b>Угловые.</b> Заполняют угол комнаты, экономят место.</p>
+      <p><b>Островные (только био).</b> Ставятся посреди комнаты как обеденный стол. Дорогие, для больших помещений.</p>
+      <h2>Безопасность биокамина: главное</h2>
+      <p><b>Проветривание обязательно.</b> Каждые 1,5–2 часа открывайте окно на 5–10 минут. Датчик CO₂ (2 000–8 000 тг) поможет контролировать.</p>
+      <p><b>Не заправляйте горячий очаг.</b> Дайте остыть 15+ минут. Иначе — вспышка биоэтанола на руках.</p>
+      <p><b>Не переливайте.</b> Заправляйте не более чем на 2/3 объёма топливного блока.</p>
+      <p><b>Держите огнетушитель или крышку для гашения</b> в шаговой доступности. Вода не тушит биоэтанол.</p>
+      <p><b>Не оставляйте детей и животных без присмотра.</b> Огонь живой, стекло греется до 200 °C.</p>
+      <p><b>Не подходит для спальни и детской.</b></p>
+      <h2>Электрокамин: что смотреть при покупке</h2>
+      <p><b>Тип обогрева.</b> Тепловентилятор (быстро, шумно) или ИК-панель (тише, но медленнее). Для гостиной — тепловентилятор с термостатом.</p>
+      <p><b>Термостат.</b> Обязательно. Иначе комната перегреется, а счёт вырастет.</p>
+      <p><b>Отдельное управление подсветкой и обогревом.</b> Летом — только пламя-подсветка без нагрева.</p>
+      <p><b>Пульт ДУ.</b> Удобство, особенно если ставите в спальне.</p>
+      <p><b>Функция «эффект дров» с потрескиванием.</b> Опционально — некоторые модели воспроизводят звук горения через встроенный динамик.</p>
+      <p><b>Материал корпуса.</b> Металл и стекло — надёжнее и долговечнее пластика.</p>
+      <h2>Расход электричества</h2>
+      <p><b>Электрокамин</b> (обогрев 2 кВт, работа 4 часа в сутки): 2 × 4 = 8 кВт·ч в день. За месяц — 240 кВт·ч (~6 500 тг, тариф ориентировочный, уточняйте по своему счётчику).</p>
+      <p>Если использовать только подсветку без обогрева — 30–60 Вт (как ноутбук). За месяц — 20–40 кВт·ч.</p>
+      <p><b>Биокамин.</b> Не потребляет электричество, но: 1 л биоэтанола (~1 500 тг) = 2–4 часа горения. Использование по вечерам, 3 часа × 20 дней в месяц = 60 часов = 15–30 литров = <b>22 000–45 000 тг в месяц</b>.</p>
+      <p>Биокамин <b>в 5–7 раз дороже в эксплуатации</b>, чем электрокамин.</p>
+      <h2>Частые ошибки</h2>
+      <ol><li><b>Купили биокамин в спальню.</b> За ночь при закрытых окнах — избыток CO₂, головная боль, плохой сон. Биокамин — только в гостиную с открытой форточкой.</li><li><b>Купили дешёвый электрокамин в большую гостиную.</b> Обогрев 1 кВт на комнату 30 м² не справляется. Мощность обогрева нужно подбирать по площади (100 Вт/м²).</li><li><b>Поставили пристенный электрокамин впритык к стене без вентзазора.</b> Задняя стенка перегревается. Оставляйте 5–10 см вентиляционного зазора.</li><li><b>Заправляют биокамин из пластиковой бутылки без воронки.</b> Проливают этанол, потом искра — вспышка. Всегда — воронка и защитные перчатки.</li></ol>
+      <h2>Вывод</h2>
+      <p>Для квартиры в Алматы:</p>
+      <ul><li><b>Хотите тепло + красоту</b> — электрокамин с 3D-эффектом.</li><li><b>Хотите живой огонь и атмосферу</b> — биокамин, только в гостиную с проветриванием.</li><li><b>Хотите только внешний вид</b> — портал с зеркалом или свечами.</li></ul>
+      <p>Посмотреть модели: <a href="/katalog?g=kaminy">камины в каталоге</a>. Приедем на замер и подберём модель под ваш интерьер — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, доставка по Алматы и области.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/konvektor-obogrevatel">«Конвектор или обогреватель»</a>, <a href="https://tehnoholod369.kz/ik-obogrevatel">«Инфракрасный обогреватель»</a>.</p>
+      <h2>Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=kaminy&amp;brand=Electrolux&amp;sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BE%D1%87%D0%B0%D0%B3%D0%B8%202D&amp;stock=in"><div class="art-card__t">Electrolux · Электроочаги 2D</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">8 моделей</span> →</div></a>
+      <a class="art-card" href="/katalog?g=kaminy&amp;sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BE%D1%87%D0%B0%D0%B3%D0%B8%202D"><div class="art-card__t">Камины и электроочаги · Электроочаги 2D</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-sub="kaminy|Электроочаги 2D"></span> →</div></a>
+      <a class="art-card" href="/katalog?g=kaminy&amp;sub=%D0%91%D0%B8%D0%BE%D0%BA%D0%B0%D0%BC%D0%B8%D0%BD%D1%8B"><div class="art-card__t">Камины и электроочаги · Биокамины</div><div class="art-card__s">Соседний раздел — если задача решается им.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-sub="kaminy|Биокамины"></span> →</div></a>
+      </div>
+      <a class="art-pick" data-pick="kaminy" href="/katalog?g=kaminy"
+         title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
+        <img class="art-pick__img" data-pick-img alt="" />
+        <div class="art-pick__b">
+          <div class="art-pick__tag" data-pick-tag>Наш выбор</div>
+          <div class="art-pick__brand" data-pick-brand></div>
+          <div class="art-pick__name" data-pick-name></div>
+          <div class="art-pick__price" data-pick-price></div>
+        </div>
+        <div class="art-pick__go">Открыть карточку →</div>
+      </a>
+      <h2>Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Можно ли поставить электрокамин в спальню?</div><div class="art-q__a">Да. Он безопасен, шум обычно 30–40 дБ (ниже на минимальном режиме). Ставьте не ближе 1 метра от кровати.</div></div>
+      <div class="art-q"><div class="art-q__q">Заменит ли электрокамин основное отопление?</div><div class="art-q__a">На комнату 15–20 м² с центральным отоплением — да, для докупа тепла. Как единственный источник в частном доме — нет, нужен котёл или радиаторы.</div></div>
+      <div class="art-q"><div class="art-q__q">Как долго горит одна заправка биокамина?</div><div class="art-q__a">Зависит от объёма топливного блока: 1 л биоэтанола = 2–4 часа. Малые настольные модели — 1,5 часа, крупные напольные — 6–10 часов на заправку.</div></div>
+      <div class="art-q"><div class="art-q__q">Насколько горячее стекло у электрокамина?</div><div class="art-q__a">30–50 °C — можно спокойно потрогать. У биокамина стекло греется до 150–200 °C — обжечься легко.</div></div>
+      <div class="art-q"><div class="art-q__q">Что дешевле — электрокамин или биокамин?</div><div class="art-q__a">Электрокамин <b>в 5–7 раз дешевле в эксплуатации.</b> Биокамин имеет смысл только ради живого огня, а не тепла.</div></div>
+    </div>
+
+    
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Подберём модель под вашу задачу</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь комнаты и этаж — пришлём подбор и цену с монтажом.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/katalog?g=kaminy" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards">
+        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kondicioner-ili-obogrevatel"><div class="art-card__t">Кондиционер или обогреватель: что выгоднее зимой в Алматы</div><div class="art-card__s">Сравниваем кондиционер и обогреватель по цене, расходу электричества и комфорту. Расчёт для Алматы — что выгод</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kogda-deshevle-kupit-kondicioner"><div class="art-card__t">Когда дешевле купить кондиционер: сезонность цен в Казахстане</div><div class="art-card__s">В какое время года кондиционеры дешевле всего и когда выгоднее покупать. Разбор сезонности цен в Казахстане + </div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Электрокамин в квартире: как выбрать и чем отличается от био", "description": "Электрокамин, биокамин или декоративный портал — что выбрать в квартиру. Реалистичность пламени, обогрев, безопасность, цена. Алматы.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/elektrokamin"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz"}, "dateModified": "2026-08-31"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Электрокамин в квартире: как выбрать и чем отличается от био", "item": "https://tehnoholod369.kz/elektrokamin"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Можно ли поставить электрокамин в спальню?","acceptedAnswer":{"@type":"Answer","text":"Да. Он безопасен, шум обычно 30–40 дБ (ниже на минимальном режиме). Ставьте не ближе 1 метра от кровати."}},
+    {"@type":"Question","name":"Заменит ли электрокамин основное отопление?","acceptedAnswer":{"@type":"Answer","text":"На комнату 15–20 м² с центральным отоплением — да, для докупа тепла. Как единственный источник в частном доме — нет, нужен котёл или радиаторы."}},
+    {"@type":"Question","name":"Как долго горит одна заправка биокамина?","acceptedAnswer":{"@type":"Answer","text":"1 л биоэтанола — 2–4 часа. Малые настольные модели — 1,5 часа, крупные напольные — 6–10 часов на заправку."}},
+    {"@type":"Question","name":"Насколько горячее стекло у электрокамина?","acceptedAnswer":{"@type":"Answer","text":"30–50 °C — можно спокойно потрогать. У биокамина стекло греется до 150–200 °C — обжечься легко."}},
+    {"@type":"Question","name":"Что дешевле — электрокамин или биокамин?","acceptedAnswer":{"@type":"Answer","text":"Электрокамин в 5–7 раз дешевле в эксплуатации. Биокамин имеет смысл только ради живого огня, а не для отопления."}}
+  ]
+}
+</script>
+</x-dc>

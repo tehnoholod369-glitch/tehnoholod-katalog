@@ -133,10 +133,11 @@
     </sc-if>
 
     
-    <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
-      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:32px 28px; margin-top:22px;">
-        <h2 style="margin:0; font-size:21px; font-weight:800; letter-spacing:-0.015em;">Сейчас уценённых позиций нет</h2>
-        <div style="font-size:15px; color:#5A6675; line-height:1.65; margin-top:9px; max-width:760px;">Раздел штучный: аппарат приходит с повреждённой упаковкой или царапиной, попадает сюда — и уходит. Напишите, какая модель нужна: ответим, есть ли что-то подходящее сейчас или на подходе.</div>
+    <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#FFF6E9; border:1px solid #F3D9B0; border-radius:16px; padding:32px 28px; margin-top:22px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#B25200;">РАЗДЕЛ В РАЗРАБОТКЕ</div>
+        <h2 style="margin:8px 0 0 0; font-size:21px; font-weight:800; letter-spacing:-0.015em;">Собираем первые позиции</h2>
+        <div style="font-size:15px; color:#2C3846; line-height:1.65; margin-top:9px; max-width:760px;">Раздел штучный: у каждой позиции будет свой дефект, описанный словами, и фотография именно того аппарата, который вы купите. Такие позиции появляются по одной, поэтому выкладываем их по мере поступления — а не заранее списком, которого пока нет.<br /><br />Ищете конкретную модель? Напишите — скажем, есть ли на неё уценённый экземпляр сейчас или на подходе.</div>
         <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
           <a href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D1%83%D1%86%D0%B5%D0%BD%D1%91%D0%BD%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0" target="_blank" rel="noreferrer" style="background:#0872D3; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">Написать в WhatsApp</a>
           <a href="/katalog" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Смотреть каталог</a>
@@ -177,10 +178,15 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  state = { data: null, grade: "" };
+  state = { data: null, loaded: false, grade: "" };
 
   componentDidMount() {
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/ucenka.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(data => this.setState({ data })).catch(() => {});
+    // loaded ставим и в успехе, и в ошибке: без него не загрузившиеся данные
+    // дают пустую страницу без единого слова — хуже, чем честное «раздел готовится».
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/ucenka.json", {cache:"no-cache"})
+      .then(r => r.ok ? r.json() : null)
+      .then(data => this.setState({ data: data || {}, loaded: true }))
+      .catch(() => this.setState({ data: {}, loaded: true }));
   }
 
   // Кадр уценёнки — единственное доказательство дефекта, за который снижена цена.
@@ -246,7 +252,7 @@ class Component extends DCLogic {
     return {
       updated: this.dateRu(d.updated),
       hasItems: all.length > 0,
-      isEmpty: !!d.updated && all.length === 0,
+      isEmpty: this.state.loaded && all.length === 0,
       headline: all.length
         ? all.length + " " + this.plural(all.length, "позиция", "позиции", "позиций") + " в разделе"
         : "",

@@ -1,0 +1,247 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art { max-width: 780px; }
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/baza-znaniy">База знаний</a> → <span style="color:#18212F;">Инфракрасный обогреватель</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Выбор</span>
+      <span style="color:#8593A6;">5 минут чтения</span>
+      <span style="color:#8593A6;">Обновлено 31.08.2026</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Инфракрасный обогреватель: плюсы, минусы и где реально работает</h1>
+
+    <div style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Как работает ИК-обогреватель, где он выигрывает у конвектора, а где проигрывает. Плюсы, минусы, для каких помещений подходит.
+    </div>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">инфракрасный обогреватель греет не воздух, а людей и предметы под ним — как солнце. Он выигрывает на террасах, в гаражах, на верандах и там, где нужно быстро согреть человека в холодном помещении. Для равномерного отопления жилой комнаты лучше подходит конвектор.** Разберём, где ИК реально работает, а где хуже альтернатив.</div></div>
+      <h2>Как работает инфракрасный обогреватель</h2>
+      <p>Обычные обогреватели (конвектор, тепловентилятор, батарея) нагревают воздух, а воздух — уже вас. Это долго и неэффективно в помещениях с плохим утеплением или сквозняками — воздух улетает через щели.</p>
+      <p><b>ИК-обогреватель работает по-другому.</b> Он излучает длинные инфракрасные волны, как солнце. Волны проходят через воздух, не нагревая его, и передают тепло прямо коже, одежде, полу, мебели. Уже нагретые предметы отдают тепло воздуху вокруг себя.</p>
+      <p><b>Ключевая разница:</b> ИК-обогреватель работает даже когда воздух холодный. Достаточно повернуть его в вашу сторону — и через 30–60 секунд вы уже чувствуете тепло, хотя термометр в комнате не двинулся.</p>
+      <h2>Три типа ИК-обогревателей</h2>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Тип</sc-raw-th><sc-raw-th>Куда ставить</sc-raw-th><sc-raw-th>Мощность</sc-raw-th><sc-raw-th>Особенность</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td><b>Потолочный</b></sc-raw-td><sc-raw-td>подвесной потолок или крепление к плите</sc-raw-td><sc-raw-td>0,5–4 кВт</sc-raw-td><sc-raw-td>греет большую зону, не занимает места</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Настенный / напольный</b></sc-raw-td><sc-raw-td>на кронштейн или ножках</sc-raw-td><sc-raw-td>0,5–2 кВт</sc-raw-td><sc-raw-td>локальный обогрев зоны</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Плёночный</b></sc-raw-td><sc-raw-td>под потолок или пол</sc-raw-td><sc-raw-td>0,15–1 кВт/м²</sc-raw-td><sc-raw-td>скрытый монтаж, для дачных домов</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p>Также по типу нагревательного элемента: <b>карбоновые</b> (быстрый нагрев, стеклянная трубка), <b>керамические</b> (равномерный нагрев, долговечные) и <b>кварцевые</b> (яркое красное свечение, недорогие).</p>
+      <h2>Плюсы</h2>
+      <p><b>1. Мгновенное тепло.</b> Пока конвектор прогревает комнату 20–30 минут, ИК-обогреватель греет вас через 30 секунд.</p>
+      <p><b>2. Работает в открытых или плохо утеплённых помещениях.</b> Терраса, беседка, гараж с воротами, автомойка, склад — всё, где обычный обогреватель бесполезен, потому что воздух улетает.</p>
+      <p><b>3. Не пересушивает воздух и не гоняет пыль.</b> Нет вентилятора и раскалённой спирали — идеально для аллергиков и людей с проблемами дыхания.</p>
+      <p><b>4. Тихая работа.</b> Полная тишина, нет вентилятора и ТЭНа.</p>
+      <p><b>5. Экономия при точечном обогреве.</b> Если греть только рабочее место или зону над столом — тратите меньше, чем на прогрев всей комнаты.</p>
+      <p><b>6. Полезен для здоровья при коротких сеансах.</b> Ощущение «тёплого солнца» приятное, снимает боли в мышцах (в разумных дозах).</p>
+      <p><b>7. Не боится сквозняков.</b> Тепло идёт направленно, ветер не сдувает.</p>
+      <h2>Минусы</h2>
+      <p><b>1. Греет только там, куда направлен.</b> Отвернулись — вам холодно. Для равномерного прогрева всей комнаты нужно 2–3 прибора.</p>
+      <p><b>2. Не запасает тепло.</b> Выключили — сразу холодно (у конвектора остывший воздух хотя бы 10–15 минут держит температуру).</p>
+      <p><b>3. Не подходит для сна.</b> Направленный ИК-поток на голову несколько часов вызывает головную боль и пересушивает слизистые.</p>
+      <p><b>4. Требует правильной высоты монтажа.</b> Потолочные модели — от 2,4 м до 3,5 м в зависимости от мощности. Ниже — можно получить перегрев кожи и ожог. Выше — тепло рассеется.</p>
+      <p><b>5. Не заменяет отопление в жилой комнате.</b> Для гостиной, спальни, детской — конвектор лучше.</p>
+      <p><b>6. Красное свечение</b> у некоторых моделей мешает вечером. Есть модели без свечения (тёмное излучение), но они дороже.</p>
+      <h2>Где ИК-обогреватель реально выигрывает</h2>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Помещение</sc-raw-th><sc-raw-th>Почему ИК лучше</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td><b>Терраса, веранда, беседка</b></sc-raw-td><sc-raw-td>воздух не нагреешь — тепло сдует ветер</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Гараж, автомойка</b></sc-raw-td><sc-raw-td>часто открываются ворота, воздух улетает</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Летняя кухня</b></sc-raw-td><sc-raw-td>быстрый прогрев, не нужно ждать</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Балкон, лоджия</b></sc-raw-td><sc-raw-td>негерметичные, тепло уходит через щели</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Дачный дом на выходные</b></sc-raw-td><sc-raw-td>приехали, включили, через минуту тепло</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Промышленный склад / цех</b></sc-raw-td><sc-raw-td>огромный объём воздуха, конвектор не справится</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Кафе на улице (тёплые зоны)</b></sc-raw-td><sc-raw-td>круглый стол под ИК-грелкой</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Мечеть, большой зал, спортзал</b></sc-raw-td><sc-raw-td>греть людей, а не весь объём здания</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <h2>Где ИК — плохой выбор</h2>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Помещение</sc-raw-th><sc-raw-th>Почему лучше конвектор</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Спальня</sc-raw-td><sc-raw-td>нельзя направленно на спящих часами</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Детская</sc-raw-td><sc-raw-td>ребёнок движется — то греет, то холодно</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Ванная (постоянно)</sc-raw-td><sc-raw-td>конвектор с влагозащитой лучше</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Основное отопление всей квартиры</sc-raw-td><sc-raw-td>понадобится 4–6 приборов, конвекторы дешевле</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <h2>Плёночный ИК-пол: отдельная категория</h2>
+      <p>Плёночные ИК-элементы монтируют <b>под потолок или пол</b>. Они греют равномерно всю комнату (не точечно, как классический ИК-обогреватель) — это уже полноценное отопление.</p>
+      <p><b>Плюсы:</b> незаметный монтаж, равномерный прогрев, можно включать зонально. <b>Минусы:</b> сложный монтаж, дороже, требует ремонта потолка/пола.</p>
+      <p>Подходит для дачных домов, гаражей, реконструкций — когда нужно спрятать отопление.</p>
+      <h2>Как выбрать мощность</h2>
+      <p>Правило: <b>1 кВт ИК-мощности на 8–10 м² площади в утеплённом помещении</b>, на 5–7 м² — в открытом.</p>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Помещение</sc-raw-th><sc-raw-th>Площадь</sc-raw-th><sc-raw-th>Мощность</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Балкон</sc-raw-td><sc-raw-td>5–8 м²</sc-raw-td><sc-raw-td>0,5–1 кВт</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Беседка</sc-raw-td><sc-raw-td>10–15 м²</sc-raw-td><sc-raw-td>1,5–2 кВт</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Терраса</sc-raw-td><sc-raw-td>15–25 м²</sc-raw-td><sc-raw-td>2,5–4 кВт</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Гараж 1 машина</sc-raw-td><sc-raw-td>20 м²</sc-raw-td><sc-raw-td>2–3 кВт</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Гараж 2 машины</sc-raw-td><sc-raw-td>40 м²</sc-raw-td><sc-raw-td>4–6 кВт (2 прибора)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Дачная комната</sc-raw-td><sc-raw-td>12–15 м²</sc-raw-td><sc-raw-td>1,5–2 кВт</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <h2>Сколько стоит эксплуатация</h2>
+      <p>При тарифе ~27 тг/кВт·ч (уточняйте по своему счётчику):</p>
+      <ul><li><b>Локальный обогрев рабочего места</b> ИК-панелью 1 кВт — 27 тг/час, за 8 часов работы 216 тг.</li><li><b>Обогрев террасы</b> ИК-обогревателем 3 кВт при +5 °C на улице — 81 тг/час, за вечер (4 часа) 324 тг.</li><li><b>Обогрев гаража</b> 2 приборами по 2 кВт — 108 тг/час, час утром = 108 тг за прогрев перед выездом.</li></ul>
+      <p>Это выгоднее, чем греть весь гараж конвектором 3 часа до тёплого воздуха.</p>
+      <h2>Три частые ошибки</h2>
+      <p><b>1. Купить один ИК-обогреватель для всей квартиры.</b> Не будет работать как основное отопление — тепло только там, куда направлен.</p>
+      <p><b>2. Повесить слишком низко.</b> Потолочный на 2 м — обжигает голову. Смотрите паспортную минимальную высоту.</p>
+      <p><b>3. Ждать «прогрева» комнаты.</b> ИК не греет воздух — воздух в помещении может остаться прохладным, но вам тепло. Это норма.</p>
+      <h2>Модели в нашем каталоге</h2>
+      <p>В <a href="/katalog?g=infrakrasnye-obogrevateli">разделе ИК-обогревателей</a> — 98 моделей: электрические, газовые, потолочные и настенные. Бренды Ballu, ZILON, Firelight и другие. Есть варианты для дома, дачи, кафе и промышленных помещений.</p>
+      <h2>Вывод</h2>
+      <p>Инфракрасный обогреватель — специализированное решение для мест, где обычный обогреватель не работает: террасы, гаражи, беседки, открытые пространства. Для жилой комнаты в квартире лучше конвектор (<a href="https://tehnoholod369.kz/konvektor-obogrevatel">сравнение — в статье</a>). Не универсальный прибор, но незаменим там, где нужен именно он.</p>
+      <p>Нужен ИК-обогреватель под конкретное помещение — <a href="https://wa.me/77000369369">напишите в WhatsApp</a>, подберём модель по площади, задаче и бюджету. Гарантия, рассрочка Kaspi/Halyk/Forte, доставка по Алматы и области.</p>
+      <h2>Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=infrakrasnye-obogrevateli&amp;brand=Ballu&amp;sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5&amp;stock=in"><div class="art-card__t">Ballu · Электрические</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">74 модели</span> →</div></a>
+      <a class="art-card" href="/katalog?g=infrakrasnye-obogrevateli&amp;sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5"><div class="art-card__t">Инфракрасные обогреватели · Электрические</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-sub="infrakrasnye-obogrevateli|Электрические"></span> →</div></a>
+      </div>
+      <a class="art-pick" data-pick="infrakrasnye-obogrevateli" href="/katalog?g=infrakrasnye-obogrevateli"
+         title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
+        <img class="art-pick__img" data-pick-img alt="" />
+        <div class="art-pick__b">
+          <div class="art-pick__tag" data-pick-tag>Наш выбор</div>
+          <div class="art-pick__brand" data-pick-brand></div>
+          <div class="art-pick__name" data-pick-name></div>
+          <div class="art-pick__price" data-pick-price></div>
+        </div>
+        <div class="art-pick__go">Открыть карточку →</div>
+      </a>
+      <h2>Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Инфракрасный обогреватель вреден для здоровья?</div><div class="art-q__a">При правильном использовании — нет. Проблемы возникают только при длительном направленном воздействии на голову (пересушивание слизистых, головная боль). Часовые сеансы или обогрев зоны с постоянным движением людей безопасны.</div></div>
+      <div class="art-q"><div class="art-q__q">Можно ли поставить ИК-обогреватель в спальню?</div><div class="art-q__a">Не рекомендуется. Долгое направленное воздействие во время сна вредно. Для спальни лучше конвектор.</div></div>
+      <div class="art-q"><div class="art-q__q">Почему у меня прохладно, хотя ИК-обогреватель работает?</div><div class="art-q__a">ИК не греет воздух — он греет вас и предметы, на которые направлен. Термометр в комнате может не двинуться, но вам будет тепло. Это нормально.</div></div>
+      <div class="art-q"><div class="art-q__q">Сколько электричества потребляет?</div><div class="art-q__a">Ровно свою мощность в киловаттах × время работы. ИК-обогреватель 2 кВт за час = 2 кВт·ч × тариф.</div></div>
+      <div class="art-q"><div class="art-q__q">Что выбрать для террасы: ИК или тепловую пушку?</div><div class="art-q__a">Для террасы — ИК-обогреватель (потолочный или уличный настенный). Тепловая пушка греет воздух, который сразу улетает — на открытом пространстве это бесполезно.</div></div>
+    </div>
+
+    
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Подберём модель под вашу задачу</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь комнаты и этаж — пришлём подбор и цену с монтажом.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/katalog?g=infrakrasnye-obogrevateli" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards">
+        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kondicioner-ili-obogrevatel"><div class="art-card__t">Кондиционер или обогреватель: что выгоднее зимой в Алматы</div><div class="art-card__s">Сравниваем кондиционер и обогреватель по цене, расходу электричества и комфорту. Расчёт для Алматы — что выгод</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kogda-deshevle-kupit-kondicioner"><div class="art-card__t">Когда дешевле купить кондиционер: сезонность цен в Казахстане</div><div class="art-card__s">В какое время года кондиционеры дешевле всего и когда выгоднее покупать. Разбор сезонности цен в Казахстане + </div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Инфракрасный обогреватель: плюсы, минусы и где реально работает", "description": "Как работает ИК-обогреватель, где он выигрывает у конвектора, а где проигрывает. Плюсы, минусы, для каких помещений подходит.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/ik-obogrevatel"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz"}, "dateModified": "2026-08-31"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Инфракрасный обогреватель: плюсы, минусы и где реально работает", "item": "https://tehnoholod369.kz/ik-obogrevatel"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Инфракрасный обогреватель вреден для здоровья?","acceptedAnswer":{"@type":"Answer","text":"При правильном использовании — нет. Проблемы возникают только при длительном направленном воздействии на голову. Часовые сеансы или обогрев зоны с постоянным движением людей безопасны."}},
+    {"@type":"Question","name":"Можно ли поставить ИК-обогреватель в спальню?","acceptedAnswer":{"@type":"Answer","text":"Не рекомендуется. Долгое направленное воздействие во время сна вредно. Для спальни лучше конвектор."}},
+    {"@type":"Question","name":"Почему у меня прохладно, хотя ИК-обогреватель работает?","acceptedAnswer":{"@type":"Answer","text":"ИК не греет воздух — он греет вас и предметы, на которые направлен. Термометр в комнате может не двинуться, но вам будет тепло. Это нормально."}},
+    {"@type":"Question","name":"Сколько электричества потребляет?","acceptedAnswer":{"@type":"Answer","text":"Ровно свою мощность в киловаттах × время работы. ИК-обогреватель 2 кВт за час = 2 кВт·ч × тариф."}},
+    {"@type":"Question","name":"Что выбрать для террасы: ИК или тепловую пушку?","acceptedAnswer":{"@type":"Answer","text":"Для террасы — ИК-обогреватель (потолочный или уличный настенный). Тепловая пушка греет воздух, который сразу улетает — на открытом пространстве это бесполезно."}}
+  ]
+}
+</script>
+</x-dc>

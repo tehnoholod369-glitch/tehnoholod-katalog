@@ -20,7 +20,7 @@
 <div class="thgeo">
 <h1>Кондиционеры в Алматы — купить с установкой</h1>
 <p>В каталоге ИП «ТехноХолод» — 381 модель настенных сплит-систем от 19 брендов,
-в том числе AERONIK, Ballu, CHERBROOKE, DITREEX, Electrolux, FUNAI, GREE, Haier и другие. Цены — от <span class="thgeo-pmin">97 505</span> ₸, техника в наличии в Алматы, монтаж выполняют
+в том числе AERONIK, Ballu, CHERBROOKE, DITREEX, Electrolux, FUNAI, GREE, Haier и другие. Цены — от <span class="thgeo-pmin" data-min-art="DTXS-07K6XA61A">97 505</span> ₸, техника в наличии в Алматы, монтаж выполняют
 сертифицированные бригады, возможна рассрочка.</p>
 <div class="thgeo-cta">
 <a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
@@ -88,8 +88,20 @@
       var x=by[td.getAttribute("data-art")];
       if(x&&x.pt)td.textContent=x.pt;
     });
-    if(min){var el=document.querySelector(".thgeo-pmin");
-      if(el)el.textContent=min.toLocaleString("ru-RU").replace(/\u202f/g,"\u00a0");}
+    // «Цены от …» в абзаце — цена КОНКРЕТНОЙ модели, самой доступной из тех,
+    // что подходят под фильтр страницы. Минимум по всей группе сюда брать нельзя:
+    // на «кондиционер на 25 м²» он подставил бы модель на 7 000 BTU, которая
+    // эти 25 м² не закрывает, — страница обещала бы не то (31.08.2026).
+    document.querySelectorAll(".thgeo-pmin").forEach(function(el){
+      var a=el.getAttribute("data-min-art"), x=a?by[a]:null, v=(x&&x.p)?x.p:null;
+      if(v===null){
+        [].forEach.call(document.querySelectorAll(".thgeo-p"),function(td){
+          var y=by[td.getAttribute("data-art")];
+          if(y&&y.p&&(v===null||y.p<v))v=y.p;
+        });
+      }
+      if(v)el.textContent=v.toLocaleString("ru-RU").replace(/ /g," ");
+    });
   });
 })();
 </script>

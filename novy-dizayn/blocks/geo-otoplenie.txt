@@ -21,7 +21,7 @@
 <h2>Отопление и обогреватели в Алматы</h2>
 <p>Радиаторы, конвекторы, инфракрасные обогреватели, тепловые пушки и завесы —
 860 позиций от 6 брендов, в том числе Ballu, DITREEX, POWERAIR by ZILON, ROYAL CLIMA, Royal Thermo, ZILON и другие.
-Цены — от <span class="thgeo-pmin">9 100</span> ₸, техника в наличии в Алматы.</p>
+Цены — от <span class="thgeo-pmin" data-min-art="RFH-CM500DC-BL">9 100</span> ₸, техника в наличии в Алматы.</p>
 <div class="thgeo-cta">
 <a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
 <a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
@@ -50,7 +50,7 @@
 </tbody>
 </table>
 </div>
-<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">30.08.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">31.08.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog">каталоге</a>.</p>
 <!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
 <h2>Что под какую задачу</h2>
 <p>Радиаторы — основное отопление от котла или теплосети; мощность секции
@@ -88,8 +88,20 @@
       var x=by[td.getAttribute("data-art")];
       if(x&&x.pt)td.textContent=x.pt;
     });
-    if(min){var el=document.querySelector(".thgeo-pmin");
-      if(el)el.textContent=min.toLocaleString("ru-RU").replace(/\u202f/g,"\u00a0");}
+    // «Цены от …» в абзаце — цена КОНКРЕТНОЙ модели, самой доступной из тех,
+    // что подходят под фильтр страницы. Минимум по всей группе сюда брать нельзя:
+    // на «кондиционер на 25 м²» он подставил бы модель на 7 000 BTU, которая
+    // эти 25 м² не закрывает, — страница обещала бы не то (31.08.2026).
+    document.querySelectorAll(".thgeo-pmin").forEach(function(el){
+      var a=el.getAttribute("data-min-art"), x=a?by[a]:null, v=(x&&x.p)?x.p:null;
+      if(v===null){
+        [].forEach.call(document.querySelectorAll(".thgeo-p"),function(td){
+          var y=by[td.getAttribute("data-art")];
+          if(y&&y.p&&(v===null||y.p<v))v=y.p;
+        });
+      }
+      if(v)el.textContent=v.toLocaleString("ru-RU").replace(/ /g," ");
+    });
   });
 })();
 </script>

@@ -1,0 +1,248 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art { max-width: 780px; }
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/baza-znaniy">База знаний</a> → <span style="color:#18212F;">Тепловая пушка</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Выбор</span>
+      <span style="color:#8593A6;">6 минут чтения</span>
+      <span style="color:#8593A6;">Обновлено 31.08.2026</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Тепловая пушка: как выбрать для гаража, склада, стройки</h1>
+
+    <div style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Электрические, газовые, дизельные тепловые пушки: расчёт мощности, безопасность, экономика. Что выбрать для гаража, склада, стройки в Алматы.
+    </div>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">тепловая пушка — мощный обогреватель с вентилятором для быстрого прогрева больших или неотапливаемых помещений. Бывают электрические (простые и безопасные, до 30 кВт), газовые (мобильные, от баллона, 10–100 кВт), дизельные (мощные, для стройки, 20–200 кВт). Мощность считается по объёму помещения: 40–70 Вт на м³ утеплённого, 100–150 Вт на м³ неутеплённого.** Ниже — типы, расчёт, безопасность.</div></div>
+      <h2>Куда ставят тепловые пушки</h2>
+      <ul><li><b>Гараж, автомойка.</b> Прогреть перед работой или на время смены.</li><li><b>Склад, цех.</b> Быстрый прогрев к началу смены, а не круглосуточное отопление.</li><li><b>Стройплощадка.</b> Прогрев рабочих зон, ускорение высыхания штукатурки, стяжки, краски.</li><li><b>Ангар, теплица, шатёр.</b> Временный обогрев на 1–3 месяца или сезонно.</li><li><b>Дача весной/осенью.</b> Быстро согреть дом с приезда.</li><li><b>Помещение после затопления.</b> Ускорить сушку стен и полов.</li></ul>
+      <p>Смотрите модели: <a href="/katalog?g=teplovye-pushki">тепловые пушки в каталоге</a> — 103 позиции, электрические, газовые и дизельные.</p>
+      <h2>Три типа по топливу</h2>
+      <h3>Электрические</h3>
+      <p><b>Мощность:</b> 2–30 кВт (бытовые 2–5 кВт, промышленные 9–30 кВт). <b>Питание:</b> до 5 кВт — 220 В, дальше — 380 В (три фазы). <b>Плюсы:</b> безопасные (нет открытого пламени), не сушат воздух, чистый обогрев без запаха, не требуют вентиляции. <b>Минусы:</b> зависят от электросети (при отсутствии — не работают), дороже в эксплуатации. <b>Куда:</b> гаражи с электричеством, склады с проводкой, стройка при наличии генератора.</p>
+      <h3>Газовые</h3>
+      <p><b>Мощность:</b> 10–100 кВт. <b>Топливо:</b> пропан-бутан из баллона 27 или 50 л, реже — магистральный газ. <b>Плюсы:</b> мобильные (баллон + пушка), очень мощные при небольших размерах, дешёвая эксплуатация (газ в 3–4 раза дешевле электричества). <b>Минусы:</b> <b>сжигают кислород, выделяют CO₂ и пары воды</b> — только с вентиляцией. Опасность утечки газа. <b>Куда:</b> большие склады с высокими потолками, ангары, теплицы, стройка (только открытые или проветриваемые помещения).</p>
+      <h3>Дизельные (прямого или непрямого нагрева)</h3>
+      <p><b>Мощность:</b> 20–200 кВт. <b>Топливо:</b> солярка (иногда керосин). <b>Прямого нагрева</b> — продукты сгорания идут в помещение. Только для открытых или отлично проветриваемых площадок (стройка, шатёр). <b>Непрямого нагрева</b> — с дымоходом, продукты выводятся наружу. Чистый воздух в помещении. <b>Плюсы:</b> самая высокая мощность, автономность (только баки топлива), дешёвая эксплуатация. <b>Минусы:</b> запах, шум, дымоход для «непрямых», не подходит для закрытых помещений (прямого нагрева). <b>Куда:</b> стройплощадки, промышленные объекты, ангары.</p>
+      <h2>Сравнение</h2>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Параметр</sc-raw-th><sc-raw-th>Электрическая</sc-raw-th><sc-raw-th>Газовая</sc-raw-th><sc-raw-th>Дизельная</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Диапазон мощности</sc-raw-td><sc-raw-td>2–30 кВт</sc-raw-td><sc-raw-td>10–100 кВт</sc-raw-td><sc-raw-td>20–200 кВт</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Топливо</sc-raw-td><sc-raw-td>электричество</sc-raw-td><sc-raw-td>пропан-бутан</sc-raw-td><sc-raw-td>солярка</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Стоимость обогрева</sc-raw-td><sc-raw-td>высокая</sc-raw-td><sc-raw-td>средняя</sc-raw-td><sc-raw-td>средняя-низкая</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Мобильность</sc-raw-td><sc-raw-td>средняя</sc-raw-td><sc-raw-td><b>высокая</b></sc-raw-td><sc-raw-td>средняя</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Безопасность в закрытом помещении</sc-raw-td><sc-raw-td><b>высокая</b></sc-raw-td><sc-raw-td>требует вентиляции</sc-raw-td><sc-raw-td>только непрямого нагрева</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Запах при работе</sc-raw-td><sc-raw-td>нет</sc-raw-td><sc-raw-td>лёгкий</sc-raw-td><sc-raw-td>заметный</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Шум</sc-raw-td><sc-raw-td>45–60 дБ</sc-raw-td><sc-raw-td>55–65 дБ</sc-raw-td><sc-raw-td>65–80 дБ</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Автономность</sc-raw-td><sc-raw-td>нет (нужна сеть)</sc-raw-td><sc-raw-td>4–20 часов</sc-raw-td><sc-raw-td>8–24 часа</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <h2>Расчёт мощности</h2>
+      <p>Формула: <b>мощность = объём × коэффициент теплопотерь × разница температур</b>.</p>
+      <p>Упрощённо, для практики:</p>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Тип помещения</sc-raw-th><sc-raw-th>Ватт на м³</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Утеплённое (сендвич-панели, ISO)</sc-raw-td><sc-raw-td>30–40</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Средне утеплённое (кирпич, шлакоблок)</sc-raw-td><sc-raw-td>40–70</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Плохо утеплённое (тонкие стены, щели)</sc-raw-td><sc-raw-td>100–150</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Открытое (шатёр, ангар без утепления)</sc-raw-td><sc-raw-td>150–200</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <h3>Готовые примеры</h3>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Помещение</sc-raw-th><sc-raw-th>Размеры</sc-raw-th><sc-raw-th>Объём</sc-raw-th><sc-raw-th>Утепление</sc-raw-th><sc-raw-th>Мощность</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Гараж на 1 машину</sc-raw-td><sc-raw-td>4×6×2,5 = 60 м³</sc-raw-td><sc-raw-td>60 м³</sc-raw-td><sc-raw-td>среднее</sc-raw-td><sc-raw-td>3–5 кВт</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Гараж на 2 машины</sc-raw-td><sc-raw-td>6×8×2,7 = 130 м³</sc-raw-td><sc-raw-td>130 м³</sc-raw-td><sc-raw-td>среднее</sc-raw-td><sc-raw-td>6–10 кВт</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Небольшой склад</sc-raw-td><sc-raw-td>10×15×4 = 600 м³</sc-raw-td><sc-raw-td>600 м³</sc-raw-td><sc-raw-td>утеплённый</sc-raw-td><sc-raw-td>20–30 кВт</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Большой склад</sc-raw-td><sc-raw-td>20×30×6 = 3600 м³</sc-raw-td><sc-raw-td>3600 м³</sc-raw-td><sc-raw-td>утеплённый</sc-raw-td><sc-raw-td>100–150 кВт</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Открытый ангар</sc-raw-td><sc-raw-td>15×20×5 = 1500 м³</sc-raw-td><sc-raw-td>1500 м³</sc-raw-td><sc-raw-td>без утепления</sc-raw-td><sc-raw-td>200–300 кВт (2 пушки)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Стройплощадка (комната)</sc-raw-td><sc-raw-td>5×8×3 = 120 м³</sc-raw-td><sc-raw-td>120 м³</sc-raw-td><sc-raw-td>без стен/окон</sc-raw-td><sc-raw-td>15–25 кВт</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p><b>Мороз ниже −15 °C</b> — умножайте на коэффициент 1,3–1,5.</p>
+      <h2>Безопасность: главное для газовых и дизельных</h2>
+      <p><b>Кислород и CO₂.</b> Открытое пламя пушки сжигает кислород. В маленьком закрытом помещении — риск удушья и отравления угарным газом.</p>
+      <p><b>Правила:</b></p>
+      <ul><li>Газовые прямого нагрева и дизельные прямого нагрева — <b>только в проветриваемых помещениях или на улице</b>.</li><li>Обязательно приоткрытая дверь или окно.</li><li>Датчик CO (угарного газа) в закрытом помещении обязателен (5 000–15 000 тг).</li><li>Не спать в помещении с работающей газовой пушкой прямого нагрева.</li></ul>
+      <p><b>Пожарная безопасность.</b></p>
+      <ul><li>Минимум 2 метра от пушки до горючих материалов (дрова, картон, ткань).</li><li>Не направляйте струю на баллон, канистры, стены с пластиком.</li><li>Огнетушитель порошковый или углекислотный — обязательно.</li></ul>
+      <p><b>Электрическая пушка</b> самая безопасная, но:</p>
+      <ul><li>Мокрый пол, снег, лужи — риск удара током. Ставьте на подставку.</li><li>УЗО 30 мА обязательно на линию.</li><li>Не оставляйте без присмотра на всю ночь.</li></ul>
+      <h2>Экономика: что выбрать по деньгам</h2>
+      <p><b>Электрическая, 10 кВт, работа 8 часов в день:</b> 80 кВт·ч × 27 тг = <b>2 160 тг/день</b> (тариф ориентировочный, уточняйте по своему счётчику).</p>
+      <p><b>Газовая пропан-бутан, 10 кВт, работа 8 часов:</b> Расход газа ~0,7 кг/час × 8 ч = 5,6 кг. Пропан ~350 тг/кг = <b>~2 000 тг/день</b>.</p>
+      <p><b>Дизельная, 10 кВт, работа 8 часов:</b> Расход ~1 л/час × 8 ч = 8 л. Солярка ~280 тг/л = <b>~2 200 тг/день</b>.</p>
+      <p><b>По деньгам разница небольшая, ~10–15%.</b> Выбирайте по условиям: есть электричество — электрическая, нужна мобильность — газовая, большая мощность — дизельная.</p>
+      <p><b>Электрическая выигрывает в комфорте.</b> Газовая и дизельная — в мощности и мобильности.</p>
+      <h2>Что смотреть при выборе</h2>
+      <p><b>Термостат.</b> Обязательно. Автоматически выключается при достижении температуры, экономит топливо.</p>
+      <p><b>Защита от перегрева.</b> Обязательно, особенно у газовых и дизельных.</p>
+      <p><b>Датчик наклона.</b> Пушка опрокинулась — сразу выключилась. У газовых обязательно, чтоб не воспламенился газ.</p>
+      <p><b>Электронное зажигание</b> (у газовых и дизельных). Пьезоподжиг — надёжнее спичечного.</p>
+      <p><b>Ручки для переноски и колёса</b> — важно для мобильных сценариев.</p>
+      <p><b>Регулировка мощности</b> (ступенчатая или плавная). У больших пушек — плавная предпочтительнее для точного контроля.</p>
+      <p><b>Класс защиты от пыли и влаги.</b> Для стройки минимум IP24, для склада — IP20.</p>
+      <h2>Частые ошибки</h2>
+      <ol><li><b>Купили газовую пушку 30 кВт в закрытый гараж 30 м² без вентиляции.</b> Через 15 минут — головная боль, удушье. Только с открытыми воротами или в утеплённый гараж с вентиляцией.</li><li><b>Электрическая пушка 9 кВт в квартиру с обычной розеткой.</b> Автомат выбивает мгновенно. От 5 кВт — только на 380 В.</li><li><b>Дизельная прямого нагрева в мастерской с пластиковыми деталями.</b> Запах впитывается в материалы. Только с непрямым нагревом и дымоходом.</li><li><b>Слишком мощная пушка для маленького помещения.</b> 15 кВт на 40 м² — перегрев за 20 минут, отключение по термостату, потом холод, потом снова перегрев. Циклирование = быстрый износ.</li></ol>
+      <h2>Вывод</h2>
+      <p>Тепловая пушка — рабочий инструмент для гаража, склада, стройки, ангара. Электрическая — универсал для помещений с сетью, безопасная и удобная. Газовая — мобильность и мощность, но только с вентиляцией. Дизельная — стройка и промышленные объекты, только с дымоходом в закрытых помещениях.</p>
+      <p>Посмотреть модели: <a href="/katalog?g=teplovye-pushki">тепловые пушки</a> — 103 позиции от 2 до 200 кВт. Приедем на замер и подберём под задачу — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, доставка по Алматы и области.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/teplovaya-zavesa">«Тепловая завеса»</a>, <a href="https://tehnoholod369.kz/ik-obogrevatel">«Инфракрасный обогреватель»</a>, <a href="https://tehnoholod369.kz/otoplenie-chastnogo-doma">«Отопление частного дома»</a>.</p>
+      <h2>Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=teplovye-pushki&amp;brand=Ballu&amp;sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5&amp;stock=in"><div class="art-card__t">Ballu · Электрические</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">49 моделей</span> →</div></a>
+      <a class="art-card" href="/katalog?g=teplovye-pushki&amp;sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5"><div class="art-card__t">Тепловые пушки · Электрические</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-sub="teplovye-pushki|Электрические"></span> →</div></a>
+      </div>
+      <a class="art-pick" data-pick="teplovye-pushki" href="/katalog?g=teplovye-pushki"
+         title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
+        <img class="art-pick__img" data-pick-img alt="" />
+        <div class="art-pick__b">
+          <div class="art-pick__tag" data-pick-tag>Наш выбор</div>
+          <div class="art-pick__brand" data-pick-brand></div>
+          <div class="art-pick__name" data-pick-name></div>
+          <div class="art-pick__price" data-pick-price></div>
+        </div>
+        <div class="art-pick__go">Открыть карточку →</div>
+      </a>
+      <h2>Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Можно ли использовать тепловую пушку постоянно вместо основного отопления?</div><div class="art-q__a">Электрическая — можно, но дорого (в 2–3 раза дороже конвекторного отопления). Газовая и дизельная — нет, они рассчитаны на временный обогрев.</div></div>
+      <div class="art-q"><div class="art-q__q">Насколько быстро греет пушка?</div><div class="art-q__a">Электрическая 5 кВт: гараж 60 м³ прогревает с 0 °C до +18 °C за 30–40 минут. Газовая 15 кВт — за 10–15 минут.</div></div>
+      <div class="art-q"><div class="art-q__q">Можно ли поставить газовую пушку в квартире?</div><div class="art-q__a">Нельзя. Категорически. В квартире с газовой плитой ещё есть вентиляция, но пропан-бутановая пушка на 20 кВт — риск удушья.</div></div>
+      <div class="art-q"><div class="art-q__q">Как долго работает газовый баллон 27 л?</div><div class="art-q__a">Пропан-бутан 27 л ≈ 22 кг газа. Пушка 10 кВт расходует ~0,7 кг/ч — хватит на 30 часов работы (примерно 3–4 дня по 8 часов).</div></div>
+      <div class="art-q"><div class="art-q__q">Нужна ли лицензия на дизельную пушку?</div><div class="art-q__a">Нет для покупки и использования. Но при работе на стройке нужен инструктаж по технике безопасности и учёт нормы установки.</div></div>
+    </div>
+
+    
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Подберём модель под вашу задачу</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь комнаты и этаж — пришлём подбор и цену с монтажом.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/katalog?g=teplovye-pushki" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards">
+        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kondicioner-ili-obogrevatel"><div class="art-card__t">Кондиционер или обогреватель: что выгоднее зимой в Алматы</div><div class="art-card__s">Сравниваем кондиционер и обогреватель по цене, расходу электричества и комфорту. Расчёт для Алматы — что выгод</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kogda-deshevle-kupit-kondicioner"><div class="art-card__t">Когда дешевле купить кондиционер: сезонность цен в Казахстане</div><div class="art-card__s">В какое время года кондиционеры дешевле всего и когда выгоднее покупать. Разбор сезонности цен в Казахстане + </div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Тепловая пушка: как выбрать для гаража, склада, стройки", "description": "Электрические, газовые, дизельные тепловые пушки: расчёт мощности, безопасность, экономика. Что выбрать для гаража, склада, стройки в Алматы.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/teplovaya-pushka"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz"}, "dateModified": "2026-08-31"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Тепловая пушка: как выбрать для гаража, склада, стройки", "item": "https://tehnoholod369.kz/teplovaya-pushka"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Можно ли использовать тепловую пушку постоянно вместо основного отопления?","acceptedAnswer":{"@type":"Answer","text":"Электрическая — можно, но дорого (в 2–3 раза дороже конвекторного отопления). Газовая и дизельная — нет, они рассчитаны на временный обогрев."}},
+    {"@type":"Question","name":"Насколько быстро греет пушка?","acceptedAnswer":{"@type":"Answer","text":"Электрическая 5 кВт: гараж 60 м³ прогревает с 0 °C до +18 °C за 30–40 минут. Газовая 15 кВт — за 10–15 минут."}},
+    {"@type":"Question","name":"Можно ли поставить газовую пушку в квартире?","acceptedAnswer":{"@type":"Answer","text":"Категорически нельзя. В квартире нет вентиляции достаточной, чтобы безопасно использовать пропан-бутановую пушку — риск удушья и отравления CO."}},
+    {"@type":"Question","name":"Как долго работает газовый баллон 27 л?","acceptedAnswer":{"@type":"Answer","text":"Пропан-бутан 27 л ≈ 22 кг газа. Пушка 10 кВт расходует 0,7 кг/ч — хватит на 30 часов работы (примерно 3–4 дня по 8 часов)."}},
+    {"@type":"Question","name":"Нужна ли лицензия на дизельную пушку?","acceptedAnswer":{"@type":"Answer","text":"Нет для покупки и использования. Но на стройке нужен инструктаж по технике безопасности."}}
+  ]
+}
+</script>
+</x-dc>
