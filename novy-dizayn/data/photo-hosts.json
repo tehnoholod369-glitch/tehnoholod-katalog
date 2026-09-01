@@ -1,11 +1,11 @@
 {
- "totalFiles": 8475,
- "external": 7455,
- "local": 1020,
+ "totalFiles": 8550,
+ "external": 8000,
+ "local": 550,
  "cdn": 0,
- "gallery": 8475,
+ "gallery": 8550,
  "hosts": {
-  "img.tehnoholod369.kz": 7454,
+  "img.tehnoholod369.kz": 7999,
   "static.tildacdn.com": 1
  },
  "multisplitNoPhoto": 4,
