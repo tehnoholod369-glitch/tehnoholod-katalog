@@ -248,14 +248,15 @@ class Component extends DCLogic {
         ]
       },
       {
-        kind: "Офис", city: "Алматы", date: "объект добавим",
-        title: "Климат в офисе",
-        text: "Объект добавим после фото: тип системы, количество блоков и площадь.",
+        kind: "Офис", city: "Алматы", date: "октябрь 2024",
+        title: "Приточно-вытяжная установка в офисе",
+        text: "Доставка, алмазное бурение отверстий под воздуховоды, монтаж и пусконаладка настенной приточно-вытяжной установки FUNAI FUJI с рекуперацией тепла.",
         slotId: "work-4", slotHint: "Фото офисного объекта",
+        photo: "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/ofis-funai-2024.jpg",
+        model: "ERW-150X.D",
         rows: [
-          { k: "Тип системы", v: need.v, color: need.color },
-          { k: "Блоков установлено", v: need.v, color: need.color },
-          { k: "Площадь", v: need.v, color: need.color }
+          { k: "Оборудование", v: "FUNAI FUJI ERW-150X.D", color: "#18212F" },
+          { k: "Работы", v: "доставка, бурение, монтаж, пусконаладка", color: "#18212F" }
         ]
       },
       {
