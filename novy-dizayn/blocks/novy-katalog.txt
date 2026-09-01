@@ -93,7 +93,7 @@
   <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
     <div style="max-width:1320px; margin:0 auto; padding:12px 24px; display:flex; gap:8px; flex-wrap:wrap;">
       <sc-for list="{{ extraTabs }}" as="e" hint-placeholder-count="0">
-        <a href="{{ e.href }}" style="border:1px solid {{ e.border }}; background:{{ e.bg }}; color:{{ e.fg }}; border-radius:8px; padding:9px 14px; font-size:14px; font-weight:600; display:flex; align-items:baseline; gap:7px; order:1;">
+        <a href="{{ e.href }}" style="border:1px solid {{ e.border }}; background:{{ e.bg }}; color:{{ e.fg }}; border-radius:8px; padding:9px 14px; font-size:14px; font-weight:600; display:flex; align-items:baseline; gap:7px; order:{{ e.order }};">
           <span>{{ e.title }}</span><span style="font-size:12px; color:{{ e.countFg }};">{{ e.count }}</span>
         </a>
       </sc-for>
@@ -292,7 +292,7 @@
           </div>
         </sc-if>
 
-        <div style="background:#E6F2FD; border-radius:12px; padding:16px 20px; margin-top:16px; font-size:14px; color:#071C3B; line-height:1.55;">Не нашли модель? Напишите площадь помещения в WhatsApp — подберём и посчитаем с доставкой: <b>+77 000 369 369</b></div>
+        <div style="background:#E6F2FD; border-radius:12px; padding:16px 20px; margin-top:16px; font-size:14px; color:#071C3B; line-height:1.55;">Не нашли модель? Напишите в WhatsApp, что нужно, — подберём и посчитаем с доставкой: <b>+77 000 369 369</b></div>
         <div style="font-size:13px; color:#8593A6; margin-top:14px; line-height:1.6;">{{ footNote }}</div>
       </div>
     </div>
@@ -353,6 +353,10 @@ class Component extends DCLogic {
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/picks.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(p => this.setState({ picks: (p && p.skus) || [] })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/akcii.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(a => this.setState({ sale: (a && a.items) || {} })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/hits.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(h => this.setState({ hits: (h && h.items) || {} })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/ucenka.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null)
+      .then(u => this.setState({ ucenkaN: (u && u.items || []).length })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bu.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null)
+      .then(b => this.setState({ buN: (b && b.items || []).length })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/prioritet.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null)
       .then(p => this.setState({ prio: (p && p.order) || [], prioQuota: (p && p.quota) || 2 })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"})
@@ -1510,18 +1514,17 @@ class Component extends DCLogic {
       title: "Мультисплит-системы",
       count: msGroup ? msGroup.count : "конструктор",
       href: "/multisplit",
-      border: "#DCE5F0", bg: "#fff", fg: "#2C3846", countFg: "#8593A6"
+      border: "#DCE5F0", bg: "#fff", fg: "#2C3846", countFg: "#8593A6", order: 1
     }] : [];
-    // Уценёнка — не группа каталога, а отдельный раздел со своим мастером: там
-    // штучные экземпляры, а не модельный ряд. Поэтому это ссылка, а не фильтр,
-    // и стоит она во всех направлениях — повреждённая упаковка бывает и у радиатора,
-    // и у сплита. Вместо счётчика подпись «в разработке»: числа у раздела ещё нет,
-    // а поставить ноль значило бы сказать «пусто» там, где мы только начинаем.
-    extraTab.push({
-      title: "Уценённый товар",
-      count: "в разработке",
-      href: "/ucenka",
-      border: "#F3D9B0", bg: "#FFF6E9", fg: "#B25200", countFg: "#B25200"
+    [
+      { title: "Уценённый товар", n: s.ucenkaN, href: "/ucenka",
+        border: "#F3D9B0", bg: "#FFF6E9", fg: "#B25200", countFg: "#B25200", order: 900 },
+      { title: "Товар б/у", n: s.buN, href: "/obyavleniya-bu",
+        border: "#DCE5F0", bg: "#fff", fg: "#0A4EA7", countFg: "#0872D3", order: 901 }
+    ].forEach(v => {
+      if (!(v.n > 0)) return;
+      extraTab.push({ title: v.title, count: String(v.n), href: v.href,
+        border: v.border, bg: v.bg, fg: v.fg, countFg: v.countFg, order: v.order });
     });
 
     // мультисплит идёт сразу после бытовых, а не в конце ряда
@@ -1757,9 +1760,13 @@ class Component extends DCLogic {
         }).slice(0, 4),
         price: it.pt || "Цена по запросу",
         priceColor: it.pt ? "#18212F" : "#5A6675",
-        priceNote: it.pt ? "с НДС" : "считаем по запросу",
+        // Позиция без цены раньше говорила одно и то же пятью способами разом:
+        // «Цена по запросу», под ней «считаем по запросу», ссылка «Запросить цену →»,
+        // кнопка «Уточнить цену» и подсказка к ней. Оставляем цену и две РАЗНЫЕ
+        // по смыслу кнопки: ссылка открывает карточку, кнопка спрашивает цену.
+        priceNote: it.pt ? "с НДС" : "",
         monthly: monthlyBase ? "рассрочка 12 мес — " + this.fmt(monthlyBase / 12) + " ₸/мес" : "",
-        cta: it.pt ? "Открыть карточку →" : "Запросить цену →",
+        cta: "Открыть карточку →",
         pickScore: this.isPick(it, picks) ? this.recScore(it, picks) : -1,
         isPick: false,
         // Хит и «Наш выбор» на одной карточке не показываем: две плашки об одном
@@ -1880,7 +1887,7 @@ class Component extends DCLogic {
       isEmpty: !s.loading && list.length === 0,
       multisplitHref: "/multisplit",
       emptyTitle: "По этим условиям ничего нет",
-      emptyText: "Сбросьте фильтры или напишите площадь помещения в WhatsApp — подберём вручную.",
+      emptyText: "Сбросьте фильтры или напишите в WhatsApp, что нужно, — подберём вручную.",
       hasMore: list.length > visible.length,
       // в счётчике группы сопутствующие показаны отдельной строкой, а не подмешаны к оборудованию
       counterText: s.loading ? "Загружаем…"

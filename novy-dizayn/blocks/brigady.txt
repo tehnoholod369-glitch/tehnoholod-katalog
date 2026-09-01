@@ -530,6 +530,11 @@ class Component extends DCLogic {
           c.city     ? { k: "ВЫЕЗД", v: c.city + (c.zone ? " " + c.zone : "") } : null,
           c.warranty ? { k: "ГАРАНТИЯ НА МОНТАЖ", v: c.warranty + " мес — даёт бригада" } : null,
           c.since    ? { k: "В СЕТИ", v: "с " + c.since + " года" } : null,
+          (c.withUsSince && (new Date().getFullYear() - c.withUsSince) >= 1)
+            ? { k: "РАБОТАЕТ С НАМИ",
+                v: (new Date().getFullYear() - c.withUsSince) + " "
+                   + this.letWord(new Date().getFullYear() - c.withUsSince)
+                   + " · с " + c.withUsSince } : null,
           // Языки и оснащение приходят из реестра только у одобренных бригад:
           // при сертификации владелец сверил анкету (оснащение — по фото
           // инструмента) — поэтому подпись «подтверждено» здесь честная.

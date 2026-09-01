@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+  input, select, textarea { font-family: inherit; }
+</style>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · объекты по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · счёт и договор</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1280px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="Главная.dc.html"><img src="assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="Каталог - выдача.dc.html" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="B2B и госзакупки.dc.html" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">Для юрлиц</a>
+    </div>
+  </div>
+
+  <div style="max-width:1280px; margin:0 auto; padding:20px 24px 96px 24px;">
+    <div style="font-size:13px; color:#8593A6;"><a href="Главная.dc.html">Главная</a> → <span style="color:#18212F;">Проектные системы</span></div>
+
+    <div style="background:linear-gradient(125deg,#071C3B,#0A4EA7 78%); color:#fff; border-radius:16px; padding:36px; margin-top:12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:28px; align-items:center;">
+      <div>
+        <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#7FC4F2;">ОБЪЕКТЫ, КОТОРЫЕ СЧИТАЮТ ПРОЕКТИРОВЩИКИ</div>
+        <h1 style="margin:14px 0 0 0; font-size:clamp(21px,5.6vw,36px); font-weight:800; line-height:1.12; letter-spacing:-0.025em;">Проектные системы: VRF, чиллеры, фанкойлы, приточно-вытяжные установки</h1>
+        <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px;">Оборудование, которое не продаётся штукой из каталога. Состав и цена собираются под объект: по теплопритокам, длинам трасс, схеме воздухообмена и очерёдности пусконаладки.</div>
+        <div style="display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;">
+          <a href="#zapros" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Запросить спецификацию</a>
+          <a href="#oborudovanie" style="border:2px solid rgba(255,255,255,0.55); color:#fff; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть оборудование</a>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); border-radius:12px; padding:22px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#7FC4F2;">ЧТО ЕСТЬ В ПОДБОРЕ</div>
+        <div style="display:flex; flex-direction:column; gap:11px; margin-top:14px; font-size:14px;">
+          <sc-for list="{{ stats }}" as="s" hint-placeholder-count="5">
+            <div style="display:flex; justify-content:space-between; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;">
+              <span style="color:#9FB0C4;">{{ s.k }}</span><b style="text-align:right; font-variant-numeric:tabular-nums;">{{ s.v }}</b>
+            </div>
+          </sc-for>
+        </div>
+        <div style="font-size:12px; color:#9FB0C4; line-height:1.5; margin-top:14px;">{{ dataNote }}</div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;">
+      <h2 style="margin:0; font-size:26px; font-weight:800; letter-spacing:-0.018em;">{{ classesTitle }}</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr)); gap:16px; margin-top:16px;">
+        <sc-for list="{{ classes }}" as="c" hint-placeholder-count="4">
+          <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px; display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+              <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">{{ c.title }}</div>
+              <div style="font-size:12px; font-weight:700; color:#0A4EA7; background:#E6F2FD; border-radius:5px; padding:4px 9px; font-variant-numeric:tabular-nums; white-space:nowrap;">{{ c.count }}</div>
+            </div>
+            <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:10px;">{{ c.text }}</div>
+            <div style="background:#F3F7FB; border-radius:10px; padding:12px 14px; margin-top:12px;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#8593A6;">КОГДА ВЫБИРАЮТ</div>
+              <div style="font-size:14px; color:#2C3846; line-height:1.5; margin-top:4px;">{{ c.when }}</div>
+            </div>
+            <div style="font-size:13px; color:#B25200; line-height:1.5; margin-top:10px;">{{ c.limit }}</div>
+            <div onClick="{{ c.pick }}" style="font-size:13px; font-weight:700; color:#0872D3; margin-top:12px; cursor:pointer;">Смотреть позиции →</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div id="oborudovanie" style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:22px;">
+      <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px;">
+        <div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">ОБОРУДОВАНИЕ ПОД ПРОЕКТ</div>
+          <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Соберите список моделей — мы посчитаем спецификацию</h2>
+        </div>
+        <div style="font-size:14px; color:#5A6675; max-width:320px; line-height:1.5;">Цена по проектным системам считается по объекту: состав, трассы, автоматика и пусконаладка входят в расчёт.</div>
+      </div>
+
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:18px;">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+          <div onClick="{{ t.pick }}" style="border:1px solid {{ t.border }}; background:{{ t.bg }}; color:{{ t.fg }}; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600; cursor:pointer; display:flex; gap:8px; align-items:center;">
+            {{ t.label }}<span style="font-size:12px; opacity:0.7; font-variant-numeric:tabular-nums;">{{ t.count }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; padding-top:12px; border-top:1px solid #EDF2F8;">
+        <sc-for list="{{ subs }}" as="s" hint-placeholder-count="5">
+          <div onClick="{{ s.pick }}" style="border:1px solid {{ s.border }}; background:{{ s.bg }}; color:{{ s.fg }}; border-radius:20px; padding:7px 14px; font-size:13px; font-weight:600; cursor:pointer;">{{ s.label }}</div>
+        </sc-for>
+        <div style="flex:1;"></div>
+        <div onClick="{{ toggleStock }}" style="border:1px solid {{ stockBorder }}; background:{{ stockBg }}; color:{{ stockFg }}; border-radius:20px; padding:7px 14px; font-size:13px; font-weight:700; cursor:pointer;">{{ stockLabel }}</div>
+      </div>
+
+      <div style="overflow-x:auto; margin-top:16px;">
+        <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:720px;">
+          <thead>
+            <tr style="text-align:left; color:#8593A6; font-size:12px; letter-spacing:0.06em;">
+              <th style="padding:8px 10px 8px 0; font-weight:700;">МОДЕЛЬ</th>
+              <th style="padding:8px 10px; font-weight:700;">{{ capHeader }}</th>
+              <th style="padding:8px 10px; font-weight:700;">ЭЛЕКТРОПИТАНИЕ</th>
+              <th style="padding:8px 10px; font-weight:700;">СТАТУС</th>
+              <th style="padding:8px 0 8px 10px; font-weight:700;"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ rows }}" as="r" hint-placeholder-count="8">
+              <tr style="border-top:1px solid #EDF2F8;">
+                <td style="padding:12px 10px 12px 0; vertical-align:top;">
+                  <div style="font-weight:700; color:#18212F;">{{ r.m }}</div>
+                  <div style="font-size:12px; color:#8593A6; margin-top:3px;">{{ r.sub }}</div>
+                </td>
+                <td style="padding:12px 10px; vertical-align:top; font-variant-numeric:tabular-nums;">
+                  <div>{{ r.cap }}</div>
+                  <div style="font-size:12px; color:#8593A6; margin-top:3px;">{{ r.area }}</div>
+                </td>
+                <td style="padding:12px 10px; vertical-align:top; color:#5A6675;">{{ r.pw }}</td>
+                <td style="padding:12px 10px; vertical-align:top;">
+                  <span style="font-size:12px; font-weight:700; border-radius:5px; padding:4px 9px; white-space:nowrap; background:{{ r.stBg }}; color:{{ r.stFg }};">{{ r.stLabel }}</span>
+                </td>
+                <td style="padding:12px 0 12px 10px; vertical-align:top; text-align:right;">
+                  <div onClick="{{ r.add }}" style="display:inline-block; border:1px solid {{ r.addBorder }}; background:{{ r.addBg }}; color:{{ r.addFg }}; border-radius:8px; padding:8px 14px; font-size:13px; font-weight:700; cursor:pointer; white-space:nowrap;">{{ r.addLabel }}</div>
+                </td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+      <div style="font-size:13px; color:#8593A6; margin-top:14px;">{{ rowsNote }}</div>
+    </div>
+
+    <div id="zapros" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:20px; margin-top:22px; align-items:start;">
+
+      <div style="background:#071C3B; color:#fff; border-radius:16px; padding:26px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">ВАША СПЕЦИФИКАЦИЯ</div>
+        <h2 style="margin:6px 0 0 0; font-size:22px; font-weight:800; color:#fff;">{{ specTitle }}</h2>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <sc-for list="{{ spec }}" as="s" hint-placeholder-count="2">
+            <div style="display:flex; align-items:center; gap:12px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.16); border-radius:10px; padding:11px 14px;">
+              <div style="flex:1;">
+                <div style="font-size:14px; font-weight:700;">{{ s.m }}</div>
+                <div style="font-size:12px; color:#9FB0C4; margin-top:2px;">{{ s.group }}</div>
+              </div>
+              <input type="number" min="1" value="{{ s.qty }}" onInput="{{ s.onQty }}" style="width:58px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.25); color:#fff; border-radius:6px; padding:6px 8px; font-size:14px; text-align:center;" />
+              <div onClick="{{ s.remove }}" style="cursor:pointer; color:#9FB0C4; font-size:18px; line-height:1;">×</div>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ specEmpty }}" hint-placeholder-val="{{ true }}">
+          <div style="font-size:14px; color:#9FB0C4; line-height:1.6; margin-top:14px;">Пока пусто. Добавьте модели из таблицы выше — или отправьте запрос без списка: подберём состав сами по данным объекта.</div>
+        </sc-if>
+        <div style="border-top:1px solid rgba(255,255,255,0.16); margin-top:18px; padding-top:16px; font-size:13px; color:#9FB0C4; line-height:1.6;">В ответ приходит спецификация с составом, схемой подключения и сроками. Цена — по объекту, отдельной строкой оборудование, отдельной монтаж и пусконаладка. Работаем с НДС, счёт и договор.</div>
+      </div>
+
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px;">
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#0A7A3C;">ЗАПРОС ОТПРАВЛЕН</div>
+            <h2 style="margin:8px 0 0 0; font-size:22px; font-weight:800;">Спецификация в работе</h2>
+            <div style="font-size:15px; color:#5A6675; line-height:1.6; margin-top:12px;">{{ sentNote }}</div>
+            <div onClick="{{ reset }}" style="display:inline-block; margin-top:18px; border:1px solid #DCE5F0; border-radius:8px; padding:11px 18px; font-size:14px; font-weight:700; color:#0A4EA7; cursor:pointer;">Отправить ещё один запрос</div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">ЗАПРОС СПЕЦИФИКАЦИИ</div>
+            <h2 style="margin:8px 0 0 0; font-size:22px; font-weight:800;">Данные объекта</h2>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr)); gap:14px; margin-top:16px;">
+              <label style="display:block;">
+                <span style="font-size:13px; font-weight:600; color:#5A6675;">Тип объекта</span>
+                <select value="{{ f.kind }}" onChange="{{ onKind }}" style="width:100%; margin-top:6px; border:1px solid #DCE5F0; border-radius:8px; padding:11px 10px; font-size:15px; background:#fff; color:#18212F;">
+                  <sc-for list="{{ kinds }}" as="k" hint-placeholder-count="4">
+                    <option value="{{ k }}">{{ k }}</option>
+                  </sc-for>
+                </select>
+              </label>
+              <label style="display:block;">
+                <span style="font-size:13px; font-weight:600; color:#5A6675;">Город</span>
+                <input value="{{ f.city }}" onInput="{{ onCity }}" placeholder="Алматы" style="width:100%; box-sizing:border-box; margin-top:6px; border:1px solid #DCE5F0; border-radius:8px; padding:11px 12px; font-size:15px;" />
+              </label>
+              <label style="display:block;">
+                <span style="font-size:13px; font-weight:600; color:#5A6675;">Площадь, м²</span>
+                <input value="{{ f.area }}" onInput="{{ onArea }}" placeholder="нет данных" style="width:100%; box-sizing:border-box; margin-top:6px; border:1px solid #DCE5F0; border-radius:8px; padding:11px 12px; font-size:15px;" />
+              </label>
+              <label style="display:block;">
+                <span style="font-size:13px; font-weight:600; color:#5A6675;">Срок запуска</span>
+                <select value="{{ f.term }}" onChange="{{ onTerm }}" style="width:100%; margin-top:6px; border:1px solid #DCE5F0; border-radius:8px; padding:11px 10px; font-size:15px; background:#fff; color:#18212F;">
+                  <sc-for list="{{ terms }}" as="t" hint-placeholder-count="3">
+                    <option value="{{ t }}">{{ t }}</option>
+                  </sc-for>
+                </select>
+              </label>
+            </div>
+
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:16px;">
+              <sc-for list="{{ needs }}" as="n" hint-placeholder-count="4">
+                <div onClick="{{ n.toggle }}" style="border:1px solid {{ n.border }}; background:{{ n.bg }}; color:{{ n.fg }}; border-radius:20px; padding:7px 14px; font-size:13px; font-weight:600; cursor:pointer;">{{ n.label }}</div>
+              </sc-for>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr)); gap:14px; margin-top:16px;">
+              <label style="display:block;">
+                <span style="font-size:13px; font-weight:600; color:#5A6675;">Кто на связи</span>
+                <input value="{{ f.name }}" onInput="{{ onName }}" placeholder="Имя" style="width:100%; box-sizing:border-box; margin-top:6px; border:1px solid #DCE5F0; border-radius:8px; padding:11px 12px; font-size:15px;" />
+              </label>
+              <label style="display:block;">
+                <span style="font-size:13px; font-weight:600; color:#5A6675;">Телефон или почта</span>
+                <input value="{{ f.contact }}" onInput="{{ onContact }}" placeholder="+7 ___ ___ __ __" style="width:100%; box-sizing:border-box; margin-top:6px; border:1px solid #DCE5F0; border-radius:8px; padding:11px 12px; font-size:15px;" />
+              </label>
+            </div>
+
+            <label style="display:block; margin-top:14px;">
+              <span style="font-size:13px; font-weight:600; color:#5A6675;">Что уже известно по объекту</span>
+              <textarea value="{{ f.note }}" onInput="{{ onNote }}" rows="3" placeholder="Есть ТЗ и планировки, нужен расчёт VRF на два этажа" style="width:100%; box-sizing:border-box; margin-top:6px; border:1px solid #DCE5F0; border-radius:8px; padding:11px 12px; font-size:15px; resize:vertical;"></textarea>
+            </label>
+
+            <div onClick="{{ submit }}" style="margin-top:18px; background:{{ submitBg }}; color:#fff; border-radius:8px; padding:15px 22px; font-size:16px; font-weight:700; text-align:center; cursor:pointer;">{{ submitLabel }}</div>
+            <div style="font-size:13px; color:#8593A6; line-height:1.6; margin-top:12px;">{{ formHint }}</div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:22px;">
+      <h2 style="margin:0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Как идёт работа по объекту</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr)); gap:16px; margin-top:18px;">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+          <div style="border-top:3px solid #0872D3; padding-top:14px;">
+            <div style="font-size:12px; font-weight:700; color:#0872D3; letter-spacing:0.08em;">{{ s.n }}</div>
+            <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700; margin-top:6px;">{{ s.title }}</div>
+            <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">{{ s.text }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px; margin-top:20px; font-size:14px; color:#2C3846; line-height:1.6;">Гарантия на оборудование — производителя, в его сертифицированных сервисных центрах. Наша ответственность — 12 месяцев на монтажные работы; на объектах с пусконаладкой в акт входит регламент обслуживания. Бригады лицензированные, каждая установка попадает в реестр Сервис-карты 369.</div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:22px;">
+      <a href="B2B и госзакупки.dc.html" style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px; display:block;">
+        <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#18212F;">Юрлицам и госзакупкам</div>
+        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Счёт, договор, отсрочка, участие в конкурсах и поставка по спецификации заказчика.</div>
+        <div style="font-size:13px; font-weight:700; color:#0872D3; margin-top:12px;">Условия для юрлиц →</div>
+      </a>
+      <a href="Услуги - монтаж, сервис, гарантия.dc.html" style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px; display:block;">
+        <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#18212F;">Монтаж и сервис</div>
+        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Трассы, автоматика, пусконаладка и регламентное обслуживание после сдачи объекта.</div>
+        <div style="font-size:13px; font-weight:700; color:#0872D3; margin-top:12px;">Что входит в работы →</div>
+      </a>
+      <a href="Полупромышленное оборудование.dc.html" style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px; display:block;">
+        <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#18212F;">Объект меньше — смотрите полупром</div>
+        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Кассетные, канальные и колонные системы на один-два зала: цена и наличие сразу в каталоге.</div>
+        <div style="font-size:13px; font-weight:700; color:#0872D3; margin-top:12px;">Полупромышленное оборудование →</div>
+      </a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultGroup&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;vrf&quot;,&quot;chillery&quot;,&quot;fankoyly&quot;,&quot;pvu&quot;],&quot;default&quot;:&quot;vrf&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Оборудование&quot;},&quot;stockOnly&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Оборудование&quot;}}">
+class Component extends DCLogic {
+  state = {
+    data: null, group: null, sub: 'Все', stock: false, spec: [], sent: false,
+    f: { kind: 'Офис / бизнес-центр', city: '', area: '', term: 'В этом сезоне', name: '', contact: '', note: '' },
+    needs: []
+  };
+
+  componentDidMount() {
+    fetch('data/proektnye.json', {cache:"no-cache"}).then(r => r.json()).then(d => {
+      this.setState({ data: d, group: this.props.defaultGroup || 'vrf' });
+    }).catch(() => this.setState({ data: { groups: [] } }));
+    if (this.props.stockOnly) this.setState({ stock: true });
+  }
+
+  g() {
+    const d = this.state.data;
+    if (!d || !d.groups) return null;
+    return d.groups.find(x => x.slug === this.state.group) || d.groups[0];
+  }
+
+  subOf(it) {
+    const s = it.sec || '';
+    if (/кассет/i.test(s)) return 'Кассетные';
+    if (/канальн/i.test(s)) return 'Канальные';
+    if (/настенн/i.test(s)) return 'Настенные';
+    if (/напольно/i.test(s)) return 'Напольно-потолочные';
+    if (/однопоточ/i.test(s)) return 'Однопоточные';
+    if (/модульн/i.test(s)) return 'Модульные';
+    if (/3-х фазные/i.test(s)) return 'Трёхфазные';
+    if (/Внешние блоки|Серия/i.test(s)) return 'Наружные блоки';
+    if (/AHRV/i.test(s)) return 'AHRV';
+    return s;
+  }
+
+  chip(active) {
+    return active
+      ? { bg: '#0872D3', fg: '#fff', border: '#0872D3' }
+      : { bg: '#fff', fg: '#2C3846', border: '#DCE5F0' };
+  }
+
+  addToSpec(it, groupName) {
+    this.setState(s => {
+      const i = s.spec.findIndex(x => x.m === it.m);
+      if (i >= 0) return { spec: s.spec.filter(x => x.m !== it.m) };
+      return { spec: [...s.spec, { m: it.m, group: groupName, qty: 1 }] };
+    });
+  }
+
+  renderVals() {
+    const d = this.state.data;
+    const groups = (d && d.groups) || [];
+    const g = this.g();
+    const all = groups.reduce((n, x) => n + x.items.length, 0);
+    const inStock = groups.reduce((n, x) => n + x.items.filter(i => i.st === 'in').length, 0);
+    const num = v => String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
+    const items = g ? g.items : [];
+    const subList = ['Все', ...Array.from(new Set(items.map(i => this.subOf(i))))];
+    const sub = subList.includes(this.state.sub) ? this.state.sub : 'Все';
+    const rows = items
+      .filter(i => sub === 'Все' || this.subOf(i) === sub)
+      .filter(i => !this.state.stock || i.st === 'in');
+
+    const stLabel = { in: 'в наличии', order: 'под заказ', wait: 'ожидаем' };
+    const stBg = { in: '#E4F6EA', order: '#FFF1DE', wait: '#EDF2F8' };
+    const stFg = { in: '#0A7A3C', order: '#8A5200', wait: '#5A6675' };
+
+    const specHas = m => this.state.spec.some(x => x.m === m);
+
+    const kindTitles = {
+      vrf: 'VRF-системы',
+      chillery: 'Чиллеры',
+      fankoyly: 'Фанкойлы',
+      pvu: 'ПВУ с рекуперацией',
+      precizionnye: 'Прецизионные кондиционеры',
+      rekuperatory: 'Рекуператоры'
+    };
+    const cnt = slug => {
+      const x = groups.find(y => y.slug === slug);
+      return x ? x.items.length : 0;
+    };
+
+    const classes = [
+      { slug: 'vrf', title: 'VRF-системы', text: 'Один наружный блок на десятки внутренних, каждое помещение со своей уставкой. Внутренние блоки разных типов в одном контуре.', when: 'Бизнес-центры, гостиницы, многоуровневые объекты, где нельзя вывести десять наружных блоков на фасад.', limit: 'Требует проекта трасс и расчёта одновременной нагрузки — не ставится «по площади».' },
+      { slug: 'chillery', title: 'Чиллеры', text: 'Холодоснабжение водой: чиллер на техэтаже или на улице, вода идёт к фанкойлам и приточным установкам.', when: 'Крупные площади, промышленные процессы, объекты с технологическим холодом.', limit: 'Нужна гидравлика: насосные группы, гидромодуль, теплоизоляция контура.' },
+      { slug: 'fankoyly', title: 'Фанкойлы', text: 'Теплообменник на воде от чиллера или котла. Кассетные, канальные, настенные исполнения.', when: 'Помещения на водяной системе — как продолжение чиллера или общей котельной.', limit: 'Сам по себе не охлаждает: нужен источник холода и обвязка.' },
+      { slug: 'pvu', title: 'ПВУ с рекуперацией', text: 'Приточно-вытяжные установки: свежий воздух с возвратом тепла вытяжки, по расходу и внешнему давлению сети.', when: 'Объекты с нормируемым воздухообменом: офисы, медицина, общепит, учебные помещения.', limit: 'Расход считается по людям и процессу, а не по метражу; нужна разводка воздуховодов.' },
+      // Пятый и шестой классы добавлены 26.08.2026: их позиции считались в сводке,
+      // а описания не было. Тексты — по фактическим данным подбора, без обобщений:
+      // прецизионные GREE JKFD 5,3–26 кВт, 220 и 380 В; рекуператоры GREE FHBQG 500–3000 м³/ч.
+      { slug: 'precizionnye', title: 'Прецизионные кондиционеры', text: 'Машины для помещений, где температуру и влажность держат в узком допуске круглый год. В подборе GREE JKFD от 5,3 до 26 кВт холода, исполнения на 220 и 380 В.', when: 'Серверные, узлы связи, лаборатории, архивы — там, где тепло выделяет оборудование, а не люди.', limit: 'Считается по тепловыделению оборудования и резервированию, а не по площади; бытовой сплит эту задачу не закрывает.' },
+      { slug: 'rekuperatory', title: 'Рекуператоры', text: 'Приточно-вытяжной агрегат без нагрева и охлаждения: забирает тепло уходящего воздуха и отдаёт приточному. В подборе GREE FHBQG на 500–3000 м³/ч.', when: 'Когда нужен воздухообмен с возвратом тепла, а холод и тепло уже дают другие системы объекта.', limit: 'Не заменяет отопление и кондиционирование: температуру приточного воздуха доводит внешний нагреватель или фанкойл.' }
+    ].map(c => ({
+      ...c,
+      count: cnt(c.slug) ? cnt(c.slug) + ' поз.' : 'нет данных',
+      pick: () => this.setState({ group: c.slug, sub: 'Все' })
+    }));
+
+    const capHeader = this.state.group === 'pvu' ? 'РАСХОД ВОЗДУХА / ДАВЛЕНИЕ' : 'МОЩНОСТЬ, КВТ';
+
+    const needsList = ['Есть проект', 'Нужен расчёт', 'Нужен монтаж', 'Нужна пусконаладка', 'Нужен сервис по регламенту'];
+
+    return {
+      // Сводка должна сходиться с итогом: 52 + 21 + 205 = 278, а в подборе 288 —
+      // прецизионные (5) и рекуператоры (5) в плитках не показывались, и разница
+      // в 10 позиций висела необъяснённой (26.08.2026).
+      // Точное число «в наличии» убрано: решение владельца 25.08.2026 — остатки
+      // на витрину не выводим, они устаревают между пересборками.
+      stats: [
+        { k: 'Позиций в подборе', v: all ? num(all) : 'нет данных' },
+        { k: 'VRF-системы', v: cnt('vrf') || 'нет данных' },
+        { k: 'Чиллеры и фанкойлы', v: (cnt('chillery') + cnt('fankoyly')) || 'нет данных' },
+        { k: 'ПВУ с рекуперацией', v: cnt('pvu') || 'нет данных' },
+        { k: 'Прецизионные и рекуператоры', v: (cnt('precizionnye') + cnt('rekuperatory')) || 'нет данных' }
+      ],
+      // 143 = 126 только здесь + 17 моделей, которые есть и в каталоге штучно. Числа из данных
+      // Хвост «остальные N считаются только под объект» пишем, ТОЛЬКО когда таких
+      // позиций правда есть. 25.08.2026 своего ассортимента под проект у нас нет —
+      // все 305 позиций подбора лежат и в каталоге, и фраза выходила «остальные 0».
+      dataNote: d && d.updated
+        ? 'Состав и наличие на ' + d.updated + '. Позиции под заказ привозим под объект.' +
+          (d.alsoInCatalog
+            ? (all === d.alsoInCatalog
+                ? ' Все ' + all + ' позиций подбора есть и в каталоге — там их можно купить штукой по цене.'
+                : ' Из ' + all + ' позиций подбора ' + d.alsoInCatalog + ' моделей есть и в каталоге — там их можно купить штукой по цене.')
+              + ((all - d.alsoInCatalog) > 0
+                 ? ' Остальные ' + (all - d.alsoInCatalog) + ' считаются только под объект.' : '')
+            : '')
+        : 'Данные загружаются',
+      classes,
+      // заголовок считается от числа карточек: раньше стояло «Четыре класса»,
+      // и любое пополнение подбора делало его неверным
+      classesTitle: ({ 2: 'Два класса', 3: 'Три класса', 4: 'Четыре класса', 5: 'Пять классов',
+        6: 'Шесть классов', 7: 'Семь классов' }[classes.length] || (classes.length + ' классов'))
+        + ' оборудования и что они решают',
+      capHeader,
+
+      tabs: groups.map(x => ({
+        label: kindTitles[x.slug] || x.name,
+        count: x.items.length,
+        pick: () => this.setState({ group: x.slug, sub: 'Все' }),
+        ...this.chip(g && x.slug === g.slug)
+      })),
+      subs: subList.map(s => ({
+        label: s.length > 34 ? s.slice(0, 32) + '…' : s,
+        pick: () => this.setState({ sub: s }),
+        ...this.chip(s === sub)
+      })),
+      toggleStock: () => this.setState(x => ({ stock: !x.stock })),
+      stockLabel: this.state.stock ? 'Только в наличии ✓' : 'Только в наличии',
+      ...(v => ({ stockBg: v.bg, stockFg: v.fg, stockBorder: v.border }))(this.chip(this.state.stock)),
+
+      rows: rows.map(i => {
+        const has = specHas(i.m);
+        return {
+          m: i.m,
+          sub: this.subOf(i),
+          cap: this.state.group === 'pvu' ? (i.air || 'нет данных') : (i.cap || 'нет данных'),
+          area: i.area ? i.area + ' м²' : '',
+          pw: i.pw || 'нет данных',
+          stLabel: stLabel[i.st] || 'нет данных',
+          stBg: stBg[i.st] || '#EDF2F8',
+          stFg: stFg[i.st] || '#5A6675',
+          add: () => this.addToSpec(i, kindTitles[this.state.group] || ''),
+          addLabel: has ? 'В спецификации' : 'В спецификацию',
+          addBg: has ? '#E6F2FD' : '#fff',
+          addFg: has ? '#0A4EA7' : '#0872D3',
+          addBorder: has ? '#0A4EA7' : '#DCE5F0'
+        };
+      }),
+      rowsNote: rows.length
+        ? 'Показано ' + rows.length + ' из ' + items.length + ' позиций группы. Технические данные приведены по документации производителя; отсутствующие поля уточняем при расчёте.'
+        : 'По этому фильтру позиций нет.',
+
+      spec: this.state.spec.map((s, idx) => ({
+        m: s.m, group: s.group, qty: s.qty,
+        onQty: e => {
+          const v = Math.max(1, parseInt(e.target.value || '1', 10));
+          this.setState(st => ({ spec: st.spec.map((x, i) => i === idx ? { ...x, qty: v } : x) }));
+        },
+        remove: () => this.setState(st => ({ spec: st.spec.filter((x, i) => i !== idx) }))
+      })),
+      specEmpty: this.state.spec.length === 0,
+      specTitle: this.state.spec.length
+        ? this.state.spec.length + ' позиц. в запросе'
+        : 'Список пока пуст',
+
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      sentNote: 'Запрос по объекту «' + (this.state.f.kind || 'нет данных') + '»' +
+        (this.state.f.city ? ', ' + this.state.f.city : '') +
+        (this.state.spec.length ? ', ' + this.state.spec.length + ' позиц. в списке' : ', состав подбираем сами') +
+        '. Инженер связывается по указанному контакту и запрашивает планировки, если их не было.',
+      reset: () => this.setState({ sent: false }),
+
+      f: this.state.f,
+      kinds: ['Офис / бизнес-центр', 'Торговый объект', 'Гостиница', 'Производство / склад', 'Медицина / лаборатория', 'Общепит', 'Жилой комплекс', 'Другое'],
+      terms: ['В этом сезоне', 'Через 1–3 месяца', 'Проект на будущий год', 'Срок не определён'],
+      needs: needsList.map(n => ({
+        label: n,
+        toggle: () => this.setState(s => ({ needs: s.needs.includes(n) ? s.needs.filter(x => x !== n) : [...s.needs, n] })),
+        ...this.chip(this.state.needs.includes(n))
+      })),
+      onKind: e => this.setField('kind', e.target.value),
+      onCity: e => this.setField('city', e.target.value),
+      onArea: e => this.setField('area', e.target.value),
+      onTerm: e => this.setField('term', e.target.value),
+      onName: e => this.setField('name', e.target.value),
+      onContact: e => this.setField('contact', e.target.value),
+      onNote: e => this.setField('note', e.target.value),
+      submit: () => { if (this.state.f.contact.trim()) this.setState({ sent: true }); },
+      submitBg: this.state.f.contact.trim() ? '#0872D3' : '#9FB0C4',
+      submitLabel: this.state.f.contact.trim() ? 'Отправить запрос' : 'Укажите телефон или почту',
+      formHint: 'Отправка не создаёт заказ и не фиксирует цену: сначала спецификация, потом счёт. Прикрепить планировки и ТЗ можно ответом на письмо инженера.',
+
+      steps: [
+        { n: 'ШАГ 1', title: 'Данные объекта', text: 'Тип, площадь, зонирование, режим работы. Если есть проект — берём его; если нет, считаем сами.' },
+        { n: 'ШАГ 2', title: 'Подбор и спецификация', text: 'Состав оборудования, схема трасс и обвязки, автоматика, перечень материалов.' },
+        { n: 'ШАГ 3', title: 'Цена по объекту', text: 'Оборудование, монтаж и пусконаладка отдельными строками. Работаем с НДС, счёт и договор.' },
+        { n: 'ШАГ 4', title: 'Поставка и монтаж', text: 'График под очерёдность работ на объекте, монтаж лицензированными бригадами.' },
+        { n: 'ШАГ 5', title: 'Пусконаладка и сервис', text: 'Запуск, настройка автоматики, обучение эксплуатации, регламентное обслуживание.' }
+      ]
+    };
+  }
+
+  setField(k, v) {
+    this.setState(s => ({ f: { ...s.f, [k]: v } }));
+  }
+}
+</script>
+</body>
+</html>
