@@ -59,12 +59,17 @@
     <div ref="{{ linkRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:18px; margin-top:22px;">
       <sc-for list="{{ works }}" as="w" hint-placeholder-count="6">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; overflow:hidden; display:flex; flex-direction:column;">
-          <div style="position:relative; height:230px; background:#F9FBFE;">
+          <div style="position:relative; height:230px; background:#F9FBFE; cursor:{{ w.curs }};" onClick="{{ w.openGal }}">
             <image-slot id="{{ w.slotId }}" shape="rect" src="{{ w.photo }}" placeholder="{{ w.slotHint }}"></image-slot>
             <div style="position:absolute; top:12px; left:12px; display:flex; gap:6px; flex-wrap:wrap; pointer-events:none;">
               <div style="background:rgba(7,28,59,0.86); color:#fff; border-radius:6px; padding:5px 9px; font-size:12px; font-weight:700; letter-spacing:0.04em;">{{ w.city }}</div>
               <div style="background:rgba(255,255,255,0.94); color:#18212F; border-radius:6px; padding:5px 9px; font-size:12px; font-weight:700;">{{ w.date }}</div>
             </div>
+            <sc-if value="{{ w.hasGal }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute; right:12px; bottom:12px; background:rgba(7,28,59,0.86); color:#fff; border-radius:6px; padding:5px 9px; font-size:12px; font-weight:700; pointer-events:none; display:flex; align-items:center; gap:6px;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="display:block;"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /><path d="M11 8v6M8 11h6" /></svg>{{ w.galN }} фото
+              </div>
+            </sc-if>
           </div>
           <div style="padding:20px; display:flex; flex-direction:column; flex:1;">
             <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">{{ w.kind }}</div>
@@ -101,6 +106,22 @@
         </div>
       </sc-for>
     </div>
+
+    <sc-if value="{{ galOpen }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ galClose }}" style="position:fixed; inset:0; background:rgba(7,16,30,0.93); z-index:1000; display:flex; align-items:center; justify-content:center; padding:16px;">
+        <img src="{{ galSrc }}" alt="{{ galTitle }}" onClick="{{ galNext }}" style="max-width:min(92vw,1400px); max-height:88vh; object-fit:contain; border-radius:8px; cursor:pointer; display:block;" />
+        <div onClick="{{ galClose }}" style="position:fixed; top:14px; right:14px; width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.14); color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:26px; line-height:1;">×</div>
+        <div style="position:fixed; bottom:18px; left:0; right:0; display:flex; align-items:center; justify-content:center; gap:16px; pointer-events:none;">
+          <div onClick="{{ galPrev }}" style="pointer-events:auto; width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.14); color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="m15 18-6-6 6-6" /></svg>
+          </div>
+          <div style="color:#fff; font-size:14px; font-weight:700; min-width:64px; text-align:center;">{{ galCount }}</div>
+          <div onClick="{{ galNext }}" style="pointer-events:auto; width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.14); color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="m9 6 6 6-6 6" /></svg>
+          </div>
+        </div>
+      </div>
+    </sc-if>
 
     <sc-if value="{{ editMode }}" hint-placeholder-val="{{ false }}">
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
@@ -144,7 +165,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  state = { filter: "Все", catalog: null };
+  state = { filter: "Все", catalog: null, gal: null };
 
   componentDidMount() {
     // связка с каталогом: ищем модель, которую ставили, по артикулу или названию
@@ -257,6 +278,11 @@ class Component extends DCLogic {
         text: "Доставка, алмазное бурение отверстий под воздуховоды, монтаж и пусконаладка настенной приточно-вытяжной установки FUNAI FUJI с рекуперацией тепла.",
         slotId: "work-4", slotHint: "Фото офисного объекта",
         photo: "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/ofis-funai-2024.jpg",
+        gallery: [
+          "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/ofis-funai-2024_2.jpg",
+          "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/ofis-funai-2024_3.jpg",
+          "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/ofis-funai-2024_4.jpg"
+        ],
         model: "ERW-150X.D",
         rows: [
           { k: "Оборудование", v: "FUNAI FUJI ERW-150X.D", color: "#18212F" },
@@ -296,9 +322,23 @@ class Component extends DCLogic {
       // Фото объекта — файл в репозитории (поле photo), а не перетаскивание:
       // сайдкар image-slot живёт только в редакторе, витрина его не читает.
       w.photo = w.photo || "";
+      // Галерея: клик по кадру открывает полноэкранный просмотр всех фото объекта
+      const g = w.gallery || [];
+      w.hasGal = g.length > 0;
+      w.galN = g.length;
+      w.curs = w.hasGal ? "zoom-in" : "default";
+      w.openGal = w.hasGal ? (() => this.setState({ gal: { list: g, i: 0, title: w.title } })) : (() => {});
       w.link = this.linkCard(w.model || "");
       w.hasLink = !!w.link.has;
     });
+
+    const gal = this.state.gal;
+    const galStep = d => e => {
+      if (e && e.stopPropagation) e.stopPropagation();
+      const cur = this.state.gal;
+      if (!cur || cur.list.length < 2) return;
+      this.setState({ gal: Object.assign({}, cur, { i: (cur.i + d + cur.list.length) % cur.list.length }) });
+    };
 
     // режим правки: владелец открывает страницу с ?edit=1 и видит заготовки и подсказки
     const edit = /(?:^|[?&])edit=1(?:&|$)/.test(location.search);
@@ -313,6 +353,13 @@ class Component extends DCLogic {
         fg: f === n ? "#0A4EA7" : "#5A6675"
       })),
       editMode: edit,
+      galOpen: !!gal,
+      galSrc: gal ? gal.list[gal.i] : "",
+      galTitle: gal ? gal.title : "",
+      galCount: gal ? (gal.i + 1) + " / " + gal.list.length : "",
+      galClose: () => this.setState({ gal: null }),
+      galPrev: galStep(-1),
+      galNext: galStep(1),
       works: all
         .filter(w => edit || !/добавим/i.test(String(w.date || "")))
         .filter(w => f === "Все" || w.kind === f)
