@@ -40,7 +40,7 @@
       + 'color:#B25200;background:#FFF1E3;border:1px solid #F3D2AC;border-radius:12px;">'
       + 'Страница не загрузилась. Мы уже знаем об этом. '
       + 'Напишите нам: <a href="https://wa.me/77000369369" style="color:#0A4EA7;font-weight:700;">WhatsApp</a> '
-      + 'или +77 000 369 369.</div>';
+      + 'или +77 000 369 369.</div>';
   }
 
   // На «/» с 14.06.2026 в head страницы Tilda висят два <style> старой Главной:
