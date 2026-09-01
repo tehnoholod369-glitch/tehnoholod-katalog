@@ -41,7 +41,7 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=e0671c84"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=1810f723"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -292,19 +292,6 @@
           </div>
         </sc-if>
 
-        <sc-if value="{{ hasGroupText }}" hint-placeholder-val="{{ true }}">
-        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px; margin-top:20px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700;">Что важно знать про эту группу</div>
-          <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">{{ groupFacts }}</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:4px;">{{ groupBrands }}</div>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:12px; margin-top:14px;">
-            <sc-for list="{{ groupTips }}" as="t" hint-placeholder-count="3">
-              <div style="background:#F3F7FB; border-radius:10px; padding:14px 16px; font-size:14px; color:#2C3846; line-height:1.55;">{{ t }}</div>
-            </sc-for>
-          </div>
-        </div>
-
-        </sc-if>
         <div style="background:#E6F2FD; border-radius:12px; padding:16px 20px; margin-top:16px; font-size:14px; color:#071C3B; line-height:1.55;">Не нашли модель? Напишите площадь помещения в WhatsApp — подберём и посчитаем с доставкой: <b>+77 000 369 369</b></div>
         <div style="font-size:13px; color:#8593A6; margin-top:14px; line-height:1.6;">{{ footNote }}</div>
       </div>
@@ -1861,22 +1848,8 @@ class Component extends DCLogic {
       crumbSub: s.sub === "all" ? "" : " → " + s.sub,
       mobNavLabel: (DIRS.find(d => d.key === curDir) || DIRS[0]).label + " → " + (txt.h1 || meta.title),
       groupHref: "/katalog?g=" + s.group,
-      // блок «Что важно знать» прячем целиком, если для группы нет текста:
-      // заголовок над пустотой выглядит как недоделка (groups.json заполняется отдельно).
-      // И прячем под ЛЮБЫМ фильтром: сводка посчитана по всей группе, а рядом с
-      // отфильтрованной выдачей читается как про неё. 26.08.2026 под брендом Samsung
-      // страница писала «приток свежего воздуха — у 13 моделей», хотя у Samsung его нет
-      // ни у одной модели: 13 — это TCL FreshIN 9, MDV NOVA 2 и Electrolux Crystal Air 2
-      // по всей группе. Пересчитать готовый текст из groups.json под фильтр нельзя,
-      // поэтому прячем, а не пересчитываем.
-      hasGroupText: !!(txt.facts || txt.brandsLine || (txt.tips && txt.tips.length))
-        && s.sub === "all" && !s.q && !s.onlyPick
-        && (this.facetKeys || []).every(k => (s[k] || "all") === "all"),
       groupTitle: txt.h1 || meta.title,
       groupSub: txt.intro || "",
-      groupFacts: txt.facts || "",
-      groupBrands: txt.brandsLine || "",
-      groupTips: txt.tips || [],
       seoTitle: txt.seo || "",
       seoMeta: txt.meta || "",
       cartLabel: (s.cartN || 0) ? "Корзина · " + s.cartN : "Корзина",
