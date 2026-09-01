@@ -56,7 +56,7 @@
       <sc-for list="{{ works }}" as="w" hint-placeholder-count="6">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; overflow:hidden; display:flex; flex-direction:column;">
           <div style="position:relative; height:230px; background:#F9FBFE;">
-            <image-slot id="{{ w.slotId }}" shape="rect" placeholder="{{ w.slotHint }}"></image-slot>
+            <image-slot id="{{ w.slotId }}" shape="rect" src="{{ w.photo }}" placeholder="{{ w.slotHint }}"></image-slot>
             <div style="position:absolute; top:12px; left:12px; display:flex; gap:6px; flex-wrap:wrap; pointer-events:none;">
               <div style="background:rgba(7,28,59,0.86); color:#fff; border-radius:6px; padding:5px 9px; font-size:12px; font-weight:700; letter-spacing:0.04em;">{{ w.city }}</div>
               <div style="background:rgba(255,255,255,0.94); color:#18212F; border-radius:6px; padding:5px 9px; font-size:12px; font-weight:700;">{{ w.date }}</div>
@@ -101,7 +101,7 @@
     <sc-if value="{{ editMode }}" hint-placeholder-val="{{ false }}">
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
       <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Как заполнить эту страницу</div>
-      <div style="font-size:15px; color:#5A6675; line-height:1.65; margin-top:10px; max-width:940px;">Перетащите фото монтажа прямо в рамку карточки — оно сохранится. К каждому объекту нужны четыре факта: город, месяц и год, что установили и площадь помещения. Пустые поля не показываются — карточка с двумя фактами выглядит законченной, а не недоделанной.</div>
+      <div style="font-size:15px; color:#5A6675; line-height:1.65; margin-top:10px; max-width:940px;">Фото объектов передайте в сессию Claude — файлами в чат или в папку «Единый источник данных\06_САЙТ_И_КОНТЕНТ\ПОРТФОЛИО_НАШИ_РАБОТЫ». Перетаскивание в рамку на этой странице фото НЕ сохраняет: после перезагрузки оно пропадает. К каждому объекту нужны четыре факта: город, месяц и год, что установили и площадь помещения. Пустые поля не показываются — карточка с двумя фактами выглядит законченной, а не недоделанной.</div>
       <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:14px;">
         <div style="font-size:14px; font-weight:700; color:#0A4EA7;">Главное — назовите модель или артикул</div>
         <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:6px;">По ней объект связывается с каталогом: под кейсом появляется карточка «Хочу такой же» с фото, ценой и наличием. Клиент из портфолио попадает сразу в покупку, а не в тупик. Ищется и по артикулу («TAC-FR09HSV/P7W»), и по названию модели («TCL FreshIN 3.0»). Если модели нет в каталоге, блок просто не покажется.</div>
@@ -288,6 +288,9 @@ class Component extends DCLogic {
     // пустые поля не показываем: карточка с двумя фактами выглядит законченной
     all.forEach(w => {
       w.rows = (w.rows || []).filter(r => r.v && r.v !== need.v);
+      // Фото объекта — файл в репозитории (поле photo), а не перетаскивание:
+      // сайдкар image-slot живёт только в редакторе, витрина его не читает.
+      w.photo = w.photo || "";
       w.link = this.linkCard(w.model || "");
       w.hasLink = !!w.link.has;
     });

@@ -50,16 +50,23 @@
   </div>
 
   <div style="max-width:820px; margin:0 auto; padding:18px 24px 72px 24px;">
-    <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <a href="/brigady">Бригады</a> → <span style="color:#18212F;">Проверка сертификата</span></div>
+    <div style="font-size:13px; color:#8593A6; display:flex; align-items:center; gap:8px;">
+      <span><a href="/">{{ t.crumbHome }}</a> → <a href="/brigady">{{ t.crumbBrigady }}</a> → <span style="color:#18212F;">{{ t.crumbHere }}</span></span>
+      
+      <span style="margin-left:auto; display:flex; gap:10px; font-weight:700;">
+        <span onClick="{{ setKz }}" style="cursor:pointer; color:{{ kzColor }};">KZ</span>
+        <span onClick="{{ setRu }}" style="cursor:pointer; color:{{ ruColor }};">RU</span>
+      </span>
+    </div>
 
     <div style="margin-top:12px;">
-      <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">Проверка сертификата</h1>
-      <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">ИП «ТехноХолод» допускает к заказам только проверенные бригады. Введите номер с бланка или из «Сервис-карты 369» — покажем, действует ли он и что подтверждает. Номер бригады выглядит как <b>369-BR-02-001</b>, именной номер мастера — <b>369-M-02-001</b>.</div>
+      <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">{{ t.h1 }}</h1>
+      <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">{{ t.intro }} <b>369-BR-02-001</b>{{ t.introMaster }} <b>369-M-02-001</b>.</div>
     </div>
 
     
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:18px 16px; margin-top:20px;">
-      <label for="th-pv-cert" style="display:block; font-size:13px; font-weight:600; color:#5A6675;">Номер сертификата</label>
+      <label for="th-pv-cert" style="display:block; font-size:13px; font-weight:600; color:#5A6675;">{{ t.fieldLabel }}</label>
       <input id="th-pv-cert" class="th-pv-inp" type="text" value="{{ cert }}" onInput="{{ onCert }}" placeholder="369-BR-02-001" autocomplete="off" spellcheck="false" style="margin-top:6px;" />
       <button type="button" class="th-pv-btn" onClick="{{ onCheck }}" disabled="{{ busy }}">{{ btnText }}</button>
     </div>
@@ -80,7 +87,7 @@
         </sc-if>
 
         <sc-if value="{{ trusted }}" hint-placeholder-val="{{ true }}">
-          <div style="display:inline-block; margin-top:14px; background:#E6F2FD; color:#0C447C; border-radius:999px; padding:6px 12px; font-size:13px; font-weight:700;">✓ Проверена ИП «ТехноХолод» перед допуском к заказам</div>
+          <div style="display:inline-block; margin-top:14px; background:#E6F2FD; color:#0C447C; border-radius:999px; padding:6px 12px; font-size:13px; font-weight:700;">{{ t.trustedBadge }}</div>
         </sc-if>
 
         <sc-if value="{{ hasHint }}" hint-placeholder-val="{{ true }}">
@@ -90,11 +97,11 @@
     </sc-if>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:18px 16px; margin-top:14px;">
-      <h2 style="margin:0 0 8px; font-size:18px; font-weight:800;">Что означает этот номер</h2>
+      <h2 style="margin:0 0 8px; font-size:18px; font-weight:800;">{{ t.aboutH2 }}</h2>
       <div style="font-size:15px; color:#5A6675; line-height:1.65;">
-        Номер получает бригада, которую мы проверили перед допуском к заказам: профессиональный инструмент и оснащение, направления и виды работ, срок её гарантии на монтаж. Сертификат — это <b>наш допуск</b>, а не лицензия и не разрешительный документ: обучение у производителя, разряд и квалификационные удостоверения он не подтверждает.<br /><br />
-        Гарантию на монтаж даёт бригада, гарантию на оборудование — производитель, а обращение принимаем мы и передаём тому, чей это случай. Рейтинг бригады складывается только из оценок клиентов по подтверждённым монтажам и публикуется после пяти оценок — <a href="/brigady">смотрите на странице бригад</a>.<br /><br />
-        Если сертификат не действует, а бригада приехала — напишите нам в <a href="https://wa.me/77000369369">WhatsApp</a> или позвоните <a href="tel:+77000369369">+77 000 369 369</a> до начала работ.
+        {{ t.aboutP1a }} <b>{{ t.aboutOurPass }}</b>{{ t.aboutP1b }}<br /><br />
+        {{ t.aboutP2a }} <a href="/brigady">{{ t.aboutP2link }}</a>.<br /><br />
+        {{ t.aboutP3a }} <a href="https://wa.me/77000369369">WhatsApp</a> {{ t.aboutP3b }} <a href="tel:+77000369369">+77 000 369 369</a> {{ t.aboutP3c }}
       </div>
     </div>
 
@@ -107,9 +114,90 @@ class Component extends DCLogic {
   // Приёмник заявок — тот же, что у страницы бригад. Второго адреса не заводим.
   PRIEMNIK = "https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec";
 
-  state = { cert: "", busy: false, res: null, err: "" };
+  state = { cert: "", busy: false, res: null, err: "", lang: "ru" };
+
+  /** Словарь интерфейса. Данные из реестра (зона, названия работ) остаются
+   *  как записаны; направления маппятся по известному списку — незнакомое
+   *  значение показывается как есть, а не переводится наугад (4П «Правдиво»).
+   *  ⚠️ Перевод сделан ассистентом 01.09.2026, вычитка носителем не проводилась. */
+  L = {
+    ru: {
+      crumbHome: "Главная", crumbBrigady: "Бригады", crumbHere: "Проверка сертификата",
+      h1: "Проверка сертификата",
+      intro: "ИП «ТехноХолод» допускает к заказам только проверенные бригады. Введите номер с бланка или из «Сервис-карты 369» — покажем, действует ли он и что подтверждает. Номер бригады выглядит как",
+      introMaster: ", именной номер мастера —",
+      fieldLabel: "Номер сертификата",
+      btn: "Проверить", btnBusy: "Проверяем…",
+      valid: "✓ Сертификат действует", invalid: "Сертификат не действует",
+      notFound: "Номер не найден", failed: "Не удалось проверить",
+      failedHint: "Связь с реестром прервалась. Повторите попытку или напишите нам в WhatsApp +77 000 369 369.",
+      notFoundHint: "Проверьте номер на бланке. Если он написан верно, напишите нам в WhatsApp +77 000 369 369 — разберёмся.",
+      trustedBadge: "✓ Проверена ИП «ТехноХолод» перед допуском к заказам",
+      who: "Кто", master: "Мастер", brigada: "Бригада",
+      fio: "Фамилия и инициалы", inBrigada: "В составе бригады",
+      city: "Город", zone: "Выезд", dirs: "Направления",
+      qual: "Квалификация", eb: "Электробезопасность", height: "Высота",
+      warranty: "Гарантия бригады на монтаж", months: " мес.",
+      since: "Работает с", issued: "Сертификат выдан",
+      checked: "Проверено", daysAgo: " дн. назад",
+      blank: "Действующий бланк", issueWord: "выпуск ", fromWord: " от ",
+      mfr: "Сертификаты производителей", shown: " · предъявлены нам ",
+      does: "Делает", meaning: "Что это значит",
+      aboutH2: "Что означает этот номер",
+      aboutP1a: "Номер получает бригада, которую мы проверили перед допуском к заказам: профессиональный инструмент и оснащение, направления и виды работ, срок её гарантии на монтаж. Сертификат — это",
+      aboutOurPass: "наш допуск",
+      aboutP1b: ", а не лицензия и не разрешительный документ: обучение у производителя, разряд и квалификационные удостоверения он не подтверждает.",
+      aboutP2a: "Гарантию на монтаж даёт бригада, гарантию на оборудование — производитель, а обращение принимаем мы и передаём тому, чей это случай. Рейтинг бригады складывается только из оценок клиентов по подтверждённым монтажам и публикуется после пяти оценок —",
+      aboutP2link: "смотрите на странице бригад",
+      aboutP3a: "Если сертификат не действует, а бригада приехала — напишите нам в",
+      aboutP3b: "или позвоните", aboutP3c: "до начала работ.",
+      dirMap: {}
+    },
+    kz: {
+      crumbHome: "Басты бет", crumbBrigady: "Бригадалар", crumbHere: "Сертификатты тексеру",
+      h1: "Сертификатты тексеру",
+      intro: "«ТехноХолод» ЖК тапсырыстарға тек тексерілген бригадаларды жібереді. Бланктегі немесе «Сервис-карта 369» ішіндегі нөмірді енгізіңіз — жарамды ма және нені растайтынын көрсетеміз. Бригада нөмірі мынадай:",
+      introMaster: ", шебердің атаулы нөмірі —",
+      fieldLabel: "Сертификат нөмірі",
+      btn: "Тексеру", btnBusy: "Тексерудеміз…",
+      valid: "✓ Сертификат жарамды", invalid: "Сертификат жарамды емес",
+      notFound: "Нөмір табылмады", failed: "Тексеру мүмкін болмады",
+      failedHint: "Тізіліммен байланыс үзілді. Қайталап көріңіз немесе WhatsApp +77 000 369 369 нөміріне жазыңыз.",
+      notFoundHint: "Бланктегі нөмірді тексеріңіз. Дұрыс жазылған болса — WhatsApp +77 000 369 369 нөміріне жазыңыз, бірге анықтаймыз.",
+      trustedBadge: "✓ Тапсырыстарға жіберер алдында «ТехноХолод» ЖК тексерген",
+      who: "Кім", master: "Шебер", brigada: "Бригада",
+      fio: "Тегі мен инициалдары", inBrigada: "Бригада құрамында",
+      city: "Қала", zone: "Шығу аймағы", dirs: "Бағыттар",
+      qual: "Біліктілік", eb: "Электр қауіпсіздігі", height: "Биіктік",
+      warranty: "Бригаданың монтажға кепілдігі", months: " ай",
+      since: "Жұмысын бастаған жылы", issued: "Сертификат берілген",
+      checked: "Тексерілген", daysAgo: " күн бұрын",
+      blank: "Қолданыстағы бланк", issueWord: "шығарылым: ", fromWord: ", ",
+      mfr: "Өндірушілер сертификаттары", shown: " · бізге ұсынылған: ",
+      does: "Атқаратын жұмыстары", meaning: "Бұл нені білдіреді",
+      aboutH2: "Бұл нөмір нені білдіреді",
+      aboutP1a: "Нөмірді тапсырыстарға жіберер алдында біз тексерген бригада алады: кәсіби құрал-жабдық, бағыттар мен жұмыс түрлері, монтажға кепілдік мерзімі. Сертификат — бұл",
+      aboutOurPass: "біздің рұқсатымыз",
+      aboutP1b: ", лицензия да, рұқсат беру құжаты да емес: өндірушіде оқығанын, разрядты және біліктілік куәліктерін растамайды.",
+      aboutP2a: "Монтажға кепілдікті бригада береді, жабдыққа кепілдікті — өндіруші, ал өтінішті біз қабылдап, тиісті тарапқа жеткіземіз. Бригада рейтингі тек расталған монтаждар бойынша клиенттердің бағаларынан құралады және бес бағадан кейін жарияланады —",
+      aboutP2link: "бригадалар бетінен қараңыз",
+      aboutP3a: "Сертификат жарамсыз болса, ал бригада келсе — жұмыс басталмас бұрын бізге",
+      aboutP3b: "арқылы жазыңыз немесе", aboutP3c: "нөміріне қоңырау шалыңыз.",
+      dirMap: { "Кондиционирование": "Кондиционерлеу", "Вентиляция": "Желдету",
+                "Отопление": "Жылыту", "Водонагрев": "Су жылыту",
+                "Водонагреватели": "Су жылытқыштар" }
+    }
+  };
 
   componentDidMount() {
+    // Язык: ?lang=kz из ссылки, иначе выбор, сохранённый на этом устройстве.
+    let язык = "ru";
+    try {
+      const p = new URLSearchParams(location.search);
+      язык = (p.get("lang") || localStorage.getItem("th_pv_lang") || "ru") === "kz" ? "kz" : "ru";
+    } catch (e) {}
+    if (язык !== "ru") this.setState({ lang: язык });
+
     // Номер приходит из QR на бланке: ?cert=369-BR-02-001. Тогда проверяем сразу,
     // не заставляя человека набирать то, что он уже поднёс камерой.
     let из_url = "";
@@ -121,6 +209,11 @@ class Component extends DCLogic {
       this.setState({ cert: this.norm(из_url) });
       this.check(this.norm(из_url));
     }
+  }
+
+  setLang(язык) {
+    this.setState({ lang: язык });
+    try { localStorage.setItem("th_pv_lang", язык); } catch (e) {}
   }
 
   /** Номер как его вводит человек. Правило одно с приёмником (нормНомер):
@@ -161,51 +254,58 @@ class Component extends DCLogic {
 
   renderVals() {
     const d = this.state.res;
+    const t = this.L[this.state.lang] || this.L.ru;
     const rows = [];
     let plash = "", plashBg = "#EEF3F9", plashFg = "#5A6675", hint = "", trusted = false;
 
     if (this.state.err) {
-      plash = "Не удалось проверить";
-      hint = "Связь с реестром прервалась. Повторите попытку или напишите нам в WhatsApp +77 000 369 369.";
+      plash = t.failed;
+      hint = t.failedHint;
     } else if (d && d.ok) {
       trusted = !!(d.valid && d.trusted);
-      if (d.valid) { plash = "✓ Сертификат действует"; plashBg = "#E8F6EC"; plashFg = "#1B6B34"; }
-      else { plash = "Сертификат не действует"; plashBg = "#FDECEA"; plashFg = "#A3251B"; }
+      if (d.valid) { plash = t.valid; plashBg = "#E8F6EC"; plashFg = "#1B6B34"; }
+      else { plash = t.invalid; plashBg = "#FDECEA"; plashFg = "#A3251B"; }
 
       const add = (k, v) => { if (v) rows.push({ k: k, v: String(v) }); };
-      add("Кто", d.type === "мастер" ? "Мастер" : "Бригада");
-      if (d.type === "мастер") { add("Фамилия и инициалы", d.fio); add("В составе бригады", d.brigada); }
-      add("Город", d.city);
-      add("Выезд", d.zone);
-      add("Направления", (d.dirLabels || []).join(", "));
-      add("Квалификация", d.qual);
-      add("Электробезопасность", d.eb);
-      add("Высота", d.height);
-      add("Гарантия бригады на монтаж", d.warranty ? (d.warranty + " мес.") : "");
-      add("Работает с", d.since);
-      add("Сертификат выдан", this.dateRu(d.issued));
-      add("Проверено", d.checked ? (this.dateRu(d.checked) + (d.checkedDays != null ? " · " + d.checkedDays + " дн. назад" : "")) : "");
-      add("Действующий бланк", d.issue ? ("выпуск " + d.issue + (d.issueDate ? " от " + this.dateRu(d.issueDate) : "")) : "");
+      const dir = (x) => t.dirMap[x] || x;
+      add(t.who, d.type === "мастер" ? t.master : t.brigada);
+      if (d.type === "мастер") { add(t.fio, d.fio); add(t.inBrigada, d.brigada); }
+      add(t.city, d.city);
+      add(t.zone, d.zone);
+      add(t.dirs, (d.dirLabels || []).map(dir).join(", "));
+      add(t.qual, d.qual);
+      add(t.eb, d.eb);
+      add(t.height, d.height);
+      add(t.warranty, d.warranty ? (d.warranty + t.months) : "");
+      add(t.since, d.since);
+      add(t.issued, this.dateRu(d.issued));
+      add(t.checked, d.checked ? (this.dateRu(d.checked) + (d.checkedDays != null ? " · " + d.checkedDays + t.daysAgo : "")) : "");
+      add(t.blank, d.issue ? (t.issueWord + d.issue + (d.issueDate ? t.fromWord + this.dateRu(d.issueDate) : "")) : "");
       // Сертификаты производителей приёмник отдаёт только после того, как мы
       // видели документы. Поэтому «предъявлены нам» — факт, а не пересказ.
-      if (d.certs && d.certs.list) add("Сертификаты производителей", d.certs.list + " · предъявлены нам " + this.dateRu(d.certs.checked));
-      add("Делает", (d.skills || []).map(s => s.title).join(", "));
+      if (d.certs && d.certs.list) add(t.mfr, d.certs.list + t.shown + this.dateRu(d.certs.checked));
+      add(t.does, (d.skills || []).map(s => s.title).join(", "));
       if (!d.valid) hint = d.status || "";
     } else if (d && !d.ok) {
-      plash = "Номер не найден";
-      hint = (d.reason || "") + ". Проверьте номер на бланке. Если он написан верно, напишите нам в WhatsApp +77 000 369 369 — разберёмся.";
+      plash = t.notFound;
+      hint = (d.reason ? d.reason + ". " : "") + t.notFoundHint;
     }
 
     return {
+      t: t,
       cert: this.state.cert,
       busy: !!this.state.busy,
-      btnText: this.state.busy ? "Проверяем…" : "Проверить",
+      btnText: this.state.busy ? t.btnBusy : t.btn,
       hasResult: !!(plash),
       shownCert: (d && d.cert) ? d.cert : this.norm(this.state.cert),
       plash: plash, plashBg: plashBg, plashFg: plashFg,
       rows: rows, hasRows: rows.length > 0,
       trusted: trusted,
       hint: hint, hasHint: !!hint,
+      kzColor: this.state.lang === "kz" ? "#0872D3" : "#8593A6",
+      ruColor: this.state.lang === "kz" ? "#8593A6" : "#0872D3",
+      setKz: () => this.setLang("kz"),
+      setRu: () => this.setLang("ru"),
       onCert: (e) => this.onCert(e),
       onCheck: () => this.onCheck()
     };
