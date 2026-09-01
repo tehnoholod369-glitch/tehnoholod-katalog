@@ -440,6 +440,21 @@ class Component extends DCLogic {
     this.setState({ sent: Object.assign({}, this.state.sent, { [cert]: true }) });
   }
 
+  /** Языки — кодами и в порядке языкового переключателя сайта: KZ RU EN
+   *  (решение владельца 01.09.2026, «как в шапке и в том же порядке»).
+   *  Редкие языки без общепринятого кода остаются словами после тройки —
+   *  выдуманный код хуже слова. Хранится по-прежнему словами: правка только
+   *  отображения, данные анкет не трогаем. */
+  langCodes(langs) {
+    const код = { "казахский": "KZ", "русский": "RU", "английский": "EN" };
+    const порядок = ["казахский", "русский", "английский"];
+    const низ = (langs || []).map(x => String(x).toLowerCase().trim());
+    const тройка = порядок.filter(l => низ.includes(l)).map(l => код[l]);
+    const прочие = (langs || []).map(x => String(x).trim()).filter(x => !(x.toLowerCase() in код))
+      .map(x => x.charAt(0).toUpperCase() + x.slice(1));
+    return тройка.concat(прочие).join(" · ");
+  }
+
   renderVals() {
     const d = this.state.data;
     const all = (d && d.brigady) || [];
@@ -507,7 +522,7 @@ class Component extends DCLogic {
           // Языки и оснащение приходят из реестра только у одобренных бригад:
           // при сертификации владелец сверил анкету (оснащение — по фото
           // инструмента) — поэтому подпись «подтверждено» здесь честная.
-          c.langs && c.langs.length ? { k: "ЯЗЫКИ", v: this.cap(c.langs.join(", ")) } : null,
+          c.langs && c.langs.length ? { k: "ЯЗЫКИ", v: this.langCodes(c.langs) } : null,
           c.osn && c.osn.length ? { k: "ОСНАЩЕНИЕ",
             v: this.cap(c.osn.join(" · ")) + " — подтверждено при сертификации" } : null,
           c.forma ? { k: "ОФОРМЛЕНИЕ",

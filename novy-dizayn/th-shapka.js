@@ -64,6 +64,7 @@
     ["https://tehnoholod369.kz/protochnyy-vodonagrevatel-almaty", "Проточные водонагреватели"],
     ["https://tehnoholod369.kz/radiatory-sekcionnye-almaty", "Секционные радиаторы отопления"],
     ["https://tehnoholod369.kz/konvektory-almaty", "Электрические конвекторы"],
+    ["https://tehnoholod369.kz/kondicioner-s-pritokom", "Кондиционеры с притоком свежего воздуха"],
   ];
   /* GEO-ПОДБОРКИ-КОНЕЦ */
 

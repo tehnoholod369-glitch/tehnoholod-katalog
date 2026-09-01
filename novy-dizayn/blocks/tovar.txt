@@ -161,6 +161,9 @@
                   <div style="font-size:14px; font-weight:600;">{{ f.v }}</div>
                   <div style="font-size:12px; color:#8593A6; margin-top:2px;">{{ f.k }}</div>
                   <div style="font-size:12px; color:#5A6675; line-height:1.45; margin-top:5px;">{{ f.hint }}</div>
+                  <sc-if value="{{ f.hasLink }}" hint-placeholder-val="{{ false }}">
+                    <a href="{{ f.href }}" style="display:inline-block; font-size:12px; font-weight:700; color:#0872D3; margin-top:6px;">{{ f.link }}</a>
+                  </sc-if>
                 </div>
               </sc-for>
             </div>
@@ -197,7 +200,7 @@
                 </div>
               </sc-for>
             </div>
-            <div style="font-size:13px; color:#8593A6; margin-top:14px; line-height:1.6;">Характеристики — по данным производителя. Если параметра нет в документации, мы его не указываем.</div>
+            <div style="font-size:13px; color:#8593A6; margin-top:14px; line-height:1.6;">{{ specsNote }}</div>
           </sc-if>
 
           <sc-if value="{{ isDesc }}" hint-placeholder-val="{{ false }}">
@@ -823,6 +826,21 @@ class Component extends DCLogic {
     } catch (e) { /* SEO-обвязка не должна ронять карточку */ }
   }
 
+  /** Языки — кодами и в порядке языкового переключателя сайта: KZ RU EN
+   *  (решение владельца 01.09.2026, «как в шапке и в том же порядке»).
+   *  Редкие языки без общепринятого кода остаются словами после тройки —
+   *  выдуманный код хуже слова. Хранится по-прежнему словами: правка только
+   *  отображения, данные анкет не трогаем. */
+  langCodes(langs) {
+    const код = { "казахский": "KZ", "русский": "RU", "английский": "EN" };
+    const порядок = ["казахский", "русский", "английский"];
+    const низ = (langs || []).map(x => String(x).toLowerCase().trim());
+    const тройка = порядок.filter(l => низ.includes(l)).map(l => код[l]);
+    const прочие = (langs || []).map(x => String(x).trim()).filter(x => !(x.toLowerCase() in код))
+      .map(x => x.charAt(0).toUpperCase() + x.slice(1));
+    return тройка.concat(прочие).join(" · ");
+  }
+
   renderVals() {
     const s = this.state;
     // названия групп берём из данных: захардкоженный список не знал о новых группах
@@ -865,7 +883,11 @@ class Component extends DCLogic {
     };
     // одна карта на группу — и вкладка, и плашка у цены, и блок гарантии бригады.
     // Нет группы в карте: блок не показываем, чужой текст не подставляем.
-    const m = MOUNT[s.group] || null;
+    // Карта заведена по ГРУППЕ, а сопутствующий товар живёт в группе оборудования:
+    // сменному фильтру она отдавала «Монтаж 1–3 дня» и вкладку про вакуумирование
+    // контура. Расходник не монтируется — карты у него нет вовсе (01.09.2026).
+    const _прежде = (s.items || [])[s.idx];
+    const m = (_прежде && _прежде.acc) ? null : (MOUNT[s.group] || null);
     const items = s.items || [];
     const cartN = s.cartN || (window.CART ? window.CART.count() : 0);
     const it = items[s.idx];
@@ -876,6 +898,9 @@ class Component extends DCLogic {
     }
 
     // корзина общая для всех страниц: состояние читаем из неё, а не держим своё
+    // «БЕЗ МАРКИ» — канон для товара без торговой марки (свой импорт). Ни производителя
+    // с документацией, ни сервисных центров у него нет: тексты про них — пустое обещание.
+    const _безМарки = !it.b || /^без\s*марки$/i.test(String(it.b).trim());
     const inCart = !!(window.CART && it.sl && window.CART.has(it.sl));
 
     const ACC_ONLY_FOR = [[/дымоход|коаксиальн|для колонок|газов/i, /газов|колонк/i],
@@ -951,7 +976,16 @@ class Component extends DCLogic {
       .map(re => (it.sp || []).find(row => re.test(String(row[0]).trim()) && String(row[1] || "").trim()))
       .filter(row => row && !seenFact[row[0]] && (seenFact[row[0]] = 1))
       .filter(row => !/^нет$|^-$/i.test(String(row[1]).trim()))
-      .map(row => ({ k: row[0], v: row[1], hint: hintFor(row[0], row[1]) }))
+      .map(row => {
+        const f = { k: row[0], v: row[1], hint: hintFor(row[0], row[1]) };
+        // у притока есть своя посадочная — с плашки можно уйти на подборку таких моделей
+        if (/приток/i.test(String(row[0])) && /^да$/i.test(String(row[1]).trim())) {
+          f.href = "https://tehnoholod369.kz/kondicioner-s-pritokom";
+          f.link = "Все модели с притоком →";
+        }
+        f.hasLink = !!f.href;
+        return f;
+      })
       // без пояснения плашка дублирует пилюлю выше — оставляем только те, что объясняют
       .filter(f => f.hint)
       .slice(0, 4);
@@ -1116,7 +1150,7 @@ class Component extends DCLogic {
       priceNote: it.pt ? "цена с НДС" : "считаем по запросу",
       hasInstallment: !!monthlyBase,
       installment: monthlyBase ? "Рассрочка 12 мес — " + this.fmt(monthlyBase / 12) + " ₸/мес · Kaspi, ForteBank, Halyk" : "",
-      mountNote: m ? m.note : "Монтаж и подключение обсуждаем при заказе.",
+      mountNote: m ? m.note : (it.acc ? "" : "Монтаж и подключение обсуждаем при заказе."),
       // сопутствующие: аксессуары и комплектующие своей группы, сначала того же бренда.
       // Совместимость по данным не подтверждена — так и написано в подписи, не обещаем.
       hasAcc: accList.length > 0,
@@ -1260,7 +1294,7 @@ class Component extends DCLogic {
           b.el ? { v: "Электрика: допуск " + b.el.gr + " группы"
                       + (b.el.v ? ", " + b.el.v : "") } : null,
           b.since ? { v: "В сети с " + b.since + " года" } : null,
-          (b.langs || []).length ? { v: "Языки: " + b.langs.join(", ") } : null,
+          (b.langs || []).length ? { v: "Языки: " + this.langCodes(b.langs) } : null,
           (b.osn || []).length ? { v: "Оснащение: " + b.osn.join(" · ") } : null
         ].filter(Boolean);
         const ot = showPrices ? (b.ot || null) : null;
@@ -1308,9 +1342,16 @@ class Component extends DCLogic {
       warrantyText: wLabel ? wVal : "Срок уточняется",
       warrantyTitle: wKey || "Гарантия на оборудование",
       // в строке над характеристиками — гарантия производителя, а не наша карта на монтаж
-      warrantyStrip: (wLabel ? wKey + " " + wVal : "Гарантия производителя")
-        + " — сервисные центры " + (it.b || "бренда"),
-      serviceNote: "Обслуживание в сервисных центрах, сертифицированных на работу с оборудованием " + (it.b || "этого бренда")
+      specsNote: _безМарки
+        ? "Характеристики — по нашим данным. Чего нет, того не указываем."
+        : "Характеристики — по данным производителя. Если параметра нет в документации, мы его не указываем.",
+      warrantyStrip: _безМарки ? "Гарантия и обмен — через нас"
+        : ((wLabel ? wKey + " " + wVal : "Гарантия производителя")
+           + " — сервисные центры " + (it.b || "бренда")),
+      serviceNote: _безМарки
+        ? "Это товар нашего импорта: марки и сервисных центров производителя у него нет, "
+          + "гарантию и обмен ведём мы напрямую."
+        : "Обслуживание в сервисных центрах, сертифицированных на работу с оборудованием " + (it.b || "этого бренда")
         + ": так сохраняется гарантия производителя. Выезд сертифицированной бригады по Алматы и области.",
       // ссылка на инструкцию и обзор приходит из данных, если она там есть
       hasVideo: !!det.vd,

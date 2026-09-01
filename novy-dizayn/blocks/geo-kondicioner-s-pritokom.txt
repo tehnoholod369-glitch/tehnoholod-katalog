@@ -1,0 +1,119 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo-rev{background:#f4f9ff;border:1px solid #cfe3f7;border-radius:12px;padding:14px 16px;margin:14px 0}
+.thgeo-rev__t{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0a4ea7}
+.thgeo-rev__q{font-size:16px;line-height:1.55;margin-top:6px}
+.thgeo-rev__a{font-size:13px;color:#5a6b80;margin-top:8px}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+.thgeo-also{margin-top:26px}
+.thgeo-also p{font-size:14px;line-height:2;color:#5a6676}
+</style>
+<div class="thgeo">
+<h1>Кондиционеры с притоком свежего воздуха в Алматы</h1>
+<p>Обычный сплит гоняет по кругу комнатный воздух. Приточный — берёт часть
+воздуха с улицы через собственный канал: можно не открывать окно, чтобы
+проветрить. В таблице — модели, у которых приток есть у самой модели,
+в наличии в Алматы, цены от <span class="thgeo-pmin" data-min-art="MDSAH-09HRFN8">310 000</span> ₸.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog?g=bytovye">Весь каталог</a>
+<a class="tg2" href="https://podbor.tehnoholod369.kz/">Подобрать по площади</a>
+</div>
+<h2>Модели с притоком в наличии</h2>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsah-09hrfn8">NOVA 3-IN-1 MDSAH-09HRFN8 / MDOAH-09HFN8</a></td><td>MDV</td><td>30 м²</td><td class="thgeo-p" data-art="MDSAH-09HRFN8">310 000 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr09hsv-p7w">FreshIN 3.0 (белый) TAC-FR09HSV/P7W</a></td><td>TCL</td><td>25 м²</td><td class="thgeo-p" data-art="TAC-FR09HSV/P7W">323 942 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsah-12hrfn8">NOVA 3-IN-1 MDSAH-12HRFN8 / MDOAH-12HFN8</a></td><td>MDV</td><td>35 м²</td><td class="thgeo-p" data-art="MDSAH-12HRFN8">331 250 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr12inv-r3">FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3</a></td><td>TCL</td><td>35 м²</td><td class="thgeo-p" data-art="TAC-FR12INV/R3">340 766 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr12hsv-p7w">FreshIN 3.0 (белый) TAC-FR12HSV/P7W</a></td><td>TCL</td><td>35 м²</td><td class="thgeo-p" data-art="TAC-FR12HSV/P7W">340 992 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr09hsv-p7s">FreshIN 3.0 (серебро) TAC-FR09HSV/P7S</a></td><td>TCL</td><td>25 м²</td><td class="thgeo-p" data-art="TAC-FR09HSV/P7S">340 992 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr10hsv-p7b">FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B</a></td><td>TCL</td><td>28 м²</td><td class="thgeo-p" data-art="TAC-FR10HSV/P7B">340 992 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr12hsv-p7s">FreshIN 3.0 (серебро) TAC-FR12HSV/P7S</a></td><td>TCL</td><td>35 м²</td><td class="thgeo-p" data-art="TAC-FR12HSV/P7S">375 092 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr13hsv-p7b">FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B</a></td><td>TCL</td><td>38 м²</td><td class="thgeo-p" data-art="TAC-FR13HSV/P7B">383 617 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr18hsv-p7w">FreshIN 3.0 (белый) TAC-FR18HSV/P7W</a></td><td>TCL</td><td>50 м²</td><td class="thgeo-p" data-art="TAC-FR18HSV/P7W">392 142 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr18hsv-p7s">FreshIN 3.0 (серебро) TAC-FR18HSV/P7S</a></td><td>TCL</td><td>50 м²</td><td class="thgeo-p" data-art="TAC-FR18HSV/P7S">409 192 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=electrolux-eacs-i-10hfa-n8-v2">Crystal Air Super DC EACS/I-10HFA/N8_V2</a></td><td>Electrolux</td><td>28 м²</td><td class="thgeo-p" data-art="EACS/I-10HFA/N8_V2">425 615 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr18hsv-p7b">FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B</a></td><td>TCL</td><td>50 м²</td><td class="thgeo-p" data-art="TAC-FR18HSV/P7B">426 242 ₸</td></tr>
+<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=electrolux-eacs-i-13hfa-n8-v2">Crystal Air Super DC EACS/I-13HFA/N8_V2</a></td><td>Electrolux</td><td>38 м²</td><td class="thgeo-p" data-art="EACS/I-13HFA/N8_V2">467 802 ₸</td></tr>
+</tbody>
+</table>
+</div>
+<div class="thgeo-rev"><div class="thgeo-rev__t">Отзыв покупателя</div><div class="thgeo-rev__q">«Он шикарен. С установкой помучались, но работает на все 100%. Подключение удалено и голосовое+ можно также через Алису подключить.»</div><div class="thgeo-rev__a">★★★★★ Алёна · 01.08.2026 — о модели FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3. Всего отзывов на Kaspi.kz: 13, средняя оценка 4.9.</div></div>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">01.09.2026</span>; цены на странице обновляются автоматически. Полный список — в <a href="https://tehnoholod369.kz/katalog?g=bytovye">каталоге</a>.</p>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Что такое приток и чем он не является</h2>
+<p>Приточный кондиционер подмешивает уличный воздух через отдельный воздуховод
+в трассе — у TCL FreshIN есть и режим Fresh Air: вентиляция без охлаждения.
+Полноценную приточную установку он не заменяет: объём подмеса ограничен,
+это дополнение к проветриванию, а не система вентиляции на весь дом.
+Когда нужен именно объём — смотрите <a href="https://tehnoholod369.kz/pritochnaya-ustanovka-almaty">
+приточные установки</a>.</p>
+<h2>Что уточнить до покупки</h2>
+<p>Уровень шума в режиме притока — приточный вентилятор слышно сильнее
+обычного минимального хода; диаметр отверстия в стене — трасса с воздуховодом
+толще стандартной; и обслуживание фильтров приточного канала. Это вопросы
+монтажа, и их лучше решить до бурения, а не после.</p>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
+производителя, срок в паспорте изделия; гарантия на монтаж — бригады, срок в её карточке
+и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад,
+напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
+возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Сколько стоит кондиционер с притоком свежего воздуха в Алматы?</summary><p>Цена зависит от мощности и оснащения; приток — функция старших серий, они дороже базовых. В наличии 14 таких моделей, цены от 310 000 ₸. Например: NOVA 3-IN-1 MDSAH-09HRFN8 / MDOAH-09HFN8 — 310 000 ₸; FreshIN 3.0 (белый) TAC-FR09HSV/P7W — 323 942 ₸; NOVA 3-IN-1 MDSAH-12HRFN8 / MDOAH-12HFN8 — 331 250 ₸.</p></details>
+<details class="thgeo-faq"><summary>Что влияет на выбор кроме этого параметра?</summary><p>Площадь помещения, нужен ли приток постоянно или как дополнение к проветриванию, уровень шума в режиме притока и толщина трассы с воздуховодом.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
+<details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+<nav class="thgeo-also" aria-label="Другие подборки"><h2>Другие подборки</h2><p><a href="https://tehnoholod369.kz/kondicionery-almaty">Кондиционеры</a> · <a href="https://tehnoholod369.kz/ventilyaciya">Вентиляция</a> · <a href="https://tehnoholod369.kz/vodonagrevateli">Водонагреватели</a> · <a href="https://tehnoholod369.kz/poluprom">Полупромышленные кондиционеры</a> · <a href="https://tehnoholod369.kz/multisplit">Мульти-сплит системы</a> · <a href="https://tehnoholod369.kz/otoplenie">Отопление и обогреватели</a> · <a href="https://tehnoholod369.kz/teplovye-zavesy-almaty">Тепловые завесы</a> · <a href="https://tehnoholod369.kz/teplovye-pushki-almaty">Тепловые пушки</a> · <a href="https://tehnoholod369.kz/radiatory-otopleniya-almaty">Радиаторы отопления</a> · <a href="https://tehnoholod369.kz/mobilnye-kondicionery-almaty">Мобильные кондиционеры</a> · <a href="https://tehnoholod369.kz/osushiteli-vozduha-almaty">Осушители воздуха</a> · <a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">Кондиционер на комнату 25 м²</a> · <a href="https://tehnoholod369.kz/kondicioner-do-200000">Кондиционер до 200 000 ₸</a> · <a href="https://tehnoholod369.kz/tihiy-kondicioner">Тихий кондиционер для спальни</a> · <a href="https://tehnoholod369.kz/kondicioner-obogrev-zimoy">Кондиционер для обогрева зимой</a></p></nav>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Кондиционеры с притоком свежего воздуха в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "MDV NOVA 3-IN-1 MDSAH-09HRFN8 / MDOAH-09HFN8", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=mdv-mdsah-09hrfn8"}, {"@type": "ListItem", "position": 2, "name": "TCL FreshIN 3.0 (белый) TAC-FR09HSV/P7W", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=tcl-tac-fr09hsv-p7w"}, {"@type": "ListItem", "position": 3, "name": "MDV NOVA 3-IN-1 MDSAH-12HRFN8 / MDOAH-12HFN8", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=mdv-mdsah-12hrfn8"}, {"@type": "ListItem", "position": 4, "name": "TCL FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=tcl-tac-fr12inv-r3"}, {"@type": "ListItem", "position": 5, "name": "TCL FreshIN 3.0 (белый) TAC-FR12HSV/P7W", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=tcl-tac-fr12hsv-p7w"}, {"@type": "ListItem", "position": 6, "name": "TCL FreshIN 3.0 (серебро) TAC-FR09HSV/P7S", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=tcl-tac-fr09hsv-p7s"}, {"@type": "ListItem", "position": 7, "name": "TCL FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=tcl-tac-fr10hsv-p7b"}, {"@type": "ListItem", "position": 8, "name": "TCL FreshIN 3.0 (серебро) TAC-FR12HSV/P7S", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=tcl-tac-fr12hsv-p7s"}, {"@type": "ListItem", "position": 9, "name": "TCL FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=tcl-tac-fr13hsv-p7b"}, {"@type": "ListItem", "position": 10, "name": "TCL FreshIN 3.0 (белый) TAC-FR18HSV/P7W", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=tcl-tac-fr18hsv-p7w"}, {"@type": "ListItem", "position": 11, "name": "TCL FreshIN 3.0 (серебро) TAC-FR18HSV/P7S", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=tcl-tac-fr18hsv-p7s"}, {"@type": "ListItem", "position": 12, "name": "Electrolux Crystal Air Super DC EACS/I-10HFA/N8_V2", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=electrolux-eacs-i-10hfa-n8-v2"}, {"@type": "ListItem", "position": 13, "name": "TCL FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=tcl-tac-fr18hsv-p7b"}, {"@type": "ListItem", "position": 14, "name": "Electrolux Crystal Air Super DC EACS/I-13HFA/N8_V2", "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=electrolux-eacs-i-13hfa-n8-v2"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит кондиционер с притоком свежего воздуха в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "Цена зависит от мощности и оснащения; приток — функция старших серий, они дороже базовых. В наличии 14 таких моделей, цены от 310 000 ₸. Например: NOVA 3-IN-1 MDSAH-09HRFN8 / MDOAH-09HFN8 — 310 000 ₸; FreshIN 3.0 (белый) TAC-FR09HSV/P7W — 323 942 ₸; NOVA 3-IN-1 MDSAH-12HRFN8 / MDOAH-12HFN8 — 331 250 ₸."}}, {"@type": "Question", "name": "Что влияет на выбор кроме этого параметра?", "acceptedAnswer": {"@type": "Answer", "text": "Площадь помещения, нужен ли приток постоянно или как дополнение к проветриванию, уровень шума в режиме притока и толщина трассы с воздуховодом."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json"];
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
+  })).then(function(all){
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    // «Цены от …» в абзаце — цена КОНКРЕТНОЙ модели, самой доступной из тех,
+    // что подходят под фильтр страницы. Минимум по всей группе сюда брать нельзя:
+    // на «кондиционер на 25 м²» он подставил бы модель на 7 000 BTU, которая
+    // эти 25 м² не закрывает, — страница обещала бы не то (31.08.2026).
+    document.querySelectorAll(".thgeo-pmin").forEach(function(el){
+      var a=el.getAttribute("data-min-art"), x=a?by[a]:null, v=(x&&x.p)?x.p:null;
+      if(v===null){
+        [].forEach.call(document.querySelectorAll(".thgeo-p"),function(td){
+          var y=by[td.getAttribute("data-art")];
+          if(y&&y.p&&(v===null||y.p<v))v=y.p;
+        });
+      }
+      if(v)el.textContent=v.toLocaleString("ru-RU").replace(/ /g," ");
+    });
+  });
+})();
+</script>
