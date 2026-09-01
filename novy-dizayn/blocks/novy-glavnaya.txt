@@ -108,6 +108,8 @@
           </sc-for>
         </div>
         <div style="font-size:13px; color:#9FBCD8; line-height:1.5; margin-top:10px;">{{ proektNote }}</div>
+        
+        <div style="font-size:12px; color:#7F9CBE; line-height:1.5; margin-top:14px;">Сайт работает в тестовом режиме и продолжает наполняться. Не нашли нужное или заметили неточность — напишите в <a href="https://wa.me/77000369369" style="color:#9FC4EA; text-decoration:underline;">WhatsApp</a>, поможем и поправим.</div>
       </div>
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:16px;">
