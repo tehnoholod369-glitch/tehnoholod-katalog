@@ -263,6 +263,14 @@
                   <input type="text" placeholder="Как вас зовут" value="{{ c.formName }}" onInput="{{ c.onName }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#18212F; outline:none; margin-top:10px; background:#fff;" />
                   <input type="text" placeholder="Номер Сервис-карты 369 (если есть) — 369-…" value="{{ c.formCard }}" onInput="{{ c.onCard }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#18212F; outline:none; margin-top:8px; background:#fff;" />
                   <textarea placeholder="Что делали, как приехали, что понравилось и что нет" value="{{ c.formText }}" onInput="{{ c.onText }}" rows="3" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#18212F; outline:none; margin-top:8px; resize:vertical; background:#fff;"></textarea>
+                  
+                  <div style="font-size:13px; font-weight:700; margin-top:12px;">Оцените и купленную технику — по желанию</div>
+                  <div style="display:flex; gap:7px; flex-wrap:wrap; margin-top:8px;">
+                    <sc-for list="{{ c.tovarButtons }}" as="s" hint-placeholder-count="5">
+                      <div onClick="{{ s.pick }}" style="border:1px solid {{ s.border }}; background:{{ s.bg }}; color:{{ s.fg }}; border-radius:8px; padding:8px 14px; font-size:14px; font-weight:700; cursor:pointer;">{{ s.label }}</div>
+                    </sc-for>
+                  </div>
+                  <input type="text" placeholder="Пара слов о технике — по желанию" value="{{ c.formTovarText }}" onInput="{{ c.onTovarText }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#18212F; outline:none; margin-top:8px; background:#fff;" />
                   <div onClick="{{ c.send }}" style="background:{{ c.sendBg }}; color:#fff; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700; margin-top:10px; cursor:{{ c.sendCursor }};">{{ c.sendLabel }}</div>
                 </sc-if>
               </div>
@@ -407,7 +415,7 @@ class Component extends DCLogic {
     if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return "монтажа";
     return "монтажей"; }
 
-  form(cert) { return this.state.form[cert] || { score: 0, name: "", card: "", text: "" }; }
+  form(cert) { return this.state.form[cert] || { score: 0, name: "", card: "", text: "", tovar: 0, tovarText: "" }; }
 
   setForm(cert, patch) {
     this.setState({ form: Object.assign({}, this.state.form,
@@ -422,6 +430,7 @@ class Component extends DCLogic {
     const body = new URLSearchParams({
       kind: "review", brigada: cert, score: String(f.score),
       name: f.name.trim(), text: f.text.trim(), karta: f.card.trim(),
+      scoreTovar: f.tovar ? String(f.tovar) : "", textTovar: (f.tovarText || "").trim(),
       src: (document.referrer || "").slice(0, 180) || "direct",
       ses: (() => { try { let s = sessionStorage.getItem("th_ses");
         if (!s) { s = Math.random().toString(36).slice(2, 10); sessionStorage.setItem("th_ses", s); }
@@ -609,6 +618,17 @@ class Component extends DCLogic {
             fg:     f.score === n ? "#fff"    : "#2C3846",
             border: f.score === n ? "#0872D3" : "#DCE5F0"
           })),
+          formTovarText: f.tovarText || "",
+          tovarButtons: [1, 2, 3, 4, 5].map(n => ({
+            label: "★ " + n,
+            // Повторный клик снимает оценку: поле необязательное, и передумать
+            // можно без перезагрузки.
+            pick: () => this.setForm(c.cert, { tovar: f.tovar === n ? 0 : n }),
+            bg:     f.tovar === n ? "#0872D3" : "#fff",
+            fg:     f.tovar === n ? "#fff"    : "#2C3846",
+            border: f.tovar === n ? "#0872D3" : "#DCE5F0"
+          })),
+          onTovarText: e => this.setForm(c.cert, { tovarText: e.target.value }),
           onName: e => this.setForm(c.cert, { name: e.target.value }),
           onCard: e => this.setForm(c.cert, { card: e.target.value }),
           onText: e => this.setForm(c.cert, { text: e.target.value }),
