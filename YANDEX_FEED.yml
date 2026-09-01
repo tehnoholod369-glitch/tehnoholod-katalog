@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<yml_catalog date="2026-09-01 12:04">
+<yml_catalog date="2026-09-01 12:14">
   <shop>
     <name>ТехноХолод</name>
     <company>ИП «ТехноХолод»</company>
@@ -30515,7 +30515,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-bianco-traffico-18-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower Bianco Traffico — 18 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower Bianco Traffico — 18 секц.</name>
         <description>Секционный радиатор PianoForte Tower Bianco Traffico, 18 секц.</description>
       </offer>
       <offer id="PianoForte Tower Noir Sable — 18 секц." available="true">
@@ -30526,7 +30526,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-noir-sable-18-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower Noir Sable — 18 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower Noir Sable — 18 секц.</name>
         <description>Секционный радиатор PianoForte Tower Noir Sable, 18 секц.</description>
       </offer>
       <offer id="PianoForte Tower Silver Satin — 18 секц." available="true">
@@ -30537,7 +30537,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-silver-satin-18-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower Silver Satin — 18 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower Silver Satin — 18 секц.</name>
         <description>Секционный радиатор PianoForte Tower Silver Satin, 18 секц.</description>
       </offer>
       <offer id="PianoForte Tower Bianco Traffico — 22 секц." available="true">
@@ -30548,7 +30548,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-bianco-traffico-22-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower Bianco Traffico — 22 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower Bianco Traffico — 22 секц.</name>
         <description>Секционный радиатор PianoForte Tower Bianco Traffico, 22 секц.</description>
       </offer>
       <offer id="PianoForte Tower Noir Sable — 22 секц." available="true">
@@ -30559,7 +30559,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-noir-sable-22-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower Noir Sable — 22 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower Noir Sable — 22 секц.</name>
         <description>Секционный радиатор PianoForte Tower Noir Sable, 22 секц.</description>
       </offer>
       <offer id="PianoForte Tower Silver Satin — 22 секц." available="true">
@@ -30570,7 +30570,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-silver-satin-22-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower Silver Satin — 22 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower Silver Satin — 22 секц.</name>
         <description>Секционный радиатор PianoForte Tower Silver Satin, 22 секц.</description>
       </offer>
       <offer id="PianoForte Tower 300 /Bianco Traffico — 18 секц." available="true">
@@ -30581,7 +30581,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-300-bianco-traffico-18-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower 300 /Bianco Traffico — 18 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower 300 /Bianco Traffico — 18 секц.</name>
         <description>Секционный радиатор PianoForte Tower 300 /Bianco Traffico, 18 секц.</description>
       </offer>
       <offer id="PianoForte Tower 300 /Noir Sable — 18 секц." available="true">
@@ -30592,7 +30592,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-300-noir-sable-18-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower 300 /Noir Sable — 18 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower 300 /Noir Sable — 18 секц.</name>
         <description>Секционный радиатор PianoForte Tower 300 /Noir Sable, 18 секц.</description>
       </offer>
       <offer id="PianoForte Tower 300 /Silver Satin — 18 секц." available="false">
@@ -30603,7 +30603,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-300-silver-satin-18-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower 300 /Silver Satin — 18 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower 300 /Silver Satin — 18 секц.</name>
         <description>Секционный радиатор PianoForte Tower 300 /Silver Satin, 18 секц.</description>
       </offer>
       <offer id="PianoForte Tower 300 /Bianco Traffico — 22 секц." available="true">
@@ -30614,7 +30614,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-300-bianco-traffico-22-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower 300 /Bianco Traffico — 22 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower 300 /Bianco Traffico — 22 секц.</name>
         <description>Секционный радиатор PianoForte Tower 300 /Bianco Traffico, 22 секц.</description>
       </offer>
       <offer id="PianoForte Tower 300 /Noir Sable — 22 секц." available="true">
@@ -30625,7 +30625,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-300-noir-sable-22-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower 300 /Noir Sable — 22 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower 300 /Noir Sable — 22 секц.</name>
         <description>Секционный радиатор PianoForte Tower 300 /Noir Sable, 22 секц.</description>
       </offer>
       <offer id="PianoForte Tower 300 /Silver Satin — 22 секц." available="false">
@@ -30636,7 +30636,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-300-silver-satin-22-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower 300 /Silver Satin — 22 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower 300 /Silver Satin — 22 секц.</name>
         <description>Секционный радиатор PianoForte Tower 300 /Silver Satin, 22 секц.</description>
       </offer>
       <offer id="PianoForte Tower 200 /Bianco Traffico — 18 секц." available="true">
@@ -30647,7 +30647,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-200-bianco-traffico-18-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower 200 /Bianco Traffico — 18 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower 200 /Bianco Traffico — 18 секц.</name>
         <description>Секционный радиатор PianoForte Tower 200 /Bianco Traffico, 18 секц.</description>
       </offer>
       <offer id="PianoForte Tower 200 /Noir Sable — 18 секц." available="true">
@@ -30658,7 +30658,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-200-noir-sable-18-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower 200 /Noir Sable — 18 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower 200 /Noir Sable — 18 секц.</name>
         <description>Секционный радиатор PianoForte Tower 200 /Noir Sable, 18 секц.</description>
       </offer>
       <offer id="PianoForte Tower 200 /Silver Satin — 18 секц." available="true">
@@ -30669,7 +30669,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-200-silver-satin-18-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower 200 /Silver Satin — 18 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower 200 /Silver Satin — 18 секц.</name>
         <description>Секционный радиатор PianoForte Tower 200 /Silver Satin, 18 секц.</description>
       </offer>
       <offer id="PianoForte Tower 200 /Bianco Traffico — 22 секц." available="true">
@@ -30680,7 +30680,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-200-bianco-traffico-22-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower 200 /Bianco Traffico — 22 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower 200 /Bianco Traffico — 22 секц.</name>
         <description>Секционный радиатор PianoForte Tower 200 /Bianco Traffico, 22 секц.</description>
       </offer>
       <offer id="PianoForte Tower 200 /Noir Sable — 22 секц." available="true">
@@ -30691,7 +30691,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-200-noir-sable-22-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower 200 /Noir Sable — 22 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower 200 /Noir Sable — 22 секц.</name>
         <description>Секционный радиатор PianoForte Tower 200 /Noir Sable, 22 секц.</description>
       </offer>
       <offer id="PianoForte Tower 200 /Silver Satin — 22 секц." available="true">
@@ -30702,7 +30702,7 @@
         <picture>https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-200-silver-satin-22-sekc.jpg</picture>
         <vendor>Royal Thermo</vendor>
         <vendorCode>PianoForte Tower 200 /Silver Satin — 22 секц.</vendorCode>
-        <name>Радиатор INFINITY 300 /Silver Satin</name>
+        <name>Радиатор PianoForte Tower 200 /Silver Satin — 22 секц.</name>
         <description>Секционный радиатор PianoForte Tower 200 /Silver Satin, 22 секц.</description>
       </offer>
       <offer id="Shift R 22.2 боковое H1800 4секц белый" available="false">
