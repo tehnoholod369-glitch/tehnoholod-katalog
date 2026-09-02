@@ -162,11 +162,34 @@
             </div>
           </div>
 
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-top:16px;">
-            <sc-for list="{{ c.facts }}" as="f" hint-placeholder-count="3">
+          
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; align-items:start; margin-top:16px;">
+            <sc-for list="{{ c.factsShort }}" as="f" hint-placeholder-count="4">
               <div style="background:#F3F7FB; border-radius:10px; padding:11px 13px;">
                 <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ f.k }}</div>
                 <div style="font-size:14px; color:#18212F; line-height:1.45; margin-top:3px;">{{ f.v }}</div>
+              </div>
+            </sc-for>
+          </div>
+
+          
+          <div style="display:grid; grid-template-columns:1fr; gap:10px; margin-top:10px;">
+            <sc-for list="{{ c.factsWide }}" as="f" hint-placeholder-count="2">
+              <div style="background:#F3F7FB; border-radius:10px; padding:12px 14px;">
+                <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ f.k }}</div>
+                <sc-if value="{{ f.hasV }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-size:14px; color:#18212F; line-height:1.5; margin-top:4px;">{{ f.v }}</div>
+                </sc-if>
+                <sc-if value="{{ f.hasItems }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;">
+                    <sc-for list="{{ f.items }}" as="it" hint-placeholder-count="4">
+                      <span style="font-size:13px; color:#2A3646; background:#FFFFFF; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
+                    </sc-for>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ f.hasNote }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:8px;">{{ f.note }}</div>
+                </sc-if>
               </div>
             </sc-for>
           </div>
@@ -456,6 +479,20 @@ class Component extends DCLogic {
    *  Редкие языки без общепринятого кода остаются словами после тройки —
    *  выдуманный код хуже слова. Хранится по-прежнему словами: правка только
    *  отображения, данные анкет не трогаем. */
+  /** Языки словами: «Казахский · Русский». Коды KZ/RU/EN остались для мест,
+   *  где важна компактность, но в карточке одна метка «RU» выглядела кодом
+   *  системы, а не ответом клиенту (замечание владельца 02.09.2026). */
+  langWords(langs) {
+    const имя = { "казахский": "Казахский", "русский": "Русский", "английский": "Английский" };
+    const порядок = ["казахский", "русский", "английский"];
+    const низ = (langs || []).map(x => String(x).toLowerCase().trim());
+    const свои = порядок.filter(l => низ.includes(l)).map(l => имя[l]);
+    const прочие = (langs || []).map(x => String(x).trim())
+      .filter(x => !(x.toLowerCase() in имя))
+      .map(x => this.cap(x));
+    return свои.concat(прочие).join(" · ");
+  }
+
   langCodes(langs) {
     const код = { "казахский": "KZ", "русский": "RU", "английский": "EN" };
     const порядок = ["казахский", "русский", "английский"];
@@ -526,8 +563,8 @@ class Component extends DCLogic {
         const sent = !!this.state.sent[c.cert];
         const f = this.form(c.cert);
         const ready = f.score >= 1 && f.text.trim().length >= 2;
-        const facts = [
-          c.city     ? { k: "ВЫЕЗД", v: c.city + (c.zone ? " " + c.zone : "") } : null,
+        const factsShort = [
+          c.city     ? { k: "ВЫЕЗД", v: c.city + (c.zone ? " · до " + c.zone : "") } : null,
           c.warranty ? { k: "ГАРАНТИЯ НА МОНТАЖ", v: c.warranty + " мес — даёт бригада" } : null,
           c.since    ? { k: "ОПЫТ РАБОТЫ", v: "с " + c.since + " года" } : null,
           (c.withUsSince && (new Date().getFullYear() - c.withUsSince) >= 1)
@@ -538,17 +575,28 @@ class Component extends DCLogic {
           // Языки и оснащение приходят из реестра только у одобренных бригад:
           // при сертификации владелец сверил анкету (оснащение — по фото
           // инструмента) — поэтому подпись «подтверждено» здесь честная.
-          c.langs && c.langs.length ? { k: "ЯЗЫКИ", v: this.langCodes(c.langs) } : null,
-          c.osn && c.osn.length ? { k: "ОСНАЩЕНИЕ",
-            v: this.cap(c.osn.join(" · ")) + " — подтверждено при сертификации" } : null,
-          c.forma ? { k: "ОФОРМЛЕНИЕ",
-            v: c.forma + (c.nds ? " · " + c.nds : "")
-               + (c.docs ? " · " + c.docs : "") } : null,
+          // Языки словами, а не кодами: у бригады с одним языком плитка
+          // показывала «RU» — это читалось как служебная метка, а не как ответ
+          // на вопрос «поймём ли мы друг друга» (02.09.2026).
+          c.langs && c.langs.length ? { k: "ЯЗЫКИ", v: this.langWords(c.langs) } : null
+        ].filter(Boolean);
+
+        const factsWide = [
+          // Оснащение — чипами. Подпись «подтверждено при сертификации» вынесена
+          // отдельной строкой: приклеенная к последнему инструменту, она читалась
+          // как часть перечня.
+          c.osn && c.osn.length ? { k: "ОСНАЩЕНИЕ", v: "", hasV: false,
+            items: c.osn.map(x => this.cap(x)), hasItems: true,
+            note: "Подтверждено при сертификации", hasNote: true } : null,
+          c.forma ? { k: "ОФОРМЛЕНИЕ", v: "", hasV: false,
+            items: [c.forma].concat(c.nds ? [c.nds] : []).concat(c.docs ? [c.docs] : []),
+            hasItems: true, note: "", hasNote: false } : null,
           // Допуск по электробезопасности приходит ТОЛЬКО действующий: приёмник
           // сравнивает срок с сегодняшним днём и просроченный не отдаёт вовсе.
-          c.el ? { k: "ЭЛЕКТРИКА",
-            v: "допуск " + c.el.gr + " группы" + (c.el.v ? ", " + c.el.v : "")
-               + (c.el.till ? ", действует до " + this.dateLabel(c.el.till) : "") } : null
+          c.el ? { k: "ЭЛЕКТРИКА", hasV: true,
+            v: "Допуск " + c.el.gr + " группы" + (c.el.v ? ", " + c.el.v : "")
+               + (c.el.till ? " · действует до " + this.dateLabel(c.el.till) : ""),
+            items: [], hasItems: false, note: "", hasNote: false } : null
         ].filter(Boolean);
 
         return {
@@ -563,7 +611,8 @@ class Component extends DCLogic {
           noRating: c.rating === null && !c.accruing,
           rating: c.rating === null ? "" : this.ratingLabel(c.rating),
           votesLabel: this.votesLabel(c.votes),
-          facts: facts,
+          factsShort: factsShort,
+          factsWide: factsWide,
 
           vremya: !!c.vremya,
           // Две графы, как просил владелец: годы и монтажи по отдельности —
