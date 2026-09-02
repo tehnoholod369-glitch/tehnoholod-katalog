@@ -264,12 +264,27 @@ class Component extends DCLogic {
 
   check(номер) {
     this.setState({ busy: true, err: "", res: null });
-    fetch(this.PRIEMNIK + "?check=" + encodeURIComponent(номер), { cache: "no-cache" })
+    // Предел ожидания (02.09.2026). Реестр отвечает через Google Apps Script,
+    // у него бывает холодный старт; без предела страница показывала
+    // «Проверяем…» бесконечно, и человек с бланком в руках не получал НИКАКОГО
+    // ответа. Пятнадцать секунд — заведомо больше обычных двух, но всё ещё
+    // столько, сколько люди готовы ждать.
+    const прервать = ("AbortController" in window) ? new AbortController() : null;
+    const срок = setTimeout(() => { if (прервать) { прервать.abort(); } }, 15000);
+    const опции = { cache: "no-cache" };
+    if (прервать) { опции.signal = прервать.signal; }
+    fetch(this.PRIEMNIK + "?check=" + encodeURIComponent(номер), опции)
       .then(r => r.ok ? r.json() : null)
-      .then(d => this.setState({ res: d, busy: false, err: d ? "" : "нет ответа" }))
+      .then(d => {
+        clearTimeout(срок);
+        this.setState({ res: d, busy: false, err: d ? "" : "нет ответа" });
+      })
       // Связи нет — говорим об этом прямо. Молчащая кнопка читается как
       // «сертификат недействителен», а это разные вещи.
-      .catch(() => this.setState({ busy: false, err: "нет ответа" }));
+      .catch(() => {
+        clearTimeout(срок);
+        this.setState({ busy: false, err: "нет ответа" });
+      });
   }
 
   dateRu(iso) {
