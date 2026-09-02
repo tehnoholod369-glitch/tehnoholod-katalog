@@ -96,8 +96,9 @@
         <sc-if value="{{ hasLevel }}" hint-placeholder-val="{{ true }}">
           <div style="border-top:1px solid #EEF3F9; margin-top:16px; padding-top:14px;">
             <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ t.levelH }}</div>
-            <div style="display:inline-block; margin-top:8px; background:{{ levelBg }}; border:1px solid {{ levelBd }}; border-radius:8px; padding:7px 12px;">
+            <div style="display:inline-flex; align-items:baseline; flex-wrap:wrap; gap:9px; margin-top:8px; background:{{ levelBg }}; border:1px solid {{ levelBd }}; border-radius:8px; padding:7px 12px;">
               <span style="font-size:15px; font-weight:700; color:{{ levelFg }};">{{ levelName }}</span>
+              <span style="font-size:13px; color:#1F2937;">{{ levelPub }}</span>
             </div>
             <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:10px;">{{ t.levelNote }}</div>
           </div>
@@ -139,9 +140,9 @@
 // Уровни программы: цвет плашки. Держим рядом с разметкой, а не в приёмнике —
 // приёмник отдаёт факты (ключ, имя, подпись), оформление делает витрина.
 const УРЦВЕТ = {
-  uchastnik: { bg: "#F3F7FB", bd: "#DCE5F0", fg: "#41506A" },
-  master:    { bg: "#E6F2FD", bd: "#B9DBF7", fg: "#0A4EA7" },
-  partner:   { bg: "#E7F7F0", bd: "#BFE6D4", fg: "#0B6B45" }
+  uchastnik: { bg: "#EAF4FA", bd: "#C9E3F2", fg: "#2079B5" },
+  master:    { bg: "#F5F7FA", bd: "#D6DEE9", fg: "#123B67" },
+  partner:   { bg: "#FCEDE8", bd: "#F3CBBB", fg: "#E4572E" }
 };
 
 class Component extends DCLogic {
@@ -175,6 +176,7 @@ class Component extends DCLogic {
         + "Оборудование покупаете у нас, монтаж делает эта бригада — гарантия на монтаж её, "
         + "на технику производителя.",
       who: "Кто", master: "Мастер", brigada: "Бригада",
+      chief: "Бригадир",
       fio: "Фамилия и инициалы", inBrigada: "В составе бригады",
       city: "Город", zone: "Выезд", dirs: "Направления",
       qual: "Квалификация", eb: "Электробезопасность", height: "Высота",
@@ -215,6 +217,7 @@ class Component extends DCLogic {
         + "Жабдықты бізден аласыз, монтажды осы бригада жасайды — монтажға кепілдік оның, "
         + "техникаға өндірушінің.",
       who: "Кім", master: "Шебер", brigada: "Бригада",
+      chief: "Бригада жетекшісі",
       fio: "Тегі мен инициалдары", inBrigada: "Бригада құрамында",
       city: "Қала", zone: "Шығу аймағы", dirs: "Бағыттар",
       qual: "Біліктілік", eb: "Электр қауіпсіздігі", height: "Биіктік",
@@ -339,6 +342,7 @@ class Component extends DCLogic {
       const dir = (x) => t.dirMap[x] || x;
       add(t.who, d.type === "мастер" ? t.master : t.brigada);
       if (d.type === "мастер") { add(t.fio, d.fio); add(t.inBrigada, d.brigada); }
+      add(t.chief, d.chief);
       add(t.city, d.city);
       add(t.zone, d.zone);
       add(t.dirs, (d.dirLabels || []).map(dir).join(", "));

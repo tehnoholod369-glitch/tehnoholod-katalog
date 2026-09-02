@@ -135,6 +135,14 @@
     </sc-if>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr)); gap:16px; margin-top:14px; align-items:start;">
+      
+      <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 14px;">
+        <span style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">УРОВНИ</span>
+        <span style="font-size:12px; color:#2079B5; background:#EAF4FA; border:1px solid #C9E3F2; border-radius:999px; padding:4px 10px;"><b>Участник 369</b> · проверка пройдена</span>
+        <span style="font-size:12px; color:#123B67; background:#F5F7FA; border:1px solid #D6DEE9; border-radius:999px; padding:4px 10px;"><b>Мастер 369</b> · качество подтверждено</span>
+        <span style="font-size:12px; color:#E4572E; background:#FCEDE8; border:1px solid #F3CBBB; border-radius:999px; padding:4px 10px;"><b>Партнёр 369</b> · доверие подтверждено</span>
+      </div>
+
       <sc-for list="{{ crews }}" as="c" hint-placeholder-count="3">
         <div id="{{ c.cert }}" style="background:#fff; border:1px solid {{ c.cardBorder }}; border-radius:16px; padding:24px; scroll-margin-top:16px;">
 
@@ -146,8 +154,9 @@
               </div>
               
               <sc-if value="{{ c.hasLevel }}" hint-placeholder-val="{{ true }}">
-                <div style="display:inline-block; margin-top:7px; background:{{ c.levelBg }}; border:1px solid {{ c.levelBd }}; border-radius:6px; padding:5px 10px;">
+                <div style="display:inline-flex; align-items:baseline; flex-wrap:wrap; gap:8px; margin-top:7px; background:{{ c.levelBg }}; border:1px solid {{ c.levelBd }}; border-radius:6px; padding:5px 10px;">
                   <span style="font-size:13px; font-weight:700; color:{{ c.levelFg }};">{{ c.levelName }}</span>
+                  <span style="font-size:12px; color:#1F2937;">{{ c.levelPub }}</span>
                 </div>
               </sc-if>
               <div style="font-size:12px; color:#8593A6; margin-top:5px;">сертификация ИП «ТехноХолод», реестр «Сервис-карта 369»<sc-if value="{{ c.canVerify }}" hint-placeholder-val="{{ true }}"> · <a href="{{ c.verifyHref }}" style="color:#0872D3; font-weight:600;">проверить сертификат</a></sc-if></div>
@@ -608,10 +617,13 @@ class Component extends DCLogic {
         // Цвета уровня: нейтральный у Участника, синий у Мастера, зелёный
         // у Партнёра. Ярче — не значит «лучше делает монтаж»: цвет говорит
         // о длине пути в программе, а качество показывает рейтинг рядом.
+        // Палитра — из положения о программе (заливка и цвет заголовка
+        // в самом docx), а не подобрана на глаз: клиент, который видел
+        // документ или бланк, узнаёт тот же цвет.
         const ЦВЕТ = {
-          uchastnik: { bg: "#F3F7FB", bd: "#DCE5F0", fg: "#41506A" },
-          master:    { bg: "#E6F2FD", bd: "#B9DBF7", fg: "#0A4EA7" },
-          partner:   { bg: "#E7F7F0", bd: "#BFE6D4", fg: "#0B6B45" }
+          uchastnik: { bg: "#EAF4FA", bd: "#C9E3F2", fg: "#2079B5" },
+          master:    { bg: "#F5F7FA", bd: "#D6DEE9", fg: "#123B67" },
+          partner:   { bg: "#FCEDE8", bd: "#F3CBBB", fg: "#E4572E" }
         };
         const ур = c.level || null;
         const цв = ЦВЕТ[(ур && ур.key) || "uchastnik"] || ЦВЕТ.uchastnik;
