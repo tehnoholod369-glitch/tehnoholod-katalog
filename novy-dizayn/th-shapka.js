@@ -44,28 +44,6 @@
     ["https://tehnoholod369.kz/kondicioner-do-200000", "Кондиционер до 200 000 ₸"],
     ["https://tehnoholod369.kz/tihiy-kondicioner", "Тихий кондиционер для спальни"],
     ["https://tehnoholod369.kz/kondicioner-obogrev-zimoy", "Кондиционер для обогрева зимой"],
-    ["https://tehnoholod369.kz/kanalnye-kondicionery-almaty", "Канальные кондиционеры"],
-    ["https://tehnoholod369.kz/kassetnye-kondicionery-almaty", "Кассетные кондиционеры"],
-    ["https://tehnoholod369.kz/kondicioner-na-35-kvm", "Кондиционер на комнату 35 м²"],
-    ["https://tehnoholod369.kz/ustanovka-kondicionera-talgar", "Установка кондиционера в Талгаре"],
-    ["https://tehnoholod369.kz/ustanovka-kondicionera-otegen-batyr", "Установка кондиционера в Отеген батыре"],
-    ["https://tehnoholod369.kz/ustanovka-kondicionera-burundai", "Установка кондиционера в Бурундае"],
-    ["https://tehnoholod369.kz/kaminy-almaty", "Камины и электроочаги"],
-    ["https://tehnoholod369.kz/vrf-sistemy-almaty", "VRF и мини-VRF системы"],
-    ["https://tehnoholod369.kz/kondicionery-dlya-ofisa", "Кондиционеры для офиса"],
-    ["https://tehnoholod369.kz/napolno-potolochnye-kondicionery-almaty", "Напольно-потолочные кондиционеры"],
-    ["https://tehnoholod369.kz/pritochnaya-ustanovka-almaty", "Приточные установки"],
-    ["https://tehnoholod369.kz/pritochno-vytyazhnye-ustanovki-almaty", "Приточно-вытяжные установки с рекуперацией"],
-    ["https://tehnoholod369.kz/vytyazhnye-ventilyatory-almaty", "Вытяжные вентиляторы"],
-    ["https://tehnoholod369.kz/invertornyy-kondicioner-almaty", "Инверторные кондиционеры"],
-    ["https://tehnoholod369.kz/kondicioner-s-wifi", "Кондиционеры с Wi-Fi"],
-    ["https://tehnoholod369.kz/kondicioner-na-50-kvm", "Кондиционер на комнату 50 м²"],
-    ["https://tehnoholod369.kz/kondicioner-do-300000", "Кондиционеры до 300 000 ₸"],
-    ["https://tehnoholod369.kz/nakopitelnyy-vodonagrevatel-almaty", "Накопительные водонагреватели"],
-    ["https://tehnoholod369.kz/protochnyy-vodonagrevatel-almaty", "Проточные водонагреватели"],
-    ["https://tehnoholod369.kz/radiatory-sekcionnye-almaty", "Секционные радиаторы отопления"],
-    ["https://tehnoholod369.kz/konvektory-almaty", "Электрические конвекторы"],
-    ["https://tehnoholod369.kz/kondicioner-s-pritokom", "Кондиционеры с притоком свежего воздуха"],
   ];
   /* GEO-ПОДБОРКИ-КОНЕЦ */
 
@@ -100,9 +78,17 @@
   }
 
   // 3. Телефон на витрине пишется одинаково везде (правило проекта).
+  //    Но одинаково — про ОДИН номер, а не про все. До 02.09.2026 под гребёнку
+  //    попадала каждая ссылка tel:, включая дополнительный +7 700 033 66 99:
+  //    ему переписывался и href, и подпись. В статьях «До какой температуры»,
+  //    «Как работает приток», «Обслуживание», «Приток или форточка» призыв
+  //    показывал один и тот же номер дважды, а второго номера на витрине
+  //    не существовало вовсе. Правим только основной, чужие не трогаем.
   function единыйТелефон() {
-    var re = /\+?7\s*\(?700\)?[\s\-]*0?\s*3?36?\s*[\d\s\-]{5,}/g;
+    var ОСНОВНОЙ = ТЕЛЕФОН_МАШИНЕ.replace(/\D/g, "");
     [].forEach.call(document.querySelectorAll("a[href^='tel:']"), function (a) {
+      var цифры = (a.getAttribute("href") || "").replace(/\D/g, "");
+      if (цифры && цифры !== ОСНОВНОЙ) return;
       a.setAttribute("href", "tel:" + ТЕЛЕФОН_МАШИНЕ);
       if (/\d/.test(a.textContent)) a.textContent = ТЕЛЕФОН_ЛЮДЯМ;
     });

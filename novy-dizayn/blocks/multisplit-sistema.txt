@@ -140,7 +140,7 @@
     <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
       <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Выбор</span>
       <span style="color:#8593A6;">6 минут чтения</span>
-      <span style="color:#8593A6;">Обновлено 02.09.2026</span>
+      <span style="color:#8593A6;">Обновлено 03.09.2026</span>
     </div>
 
     <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Мультисплит-система: один внешний блок на несколько комнат</h1>
@@ -157,7 +157,7 @@
       <p><b>Внутренние блоки могут быть разными:</b></p>
       <ul><li>Настенные (обычные, самые распространённые).</li><li>Кассетные (потолочные, для больших комнат/офисов).</li><li>Канальные (спрятанные в потолок с воздуховодами).</li><li>Напольно-потолочные.</li></ul>
       <p>Мешать типы можно в одной системе — например, 3 настенных + 1 кассетный.</p>
-      <p>Смотрите модели: <a href="/katalog?g=multisplit">мультисплит-системы TCL в каталоге</a>.</p>
+      <p>Смотрите модели: <a href="/katalog?g=multisplit">мультисплит-системы в каталоге</a>.</p>
       <h2>Когда мультисплит имеет смысл</h2>
       <p><b>✅ Управляющая компания запрещает наружные блоки на фасаде.</b> Один блок на балконе или в специально отведённом месте — единственный способ поставить кондиционер в квартире.</p>
       <p><b>✅ Дизайн важнее денег.</b> На дорогом фасаде 3 наружных блока смотрятся неаккуратно. Один — эстетичнее.</p>
@@ -187,7 +187,7 @@
       <p><b>Дополнительная мощность:</b> если планируете использовать все блоки одновременно в жару — берите наружный блок с запасом 15–20%. Если знаете, что 2 из 4 комнат почти всегда не используются — можно ставить наружный блок в 1,3× общей мощности активных.</p>
       <h2>Про инверторный компрессор</h2>
       <p><b>Мультисплит всегда покупайте инверторный.</b> Причина: инверторный компрессор плавно меняет мощность, чтобы точно распределить холод/тепло между работающими внутренними блоками. Он-офф компрессор на мультисплите циклирует, режимы «всё-ничего» — комфорт страдает.</p>
-      <p>Все современные мультисплит-системы TCL — инверторные.</p>
+      <p>Все современные мультисплит-системы — инверторные.</p>
       <h2>Монтаж: что важно знать</h2>
       <p><b>Прокладка магистрали.</b> Каждый внутренний блок соединяется с наружным своей парой медных труб (жидкость + газ). Магистраль идёт по стенам за декоративный короб или под потолком за подвесным.</p>
       <p><b>Длина трассы.</b> Обычно до 25–30 м на каждый внутренний блок. Свыше — проверять по инструкции конкретной модели.</p>
@@ -212,8 +212,8 @@
       <h2>Частые вопросы</h2>
       <div class="art-q"><div class="art-q__q">Можно ли поставить внутренний блок мультисплита в санузел?</div><div class="art-q__a">Нет, там повышенная влажность. Кондиционер греется и конденсат может протекать в электрику. Только жилые комнаты, кабинеты, кухни.</div></div>
       <div class="art-q"><div class="art-q__q">Что делать, если в одной комнате нужно охлаждать, а в другой греть в один момент?</div><div class="art-q__a">Нужна мультисплит-система с одновременной работой на охлаждение и нагрев — они есть (тип «heat recovery»), но стоят на 40–60% дороже. Часто проще поставить отдельный сплит на 1 из комнат.</div></div>
-      <div class="art-q"><div class="art-q__q">Насколько шумит внешний блок мультисплита?</div><div class="art-q__a">На 3–5 дБ громче обычного сплита той же мощности. Для большинства инверторных TCL — 48–55 дБ на расстоянии 1 м. На балконе или на крыше — незаметно.</div></div>
-      <div class="art-q"><div class="art-q__q">Мультисплит и умный дом — как это дружит?</div><div class="art-q__a">Многие модели TCL совместимы с Wi-Fi модулями и приложениями. Можно управлять с телефона, задавать сценарии по температуре, времени, присутствию.</div></div>
+      <div class="art-q"><div class="art-q__q">Насколько шумит внешний блок мультисплита?</div><div class="art-q__a">На 3–5 дБ громче обычного сплита той же мощности. У инверторных моделей это обычно 48–55 дБ на расстоянии 1 м — точное значение есть в характеристиках модели. На балконе или на крыше — незаметно.</div></div>
+      <div class="art-q"><div class="art-q__q">Мультисплит и умный дом — как это дружит?</div><div class="art-q__a">Многие модели совместимы с Wi-Fi модулями и приложениями. Можно управлять с телефона, задавать сценарии по температуре, времени, присутствию.</div></div>
       <div class="art-q"><div class="art-q__q">Как ремонтируется мультисплит?</div><div class="art-q__a">Внутренний блок — как обычный сплит (замена мотора, платы, чистка). Наружный — сложнее, часто нужен вакуум всей системы. Один сервис = час-два простоя всех блоков.</div></div>
     </div>
 
@@ -232,10 +232,10 @@
 
     
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
-    <div class="art-cards">
-        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/kondicioner-ili-obogrevatel"><div class="art-card__t">Кондиционер или обогреватель: что выгоднее зимой в Алматы</div><div class="art-card__s">Сравниваем кондиционер и обогреватель по цене, расходу электричества и комфорту. Расчёт для Алматы — что выгод</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/kogda-deshevle-kupit-kondicioner"><div class="art-card__t">Когда дешевле купить кондиционер: сезонность цен в Казахстане</div><div class="art-card__s">В какое время года кондиционеры дешевле всего и когда выгоднее покупать. Разбор сезонности цен в Казахстане + </div><div class="art-card__go">Читать →</div></a>
+    <div class="art-cards" data-art-next="multisplit-sistema|byt-kond|multisplit|">
+        <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada"><div class="art-card__t">Монтаж кондиционера: что даёт проверенная бригада</div><div class="art-card__s">Как проверить монтажников кондиционера: внутренний допуск 369, личный рейтинг МАСТЕРОВ, прозрачная смета, серв</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/brizer-ili-konditsioner-s-pritokom"><div class="art-card__t">Бризер или кондиционер с притоком свежего воздуха: что выбрать</div><div class="art-card__s">Чем бризер отличается от кондиционера с притоком свежего воздуха, когда выгоднее каждый и как выбрать модель п</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kak-rabotaet-konditsioner-s-pritokom"><div class="art-card__t">Как работает кондиционер с притоком свежего воздуха</div><div class="art-card__s">Принцип работы приточной сплит-системы: забор воздуха с улицы, очистка HEPA H13, доведение до комнатной темпер</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>
@@ -253,8 +253,9 @@
 
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=7ff7fd79"></script>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Мультисплит-система: один внешний блок на несколько комнат", "description": "Мультисплит: как работает, когда выгоднее нескольких сплитов, ограничения. Подбор для квартиры 2–4 комнаты в Алматы. Плюсы, минусы, цены.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/multisplit-sistema"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-02"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Мультисплит-система: один внешний блок на несколько комнат", "description": "Мультисплит: как работает, когда выгоднее нескольких сплитов, ограничения. Подбор для квартиры 2–4 комнаты в Алматы. Плюсы, минусы, цены.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/multisplit-sistema"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-03"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Мультисплит-система: один внешний блок на несколько комнат", "item": "https://tehnoholod369.kz/multisplit-sistema"}]}</script>
 <script type="application/ld+json">
 {
@@ -263,8 +264,8 @@
   "mainEntity": [
     {"@type":"Question","name":"Можно ли поставить внутренний блок мультисплита в санузел?","acceptedAnswer":{"@type":"Answer","text":"Нет, из-за влажности. Кондиционер греется и конденсат может протекать в электрику. Только жилые комнаты, кабинеты, кухни."}},
     {"@type":"Question","name":"Что делать, если в одной комнате нужно охлаждать, а в другой греть одновременно?","acceptedAnswer":{"@type":"Answer","text":"Нужна мультисплит-система с одновременной работой на охлаждение и нагрев (heat recovery). Стоят на 40–60% дороже. Часто проще поставить отдельный сплит на 1 комнату."}},
-    {"@type":"Question","name":"Насколько шумит внешний блок мультисплита?","acceptedAnswer":{"@type":"Answer","text":"На 3–5 дБ громче обычного сплита той же мощности. Для инверторных TCL — 48–55 дБ на расстоянии 1 м."}},
-    {"@type":"Question","name":"Мультисплит и умный дом — как это дружит?","acceptedAnswer":{"@type":"Answer","text":"Многие модели TCL совместимы с Wi-Fi модулями и приложениями. Управление с телефона, сценарии по температуре, времени, присутствию."}},
+    {"@type":"Question","name":"Насколько шумит внешний блок мультисплита?","acceptedAnswer":{"@type":"Answer","text":"На 3–5 дБ громче обычного сплита той же мощности. У инверторных моделей — обычно 48–55 дБ на расстоянии 1 м, точное значение в характеристиках."}},
+    {"@type":"Question","name":"Мультисплит и умный дом — как это дружит?","acceptedAnswer":{"@type":"Answer","text":"Многие модели совместимы с Wi-Fi модулями и приложениями. Управление с телефона, сценарии по температуре, времени, присутствию."}},
     {"@type":"Question","name":"Как ремонтируется мультисплит?","acceptedAnswer":{"@type":"Answer","text":"Внутренний блок — как обычный сплит. Наружный — сложнее, часто нужен вакуум всей системы. Ремонт наружного = час-два простоя всех блоков."}}
   ]
 }

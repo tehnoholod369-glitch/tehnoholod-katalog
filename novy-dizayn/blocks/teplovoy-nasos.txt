@@ -140,7 +140,7 @@
     <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
       <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Выбор</span>
       <span style="color:#8593A6;">5 минут чтения</span>
-      <span style="color:#8593A6;">Обновлено 02.09.2026</span>
+      <span style="color:#8593A6;">Обновлено 03.09.2026</span>
     </div>
 
     <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Тепловой насос воздух-вода: экономика отопления в Алматы</h1>
@@ -182,7 +182,7 @@
       <p>Если в доме старые чугунные радиаторы — экономия будет меньше расчётной. Оптимально ставить насос вместе с монтажом тёплого пола или заменой радиаторов на алюминиевые.</p>
       <h2>Окупаемость на примере</h2>
       <p><b>Дом 120 м² в пригороде Алматы, без газа.</b></p>
-      <ul><li>Стоимость системы «под ключ» (насос 12 кВт + монтаж + бойлер): <b>3 500 000 тг</b>.</li><li>Экономия против электрокотла: 405 000 − 130 000 = <b>275 000 тг/год</b>.</li><li>Окупаемость: 3 500 000 ÷ 275 000 = <b>12,7 лет</b>? Нет, потому что альтернатива — не «поставить электрокотёл бесплатно», а тоже вложиться. Электрокотёл под ключ — около 400 000 тг.</li><li>Реальная разница вложений: 3 500 000 − 400 000 = <b>3 100 000 тг</b>.</li><li>Окупаемость дополнительных вложений: 3 100 000 ÷ 275 000 = <b>~11 лет</b>.</li></ul>
+      <ul><li>Экономия против электрокотла: 405 000 − 130 000 = <b>275 000 тг/год</b> — только на электричестве, по тарифам из таблицы выше.</li><li>Окупается не вся система, а <b>разница вложений</b> с более дешёвой альтернативой: электрокотёл тоже надо купить и смонтировать.</li><li>Отсюда ориентир: при экономии 275 000 тг в год каждый лишний миллион вложений возвращается примерно за четыре года.</li><li>Точную сумму по вашему дому считают по теплопотерям — мощность насоса, бойлер, обвязка и монтаж зависят от объекта. <a href="https://wa.me/77000369369">Пришлите планировку</a>, вернём расчёт.</li></ul>
       <p>Если сравнивать с твердотопливным котлом — окупается быстрее (5–7 лет), т.к. насос ещё и экономит время на топку и уборку.</p>
       <p><b>Реальный смысл ставить насос — когда газа нет и выбор между электрокотлом (дешёвая покупка, дорогая эксплуатация) и насосом (дорогая покупка, дешёвая эксплуатация).</b> Здесь насос экономит и деньги, и здоровье (никакого горения, копоти, СО).</p>
       <h2>Тепловые насосы в нашем каталоге</h2>
@@ -194,7 +194,7 @@
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=teplovye-nasosy"><div class="art-card__t">Тепловые насосы</div><div class="art-card__s">Под заказ — цены и характеристики моделей смотрите в каталоге.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="teplovye-nasosy"></span> →</div></a>
-      <a class="art-card" href="/otoplenie"><div class="art-card__t">Отопление</div><div class="art-card__s">Радиаторы, конвекторы и обогрев — что есть сегодня.</div><div class="art-card__go">Открыть раздел →</div></a>
+      <a class="art-card" href="/otoplenie"><div class="art-card__t">Отопление и обогреватели в Алматы</div><div class="art-card__s">Радиаторы, конвекторы и обогрев — что есть сегодня.</div><div class="art-card__go">Открыть раздел →</div></a>
       </div>
       <h2>Частые вопросы</h2>
       <div class="art-q"><div class="art-q__q">Работает ли тепловой насос в −25 °C в Алматы?</div><div class="art-q__a">Да. Современные инверторные модели сохраняют работоспособность до −25…−28 °C с COP около 1,8–2. В самые холодные дни включается встроенный ТЭН для догрева.</div></div>
@@ -219,10 +219,10 @@
 
     
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
-    <div class="art-cards">
-        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/kondicioner-ili-obogrevatel"><div class="art-card__t">Кондиционер или обогреватель: что выгоднее зимой в Алматы</div><div class="art-card__s">Сравниваем кондиционер и обогреватель по цене, расходу электричества и комфорту. Расчёт для Алматы — что выгод</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/kogda-deshevle-kupit-kondicioner"><div class="art-card__t">Когда дешевле купить кондиционер: сезонность цен в Казахстане</div><div class="art-card__s">В какое время года кондиционеры дешевле всего и когда выгоднее покупать. Разбор сезонности цен в Казахстане + </div><div class="art-card__go">Читать →</div></a>
+    <div class="art-cards" data-art-next="teplovoy-nasos|otoplenie|teplovye-nasosy|">
+        <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada"><div class="art-card__t">Монтаж кондиционера: что даёт проверенная бригада</div><div class="art-card__s">Как проверить монтажников кондиционера: внутренний допуск 369, личный рейтинг МАСТЕРОВ, прозрачная смета, серв</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/brizer-ili-konditsioner-s-pritokom"><div class="art-card__t">Бризер или кондиционер с притоком свежего воздуха: что выбрать</div><div class="art-card__s">Чем бризер отличается от кондиционера с притоком свежего воздуха, когда выгоднее каждый и как выбрать модель п</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kak-rabotaet-konditsioner-s-pritokom"><div class="art-card__t">Как работает кондиционер с притоком свежего воздуха</div><div class="art-card__s">Принцип работы приточной сплит-системы: забор воздуха с улицы, очистка HEPA H13, доведение до комнатной темпер</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>
@@ -240,8 +240,9 @@
 
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=7ff7fd79"></script>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Тепловой насос воздух-вода: экономика отопления в Алматы", "description": "Сколько реально экономит тепловой насос воздух-вода по сравнению с газом и электричеством. Окупаемость, минусы, для каких домов подходит.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/teplovoy-nasos"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-02"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Тепловой насос воздух-вода: экономика отопления в Алматы", "description": "Сколько реально экономит тепловой насос воздух-вода по сравнению с газом и электричеством. Окупаемость, минусы, для каких домов подходит.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/teplovoy-nasos"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-03"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Тепловой насос воздух-вода: экономика отопления в Алматы", "item": "https://tehnoholod369.kz/teplovoy-nasos"}]}</script>
 <script type="application/ld+json">
 {
