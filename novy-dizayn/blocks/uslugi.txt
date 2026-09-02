@@ -1,4 +1,5 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
 
 <x-dc>
 <helmet>
@@ -132,7 +133,7 @@
       </div>
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:26px; margin-top:16px;">
-        <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Когда пора вызывать мастера</div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Когда пора вызывать МАСТЕРА</div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:16px; margin-top:16px;">
           <sc-for list="{{ symptoms }}" as="s" hint-placeholder-count="4">
             <div style="background:#F3F7FB; border-radius:10px; padding:16px 18px;">
@@ -198,7 +199,7 @@
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:26px;">
       <div>
-        <div style="font-family:'Montserrat',sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Вызвать замерщика или мастера</div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Вызвать замерщика или МАСТЕРА</div>
         <div style="font-size:15px; color:#5A6675; line-height:1.6; margin-top:10px;">Оставьте имя, номер и адрес объекта. Перезвоним в рабочее время, подскажем срок и назовём стоимость после замера.</div>
         <div style="font-size:14px; color:#5A6675; line-height:1.7; margin-top:14px;">Телефон и WhatsApp: <b style="color:#18212F;">+77 000 369 369</b><br />Дополнительный: <b style="color:#18212F;">+77 000 33 66 99</b></div>
       </div>

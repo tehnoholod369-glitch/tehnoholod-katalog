@@ -1,4 +1,5 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
 
 <x-dc>
 <helmet>
@@ -90,6 +91,45 @@
 
         <sc-if value="{{ trusted }}" hint-placeholder-val="{{ true }}">
           <div style="display:inline-block; margin-top:14px; background:#E6F2FD; color:#0C447C; border-radius:999px; padding:6px 12px; font-size:13px; font-weight:700;">{{ t.trustedBadge }}</div>
+        </sc-if>
+
+        
+        <sc-if value="{{ hasRating }}" hint-placeholder-val="{{ true }}">
+          <div style="border-top:1px solid #EEF3F9; margin-top:16px; padding-top:14px;">
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ t.ratingH }}</div>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:10px;">
+              <sc-if value="{{ hasRatingValue }}" hint-placeholder-val="{{ true }}">
+                <span style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; color:#18212F;">{{ ratingValue }}</span>
+                <span style="font-size:13px; color:#5A6675;">{{ ratingVotes }}</span>
+              </sc-if>
+              <sc-if value="{{ ratingAccruing }}" hint-placeholder-val="{{ false }}">
+                <span style="font-size:13px; font-weight:700; color:#0A4EA7; background:#E6F2FD; border:1px solid #B9DBF7; border-radius:6px; padding:6px 10px;">{{ t.ratingWait }}</span>
+                <span style="font-size:13px; color:#5A6675;">{{ ratingVotes }}{{ t.ratingOf }}</span>
+              </sc-if>
+              <sc-if value="{{ ratingNone }}" hint-placeholder-val="{{ false }}">
+                <span style="font-size:13px; font-weight:700; color:#B25200; background:#FFF1E3; border:1px solid #F3D2AC; border-radius:6px; padding:6px 10px;">{{ t.ratingNo }}</span>
+              </sc-if>
+            </div>
+            <sc-if value="{{ hasWorks }}" hint-placeholder-val="{{ true }}">
+              <div style="font-size:14px; color:#18212F; line-height:1.6; margin-top:10px;">{{ t.worksH }}: <b>{{ worksLine }}</b></div>
+            </sc-if>
+            <sc-if value="{{ noWorks }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:10px;">{{ t.worksNo }}</div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        
+        <sc-if value="{{ hasTovary }}" hint-placeholder-val="{{ false }}">
+          <div style="border-top:1px solid #EEF3F9; margin-top:16px; padding-top:14px;">
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ t.tovaryH }}</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;">
+              <sc-for list="{{ tovary }}" as="tv" hint-placeholder-count="3">
+                <a href="{{ tv.u }}" target="_blank" rel="noopener" style="display:inline-block; background:#F3F7FB; border:1px solid #DCE5F0; border-radius:999px; padding:8px 14px; font-size:14px; color:#0872D3; text-decoration:none; font-weight:600;">{{ tv.n }} →</a>
+              </sc-for>
+            </div>
+            <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:10px;">{{ t.tovaryNote }}</div>
+          </div>
         </sc-if>
 
         
@@ -189,6 +229,17 @@ class Component extends DCLogic {
         + "на технику производителя.",
       who: "Кто", master: "Мастер", brigada: "Бригада",
       chief: "Бригадир",
+      vidy: "Что делает",
+      ratingH: "ОЦЕНКИ И ОБЪЁМ РАБОТ",
+      ratingNo: "Пока нет оценок",
+      ratingWait: "Рейтинг накапливается",
+      ratingOf: " из 5 подтверждённых оценок",
+      worksH: "Закрыто с «Сервис-картой 369»",
+      worksMont: "монтажей", worksServ: "сервисных выездов", worksRem: "ремонтов",
+      worksNo: "Работ с картой 369 пока нет — бригада новая в системе. "
+        + "Оценки клиентов появляются только по работам, закрытым картой.",
+      tovaryH: "ЧТО СТАВИЛА ЭТА БРИГАДА",
+      tovaryNote: "Модели из закрытых работ. Нажмите — откроется тот же товар в каталоге.",
       fio: "Фамилия и инициалы", inBrigada: "В составе бригады",
       city: "Город", zone: "Выезд", dirs: "Направления",
       qual: "Квалификация", eb: "Электробезопасность", height: "Высота",
@@ -202,7 +253,7 @@ class Component extends DCLogic {
       aboutP1a: "Номер получает бригада, которую мы проверили перед допуском к заказам: профессиональный инструмент и оснащение, направления и виды работ, срок её гарантии на монтаж. Сертификат — это",
       aboutOurPass: "наш допуск",
       aboutP1b: ", а не лицензия и не разрешительный документ: обучение у производителя, разряд и квалификационные удостоверения он не подтверждает.",
-      aboutP2a: "Гарантию на монтаж даёт бригада, гарантию на оборудование — производитель, а обращение принимаем мы и передаём тому, чей это случай. Рейтинг бригады складывается только из оценок клиентов по подтверждённым монтажам и публикуется после пяти оценок —",
+      aboutP2a: "Гарантию на монтаж даёт бригада, гарантию на оборудование — производитель, а обращение принимаем мы и передаём тому, чей это случай. Рейтинг бригады складывается только из оценок клиентов по подтверждённым работам — монтажам, сервису и ремонту — и публикуется после пяти оценок —",
       aboutP2link: "смотрите на странице бригад",
       amanat: "То, что вы нам доверили, — наш аманат: обращение примем и после окончания гарантии.",
       aboutP3a: "Если сертификат не действует, а бригада приехала — напишите нам в",
@@ -230,6 +281,18 @@ class Component extends DCLogic {
         + "техникаға өндірушінің.",
       who: "Кім", master: "Шебер", brigada: "Бригада",
       chief: "Бригада жетекшісі",
+      vidy: "Не істейді",
+      ratingH: "БАҒАЛАР МЕН ЖҰМЫС КӨЛЕМІ",
+      ratingNo: "Әзірге баға жоқ",
+      ratingWait: "Рейтинг жиналуда",
+      ratingOf: " расталған бағаның 5-еуінен",
+      worksH: "«Сервис-карта 369» бойынша жабылған",
+      worksMont: "монтаж", worksServ: "сервистік шығу", worksRem: "жөндеу",
+      worksNo: "«Сервис-карта 369» бойынша жұмыстар әзірге жоқ — бригада "
+        + "жүйеде жаңа. Клиенттердің бағалары картамен жабылған жұмыстар "
+        + "бойынша ғана пайда болады.",
+      tovaryH: "БҰЛ БРИГАДА НЕ ОРНАТТЫ",
+      tovaryNote: "Жабылған жұмыстардағы модельдер. Басыңыз — сол тауар каталогта ашылады.",
       fio: "Тегі мен инициалдары", inBrigada: "Бригада құрамында",
       city: "Қала", zone: "Шығу аймағы", dirs: "Бағыттар",
       qual: "Біліктілік", eb: "Электр қауіпсіздігі", height: "Биіктік",
@@ -328,6 +391,16 @@ class Component extends DCLogic {
       });
   }
 
+  /** «1 оценка · 2 оценки · 5 оценок» — число рядом с рейтингом читается
+   *  человеком, а не машиной. */
+  otzyvLabel(n) {
+    n = Number(n) || 0;
+    const a = n % 10, b = n % 100;
+    const сл = (a === 1 && b !== 11) ? "оценка"
+      : (a >= 2 && a <= 4 && (b < 10 || b >= 20)) ? "оценки" : "оценок";
+    return n + " " + сл;
+  }
+
   dateRu(iso) {
     const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso || ""));
     return m ? (m[3] + "." + m[2] + "." + m[1]) : (iso || "");
@@ -356,6 +429,9 @@ class Component extends DCLogic {
       add(t.who, d.type === "мастер" ? t.master : t.brigada);
       if (d.type === "мастер") { add(t.fio, d.fio); add(t.inBrigada, d.brigada); }
       add(t.chief, d.chief);
+      // Виды работ по направлениям — то, что бригада заявила в анкете
+      // и что мы проверили при одобрении: «Кондиционирование — монтаж».
+      add(t.vidy, (d.vidy || []).map(v => v.dir + " — " + v.vidy).join("; "));
       add(t.city, d.city);
       add(t.zone, d.zone);
       add(t.dirs, (d.dirLabels || []).map(dir).join(", "));
@@ -365,7 +441,6 @@ class Component extends DCLogic {
       add(t.warranty, d.warranty ? (d.warranty + t.months) : "");
       add(t.since, d.since);
       add(t.issued, this.dateRu(d.issued));
-      add(t.checked, d.checked ? (this.dateRu(d.checked) + (d.checkedDays != null ? " · " + d.checkedDays + t.daysAgo : "")) : "");
       add(t.blank, d.issue ? (t.issueWord + d.issue + (d.issueDate ? t.fromWord + this.dateRu(d.issueDate) : "")) : "");
       // Сертификаты производителей приёмник отдаёт только после того, как мы
       // видели документы. Поэтому «предъявлены нам» — факт, а не пересказ.
@@ -391,6 +466,33 @@ class Component extends DCLogic {
       // (адрес + подпись), витрина их только рисует.
       // Уровень программы. Показываем только у ДЕЙСТВУЮЩЕГО сертификата:
       // «Партнёр 369» рядом со снятым номером читался бы как рекомендация.
+      // Оценки и объём работ — только у действующего сертификата.
+      hasRating: !!(d && d.ok && d.valid),
+      hasRatingValue: !!(d && d.rating && d.rating.value !== null && d.rating.value !== undefined),
+      ratingValue: (d && d.rating && d.rating.value !== null && d.rating.value !== undefined)
+        ? String(d.rating.value).replace(".", ",") : "",
+      ratingVotes: (d && d.rating) ? this.otzyvLabel(d.rating.votes) : "",
+      ratingAccruing: !!(d && d.rating && d.rating.accruing),
+      ratingNone: !!(d && d.rating && !d.rating.votes),
+      hasWorks: !!(d && d.works && d.works.vsego),
+      noWorks: !!(d && d.valid && d.works && !d.works.vsego),
+      worksLine: (() => {
+        const w = (d && d.works) || {};
+        const tt = this.L[this.state.lang] || this.L.ru;
+        const части = [];
+        if (w.montaj) части.push(w.montaj + " " + tt.worksMont);
+        if (w.servis) части.push(w.servis + " " + tt.worksServ);
+        if (w.remont) части.push(w.remont + " " + tt.worksRem);
+        return части.join(" · ");
+      })(),
+      // Модели: ссылка ведёт в каталог по группе и артикулу — тем же адресом,
+      // что и карточка товара на витрине.
+      hasTovary: !!(d && d.valid && d.tovary && d.tovary.length),
+      tovary: ((d && d.tovary) || []).map(x => ({
+        n: x.name,
+        u: "/novy-katalog?g=" + encodeURIComponent(x.group || "")
+           + "&q=" + encodeURIComponent(x.art || x.name)
+      })),
       hasLevel: !!(d && d.ok && d.valid && d.level && d.level.name),
       levels: УРСТУПЕНИ.map(function (с) {
         var свой = !!(d && d.level && d.level.key === с.key);

@@ -1,4 +1,5 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
 
 <x-dc>
 <helmet>
@@ -62,7 +63,7 @@
         </div>
         <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
           <div style="font-size:15px; font-weight:700;">В рейтинг идут только подтверждённые оценки</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Оценка засчитывается бригаде, когда по монтажу заполнена «Сервис-карта 369» — то есть монтаж подтверждён документом, а не словами. Отзывы без карты публикуются с пометкой, но в цифру рейтинга не входят.</div>
+          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Оценка засчитывается бригаде, когда по работе заполнена «Сервис-карта 369» — монтаж это, сервис или ремонт: работа подтверждена документом, а не словами. Отзывы без карты публикуются с пометкой, но в цифру рейтинга не входят.</div>
         </div>
         <div style="background:#FFF7E6; border-radius:12px; padding:18px 20px;">
           <div style="font-size:15px; font-weight:700; color:#8A5A00;">Цифру показываем после {{ pubMinLabel }}</div>
