@@ -17,7 +17,7 @@
   a:hover { color: #0872D3; }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=c89278d9"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=c1f9b150"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
@@ -336,7 +336,7 @@
         <div style="font-size:15px; font-weight:700;">Контакты</div>
         <div style="font-size:13px; color:#9FB0C4; line-height:1.9; margin-top:8px;"><a href="tel:+77000369369" style="color:#fff;">+77 000 369 369</a><br /><a href="tel:+77000336699" style="color:#fff;">+77 000 33 66 99</a><br /><a href="mailto:tehnoholod369@gmail.com" style="color:#9FB0C4;">tehnoholod369@gmail.com</a></div>
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
-          <sc-for list="{{ socials }}" as="s" hint-placeholder-count="6">
+          <sc-for list="{{ socials }}" as="s" hint-placeholder-count="4">
             <a href="{{ s.href }}" target="_blank" rel="noreferrer" title="{{ s.label }}" style="width:34px; height:34px; border-radius:9px; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center;">{{ s.icon }}</a>
           </sc-for>
         </div>
@@ -687,16 +687,12 @@ class Component extends DCLogic {
       socials: [
         { label: "WhatsApp", href: "https://wa.me/77000369369",
           icon: this.brandIcon('<path d="M12 2.5a9.4 9.4 0 0 0-8 14.3L2.5 21.5l4.8-1.4A9.4 9.4 0 1 0 12 2.5z" fill="#25D366"/><path d="M8.6 7.4c.3-.1.7 0 .9.4l.8 1.5c.1.3.1.6-.1.8l-.5.6c-.2.2-.2.4-.1.6.5 1 1.3 1.8 2.4 2.3.2.1.5 0 .6-.1l.6-.5c.2-.2.5-.2.8-.1l1.5.8c.4.2.5.6.4.9-.3.9-1.3 1.5-2.3 1.4-3-.3-5.6-2.8-5.9-5.9-.1-1 .5-2 1.4-2.3z" fill="#fff"/>') },
-        { label: "Instagram", href: "https://www.instagram.com/tehnoholod369/",
-          icon: this.brandIcon('<rect x="3" y="3" width="18" height="18" rx="5" fill="#E1306C"/><rect x="7" y="7" width="10" height="10" rx="5" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="#fff"/>') },
         { label: "YouTube", href: "https://www.youtube.com/@Tehnoholod369",
           icon: this.brandIcon('<rect x="2.5" y="5.5" width="19" height="13" rx="3.5" fill="#FF0000"/><path d="M10.3 9.4l5 2.6-5 2.6z" fill="#fff"/>') },
         { label: "Google", href: "https://maps.google.com/?cid=6985295064906783345",
           icon: this.brandIcon('<path d="M21.4 12.2c0-.7-.1-1.2-.2-1.8H12v3.5h5.3c-.1.9-.7 2.2-1.9 3l2.9 2.2c1.8-1.6 2.9-4 2.9-6.9z" fill="#4285F4"/><path d="M12 21.5c2.6 0 4.8-.9 6.3-2.4l-2.9-2.2c-.8.5-1.9.9-3.4.9-2.7 0-5-1.8-5.8-4.2l-3 2.3A9.5 9.5 0 0 0 12 21.5z" fill="#34A853"/><path d="M6.2 13.6a5.8 5.8 0 0 1 0-3.6l-3-2.3a9.5 9.5 0 0 0 0 8.2z" fill="#FBBC05"/><path d="M12 5.9c1.5 0 2.7.5 3.6 1.3l2.6-2.5A9.4 9.4 0 0 0 3.2 7.7l3 2.3C7 7.7 9.3 5.9 12 5.9z" fill="#EA4335"/>') },
         { label: "2ГИС", href: "https://2gis.kz/almaty/firm/70000001115210880",
           icon: this.brandIcon('<circle cx="12" cy="12" r="9.2" fill="#39B54A"/><path d="M9.4 9.1c0-1.3 1.2-2.2 2.7-2.2 1.5 0 2.6.9 2.6 2.1 0 1-.6 1.7-1.9 2.6-1.2.9-1.9 1.5-2.1 2.2h4.2v1.9H9.2c0-1.9.8-3 2.3-4.1 1-.8 1.3-1.1 1.3-1.6 0-.5-.4-.8-1-.8-.6 0-1 .4-1 1.1z" fill="#fff"/>') },
-        { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61551801274896",
-          icon: this.brandIcon('<circle cx="12" cy="12" r="9.2" fill="#1877F2"/><path d="M13.4 12.6h1.8l.3-2.2h-2.1V9.1c0-.6.2-1 1.1-1h1.1V6.2c-.2 0-1-.1-1.8-.1-1.9 0-3.1 1.1-3.1 3.2v1.1H8.9v2.2h1.8v5.5h2.7z" fill="#fff"/>') }
       ],
       // навполоса и карточки берут направления из одного источника — иначе расходятся
       // кнопка и строка героя берут одно и то же поле uniq: 143 включают 17 моделей из каталога

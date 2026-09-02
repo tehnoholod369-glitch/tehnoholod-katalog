@@ -13,9 +13,14 @@
   a { color: #0A4EA7; text-decoration: none; }
   a:hover { color: #0872D3; }
   input, textarea { font-family: inherit; }
+  /* Две колонки — только пока помещаются. Инлайн-грид без медиазапроса на 375 px
+     не схлопывался: правая колонка держала 280 px, левой доставалось 47 px, и
+     карточки товара вместе с кнопкой «Убрать из заказа» превращались в полоску. */
+  .th-cart-grid { display:grid; grid-template-columns:minmax(0,1.6fr) minmax(min(280px,100%),1fr); gap:20px; align-items:start; }
+  @media (max-width: 900px) { .th-cart-grid { grid-template-columns:minmax(0,1fr); } }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=c89278d9"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=c1f9b150"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
@@ -62,7 +67,7 @@
       </div>
     </sc-if>
 
-    <div style="display:grid; grid-template-columns:minmax(0,1.6fr) minmax(min(280px,100%),1fr); gap:20px; margin-top:20px; align-items:start;">
+    <div class="th-cart-grid" style="margin-top:20px;">
       <div style="display:flex; flex-direction:column; gap:14px;">
 
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
@@ -86,7 +91,10 @@
                   </div>
                   <a href="{{ i.href }}" style="display:block; font-family:'Montserrat',sans-serif; font-size:15px; font-weight:600; line-height:1.35; margin-top:6px; color:#18212F;">{{ i.name }}</a>
                   <div style="font-size:13px; color:#5A6675; margin-top:4px;">{{ i.spec }}</div>
-                  <div onClick="{{ i.remove }}" style="font-size:13px; color:#8593A6; margin-top:8px; cursor:pointer;">Убрать из заказа</div>
+                  <div onClick="{{ i.remove }}" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#5A6675; border:1px solid #DCE5F0; border-radius:8px; padding:7px 11px; margin-top:10px; cursor:pointer;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:block;"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                    Убрать из заказа
+                  </div>
                 </div>
                 <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px; min-width:150px;">
                   <div style="display:flex; align-items:center; gap:0; border:1px solid #DCE5F0; border-radius:8px; overflow:hidden;">
@@ -113,24 +121,35 @@
         </div>
 
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#8593A6;">ГОРОД</div>
+          <div style="font-size:13px; color:#5A6675; line-height:1.6; margin-top:8px;">С города начинается расчёт: от него зависит, кто поедет на монтаж и как поедет оборудование.</div>
+          <select value="{{ region }}" onChange="{{ onRegion }}" style="width:100%; box-sizing:border-box; margin-top:12px; border:1px solid #DCE5F0; border-radius:8px; padding:13px 12px; font-size:15px; background:#fff; color:#18212F;">
+            <sc-for list="{{ regionOptions }}" as="o" hint-placeholder-count="4">
+              <option value="{{ o.v }}">{{ o.t }}</option>
+            </sc-for>
+          </select>
+          <div style="font-size:13px; color:#5A6675; margin-top:10px; line-height:1.6;">{{ regionNote }}</div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
           <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#8593A6;">МОНТАЖ И КОМПЛЕКТ</div>
           <div style="display:flex; flex-direction:column; gap:12px; margin-top:14px;">
             <sc-for list="{{ services }}" as="s" hint-placeholder-count="2">
-              <div onClick="{{ s.toggle }}" style="display:flex; gap:14px; align-items:flex-start; border:1px solid {{ s.border }}; background:{{ s.bg }}; border-radius:10px; padding:14px 16px; cursor:pointer;">
+              <div onClick="{{ s.toggle }}" style="display:flex; gap:14px; align-items:flex-start; border:1px solid {{ s.border }}; background:{{ s.bg }}; border-radius:10px; padding:14px 16px; cursor:{{ s.cursor }};">
                 <div style="width:22px; height:22px; border-radius:6px; border:2px solid {{ s.boxBorder }}; background:{{ s.boxBg }}; flex:none; display:flex; align-items:center; justify-content:center; margin-top:1px;">
                   <sc-if value="{{ s.on }}" hint-placeholder-val="{{ false }}">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M4.5 12.5l5 5 10-11" /></svg>
                   </sc-if>
                 </div>
                 <div style="flex:1; min-width:0;">
-                  <div style="font-size:15px; font-weight:600;">{{ s.title }}</div>
+                  <div style="font-size:15px; font-weight:600; color:{{ s.fg }};">{{ s.title }}</div>
                   <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:4px;">{{ s.text }}</div>
                 </div>
-                <div style="font-size:14px; font-weight:700; color:#B25200; white-space:nowrap;">{{ s.price }}</div>
+                <div style="font-size:14px; font-weight:700; color:{{ s.priceFg }}; white-space:nowrap;">{{ s.price }}</div>
               </div>
             </sc-for>
           </div>
-          <div style="font-size:13px; color:#5A6675; margin-top:12px; line-height:1.6;">Мы не подставляем сумму монтажа заранее: она зависит от длины трассы, этажа и доступа к наружному блоку. Замерщик назовёт цену до начала работ.</div>
+          <div style="font-size:13px; color:#5A6675; margin-top:12px; line-height:1.6;">{{ mountNote }}</div>
         </div>
 
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
@@ -156,7 +175,7 @@
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); gap:10px; margin-top:14px;">
             <input type="text" placeholder="Имя" value="{{ fName }}" onInput="{{ onName }}" style="border:1px solid {{ nameBorder }}; border-radius:8px; padding:13px 14px; font-size:15px; outline:none; color:#18212F;" />
             <input type="tel" placeholder="Телефон или WhatsApp" value="{{ fPhone }}" onInput="{{ onPhone }}" style="border:1px solid {{ phoneBorder }}; border-radius:8px; padding:13px 14px; font-size:15px; outline:none; color:#18212F;" />
-            <input type="text" placeholder="Город" value="{{ fCity }}" onInput="{{ onCity }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-size:15px; outline:none; color:#18212F;" />
+            <input type="text" placeholder="{{ townPlaceholder }}" value="{{ fTown }}" onInput="{{ onTown }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-size:15px; outline:none; color:#18212F;" />
             <input type="text" placeholder="Адрес и площадь помещения" value="{{ fAddress }}" onInput="{{ onAddress }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-size:15px; outline:none; color:#18212F;" />
           </div>
           <sc-if value="{{ isCompany }}" hint-placeholder-val="{{ false }}">
@@ -181,6 +200,10 @@
           <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:14px;"><span style="color:#5A6675;">Соединительный комплект</span><b style="color:#B25200;">{{ kitLine }}</b></div>
           <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:14px;"><span style="color:#5A6675;">Монтаж под ключ</span><b style="color:#B25200;">{{ mountLine }}</b></div>
           <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:14px;"><span style="color:#5A6675;">Доставка</span><b>{{ deliveryLine }}</b></div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:14px;"><span style="color:#5A6675;">Город</span><b style="color:{{ cityFg }};">{{ cityLine }}</b></div>
+          <sc-if value="{{ showInstallment }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:14px;"><span style="color:#5A6675;">В рассрочку, 12 мес</span><b style="font-variant-numeric:tabular-nums;">{{ instTotalLine }}</b></div>
+          </sc-if>
         </div>
         <div style="border-top:2px solid #E9EFF7; margin-top:14px; padding-top:14px;">
           <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; align-items:baseline;">
@@ -193,6 +216,7 @@
           <div style="background:#F3F7FB; border-radius:10px; padding:14px 16px; margin-top:14px;">
             <div style="font-size:13px; color:#5A6675;">Рассрочка 12 месяцев</div>
             <div style="font-size:18px; font-weight:700; font-variant-numeric:tabular-nums; margin-top:2px;">{{ monthly }}</div>
+            <div style="font-size:12px; color:#5A6675; margin-top:4px; font-variant-numeric:tabular-nums;">{{ instHint }}</div>
             <div style="font-size:12px; color:#8593A6; margin-top:4px; line-height:1.45;">Оформляет банк — Kaspi, ForteBank, Halyk. Монтаж в рассрочку не входит.</div>
           </div>
         </sc-if>
@@ -214,14 +238,39 @@
 class Component extends DCLogic {
   state = {
     items: [], changes: [], loaded: false, titles: {},
-    mount: true, kit: true,
-    delivery: "Алматы, до адреса",
+    // Монтаж выключен, пока не выбран город: до этого неизвестно, есть ли кому ехать.
+    // Раньше галка стояла с порога, и заказ из Астаны уходил со строкой «нужен монтаж
+    // под ключ (после замера)» — замерять там некому, обещание отзывать приходилось в
+    // переписке. Комплект от города не зависит: он едет вместе с оборудованием.
+    region: "", town: "", crewRegions: null,
+    mount: false, kit: true,
+    delivery: "",
     payment: "Kaspi или перевод",
-    name: "", phone: "", city: "", address: "", company: "", bin: "", comment: "",
+    name: "", phone: "", address: "", company: "", bin: "", comment: "",
     // номер заказа приходит из приёмника после отправки; пока пусто — заказ не отправлен
     orderNo: "", sending: false
   };
   boxRefs = {};
+
+  // Справочник городов — тот же, что в приёмнике заявок (автомобильные коды РК).
+  // Второго списка городов не заводим: по этому же коду собирается номер бригады
+  // 369-BR-<РЕГ>-<NNN> и номер Сервис-карты, и по нему же корзина понимает,
+  // есть ли в городе наша бригада.
+  REGIONS = [
+    ["01", "Астана"], ["02", "Алматы"], ["03", "Акмолинская обл."],
+    ["04", "Актюбинская обл."], ["05", "Алматинская обл."], ["06", "Атырауская обл."],
+    ["07", "Западно-Казахстанская обл."], ["08", "Жамбылская обл."],
+    ["09", "Карагандинская обл."], ["10", "Костанайская обл."],
+    ["11", "Кызылординская обл."], ["12", "Мангистауская обл."],
+    ["13", "Туркестанская обл."], ["14", "Павлодарская обл."],
+    ["15", "Северо-Казахстанская обл."], ["16", "Восточно-Казахстанская обл."],
+    ["17", "Шымкент"], ["18", "Абайская обл."], ["19", "Жетысуская обл."],
+    ["20", "Улытауская обл."]
+  ];
+
+  // Где монтаж наш и без оговорок: Алматы (02) и область (05) — зона выезда
+  // бригады 369-BR-02-001 составляет 100 км. Остальные города приходят из реестра.
+  MOUNT_BASE = ["02", "05"];
 
   fmt(n) { return (window.CART ? window.CART.fmt(n) : String(Math.round(n))); }
 
@@ -242,6 +291,21 @@ class Component extends DCLogic {
     }).catch(() => {});
     this.__onCart = () => this.syncFromCart();
     window.addEventListener("th-cart", this.__onCart);
+    // Кто где монтирует — берём из того же реестра бригад, что рисует /brigady:
+    // второго списка «где мы работаем» не заводим, иначе он разойдётся с реестром.
+    // Не ответил — остаёмся с crewRegions: null и говорим «подтвердим при звонке»,
+    // а не «монтажа нет»: молчание сети не повод отказать клиенту.
+    if (window.CART && window.CART.exec) {
+      fetch(window.CART.exec + "?data=brigady", { cache: "no-cache" })
+        .then(r => r.ok ? r.json() : null)
+        .then(d => {
+          const regs = ((d && d.brigady) || []).map(c => String(c.region || "")).filter(Boolean);
+          // Зона выезда алматинской бригады — 100 км, это вся ближняя область
+          // (Талгар, Отеген батыр, Бурундай — под них есть отдельные страницы).
+          if (regs.indexOf("02") >= 0 && regs.indexOf("05") < 0) regs.push("05");
+          this.setState({ crewRegions: regs });
+        }).catch(() => {});
+    }
     // цена и наличие сверяются с мастером при каждом открытии корзины
     if (window.CART) {
       window.CART.refresh().then(res => {
@@ -301,7 +365,9 @@ class Component extends DCLogic {
         sum: x.p ? this.fmt(x.p * qty) + " ₸" : "цена по запросу",
         each: !x.p ? "посчитаем при подтверждении" : qty > 1 ? "по " + this.fmt(x.p) + " ₸" : "с НДС",
         inc: () => cart && cart.setQty(x.sl, qty + 1),
-        dec: () => cart && cart.setQty(x.sl, Math.max(1, qty - 1)),
+        // «−» на последней штуке убирает позицию: до 02.09.2026 он упирался в 1 и
+        // молча ничего не делал — со стороны это «кнопка сломана».
+        dec: () => cart && (qty > 1 ? cart.setQty(x.sl, qty - 1) : cart.remove(x.sl)),
         remove: () => cart && cart.remove(x.sl)
       };
     });
@@ -310,15 +376,33 @@ class Component extends DCLogic {
     const totalQty = items.reduce((n, x) => n + (x.q || 1), 0);
     const byRequest = items.filter(x => !x.p).length;
 
-    const svc = (key, title, text, price) => {
-      const on = s[key];
+    // Город решает две вещи: кто поедет на монтаж и как поедет оборудование.
+    // hasCrew: true — бригада в реестре есть, false — нет, null — реестр не ответил
+    // или город ещё не выбран. Три состояния, а не два: «не знаем» и «нет» —
+    // разные ответы клиенту.
+    const region = s.region;
+    const regionLabel = (this.REGIONS.filter(r => r[0] === region)[0] || [])[1] || "";
+    // Алматы и область держим своими без всякого запроса: бригада наша, витрина обещает
+    // монтаж там в девяти местах, и молчание приёмника не повод отказать в родном городе.
+    // Реестр только добавляет города, отнять эти два он не может.
+    const hasCrew = !region ? null
+      : this.MOUNT_BASE.indexOf(region) >= 0 ? true
+      : s.crewRegions ? s.crewRegions.indexOf(region) >= 0
+      : null;
+    const mountAsk = !!region && hasCrew !== true;
+
+    const svc = (key, title, text, price, locked) => {
+      const on = !locked && s[key];
       return {
         title, text, price, on,
-        toggle: () => this.setState({ [key]: !on }),
-        border: on ? "#B9DBF7" : "#DCE5F0",
-        bg: on ? "#E6F2FD" : "#fff",
-        boxBorder: on ? "#0872D3" : "#DCE5F0",
-        boxBg: on ? "#0872D3" : "#fff"
+        toggle: () => { if (!locked) this.setState({ [key]: !on }); },
+        border: locked ? "#E9EFF7" : on ? "#B9DBF7" : "#DCE5F0",
+        bg: locked ? "#F9FBFE" : on ? "#E6F2FD" : "#fff",
+        boxBorder: locked ? "#E9EFF7" : on ? "#0872D3" : "#DCE5F0",
+        boxBg: locked ? "#F3F7FB" : on ? "#0872D3" : "#fff",
+        cursor: locked ? "default" : "pointer",
+        fg: locked ? "#8593A6" : "#18212F",
+        priceFg: locked ? "#8593A6" : "#B25200"
       };
     };
 
@@ -330,11 +414,18 @@ class Component extends DCLogic {
       fg: s[key] === label ? "#0A4EA7" : "#5A6675"
     });
 
-    const deliveryNotes = {
+    // Способы доставки следуют из города: «Алматы, до адреса» при заказе в Актобе —
+    // противоречие, которое клиент замечает раньше нас.
+    const deliveryNotes = region === "02" ? {
       "Алматы, до адреса": "Доставка по городу — стоимость уточняется при подтверждении заказа, зависит от адреса и габаритов.",
-      "Другой город Казахстана": "Отправка транспортной компанией по её тарифу. Срок называем при подтверждении — зависит от города и наличия позиции.",
       "Самовывоз": "Забрать можно после подтверждения наличия. Часть позиций идёт под заказ и приходит в Алматы в срок поставки."
-    };
+    } : region === "05" ? {
+      "По области, до адреса": "Возим по Алматинской области — стоимость зависит от адреса и габаритов, назовём при подтверждении.",
+      "Самовывоз": "Забрать в Алматы можно после подтверждения наличия."
+    } : region ? {
+      "Транспортной компанией": "Отправка ТК по её тарифу, оборудование в заводской упаковке. Срок называем при подтверждении — зависит от города и наличия позиции.",
+      "Самовывоз": "Забрать в Алматы можно после подтверждения наличия."
+    } : {};
     const paymentNotes = {
       "Kaspi или перевод": "Оплата на счёт в АО «Kaspi Bank» или переводом по реквизитам. Отгрузка после поступления оплаты.",
       "Рассрочка 12 месяцев": "Оформляет банк: Kaspi, ForteBank, Halyk. Решение по одобрению — на стороне банка. Монтаж в рассрочку не входит.",
@@ -344,14 +435,31 @@ class Component extends DCLogic {
     const isCompany = s.payment === "Счёт для юрлица";
     const installment = s.payment === "Рассрочка 12 месяцев";
 
+    // Город в заказ уходит одной строкой: «Алматинская обл., Талгар». Регион берётся
+    // из справочника, посёлок дописывает клиент — по одному региону адрес не найти.
+    const town = s.town.trim();
+    const cityLabel = regionLabel ? (town ? regionLabel + ", " + town : regionLabel) : town;
+    // Рассрочка = розница ×1,175 (правило каталога, без исключений и без округления
+    // до 990). До 02.09.2026 коэффициент стоял только в строке «₸/мес», а итог и заказ
+    // уходили по рознице: клиент видел 12 × 12 337 ₸ при сумме 125 990 ₸.
+    const instTotal = equip * 1.175;
+
     const form = {
-      name: s.name.trim(), phone: s.phone.trim(), city: s.city.trim(),
+      name: s.name.trim(), phone: s.phone.trim(), city: cityLabel,
       address: s.address.trim(), company: isCompany ? s.company.trim() : "",
       bin: isCompany ? s.bin.trim() : "", comment: s.comment.trim(),
-      mount: s.mount, kit: s.kit, delivery: s.delivery, payment: s.payment
+      mount: s.mount, mountAsk: mountAsk, kit: s.kit, delivery: s.delivery, payment: s.payment,
+      // Строку монтажа для заказа собирает страница: она одна знает, бригады нет
+      // или реестр ещё не ответил. «Бригады нет» — утверждение, и говорить его,
+      // когда мы просто не дозвонились до реестра, нельзя.
+      mountLine: hasCrew === true ? "Нужен монтаж под ключ (считается после замера)."
+        : hasCrew === false ? "Нужен монтаж: своей бригады в этом городе нет — ищем исполнителя, подтвердим при звонке."
+        : "Нужен монтаж: исполнителя в этом городе подтвердим при звонке.",
+      instTotal: installment && equip ? this.fmt(instTotal) + " ₸" : "",
+      instMonthly: installment && equip ? this.fmt(instTotal / 12) + " ₸" : ""
     };
     const phoneOk = form.phone.replace(/[^\d]/g, "").length >= 10;
-    const ready = items.length > 0 && form.name.length > 1 && phoneOk;
+    const ready = items.length > 0 && form.name.length > 1 && phoneOk && !!region;
 
     return {
       items: rows,
@@ -362,20 +470,49 @@ class Component extends DCLogic {
       changes: s.changes || [],
 
       services: [
-        svc("mount", "Монтаж под ключ", "Установка блоков, вакуумирование, пусконаладка, уборка. Срок 1–3 дня после доставки.", "после замера"),
-        svc("kit", "Соединительный комплект и трасса", "Медные трубы, изоляция, кабель, дренаж. Длина зависит от расположения наружного блока.", "по длине трассы")
+        svc("mount", "Монтаж под ключ",
+          !region ? "Сначала выберите город — от него зависит, кто поедет на монтаж и как считается выезд."
+          : hasCrew === true ? "Установка блоков, вакуумирование, пусконаладка, уборка. Срок 1–3 дня после доставки."
+          : hasCrew === false ? "Своей бригады в этом городе у нас нет. Заявку примем и поищем монтажников — цену и срок подтвердим при звонке, до начала работ."
+          : "Проверим по реестру бригад, кого можем отправить. Подтвердим при звонке, до начала работ.",
+          !region ? "нужен город" : hasCrew === true ? "после замера" : "уточним",
+          !region),
+        svc("kit", "Соединительный комплект и трасса", "Медные трубы, изоляция, кабель, дренаж. Длина зависит от расположения наружного блока.", "по длине трассы", false)
       ],
+      mountNote: !region
+        ? "Город выбирается первым: в Алматы и области монтаж делает наша бригада, в других городах мы сначала ищем исполнителя."
+        : hasCrew === true
+        ? "Мы не подставляем сумму монтажа заранее: она зависит от длины трассы, этажа и доступа к наружному блоку. Замерщик назовёт цену до начала работ."
+        : "Оборудование отправим транспортной компанией в любом случае. Монтаж в этом городе — отдельный разговор: подтвердим исполнителя и цену до того, как что-то оплачивать.",
+      regionOptions: [{ v: "", t: "— выберите город —" }]
+        .concat(this.REGIONS.map(r => ({ v: r[0], t: r[1] }))),
+      region,
+      regionNote: !region
+        ? "Из справочника — тот же список городов, по которому ведём бригады и сервис-карты."
+        : hasCrew === true ? regionLabel + " — здесь работает наша бригада: монтаж, гарантия на работы и ТО наши."
+        : hasCrew === false ? regionLabel + " — своей бригады здесь нет. Оборудование отправим транспортной компанией, по монтажу вернёмся с ответом."
+        : regionLabel + " — сверяемся с реестром бригад, кого можем отправить.",
+      onRegion: e => {
+        const v = e.target.value;
+        this.setState({
+          region: v, mount: !!v,
+          delivery: v === "02" ? "Алматы, до адреса"
+            : v === "05" ? "По области, до адреса"
+            : v ? "Транспортной компанией" : ""
+        });
+      },
       deliveryOptions: Object.keys(deliveryNotes).map(k => chip("delivery", k)),
-      deliveryNote: deliveryNotes[s.delivery],
+      deliveryNote: s.delivery ? deliveryNotes[s.delivery] : "Выберите город — покажем, как повезём.",
       paymentOptions: Object.keys(paymentNotes).map(k => chip("payment", k)),
       paymentNote: paymentNotes[s.payment],
       isCompany,
 
-      fName: s.name, fPhone: s.phone, fCity: s.city, fAddress: s.address,
+      fName: s.name, fPhone: s.phone, fTown: s.town, fAddress: s.address,
       fCompany: s.company, fBin: s.bin, fComment: s.comment,
+      townPlaceholder: region === "02" ? "Район города" : region ? "Населённый пункт" : "Населённый пункт или район",
       onName: e => this.setState({ name: e.target.value }),
       onPhone: e => this.setState({ phone: e.target.value }),
-      onCity: e => this.setState({ city: e.target.value }),
+      onTown: e => this.setState({ town: e.target.value }),
       onAddress: e => this.setState({ address: e.target.value }),
       onCompany: e => this.setState({ company: e.target.value }),
       onBin: e => this.setState({ bin: e.target.value }),
@@ -390,6 +527,8 @@ class Component extends DCLogic {
         : s.sending ? "Отправляем заказ…"
         : ready
         ? "Всё заполнено — заказ уйдёт в WhatsApp составом, останется нажать «Отправить»."
+        : !region
+        ? "Выберите город выше: от него зависят доставка и монтаж, без него заказ не считается."
         : "Имя и телефон нужны, чтобы перезвонить и подтвердить наличие. Остальное — по желанию.",
 
       totalQty,
@@ -399,13 +538,18 @@ class Component extends DCLogic {
       hasByRequest: byRequest > 0,
       byRequestLine: byRequest + " шт. — посчитаем",
       kitLine: s.kit ? "по длине трассы" : "не нужен",
-      mountLine: s.mount ? "после замера" : "не нужен",
-      deliveryLine: s.delivery === "Самовывоз" ? "бесплатно" : "уточняется",
+      mountLine: !s.mount ? "не нужен" : hasCrew === true ? "после замера" : "уточним",
+      cityLine: regionLabel || "не выбран",
+      cityFg: regionLabel ? "#18212F" : "#B25200",
+      deliveryLine: !s.delivery ? "нужен город" : s.delivery === "Самовывоз" ? "бесплатно" : "уточняется",
       showInstallment: installment && equip > 0,
       // рассрочка = розница x 1,175, делится на 12 месяцев без округления до 990
-      monthly: this.fmt(equip * 1.175 / 12) + " ₸/мес",
+      monthly: this.fmt(instTotal / 12) + " ₸/мес",
+      instTotalLine: this.fmt(instTotal) + " ₸",
+      instHint: "12 × " + this.fmt(instTotal / 12) + " ₸ · при оплате сразу " + this.fmt(equip) + " ₸",
 
       submitLabel: !items.length ? "Добавьте позиции из каталога"
+        : !region ? "Выберите город"
         : !ready ? "Заполните имя и телефон"
         : s.sending ? "Отправляем…"
         : isCompany ? "Запросить счёт" : "Отправить заказ в WhatsApp",

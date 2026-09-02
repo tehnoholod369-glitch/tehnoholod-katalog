@@ -162,16 +162,32 @@
         );
       });
       if (list.length) lines.push("Оборудование итого: " + fmt(total()) + " ₸ с НДС.");
-      if (form.mount) lines.push("Нужен монтаж под ключ (считается после замера).");
+      // Монтаж пишем по-разному: там, где своей бригады нет, обещать «после замера»
+      // нельзя — замерять некому. Менеджер должен увидеть это в первой же строке.
+      if (form.mount) {
+        lines.push(form.mountLine || "Нужен монтаж под ключ (считается после замера).");
+      }
       if (form.kit) lines.push("Нужен соединительный комплект и трасса.");
       if (form.delivery) lines.push("Доставка: " + form.delivery + ".");
-      if (form.payment) lines.push("Оплата: " + form.payment + ".");
+      // Рассрочка дороже розницы на коэффициент каталога (×1,175). В заказ уходят обе
+      // суммы: со сплошной розницей менеджер выставит счёт, где комиссия банка съест маржу.
+      if (form.payment) {
+        lines.push(form.instTotal
+          ? "Оплата: " + form.payment + " — " + form.instTotal + " (12 × " + form.instMonthly
+            + "). При оплате сразу: " + fmt(total()) + " ₸."
+          : "Оплата: " + form.payment + ".");
+      }
       var who = [];
       if (form.name) who.push(form.name);
       if (form.phone) who.push("тел. " + form.phone);
       if (form.city) who.push(form.city);
       if (form.address) who.push(form.address);
-      if (who.length) lines.push("Контакты: " + who.join(", ") + ".");
+      // Точку в конце не удваиваем: название региона из справочника уже кончается
+      // на «обл.», и строка получалась «Алматинская обл..».
+      if (who.length) {
+        var contacts = "Контакты: " + who.join(", ");
+        lines.push(/\.$/.test(contacts) ? contacts : contacts + ".");
+      }
       if (form.company) lines.push("Организация: " + form.company + (form.bin ? ", ИИН/БИН " + form.bin : "") + ".");
       if (form.comment) lines.push("Комментарий: " + form.comment);
       return lines.join("\n");
@@ -211,7 +227,9 @@
                   form.bin ? "ИИН/БИН: " + form.bin : "",
                   form.delivery ? "Доставка: " + form.delivery : "",
                   form.payment ? "Оплата: " + form.payment : "",
-                  form.mount ? "Нужен монтаж" : "", form.kit ? "Нужен комплект" : ""]
+                  form.instTotal ? "В рассрочку: " + form.instTotal : "",
+                  form.mount ? (form.mountAsk ? "Нужен монтаж — исполнителя в городе подтвердить" : "Нужен монтаж") : "",
+                  form.kit ? "Нужен комплект" : ""]
                  .filter(Boolean).join("; "),
         items: items,
         src: (typeof location !== "undefined" ? location.pathname : ""),
@@ -232,5 +250,8 @@
   }
 
   CART.fmt = fmt;
+  // Адрес приёмника отдаём наружу: странице корзины он нужен, чтобы спросить реестр
+  // бригад (в каком городе есть кому монтировать). Второго адреса не заводим — см. EXEC.
+  CART.exec = EXEC;
   window.CART = CART;
 })();
