@@ -238,10 +238,10 @@
 
     
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
-    <div class="art-cards" data-art-next="obem-boilera|voda|vodonagrevateli|">
+    <div class="art-cards" data-art-next="obem-boilera|voda|vodonagrevateli|kak-vybrat-radiator">
+        <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-radiator"><div class="art-card__t">Как выбрать радиатор отопления для квартиры: типы и советы</div><div class="art-card__s">Разбираем биметаллические, алюминиевые и стальные радиаторы: плюсы, минусы, для каких квартир и домов подходят</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/otoplenie-chastnogo-doma"><div class="art-card__t">Отопление частного дома: сравнение вариантов для Алматы</div><div class="art-card__s">Электрокотёл, газовый котёл, тепловой насос, конвекторы, ИК-панели — что выбрать для дома в Алматы. Расчёт сто</div><div class="art-card__go">Читать →</div></a>
         <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada"><div class="art-card__t">Монтаж кондиционера: что даёт проверенная бригада</div><div class="art-card__s">Как проверить монтажников кондиционера: внутренний допуск 369, личный рейтинг МАСТЕРОВ, прозрачная смета, серв</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/brizer-ili-konditsioner-s-pritokom"><div class="art-card__t">Бризер или кондиционер с притоком свежего воздуха: что выбрать</div><div class="art-card__s">Чем бризер отличается от кондиционера с притоком свежего воздуха, когда выгоднее каждый и как выбрать модель п</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/kak-rabotaet-konditsioner-s-pritokom"><div class="art-card__t">Как работает кондиционер с притоком свежего воздуха</div><div class="art-card__s">Принцип работы приточной сплит-системы: забор воздуха с улицы, очистка HEPA H13, доведение до комнатной темпер</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>
