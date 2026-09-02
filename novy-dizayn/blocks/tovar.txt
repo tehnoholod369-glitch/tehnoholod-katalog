@@ -1259,7 +1259,7 @@ class Component extends DCLogic {
       docsMark: s.crewDocs ? "#0872D3" : "#B9C6D6",
       docsFill: s.crewDocs ? "#0872D3" : "transparent",
       crewsShown: !!crewCity && inCity.length > 0,
-      crewsDopusk: "Подключение к электросети выполняет мастер с действующим допуском по "
+      crewsDopusk: "Подключение к электросети выполняет Мастер с действующим допуском по "
                  + "электробезопасности — группа и срок проверки знаний указаны в карточке бригады. "
                  + "Срок истёк — электрические работы с сайта убраны, пока бригада его не обновит.",
       crewsFooter: showPrices

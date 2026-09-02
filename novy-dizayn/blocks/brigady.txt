@@ -135,14 +135,6 @@
     </sc-if>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr)); gap:16px; margin-top:14px; align-items:start;">
-      
-      <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 14px;">
-        <span style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">УРОВНИ</span>
-        <span style="font-size:12px; color:#2079B5; background:#EAF4FA; border:1px solid #C9E3F2; border-radius:999px; padding:4px 10px;"><b>Участник 369</b> · проверка пройдена</span>
-        <span style="font-size:12px; color:#123B67; background:#F5F7FA; border:1px solid #D6DEE9; border-radius:999px; padding:4px 10px;"><b>Мастер 369</b> · качество подтверждено</span>
-        <span style="font-size:12px; color:#E4572E; background:#FCEDE8; border:1px solid #F3CBBB; border-radius:999px; padding:4px 10px;"><b>Партнёр 369</b> · доверие подтверждено</span>
-      </div>
-
       <sc-for list="{{ crews }}" as="c" hint-placeholder-count="3">
         <div id="{{ c.cert }}" style="background:#fff; border:1px solid {{ c.cardBorder }}; border-radius:16px; padding:24px; scroll-margin-top:16px;">
 
@@ -154,9 +146,13 @@
               </div>
               
               <sc-if value="{{ c.hasLevel }}" hint-placeholder-val="{{ true }}">
-                <div style="display:inline-flex; align-items:baseline; flex-wrap:wrap; gap:8px; margin-top:7px; background:{{ c.levelBg }}; border:1px solid {{ c.levelBd }}; border-radius:6px; padding:5px 10px;">
-                  <span style="font-size:13px; font-weight:700; color:{{ c.levelFg }};">{{ c.levelName }}</span>
-                  <span style="font-size:12px; color:#1F2937;">{{ c.levelPub }}</span>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:8px; margin-top:9px; max-width:620px;">
+                  <sc-for list="{{ c.levels }}" as="st" hint-placeholder-count="3">
+                    <div style="background:{{ st.bg }}; border:1px solid {{ st.bd }}; border-radius:8px; padding:9px 12px; text-align:center;">
+                      <div style="font-size:12px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:{{ st.fg }};">{{ st.n }}</div>
+                      <div style="font-size:11px; line-height:1.4; margin-top:3px; color:{{ st.sub }};">{{ st.pub }}</div>
+                    </div>
+                  </sc-for>
                 </div>
               </sc-if>
               <div style="font-size:12px; color:#8593A6; margin-top:5px;">сертификация ИП «ТехноХолод», реестр «Сервис-карта 369»<sc-if value="{{ c.canVerify }}" hint-placeholder-val="{{ true }}"> · <a href="{{ c.verifyHref }}" style="color:#0872D3; font-weight:600;">проверить сертификат</a></sc-if></div>
@@ -625,18 +621,40 @@ class Component extends DCLogic {
           master:    { bg: "#F5F7FA", bd: "#D6DEE9", fg: "#123B67" },
           partner:   { bg: "#FCEDE8", bd: "#F3CBBB", fg: "#E4572E" }
         };
+        // Ступень, на которой бригада не стоит: без заливки и серым. Это
+        // не «плохо», а «ещё не здесь» — поэтому не красный и не зачёркнутый.
+        const СЕРЫЙ = { bg: "#FFFFFF", bd: "#E3E9F0", fg: "#9AA6B6" };
+        // Имена ступеней держим здесь: приёмник отдаёт текущий уровень,
+        // а сама лестница — свойство программы, а не бригады.
+        const СТУПЕНИ = [
+          { key: "uchastnik", n: "УЧАСТНИК 369" },
+          { key: "master",    n: "МАСТЕР 369" },
+          { key: "partner",   n: "ПАРТНЁР 369" }
+        ];
+        // Подписи ступеней — из положения о программе, дословно.
+        const ОТМЕТКА = {
+          uchastnik: "Проверка пройдена",
+          master: "Качество подтверждено",
+          partner: "Доверие подтверждено"
+        };
         const ур = c.level || null;
-        const цв = ЦВЕТ[(ур && ур.key) || "uchastnik"] || ЦВЕТ.uchastnik;
 
         return {
           cert: c.cert,
           canVerify: !!this.state.verify,
           hasLevel: !!(ур && ур.name),
-          levelName: (ур && ур.name) || "",
-          levelPub: (ур && ур.pub) || "",
-          hasLevelSince: !!(ур && ур.since),
-          levelSince: ур && ур.since ? "с " + this.dateLabel(ур.since) : "",
-          levelBg: цв.bg, levelBd: цв.bd, levelFg: цв.fg,
+          levels: СТУПЕНИ.map(function (с) {
+            var свой = !!(ур && ур.key === с.key);
+            var цв = свой ? (ЦВЕТ[с.key] || ЦВЕТ.uchastnik) : СЕРЫЙ;
+            return {
+              n: с.n,
+              // Отметка стоит у всех трёх: это описание лестницы, а не
+              // утверждение об этой бригаде — про неё говорит цвет.
+              pub: ОТМЕТКА[с.key],
+              bg: цв.bg, bd: цв.bd, fg: цв.fg,
+              sub: свой ? "#1F2937" : "#9AA6B6"
+            };
+          }),
           verifyHref: "/proverka?cert=" + encodeURIComponent(c.cert),
           dirLine: (c.dirLabels || []).join(" · ") || "Направление уточняется",
           cardBorder: open ? "#B9DBF7" : "#DCE5F0",

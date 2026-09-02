@@ -96,9 +96,13 @@
         <sc-if value="{{ hasLevel }}" hint-placeholder-val="{{ true }}">
           <div style="border-top:1px solid #EEF3F9; margin-top:16px; padding-top:14px;">
             <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ t.levelH }}</div>
-            <div style="display:inline-flex; align-items:baseline; flex-wrap:wrap; gap:9px; margin-top:8px; background:{{ levelBg }}; border:1px solid {{ levelBd }}; border-radius:8px; padding:7px 12px;">
-              <span style="font-size:15px; font-weight:700; color:{{ levelFg }};">{{ levelName }}</span>
-              <span style="font-size:13px; color:#1F2937;">{{ levelPub }}</span>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; margin-top:10px;">
+              <sc-for list="{{ levels }}" as="st" hint-placeholder-count="3">
+                <div style="background:{{ st.bg }}; border:1px solid {{ st.bd }}; border-radius:10px; padding:12px 14px; text-align:center;">
+                  <div style="font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:{{ st.fg }};">{{ st.n }}</div>
+                  <div style="font-size:12px; line-height:1.45; margin-top:4px; color:{{ st.sub }};">{{ st.pub }}</div>
+                </div>
+              </sc-for>
             </div>
             <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:10px;">{{ t.levelNote }}</div>
           </div>
@@ -144,6 +148,14 @@ const УРЦВЕТ = {
   master:    { bg: "#F5F7FA", bd: "#D6DEE9", fg: "#123B67" },
   partner:   { bg: "#FCEDE8", bd: "#F3CBBB", fg: "#E4572E" }
 };
+// Ступень, на которой бригада не стоит, — без заливки и серым.
+const УРСЕРЫЙ = { bg: "#FFFFFF", bd: "#E3E9F0", fg: "#9AA6B6" };
+// Лестница — свойство программы: приёмник отдаёт только текущую ступень.
+const УРСТУПЕНИ = [
+  { key: "uchastnik", n: "УЧАСТНИК 369", pub: "Проверка пройдена" },
+  { key: "master",    n: "МАСТЕР 369",   pub: "Качество подтверждено" },
+  { key: "partner",   n: "ПАРТНЁР 369",  pub: "Доверие подтверждено" }
+];
 
 class Component extends DCLogic {
   // Приёмник заявок — тот же, что у страницы бригад. Второго адреса не заводим.
@@ -160,7 +172,7 @@ class Component extends DCLogic {
       crumbHome: "Главная", crumbBrigady: "Бригады", crumbHere: "Проверка сертификата",
       h1: "Проверка сертификата",
       intro: "ИП «ТехноХолод» допускает к заказам только проверенные бригады. Введите номер с бланка или из «Сервис-карты 369» — покажем, действует ли он и что подтверждает. Номер бригады выглядит как",
-      introMaster: ", именной номер мастера —",
+      introMaster: ", именной номер Мастера —",
       fieldLabel: "Номер сертификата",
       btn: "Проверить", btnBusy: "Проверяем…",
       valid: "✓ Сертификат действует", invalid: "Сертификат не действует",
@@ -170,7 +182,7 @@ class Component extends DCLogic {
       trustedBadge: "✓ Проверена ИП «ТехноХолод» перед допуском к заказам",
       levelH: "УРОВЕНЬ В ПРОГРАММЕ",
       levelSinceWord: "с ",
-      levelNote: "Три уровня: «Участник 369», «Мастер 369», «Партнёр 369». Уровень живой — он читается из реестра в момент проверки, поэтому здесь всегда текущий. Он не заменяет рейтинг клиентов и не является лицензией.",
+      levelNote: "Три уровня: «УЧАСТНИК 369», «МАСТЕР 369», «ПАРТНЁР 369». Уровень живой — он читается из реестра в момент проверки, поэтому здесь всегда текущий. Он не заменяет рейтинг клиентов и не является лицензией.",
       razdelyH: "ЧТО ЭТА БРИГАДА СТАВИТ — ВЫБРАТЬ У НАС",
       razdelyNote: "Разделы открыты по тем работам, на которые бригада назвала цены. "
         + "Оборудование покупаете у нас, монтаж делает эта бригада — гарантия на монтаж её, "
@@ -211,7 +223,7 @@ class Component extends DCLogic {
       trustedBadge: "✓ Тапсырыстарға жіберер алдында «ТехноХолод» ЖК тексерген",
       levelH: "БАҒДАРЛАМАДАҒЫ ДЕҢГЕЙ",
       levelSinceWord: "",
-      levelNote: "Үш деңгей: «Участник 369», «Мастер 369», «Партнёр 369». Деңгей тірі — ол тексеру сәтінде тізілімнен оқылады, сондықтан мұнда әрқашан ағымдағы деңгей тұрады. Ол клиенттер рейтингін алмастырмайды және лицензия болып табылмайды.",
+      levelNote: "Үш деңгей: «УЧАСТНИК 369», «МАСТЕР 369», «ПАРТНЁР 369». Деңгей тірі — ол тексеру сәтінде тізілімнен оқылады, сондықтан мұнда әрқашан ағымдағы деңгей тұрады. Ол клиенттер рейтингін алмастырмайды және лицензия болып табылмайды.",
       razdelyH: "БҰЛ БРИГАДА НЕ ОРНАТАДЫ — БІЗДЕН ТАҢДАҢЫЗ",
       razdelyNote: "Бөлімдер бригада баға берген жұмыстар бойынша ашылған. "
         + "Жабдықты бізден аласыз, монтажды осы бригада жасайды — монтажға кепілдік оның, "
@@ -295,10 +307,11 @@ class Component extends DCLogic {
     // Предел ожидания (02.09.2026). Реестр отвечает через Google Apps Script,
     // у него бывает холодный старт; без предела страница показывала
     // «Проверяем…» бесконечно, и человек с бланком в руках не получал НИКАКОГО
-    // ответа. Пятнадцать секунд — заведомо больше обычных двух, но всё ещё
-    // столько, сколько люди готовы ждать.
+    // ответа. Замер 02.09.2026: обычный ответ 7 секунд, но у Apps Script
+    // бывают выбросы (в замере один ответ занял 112 с). Тридцать секунд
+    // покрывают нормальную работу и не заставляют ждать бесконечно.
     const прервать = ("AbortController" in window) ? new AbortController() : null;
-    const срок = setTimeout(() => { if (прервать) { прервать.abort(); } }, 15000);
+    const срок = setTimeout(() => { if (прервать) { прервать.abort(); } }, 30000);
     const опции = { cache: "no-cache" };
     if (прервать) { опции.signal = прервать.signal; }
     fetch(this.PRIEMNIK + "?check=" + encodeURIComponent(номер), опции)
@@ -379,15 +392,16 @@ class Component extends DCLogic {
       // Уровень программы. Показываем только у ДЕЙСТВУЮЩЕГО сертификата:
       // «Партнёр 369» рядом со снятым номером читался бы как рекомендация.
       hasLevel: !!(d && d.ok && d.valid && d.level && d.level.name),
-      levelName: (d && d.level && d.level.name) || "",
-      levelPub: (d && d.level && d.level.pub) || "",
-      hasLevelSince: !!(d && d.valid && d.level && d.level.since),
-      levelSince: (d && d.level && d.level.since)
-        ? ((this.L[this.state.lang] || this.L.ru).levelSinceWord || "") + this.dateRu(d.level.since)
-        : "",
-      levelBg: УРЦВЕТ[(d && d.level && d.level.key) || "uchastnik"].bg,
-      levelBd: УРЦВЕТ[(d && d.level && d.level.key) || "uchastnik"].bd,
-      levelFg: УРЦВЕТ[(d && d.level && d.level.key) || "uchastnik"].fg,
+      levels: УРСТУПЕНИ.map(function (с) {
+        var свой = !!(d && d.level && d.level.key === с.key);
+        var цв = свой ? (УРЦВЕТ[с.key] || УРЦВЕТ.uchastnik) : УРСЕРЫЙ;
+        return {
+          n: с.n,
+          pub: с.pub,
+          bg: цв.bg, bd: цв.bd, fg: цв.fg,
+          sub: свой ? "#1F2937" : "#9AA6B6"
+        };
+      }),
       razdely: (d && d.ok && d.valid && d.razdely) ? d.razdely : [],
       hasRazdely: !!(d && d.ok && d.valid && d.razdely && d.razdely.length),
       hint: hint, hasHint: !!hint,
