@@ -43,18 +43,18 @@
     </div>
   </div>
 
-  <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
+  <div class="art-page-main" style="width:100%; max-width:888px; box-sizing:border-box; margin:0 auto; padding:18px 24px 72px 24px;">
     <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <a href="/tcl-freshin">TCL FreshIN 3.0</a> → <span style="color:#18212F;">Сравнение моделей</span></div>
 
     <h1 style="margin:14px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em;">Как выбрать TCL FreshIN 3.0: сравнение всех девяти исполнений</h1>
 
-    <div style="font-size:16px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:860px;">
+    <div style="font-size:16px; color:#2C3846; line-height:1.65; margin-top:14px;">
       Все FreshIN 3.0 — это кондиционер с притоком свежего воздуха с улицы: окно открывать не нужно.
       Фильтрация, Wi-Fi, голосовое управление, самоочистка и инверторный компрессор одинаковы у всех.
       Различаются <b>мощность, рекомендуемая площадь, цвет корпуса и цена</b>.
     </div>
 
-    <div style="background:#FFF6E6; border:1px solid #F5D08A; border-radius:12px; padding:16px 18px; margin-top:18px; max-width:860px;">
+    <div style="background:#FFF6E6; border:1px solid #F5D08A; border-radius:12px; padding:16px 18px; margin-top:18px;">
       <div style="font-weight:700; color:#7A4A00; font-size:15px;">Главное, что стоит знать до выбора цвета</div>
       <div style="font-size:15px; color:#4A3410; line-height:1.6; margin-top:6px;">
         Чёрная серия — это <b>не тот же аппарат в другом корпусе</b>, а отдельный ряд мощностей.
@@ -120,7 +120,7 @@
 
     </div>
 
-    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:16px; max-width:860px;">
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:16px;">
       <div style="font-size:15px; color:#2C3846; line-height:1.65;">
         <b>Берите на размер больше</b>, если комната на солнечной стороне, это кухня, высокие потолки
         или панорамные окна, либо людей регулярно много. Площадь в таблице — ориентир для обычной
