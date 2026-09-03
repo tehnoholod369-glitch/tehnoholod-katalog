@@ -224,7 +224,7 @@
     <div class="art-cards" data-art-next="skolko-sekcii-radiatora|otoplenie|radiatory|kak-vybrat-radiator">
         <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-radiator"><div class="art-card__t">Как выбрать радиатор отопления для квартиры: типы и советы</div><div class="art-card__s">Разбираем биметаллические, алюминиевые и стальные радиаторы: плюсы, минусы, для каких квартир и домов подходят</div><div class="art-card__go">Читать →</div></a>
         <a class="art-card" href="https://tehnoholod369.kz/otoplenie-chastnogo-doma"><div class="art-card__t">Отопление частного дома: сравнение вариантов для Алматы</div><div class="art-card__s">Электрокотёл, газовый котёл, тепловой насос, конвекторы, ИК-панели — что выбрать для дома в Алматы. Расчёт сто</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada"><div class="art-card__t">Монтаж кондиционера: что даёт проверенная бригада</div><div class="art-card__s">Как проверить монтажников кондиционера: внутренний допуск 369, личный рейтинг МАСТЕРОВ, прозрачная смета, серв</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/podgotovka-kondicionera-k-zime"><div class="art-card__t">Подготовка кондиционера к зиме: чеклист из 6 шагов</div><div class="art-card__s">Как правильно подготовить кондиционер к зиме: чистка, консервация, зимний комплект. Пошаговый чеклист + что мо</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>
