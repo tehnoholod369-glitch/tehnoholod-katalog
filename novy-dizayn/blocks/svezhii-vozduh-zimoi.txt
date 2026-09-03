@@ -199,8 +199,8 @@
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
     <div class="art-cards" data-art-next="svezhii-vozduh-zimoi|vozduh|ventilyaciya|pritok-vozdukha-vs-fortochka">
         <a class="art-card" href="https://tehnoholod369.kz/pritok-vozdukha-vs-fortochka"><div class="art-card__t">Приток через кондиционер или форточка: что выбрать</div><div class="art-card__s">Сравниваем способы получить свежий воздух дома: форточка, приточный клапан и кондиционер с притоком — очистка,</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/brizer-ili-konditsioner-s-pritokom"><div class="art-card__t">Бризер или кондиционер с притоком свежего воздуха: что выбрать</div><div class="art-card__s">Чем бризер отличается от кондиционера с притоком свежего воздуха, когда выгоднее каждый и как выбрать модель п</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/kak-rabotaet-konditsioner-s-pritokom"><div class="art-card__t">Как работает кондиционер с притоком свежего воздуха</div><div class="art-card__s">Принцип работы приточной сплит-системы: забор воздуха с улицы, очистка HEPA H13, доведение до комнатной темпер</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/suhoi-vozduh-zimoi"><div class="art-card__t">Сухой воздух зимой: увлажнитель или приточный кондиционер</div><div class="art-card__s">Зимой в квартире сухой воздух — пересыхает кожа, тяжело дышать. Сравниваем увлажнитель и приточный кондиционер</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/pritochnaya-ventilyaciya"><div class="art-card__t">Приточная вентиляция в квартиру: что это и зачем нужна</div><div class="art-card__s">Как работает приточка, чем отличается от бризера и проветривателя, кому нужна в Алматы. Мощность, шум, установ</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>

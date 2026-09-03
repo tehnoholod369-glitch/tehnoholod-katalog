@@ -207,7 +207,7 @@
       <h2>Вывод</h2>
       <p>Тепловая завеса — рабочий инструмент для магазина, кафе, офиса, склада. Считается по ширине и высоте двери. Электрическая — универсал для арендных помещений. Мощность подбирайте с запасом 20% — работать на 70% лучше, чем на пределе.</p>
       <p>Посмотреть модели: <a href="/katalog?g=teplovye-zavesy">тепловые завесы</a> — 150 позиций от бытовых до промышленных. Приедем на замер и подберём под ваш вход — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж по Алматы.</p>
-      <p>Читайте также: <span data-art-link="teplovaya-pushka">«Тепловая пушка для гаража и склада»</span>, <a href="https://tehnoholod369.kz/otoplenie-chastnogo-doma">«Отопление частного дома»</a>.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/teplovaya-pushka">«Тепловая пушка для гаража и склада»</a>, <a href="https://tehnoholod369.kz/otoplenie-chastnogo-doma">«Отопление частного дома»</a>.</p>
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=teplovye-zavesy&amp;brand=Ballu&amp;sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5&amp;stock=in"><div class="art-card__t">Ballu · Электрические</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">80 моделей</span> →</div></a>
@@ -248,10 +248,10 @@
 
     
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
-    <div class="art-cards" data-art-next="teplovaya-zavesa|nezhilye|teplovye-zavesy|otoplenie-chastnogo-doma">
+    <div class="art-cards" data-art-next="teplovaya-zavesa|nezhilye|teplovye-zavesy|teplovaya-pushka,otoplenie-chastnogo-doma">
+        <a class="art-card" href="https://tehnoholod369.kz/teplovaya-pushka"><div class="art-card__t">Тепловая пушка: как выбрать для гаража, склада, стройки</div><div class="art-card__s">Электрические, газовые, дизельные тепловые пушки: расчёт мощности, безопасность, экономика. Что выбрать для га</div><div class="art-card__go">Читать →</div></a>
         <a class="art-card" href="https://tehnoholod369.kz/otoplenie-chastnogo-doma"><div class="art-card__t">Отопление частного дома: сравнение вариантов для Алматы</div><div class="art-card__s">Электрокотёл, газовый котёл, тепловой насос, конвекторы, ИК-панели — что выбрать для дома в Алматы. Расчёт сто</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/podgotovka-kondicionera-k-zime"><div class="art-card__t">Подготовка кондиционера к зиме: чеклист из 6 шагов</div><div class="art-card__s">Как правильно подготовить кондиционер к зиме: чистка, консервация, зимний комплект. Пошаговый чеклист + что мо</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada"><div class="art-card__t">Монтаж кондиционера: что даёт проверенная бригада</div><div class="art-card__s">Как проверить монтажников кондиционера: внутренний допуск 369, личный рейтинг МАСТЕРОВ, прозрачная смета, серв</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kanalny-kondicioner"><div class="art-card__t">Канальный кондиционер: скрытое кондиционирование квартиры и дома</div><div class="art-card__s">Канальный кондиционер: как работает, когда его брать вместо сплитов, монтаж и высота потолка. Подбор для кварт</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>

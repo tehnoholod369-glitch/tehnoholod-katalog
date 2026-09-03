@@ -213,7 +213,7 @@
       <p>Для квартиры в Алматы:</p>
       <ul><li><b>Хотите тепло + красоту</b> — электрокамин с 3D-эффектом.</li><li><b>Хотите живой огонь и атмосферу</b> — биокамин, только в гостиную с проветриванием.</li><li><b>Хотите только внешний вид</b> — портал с зеркалом или свечами.</li></ul>
       <p>Посмотреть модели: <a href="/katalog?g=kaminy">камины в каталоге</a>. Приедем на замер и подберём модель под ваш интерьер — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, доставка по Алматы.</p>
-      <p>Читайте также: <span data-art-link="konvektor-obogrevatel">«Конвектор или обогреватель»</span>, <span data-art-link="ik-obogrevatel">«Инфракрасный обогреватель»</span>.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/konvektor-obogrevatel">«Конвектор или обогреватель»</a>, <a href="https://tehnoholod369.kz/ik-obogrevatel">«Инфракрасный обогреватель»</a>.</p>
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=kaminy&amp;brand=Electrolux&amp;sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BE%D1%87%D0%B0%D0%B3%D0%B8%202D&amp;stock=in"><div class="art-card__t">Electrolux · Электроочаги 2D</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">8 моделей</span> →</div></a>
@@ -254,10 +254,10 @@
 
     
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
-    <div class="art-cards" data-art-next="elektrokamin|otoplenie|kaminy|">
-        <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-radiator"><div class="art-card__t">Как выбрать радиатор отопления для квартиры: типы и советы</div><div class="art-card__s">Разбираем биметаллические, алюминиевые и стальные радиаторы: плюсы, минусы, для каких квартир и домов подходят</div><div class="art-card__go">Читать →</div></a>
+    <div class="art-cards" data-art-next="elektrokamin|otoplenie|kaminy|konvektor-obogrevatel,ik-obogrevatel">
+        <a class="art-card" href="https://tehnoholod369.kz/konvektor-obogrevatel"><div class="art-card__t">Конвектор или обогреватель: что выбрать для квартиры и дома</div><div class="art-card__s">Электрический конвектор, тепловентилятор, масляный радиатор или ИК-панель — что реально греет и экономит элект</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/ik-obogrevatel"><div class="art-card__t">Инфракрасный обогреватель: плюсы, минусы и где реально работает</div><div class="art-card__s">Как работает ИК-обогреватель, где он выигрывает у конвектора, а где проигрывает. Плюсы, минусы, для каких поме</div><div class="art-card__go">Читать →</div></a>
         <a class="art-card" href="https://tehnoholod369.kz/otoplenie-chastnogo-doma"><div class="art-card__t">Отопление частного дома: сравнение вариантов для Алматы</div><div class="art-card__s">Электрокотёл, газовый котёл, тепловой насос, конвекторы, ИК-панели — что выбрать для дома в Алматы. Расчёт сто</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/podgotovka-kondicionera-k-zime"><div class="art-card__t">Подготовка кондиционера к зиме: чеклист из 6 шагов</div><div class="art-card__s">Как правильно подготовить кондиционер к зиме: чистка, консервация, зимний комплект. Пошаговый чеклист + что мо</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>

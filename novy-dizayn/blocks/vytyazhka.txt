@@ -199,7 +199,7 @@
       <h2>Вывод</h2>
       <p>Вытяжка нужна во всех помещениях с влагой и запахами — ванная, санузел, кухня. Мощность считается по объёму комнаты и кратности воздухообмена. Обязательно с обратным клапаном (без него будет тянуть от соседей). Для ванной — датчик влажности и таймер, для кухни — жёсткий воздуховод и запас по производительности.</p>
       <p>Посмотреть модели: <a href="/katalog?g=ventilyaciya&amp;sub=%D0%92%D1%8B%D1%82%D1%8F%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D1%8B%D0%B5">вытяжные вентиляторы</a>. Приедем на замер и подберём — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж по Алматы.</p>
-      <p>Читайте также: <span data-art-link="pritochnaya-ventilyaciya">«Приточная вентиляция в квартиру»</span>, <span data-art-link="osushitel">«Осушитель воздуха»</span>, <span data-art-link="svezhii-vozduh-zimoi">«Свежий воздух зимой»</span>.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/pritochnaya-ventilyaciya">«Приточная вентиляция в квартиру»</a>, <a href="https://tehnoholod369.kz/osushitel">«Осушитель воздуха»</a>, <a href="https://tehnoholod369.kz/svezhii-vozduh-zimoi">«Свежий воздух зимой»</a>.</p>
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=ventilyaciya&amp;brand=Royal%20Thermo&amp;sub=%D0%92%D1%8B%D1%82%D1%8F%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D1%8B%D0%B5&amp;stock=in"><div class="art-card__t">Royal Thermo · Вытяжные бытовые</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">38 моделей</span> →</div></a>
@@ -229,10 +229,10 @@
 
     
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
-    <div class="art-cards" data-art-next="vytyazhka|vozduh|ventilyaciya|">
-        <a class="art-card" href="https://tehnoholod369.kz/brizer-ili-konditsioner-s-pritokom"><div class="art-card__t">Бризер или кондиционер с притоком свежего воздуха: что выбрать</div><div class="art-card__s">Чем бризер отличается от кондиционера с притоком свежего воздуха, когда выгоднее каждый и как выбрать модель п</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/kak-rabotaet-konditsioner-s-pritokom"><div class="art-card__t">Как работает кондиционер с притоком свежего воздуха</div><div class="art-card__s">Принцип работы приточной сплит-системы: забор воздуха с улицы, очистка HEPA H13, доведение до комнатной темпер</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera"><div class="art-card__t">Как выбрать мощность кондиционера по площади комнаты</div><div class="art-card__s">Как подобрать мощность кондиционера по площади комнаты: правило 100 Вт на м², перевод BTU в кВт, классы 9/12/1</div><div class="art-card__go">Читать →</div></a>
+    <div class="art-cards" data-art-next="vytyazhka|vozduh|ventilyaciya|pritochnaya-ventilyaciya,osushitel,svezhii-vozduh-zimoi">
+        <a class="art-card" href="https://tehnoholod369.kz/pritochnaya-ventilyaciya"><div class="art-card__t">Приточная вентиляция в квартиру: что это и зачем нужна</div><div class="art-card__s">Как работает приточка, чем отличается от бризера и проветривателя, кому нужна в Алматы. Мощность, шум, установ</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/osushitel"><div class="art-card__t">Осушитель воздуха: когда нужен и как выбрать в Алматы</div><div class="art-card__s">Плесень, конденсат, сушка белья в квартире — когда нужен осушитель. Расчёт мощности в литрах в сутки, типы, от</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/svezhii-vozduh-zimoi"><div class="art-card__t">Свежий воздух зимой без открытых окон: как решить проблему духоты и CO₂</div><div class="art-card__s">Зимой окна закрыты — в квартире духота и высокий CO₂. Разбираем, как подавать свежий воздух с улицы, не открыв</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>

@@ -215,9 +215,9 @@
     
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
     <div class="art-cards" data-art-next="obogrev-kondicionerom-zimoy|byt-kond|bytovye|">
+        <a class="art-card" href="https://tehnoholod369.kz/kondicioner-ili-obogrevatel"><div class="art-card__t">Кондиционер или обогреватель: что выгоднее зимой в Алматы</div><div class="art-card__s">Сравниваем кондиционер и обогреватель по цене, расходу электричества и комфорту. Расчёт для Алматы — что выгод</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kogda-deshevle-kupit-kondicioner"><div class="art-card__t">Когда дешевле купить кондиционер: сезонность цен в Казахстане</div><div class="art-card__s">В какое время года кондиционеры дешевле всего и когда выгоднее покупать. Разбор сезонности цен в Казахстане + </div><div class="art-card__go">Читать →</div></a>
         <a class="art-card" href="https://tehnoholod369.kz/podgotovka-kondicionera-k-zime"><div class="art-card__t">Подготовка кондиционера к зиме: чеклист из 6 шагов</div><div class="art-card__s">Как правильно подготовить кондиционер к зиме: чистка, консервация, зимний комплект. Пошаговый чеклист + что мо</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada"><div class="art-card__t">Монтаж кондиционера: что даёт проверенная бригада</div><div class="art-card__s">Как проверить монтажников кондиционера: внутренний допуск 369, личный рейтинг МАСТЕРОВ, прозрачная смета, серв</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/brizer-ili-konditsioner-s-pritokom"><div class="art-card__t">Бризер или кондиционер с притоком свежего воздуха: что выбрать</div><div class="art-card__s">Чем бризер отличается от кондиционера с притоком свежего воздуха, когда выгоднее каждый и как выбрать модель п</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>

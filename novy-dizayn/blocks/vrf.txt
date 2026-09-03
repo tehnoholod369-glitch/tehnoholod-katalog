@@ -220,7 +220,7 @@
       <ul><li>Офисов и БЦ от 300 м² с множеством зон.</li><li>Гостиниц, апарт-отелей с индивидуальным управлением по номерам.</li><li>ТРЦ и магазинов с зонами разного назначения.</li><li>Объектов, где нужны одновременный нагрев и охлаждение (Heat Recovery).</li></ul>
       <p>Для небольших офисов до 200–300 м² — оставайтесь на мультисплите или обычных сплитах. VRF окупает себя только на большом объёме и долгом сроке эксплуатации.</p>
       <p>Посмотреть модели: <a href="/katalog?g=mini-vrf">VRF-системы</a>. Приедем на объект, сделаем проект под ваш офис или БЦ и рассчитаем экономику — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж и пусконаладка по Алматы.</p>
-      <p>Читайте также: <a href="https://tehnoholod369.kz/multisplit">«Мультисплит-система»</a>, <span data-art-link="kanalny-kondicioner">«Канальный кондиционер»</span>, <span data-art-link="kassetny-kondicioner">«Кассетный кондиционер»</span>.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/multisplit">«Мультисплит-система»</a>, <a href="https://tehnoholod369.kz/kanalny-kondicioner">«Канальный кондиционер»</a>, <a href="https://tehnoholod369.kz/kassetny-kondicioner">«Кассетный кондиционер»</a>.</p>
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=mini-vrf&amp;brand=AUX&amp;stock=in"><div class="art-card__t">AUX</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">15 моделей</span> →</div></a>
@@ -250,10 +250,10 @@
 
     
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
-    <div class="art-cards" data-art-next="vrf|nezhilye|mini-vrf|">
-        <a class="art-card" href="https://tehnoholod369.kz/podgotovka-kondicionera-k-zime"><div class="art-card__t">Подготовка кондиционера к зиме: чеклист из 6 шагов</div><div class="art-card__s">Как правильно подготовить кондиционер к зиме: чистка, консервация, зимний комплект. Пошаговый чеклист + что мо</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada"><div class="art-card__t">Монтаж кондиционера: что даёт проверенная бригада</div><div class="art-card__s">Как проверить монтажников кондиционера: внутренний допуск 369, личный рейтинг МАСТЕРОВ, прозрачная смета, серв</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-radiator"><div class="art-card__t">Как выбрать радиатор отопления для квартиры: типы и советы</div><div class="art-card__s">Разбираем биметаллические, алюминиевые и стальные радиаторы: плюсы, минусы, для каких квартир и домов подходят</div><div class="art-card__go">Читать →</div></a>
+    <div class="art-cards" data-art-next="vrf|nezhilye|mini-vrf|kanalny-kondicioner,kassetny-kondicioner">
+        <a class="art-card" href="https://tehnoholod369.kz/kanalny-kondicioner"><div class="art-card__t">Канальный кондиционер: скрытое кондиционирование квартиры и дома</div><div class="art-card__s">Канальный кондиционер: как работает, когда его брать вместо сплитов, монтаж и высота потолка. Подбор для кварт</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kassetny-kondicioner"><div class="art-card__t">Кассетный кондиционер: потолочный на 4 стороны для офиса и магазина</div><div class="art-card__s">Кассетный кондиционер: как работает, где ставят, отличия от настенного. Подбор для офиса, магазина, ресторана </div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/teplovaya-zavesa"><div class="art-card__t">Тепловая завеса на входную дверь: зачем нужна и как выбрать</div><div class="art-card__s">Расчёт мощности тепловой завесы для магазина, офиса, склада, кафе. Электрическая или водяная. Монтаж и экономи</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>

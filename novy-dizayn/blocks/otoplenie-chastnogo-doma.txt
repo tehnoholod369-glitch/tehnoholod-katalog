@@ -182,7 +182,7 @@
       <p><b>Минусы:</b></p>
       <ul><li>Высокая стоимость покупки (12 кВт — цена в каталоге).</li><li>Работает эффективно до −25 °C; ниже — переходит в резервный режим (ТЭН).</li><li>Нужен внешний блок (шумит, ставится снаружи).</li><li>Проект и монтаж — от 3–4 недель.</li></ul>
       <p><b>Стоимость эксплуатации:</b> тепловая мощность 12 кВт делится на COP ~3–4 (ниже в сильный мороз). За сезон: около 3 700–4 800 кВт·ч × 27 тг = <b>около 100 000–130 000 тг/сезон</b>.</p>
-      <p>Подробно про этот вариант — <span data-art-link="teplovoy-nasos">«Тепловой насос воздух-вода»</span>.</p>
+      <p>Подробно про этот вариант — <a href="https://tehnoholod369.kz/teplovoy-nasos">«Тепловой насос воздух-вода»</a>.</p>
       <h3>4. Электрические конвекторы (без котла и труб)</h3>
       <p><b>Как работает:</b> отдельные приборы в каждой комнате греют воздух напрямую. Нет труб, нет теплоносителя.</p>
       <p><b>Плюсы:</b></p>
@@ -196,7 +196,7 @@
       <ul><li>Быстрое ощущение тепла (30 секунд).</li><li>Точечный обогрев (греется только там, где нужно).</li><li>Не занимают место на полу.</li><li>Работают от обычной розетки.</li></ul>
       <p><b>Минусы:</b></p>
       <ul><li>Дороже конвекторов при покупке (панель 1 кВт — цена в каталоге).</li><li>Для сплошного отопления дома нужно много панелей — считать по площади.</li><li>Работают, только когда включены (нет инерции — комната остывает быстро).</li></ul>
-      <p>Подробно — <span data-art-link="ik-obogrevatel">«Инфракрасный обогреватель»</span>.</p>
+      <p>Подробно — <a href="https://tehnoholod369.kz/ik-obogrevatel">«Инфракрасный обогреватель»</a>.</p>
       <h3>6. Твёрдотопливный котёл (уголь, дрова, пеллеты)</h3>
       <p><b>Как работает:</b> горит топливо, нагревает теплоноситель.</p>
       <p><b>Плюсы:</b></p>
@@ -231,7 +231,7 @@
       <ul><li><b>Газ есть</b> → газовый котёл (окупает всё быстро).</li><li><b>Газа нет, дом большой</b> → тепловой насос воздух-вода.</li><li><b>Газа нет, дом маленький или дача</b> → конвекторы / ИК-панели.</li></ul>
       <p>Разница в эксплуатации за 10 сезонов может достигать 2–3 миллионов тг — считайте не только цену покупки.</p>
       <p>Посмотреть модели: <a href="/katalog?g=radiatory">котлы, радиаторы, конвекторы, тепловые насосы</a>. Приедем на замер, посчитаем теплопотери вашего дома и подберём оптимальный вариант — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж силами проверенной бригады по Алматы.</p>
-      <p>Читайте также: <span data-art-link="teplovoy-nasos">«Тепловой насос воздух-вода»</span>, <a href="https://tehnoholod369.kz/kak-vybrat-radiator">«Как выбрать радиатор»</a>, <span data-art-link="konvektor-obogrevatel">«Конвектор или обогреватель»</span>, <span data-art-link="ik-obogrevatel">«ИК-обогреватель»</span>.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/teplovoy-nasos">«Тепловой насос воздух-вода»</a>, <a href="https://tehnoholod369.kz/kak-vybrat-radiator">«Как выбрать радиатор»</a>, <a href="https://tehnoholod369.kz/konvektor-obogrevatel">«Конвектор или обогреватель»</a>, <a href="https://tehnoholod369.kz/ik-obogrevatel">«ИК-обогреватель»</a>.</p>
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=radiatory&amp;brand=Royal%20Thermo&amp;stock=in"><div class="art-card__t">Royal Thermo</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">444 модели</span> →</div></a>
@@ -272,10 +272,10 @@
 
     
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
-    <div class="art-cards" data-art-next="otoplenie-chastnogo-doma|otoplenie|radiatory|kak-vybrat-radiator">
+    <div class="art-cards" data-art-next="otoplenie-chastnogo-doma|otoplenie|radiatory|teplovoy-nasos,ik-obogrevatel,kak-vybrat-radiator,konvektor-obogrevatel">
+        <a class="art-card" href="https://tehnoholod369.kz/teplovoy-nasos"><div class="art-card__t">Тепловой насос воздух-вода: экономика отопления в Алматы</div><div class="art-card__s">Сколько реально экономит тепловой насос воздух-вода по сравнению с газом и электричеством. Окупаемость, минусы</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/ik-obogrevatel"><div class="art-card__t">Инфракрасный обогреватель: плюсы, минусы и где реально работает</div><div class="art-card__s">Как работает ИК-обогреватель, где он выигрывает у конвектора, а где проигрывает. Плюсы, минусы, для каких поме</div><div class="art-card__go">Читать →</div></a>
         <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-radiator"><div class="art-card__t">Как выбрать радиатор отопления для квартиры: типы и советы</div><div class="art-card__s">Разбираем биметаллические, алюминиевые и стальные радиаторы: плюсы, минусы, для каких квартир и домов подходят</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/podgotovka-kondicionera-k-zime"><div class="art-card__t">Подготовка кондиционера к зиме: чеклист из 6 шагов</div><div class="art-card__s">Как правильно подготовить кондиционер к зиме: чистка, консервация, зимний комплект. Пошаговый чеклист + что мо</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada"><div class="art-card__t">Монтаж кондиционера: что даёт проверенная бригада</div><div class="art-card__s">Как проверить монтажников кондиционера: внутренний допуск 369, личный рейтинг МАСТЕРОВ, прозрачная смета, серв</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>

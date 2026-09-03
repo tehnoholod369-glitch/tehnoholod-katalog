@@ -205,7 +205,7 @@
       <ul><li>Офисов open space 30–100 м² с одним центральным блоком.</li><li>Магазинов, ресторанов, кафе — равномерная температура во всём зале.</li><li>Переговорных, лобби, ресепшн — тихо и без выделения на потолке.</li><li>Спортзалов и фитнес-центров — усиленный поток на большой площади.</li></ul>
       <p>Для квартиры или небольшой комнаты — оставайтесь на настенном сплите. Для скрытого монтажа с несколькими зонами — канальный или VRF.</p>
       <p>Посмотреть модели: <a href="/katalog?g=poluprom&amp;sub=%D0%9A%D0%B0%D1%81%D1%81%D0%B5%D1%82%D0%BD%D1%8B%D0%B5">кассетные кондиционеры</a>. Приедем на объект, посчитаем нагрузку и подберём кассету с правильной раздачей воздуха — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж силами проверенной бригады по Алматы.</p>
-      <p>Читайте также: <a href="https://tehnoholod369.kz/multisplit">«Мультисплит-система»</a>, <span data-art-link="kanalny-kondicioner">«Канальный кондиционер»</span>, <span data-art-link="vrf">«VRF-система для офиса»</span>.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/multisplit">«Мультисплит-система»</a>, <a href="https://tehnoholod369.kz/kanalny-kondicioner">«Канальный кондиционер»</a>, <a href="https://tehnoholod369.kz/vrf">«VRF-система для офиса»</a>.</p>
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=poluprom&amp;brand=AUX&amp;sub=%D0%9A%D0%B0%D1%81%D1%81%D0%B5%D1%82%D0%BD%D1%8B%D0%B5&amp;stock=in"><div class="art-card__t">AUX · Кассетные</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">15 моделей</span> →</div></a>
@@ -235,10 +235,10 @@
 
     
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
-    <div class="art-cards" data-art-next="kassetny-kondicioner|nezhilye|poluprom|">
-        <a class="art-card" href="https://tehnoholod369.kz/podgotovka-kondicionera-k-zime"><div class="art-card__t">Подготовка кондиционера к зиме: чеклист из 6 шагов</div><div class="art-card__s">Как правильно подготовить кондиционер к зиме: чистка, консервация, зимний комплект. Пошаговый чеклист + что мо</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada"><div class="art-card__t">Монтаж кондиционера: что даёт проверенная бригада</div><div class="art-card__s">Как проверить монтажников кондиционера: внутренний допуск 369, личный рейтинг МАСТЕРОВ, прозрачная смета, серв</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-radiator"><div class="art-card__t">Как выбрать радиатор отопления для квартиры: типы и советы</div><div class="art-card__s">Разбираем биметаллические, алюминиевые и стальные радиаторы: плюсы, минусы, для каких квартир и домов подходят</div><div class="art-card__go">Читать →</div></a>
+    <div class="art-cards" data-art-next="kassetny-kondicioner|nezhilye|poluprom|kanalny-kondicioner,vrf">
+        <a class="art-card" href="https://tehnoholod369.kz/kanalny-kondicioner"><div class="art-card__t">Канальный кондиционер: скрытое кондиционирование квартиры и дома</div><div class="art-card__s">Канальный кондиционер: как работает, когда его брать вместо сплитов, монтаж и высота потолка. Подбор для кварт</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/vrf"><div class="art-card__t">VRF-система для офиса и бизнес-центра: как выбрать</div><div class="art-card__s">VRF-система: до 64 внутренних блоков на один наружный, одновременный нагрев и охлаждение, зональное управление</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/teplovaya-zavesa"><div class="art-card__t">Тепловая завеса на входную дверь: зачем нужна и как выбрать</div><div class="art-card__s">Расчёт мощности тепловой завесы для магазина, офиса, склада, кафе. Электрическая или водяная. Монтаж и экономи</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>

@@ -202,7 +202,7 @@
       <ul><li>УК запрещает наружные блоки на фасаде;</li><li>нужна эстетика единого блока;</li><li>планируете разные типы внутренних (настенный + канальный + кассетный) в одной системе;</li><li>готовы к более сложному и дорогому монтажу.</li></ul>
       <p>В обычной квартире без ограничений — 3 обычных сплита дешевле и надёжнее.</p>
       <p>Посмотреть модели: <a href="/katalog?g=multisplit">мультисплит-системы</a>. Приедем на замер, посчитаем нагрузку по каждой комнате и подберём оптимальный комплект — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж силами проверенной бригады по Алматы.</p>
-      <p>Читайте также: <span data-art-link="kanalny-kondicioner">«Канальный кондиционер»</span>, <span data-art-link="kassetny-kondicioner">«Кассетный кондиционер»</span>, <span data-art-link="vrf">«VRF-система для офиса»</span>.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/kanalny-kondicioner">«Канальный кондиционер»</a>, <a href="https://tehnoholod369.kz/kassetny-kondicioner">«Кассетный кондиционер»</a>, <a href="https://tehnoholod369.kz/vrf">«VRF-система для офиса»</a>.</p>
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=multisplit&amp;brand=AERONIK&amp;stock=in"><div class="art-card__t">AERONIK</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">13 моделей</span> →</div></a>
@@ -232,10 +232,10 @@
 
     
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
-    <div class="art-cards" data-art-next="multisplit-sistema|byt-kond|multisplit|">
-        <a class="art-card" href="https://tehnoholod369.kz/podgotovka-kondicionera-k-zime"><div class="art-card__t">Подготовка кондиционера к зиме: чеклист из 6 шагов</div><div class="art-card__s">Как правильно подготовить кондиционер к зиме: чистка, консервация, зимний комплект. Пошаговый чеклист + что мо</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada"><div class="art-card__t">Монтаж кондиционера: что даёт проверенная бригада</div><div class="art-card__s">Как проверить монтажников кондиционера: внутренний допуск 369, личный рейтинг МАСТЕРОВ, прозрачная смета, серв</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/brizer-ili-konditsioner-s-pritokom"><div class="art-card__t">Бризер или кондиционер с притоком свежего воздуха: что выбрать</div><div class="art-card__s">Чем бризер отличается от кондиционера с притоком свежего воздуха, когда выгоднее каждый и как выбрать модель п</div><div class="art-card__go">Читать →</div></a>
+    <div class="art-cards" data-art-next="multisplit-sistema|byt-kond|multisplit|kanalny-kondicioner,kassetny-kondicioner,vrf">
+        <a class="art-card" href="https://tehnoholod369.kz/kanalny-kondicioner"><div class="art-card__t">Канальный кондиционер: скрытое кондиционирование квартиры и дома</div><div class="art-card__s">Канальный кондиционер: как работает, когда его брать вместо сплитов, монтаж и высота потолка. Подбор для кварт</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kassetny-kondicioner"><div class="art-card__t">Кассетный кондиционер: потолочный на 4 стороны для офиса и магазина</div><div class="art-card__s">Кассетный кондиционер: как работает, где ставят, отличия от настенного. Подбор для офиса, магазина, ресторана </div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/vrf"><div class="art-card__t">VRF-система для офиса и бизнес-центра: как выбрать</div><div class="art-card__s">VRF-система: до 64 внутренних блоков на один наружный, одновременный нагрев и охлаждение, зональное управление</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>

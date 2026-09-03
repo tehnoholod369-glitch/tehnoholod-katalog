@@ -190,7 +190,7 @@
       <h2>Вывод</h2>
       <p>Тепловой насос воздух-вода имеет смысл в частном доме без магистрального газа: он примерно в 3 раза экономичнее электрокотла в эксплуатации, а его дополнительные вложения окупаются за 5–11 лет в зависимости от альтернативы. В квартире с центральным отоплением и в доме с магистральным газом — экономически не оправдан.</p>
       <p>Если у вас частный дом или коттедж без газа, рассматриваете отопление — <a href="https://wa.me/77000369369">напишите в WhatsApp</a>. Приедем на замер, посчитаем теплопотери, подберём модель под ваш дом. Гарантия, рассрочка, монтаж силами проверенной бригады.</p>
-      <p>Читайте также: <a href="https://tehnoholod369.kz/kak-vybrat-radiator">«Как выбрать радиатор отопления»</a>, <span data-art-link="konvektor-obogrevatel">«Конвектор или обогреватель»</span>.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/kak-vybrat-radiator">«Как выбрать радиатор отопления»</a>, <a href="https://tehnoholod369.kz/konvektor-obogrevatel">«Конвектор или обогреватель»</a>.</p>
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=teplovye-nasosy"><div class="art-card__t">Тепловые насосы</div><div class="art-card__s">Под заказ — цены и характеристики моделей смотрите в каталоге.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="teplovye-nasosy"></span> →</div></a>
@@ -219,10 +219,10 @@
 
     
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
-    <div class="art-cards" data-art-next="teplovoy-nasos|otoplenie|teplovye-nasosy|kak-vybrat-radiator">
+    <div class="art-cards" data-art-next="teplovoy-nasos|otoplenie|teplovye-nasosy|kak-vybrat-radiator,konvektor-obogrevatel">
         <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-radiator"><div class="art-card__t">Как выбрать радиатор отопления для квартиры: типы и советы</div><div class="art-card__s">Разбираем биметаллические, алюминиевые и стальные радиаторы: плюсы, минусы, для каких квартир и домов подходят</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/otoplenie-chastnogo-doma"><div class="art-card__t">Отопление частного дома: сравнение вариантов для Алматы</div><div class="art-card__s">Электрокотёл, газовый котёл, тепловой насос, конвекторы, ИК-панели — что выбрать для дома в Алматы. Расчёт сто</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/podgotovka-kondicionera-k-zime"><div class="art-card__t">Подготовка кондиционера к зиме: чеклист из 6 шагов</div><div class="art-card__s">Как правильно подготовить кондиционер к зиме: чистка, консервация, зимний комплект. Пошаговый чеклист + что мо</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/konvektor-obogrevatel"><div class="art-card__t">Конвектор или обогреватель: что выбрать для квартиры и дома</div><div class="art-card__s">Электрический конвектор, тепловентилятор, масляный радиатор или ИК-панель — что реально греет и экономит элект</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/ik-obogrevatel"><div class="art-card__t">Инфракрасный обогреватель: плюсы, минусы и где реально работает</div><div class="art-card__s">Как работает ИК-обогреватель, где он выигрывает у конвектора, а где проигрывает. Плюсы, минусы, для каких поме</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>

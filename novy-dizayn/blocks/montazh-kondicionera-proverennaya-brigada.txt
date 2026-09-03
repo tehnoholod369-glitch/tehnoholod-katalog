@@ -245,7 +245,7 @@
     <div class="art-cards" data-art-next="montazh-kondicionera-proverennaya-brigada|byt-kond|bytovye|kak-vybrat-moshchnost-konditsionera,obsluzhivanie-konditsionera-zamena-filtra">
         <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera"><div class="art-card__t">Как выбрать мощность кондиционера по площади комнаты</div><div class="art-card__s">Как подобрать мощность кондиционера по площади комнаты: правило 100 Вт на м², перевод BTU в кВт, классы 9/12/1</div><div class="art-card__go">Читать →</div></a>
         <a class="art-card" href="https://tehnoholod369.kz/obsluzhivanie-konditsionera-zamena-filtra"><div class="art-card__t">Обслуживание кондиционера: чистка и замена фильтров</div><div class="art-card__s">Как часто мыть фильтр грубой очистки и менять HEPA-элемент, что входит в ежегодное ТО и что лучше не делать са</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/podgotovka-kondicionera-k-zime"><div class="art-card__t">Подготовка кондиционера к зиме: чеклист из 6 шагов</div><div class="art-card__s">Как правильно подготовить кондиционер к зиме: чистка, консервация, зимний комплект. Пошаговый чеклист + что мо</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>
