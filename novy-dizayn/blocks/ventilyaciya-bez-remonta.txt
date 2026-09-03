@@ -1,0 +1,259 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art-page-main {
+    width: 100%;
+    max-width: 888px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 18px 24px 72px;
+  }
+  .art-page-main > h1 { max-width: none !important; overflow-wrap: anywhere; }
+  .art-page-lead { max-width: none !important; }
+  .art { width: 100%; max-width: none; }
+
+  
+  .t-body .art-local-chrome { display: none !important; }
+
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+
+  @media (max-width: 640px) {
+    .art-page-main { padding: 14px 16px 56px; }
+    .art-page-main > h1 { font-size: clamp(25px, 7vw, 30px) !important; line-height: 1.16; }
+    .art-page-lead { font-size: 16px !important; line-height: 1.6 !important; }
+    .art h2 { margin-top: 28px; font-size: 20px; line-height: 1.3; }
+    .art h3 { font-size: 17px; line-height: 1.35; }
+    .art p, .art li { font-size: 16px; line-height: 1.65; }
+    .art-note, .art-warn, .art-tldr, .art-q { padding: 14px 15px; }
+    .art-cta { padding: 20px !important; gap: 18px !important; }
+    .art-cta__actions { display: grid !important; grid-template-columns: 1fr; width: 100%; }
+    .art-cta__actions > a { width: 100%; box-sizing: border-box; text-align: center; }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=1810f723"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="art-page-main">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/baza-znaniy">База знаний</a> → <span style="color:#18212F;">Вентиляция в квартире без ремонта</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Вентиляция</span>
+      <span style="color:#8593A6;">4 минуты чтения</span>
+      <span style="color:#8593A6;">Обновлено 03.09.2026</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Вентиляция в квартире без ремонта: 4 способа</h1>
+
+    <div class="art-page-lead" style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Как наладить приток свежего воздуха, не разбирая отделку: клапан в стене, проветриватель, приточная установка, кондиционер с притоком. Плюсы и минусы.
+    </div>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">свежий воздух в готовую квартиру заводят через отверстие в наружной стене — разница между способами в том, что стоит на этом отверстии: простой клапан, проветриватель с вентилятором, приточная установка или кондиционер с притоком.** Все четыре ставятся за несколько часов и не требуют разбирать отделку. Ниже — чем они отличаются и кому что подходит.</div></div>
+      <h2>Почему в новой квартире душно</h2>
+      <p>В домах советской постройки воздух заходил через щели в деревянных окнах, а вытягивался через вентканал на кухне и в санузле. Пластиковые окна убрали приток — вытяжка осталась, а заходить воздуху стало неоткуда.</p>
+      <p>Дальше просто: люди дышат, углекислый газ копится, к вечеру тяжелеет голова. Кондиционер эту задачу не решает — он охлаждает тот же воздух по кругу. Подробно разобрано в статье <a href="https://tehnoholod369.kz/pochemu-dushno-doma-s-konditsionerom">«Почему дома душно даже с кондиционером»</a>.</p>
+      <p>Проветривать окном зимой — значит впускать мороз, шум и пыль. Отсюда и запрос: приток без открытых окон и без ремонта.</p>
+      <h2>Способ 1. Приточный клапан в стене</h2>
+      <p>Самое простое: сквозное отверстие в наружной стене, внутри — фильтр и регулятор потока. Воздух заходит сам, за счёт разницы давления, которую создаёт вытяжной канал.</p>
+      <p><b>Плюсы:</b> дёшево, нет электричества, нечему ломаться, ставится за час.</p>
+      <p><b>Минусы:</b> поток зависит от погоды и от того, работает ли вытяжка. Зимой заходит холодный воздух — под клапаном обычно вешают радиатор, чтобы он подогревал струю. Фильтрация грубая, от городской пыли защищает слабо. Производительности хватает на одного-двух человек в комнате.</p>
+      <p><b>Кому:</b> спальня, где нужно чуть-чуть свежести, бюджет минимальный, электричество подводить не хочется.</p>
+      <h2>Способ 2. Проветриватель (бризер)</h2>
+      <p>То же отверстие, но с вентилятором, фильтрами и обычно с подогревом входящего воздуха. Прибор гонит воздух принудительно и не зависит от погоды.</p>
+      <p><b>Плюсы:</b> стабильный поток, ступенчатая фильтрация, подогрев зимой, регулировка скорости.</p>
+      <p><b>Минусы:</b> нужна розетка, прибор заметен на стене, вентилятор слышно на высоких скоростях, фильтры — расходник.</p>
+      <p><b>Кому:</b> спальня или детская, окна на шумную или пыльную улицу, есть аллергия.</p>
+      <h2>Способ 3. Приточная установка</h2>
+      <p>По сути то же, что проветриватель, но мощнее и с раздачей по нескольким комнатам через короткие воздуховоды. Ставится обычно в коридоре под потолком.</p>
+      <p><b>Плюсы:</b> производительности хватает на квартиру целиком, серьёзная фильтрация, один прибор вместо нескольких.</p>
+      <p><b>Минусы:</b> нужны хотя бы короткие воздуховоды и место под них — это уже ближе к небольшому ремонту в коридоре. Дороже точечных решений.</p>
+      <p><b>Кому:</b> квартира, где нужен воздух в нескольких комнатах сразу, и есть подшитый или подвесной потолок в коридоре.</p>
+      <p>Что это за класс техники — в статье <a href="https://tehnoholod369.kz/pritochnaya-ventilyaciya">«Приточная вентиляция в квартиру»</a>. Если хочется ещё и возвращать тепло уходящего воздуха, смотрите <a href="https://tehnoholod369.kz/rekuperator">«Рекуператор»</a>.</p>
+      <h2>Способ 4. Кондиционер с притоком свежего воздуха</h2>
+      <p>Сплит-система, которая дополнительно забирает воздух с улицы, фильтрует и доводит до комфортной температуры. Один прибор вместо двух: и охлаждение с обогревом, и приток.</p>
+      <p><b>Плюсы:</b> одна установка и одно отверстие вместо двух приборов на стене; входящий воздух не просто подогрет, а доведён до нужной температуры и летом, и зимой; управление одним пультом.</p>
+      <p><b>Минусы:</b> дороже обычного кондиционера; монтаж сложнее — нужен канал для наружного воздуха и повышенная герметичность, поэтому такие объекты считают только после замера.</p>
+      <p><b>Кому:</b> если вы всё равно собирались ставить кондиционер, а духота при закрытых окнах — знакомая проблема. Тогда логично закрыть обе задачи одной машиной.</p>
+      <p>Сравнение с отдельным бризером — в статье <a href="https://tehnoholod369.kz/brizer-ili-konditsioner-s-pritokom">«Бризер или кондиционер с притоком»</a>. Разбор исполнений приточной серии — в материале <a href="https://tehnoholod369.kz/freshin-sravnenie">«TCL FreshIN 3.0»</a>, сами модели — в разделе <a href="https://tehnoholod369.kz/tcl-freshin">приточных сплит-систем</a>.</p>
+      <h2>Как выбрать: короткая таблица</h2>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Что важнее</sc-raw-th><sc-raw-th>Способ</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Минимальный бюджет, одна комната</sc-raw-td><sc-raw-td>Приточный клапан</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Тишина и фильтрация в спальне</sc-raw-td><sc-raw-td>Проветриватель</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Воздух сразу в несколько комнат</sc-raw-td><sc-raw-td>Приточная установка</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Уже нужен кондиционер + мешает духота</sc-raw-td><sc-raw-td>Кондиционер с притоком</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Вернуть тепло уходящего воздуха</sc-raw-td><sc-raw-td>Приточно-вытяжная с рекуперацией</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <h2>Что проверить до заказа</h2>
+      <p><b>Работает ли вытяжка.</b> Приложите лист бумаги к решётке на кухне и в санузле: если он не держится, канал не тянет. Без работающей вытяжки приток не создаст движения воздуха — сначала чинят канал.</p>
+      <p><b>Что за стена.</b> В монолите сквозное отверстие делают алмазным бурением — это отдельная работа. Толщина стены влияет на выбор прибора.</p>
+      <p><b>Куда пойдёт отверстие снаружи.</b> Не в шов, не в утеплитель под облицовкой и не туда, где к нему потом не подобраться.</p>
+      <p><b>Есть ли розетка.</b> Всё, кроме простого клапана, требует питания.</p>
+      <p>Что входит в монтаж и что считается отдельной строкой — в статье <a href="https://tehnoholod369.kz/skolko-stoit-ustanovka-kondicionera">«Сколько стоит установка кондиционера»</a>: для приточных работ логика та же.</p>
+      <h2>Чего ни один из способов не делает</h2>
+      <p><b>Не заменяет вытяжку.</b> Приток и вытяжка работают в паре. Если канал забит, свежий воздух просто некуда вытеснять.</p>
+      <p><b>Не убирает влажность сам по себе.</b> С конденсатом на окнах и плесенью борется осушитель или нормальный воздухообмен — разобрано в статье <a href="https://tehnoholod369.kz/osushitel">«Осушитель воздуха»</a>.</p>
+      <p><b>Не увлажняет зимой.</b> Уличный воздух зимой сухой, и подогрев делает его ещё суше. Что с этим делать — в статье <a href="https://tehnoholod369.kz/suhoi-vozduh-zimoi">«Сухой воздух зимой»</a>.</p>
+      <h2>Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=ventilyaciya&amp;brand=COMPACTAIR%20by%20ZILON&amp;sub=%D0%9F%D1%80%D0%B8%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B5%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8&amp;stock=in"><div class="art-card__t">COMPACTAIR by ZILON · Приточные установки</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">39 моделей</span> →</div></a>
+      <a class="art-card" href="/katalog?g=ventilyaciya&amp;sub=%D0%9F%D1%80%D0%B8%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B5%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8"><div class="art-card__t">Вентиляция · Приточные установки</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-sub="ventilyaciya|Приточные установки"></span> →</div></a>
+      <a class="art-card" href="/ventilyaciya"><div class="art-card__t">Вентиляция в Алматы</div><div class="art-card__s">Приточное, вытяжное и канальное оборудование в наличии.</div><div class="art-card__go">Открыть раздел →</div></a>
+      </div>
+      <h2>Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Можно ли поставить приток в готовой квартире без ремонта?</div><div class="art-q__a">Да. Все четыре способа требуют одного сквозного отверстия в наружной стене и занимают несколько часов. Отделку разбирать не нужно.</div></div>
+      <div class="art-q"><div class="art-q__q">Не будет ли дуть холодом зимой?</div><div class="art-q__a">У простого клапана — может, поэтому его ставят над радиатором. Проветриватели и приточные установки подогревают входящий воздух, а кондиционер с притоком доводит его до заданной температуры.</div></div>
+      <div class="art-q"><div class="art-q__q">Насколько это шумно?</div><div class="art-q__a">Клапан бесшумен. У приборов с вентилятором шум зависит от скорости: на низкой обычно не мешает спать, на максимальной слышен.</div></div>
+      <div class="art-q"><div class="art-q__q">Нужно ли согласование, чтобы сделать отверстие в стене?</div><div class="art-q__a">Отверстие в наружной стене квартиры — работа по вашему помещению, но в части домов есть требования к внешнему виду фасада. Уточните в управляющей компании до монтажа.</div></div>
+      <div class="art-q"><div class="art-q__q">Как часто менять фильтры?</div><div class="art-q__a">Зависит от прибора и запылённости улицы. Практика для города: проверять раз в сезон, а в квартирах у оживлённых дорог — чаще.</div></div>
+    </div>
+
+    
+    <div class="art-cta" style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Посчитаем проект и монтаж</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Пришлите планировку и площадь — вернём расчёт с составом оборудования.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div class="art-cta__actions" style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/katalog?g=ventilyaciya" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards" data-art-next="ventilyaciya-bez-remonta|pritok|ventilyaciya|pochemu-dushno-doma-s-konditsionerom,pritochnaya-ventilyaciya,rekuperator,brizer-ili-konditsioner-s-pritokom,freshin-sravnenie,skolko-stoit-ustanovka-kondicionera,osushitel,suhoi-vozduh-zimoi">
+        <a class="art-card" href="https://tehnoholod369.kz/pochemu-dushno-doma-s-konditsionerom"><div class="art-card__t">Почему дома душно даже с включённым кондиционером</div><div class="art-card__s">Кондиционер охлаждает, но не приносит свежий воздух — копится CO₂ и появляется духота. Разбираем причину и раб</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/pritochnaya-ventilyaciya"><div class="art-card__t">Приточная вентиляция в квартиру: что это и зачем нужна</div><div class="art-card__s">Как работает приточка, чем отличается от бризера и проветривателя, кому нужна в Алматы. Мощность, шум, установ</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/rekuperator"><div class="art-card__t">Рекуператор — что это и зачем он зимой в Алматы</div><div class="art-card__s">Как работает рекуператор, сколько тепла возвращает, окупаемость в квартире и частном доме. Отличие от бризера </div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=7c7384bc"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=4af75ffa"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Вентиляция в квартире без ремонта: 4 способа", "description": "Как наладить приток свежего воздуха, не разбирая отделку: клапан в стене, проветриватель, приточная установка, кондиционер с притоком. Плюсы и минусы.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/ventilyaciya-bez-remonta"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-03"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Вентиляция в квартире без ремонта: 4 способа", "item": "https://tehnoholod369.kz/ventilyaciya-bez-remonta"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Можно ли поставить приток в готовой квартире без ремонта?","acceptedAnswer":{"@type":"Answer","text":"Да. Все четыре способа требуют одного сквозного отверстия в наружной стене и занимают несколько часов. Отделку разбирать не нужно."}},
+    {"@type":"Question","name":"Не будет ли дуть холодом зимой?","acceptedAnswer":{"@type":"Answer","text":"У простого клапана может, поэтому его ставят над радиатором. Проветриватели и приточные установки подогревают входящий воздух, а кондиционер с притоком доводит его до заданной температуры."}},
+    {"@type":"Question","name":"Насколько это шумно?","acceptedAnswer":{"@type":"Answer","text":"Клапан бесшумен. У приборов с вентилятором шум зависит от скорости: на низкой обычно не мешает спать, на максимальной слышен."}},
+    {"@type":"Question","name":"Нужно ли согласование, чтобы сделать отверстие в стене?","acceptedAnswer":{"@type":"Answer","text":"Отверстие в наружной стене квартиры — работа по вашему помещению, но в части домов есть требования к внешнему виду фасада. Уточните в управляющей компании до монтажа."}},
+    {"@type":"Question","name":"Как часто менять фильтры?","acceptedAnswer":{"@type":"Answer","text":"Зависит от прибора и запылённости улицы. Практика для города: проверять раз в сезон, а в квартирах у оживлённых дорог — чаще."}}
+  ]
+}
+</script>
+</x-dc>

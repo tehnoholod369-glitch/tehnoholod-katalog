@@ -1,0 +1,257 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art-page-main {
+    width: 100%;
+    max-width: 888px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 18px 24px 72px;
+  }
+  .art-page-main > h1 { max-width: none !important; overflow-wrap: anywhere; }
+  .art-page-lead { max-width: none !important; }
+  .art { width: 100%; max-width: none; }
+
+  
+  .t-body .art-local-chrome { display: none !important; }
+
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+
+  @media (max-width: 640px) {
+    .art-page-main { padding: 14px 16px 56px; }
+    .art-page-main > h1 { font-size: clamp(25px, 7vw, 30px) !important; line-height: 1.16; }
+    .art-page-lead { font-size: 16px !important; line-height: 1.6 !important; }
+    .art h2 { margin-top: 28px; font-size: 20px; line-height: 1.3; }
+    .art h3 { font-size: 17px; line-height: 1.35; }
+    .art p, .art li { font-size: 16px; line-height: 1.65; }
+    .art-note, .art-warn, .art-tldr, .art-q { padding: 14px 15px; }
+    .art-cta { padding: 20px !important; gap: 18px !important; }
+    .art-cta__actions { display: grid !important; grid-template-columns: 1fr; width: 100%; }
+    .art-cta__actions > a { width: 100%; box-sizing: border-box; text-align: center; }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=1810f723"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="art-page-main">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/baza-znaniy">База знаний</a> → <span style="color:#18212F;">Кондиционер для офиса</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Проектные решения</span>
+      <span style="color:#8593A6;">5 минут чтения</span>
+      <span style="color:#8593A6;">Обновлено 03.09.2026</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Кондиционер для офиса: как рассчитать и что выбрать</h1>
+
+    <div class="art-page-lead" style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Расчёт мощности для офиса с людьми и техникой, выбор между кассетным, канальным и мультизональной системой. Серверная, согласование, обслуживание.
+    </div>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">офис греется сильнее квартиры той же площади — люди, компьютеры и освещение добавляют тепло, поэтому расчёт «по квадратам» здесь занижает мощность.** А тип системы выбирают не по цене, а по потолку: есть подвесной — кассетные или канальные, нет — настенные или напольно-потолочные. Ниже — как считать и на чём не ошибиться.</div></div>
+      <h2>Почему офис нельзя считать как квартиру</h2>
+      <p>В жилой комнате основной приток тепла — от солнца и через стены. В офисе к этому добавляется то, чего дома нет:</p>
+      <ul><li><b>люди</b> — каждый сотрудник постоянно отдаёт тепло, и в переговорной на десять человек это уже заметная нагрузка;</li><li><b>техника</b> — рабочие станции, мониторы, МФУ, сетевое оборудование греют круглый день;</li><li><b>освещение</b> — в открытых пространствах его много и оно работает весь день;</li><li><b>остекление</b> — панорамные окна в бизнес-центрах дают солнечную нагрузку, которой в квартире обычно меньше.</li></ul>
+      <p>Поэтому расчёт для офиса делают по площади <b>плюс</b> поправки на плотность посадки и технику. Базовую методику по площади можно посмотреть в статье <a href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera">«Как выбрать мощность кондиционера по площади»</a> — для офиса она даёт нижнюю границу, от которой считают дальше.</p>
+      <h2>Что нужно знать до расчёта</h2>
+      <p>Соберите пять цифр — с ними расчёт займёт минуты, без них любая оценка будет гаданием:</p>
+      <ol><li>Площадь и высота потолка каждого помещения.</li><li>Сколько человек сидит постоянно и сколько бывает пиково.</li><li>Что за техника и сколько её.</li><li>Сторона света и площадь остекления.</li><li>Есть ли подвесной потолок и какой запас высоты за ним.</li></ol>
+      <p>Отдельно отметьте помещения с особым режимом: серверная, переговорная (пиковая нагрузка), кабинет руководителя (отдельное управление).</p>
+      <h2>Какой тип системы выбрать</h2>
+      <p><b>Кассетные.</b> Встраиваются в подвесной потолок, раздают воздух на четыре стороны — равномерно и без сквозняка на конкретного человека. Классика для open space и залов. Нужен запас высоты за потолком.</p>
+      <p><b>Канальные.</b> Полностью скрыты, воздух идёт по воздуховодам и раздаётся решётками. Одна машина может обслуживать несколько соседних помещений, и к ней проще подмешать свежий воздух. Требуют проектирования воздуховодов и того же запаса за потолком.</p>
+      <p><b>Напольно-потолочные.</b> Ставятся под потолок или у пола, подвесной потолок не нужен. Хороший вариант для помещений с открытыми коммуникациями и высокими потолками.</p>
+      <p><b>Колонные.</b> Мощные напольные машины для залов, магазинов, ресторанов, где нужен большой поток и нет места для скрытого монтажа.</p>
+      <p><b>Настенные.</b> Дешевле всего, ставятся быстро, но в офисе дают неравномерность: рядом с блоком дует, в дальнем углу тепло. Разумны для отдельных небольших кабинетов.</p>
+      <p>Весь этот класс техники — в разделе <a href="https://tehnoholod369.kz/poluprom">полупромышленных систем</a>. Подробные разборы отдельных типов: <a href="https://tehnoholod369.kz/kassetny-kondicioner">«Кассетный кондиционер»</a> и <a href="https://tehnoholod369.kz/kanalny-kondicioner">«Канальный кондиционер»</a>.</p>
+      <h2>Когда пора переходить на мультизональную систему</h2>
+      <p>Если помещений много, наружных блоков на фасаде становится столько же — а бизнес-центры это редко разрешают. Тогда считают VRF или mini-VRF: один наружный блок обслуживает много внутренних, каждое помещение управляется отдельно, а часть систем умеет одновременно греть одни комнаты и охлаждать другие.</p>
+      <p>Ориентир простой: <b>до трёх-четырёх помещений</b> обычно дешевле отдельные системы или мультисплит, <b>дальше</b> выигрывает VRF — и по месту на фасаде, и по эксплуатации. Разобрано в статьях <a href="https://tehnoholod369.kz/vrf">«VRF-система для офиса»</a> и <a href="https://tehnoholod369.kz/multisplit-sistema">«Мультисплит-система»</a>.</p>
+      <h2>Серверная — отдельная задача</h2>
+      <p>Серверную нельзя считать вместе с офисом, и вот почему:</p>
+      <ul><li>охлаждение нужно <b>круглый год</b>, включая зиму, — а обычный бытовой кондиционер не рассчитан работать на холод при минусе на улице;</li><li>нагрузка постоянная и известная — её считают по мощности оборудования, а не по площади;</li><li>простой недопустим, поэтому часто ставят две машины с чередованием.</li></ul>
+      <p>Для круглогодичной работы на охлаждение нужен зимний комплект — подогрев картера компрессора и дренажа. Это отдельная позиция работ, её обсуждают на замере.</p>
+      <h2>Свежий воздух: чего кондиционер не делает</h2>
+      <p>Кондиционер любого типа не проветривает — он охлаждает тот же воздух. В офисе, где людей много, а окна закрыты, углекислый газ копится быстрее, чем дома: отсюда сонливость после обеда и тяжёлые головы к вечеру.</p>
+      <p>Решается это вентиляцией, а не более мощным кондиционером: приточной установкой или приточно-вытяжной с рекуперацией. Что это такое — в статьях <a href="https://tehnoholod369.kz/pritochnaya-ventilyaciya">«Приточная вентиляция в квартиру»</a> и <a href="https://tehnoholod369.kz/rekuperator">«Рекуператор»</a>; в офисе логика та же, только расход воздуха считают на количество людей.</p>
+      <h2>Что учесть до монтажа</h2>
+      <p><b>Согласование с бизнес-центром.</b> Почти везде есть требования к размещению наружных блоков: технические балконы, отведённые места на фасаде, запрет на видимую сторону. Узнавать это надо до заказа техники, а не после.</p>
+      <p><b>Электрика.</b> Несколько машин — это заметная нагрузка. Проверьте, выдержит ли ввод и есть ли свободные линии в щите.</p>
+      <p><b>Дренаж.</b> В офисном здании конденсат чаще всего уводят в канализацию, а не на улицу. Это отдельная работа, и трассы для неё планируют вместе с воздуховодами.</p>
+      <p><b>Шум.</b> В переговорной и кабинетах уровень шума внутреннего блока важнее, чем в open space.</p>
+      <p>Что входит в стандартный монтаж и что считается отдельной строкой — в статье <a href="https://tehnoholod369.kz/skolko-stoit-ustanovka-kondicionera">«Сколько стоит установка кондиционера»</a>.</p>
+      <h2>Обслуживание: в офисе чаще</h2>
+      <p>Фильтры в офисе забиваются быстрее, чем в квартире: больше людей, больше пыли, больше часов работы. Забитый фильтр — это не только запах, но и рост расхода электричества и риск для компрессора.</p>
+      <p>Практика простая: осмотр и чистка перед сезоном охлаждения и после него, а в помещениях с высокой нагрузкой — чаще. Подробно про регламент — в статье <a href="https://tehnoholod369.kz/obsluzhivanie-konditsionera-zamena-filtra">«Обслуживание кондиционера»</a>.</p>
+      <h2>Кто за что отвечает</h2>
+      <p>Гарантию на оборудование даёт производитель — срок в паспорте изделия. Гарантию на монтаж даёт бригада-установщик, её срок записан в «Сервис-карте 369». Для юридических лиц условия работ фиксируются договором.</p>
+      <h2>Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=poluprom&amp;brand=AUX&amp;stock=in"><div class="art-card__t">AUX</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">46 моделей</span> →</div></a>
+      <a class="art-card" href="/katalog?g=poluprom"><div class="art-card__t">Полупромышленные</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="poluprom"></span> →</div></a>
+      <a class="art-card" href="/poluprom"><div class="art-card__t">Полупромышленные кондиционеры в Алматы</div><div class="art-card__s">Кассетные, канальные и напольно-потолочные блоки.</div><div class="art-card__go">Открыть раздел →</div></a>
+      </div>
+      <h2>Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Как считать мощность для офиса?</div><div class="art-q__a">От расчёта по площади, а затем добавляют поправки на людей, технику, освещение и остекление. Для помещений с плотной посадкой или серверным оборудованием считают по фактической тепловой нагрузке.</div></div>
+      <div class="art-q"><div class="art-q__q">Кассетный или канальный — что лучше для open space?</div><div class="art-q__a">Кассетный проще в монтаже и равномерно раздаёт воздух на четыре стороны. Канальный выбирают, когда важно полностью скрыть технику или подмешать свежий воздух.</div></div>
+      <div class="art-q"><div class="art-q__q">Со скольких помещений выгоден VRF?</div><div class="art-q__a">Ориентировочно с четырёх-пяти. Меньше — обычно дешевле отдельные системы или мультисплит; больше — VRF выигрывает по месту на фасаде и по управлению.</div></div>
+      <div class="art-q"><div class="art-q__q">Нужно ли согласовывать наружные блоки с бизнес-центром?</div><div class="art-q__a">Как правило, да: в большинстве БЦ есть требования к размещению на фасаде и отведённые технические места. Уточнять нужно до заказа техники.</div></div>
+      <div class="art-q"><div class="art-q__q">Можно ли охлаждать серверную обычным кондиционером?</div><div class="art-q__a">Только с оговорками: серверной нужно охлаждение круглый год, а для работы на холод при минусовой уличной температуре требуется зимний комплект. Такие помещения считают отдельно.</div></div>
+    </div>
+
+    
+    <div class="art-cta" style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Посчитаем проект и монтаж</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Пришлите планировку и площадь — вернём расчёт с составом оборудования.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div class="art-cta__actions" style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/katalog?g=poluprom" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards" data-art-next="kondicionery-dlya-ofisa|nezhilye|poluprom|kak-vybrat-moshchnost-konditsionera,kassetny-kondicioner,kanalny-kondicioner,vrf,multisplit-sistema,pritochnaya-ventilyaciya,rekuperator,skolko-stoit-ustanovka-kondicionera,obsluzhivanie-konditsionera-zamena-filtra">
+        <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera"><div class="art-card__t">Как выбрать мощность кондиционера по площади комнаты</div><div class="art-card__s">Как подобрать мощность кондиционера по площади комнаты: правило 100 Вт на м², перевод BTU в кВт, классы 9/12/1</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kassetny-kondicioner"><div class="art-card__t">Кассетный кондиционер: потолочный на 4 стороны для офиса и магазина</div><div class="art-card__s">Кассетный кондиционер: как работает, где ставят, отличия от настенного. Подбор для офиса, магазина, ресторана </div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kanalny-kondicioner"><div class="art-card__t">Канальный кондиционер: скрытое кондиционирование квартиры и дома</div><div class="art-card__s">Канальный кондиционер: как работает, когда его брать вместо сплитов, монтаж и высота потолка. Подбор для кварт</div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=7c7384bc"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=4af75ffa"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Кондиционер для офиса: как рассчитать и что выбрать", "description": "Расчёт мощности для офиса с людьми и техникой, выбор между кассетным, канальным и мультизональной системой. Серверная, согласование, обслуживание.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/kondicionery-dlya-ofisa"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-03"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Кондиционер для офиса: как рассчитать и что выбрать", "item": "https://tehnoholod369.kz/kondicionery-dlya-ofisa"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Как считать мощность для офиса?","acceptedAnswer":{"@type":"Answer","text":"От расчёта по площади, затем добавляют поправки на людей, технику, освещение и остекление. Для плотной посадки или серверного оборудования считают по фактической тепловой нагрузке."}},
+    {"@type":"Question","name":"Кассетный или канальный — что лучше для open space?","acceptedAnswer":{"@type":"Answer","text":"Кассетный проще в монтаже и равномерно раздаёт воздух на четыре стороны. Канальный выбирают, когда важно полностью скрыть технику или подмешать свежий воздух."}},
+    {"@type":"Question","name":"Со скольких помещений выгоден VRF?","acceptedAnswer":{"@type":"Answer","text":"Ориентировочно с четырёх-пяти. Меньше — обычно дешевле отдельные системы или мультисплит; больше — VRF выигрывает по месту на фасаде и по управлению."}},
+    {"@type":"Question","name":"Нужно ли согласовывать наружные блоки с бизнес-центром?","acceptedAnswer":{"@type":"Answer","text":"Как правило, да: в большинстве бизнес-центров есть требования к размещению на фасаде и отведённые технические места. Уточнять нужно до заказа техники."}},
+    {"@type":"Question","name":"Можно ли охлаждать серверную обычным кондиционером?","acceptedAnswer":{"@type":"Answer","text":"Только с оговорками: серверной нужно охлаждение круглый год, а для работы на холод при минусовой уличной температуре требуется зимний комплект. Такие помещения считают отдельно."}}
+  ]
+}
+</script>
+</x-dc>
