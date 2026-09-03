@@ -219,8 +219,8 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=7ff7fd79"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c76635e3"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=4af75ffa"></script>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Сухой воздух зимой: увлажнитель или приточный кондиционер", "description": "Зимой в квартире сухой воздух — пересыхает кожа, тяжело дышать. Сравниваем увлажнитель и приточный кондиционер: что реально решает проблему.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/suhoi-vozduh-zimoi"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-03"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Сухой воздух зимой: увлажнитель или приточный кондиционер", "item": "https://tehnoholod369.kz/suhoi-vozduh-zimoi"}]}</script>

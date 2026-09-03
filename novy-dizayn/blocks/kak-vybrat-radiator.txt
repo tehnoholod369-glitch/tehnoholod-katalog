@@ -174,7 +174,7 @@
       <p><b>Межосевое расстояние.</b> Это расстояние между центрами верхнего и нижнего подключений. Стандарт — 500 мм, но бывают 300 и 350 мм для установки под низкими окнами. Замерьте перед покупкой.</p>
       <p><b>Тип подключения.</b> Боковое (классика для квартир) или нижнее (для скрытой разводки труб). В квартирах чаще боковое, в частных домах — нижнее.</p>
       <p>Посмотреть модели с нижним подключением: <a href="/katalog?g=radiatory&amp;sub=%D0%A1%20%D0%BD%D0%B8%D0%B6%D0%BD%D0%B8%D0%BC%20%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC">радиаторы с нижним подключением</a>.</p>
-      <p><b>Мощность одной секции.</b> Обычно 150–200 Вт. От этого зависит, сколько секций нужно на комнату — подробно расписал в отдельной статье <a href="https://tehnoholod369.kz/skolko-sekcii-radiatora">«Сколько секций радиатора нужно на комнату»</a>.</p>
+      <p><b>Мощность одной секции.</b> Обычно 150–200 Вт. От этого зависит, сколько секций нужно на комнату — подробно расписал в отдельной статье <span data-art-link="skolko-sekcii-radiatora">«Сколько секций радиатора нужно на комнату»</span>.</p>
       <p><b>Бренд.</b> Проверенные производители: Royal Thermo (представлен в нашем каталоге всеми линейками) — российско-итальянская промышленная группа со штаб-квартирой в Италии и заводами в Италии и России. Есть гарантия и запчасти в Алматы.</p>
       <h2>Частые ошибки</h2>
       <ol><li><b>Купить алюминиевый радиатор для квартиры.</b> Через 3–5 лет начнёт течь из-за плохой воды.</li><li><b>Купить панельный стальной для квартиры с высоким давлением.</b> Разорвёт при опрессовке.</li><li><b>Не учесть межосевое расстояние.</b> Радиатор просто не встанет на место.</li><li><b>Взять слишком мощный или слабый.</b> Будет либо жарко, либо холодно — расчёт секций обязателен.</li><li><b>Сэкономить на подключении.</b> Плохая обвязка убьёт даже самый качественный радиатор.</li></ol>
@@ -241,8 +241,8 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=7ff7fd79"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c76635e3"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=4af75ffa"></script>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Как выбрать радиатор отопления для квартиры: типы и советы", "description": "Разбираем биметаллические, алюминиевые и стальные радиаторы: плюсы, минусы, для каких квартир и домов подходят. Как выбрать без ошибок.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/kak-vybrat-radiator"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-03"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Как выбрать радиатор отопления для квартиры: типы и советы", "item": "https://tehnoholod369.kz/kak-vybrat-radiator"}]}</script>

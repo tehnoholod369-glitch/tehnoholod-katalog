@@ -220,7 +220,7 @@
       <ul><li>Офисов и БЦ от 300 м² с множеством зон.</li><li>Гостиниц, апарт-отелей с индивидуальным управлением по номерам.</li><li>ТРЦ и магазинов с зонами разного назначения.</li><li>Объектов, где нужны одновременный нагрев и охлаждение (Heat Recovery).</li></ul>
       <p>Для небольших офисов до 200–300 м² — оставайтесь на мультисплите или обычных сплитах. VRF окупает себя только на большом объёме и долгом сроке эксплуатации.</p>
       <p>Посмотреть модели: <a href="/katalog?g=mini-vrf">VRF-системы</a>. Приедем на объект, сделаем проект под ваш офис или БЦ и рассчитаем экономику — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж и пусконаладка по Алматы.</p>
-      <p>Читайте также: <a href="https://tehnoholod369.kz/multisplit">«Мультисплит-система»</a>, <a href="https://tehnoholod369.kz/kanalny-kondicioner">«Канальный кондиционер»</a>, <a href="https://tehnoholod369.kz/kassetny-kondicioner">«Кассетный кондиционер»</a>.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/multisplit">«Мультисплит-система»</a>, <span data-art-link="kanalny-kondicioner">«Канальный кондиционер»</span>, <span data-art-link="kassetny-kondicioner">«Кассетный кондиционер»</span>.</p>
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=mini-vrf&amp;brand=AUX&amp;stock=in"><div class="art-card__t">AUX</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">15 моделей</span> →</div></a>
@@ -270,8 +270,8 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=7ff7fd79"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c76635e3"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=4af75ffa"></script>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "VRF-система для офиса и бизнес-центра: как выбрать", "description": "VRF-система: до 64 внутренних блоков на один наружный, одновременный нагрев и охлаждение, зональное управление. Для офисов, БЦ, гостиниц в Алматы.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/vrf"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-03"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "VRF-система для офиса и бизнес-центра: как выбрать", "item": "https://tehnoholod369.kz/vrf"}]}</script>

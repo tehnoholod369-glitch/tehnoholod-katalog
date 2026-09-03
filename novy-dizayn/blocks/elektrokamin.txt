@@ -213,7 +213,7 @@
       <p>Для квартиры в Алматы:</p>
       <ul><li><b>Хотите тепло + красоту</b> — электрокамин с 3D-эффектом.</li><li><b>Хотите живой огонь и атмосферу</b> — биокамин, только в гостиную с проветриванием.</li><li><b>Хотите только внешний вид</b> — портал с зеркалом или свечами.</li></ul>
       <p>Посмотреть модели: <a href="/katalog?g=kaminy">камины в каталоге</a>. Приедем на замер и подберём модель под ваш интерьер — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, доставка по Алматы.</p>
-      <p>Читайте также: <a href="https://tehnoholod369.kz/konvektor-obogrevatel">«Конвектор или обогреватель»</a>, <a href="https://tehnoholod369.kz/ik-obogrevatel">«Инфракрасный обогреватель»</a>.</p>
+      <p>Читайте также: <span data-art-link="konvektor-obogrevatel">«Конвектор или обогреватель»</span>, <span data-art-link="ik-obogrevatel">«Инфракрасный обогреватель»</span>.</p>
       <h2>Что посмотреть в каталоге</h2>
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=kaminy&amp;brand=Electrolux&amp;sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BE%D1%87%D0%B0%D0%B3%D0%B8%202D&amp;stock=in"><div class="art-card__t">Electrolux · Электроочаги 2D</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">8 моделей</span> →</div></a>
@@ -274,8 +274,8 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c0526829"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=7ff7fd79"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c76635e3"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=4af75ffa"></script>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Электрокамин в квартире: как выбрать и чем отличается от био", "description": "Электрокамин, биокамин или декоративный портал — что выбрать в квартиру. Реалистичность пламени, обогрев, безопасность, цена. Алматы.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/elektrokamin"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-03"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Электрокамин в квартире: как выбрать и чем отличается от био", "item": "https://tehnoholod369.kz/elektrokamin"}]}</script>

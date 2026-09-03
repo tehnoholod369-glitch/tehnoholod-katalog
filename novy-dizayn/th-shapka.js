@@ -164,10 +164,7 @@
   }
 
   function вставить() {
-    // Страницы редизайна рисуют свою шапку сами (th-page.js) — там нам делать нечего.
-    // Это важно: скрипт подключается в «HTML-код в HEAD» на весь сайт, чтобы попасть
-    // и на карточки магазина /tproduct/, у которых своей шапки нет вообще.
-    if (document.querySelector("[data-th-page]")) return;
+    if (document.querySelector("[data-th-page], #dc-root")) return;
     плашка();
     if (document.querySelector("[data-th-shapka]")) return;   // идемпотентно
     убратьСтарую();

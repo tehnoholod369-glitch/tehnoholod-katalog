@@ -32,6 +32,8 @@
  *      <span data-pick-brand>
  *      <span data-pick-name>
  *      <span data-pick-price>
+ *   <a data-pick="bytovye" data-pick-only="TCL|FreshIN 3.0">
+ *      — сузить рекомендацию до марки и модели (обе части необязательны)
  *
  * Две метки, два разных утверждения — не путать:
  *   «Хит продаж» — это часто покупают. Назначает ВЛАДЕЛЕЦ в PIM/ХИТЫ_ПРОДАЖ.csv,
@@ -143,11 +145,29 @@
           for (var h = 0; h < хиты.length && !хит; h++) {
             хит = items.filter(function (x) { return x.s === хиты[h] && x.p; })[0] || null;
           }
-          // рекомендуем товар, а не аксессуар: статья ведёт к покупке техники
-          var it = хит || лучший(товар, skus);
-          if (!it) return;
           пики.filter(function (e) { return слаг(e.getAttribute("data-pick")) === slug; })
             .forEach(function (a) {
+              // Сужение статьи: data-pick-only="TCL|FreshIN 3.0" — марка и кусок
+              // названия. Появилось 03.09.2026: в статье про приточный кондиционер
+              // «Наш выбор» показывал Ditreex, потому что выбирал из всех 383
+              // настенных группы, а поле sub у них у всех одно — «Настенные».
+              // Статья про конкретную технику обязана рекомендовать её же.
+              var только = (a.getAttribute("data-pick-only") || "").split("|");
+              var марка = (только[0] || "").trim().toLowerCase();
+              var кусок = (только[1] || "").trim().toLowerCase();
+              var поле = function (x) { return ((x.nb || x.n || "") + "").toLowerCase(); };
+              var годные = товар.filter(function (x) {
+                if (марка && ((x.b || "") + "").toLowerCase().indexOf(марка) < 0) return false;
+                if (кусок && поле(x).indexOf(кусок) < 0) return false;
+                return true;
+              });
+              // сузили в пустоту — карточку не показываем вовсе: чужая модель
+              // под заголовком статьи хуже, чем её отсутствие
+              if (!годные.length) return;
+              var свойХит = (марка || кусок)
+                ? (годные.indexOf(хит) >= 0 ? хит : null) : хит;
+              var it = свойХит || лучший(годные, skus);
+              if (!it) return;
               if (a.tagName === "A") {
                 a.setAttribute("href", "/tovar?g=" + slug + "&sl=" + encodeURIComponent(it.sl || ""));
               }

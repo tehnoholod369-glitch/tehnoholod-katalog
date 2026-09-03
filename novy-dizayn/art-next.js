@@ -29,6 +29,14 @@
  * в самом тексте → свой кластер (по кругу от текущей статьи, иначе младшие
  * номера собирают все ссылки) → своя группа каталога → соседний кластер
  * из карты в самих данных.
+ *
+ * Второе дело того же файла — ссылки ВНУТРИ текста:
+ *   <span data-art-link="<слуг>">Тепловой насос воздух-вода</span>
+ * Генератор снимает ссылку со статьи, которой ещё нет в Tilda (замечание
+ * владельца 03.09.2026: «не открывает ссылки» — в тексте про отопление
+ * автор сослался на четыре статьи следующих волн). Здесь она возвращается
+ * обратно ссылкой в тот день, когда адрес появится в данных, — блок в Tilda
+ * перевставлять не нужно.
  */
 (function () {
   "use strict";
@@ -84,9 +92,23 @@
     }).join("");
   }
 
+  function оживить(все) {
+    var карта = {}, i;
+    for (i = 0; i < все.length; i++) карта[все[i].s] = все[i];
+    [].forEach.call(document.querySelectorAll("[data-art-link]"), function (у) {
+      var слуг = у.getAttribute("data-art-link");
+      if (!карта[слуг]) return;
+      var a = document.createElement("a");
+      a.href = САЙТ + "/" + слуг;
+      a.innerHTML = у.innerHTML;
+      у.parentNode.replaceChild(a, у);
+    });
+  }
+
   function пуск() {
     var узлы = document.querySelectorAll("[data-art-next]");
-    if (!узлы.length) return;
+    var спящие = document.querySelectorAll("[data-art-link]");
+    if (!узлы.length && !спящие.length) return;
     fetch(RAW, { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) {
@@ -99,6 +121,7 @@
                               части[2] || "", изТекста);
           if (выбор.length) нарисовать(узел, выбор);
         });
+        оживить(d.items);
       })
       .catch(function () { /* оставляем то, что собрал генератор */ });
   }
