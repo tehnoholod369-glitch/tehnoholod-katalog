@@ -168,7 +168,7 @@
       <a class="art-card" href="/katalog?g=bytovye"><div class="art-card__t">Бытовые сплит-системы</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="bytovye"></span> →</div></a>
       <a class="art-card" href="/tcl-freshin"><div class="art-card__t">TCL FreshIN 3.0</div><div class="art-card__s">Кондиционер с подачей свежего воздуха с улицы.</div><div class="art-card__go">Открыть раздел →</div></a>
       </div>
-      <a class="art-pick" data-pick="bytovye" data-pick-only="TCL|FreshIN 3.0" href="/katalog?g=bytovye"
+      <a class="art-pick" data-pick="bytovye" data-pick-only="TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0" href="/katalog?g=bytovye"
          title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
         <img class="art-pick__img" data-pick-img alt="" />
         <div class="art-pick__b">
@@ -222,7 +222,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=c76635e3"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=921c3a81"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=4af75ffa"></script>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Как работает кондиционер с притоком свежего воздуха", "description": "Принцип работы приточной сплит-системы: забор воздуха с улицы, очистка HEPA H13, доведение до комнатной температуры и подача в комнату.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/kak-rabotaet-konditsioner-s-pritokom"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-03"}</script>
