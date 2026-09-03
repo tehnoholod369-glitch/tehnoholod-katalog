@@ -194,17 +194,6 @@
       <a class="art-card" href="/katalog?g=bytovye"><div class="art-card__t">Бытовые сплит-системы</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="bytovye"></span> →</div></a>
       <a class="art-card" href="/kondicionery-almaty"><div class="art-card__t">Кондиционеры в Алматы</div><div class="art-card__s">Настенные сплит-системы в наличии, с установкой.</div><div class="art-card__go">Открыть раздел →</div></a>
       </div>
-      <a class="art-pick" data-pick="bytovye" href="/katalog?g=bytovye"
-         title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
-        <img class="art-pick__img" data-pick-img alt="" />
-        <div class="art-pick__b">
-          <div class="art-pick__tag" data-pick-tag>Наш выбор</div>
-          <div class="art-pick__brand" data-pick-brand></div>
-          <div class="art-pick__name" data-pick-name></div>
-          <div class="art-pick__price" data-pick-price></div>
-        </div>
-        <div class="art-pick__go">Открыть карточку →</div>
-      </a>
       <h2>Частые вопросы</h2>
       <div class="art-q"><div class="art-q__q">Какой кондиционер лучше для однокомнатной квартиры?</div><div class="art-q__a">Обычно достаточно одного настенного блока на комнату, мощность считают по её площади. Кухню и коридор такой блок охлаждает частично — если нужен холод и там, считают либо более мощную модель, либо мультисплит.</div></div>
       <div class="art-q"><div class="art-q__q">Инвертор действительно экономит электричество?</div><div class="art-q__a">Да, когда кондиционер работает долго — часами и днями. При коротких включениях по часу разница почти не набегает.</div></div>
@@ -248,7 +237,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=02c11b87"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=7c7384bc"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=4af75ffa"></script>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Какой кондиционер выбрать для квартиры в Алматы", "description": "Пошаговый выбор кондиционера для квартиры: мощность, инвертор или on/off, уровень шума для спальни, нужен ли приток. Что важно именно в Алматы.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/kakoy-kondicioner-vybrat-dlya-kvartiry"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-03"}</script>
