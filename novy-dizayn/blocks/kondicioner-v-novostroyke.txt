@@ -165,7 +165,7 @@
       <p><b>Как правильно.</b> До монтажа выяснить в своей управляющей компании: есть ли требования к размещению наружных блоков, нужна ли заявка, предусмотрены ли корзины. Заодно уточните, как в вашем доме относятся к сверлению фасада.</p>
       <h2>Ошибка 4. Не учесть монолит</h2>
       <p>В новостройках Алматы несущие стены и перекрытия обычно монолитные. Для монтажа это значит: бурение и штробление по железобетону идут тяжелее и считаются отдельной надбавкой, а сквозное отверстие в толстой стене может потребовать алмазного бурения.</p>
-      <p>Это не повод расстраиваться — это повод заложить в бюджет. Что входит в стандартный монтаж, а что считается отдельной строкой, разобрано в статье <span data-art-link="skolko-stoit-ustanovka-kondicionera">«Сколько стоит установка кондиционера»</span>.</p>
+      <p>Это не повод расстраиваться — это повод заложить в бюджет. Что входит в стандартный монтаж, а что считается отдельной строкой, разобрано в статье <a href="https://tehnoholod369.kz/skolko-stoit-ustanovka-kondicionera">«Сколько стоит установка кондиционера»</a>.</p>
       <p><b>Как правильно.</b> На замере сразу сказать бригаде, что стены монолитные, и уточнить, нужно ли алмазное бурение под вашу толщину стены.</p>
       <h2>Ошибка 5. Забыть про розетку</h2>
       <p>Внутренний блок нужно куда-то включить. Если розетки рядом нет, после ремонта появляется удлинитель по стене — ровно то, ради чего затевался скрытый монтаж.</p>
@@ -225,10 +225,10 @@
 
     
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
-    <div class="art-cards" data-art-next="kondicioner-v-novostroyke|byt-kond|bytovye|multisplit-sistema,montazh-kondicionera-proverennaya-brigada">
+    <div class="art-cards" data-art-next="kondicioner-v-novostroyke|byt-kond|bytovye|multisplit-sistema,skolko-stoit-ustanovka-kondicionera,montazh-kondicionera-proverennaya-brigada">
         <a class="art-card" href="https://tehnoholod369.kz/multisplit-sistema"><div class="art-card__t">Мультисплит-система: один внешний блок на несколько комнат</div><div class="art-card__s">Мультисплит: как работает, когда выгоднее нескольких сплитов, ограничения. Подбор для квартиры 2–4 комнаты в А</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/skolko-stoit-ustanovka-kondicionera"><div class="art-card__t">Сколько стоит установка кондиционера в Алматы: из чего складывается цена</div><div class="art-card__s">Из чего складывается цена монтажа кондиционера: что входит в стандартную установку, что считается отдельно и п</div><div class="art-card__go">Читать →</div></a>
         <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada"><div class="art-card__t">Монтаж кондиционера: что даёт проверенная бригада</div><div class="art-card__s">Как проверить монтажников кондиционера: внутренний допуск 369, личный рейтинг МАСТЕРОВ, прозрачная смета, серв</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>

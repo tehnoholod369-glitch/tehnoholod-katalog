@@ -221,7 +221,7 @@
     <div class="art-cards" data-art-next="podgotovka-kondicionera-k-zime|byt-kond|bytovye|">
         <a class="art-card" href="https://tehnoholod369.kz/multisplit-sistema"><div class="art-card__t">Мультисплит-система: один внешний блок на несколько комнат</div><div class="art-card__s">Мультисплит: как работает, когда выгоднее нескольких сплитов, ограничения. Подбор для квартиры 2–4 комнаты в А</div><div class="art-card__go">Читать →</div></a>
         <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada"><div class="art-card__t">Монтаж кондиционера: что даёт проверенная бригада</div><div class="art-card__s">Как проверить монтажников кондиционера: внутренний допуск 369, личный рейтинг МАСТЕРОВ, прозрачная смета, серв</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/skolko-stoit-ustanovka-kondicionera"><div class="art-card__t">Сколько стоит установка кондиционера в Алматы: из чего складывается цена</div><div class="art-card__s">Из чего складывается цена монтажа кондиционера: что входит в стандартную установку, что считается отдельно и п</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>
