@@ -16,7 +16,8 @@
    "r": "Эксплуатация",
    "c": "byt-kond",
    "g": "bytovye",
-   "m": 3
+   "m": 3,
+   "p": ""
   },
   {
    "s": "kak-vybrat-radiator",
@@ -25,7 +26,8 @@
    "r": "Выбор",
    "c": "otoplenie",
    "g": "radiatory",
-   "m": 4
+   "m": 4,
+   "p": ""
   },
   {
    "s": "otoplenie-chastnogo-doma",
@@ -34,7 +36,8 @@
    "r": "Выбор",
    "c": "otoplenie",
    "g": "radiatory",
-   "m": 8
+   "m": 8,
+   "p": ""
   },
   {
    "s": "montazh-kondicionera-proverennaya-brigada",
@@ -43,7 +46,8 @@
    "r": "Монтаж",
    "c": "byt-kond",
    "g": "bytovye",
-   "m": 9
+   "m": 9,
+   "p": ""
   },
   {
    "s": "brizer-ili-konditsioner-s-pritokom",
@@ -52,7 +56,8 @@
    "r": "Выбор",
    "c": "pritok",
    "g": "bytovye",
-   "m": 4
+   "m": 4,
+   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0"
   },
   {
    "s": "kak-rabotaet-konditsioner-s-pritokom",
@@ -61,7 +66,8 @@
    "r": "Выбор",
    "c": "pritok",
    "g": "bytovye",
-   "m": 3
+   "m": 3,
+   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0"
   },
   {
    "s": "kak-vybrat-moshchnost-konditsionera",
@@ -70,7 +76,8 @@
    "r": "Выбор",
    "c": "pritok",
    "g": "bytovye",
-   "m": 3
+   "m": 3,
+   "p": ""
   },
   {
    "s": "pritok-vozdukha-vs-fortochka",
@@ -79,7 +86,8 @@
    "r": "Выбор",
    "c": "pritok",
    "g": "bytovye",
-   "m": 2
+   "m": 2,
+   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0"
   },
   {
    "s": "pochemu-dushno-doma-s-konditsionerom",
@@ -88,7 +96,8 @@
    "r": "Эксплуатация",
    "c": "pritok",
    "g": "bytovye",
-   "m": 3
+   "m": 3,
+   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0"
   },
   {
    "s": "do-kakoy-temperatury-rabotaet-konditsioner",
@@ -97,7 +106,8 @@
    "r": "Эксплуатация",
    "c": "pritok",
    "g": "bytovye",
-   "m": 2
+   "m": 2,
+   "p": ""
   },
   {
    "s": "obsluzhivanie-konditsionera-zamena-filtra",
@@ -106,7 +116,8 @@
    "r": "Эксплуатация",
    "c": "pritok",
    "g": "bytovye",
-   "m": 2
+   "m": 2,
+   "p": ""
   },
   {
    "s": "montazh-kondicionera-s-pritokom",
@@ -115,7 +126,8 @@
    "r": "Монтаж",
    "c": "pritok",
    "g": "bytovye",
-   "m": 3
+   "m": 3,
+   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0"
   },
   {
    "s": "freshin-sravnenie",
@@ -124,7 +136,8 @@
    "r": "Выбор",
    "c": "pritok",
    "g": "bytovye",
-   "m": 5
+   "m": 5,
+   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0"
   }
  ]
 }

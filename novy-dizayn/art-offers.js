@@ -105,10 +105,18 @@
     цены.forEach(function (e) { группы[слаг(e.getAttribute("data-price-from"))] = 1; });
     пики.forEach(function (e) { группы[слаг(e.getAttribute("data-pick"))] = 1; });
 
-    Promise.all([взять("index.json"), взять("picks.json"), взять("hits.json")])
+    Promise.all([взять("index.json"), взять("picks.json"), взять("hits.json"),
+                 взять("articles.json")])
       .then(function (общее) {
       var idx = общее[0], p = общее[1], hits = общее[2] || {};
       var skus = (p && p.skus) || [];
+
+      var изДанных = "";
+      var стат = (общее[3] && общее[3].items) || [];
+      var адрес = location.pathname.replace(/^\/+|\/+$/g, "");
+      for (var i = 0; i < стат.length; i++) {
+        if (стат[i].s === адрес) { изДанных = стат[i].p || ""; break; }
+      }
 
       var дата = idx && idx.updated;
       if (дата) {
@@ -155,7 +163,7 @@
               // Третья часть — запасной кусок: названную модель разберут, и без него
               // карточка просто пропала бы со страницы. Запасной шире (вся линейка),
               // и он честнее пустого места: техника та же, исполнение другое.
-              var только = (a.getAttribute("data-pick-only") || "").split("|");
+              var только = (a.getAttribute("data-pick-only") || изДанных || "").split("|");
               var марка = (только[0] || "").trim().toLowerCase();
               var кусок = (только[1] || "").trim().toLowerCase();
               var запас = (только[2] || "").trim().toLowerCase();
