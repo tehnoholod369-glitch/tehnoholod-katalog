@@ -1,0 +1,266 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art-page-main {
+    width: 100%;
+    max-width: 888px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 18px 24px 72px;
+  }
+  .art-page-main > h1 { max-width: none !important; overflow-wrap: anywhere; }
+  .art-page-lead { max-width: none !important; }
+  .art { width: 100%; max-width: none; }
+
+  
+  .t-body .art-local-chrome { display: none !important; }
+
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+
+  @media (max-width: 640px) {
+    .art-page-main { padding: 14px 16px 56px; }
+    .art-page-main > h1 { font-size: clamp(25px, 7vw, 30px) !important; line-height: 1.16; }
+    .art-page-lead { font-size: 16px !important; line-height: 1.6 !important; }
+    .art h2 { margin-top: 28px; font-size: 20px; line-height: 1.3; }
+    .art h3 { font-size: 17px; line-height: 1.35; }
+    .art p, .art li { font-size: 16px; line-height: 1.65; }
+    .art-note, .art-warn, .art-tldr, .art-q { padding: 14px 15px; }
+    .art-cta { padding: 20px !important; gap: 18px !important; }
+    .art-cta__actions { display: grid !important; grid-template-columns: 1fr; width: 100%; }
+    .art-cta__actions > a { width: 100%; box-sizing: border-box; text-align: center; }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=1810f723"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="art-page-main">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/baza-znaniy">База знаний</a> → <span style="color:#18212F;">Кондиционер в новостройке</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Монтаж</span>
+      <span style="color:#8593A6;">5 минут чтения</span>
+      <span style="color:#8593A6;">Обновлено 03.09.2026</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Кондиционер в новостройке: 7 ошибок при установке</h1>
+
+    <div class="art-page-lead" style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Когда закладывать трассу, куда вешать наружный блок, что согласовать с УК и почему монолит дороже. Семь ошибок, которые дорого исправлять после ремонта.
+    </div>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">трассу под кондиционер закладывают до чистовой отделки, место наружного блока согласовывают заранее, а розетку выводят там же, где будет внутренний блок.** Всё это стоит копейки на этапе ремонта и превращается в штробление по готовым стенам, если про кондиционер вспомнили после новоселья. Ниже — семь ошибок по порядку, от самой дорогой.</div></div>
+      <h2>Ошибка 1. Вспомнить о кондиционере после ремонта</h2>
+      <p>Самая частая и самая дорогая. Пока стены не отделаны, трасса прячется в штробу, и снаружи не видно ничего. После ремонта варианта два: либо снова штробить — с пылью, ремонтом отделки и повторной покраской, либо вести трассу в декоративном коробе по стене.</p>
+      <p>Короб — рабочее решение, но он виден, и в дизайнерском интерьере смотрится тем, чем является: пластиковой трубой на стене.</p>
+      <p><b>Как правильно.</b> Решить про кондиционер на этапе, когда стены готовы под чистовую отделку, но отделки ещё нет. Даже если саму технику покупать позже — трассу, кабель и дренаж закладывают сразу. Это называется «закладка трассы» и делается отдельным выездом.</p>
+      <h2>Ошибка 2. Не решить заранее, сколько будет блоков</h2>
+      <p>От числа блоков зависит, что закладывать. Один кондиционер в гостиной — одна трасса. Три блока в трёшке — либо три отдельные системы с тремя наружными блоками, либо мультисплит: один наружный блок на несколько внутренних.</p>
+      <p>Мультисплит решают именно на этапе ремонта: все трассы сходятся в одну точку, и после отделки перепланировать это невозможно. Как устроена такая система и когда она выгоднее — в статье <a href="https://tehnoholod369.kz/multisplit-sistema">«Мультисплит-система»</a>.</p>
+      <p><b>Как правильно.</b> Пройти по квартире и решить: в каких комнатах точно будет кондиционер, в каких — «может быть, потом». Под «может быть» закладывают трассу-заглушку. Она дешевле, чем штробление через два года.</p>
+      <h2>Ошибка 3. Не согласовать место наружного блока</h2>
+      <p>В новостройках нередко есть правила по фасаду: где вешать блоки, можно ли на видимую сторону, есть ли специальные корзины или технические ниши. Где-то это прописано в правилах дома, где-то решает управляющая компания или КСК.</p>
+      <p>Ситуация «блок повесили, УК потребовала снять» встречается достаточно часто, чтобы спросить заранее.</p>
+      <p><b>Как правильно.</b> До монтажа выяснить в своей управляющей компании: есть ли требования к размещению наружных блоков, нужна ли заявка, предусмотрены ли корзины. Заодно уточните, как в вашем доме относятся к сверлению фасада.</p>
+      <h2>Ошибка 4. Не учесть монолит</h2>
+      <p>В новостройках Алматы несущие стены и перекрытия обычно монолитные. Для монтажа это значит: бурение и штробление по железобетону идут тяжелее и считаются отдельной надбавкой, а сквозное отверстие в толстой стене может потребовать алмазного бурения.</p>
+      <p>Это не повод расстраиваться — это повод заложить в бюджет. Что входит в стандартный монтаж, а что считается отдельной строкой, разобрано в статье <span data-art-link="skolko-stoit-ustanovka-kondicionera">«Сколько стоит установка кондиционера»</span>.</p>
+      <p><b>Как правильно.</b> На замере сразу сказать бригаде, что стены монолитные, и уточнить, нужно ли алмазное бурение под вашу толщину стены.</p>
+      <h2>Ошибка 5. Забыть про розетку</h2>
+      <p>Внутренний блок нужно куда-то включить. Если розетки рядом нет, после ремонта появляется удлинитель по стене — ровно то, ради чего затевался скрытый монтаж.</p>
+      <p>В стандартный монтаж входит подключение к розетке рядом — до полутора метров. Всё, что дальше, — это отдельная работа, а на готовой отделке ещё и штробление.</p>
+      <p><b>Как правильно.</b> Планируя электрику, поставить розетку в точке будущего внутреннего блока — обычно это верх стены, рядом с местом установки. Электрику про это надо сказать словами: сам он не догадается.</p>
+      <h2>Ошибка 6. Не подумать, куда пойдёт конденсат</h2>
+      <p>Кондиционер вырабатывает воду — в жару это литры в сутки. Самый простой и надёжный путь — самотёком на улицу, и он входит в стандартный монтаж.</p>
+      <p>Но самотёк работает не всегда: если внутренний блок висит ниже точки вывода или планировка не даёт уклона, нужна дренажная помпа либо вывод в канализацию с сифоном. И то и другое проще заложить на этапе ремонта, чем встраивать потом.</p>
+      <p><b>Как правильно.</b> На закладке трассы обсудить дренаж отдельным пунктом: куда именно уходит вода и хватает ли уклона. Капающая с фасада вода на голову соседям — это тоже про дренаж.</p>
+      <h2>Ошибка 7. Выбрать место блока по красоте, а не по воздуху</h2>
+      <p>Внутренний блок раздаёт холод потоком. Если поставить его над шкафом, за шторой или в нишу, поток упрётся в препятствие, и комната будет охлаждаться неравномерно: у блока холодно, в двух метрах душно.</p>
+      <p>Второе частое место ошибки — прямо над кроватью или рабочим столом. Технически всё верно, а жить некомфортно: поток идёт на человека.</p>
+      <p><b>Как правильно.</b> Блок вешают так, чтобы поток шёл вдоль длинной стороны комнаты и не упирался в мебель, и так, чтобы он не дул на постоянное место человека. Место выбирают на замере — это часть работы бригады.</p>
+      <h2>Что сделать на этапе ремонта: короткий список</h2>
+      <ol><li>Решить, в каких комнатах будут кондиционеры — и где «возможно, позже».</li><li>Вызвать замерщика до чистовой отделки.</li><li>Согласовать место наружного блока с управляющей компанией.</li><li>Заложить трассу, межблочный кабель и дренаж в штробу.</li><li>Вывести розетку в точке внутреннего блока.</li><li>Зафиксировать на фото, где именно проходят трассы, — пригодится и вам, и МАСТЕРАМ через годы.</li></ol>
+      <p>Сам монтаж после этого делается быстро: блоки вешают на готовые закладки, трасса уже в стене.</p>
+      <h2>Кто отвечает за результат</h2>
+      <p>Гарантию на оборудование даёт производитель — срок в паспорте изделия. Гарантию на монтаж даёт бригада-установщик, её срок записан в «Сервис-карте 369». Если закладку трассы делала одна бригада, а монтаж — другая, спрашивайте, кто отвечает за герметичность соединений: это стык ответственности, где чаще всего возникают споры.</p>
+      <p>Что проверять у бригады до начала работ — в статье <a href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada">«Монтаж кондиционера: что даёт проверенная бригада»</a>.</p>
+      <h2>Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=bytovye&amp;brand=TCL&amp;stock=in"><div class="art-card__t">TCL</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">10 моделей</span> →</div></a>
+      <a class="art-card" href="/katalog?g=bytovye"><div class="art-card__t">Бытовые сплит-системы</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="bytovye"></span> →</div></a>
+      <a class="art-card" href="/uslugi"><div class="art-card__t">Монтаж и сервис</div><div class="art-card__s">Что делает бригада и как считается работа.</div><div class="art-card__go">Открыть раздел →</div></a>
+      </div>
+      <a class="art-pick" data-pick="bytovye" href="/katalog?g=bytovye"
+         title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
+        <img class="art-pick__img" data-pick-img alt="" />
+        <div class="art-pick__b">
+          <div class="art-pick__tag" data-pick-tag>Наш выбор</div>
+          <div class="art-pick__brand" data-pick-brand></div>
+          <div class="art-pick__name" data-pick-name></div>
+          <div class="art-pick__price" data-pick-price></div>
+        </div>
+        <div class="art-pick__go">Открыть карточку →</div>
+      </a>
+      <h2>Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">На каком этапе ремонта вызывать замерщика?</div><div class="art-q__a">Когда стены возведены и разведена электрика, но до чистовой отделки. В этот момент трасса ещё прячется в штробу без ущерба для отделки.</div></div>
+      <div class="art-q"><div class="art-q__q">Можно ли заложить трассу, а кондиционер купить позже?</div><div class="art-q__a">Да, это обычная практика. Трассу закладывают с запасом и заглушают; когда дойдёт до покупки, останется повесить блоки и подключить.</div></div>
+      <div class="art-q"><div class="art-q__q">Обязательно ли согласовывать наружный блок с УК?</div><div class="art-q__a">Требования зависят от дома. В части новостроек есть правила по фасаду и предусмотренные корзины — узнать это до монтажа дешевле, чем снимать блок после.</div></div>
+      <div class="art-q"><div class="art-q__q">Насколько дороже монтаж в монолитном доме?</div><div class="art-q__a">Отдельной строкой идёт надбавка за бурение и штробление по железобетону, а в толстых стенах может понадобиться алмазное бурение. Точную сумму называют после замера.</div></div>
+      <div class="art-q"><div class="art-q__q">Куда девать конденсат, если самотёк невозможен?</div><div class="art-q__a">Ставят дренажную помпу или выводят дренаж в канализацию с сифоном. Оба варианта проще заложить на этапе ремонта.</div></div>
+    </div>
+
+    
+    <div class="art-cta" style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Подберём модель под вашу задачу</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь комнаты и этаж — пришлём подбор и цену с монтажом.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div class="art-cta__actions" style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/katalog?g=bytovye" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards" data-art-next="kondicioner-v-novostroyke|byt-kond|bytovye|multisplit-sistema,montazh-kondicionera-proverennaya-brigada">
+        <a class="art-card" href="https://tehnoholod369.kz/multisplit-sistema"><div class="art-card__t">Мультисплит-система: один внешний блок на несколько комнат</div><div class="art-card__s">Мультисплит: как работает, когда выгоднее нескольких сплитов, ограничения. Подбор для квартиры 2–4 комнаты в А</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada"><div class="art-card__t">Монтаж кондиционера: что даёт проверенная бригада</div><div class="art-card__s">Как проверить монтажников кондиционера: внутренний допуск 369, личный рейтинг МАСТЕРОВ, прозрачная смета, серв</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=02c11b87"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=4af75ffa"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Кондиционер в новостройке: 7 ошибок при установке", "description": "Когда закладывать трассу, куда вешать наружный блок, что согласовать с УК и почему монолит дороже. Семь ошибок, которые дорого исправлять после ремонта.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/kondicioner-v-novostroyke"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-03"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Кондиционер в новостройке: 7 ошибок при установке", "item": "https://tehnoholod369.kz/kondicioner-v-novostroyke"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"На каком этапе ремонта вызывать замерщика?","acceptedAnswer":{"@type":"Answer","text":"Когда стены возведены и разведена электрика, но до чистовой отделки. В этот момент трасса ещё прячется в штробу без ущерба для отделки."}},
+    {"@type":"Question","name":"Можно ли заложить трассу, а кондиционер купить позже?","acceptedAnswer":{"@type":"Answer","text":"Да, это обычная практика. Трассу закладывают с запасом и заглушают; когда дойдёт до покупки, останется повесить блоки и подключить."}},
+    {"@type":"Question","name":"Обязательно ли согласовывать наружный блок с УК?","acceptedAnswer":{"@type":"Answer","text":"Требования зависят от дома. В части новостроек есть правила по фасаду и предусмотренные корзины — узнать это до монтажа дешевле, чем снимать блок после."}},
+    {"@type":"Question","name":"Насколько дороже монтаж в монолитном доме?","acceptedAnswer":{"@type":"Answer","text":"Отдельной строкой идёт надбавка за бурение и штробление по железобетону, а в толстых стенах может понадобиться алмазное бурение. Точную сумму называют после замера."}},
+    {"@type":"Question","name":"Куда девать конденсат, если самотёк невозможен?","acceptedAnswer":{"@type":"Answer","text":"Ставят дренажную помпу или выводят дренаж в канализацию с сифоном. Оба варианта проще заложить на этапе ремонта."}}
+  ]
+}
+</script>
+</x-dc>

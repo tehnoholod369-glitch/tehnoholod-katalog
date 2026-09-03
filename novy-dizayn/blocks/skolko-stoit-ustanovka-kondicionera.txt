@@ -1,0 +1,268 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art-page-main {
+    width: 100%;
+    max-width: 888px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 18px 24px 72px;
+  }
+  .art-page-main > h1 { max-width: none !important; overflow-wrap: anywhere; }
+  .art-page-lead { max-width: none !important; }
+  .art { width: 100%; max-width: none; }
+
+  
+  .t-body .art-local-chrome { display: none !important; }
+
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+
+  @media (max-width: 640px) {
+    .art-page-main { padding: 14px 16px 56px; }
+    .art-page-main > h1 { font-size: clamp(25px, 7vw, 30px) !important; line-height: 1.16; }
+    .art-page-lead { font-size: 16px !important; line-height: 1.6 !important; }
+    .art h2 { margin-top: 28px; font-size: 20px; line-height: 1.3; }
+    .art h3 { font-size: 17px; line-height: 1.35; }
+    .art p, .art li { font-size: 16px; line-height: 1.65; }
+    .art-note, .art-warn, .art-tldr, .art-q { padding: 14px 15px; }
+    .art-cta { padding: 20px !important; gap: 18px !important; }
+    .art-cta__actions { display: grid !important; grid-template-columns: 1fr; width: 100%; }
+    .art-cta__actions > a { width: 100%; box-sizing: border-box; text-align: center; }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=1810f723"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="art-page-main">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/baza-znaniy">База знаний</a> → <span style="color:#18212F;">Сколько стоит установка кондиционера в Алматы</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Монтаж</span>
+      <span style="color:#8593A6;">5 минут чтения</span>
+      <span style="color:#8593A6;">Обновлено 03.09.2026</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Сколько стоит установка кондиционера в Алматы: из чего складывается цена</h1>
+
+    <div class="art-page-lead" style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Из чего складывается цена монтажа кондиционера: что входит в стандартную установку, что считается отдельно и почему точную сумму называют после замера.
+    </div>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">цена монтажа складывается из стандартного набора работ плюс всё, что диктует конкретный объект — материал стены, длина трассы, высота, доступ к наружному блоку.** Поэтому честную сумму называют после замера, а не по телефону. Ниже — что входит в стандартную установку, за что берут отдельно и как понять заранее, попадёте вы в базовый вариант или нет.</div></div>
+      <h2>Почему «монтаж от 25 000» — почти всегда не ваша цена</h2>
+      <p>Объявление с ценой «от» считает идеальный объект: кирпичная стена, наружный блок в метре от внутреннего, розетка рядом, первый этаж. В реальной квартире почти всегда есть что-то ещё: монолит вместо кирпича, семь метров трассы до балкона, штробление под дренаж, кронштейны на фасад.</p>
+      <p>Итог знаком каждому, кто заказывал монтаж по объявлению: бригада приезжает, пересчитывает на месте, и сумма отличается от обещанной в полтора-два раза. Формально никто не обманул — цена и была «от».</p>
+      <p>Мы называем <b>состав работ</b> заранее, а цену — после замера. Так у вас есть, с чем сравнивать предложения, и нет неприятного сюрприза в день установки.</p>
+      <h2>Что входит в стандартный монтаж</h2>
+      <p>Это набор, который нужен любой сплит-системе независимо от модели:</p>
+      <ul><li>выезд на замер и выбор места установки блоков;</li><li>установка внутреннего и наружного блоков;</li><li><b>трасса до 3 метров</b> (диаметр 6/10);</li><li>одно бурение стены;</li><li>дренаж самотёком;</li><li>подключение к розетке рядом — до 1,5 метра;</li><li>пусконаладка с проверкой режимов;</li><li>сухая уборка за собой.</li></ul>
+      <p>Если ваш объект укладывается в этот список — вы в базовом варианте. На практике так бывает, когда внутренний блок вешают на внешнюю стену, а наружный — сразу за ней.</p>
+      <h2>Что считается отдельной строкой</h2>
+      <p>Всё остальное — это не «накрутка», а работы, которых в базовом варианте физически нет. Самые частые:</p>
+      <p><b>Стена и отверстия.</b> Надбавка за монолит — бурение и штробление по железобетону идут тяжелее кирпича. Дополнительное бурение перфоратором, алмазное бурение для стен до 500 мм и свыше 500 мм, штробление по бетону или по кирпичу и газоблоку, отдельная штроба под дренаж.</p>
+      <p><b>Длина трассы.</b> Каждый метр сверх трёх считается отдельно, и тариф зависит от диаметра: 6/10 для моделей 7–12k, 10/16 для 18–24k, 12/19 и крупнее — для мощных. Отдельно — дополнительный метр межблочного кабеля.</p>
+      <p><b>Наружный блок.</b> Кронштейны на фасад, корзина под блок (установка с земли, из окна или с лестницы), демонтаж старой корзины, козырёк или антивандальная решётка.</p>
+      <p><b>Дренаж.</b> Дренажная помпа, если самотёком не выходит. Дополнительный метр дренажа или вывод в канализацию с сифоном.</p>
+      <p><b>Отделка.</b> Декоративный короб или кабель-канал — до 60 мм и от 80 мм считаются по-разному. Проход и крепёж по плитке или декоративной отделке.</p>
+      <p><b>Доступ и логистика.</b> Демонтаж и обратная сборка окна, чтобы пронести блок. Подъём или спуск блока верёвкой. Подъём по этажам без лифта. Выезд за город.</p>
+      <p><b>Сроки и время.</b> Срочный выезд в день обращения в пик сезона, ночные работы, работа в выходной или праздник.</p>
+      <p><b>Мультисплит.</b> Каждый следующий внутренний блок — отдельная строка. Подробно про такие системы — в статье <a href="https://tehnoholod369.kz/multisplit-sistema">«Мультисплит-система»</a>.</p>
+      <p>Полный перечень работ с ценами — в разделе <a href="https://tehnoholod369.kz/uslugi">«Монтаж и сервис»</a>.</p>
+      <h2>Как понять свою вилку до замера</h2>
+      <p>Прикиньте четыре вещи — они решают почти всё:</p>
+      <ol><li><b>Из чего стена.</b> Монолит дороже кирпича и газоблока. В новостройках Алматы монолит — норма.</li><li><b>Сколько метров от внутреннего блока до наружного.</b> Считайте по стене с поворотами, а не по прямой. До 3 метров — базовый вариант.</li><li><b>Куда вешать наружный блок.</b> Есть готовая корзина или балконная плита — дешевле. Нужны кронштейны на фасад или работа с лестницы — дороже.</li><li><b>Куда уходит конденсат.</b> Самотёком на улицу — базовый вариант. В канализацию или с помпой — отдельная строка.</li></ol>
+      <p>Ещё до замера полезно определиться с мощностью: она влияет и на цену техники, и на диаметр трассы. Как считать — в статье <a href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera">«Как выбрать мощность кондиционера по площади»</a>.</p>
+      <h2>Приточные модели считают отдельно</h2>
+      <p>У сплит-систем с подачей свежего воздуха монтаж сложнее обычного: нужен канал для наружного воздуха, дренаж приточного канала на случай конденсата и повышенная герметичность — лишние щели снижают КПД воздухообмена. Зимой отдельно контролируют качество герметиков и креплений на морозе.</p>
+      <p>Такие объекты считают только после замера — заочная вилка тут особенно бессмысленна. Как это устроено, разобрано в статье <a href="https://tehnoholod369.kz/montazh-kondicionera-s-pritokom">«Монтаж кондиционера с притоком свежего воздуха»</a>.</p>
+      <h2>Как проходит установка по шагам</h2>
+      <ol><li><b>День обращения.</b> Заявка и подбор: уточняем площадь, назначение помещения и сроки, подбираем модель по мощности.</li><li><b>1–2 дня.</b> Замер на объекте: бригада смотрит место установки, трассу и доступ для техники. После замера называется окончательная стоимость работ.</li><li><b>После оплаты.</b> Доставка по Алматы и в любой город Казахстана. Оборудование, соединительный комплект и работы идут отдельными строками в счёте.</li><li><b>1–3 дня.</b> Монтаж и пусконаладка с проверкой режимов, у фреоновых систем — вакуумирование.</li><li><b>В день монтажа.</b> Документы на руки: «Сервис-карта 369» с номером продажи, датой монтажа и бригадой.</li></ol>
+      <h2>На чём не стоит экономить</h2>
+      <p><b>Вакуумирование.</b> Это удаление воздуха и влаги из трассы перед пуском. Занимает время, поэтому его чаще всего и пропускают «дешёвые» монтажники. Последствия видны не сразу: влага в контуре постепенно убивает компрессор — самый дорогой узел системы.</p>
+      <p><b>Проверка герметичности.</b> Утечка фреона через плохо развальцованное соединение проявляется через месяцы: кондиционер хуже холодит, вы доливаете фреон и не понимаете почему.</p>
+      <p><b>Крепление наружного блока.</b> Блок весит десятки килограммов и висит над улицей. Здесь цена ошибки не в деньгах.</p>
+      <p>Что именно проверять у бригады до начала работ — разобрано в статье <a href="https://tehnoholod369.kz/montazh-kondicionera-proverennaya-brigada">«Монтаж кондиционера: что даёт проверенная бригада»</a>.</p>
+      <h2>Кто за что отвечает после установки</h2>
+      <p>Гарантию на <b>оборудование</b> даёт производитель — срок написан в паспорте изделия. Гарантию на <b>монтаж</b> даёт бригада-установщик, её срок записан в «Сервис-карте 369». Мы ведём реестр и рейтинг бригад, принимаем обращения по номеру карты и напоминаем о сервисе.</p>
+      <p>Оборудование, соединительный комплект и работы всегда идут отдельными строками — видно, за что вы платите.</p>
+      <h2>Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=bytovye&amp;brand=TCL&amp;stock=in"><div class="art-card__t">TCL</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">10 моделей</span> →</div></a>
+      <a class="art-card" href="/katalog?g=bytovye"><div class="art-card__t">Бытовые сплит-системы</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="bytovye"></span> →</div></a>
+      <a class="art-card" href="/uslugi"><div class="art-card__t">Монтаж и сервис</div><div class="art-card__s">Что делает бригада и как считается работа.</div><div class="art-card__go">Открыть раздел →</div></a>
+      </div>
+      <a class="art-pick" data-pick="bytovye" href="/katalog?g=bytovye"
+         title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
+        <img class="art-pick__img" data-pick-img alt="" />
+        <div class="art-pick__b">
+          <div class="art-pick__tag" data-pick-tag>Наш выбор</div>
+          <div class="art-pick__brand" data-pick-brand></div>
+          <div class="art-pick__name" data-pick-name></div>
+          <div class="art-pick__price" data-pick-price></div>
+        </div>
+        <div class="art-pick__go">Открыть карточку →</div>
+      </a>
+      <h2>Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Почему нельзя назвать точную цену монтажа по телефону?</div><div class="art-q__a">Потому что цену определяет объект: материал стены, длина трассы, высота, доступ к наружному блоку. По телефону называют состав работ, точную сумму — после замера.</div></div>
+      <div class="art-q"><div class="art-q__q">Сколько метров трассы входит в стандартный монтаж?</div><div class="art-q__a">Три метра диаметром 6/10. Каждый следующий метр считается отдельной строкой, тариф зависит от диаметра трассы под мощность модели.</div></div>
+      <div class="art-q"><div class="art-q__q">Дороже ли монтаж в новостройке?</div><div class="art-q__a">Обычно да: в новостройках Алматы стены монолитные, а бурение и штробление по железобетону идут отдельной надбавкой.</div></div>
+      <div class="art-q"><div class="art-q__q">Можно ли купить кондиционер у вас, а поставить своими монтажниками?</div><div class="art-q__a">Да. Но тогда гарантию на монтаж даёт тот, кто его делал, — «Сервис-карта 369» на такие работы не оформляется.</div></div>
+      <div class="art-q"><div class="art-q__q">Что делать, если бригада на объекте назвала цену выше расчётной?</div><div class="art-q__a">Спросить, какие строки добавились и почему. В смете каждая работа стоит отдельной строкой, а не общей суммой «за монтаж», — расхождение всегда можно разобрать.</div></div>
+    </div>
+
+    
+    <div class="art-cta" style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Подберём модель под вашу задачу</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь комнаты и этаж — пришлём подбор и цену с монтажом.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div class="art-cta__actions" style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/katalog?g=bytovye" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards" data-art-next="skolko-stoit-ustanovka-kondicionera|byt-kond|bytovye|multisplit-sistema,kak-vybrat-moshchnost-konditsionera,montazh-kondicionera-s-pritokom,montazh-kondicionera-proverennaya-brigada">
+        <a class="art-card" href="https://tehnoholod369.kz/multisplit-sistema"><div class="art-card__t">Мультисплит-система: один внешний блок на несколько комнат</div><div class="art-card__s">Мультисплит: как работает, когда выгоднее нескольких сплитов, ограничения. Подбор для квартиры 2–4 комнаты в А</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera"><div class="art-card__t">Как выбрать мощность кондиционера по площади комнаты</div><div class="art-card__s">Как подобрать мощность кондиционера по площади комнаты: правило 100 Вт на м², перевод BTU в кВт, классы 9/12/1</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/montazh-kondicionera-s-pritokom"><div class="art-card__t">Монтаж кондиционера с притоком свежего воздуха</div><div class="art-card__s">Как проходит монтаж приточной сплит-системы: воздуховод притока, пусконаладка, что входит в работу и на что см</div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=02c11b87"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=4af75ffa"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Сколько стоит установка кондиционера в Алматы: из чего складывается цена", "description": "Из чего складывается цена монтажа кондиционера: что входит в стандартную установку, что считается отдельно и почему точную сумму называют после замера.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/skolko-stoit-ustanovka-kondicionera"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-03"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Сколько стоит установка кондиционера в Алматы: из чего складывается цена", "item": "https://tehnoholod369.kz/skolko-stoit-ustanovka-kondicionera"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Почему нельзя назвать точную цену монтажа по телефону?","acceptedAnswer":{"@type":"Answer","text":"Цену определяет объект: материал стены, длина трассы, высота, доступ к наружному блоку. По телефону называют состав работ, точную сумму — после замера."}},
+    {"@type":"Question","name":"Сколько метров трассы входит в стандартный монтаж?","acceptedAnswer":{"@type":"Answer","text":"Три метра диаметром 6/10. Каждый следующий метр считается отдельной строкой, тариф зависит от диаметра трассы под мощность модели."}},
+    {"@type":"Question","name":"Дороже ли монтаж в новостройке?","acceptedAnswer":{"@type":"Answer","text":"Обычно да: в новостройках Алматы стены монолитные, а бурение и штробление по железобетону идут отдельной надбавкой."}},
+    {"@type":"Question","name":"Можно ли купить кондиционер у вас, а поставить своими монтажниками?","acceptedAnswer":{"@type":"Answer","text":"Да. Но тогда гарантию на монтаж даёт тот, кто его делал, — «Сервис-карта 369» на такие работы не оформляется."}},
+    {"@type":"Question","name":"Что делать, если бригада на объекте назвала цену выше расчётной?","acceptedAnswer":{"@type":"Answer","text":"Спросить, какие строки добавились и почему. В смете каждая работа стоит отдельной строкой, а не общей суммой за монтаж, — расхождение всегда можно разобрать."}}
+  ]
+}
+</script>
+</x-dc>
