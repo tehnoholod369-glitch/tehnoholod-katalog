@@ -1,0 +1,398 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+</style>
+</helmet>
+
+
+<div style="min-height:100vh; background:#F3F7FB;">
+<style>
+.kpw{--син:#0A4EA7;--крас:#D32B2B;--сер:#EDF1F7;--рамка:#D7DEE8;--блед:#6B7A90;--поле:16px}
+.kpw{max-width:820px;margin:0 auto;padding:0 var(--поле) 120px}
+.kpw h2{font-size:14px;margin:24px 0 8px;color:var(--блед);text-transform:uppercase;letter-spacing:.05em}
+.kpw input,.kpw select,.kpw textarea{width:100%;padding:11px 12px;border:1px solid var(--рамка);
+  border-radius:10px;background:#fff;font:inherit;color:inherit;box-sizing:border-box}
+.kpw label{display:block;font-size:13px;color:var(--блед);margin:10px 0 4px}
+.kpw button{cursor:pointer;border:0;border-radius:10px;padding:12px 14px;background:var(--сер);font:inherit}
+.kpw .главная{background:var(--син);color:#fff;font-weight:600}
+.kpw .опасно{background:#fff;color:var(--крас);border:1px solid var(--рамка)}
+.kpшапка{position:sticky;top:0;z-index:20;background:#F3F7FB;border-bottom:1px solid var(--рамка);
+  padding:12px var(--поле);display:flex;align-items:center;gap:10px;margin:0 calc(-1*var(--поле))}
+.kpшапка h1{font-size:18px;margin:0}
+.kpитог{margin-left:auto;font-weight:700;white-space:nowrap}
+.kpпоиск{position:relative}
+.kpвыдача{position:absolute;left:0;right:0;top:calc(100% + 4px);background:#fff;z-index:15;
+  border:1px solid var(--рамка);border-radius:12px;max-height:52vh;overflow:auto;
+  box-shadow:0 12px 32px rgba(16,32,64,.16)}
+.kpвыдача div{padding:10px 12px;border-bottom:1px solid var(--сер);cursor:pointer}
+.kpвыдача div:last-child{border-bottom:0}
+.kpвыдача b{display:block;font-weight:600;font-size:14px}
+.kpвыдача small{color:var(--блед);font-size:12px}
+.kpпоз{border:1px solid var(--рамка);border-radius:14px;padding:12px;margin:10px 0;background:#fff}
+.kpпоз .имя{font-weight:600;font-size:14px;line-height:1.35}
+.kpпоз .мета{color:var(--блед);font-size:12px;margin-top:2px}
+.kpсетка{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.kpсетка .вовсю{grid-column:1/-1}
+.kpцена{font-weight:700;text-align:right}
+.kpнет{color:var(--крас);font-size:12px}
+.kpподсказка{font-size:12px;color:var(--блед);margin-top:6px}
+.kpниз{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--рамка);
+  padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px;z-index:30}
+.kpниз button{flex:1}
+#kpБланк{display:none}
+.kpдок{color:#000;background:#fff}
+.kpдок .верх{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.kpдок .верх img{width:185px;height:auto}
+.kpдок .орг{font-size:12px;line-height:1.5}
+.kpдок .орг b{font-size:15px}
+.kpдок h3{text-align:center;font-size:20px;margin:22px 0 12px}
+.kpдок table{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}
+.kpдок th,.kpдок td{padding:5px 6px;border-top:1px solid #DBDBDB;border-bottom:1px solid #DBDBDB;
+  text-align:left;vertical-align:top}
+.kpдок th{background:#DBDBDB;font-weight:700}
+.kpдок td.ч,.kpдок th.ч{text-align:center}
+.kpдок td.п,.kpдок th.п{text-align:right;white-space:nowrap}
+.kpдок tr.итог td{background:#DBDBDB;font-weight:700;text-align:right}
+.kpдок tr.пропись td{background:#DBDBDB;font-style:italic;text-align:right;font-weight:400}
+.kpдок .условия{font-size:13px;margin-top:14px}
+.kpдок .условия div{margin-bottom:3px}
+.kpдок .подвал{font-size:13px;margin-top:18px}
+.kpдок .сноска{font-size:11px;color:#808080;font-style:italic;margin-top:14px}
+@media print{
+  body{background:#fff !important}
+  .kpшапка,.kpниз,.kpредактор{display:none !important}
+  #kpБланк{display:block !important}
+  .kpw{padding:0;max-width:none}
+  @page{size:A4;margin:12mm 15mm}
+}
+</style>
+
+<div class="kpw">
+  <div class="kpшапка">
+    <h1>Коммерческое предложение</h1>
+    <span class="kpитог" id="kpШапкаИтог">0 ₸</span>
+  </div>
+
+  <div class="kpредактор">
+    <h2>Позиции</h2>
+    <div class="kpпоиск">
+      <input id="kpПоиск" placeholder="Артикул или название — GWH12, Eva, ESVMW…" autocomplete="off">
+      <div class="kpвыдача" id="kpВыдача" hidden></div>
+    </div>
+    <div class="kpподсказка" id="kpБаза">каталог загружается…</div>
+    <div id="kpПозиции"></div>
+    <button id="kpСвоя" style="margin-top:8px">+ Позиция вручную</button>
+
+    <h2>Заказчик и документ</h2>
+    <label>Заказчик</label>
+    <input id="kpКлиент" placeholder="ТОО «…» или До востребования">
+    <label>БИН (если юрлицо)</label>
+    <input id="kpБин" inputmode="numeric" placeholder="необязательно">
+    <div class="kpсетка">
+      <div><label>Номер КП</label><input id="kpНомер"></div>
+      <div><label>Действует до</label><input id="kpДо" type="date"></div>
+    </div>
+
+    <h2>Условия</h2>
+    <label>Оплата</label>
+    <input id="kpОплата" value="100 % предоплата">
+    <label>Срок поставки</label>
+    <input id="kpСрок" value="1–2 рабочих дня с даты поступления предоплаты">
+    <label>Дополнительно — каждая строка отдельным пунктом</label>
+    <textarea id="kpЕщё" rows="3"></textarea>
+    <label style="display:flex;gap:8px;align-items:center;margin-top:12px">
+      <input type="checkbox" id="kpДоки" checked style="width:auto"><span>Блок закрывающих документов (НДС, ЭДО)</span></label>
+    <label style="display:flex;gap:8px;align-items:center">
+      <input type="checkbox" id="kpМонтажНДС" style="width:auto"><span>Монтаж бригадой — она не плательщик НДС</span></label>
+  </div>
+
+  <div id="kpБланк"></div>
+</div>
+
+<div class="kpниз">
+  <button class="главная" id="kpПечать">Сохранить PDF</button>
+  <button id="kpВатсап">WhatsApp</button>
+  <button id="kpКопия">Текст</button>
+</div>
+
+<script>
+(function(){
+"use strict";
+var КАТАЛОГ = [];
+var ОРГ = {
+  имя:"ИП «ТехноХолод»",
+  адрес:"г. Алматы, ул. Какимжана Казыбаева, 286Б",
+  бин:"БИН 770313000379",
+  тел:"+7 700 036 93 69",
+  почта:"tehnoholod369@gmail.com",
+  сайт:"https://tehnoholod369.kz",
+  эдо:"ЭДО",
+  лого:"https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png"
+};
+var НДС = 0.16;
+var $ = function(id){ return document.getElementById(id); };
+var экр = function(s){ return String(s==null?"":s).replace(/[&<>"]/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); };
+var деньги = function(n){ return (Math.round(n*100)/100).toFixed(2)
+  .replace(/\B(?=(\d{3})+(?!\d))/g," ").replace(".",","); };
+
+var ЕД=["","один","два","три","четыре","пять","шесть","семь","восемь","девять"];
+var ЕДЖ=["","одна","две","три","четыре","пять","шесть","семь","восемь","девять"];
+var ДЕС10=["десять","одиннадцать","двенадцать","тринадцать","четырнадцать","пятнадцать",
+  "шестнадцать","семнадцать","восемнадцать","девятнадцать"];
+var ДЕС=["","","двадцать","тридцать","сорок","пятьдесят","шестьдесят","семьдесят","восемьдесят","девяносто"];
+var СОТ=["","сто","двести","триста","четыреста","пятьсот","шестьсот","семьсот","восемьсот","девятьсот"];
+function форма(n,a,b,c){ n=Math.abs(n)%100; if(n>=11&&n<=19) return c; n%=10;
+  if(n===1) return a; if(n>=2&&n<=4) return b; return c; }
+function тройка(n,ж){ var е=ж?ЕДЖ:ЕД, о=[]; if((n/100|0)) о.push(СОТ[n/100|0]);
+  var r=n%100; if(r>=10&&r<=19) о.push(ДЕС10[r-10]);
+  else { if((r/10|0)) о.push(ДЕС[r/10|0]); if(r%10) о.push(е[r%10]); }
+  return о.filter(Boolean); }
+function прописью(сумма){ var tg=Math.round(сумма), сл=[];
+  if(!tg) сл=["ноль"]; else {
+    var гр=[[(tg/1e9|0)%1000,1,["миллиард","миллиарда","миллиардов"],0],
+            [(tg/1e6|0)%1000,1,["миллион","миллиона","миллионов"],0],
+            [(tg/1e3|0)%1000,1,["тысяча","тысячи","тысяч"],1],
+            [tg%1000,0,null,0]];
+    for(var i=0;i<гр.length;i++){ var v=гр[i][0]; if(!v) continue;
+      сл=сл.concat(тройка(v,!!гр[i][3]));
+      if(гр[i][1]&&гр[i][2]) сл.push(форма(v,гр[i][2][0],гр[i][2][1],гр[i][2][2])); } }
+  var s=сл.join(" "); return s.charAt(0).toUpperCase()+s.slice(1)+" тенге 00 тиын"; }
+
+var ПОЗ = [];
+function ценаПозиции(p){ var б=+p.база||0, з=+p.знач||0;
+  if(p.режим==="сумма") return Math.round(з);
+  if(p.режим==="наценка") return Math.round(б*(1+з/100));
+  if(p.режим==="скидка") return Math.round(б*(1-з/100));
+  return Math.round(б); }
+function суммаПозиции(p){ return ценаПозиции(p)*(+p.кол||0); }
+function всего(){ return ПОЗ.reduce(function(s,p){ return s+суммаПозиции(p); },0); }
+
+var МЕС=["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"];
+function датаСловами(d){ return d.getDate()+" "+МЕС[d.getMonth()]+" "+d.getFullYear()+" г."; }
+
+/* ---------- каталог ---------- */
+function загрузить(){
+  var кэш = null;
+  try { кэш = JSON.parse(localStorage.getItem("kp-index")||"null"); } catch(e){}
+  if(кэш && кэш.length){ КАТАЛОГ = кэш; готово(true); }
+  fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/kp-index.json", {cache:"no-cache"})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(j){
+      if(!j || !j.length) return;
+      КАТАЛОГ = j; готово(false);
+      try { localStorage.setItem("kp-index", JSON.stringify(j)); } catch(e){}
+    })
+    .catch(function(){});
+}
+function готово(изКэша){
+  $("kpБаза").textContent = "каталог: " + КАТАЛОГ.length + " позиций" + (изКэша ? " (из памяти телефона)" : "");
+}
+
+/* ---------- поиск ---------- */
+function искать(q){
+  q = q.trim().toLowerCase();
+  if(q.length < 2) return [];
+  var слова = q.split(/\s+/), из = [];
+  for(var i=0;i<КАТАЛОГ.length;i++){
+    var x = КАТАЛОГ[i], t = (x.s+" "+x.n+" "+(x.b||"")).toLowerCase(), ок = true;
+    for(var w=0;w<слова.length;w++) if(t.indexOf(слова[w])<0){ ок=false; break; }
+    if(ок){ из.push(i); if(из.length>=40) break; }
+  }
+  return из;
+}
+$("kpПоиск").addEventListener("input", function(e){
+  var р = искать(e.target.value), в = $("kpВыдача");
+  if(!р.length){ в.hidden = true; в.innerHTML = ""; return; }
+  в.hidden = false;
+  в.innerHTML = р.map(function(i){ var x = КАТАЛОГ[i];
+    return '<div data-i="'+i+'"><b>'+экр(x.n)+'</b><small>'+экр(x.s)+' · '+
+      (x.p ? деньги(x.p)+" ₸" : "цена по запросу")+' · '+экр(x.st||"")+'</small></div>'; }).join("");
+});
+$("kpВыдача").addEventListener("click", function(e){
+  var d = e.target.closest("div[data-i]"); if(!d) return;
+  добавить(КАТАЛОГ[+d.dataset.i], false);
+  $("kpПоиск").value = ""; $("kpВыдача").hidden = true; $("kpВыдача").innerHTML = "";
+});
+$("kpСвоя").addEventListener("click", function(){ добавить({s:"",n:"",p:0,st:"",g:"",sl:""}, true); });
+
+function добавить(x, вручную){
+  ПОЗ.push({ арт:x.s||"", имя:x.n||"", база:x.p||0, кол:1, ед:"шт",
+    режим: x.p ? "база" : "сумма", знач:0, срок:x.st||"",
+    ссылка: (x.g&&x.sl) ? (ОРГ.сайт+"/tovar?g="+x.g+"&sl="+x.sl) : "", вручную:!!вручную });
+  рисовать();
+}
+
+/* ---------- редактор ---------- */
+function рисовать(){
+  $("kpПозиции").innerHTML = ПОЗ.map(function(p,i){
+    return '<div class="kpпоз" data-i="'+i+'">'+
+      (p.вручную
+        ? '<input data-k="имя" value="'+экр(p.имя)+'" placeholder="Наименование позиции">'
+        : '<div class="имя">'+экр(p.имя)+'</div><div class="мета">'+экр(p.арт)+(p.срок?" · "+экр(p.срок):"")+'</div>')+
+      '<div class="kpсетка">'+
+      '<div><label>Кол-во</label><input inputmode="decimal" data-k="кол" value="'+p.кол+'"></div>'+
+      '<div><label>Ед.</label><input data-k="ед" value="'+экр(p.ед)+'"></div>'+
+      '<div><label>Базовая цена, ₸</label><input inputmode="numeric" data-k="база" value="'+(p.база||"")+'"></div>'+
+      '<div><label>Как считаем</label><select data-k="режим">'+
+        '<option value="база"'+(p.режим==="база"?" selected":"")+'>Как в каталоге</option>'+
+        '<option value="сумма"'+(p.режим==="сумма"?" selected":"")+'>Своя цена</option>'+
+        '<option value="наценка"'+(p.режим==="наценка"?" selected":"")+'>Наценка %</option>'+
+        '<option value="скидка"'+(p.режим==="скидка"?" selected":"")+'>Скидка %</option>'+
+      '</select></div>'+
+      '<div><label>'+(p.режим==="сумма"?"Цена, ₸":p.режим==="база"?"—":"Процент")+'</label>'+
+        '<input inputmode="decimal" data-k="знач" value="'+(p.знач||"")+'"'+(p.режим==="база"?" disabled":"")+'></div>'+
+      '<div><label>Срок поставки</label><input data-k="срок" value="'+экр(p.срок)+'"></div>'+
+      '<div class="вовсю" style="display:flex;gap:8px;align-items:center">'+
+        '<div class="kpцена" style="flex:1">'+деньги(ценаПозиции(p))+' ₸ × '+p.кол+' = <b>'+деньги(суммаПозиции(p))+' ₸</b></div>'+
+        '<button class="опасно" data-del="'+i+'">Убрать</button></div>'+
+      (!p.база && p.режим!=="сумма"
+        ? '<div class="вовсю kpнет">Базовой цены нет — на витрине «цена по запросу». Выберите «Своя цена».</div>' : '')+
+      '</div></div>';
+  }).join("");
+  $("kpШапкаИтог").textContent = деньги(всего())+" ₸";
+  бланк(); сохранить();
+}
+$("kpПозиции").addEventListener("input", function(e){
+  var к = e.target.dataset.k; if(!к) return;
+  var i = +e.target.closest(".kpпоз").dataset.i;
+  ПОЗ[i][к] = (к==="кол"||к==="база"||к==="знач") ? e.target.value.replace(",",".") : e.target.value;
+  $("kpШапкаИтог").textContent = деньги(всего())+" ₸";
+  var у = e.target.closest(".kpпоз").querySelector(".kpцена");
+  if(у) у.innerHTML = деньги(ценаПозиции(ПОЗ[i]))+" ₸ × "+ПОЗ[i].кол+" = <b>"+деньги(суммаПозиции(ПОЗ[i]))+" ₸</b>";
+  бланк(); сохранить();
+});
+$("kpПозиции").addEventListener("change", function(e){ if(e.target.dataset.k==="режим") рисовать(); });
+$("kpПозиции").addEventListener("click", function(e){
+  var d = e.target.dataset.del; if(d===undefined) return;
+  ПОЗ.splice(+d,1); рисовать();
+});
+
+/* ---------- бланк ---------- */
+function условия(){
+  var у = [];
+  if($("kpОплата").value.trim()) у.push("Условия оплаты: "+$("kpОплата").value.trim()+".");
+  if($("kpСрок").value.trim()) у.push("Срок поставки: "+$("kpСрок").value.trim()+".");
+  $("kpЕщё").value.split("\n").map(function(s){return s.trim();}).filter(Boolean)
+    .forEach(function(s){ у.push(s); });
+  if($("kpДоки").checked){
+    у.push("Закрывающие документы: договор, счёт на оплату, накладную, счёт-фактуру.");
+    у.push(ОРГ.имя+" — плательщик НДС: счёт-фактура выписывается с НДС "+(НДС*100)+" %, обмен документами через "+ОРГ.эдо+".");
+  }
+  if($("kpМонтажНДС").checked)
+    у.push("Монтаж выполняет сертифицированная бригада и выдаёт свои закрывающие документы. "+
+           "Бригада не является плательщиком НДС: её документы идут без НДС, к зачёту по монтажным работам НДС не принимается.");
+  var д = $("kpДо").value;
+  if(д) у.push("Указанные цены действуют до "+датаСловами(new Date(д))+" Стоимость может измениться исходя из курса ЦБ РК.");
+  return у;
+}
+function бланк(){
+  var сум = всего(), безНДС = Math.round(сум/(1+НДС)), ндс = сум - безНДС;
+  var клиент = $("kpКлиент").value.trim() || "До востребования";
+  var бин = $("kpБин").value.trim();
+  $("kpБланк").innerHTML = '<div class="kpдок">'+
+    '<div class="верх"><div class="орг"><b>'+ОРГ.имя+'</b><br>'+ОРГ.адрес+'<br>'+ОРГ.бин+'<br>'+
+      ОРГ.тел+' · '+ОРГ.почта+'</div><img src="'+ОРГ.лого+'" alt=""></div>'+
+    '<h3>Коммерческое предложение</h3>'+
+    '<div style="font-size:13px">№ '+экр($("kpНомер").value)+' от '+датаСловами(new Date())+'<br>'+
+      'Для: '+экр(клиент)+(бин?", БИН "+экр(бин):"")+'.</div>'+
+    '<div style="font-size:13px;margin-top:10px">'+ОРГ.имя+' предлагает Вам ознакомиться с предложением по следующим позициям:</div>'+
+    '<table><tr><th class="ч">№</th><th>Наименование</th><th class="ч">Кол-во</th><th class="ч">Ед.&nbsp;изм.</th>'+
+      '<th class="ч">Срок поставки</th><th class="п">Цена, ₸</th><th class="п">Сумма, ₸</th></tr>'+
+    ПОЗ.map(function(p,i){ return '<tr><td class="ч">'+(i+1)+'</td><td>'+
+      (p.ссылка ? '<a href="'+p.ссылка+'">'+экр(p.имя)+'</a>' : экр(p.имя))+'</td>'+
+      '<td class="ч">'+экр(p.кол)+'</td><td class="ч">'+экр(p.ед)+'</td><td class="ч">'+экр(p.срок)+'</td>'+
+      '<td class="п">'+деньги(ценаПозиции(p))+'</td><td class="п">'+деньги(суммаПозиции(p))+'</td></tr>'; }).join("")+
+    '<tr class="итог"><td colspan="7">Всего наименований: '+ПОЗ.length+', на сумму '+деньги(сум)+
+      ' ₸, в том числе НДС '+(НДС*100)+' % — '+деньги(ндс)+' ₸</td></tr>'+
+    '<tr class="пропись"><td colspan="7">'+прописью(сум)+'</td></tr></table>'+
+    '<div class="условия">'+условия().map(function(s){ return "<div>"+экр(s)+"</div>"; }).join("")+'</div>'+
+    '<div class="подвал">С уважением,<br><b>'+ОРГ.имя+'</b><br>'+ОРГ.тел+' · '+ОРГ.почта+'<br>'+
+      '<a href="'+ОРГ.сайт+'">tehnoholod369.kz</a></div>'+
+    '<div class="сноска">Документ сформирован автоматически и действителен без печати и подписи.</div></div>';
+}
+
+/* ---------- выгрузка ---------- */
+function текст(){
+  var сум = всего(), безНДС = Math.round(сум/(1+НДС)), ндс = сум - безНДС;
+  var L = ["Коммерческое предложение № "+$("kpНомер").value+" от "+датаСловами(new Date()), ОРГ.имя, ""];
+  ПОЗ.forEach(function(p,i){
+    L.push((i+1)+". "+p.имя);
+    L.push("   "+p.кол+" "+p.ед+" x "+деньги(ценаПозиции(p))+" = "+деньги(суммаПозиции(p)));
+    if(p.ссылка) L.push("   "+p.ссылка);
+    L.push("");
+  });
+  L.push("Итого с НДС: "+деньги(сум)+" тг (в т.ч. НДС "+(НДС*100)+" % — "+деньги(ндс)+" тг)");
+  L.push(прописью(сум)); L.push("");
+  условия().forEach(function(s){ L.push(s); });
+  L.push(""); L.push("Каталог и цены: "+ОРГ.сайт);
+  L.push(ОРГ.тел+"  ·  "+ОРГ.почта);
+  return L.join("\n");
+}
+$("kpПечать").addEventListener("click", function(){
+  if(!ПОЗ.length) return alert("Добавьте хотя бы одну позицию.");
+  бланк(); window.print();
+});
+$("kpВатсап").addEventListener("click", function(){
+  if(!ПОЗ.length) return alert("Добавьте хотя бы одну позицию.");
+  window.open("https://wa.me/?text="+encodeURIComponent(текст()), "_blank");
+});
+$("kpКопия").addEventListener("click", function(){
+  var t = текст();
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(t).then(function(){ alert("Текст КП скопирован."); });
+  } else {
+    var e = document.createElement("textarea"); e.value = t; document.body.appendChild(e);
+    e.select(); document.execCommand("copy"); e.parentNode.removeChild(e); alert("Текст КП скопирован.");
+  }
+});
+
+/* ---------- черновик ---------- */
+function сохранить(){
+  try {
+    localStorage.setItem("kp-черновик", JSON.stringify({ поз:ПОЗ,
+      клиент:$("kpКлиент").value, бин:$("kpБин").value, номер:$("kpНомер").value,
+      до:$("kpДо").value, оплата:$("kpОплата").value, срок:$("kpСрок").value,
+      ещё:$("kpЕщё").value, доки:$("kpДоки").checked, монтаж:$("kpМонтажНДС").checked }));
+  } catch(e){}
+}
+function восстановить(){
+  var s = null;
+  try { s = JSON.parse(localStorage.getItem("kp-черновик")||"null"); } catch(e){}
+  if(!s) return;
+  if(s.поз) ПОЗ = s.поз;
+  var пары = {kpКлиент:"клиент",kpБин:"бин",kpНомер:"номер",kpДо:"до",
+              kpОплата:"оплата",kpСрок:"срок",kpЕщё:"ещё"};
+  Object.keys(пары).forEach(function(id){ if(s[пары[id]]!=null) $(id).value = s[пары[id]]; });
+  if(s.доки!=null) $("kpДоки").checked = s.доки;
+  if(s.монтаж!=null) $("kpМонтажНДС").checked = s.монтаж;
+}
+
+/* ---------- старт ---------- */
+["kpКлиент","kpБин","kpНомер","kpДо","kpОплата","kpСрок","kpЕщё","kpДоки","kpМонтажНДС"]
+  .forEach(function(id){
+    $(id).addEventListener("input", function(){ бланк(); сохранить(); });
+    $(id).addEventListener("change", function(){ бланк(); сохранить(); });
+  });
+восстановить();
+var д = new Date();
+if(!$("kpНомер").value){
+  var дд = ("0"+д.getDate()).slice(-2), мм = ("0"+(д.getMonth()+1)).slice(-2);
+  $("kpНомер").value = дд+мм+String(д.getFullYear()).slice(2);
+}
+if(!$("kpДо").value) $("kpДо").value = new Date(д.getTime()+7*864e5).toISOString().slice(0,10);
+рисовать();
+загрузить();
+})();
+</script>
+</div>
