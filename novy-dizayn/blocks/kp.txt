@@ -1,19 +1,16 @@
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=591c7919"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
 
-<x-dc>
-<helmet>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
-  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
-  a { color: #0A4EA7; text-decoration: none; }
-  a:hover { color: #0872D3; }
+  .kpw, .kpниз { font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  .kpw h1, .kpw h2, .kpw h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  .kpw a { color: #0A4EA7; text-decoration: none; }
+  .kpw a:hover { color: #0872D3; }
 </style>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=591c7919"></script>
-</helmet>
 
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -91,7 +88,8 @@
   <div class="kpредактор">
     <h2>Позиции</h2>
     <div class="kpкорзина" id="kpБлокКорзины">
-      <button class="главная" id="kpВзять" hidden></button>
+      
+      <button class="главная" id="kpВзять"></button>
       <a class="kpвкаталог" href="/katalog">Выбрать в каталоге →</a>
       <div class="kpподсказка">Отмечайте товары в каталоге кнопкой «В корзину» — сюда они придут составом.</div>
     </div>
@@ -121,7 +119,7 @@
     <label>Дополнительно — каждая строка отдельным пунктом</label>
     <textarea id="kpЕщё" rows="3"></textarea>
     <label style="display:flex;gap:8px;align-items:center;margin-top:12px">
-      <input type="checkbox" id="kpДоки" checked style="width:auto"><span>Блок закрывающих документов (НДС, ЭДО)</span></label>
+      <input type="checkbox" id="kpДоки" style="width:auto"><span>Блок закрывающих документов (НДС, ЭДО)</span></label>
     <label style="display:flex;gap:8px;align-items:center">
       <input type="checkbox" id="kpМонтажНДС" style="width:auto"><span>Монтаж бригадой — она не плательщик НДС</span></label>
   </div>
@@ -197,13 +195,19 @@ function загрузить(){
   try { кэш = JSON.parse(localStorage.getItem("kp-index")||"null"); } catch(e){}
   if(кэш && кэш.length){ КАТАЛОГ = кэш; готово(true); }
   fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/kp-index.json", {cache:"no-cache"})
-    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
     .then(function(j){
-      if(!j || !j.length) return;
+      if(!j || !j.length) throw new Error("пустой файл");
       КАТАЛОГ = j; готово(false);
       try { localStorage.setItem("kp-index", JSON.stringify(j)); } catch(e){}
     })
-    .catch(function(){});
+    .catch(function(e){
+      // Молча «загружается…» висеть не должно: без каталога поиск пуст, и человек
+      // должен понимать, почему, а не гадать.
+      if(!КАТАЛОГ.length)
+        $("kpБаза").textContent = "каталог не загрузился (" + (e && e.message || e) +
+          ") — позиции можно добавить вручную";
+    });
 }
 function готово(изКэша){
   $("kpБаза").textContent = "каталог: " + КАТАЛОГ.length + " позиций" + (изКэша ? " (из памяти телефона)" : "");
@@ -425,6 +429,9 @@ function восстановить(){
     $(id).addEventListener("input", function(){ бланк(); сохранить(); });
     $(id).addEventListener("change", function(){ бланк(); сохранить(); });
   });
+// Состояния по умолчанию задаём кодом: булевы атрибуты разметки Tilda вырезает.
+$("kpДоки").checked = true;
+$("kpВзять").hidden = true;
 восстановить();
 var д = new Date();
 if(!$("kpНомер").value){
@@ -434,6 +441,9 @@ if(!$("kpНомер").value){
 if(!$("kpДо").value) $("kpДо").value = new Date(д.getTime()+7*864e5).toISOString().slice(0,10);
 рисовать();
 обновитьКнопкуКорзины();
+// cart.js подключается отдельным <script src> и по порядку успевает раньше,
+// но если когда-нибудь не успеет — перепроверяем, а не показываем пустую кнопку.
+[300, 1200, 3000].forEach(function(мс){ setTimeout(обновитьКнопкуКорзины, мс); });
 загрузить();
 })();
 </script>
