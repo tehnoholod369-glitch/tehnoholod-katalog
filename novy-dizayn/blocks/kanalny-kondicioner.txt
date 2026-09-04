@@ -236,7 +236,7 @@
     <div class="art-cards" data-art-next="kanalny-kondicioner|nezhilye|poluprom|kassetny-kondicioner,vrf">
         <a class="art-card" href="https://tehnoholod369.kz/kassetny-kondicioner"><div class="art-card__t">Кассетный кондиционер: потолочный на 4 стороны для офиса и магазина</div><div class="art-card__s">Кассетный кондиционер: как работает, где ставят, отличия от настенного. Подбор для офиса, магазина, ресторана </div><div class="art-card__go">Читать →</div></a>
         <a class="art-card" href="https://tehnoholod369.kz/vrf"><div class="art-card__t">VRF-система для офиса и бизнес-центра: как выбрать</div><div class="art-card__s">VRF-система: до 64 внутренних блоков на один наружный, одновременный нагрев и охлаждение, зональное управление</div><div class="art-card__go">Читать →</div></a>
-        <a class="art-card" href="https://tehnoholod369.kz/teplovaya-zavesa"><div class="art-card__t">Тепловая завеса на входную дверь: зачем нужна и как выбрать</div><div class="art-card__s">Расчёт мощности тепловой завесы для магазина, офиса, склада, кафе. Электрическая или водяная. Монтаж и экономи</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kondicionery-dlya-ofisa"><div class="art-card__t">Кондиционер для офиса: как рассчитать и что выбрать</div><div class="art-card__s">Расчёт мощности для офиса с людьми и техникой, выбор между кассетным, канальным и мультизональной системой. Се</div><div class="art-card__go">Читать →</div></a>
     </div>
 
   </div>
