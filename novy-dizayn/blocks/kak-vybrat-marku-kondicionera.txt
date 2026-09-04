@@ -1,0 +1,260 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art-page-main {
+    width: 100%;
+    max-width: 888px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 18px 24px 72px;
+  }
+  .art-page-main > h1 { max-width: none !important; overflow-wrap: anywhere; }
+  .art-page-lead { max-width: none !important; }
+  .art { width: 100%; max-width: none; }
+
+  
+  .t-body .art-local-chrome { display: none !important; }
+
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+
+  @media (max-width: 640px) {
+    .art-page-main { padding: 14px 16px 56px; }
+    .art-page-main > h1 { font-size: clamp(25px, 7vw, 30px) !important; line-height: 1.16; }
+    .art-page-lead { font-size: 16px !important; line-height: 1.6 !important; }
+    .art h2 { margin-top: 28px; font-size: 20px; line-height: 1.3; }
+    .art h3 { font-size: 17px; line-height: 1.35; }
+    .art p, .art li { font-size: 16px; line-height: 1.65; }
+    .art-note, .art-warn, .art-tldr, .art-q { padding: 14px 15px; }
+    .art-cta { padding: 20px !important; gap: 18px !important; }
+    .art-cta__actions { display: grid !important; grid-template-columns: 1fr; width: 100%; }
+    .art-cta__actions > a { width: 100%; box-sizing: border-box; text-align: center; }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=1810f723"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="art-page-main">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/baza-znaniy">База знаний</a> → <span style="color:#18212F;">Какую марку кондиционера выбрать</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Выбор</span>
+      <span style="color:#8593A6;">5 минут чтения</span>
+      <span style="color:#8593A6;">Обновлено 04.09.2026</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Какую марку кондиционера выбрать: TCL, Midea, Gree, LG и другие</h1>
+
+    <div class="art-page-lead" style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Чем марки кондиционеров действительно отличаются, а чем нет. Что сравнивать вместо рейтингов: сервис в Казахстане, ширина линейки, наличие, функции.
+    </div>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">в одном ценовом сегменте марки отличаются меньше, чем принято думать, — а решают вещи, которых нет ни в одном рейтинге: есть ли сервис и запчасти в Казахстане, есть ли нужная вам мощность в линейке и стоит ли модель на складе сейчас.** Ниже — что сравнивать вместо «какая марка лучше» и почему честного ответа на этот вопрос не существует.</div></div>
+      <h2>Почему «рейтинг марок» вам не поможет</h2>
+      <p>Наберите «топ-10 кондиционеров» — увидите десяток списков, и все разные. Причина простая: у марки нет единого качества. Есть конкретные линейки в конкретных ценовых сегментах, и у одного производителя бюджетная серия и флагман различаются сильнее, чем флагманы двух разных марок между собой.</p>
+      <p>Ещё одна причина, о которой редко пишут: техника в одном сегменте часто близка по конструкции. Компрессоры, теплообменники и платы — это несколько крупных поставщиков на весь рынок, и марки собирают аппараты из во многом схожих узлов. Отличия смещаются в отделку, электронику, набор режимов и — главное — в то, что происходит после покупки.</p>
+      <p>Поэтому вопрос «какая марка лучше» стоит заменить на четыре других.</p>
+      <h2>Вопрос 1. Есть ли сервис и запчасти в Казахстане</h2>
+      <p>Кондиционер живёт восемь-двенадцать лет. За это время у него с высокой вероятностью что-то потребуется: плата управления, вентилятор внутреннего блока, датчик, пульт.</p>
+      <p>Разница между марками здесь огромная и она не про качество: у одних есть представительство и склад запчастей в стране, у других запчасть придётся везти под заказ месяцами. Второй вариант превращает мелкий ремонт на пятый год в замену всего аппарата.</p>
+      <p><b>Что спросить перед покупкой:</b> есть ли по этой марке сервис в Казахстане и как быстро приходят запчасти. Это единственный вопрос из всего списка, ответ на который стоит денег через несколько лет.</p>
+      <h2>Вопрос 2. Есть ли в линейке ваша мощность</h2>
+      <p>Марки закрывают ряд мощностей по-разному. У одной есть аккуратный вариант ровно под вашу комнату, у другой — только «на размер меньше» и «на размер больше».</p>
+      <p>Это важнее выбора бренда: заниженная мощность заставит аппарат работать без остановки, завышенная — включаться рывками и хуже осушать воздух. Как считать нужную — в статье <a href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera">«Как выбрать мощность кондиционера по площади»</a>.</p>
+      <p><b>Правило:</b> сначала мощность, потом марка. Не наоборот.</p>
+      <h2>Вопрос 3. Есть ли модель на складе сейчас</h2>
+      <p>В пик сезона «привезём через три недели» означает три недели без кондиционера — а жара в Алматы не ждёт. Наличие на складе в июле стоит дороже, чем разница в характеристиках между двумя близкими моделями.</p>
+      <p>В нашем <a href="/katalog?g=bytovye">каталоге</a> наличие показано у каждой позиции и обновляется из склада, а не пишется руками. Фильтр по марке там же — можно посмотреть, что из интересующей вас марки есть прямо сейчас.</p>
+      <h2>Вопрос 4. Нужна ли вам функция, которая есть не у всех</h2>
+      <p>Вот здесь марки действительно расходятся — и это единственное место, где выбор бренда решает задачу, а не вкусовщину.</p>
+      <p>Пример из нашего ассортимента: <b>подача свежего воздуха с улицы</b>. Обычный кондиционер любой марки гоняет по кругу воздух той же комнаты; при закрытых окнах копится углекислый газ, и появляется духота при формально комфортной температуре. Среди линеек, которые мы продаём, приток есть у <b>TCL FreshIN 3.0</b> — там это конструктивная особенность, а не режим, который можно включить на другой модели.</p>
+      <p>Если духота при закрытых окнах — ваша проблема, выбор сужается не по «качеству марки», а по наличию функции. Разбор: <a href="https://tehnoholod369.kz/pochemu-dushno-doma-s-konditsionerom">«Почему дома душно даже с кондиционером»</a> и <a href="https://tehnoholod369.kz/brizer-ili-konditsioner-s-pritokom">«Бризер или кондиционер с притоком»</a>. Сравнение всех исполнений приточной серии — в материале <a href="https://tehnoholod369.kz/freshin-sravnenie">«TCL FreshIN 3.0»</a>.</p>
+      <p>То же касается других специфичных вещей: очень тихий ночной режим для спальни, работа на обогрев при низких температурах, узкий корпус под нишу. Это проверяется по паспорту конкретной модели, а не по репутации марки.</p>
+      <h2>Что мы держим в наличии</h2>
+      <p>В нашем каталоге бытовых сплит-систем представлены <b>TCL, Midea, Gree, LG, Samsung, Haier, Hisense, Electrolux, MDV, Royal Clima, Aeronik, Thaicon, Funai, Cherbrooke</b> и другие марки — от бюджетного сегмента до премиального.</p>
+      <p>Такой набор — не «мы продаём всё подряд», а следствие первых трёх вопросов: под каждую задачу и бюджет должна найтись модель, которая есть на складе и которую есть кому обслуживать.</p>
+      <p>Актуальный список с фильтрами по марке, мощности и наличию — в <a href="https://tehnoholod369.kz/kondicionery-almaty">каталоге кондиционеров</a>.</p>
+      <h2>Чего в сравнении марок делать не стоит</h2>
+      <p><b>Сравнивать бюджетную модель одной марки с флагманом другой.</b> Это сравнение сегментов, а не брендов, и вывод из него всегда предопределён.</p>
+      <p><b>Верить «мощности» из названия как единственной характеристике.</b> Цифра 09 или 12 в названии — это типоразмер, а не гарантия, что аппарат справится с вашей комнатой на солнечной стороне последнего этажа.</p>
+      <p><b>Выбирать по стране происхождения бренда.</b> Производство почти всегда не там, где зарегистрирована марка, а комплектующие — общие для отрасли.</p>
+      <p><b>Экономить на монтаже ради более «именитой» марки.</b> Хорошая техника, поставленная плохо, ломается как плохая техника. Что входит в монтаж и что считается отдельно — в статье <a href="https://tehnoholod369.kz/skolko-stoit-ustanovka-kondicionera">«Сколько стоит установка кондиционера»</a>.</p>
+      <h2>Порядок выбора, если коротко</h2>
+      <ol><li>Посчитать мощность по площади и поправкам.</li><li>Решить вопрос типа компрессора — <a href="https://tehnoholod369.kz/invertor-ili-obychnyy-kondicioner">инвертор или on/off</a>.</li><li>Проверить, нужна ли специфичная функция (приток, тихий режим, обогрев в мороз).</li><li>Из оставшихся моделей взять ту, что есть в наличии и по которой есть сервис.</li><li>Марку выбрать в последнюю очередь — из тех, что прошли пункты 1–4.</li></ol>
+      <p>Развёрнутый разбор всех шагов для квартиры — в статье <a href="https://tehnoholod369.kz/kakoy-kondicioner-vybrat-dlya-kvartiry">«Какой кондиционер выбрать для квартиры в Алматы»</a>.</p>
+      <h2>Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=bytovye&amp;brand=TCL&amp;stock=in"><div class="art-card__t">TCL</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">10 моделей</span> →</div></a>
+      <a class="art-card" href="/katalog?g=bytovye"><div class="art-card__t">Бытовые сплит-системы</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="bytovye"></span> →</div></a>
+      <a class="art-card" href="/kondicionery-almaty"><div class="art-card__t">Кондиционеры в Алматы</div><div class="art-card__s">Настенные сплит-системы в наличии, с установкой.</div><div class="art-card__go">Открыть раздел →</div></a>
+      </div>
+      <h2>Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Какая марка кондиционеров самая надёжная?</div><div class="art-q__a">Честный ответ: универсального победителя нет — надёжность различается между линейками сильнее, чем между марками. Практичнее сравнивать доступность сервиса и запчастей в Казахстане, чем места в чужих рейтингах.</div></div>
+      <div class="art-q"><div class="art-q__q">Правда ли, что многие марки — это одни и те же заводы?</div><div class="art-q__a">Компрессоры, теплообменники и электроника в отрасли поставляются несколькими крупными производителями, поэтому техника одного ценового сегмента бывает близка по конструкции. Отличия смещаются в сборку, электронику, набор функций и сервис.</div></div>
+      <div class="art-q"><div class="art-q__q">Стоит ли переплачивать за известный бренд?</div><div class="art-q__a">Если переплата покрывает конкретную вещь — нужную функцию, более широкую линейку мощностей, доступный сервис, — да. Если только за узнаваемость названия — нет.</div></div>
+      <div class="art-q"><div class="art-q__q">У какой марки есть кондиционер с притоком свежего воздуха?</div><div class="art-q__a">Среди линеек, которые мы продаём, приток свежего воздуха с улицы есть у TCL FreshIN 3.0. Это конструктивная особенность серии, а не режим, доступный на обычных моделях.</div></div>
+      <div class="art-q"><div class="art-q__q">Как понять, что марка представлена в Казахстане по сервису?</div><div class="art-q__a">Спросите продавца прямо: есть ли авторизованный сервис и срок поставки запчастей. Ответ «привезём под заказ» без срока — это и есть ответ.</div></div>
+    </div>
+
+    
+    <div class="art-cta" style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Подберём модель под вашу задачу</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь комнаты и этаж — пришлём подбор и цену с монтажом.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div class="art-cta__actions" style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/katalog?g=bytovye" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards" data-art-next="kak-vybrat-marku-kondicionera|byt-kond|bytovye|kak-vybrat-moshchnost-konditsionera,pochemu-dushno-doma-s-konditsionerom,brizer-ili-konditsioner-s-pritokom,freshin-sravnenie,skolko-stoit-ustanovka-kondicionera,invertor-ili-obychnyy-kondicioner,kakoy-kondicioner-vybrat-dlya-kvartiry">
+        <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera"><div class="art-card__t">Как выбрать мощность кондиционера по площади комнаты</div><div class="art-card__s">Как подобрать мощность кондиционера по площади комнаты: правило 100 Вт на м², перевод BTU в кВт, классы 9/12/1</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/pochemu-dushno-doma-s-konditsionerom"><div class="art-card__t">Почему дома душно даже с включённым кондиционером</div><div class="art-card__s">Кондиционер охлаждает, но не приносит свежий воздух — копится CO₂ и появляется духота. Разбираем причину и раб</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/brizer-ili-konditsioner-s-pritokom"><div class="art-card__t">Бризер или кондиционер с притоком свежего воздуха: что выбрать</div><div class="art-card__s">Чем бризер отличается от кондиционера с притоком свежего воздуха, когда выгоднее каждый и как выбрать модель п</div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+    
+    <div data-th-copyright style="max-width:1240px; margin:14px auto 0; padding:0 24px; font-size:12px; line-height:1.7; color:#6B7C93;">
+      © <span data-th-god>2026</span> ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
+      Перепечатка целиком или существенной частью — только с письменного разрешения.
+      Цитата с активной ссылкой на источник разрешена без запроса.
+      <a href="/usloviya-ispolzovaniya" style="color:#9FB0C4;">Условия использования</a>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=7c7384bc"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=aa67580c"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Какую марку кондиционера выбрать: TCL, Midea, Gree, LG и другие", "description": "Чем марки кондиционеров действительно отличаются, а чем нет. Что сравнивать вместо рейтингов: сервис в Казахстане, ширина линейки, наличие, функции.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/kak-vybrat-marku-kondicionera"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-04", "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightYear": 2026}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Какую марку кондиционера выбрать: TCL, Midea, Gree, LG и другие", "item": "https://tehnoholod369.kz/kak-vybrat-marku-kondicionera"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Какая марка кондиционеров самая надёжная?","acceptedAnswer":{"@type":"Answer","text":"Универсального победителя нет — надёжность различается между линейками сильнее, чем между марками. Практичнее сравнивать доступность сервиса и запчастей в Казахстане, чем места в чужих рейтингах."}},
+    {"@type":"Question","name":"Правда ли, что многие марки — это одни и те же заводы?","acceptedAnswer":{"@type":"Answer","text":"Компрессоры, теплообменники и электроника в отрасли поставляются несколькими крупными производителями, поэтому техника одного ценового сегмента бывает близка по конструкции. Отличия смещаются в сборку, электронику, набор функций и сервис."}},
+    {"@type":"Question","name":"Стоит ли переплачивать за известный бренд?","acceptedAnswer":{"@type":"Answer","text":"Если переплата покрывает конкретную вещь — нужную функцию, более широкую линейку мощностей, доступный сервис, — да. Если только за узнаваемость названия — нет."}},
+    {"@type":"Question","name":"У какой марки есть кондиционер с притоком свежего воздуха?","acceptedAnswer":{"@type":"Answer","text":"Среди линеек, которые мы продаём, приток свежего воздуха с улицы есть у TCL FreshIN 3.0. Это конструктивная особенность серии, а не режим, доступный на обычных моделях."}},
+    {"@type":"Question","name":"Как понять, что марка представлена в Казахстане по сервису?","acceptedAnswer":{"@type":"Answer","text":"Спросите продавца прямо: есть ли авторизованный сервис и срок поставки запчастей. Ответ «привезём под заказ» без срока — это и есть ответ."}}
+  ]
+}
+</script>
+</x-dc>

@@ -1,0 +1,272 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art-page-main {
+    width: 100%;
+    max-width: 888px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 18px 24px 72px;
+  }
+  .art-page-main > h1 { max-width: none !important; overflow-wrap: anywhere; }
+  .art-page-lead { max-width: none !important; }
+  .art { width: 100%; max-width: none; }
+
+  
+  .t-body .art-local-chrome { display: none !important; }
+
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+
+  @media (max-width: 640px) {
+    .art-page-main { padding: 14px 16px 56px; }
+    .art-page-main > h1 { font-size: clamp(25px, 7vw, 30px) !important; line-height: 1.16; }
+    .art-page-lead { font-size: 16px !important; line-height: 1.6 !important; }
+    .art h2 { margin-top: 28px; font-size: 20px; line-height: 1.3; }
+    .art h3 { font-size: 17px; line-height: 1.35; }
+    .art p, .art li { font-size: 16px; line-height: 1.65; }
+    .art-note, .art-warn, .art-tldr, .art-q { padding: 14px 15px; }
+    .art-cta { padding: 20px !important; gap: 18px !important; }
+    .art-cta__actions { display: grid !important; grid-template-columns: 1fr; width: 100%; }
+    .art-cta__actions > a { width: 100%; box-sizing: border-box; text-align: center; }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=1810f723"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="art-page-main">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/baza-znaniy">База знаний</a> → <span style="color:#18212F;">Кондиционер и дети</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Эксплуатация</span>
+      <span style="color:#8593A6;">5 минут чтения</span>
+      <span style="color:#8593A6;">Обновлено 04.09.2026</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Кондиционер и дети: температура, поток, фильтры</h1>
+
+    <div class="art-page-lead" style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Как пользоваться кондиционером в детской: куда направить поток, какую разницу с улицей держать, как часто чистить фильтры и почему дело чаще в них.
+    </div>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">проблемы в детской создаёт не холод сам по себе, а три вещи — поток воздуха прямо на ребёнка, слишком большая разница с улицей и грязные фильтры.** Все три убираются настройкой и обслуживанием, а не отказом от кондиционера. Ниже — что делать на практике.</div></div>
+      <div class="art-note">Это бытовые правила эксплуатации техники, а не медицинские рекомендации. Вопросы здоровья ребёнка обсуждайте с педиатром.</div>
+      <h2>Три причины, по которым «от кондиционера заболели»</h2>
+      <p><b>Поток на человека.</b> Струя холодного воздуха, направленная в кроватку или на стол, где ребёнок сидит часами, — это локальное переохлаждение при нормальной температуре в комнате. Термометр показывает +24, а ребёнку холодно именно в том месте, где он находится.</p>
+      <p><b>Резкий перепад.</b> Заход с жары +35 в комнату +19 — нагрузка на организм. Дело не в кондиционере, а в разнице.</p>
+      <p><b>Грязный фильтр.</b> За сезон в фильтре скапливается пыль, а во влажном поддоне может расти плесень. Дальше кондиционер раздувает это по комнате. Это самая частая и самая недооценённая причина — и единственная, где виновата действительно техника, точнее её обслуживание.</p>
+      <h2>Куда направить поток</h2>
+      <p>Правило одно: <b>воздух не должен идти на постоянное место ребёнка</b> — кроватку, стол, коврик для игр.</p>
+      <p>Как этого добиться:</p>
+      <ul><li><b>Место блока выбирают на замере</b>, а не после. Блок вешают так, чтобы поток шёл вдоль длинной стороны комнаты и не упирался в мебель. Подробно про ошибки размещения — в статье <a href="https://tehnoholod369.kz/kondicioner-v-novostroyke">«Кондиционер в новостройке»</a>.</li><li><b>Жалюзи вверх.</b> Холодный воздух тяжелее тёплого и опускается сам. Направленный вверх поток перемешивает воздух, не обдувая никого напрямую.</li><li><b>Режим «swing»</b> (качание жалюзи) вместо фиксированного положения — струя не стоит на одном месте.</li><li>Если блок уже висит неудачно, помогает <b>снижение скорости вентилятора</b>: меньше скорость — короче струя.</li></ul>
+      <h2>Какую температуру держать</h2>
+      <p>Универсальной «детской» цифры не существует, а вот практическое правило есть: <b>держать разницу с улицей умеренной</b>, а не гнаться за максимальным холодом. Комфортная разница ощущается лучше, чем низкая температура, и переход с улицы в дом не бьёт по самочувствию.</p>
+      <p>Помогает не столько цифра на пульте, сколько ровность: инверторный кондиционер держит заданную температуру почти без колебаний, обычный on/off даёт «пилу» — то прохладно, то снова душно. Для комнаты, где ребёнок спит, это заметная разница, и она же про шум. Разбор — в статье <a href="https://tehnoholod369.kz/invertor-ili-obychnyy-kondicioner">«Инверторный или обычный кондиционер»</a>.</p>
+      <p>Ночью удобен ночной или «сонный» режим: кондиционер сам поднимает температуру на градус-два и снижает обороты вентилятора.</p>
+      <h2>Фильтры: то, на чём нельзя экономить</h2>
+      <p>Это самый практичный пункт всей статьи.</p>
+      <ul><li><b>Промывать фильтры раз в 1–2 месяца в сезон.</b> Снять переднюю панель, вынуть фильтры, промыть тёплой водой, высушить полностью и поставить обратно. Занимает десять минут.</li><li><b>Глубокая чистка блока — 1–2 раза в год.</b> Пыль оседает не только на фильтрах, но и на теплообменнике и крыльчатке; там же скапливается влага. Это работа МАСТЕРА со специальным оборудованием.</li><li><b>Городская пыль забивает фильтры быстрее</b>, чем обещает инструкция. Если окна выходят на оживлённую улицу, интервал сокращают.</li></ul>
+      <p>Признак, что пора: слабеет поток, появляется запах при включении, кондиционер стал хуже холодить при тех же настройках. Подробный регламент — в статье <a href="https://tehnoholod369.kz/obsluzhivanie-konditsionera-zamena-filtra">«Обслуживание кондиционера: чистка и замена фильтров»</a>.</p>
+      <h2>Сухость воздуха</h2>
+      <p>Кондиционер в режиме охлаждения осушает воздух — это его физика, а не дефект. В детской сухой воздух заметен по утрам: сухость в носу, першение.</p>
+      <p>Что помогает:</p>
+      <ul><li>не держать слишком низкую температуру — чем ниже, тем сильнее осушение;</li><li>увлажнитель воздуха, если сухость выражена;</li><li>зимой отдельная история — там сушит отопление, а не кондиционер. Разобрано в статье <a href="https://tehnoholod369.kz/suhoi-vozduh-zimoi">«Сухой воздух зимой»</a>.</li></ul>
+      <h2>Про духоту, которую кондиционер не лечит</h2>
+      <p>Отдельный случай, который часто путают с «плохим кондиционером»: в детской прохладно, а дышать тяжело. Кондиционер не проветривает — он охлаждает воздух той же комнаты по кругу. При закрытых окнах и дверях углекислый газ копится, и это чувствуется как духота при нормальной температуре.</p>
+      <p>Особенно заметно ночью в маленькой комнате с закрытой дверью. Решение — приток свежего воздуха: отдельным прибором или кондиционером, который умеет забирать воздух с улицы и фильтровать его. Что выбрать, разобрано в статьях <a href="https://tehnoholod369.kz/pochemu-dushno-doma-s-konditsionerom">«Почему дома душно даже с кондиционером»</a> и <a href="https://tehnoholod369.kz/ventilyaciya-bez-remonta">«Вентиляция в квартире без ремонта»</a>.</p>
+      <p>Для комнаты, где окна на шумную или пыльную улицу и открывать их не хочется, это единственный способ получить свежий воздух не открывая окно.</p>
+      <h2>Что учесть при выборе модели для детской</h2>
+      <p><b>Уровень шума на минимальной скорости.</b> Именно на ней кондиционер работает ночью — смотрите нижнюю границу диапазона в паспорте, а не верхнюю.</p>
+      <p><b>Ночной режим.</b> Есть почти у всех, но реализован по-разному: где-то только снижение оборотов, где-то ещё и плавный подъём температуры.</p>
+      <p><b>Фильтрация.</b> Если у ребёнка аллергия, тонкий фильтр — не маркетинг, а разница в том, чем он дышит с закрытыми окнами.</p>
+      <p><b>Мощность без запаса «на всякий случай».</b> Слишком мощный аппарат в маленькой комнате будет включаться короткими рывками, хуже осушать и создавать те самые перепады. Считать — по площади: <a href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera">«Как выбрать мощность кондиционера»</a>.</p>
+      <p>Общий порядок выбора — в статье <a href="https://tehnoholod369.kz/kakoy-kondicioner-vybrat-dlya-kvartiry">«Какой кондиционер выбрать для квартиры»</a>.</p>
+      <h2>Короткий чеклист для детской</h2>
+      <ol><li>Поток не направлен на кроватку и на место, где ребёнок играет.</li><li>Жалюзи вверх или в режиме качания, скорость вентилятора невысокая.</li><li>Разница с улицей умеренная, ночью — ночной режим.</li><li>Фильтры промыты в этом месяце.</li><li>Глубокая чистка сделана в этом сезоне.</li><li>Если при прохладе тяжело дышать — вопрос не к холоду, а к свежему воздуху.</li></ol>
+      <h2>Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=bytovye&amp;brand=TCL&amp;stock=in"><div class="art-card__t">TCL</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">10 моделей</span> →</div></a>
+      <a class="art-card" href="/katalog?g=bytovye"><div class="art-card__t">Бытовые сплит-системы</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="bytovye"></span> →</div></a>
+      <a class="art-card" href="/kondicionery-almaty"><div class="art-card__t">Кондиционеры в Алматы</div><div class="art-card__s">Настенные сплит-системы в наличии, с установкой.</div><div class="art-card__go">Открыть раздел →</div></a>
+      </div>
+      <a class="art-pick" data-pick="bytovye" href="/katalog?g=bytovye"
+         title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
+        <img class="art-pick__img" data-pick-img alt="" />
+        <div class="art-pick__b">
+          <div class="art-pick__tag" data-pick-tag>Наш выбор</div>
+          <div class="art-pick__brand" data-pick-brand></div>
+          <div class="art-pick__name" data-pick-name></div>
+          <div class="art-pick__price" data-pick-price></div>
+        </div>
+        <div class="art-pick__go">Открыть карточку →</div>
+      </a>
+      <h2>Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Можно ли включать кондиционер в комнате, где спит ребёнок?</div><div class="art-q__a">Да, при соблюдении простых условий: поток не направлен на кроватку, скорость вентилятора невысокая, разница с улицей умеренная, фильтры чистые. Удобен ночной режим — он снижает обороты и слегка поднимает температуру.</div></div>
+      <div class="art-q"><div class="art-q__q">Почему после кондиционера у ребёнка бывает насморк?</div><div class="art-q__a">Чаще всего дело не в холоде как таковом, а в прямом обдуве, резком перепаде температур или в грязных фильтрах, которые раздувают пыль. Все три причины устраняются настройкой и чисткой. По вопросам здоровья обращайтесь к педиатру.</div></div>
+      <div class="art-q"><div class="art-q__q">Как часто чистить кондиционер в детской?</div><div class="art-q__a">Фильтры — раз в 1–2 месяца в сезон, при окнах на оживлённую улицу чаще. Глубокая чистка блока — 1–2 раза в год.</div></div>
+      <div class="art-q"><div class="art-q__q">Кондиционер сушит воздух в детской — что делать?</div><div class="art-q__a">Не держать слишком низкую температуру: чем ниже, тем сильнее осушение. При выраженной сухости помогает увлажнитель. Зимой сушит отопление, а не кондиционер.</div></div>
+      <div class="art-q"><div class="art-q__q">В детской прохладно, но душно — почему?</div><div class="art-q__a">Кондиционер не проветривает, он охлаждает тот же воздух. При закрытых окнах копится углекислый газ, и это ощущается как духота при нормальной температуре. Нужен приток свежего воздуха — отдельным прибором или кондиционером с притоком.</div></div>
+    </div>
+
+    
+    <div class="art-cta" style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Подберём модель под вашу задачу</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь комнаты и этаж — пришлём подбор и цену с монтажом.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div class="art-cta__actions" style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/katalog?g=bytovye" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards" data-art-next="kondicioner-i-deti|byt-kond|bytovye|kondicioner-v-novostroyke,invertor-ili-obychnyy-kondicioner,obsluzhivanie-konditsionera-zamena-filtra,suhoi-vozduh-zimoi,pochemu-dushno-doma-s-konditsionerom,ventilyaciya-bez-remonta,kak-vybrat-moshchnost-konditsionera,kakoy-kondicioner-vybrat-dlya-kvartiry">
+        <a class="art-card" href="https://tehnoholod369.kz/kondicioner-v-novostroyke"><div class="art-card__t">Кондиционер в новостройке: 7 ошибок при установке</div><div class="art-card__s">Когда закладывать трассу, куда вешать наружный блок, что согласовать с УК и почему монолит дороже. Семь ошибок</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/invertor-ili-obychnyy-kondicioner"><div class="art-card__t">Инверторный или обычный кондиционер: что выгоднее</div><div class="art-card__s">Чем инвертор отличается от on/off: расход электричества, шум, ресурс, цена ремонта. Когда переплата за инверто</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/obsluzhivanie-konditsionera-zamena-filtra"><div class="art-card__t">Обслуживание кондиционера: чистка и замена фильтров</div><div class="art-card__s">Как часто мыть фильтр грубой очистки и менять HEPA-элемент, что входит в ежегодное ТО и что лучше не делать са</div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+    
+    <div data-th-copyright style="max-width:1240px; margin:14px auto 0; padding:0 24px; font-size:12px; line-height:1.7; color:#6B7C93;">
+      © <span data-th-god>2026</span> ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
+      Перепечатка целиком или существенной частью — только с письменного разрешения.
+      Цитата с активной ссылкой на источник разрешена без запроса.
+      <a href="/usloviya-ispolzovaniya" style="color:#9FB0C4;">Условия использования</a>
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=7c7384bc"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=aa67580c"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Кондиционер и дети: температура, поток, фильтры", "description": "Как пользоваться кондиционером в детской: куда направить поток, какую разницу с улицей держать, как часто чистить фильтры и почему дело чаще в них.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/kondicioner-i-deti"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-04", "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightYear": 2026}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Кондиционер и дети: температура, поток, фильтры", "item": "https://tehnoholod369.kz/kondicioner-i-deti"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Можно ли включать кондиционер в комнате, где спит ребёнок?","acceptedAnswer":{"@type":"Answer","text":"Да, при соблюдении простых условий: поток не направлен на кроватку, скорость вентилятора невысокая, разница с улицей умеренная, фильтры чистые. Удобен ночной режим — он снижает обороты и слегка поднимает температуру."}},
+    {"@type":"Question","name":"Почему после кондиционера у ребёнка бывает насморк?","acceptedAnswer":{"@type":"Answer","text":"Чаще всего дело не в холоде как таковом, а в прямом обдуве, резком перепаде температур или в грязных фильтрах, которые раздувают пыль. Все три причины устраняются настройкой и чисткой. По вопросам здоровья обращайтесь к педиатру."}},
+    {"@type":"Question","name":"Как часто чистить кондиционер в детской?","acceptedAnswer":{"@type":"Answer","text":"Фильтры — раз в 1–2 месяца в сезон, при окнах на оживлённую улицу чаще. Глубокая чистка блока — 1–2 раза в год."}},
+    {"@type":"Question","name":"Кондиционер сушит воздух в детской — что делать?","acceptedAnswer":{"@type":"Answer","text":"Не держать слишком низкую температуру: чем ниже, тем сильнее осушение. При выраженной сухости помогает увлажнитель. Зимой сушит отопление, а не кондиционер."}},
+    {"@type":"Question","name":"В детской прохладно, но душно — почему?","acceptedAnswer":{"@type":"Answer","text":"Кондиционер не проветривает, он охлаждает тот же воздух. При закрытых окнах копится углекислый газ, и это ощущается как духота при нормальной температуре. Нужен приток свежего воздуха — отдельным прибором или кондиционером с притоком."}}
+  ]
+}
+</script>
+</x-dc>
