@@ -114,7 +114,13 @@
   // не видна никому. Первая версия этой функции ошиблась ровно так, поймано на живой
   // /brizer-ili-konditsioner-s-pritokom в тот же день.
   function копирайт() {
-    if (document.querySelector("[data-th-copyright]")) return;
+    // Проверяем не «есть ли», а «видно ли». Блоки, собранные днём 03.09.2026,
+    // несут копирайт ВНУТРИ .art-local-chrome, а тот в Tilda скрыт — строка есть
+    // в разметке и не видна никому. Простое «уже есть — выходим» на таких
+    // страницах молча оставляло невидимую строку.
+    var был = document.querySelector("[data-th-copyright]");
+    if (был && был.offsetHeight > 0) return;
+    if (был && был.parentNode) был.parentNode.removeChild(был);
     var корень = document.querySelector("#dc-root");
     if (!корень) return;
     var о = document.createElement("div");

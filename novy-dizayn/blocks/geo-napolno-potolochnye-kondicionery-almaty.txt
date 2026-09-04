@@ -25,6 +25,12 @@
 .thgeo-faq summary{font-weight:600;cursor:pointer}
 .thgeo-also{margin-top:26px}
 .thgeo-also p{font-size:14px;line-height:2;color:#5a6676}
+.thgeo-mont{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:12px;margin:14px 0}
+.thgeo-mont__c{background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:14px 16px}
+.thgeo-mont__t{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0A4EA7;margin-bottom:8px}
+.thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
+.thgeo-mont ul{margin:0;padding-left:18px}
+.thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
 </style>
 <div class="thgeo">
 <h1>Напольно-потолочные кондиционеры в Алматы</h1>
@@ -69,6 +75,33 @@
 если его нет или потолок бетонный, остаётся напольно-потолочный. Он же
 выигрывает в помещениях вытянутой формы: поток идёт вдоль стены и добивает
 дальше, чем у настенного блока. Минус — блок виден в интерьере.</p>
+<h2>Сколько стоит кондиционер с установкой</h2>
+<p>Итог складывается из двух частей: цена оборудования и монтаж. Цены оборудования — в таблице выше и в каталоге. Стоимость монтажа называет монтажная бригада: она выполняет работу и отвечает за неё. Цену по вашему городу показываем в карточке модели после выбора города — до этого любая сумма была бы обещанием без покрытия. Ниже — что входит в базовый монтаж, а что считается отдельно.</p>
+<div class="thgeo-mont">
+<div class="thgeo-mont__c"><div class="thgeo-mont__t">Входит в базовый монтаж</div><ul>
+<li>Выбор оптимального места установки блоков</li>
+<li>Бурение 1 монтажного отверстия (бетон до 20 см / кирпич, газоблок до 40 см)</li>
+<li>Монтаж внутреннего блока на высоте до 2,8 м</li>
+<li>Монтаж наружного блока под окном или на балконе (без высотных работ)</li>
+<li>Прокладка комплектной фреоновой магистрали до 3 м</li>
+<li>Прокладка дренажа самотёком до 3 м и пролив для проверки</li>
+<li>Подключение к имеющейся точке электропитания до 1,5 м</li>
+<li>Весь необходимый крепёж</li>
+<li>Вакуумирование, опрессовка, пусконаладка и проверка режимов</li>
+<li>Инструктаж по эксплуатации и уходу</li>
+</ul></div>
+<div class="thgeo-mont__c thgeo-mont__c--out"><div class="thgeo-mont__t">Считается отдельно</div><ul>
+<li>Удлинение трассы свыше 3 м</li>
+<li>Штробление стен и скрытая прокладка трассы</li>
+<li>Алмазное бурение и работа по монолиту</li>
+<li>Высотные работы (альпинизм или автовышка)</li>
+<li>Монтаж на вентилируемый фасад</li>
+<li>Демонтаж старого кондиционера</li>
+<li>Дренажный насос</li>
+<li>Нестандартные и сложные условия монтажа</li>
+</ul></div>
+</div>
+<p class="thgeo-note">Срок монтажа — от 1 до 3 дней. Алматы и область — свои бригады; другие регионы — исполнителя подтверждаем при звонке. Рассрочка: Kaspi, ForteBank, Halyk, БЦК.</p>
 <h2>Разбираем подробнее</h2><div class="thgeo-arts"><a class="thgeo-art" href="https://tehnoholod369.kz/kanalny-kondicioner"><span class="thgeo-art__r">Монтаж · 6 мин чтения</span><span class="thgeo-art__t">Канальный кондиционер: скрытое кондиционирование квартиры и дома</span><span class="thgeo-art__s">Канальный кондиционер: как работает, когда его брать вместо сплитов, монтаж и высота потолка. Подбор для квартиры и котт</span></a><a class="thgeo-art" href="https://tehnoholod369.kz/kassetny-kondicioner"><span class="thgeo-art__r">Монтаж · 6 мин чтения</span><span class="thgeo-art__t">Кассетный кондиционер: потолочный на 4 стороны для офиса и магазина</span><span class="thgeo-art__s">Кассетный кондиционер: как работает, где ставят, отличия от настенного. Подбор для офиса, магазина, ресторана в Алматы. </span></a></div>
 <h2>Монтаж, гарантия, доставка</h2>
 <p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
@@ -77,17 +110,32 @@
 напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
 возможна рассрочка.</p>
 <h2>Вопросы и ответы</h2>
-<details class="thgeo-faq"><summary>Сколько стоит напольно-потолочный кондиционер в Алматы?</summary><p>Цена зависит от мощности; монтаж считается по объекту. В наличии 53 таких моделей, цены от 417 820 ₸. Например: напольно-потолочный ECO AC50S2LG1FA new — 417 820 ₸; напольно-потолочный Super Match AC25S2SG2FA new — 422 370 ₸; LCAC R410A ON/OFF ALCF-H18/4R1F — 432 011 ₸.</p></details>
+<details class="thgeo-faq"><summary>Сколько стоит напольно-потолочный кондиционер в Алматы?</summary><p>Цена зависит от мощности; монтаж считается по объекту. В наличии 53 таких моделей. Актуальные цены — в таблице на этой странице: она обновляется из каталога автоматически.</p></details>
 <details class="thgeo-faq"><summary>Что влияет на выбор кроме этого параметра?</summary><p>Форма и длина помещения, высота потолка, куда выносится наружный блок и есть ли возможность штробить стену под трассу.</p></details>
 <details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
 <details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
-<nav class="thgeo-also" aria-label="Другие подборки"><h2>Другие подборки</h2><p><a href="https://tehnoholod369.kz/kondicionery-almaty">Кондиционеры</a> · <a href="https://tehnoholod369.kz/ventilyaciya">Вентиляция</a> · <a href="https://tehnoholod369.kz/vodonagrevateli">Водонагреватели</a> · <a href="https://tehnoholod369.kz/poluprom">Полупромышленные кондиционеры</a> · <a href="https://tehnoholod369.kz/multisplit">Мульти-сплит системы</a> · <a href="https://tehnoholod369.kz/otoplenie">Отопление и обогреватели</a> · <a href="https://tehnoholod369.kz/teplovye-zavesy-almaty">Тепловые завесы</a> · <a href="https://tehnoholod369.kz/teplovye-pushki-almaty">Тепловые пушки</a> · <a href="https://tehnoholod369.kz/radiatory-otopleniya-almaty">Радиаторы отопления</a> · <a href="https://tehnoholod369.kz/mobilnye-kondicionery-almaty">Мобильные кондиционеры</a> · <a href="https://tehnoholod369.kz/osushiteli-vozduha-almaty">Осушители воздуха</a> · <a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">Кондиционер на комнату 25 м²</a> · <a href="https://tehnoholod369.kz/kondicioner-do-200000">Кондиционер до 200 000 ₸</a> · <a href="https://tehnoholod369.kz/tihiy-kondicioner">Тихий кондиционер для спальни</a> · <a href="https://tehnoholod369.kz/kondicioner-obogrev-zimoy">Кондиционер для обогрева зимой</a></p></nav>
+<nav class="thgeo-also" aria-label="Другие подборки"><h2>Другие подборки</h2><p><a href="https://tehnoholod369.kz/kondicionery-almaty">Кондиционеры</a> · <a href="https://tehnoholod369.kz/ventilyaciya">Вентиляция</a> · <a href="https://tehnoholod369.kz/vodonagrevateli">Водонагреватели</a> · <a href="https://tehnoholod369.kz/poluprom">Полупромышленные кондиционеры</a> · <a href="https://tehnoholod369.kz/multisplit">Мульти-сплит системы</a> · <a href="https://tehnoholod369.kz/otoplenie">Отопление и обогреватели</a> · <a href="https://tehnoholod369.kz/teplovye-zavesy-almaty">Тепловые завесы</a> · <a href="https://tehnoholod369.kz/teplovye-pushki-almaty">Тепловые пушки</a> · <a href="https://tehnoholod369.kz/radiatory-otopleniya-almaty">Радиаторы отопления</a> · <a href="https://tehnoholod369.kz/mobilnye-kondicionery-almaty">Мобильные кондиционеры</a> · <a href="https://tehnoholod369.kz/osushiteli-vozduha-almaty">Осушители воздуха</a> · <a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">Кондиционер на комнату 25 м²</a> · <a href="https://tehnoholod369.kz/kondicioner-do-200000">Кондиционер до 200 000 ₸</a> · <a href="https://tehnoholod369.kz/tihiy-kondicioner">Тихий кондиционер для спальни</a> · <a href="https://tehnoholod369.kz/kondicioner-obogrev-zimoy">Кондиционер для обогрева зимой</a> · <a href="https://tehnoholod369.kz/kondicionery-dlya-ofisa">Кондиционеры для офиса</a></p></nav>
 </div>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Напольно-потолочные кондиционеры в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Haier напольно-потолочный ECO AC50S2LG1FA new", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=haier-ac50s2lg1fa-new"}, {"@type": "ListItem", "position": 2, "name": "Haier напольно-потолочный Super Match AC25S2SG2FA new", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=haier-ac25s2sg2fa-new"}, {"@type": "ListItem", "position": 3, "name": "AUX LCAC R410A ON/OFF ALCF-H18/4R1F", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=aux-alcf-h18-4r1f"}, {"@type": "ListItem", "position": 4, "name": "CHERBROOKE AUL-24HR4S1/AUA-24H4SL1", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=cherbrooke-aul-24hr4s1-aua-24h4sl1"}, {"@type": "ListItem", "position": 5, "name": "Ballu UNIVERSAL III CF-24HN1 напольно-потолочный", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=ballu-blc-cf-24hn1-21y"}, {"@type": "ListItem", "position": 6, "name": "ROYAL CLIMA ESPERTO ES-F 24HRCX", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=royal-clima-es-f-24hrcx"}, {"@type": "ListItem", "position": 7, "name": "Midea Напольно потолочные MUE-24HRN1-Q", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=midea-mue-24hrn1-q"}, {"@type": "ListItem", "position": 8, "name": "AUX LCAC R410A ON/OFF ALCF-H24/4R1F", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=aux-alcf-h24-4r1f"}, {"@type": "ListItem", "position": 9, "name": "ROYAL CLIMA COMPETENZA DC Inverter CO-F 24HNDI", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=royal-clima-co-f-24hndi"}, {"@type": "ListItem", "position": 10, "name": "AERONIK ASI-ATH100RD1/B-S INV/ASO-AGUHN100R1/INV", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=aeronik-asi-ath100rd1-b-s-inv-aso-aguhn100r1-inv"}, {"@type": "ListItem", "position": 11, "name": "GREE нап.-потолочный U-Match R32 GUD100ZD1/B-S/GUD100W1/NhB", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=gree-gud100zd1-b-s-gud100w1-nhb"}, {"@type": "ListItem", "position": 12, "name": "CHERBROOKE CUE-36HRN1-R/COD-36NH1-R", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=cherbrooke-cue-36hrn1-r-cod-36nh1-r"}, {"@type": "ListItem", "position": 13, "name": "Midea Напольно потолочные MUE-36HRN1-R", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=midea-mue-36hrn1-r"}, {"@type": "ListItem", "position": 14, "name": "TCL LCAC напольно-потолочный TCC-48ZHRA/UI(05) + TCC-48HA/U3O-L(04)", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=tcl-tcc-48zhra-ui-05-tcc-48ha-u3o-l-04"}, {"@type": "ListItem", "position": 15, "name": "Ballu UNIVERSAL III CF-48HN1 напольно-потолочный", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=ballu-blc-cf-48hn1-21y"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит напольно-потолочный кондиционер в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "Цена зависит от мощности; монтаж считается по объекту. В наличии 53 таких моделей, цены от 417 820 ₸. Например: напольно-потолочный ECO AC50S2LG1FA new — 417 820 ₸; напольно-потолочный Super Match AC25S2SG2FA new — 422 370 ₸; LCAC R410A ON/OFF ALCF-H18/4R1F — 432 011 ₸."}}, {"@type": "Question", "name": "Что влияет на выбор кроме этого параметра?", "acceptedAnswer": {"@type": "Answer", "text": "Форма и длина помещения, высота потолка, куда выносится наружный блок и есть ли возможность штробить стену под трассу."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит напольно-потолочный кондиционер в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "Цена зависит от мощности; монтаж считается по объекту. В наличии 53 таких моделей. Актуальные цены — в таблице на этой странице: она обновляется из каталога автоматически."}}, {"@type": "Question", "name": "Что влияет на выбор кроме этого параметра?", "acceptedAnswer": {"@type": "Answer", "text": "Форма и длина помещения, высота потолка, куда выносится наружный блок и есть ли возможность штробить стену под трассу."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
 <script>
 (function(){
   var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/poluprom.json"];
+  // Штамп свежести обязан описывать ТЕ данные, которые видит посетитель.
+  // Цены подставляются здесь же, в браузере, из живого data/*.json — а дата
+  // до 04.09.2026 бралась из mtime локального файла в момент сборки блока.
+  // Это дата сборки, а не данных: страница писала «по данным каталога
+  // от 01.09.2026», когда в export-state.json стояло 2026-09-03. ТЗ п.27:
+  // фиктивной даты обновления быть не должно.
+  fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/export-state.json",{cache:"no-cache"})
+    .then(function(r){return r.json()})
+    .then(function(st){
+      var d=st&&st.dataUpdated; if(!d)return;
+      var p=String(d).split("-"); if(p.length!==3)return;
+      var t=p[2]+"."+p[1]+"."+p[0];
+      document.querySelectorAll(".thgeo-date").forEach(function(el){el.textContent=t});
+    })
+    .catch(function(){});
   Promise.all(srcs.map(function(u){
     return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
   })).then(function(all){

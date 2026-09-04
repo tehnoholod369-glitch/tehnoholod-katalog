@@ -25,6 +25,12 @@
 .thgeo-faq summary{font-weight:600;cursor:pointer}
 .thgeo-also{margin-top:26px}
 .thgeo-also p{font-size:14px;line-height:2;color:#5a6676}
+.thgeo-mont{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:12px;margin:14px 0}
+.thgeo-mont__c{background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:14px 16px}
+.thgeo-mont__t{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0A4EA7;margin-bottom:8px}
+.thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
+.thgeo-mont ul{margin:0;padding-left:18px}
+.thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
 </style>
 <div class="thgeo">
 <h1>Кондиционеры для офиса в Алматы</h1>
@@ -68,7 +74,7 @@
 <p><b>Open space</b> — кассетный: раздача на четыре стороны, видна только панель.
 <b>Кабинеты и коридоры</b> — канальный: один блок на несколько комнат, в интерьере
 только решётки. <b>Помещение без подвесного потолка</b> — напольно-потолочный:
-ставится под потолок или у стены. <b>Здание целиком, от 300 м²</b> — <a href="https://tehnoholod369.kz/vrf-sistemy-almaty">VRF-система</a>: один наружный блок
+ставится под потолок или у стены. <b>Здание целиком, от 300 м²</b> — VRF-система: один наружный блок
 и раздельное управление по кабинетам.</p>
 <h2>Как считается мощность</h2>
 <p>Для офиса мало площади: считают людей, технику, освещение и остекление —
@@ -76,6 +82,33 @@
 все помещения редко работают на максимум одновременно. Пришлите планировку —
 посчитаем: <a href="https://tehnoholod369.kz/proekt">заявка на проект</a>, для юрлиц —
 <a href="https://tehnoholod369.kz/b2b">B2B и госзакупки</a>.</p>
+<h2>Сколько стоит кондиционер с установкой</h2>
+<p>Итог складывается из двух частей: цена оборудования и монтаж. Цены оборудования — в таблице выше и в каталоге. Стоимость монтажа называет монтажная бригада: она выполняет работу и отвечает за неё. Цену по вашему городу показываем в карточке модели после выбора города — до этого любая сумма была бы обещанием без покрытия. Ниже — что входит в базовый монтаж, а что считается отдельно.</p>
+<div class="thgeo-mont">
+<div class="thgeo-mont__c"><div class="thgeo-mont__t">Входит в базовый монтаж</div><ul>
+<li>Выбор оптимального места установки блоков</li>
+<li>Бурение 1 монтажного отверстия (бетон до 20 см / кирпич, газоблок до 40 см)</li>
+<li>Монтаж внутреннего блока на высоте до 2,8 м</li>
+<li>Монтаж наружного блока под окном или на балконе (без высотных работ)</li>
+<li>Прокладка комплектной фреоновой магистрали до 3 м</li>
+<li>Прокладка дренажа самотёком до 3 м и пролив для проверки</li>
+<li>Подключение к имеющейся точке электропитания до 1,5 м</li>
+<li>Весь необходимый крепёж</li>
+<li>Вакуумирование, опрессовка, пусконаладка и проверка режимов</li>
+<li>Инструктаж по эксплуатации и уходу</li>
+</ul></div>
+<div class="thgeo-mont__c thgeo-mont__c--out"><div class="thgeo-mont__t">Считается отдельно</div><ul>
+<li>Удлинение трассы свыше 3 м</li>
+<li>Штробление стен и скрытая прокладка трассы</li>
+<li>Алмазное бурение и работа по монолиту</li>
+<li>Высотные работы (альпинизм или автовышка)</li>
+<li>Монтаж на вентилируемый фасад</li>
+<li>Демонтаж старого кондиционера</li>
+<li>Дренажный насос</li>
+<li>Нестандартные и сложные условия монтажа</li>
+</ul></div>
+</div>
+<p class="thgeo-note">Срок монтажа — от 1 до 3 дней. Алматы и область — свои бригады; другие регионы — исполнителя подтверждаем при звонке. Рассрочка: Kaspi, ForteBank, Halyk, БЦК.</p>
 <h2>Разбираем подробнее</h2><div class="thgeo-arts"><a class="thgeo-art" href="https://tehnoholod369.kz/kanalny-kondicioner"><span class="thgeo-art__r">Монтаж · 6 мин чтения</span><span class="thgeo-art__t">Канальный кондиционер: скрытое кондиционирование квартиры и дома</span><span class="thgeo-art__s">Канальный кондиционер: как работает, когда его брать вместо сплитов, монтаж и высота потолка. Подбор для квартиры и котт</span></a><a class="thgeo-art" href="https://tehnoholod369.kz/kassetny-kondicioner"><span class="thgeo-art__r">Монтаж · 6 мин чтения</span><span class="thgeo-art__t">Кассетный кондиционер: потолочный на 4 стороны для офиса и магазина</span><span class="thgeo-art__s">Кассетный кондиционер: как работает, где ставят, отличия от настенного. Подбор для офиса, магазина, ресторана в Алматы. </span></a></div>
 <h2>Монтаж, гарантия, доставка</h2>
 <p>Монтаж выполняют сертифицированные монтажные бригады. Гарантия на оборудование —
@@ -84,17 +117,32 @@
 напоминания о чистке фильтров и сервисе. Доставка по Алматы и Казахстану,
 возможна рассрочка.</p>
 <h2>Вопросы и ответы</h2>
-<details class="thgeo-faq"><summary>Сколько стоит кондиционер для офиса?</summary><p>Цена зависит от типа блока и мощности; монтаж считается по объекту. В наличии 283 таких моделей, цены от 153 400 ₸. Например: TL-MD25-FR — 153 400 ₸; TL-MD35-FR — 159 250 ₸; LCAC кассетный TCC-18CHRA/UI(04) + TCC-18HRA/UO-L(04) + панель MBQ8-LCFA — 325 850 ₸.</p></details>
+<details class="thgeo-faq"><summary>Сколько стоит кондиционер для офиса?</summary><p>Цена зависит от типа блока и мощности; монтаж считается по объекту. В наличии 283 таких моделей. Актуальные цены — в таблице на этой странице: она обновляется из каталога автоматически.</p></details>
 <details class="thgeo-faq"><summary>Что влияет на выбор кроме этого параметра?</summary><p>Планировка и площади, число сотрудников и техники, высота потолков, есть ли подвесной потолок и куда выносить наружные блоки.</p></details>
 <details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
 <details class="thgeo-faq"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
 <nav class="thgeo-also" aria-label="Другие подборки"><h2>Другие подборки</h2><p><a href="https://tehnoholod369.kz/kondicionery-almaty">Кондиционеры</a> · <a href="https://tehnoholod369.kz/ventilyaciya">Вентиляция</a> · <a href="https://tehnoholod369.kz/vodonagrevateli">Водонагреватели</a> · <a href="https://tehnoholod369.kz/poluprom">Полупромышленные кондиционеры</a> · <a href="https://tehnoholod369.kz/multisplit">Мульти-сплит системы</a> · <a href="https://tehnoholod369.kz/otoplenie">Отопление и обогреватели</a> · <a href="https://tehnoholod369.kz/teplovye-zavesy-almaty">Тепловые завесы</a> · <a href="https://tehnoholod369.kz/teplovye-pushki-almaty">Тепловые пушки</a> · <a href="https://tehnoholod369.kz/radiatory-otopleniya-almaty">Радиаторы отопления</a> · <a href="https://tehnoholod369.kz/mobilnye-kondicionery-almaty">Мобильные кондиционеры</a> · <a href="https://tehnoholod369.kz/osushiteli-vozduha-almaty">Осушители воздуха</a> · <a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">Кондиционер на комнату 25 м²</a> · <a href="https://tehnoholod369.kz/kondicioner-do-200000">Кондиционер до 200 000 ₸</a> · <a href="https://tehnoholod369.kz/tihiy-kondicioner">Тихий кондиционер для спальни</a> · <a href="https://tehnoholod369.kz/kondicioner-obogrev-zimoy">Кондиционер для обогрева зимой</a></p></nav>
 </div>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Кондиционеры для офиса в наличии в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "THAICON TL-MD25-FR", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=thaicon-tl-md25-fr"}, {"@type": "ListItem", "position": 2, "name": "THAICON TL-MD35-FR", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=thaicon-tl-md35-fr"}, {"@type": "ListItem", "position": 3, "name": "TCL LCAC кассетный TCC-18CHRA/UI(04) + TCC-18HRA/UO-L(04) + панель MBQ8-LCFA", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=tcl-tcc-18chra-ui-04-tcc-18hra-uo-l-04-panel-mbq8-lcfa"}, {"@type": "ListItem", "position": 4, "name": "Midea Кассетные MCA3-12HRN1-Q", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=midea-mca3-12hrn1-q"}, {"@type": "ListItem", "position": 5, "name": "TCL LCAC канальный TCC-18D2HRA/UI(03) + TCC-18HRA/UO-L(04)", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=tcl-tcc-18d2hra-ui-03-tcc-18hra-uo-l-04"}, {"@type": "ListItem", "position": 6, "name": "DITREEX канальный DFH-18N1DV", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=ditreex-dfh-18n1dv"}, {"@type": "ListItem", "position": 7, "name": "AUX LCAC R410A ON/OFF ALCA-H18/4R1Y", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=aux-alca-h18-4r1y"}, {"@type": "ListItem", "position": 8, "name": "Ballu UNIVERSAL III C-18HN1 кассетный", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=ballu-blc-c-18hn1-21y"}, {"@type": "ListItem", "position": 9, "name": "CHERBROOKE CDI-18HWN1-Q/COX18HN1-Q", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=cherbrooke-cdi-18hwn1-q-cox18hn1-q"}, {"@type": "ListItem", "position": 10, "name": "CHERBROOKE AUK-18HR4SC1/AUA-18H4SL1", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=cherbrooke-auk-18hr4sc1-aua-18h4sl1"}, {"@type": "ListItem", "position": 11, "name": "Haier консольный Super Match AF25S2SD1FA", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=haier-af25s2sd1fa"}, {"@type": "ListItem", "position": 12, "name": "Midea Кассетные MCA3-18HRN1-Q", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=midea-mca3-18hrn1-q"}, {"@type": "ListItem", "position": 13, "name": "FUNAI DRAGON LAC-DR55HP.D01/S", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=funai-lac-dr55hp-d01-s"}, {"@type": "ListItem", "position": 14, "name": "AUX LCAC R410A ON/OFF ALMD-H18/4R1Y", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=aux-almd-h18-4r1y"}, {"@type": "ListItem", "position": 15, "name": "Haier канальный Super Match AD25S2SS1FA", "url": "https://tehnoholod369.kz/tovar?g=poluprom&sl=haier-ad25s2ss1fa"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит кондиционер для офиса?", "acceptedAnswer": {"@type": "Answer", "text": "Цена зависит от типа блока и мощности; монтаж считается по объекту. В наличии 283 таких моделей, цены от 153 400 ₸. Например: TL-MD25-FR — 153 400 ₸; TL-MD35-FR — 159 250 ₸; LCAC кассетный TCC-18CHRA/UI(04) + TCC-18HRA/UO-L(04) + панель MBQ8-LCFA — 325 850 ₸."}}, {"@type": "Question", "name": "Что влияет на выбор кроме этого параметра?", "acceptedAnswer": {"@type": "Answer", "text": "Планировка и площади, число сотрудников и техники, высота потолков, есть ли подвесной потолок и куда выносить наружные блоки."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит кондиционер для офиса?", "acceptedAnswer": {"@type": "Answer", "text": "Цена зависит от типа блока и мощности; монтаж считается по объекту. В наличии 283 таких моделей. Актуальные цены — в таблице на этой странице: она обновляется из каталога автоматически."}}, {"@type": "Question", "name": "Что влияет на выбор кроме этого параметра?", "acceptedAnswer": {"@type": "Answer", "text": "Планировка и площади, число сотрудников и техники, высота потолков, есть ли подвесной потолок и куда выносить наружные блоки."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование — производителя, срок указан в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе."}}, {"@type": "Question", "name": "Есть ли доставка и рассрочка?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Доставка по Алматы и Казахстану, возможна рассрочка. Условия по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
 <script>
 (function(){
   var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/poluprom.json"];
+  // Штамп свежести обязан описывать ТЕ данные, которые видит посетитель.
+  // Цены подставляются здесь же, в браузере, из живого data/*.json — а дата
+  // до 04.09.2026 бралась из mtime локального файла в момент сборки блока.
+  // Это дата сборки, а не данных: страница писала «по данным каталога
+  // от 01.09.2026», когда в export-state.json стояло 2026-09-03. ТЗ п.27:
+  // фиктивной даты обновления быть не должно.
+  fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/export-state.json",{cache:"no-cache"})
+    .then(function(r){return r.json()})
+    .then(function(st){
+      var d=st&&st.dataUpdated; if(!d)return;
+      var p=String(d).split("-"); if(p.length!==3)return;
+      var t=p[2]+"."+p[1]+"."+p[0];
+      document.querySelectorAll(".thgeo-date").forEach(function(el){el.textContent=t});
+    })
+    .catch(function(){});
   Promise.all(srcs.map(function(u){
     return fetch(u,{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return []});
   })).then(function(all){
