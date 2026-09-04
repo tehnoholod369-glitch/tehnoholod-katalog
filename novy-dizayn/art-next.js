@@ -105,7 +105,27 @@
     });
   }
 
+  // Копирайт в подвале. Блоки, вставленные в Tilda до 03.09.2026, его не несут,
+  // а перевставлять сорок страниц ради одной строки — не работа. Шаблон её теперь
+  // рисует сам, поэтому здесь сначала проверяем, нет ли её уже.
+  function копирайт() {
+    if (document.querySelector("[data-th-copyright]")) return;
+    var подвал = document.querySelector(".art-local-chrome");
+    if (!подвал) return;
+    var о = document.createElement("div");
+    о.setAttribute("data-th-copyright", "1");
+    о.style.cssText = "max-width:1240px;margin:14px auto 0;padding:0 24px;" +
+                      "font-size:12px;line-height:1.7;color:#6B7C93;";
+    о.innerHTML = "© " + new Date().getFullYear() + " ИП «ТехноХолод». Тексты и таблицы " +
+      "базы знаний — наши собственные. Перепечатка целиком или существенной частью — " +
+      "только с письменного разрешения. Цитата с активной ссылкой на источник разрешена " +
+      'без запроса. <a href="' + САЙТ + '/usloviya-ispolzovaniya" style="color:#9FB0C4;">' +
+      "Условия использования</a>";
+    подвал.appendChild(о);
+  }
+
   function пуск() {
+    копирайт();
     var узлы = document.querySelectorAll("[data-art-next]");
     var спящие = document.querySelectorAll("[data-art-link]");
     if (!узлы.length && !спящие.length) return;

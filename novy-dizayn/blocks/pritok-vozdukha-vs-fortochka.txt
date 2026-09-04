@@ -215,6 +215,13 @@
       <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
       <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
     </div>
+    
+    <div data-th-copyright style="max-width:1240px; margin:14px auto 0; padding:0 24px; font-size:12px; line-height:1.7; color:#6B7C93;">
+      © <span data-th-god>2026</span> ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
+      Перепечатка целиком или существенной частью — только с письменного разрешения.
+      Цитата с активной ссылкой на источник разрешена без запроса.
+      <a href="/usloviya-ispolzovaniya" style="color:#9FB0C4;">Условия использования</a>
+    </div>
   </div>
 
 </div>
@@ -222,9 +229,9 @@
 
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=7c7384bc"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=4af75ffa"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=aa67580c"></script>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Приток через кондиционер или форточка: что выбрать", "description": "Сравниваем способы получить свежий воздух дома: форточка, приточный клапан и кондиционер с притоком — очистка, температура, шум, цена.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/pritok-vozdukha-vs-fortochka"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-04"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Приток через кондиционер или форточка: что выбрать", "description": "Сравниваем способы получить свежий воздух дома: форточка, приточный клапан и кондиционер с притоком — очистка, температура, шум, цена.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/pritok-vozdukha-vs-fortochka"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-04", "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightYear": 2026, "datePublished": "2026-09-02"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Приток через кондиционер или форточка: что выбрать", "item": "https://tehnoholod369.kz/pritok-vozdukha-vs-fortochka"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чем кондиционер с притоком лучше форточки?", "acceptedAnswer": {"@type": "Answer", "text": "Он подаёт воздух очищенным через HEPA-фильтр и доведённым до комфортной температуры, без уличного шума и пыли, при закрытых окнах, и одновременно охлаждает или греет комнату."}}, {"@type": "Question", "name": "Приточный клапан очищает воздух?", "acceptedAnswer": {"@type": "Answer", "text": "Очистка у клапана минимальна или отсутствует, а воздух поступает уличной температуры."}}, {"@type": "Question", "name": "Сколько свежего воздуха даёт кондиционер с притоком?", "acceptedAnswer": {"@type": "Answer", "text": "TCL FreshIN 3.0 подаёт до 60 м³ свежего очищенного воздуха в час."}}, {"@type": "Question", "name": "Нужен ли приток, если уже есть обычный кондиционер?", "acceptedAnswer": {"@type": "Answer", "text": "Да, если беспокоит духота. Обычный кондиционер гоняет воздух по кругу и не приносит свежий — CO₂ всё равно копится."}}, {"@type": "Question", "name": "Можно ли совсем не открывать окна с таким кондиционером?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Свежий воздух поступает через систему, поэтому окна можно держать закрытыми."}}]}</script>
 </x-dc>

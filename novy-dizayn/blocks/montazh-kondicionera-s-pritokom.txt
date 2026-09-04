@@ -223,6 +223,13 @@
       <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
       <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
     </div>
+    
+    <div data-th-copyright style="max-width:1240px; margin:14px auto 0; padding:0 24px; font-size:12px; line-height:1.7; color:#6B7C93;">
+      © <span data-th-god>2026</span> ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
+      Перепечатка целиком или существенной частью — только с письменного разрешения.
+      Цитата с активной ссылкой на источник разрешена без запроса.
+      <a href="/usloviya-ispolzovaniya" style="color:#9FB0C4;">Условия использования</a>
+    </div>
   </div>
 
 </div>
@@ -230,9 +237,9 @@
 
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=7c7384bc"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=4af75ffa"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=aa67580c"></script>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Монтаж кондиционера с притоком свежего воздуха", "description": "Как проходит монтаж приточной сплит-системы: воздуховод притока, пусконаладка, что входит в работу и на что смотреть при приёмке.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/montazh-kondicionera-s-pritokom"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-04"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Монтаж кондиционера с притоком свежего воздуха", "description": "Как проходит монтаж приточной сплит-системы: воздуховод притока, пусконаладка, что входит в работу и на что смотреть при приёмке.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/montazh-kondicionera-s-pritokom"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-04", "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightYear": 2026, "datePublished": "2026-09-02"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Монтаж кондиционера с притоком свежего воздуха", "item": "https://tehnoholod369.kz/montazh-kondicionera-s-pritokom"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Нужно ли отдельное отверстие в стене для притока?", "acceptedAnswer": {"@type": "Answer", "text": "Не обязательно. Приточный воздуховод можно провести через общий разделённый канал вместе с трассами или отдельным отверстием около 50 мм — оптимальный вариант мастер выберет на замере."}}, {"@type": "Question", "name": "Можно ли устанавливать кондиционер зимой?", "acceptedAnswer": {"@type": "Answer", "text": "Монтаж возможен круглый год. В сильный мороз есть нюансы по пусконаладке — мастер их учтёт. FreshIN работает и на обогрев в холодный сезон."}}, {"@type": "Question", "name": "Сколько времени занимает установка?", "acceptedAnswer": {"@type": "Answer", "text": "Обычно несколько часов. Точнее скажем после замера — зависит от расположения блоков, длины коммуникаций и способа прокладки притока."}}, {"@type": "Question", "name": "Нужно ли всё равно проветривать комнату?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Режим притока подаёт свежий воздух с улицы при закрытых окнах, фильтруя пыль, аллергены и запахи — это удобно для аллергиков и семей с детьми."}}, {"@type": "Question", "name": "Какая гарантия?", "acceptedAnswer": {"@type": "Answer", "text": "гарантия производителя на оборудование, гарантия бригады на монтаж."}}]}</script>
 </x-dc>

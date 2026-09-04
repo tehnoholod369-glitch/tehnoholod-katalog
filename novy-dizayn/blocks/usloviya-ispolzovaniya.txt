@@ -1,0 +1,94 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
+
+<x-dc>
+
+<style>
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #182122; }
+  h1, h2 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  .doc-page { width: 100%; max-width: 888px; box-sizing: border-box; margin: 0 auto; padding: 18px 24px 72px; }
+  .doc-page > h1 { max-width: none !important; overflow-wrap: anywhere; }
+  .t-body .t-local-chrome { display: none !important; }
+
+  .doc h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .doc p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .doc ul { margin: 12px 0 0; padding-left: 22px; }
+  .doc li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .doc b, .doc strong { color: #18212F; }
+
+  .doc-note { background: #E6F2FD; border: 1px solid #B9D8F7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.7; }
+  .doc-note b { color: #071C3B; }
+
+  .doc-crumbs { font-size: 13px; color: #6B7C93; }
+  .doc-crumbs a { color: #6B7C93; }
+  .doc-lead { font-size: 17px; line-height: 1.7; color: #2C3846; margin-top: 14px; }
+  .doc-upd { font-size: 13px; color: #6B7C93; margin-top: 26px; }
+
+  .art-local-chrome { background: #071C3B; color: #9FB0C4; padding: 26px 0; font-size: 13px; }
+</style>
+
+<div class="doc-page doc">
+
+  <div class="doc-crumbs">
+    <a href="/">Главная</a> → Условия использования материалов
+  </div>
+
+  <h1 style="margin:10px 0 0; font-size:34px; font-weight:800; letter-spacing:-0.02em; color:#071C3B; line-height:1.2;">Условия использования материалов сайта</h1>
+
+  <p class="doc-lead">Коротко: <b>цитировать нас со ссылкой можно и без спроса. Перепечатывать статью целиком — нельзя.</b> Ниже то же самое подробнее.</p>
+
+  <h2>Кому принадлежат материалы</h2>
+  <p>Тексты статей базы знаний, таблицы, расчёты и подборки на сайте <b>tehnoholod369.kz</b> подготовлены ИП «ТехноХолод» и принадлежат ему. Права на них возникли в момент создания материалов и не требуют регистрации.</p>
+  <p>Отдельно оговорим то, что нам <i>не</i> принадлежит: названия и логотипы производителей климатической техники — товарные знаки их владельцев. Мы используем их, чтобы назвать конкретную технику, и никаких прав на них не заявляем. Фотографии оборудования принадлежат производителям и поставщикам.</p>
+
+  <h2>Что можно без запроса</h2>
+  <ul>
+    <li><b>Цитировать</b> фрагмент с указанием автора и <b>активной ссылкой</b> на страницу-источник.</li>
+    <li><b>Ссылаться</b> на любую страницу сайта — ссылка нам полезна, разрешение на неё не нужно.</li>
+    <li><b>Пересылать</b> ссылку клиенту, коллеге, в мессенджер или соцсеть.</li>
+    <li><b>Печатать для себя</b> — распечатать чеклист или таблицу, чтобы взять на объект.</li>
+  </ul>
+
+  <h2>Что требует письменного разрешения</h2>
+  <ul>
+    <li>Перепечатка статьи целиком или существенной её частью на другом сайте, в блоге, канале или печатном издании.</li>
+    <li>Публикация наших таблиц и расчётов как своих — с изменением или без.</li>
+    <li>Использование материалов в коммерческих предложениях, презентациях и рекламе других компаний.</li>
+    <li>Переработка текста ради обхода совпадений — переписанный своими словами чужой материал остаётся чужим материалом.</li>
+  </ul>
+  <p>Разрешение спрашивается письмом на <a href="mailto:tehnoholod369@gmail.com">tehnoholod369@gmail.com</a>. Обычно мы не против — нам важно, чтобы стояла ссылка и не искажался смысл.</p>
+
+  <div class="doc-note">
+    <b>Про точность.</b> Цены, наличие и количество моделей на страницах сайта подтягиваются из нашего каталога и меняются. Если вы цитируете число — укажите дату, на которую оно было верным. Скопированное вчерашнее число завтра будет неправдой, и отвечать за неё будем не мы.
+  </div>
+
+  <h2>Что делать, если вы нашли копию</h2>
+  <p>Напишите нам на <a href="mailto:tehnoholod369@gmail.com">tehnoholod369@gmail.com</a> — со ссылкой на копию. Это помогает: чужие копии в поиске мешают читателю найти актуальную версию, а актуальная только у нас.</p>
+
+  <h2>Чего эта страница не касается</h2>
+  <p>Здесь только про использование <b>материалов</b>. Обязательства по продаже, доставке, монтажу и гарантии — в разделе <a href="/uslugi">«Монтаж и сервис»</a>, условия возврата — на странице <a href="Возврат и обмен.dc.html">«Возврат и обмен»</a>.</p>
+
+  <h2>Реквизиты</h2>
+  <p>ИП «ТехноХолод», Алматы, ул. Какимжана Казыбаева, 286Б.<br />
+  Телефон и WhatsApp: <a href="tel:+77000369369">+77&nbsp;000&nbsp;369&nbsp;369</a>. Дополнительный: <a href="tel:+77000336699">+77&nbsp;000&nbsp;33&nbsp;66&nbsp;99</a>.<br />
+  Почта: <a href="mailto:tehnoholod369@gmail.com">tehnoholod369@gmail.com</a></p>
+
+  <p class="doc-upd">Действует с 3 сентября 2026 года.</p>
+
+</div>
+
+<div class="art-local-chrome">
+  <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+    <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+    <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+  </div>
+  <div data-th-copyright style="max-width:1240px; margin:14px auto 0; padding:0 24px; font-size:12px; line-height:1.7; color:#6B7C93;">
+    © 2026 ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
+    Перепечатка целиком или существенной частью — только с письменного разрешения.
+    Цитата с активной ссылкой на источник разрешена без запроса.
+  </div>
+</div>
+
+</x-dc>
