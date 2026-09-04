@@ -232,13 +232,15 @@
       <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
       <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
     </div>
-    
-    <div data-th-copyright style="max-width:1240px; margin:14px auto 0; padding:0 24px; font-size:12px; line-height:1.7; color:#6B7C93;">
-      © <span data-th-god>2026</span> ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
-      Перепечатка целиком или существенной частью — только с письменного разрешения.
-      Цитата с активной ссылкой на источник разрешена без запроса.
-      <a href="/usloviya-ispolzovaniya" style="color:#9FB0C4;">Условия использования</a>
     </div>
+  </div>
+
+  
+  <div data-th-copyright style="max-width:888px; margin:0 auto; padding:18px 24px 40px; font-size:12px; line-height:1.7; color:#6B7C93;">
+    © 2026 ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
+    Перепечатка целиком или существенной частью — только с письменного разрешения.
+    Цитата с активной ссылкой на источник разрешена без запроса.
+    <a href="/usloviya-ispolzovaniya" style="color:#6B7C93; text-decoration:underline;">Условия использования</a>
   </div>
 
 </div>
@@ -246,7 +248,7 @@
 
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=aa7da59c"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=f54281a3"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=c2940deb"></script>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Приточная вентиляция в квартиру: что это и зачем нужна", "description": "Как работает приточка, чем отличается от бризера и проветривателя, кому нужна в Алматы. Мощность, шум, установка, фильтры.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/pritochnaya-ventilyaciya"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-04", "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightYear": 2026, "datePublished": "2026-09-03"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Приточная вентиляция в квартиру: что это и зачем нужна", "item": "https://tehnoholod369.kz/pritochnaya-ventilyaciya"}]}</script>
