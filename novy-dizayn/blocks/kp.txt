@@ -106,6 +106,9 @@
     <input id="kpКлиент" placeholder="ТОО «…» или До востребования">
     <label>БИН (если юрлицо)</label>
     <input id="kpБин" inputmode="numeric" placeholder="необязательно">
+    
+    <label>Телефон клиента для WhatsApp</label>
+    <input id="kpТел" inputmode="tel" placeholder="+7 700 000 00 00 — для напоминания и учёта">
     <div class="kpсетка">
       <div><label>Номер КП</label><input id="kpНомер"></div>
       <div><label>Действует до</label><input id="kpДо" type="date"></div>
@@ -392,7 +395,8 @@ function выдатьНомер(){
   if(!exec) return Promise.resolve(false);
   var сум = всего(), ндс = сум - Math.round(сум/(1+НДС));
   var тело = { kind:"kp", customer:$("kpКлиент").value.trim() || "До востребования",
-    bin:$("kpБин").value.trim(), until:$("kpДо").value, vat:ндс, src:"/kp",
+    bin:$("kpБин").value.trim(), phone:$("kpТел").value.trim(),
+    until:$("kpДо").value, vat:ндс, src:"/kp",
     ua:(navigator.userAgent||"").slice(0,120),
     items: ПОЗ.map(function(p){ return {art:p.арт, name:p.имя, qty:+p.кол||0,
       price:ценаПозиции(p)}; }) };
@@ -441,7 +445,15 @@ $("kpПечать").addEventListener("click", function(){
 $("kpВатсап").addEventListener("click", function(){
   if(!ПОЗ.length) return alert("Добавьте хотя бы одну позицию.");
   // Окно открываем ПОСЛЕ получения номера, иначе в сообщение уедет пустой номер.
-  сНомером(function(){ window.open("https://wa.me/?text="+encodeURIComponent(текст()), "_blank"); });
+  сНомером(function(){
+    // Телефон указан — открываем чат сразу с ним, а не «поделиться куда-нибудь».
+    // Это же поле потом кормит напоминание «купил / не купил».
+    var тел = $("kpТел").value.replace(/\D/g, "");
+    if(тел.length === 10) тел = "7" + тел;            // 700… → 7700…
+    if(тел.length === 11 && тел.charAt(0) === "8") тел = "7" + тел.slice(1);
+    window.open("https://wa.me/" + (тел.length >= 11 ? тел : "") +
+                "?text=" + encodeURIComponent(текст()), "_blank");
+  });
 });
 $("kpКопия").addEventListener("click", function(){
   if(!ПОЗ.length) return alert("Добавьте хотя бы одну позицию.");
@@ -461,7 +473,8 @@ function копироватьТекст(){
 function сохранить(){
   try {
     localStorage.setItem("kp-черновик", JSON.stringify({ поз:ПОЗ,
-      клиент:$("kpКлиент").value, бин:$("kpБин").value, номер:$("kpНомер").value,
+      клиент:$("kpКлиент").value, бин:$("kpБин").value, тел:$("kpТел").value,
+      номер:$("kpНомер").value,
       до:$("kpДо").value, оплата:$("kpОплата").value, срок:$("kpСрок").value,
       ещё:$("kpЕщё").value, доки:$("kpДоки").checked, монтаж:$("kpМонтажНДС").checked }));
   } catch(e){}
@@ -471,7 +484,7 @@ function восстановить(){
   try { s = JSON.parse(localStorage.getItem("kp-черновик")||"null"); } catch(e){}
   if(!s) return;
   if(s.поз) ПОЗ = s.поз;
-  var пары = {kpКлиент:"клиент",kpБин:"бин",kpНомер:"номер",kpДо:"до",
+  var пары = {kpКлиент:"клиент",kpБин:"бин",kpТел:"тел",kpНомер:"номер",kpДо:"до",
               kpОплата:"оплата",kpСрок:"срок",kpЕщё:"ещё"};
   Object.keys(пары).forEach(function(id){ if(s[пары[id]]!=null) $(id).value = s[пары[id]]; });
   if(s.доки!=null) $("kpДоки").checked = s.доки;
@@ -479,7 +492,7 @@ function восстановить(){
 }
 
 /* ---------- старт ---------- */
-["kpКлиент","kpБин","kpНомер","kpДо","kpОплата","kpСрок","kpЕщё","kpДоки","kpМонтажНДС"]
+["kpКлиент","kpБин","kpТел","kpНомер","kpДо","kpОплата","kpСрок","kpЕщё","kpДоки","kpМонтажНДС"]
   .forEach(function(id){
     $(id).addEventListener("input", function(){ бланк(); сохранить(); });
     $(id).addEventListener("change", function(){ бланк(); сохранить(); });
