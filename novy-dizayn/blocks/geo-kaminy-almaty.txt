@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Камины и электроочаги в Алматы</h1>
@@ -44,26 +58,27 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=kaminy">Весь каталог</a>
 
 </div>
+
 <h2>Модели, которые есть сейчас</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Вид установки</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=firelight-bfp-t-2525">BFP/T-2525 Cup</a></td><td>Firelight</td><td>Настольная</td><td class="thgeo-p" data-art="BFP/T-2525">99 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=firelight-bfp-t-3520">BFP/T-3520 Glass</a></td><td>Firelight</td><td>Настольная</td><td class="thgeo-p" data-art="BFP/T-3520">99 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=firelight-bfp-t-4025">BFP/T-4025 Wood</a></td><td>Firelight</td><td>Настольная</td><td class="thgeo-p" data-art="BFP/T-4025">149 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=firelight-bfp-t-5025">BFP/T-5025 Tale</a></td><td>Firelight</td><td>Настольная</td><td class="thgeo-p" data-art="BFP/T-5025">179 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=electrolux-3020ls">ультра-широкий очаг EFP/P - 3020LS N (диагональ -31 дюйм)</a></td><td>Electrolux</td><td>В портал</td><td class="thgeo-p" data-art="3020LS">279 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=firelight-bfp-w-110">BFP/W-110</a></td><td>Firelight</td><td>Настенная</td><td class="thgeo-p" data-art="BFP/W-110">279 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=electrolux-3320rls">ПАНОРАМНЫЙ очаг Sphere Plus EFP/P - 3320RLS N (диагональ -33 дюйма)</a></td><td>Electrolux</td><td>В портал</td><td class="thgeo-p" data-art="3320RLS">299 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=elektrokamin-072222843">Электрокамин 072222843</a></td><td></td><td>Напольная</td><td class="thgeo-p" data-art="">364 255 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=electrolux-1600uls-2">ультра-длинный очаг EFP/P - 1600ULS N (длина 1</a></td><td>Electrolux</td><td>В портал</td><td class="thgeo-p" data-art="1600ULS">429 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=royal-thermo-rtfp-p-ar50ls">Aurora RTFP/P-AR50LS</a></td><td>Royal Thermo</td><td>В портал</td><td class="thgeo-p" data-art="RTFP/P-AR50LS">429 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=392s">Электрокамин 392S</a></td><td></td><td>Напольная</td><td class="thgeo-p" data-art="392S">485 957 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=390s">Электрокамин 390S</a></td><td></td><td>Напольная</td><td class="thgeo-p" data-art="390S">485 957 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=royal-thermo-rtfp-p-ar60ls-11">Aurora RTFP/P-AR60LS</a></td><td>Royal Thermo</td><td>В портал</td><td class="thgeo-p" data-art="RTFP/P-AR60LS">499 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=royal-thermo-rtfp-p1000m">RTFP/P1000M 3D Cassette Mystery</a></td><td>Royal Thermo</td><td>В нишу</td><td class="thgeo-p" data-art="RTFP/P1000M">599 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=royal-thermo-rtfp-w-al80ls">Allira RTFP/W-AL80LS</a></td><td>Royal Thermo</td><td>В нишу</td><td class="thgeo-p" data-art="RTFP/W-AL80LS">699 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=firelight-bfp-t-2525">BFP/T-2525 Cup</a></td><td data-label="Бренд">Firelight</td><td data-label="Вид установки">Настольная</td><td class="thgeo-p" data-label="Цена" data-art="BFP/T-2525">99 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=firelight-bfp-t-3520">BFP/T-3520 Glass</a></td><td data-label="Бренд">Firelight</td><td data-label="Вид установки">Настольная</td><td class="thgeo-p" data-label="Цена" data-art="BFP/T-3520">99 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=firelight-bfp-t-4025">BFP/T-4025 Wood</a></td><td data-label="Бренд">Firelight</td><td data-label="Вид установки">Настольная</td><td class="thgeo-p" data-label="Цена" data-art="BFP/T-4025">149 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=firelight-bfp-t-5025">BFP/T-5025 Tale</a></td><td data-label="Бренд">Firelight</td><td data-label="Вид установки">Настольная</td><td class="thgeo-p" data-label="Цена" data-art="BFP/T-5025">179 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=electrolux-3020ls">ультра-широкий очаг EFP/P - 3020LS N (диагональ -31 дюйм)</a></td><td data-label="Бренд">Electrolux</td><td data-label="Вид установки">В портал</td><td class="thgeo-p" data-label="Цена" data-art="3020LS">279 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=firelight-bfp-w-110">BFP/W-110</a></td><td data-label="Бренд">Firelight</td><td data-label="Вид установки">Настенная</td><td class="thgeo-p" data-label="Цена" data-art="BFP/W-110">279 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=electrolux-3320rls">ПАНОРАМНЫЙ очаг Sphere Plus EFP/P - 3320RLS N (диагональ -33 дюйма)</a></td><td data-label="Бренд">Electrolux</td><td data-label="Вид установки">В портал</td><td class="thgeo-p" data-label="Цена" data-art="3320RLS">299 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=elektrokamin-072222843">Электрокамин 072222843</a></td><td data-label="Бренд"></td><td data-label="Вид установки">Напольная</td><td class="thgeo-p" data-label="Цена" data-art="">364 255 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=electrolux-1600uls-2">ультра-длинный очаг EFP/P - 1600ULS N (длина 1</a></td><td data-label="Бренд">Electrolux</td><td data-label="Вид установки">В портал</td><td class="thgeo-p" data-label="Цена" data-art="1600ULS">429 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=royal-thermo-rtfp-p-ar50ls">Aurora RTFP/P-AR50LS</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Вид установки">В портал</td><td class="thgeo-p" data-label="Цена" data-art="RTFP/P-AR50LS">429 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=392s">Электрокамин 392S</a></td><td data-label="Бренд"></td><td data-label="Вид установки">Напольная</td><td class="thgeo-p" data-label="Цена" data-art="392S">485 957 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=390s">Электрокамин 390S</a></td><td data-label="Бренд"></td><td data-label="Вид установки">Напольная</td><td class="thgeo-p" data-label="Цена" data-art="390S">485 957 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=royal-thermo-rtfp-p-ar60ls-11">Aurora RTFP/P-AR60LS</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Вид установки">В портал</td><td class="thgeo-p" data-label="Цена" data-art="RTFP/P-AR60LS">499 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=royal-thermo-rtfp-p1000m">RTFP/P1000M 3D Cassette Mystery</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Вид установки">В нишу</td><td class="thgeo-p" data-label="Цена" data-art="RTFP/P1000M">599 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=royal-thermo-rtfp-w-al80ls">Allira RTFP/W-AL80LS</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Вид установки">В нишу</td><td class="thgeo-p" data-label="Цена" data-art="RTFP/W-AL80LS">699 990 ₸</td></tr>
 </tbody>
 </table>
 </div>

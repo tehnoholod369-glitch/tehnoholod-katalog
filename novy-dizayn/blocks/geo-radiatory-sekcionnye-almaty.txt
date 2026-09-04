@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Секционные радиаторы отопления в Алматы</h1>
@@ -44,26 +58,27 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=radiatory">Весь каталог</a>
 
 </div>
+
 <h2>Секционные радиаторы в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Секций</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtra335004">Revolution А 350 — 4 секц.</a></td><td>Royal Thermo</td><td>4</td><td class="thgeo-p" data-art="RTRA335004">20 581 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtra350004">Revolution А 500 — 4 секц.</a></td><td>Royal Thermo</td><td>4</td><td class="thgeo-p" data-art="RTRA350004">21 712 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtrb335004">Revolution B 350 — 4 секц.</a></td><td>Royal Thermo</td><td>4</td><td class="thgeo-p" data-art="RTRB335004">23 295 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtia3050004">INDIGO A 500 — 4 секц.</a></td><td>Royal Thermo</td><td>4</td><td class="thgeo-p" data-art="RTIA3050004">24 200 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtrb350004">Revolution B 500 — 4 секц.</a></td><td>Royal Thermo</td><td>4</td><td class="thgeo-p" data-art="RTRB350004">24 200 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtib3050004">INDIGO B 500 — 4 секц.</a></td><td>Royal Thermo</td><td>4</td><td class="thgeo-p" data-art="RTIB3050004">27 818 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtbw335004">BILINER B 350 Белый — 4 секц.</a></td><td>Royal Thermo</td><td>4</td><td class="thgeo-p" data-art="RTBW335004">27 826 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtbw350004">BILINER B 500 Белый — 4 секц.</a></td><td>Royal Thermo</td><td>4</td><td class="thgeo-p" data-art="RTBW350004">29 057 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtbb335004">BILINER B 350 Чёрный — 4 секц.</a></td><td>Royal Thermo</td><td>4</td><td class="thgeo-p" data-art="RTBB335004">30 781 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtbs335004">BILINER B 350 Серебристый — 4 секц.</a></td><td>Royal Thermo</td><td>4</td><td class="thgeo-p" data-art="RTBS335004">30 781 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtra335006">Revolution А 350 — 6 секц.</a></td><td>Royal Thermo</td><td>6</td><td class="thgeo-p" data-art="RTRA335006">30 872 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtbb350004">BILINER B 500 Чёрный — 4 секц.</a></td><td>Royal Thermo</td><td>4</td><td class="thgeo-p" data-art="RTBB350004">31 766 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtbs350004">BILINER B 500 Серебристый — 4 секц.</a></td><td>Royal Thermo</td><td>4</td><td class="thgeo-p" data-art="RTBS350004">31 766 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtra350006">Revolution А 500 — 6 секц.</a></td><td>Royal Thermo</td><td>6</td><td class="thgeo-p" data-art="RTRA350006">32 568 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtrb335006">Revolution B 350 — 6 секц.</a></td><td>Royal Thermo</td><td>6</td><td class="thgeo-p" data-art="RTRB335006">34 943 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtra335004">Revolution А 350 — 4 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">4</td><td class="thgeo-p" data-label="Цена" data-art="RTRA335004">20 581 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtra350004">Revolution А 500 — 4 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">4</td><td class="thgeo-p" data-label="Цена" data-art="RTRA350004">21 712 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtrb335004">Revolution B 350 — 4 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">4</td><td class="thgeo-p" data-label="Цена" data-art="RTRB335004">23 295 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtia3050004">INDIGO A 500 — 4 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">4</td><td class="thgeo-p" data-label="Цена" data-art="RTIA3050004">24 200 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtrb350004">Revolution B 500 — 4 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">4</td><td class="thgeo-p" data-label="Цена" data-art="RTRB350004">24 200 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtib3050004">INDIGO B 500 — 4 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">4</td><td class="thgeo-p" data-label="Цена" data-art="RTIB3050004">27 818 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtbw335004">BILINER B 350 Белый — 4 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">4</td><td class="thgeo-p" data-label="Цена" data-art="RTBW335004">27 826 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtbw350004">BILINER B 500 Белый — 4 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">4</td><td class="thgeo-p" data-label="Цена" data-art="RTBW350004">29 057 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtbb335004">BILINER B 350 Чёрный — 4 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">4</td><td class="thgeo-p" data-label="Цена" data-art="RTBB335004">30 781 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtbs335004">BILINER B 350 Серебристый — 4 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">4</td><td class="thgeo-p" data-label="Цена" data-art="RTBS335004">30 781 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtra335006">Revolution А 350 — 6 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">6</td><td class="thgeo-p" data-label="Цена" data-art="RTRA335006">30 872 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtbb350004">BILINER B 500 Чёрный — 4 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">4</td><td class="thgeo-p" data-label="Цена" data-art="RTBB350004">31 766 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtbs350004">BILINER B 500 Серебристый — 4 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">4</td><td class="thgeo-p" data-label="Цена" data-art="RTBS350004">31 766 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtra350006">Revolution А 500 — 6 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">6</td><td class="thgeo-p" data-label="Цена" data-art="RTRA350006">32 568 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=radiatory&amp;sl=royal-thermo-rtrb335006">Revolution B 350 — 6 секц.</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Секций">6</td><td class="thgeo-p" data-label="Цена" data-art="RTRB335006">34 943 ₸</td></tr>
 </tbody>
 </table>
 </div>

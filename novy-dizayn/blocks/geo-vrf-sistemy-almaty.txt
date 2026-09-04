@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>VRF и мини-VRF системы в Алматы</h1>
@@ -45,26 +59,27 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=mini-vrf">Весь каталог</a>
 <a class="tg2" href="https://podbor.tehnoholod369.kz/">Подобрать по площади</a>
 </div>
+
 <h2>Наружные блоки в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Мощность</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=gree-gmv-80wl-c-t">GMV-80WL/C-T</a></td><td>GREE</td><td>—</td><td class="thgeo-p" data-art="GMV-80WL/C-T">1 138 150 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=gree-gmv-120wl-c1-s">GMV-120WL/C1-S</a></td><td>GREE</td><td>—</td><td class="thgeo-p" data-art="GMV-120WL/C1-S">1 285 440 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=gree-gmv-121wl-c-t">GMV-121WL/C-T</a></td><td>GREE</td><td>—</td><td class="thgeo-p" data-art="GMV-121WL/C-T">1 285 440 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=gree-gmv-140wl-c1-s">GMV-140WL/C1-S</a></td><td>GREE</td><td>—</td><td class="thgeo-p" data-art="GMV-140WL/C1-S">1 339 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=gree-gmv-160wl-c1-s">GMV-160WL/C1-S</a></td><td>GREE</td><td>—</td><td class="thgeo-p" data-art="GMV-160WL/C1-S">1 471 722 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=gree-gmv-180wl-c1-s">GMV-180WL/C1-S</a></td><td>GREE</td><td>—</td><td class="thgeo-p" data-art="GMV-180WL/C1-S">1 560 225 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h330-sr1mv">ARV-H330/SR1MV</a></td><td>AUX</td><td>—</td><td class="thgeo-p" data-art="ARV-H330/SR1MV">3 304 179 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h400-sr1mv">ARV-H400/SR1MV</a></td><td>AUX</td><td>—</td><td class="thgeo-p" data-art="ARV-H400/SR1MV">4 159 058 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h450-sr1mv">ARV-H450/SR1MV</a></td><td>AUX</td><td>—</td><td class="thgeo-p" data-art="ARV-H450/SR1MV">4 501 139 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h500-sr1mv">ARV-H500/SR1MV</a></td><td>AUX</td><td>—</td><td class="thgeo-p" data-art="ARV-H500/SR1MV">5 224 753 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h560-sr1mv">ARV-H560/SR1MV</a></td><td>AUX</td><td>—</td><td class="thgeo-p" data-art="ARV-H560/SR1MV">5 963 077 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h610-sr1mv">ARV-H610/SR1MV</a></td><td>AUX</td><td>—</td><td class="thgeo-p" data-art="ARV-H610/SR1MV">6 126 855 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h680-sr1mv">ARV-H680/SR1MV</a></td><td>AUX</td><td>—</td><td class="thgeo-p" data-art="ARV-H680/SR1MV">6 200 824 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h730-sr1mv">ARV-H730/SR1MV</a></td><td>AUX</td><td>—</td><td class="thgeo-p" data-art="ARV-H730/SR1MV">7 423 456 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h785-sr1mv">ARV-H785/SR1MV</a></td><td>AUX</td><td>—</td><td class="thgeo-p" data-art="ARV-H785/SR1MV">8 301 016 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=gree-gmv-80wl-c-t">GMV-80WL/C-T</a></td><td data-label="Бренд">GREE</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="GMV-80WL/C-T">1 138 150 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=gree-gmv-120wl-c1-s">GMV-120WL/C1-S</a></td><td data-label="Бренд">GREE</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="GMV-120WL/C1-S">1 285 440 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=gree-gmv-121wl-c-t">GMV-121WL/C-T</a></td><td data-label="Бренд">GREE</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="GMV-121WL/C-T">1 285 440 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=gree-gmv-140wl-c1-s">GMV-140WL/C1-S</a></td><td data-label="Бренд">GREE</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="GMV-140WL/C1-S">1 339 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=gree-gmv-160wl-c1-s">GMV-160WL/C1-S</a></td><td data-label="Бренд">GREE</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="GMV-160WL/C1-S">1 471 722 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=gree-gmv-180wl-c1-s">GMV-180WL/C1-S</a></td><td data-label="Бренд">GREE</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="GMV-180WL/C1-S">1 560 225 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h330-sr1mv">ARV-H330/SR1MV</a></td><td data-label="Бренд">AUX</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="ARV-H330/SR1MV">3 304 179 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h400-sr1mv">ARV-H400/SR1MV</a></td><td data-label="Бренд">AUX</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="ARV-H400/SR1MV">4 159 058 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h450-sr1mv">ARV-H450/SR1MV</a></td><td data-label="Бренд">AUX</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="ARV-H450/SR1MV">4 501 139 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h500-sr1mv">ARV-H500/SR1MV</a></td><td data-label="Бренд">AUX</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="ARV-H500/SR1MV">5 224 753 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h560-sr1mv">ARV-H560/SR1MV</a></td><td data-label="Бренд">AUX</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="ARV-H560/SR1MV">5 963 077 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h610-sr1mv">ARV-H610/SR1MV</a></td><td data-label="Бренд">AUX</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="ARV-H610/SR1MV">6 126 855 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h680-sr1mv">ARV-H680/SR1MV</a></td><td data-label="Бренд">AUX</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="ARV-H680/SR1MV">6 200 824 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h730-sr1mv">ARV-H730/SR1MV</a></td><td data-label="Бренд">AUX</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="ARV-H730/SR1MV">7 423 456 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mini-vrf&amp;sl=aux-arv-h785-sr1mv">ARV-H785/SR1MV</a></td><td data-label="Бренд">AUX</td><td data-label="Мощность">—</td><td class="thgeo-p" data-label="Цена" data-art="ARV-H785/SR1MV">8 301 016 ₸</td></tr>
 </tbody>
 </table>
 </div>

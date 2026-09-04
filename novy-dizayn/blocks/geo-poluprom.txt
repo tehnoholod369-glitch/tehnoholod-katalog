@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h2>Полупромышленные кондиционеры в Алматы</h2>
@@ -42,26 +56,27 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=poluprom">Весь каталог</a>
 <a class="tg2" href="https://podbor.tehnoholod369.kz/">Подобрать по площади</a>
 </div>
+
 <h2>Примеры моделей в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=thaicon-tl-md25-fr">TL-MD25-FR</a></td><td>THAICON</td><td>до 27 м²</td><td class="thgeo-p" data-art="TL-MD25-FR">153 400 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=thaicon-tl-md35-fr">TL-MD35-FR</a></td><td>THAICON</td><td>до 36 м²</td><td class="thgeo-p" data-art="TL-MD35-FR">159 250 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=tcl-tcc-18chra-ui-04-tcc-18hra-uo-l-04-panel-mbq8-lcfa">LCAC кассетный TCC-18CHRA/UI(04) + TCC-18HRA/UO-L(04) + панель MBQ8-LCFA</a></td><td>TCL</td><td>до 53 м²</td><td class="thgeo-p" data-art="TCC-18CHRA/UI(04) + TCC-18HRA/UO-L(04) + панель MBQ8-LCFA">325 850 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=midea-mca3-12hrn1-q">Кассетные MCA3-12HRN1-Q</a></td><td>Midea</td><td>до 35 м²</td><td class="thgeo-p" data-art="MCA3-12HRN1-Q">325 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=tcl-tcc-18d2hra-ui-03-tcc-18hra-uo-l-04">LCAC канальный TCC-18D2HRA/UI(03) + TCC-18HRA/UO-L(04)</a></td><td>TCL</td><td>до 53 м²</td><td class="thgeo-p" data-art="TCC-18D2HRA/UI(03) + TCC-18HRA/UO-L(04)">335 650 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=ditreex-dfh-18n1dv">канальный DFH-18N1DV</a></td><td>DITREEX</td><td>до 50 м²</td><td class="thgeo-p" data-art="DFH-18N1DV">351 320 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=aux-alca-h18-4r1y">LCAC R410A ON/OFF ALCA-H18/4R1Y</a></td><td>AUX</td><td>до 55 м²</td><td class="thgeo-p" data-art="ALCA-H18/4R1Y">356 588 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=ballu-blc-c-18hn1-21y">UNIVERSAL III C-18HN1 кассетный</a></td><td>Ballu</td><td>до 53 м²</td><td class="thgeo-p" data-art="BLC_C-18HN1_21Y">361 119 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=cherbrooke-cdi-18hwn1-q-cox18hn1-q">CDI-18HWN1-Q/COX18HN1-Q</a></td><td>CHERBROOKE</td><td>до 54 м²</td><td class="thgeo-p" data-art="CDI-18HWN1-Q/COX18HN1-Q">361 800 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=cherbrooke-auk-18hr4sc1-aua-18h4sl1">AUK-18HR4SC1/AUA-18H4SL1</a></td><td>CHERBROOKE</td><td>до 55 м²</td><td class="thgeo-p" data-art="AUK-18HR4SC1/AUA-18H4SL1">367 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=haier-af25s2sd1fa">консольный Super Match AF25S2SD1FA</a></td><td>Haier</td><td>до 25 м²</td><td class="thgeo-p" data-art="AF25S2SD1FA">374 598 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=midea-mca3-18hrn1-q">Кассетные MCA3-18HRN1-Q</a></td><td>Midea</td><td>до 50 м²</td><td class="thgeo-p" data-art="MCA3-18HRN1-Q">375 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=funai-lac-dr55hp-d01-s">DRAGON LAC-DR55HP.D01/S</a></td><td>FUNAI</td><td>до 53 м²</td><td class="thgeo-p" data-art="LAC-DR55HP.D01/S">383 100 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=aux-almd-h18-4r1y">LCAC R410A ON/OFF ALMD-H18/4R1Y</a></td><td>AUX</td><td>до 55 м²</td><td class="thgeo-p" data-art="ALMD-H18/4R1Y">385 988 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=haier-ad25s2ss1fa">канальный Super Match AD25S2SS1FA</a></td><td>Haier</td><td>до 25 м²</td><td class="thgeo-p" data-art="AD25S2SS1FA">386 730 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=thaicon-tl-md25-fr">TL-MD25-FR</a></td><td data-label="Бренд">THAICON</td><td data-label="Площадь">до 27 м²</td><td class="thgeo-p" data-label="Цена" data-art="TL-MD25-FR">153 400 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=thaicon-tl-md35-fr">TL-MD35-FR</a></td><td data-label="Бренд">THAICON</td><td data-label="Площадь">до 36 м²</td><td class="thgeo-p" data-label="Цена" data-art="TL-MD35-FR">159 250 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=tcl-tcc-18chra-ui-04-tcc-18hra-uo-l-04-panel-mbq8-lcfa">LCAC кассетный TCC-18CHRA/UI(04) + TCC-18HRA/UO-L(04) + панель MBQ8-LCFA</a></td><td data-label="Бренд">TCL</td><td data-label="Площадь">до 53 м²</td><td class="thgeo-p" data-label="Цена" data-art="TCC-18CHRA/UI(04) + TCC-18HRA/UO-L(04) + панель MBQ8-LCFA">325 850 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=midea-mca3-12hrn1-q">Кассетные MCA3-12HRN1-Q</a></td><td data-label="Бренд">Midea</td><td data-label="Площадь">до 35 м²</td><td class="thgeo-p" data-label="Цена" data-art="MCA3-12HRN1-Q">325 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=tcl-tcc-18d2hra-ui-03-tcc-18hra-uo-l-04">LCAC канальный TCC-18D2HRA/UI(03) + TCC-18HRA/UO-L(04)</a></td><td data-label="Бренд">TCL</td><td data-label="Площадь">до 53 м²</td><td class="thgeo-p" data-label="Цена" data-art="TCC-18D2HRA/UI(03) + TCC-18HRA/UO-L(04)">335 650 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=ditreex-dfh-18n1dv">канальный DFH-18N1DV</a></td><td data-label="Бренд">DITREEX</td><td data-label="Площадь">до 50 м²</td><td class="thgeo-p" data-label="Цена" data-art="DFH-18N1DV">351 320 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=aux-alca-h18-4r1y">LCAC R410A ON/OFF ALCA-H18/4R1Y</a></td><td data-label="Бренд">AUX</td><td data-label="Площадь">до 55 м²</td><td class="thgeo-p" data-label="Цена" data-art="ALCA-H18/4R1Y">356 588 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=ballu-blc-c-18hn1-21y">UNIVERSAL III C-18HN1 кассетный</a></td><td data-label="Бренд">Ballu</td><td data-label="Площадь">до 53 м²</td><td class="thgeo-p" data-label="Цена" data-art="BLC_C-18HN1_21Y">361 119 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=cherbrooke-cdi-18hwn1-q-cox18hn1-q">CDI-18HWN1-Q/COX18HN1-Q</a></td><td data-label="Бренд">CHERBROOKE</td><td data-label="Площадь">до 54 м²</td><td class="thgeo-p" data-label="Цена" data-art="CDI-18HWN1-Q/COX18HN1-Q">361 800 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=cherbrooke-auk-18hr4sc1-aua-18h4sl1">AUK-18HR4SC1/AUA-18H4SL1</a></td><td data-label="Бренд">CHERBROOKE</td><td data-label="Площадь">до 55 м²</td><td class="thgeo-p" data-label="Цена" data-art="AUK-18HR4SC1/AUA-18H4SL1">367 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=haier-af25s2sd1fa">консольный Super Match AF25S2SD1FA</a></td><td data-label="Бренд">Haier</td><td data-label="Площадь">до 25 м²</td><td class="thgeo-p" data-label="Цена" data-art="AF25S2SD1FA">374 598 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=midea-mca3-18hrn1-q">Кассетные MCA3-18HRN1-Q</a></td><td data-label="Бренд">Midea</td><td data-label="Площадь">до 50 м²</td><td class="thgeo-p" data-label="Цена" data-art="MCA3-18HRN1-Q">375 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=funai-lac-dr55hp-d01-s">DRAGON LAC-DR55HP.D01/S</a></td><td data-label="Бренд">FUNAI</td><td data-label="Площадь">до 53 м²</td><td class="thgeo-p" data-label="Цена" data-art="LAC-DR55HP.D01/S">383 100 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=aux-almd-h18-4r1y">LCAC R410A ON/OFF ALMD-H18/4R1Y</a></td><td data-label="Бренд">AUX</td><td data-label="Площадь">до 55 м²</td><td class="thgeo-p" data-label="Цена" data-art="ALMD-H18/4R1Y">385 988 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=haier-ad25s2ss1fa">канальный Super Match AD25S2SS1FA</a></td><td data-label="Бренд">Haier</td><td data-label="Площадь">до 25 м²</td><td class="thgeo-p" data-label="Цена" data-art="AD25S2SS1FA">386 730 ₸</td></tr>
 </tbody>
 </table>
 </div>

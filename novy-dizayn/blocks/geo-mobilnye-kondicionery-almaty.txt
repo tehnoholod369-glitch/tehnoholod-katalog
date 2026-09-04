@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Мобильные кондиционеры в Алматы — без монтажа</h1>
@@ -43,26 +57,27 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=mobilnye">Весь каталог</a>
 <a class="tg2" href="https://podbor.tehnoholod369.kz/">Подобрать по площади</a>
 </div>
+
 <h2>Модели в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=shuft-kf-n6">Frigo SFPAC-07 KF/N6</a></td><td>SHUFT</td><td>—</td><td class="thgeo-p" data-art="KF/N6">144 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=ballu-or-n6">Orbis BPAC-07 OR/N6</a></td><td>Ballu</td><td>18 м²</td><td class="thgeo-p" data-art="OR/N6">147 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=shuft-kf-n6-2">Frigo SFPAC-09 KF/N6</a></td><td>SHUFT</td><td>—</td><td class="thgeo-p" data-art="KF/N6">157 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=electrolux-az-n6">Arizona EACM-09 AZ/N6</a></td><td>Electrolux</td><td>24 м²</td><td class="thgeo-p" data-art="AZ/N6">165 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=ballu-or-n6-2">Orbis BPAC-09 OR/N6</a></td><td>Ballu</td><td>23 м²</td><td class="thgeo-p" data-art="OR/N6">169 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=ballu-cp-n1">Aura BPAC-09 CP/N1</a></td><td>Ballu</td><td>24 м²</td><td class="thgeo-p" data-art="CP/N1">178 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=royal-clima-rm-ts28ch-e">RM-TS28CH-E</a></td><td>ROYAL CLIMA</td><td>20 м²</td><td class="thgeo-p" data-art="RM-TS28CH-E">182 500 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=royal-clima-rm-mt28ch-e">RM-MT28CH-E</a></td><td>ROYAL CLIMA</td><td>20 м²</td><td class="thgeo-p" data-art="RM-MT28CH-E">183 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=electrolux-cl-n3">EACM-13 CL/N3</a></td><td>Electrolux</td><td>32 м²</td><td class="thgeo-p" data-art="CL/N3">185 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=midea-mppda-09crn7">MPPDA-09CRN7</a></td><td>Midea</td><td>25 м²</td><td class="thgeo-p" data-art="MPPDA-09CRN7">187 375 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=electrolux-az-n6-2">Arizona EACM-12 AZ/N6</a></td><td>Electrolux</td><td>30 м²</td><td class="thgeo-p" data-art="AZ/N6">195 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=electrolux-cl-n3-2">EACM-11 CL/N3</a></td><td>Electrolux</td><td>27 м²</td><td class="thgeo-p" data-art="CL/N3">205 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=ballu-cp-n1-2">Aura BPAC-12 CP/N1</a></td><td>Ballu</td><td>30 м²</td><td class="thgeo-p" data-art="CP/N1">225 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=electrolux-az-n6-3">Arizona EACM-14 AZ/N6</a></td><td>Electrolux</td><td>35 м²</td><td class="thgeo-p" data-art="AZ/N6">225 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=royal-clima-rm-cr39hh-e">RM-CR39HH-E</a></td><td>ROYAL CLIMA</td><td>27 м²</td><td class="thgeo-p" data-art="RM-CR39HH-E">307 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=shuft-kf-n6">Frigo SFPAC-07 KF/N6</a></td><td data-label="Бренд">SHUFT</td><td data-label="Площадь">—</td><td class="thgeo-p" data-label="Цена" data-art="KF/N6">144 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=ballu-or-n6">Orbis BPAC-07 OR/N6</a></td><td data-label="Бренд">Ballu</td><td data-label="Площадь">18 м²</td><td class="thgeo-p" data-label="Цена" data-art="OR/N6">147 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=shuft-kf-n6-2">Frigo SFPAC-09 KF/N6</a></td><td data-label="Бренд">SHUFT</td><td data-label="Площадь">—</td><td class="thgeo-p" data-label="Цена" data-art="KF/N6">157 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=electrolux-az-n6">Arizona EACM-09 AZ/N6</a></td><td data-label="Бренд">Electrolux</td><td data-label="Площадь">24 м²</td><td class="thgeo-p" data-label="Цена" data-art="AZ/N6">165 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=ballu-or-n6-2">Orbis BPAC-09 OR/N6</a></td><td data-label="Бренд">Ballu</td><td data-label="Площадь">23 м²</td><td class="thgeo-p" data-label="Цена" data-art="OR/N6">169 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=ballu-cp-n1">Aura BPAC-09 CP/N1</a></td><td data-label="Бренд">Ballu</td><td data-label="Площадь">24 м²</td><td class="thgeo-p" data-label="Цена" data-art="CP/N1">178 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=royal-clima-rm-ts28ch-e">RM-TS28CH-E</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Площадь">20 м²</td><td class="thgeo-p" data-label="Цена" data-art="RM-TS28CH-E">182 500 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=royal-clima-rm-mt28ch-e">RM-MT28CH-E</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Площадь">20 м²</td><td class="thgeo-p" data-label="Цена" data-art="RM-MT28CH-E">183 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=electrolux-cl-n3">EACM-13 CL/N3</a></td><td data-label="Бренд">Electrolux</td><td data-label="Площадь">32 м²</td><td class="thgeo-p" data-label="Цена" data-art="CL/N3">185 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=midea-mppda-09crn7">MPPDA-09CRN7</a></td><td data-label="Бренд">Midea</td><td data-label="Площадь">25 м²</td><td class="thgeo-p" data-label="Цена" data-art="MPPDA-09CRN7">187 375 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=electrolux-az-n6-2">Arizona EACM-12 AZ/N6</a></td><td data-label="Бренд">Electrolux</td><td data-label="Площадь">30 м²</td><td class="thgeo-p" data-label="Цена" data-art="AZ/N6">195 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=electrolux-cl-n3-2">EACM-11 CL/N3</a></td><td data-label="Бренд">Electrolux</td><td data-label="Площадь">27 м²</td><td class="thgeo-p" data-label="Цена" data-art="CL/N3">205 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=ballu-cp-n1-2">Aura BPAC-12 CP/N1</a></td><td data-label="Бренд">Ballu</td><td data-label="Площадь">30 м²</td><td class="thgeo-p" data-label="Цена" data-art="CP/N1">225 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=electrolux-az-n6-3">Arizona EACM-14 AZ/N6</a></td><td data-label="Бренд">Electrolux</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="AZ/N6">225 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=mobilnye&amp;sl=royal-clima-rm-cr39hh-e">RM-CR39HH-E</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Площадь">27 м²</td><td class="thgeo-p" data-label="Цена" data-art="RM-CR39HH-E">307 000 ₸</td></tr>
 </tbody>
 </table>
 </div>

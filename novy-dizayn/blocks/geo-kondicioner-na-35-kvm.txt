@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Кондиционер на комнату 35 м² — какой выбрать</h1>
@@ -44,26 +58,29 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=bytovye">Весь каталог</a>
 <a class="tg2" href="https://podbor.tehnoholod369.kz/">Подобрать по площади</a>
 </div>
+<h2>Кондиционер по площади помещения</h2>
+<div class="thgeo-area"><a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">до 25 м²</a>до 50 м²<a href="https://podbor.tehnoholod369.kz/">Другая площадь</a></div>
+<p class="thgeo-note">Площадь — первый ориентир, а не весь расчёт. На мощность влияют окна и сторона света, высота потолков, сколько людей и техники в комнате. Точный подбор — в калькуляторе или по опросному листу.</p>
 <h2>Модели в наличии на 33–38 м²</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ditreex-dtxs-12k6xa61b">ON/OFF DTXS-12K6XA61B</a></td><td>DITREEX</td><td>35 м²</td><td class="thgeo-p" data-art="DTXS-12K6XA61B">141 254 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsae-12hrn8">iERA MDSAE-12HRN8 / MDOAE-12HN8</a></td><td>MDV</td><td>35 м²</td><td class="thgeo-p" data-art="MDSAE-12HRN8">165 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=royal-clima-rc-gl35hn">GLORIA RC-GL35HN</a></td><td>ROYAL CLIMA</td><td>36,4 м²</td><td class="thgeo-p" data-art="RC-GL35HN">168 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=cherbrooke-asa-12-hr4k1-aoa-12-hr4k1">ASA-12 HR4K1/AOA-12 HR4K1</a></td><td>CHERBROOKE</td><td>35 м²</td><td class="thgeo-p" data-art="ASA-12 HR4K1/AOA-12 HR4K1">169 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ditreex-dtxs-12d6xac1b">Inverter DTXS-12D6XAC1B</a></td><td>DITREEX</td><td>35 м²</td><td class="thgeo-p" data-art="DTXS-12D6XAC1B">171 495 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=midea-msab-12hrn8">AURORA 3 MSAB-12HRN8</a></td><td>Midea</td><td>35 м²</td><td class="thgeo-p" data-art="MSAB-12HRN8">178 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ballu-bso-12hn8-ik">Olympio Pro BSO-12HN8/IK</a></td><td>Ballu</td><td>35 м²</td><td class="thgeo-p" data-art="BSO-12HN8/IK">179 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=royal-clima-rci-ar35hn">ARIA DC Inverter RCI-AR35HN</a></td><td>ROYAL CLIMA</td><td>35 м²</td><td class="thgeo-p" data-art="RCI-AR35HN">181 800 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=thaicon-tl-rwb35-vr-tl-rob35-vr">Balance inv TL-RWB35-VR / TL-ROB35-VR</a></td><td>THAICON</td><td>35 м²</td><td class="thgeo-p" data-art="TL-RWB35-VR / TL-ROB35-VR">183 300 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=gree-gwh12acbxb-k3nna1b">Fairy GWH12ACBXB-K3NNA1B</a></td><td>GREE</td><td>35 м²</td><td class="thgeo-p" data-art="GWH12ACBXB-K3NNA1B">183 469 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=gree-gwh12afbxb-k3nna1b">Muse GWH12AFBXB-K3NNA1B</a></td><td>GREE</td><td>35 м²</td><td class="thgeo-p" data-art="GWH12AFBXB-K3NNA1B">183 469 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=thaicon-tl-rwc35-nr-tl-roc35-nr">Comfort+ TL-RWC35-NR / TL-ROC35-NR</a></td><td>THAICON</td><td>35 м²</td><td class="thgeo-p" data-art="TL-RWC35-NR / TL-ROC35-NR">189 150 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=midea-msaa-12hrn8">AURORA 2 MSAA-12HRN8</a></td><td>Midea</td><td>35 м²</td><td class="thgeo-p" data-art="MSAA-12HRN8">189 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ballu-bsti-12hn8-ik">Tessey DC BSTI-12HN8/IK</a></td><td>Ballu</td><td>35 м²</td><td class="thgeo-p" data-art="BSTI-12HN8/IK">189 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=cherbrooke-asv-12ur4k1-aov-12ur4k1">ASV-12UR4K1/AOV-12UR4K1</a></td><td>CHERBROOKE</td><td>35 м²</td><td class="thgeo-p" data-art="ASV-12UR4K1/AOV-12UR4K1">194 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ditreex-dtxs-12k6xa61b">ON/OFF DTXS-12K6XA61B</a></td><td data-label="Бренд">DITREEX</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="DTXS-12K6XA61B">141 254 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsae-12hrn8">iERA MDSAE-12HRN8 / MDOAE-12HN8</a></td><td data-label="Бренд">MDV</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="MDSAE-12HRN8">165 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=royal-clima-rc-gl35hn">GLORIA RC-GL35HN</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Площадь">36,4 м²</td><td class="thgeo-p" data-label="Цена" data-art="RC-GL35HN">168 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=cherbrooke-asa-12-hr4k1-aoa-12-hr4k1">ASA-12 HR4K1/AOA-12 HR4K1</a></td><td data-label="Бренд">CHERBROOKE</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="ASA-12 HR4K1/AOA-12 HR4K1">169 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ditreex-dtxs-12d6xac1b">Inverter DTXS-12D6XAC1B</a></td><td data-label="Бренд">DITREEX</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="DTXS-12D6XAC1B">171 495 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=midea-msab-12hrn8">AURORA 3 MSAB-12HRN8</a></td><td data-label="Бренд">Midea</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="MSAB-12HRN8">178 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ballu-bso-12hn8-ik">Olympio Pro BSO-12HN8/IK</a></td><td data-label="Бренд">Ballu</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="BSO-12HN8/IK">179 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=royal-clima-rci-ar35hn">ARIA DC Inverter RCI-AR35HN</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="RCI-AR35HN">181 800 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=thaicon-tl-rwb35-vr-tl-rob35-vr">Balance inv TL-RWB35-VR / TL-ROB35-VR</a></td><td data-label="Бренд">THAICON</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="TL-RWB35-VR / TL-ROB35-VR">183 300 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=gree-gwh12acbxb-k3nna1b">Fairy GWH12ACBXB-K3NNA1B</a></td><td data-label="Бренд">GREE</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="GWH12ACBXB-K3NNA1B">183 469 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=gree-gwh12afbxb-k3nna1b">Muse GWH12AFBXB-K3NNA1B</a></td><td data-label="Бренд">GREE</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="GWH12AFBXB-K3NNA1B">183 469 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=thaicon-tl-rwc35-nr-tl-roc35-nr">Comfort+ TL-RWC35-NR / TL-ROC35-NR</a></td><td data-label="Бренд">THAICON</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="TL-RWC35-NR / TL-ROC35-NR">189 150 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=midea-msaa-12hrn8">AURORA 2 MSAA-12HRN8</a></td><td data-label="Бренд">Midea</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="MSAA-12HRN8">189 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ballu-bsti-12hn8-ik">Tessey DC BSTI-12HN8/IK</a></td><td data-label="Бренд">Ballu</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="BSTI-12HN8/IK">189 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=cherbrooke-asv-12ur4k1-aov-12ur4k1">ASV-12UR4K1/AOV-12UR4K1</a></td><td data-label="Бренд">CHERBROOKE</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="ASV-12UR4K1/AOV-12UR4K1">194 900 ₸</td></tr>
 </tbody>
 </table>
 </div>

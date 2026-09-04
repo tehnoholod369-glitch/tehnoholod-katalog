@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Проточные водонагреватели в Алматы</h1>
@@ -43,26 +57,27 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=vodonagrevateli">Весь каталог</a>
 
 </div>
+
 <h2>Проточные модели в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Мощность</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-royal-thermo-quicktap-black-3-3-kvt-1-48-l-min">QuickTap (Black)</a></td><td>Royal Thermo</td><td>3,3 кВт</td><td class="thgeo-p" data-art="">15 590 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-royal-thermo-quicktap-white-3-3-kvt-1-48-l-min">QuickTap (White)</a></td><td>Royal Thermo</td><td>3,3 кВт</td><td class="thgeo-p" data-art="">15 590 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=ballu-3-logic">3-logic TS (3</a></td><td>Ballu</td><td>3,5 кВт</td><td class="thgeo-p" data-art="3-logic">18 644 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=ballu-3-logic-2">3-logic TS (5</a></td><td>Ballu</td><td>5,5 кВт</td><td class="thgeo-p" data-art="3-logic">19 284 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-electrolux-taptronic-white-3-3-kvt-1-48-l-min">Taptronic (White)</a></td><td>Electrolux</td><td>3,3 кВт</td><td class="thgeo-p" data-art="">19 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-electrolux-taptronic-black-3-3-kvt-1-48-l-min">Taptronic (Black)</a></td><td>Electrolux</td><td>3,3 кВт</td><td class="thgeo-p" data-art="">19 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-royal-thermo-smartfix-s-5-5-kw-dush-5-5-kvt-3-1-l-min">Smartfix S (5</a></td><td>Royal Thermo</td><td>5,5 кВт</td><td class="thgeo-p" data-art="">20 790 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-royal-thermo-smartfix-t-5-5-kw-kran-5-5-kvt-3-1-l-min">SmartFix T (5</a></td><td>Royal Thermo</td><td>5,5 кВт</td><td class="thgeo-p" data-art="">20 790 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-royal-thermo-smartfix-ts-5-5-kw-kran-dush-5-5-kvt-3-1-l-min">SmartFix TS (5</a></td><td>Royal Thermo</td><td>5,5 кВт</td><td class="thgeo-p" data-art="">20 790 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-royal-thermo-smartfix-ts-6-5-kw-kran-dush-6-5-kvt-3-7-l-min">SmartFix TS (6</a></td><td>Royal Thermo</td><td>6,5 кВт</td><td class="thgeo-p" data-art="">21 830 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-electrolux-taptronic-s-3-3-kvt-1-48-l-min">Taptronic S</a></td><td>Electrolux</td><td>3,3 кВт</td><td class="thgeo-p" data-art="">31 924 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=electrolux-np-4-aquatronic-2-0">NP 4 AQUATRONIC 2.0</a></td><td>Electrolux</td><td>4 кВт</td><td class="thgeo-p" data-art="NP 4 AQUATRONIC 2.0">48 609 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=electrolux-np-6-aquatronic-2-0">NP 6 AQUATRONIC 2.0</a></td><td>Electrolux</td><td>5,5 кВт</td><td class="thgeo-p" data-art="NP 6 AQUATRONIC 2.0">56 675 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=electrolux-npx-6-aquatronic-digital-2-0">NPX 6 AQUATRONIC DIGITAL 2.0</a></td><td>Electrolux</td><td>5,7 кВт</td><td class="thgeo-p" data-art="NPX 6 AQUATRONIC DIGITAL 2.0">74 576 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=philips-85hb">AWH1011/51(85HB)</a></td><td>PHILIPS</td><td>8,5/-/-</td><td class="thgeo-p" data-art="85HB">130 330 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-royal-thermo-quicktap-black-3-3-kvt-1-48-l-min">QuickTap (Black)</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Мощность">3,3 кВт</td><td class="thgeo-p" data-label="Цена" data-art="">15 590 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-royal-thermo-quicktap-white-3-3-kvt-1-48-l-min">QuickTap (White)</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Мощность">3,3 кВт</td><td class="thgeo-p" data-label="Цена" data-art="">15 590 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=ballu-3-logic">3-logic TS (3</a></td><td data-label="Бренд">Ballu</td><td data-label="Мощность">3,5 кВт</td><td class="thgeo-p" data-label="Цена" data-art="3-logic">18 644 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=ballu-3-logic-2">3-logic TS (5</a></td><td data-label="Бренд">Ballu</td><td data-label="Мощность">5,5 кВт</td><td class="thgeo-p" data-label="Цена" data-art="3-logic">19 284 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-electrolux-taptronic-white-3-3-kvt-1-48-l-min">Taptronic (White)</a></td><td data-label="Бренд">Electrolux</td><td data-label="Мощность">3,3 кВт</td><td class="thgeo-p" data-label="Цена" data-art="">19 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-electrolux-taptronic-black-3-3-kvt-1-48-l-min">Taptronic (Black)</a></td><td data-label="Бренд">Electrolux</td><td data-label="Мощность">3,3 кВт</td><td class="thgeo-p" data-label="Цена" data-art="">19 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-royal-thermo-smartfix-s-5-5-kw-dush-5-5-kvt-3-1-l-min">Smartfix S (5</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Мощность">5,5 кВт</td><td class="thgeo-p" data-label="Цена" data-art="">20 790 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-royal-thermo-smartfix-t-5-5-kw-kran-5-5-kvt-3-1-l-min">SmartFix T (5</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Мощность">5,5 кВт</td><td class="thgeo-p" data-label="Цена" data-art="">20 790 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-royal-thermo-smartfix-ts-5-5-kw-kran-dush-5-5-kvt-3-1-l-min">SmartFix TS (5</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Мощность">5,5 кВт</td><td class="thgeo-p" data-label="Цена" data-art="">20 790 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-royal-thermo-smartfix-ts-6-5-kw-kran-dush-6-5-kvt-3-7-l-min">SmartFix TS (6</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Мощность">6,5 кВт</td><td class="thgeo-p" data-label="Цена" data-art="">21 830 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=vodonagrevatel-electrolux-taptronic-s-3-3-kvt-1-48-l-min">Taptronic S</a></td><td data-label="Бренд">Electrolux</td><td data-label="Мощность">3,3 кВт</td><td class="thgeo-p" data-label="Цена" data-art="">31 924 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=electrolux-np-4-aquatronic-2-0">NP 4 AQUATRONIC 2.0</a></td><td data-label="Бренд">Electrolux</td><td data-label="Мощность">4 кВт</td><td class="thgeo-p" data-label="Цена" data-art="NP 4 AQUATRONIC 2.0">48 609 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=electrolux-np-6-aquatronic-2-0">NP 6 AQUATRONIC 2.0</a></td><td data-label="Бренд">Electrolux</td><td data-label="Мощность">5,5 кВт</td><td class="thgeo-p" data-label="Цена" data-art="NP 6 AQUATRONIC 2.0">56 675 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=electrolux-npx-6-aquatronic-digital-2-0">NPX 6 AQUATRONIC DIGITAL 2.0</a></td><td data-label="Бренд">Electrolux</td><td data-label="Мощность">5,7 кВт</td><td class="thgeo-p" data-label="Цена" data-art="NPX 6 AQUATRONIC DIGITAL 2.0">74 576 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=vodonagrevateli&amp;sl=philips-85hb">AWH1011/51(85HB)</a></td><td data-label="Бренд">PHILIPS</td><td data-label="Мощность">8,5/-/-</td><td class="thgeo-p" data-label="Цена" data-art="85HB">130 330 ₸</td></tr>
 </tbody>
 </table>
 </div>

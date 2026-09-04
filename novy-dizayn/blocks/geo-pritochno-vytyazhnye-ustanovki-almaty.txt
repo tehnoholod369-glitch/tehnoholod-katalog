@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Приточно-вытяжные установки с рекуперацией в Алматы</h1>
@@ -44,26 +58,27 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=ventilyaciya">Весь каталог</a>
 
 </div>
+
 <h2>Установки в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Производительность</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=funai-erw-60x">ERW-60X</a></td><td>FUNAI</td><td>60 м³/ч</td><td class="thgeo-p" data-art="ERW-60X">293 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=funai-erw-150x-p">ERW-150X.P</a></td><td>FUNAI</td><td>150 м³/ч</td><td class="thgeo-p" data-art="ERW-150X.P">402 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=funai-erw-150x-d">ERW-150X.D</a></td><td>FUNAI</td><td>150 м³/ч</td><td class="thgeo-p" data-art="ERW-150X.D">402 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-clima-rcs-350-u">RCS-350-U 4.0</a></td><td>ROYAL CLIMA</td><td>350 м³/ч</td><td class="thgeo-p" data-art="RCS-350-U">543 784 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-pvs-450">Star PVS-450</a></td><td>SHUFT</td><td>450 м³/ч</td><td class="thgeo-p" data-art="PVS-450">571 339 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-clima-rcs-500-u">RCS-500-U 4.0</a></td><td>ROYAL CLIMA</td><td>500 м³/ч</td><td class="thgeo-p" data-art="RCS-500-U">602 759 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-pvs-650">Star PVS-650</a></td><td>SHUFT</td><td>650 м³/ч</td><td class="thgeo-p" data-art="PVS-650">666 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-clima-rcs-200-p">RCS-200-P 3.0</a></td><td>ROYAL CLIMA</td><td>200 м³/ч</td><td class="thgeo-p" data-art="RCS-200-P">689 724 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-clima-rcs-250-p">RCS-250-P</a></td><td>ROYAL CLIMA</td><td>230 м³/ч</td><td class="thgeo-p" data-art="RCS-250-P">718 936 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-rvx-600">Universe RVX-600 inv</a></td><td>SHUFT</td><td>600 м³/ч</td><td class="thgeo-p" data-art="RVX-600">1 008 165 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-pvs-1100">Star PVS-1100</a></td><td>SHUFT</td><td>1100 м³/ч</td><td class="thgeo-p" data-art="PVS-1100">1 124 800 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpvp-800-he">ZPVP 800 HE</a></td><td>COMPACTAIR by ZILON</td><td>810 м³/ч</td><td class="thgeo-p" data-art="ZPVP 800 HE">1 653 347 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpvp-450-vel">ZPVP 450 VEL</a></td><td>COMPACTAIR by ZILON</td><td>460 м³/ч</td><td class="thgeo-p" data-art="ZPVP 450 VEL">1 821 287 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpvp-450-hw">ZPVP 450 HW</a></td><td>COMPACTAIR by ZILON</td><td>420 м³/ч</td><td class="thgeo-p" data-art="ZPVP 450 HW">2 092 242 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpvp-800-hw">ZPVP 800 HW</a></td><td>COMPACTAIR by ZILON</td><td>810 м³/ч</td><td class="thgeo-p" data-art="ZPVP 800 HW">2 152 402 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=funai-erw-60x">ERW-60X</a></td><td data-label="Бренд">FUNAI</td><td data-label="Производительность">60 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ERW-60X">293 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=funai-erw-150x-p">ERW-150X.P</a></td><td data-label="Бренд">FUNAI</td><td data-label="Производительность">150 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ERW-150X.P">402 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=funai-erw-150x-d">ERW-150X.D</a></td><td data-label="Бренд">FUNAI</td><td data-label="Производительность">150 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ERW-150X.D">402 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-clima-rcs-350-u">RCS-350-U 4.0</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Производительность">350 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="RCS-350-U">543 784 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-pvs-450">Star PVS-450</a></td><td data-label="Бренд">SHUFT</td><td data-label="Производительность">450 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="PVS-450">571 339 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-clima-rcs-500-u">RCS-500-U 4.0</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Производительность">500 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="RCS-500-U">602 759 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-pvs-650">Star PVS-650</a></td><td data-label="Бренд">SHUFT</td><td data-label="Производительность">650 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="PVS-650">666 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-clima-rcs-200-p">RCS-200-P 3.0</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Производительность">200 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="RCS-200-P">689 724 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-clima-rcs-250-p">RCS-250-P</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Производительность">230 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="RCS-250-P">718 936 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-rvx-600">Universe RVX-600 inv</a></td><td data-label="Бренд">SHUFT</td><td data-label="Производительность">600 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="RVX-600">1 008 165 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-pvs-1100">Star PVS-1100</a></td><td data-label="Бренд">SHUFT</td><td data-label="Производительность">1100 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="PVS-1100">1 124 800 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpvp-800-he">ZPVP 800 HE</a></td><td data-label="Бренд">COMPACTAIR by ZILON</td><td data-label="Производительность">810 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ZPVP 800 HE">1 653 347 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpvp-450-vel">ZPVP 450 VEL</a></td><td data-label="Бренд">COMPACTAIR by ZILON</td><td data-label="Производительность">460 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ZPVP 450 VEL">1 821 287 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpvp-450-hw">ZPVP 450 HW</a></td><td data-label="Бренд">COMPACTAIR by ZILON</td><td data-label="Производительность">420 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ZPVP 450 HW">2 092 242 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpvp-800-hw">ZPVP 800 HW</a></td><td data-label="Бренд">COMPACTAIR by ZILON</td><td data-label="Производительность">810 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ZPVP 800 HW">2 152 402 ₸</td></tr>
 </tbody>
 </table>
 </div>

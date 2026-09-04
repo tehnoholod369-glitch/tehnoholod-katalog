@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Приточные установки в Алматы</h1>
@@ -44,26 +58,27 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=ventilyaciya">Весь каталог</a>
 
 </div>
+
 <h2>Приточные установки в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Производительность</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-80">ONEAIR ASP-80</a></td><td>Ballu</td><td>80 м³/ч</td><td class="thgeo-p" data-art="ASP-80">114 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100">ONEAIR ASP-100</a></td><td>Ballu</td><td>125 м³/ч</td><td class="thgeo-p" data-art="ASP-100">203 390 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100w">ONEAIR ASP-100W</a></td><td>Ballu</td><td>125 м³/ч</td><td class="thgeo-p" data-art="ASP-100W">203 390 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200s">ONEAIR ASP-200S</a></td><td>Ballu</td><td>200 м³/ч</td><td class="thgeo-p" data-art="ASP-200S">327 590 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sp">ONEAIR ASP-200SP</a></td><td>Ballu</td><td>200 м³/ч</td><td class="thgeo-p" data-art="ASP-200SP">327 590 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-airtube-315">приточная AIRTUBE 315</a></td><td>SHUFT</td><td>1300 м³/ч</td><td class="thgeo-p" data-art="AIRTUBE 315">348 567 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpe-2000-5">ZPE 2000-5</a></td><td>COMPACTAIR by ZILON</td><td>1900 м³/ч</td><td class="thgeo-p" data-art="ZPE 2000-5">649 124 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-2000-1-w">приточная компактная моноблочная CAU 2000/1-W VIM</a></td><td>SHUFT</td><td>2000 м³/ч</td><td class="thgeo-p" data-art="2000/1-W">699 320 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpw-2000-14-l1">ZPW 2000 / 14 L1</a></td><td>COMPACTAIR by ZILON</td><td>1540 м³/ч</td><td class="thgeo-p" data-art="ZPW 2000 / 14 L1">768 824 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpw-2000-14-l3">ZPW 2000 / 14 L3</a></td><td>COMPACTAIR by ZILON</td><td>1620 м³/ч</td><td class="thgeo-p" data-art="ZPW 2000 / 14 L3">770 253 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-cau-2000-1-12">приточная компактная моноблочная CAU 2000/1-12</a></td><td>SHUFT</td><td>2000 м³/ч</td><td class="thgeo-p" data-art="CAU 2000/1-12">819 110 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpe-2000-9">ZPE 2000-9</a></td><td>COMPACTAIR by ZILON</td><td>1900 м³/ч</td><td class="thgeo-p" data-art="ZPE 2000-9">835 724 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpe-2000-12">ZPE 2000-12</a></td><td>COMPACTAIR by ZILON</td><td>1900 м³/ч</td><td class="thgeo-p" data-art="ZPE 2000-12">901 568 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-eco-slim-1100-15">приточная ECO-SLIM 1100-15</a></td><td>SHUFT</td><td>1300 м³/ч</td><td class="thgeo-p" data-art="ECO-SLIM 1100-15">1 189 974 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-cau-4000-3-22">приточная компактная моноблочная CAU 4000/3-22</a></td><td>SHUFT</td><td>4000 м³/ч</td><td class="thgeo-p" data-art="CAU 4000/3-22">1 232 757 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-80">ONEAIR ASP-80</a></td><td data-label="Бренд">Ballu</td><td data-label="Производительность">80 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ASP-80">114 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100">ONEAIR ASP-100</a></td><td data-label="Бренд">Ballu</td><td data-label="Производительность">125 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ASP-100">203 390 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100w">ONEAIR ASP-100W</a></td><td data-label="Бренд">Ballu</td><td data-label="Производительность">125 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ASP-100W">203 390 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200s">ONEAIR ASP-200S</a></td><td data-label="Бренд">Ballu</td><td data-label="Производительность">200 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ASP-200S">327 590 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sp">ONEAIR ASP-200SP</a></td><td data-label="Бренд">Ballu</td><td data-label="Производительность">200 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ASP-200SP">327 590 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-airtube-315">приточная AIRTUBE 315</a></td><td data-label="Бренд">SHUFT</td><td data-label="Производительность">1300 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="AIRTUBE 315">348 567 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpe-2000-5">ZPE 2000-5</a></td><td data-label="Бренд">COMPACTAIR by ZILON</td><td data-label="Производительность">1900 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ZPE 2000-5">649 124 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-2000-1-w">приточная компактная моноблочная CAU 2000/1-W VIM</a></td><td data-label="Бренд">SHUFT</td><td data-label="Производительность">2000 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="2000/1-W">699 320 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpw-2000-14-l1">ZPW 2000 / 14 L1</a></td><td data-label="Бренд">COMPACTAIR by ZILON</td><td data-label="Производительность">1540 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ZPW 2000 / 14 L1">768 824 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpw-2000-14-l3">ZPW 2000 / 14 L3</a></td><td data-label="Бренд">COMPACTAIR by ZILON</td><td data-label="Производительность">1620 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ZPW 2000 / 14 L3">770 253 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-cau-2000-1-12">приточная компактная моноблочная CAU 2000/1-12</a></td><td data-label="Бренд">SHUFT</td><td data-label="Производительность">2000 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="CAU 2000/1-12">819 110 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpe-2000-9">ZPE 2000-9</a></td><td data-label="Бренд">COMPACTAIR by ZILON</td><td data-label="Производительность">1900 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ZPE 2000-9">835 724 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=compactair-by-zilon-zpe-2000-12">ZPE 2000-12</a></td><td data-label="Бренд">COMPACTAIR by ZILON</td><td data-label="Производительность">1900 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ZPE 2000-12">901 568 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-eco-slim-1100-15">приточная ECO-SLIM 1100-15</a></td><td data-label="Бренд">SHUFT</td><td data-label="Производительность">1300 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="ECO-SLIM 1100-15">1 189 974 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=shuft-cau-4000-3-22">приточная компактная моноблочная CAU 4000/3-22</a></td><td data-label="Бренд">SHUFT</td><td data-label="Производительность">4000 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="CAU 4000/3-22">1 232 757 ₸</td></tr>
 </tbody>
 </table>
 </div>

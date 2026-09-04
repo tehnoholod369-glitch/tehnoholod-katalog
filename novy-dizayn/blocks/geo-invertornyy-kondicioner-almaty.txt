@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Инверторные кондиционеры в Алматы</h1>
@@ -44,26 +58,29 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=bytovye">Весь каталог</a>
 <a class="tg2" href="https://podbor.tehnoholod369.kz/">Подобрать по площади</a>
 </div>
+<h2>Кондиционер по площади помещения</h2>
+<div class="thgeo-area"><a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">до 25 м²</a>до 35 м²до 50 м²<a href="https://podbor.tehnoholod369.kz/">Другая площадь</a></div>
+<p class="thgeo-note">Площадь — первый ориентир, а не весь расчёт. На мощность влияют окна и сторона света, высота потолков, сколько людей и техники в комнате. Точный подбор — в калькуляторе или по опросному листу.</p>
 <h2>Инверторные модели в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ballu-bsti-07hn8-ik">Tessey DC BSTI-07HN8/IK</a></td><td>Ballu</td><td>20 м²</td><td class="thgeo-p" data-art="BSTI-07HN8/IK">141 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=thaicon-tl-rwb20-vr-tl-rob20-vr">Balance inv TL-RWB20-VR / TL-ROB20-VR</a></td><td>THAICON</td><td>22 м²</td><td class="thgeo-p" data-art="TL-RWB20-VR / TL-ROB20-VR">146 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ditreex-dtxs-09d6xac1a">Inverter DTXS-09D6XAC1A</a></td><td>DITREEX</td><td>26 м²</td><td class="thgeo-p" data-art="DTXS-09D6XAC1A">151 410 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=thaicon-tl-rwb25-vr-tl-rob25-vr">Balance inv TL-RWB25-VR / TL-ROB25-VR</a></td><td>THAICON</td><td>26 м²</td><td class="thgeo-p" data-art="TL-RWB25-VR / TL-ROB25-VR">156 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ballu-bsti-09hn8-ik">Tessey DC BSTI-09HN8/IK</a></td><td>Ballu</td><td>25 м²</td><td class="thgeo-p" data-art="BSTI-09HN8/IK">158 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=aeronik-asi-07iu2-aso-07iu2">ASI-07IU2/ASO-07IU2</a></td><td>AERONIK</td><td>21 м²</td><td class="thgeo-p" data-art="ASI-07IU2/ASO-07IU2">164 100 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=royal-clima-rci-ar28hn">ARIA DC Inverter RCI-AR28HN</a></td><td>ROYAL CLIMA</td><td>27 м²</td><td class="thgeo-p" data-art="RCI-AR28HN">164 500 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=cherbrooke-asv-07ur4k1-aov-07ur4k1">ASV-07UR4K1/AOV-07UR4K1</a></td><td>CHERBROOKE</td><td>22 м²</td><td class="thgeo-p" data-art="ASV-07UR4K1/AOV-07UR4K1">165 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsi-07hrdn8">INTEGRA MDSI-07HRDN8 / MDOI-07HDN8</a></td><td>MDV</td><td>20 м²</td><td class="thgeo-p" data-art="MDSI-07HRDN8">166 250 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=funai-rac-i-sn30hp-d04">SENSEI Inverter RAC-I-SN30HP.D04</a></td><td>FUNAI</td><td>27,5 м²</td><td class="thgeo-p" data-art="RAC-I-SN30HP.D04">168 400 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsai2-07hrfn8">INTEGRA PRO MDSAI2-07HRFN8 / MDOAI2-07HFN8</a></td><td>MDV</td><td>20 м²</td><td class="thgeo-p" data-art="MDSAI2-07HRFN8">170 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=royal-clima-rci-gle22hn">GLORIA Inverter RCI-GLE22HN</a></td><td>ROYAL CLIMA</td><td>23 м²</td><td class="thgeo-p" data-art="RCI-GLE22HN">170 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ditreex-dtxs-12d6xac1b">Inverter DTXS-12D6XAC1B</a></td><td>DITREEX</td><td>35 м²</td><td class="thgeo-p" data-art="DTXS-12D6XAC1B">171 495 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=cherbrooke-asv-09ur4k1-aov-09ur4k1">ASV-09UR4K1/AOV-09UR4K1</a></td><td>CHERBROOKE</td><td>27 м²</td><td class="thgeo-p" data-art="ASV-09UR4K1/AOV-09UR4K1">176 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=electrolux-eacs-i-07hsm-ik-n8-v3">Smartline DC EACS/I-07HSM/IK/N8_V3</a></td><td>Electrolux</td><td>20 м²</td><td class="thgeo-p" data-art="EACS/I-07HSM/IK/N8_V3">183 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ballu-bsti-07hn8-ik">Tessey DC BSTI-07HN8/IK</a></td><td data-label="Бренд">Ballu</td><td data-label="Площадь">20 м²</td><td class="thgeo-p" data-label="Цена" data-art="BSTI-07HN8/IK">141 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=thaicon-tl-rwb20-vr-tl-rob20-vr">Balance inv TL-RWB20-VR / TL-ROB20-VR</a></td><td data-label="Бренд">THAICON</td><td data-label="Площадь">22 м²</td><td class="thgeo-p" data-label="Цена" data-art="TL-RWB20-VR / TL-ROB20-VR">146 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ditreex-dtxs-09d6xac1a">Inverter DTXS-09D6XAC1A</a></td><td data-label="Бренд">DITREEX</td><td data-label="Площадь">26 м²</td><td class="thgeo-p" data-label="Цена" data-art="DTXS-09D6XAC1A">151 410 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=thaicon-tl-rwb25-vr-tl-rob25-vr">Balance inv TL-RWB25-VR / TL-ROB25-VR</a></td><td data-label="Бренд">THAICON</td><td data-label="Площадь">26 м²</td><td class="thgeo-p" data-label="Цена" data-art="TL-RWB25-VR / TL-ROB25-VR">156 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ballu-bsti-09hn8-ik">Tessey DC BSTI-09HN8/IK</a></td><td data-label="Бренд">Ballu</td><td data-label="Площадь">25 м²</td><td class="thgeo-p" data-label="Цена" data-art="BSTI-09HN8/IK">158 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=aeronik-asi-07iu2-aso-07iu2">ASI-07IU2/ASO-07IU2</a></td><td data-label="Бренд">AERONIK</td><td data-label="Площадь">21 м²</td><td class="thgeo-p" data-label="Цена" data-art="ASI-07IU2/ASO-07IU2">164 100 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=royal-clima-rci-ar28hn">ARIA DC Inverter RCI-AR28HN</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Площадь">27 м²</td><td class="thgeo-p" data-label="Цена" data-art="RCI-AR28HN">164 500 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=cherbrooke-asv-07ur4k1-aov-07ur4k1">ASV-07UR4K1/AOV-07UR4K1</a></td><td data-label="Бренд">CHERBROOKE</td><td data-label="Площадь">22 м²</td><td class="thgeo-p" data-label="Цена" data-art="ASV-07UR4K1/AOV-07UR4K1">165 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsi-07hrdn8">INTEGRA MDSI-07HRDN8 / MDOI-07HDN8</a></td><td data-label="Бренд">MDV</td><td data-label="Площадь">20 м²</td><td class="thgeo-p" data-label="Цена" data-art="MDSI-07HRDN8">166 250 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=funai-rac-i-sn30hp-d04">SENSEI Inverter RAC-I-SN30HP.D04</a></td><td data-label="Бренд">FUNAI</td><td data-label="Площадь">27,5 м²</td><td class="thgeo-p" data-label="Цена" data-art="RAC-I-SN30HP.D04">168 400 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsai2-07hrfn8">INTEGRA PRO MDSAI2-07HRFN8 / MDOAI2-07HFN8</a></td><td data-label="Бренд">MDV</td><td data-label="Площадь">20 м²</td><td class="thgeo-p" data-label="Цена" data-art="MDSAI2-07HRFN8">170 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=royal-clima-rci-gle22hn">GLORIA Inverter RCI-GLE22HN</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Площадь">23 м²</td><td class="thgeo-p" data-label="Цена" data-art="RCI-GLE22HN">170 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ditreex-dtxs-12d6xac1b">Inverter DTXS-12D6XAC1B</a></td><td data-label="Бренд">DITREEX</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="DTXS-12D6XAC1B">171 495 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=cherbrooke-asv-09ur4k1-aov-09ur4k1">ASV-09UR4K1/AOV-09UR4K1</a></td><td data-label="Бренд">CHERBROOKE</td><td data-label="Площадь">27 м²</td><td class="thgeo-p" data-label="Цена" data-art="ASV-09UR4K1/AOV-09UR4K1">176 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=electrolux-eacs-i-07hsm-ik-n8-v3">Smartline DC EACS/I-07HSM/IK/N8_V3</a></td><td data-label="Бренд">Electrolux</td><td data-label="Площадь">20 м²</td><td class="thgeo-p" data-label="Цена" data-art="EACS/I-07HSM/IK/N8_V3">183 990 ₸</td></tr>
 </tbody>
 </table>
 </div>

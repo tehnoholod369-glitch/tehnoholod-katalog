@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Осушители воздуха в Алматы — для дома, бассейна, склада</h1>
@@ -42,22 +56,23 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=osushiteli">Весь каталог</a>
 
 </div>
+
 <h2>Модели в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Осушение</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd12t">BD12T CL</a></td><td>Ballu</td><td>12 л/сут</td><td class="thgeo-p" data-art="BD12T">78 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdr-18le">BDR-18LE</a></td><td>Ballu</td><td>18 л/сут</td><td class="thgeo-p" data-art="BDR-18LE">106 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd20t">BD20T CL</a></td><td>Ballu</td><td>20 л/сут</td><td class="thgeo-p" data-art="BD20T">114 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd30t">BD30T CL</a></td><td>Ballu</td><td>30 л/сут</td><td class="thgeo-p" data-art="BD30T">130 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdr-25le">BDR-25LE</a></td><td>Ballu</td><td>25 л/сут</td><td class="thgeo-p" data-art="BDR-25LE">130 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdr-40le">BDR-40LE</a></td><td>Ballu</td><td>40 л/сут</td><td class="thgeo-p" data-art="BDR-40LE">177 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-50l">BDI-50L</a></td><td>Ballu</td><td>50 л/сут</td><td class="thgeo-p" data-art="BDI-50L">473 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd80hp">BD80HP</a></td><td>Ballu</td><td>80 л/сут</td><td class="thgeo-p" data-art="BD80HP">639 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-80l">BDI-80L</a></td><td>Ballu</td><td>80 л/сут</td><td class="thgeo-p" data-art="BDI-80L">722 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-100l">BDI-100L</a></td><td>Ballu</td><td>100 л/сут</td><td class="thgeo-p" data-art="BDI-100L">828 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd120hp">BD120HP</a></td><td>Ballu</td><td>120 л/сут</td><td class="thgeo-p" data-art="BD120HP">864 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd12t">BD12T CL</a></td><td data-label="Бренд">Ballu</td><td data-label="Осушение">12 л/сут</td><td class="thgeo-p" data-label="Цена" data-art="BD12T">78 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdr-18le">BDR-18LE</a></td><td data-label="Бренд">Ballu</td><td data-label="Осушение">18 л/сут</td><td class="thgeo-p" data-label="Цена" data-art="BDR-18LE">106 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd20t">BD20T CL</a></td><td data-label="Бренд">Ballu</td><td data-label="Осушение">20 л/сут</td><td class="thgeo-p" data-label="Цена" data-art="BD20T">114 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd30t">BD30T CL</a></td><td data-label="Бренд">Ballu</td><td data-label="Осушение">30 л/сут</td><td class="thgeo-p" data-label="Цена" data-art="BD30T">130 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdr-25le">BDR-25LE</a></td><td data-label="Бренд">Ballu</td><td data-label="Осушение">25 л/сут</td><td class="thgeo-p" data-label="Цена" data-art="BDR-25LE">130 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdr-40le">BDR-40LE</a></td><td data-label="Бренд">Ballu</td><td data-label="Осушение">40 л/сут</td><td class="thgeo-p" data-label="Цена" data-art="BDR-40LE">177 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-50l">BDI-50L</a></td><td data-label="Бренд">Ballu</td><td data-label="Осушение">50 л/сут</td><td class="thgeo-p" data-label="Цена" data-art="BDI-50L">473 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd80hp">BD80HP</a></td><td data-label="Бренд">Ballu</td><td data-label="Осушение">80 л/сут</td><td class="thgeo-p" data-label="Цена" data-art="BD80HP">639 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-80l">BDI-80L</a></td><td data-label="Бренд">Ballu</td><td data-label="Осушение">80 л/сут</td><td class="thgeo-p" data-label="Цена" data-art="BDI-80L">722 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-100l">BDI-100L</a></td><td data-label="Бренд">Ballu</td><td data-label="Осушение">100 л/сут</td><td class="thgeo-p" data-label="Цена" data-art="BDI-100L">828 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd120hp">BD120HP</a></td><td data-label="Бренд">Ballu</td><td data-label="Осушение">120 л/сут</td><td class="thgeo-p" data-label="Цена" data-art="BD120HP">864 990 ₸</td></tr>
 </tbody>
 </table>
 </div>

@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h2>Мульти-сплит системы в Алматы</h2>
@@ -43,26 +57,27 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=multisplit">Весь каталог</a>
 <a class="tg2" href="https://podbor.tehnoholod369.kz/">Подобрать по площади</a>
 </div>
+
 <h2>Примеры блоков и модулей в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Параметр</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=mdv-mdsai2-07hrfn8">INTEGRA PRO MDSAI2-07HRFN8-M (настенный (внутр. блок))</a></td><td>MDV</td><td>—</td><td class="thgeo-p" data-art="MDSAI2-07HRFN8">55 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=mdv-mdsai2-09hrfn8">INTEGRA PRO MDSAI2-09HRFN8-M (настенный (внутр. блок))</a></td><td>MDV</td><td>—</td><td class="thgeo-p" data-art="MDSAI2-09HRFN8">62 500 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=mdv-mdsal-09hrfn8">INFINI Uvpro MDSAL-09HRFN8-M (настенный (внутр. блок))</a></td><td>MDV</td><td>—</td><td class="thgeo-p" data-art="MDSAL-09HRFN8">75 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=aeronik-asi-07-ilk3">Внутренний блок ASI-07 ILK3</a></td><td>AERONIK</td><td>—</td><td class="thgeo-p" data-art="ASI-07 ILK3">77 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=aeronik-asi-09-ilk4">Внутренний блок ASI-09 ILK4</a></td><td>AERONIK</td><td>—</td><td class="thgeo-p" data-art="ASI-09 ILK4">78 700 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=aux-amwm-h07-4r3c-ha">Внутренний блок Free Match R32 DC инвертор AMWM-H07/4R3C(HA）</a></td><td>AUX</td><td>—</td><td class="thgeo-p" data-art="AMWM-H07/4R3C(HA）">81 460 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=aeronik-asi-09-ilk3">Внутренний блок ASI-09 ILK3</a></td><td>AERONIK</td><td>—</td><td class="thgeo-p" data-art="ASI-09 ILK3">81 700 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=thaicon-tl-rwp20-fr">Внутренний блок TL-RWP20-FR</a></td><td>THAICON</td><td>—</td><td class="thgeo-p" data-art="TL-RWP20-FR">81 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=aux-amwm-h09-4r3a-ha">Внутренний блок Free Match R32 DC инвертор AMWM-H09/4R3A(HA)</a></td><td>AUX</td><td>—</td><td class="thgeo-p" data-art="AMWM-H09/4R3A(HA)">81 978 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=aux-amwm-h09-4r3c-ha">Внутренний блок Free Match R32 DC инвертор AMWM-H09/4R3C(HA）</a></td><td>AUX</td><td>—</td><td class="thgeo-p" data-art="AMWM-H09/4R3C(HA）">85 001 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=thaicon-tl-rwp25-fr">Внутренний блок TL-RWP25-FR</a></td><td>THAICON</td><td>—</td><td class="thgeo-p" data-art="TL-RWP25-FR">88 400 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=royal-clima-rci-fc09hn">Внутренний блок FELICITA MULTI FLEXI EU ERP RCI-FC09HN</a></td><td>ROYAL CLIMA</td><td>—</td><td class="thgeo-p" data-art="RCI-FC09HN">89 200 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=thaicon-tl-rwc35-fr">Внутренний блок TL-RWC35-FR</a></td><td>THAICON</td><td>—</td><td class="thgeo-p" data-art="TL-RWC35-FR">90 350 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=ditreex-dtxm-12k6xac1-i">Внутренний блок DTXM-12K6XAC1/I</a></td><td>DITREEX</td><td>—</td><td class="thgeo-p" data-art="DTXM-12K6XAC1/I">92 700 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=royal-clima-rci-vt09hn">Внутренний блок VENTURO NERO MULTI FLEXI EU ERP RCI-VT09HN</a></td><td>ROYAL CLIMA</td><td>—</td><td class="thgeo-p" data-art="RCI-VT09HN">105 100 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=mdv-mdsai2-07hrfn8">INTEGRA PRO MDSAI2-07HRFN8-M (настенный (внутр. блок))</a></td><td data-label="Бренд">MDV</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="MDSAI2-07HRFN8">55 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=mdv-mdsai2-09hrfn8">INTEGRA PRO MDSAI2-09HRFN8-M (настенный (внутр. блок))</a></td><td data-label="Бренд">MDV</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="MDSAI2-09HRFN8">62 500 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=mdv-mdsal-09hrfn8">INFINI Uvpro MDSAL-09HRFN8-M (настенный (внутр. блок))</a></td><td data-label="Бренд">MDV</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="MDSAL-09HRFN8">75 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=aeronik-asi-07-ilk3">Внутренний блок ASI-07 ILK3</a></td><td data-label="Бренд">AERONIK</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="ASI-07 ILK3">77 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=aeronik-asi-09-ilk4">Внутренний блок ASI-09 ILK4</a></td><td data-label="Бренд">AERONIK</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="ASI-09 ILK4">78 700 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=aux-amwm-h07-4r3c-ha">Внутренний блок Free Match R32 DC инвертор AMWM-H07/4R3C(HA）</a></td><td data-label="Бренд">AUX</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="AMWM-H07/4R3C(HA）">81 460 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=aeronik-asi-09-ilk3">Внутренний блок ASI-09 ILK3</a></td><td data-label="Бренд">AERONIK</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="ASI-09 ILK3">81 700 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=thaicon-tl-rwp20-fr">Внутренний блок TL-RWP20-FR</a></td><td data-label="Бренд">THAICON</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="TL-RWP20-FR">81 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=aux-amwm-h09-4r3a-ha">Внутренний блок Free Match R32 DC инвертор AMWM-H09/4R3A(HA)</a></td><td data-label="Бренд">AUX</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="AMWM-H09/4R3A(HA)">81 978 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=aux-amwm-h09-4r3c-ha">Внутренний блок Free Match R32 DC инвертор AMWM-H09/4R3C(HA）</a></td><td data-label="Бренд">AUX</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="AMWM-H09/4R3C(HA）">85 001 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=thaicon-tl-rwp25-fr">Внутренний блок TL-RWP25-FR</a></td><td data-label="Бренд">THAICON</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="TL-RWP25-FR">88 400 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=royal-clima-rci-fc09hn">Внутренний блок FELICITA MULTI FLEXI EU ERP RCI-FC09HN</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="RCI-FC09HN">89 200 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=thaicon-tl-rwc35-fr">Внутренний блок TL-RWC35-FR</a></td><td data-label="Бренд">THAICON</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="TL-RWC35-FR">90 350 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=ditreex-dtxm-12k6xac1-i">Внутренний блок DTXM-12K6XAC1/I</a></td><td data-label="Бренд">DITREEX</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="DTXM-12K6XAC1/I">92 700 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=royal-clima-rci-vt09hn">Внутренний блок VENTURO NERO MULTI FLEXI EU ERP RCI-VT09HN</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Параметр">—</td><td class="thgeo-p" data-label="Цена" data-art="RCI-VT09HN">105 100 ₸</td></tr>
 </tbody>
 </table>
 </div>

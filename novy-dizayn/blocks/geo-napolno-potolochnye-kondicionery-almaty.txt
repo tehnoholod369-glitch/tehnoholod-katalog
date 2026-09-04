@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Напольно-потолочные кондиционеры в Алматы</h1>
@@ -44,26 +58,27 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=poluprom">Весь каталог</a>
 <a class="tg2" href="https://podbor.tehnoholod369.kz/">Подобрать по площади</a>
 </div>
+
 <h2>Напольно-потолочные модели в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=haier-ac50s2lg1fa-new">напольно-потолочный ECO AC50S2LG1FA new</a></td><td>Haier</td><td>50 м²</td><td class="thgeo-p" data-art="AC50S2LG1FA new">417 820 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=haier-ac25s2sg2fa-new">напольно-потолочный Super Match AC25S2SG2FA new</a></td><td>Haier</td><td>25 м²</td><td class="thgeo-p" data-art="AC25S2SG2FA  new">422 370 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=aux-alcf-h18-4r1f">LCAC R410A ON/OFF ALCF-H18/4R1F</a></td><td>AUX</td><td>55 м²</td><td class="thgeo-p" data-art="ALCF-H18/4R1F">432 011 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=cherbrooke-aul-24hr4s1-aua-24h4sl1">AUL-24HR4S1/AUA-24H4SL1</a></td><td>CHERBROOKE</td><td>69 м²</td><td class="thgeo-p" data-art="AUL-24HR4S1/AUA-24H4SL1">442 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=ballu-blc-cf-24hn1-21y">UNIVERSAL III CF-24HN1 напольно-потолочный</a></td><td>Ballu</td><td>70 м²</td><td class="thgeo-p" data-art="BLC_CF-24HN1_21Y">458 190 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=royal-clima-es-f-24hrcx">ESPERTO ES-F 24HRCX</a></td><td>ROYAL CLIMA</td><td>70,3 м²</td><td class="thgeo-p" data-art="ES-F 24HRCX">477 100 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=midea-mue-24hrn1-q">Напольно потолочные MUE-24HRN1-Q</a></td><td>Midea</td><td>65 м²</td><td class="thgeo-p" data-art="MUE-24HRN1-Q">496 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=aux-alcf-h24-4r1f">LCAC R410A ON/OFF ALCF-H24/4R1F</a></td><td>AUX</td><td>70 м²</td><td class="thgeo-p" data-art="ALCF-H24/4R1F">517 795 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=royal-clima-co-f-24hndi">COMPETENZA DC Inverter CO-F 24HNDI</a></td><td>ROYAL CLIMA</td><td>71 м²</td><td class="thgeo-p" data-art="CO-F 24HNDI">597 200 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=aeronik-asi-ath100rd1-b-s-inv-aso-aguhn100r1-inv">ASI-ATH100RD1/B-S INV/ASO-AGUHN100R1/INV</a></td><td>AERONIK</td><td>100 м²</td><td class="thgeo-p" data-art="ASI-ATH100RD1/B-S INV/ASO-AGUHN100R1/INV">608 600 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=gree-gud100zd1-b-s-gud100w1-nhb">нап.-потолочный U-Match R32 GUD100ZD1/B-S/GUD100W1/NhB</a></td><td>GREE</td><td>100 м²</td><td class="thgeo-p" data-art="GUD100ZD1/B-S/GUD100W1/NhB">642 720 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=cherbrooke-cue-36hrn1-r-cod-36nh1-r">CUE-36HRN1-R/COD-36NH1-R</a></td><td>CHERBROOKE</td><td>110 м²</td><td class="thgeo-p" data-art="CUE-36HRN1-R/COD-36NH1-R">679 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=midea-mue-36hrn1-r">Напольно потолочные MUE-36HRN1-R</a></td><td>Midea</td><td>95 м²</td><td class="thgeo-p" data-art="MUE-36HRN1-R">689 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=tcl-tcc-48zhra-ui-05-tcc-48ha-u3o-l-04">LCAC напольно-потолочный TCC-48ZHRA/UI(05) + TCC-48HA/U3O-L(04)</a></td><td>TCL</td><td>141 м²</td><td class="thgeo-p" data-art="TCC-48ZHRA/UI(05) + TCC-48HA/U3O-L(04)">699 720 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=ballu-blc-cf-48hn1-21y">UNIVERSAL III CF-48HN1 напольно-потолочный</a></td><td>Ballu</td><td>141 м²</td><td class="thgeo-p" data-art="BLC_CF-48HN1_21Y">751 576 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=haier-ac50s2lg1fa-new">напольно-потолочный ECO AC50S2LG1FA new</a></td><td data-label="Бренд">Haier</td><td data-label="Площадь">50 м²</td><td class="thgeo-p" data-label="Цена" data-art="AC50S2LG1FA new">417 820 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=haier-ac25s2sg2fa-new">напольно-потолочный Super Match AC25S2SG2FA new</a></td><td data-label="Бренд">Haier</td><td data-label="Площадь">25 м²</td><td class="thgeo-p" data-label="Цена" data-art="AC25S2SG2FA  new">422 370 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=aux-alcf-h18-4r1f">LCAC R410A ON/OFF ALCF-H18/4R1F</a></td><td data-label="Бренд">AUX</td><td data-label="Площадь">55 м²</td><td class="thgeo-p" data-label="Цена" data-art="ALCF-H18/4R1F">432 011 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=cherbrooke-aul-24hr4s1-aua-24h4sl1">AUL-24HR4S1/AUA-24H4SL1</a></td><td data-label="Бренд">CHERBROOKE</td><td data-label="Площадь">69 м²</td><td class="thgeo-p" data-label="Цена" data-art="AUL-24HR4S1/AUA-24H4SL1">442 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=ballu-blc-cf-24hn1-21y">UNIVERSAL III CF-24HN1 напольно-потолочный</a></td><td data-label="Бренд">Ballu</td><td data-label="Площадь">70 м²</td><td class="thgeo-p" data-label="Цена" data-art="BLC_CF-24HN1_21Y">458 190 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=royal-clima-es-f-24hrcx">ESPERTO ES-F 24HRCX</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Площадь">70,3 м²</td><td class="thgeo-p" data-label="Цена" data-art="ES-F 24HRCX">477 100 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=midea-mue-24hrn1-q">Напольно потолочные MUE-24HRN1-Q</a></td><td data-label="Бренд">Midea</td><td data-label="Площадь">65 м²</td><td class="thgeo-p" data-label="Цена" data-art="MUE-24HRN1-Q">496 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=aux-alcf-h24-4r1f">LCAC R410A ON/OFF ALCF-H24/4R1F</a></td><td data-label="Бренд">AUX</td><td data-label="Площадь">70 м²</td><td class="thgeo-p" data-label="Цена" data-art="ALCF-H24/4R1F">517 795 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=royal-clima-co-f-24hndi">COMPETENZA DC Inverter CO-F 24HNDI</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Площадь">71 м²</td><td class="thgeo-p" data-label="Цена" data-art="CO-F 24HNDI">597 200 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=aeronik-asi-ath100rd1-b-s-inv-aso-aguhn100r1-inv">ASI-ATH100RD1/B-S INV/ASO-AGUHN100R1/INV</a></td><td data-label="Бренд">AERONIK</td><td data-label="Площадь">100 м²</td><td class="thgeo-p" data-label="Цена" data-art="ASI-ATH100RD1/B-S INV/ASO-AGUHN100R1/INV">608 600 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=gree-gud100zd1-b-s-gud100w1-nhb">нап.-потолочный U-Match R32 GUD100ZD1/B-S/GUD100W1/NhB</a></td><td data-label="Бренд">GREE</td><td data-label="Площадь">100 м²</td><td class="thgeo-p" data-label="Цена" data-art="GUD100ZD1/B-S/GUD100W1/NhB">642 720 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=cherbrooke-cue-36hrn1-r-cod-36nh1-r">CUE-36HRN1-R/COD-36NH1-R</a></td><td data-label="Бренд">CHERBROOKE</td><td data-label="Площадь">110 м²</td><td class="thgeo-p" data-label="Цена" data-art="CUE-36HRN1-R/COD-36NH1-R">679 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=midea-mue-36hrn1-r">Напольно потолочные MUE-36HRN1-R</a></td><td data-label="Бренд">Midea</td><td data-label="Площадь">95 м²</td><td class="thgeo-p" data-label="Цена" data-art="MUE-36HRN1-R">689 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=tcl-tcc-48zhra-ui-05-tcc-48ha-u3o-l-04">LCAC напольно-потолочный TCC-48ZHRA/UI(05) + TCC-48HA/U3O-L(04)</a></td><td data-label="Бренд">TCL</td><td data-label="Площадь">141 м²</td><td class="thgeo-p" data-label="Цена" data-art="TCC-48ZHRA/UI(05) + TCC-48HA/U3O-L(04)">699 720 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=poluprom&amp;sl=ballu-blc-cf-48hn1-21y">UNIVERSAL III CF-48HN1 напольно-потолочный</a></td><td data-label="Бренд">Ballu</td><td data-label="Площадь">141 м²</td><td class="thgeo-p" data-label="Цена" data-art="BLC_CF-48HN1_21Y">751 576 ₸</td></tr>
 </tbody>
 </table>
 </div>

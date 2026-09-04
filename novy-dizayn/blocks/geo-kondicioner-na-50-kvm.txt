@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Кондиционер на комнату 50 м² — какой выбрать</h1>
@@ -43,26 +57,29 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=bytovye">Весь каталог</a>
 <a class="tg2" href="https://podbor.tehnoholod369.kz/">Подобрать по площади</a>
 </div>
+<h2>Кондиционер по площади помещения</h2>
+<div class="thgeo-area"><a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">до 25 м²</a>до 35 м²<a href="https://podbor.tehnoholod369.kz/">Другая площадь</a></div>
+<p class="thgeo-note">Площадь — первый ориентир, а не весь расчёт. На мощность влияют окна и сторона света, высота потолков, сколько людей и техники в комнате. Точный подбор — в калькуляторе или по опросному листу.</p>
 <h2>Модели в наличии на 46–55 м²</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ditreex-dtxs-18k3xa41d">ON/OFF DTXS-18K3XA41D</a></td><td>DITREEX</td><td>50 м²</td><td class="thgeo-p" data-art="DTXS-18K3XA41D">218 752 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsae-18hrn8">iERA MDSAE-18HRN8 / MDOAE-18HN8</a></td><td>MDV</td><td>55 м²</td><td class="thgeo-p" data-art="MDSAE-18HRN8">262 500 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=midea-msab-18hrn8">AURORA 3 MSAB-18HRN8</a></td><td>Midea</td><td>50 м²</td><td class="thgeo-p" data-art="MSAB-18HRN8">262 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ditreex-dtxs-18d6xac1c">Inverter DTXS-18D6XAC1C</a></td><td>DITREEX</td><td>50 м²</td><td class="thgeo-p" data-art="DTXS-18D6XAC1C">268 830 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=royal-clima-rc-gl55hn">GLORIA RC-GL55HN</a></td><td>ROYAL CLIMA</td><td>53,7 м²</td><td class="thgeo-p" data-art="RC-GL55HN">280 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=gree-gwh18alcxd-k3nna1b">18: Eva R410 класс A GWH18ALCXD-K3NNA1B (комплектуется медными трубами)</a></td><td>GREE</td><td>48 м²</td><td class="thgeo-p" data-art="GWH18ALCXD-K3NNA1B">281 248 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=gree-gwh18accxd-k3nna1b">Fairy GWH18ACCXD-K3NNA1B</a></td><td>GREE</td><td>48 м²</td><td class="thgeo-p" data-art="GWH18ACCXD-K3NNA1B">283 128 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=thaicon-tl-rwb50-nr-tl-rob50-nr">Balance TL-RWB50-NR / TL-ROB50-NR</a></td><td>THAICON</td><td>50 м²</td><td class="thgeo-p" data-art="TL-RWB50-NR / TL-ROB50-NR">285 350 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ballu-bso-18hn8-ik">Olympio Pro BSO-18HN8/IK</a></td><td>Ballu</td><td>50 м²</td><td class="thgeo-p" data-art="BSO-18HN8/IK">285 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=midea-mega-18hrfn8">Xtreme MEGA-18HRFN8</a></td><td>Midea</td><td>50 м²</td><td class="thgeo-p" data-art="MEGA-18HRFN8">293 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ballu-bsti-18hn8-ik">Tessey DC BSTI-18HN8/IK</a></td><td>Ballu</td><td>50 м²</td><td class="thgeo-p" data-art="BSTI-18HN8/IK">295 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=royal-clima-rc-pd55hn">PANDORA RC-PD55HN</a></td><td>ROYAL CLIMA</td><td>55 м²</td><td class="thgeo-p" data-art="RC-PD55HN">301 800 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=funai-rac-sn55hp-d04">SENSEI RAC-SN55HP.D04</a></td><td>FUNAI</td><td>55 м²</td><td class="thgeo-p" data-art="RAC-SN55HP.D04">302 700 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=funai-rac-kd55hp-d01">KADZOKU RAC-KD55HP.D01</a></td><td>FUNAI</td><td>55 м²</td><td class="thgeo-p" data-art="RAC-KD55HP.D01">308 900 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=aeronik-asi-18hs5-aso-18hms5">ASI-18HS5/ASO-18HMS5</a></td><td>AERONIK</td><td>54 м²</td><td class="thgeo-p" data-art="ASI-18HS5/ASO-18HMS5">310 500 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ditreex-dtxs-18k3xa41d">ON/OFF DTXS-18K3XA41D</a></td><td data-label="Бренд">DITREEX</td><td data-label="Площадь">50 м²</td><td class="thgeo-p" data-label="Цена" data-art="DTXS-18K3XA41D">218 752 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsae-18hrn8">iERA MDSAE-18HRN8 / MDOAE-18HN8</a></td><td data-label="Бренд">MDV</td><td data-label="Площадь">55 м²</td><td class="thgeo-p" data-label="Цена" data-art="MDSAE-18HRN8">262 500 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=midea-msab-18hrn8">AURORA 3 MSAB-18HRN8</a></td><td data-label="Бренд">Midea</td><td data-label="Площадь">50 м²</td><td class="thgeo-p" data-label="Цена" data-art="MSAB-18HRN8">262 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ditreex-dtxs-18d6xac1c">Inverter DTXS-18D6XAC1C</a></td><td data-label="Бренд">DITREEX</td><td data-label="Площадь">50 м²</td><td class="thgeo-p" data-label="Цена" data-art="DTXS-18D6XAC1C">268 830 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=royal-clima-rc-gl55hn">GLORIA RC-GL55HN</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Площадь">53,7 м²</td><td class="thgeo-p" data-label="Цена" data-art="RC-GL55HN">280 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=gree-gwh18alcxd-k3nna1b">18: Eva R410 класс A GWH18ALCXD-K3NNA1B (комплектуется медными трубами)</a></td><td data-label="Бренд">GREE</td><td data-label="Площадь">48 м²</td><td class="thgeo-p" data-label="Цена" data-art="GWH18ALCXD-K3NNA1B">281 248 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=gree-gwh18accxd-k3nna1b">Fairy GWH18ACCXD-K3NNA1B</a></td><td data-label="Бренд">GREE</td><td data-label="Площадь">48 м²</td><td class="thgeo-p" data-label="Цена" data-art="GWH18ACCXD-K3NNA1B">283 128 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=thaicon-tl-rwb50-nr-tl-rob50-nr">Balance TL-RWB50-NR / TL-ROB50-NR</a></td><td data-label="Бренд">THAICON</td><td data-label="Площадь">50 м²</td><td class="thgeo-p" data-label="Цена" data-art="TL-RWB50-NR / TL-ROB50-NR">285 350 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ballu-bso-18hn8-ik">Olympio Pro BSO-18HN8/IK</a></td><td data-label="Бренд">Ballu</td><td data-label="Площадь">50 м²</td><td class="thgeo-p" data-label="Цена" data-art="BSO-18HN8/IK">285 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=midea-mega-18hrfn8">Xtreme MEGA-18HRFN8</a></td><td data-label="Бренд">Midea</td><td data-label="Площадь">50 м²</td><td class="thgeo-p" data-label="Цена" data-art="MEGA-18HRFN8">293 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=ballu-bsti-18hn8-ik">Tessey DC BSTI-18HN8/IK</a></td><td data-label="Бренд">Ballu</td><td data-label="Площадь">50 м²</td><td class="thgeo-p" data-label="Цена" data-art="BSTI-18HN8/IK">295 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=royal-clima-rc-pd55hn">PANDORA RC-PD55HN</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Площадь">55 м²</td><td class="thgeo-p" data-label="Цена" data-art="RC-PD55HN">301 800 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=funai-rac-sn55hp-d04">SENSEI RAC-SN55HP.D04</a></td><td data-label="Бренд">FUNAI</td><td data-label="Площадь">55 м²</td><td class="thgeo-p" data-label="Цена" data-art="RAC-SN55HP.D04">302 700 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=funai-rac-kd55hp-d01">KADZOKU RAC-KD55HP.D01</a></td><td data-label="Бренд">FUNAI</td><td data-label="Площадь">55 м²</td><td class="thgeo-p" data-label="Цена" data-art="RAC-KD55HP.D01">308 900 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=aeronik-asi-18hs5-aso-18hms5">ASI-18HS5/ASO-18HMS5</a></td><td data-label="Бренд">AERONIK</td><td data-label="Площадь">54 м²</td><td class="thgeo-p" data-label="Цена" data-art="ASI-18HS5/ASO-18HMS5">310 500 ₸</td></tr>
 </tbody>
 </table>
 </div>

@@ -120,9 +120,12 @@
     // страницах молча оставляло невидимую строку.
     var был = document.querySelector("[data-th-copyright]");
     if (был && был.offsetHeight > 0) return;
-    if (был && был.parentNode) был.parentNode.removeChild(был);
     var корень = document.querySelector("#dc-root");
-    if (!корень) return;
+    // Корень статьи создаёт шаблонизатор блока — ПОСЛЕ DOMContentLoaded. Ждём его,
+    // иначе выходим впустую: ровно на этом 04.09.2026 копирайт не появлялся,
+    // хотя скрипт был свежий. Та же грабля, что у th-shapka.js часом раньше.
+    if (!корень) { setTimeout(копирайт, 300); return; }
+    if (был && был.parentNode) был.parentNode.removeChild(был);
     var о = document.createElement("div");
     о.setAttribute("data-th-copyright", "1");
     о.style.cssText = "max-width:888px;margin:0 auto;padding:18px 24px 40px;" +

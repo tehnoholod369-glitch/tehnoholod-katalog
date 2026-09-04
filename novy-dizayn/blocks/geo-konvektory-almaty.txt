@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Электрические конвекторы в Алматы</h1>
@@ -44,26 +58,27 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=obogrevateli">Весь каталог</a>
 
 </div>
+
 <h2>Конвекторы в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Мощность</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-re1000m">REC-RE1000M</a></td><td>ROYAL CLIMA</td><td>1 кВт</td><td class="thgeo-p" data-art="REC-RE1000M">21 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-ae1000m">REC-AE1000M</a></td><td>ROYAL CLIMA</td><td>1 кВт</td><td class="thgeo-p" data-art="REC-AE1000M">21 600 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=zilon-a2-0">ZHC-1000 A2.0</a></td><td>ZILON</td><td>1 кВт</td><td class="thgeo-p" data-art="A2.0">22 600 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-re1500m">REC-RE1500M</a></td><td>ROYAL CLIMA</td><td>1,5 кВт</td><td class="thgeo-p" data-art="REC-RE1500M">26 200 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-ae1500m">REC-AE1500M</a></td><td>ROYAL CLIMA</td><td>1,5 кВт</td><td class="thgeo-p" data-art="REC-AE1500M">27 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=zilon-a2-0-2">ZHC-1500 A2.0</a></td><td>ZILON</td><td>1,5 (1,5/0,75)</td><td class="thgeo-p" data-art="A2.0">27 500 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-fr1500m">REC-FR1500M</a></td><td>ROYAL CLIMA</td><td>1,5 кВт</td><td class="thgeo-p" data-art="REC-FR1500M">29 050 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-a1500m">REC-A1500M</a></td><td>ROYAL CLIMA</td><td>1,5 кВт</td><td class="thgeo-p" data-art="REC-A1500M">29 600 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-frbr1000m">REC-FRBR1000M</a></td><td>ROYAL CLIMA</td><td>1 кВт</td><td class="thgeo-p" data-art="REC-FRBR1000M">29 600 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-frwg1000m">REC-FRWG1000M</a></td><td>ROYAL CLIMA</td><td>1 кВт</td><td class="thgeo-p" data-art="REC-FRWG1000M">29 600 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-at1000m">REC-AT1000M</a></td><td>ROYAL CLIMA</td><td>1 кВт</td><td class="thgeo-p" data-art="REC-AT1000M">30 800 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-re2000m">REC-RE2000M</a></td><td>ROYAL CLIMA</td><td>2 кВт</td><td class="thgeo-p" data-art="REC-RE2000M">31 488 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-frbr1500m">REC-FRBR1500M</a></td><td>ROYAL CLIMA</td><td>1,5 кВт</td><td class="thgeo-p" data-art="REC-FRBR1500M">32 800 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-frwg1500m">REC-FRWG1500M</a></td><td>ROYAL CLIMA</td><td>1,5 кВт</td><td class="thgeo-p" data-art="REC-FRWG1500M">32 800 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=zilon-a2-0-3">ZHC-2000 A2.0</a></td><td>ZILON</td><td>2 (2/1)</td><td class="thgeo-p" data-art="A2.0">34 100 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-re1000m">REC-RE1000M</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Мощность">1 кВт</td><td class="thgeo-p" data-label="Цена" data-art="REC-RE1000M">21 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-ae1000m">REC-AE1000M</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Мощность">1 кВт</td><td class="thgeo-p" data-label="Цена" data-art="REC-AE1000M">21 600 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=zilon-a2-0">ZHC-1000 A2.0</a></td><td data-label="Бренд">ZILON</td><td data-label="Мощность">1 кВт</td><td class="thgeo-p" data-label="Цена" data-art="A2.0">22 600 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-re1500m">REC-RE1500M</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Мощность">1,5 кВт</td><td class="thgeo-p" data-label="Цена" data-art="REC-RE1500M">26 200 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-ae1500m">REC-AE1500M</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Мощность">1,5 кВт</td><td class="thgeo-p" data-label="Цена" data-art="REC-AE1500M">27 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=zilon-a2-0-2">ZHC-1500 A2.0</a></td><td data-label="Бренд">ZILON</td><td data-label="Мощность">1,5 (1,5/0,75)</td><td class="thgeo-p" data-label="Цена" data-art="A2.0">27 500 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-fr1500m">REC-FR1500M</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Мощность">1,5 кВт</td><td class="thgeo-p" data-label="Цена" data-art="REC-FR1500M">29 050 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-a1500m">REC-A1500M</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Мощность">1,5 кВт</td><td class="thgeo-p" data-label="Цена" data-art="REC-A1500M">29 600 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-frbr1000m">REC-FRBR1000M</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Мощность">1 кВт</td><td class="thgeo-p" data-label="Цена" data-art="REC-FRBR1000M">29 600 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-frwg1000m">REC-FRWG1000M</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Мощность">1 кВт</td><td class="thgeo-p" data-label="Цена" data-art="REC-FRWG1000M">29 600 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-at1000m">REC-AT1000M</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Мощность">1 кВт</td><td class="thgeo-p" data-label="Цена" data-art="REC-AT1000M">30 800 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-re2000m">REC-RE2000M</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Мощность">2 кВт</td><td class="thgeo-p" data-label="Цена" data-art="REC-RE2000M">31 488 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-frbr1500m">REC-FRBR1500M</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Мощность">1,5 кВт</td><td class="thgeo-p" data-label="Цена" data-art="REC-FRBR1500M">32 800 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-frwg1500m">REC-FRWG1500M</a></td><td data-label="Бренд">ROYAL CLIMA</td><td data-label="Мощность">1,5 кВт</td><td class="thgeo-p" data-label="Цена" data-art="REC-FRWG1500M">32 800 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=zilon-a2-0-3">ZHC-2000 A2.0</a></td><td data-label="Бренд">ZILON</td><td data-label="Мощность">2 (2/1)</td><td class="thgeo-p" data-label="Цена" data-art="A2.0">34 100 ₸</td></tr>
 </tbody>
 </table>
 </div>

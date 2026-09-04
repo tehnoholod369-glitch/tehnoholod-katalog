@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Вытяжные вентиляторы в Алматы</h1>
@@ -44,26 +58,27 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=ventilyaciya">Весь каталог</a>
 
 </div>
+
 <h2>Вытяжные вентиляторы в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Производительность</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-fw-100-n">BAF-FW 100 N</a></td><td>Ballu</td><td>95 м³/ч</td><td class="thgeo-p" data-art="BAF-FW 100 N">6 390 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-ar-100-v">BAF-AR 100 V</a></td><td>Ballu</td><td>97 м³/ч</td><td class="thgeo-p" data-art="BAF-AR 100 V">6 990 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-ex-100-g">BAF-EX 100 G</a></td><td>Ballu</td><td>90 м³/ч</td><td class="thgeo-p" data-art="BAF-EX 100 G">8 290 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-fw-120-n">BAF-FW 120 N</a></td><td>Ballu</td><td>185 м³/ч</td><td class="thgeo-p" data-art="BAF-FW 120 N">8 290 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-ar-120-v">BAF-AR 120 V</a></td><td>Ballu</td><td>190 м³/ч</td><td class="thgeo-p" data-art="BAF-AR 120 V">9 390 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-fw-150-n">BAF-FW 150 N</a></td><td>Ballu</td><td>295 м³/ч</td><td class="thgeo-p" data-art="BAF-FW 150 N">9 590 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-sl-100-v">BAF-SL 100 V</a></td><td>Ballu</td><td>95 м³/ч</td><td class="thgeo-p" data-art="BAF-SL 100 V">9 590 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafv-100">RAFV 100</a></td><td>Royal Thermo</td><td>98 м³/ч</td><td class="thgeo-p" data-art="RAFV 100">10 790 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-ar-150-v">BAF-AR 150 V</a></td><td>Ballu</td><td>300 м³/ч</td><td class="thgeo-p" data-art="BAF-AR 150 V">11 490 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafr-100">RAFR 100</a></td><td>Royal Thermo</td><td>100 м³/ч</td><td class="thgeo-p" data-art="RAFR 100">12 390 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafv-120">RAFV 120</a></td><td>Royal Thermo</td><td>195 м³/ч</td><td class="thgeo-p" data-art="RAFV 120">12 390 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafc-100-white">RAFC 100 White</a></td><td>Royal Thermo</td><td>95 м³/ч</td><td class="thgeo-p" data-art="RAFC 100 White">12 790 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafr-100-v">RAFR 100 V</a></td><td>Royal Thermo</td><td>100 м³/ч</td><td class="thgeo-p" data-art="RAFR 100 V">12 790 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafs-100">RAFS 100</a></td><td>Royal Thermo</td><td>97 м³/ч</td><td class="thgeo-p" data-art="RAFS 100">13 390 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafs-100-v">RAFS 100 V</a></td><td>Royal Thermo</td><td>97 м³/ч</td><td class="thgeo-p" data-art="RAFS 100 V">13 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-fw-100-n">BAF-FW 100 N</a></td><td data-label="Бренд">Ballu</td><td data-label="Производительность">95 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="BAF-FW 100 N">6 390 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-ar-100-v">BAF-AR 100 V</a></td><td data-label="Бренд">Ballu</td><td data-label="Производительность">97 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="BAF-AR 100 V">6 990 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-ex-100-g">BAF-EX 100 G</a></td><td data-label="Бренд">Ballu</td><td data-label="Производительность">90 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="BAF-EX 100 G">8 290 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-fw-120-n">BAF-FW 120 N</a></td><td data-label="Бренд">Ballu</td><td data-label="Производительность">185 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="BAF-FW 120 N">8 290 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-ar-120-v">BAF-AR 120 V</a></td><td data-label="Бренд">Ballu</td><td data-label="Производительность">190 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="BAF-AR 120 V">9 390 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-fw-150-n">BAF-FW 150 N</a></td><td data-label="Бренд">Ballu</td><td data-label="Производительность">295 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="BAF-FW 150 N">9 590 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-sl-100-v">BAF-SL 100 V</a></td><td data-label="Бренд">Ballu</td><td data-label="Производительность">95 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="BAF-SL 100 V">9 590 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafv-100">RAFV 100</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Производительность">98 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="RAFV 100">10 790 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-baf-ar-150-v">BAF-AR 150 V</a></td><td data-label="Бренд">Ballu</td><td data-label="Производительность">300 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="BAF-AR 150 V">11 490 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafr-100">RAFR 100</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Производительность">100 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="RAFR 100">12 390 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafv-120">RAFV 120</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Производительность">195 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="RAFV 120">12 390 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafc-100-white">RAFC 100 White</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Производительность">95 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="RAFC 100 White">12 790 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafr-100-v">RAFR 100 V</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Производительность">100 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="RAFR 100 V">12 790 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafs-100">RAFS 100</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Производительность">97 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="RAFS 100">13 390 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=royal-thermo-rafs-100-v">RAFS 100 V</a></td><td data-label="Бренд">Royal Thermo</td><td data-label="Производительность">97 м³/ч</td><td class="thgeo-p" data-label="Цена" data-art="RAFS 100 V">13 990 ₸</td></tr>
 </tbody>
 </table>
 </div>

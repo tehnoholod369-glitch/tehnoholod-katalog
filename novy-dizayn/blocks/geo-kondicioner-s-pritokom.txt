@@ -31,6 +31,20 @@
 .thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
 .thgeo-mont ul{margin:0;padding-left:18px}
 .thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+@media (max-width:480px){
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
 </style>
 <div class="thgeo">
 <h1>Кондиционеры с притоком свежего воздуха в Алматы</h1>
@@ -44,25 +58,28 @@
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=bytovye">Весь каталог</a>
 <a class="tg2" href="https://podbor.tehnoholod369.kz/">Подобрать по площади</a>
 </div>
+<h2>Кондиционер по площади помещения</h2>
+<div class="thgeo-area"><a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">до 25 м²</a>до 35 м²до 50 м²<a href="https://podbor.tehnoholod369.kz/">Другая площадь</a></div>
+<p class="thgeo-note">Площадь — первый ориентир, а не весь расчёт. На мощность влияют окна и сторона света, высота потолков, сколько людей и техники в комнате. Точный подбор — в калькуляторе или по опросному листу.</p>
 <h2>Модели с притоком в наличии</h2>
 <div class="thgeo-tw">
 <table>
 <thead><tr><th>Модель</th><th>Бренд</th><th>Площадь</th><th>Цена</th></tr></thead>
 <tbody>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsah-09hrfn8">NOVA 3-IN-1 MDSAH-09HRFN8 / MDOAH-09HFN8</a></td><td>MDV</td><td>30 м²</td><td class="thgeo-p" data-art="MDSAH-09HRFN8">310 000 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr09hsv-p7w">FreshIN 3.0 (белый) TAC-FR09HSV/P7W</a></td><td>TCL</td><td>25 м²</td><td class="thgeo-p" data-art="TAC-FR09HSV/P7W">323 942 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsah-12hrfn8">NOVA 3-IN-1 MDSAH-12HRFN8 / MDOAH-12HFN8</a></td><td>MDV</td><td>35 м²</td><td class="thgeo-p" data-art="MDSAH-12HRFN8">331 250 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr12inv-r3">FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3</a></td><td>TCL</td><td>35 м²</td><td class="thgeo-p" data-art="TAC-FR12INV/R3">340 766 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr12hsv-p7w">FreshIN 3.0 (белый) TAC-FR12HSV/P7W</a></td><td>TCL</td><td>35 м²</td><td class="thgeo-p" data-art="TAC-FR12HSV/P7W">340 992 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr09hsv-p7s">FreshIN 3.0 (серебро) TAC-FR09HSV/P7S</a></td><td>TCL</td><td>25 м²</td><td class="thgeo-p" data-art="TAC-FR09HSV/P7S">340 992 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr10hsv-p7b">FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B</a></td><td>TCL</td><td>28 м²</td><td class="thgeo-p" data-art="TAC-FR10HSV/P7B">340 992 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr12hsv-p7s">FreshIN 3.0 (серебро) TAC-FR12HSV/P7S</a></td><td>TCL</td><td>35 м²</td><td class="thgeo-p" data-art="TAC-FR12HSV/P7S">375 092 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr13hsv-p7b">FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B</a></td><td>TCL</td><td>38 м²</td><td class="thgeo-p" data-art="TAC-FR13HSV/P7B">383 617 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr18hsv-p7w">FreshIN 3.0 (белый) TAC-FR18HSV/P7W</a></td><td>TCL</td><td>50 м²</td><td class="thgeo-p" data-art="TAC-FR18HSV/P7W">392 142 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr18hsv-p7s">FreshIN 3.0 (серебро) TAC-FR18HSV/P7S</a></td><td>TCL</td><td>50 м²</td><td class="thgeo-p" data-art="TAC-FR18HSV/P7S">409 192 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=electrolux-eacs-i-10hfa-n8-v2">Crystal Air Super DC EACS/I-10HFA/N8_V2</a></td><td>Electrolux</td><td>28 м²</td><td class="thgeo-p" data-art="EACS/I-10HFA/N8_V2">425 615 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr18hsv-p7b">FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B</a></td><td>TCL</td><td>50 м²</td><td class="thgeo-p" data-art="TAC-FR18HSV/P7B">426 242 ₸</td></tr>
-<tr><td><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=electrolux-eacs-i-13hfa-n8-v2">Crystal Air Super DC EACS/I-13HFA/N8_V2</a></td><td>Electrolux</td><td>38 м²</td><td class="thgeo-p" data-art="EACS/I-13HFA/N8_V2">467 802 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsah-09hrfn8">NOVA 3-IN-1 MDSAH-09HRFN8 / MDOAH-09HFN8</a></td><td data-label="Бренд">MDV</td><td data-label="Площадь">30 м²</td><td class="thgeo-p" data-label="Цена" data-art="MDSAH-09HRFN8">310 000 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr09hsv-p7w">FreshIN 3.0 (белый) TAC-FR09HSV/P7W</a></td><td data-label="Бренд">TCL</td><td data-label="Площадь">25 м²</td><td class="thgeo-p" data-label="Цена" data-art="TAC-FR09HSV/P7W">323 942 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=mdv-mdsah-12hrfn8">NOVA 3-IN-1 MDSAH-12HRFN8 / MDOAH-12HFN8</a></td><td data-label="Бренд">MDV</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="MDSAH-12HRFN8">331 250 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr12inv-r3">FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3</a></td><td data-label="Бренд">TCL</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="TAC-FR12INV/R3">340 766 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr12hsv-p7w">FreshIN 3.0 (белый) TAC-FR12HSV/P7W</a></td><td data-label="Бренд">TCL</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="TAC-FR12HSV/P7W">340 992 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr09hsv-p7s">FreshIN 3.0 (серебро) TAC-FR09HSV/P7S</a></td><td data-label="Бренд">TCL</td><td data-label="Площадь">25 м²</td><td class="thgeo-p" data-label="Цена" data-art="TAC-FR09HSV/P7S">340 992 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr10hsv-p7b">FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B</a></td><td data-label="Бренд">TCL</td><td data-label="Площадь">28 м²</td><td class="thgeo-p" data-label="Цена" data-art="TAC-FR10HSV/P7B">340 992 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr12hsv-p7s">FreshIN 3.0 (серебро) TAC-FR12HSV/P7S</a></td><td data-label="Бренд">TCL</td><td data-label="Площадь">35 м²</td><td class="thgeo-p" data-label="Цена" data-art="TAC-FR12HSV/P7S">375 092 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr13hsv-p7b">FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B</a></td><td data-label="Бренд">TCL</td><td data-label="Площадь">38 м²</td><td class="thgeo-p" data-label="Цена" data-art="TAC-FR13HSV/P7B">383 617 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr18hsv-p7w">FreshIN 3.0 (белый) TAC-FR18HSV/P7W</a></td><td data-label="Бренд">TCL</td><td data-label="Площадь">50 м²</td><td class="thgeo-p" data-label="Цена" data-art="TAC-FR18HSV/P7W">392 142 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr18hsv-p7s">FreshIN 3.0 (серебро) TAC-FR18HSV/P7S</a></td><td data-label="Бренд">TCL</td><td data-label="Площадь">50 м²</td><td class="thgeo-p" data-label="Цена" data-art="TAC-FR18HSV/P7S">409 192 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=electrolux-eacs-i-10hfa-n8-v2">Crystal Air Super DC EACS/I-10HFA/N8_V2</a></td><td data-label="Бренд">Electrolux</td><td data-label="Площадь">28 м²</td><td class="thgeo-p" data-label="Цена" data-art="EACS/I-10HFA/N8_V2">425 615 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=tcl-tac-fr18hsv-p7b">FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B</a></td><td data-label="Бренд">TCL</td><td data-label="Площадь">50 м²</td><td class="thgeo-p" data-label="Цена" data-art="TAC-FR18HSV/P7B">426 242 ₸</td></tr>
+<tr><td data-label="Модель"><a href="https://tehnoholod369.kz/tovar?g=bytovye&amp;sl=electrolux-eacs-i-13hfa-n8-v2">Crystal Air Super DC EACS/I-13HFA/N8_V2</a></td><td data-label="Бренд">Electrolux</td><td data-label="Площадь">38 м²</td><td class="thgeo-p" data-label="Цена" data-art="EACS/I-13HFA/N8_V2">467 802 ₸</td></tr>
 </tbody>
 </table>
 </div>
