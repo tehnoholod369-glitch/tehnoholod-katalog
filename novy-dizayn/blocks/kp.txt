@@ -12,6 +12,7 @@
   a { color: #0A4EA7; text-decoration: none; }
   a:hover { color: #0872D3; }
 </style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=591c7919"></script>
 </helmet>
 
 
@@ -30,6 +31,10 @@
   padding:12px var(--поле);display:flex;align-items:center;gap:10px;margin:0 calc(-1*var(--поле))}
 .kpшапка h1{font-size:18px;margin:0}
 .kpитог{margin-left:auto;font-weight:700;white-space:nowrap}
+.kpкорзина{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.kpкорзина button{flex:1 1 220px}
+.kpвкаталог{font-weight:600;white-space:nowrap}
+.kpкорзина .kpподсказка{flex:1 1 100%;margin-top:0}
 .kpпоиск{position:relative}
 .kpвыдача{position:absolute;left:0;right:0;top:calc(100% + 4px);background:#fff;z-index:15;
   border:1px solid var(--рамка);border-radius:12px;max-height:52vh;overflow:auto;
@@ -85,6 +90,11 @@
 
   <div class="kpредактор">
     <h2>Позиции</h2>
+    <div class="kpкорзина" id="kpБлокКорзины">
+      <button class="главная" id="kpВзять" hidden></button>
+      <a class="kpвкаталог" href="/katalog">Выбрать в каталоге →</a>
+      <div class="kpподсказка">Отмечайте товары в каталоге кнопкой «В корзину» — сюда они придут составом.</div>
+    </div>
     <div class="kpпоиск">
       <input id="kpПоиск" placeholder="Артикул или название — GWH12, Eva, ESVMW…" autocomplete="off">
       <div class="kpвыдача" id="kpВыдача" hidden></div>
@@ -225,6 +235,37 @@ $("kpВыдача").addEventListener("click", function(e){
   $("kpПоиск").value = ""; $("kpВыдача").hidden = true; $("kpВыдача").innerHTML = "";
 });
 $("kpСвоя").addEventListener("click", function(){ добавить({s:"",n:"",p:0,st:"",g:"",sl:""}, true); });
+
+/* ---------- выбор прямо в каталоге: берём состав из корзины сайта ----------
+   Корзина общая для всех страниц (cart.js, ключ th_cart_v1), поэтому менеджер
+   ходит по каталогу как обычный покупатель, жмёт «В корзину», а здесь забирает
+   всё составом. Из корзины берём только СОСТАВ и количество: цену, название,
+   наличие и ссылку подставляем из своего kp-index.json — он свежее снимка,
+   сделанного в момент добавления в корзину. Нет позиции в индексе — тогда
+   значения корзины, чтобы строка не потерялась. */
+function корзина(){ return (window.CART && window.CART.list) ? window.CART.list() : []; }
+function обновитьКнопкуКорзины(){
+  var n = корзина().length, b = $("kpВзять");
+  b.hidden = !n;
+  if(n) b.textContent = "Взять из корзины сайта (" + n + ")";
+}
+$("kpВзять").addEventListener("click", function(){
+  var было = ПОЗ.length, пропущено = 0;
+  корзина().forEach(function(c){
+    var ключ = String(c.s || c.sl || c.n || "");
+    var есть = ПОЗ.some(function(p){ return p.арт && ключ && p.арт === c.s; });
+    if(есть){ пропущено++; return; }
+    var из = null;
+    for(var i=0;i<КАТАЛОГ.length;i++) if(КАТАЛОГ[i].s === c.s){ из = КАТАЛОГ[i]; break; }
+    var x = из || { s:c.s||"", n:c.n||"", p:c.p||0, st:c.st||"", g:c.g||"", sl:c.sl||"" };
+    ПОЗ.push({ арт:x.s, имя:x.n, база:x.p||0, кол:(+c.q>0?+c.q:1), ед:"шт",
+      режим: x.p ? "база" : "сумма", знач:0, срок:x.st||"",
+      ссылка: (x.g && x.sl) ? (ОРГ.сайт+"/tovar?g="+x.g+"&sl="+x.sl) : "", вручную:false });
+  });
+  рисовать();
+  if(ПОЗ.length === было) alert(пропущено ? "Всё из корзины уже в этом КП." : "Корзина пуста.");
+});
+window.addEventListener("th-cart", обновитьКнопкуКорзины);
 
 function добавить(x, вручную){
   ПОЗ.push({ арт:x.s||"", имя:x.n||"", база:x.p||0, кол:1, ед:"шт",
@@ -392,6 +433,7 @@ if(!$("kpНомер").value){
 }
 if(!$("kpДо").value) $("kpДо").value = new Date(д.getTime()+7*864e5).toISOString().slice(0,10);
 рисовать();
+обновитьКнопкуКорзины();
 загрузить();
 })();
 </script>
