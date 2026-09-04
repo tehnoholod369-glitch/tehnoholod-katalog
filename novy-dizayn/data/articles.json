@@ -17,7 +17,8 @@
    "c": "byt-kond",
    "g": "bytovye",
    "m": 3,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "kondicioner-ili-obogrevatel",
@@ -27,7 +28,8 @@
    "c": "byt-kond",
    "g": "bytovye",
    "m": 3,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "kogda-deshevle-kupit-kondicioner",
@@ -37,7 +39,8 @@
    "c": "byt-kond",
    "g": "bytovye",
    "m": 3,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "svezhii-vozduh-zimoi",
@@ -47,7 +50,8 @@
    "c": "vozduh",
    "g": "ventilyaciya",
    "m": 3,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "podgotovka-kondicionera-k-zime",
@@ -57,7 +61,8 @@
    "c": "byt-kond",
    "g": "bytovye",
    "m": 3,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "suhoi-vozduh-zimoi",
@@ -67,7 +72,8 @@
    "c": "vozduh",
    "g": "ventilyaciya",
    "m": 3,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "kak-vybrat-radiator",
@@ -77,7 +83,8 @@
    "c": "otoplenie",
    "g": "radiatory",
    "m": 4,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-02"
   },
   {
    "s": "skolko-sekcii-radiatora",
@@ -87,7 +94,8 @@
    "c": "otoplenie",
    "g": "radiatory",
    "m": 4,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "konvektor-obogrevatel",
@@ -97,7 +105,8 @@
    "c": "otoplenie",
    "g": "obogrevateli",
    "m": 5,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "teplovoy-nasos",
@@ -107,7 +116,8 @@
    "c": "otoplenie",
    "g": "teplovye-nasosy",
    "m": 5,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "ik-obogrevatel",
@@ -117,7 +127,8 @@
    "c": "otoplenie",
    "g": "infrakrasnye-obogrevateli",
    "m": 5,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "pritochnaya-ventilyaciya",
@@ -127,7 +138,8 @@
    "c": "vozduh",
    "g": "ventilyaciya",
    "m": 5,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "rekuperator",
@@ -137,7 +149,8 @@
    "c": "vozduh",
    "g": "ventilyaciya",
    "m": 5,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "vytyazhka",
@@ -147,7 +160,8 @@
    "c": "vozduh",
    "g": "ventilyaciya",
    "m": 5,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "nakopitelnyi-ili-protochnyi",
@@ -157,7 +171,8 @@
    "c": "voda",
    "g": "vodonagrevateli",
    "m": 5,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "obem-boilera",
@@ -167,7 +182,8 @@
    "c": "voda",
    "g": "vodonagrevateli",
    "m": 6,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "osushitel",
@@ -177,7 +193,8 @@
    "c": "vozduh",
    "g": "osushiteli",
    "m": 5,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "elektrokamin",
@@ -187,7 +204,8 @@
    "c": "otoplenie",
    "g": "kaminy",
    "m": 6,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "teplovaya-zavesa",
@@ -197,7 +215,8 @@
    "c": "nezhilye",
    "g": "teplovye-zavesy",
    "m": 6,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "teplovaya-pushka",
@@ -207,7 +226,8 @@
    "c": "nezhilye",
    "g": "teplovye-pushki",
    "m": 6,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "otoplenie-chastnogo-doma",
@@ -217,7 +237,8 @@
    "c": "otoplenie",
    "g": "radiatory",
    "m": 8,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-02"
   },
   {
    "s": "multisplit-sistema",
@@ -227,7 +248,8 @@
    "c": "byt-kond",
    "g": "multisplit",
    "m": 6,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "kanalny-kondicioner",
@@ -237,7 +259,8 @@
    "c": "nezhilye",
    "g": "poluprom",
    "m": 6,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "vrf",
@@ -247,7 +270,8 @@
    "c": "nezhilye",
    "g": "mini-vrf",
    "m": 7,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "kassetny-kondicioner",
@@ -257,7 +281,8 @@
    "c": "nezhilye",
    "g": "poluprom",
    "m": 6,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "montazh-kondicionera-proverennaya-brigada",
@@ -267,7 +292,8 @@
    "c": "byt-kond",
    "g": "bytovye",
    "m": 9,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-02"
   },
   {
    "s": "brizer-ili-konditsioner-s-pritokom",
@@ -277,7 +303,8 @@
    "c": "pritok",
    "g": "bytovye",
    "m": 4,
-   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0"
+   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0",
+   "pub": "2026-09-02"
   },
   {
    "s": "kak-rabotaet-konditsioner-s-pritokom",
@@ -287,7 +314,8 @@
    "c": "pritok",
    "g": "bytovye",
    "m": 3,
-   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0"
+   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0",
+   "pub": "2026-09-02"
   },
   {
    "s": "kak-vybrat-moshchnost-konditsionera",
@@ -297,7 +325,8 @@
    "c": "pritok",
    "g": "bytovye",
    "m": 3,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-02"
   },
   {
    "s": "pritok-vozdukha-vs-fortochka",
@@ -307,7 +336,8 @@
    "c": "pritok",
    "g": "bytovye",
    "m": 2,
-   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0"
+   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0",
+   "pub": "2026-09-02"
   },
   {
    "s": "pochemu-dushno-doma-s-konditsionerom",
@@ -317,7 +347,8 @@
    "c": "pritok",
    "g": "bytovye",
    "m": 3,
-   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0"
+   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0",
+   "pub": "2026-09-02"
   },
   {
    "s": "do-kakoy-temperatury-rabotaet-konditsioner",
@@ -327,7 +358,8 @@
    "c": "pritok",
    "g": "bytovye",
    "m": 2,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-02"
   },
   {
    "s": "obsluzhivanie-konditsionera-zamena-filtra",
@@ -337,7 +369,8 @@
    "c": "pritok",
    "g": "bytovye",
    "m": 2,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-02"
   },
   {
    "s": "montazh-kondicionera-s-pritokom",
@@ -347,7 +380,8 @@
    "c": "pritok",
    "g": "bytovye",
    "m": 3,
-   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0"
+   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0",
+   "pub": "2026-09-02"
   },
   {
    "s": "freshin-sravnenie",
@@ -357,7 +391,8 @@
    "c": "pritok",
    "g": "bytovye",
    "m": 5,
-   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0"
+   "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0",
+   "pub": "2026-09-02"
   },
   {
    "s": "skolko-stoit-ustanovka-kondicionera",
@@ -367,7 +402,8 @@
    "c": "byt-kond",
    "g": "bytovye",
    "m": 5,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "kakoy-kondicioner-vybrat-dlya-kvartiry",
@@ -377,7 +413,8 @@
    "c": "byt-kond",
    "g": "bytovye",
    "m": 5,
-   "p": "—"
+   "p": "—",
+   "pub": "2026-09-03"
   },
   {
    "s": "kondicioner-v-novostroyke",
@@ -387,7 +424,8 @@
    "c": "byt-kond",
    "g": "bytovye",
    "m": 5,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "invertor-ili-obychnyy-kondicioner",
@@ -397,7 +435,8 @@
    "c": "byt-kond",
    "g": "bytovye",
    "m": 4,
-   "p": "—"
+   "p": "—",
+   "pub": "2026-09-03"
   },
   {
    "s": "kondicionery-dlya-ofisa",
@@ -407,7 +446,8 @@
    "c": "nezhilye",
    "g": "poluprom",
    "m": 5,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "ventilyaciya-bez-remonta",
@@ -417,7 +457,8 @@
    "c": "pritok",
    "g": "ventilyaciya",
    "m": 4,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-03"
   },
   {
    "s": "kak-vybrat-marku-kondicionera",
@@ -427,7 +468,8 @@
    "c": "byt-kond",
    "g": "bytovye",
    "m": 5,
-   "p": "—"
+   "p": "—",
+   "pub": "2026-09-04"
   },
   {
    "s": "kondicioner-i-deti",
@@ -437,7 +479,8 @@
    "c": "byt-kond",
    "g": "bytovye",
    "m": 5,
-   "p": ""
+   "p": "",
+   "pub": "2026-09-04"
   }
  ]
 }

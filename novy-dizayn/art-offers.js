@@ -57,12 +57,12 @@
       .catch(function () { return null; });
   }
 
-  // Правило «Наш выбор» — то же, что на странице выдачи /katalog (там оно называется
-  // isPick и recScore). Второго правила для одной сущности не заводим: если в picks.json
-  // владелец вписал артикулы, выбираем из них; список пуст — считаем по данным.
   function лучший(items, picks) {
     var есть = function (it) { return !!(it.s && it.i && it.p && /налич/i.test(it.st || "")); };
-    var свой = function (it) { return picks && picks.length ? (it.s && picks.indexOf(it.s) >= 0) : есть(it); };
+    var здесь = !!(picks && picks.length && items.some(function (it) {
+      return it.s && picks.indexOf(it.s) >= 0;
+    }));
+    var свой = function (it) { return здесь ? (it.s && picks.indexOf(it.s) >= 0) : есть(it); };
     var балл = function (it) {
       var n = 0;
       if (свой(it)) n += 8;

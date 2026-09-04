@@ -501,8 +501,21 @@ class Component extends DCLogic {
 
   componentDidUpdate() { this.syncPhotos(); }
 
+  picksZdes(picks) {
+    if (!picks || !picks.length) return false;
+    const сп = this.state.items;
+    if (!сп || !сп.length) return false;
+    const п = this.__pz;
+    if (п && п.г === this.state.group && п.н === picks.length && п.к === сп.length) return п.в;
+    const есть = {};
+    picks.forEach(s => { есть[s] = 1; });
+    const в = сп.some(x => x.s && есть[x.s]);
+    this.__pz = { г: this.state.group, н: picks.length, к: сп.length, в };
+    return в;
+  }
+
   isPick(it, picks) {
-    if (picks && picks.length) return it.s && picks.indexOf(it.s) >= 0;
+    if (this.picksZdes(picks)) return !!(it.s && picks.indexOf(it.s) >= 0);
     return !!(it.s && it.i && it.p && /налич/i.test(it.st || ""));
   }
 
@@ -1698,7 +1711,7 @@ class Component extends DCLogic {
       } : null,
       {
         key: "pick", activeLabel: s.onlyPick ? "Наш выбор" : (s.onlySale ? "Акция" : ""),
-        title: "Отбор", note: picks.length ? "Рекомендуем сами: в наличии и проверены на объектах" : "В наличии, с фото и артикулом",
+        title: "Отбор", note: this.picksZdes(picks) ? "Отобрали сами: есть в наличии, с фото и полными характеристиками" : "В наличии, с фото и артикулом",
         options: [
           this.chip(!s.onlyPick && !s.onlySale, "Все", () => this.setState({ onlyPick: false, onlySale: false, shown: 12 })),
           this.chip(s.onlyPick, "Наш выбор", () => this.setState({ onlyPick: true, onlySale: false, shown: 12 }))

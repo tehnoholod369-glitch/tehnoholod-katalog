@@ -281,8 +281,8 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=7c7384bc"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=aa67580c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=aa7da59c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=f54281a3"></script>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Электрокамин в квартире: как выбрать и чем отличается от био", "description": "Электрокамин, биокамин или декоративный портал — что выбрать в квартиру. Реалистичность пламени, обогрев, безопасность, цена. Алматы.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/elektrokamin"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-04", "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightYear": 2026, "datePublished": "2026-09-03"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Электрокамин в квартире: как выбрать и чем отличается от био", "item": "https://tehnoholod369.kz/elektrokamin"}]}</script>

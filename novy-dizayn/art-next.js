@@ -105,23 +105,46 @@
     });
   }
 
-  // Копирайт в подвале. Блоки, вставленные в Tilda до 03.09.2026, его не несут,
-  // а перевставлять сорок страниц ради одной строки — не работа. Шаблон её теперь
-  // рисует сам, поэтому здесь сначала проверяем, нет ли её уже.
+  // Копирайт. Блоки, вставленные в Tilda до 03.09.2026, его не несут, а перевставлять
+  // сорок страниц ради одной строки — не работа. Шаблон её теперь рисует сам,
+  // поэтому сначала проверяем, нет ли её уже.
+  //
+  // ⚠️ Цепляем в конец #dc-root, а НЕ в .art-local-chrome: тот подвал в Tilda скрыт
+  // (display:none — глобальный подвал сайта рисуется отдельно), и строка внутри него
+  // не видна никому. Первая версия этой функции ошиблась ровно так, поймано на живой
+  // /brizer-ili-konditsioner-s-pritokom в тот же день.
   function копирайт() {
     if (document.querySelector("[data-th-copyright]")) return;
-    var подвал = document.querySelector(".art-local-chrome");
-    if (!подвал) return;
+    var корень = document.querySelector("#dc-root");
+    if (!корень) return;
     var о = document.createElement("div");
     о.setAttribute("data-th-copyright", "1");
-    о.style.cssText = "max-width:1240px;margin:14px auto 0;padding:0 24px;" +
+    о.style.cssText = "max-width:888px;margin:0 auto;padding:18px 24px 40px;" +
                       "font-size:12px;line-height:1.7;color:#6B7C93;";
     о.innerHTML = "© " + new Date().getFullYear() + " ИП «ТехноХолод». Тексты и таблицы " +
       "базы знаний — наши собственные. Перепечатка целиком или существенной частью — " +
       "только с письменного разрешения. Цитата с активной ссылкой на источник разрешена " +
       'без запроса. <a href="' + САЙТ + '/usloviya-ispolzovaniya" style="color:#9FB0C4;">' +
       "Условия использования</a>";
-    подвал.appendChild(о);
+    корень.appendChild(о);
+  }
+
+  // Дата первой публикации в разметку. Поле datePublished появилось в генераторе
+  // 03.09.2026 — блоки, вставленные раньше, его не несут, а перевставлять сорок
+  // страниц ради одной строки JSON-LD не работа. Дописываем на лету: Google
+  // разбирает structured data после исполнения скриптов.
+  // Если поле уже есть — не трогаем: в блоке оно точнее, чем что-либо здесь.
+  function датаВРазметку(все) {
+    var адрес = location.pathname.replace(/^\/+|\/+$/g, ""), дата = "", i;
+    for (i = 0; i < все.length; i++) if (все[i].s === адрес) { дата = все[i].pub || ""; break; }
+    if (!дата) return;
+    [].forEach.call(document.querySelectorAll('script[type="application/ld+json"]'), function (у) {
+      var j;
+      try { j = JSON.parse(у.textContent); } catch (e) { return; }
+      if (!j || j["@type"] !== "Article" || j.datePublished) return;
+      j.datePublished = дата;
+      у.textContent = JSON.stringify(j);
+    });
   }
 
   function пуск() {
@@ -142,6 +165,7 @@
           if (выбор.length) нарисовать(узел, выбор);
         });
         оживить(d.items);
+        датаВРазметку(d.items);
       })
       .catch(function () { /* оставляем то, что собрал генератор */ });
   }
