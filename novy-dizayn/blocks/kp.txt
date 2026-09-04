@@ -374,6 +374,49 @@ function бланк(){
     '<div class="сноска">Документ сформирован автоматически и действителен без печати и подписи.</div></div>';
 }
 
+/* ---------- сквозной номер КП ----------
+   Номер выдаёт приёмник заявок (лист «КП», счётчик КП-ГГММ-NNNN), а не браузер:
+   у менеджера с телефона и с компьютера браузерные счётчики разошлись бы, а после
+   чистки кэша начались бы заново. Решение владельца 04.09.2026.
+
+   Спрашиваем номер в момент выгрузки, а не при открытии: иначе каждый заход
+   сжигал бы номер. Один раз выданный номер остаётся у этого КП — повторная
+   выгрузка второй номер не берёт.
+
+   Адрес приёмника берём из cart.js (CART.exec): второго адреса не заводим,
+   при смене развёртывания менять в одном месте. */
+var номерВыдан = false;
+function выдатьНомер(){
+  if(номерВыдан || !ПОЗ.length) return Promise.resolve(true);
+  var exec = (window.CART && window.CART.exec) || "";
+  if(!exec) return Promise.resolve(false);
+  var сум = всего(), ндс = сум - Math.round(сум/(1+НДС));
+  var тело = { kind:"kp", customer:$("kpКлиент").value.trim() || "До востребования",
+    bin:$("kpБин").value.trim(), until:$("kpДо").value, vat:ндс, src:"/kp",
+    ua:(navigator.userAgent||"").slice(0,120),
+    items: ПОЗ.map(function(p){ return {art:p.арт, name:p.имя, qty:+p.кол||0,
+      price:ценаПозиции(p)}; }) };
+  return fetch(exec, { method:"POST", headers:{"Content-Type":"text/plain;charset=utf-8"},
+                       body: JSON.stringify(тело) })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if(d && d.number){ $("kpНомер").value = d.number; номерВыдан = true; бланк(); сохранить(); return true; }
+      return false;
+    })
+    .catch(function(){ return false; });
+}
+function сНомером(дальше){
+  выдатьНомер().then(function(ок){
+    // Молча ставить свой номер нельзя: два КП с одинаковым номером хуже, чем
+    // пауза и честное предупреждение.
+    if(!ок && !$("kpНомер").value.trim()){
+      if(!confirm("Не удалось получить номер КП с сайта (нет связи с приёмником).\n"
+                + "Выгрузить без номера? Номер можно вписать вручную.")) return;
+    }
+    дальше();
+  });
+}
+
 /* ---------- выгрузка ---------- */
 function текст(){
   var сум = всего(), безНДС = Math.round(сум/(1+НДС)), ндс = сум - безНДС;
@@ -393,13 +436,18 @@ function текст(){
 }
 $("kpПечать").addEventListener("click", function(){
   if(!ПОЗ.length) return alert("Добавьте хотя бы одну позицию.");
-  бланк(); window.print();
+  сНомером(function(){ бланк(); window.print(); });
 });
 $("kpВатсап").addEventListener("click", function(){
   if(!ПОЗ.length) return alert("Добавьте хотя бы одну позицию.");
-  window.open("https://wa.me/?text="+encodeURIComponent(текст()), "_blank");
+  // Окно открываем ПОСЛЕ получения номера, иначе в сообщение уедет пустой номер.
+  сНомером(function(){ window.open("https://wa.me/?text="+encodeURIComponent(текст()), "_blank"); });
 });
 $("kpКопия").addEventListener("click", function(){
+  if(!ПОЗ.length) return alert("Добавьте хотя бы одну позицию.");
+  сНомером(function(){ копироватьТекст(); });
+});
+function копироватьТекст(){
   var t = текст();
   if(navigator.clipboard && navigator.clipboard.writeText){
     navigator.clipboard.writeText(t).then(function(){ alert("Текст КП скопирован."); });
@@ -407,7 +455,7 @@ $("kpКопия").addEventListener("click", function(){
     var e = document.createElement("textarea"); e.value = t; document.body.appendChild(e);
     e.select(); document.execCommand("copy"); e.parentNode.removeChild(e); alert("Текст КП скопирован.");
   }
-});
+}
 
 /* ---------- черновик ---------- */
 function сохранить(){
@@ -441,10 +489,12 @@ $("kpДоки").checked = true;
 $("kpВзять").hidden = true;
 восстановить();
 var д = new Date();
-if(!$("kpНомер").value){
-  var дд = ("0"+д.getDate()).slice(-2), мм = ("0"+(д.getMonth()+1)).slice(-2);
-  $("kpНомер").value = дд+мм+String(д.getFullYear()).slice(2);
-}
+// Номер сам не придумываем: он сквозной и приходит от приёмника в момент выгрузки.
+// Датой заполнять поле нельзя — два КП, выписанные в один день, получили бы
+// одинаковый номер, а нумерация должна быть сквозной.
+$("kpНомер").placeholder = "присвоится при выгрузке";
+// В черновике номер уже мог быть выдан — второй раз не запрашиваем.
+if($("kpНомер").value.trim()) номерВыдан = true;
 if(!$("kpДо").value) $("kpДо").value = new Date(д.getTime()+7*864e5).toISOString().slice(0,10);
 рисовать();
 обновитьКнопкуКорзины();
