@@ -308,16 +308,23 @@ function рисовать(){
   $("kpШапкаИтог").textContent = деньги(всего())+" ₸";
   бланк(); сохранить();
 }
-$("kpПозиции").addEventListener("input", function(e){
+// Значение позиции пишем и по input, и по change — одной функцией. Раньше запись
+// висела только на input, а перерисовку по смене режима дергал change: если change
+// приходил без input (а так бывает — например когда select меняют программно),
+// режим в ПОЗ не попадал, перерисовка брала старое значение и список «откатывался».
+function правкаПозиции(e, перерисовать){
   var к = e.target.dataset.k; if(!к) return;
-  var i = +e.target.closest(".kpпоз").dataset.i;
+  var карточка = e.target.closest(".kpпоз"); if(!карточка) return;
+  var i = +карточка.dataset.i;
   ПОЗ[i][к] = (к==="кол"||к==="база"||к==="знач") ? e.target.value.replace(",",".") : e.target.value;
+  if(перерисовать || к==="режим") { рисовать(); return; }
   $("kpШапкаИтог").textContent = деньги(всего())+" ₸";
-  var у = e.target.closest(".kpпоз").querySelector(".kpцена");
+  var у = карточка.querySelector(".kpцена");
   if(у) у.innerHTML = деньги(ценаПозиции(ПОЗ[i]))+" ₸ × "+ПОЗ[i].кол+" = <b>"+деньги(суммаПозиции(ПОЗ[i]))+" ₸</b>";
   бланк(); сохранить();
-});
-$("kpПозиции").addEventListener("change", function(e){ if(e.target.dataset.k==="режим") рисовать(); });
+}
+$("kpПозиции").addEventListener("input", function(e){ правкаПозиции(e, false); });
+$("kpПозиции").addEventListener("change", function(e){ правкаПозиции(e, false); });
 $("kpПозиции").addEventListener("click", function(e){
   var d = e.target.dataset.del; if(d===undefined) return;
   ПОЗ.splice(+d,1); рисовать();
