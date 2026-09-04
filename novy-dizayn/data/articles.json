@@ -84,7 +84,7 @@
    "g": "radiatory",
    "m": 4,
    "p": "",
-   "pub": "2026-09-02"
+   "pub": "2026-08-08"
   },
   {
    "s": "skolko-sekcii-radiatora",
@@ -238,7 +238,7 @@
    "g": "radiatory",
    "m": 8,
    "p": "",
-   "pub": "2026-09-02"
+   "pub": "2026-08-08"
   },
   {
    "s": "multisplit-sistema",
@@ -293,7 +293,7 @@
    "g": "bytovye",
    "m": 9,
    "p": "",
-   "pub": "2026-09-02"
+   "pub": "2026-08-08"
   },
   {
    "s": "brizer-ili-konditsioner-s-pritokom",
@@ -304,7 +304,7 @@
    "g": "bytovye",
    "m": 4,
    "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0",
-   "pub": "2026-09-02"
+   "pub": "2026-08-08"
   },
   {
    "s": "kak-rabotaet-konditsioner-s-pritokom",
@@ -315,7 +315,7 @@
    "g": "bytovye",
    "m": 3,
    "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0",
-   "pub": "2026-09-02"
+   "pub": "2026-08-08"
   },
   {
    "s": "kak-vybrat-moshchnost-konditsionera",
@@ -326,7 +326,7 @@
    "g": "bytovye",
    "m": 3,
    "p": "",
-   "pub": "2026-09-02"
+   "pub": "2026-08-08"
   },
   {
    "s": "pritok-vozdukha-vs-fortochka",
@@ -337,7 +337,7 @@
    "g": "bytovye",
    "m": 2,
    "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0",
-   "pub": "2026-09-02"
+   "pub": "2026-08-08"
   },
   {
    "s": "pochemu-dushno-doma-s-konditsionerom",
@@ -348,7 +348,7 @@
    "g": "bytovye",
    "m": 3,
    "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0",
-   "pub": "2026-09-02"
+   "pub": "2026-08-08"
   },
   {
    "s": "do-kakoy-temperatury-rabotaet-konditsioner",
@@ -359,7 +359,7 @@
    "g": "bytovye",
    "m": 2,
    "p": "",
-   "pub": "2026-09-02"
+   "pub": "2026-08-08"
   },
   {
    "s": "obsluzhivanie-konditsionera-zamena-filtra",
@@ -370,7 +370,7 @@
    "g": "bytovye",
    "m": 2,
    "p": "",
-   "pub": "2026-09-02"
+   "pub": "2026-08-08"
   },
   {
    "s": "montazh-kondicionera-s-pritokom",
@@ -381,7 +381,7 @@
    "g": "bytovye",
    "m": 3,
    "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0",
-   "pub": "2026-09-02"
+   "pub": "2026-08-08"
   },
   {
    "s": "freshin-sravnenie",
@@ -392,7 +392,7 @@
    "g": "bytovye",
    "m": 5,
    "p": "TCL|FreshIN 3.0 (серебро 2025)|FreshIN 3.0",
-   "pub": "2026-09-02"
+   "pub": "2026-08-08"
   },
   {
    "s": "skolko-stoit-ustanovka-kondicionera",
@@ -439,7 +439,7 @@
    "pub": "2026-09-03"
   },
   {
-   "s": "kondicionery-dlya-ofisa",
+   "s": "kak-vybrat-kondicioner-dlya-ofisa",
    "t": "Кондиционер для офиса: как рассчитать и что выбрать",
    "d": "Расчёт мощности для офиса с людьми и техникой, выбор между кассетным, канальным и мультизональной системой. Серверная, согласование, обслуживание.",
    "r": "Проектные решения",
@@ -447,7 +447,7 @@
    "g": "poluprom",
    "m": 5,
    "p": "",
-   "pub": "2026-09-03"
+   "pub": "2026-09-04"
   },
   {
    "s": "ventilyaciya-bez-remonta",
