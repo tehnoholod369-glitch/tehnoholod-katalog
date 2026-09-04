@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-03",
+ "generated": "2026-09-04",
  "neighbours": {
   "byt-kond": "pritok",
   "vozduh": "pritok",
@@ -397,7 +397,7 @@
    "c": "byt-kond",
    "g": "bytovye",
    "m": 4,
-   "p": ""
+   "p": "—"
   },
   {
    "s": "kondicionery-dlya-ofisa",
