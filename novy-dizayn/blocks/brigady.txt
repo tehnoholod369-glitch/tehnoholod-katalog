@@ -107,6 +107,17 @@
         </sc-for>
       </div>
 
+      <sc-if value="{{ manyLangs }}" hint-placeholder-val="{{ false }}">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6; margin-top:16px;">Язык</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
+          <sc-for list="{{ langChips }}" as="l" hint-placeholder-count="3">
+            <div onClick="{{ l.pick }}" style="border:1px solid {{ l.border }}; background:{{ l.bg }}; color:{{ l.fg }}; border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:6px;">
+              <span>{{ l.label }}</span><span style="font-size:12px; color:{{ l.countFg }}; font-variant-numeric:tabular-nums;">{{ l.count }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
       <sc-if value="{{ manyCities }}" hint-placeholder-val="{{ true }}">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6; margin-top:16px;">Город</div>
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
@@ -136,20 +147,14 @@
     </sc-if>
 
     
-    <sc-if value="{{ hasCommon }}" hint-placeholder-val="{{ false }}">
+    <sc-if value="{{ hasOsnCommon }}" hint-placeholder-val="{{ false }}">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:16px 18px; margin-top:14px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">ЕСТЬ У КАЖДОЙ БРИГАДЫ В СПИСКЕ</div>
-        
-        <sc-if value="{{ hasLangCommon }}" hint-placeholder-val="{{ false }}">
-          <div style="font-size:14px; color:#18212F; line-height:1.5; margin-top:9px;">{{ langCommonLine }}</div>
-        </sc-if>
-        <sc-if value="{{ hasOsnCommon }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:9px;">
-            <sc-for list="{{ osnCommon }}" as="it" hint-placeholder-count="6">
-              <span style="font-size:13px; color:#2A3646; background:#F3F7FB; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
-            </sc-for>
-          </div>
-        </sc-if>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:9px;">
+          <sc-for list="{{ osnCommon }}" as="it" hint-placeholder-count="6">
+            <span style="font-size:13px; color:#2A3646; background:#F3F7FB; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
+          </sc-for>
+        </div>
         <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:9px;">{{ osnCommonNote }}</div>
       </div>
     </sc-if>
@@ -402,11 +407,12 @@ const ПОРЦИЯ = 10;
 class Component extends DCLogic {
   PRIEMNIK = "https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec";
 
-  state = { data: null, failed: false, dir: "", city: "", open: {}, form: {}, sent: {}, verify: false, shown: ПОРЦИЯ };
+  state = { data: null, failed: false, dir: "", city: "", lang: "", open: {}, form: {}, sent: {}, verify: false, shown: ПОРЦИЯ };
 
   componentDidMount() {
     const q = new URLSearchParams(window.location.search);
-    this.setState({ dir: q.get("napravlenie") || "", city: q.get("gorod") || "" });
+    this.setState({ dir: q.get("napravlenie") || "", city: q.get("gorod") || "",
+                    lang: (q.get("yazyk") || "").toLowerCase() });
 
     try {
       const cached = sessionStorage.getItem("th_brigady");
@@ -472,10 +478,12 @@ class Component extends DCLogic {
     // «показать ещё» новый фильтр открывался бы сразу развёрнутым.
     this.setState(Object.assign({ shown: ПОРЦИЯ }, patch));
     try {
-      const s = Object.assign({ dir: this.state.dir, city: this.state.city }, patch);
+      const s = Object.assign({ dir: this.state.dir, city: this.state.city,
+                               lang: this.state.lang }, patch);
       const q = new URLSearchParams();
       if (s.dir) { q.set("napravlenie", s.dir); }
       if (s.city) { q.set("gorod", s.city); }
+      if (s.lang) { q.set("yazyk", s.lang); }
       const qs = q.toString();
       window.history.replaceState(null, "", window.location.pathname + (qs ? "?" + qs : ""));
     } catch (_) {}
@@ -590,13 +598,17 @@ class Component extends DCLogic {
     const d = this.state.data;
     const all = (d && d.brigady) || [];
     const loading = !d && !this.state.failed;
-    const dir = this.state.dir, city = this.state.city;
+    const dir = this.state.dir, city = this.state.city, lang = this.state.lang;
     // Порог публикации рейтинга живёт в приёмнике (PUB_MIN) — здесь только подпись.
     const pubMin = (d && d.pubMin) || 5;
 
+    // Язык нормализуем при сравнении: в анкете его пишут по-разному
+    // («Русский», «русский »), а фильтр обязан совпасть.
+    const яз = c => (c.langs || []).map(x => String(x).toLowerCase().trim());
     const list = all.filter(c =>
       (!dir || (c.dirs || []).indexOf(dir) >= 0) &&
-      (!city || c.region === city));
+      (!city || c.region === city) &&
+      (!lang || яз(c).indexOf(lang) >= 0));
 
     // Показываем порциями: реестр растёт, а первый экран должен оставаться
     // первым экраном. «Показать ещё» вместо страниц — ссылка вида
@@ -611,12 +623,6 @@ class Component extends DCLogic {
       ? (list[0].osn || []).filter(x => list.every(c => (c.osn || []).indexOf(x) >= 0))
       : [];
 
-    const общиеЯз = list.length > 1
-      ? (list[0].langs || []).filter(x => list.every(c => (c.langs || []).indexOf(x) >= 0))
-      : [];
-    const языкиОдинаковы = list.length > 1 && общиеЯз.length > 0
-      && list.every(c => (c.langs || []).length === общиеЯз.length);
-
     // Фишки строим только по тому, что реально есть в реестре: направление,
     // по которому нет ни одной бригады, — обещание фильтра без содержимого.
     const dirSeen = [];
@@ -626,6 +632,17 @@ class Component extends DCLogic {
       const hit = dirSeen.find(x => x.key === k);
       if (hit) { hit.n++; } else { dirSeen.push({ key: k, label: label, n: 1 }); }
     }));
+    // Языки — как города: строим фишки только по тому, что есть в реестре.
+    // Фильтр по языку, на котором не говорит ни одна бригада, — обещание
+    // без содержимого (владелец, 05.09.2026).
+    const langSeen = [];
+    all.forEach(c => яз(c).forEach(k => {
+      if (!k) { return; }
+      const hit = langSeen.find(x => x.key === k);
+      if (hit) { hit.n++; } else { langSeen.push({ key: k, label: this.langWords([k]), n: 1 }); }
+    }));
+    langSeen.sort((a, b) => b.n - a.n);
+
     const citySeen = [];
     all.forEach(c => {
       const hit = citySeen.find(x => x.key === c.region);
@@ -642,20 +659,18 @@ class Component extends DCLogic {
       hasAny: all.length > 0,
       nothingFound: all.length > 0 && list.length === 0,
       manyCities: citySeen.length > 1,
+      // Один язык на весь реестр — фильтровать не из чего, фишки не показываем.
+      manyLangs: langSeen.length > 1,
       pubMinLabel: this.votesLabel(pubMin).replace(/^\d+\s*/, pubMin + " "),
-      crewsTitle: list.length ? this.crewsWord(list.length) + (dir || city ? " по фильтру" : " в реестре")
+      crewsTitle: list.length ? this.crewsWord(list.length) + (dir || city || lang ? " по фильтру" : " в реестре")
                               : "Бригады",
       updatedNote: d && d.updated ? "реестр на " + this.dateLabel(d.updated) : "",
-      resetFilters: () => this.setFilter({ dir: "", city: "" }),
+      resetFilters: () => this.setFilter({ dir: "", city: "", lang: "" }),
 
-      hasCommon: общееОсн.length > 0 || языкиОдинаковы,
-      hasLangCommon: языкиОдинаковы,
-      langCommonLine: "Говорят: " + this.langWords(общиеЯз),
       hasOsnCommon: общееОсн.length > 0,
       osnCommon: общееОсн.map(x => this.cap(x)),
       osnCommonNote: "Это есть у каждой бригады в списке — проверено при сертификации. "
-                   + "В карточках указано только то, что сверх этого набора. Если "
-                   + "нужен другой язык — напишите, подберём бригаду отдельно.",
+                   + "В карточках указано только то, что сверх этого набора.",
       hasMore: list.length > показаны.length,
       moreLabel: "Показать ещё " + Math.min(ПОРЦИЯ, list.length - показаны.length),
       showMore: () => this.setState({ shown: this.state.shown + ПОРЦИЯ }),
@@ -671,6 +686,12 @@ class Component extends DCLogic {
         count: x.n,
         pick: () => this.setFilter({ city: x.key })
       }, this.chip(city === x.key))),
+
+      langChips: [{ key: "", label: "Любой", n: all.length }].concat(langSeen).map(x => Object.assign({
+        label: x.label,
+        count: x.n,
+        pick: () => this.setFilter({ lang: x.key })
+      }, this.chip(lang === x.key))),
 
       crews: показаны.map(c => {
         const open = !!this.state.open[c.cert];
@@ -717,10 +738,11 @@ class Component extends DCLogic {
             ? Object.assign({ t: "✓ Проверена временем · на рынке " + c.vremya.let_
                                  + " " + this.letWord(c.vremya.let_) }, ЗЕЛ) : null,
           c.docsOk ? Object.assign({ t: "Договор и акт" }, СИН) : null,
-          // Плашка нужна, когда в списке есть выбор по языку. Если все
-          // говорят одинаково, факт вынесен наверх и в карточке был бы шумом.
-          (!языкиОдинаковы && c.langs && c.langs.length)
-            ? Object.assign({ t: this.langWords(c.langs) }, СИН) : null,
+          // Язык — обычный факт карточки, как и объём работ: обозначаем,
+          // на чём бригада говорит, и не делаем из этого отдельной темы.
+          // Выбрать по языку можно фильтром над списком.
+          (c.langs && c.langs.length)
+            ? Object.assign({ t: this.langWords(c.langs) }, НЕЙТР) : null,
           работ ? Object.assign({ t: работ + " " + this.vidWord(работ) + " работ" }, НЕЙТР) : null
         ].filter(Boolean);
 
