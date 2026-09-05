@@ -205,6 +205,7 @@
                 <div style="font-size:12px; color:#8593A6; margin-top:8px;">{{ g.nores }}</div>
                 <div onClick="{{ g.expand }}" style="font-size:12px; font-weight:600; color:#0872D3; margin-top:8px; cursor:pointer;">{{ g.more }}</div>
                 <div style="font-size:12px; color:#8593A6; margin-top:6px; line-height:1.4;">{{ g.note }}</div>
+                <a href="{{ g.linkHref }}" style="display:{{ g.linkShow }}; font-size:12px; font-weight:700; color:#0872D3; margin-top:7px;">{{ g.linkText }}</a>
             </div>
           </div>
         </sc-for>
@@ -212,45 +213,7 @@
       </div>
 
       <div>
-        <sc-if value="{{ showCalc }}" hint-placeholder-val="{{ false }}">
-          <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:20px 22px; margin-bottom:16px;">
-            <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:10px;">
-              <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Подбор по площади</div>
-              <div style="font-size:13px; color:#5A6675;">100 Вт на м² — базовая нагрузка, как на странице расчёта. Солнце, верхний этаж и кухню учитываем там</div>
-            </div>
-            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;">
-              <sc-for list="{{ calcOptions }}" as="a" hint-placeholder-count="6">
-                <div onClick="{{ a.pick }}" style="border:1px solid {{ a.border }}; background:{{ a.bg }}; color:{{ a.fg }}; border-radius:8px; padding:9px 14px; font-size:15px; font-weight:600; cursor:pointer; font-variant-numeric:tabular-nums;">{{ a.label }}</div>
-              </sc-for>
-            </div>
-            <div style="display:flex; flex-wrap:wrap; gap:16px 28px; background:#F3F7FB; border-radius:12px; padding:16px 18px; margin-top:14px;">
-              <div>
-                <div style="font-size:12px; color:#8593A6; font-weight:600;">Нужная мощность</div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:700; margin-top:2px; font-variant-numeric:tabular-nums;">{{ calcKw }}</div>
-              </div>
-              <div>
-                <div style="font-size:12px; color:#8593A6; font-weight:600;">{{ calcClassLabel }}</div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:700; margin-top:2px;">{{ calcClass }}</div>
-              </div>
-              <div>
-                <div style="font-size:12px; color:#8593A6; font-weight:600;">Подходит в этой группе</div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:700; margin-top:2px; color:#0E9F6E; font-variant-numeric:tabular-nums;">{{ calcFit }}</div>
-              </div>
-              <div style="margin-left:auto; display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
-                <a href="/kontakty#podbor" style="font-size:13px; font-weight:700; color:#0872D3;">Уточнить расчёт: потолок, солнце, техника →</a>
-                <div onClick="{{ calcApply }}" style="background:#0872D3; color:#fff; border-radius:8px; padding:12px 20px; font-size:15px; font-weight:700; cursor:pointer;">Показать подходящие</div>
-              </div>
-            </div>
-            <sc-if value="{{ calcOn }}" hint-placeholder-val="{{ false }}">
-              <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; background:#E6F2FD; border-radius:10px; padding:10px 14px; margin-top:10px;">
-                <div style="font-size:13px; font-weight:600; color:#0A4EA7;">{{ calcOnNote }}</div>
-                <div onClick="{{ calcOff }}" style="font-size:13px; font-weight:600; color:#0872D3; cursor:pointer; margin-left:auto;">Показать все ✕</div>
-              </div>
-            </sc-if>
-            <div style="font-size:12px; color:#5A6675; line-height:1.5; margin-top:10px;">Расчёт предварительный. Окна на юг, техника и число людей меняют результат — точную мощность считаем при замере.</div>
-          </div>
-        </sc-if>
-
+        
         <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px;">
           <div style="font-size:14px; color:#5A6675;">{{ counterText }}</div>
           <div style="font-size:13px; color:#8593A6;">{{ dateNote }}</div>
@@ -472,7 +435,10 @@ class Component extends DCLogic {
       const listNow = sq ? shownOpts : all;
       // не сворачиваем, когда прячется меньше трёх: клик ради одного чипа — лишнее трение
       const cut = !shownAll[key] && listNow.length > limit + 2;
-      return Object.assign({}, g, {
+      // ссылка под секцией есть только у площади («уточнить расчёт»); у остальных
+      // фасетов её нет, и без этих значений по умолчанию пустой <a> вылезал бы
+      // видимым элементом в каждой секции — display приходит из данных, не из CSS
+      return Object.assign({ linkHref: "#", linkShow: "none", linkText: "" }, g, {
         // скрываем через display, а не условным рендером: sc-if внутри sc-for не переоткрывался
         body: isOpen ? "block" : "none",
         caret: isOpen ? "▴" : "▾",
@@ -699,11 +665,10 @@ class Component extends DCLogic {
     };
     const areas = items.map(areaOf).filter(Boolean);
     const areaMax = areas.length ? Math.max.apply(null, areas) : 0;
-    const AREA_BANDS = areaMax > 600
-      ? { "до 100 м²": [1, 100], "100–300 м²": [101, 300], "300–600 м²": [301, 600], "600 м²+": [601, 99999] }
-      : areaMax > 120
-        ? { "до 50 м²": [1, 50], "50–100 м²": [51, 100], "100–200 м²": [101, 200], "200 м²+": [201, 99999] }
-        : { "до 20 м²": [1, 20], "20–35 м²": [21, 35], "35–60 м²": [36, 60], "60 м²+": [61, 99999] };
+    // Полос паспортной площади («до 20 м²», «20–35 м²») здесь больше нет: 06.09.2026
+    // фасет перешёл на площадь ПОКУПАТЕЛЯ, и полосы врали в обе стороны — модель
+    // «до 21 м²» не попадала в «до 20 м²», хотя подходит, а «до 36 м²» лежала
+    // в «35–60» вместе с теми, кто 60 м² действительно тянет. Разбор — у askPass.
     if (this.pendingBrand && items.length) {
       const want = this.pendingBrand;
       this.pendingBrand = "";
@@ -713,12 +678,6 @@ class Component extends DCLogic {
       if (items.some(x => x.b === want) && s.brand !== want) {
         setTimeout(() => this.setState(onlyStock ? { brand: want, stock: "in", shown: 12 } : { brand: want, shown: 12 }), 0);
       }
-    }
-    if (this.pendingArea && items.length) {
-      const want = this.pendingArea;
-      const hit = Object.keys(AREA_BANDS).find(k => want >= AREA_BANDS[k][0] && want <= AREA_BANDS[k][1]);
-      this.pendingArea = 0;
-      if (hit && s.area !== hit) setTimeout(() => this.setState({ area: hit, shown: 12 }), 0);
     }
     const isAccSub = name => /аксессуар|комплектующ/i.test(String(name || ""));
     const accMode = isAccSub(s.sub);
@@ -1323,49 +1282,78 @@ class Component extends DCLogic {
       .map(k => ({ k, n: subList.filter(x => heatOf(x) === k).length }))
       .filter(h => h.n > 0);
 
-    // подбор по площади: живёт в разделе кондиционирования, где он и нужен
-    const CALC = [20, 25, 35, 50, 70, 100];
-    const calcArea = s.calcArea || 25;
-    const calcKwNum = Math.round(calcArea * 100) / 1000;
-    // класс считается из того же ряда, что и на странице расчёта, с допуском -5 %.
-    // Лестница была зашита руками и содержала класс «30», которого в ряду BTU нет.
     const CALC_CLASSES = [7000, 9000, 12000, 18000, 24000, 36000, 48000, 60000];
-    const calcClsBtu = CALC_CLASSES.find(c => c >= calcArea * 341.2 * 0.95) || 60000;
-    const calcCls = String(calcClsBtu / 1000).padStart(2, "0");
-    // Кнопка «Показать подходящие» ставит ВИДИМЫЙ фильтр — класс мощности, а где
-    // класс не язык группы (мини-VRF, фанкойлы, насосы) — киловатты. Было своё
-    // скрытое окно 0,9–1,35 по площади: чипа оно не зажигало, «сбросить» его можно
-    // было только своей же кнопкой, и панель писала класс 09, а показывала и 12.
-    const calcFacet = EXTRA.find(f => f.key === "btu") || EXTRA.find(f => f.key === "coolkw") || null;
-    const calcVal = calcFacet && calcFacet.key === "coolkw" ? calcKwNum : calcClsBtu;
-    const calcBand = calcFacet
-      ? ((calcFacet.bands.find(b => calcVal >= b.lo && calcVal <= b.hi) || {}).k || "") : "";
-    // группа без фасета мощности (таких мало и они мелкие) — ведём полосой площади,
-    // она у подбора есть всегда: showCalc требует hasArea.
-    const calcKey = calcBand ? calcFacet.key : "area";
-    // Полосы площади — это разбиение ПАСПОРТНОЙ площади моделей, а не запрос
-    // покупателя. Полоса, в которую попал сам запрос, набита моделями слабее него:
-    // 27.08.2026 на 100 м² подбор в промышленных мобильных звал «до 70» и «до 85 м²»,
-    // а тянет такую площадь только «до 110». Берём полосу, где лежит САМАЯ МАЛЕНЬКАЯ
-    // достаточная модель — она и хватает, и дешевле остальных достаточных.
-    const calcAreaFit = areas.filter(a => a >= calcArea).sort((a, b) => a - b)[0] || 0;
-    const calcSet = calcBand || (calcAreaFit
-      ? (Object.keys(AREA_BANDS).find(k => calcAreaFit >= AREA_BANDS[k][0] && calcAreaFit <= AREA_BANDS[k][1]) || "")
-      : "");
-    const calcFitN = items.filter(x => {
-      if (calcKey === "area") {
-        const a = areaOf(x), b = AREA_BANDS[calcSet];
-        return !!(a && b && a >= b[0] && a <= b[1]);
+    // Ряд кнопок — привычные площади, но только те, что группа реально закрывает:
+    // у бытовых это комнаты 20–100 м², у тепловых пушек цеха до 1200, у ИК-панели
+    // бывает и 3 м². Основной ряд — круглые числа, которыми покупатель и мыслит;
+    // мелкий шаг подключаем, только когда основного мало (обогреватели живут в 10–30 м²,
+    // и на трёх кнопках фасет бесполезен). Нижнюю границу добавляем как есть: иначе
+    // модели слабее первой кнопки не достать ни одной кнопкой. Шесть — потолок:
+    // дальше панель фильтров превращается в стену.
+    const ASK_MAIN = [20, 25, 35, 50, 70, 100, 200, 500, 1000];
+    const ASK_EXTRA = [10, 15, 30, 150, 300, 700, 1500];
+    const areaMin = areas.length ? Math.min.apply(null, areas) : 0;
+    const inAsk = v => v >= areaMin && v <= areaMax;
+    let ASK = ASK_MAIN.filter(inAsk);
+    if (ASK.length < 4) ASK = ASK.concat(ASK_EXTRA.filter(inAsk)).sort((a, b) => a - b);
+    if (areaMin && (!ASK.length || areaMin < ASK[0])) ASK.unshift(areaMin);
+    if (areaMax && ASK.length < 6 && areaMax > ASK[ASK.length - 1]) ASK.push(areaMax);
+    if (ASK.length > 6) ASK = [0, 1, 2, 3, 4, 5]
+      .map(i => ASK[Math.round(i * (ASK.length - 1) / 5)])
+      .filter((v, i, arr) => arr.indexOf(v) === i);
+    // Фильтруем ВИДИМОЙ величиной — классом мощности, а где класс не язык группы
+    // (мини-VRF, фанкойлы, насосы, чиллеры) — киловаттами.
+    const askFacet = EXTRA.find(f => f.key === "btu") || EXTRA.find(f => f.key === "coolkw") || null;
+    const askKw = a => Math.round(a * 100) / 1000;
+    const askCls = a => CALC_CLASSES.find(c => c >= a * 341.2 * 0.95) || 60000;
+    // «Модель закрывает N м²» — два условия сразу, и оба обязательны.
+    //  1. Класс: минимальный из тех, что закрывают площадь. Слабее — не потянет,
+    //     сильнее — покупатель переплатит за киловатты, которые ему не нужны.
+    //  2. Паспорт производителя: он же и решает, какой класс минимальный. Формула
+    //     100 Вт на м² у разных типов техники ложится по-разному — у мобильных
+    //     класс 07 подписан «до 18 м²» (потери через шланг), и на запрос 20 м²
+    //     честный ответ у них 09, а не 07. Поэтому берём первый класс, в котором
+    //     есть модели с достаточным паспортом, и внутри класса оставляем только их.
+    //     Модели без паспортной площади не выбрасываем: молчание паспорта — не отказ.
+    // У групп без фасета мощности (пушки, камины, ИК-обогреватели) класса нет, и роль
+    // потолка играет следующая кнопка: «50 м²» показывает модели от 50 до следующей
+    // ступени, а не всё подряд до конца ряда. Без потолка на запрос 20 м² в тепловых
+    // пушках приезжали модели на 100 м² — вчетверо мощнее нужного.
+    const askPass = (a, next) => {
+      if (askFacet) {
+        const v0 = askFacet.key === "coolkw" ? askKw(a) : askCls(a);
+        const fits = (it, b) => {
+          const v = askFacet.of(it);
+          if (!v || v < b.lo || v > b.hi) return false;
+          const ar = areaOf(it);
+          return !ar || ar >= a;
+        };
+        const b = askFacet.bands.filter(z => z.hi >= v0).find(z => items.some(it => fits(it, z)));
+        if (b) return it => fits(it, b);
+        return () => false;                     // группа такую площадь не тянет — кнопки не будет
       }
-      const v = calcFacet.of(x), b = calcFacet.bands.find(z => z.k === calcSet);
-      return !!(b && v && v >= b.lo && v <= b.hi);
-    }).length;
+      return it => { const v = areaOf(it); return !!v && v >= a && (!next || v < next); };
+    };
+    const askOpts = ASK.map((a, i) => ({ a, label: a + " м²", pass: askPass(a, ASK[i + 1] || 0), n: 0 }));
+    // Один предикат площади на выдачу и на счётчики: чип обещает ровно то, что
+    // покажет клик. Смена группы фильтры сбрасывает (loadGroup → facetsOff),
+    // поэтому чужого значения из другой группы здесь быть не может.
+    const areaPass = it => {
+      if (s.area === "all") return true;
+      const ask = askOpts.find(o => o.label === s.area);
+      return ask ? ask.pass(it) : true;
+    };
+    // Площадь из внешней ссылки (?area=35 — её ставит подбор на главной и страница
+    // расчёта). Раньше запрос переводился в паспортную полосу; теперь берём кнопку,
+    // которая эту площадь закрывает. Саму ссылку менять не пришлось: как приходила
+    // числом, так и приходит. Больше запроса кнопки нет — берём самую большую.
+    if (this.pendingArea && items.length) {
+      const want = this.pendingArea;
+      this.pendingArea = 0;
+      const hit = (askOpts.find(o => o.a >= want) || askOpts[askOpts.length - 1]).label;
+      if (s.area !== hit) setTimeout(() => this.setState({ area: hit, shown: 12 }), 0);
+    }
 
-    const areaCount = {};
-    Object.keys(AREA_BANDS).forEach(k => {
-      const b = AREA_BANDS[k];
-      areaCount[k] = subList.filter(x => { const a = areaOf(x); return a && a >= b[0] && a <= b[1]; }).length;
-    });
     const hasArea = areas.length >= 5;
 
     // читаем ЗНАЧЕНИЕ поля ТТХ, а не факт упоминания: «Wi-Fi: нет» — это отсутствие, а не наличие
@@ -1400,6 +1388,20 @@ class Component extends DCLogic {
       "prom-mobilnye": "По паспорту производителя: считается от объёма помещения и тепловыделения оборудования",
       "infrakrasnye-obogrevateli": "Зона обогрева зависит от высоты подвеса — она указана в характеристиках модели"
     };
+    // Подпись фасета площади. Она обязана сказать, что кнопка — это комната
+    // покупателя, а не паспортная строка модели: иначе «35 м²» читается как раньше.
+    // Где мощность считается формулой (кондиционеры) — показываем и её результат,
+    // и оговорку про замер. Где площадь берётся из паспорта (пушки от объёма,
+    // ИК от высоты подвеса) — остаётся прежняя подпись группы.
+    const askSel = askOpts.find(o => o.label === s.area);
+    const askNote = askFacet
+      ? (askSel
+          ? "Ваши " + askSel.a + " м² — это " + String(askKw(askSel.a)).replace(".", ",") + " кВт"
+            + (askFacet.key === "btu" ? ", класс " + String(askCls(askSel.a) / 1000).padStart(2, "0") : "")
+            + ". Считаем 100 Вт на м² при потолке 2,7 м. Окна на юг, техника и число людей меняют результат — точную мощность считаем при замере."
+          : "Площадь вашего помещения, а не паспортная площадь модели: считаем 100 Вт на м² и показываем те модели, чья мощность её закрывает.")
+      : "Площадь вашего помещения: показываем модели, рассчитанные минимум на неё. "
+        + (AREA_NOTE[s.group] || "Площадь — по паспорту производителя");
 
     let list = items.map((x, i) => ({ x, i })).filter(o => {
       const it = o.x;
@@ -1430,11 +1432,7 @@ class Component extends DCLogic {
       }
       if (s.heat !== "all" && heatOf(it) !== s.heat) return false;
       if (!extraOk(it)) return false;
-      if (s.area !== "all") {
-        const b = AREA_BANDS[s.area];
-        const a = areaOf(it);
-        if (!b || !a || a < b[0] || a > b[1]) return false;
-      }
+      if (!areaPass(it)) return false;
       if (s.stock === "in" && !/налич/i.test(it.st)) return false;
       if (s.stock === "order" && /налич/i.test(it.st)) return false;
       if (s.price !== "all") {
@@ -1476,11 +1474,7 @@ class Component extends DCLogic {
       }
       if (skip !== "heat" && s.heat !== "all" && heatOf(it) !== s.heat) return false;
       if (!extraOk(it, skip)) return false;
-      if (skip !== "area" && s.area !== "all") {
-        const b = AREA_BANDS[s.area];
-        const a = areaOf(it);
-        if (!b || !a || a < b[0] || a > b[1]) return false;
-      }
+      if (skip !== "area" && !areaPass(it)) return false;
       if (s.stock === "in" && !/налич/i.test(it.st)) return false;
       if (s.stock === "order" && /налич/i.test(it.st)) return false;
       if (skip !== "price" && s.price !== "all") {
@@ -1494,10 +1488,9 @@ class Component extends DCLogic {
     const facSub = fac("sub"), facArea = fac("area"), facBrand = fac("brand"), facPrice = fac("price");
     const facVol = fac("vol"), facHeat = fac("heat");
     const facRef = fac("ref"), facEff = fac("eff"); const facSer = fac("ser");
-    Object.keys(AREA_BANDS).forEach(k => {
-      const b = AREA_BANDS[k];
-      areaCount[k] = facArea.filter(x => { const a = areaOf(x); return a && a >= b[0] && a <= b[1]; }).length;
-    });
+    // Счёт кнопок площади — тем же предикатом, что и выдача: чип обещает столько же,
+    // сколько покажет клик. Пул — с учётом прочих фильтров, но без самой площади.
+    askOpts.forEach(o => { o.n = facArea.filter(x => o.pass(x)).length; });
     volCount.bands.forEach(b => { b.n = facVol.filter(x => { const v = volOf(x); return v >= b.lo && v <= b.hi; }).length; });
     heatCount.forEach(h => { h.n = facHeat.filter(x => heatOf(x) === h.k).length; });
     // Счётчик пилюли обязан считаться по тому же набору, что и выдача, иначе чип
@@ -1706,11 +1699,16 @@ class Component extends DCLogic {
       }),
       hasArea ? {
         key: "area", activeLabel: s.area === "all" ? "" : s.area,
-        title: "Площадь помещения", note: AREA_NOTE[s.group] || "По паспорту производителя",
+        title: "Площадь помещения", note: askNote,
+        // ссылка на подробный расчёт — там, где мощность считается формулой:
+        // страница расчёта про кондиционеры, обогревателям её обещать нечем
+        linkShow: askFacet ? "block" : "none",
+        linkHref: "/kontakty#podbor",
+        linkText: "Уточнить расчёт: потолок, солнце, техника →",
         options: [this.chip(s.area === "all", "Любая", () => this.setState({ area: "all", shown: 12 }))].concat(
-          Object.keys(AREA_BANDS)
-            .filter(k => areaCount[k] > 0)
-            .map(k => this.chip(s.area === k, k, () => this.setState({ area: k, shown: 12 }), String(areaCount[k])))
+          askOpts.filter(o => o.n > 0 || s.area === o.label)
+            .map(o => this.chip(s.area === o.label, o.label,
+              () => this.setState({ area: o.label, shown: 12 }), String(o.n)))
         )
       } : null,
       {
@@ -1890,28 +1888,6 @@ class Component extends DCLogic {
       gridRef: this.gridRef,
       dirTabs,
       extraTabs: extraTab,
-      showCalc: curDir === "climate" && hasArea,
-      calcOptions: CALC.map(a => ({
-        label: a + " м²",
-        pick: () => this.setState({ calcArea: a }),
-        border: calcArea === a ? "#0872D3" : "#DCE5F0",
-        bg: calcArea === a ? "#E6F2FD" : "#fff",
-        fg: calcArea === a ? "#0A4EA7" : "#5A6675"
-      })),
-      calcKw: String(calcKwNum).replace(".", ",") + " кВт",
-      calcClassLabel: calcKey === "btu" ? "Класс модели"
-        : calcKey === "coolkw" ? "Мощность модели" : "Модель на площадь",
-      calcClass: calcKey === "btu" ? calcCls + " (" + (parseInt(calcCls, 10) * 1000) + " BTU)"
-        : calcKey === "coolkw" ? (calcSet || "нет данных")
-        : (calcAreaFit ? "до " + calcAreaFit + " м²" : "нет данных"),
-      calcFit: this.plural(calcFitN, "модель", "модели", "моделей"),
-      calcOn: !!calcSet && s[calcKey] === calcSet,
-      calcOnNote: "Показаны модели " + (calcKey === "btu" ? "класса " + calcCls : calcSet),
-      // тот же предикат, что в счётчике: пилюля фасета зажигается, и её видно чем сбросить.
-      // Фильтр наличия кнопка больше не ставит: в группе целиком под заказ он давал
-      // пустую выдачу, а обещание «подходит N» — про мощность, не про склад.
-      calcOff: () => this.setState({ [calcKey]: "all", shown: 12 }),
-      calcApply: () => { if (calcSet) this.setState({ shown: 12, area: "all", [calcKey]: calcSet }); },
       dirLabel: (DIRS.find(d => d.key === curDir) || DIRS[0]).label,
       groupTabs,
       hasSubs: !s.loading && (meta.subs || []).length > 1 && baseList.length > 0,
