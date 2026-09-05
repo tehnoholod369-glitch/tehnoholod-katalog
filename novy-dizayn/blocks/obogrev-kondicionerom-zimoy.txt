@@ -139,7 +139,7 @@
     
     <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
       <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Эксплуатация</span>
-      <span style="color:#8593A6;">3 минуты чтения</span>
+      <span style="color:#8593A6;">4 минуты чтения</span>
       <span style="color:#8593A6;">Обновлено 05.09.2026</span>
     </div>
 
@@ -156,7 +156,8 @@
       <p>Именно поэтому кондиционер эффективнее обогревателя: на 1 кВт потраченного электричества он выдаёт <b>3–4 кВт тепла</b> (это называется COP — коэффициент преобразования). Обогреватель же превращает 1 кВт электричества максимум в 1 кВт тепла.</p>
       <p><b>Важное отличие:</b> так умеют только <b>инверторные</b> модели. Обычные (on/off) кондиционеры либо вообще не имеют режима обогрева, либо работают в нём неэффективно и отключаются уже при −5 °C.</p>
       <h2>До какой температуры работает обогрев</h2>
-      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Тип кондиционера</sc-raw-th><sc-raw-th>Рабочая температура обогрева</sc-raw-th><sc-raw-th>Эффективность</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>On/off (обычный)</sc-raw-td><sc-raw-td>до −5 °C</sc-raw-td><sc-raw-td>низкая, часто отключается</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Инверторный базовый</sc-raw-td><sc-raw-td>до −10 °C</sc-raw-td><sc-raw-td>хорошая</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Инверторный с зимним комплектом</sc-raw-td><sc-raw-td>до −20…−25 °C</sc-raw-td><sc-raw-td>стабильная, но дороже</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Тип кондиционера</sc-raw-th><sc-raw-th>Рабочая температура обогрева</sc-raw-th><sc-raw-th>Эффективность</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>On/off (обычный)</sc-raw-td><sc-raw-td>до −5 °C</sc-raw-td><sc-raw-td>низкая, часто отключается</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Инверторный базовый</sc-raw-td><sc-raw-td>до −10 °C</sc-raw-td><sc-raw-td>хорошая</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Инверторный с зимним комплектом</sc-raw-td><sc-raw-td>до −20…−25 °C</sc-raw-td><sc-raw-td>стабильная, но дороже</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Морозостойкая серия (тепловой насос воздух-воздух)</sc-raw-td><sc-raw-td>до −30…−35 °C</sc-raw-td><sc-raw-td>стабильная, самый дорогой класс</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p>Последняя строка — не теория: такие модели есть в наличии в Алматы. По каталогу на 05.09.2026 обогрев до −20 °C и ниже заявлен у 64 позиций, из них до −30 °C — у восьми, до −35 °C — у двух. Список с ценами — на странице <a href="https://tehnoholod369.kz/kondicioner-obogrev-zimoy">кондиционеры для обогрева зимой</a>.</p>
       <p>TCL FreshIN 3.0 — инверторная сплит-система, которая корректно работает на обогрев в типичных для Алматы условиях. При сильных морозах ниже −15 °C эффективность любого кондиционера падает, и в такие дни его разумно дополнять другим источником тепла.</p>
       <h2>Сколько это стоит: расчёт для Алматы</h2>
       <p>Возьмём квартиру 35 м² и модель TCL FreshIN 3.0 TAC-FR12HSV/P7W (12 000 BTU, до 35 м²).</p>
