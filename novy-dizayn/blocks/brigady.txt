@@ -366,9 +366,19 @@ class Component extends DCLogic {
       .then(r => { if (r && r.ok) this.setState({ verify: true }); })
       .catch(() => {});
 
+    // Приёмник — Apps Script: на остывшем контейнере первый ответ идёт под минуту.
+    // Запрос не обрываем — данные всё равно нужны, — но держать страницу всё это
+    // время на «Загружаем список бригад…» нельзя: пустое ожидание читается как
+    // «бригад нет». Через 15 секунд говорим про сбой; дойдёт ответ позже —
+    // список встанет на место сам.
+    const срок = setTimeout(() => {
+      if (!this.state.data) { this.setState({ failed: true }); }
+    }, 15000);
+
     fetch(this.PRIEMNIK + "?data=brigady", { cache: "no-cache" })
       .then(r => r.ok ? r.json() : null)
       .then(d => {
+        clearTimeout(срок);
         if (!d || !d.brigady) { this.setState({ failed: true }); return; }
         this.setState({ data: d, failed: false });
         // Пустой ответ в кэш не кладём: иначе один пустой ответ заставит страницу
@@ -379,7 +389,7 @@ class Component extends DCLogic {
       })
       // Молча пустую страницу не показываем: пустота читается как «бригад нет»,
       // а это неправда — это сбой связи.
-      .catch(() => this.setState({ failed: true }));
+      .catch(() => { clearTimeout(срок); this.setState({ failed: true }); });
   }
 
   componentDidUpdate() {

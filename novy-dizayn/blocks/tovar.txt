@@ -237,6 +237,7 @@
 
                 <sc-if value="{{ crewsFailed }}" hint-placeholder-val="{{ false }}">
                   <div style="font-size:14px; color:#B25200; line-height:1.6; margin-top:14px;">Реестр бригад сейчас не загрузился — это сбой связи, а не отсутствие бригад. Напишите нам, подберём бригаду вручную: <a href="https://wa.me/77000369369" style="color:#0872D3; font-weight:700;">+77 000 369 369</a>.</div>
+                  <div onClick="{{ retryCrews }}" style="display:inline-block; border:1px solid #0872D3; color:#0872D3; border-radius:8px; padding:9px 15px; margin-top:10px; font-size:14px; font-weight:700; cursor:pointer;">Попробовать снова</div>
                 </sc-if>
 
                 <sc-if value="{{ hasCrewCities }}" hint-placeholder-val="{{ true }}">
@@ -606,20 +607,58 @@ class Component extends DCLogic {
   loadCrews(group) {
     if (!group || this.__crewGroup === group) { return; }
     this.__crewGroup = group;
+
+    // Реестр в этот визит уже приходил — рисуем сразу, сеть догонит и обновит.
+    // Приёмник отвечает 4–5 секунд даже с попадания в свой кеш, и платить их
+    // заново на каждой карточке незачем (та же логика, что на /brigady).
+    try {
+      const кеш = sessionStorage.getItem("th_brigady_" + group);
+      const было = кеш ? JSON.parse(кеш) : null;
+      if (было && было.brigady) { this.applyCrews(было); }
+    } catch (_) {}
+
+    // Приёмник — Apps Script: на остывшем контейнере первый ответ идёт под минуту.
+    // Запрос не обрываем — данные всё равно нужны, — но держать человека всё это
+    // время на «Загружаем реестр бригад…» нельзя: он читает это как «бригад нет».
+    // Через 15 секунд говорим про сбой связи; дойдёт ответ позже — список подменит
+    // сообщение сам, потому что crewsFailed гаснет, как только появился crewData.
+    const срок = setTimeout(() => {
+      if (!this.state.crewData) { this.setState({ crewFailed: true }); }
+    }, 15000);
+
     fetch(this.PRIEMNIK + "?data=brigady&group=" + encodeURIComponent(group), { cache: "no-cache" })
       .then(r => r.ok ? r.json() : null)
       .then(d => {
+        clearTimeout(срок);
         if (!d || !d.brigady) { this.setState({ crewFailed: true }); return; }
-        // Город берём из прошлого выбора, но только если в нём есть кто-то
-        // по ЭТОЙ группе: иначе человек увидит пустоту и решит, что бригад нет.
-        let city = this.state.crewCity;
-        if (!city) { try { city = localStorage.getItem("th_city") || ""; } catch (_) {} }
-        if (city && !d.brigady.some(b => b.region === city)) { city = ""; }
-        this.setState({ crewData: d, crewFailed: false, crewCity: city });
+        this.applyCrews(d);
+        // Пустой ответ в кэш не кладём: одна пустая выдача заставила бы карточку
+        // весь визит утверждать «бригад нет» — даже когда реестр уже заполнен.
+        if (d.brigady.length) {
+          try { sessionStorage.setItem("th_brigady_" + group, JSON.stringify(d)); } catch (_) {}
+        }
       })
       // Пустой экран молча не показываем: пустота читается как «бригад нет»,
       // а это неправда — это сбой связи (та же логика, что на /brigady).
-      .catch(() => this.setState({ crewFailed: true }));
+      .catch(() => { clearTimeout(срок); this.setState({ crewFailed: true }); });
+  }
+
+  applyCrews(d) {
+    // Город берём из прошлого выбора, но только если в нём есть кто-то
+    // по ЭТОЙ группе: иначе человек увидит пустоту и решит, что бригад нет.
+    let city = this.state.crewCity;
+    if (!city) { try { city = localStorage.getItem("th_city") || ""; } catch (_) {} }
+    if (city && !d.brigady.some(b => b.region === city)) { city = ""; }
+    this.setState({ crewData: d, crewFailed: false, crewCity: city });
+  }
+
+  // Повтор — только по кнопке. Сам по себе перезапрос не идёт: render дёргает
+  // loadCrews на каждой перерисовке, и снятый заслон закрутил бы цикл
+  // «ошибка → перерисовка → запрос».
+  retryCrews() {
+    this.__crewGroup = "";
+    this.setState({ crewFailed: false });
+    this.loadCrews(this.state.group);
   }
 
   pickCity(code) {
@@ -1257,6 +1296,7 @@ class Component extends DCLogic {
                 + "Показываем тех, кто ставит именно эту технику в вашем городе, с ценой на монтаж от каждой и рейтингом от клиентов.",
       crewsLoading: mountable && !cd && !s.crewFailed,
       crewsFailed: mountable && !!s.crewFailed && !cd,
+      retryCrews: () => this.retryCrews(),
       hasCrewCities: cityList.length > 0,
       // Реестр ответил, но бригад по этой технике нет ни одной: заголовок без
       // содержания читается как поломка, поэтому состояние проговариваем словами.
