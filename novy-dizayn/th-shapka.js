@@ -173,20 +173,6 @@
     тело.appendChild(подвал());
     починитьСсылки();
     единыйТелефон();
-    прибратьЗаСобой();
-  }
-
-  function прибратьЗаСобой() {
-    var осталось = 40;   // ~8 секунд, дальше блок уже не появится
-    var таймер = setInterval(function () {
-      if (!document.querySelector("#dc-root, x-dc")) {
-        if (--осталось <= 0) clearInterval(таймер);
-        return;
-      }
-      clearInterval(таймер);
-      [].forEach.call(document.querySelectorAll("[data-th-shapka], [data-th-podval]"),
-        function (у) { у.parentNode && у.parentNode.removeChild(у); });
-    }, 200);
   }
 
   if (document.readyState === "loading") {
