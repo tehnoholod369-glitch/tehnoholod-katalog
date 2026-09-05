@@ -161,6 +161,14 @@
           </div>
         </sc-if>
 
+        
+        <sc-if value="{{ hasBlank }}" hint-placeholder-val="{{ true }}">
+          <div style="border-top:1px solid #EEF3F9; margin-top:16px; padding-top:14px;">
+            <a href="{{ blankUrl }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:10px; background:#0872D3; border-radius:10px; padding:12px 18px; font-size:15px; font-weight:700; color:#fff; text-decoration:none;">{{ t.blankBtn }}</a>
+            <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:10px;">{{ blankLine }} · {{ t.blankNote }}</div>
+          </div>
+        </sc-if>
+
         <sc-if value="{{ hasHint }}" hint-placeholder-val="{{ true }}">
           <div style="font-size:14px; color:#5A6675; margin-top:14px; line-height:1.6;">{{ hint }}</div>
         </sc-if>
@@ -201,7 +209,7 @@ class Component extends DCLogic {
   // Приёмник заявок — тот же, что у страницы бригад. Второго адреса не заводим.
   PRIEMNIK = "https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec";
 
-  state = { cert: "", busy: false, res: null, err: "", lang: "ru" };
+  state = { cert: "", busy: false, res: null, err: "", lang: "ru", blanki: null };
 
   /** Словарь интерфейса. Данные из реестра (зона, названия работ) остаются
    *  как записаны; направления маппятся по известному списку — незнакомое
@@ -240,6 +248,10 @@ class Component extends DCLogic {
         + "Оценки клиентов появляются только по работам, закрытым картой.",
       tovaryH: "ЧТО СТАВИЛА ЭТА БРИГАДА",
       tovaryNote: "Модели из закрытых работ. Нажмите — откроется тот же товар в каталоге.",
+      blankBtn: "Скачать бланк сертификата (PDF)",
+      blankNote: "Бланк — печатная копия. Действует ровно то, что показано на этой странице: "
+        + "статус читается из реестра в момент проверки.",
+      blankPages: " лист(ов)",
       fio: "Фамилия и инициалы", inBrigada: "В составе бригады",
       city: "Город", zone: "Выезд", dirs: "Направления",
       qual: "Квалификация", eb: "Электробезопасность", height: "Высота",
@@ -293,6 +305,10 @@ class Component extends DCLogic {
         + "бойынша ғана пайда болады.",
       tovaryH: "БҰЛ БРИГАДА НЕ ОРНАТТЫ",
       tovaryNote: "Жабылған жұмыстардағы модельдер. Басыңыз — сол тауар каталогта ашылады.",
+      blankBtn: "Сертификат бланкісін жүктеу (PDF)",
+      blankNote: "Бланк — басып шығарылған көшірме. Осы беттегі мәлімет күшінде: "
+        + "мәртебе тексеру сәтінде тізілімнен оқылады.",
+      blankPages: " парақ",
       fio: "Тегі мен инициалдары", inBrigada: "Бригада құрамында",
       city: "Қала", zone: "Шығу аймағы", dirs: "Бағыттар",
       qual: "Біліктілік", eb: "Электр қауіпсіздігі", height: "Биіктік",
@@ -333,10 +349,21 @@ class Component extends DCLogic {
       const p = new URLSearchParams(location.search);
       из_url = p.get("cert") || p.get("check") || "";
     } catch (e) {}
+    this.загрузитьБланки();
     if (из_url) {
       this.setState({ cert: this.norm(из_url) });
       this.check(this.norm(из_url));
     }
+  }
+
+  /** Список выложенных бланков. Отдельный запрос, а не поле приёмника:
+   *  приёмник знает реестр, а что физически лежит на хранилище — знает выкат.
+   *  Не ответил — кнопки просто нет, страница от этого не ломается. */
+  загрузитьБланки() {
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/blanki.json", { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : null)
+      .then(b => { if (b && b.items) this.setState({ blanki: b.items }); })
+      .catch(() => {});
   }
 
   setLang(язык) {
@@ -413,6 +440,8 @@ class Component extends DCLogic {
   renderVals() {
     const d = this.state.res;
     const t = this.L[this.state.lang] || this.L.ru;
+    const бланк = (d && d.ok && d.valid && this.state.blanki)
+      ? this.state.blanki[d.cert] : null;
     const rows = [];
     let plash = "", plashBg = "#EEF3F9", plashFg = "#5A6675", hint = "", trusted = false;
 
@@ -506,6 +535,11 @@ class Component extends DCLogic {
       }),
       razdely: (d && d.ok && d.valid && d.razdely) ? d.razdely : [],
       hasRazdely: !!(d && d.ok && d.valid && d.razdely && d.razdely.length),
+      // Бланк показываем только действующего сертификата: у отозванного
+      // бумага утверждала бы то, что страница только что опровергла.
+      hasBlank: !!бланк,
+      blankUrl: бланк ? бланк.u : "",
+      blankLine: бланк ? (бланк.p + t.blankPages + " · " + бланк.kb + " КБ") : "",
       hint: hint, hasHint: !!hint,
       kzColor: this.state.lang === "kz" ? "#0872D3" : "#8593A6",
       ruColor: this.state.lang === "kz" ? "#8593A6" : "#0872D3",
