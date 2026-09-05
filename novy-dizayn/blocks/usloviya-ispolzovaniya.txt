@@ -26,7 +26,7 @@
   .doc-lead { font-size: 17px; line-height: 1.7; color: #2C3846; margin-top: 14px; }
   .doc-upd { font-size: 13px; color: #6B7C93; margin-top: 26px; }
 
-  .art-local-chrome { background: #071C3B; color: #9FB0C4; padding: 26px 0; font-size: 13px; }
+  .art-local-chrome { display: none !important; }  /* шапку и подвал рисует th-shapka.js */
 </style>
 
 <div class="doc-page doc">
@@ -79,16 +79,5 @@
 
 </div>
 
-<div class="art-local-chrome">
-  <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
-    <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
-    <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
-  </div>
-  <div data-th-copyright style="max-width:1240px; margin:14px auto 0; padding:0 24px; font-size:12px; line-height:1.7; color:#6B7C93;">
-    © 2026 ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
-    Перепечатка целиком или существенной частью — только с письменного разрешения.
-    Цитата с активной ссылкой на источник разрешена без запроса.
-  </div>
-</div>
 
 </x-dc>
