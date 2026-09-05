@@ -38,6 +38,8 @@
     ["https://tehnoholod369.kz/teplovye-zavesy-almaty", "Тепловые завесы"],
     ["https://tehnoholod369.kz/teplovye-pushki-almaty", "Тепловые пушки"],
     ["https://tehnoholod369.kz/radiatory-otopleniya-almaty", "Радиаторы отопления"],
+    ["https://tehnoholod369.kz/mobilnye-kondicionery-almaty", "Мобильные кондиционеры"],
+    ["https://tehnoholod369.kz/osushiteli-vozduha-almaty", "Осушители воздуха"],
     ["https://tehnoholod369.kz/kondicioner-na-25-kvm", "Кондиционер на комнату 25 м²"],
     ["https://tehnoholod369.kz/kondicioner-do-200000", "Кондиционер до 200 000 ₸"],
     ["https://tehnoholod369.kz/tihiy-kondicioner", "Тихий кондиционер для спальни"],
