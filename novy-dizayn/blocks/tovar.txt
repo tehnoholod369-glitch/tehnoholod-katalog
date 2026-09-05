@@ -81,7 +81,7 @@
     <sc-if value="{{ ready }}" hint-placeholder-val="{{ false }}">
       <div>
         <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;">
-          <div style="font-size:13px; color:#8593A6;">
+          <div class="th-crumbs" style="font-size:13px; color:#8593A6;">
             <a href="/">Главная</a> → <a href="/katalog">Каталог</a> → <span>{{ dirLabel }}</span> → <a href="{{ groupHref }}">{{ groupTitle }}</a> → <span style="color:#18212F;">{{ short }}</span>
           </div>
           <div style="display:flex; gap:8px;">
@@ -860,6 +860,42 @@ class Component extends DCLogic {
           "itemCondition": "https://schema.org/NewCondition"
         };
       }
+      // Хлебные крошки в разметке (06.09.2026). Берём их из ОТРИСОВАННЫХ крошек,
+      // а не собираем второй раз из справочника групп: тогда разметка описывает
+      // ровно то, что видит человек, и не может с ним разойтись. Второго правила
+      // для одной сущности не заводим.
+      //
+      // Уровень «Вентиляция» в крошках — подпись без ссылки, в разметку он не идёт:
+      // ListItem середины трейла без адреса Google встречает предупреждением.
+      // Последний элемент — текущая страница, адрес у него по правилу не нужен,
+      // и имя берём ПОЛНОЕ: в крошках оно обрезано до 46 знаков многоточием.
+      try {
+        const крошки = document.querySelector(".th-crumbs");
+        if (крошки) {
+          const шаги = [];
+          крошки.querySelectorAll("a[href]").forEach((a) => {
+            const имяШага = (a.textContent || "").trim();
+            if (имяШага && a.href) {
+              шаги.push({ "@type": "ListItem", "position": шаги.length + 1,
+                          "name": имяШага, "item": a.href });
+            }
+          });
+          if (шаги.length) {
+            шаги.push({ "@type": "ListItem", "position": шаги.length + 1, "name": имя });
+            let lb = document.getElementById("th-ld-crumbs");
+            if (!lb) {
+              lb = document.createElement("script");
+              lb.type = "application/ld+json";
+              lb.id = "th-ld-crumbs";
+              document.head.appendChild(lb);
+            }
+            const т = JSON.stringify({ "@context": "https://schema.org",
+                                       "@type": "BreadcrumbList", "itemListElement": шаги });
+            if (lb.textContent !== т) lb.textContent = т;
+          }
+        }
+      } catch (e) { /* крошки не нашлись — разметки просто не будет, врать нечем */ }
+
       let ld = document.getElementById("th-ld-product");
       if (!ld) {
         ld = document.createElement("script");
