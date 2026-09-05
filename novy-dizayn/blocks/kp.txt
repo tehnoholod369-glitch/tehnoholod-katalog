@@ -6,26 +6,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  .kpw, .kpниз { font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
-  .kpw h1, .kpw h2, .kpw h3 { font-family: "Montserrat", "Inter", sans-serif; }
-  .kpw a { color: #0A4EA7; text-decoration: none; }
-  .kpw a:hover { color: #0872D3; }
+  .kpстраница { font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  .kpстраница h1, .kpстраница h2, .kpстраница h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  .kpстраница a { color: #0A4EA7; text-decoration: none; }
+  .kpстраница a:hover { color: #0872D3; }
 </style>
 
 
-<div style="min-height:100vh; background:#F3F7FB;">
+<div class="kpстраница">
 <style>
-.kpw{--син:#0A4EA7;--крас:#D32B2B;--сер:#EDF1F7;--рамка:#D7DEE8;--блед:#6B7A90;--поле:16px}
+/* Переменные и стили элементов объявлены на .kpстраница, а НЕ на .kpw.
+   04.09.2026: они стояли на .kpw, а нижняя панель .kpниз — её сосед, не потомок.
+   Значит var(--сер) и var(--рамка) там не разрешались, и три кнопки выгрузки
+   выходили без фона, без скруглений и без цвета — голыми рамками во всю ширину.
+   Правило простое: переменную объявляем на общем предке ВСЕГО, что её просит. */
+.kpстраница{--син:#0A4EA7;--крас:#D32B2B;--сер:#EDF1F7;--рамка:#D7DEE8;--блед:#6B7A90;--поле:16px;
+  min-height:100vh;background:#F3F7FB}
 .kpw{max-width:820px;margin:0 auto;padding:0 var(--поле) 120px}
 .kpw h2{font-size:14px;margin:24px 0 8px;color:var(--блед);text-transform:uppercase;letter-spacing:.05em}
-.kpw input,.kpw select,.kpw textarea{width:100%;padding:11px 12px;border:1px solid var(--рамка);
+.kpстраница input,.kpстраница select,.kpстраница textarea{width:100%;padding:11px 12px;border:1px solid var(--рамка);
   border-radius:10px;background:#fff;font:inherit;color:inherit;box-sizing:border-box}
-.kpw label{display:block;font-size:13px;color:var(--блед);margin:10px 0 4px}
-.kpw button{cursor:pointer;border:0;border-radius:10px;padding:12px 14px;background:var(--сер);font:inherit}
-.kpw .главная{background:var(--син);color:#fff;font-weight:600}
-.kpw .опасно{background:#fff;color:var(--крас);border:1px solid var(--рамка)}
-.kpшапка{position:sticky;top:0;z-index:20;background:#F3F7FB;border-bottom:1px solid var(--рамка);
-  padding:12px var(--поле);display:flex;align-items:center;gap:10px;margin:0 calc(-1*var(--поле))}
+.kpстраница label{display:block;font-size:13px;color:var(--блед);margin:10px 0 4px}
+.kpстраница button{cursor:pointer;border:0;border-radius:10px;padding:12px 14px;
+  background:var(--сер);color:#18212F;font:inherit;font-weight:600}
+.kpстраница button:hover{filter:brightness(.97)}
+.kpстраница .главная{background:var(--син);color:#fff;font-weight:600}
+.kpстраница .опасно{background:#fff;color:var(--крас);border:1px solid var(--рамка);font-weight:500}
+/* Не sticky: у сайта своя фиксированная шапка сверху, и две липкие полосы
+   наезжали друг на друга — заголовок КП пропадал под меню. */
+.kpшапка{background:#F3F7FB;border-bottom:1px solid var(--рамка);
+  padding:16px var(--поле) 12px;display:flex;align-items:center;gap:10px;
+  margin:0 calc(-1*var(--поле))}
 .kpшапка h1{font-size:18px;margin:0}
 .kpитог{margin-left:auto;font-weight:700;white-space:nowrap}
 .kpкорзина{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
@@ -48,9 +59,11 @@
 .kpцена{font-weight:700;text-align:right}
 .kpнет{color:var(--крас);font-size:12px}
 .kpподсказка{font-size:12px;color:var(--блед);margin-top:6px}
-.kpниз{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--рамка);
-  padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px;z-index:30}
-.kpниз button{flex:1}
+.kpниз{position:fixed;left:0;right:0;bottom:0;background:#fff;
+  border-top:1px solid var(--рамка);box-shadow:0 -6px 20px rgba(16,32,64,.08);
+  padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));
+  display:flex;gap:10px;justify-content:center;z-index:30}
+.kpниз > *{flex:1;max-width:260px}
 #kpБланк{display:none}
 .kpдок{color:#000;background:#fff}
 .kpдок .верх{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
@@ -72,6 +85,8 @@
 .kpдок .сноска{font-size:11px;color:#808080;font-style:italic;margin-top:14px}
 @media print{
   body{background:#fff !important}
+  /* Серый фон страницы на бумаге не нужен и съедает тонер. */
+  .kpстраница{background:#fff !important;min-height:0}
   .kpшапка,.kpниз,.kpредактор{display:none !important}
   #kpБланк{display:block !important}
   .kpw{padding:0;max-width:none}
