@@ -118,7 +118,7 @@
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:16px;">
         <div>
           <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Подберём и посчитаем сегодня</div>
-          <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.5;">Скажите площадь помещения — назовём модель, цену с монтажом и срок. Отвечаем в рабочее время, Пн–Пт 9:00–18:00.</div>
+          <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.5;">Скажите площадь помещения — назовём модель, цену и срок. Нужен монтаж — посчитаем отдельно. Отвечаем в рабочее время, Пн–Пт 9:00–18:00.</div>
         </div>
 
         <div style="display:flex; flex-direction:column; gap:10px;">
