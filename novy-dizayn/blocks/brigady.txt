@@ -136,14 +136,20 @@
     </sc-if>
 
     
-    <sc-if value="{{ hasOsnCommon }}" hint-placeholder-val="{{ false }}">
+    <sc-if value="{{ hasCommon }}" hint-placeholder-val="{{ false }}">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:16px 18px; margin-top:14px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">ЕСТЬ У КАЖДОЙ БРИГАДЫ В СПИСКЕ</div>
-        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:9px;">
-          <sc-for list="{{ osnCommon }}" as="it" hint-placeholder-count="6">
-            <span style="font-size:13px; color:#2A3646; background:#F3F7FB; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
-          </sc-for>
-        </div>
+        
+        <sc-if value="{{ hasLangCommon }}" hint-placeholder-val="{{ false }}">
+          <div style="font-size:14px; color:#18212F; line-height:1.5; margin-top:9px;">{{ langCommonLine }}</div>
+        </sc-if>
+        <sc-if value="{{ hasOsnCommon }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:9px;">
+            <sc-for list="{{ osnCommon }}" as="it" hint-placeholder-count="6">
+              <span style="font-size:13px; color:#2A3646; background:#F3F7FB; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
+            </sc-for>
+          </div>
+        </sc-if>
         <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:9px;">{{ osnCommonNote }}</div>
       </div>
     </sc-if>
@@ -605,6 +611,12 @@ class Component extends DCLogic {
       ? (list[0].osn || []).filter(x => list.every(c => (c.osn || []).indexOf(x) >= 0))
       : [];
 
+    const общиеЯз = list.length > 1
+      ? (list[0].langs || []).filter(x => list.every(c => (c.langs || []).indexOf(x) >= 0))
+      : [];
+    const языкиОдинаковы = list.length > 1 && общиеЯз.length > 0
+      && list.every(c => (c.langs || []).length === общиеЯз.length);
+
     // Фишки строим только по тому, что реально есть в реестре: направление,
     // по которому нет ни одной бригады, — обещание фильтра без содержимого.
     const dirSeen = [];
@@ -636,10 +648,14 @@ class Component extends DCLogic {
       updatedNote: d && d.updated ? "реестр на " + this.dateLabel(d.updated) : "",
       resetFilters: () => this.setFilter({ dir: "", city: "" }),
 
+      hasCommon: общееОсн.length > 0 || языкиОдинаковы,
+      hasLangCommon: языкиОдинаковы,
+      langCommonLine: "Говорят: " + this.langWords(общиеЯз),
       hasOsnCommon: общееОсн.length > 0,
       osnCommon: общееОсн.map(x => this.cap(x)),
       osnCommonNote: "Это есть у каждой бригады в списке — проверено при сертификации. "
-                   + "В карточках указано только то, что сверх этого набора.",
+                   + "В карточках указано только то, что сверх этого набора. Если "
+                   + "нужен другой язык — напишите, подберём бригаду отдельно.",
       hasMore: list.length > показаны.length,
       moreLabel: "Показать ещё " + Math.min(ПОРЦИЯ, list.length - показаны.length),
       showMore: () => this.setState({ shown: this.state.shown + ПОРЦИЯ }),
@@ -676,10 +692,9 @@ class Component extends DCLogic {
           // Языки словами, а не кодами: у бригады с одним языком плитка
           // показывала «RU» — это читалось как служебная метка, а не как ответ
           // на вопрос «поймём ли мы друг друга» (02.09.2026).
-          // Язык показываем, только если он не только русский. Одинаковое
-          // «Русский» у всех — шум; казахский или английский кому-то решает.
-          (c.langs && c.langs.some(x => !/^рус/i.test(String(x))))
-            ? { k: "ЯЗЫКИ", v: this.langWords(c.langs) } : null
+          // В подробностях язык есть всегда — у любой бригады, включая
+          // русскоязычную: это ответ на вопрос «поймём ли мы друг друга».
+          c.langs && c.langs.length ? { k: "ЯЗЫКИ", v: this.langWords(c.langs) } : null
         ].filter(Boolean);
 
         // Наверху — только решающее: поедет ли к вам и какая гарантия.
@@ -702,7 +717,9 @@ class Component extends DCLogic {
             ? Object.assign({ t: "✓ Проверена временем · на рынке " + c.vremya.let_
                                  + " " + this.letWord(c.vremya.let_) }, ЗЕЛ) : null,
           c.docsOk ? Object.assign({ t: "Договор и акт" }, СИН) : null,
-          (c.langs && c.langs.some(x => !/^рус/i.test(String(x))))
+          // Плашка нужна, когда в списке есть выбор по языку. Если все
+          // говорят одинаково, факт вынесен наверх и в карточке был бы шумом.
+          (!языкиОдинаковы && c.langs && c.langs.length)
             ? Object.assign({ t: this.langWords(c.langs) }, СИН) : null,
           работ ? Object.assign({ t: работ + " " + this.vidWord(работ) + " работ" }, НЕЙТР) : null
         ].filter(Boolean);
