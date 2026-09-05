@@ -34,8 +34,43 @@
     return;
   }
 
+  // Сырой шаблон не должен показываться никогда.
+  //
+  // 05.09.2026. Блок страницы редизайна — это <x-dc> с подстановками вида {{ d.season }},
+  // их разворачивает support.js уже в браузере. Порядок был такой: сюда прилетает текст
+  // блока, box.innerHTML кладёт его в ВИДИМЫЙ DOM, и только потом грузится support.js
+  // (65 КБ плюс React) и вызывает свой hideRawTemplate(). Между этими шагами на экране
+  // висят голые {{ }}. Замерено на живой Главной: окно поймано на 855-й мс после начала
+  // навигации, и это на быстром канале. На медленном оно длится сколько угодно, а рендер
+  // Googlebot снимает кадр когда захочет — отсюда {{ d.season }} и {{ promoPrice }}
+  // в индексируемом представлении.
+  //
+  // Стиль ставим ДО первой вставки и своими силами, а не ждём его от support.js:
+  // тот приходит по сети и может не прийти вовсе. Затрагивает 19 страниц — все,
+  // у кого в блоке есть подстановки (Главная, каталог, карточка товара, корзина,
+  // бригады, отзывы, сравнение, TCL FreshIN и другие).
+  function спрятатьСыройШаблон() {
+    var с = document.createElement("style");
+    с.id = "th-hide-raw";
+    с.textContent = "x-dc{display:none!important}";
+    (document.head || document.documentElement).appendChild(с);
+  }
+
+  // Сторож на случай, когда support.js не пришёл: спрятать шаблон и оставить пустое
+  // место — это обмен одной беды на другую. Если через 12 с блок так и не собрался,
+  // показываем то же честное сообщение, что и при недоступном блоке.
+  function сторожГидратации() {
+    setTimeout(function () {
+      if (!box.querySelector("x-dc")) return;             // support.js убрал шаблон
+      if (box.innerText && box.innerText.trim()) return;  // что-то отрисовалось
+      fail("support.js не собрал страницу за 12 с");
+    }, 12000);
+  }
+
   function fail(why) {
     console.error("[th-page] " + why);
+    var с = document.getElementById("th-hide-raw");
+    if (с && с.parentNode) с.parentNode.removeChild(с);
     box.innerHTML = '<div style="max-width:640px;margin:40px auto;padding:24px;font:16px/1.6 system-ui,sans-serif;'
       + 'color:#B25200;background:#FFF1E3;border:1px solid #F3D2AC;border-radius:12px;">'
       + 'Страница не загрузилась. Мы уже знаем об этом. '
@@ -94,8 +129,10 @@
       //             /podbor-ventilyacii показывала запасной текст вместо калькулятора.
       var сДвижком = html.indexOf("<x-dc") >= 0;
       if (!html.trim()) throw new Error("блок " + page + ".txt пуст");
+      спрятатьСыройШаблон();
       box.innerHTML = html;
       снятьПерекраску();
+      сторожГидратации();
 
       if (!сДвижком) {
         // Инлайн-скрипты innerHTML тоже не выполняет — пересоздаём ВСЕ по порядку.
