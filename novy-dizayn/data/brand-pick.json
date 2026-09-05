@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-03",
+ "generated": "2026-09-05",
  "by_group": {
   "avtonomnoe-pitanie": {
    "brand": "EcoFlow",
@@ -44,10 +44,10 @@
    "st": 10
   },
   "mobilnye": {
-   "brand": "ROYAL CLIMA",
-   "url": "/novy-katalog?g=mobilnye&brand=ROYAL%20CLIMA&stock=in",
-   "n": 3,
-   "st": 3
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=mobilnye&brand=Ballu&stock=in",
+   "n": 16,
+   "st": 4
   },
   "multisplit": {
    "brand": "AERONIK",
@@ -202,9 +202,9 @@
    "st": 3
   },
   "kaminy|Электроочаги 2D": {
-   "brand": "Electrolux",
-   "url": "/novy-katalog?g=kaminy&brand=Electrolux&sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BE%D1%87%D0%B0%D0%B3%D0%B8%202D&stock=in",
-   "n": 8,
+   "brand": "Royal Thermo",
+   "url": "/novy-katalog?g=kaminy&brand=Royal%20Thermo&sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BE%D1%87%D0%B0%D0%B3%D0%B8%202D&stock=in",
+   "n": 6,
    "st": 3
   },
   "kaminy|Электроочаги 3D паровые": {
@@ -250,10 +250,10 @@
    "st": 7
   },
   "mobilnye|Мобильные": {
-   "brand": "ROYAL CLIMA",
-   "url": "/novy-katalog?g=mobilnye&brand=ROYAL%20CLIMA&sub=%D0%9C%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
-   "n": 3,
-   "st": 3
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=mobilnye&brand=Ballu&sub=%D0%9C%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 16,
+   "st": 4
   },
   "multisplit|Внутренние блоки": {
    "brand": "AERONIK",
@@ -430,10 +430,10 @@
    "st": 8
   },
   "vodonagrevateli|Газовые колонки": {
-   "brand": "Royal Thermo",
-   "url": "/novy-katalog?g=vodonagrevateli&brand=Royal%20Thermo&sub=%D0%93%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BA%D0%B8&stock=in",
-   "n": 8,
-   "st": 6
+   "brand": "Electrolux",
+   "url": "/novy-katalog?g=vodonagrevateli&brand=Electrolux&sub=%D0%93%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BA%D0%B8&stock=in",
+   "n": 4,
+   "st": 3
   },
   "vodonagrevateli|Накопительные": {
    "brand": "Electrolux",
