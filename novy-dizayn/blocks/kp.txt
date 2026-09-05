@@ -88,15 +88,38 @@
 .kpдок .условия div{margin-bottom:3px}
 .kpдок .подвал{font-size:13px;margin-top:18px}
 .kpдок .сноска{font-size:11px;color:#808080;font-style:italic;margin-top:14px}
+/* ---------- печать ----------
+   Скрывать перечислением своих блоков оказалось мало: на лист уезжала ШАПКА
+   САЙТА с меню и кнопкой «Каталог», кружок участника личного кабинета и подпись
+   Tilda — они живут вне нашего блока, и их селекторов мы не знаем.
+   Поэтому прячем ВСЁ и показываем обратно только бланк: приём не зависит от
+   того, что Tilda нарисует вокруг завтра. */
 @media print{
   body{background:#fff !important}
-  /* Серый фон страницы на бумаге не нужен и съедает тонер. */
+  body *{visibility:hidden !important}
+  #kpБланк, #kpБланк *{visibility:visible !important}
+  #kpБланк{display:block !important;position:absolute;left:0;top:0;width:100%}
   .kpстраница{background:#fff !important;min-height:0}
-  .kpшапка,.kpниз,.kpредактор{display:none !important}
-  #kpБланк{display:block !important}
   .kpw{padding:0;max-width:none}
-  @page{size:A4;margin:12mm 15mm}
+  /* Серые заливки шапки таблицы и итога — часть документа, а не украшение:
+     без них строка «Всего наименований» сливается с позициями. */
+  .kpдок{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{size:A4;margin:12mm 14mm}
 }
+
+/* Ширины колонок заданы явно и таблица фиксированной раскладки: иначе
+   «Наименование» растягивало таблицу за край листа, и «Цена» с «Суммой»
+   не печатались вовсе — вместе с концом строки итога и суммой прописью
+   (замечено на печати 05.09.2026). */
+.kpдок table{table-layout:fixed}
+.kpдок th:nth-child(1),.kpдок td:nth-child(1){width:26px}
+.kpдок th:nth-child(3),.kpдок td:nth-child(3){width:46px}
+.kpдок th:nth-child(4),.kpдок td:nth-child(4){width:58px}
+.kpдок th:nth-child(5),.kpдок td:nth-child(5){width:92px}
+.kpдок th:nth-child(6),.kpдок td:nth-child(6){width:76px}
+.kpдок th:nth-child(7),.kpдок td:nth-child(7){width:84px}
+.kpдок td{overflow-wrap:anywhere}
+.kpдок tr.итог td,.kpдок tr.пропись td{white-space:normal;overflow-wrap:normal}
 </style>
 
 <div class="kpw">
