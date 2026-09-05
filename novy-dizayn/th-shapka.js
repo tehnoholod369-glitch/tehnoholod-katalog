@@ -44,6 +44,14 @@
     ["https://tehnoholod369.kz/kondicioner-do-200000", "Кондиционер до 200 000 ₸"],
     ["https://tehnoholod369.kz/tihiy-kondicioner", "Тихий кондиционер для спальни"],
     ["https://tehnoholod369.kz/kondicioner-obogrev-zimoy", "Кондиционер для обогрева зимой"],
+    ["https://tehnoholod369.kz/kondicionery-dlya-ofisa", "Кондиционеры для офиса"],
+    ["https://tehnoholod369.kz/pritochnaya-ustanovka-almaty", "Приточные установки"],
+    ["https://tehnoholod369.kz/pritochno-vytyazhnye-ustanovki-almaty", "Приточно-вытяжные установки с рекуперацией"],
+    ["https://tehnoholod369.kz/vytyazhnye-ventilyatory-almaty", "Вытяжные вентиляторы"],
+    ["https://tehnoholod369.kz/nakopitelnyy-vodonagrevatel-almaty", "Накопительные водонагреватели"],
+    ["https://tehnoholod369.kz/protochnyy-vodonagrevatel-almaty", "Проточные водонагреватели"],
+    ["https://tehnoholod369.kz/radiatory-sekcionnye-almaty", "Секционные радиаторы отопления"],
+    ["https://tehnoholod369.kz/konvektory-almaty", "Электрические конвекторы"],
   ];
   /* GEO-ПОДБОРКИ-КОНЕЦ */
 

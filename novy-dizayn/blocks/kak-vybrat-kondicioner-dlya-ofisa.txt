@@ -140,7 +140,7 @@
     <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
       <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Проектные решения</span>
       <span style="color:#8593A6;">5 минут чтения</span>
-      <span style="color:#8593A6;">Обновлено 04.09.2026</span>
+      <span style="color:#8593A6;">Обновлено 05.09.2026</span>
     </div>
 
     <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Кондиционер для офиса: как рассчитать и что выбрать</h1>
@@ -191,7 +191,7 @@
       <div class="art-cards">
       <a class="art-card" href="/katalog?g=poluprom&amp;brand=AUX&amp;stock=in"><div class="art-card__t">AUX</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">46 моделей</span> →</div></a>
       <a class="art-card" href="/katalog?g=poluprom"><div class="art-card__t">Полупромышленные</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="poluprom"></span> →</div></a>
-      <a class="art-card" href="/poluprom"><div class="art-card__t">Полупромышленные кондиционеры в Алматы</div><div class="art-card__s">Кассетные, канальные и напольно-потолочные блоки.</div><div class="art-card__go">Открыть раздел →</div></a>
+      <a class="art-card" href="/kondicionery-dlya-ofisa"><div class="art-card__t">Кондиционеры для офиса</div><div class="art-card__s">Кассетные, канальные и напольно-потолочные блоки.</div><div class="art-card__go">Открыть раздел →</div></a>
       </div>
       <h2>Частые вопросы</h2>
       <div class="art-q"><div class="art-q__q">Как считать мощность для офиса?</div><div class="art-q__a">От расчёта по площади, а затем добавляют поправки на людей, технику, освещение и остекление. Для помещений с плотной посадкой или серверным оборудованием считают по фактической тепловой нагрузке.</div></div>
@@ -248,7 +248,7 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=aa7da59c"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=7c7222ef"></script>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Кондиционер для офиса: как рассчитать и что выбрать", "description": "Расчёт мощности для офиса с людьми и техникой, выбор между кассетным, канальным и мультизональной системой. Серверная, согласование, обслуживание.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/kak-vybrat-kondicioner-dlya-ofisa"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-04", "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightYear": 2026, "datePublished": "2026-09-04"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Кондиционер для офиса: как рассчитать и что выбрать", "description": "Расчёт мощности для офиса с людьми и техникой, выбор между кассетным, канальным и мультизональной системой. Серверная, согласование, обслуживание.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/kak-vybrat-kondicioner-dlya-ofisa"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-05", "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightYear": 2026, "datePublished": "2026-09-04"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Кондиционер для офиса: как рассчитать и что выбрать", "item": "https://tehnoholod369.kz/kak-vybrat-kondicioner-dlya-ofisa"}]}</script>
 <script type="application/ld+json">
 {

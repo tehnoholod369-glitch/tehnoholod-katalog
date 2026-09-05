@@ -985,10 +985,18 @@ class Component extends DCLogic {
       .filter(row => !/^нет$|^-$/i.test(String(row[1]).trim()))
       .map(row => {
         const f = { k: row[0], v: row[1], hint: hintFor(row[0], row[1]) };
-        // у притока есть своя посадочная — с плашки можно уйти на подборку таких моделей
+        // 05.09.2026: /kondicioner-s-pritokom отдаёт 404. Блок под неё собран
+        // gen_geo_landing.py, но страницу в Tilda так и не завели — как и ещё
+        // 21 адрес из 37. Плашка вела покупателя с карточки товара на 404.
+        // Обещать «все модели с притоком» сейчас нечем: у выдачи нет фильтра
+        // по притоку (она читает area, brand, btu, g, stock, sub), а живые
+        // адреса про приток — статьи, а не список моделей. Ведём на статью
+        // и подписываем тем, что там на самом деле есть.
+        // Заведут посадочную — вернуть href на /kondicioner-s-pritokom
+        // и подпись «Все модели с притоком →».
         if (/приток/i.test(String(row[0])) && /^да$/i.test(String(row[1]).trim())) {
-          f.href = "https://tehnoholod369.kz/kondicioner-s-pritokom";
-          f.link = "Все модели с притоком →";
+          f.href = "https://tehnoholod369.kz/kak-rabotaet-konditsioner-s-pritokom";
+          f.link = "Как работает приток →";
         }
         f.hasLink = !!f.href;
         return f;

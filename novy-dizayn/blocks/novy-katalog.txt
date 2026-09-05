@@ -36,6 +36,15 @@
     .th-nav-toggle { display:flex; }
     .th-nav-body.th-closed { display:none; }
   }
+  /* Статьи базы знаний перед выбором (05.09.2026). Полоска стоит ДО сетки товаров,
+     поэтому на телефоне она обязана быть одной строкой: три раскрытые ссылки
+     отодвигают первую карточку так же, как это делали фильтры и навигация.
+     На десктопе ссылки видны сразу — там места хватает. */
+  .th-arts-toggle { display:none; }
+  @media (max-width: 860px) {
+    .th-arts-toggle { display:flex; }
+    .th-arts-body.th-closed { display:none; }
+  }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=591c7919"></script>
@@ -142,6 +151,26 @@
         </div>
       </div>
     </div>
+
+    <sc-if value="{{ hasArts }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:13px 16px; margin-top:14px;">
+        <div onClick="{{ toggleMobArts }}" class="th-arts-toggle" style="align-items:center; justify-content:space-between; gap:10px; cursor:pointer;">
+          <span style="font-size:14px; font-weight:700; color:#0A4EA7;">{{ artsLabel }}</span>
+          <span style="font-size:12px; color:#8593A6;">{{ artsCaret }}</span>
+        </div>
+        <div class="th-arts-body {{ artsClass }}">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">{{ artsTitle }}</div>
+          <div style="display:flex; flex-direction:column; gap:7px; margin-top:8px;">
+            <sc-for list="{{ arts }}" as="a" hint-placeholder-count="3">
+              <div style="display:flex; align-items:baseline; gap:8px; font-size:14px; line-height:1.45;">
+                <a href="{{ a.href }}" style="font-weight:600; color:#0A4EA7;">{{ a.t }}</a>
+                <span style="font-size:12px; color:#8593A6; white-space:nowrap;">{{ a.m }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </sc-if>
 
     <div class="th-cat-grid">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:20px;">
@@ -297,6 +326,24 @@
         <div style="font-size:13px; color:#8593A6; margin-top:14px; line-height:1.6;">{{ footNote }}</div>
       </div>
     </div>
+
+    <sc-if value="{{ hasArts }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px; margin-top:20px;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Читать по теме</div>
+          <a href="/baza-znaniy" style="font-size:13px; font-weight:700; color:#0872D3;">Вся база знаний →</a>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:14px;">
+          <sc-for list="{{ arts }}" as="a" hint-placeholder-count="3">
+            <a href="{{ a.href }}" style="background:#F9FBFE; border:1px solid #E9EFF7; border-radius:12px; padding:18px; display:block; color:#18212F;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">{{ a.r }} · {{ a.m }}</div>
+              <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700; margin-top:8px; color:#0A4EA7; line-height:1.3;">{{ a.t }}</div>
+              <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:8px;">{{ a.d }}</div>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
   </div>
 </div>
 
@@ -315,7 +362,7 @@ class Component extends DCLogic {
   state = Object.assign({
     index: null, updated: "", group: "bytovye", sub: "all", items: null, loading: true, picks: [], onlyPick: false,
     sale: {}, onlySale: false, prio: [], prioQuota: 2, hits: {},
-    sort: "rec", view: "grid", shown: 12, mobFilters: false, mobNav: false
+    sort: "rec", view: "grid", shown: 12, mobFilters: false, mobNav: false, mobArts: false
   }, this.facetsOff());
   gridRef = React.createRef();
 
@@ -360,6 +407,11 @@ class Component extends DCLogic {
       .then(b => this.setState({ buN: (b && b.items || []).length })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/prioritet.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null)
       .then(p => this.setState({ prio: (p && p.order) || [], prioQuota: (p && p.quota) || 2 })).catch(() => {});
+    // Статьи базы знаний: группа и подкатегория у каждой уже стоят в реестре
+    // статей, витрине остаётся отобрать свои. Файл общий с блоком «Читайте
+    // дальше» на самих статьях — второго списка не заводим.
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/articles.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null)
+      .then(a => this.setState({ arts: (a && a.items) || [] })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"})
       .then(r => r.json())
       .then(idx => { this.setState({ index: idx.groups || idx, updated: idx.updated || "", group }); this.loadGroup(group, sub || "all"); })
@@ -1814,6 +1866,24 @@ class Component extends DCLogic {
       isPick: topIdx.indexOf(i) >= 0 && !c.isHit
     }));
 
+    // Статьи базы знаний по теме группы (05.09.2026). Привязку здесь НЕ выдумываем:
+    // в реестре статей у каждой заполнена группа каталога, у семнадцати из сорока
+    // трёх — ещё и подкатегория, и все семнадцать названий совпадают с
+    // подкатегориями данных витрины. Выбран таб подкатегории — её статьи первыми.
+    // Рубрика «Выбор» вперёд: это вопрос ДО покупки, монтаж и эксплуатация — после.
+    // Одиннадцать групп статей не имеют вовсе (увлажнители, водоочистка, автономное
+    // питание, фанкойлы, чиллеры…) — там блока нет: подсунуть статью не про эту
+    // технику хуже, чем не показать ничего.
+    const ВЕС_РУБРИКИ = { "Выбор": 0, "Расчёт": 1, "Вентиляция": 2, "Монтаж": 3, "Эксплуатация": 4 };
+    const субТаб = s.sub && s.sub !== "all" ? s.sub : "";
+    const весСтатьи = a => (субТаб && a.sub === субТаб ? 0 : 10)
+      + (ВЕС_РУБРИКИ[a.r] == null ? 5 : ВЕС_РУБРИКИ[a.r]);
+    const arts = (s.arts || []).filter(a => a.g === s.group).slice()
+      .sort((x, y) => весСтатьи(x) - весСтатьи(y)).slice(0, 3)
+      .map(a => ({ t: a.t, d: a.d, r: a.r,
+                   m: this.plural(a.m, "минута", "минуты", "минут"),
+                   href: "/" + a.s }));
+
     const total = groups.reduce((n, g) => n + g.count, 0);
 
     return {
@@ -1889,6 +1959,15 @@ class Component extends DCLogic {
       toggleMobNav: () => this.setState({ mobNav: !s.mobNav }),
       mobNavClass: s.mobNav ? "" : "th-closed",
       mobNavCaret: s.mobNav ? "▴ свернуть" : "▾ все разделы",
+      arts,
+      hasArts: arts.length > 0,
+      artsTitle: субТаб ? "Перед выбором — " + субТаб : "Перед выбором",
+      // на телефоне полоска свёрнута: она стоит перед товарами
+      toggleMobArts: () => this.setState({ mobArts: !s.mobArts }),
+      artsClass: s.mobArts ? "" : "th-closed",
+      artsCaret: s.mobArts ? "▴" : "▾",
+      artsLabel: s.mobArts ? "Скрыть статьи"
+        : this.plural(arts.length, "статья по теме", "статьи по теме", "статей по теме"),
       mobFiltersClass: s.mobFilters ? "" : "th-closed",
       mobFiltersCaret: s.mobFilters ? "▴" : "▾",
       mobFiltersLabel: s.mobFilters
