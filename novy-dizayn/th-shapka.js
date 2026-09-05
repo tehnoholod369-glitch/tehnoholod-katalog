@@ -38,8 +38,6 @@
     ["https://tehnoholod369.kz/teplovye-zavesy-almaty", "Тепловые завесы"],
     ["https://tehnoholod369.kz/teplovye-pushki-almaty", "Тепловые пушки"],
     ["https://tehnoholod369.kz/radiatory-otopleniya-almaty", "Радиаторы отопления"],
-    ["https://tehnoholod369.kz/mobilnye-kondicionery-almaty", "Мобильные кондиционеры"],
-    ["https://tehnoholod369.kz/osushiteli-vozduha-almaty", "Осушители воздуха"],
     ["https://tehnoholod369.kz/kondicioner-na-25-kvm", "Кондиционер на комнату 25 м²"],
     ["https://tehnoholod369.kz/kondicioner-do-200000", "Кондиционер до 200 000 ₸"],
     ["https://tehnoholod369.kz/tihiy-kondicioner", "Тихий кондиционер для спальни"],
@@ -185,20 +183,28 @@
   // сверху, последний снизу): логотип в СЕРЕДИНЕ статьи — это иллюстрация, её не трогаем.
   function снятьЛокальнуюШапку(осталось) {
     // Корень блока создаёт шаблонизатор — ПОСЛЕ DOMContentLoaded, и наполняется
-    // не сразу. Поэтому не «посмотрели и ушли», а повторяем ~9 секунд: ровно
-    // на этом промахнулись и копирайт, и прошлая правка шапки (05.09.2026).
+    // не сразу, поэтому повторяем ~9 секунд.
     осталось = (осталось === undefined) ? 30 : осталось;
     if (осталось > 0) setTimeout(function () { снятьЛокальнуюШапку(осталось - 1); }, 300);
-    var корень = document.querySelector("#dc-root") ||
-                 document.querySelector("x-dc");
+    var корень = document.querySelector("#dc-root") || document.querySelector("x-dc");
     if (!корень || !корень.children.length) return;
-    var дети = [].slice.call(корень.children);
+
+    // ⚠️ Скрываем НЕ прямого потомка корня. У части блоков корень имеет ровно
+    // одного ребёнка — всю страницу, и такое «скрытие шапки» убрало бы статью
+    // целиком. Поймано 05.09.2026 на /freshin-sravnenie до того, как сработало.
+    //
+    // Признак шапки надёжнее размера: это самый большой контейнер вокруг логотипа,
+    // в котором ещё МАЛО текста. У шапки его пара десятков символов («Каталог»,
+    // «Корзина», телефон), у статьи — тысячи. Поднимаемся от логотипа вверх, пока
+    // текст короткий, и снимаем последний такой уровень.
     [].forEach.call(корень.querySelectorAll("img[alt*='ТехноХолод']"), function (лого) {
-      var узел = лого;
-      while (узел && узел.parentNode !== корень) узел = узел.parentNode;
-      if (!узел) return;
-      var i = дети.indexOf(узел);
-      if (i === 0 || i === 1 || i === дети.length - 1) узел.style.display = "none";
+      var узел = лого, кандидат = null;
+      while (узел && узел !== корень) {
+        if ((узел.textContent || "").replace(/\s+/g, " ").trim().length < 400) кандидат = узел;
+        else break;
+        узел = узел.parentNode;
+      }
+      if (кандидат && кандидат !== корень) кандидат.style.display = "none";
     });
   }
 
