@@ -135,29 +135,38 @@
       </div>
     </sc-if>
 
+    
+    <sc-if value="{{ hasOsnCommon }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:16px 18px; margin-top:14px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">ЕСТЬ У КАЖДОЙ БРИГАДЫ В СПИСКЕ</div>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:9px;">
+          <sc-for list="{{ osnCommon }}" as="it" hint-placeholder-count="6">
+            <span style="font-size:13px; color:#2A3646; background:#F3F7FB; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
+          </sc-for>
+        </div>
+        <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:9px;">{{ osnCommonNote }}</div>
+      </div>
+    </sc-if>
+
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr)); gap:16px; margin-top:14px; align-items:start;">
       <sc-for list="{{ crews }}" as="c" hint-placeholder-count="3">
-        <div id="{{ c.cert }}" style="background:#fff; border:1px solid {{ c.cardBorder }}; border-radius:16px; padding:24px; scroll-margin-top:16px;">
+        <div id="{{ c.cert }}" style="background:#fff; border:1px solid {{ c.cardBorder }}; border-radius:16px; padding:20px 22px; scroll-margin-top:16px;">
 
+          
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:14px;">
             <div style="min-width:0;">
-              <div style="display:inline-flex; align-items:center; gap:7px; background:#E7F7F0; border:1px solid #BFE6D4; border-radius:6px; padding:5px 10px;">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#0B6B45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M20 6 9 17l-5-5" /></svg>
-                <span style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:#0B6B45; font-variant-numeric:tabular-nums; letter-spacing:0.01em;">{{ c.cert }}</span>
-              </div>
-              
-              <sc-if value="{{ c.hasLevel }}" hint-placeholder-val="{{ true }}">
-                <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:8px; margin-top:9px; max-width:620px;">
-                  <sc-for list="{{ c.levels }}" as="st" hint-placeholder-count="3">
-                    <div style="background:{{ st.bg }}; border:1px solid {{ st.bd }}; border-radius:8px; padding:9px 12px; text-align:center;">
-                      <div style="font-size:12px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:{{ st.fg }};">{{ st.n }}</div>
-                      <div style="font-size:11px; line-height:1.4; margin-top:3px; color:{{ st.sub }};">{{ st.pub }}</div>
-                    </div>
-                  </sc-for>
+              <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <div style="display:inline-flex; align-items:center; gap:7px; background:#E7F7F0; border:1px solid #BFE6D4; border-radius:6px; padding:5px 10px;">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#0B6B45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M20 6 9 17l-5-5" /></svg>
+                  <span style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:#0B6B45; font-variant-numeric:tabular-nums; letter-spacing:0.01em;">{{ c.cert }}</span>
                 </div>
-              </sc-if>
+                
+                <sc-if value="{{ c.hasLevel }}" hint-placeholder-val="{{ true }}">
+                  <div style="background:{{ c.levelBg }}; border:1px solid {{ c.levelBd }}; border-radius:6px; padding:6px 10px; font-size:12px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:{{ c.levelFg }};">{{ c.levelName }}</div>
+                </sc-if>
+              </div>
               <div style="font-size:12px; color:#8593A6; margin-top:5px;">сертификация ИП «ТехноХолод», реестр «Сервис-карта 369»<sc-if value="{{ c.canVerify }}" hint-placeholder-val="{{ true }}"> · <a href="{{ c.verifyHref }}" style="color:#0872D3; font-weight:600;">проверить сертификат</a></sc-if></div>
-              <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700; line-height:1.3; margin-top:10px;">{{ c.dirLine }}</div>
+              <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700; line-height:1.3; margin-top:10px;">{{ c.dirShort }}</div>
             </div>
             <div style="text-align:right; flex:none;">
               <sc-if value="{{ c.hasRating }}" hint-placeholder-val="{{ true }}">
@@ -175,8 +184,8 @@
           </div>
 
           
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; align-items:start; margin-top:16px;">
-            <sc-for list="{{ c.factsShort }}" as="f" hint-placeholder-count="4">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; align-items:start; margin-top:14px;">
+            <sc-for list="{{ c.factsKey }}" as="f" hint-placeholder-count="2">
               <div style="background:#F3F7FB; border-radius:10px; padding:11px 13px;">
                 <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ f.k }}</div>
                 <div style="font-size:14px; color:#18212F; line-height:1.45; margin-top:3px;">{{ f.v }}</div>
@@ -185,73 +194,11 @@
           </div>
 
           
-          <div style="display:grid; grid-template-columns:1fr; gap:10px; margin-top:10px;">
-            <sc-for list="{{ c.factsWide }}" as="f" hint-placeholder-count="2">
-              <div style="background:#F3F7FB; border-radius:10px; padding:12px 14px;">
-                <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ f.k }}</div>
-                <sc-if value="{{ f.hasV }}" hint-placeholder-val="{{ true }}">
-                  <div style="font-size:14px; color:#18212F; line-height:1.5; margin-top:4px;">{{ f.v }}</div>
-                </sc-if>
-                <sc-if value="{{ f.hasItems }}" hint-placeholder-val="{{ false }}">
-                  <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;">
-                    <sc-for list="{{ f.items }}" as="it" hint-placeholder-count="4">
-                      <span style="font-size:13px; color:#2A3646; background:#FFFFFF; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
-                    </sc-for>
-                  </div>
-                </sc-if>
-                <sc-if value="{{ f.hasNote }}" hint-placeholder-val="{{ false }}">
-                  <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:8px;">{{ f.note }}</div>
-                </sc-if>
-              </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+            <sc-for list="{{ c.badges }}" as="b" hint-placeholder-count="3">
+              <div style="background:{{ b.bg }}; border:1px solid {{ b.bd }}; border-radius:6px; padding:5px 10px; font-size:13px; font-weight:600; color:{{ b.fg }};">{{ b.t }}</div>
             </sc-for>
           </div>
-
-          <sc-if value="{{ c.vremya }}" hint-placeholder-val="{{ true }}">
-            <div style="display:inline-flex; align-items:center; gap:6px; background:#E7F7F0; border:1px solid #BFE6D4; border-radius:6px; padding:5px 10px; margin-top:12px;">
-              <span style="font-size:13px; font-weight:700; color:#0B6B45;">✓ Проверена временем</span>
-            </div>
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
-              <sc-for list="{{ c.vremyaFacts }}" as="v" hint-placeholder-count="2">
-                <div style="background:#F3F7FB; border-radius:8px; padding:8px 12px;">
-                  <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ v.k }}</div>
-                  <div style="font-size:15px; font-weight:700; color:#18212F; margin-top:2px;">{{ v.v }}</div>
-                </div>
-              </sc-for>
-            </div>
-            <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:6px;">{{ c.vremyaNote }}</div>
-          </sc-if>
-
-          <sc-if value="{{ c.hasSkills }}" hint-placeholder-val="{{ true }}">
-            <div style="border:1px solid #DCE5F0; border-radius:10px; padding:13px 15px; margin-top:14px;">
-              <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">ЧТО ДЕЛАЕТ ЭТА БРИГАДА</div>
-              <sc-for list="{{ c.skills }}" as="s" hint-placeholder-count="2">
-                <div style="margin-top:9px;">
-                  <div style="font-size:13px; font-weight:700; color:#18212F;">{{ s.title }}</div>
-                  <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:2px;">{{ s.items }}</div>
-                </div>
-              </sc-for>
-              <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:11px;">{{ c.skillsNote }}</div>
-            </div>
-          </sc-if>
-
-          <sc-if value="{{ c.hasPhotos }}" hint-placeholder-val="{{ true }}">
-            <div style="border:1px solid #DCE5F0; border-radius:10px; padding:13px 15px; margin-top:14px;">
-              <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">РАБОТЫ ЭТОЙ БРИГАДЫ</div>
-              <sc-for list="{{ c.photos }}" as="g" hint-placeholder-count="2">
-                <div style="margin-top:11px;">
-                  <div style="font-size:13px; font-weight:700; color:#18212F;">{{ g.title }}</div>
-                  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(104px,1fr)); gap:8px; margin-top:7px;">
-                    <sc-for list="{{ g.items }}" as="p" hint-placeholder-count="3">
-                      <a href="{{ p.url }}" target="_blank" rel="noopener" style="display:block;">
-                        <img src="{{ p.url }}" alt="{{ p.alt }}" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; background:#F3F7FB; display:block;">
-                      </a>
-                    </sc-for>
-                  </div>
-                </div>
-              </sc-for>
-              <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:11px;">{{ c.photosNote }}</div>
-            </div>
-          </sc-if>
 
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
             <a href="{{ c.callHref }}" style="background:#0872D3; color:#fff; border-radius:8px; padding:12px 18px; font-size:15px; font-weight:700;">Хочу эту бригаду</a>
@@ -260,6 +207,94 @@
 
           <sc-if value="{{ c.open }}" hint-placeholder-val="{{ false }}">
             <div style="border-top:1px solid #DCE5F0; margin-top:18px; padding-top:16px;">
+
+              <sc-if value="{{ c.hasLevel }}" hint-placeholder-val="{{ true }}">
+                <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">СТУПЕНЬ В ПРОГРАММЕ</div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:8px; margin-top:8px; max-width:620px;">
+                  <sc-for list="{{ c.levels }}" as="st" hint-placeholder-count="3">
+                    <div style="background:{{ st.bg }}; border:1px solid {{ st.bd }}; border-radius:8px; padding:9px 12px; text-align:center;">
+                      <div style="font-size:12px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:{{ st.fg }};">{{ st.n }}</div>
+                      <div style="font-size:11px; line-height:1.4; margin-top:3px; color:{{ st.sub }};">{{ st.pub }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+
+              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; align-items:start; margin-top:14px;">
+                <sc-for list="{{ c.factsMore }}" as="f" hint-placeholder-count="3">
+                  <div style="background:#F3F7FB; border-radius:10px; padding:11px 13px;">
+                    <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ f.k }}</div>
+                    <div style="font-size:14px; color:#18212F; line-height:1.45; margin-top:3px;">{{ f.v }}</div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr; gap:10px; margin-top:10px;">
+                <sc-for list="{{ c.factsWide }}" as="f" hint-placeholder-count="2">
+                  <div style="background:#F3F7FB; border-radius:10px; padding:12px 14px;">
+                    <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ f.k }}</div>
+                    <sc-if value="{{ f.hasV }}" hint-placeholder-val="{{ true }}">
+                      <div style="font-size:14px; color:#18212F; line-height:1.5; margin-top:4px;">{{ f.v }}</div>
+                    </sc-if>
+                    <sc-if value="{{ f.hasItems }}" hint-placeholder-val="{{ false }}">
+                      <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;">
+                        <sc-for list="{{ f.items }}" as="it" hint-placeholder-count="4">
+                          <span style="font-size:13px; color:#2A3646; background:#FFFFFF; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+                    <sc-if value="{{ f.hasNote }}" hint-placeholder-val="{{ false }}">
+                      <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:8px;">{{ f.note }}</div>
+                    </sc-if>
+                  </div>
+                </sc-for>
+              </div>
+
+              <sc-if value="{{ c.vremya }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+                  <sc-for list="{{ c.vremyaFacts }}" as="v" hint-placeholder-count="2">
+                    <div style="background:#F3F7FB; border-radius:8px; padding:8px 12px;">
+                      <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ v.k }}</div>
+                      <div style="font-size:15px; font-weight:700; color:#18212F; margin-top:2px;">{{ v.v }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:6px;">{{ c.vremyaNote }}</div>
+              </sc-if>
+
+              <sc-if value="{{ c.hasSkills }}" hint-placeholder-val="{{ true }}">
+                <div style="border:1px solid #DCE5F0; border-radius:10px; padding:13px 15px; margin-top:14px;">
+                  <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">ЧТО ДЕЛАЕТ ЭТА БРИГАДА</div>
+                  <sc-for list="{{ c.skills }}" as="s" hint-placeholder-count="2">
+                    <div style="margin-top:9px;">
+                      <div style="font-size:13px; font-weight:700; color:#18212F;">{{ s.title }}</div>
+                      <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:2px;">{{ s.items }}</div>
+                    </div>
+                  </sc-for>
+                  <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:11px;">{{ c.skillsNote }}</div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ c.hasPhotos }}" hint-placeholder-val="{{ true }}">
+                <div style="border:1px solid #DCE5F0; border-radius:10px; padding:13px 15px; margin-top:14px;">
+                  <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">РАБОТЫ ЭТОЙ БРИГАДЫ</div>
+                  <sc-for list="{{ c.photos }}" as="g" hint-placeholder-count="2">
+                    <div style="margin-top:11px;">
+                      <div style="font-size:13px; font-weight:700; color:#18212F;">{{ g.title }}</div>
+                      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(104px,1fr)); gap:8px; margin-top:7px;">
+                        <sc-for list="{{ g.items }}" as="p" hint-placeholder-count="3">
+                          <a href="{{ p.url }}" target="_blank" rel="noopener" style="display:block;">
+                            <img src="{{ p.url }}" alt="{{ p.alt }}" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; background:#F3F7FB; display:block;">
+                          </a>
+                        </sc-for>
+                      </div>
+                    </div>
+                  </sc-for>
+                  <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:11px;">{{ c.photosNote }}</div>
+                </div>
+              </sc-if>
+
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6; margin-top:18px; margin-bottom:10px;">ОТЗЫВЫ</div>
 
               <sc-if value="{{ c.noReviews }}" hint-placeholder-val="{{ false }}">
                 <div style="font-size:14px; color:#5A6675; line-height:1.6;">У этой бригады ещё нет опубликованных отзывов. Она не хуже других — просто новее или работала с теми, кто отзыв не оставил.</div>
@@ -318,6 +353,12 @@
         </div>
       </sc-for>
     </div>
+
+    <sc-if value="{{ hasMore }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex; justify-content:center; margin-top:16px;">
+        <div onClick="{{ showMore }}" style="border:1px solid #DCE5F0; background:#fff; color:#2C3846; border-radius:8px; padding:12px 22px; font-size:15px; font-weight:600; cursor:pointer;">{{ moreLabel }}</div>
+      </div>
+    </sc-if>
     </sc-if>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:16px;">
@@ -348,10 +389,14 @@
 
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
+// Сколько карточек показываем сразу. Порция, а не «все»: реестр будет расти,
+// а первый экран должен остаться первым экраном (05.09.2026).
+const ПОРЦИЯ = 10;
+
 class Component extends DCLogic {
   PRIEMNIK = "https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec";
 
-  state = { data: null, failed: false, dir: "", city: "", open: {}, form: {}, sent: {}, verify: false };
+  state = { data: null, failed: false, dir: "", city: "", open: {}, form: {}, sent: {}, verify: false, shown: ПОРЦИЯ };
 
   componentDidMount() {
     const q = new URLSearchParams(window.location.search);
@@ -408,8 +453,18 @@ class Component extends DCLogic {
 
   /** Фильтр держим и в адресе: ссылку на «вентиляционные бригады» должно быть
    *  можно послать клиенту, а не только нажать самому. */
+  // «38 видов работ»: число рядом со словом, иначе плашка читается как ошибка.
+  vidWord(n) {
+    const a = n % 10, b = n % 100;
+    if (a === 1 && b !== 11) { return "вид"; }
+    if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) { return "вида"; }
+    return "видов";
+  }
+
   setFilter(patch) {
-    this.setState(patch);
+    // Сменили фильтр — счёт показанных начинаем заново: иначе после
+    // «показать ещё» новый фильтр открывался бы сразу развёрнутым.
+    this.setState(Object.assign({ shown: ПОРЦИЯ }, patch));
     try {
       const s = Object.assign({ dir: this.state.dir, city: this.state.city }, patch);
       const q = new URLSearchParams();
@@ -537,6 +592,19 @@ class Component extends DCLogic {
       (!dir || (c.dirs || []).indexOf(dir) >= 0) &&
       (!city || c.region === city));
 
+    // Показываем порциями: реестр растёт, а первый экран должен оставаться
+    // первым экраном. «Показать ещё» вместо страниц — ссылка вида
+    // /brigady#369-BR-02-001 должна открывать карточку, а не терять её
+    // на второй странице.
+    const показаны = list.slice(0, this.state.shown);
+
+    // Оснащение у сертифицированных бригад совпадает — это условие
+    // сертификации, а не отличие. Общее выносим один раз над списком,
+    // в карточке остаётся только то, что сверх него (05.09.2026).
+    const общееОсн = list.length > 1
+      ? (list[0].osn || []).filter(x => list.every(c => (c.osn || []).indexOf(x) >= 0))
+      : [];
+
     // Фишки строим только по тому, что реально есть в реестре: направление,
     // по которому нет ни одной бригады, — обещание фильтра без содержимого.
     const dirSeen = [];
@@ -568,6 +636,14 @@ class Component extends DCLogic {
       updatedNote: d && d.updated ? "реестр на " + this.dateLabel(d.updated) : "",
       resetFilters: () => this.setFilter({ dir: "", city: "" }),
 
+      hasOsnCommon: общееОсн.length > 0,
+      osnCommon: общееОсн.map(x => this.cap(x)),
+      osnCommonNote: "Это есть у каждой бригады в списке — проверено при сертификации. "
+                   + "В карточках указано только то, что сверх этого набора.",
+      hasMore: list.length > показаны.length,
+      moreLabel: "Показать ещё " + Math.min(ПОРЦИЯ, list.length - показаны.length),
+      showMore: () => this.setState({ shown: this.state.shown + ПОРЦИЯ }),
+
       dirChips: [{ key: "", label: "Все", n: all.length }].concat(dirSeen).map(x => Object.assign({
         label: x.label,
         count: x.n,
@@ -580,7 +656,7 @@ class Component extends DCLogic {
         pick: () => this.setFilter({ city: x.key })
       }, this.chip(city === x.key))),
 
-      crews: list.map(c => {
+      crews: показаны.map(c => {
         const open = !!this.state.open[c.cert];
         const sent = !!this.state.sent[c.cert];
         const f = this.form(c.cert);
@@ -600,16 +676,52 @@ class Component extends DCLogic {
           // Языки словами, а не кодами: у бригады с одним языком плитка
           // показывала «RU» — это читалось как служебная метка, а не как ответ
           // на вопрос «поймём ли мы друг друга» (02.09.2026).
-          c.langs && c.langs.length ? { k: "ЯЗЫКИ", v: this.langWords(c.langs) } : null
+          // Язык показываем, только если он не только русский. Одинаковое
+          // «Русский» у всех — шум; казахский или английский кому-то решает.
+          (c.langs && c.langs.some(x => !/^рус/i.test(String(x))))
+            ? { k: "ЯЗЫКИ", v: this.langWords(c.langs) } : null
+        ].filter(Boolean);
+
+        // Наверху — только решающее: поедет ли к вам и какая гарантия.
+        // Опыт, стаж с нами и языки — фон: он объясняет бригаду, но выбор
+        // между двумя сертифицированными решает не он.
+        const ВЕРХ = ["ВЫЕЗД", "ГАРАНТИЯ НА МОНТАЖ", "ЦЕНА ОТ"];
+        const factsKey  = factsShort.filter(x => ВЕРХ.indexOf(x.k) >= 0);
+        const factsMore = factsShort.filter(x => ВЕРХ.indexOf(x.k) < 0);
+
+        // Оснащение в карточке — только сверх общего набора. Совпало полностью:
+        // говорим это словами, а не пустым блоком.
+        const своёОсн = (c.osn || []).filter(x => общееОсн.indexOf(x) < 0);
+        const работ = (c.skills || []).reduce((n, s) => n + ((s.items || []).length), 0);
+
+        const ЗЕЛ = { bg: "#E7F7F0", bd: "#BFE6D4", fg: "#0B6B45" };
+        const СИН = { bg: "#E6F2FD", bd: "#B9DBF7", fg: "#0A4EA7" };
+        const НЕЙТР = { bg: "#F3F7FB", bd: "#DCE5F0", fg: "#5A6675" };
+        const badges = [
+          c.vremya && c.vremya.let_ >= 1
+            ? Object.assign({ t: "✓ Проверена временем · на рынке " + c.vremya.let_
+                                 + " " + this.letWord(c.vremya.let_) }, ЗЕЛ) : null,
+          c.docsOk ? Object.assign({ t: "Договор и акт" }, СИН) : null,
+          (c.langs && c.langs.some(x => !/^рус/i.test(String(x))))
+            ? Object.assign({ t: this.langWords(c.langs) }, СИН) : null,
+          работ ? Object.assign({ t: работ + " " + this.vidWord(работ) + " работ" }, НЕЙТР) : null
         ].filter(Boolean);
 
         const factsWide = [
           // Оснащение — чипами. Подпись «подтверждено при сертификации» вынесена
           // отдельной строкой: приклеенная к последнему инструменту, она читалась
           // как часть перечня.
-          c.osn && c.osn.length ? { k: "ОСНАЩЕНИЕ", v: "", hasV: false,
-            items: c.osn.map(x => this.cap(x)), hasItems: true,
-            note: "Подтверждено при сертификации", hasNote: true } : null,
+          c.osn && c.osn.length
+            ? (своёОсн.length
+                ? { k: "ОСНАЩЕНИЕ СВЕРХ ОБЩЕГО", v: "", hasV: false,
+                    items: своёОсн.map(x => this.cap(x)), hasItems: true,
+                    note: "Подтверждено при сертификации", hasNote: true }
+                : { k: "ОСНАЩЕНИЕ", hasV: true,
+                    v: общееОсн.length ? "Полный общий набор, перечисленный над списком."
+                                       : this.cap((c.osn || []).join(", ")),
+                    items: [], hasItems: false,
+                    note: "Подтверждено при сертификации", hasNote: true })
+            : null,
           c.forma ? { k: "ОФОРМЛЕНИЕ", v: "", hasV: false,
             items: [c.forma].concat(c.nds ? [c.nds] : []).concat(c.docs ? [c.docs] : []),
             hasItems: true, note: "", hasNote: false } : null,
@@ -667,7 +779,18 @@ class Component extends DCLogic {
             };
           }),
           verifyHref: "/proverka?cert=" + encodeURIComponent(c.cert),
-          dirLine: (c.dirLabels || []).join(" · ") || "Направление уточняется",
+          // Направления в свёрнутом виде: два и счётчик. Пять направлений
+          // строкой съедали три строки заголовка и сдвигали факты вниз.
+          dirShort: (function (n) {
+            var v = c.dirLabels || [];
+            if (!v.length) { return "Направление уточняется"; }
+            return v.length <= n ? v.join(" · ")
+                                 : v.slice(0, n).join(" · ") + " · + ещё " + (v.length - n);
+          })(2),
+          levelName: (ур && ур.name) || "",
+          levelBg: ((ЦВЕТ[(ур && ур.key) || ""] || ЦВЕТ.uchastnik)).bg,
+          levelBd: ((ЦВЕТ[(ур && ур.key) || ""] || ЦВЕТ.uchastnik)).bd,
+          levelFg: ((ЦВЕТ[(ур && ур.key) || ""] || ЦВЕТ.uchastnik)).fg,
           cardBorder: open ? "#B9DBF7" : "#DCE5F0",
           hasRating: c.rating !== null,
           accruing: !!c.accruing,
@@ -675,8 +798,10 @@ class Component extends DCLogic {
           noRating: c.rating === null && !c.accruing,
           rating: c.rating === null ? "" : this.ratingLabel(c.rating),
           votesLabel: this.votesLabel(c.votes),
-          factsShort: factsShort,
+          factsKey: factsKey,
+          factsMore: factsMore,
           factsWide: factsWide,
+          badges: badges,
 
           vremya: !!c.vremya,
           // Две графы, как просил владелец: годы и монтажи по отдельности —
@@ -716,8 +841,10 @@ class Component extends DCLogic {
             "Здравствуйте! На монтаж хочу бригаду " + c.cert + "."),
 
           open: open,
-          toggle: () => this.setState({ open: Object.assign({}, this.state.open, { [c.cert]: !open }) }),
-          toggleLabel: open ? "Свернуть" : (c.reviewsTotal > 0 ? "Отзывы" : "Оставить отзыв"),
+          // Раскрытой держим одну карточку: две развёрнутые рядом — это снова
+          // простыня, от которой мы уходим. Открыл вторую — первая свернулась.
+          toggle: () => this.setState({ open: open ? {} : { [c.cert]: true } }),
+          toggleLabel: open ? "Свернуть" : "Подробнее",
 
           reviews: (c.reviews || []).map(r => ({
             name: r.name, date: this.dateLabel(r.date), text: r.text,
