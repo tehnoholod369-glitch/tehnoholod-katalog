@@ -45,6 +45,14 @@
     .th-arts-toggle { display:flex; }
     .th-arts-body.th-closed { display:none; }
   }
+  /* Площадь — первый вопрос покупателя, и на телефоне он оказался в двух тапах:
+     панель фильтров там свёрнута за строку «Фильтры», а внутри свёрнута и секция
+     площади. До 06.09.2026 её заменял блок «Подбор по площади» над выдачей, он был
+     виден сразу; когда подбор переехал в фасет, на телефоне спрятался и он. Поэтому
+     кнопки площади дублируем одной прокручиваемой строкой над выдачей — только на
+     узких экранах: на десктопе панель раскрыта, и второй такой ряд там лишний. */
+  .th-area-mob { display:none; }
+  @media (max-width: 860px) { .th-area-mob { display:block; } }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=591c7919"></script>
@@ -214,6 +222,18 @@
 
       <div>
         
+        <sc-if value="{{ hasAreaMob }}" hint-placeholder-val="{{ false }}">
+          <div class="th-area-mob" style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:13px 14px; margin-bottom:14px;">
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">Площадь помещения</div>
+            <div style="display:flex; gap:6px; margin-top:9px; overflow-x:auto; padding-bottom:3px;">
+              <sc-for list="{{ areaChips }}" as="a" hint-placeholder-count="6">
+                <div onClick="{{ a.pick }}" style="flex:none; border:1px solid {{ a.border }}; background:{{ a.bg }}; color:{{ a.fg }}; border-radius:6px; padding:7px 11px; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:5px;"><span>{{ a.label }}</span><span style="font-size:12px; color:#8593A6; font-variant-numeric:tabular-nums;">{{ a.sub }}</span></div>
+              </sc-for>
+            </div>
+            <div style="font-size:12px; color:#8593A6; margin-top:8px; line-height:1.4;">{{ areaNoteMob }}</div>
+          </div>
+        </sc-if>
+
         <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px;">
           <div style="font-size:14px; color:#5A6675;">{{ counterText }}</div>
           <div style="font-size:13px; color:#8593A6;">{{ dateNote }}</div>
@@ -1648,6 +1668,14 @@ class Component extends DCLogic {
     // сколько акционных в этой группе: чипа «Акция» нет там, где их нет —
     // кнопка «Акция 0» это не фильтр, а обещание, за которым ничего не стоит
     const saleCount = items.filter(x => this.saleOf(x)).length;
+    // Чипы площади считаем один раз: их показывает и фасет, и отдельная строка над
+    // выдачей на телефоне. Два списка разъехались бы при первой же правке.
+    const areaOptions = hasArea
+      ? [this.chip(s.area === "all", "Любая", () => this.setState({ area: "all", shown: 12 }))].concat(
+        askOpts.filter(o => o.n > 0 || s.area === o.label)
+          .map(o => this.chip(s.area === o.label, o.label,
+            () => this.setState({ area: o.label, shown: 12 }), String(o.n))))
+      : [];
     const filterGroups = this.wrapFilters([
       // в группе один бренд — выбирать не из чего: «Все 444 / Royal Thermo 444» это
       // не фильтр, а строка-пустышка. Так у семи групп, включая радиаторы (26.08.2026)
@@ -1717,11 +1745,7 @@ class Component extends DCLogic {
         linkShow: askFacet ? "block" : "none",
         linkHref: "/kontakty#podbor",
         linkText: "Уточнить расчёт: потолок, солнце, техника →",
-        options: [this.chip(s.area === "all", "Любая", () => this.setState({ area: "all", shown: 12 }))].concat(
-          askOpts.filter(o => o.n > 0 || s.area === o.label)
-            .map(o => this.chip(s.area === o.label, o.label,
-              () => this.setState({ area: o.label, shown: 12 }), String(o.n)))
-        )
+        options: areaOptions
       } : null,
       {
         key: "price", activeLabel: s.price === "all" ? "" : s.price,
@@ -1900,6 +1924,11 @@ class Component extends DCLogic {
       gridRef: this.gridRef,
       dirTabs,
       extraTabs: extraTab,
+      // строка площади над выдачей: те же чипы и та же подпись, что в фасете,
+      // видимость решает CSS — .th-area-mob живёт только до 860 px
+      hasAreaMob: hasArea,
+      areaChips: areaOptions,
+      areaNoteMob: askNote,
       dirLabel: (DIRS.find(d => d.key === curDir) || DIRS[0]).label,
       groupTabs,
       hasSubs: !s.loading && (meta.subs || []).length > 1 && baseList.length > 0,
