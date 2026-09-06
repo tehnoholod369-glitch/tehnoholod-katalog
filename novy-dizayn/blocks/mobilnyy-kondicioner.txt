@@ -1,0 +1,263 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art-page-main {
+    width: 100%;
+    max-width: 888px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 18px 24px 72px;
+  }
+  .art-page-main > h1 { max-width: none !important; overflow-wrap: anywhere; }
+  .art-page-lead { max-width: none !important; }
+  .art { width: 100%; max-width: none; }
+
+  
+  .t-body .art-local-chrome { display: none !important; }
+
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+
+  @media (max-width: 640px) {
+    .art-page-main { padding: 14px 16px 56px; }
+    .art-page-main > h1 { font-size: clamp(25px, 7vw, 30px) !important; line-height: 1.16; }
+    .art-page-lead { font-size: 16px !important; line-height: 1.6 !important; }
+    .art h2 { margin-top: 28px; font-size: 20px; line-height: 1.3; }
+    .art h3 { font-size: 17px; line-height: 1.35; }
+    .art p, .art li { font-size: 16px; line-height: 1.65; }
+    .art-note, .art-warn, .art-tldr, .art-q { padding: 14px 15px; }
+    .art-cta { padding: 20px !important; gap: 18px !important; }
+    .art-cta__actions { display: grid !important; grid-template-columns: 1fr; width: 100%; }
+    .art-cta__actions > a { width: 100%; box-sizing: border-box; text-align: center; }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=1810f723"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="art-page-main">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/baza-znaniy">База знаний</a> → <span style="color:#18212F;">Мобильный кондиционер</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Выбор</span>
+      <span style="color:#8593A6;">4 минуты чтения</span>
+      <span style="color:#8593A6;">Обновлено 06.09.2026</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Мобильный кондиционер: когда он оправдан, а когда нет</h1>
+
+    <div class="art-page-lead" style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Чем мобильный кондиционер отличается от сплита: шум в комнате, потери через воздуховод, приоткрытое окно. Когда он единственный вариант, а когда деньги на ветер.
+    </div>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">мобильный кондиционер решает ровно одну задачу — охладить комнату там, где сплит поставить нельзя.** За это платят шумом компрессора в комнате, приоткрытым окном и заметно худшей эффективностью. Если сплит поставить можно — ставят сплит.</div></div>
+      <h2>Как он устроен и почему это важно</h2>
+      <p>У сплит-системы два блока: шумный и горячий компрессор висит на улице, в комнате остаётся только вентилятор с теплообменником. У мобильного всё это собрано в одном корпусе и стоит у вас в комнате.</p>
+      <p>Тепло, которое кондиционер забирает из воздуха, деть куда-то надо. У мобильного его выбрасывает вентилятор через гибкий воздуховод — гофрированный шланг, который выводят в приоткрытое окно. Из этой конструкции вытекает всё остальное.</p>
+      <h2>Три платы за мобильность</h2>
+      <p><b>Шум.</b> Компрессор работает в той же комнате, где вы находитесь. Это принципиально иначе, чем у сплита, где он на улице. Для гостиной в дневное время терпимо, для спальни — чаще нет.</p>
+      <p><b>Потери через воздуховод.</b> Шланг с горячим воздухом проходит через комнату и греет её по дороге. Часть работы кондиционера уходит на то, чтобы охладить тепло собственного воздуховода.</p>
+      <p><b>Приоткрытое окно.</b> Выбрасывая воздух наружу, прибор создаёт в комнате небольшое разрежение — и через щели затягивает с улицы горячий воздух взамен. На створку ставят заглушку из комплекта или закрывают проём подручными средствами, иначе часть работы уходит впустую.</p>
+      <p>Из-за этих трёх вещей мобильный при равной заявленной мощности охлаждает хуже сплита и потребляет больше электричества. Это не брак и не обман производителя — это свойство конструкции.</p>
+      <h2>Когда он действительно выручает</h2>
+      <ul><li><b>Съёмная квартира.</b> Сплит — это отверстие в стене и блок на фасаде: то и другое требует согласия хозяина. Мобильный уезжает вместе с вами.</li><li><b>Фасад, на который нельзя вешать блок.</b> Исторические здания, дома с охраняемым обликом, ЖК со строгими правилами по фасаду.</li><li><b>Временная задача.</b> Охладить серверную на лето, комнату на время ремонта, помещение, которое через полгода освободят.</li><li><b>Нельзя сверлить.</b> Иногда монтаж невозможен технически: несущая стена без доступа, чужая собственность за стеной, соседский балкон под окном.</li></ul>
+      <h2>Когда деньги уходят впустую</h2>
+      <ul><li><b>Постоянное жильё, где сплит поставить можно.</b> Сплит тише, экономичнее и на дистанции дешевле, даже с учётом монтажа.</li><li><b>Спальня.</b> Шум компрессора рядом с кроватью — главная причина, по которой мобильные потом стоят в кладовке.</li><li><b>Большая площадь.</b> Мобильные редко бывают мощными: в нашем каталоге доступные модели рассчитаны примерно на 18–24 м². Если комната больше, потребуется модель посерьёзнее — и разрыв в цене со сплитом сокращается.</li></ul>
+      <p>Если сомневаетесь между мобильным и сплитом, посчитайте нужную мощность заранее — это отдельный разговор, он разобран в статье <a href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera">«Как выбрать мощность кондиционера по площади»</a>.</p>
+      <h2>Что уточнить до покупки</h2>
+      <p><b>Куда девается конденсат.</b> Часть моделей испаряет влагу и выбрасывает её вместе с воздухом, часть собирает в бак, который надо периодически сливать. Второй вариант в жару требует внимания.</p>
+      <p><b>Длина воздуховода и высота окна.</b> Шланг короткий, обычно чуть больше метра. Прибор придётся ставить рядом с окном, а не там, где удобнее.</p>
+      <p><b>Есть ли обогрев.</b> Часть моделей умеет работать на тепло — это бывает полезно в межсезонье, когда отопление ещё не дали.</p>
+      <p><b>Уровень шума в паспорте.</b> Цифру производителя стоит смотреть до покупки, а не после: разница между моделями заметная.</p>
+      <h2>Что есть у нас</h2>
+      <p>В каталоге 32 модели мобильных кондиционеров от шести брендов — Ballu, Electrolux, ROYAL CLIMA, SHUFT, GREE, Midea. Актуальные цены и наличие — на странице <a href="https://tehnoholod369.kz/mobilnye-kondicionery-almaty">«Мобильные кондиционеры в Алматы»</a>; они обновляются из каталога автоматически.</p>
+      <p>Монтаж мобильному не нужен — в этом его смысл. Достаточно вывести воздуховод в окно и включить в розетку.</p>
+      <h2>Вопросы и ответы</h2>
+      <p><b>Мобильный кондиционер сильно шумит?</b> Заметно громче сплит-системы: компрессор находится в комнате, а не на улице. Конкретную цифру смотрите в паспорте модели — разброс между моделями большой.</p>
+      <p><b>Почему мобильный охлаждает хуже сплита той же мощности?</b> Из-за конструкции: горячий воздуховод проходит через комнату и греет её, а через приоткрытое окно подсасывается уличный воздух взамен выброшенного. Часть работы уходит на компенсацию этих потерь.</p>
+      <p><b>Нужно ли открывать окно?</b> Да, воздуховод выводится наружу — окно приоткрывают. На створку ставят заглушку, иначе тёплый воздух возвращается обратно и эффект падает.</p>
+      <p><b>Мобильный кондиционер нужно куда-то сливать?</b> Зависит от модели: одни испаряют конденсат и выбрасывают его с воздухом, другие собирают в бак, который надо сливать вручную. Уточняйте до покупки.</p>
+      <p><b>Что выгоднее — мобильный или сплит?</b> Если сплит поставить можно, выгоднее сплит: он тише, экономичнее и охлаждает лучше. Мобильный выбирают тогда, когда монтаж невозможен или жильё съёмное.</p>
+      <p><i>Не уверены, что подойдёт в вашем случае — <a href="https://wa.me/77000369369">напишите в WhatsApp</a>. Скажите площадь комнаты, своё это жильё или съёмное, и можно ли вешать блок на фасад.</i></p>
+      <h2>Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=mobilnye&amp;brand=Ballu&amp;stock=in"><div class="art-card__t">Ballu</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">16 моделей</span> →</div></a>
+      <a class="art-card" href="/katalog?g=mobilnye"><div class="art-card__t">Мобильные кондиционеры</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="mobilnye"></span> →</div></a>
+      <a class="art-card" href="/mobilnye-kondicionery-almaty"><div class="art-card__t">Мобильные кондиционеры в Алматы</div><div class="art-card__s">Без монтажа, для съёмной квартиры и офиса.</div><div class="art-card__go">Открыть раздел →</div></a>
+      </div>
+      <a class="art-pick" data-pick="mobilnye" href="/katalog?g=mobilnye"
+         title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
+        <img class="art-pick__img" data-pick-img alt="" />
+        <div class="art-pick__b">
+          <div class="art-pick__tag" data-pick-tag>Наш выбор</div>
+          <div class="art-pick__brand" data-pick-brand></div>
+          <div class="art-pick__name" data-pick-name></div>
+          <div class="art-pick__price" data-pick-price></div>
+        </div>
+        <div class="art-pick__go">Открыть карточку →</div>
+      </a>
+    </div>
+
+    
+    <div class="art-cta" style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Подберём модель под вашу задачу</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь комнаты и этаж — пришлём подбор и цену. Нужен монтаж — посчитаем отдельно.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div class="art-cta__actions" style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/katalog?g=mobilnye" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards" data-art-next="mobilnyy-kondicioner|byt-kond|mobilnye|kak-vybrat-moshchnost-konditsionera">
+        <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera"><div class="art-card__t">Как выбрать мощность кондиционера по площади комнаты</div><div class="art-card__s">Как подобрать мощность кондиционера по площади комнаты: правило 100 Вт на м², перевод BTU в кВт, классы 9/12/1</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kondicioner-ili-obogrevatel"><div class="art-card__t">Кондиционер или обогреватель: что выгоднее зимой в Алматы</div><div class="art-card__s">Сравниваем кондиционер и обогреватель по цене, расходу электричества и комфорту. Расчёт для Алматы — что выгод</div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+    </div>
+  </div>
+
+  
+  <div data-th-copyright style="max-width:888px; margin:0 auto; padding:18px 24px 40px; font-size:12px; line-height:1.7; color:#6B7C93;">
+    © 2026 ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
+    Перепечатка целиком или существенной частью — только с письменного разрешения.
+    Цитата с активной ссылкой на источник разрешена без запроса.
+    <a href="/usloviya-ispolzovaniya" style="color:#6B7C93; text-decoration:underline;">Условия использования</a>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=aa7da59c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=7c7222ef"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Мобильный кондиционер: когда он оправдан, а когда нет", "description": "Чем мобильный кондиционер отличается от сплита: шум в комнате, потери через воздуховод, приоткрытое окно. Когда он единственный вариант, а когда деньги на ветер.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/mobilnyy-kondicioner"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "dateModified": "2026-09-06", "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightYear": 2026}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Мобильный кондиционер: когда он оправдан, а когда нет", "item": "https://tehnoholod369.kz/mobilnyy-kondicioner"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Мобильный кондиционер сильно шумит?","acceptedAnswer":{"@type":"Answer","text":"Заметно громче сплит-системы: компрессор находится в комнате, а не на улице. Конкретную цифру смотрите в паспорте модели — разброс между моделями большой."}},
+    {"@type":"Question","name":"Почему мобильный охлаждает хуже сплита той же мощности?","acceptedAnswer":{"@type":"Answer","text":"Из-за конструкции: горячий воздуховод проходит через комнату и греет её, а через приоткрытое окно подсасывается уличный воздух взамен выброшенного. Часть работы уходит на компенсацию этих потерь."}},
+    {"@type":"Question","name":"Нужно ли открывать окно для мобильного кондиционера?","acceptedAnswer":{"@type":"Answer","text":"Да, воздуховод выводится наружу — окно приоткрывают. На створку ставят заглушку, иначе тёплый воздух возвращается обратно и эффект падает."}},
+    {"@type":"Question","name":"Мобильный кондиционер нужно куда-то сливать?","acceptedAnswer":{"@type":"Answer","text":"Зависит от модели: одни испаряют конденсат и выбрасывают его с воздухом, другие собирают в бак, который надо сливать вручную. Уточняйте до покупки."}},
+    {"@type":"Question","name":"Что выгоднее — мобильный кондиционер или сплит-система?","acceptedAnswer":{"@type":"Answer","text":"Если сплит поставить можно, выгоднее сплит: он тише, экономичнее и охлаждает лучше. Мобильный выбирают тогда, когда монтаж невозможен или жильё съёмное."}}
+  ]
+}
+</script>
+</x-dc>
