@@ -7,6 +7,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
+  /* Заготовка шаблонизатора: до гидратации внутри стоят «{{ }}», после
+     отрисовки элемент из DOM исчезает. Прячем, чтобы робот, снявший кадр
+     раньше скриптов, не принял разметку шаблона за текст страницы. */
+  sc-for { display: none; }
+
   body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
   h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
   a { color: #0A4EA7; text-decoration: none; }
