@@ -1,0 +1,28 @@
+<div data-th-seo style="background:#F3F7FB; font-family:'Inter','Segoe UI',sans-serif; color:#18212F; padding:32px 24px 44px; margin-top:22px;">
+      <div style="max-width:1240px; margin:0 auto;">
+      <h2 style="margin:0; font-family:'Montserrat','Inter',sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#18212F;">Что есть в каталоге и как в нём искать</h2>
+
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; margin-top:16px; font-size:15px; line-height:1.7; color:#2C3846;">
+        <p style="margin:0;">Каталог собран из шести направлений: <b>кондиционирование</b> — настенные сплит-системы для квартир и офисов, полупромышленные кассетные, канальные и напольно-потолочные, мультисплит на несколько комнат и мобильные моноблоки; <b>вентиляция</b> — приточные и приточно-вытяжные установки с рекуперацией, канальные и вытяжные вентиляторы, осушители; <b>отопление</b> — радиаторы, конвекторы, инфракрасные обогреватели, тепловые пушки и завесы, электрокамины; <b>водонагрев и водоочистка</b> — накопительные и проточные нагреватели, газовые колонки, фильтры; <b>проектные системы</b> — VRF и мини-VRF, чиллеры и фанкойлы; <b>автономное питание</b> — зарядные станции и солнечные панели.</p>
+
+        <p style="margin:14px 0 0;">Подбор начинается с площади помещения: в фильтрах слева задаётся площадь, а каталог сам оставляет модели подходящей мощности. Дальше сужаем по типу корпуса, бренду, наличию Wi-Fi, обогреву зимой и уровню шума. У каждой позиции указано состояние наличия: <b>в наличии</b> — товар лежит на складе в Алматы или у поставщика и отгружается сразу, <b>под заказ</b> — привозим под заявку, срок называем при подтверждении. Цена и характеристики берутся из нашей рабочей таблицы и обновляются вместе с каталогом, поэтому в карточке всегда актуальная сумма за оборудование; стоимость монтажа в неё не входит и считается отдельно.</p>
+
+        <p style="margin:14px 0 0;">Если модель на витрине не подходит по бюджету, посмотрите <a href="/ucenka" style="color:#0A4EA7;">уценённую технику</a> — это новое оборудование с повреждённой упаковкой или царапиной, дефект описан и снят на фото. Не нашли нужное — напишите в WhatsApp <a href="tel:+77000369369" style="color:#0A4EA7;">+77&nbsp;000&nbsp;369&nbsp;369</a> с площадью и задачей: подберём и посчитаем.</p>
+      </div>
+
+      <div style="font-size:15px; line-height:1.9; color:#5A6675; margin-top:16px;">
+        Популярные подборки:
+        <a href="https://tehnoholod369.kz/kondicionery-almaty" style="color:#0A4EA7;">кондиционеры в Алматы</a> ·
+        <a href="https://tehnoholod369.kz/invertornyy-kondicioner-almaty" style="color:#0A4EA7;">инверторные</a> ·
+        <a href="https://tehnoholod369.kz/kondicioner-s-pritokom" style="color:#0A4EA7;">с притоком свежего воздуха</a> ·
+        <a href="https://tehnoholod369.kz/kanalnye-kondicionery-almaty" style="color:#0A4EA7;">канальные</a> ·
+        <a href="https://tehnoholod369.kz/kassetnye-kondicionery-almaty" style="color:#0A4EA7;">кассетные</a> ·
+        <a href="https://tehnoholod369.kz/mobilnye-kondicionery-almaty" style="color:#0A4EA7;">мобильные</a> ·
+        <a href="https://tehnoholod369.kz/pritochnaya-ustanovka-almaty" style="color:#0A4EA7;">приточные установки</a> ·
+        <a href="https://tehnoholod369.kz/radiatory-otopleniya-almaty" style="color:#0A4EA7;">радиаторы отопления</a> ·
+        <a href="https://tehnoholod369.kz/teplovye-zavesy-almaty" style="color:#0A4EA7;">тепловые завесы</a> ·
+        <a href="https://tehnoholod369.kz/nakopitelnyy-vodonagrevatel-almaty" style="color:#0A4EA7;">накопительные водонагреватели</a>.
+        <br />Монтаж и сервис — <a href="/uslugi" style="color:#0A4EA7;">под ключ бригадами с Сервис-картой 369</a>, юридическим лицам — <a href="/b2b" style="color:#0A4EA7;">счёт с НДС и договор</a>, условия обмена — на странице <a href="/vozvrat" style="color:#0A4EA7;">«Возврат и обмен»</a>.
+      </div>
+      </div>
+    </div>

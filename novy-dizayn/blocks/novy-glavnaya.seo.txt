@@ -1,0 +1,47 @@
+<div data-th-seo style="background:#F3F7FB; font-family:'Inter','Segoe UI',sans-serif; color:#18212F; padding:34px 24px 44px; margin-top:34px;">
+      <div style="max-width:1240px; margin:0 auto;">
+      <h2 style="margin:0; font-family:'Montserrat','Inter',sans-serif; font-size:26px; font-weight:800; letter-spacing:-0.015em; color:#18212F;">Частые вопросы</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:18px;">
+
+        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:20px 22px;">
+          <div style="font-size:16px; font-weight:700; color:#18212F;">Как подобрать модель</div>
+          <div style="font-size:15px; line-height:1.65; color:#5A6675; margin-top:8px;">Напишите в WhatsApp площадь комнаты, этаж и сторону света — подберём заочно и пришлём цену оборудования. Монтаж считаем отдельно и предлагаем, только если он нужен. На мультисплит, VRF и проектные системы выезжаем на замер: там от размеров трассы зависит и состав оборудования, и цена работ.</div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:20px 22px;">
+          <div style="font-size:16px; font-weight:700; color:#18212F;">Кто ставит и кто отвечает за монтаж</div>
+          <div style="font-size:15px; line-height:1.65; color:#5A6675; margin-top:8px;">Монтаж выполняют проверенные бригады, на каждую работу выписывается Сервис-карта 369 — по её номеру видно, кто ставил и что именно. Гарантия на оборудование — производителя, срок указан в паспорте изделия; гарантия на монтаж — бригады, которая работала. <a href="/uslugi" style="color:#0A4EA7;">Как устроены монтаж и сервис</a>.</div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:20px 22px;">
+          <div style="font-size:16px; font-weight:700; color:#18212F;">Доставка и самовывоз</div>
+          <div style="font-size:15px; line-height:1.65; color:#5A6675; margin-top:8px;">По Алматы и области доставляем до адреса, по Казахстану — транспортной компанией. Самовывоз возможен после подтверждения заказа: часть техники лежит на складах поставщиков, и её привозят под заявку. Сроки называем при подтверждении, а не обещаем наперёд.</div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:20px 22px;">
+          <div style="font-size:16px; font-weight:700; color:#18212F;">Работа с юридическими лицами</div>
+          <div style="font-size:15px; line-height:1.65; color:#5A6675; margin-top:8px;">Работаем с НДС: выставим счёт, заключим договор, поставим оборудование на объект и сделаем монтаж. Участвуем в тендерах и государственных закупках. <a href="/b2b" style="color:#0A4EA7;">Условия для организаций</a>.</div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:20px 22px;">
+          <div style="font-size:16px; font-weight:700; color:#18212F;">Рассрочка</div>
+          <div style="font-size:15px; line-height:1.65; color:#5A6675; margin-top:8px;">Покупку можно оформить в рассрочку через банк — Kaspi, Halyk, ForteBank и другие. Договор заключает банк, одобрение и условия на его стороне. Стоимость монтажа в рассрочку не входит и оплачивается отдельно.</div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:20px 22px;">
+          <div style="font-size:16px; font-weight:700; color:#18212F;">Если модель не подошла</div>
+          <div style="font-size:15px; line-height:1.65; color:#5A6675; margin-top:8px;">Неустановленное оборудование в заводской упаковке меняем и возвращаем в течение 14 календарных дней. Состояние товара — упаковку, комплектность, следы эксплуатации, сколы и потёртости — проверяет авторизованный сервисный центр бренда в Алматы, и решение принимается по его заключению. <a href="/vozvrat" style="color:#0A4EA7;">Условия возврата и обмена</a>.</div>
+        </div>
+
+      </div>
+
+      <div style="font-size:15px; line-height:1.8; color:#5A6675; margin-top:18px;">
+        Куда дальше: <a href="/katalog" style="color:#0A4EA7;">каталог техники</a> ·
+        <a href="/brendy" style="color:#0A4EA7;">бренды, с которыми работаем</a> ·
+        <a href="/baza-znaniy" style="color:#0A4EA7;">база знаний</a> ·
+        <a href="/portfolio" style="color:#0A4EA7;">наши работы</a> ·
+        <a href="/kontakty" style="color:#0A4EA7;">контакты и доставка</a>.
+        ИП «ТехноХолод», Алматы, ул. Какимжана Казыбаева, 286Б. Телефон и WhatsApp <a href="tel:+77000369369" style="color:#0A4EA7;">+77&nbsp;000&nbsp;369&nbsp;369</a>, Пн–Пт 9:00–18:00.
+      </div>
+      </div>
+    </div>
