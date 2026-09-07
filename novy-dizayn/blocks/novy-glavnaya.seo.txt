@@ -1,6 +1,8 @@
 <div data-th-seo style="background:#F3F7FB; font-family:'Inter','Segoe UI',sans-serif; color:#18212F; padding:34px 24px 44px; margin-top:34px;">
       <div style="max-width:1240px; margin:0 auto;">
-      <h2 style="margin:0; font-family:'Montserrat','Inter',sans-serif; font-size:26px; font-weight:800; letter-spacing:-0.015em; color:#18212F;">Частые вопросы</h2>
+      <h1 style="margin:0; font-family:'Montserrat','Inter',sans-serif; font-size:26px; font-weight:800; letter-spacing:-0.015em; color:#18212F;">Климатическая техника в Алматы</h1>
+      <p style="margin:10px 0 0; font-size:15px; line-height:1.65; color:#5A6675; max-width:780px;">Кондиционеры, вентиляция, отопление и водонагрев: подбор по площади, монтаж под ключ, работаем с НДС. Доставка по Казахстану, рассрочка.</p>
+      <h2 style="margin:26px 0 0; font-family:'Montserrat','Inter',sans-serif; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#18212F;">Частые вопросы</h2>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:18px;">
 
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:20px 22px;">
