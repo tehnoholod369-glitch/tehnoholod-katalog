@@ -1,14 +1,14 @@
 {
- "dataUpdated": "2026-09-05",
+ "dataUpdated": "2026-09-07",
  "sitemapSource": "Tilda",
  "pagesCount": 25,
- "pagesBuiltAt": "05.09.2026 18:42",
- "feedRows": 3589,
- "feedBuiltAt": "05.09.2026 21:25",
- "feedStale": false,
- "feedLinksUniq": 3583,
+ "pagesBuiltAt": "07.09.2026 17:29",
+ "feedRows": 3607,
+ "feedBuiltAt": "07.09.2026 17:29",
+ "feedStale": true,
+ "feedLinksUniq": 3593,
  "feedNoImage": 0,
  "feedNoPrice": 0,
- "feedAvailOk": 3589,
+ "feedAvailOk": 3607,
  "feedAvailLegacy": 0
 }

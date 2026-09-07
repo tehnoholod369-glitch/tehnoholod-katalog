@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<yml_catalog date="2026-09-07 02:45">
+<yml_catalog date="2026-09-07 17:29">
   <shop>
     <name>ТехноХолод</name>
     <company>ИП «ТехноХолод»</company>
@@ -16713,6 +16713,26 @@
         <name>EHR 1000x500 - 60</name>
         <description>EHR 1000x500 - 60: мощность нагревателя 60 кВт, потребляемая мощность 60 кВт, сечение прямоугольное, типоразмер 1000*500 мм, корпус — оцинкованная сталь, питание 380 - 400 В, вес 37 кг, размеры В 556 × Ш 521 × Г 1179 мм.</description>
       </offer>
+      <offer id="EHR 1000x500 - 75*" available="false">
+        <url>https://tehnoholod369.kz/tproduct/759752894824-ehr-1000x500-75</url>
+        <price>1041901</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/ehr-400x200-9.jpg</picture>
+        <vendorCode>EHR 1000x500 - 75*</vendorCode>
+        <name>EHR 1000x500 - 75*</name>
+        <description>EHR 1000x500 - 75*: мощность нагревателя 75 кВт, потребляемая мощность 75 кВт, сечение прямоугольное, типоразмер 1000*500 мм, корпус — оцинкованная сталь, питание 380 - 400 В, вес 20 кг, размеры В 505 × Ш 435 × Г 1095 мм.</description>
+      </offer>
+      <offer id="EHR 1000x500 - 90" available="false">
+        <url>https://tehnoholod369.kz/tproduct/170077757714-ehr-1000x500-90</url>
+        <price>1238332</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/ehr-400x200-9.jpg</picture>
+        <vendorCode>EHR 1000x500 - 90</vendorCode>
+        <name>EHR 1000x500 - 90</name>
+        <description>EHR 1000x500 - 90: мощность нагревателя 90 кВт, потребляемая мощность 90 кВт, сечение прямоугольное, типоразмер 1000*500 мм, корпус — оцинкованная сталь, питание 380 - 400 В, вес 46,1 кг, размеры В 556 × Ш 640 × Г 1179 мм.</description>
+      </offer>
       <offer id="EHR 400x200 - 12" available="true">
         <url>https://tehnoholod369.kz/tproduct/556047927134-ehr-400x200-12</url>
         <price>253359</price>
@@ -16732,6 +16752,16 @@
         <vendorCode>EHR 400x200 - 15</vendorCode>
         <name>EHR 400x200 - 15</name>
         <description>EHR 400x200 - 15: мощность нагревателя 15 кВт, потребляемая мощность 15 кВт, сечение прямоугольное, типоразмер 400*200 мм, корпус — оцинкованная сталь, питание 380 - 400 В, вес 12,6 кг, размеры В 375 × Ш 645 × Г 344 мм.</description>
+      </offer>
+      <offer id="EHR 400x200 - 6/2ф" available="false">
+        <url>https://tehnoholod369.kz/tproduct/540213796724-ehr-400x200-6-2f</url>
+        <price>204621</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/ehr-400x200-9.jpg</picture>
+        <vendorCode>EHR 400x200 - 6/2ф</vendorCode>
+        <name>EHR 400x200 - 6/2ф</name>
+        <description>EHR 400x200 - 6/2ф: мощность нагревателя 6 кВт, потребляемая мощность 6 кВт, сечение прямоугольное, типоразмер 400*200 мм, корпус — оцинкованная сталь, питание 380 - 400 В, вес 10,7 кг, размеры В 375 × Ш 645 × Г 344 мм.</description>
       </offer>
       <offer id="EHR 400x200 - 9" available="true">
         <url>https://tehnoholod369.kz/tproduct/763869521944-ehr-400x200-9</url>
@@ -19676,6 +19706,116 @@
         <vendor>SHUFT</vendor>
         <name>Адаптер (комплект 2шт.) переход с 150х150 на D=100 мм</name>
         <description>Фитинг воздуховода SHUFT: модель Адаптер (комплект 2шт.) переход с 150х150 на D=100 мм. Адаптер (комплект 2шт.) переход с 150х150 на D-100 мм.</description>
+      </offer>
+      <offer id="Адаптер (комплект 2шт.) переход с 150х150 на D=125 мм" available="false">
+        <url>https://tehnoholod369.kz/tproduct/745659420154-adapter-komplekt-2sht-perehod-s-150h150-na-d-125-mm</url>
+        <price>8661</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/shuft-adapter-komplekt-2sht-perehod-s-150h150-na-d-100-mm.jpg</picture>
+        <vendor>SHUFT</vendor>
+        <name>Адаптер (комплект 2шт.) переход с 150х150 на D=125 мм</name>
+        <description>Фитинг воздуховода ZILON: модель Адаптер (комплект 2шт.) переход с 150х150 на D=125 мм.</description>
+      </offer>
+      <offer id="Адаптер (комплект 2шт.) переход с 150х150 на D=160 мм" available="true">
+        <url>https://tehnoholod369.kz/tproduct/198648576904-adapter-komplekt-2sht-perehod-s-150h150-na-d-160-mm</url>
+        <price>10676</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/shuft-adapter-komplekt-2sht-perehod-s-150h150-na-d-100-mm.jpg</picture>
+        <vendor>SHUFT</vendor>
+        <name>Адаптер (комплект 2шт.) переход с 150х150 на D=160 мм</name>
+        <description>Фитинг воздуховода ZILON: модель Адаптер (комплект 2шт.) переход с 150х150 на D=160 мм.</description>
+      </offer>
+      <offer id="Адаптер (комплект 2шт.) переход с 200х200 на D=125 мм" available="false">
+        <url>https://tehnoholod369.kz/tproduct/319862771614-adapter-komplekt-2sht-perehod-s-200h200-na-d-125-mm</url>
+        <price>10916</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/shuft-adapter-komplekt-2sht-perehod-s-150h150-na-d-100-mm.jpg</picture>
+        <vendor>SHUFT</vendor>
+        <name>Адаптер (комплект 2шт.) переход с 200х200 на D=125 мм</name>
+        <description>Фитинг воздуховода ZILON: модель Адаптер (комплект 2шт.) переход с 200х200 на D=125 мм.</description>
+      </offer>
+      <offer id="Адаптер (комплект 2шт.) переход с 200х200 на D=160 мм" available="true">
+        <url>https://tehnoholod369.kz/tproduct/879214880044-adapter-komplekt-2sht-perehod-s-200h200-na-d-160-mm</url>
+        <price>11216</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/shuft-adapter-komplekt-2sht-perehod-s-150h150-na-d-100-mm.jpg</picture>
+        <vendor>SHUFT</vendor>
+        <name>Адаптер (комплект 2шт.) переход с 200х200 на D=160 мм</name>
+        <description>Фитинг воздуховода ZILON: модель Адаптер (комплект 2шт.) переход с 200х200 на D=160 мм.</description>
+      </offer>
+      <offer id="Адаптер (комплект 2шт.) переход с 200х200 на D=200 мм" available="true">
+        <url>https://tehnoholod369.kz/tproduct/933209849704-adapter-komplekt-2sht-perehod-s-200h200-na-d-200-mm</url>
+        <price>11216</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/shuft-adapter-komplekt-2sht-perehod-s-150h150-na-d-100-mm.jpg</picture>
+        <vendor>SHUFT</vendor>
+        <name>Адаптер (комплект 2шт.) переход с 200х200 на D=200 мм</name>
+        <description>Фитинг воздуховода ZILON: модель Адаптер (комплект 2шт.) переход с 200х200 на D=200 мм.</description>
+      </offer>
+      <offer id="Адаптер (комплект 2шт.) переход с 300х300 на D=200 мм" available="true">
+        <url>https://tehnoholod369.kz/tproduct/562584254794-adapter-komplekt-2sht-perehod-s-300h300-na-d-200-mm</url>
+        <price>12655</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/shuft-adapter-komplekt-2sht-perehod-s-150h150-na-d-100-mm.jpg</picture>
+        <vendor>SHUFT</vendor>
+        <name>Адаптер (комплект 2шт.) переход с 300х300 на D=200 мм</name>
+        <description>Фитинг воздуховода ZILON: модель Адаптер (комплект 2шт.) переход с 300х300 на D=200 мм.</description>
+      </offer>
+      <offer id="Адаптер (комплект 2шт.) переход с 300х300 на D=250 мм" available="true">
+        <url>https://tehnoholod369.kz/tproduct/785902939864-adapter-komplekt-2sht-perehod-s-300h300-na-d-250-mm</url>
+        <price>12655</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/shuft-adapter-komplekt-2sht-perehod-s-300h300-na-d-250-mm.jpg</picture>
+        <vendor>SHUFT</vendor>
+        <name>Адаптер (комплект 2шт.) переход с 300х300 на D=250 мм</name>
+        <description>Фитинг воздуховода ZILON: модель Адаптер (комплект 2шт.) переход с 300х300 на D=250 мм.</description>
+      </offer>
+      <offer id="Адаптер (комплект 2шт.) переход с 300х300 на D=315 мм" available="true">
+        <url>https://tehnoholod369.kz/tproduct/307941709434-adapter-komplekt-2sht-perehod-s-300h300-na-d-315-mm</url>
+        <price>13974</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/shuft-adapter-komplekt-2sht-perehod-s-150h150-na-d-100-mm.jpg</picture>
+        <vendor>SHUFT</vendor>
+        <name>Адаптер (комплект 2шт.) переход с 300х300 на D=315 мм</name>
+        <description>Фитинг воздуховода ZILON: модель Адаптер (комплект 2шт.) переход с 300х300 на D=315 мм.</description>
+      </offer>
+      <offer id="Адаптер (комплект 2шт.) переход с 400х400 на D=315 мм" available="false">
+        <url>https://tehnoholod369.kz/tproduct/109445699654-adapter-komplekt-2sht-perehod-s-400h400-na-d-315-mm</url>
+        <price>14754</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/shuft-adapter-komplekt-2sht-perehod-s-150h150-na-d-100-mm.jpg</picture>
+        <vendor>SHUFT</vendor>
+        <name>Адаптер (комплект 2шт.) переход с 400х400 на D=315 мм</name>
+        <description>Фитинг воздуховода ZILON: модель Адаптер (комплект 2шт.) переход с 400х400 на D=315 мм.</description>
+      </offer>
+      <offer id="Адаптер (комплект 2шт.) переход с 400х400 на D=355 мм" available="false">
+        <url>https://tehnoholod369.kz/tproduct/261683064694-adapter-komplekt-2sht-perehod-s-400h400-na-d-355-mm</url>
+        <price>14514</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/shuft-adapter-komplekt-2sht-perehod-s-150h150-na-d-100-mm.jpg</picture>
+        <vendor>SHUFT</vendor>
+        <name>Адаптер (комплект 2шт.) переход с 400х400 на D=355 мм</name>
+        <description>Фитинг воздуховода ZILON: модель Адаптер (комплект 2шт.) переход с 400х400 на D=355 мм.</description>
+      </offer>
+      <offer id="Адаптер (комплект 2шт.) переход с 400х400 на D=400 мм" available="false">
+        <url>https://tehnoholod369.kz/tproduct/141368604204-adapter-komplekt-2sht-perehod-s-400h400-na-d-400-mm</url>
+        <price>16134</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/ventilyaciya/shuft-adapter-komplekt-2sht-perehod-s-150h150-na-d-100-mm.jpg</picture>
+        <vendor>SHUFT</vendor>
+        <name>Адаптер (комплект 2шт.) переход с 400х400 на D=400 мм</name>
+        <description>Фитинг воздуховода ZILON: модель Адаптер (комплект 2шт.) переход с 400х400 на D=400 мм.</description>
       </offer>
       <offer id="Диффузор DVS E 100" available="true">
         <url>https://tehnoholod369.kz/tproduct/365132618134-diffuzor-dvs-e-100</url>
@@ -35526,6 +35666,16 @@
         <vendorCode>SVET-5.0-380/3-PTC</vendorCode>
         <name>Нагреватель керамический Shuft SVET-5.0-380/3-PTC</name>
         <description>Канальный нагреватель SHUFT, серия SVET-PTC: нагреватель керамический, мощность нагревателя 5 кВт, размещение вертикальное/горизонтальное, электропитание 380–400 В, масса 11,2 кг, размеры 365×280×624 мм, производство — КНР, модель Нагреватель керамический Shuft SVET-5,0–380/3-PTC. SHUFT Нагреватель керамический Shuft SVET-5,0–380/3-PTC. Потребляемая мощность 5 кВт, электропитание 380–400 В В/ф/Гц, размеры 365×280×624 мм, вес 11,2 кг. Гарантия 12 мес. Страна производства: КНР.</description>
+      </offer>
+      <offer id="SRС-TS" available="false">
+        <url>https://tehnoholod369.kz/katalog</url>
+        <price>186743</price>
+        <currencyId>KZT</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://img.tehnoholod369.kz/img/vodonagrevateli/ballu-bwh-s-30-artendo-dh_3-rk.jpg</picture>
+        <vendorCode>SRС-TS</vendorCode>
+        <name>Пульт управления сенсорный SRC-TS</name>
+        <description>Приточно-вытяжная установка: модель Пульт управления сенсорный SRC-TS. Пульт управления сенсорный SRC-TS.</description>
       </offer>
       <offer id="Установка EPVS-200 приточно-вытяжная" available="false">
         <url>https://tehnoholod369.kz/tproduct/698038747014-ustanovka-epvs-200-pritochno-vytyazhnaya</url>
