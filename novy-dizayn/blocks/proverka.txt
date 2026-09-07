@@ -26,7 +26,7 @@
   /* minmax(0,1fr), а не голый 1fr: у grid-колонки min-width по умолчанию `auto`,
      и длинное значение без пробелов (номер карты, ссылка) растянуло бы строку за
      экран. Сегодня содержимое узкое и вылета нет — правим по классу дефекта,
-     а не по симптому (Г-293, 07.09.2026). */
+     а не по симптому (Г-299, 07.09.2026). */
   @media (max-width:520px) { .th-pv-row { grid-template-columns:minmax(0,1fr); gap:2px; } }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
