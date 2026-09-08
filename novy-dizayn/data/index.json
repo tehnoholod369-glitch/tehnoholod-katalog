@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-07",
+ "updated": "2026-09-08",
  "groups": [
   {
    "slug": "avtonomnoe-pitanie",
@@ -86,7 +86,7 @@
     "Toshiba",
     "БЕЗ МАРКИ"
    ],
-   "inStock": 334,
+   "inStock": 332,
    "acc": 2,
    "serList": [
     "AG Full DC inverter",
@@ -249,7 +249,7 @@
     "DITREEX",
     "ROYAL CLIMA"
    ],
-   "inStock": 53,
+   "inStock": 51,
    "acc": 0,
    "serList": [
     "AP4",
@@ -298,7 +298,7 @@
     "Firelight",
     "Royal Thermo"
    ],
-   "inStock": 19,
+   "inStock": 18,
    "acc": 6,
    "serList": [
     "Allira",
@@ -369,7 +369,7 @@
     "GREE",
     "SHUFT"
    ],
-   "inStock": 91,
+   "inStock": 83,
    "acc": 0,
    "serList": [
     "ARV7-ME",
@@ -460,7 +460,7 @@
     "ROYAL CLIMA",
     "SHUFT"
    ],
-   "inStock": 9,
+   "inStock": 15,
    "acc": 1,
    "serList": [
     "Ballu Aura",
@@ -571,7 +571,7 @@
     "FUNAI",
     "ROYAL CLIMA"
    ],
-   "inStock": 11,
+   "inStock": 9,
    "acc": 0,
    "serList": [
     "Comfort",
@@ -750,7 +750,7 @@
    "brandList": [
     "Royal Thermo"
    ],
-   "inStock": 127,
+   "inStock": 153,
    "acc": 10,
    "serList": [],
    "subs": [
@@ -804,7 +804,7 @@
     "POWERAIR by ZILON",
     "ROYAL CLIMA"
    ],
-   "inStock": 55,
+   "inStock": 57,
    "acc": 0,
    "serList": [
     "BKN",
@@ -866,7 +866,7 @@
     "ROYAL CLIMA",
     "ZILON"
    ],
-   "inStock": 44,
+   "inStock": 46,
    "acc": 0,
    "serList": [
     "ATLAS",
@@ -917,7 +917,7 @@
     "HYGROMATIK",
     "ROYAL CLIMA"
    ],
-   "inStock": 0,
+   "inStock": 3,
    "acc": 13,
    "serList": [
     "ES",
@@ -969,7 +969,7 @@
     "Royal Thermo",
     "SHUFT"
    ],
-   "inStock": 349,
+   "inStock": 341,
    "acc": 309,
    "serList": [
     "AIRTUBE",
@@ -1125,7 +1125,7 @@
    "brandList": [
     "Ballu"
    ],
-   "inStock": 10,
+   "inStock": 11,
    "acc": 0,
    "serList": [
     "BIF",
@@ -1155,7 +1155,7 @@
     "ROYAL CLIMA",
     "Royal Thermo"
    ],
-   "inStock": 158,
+   "inStock": 160,
    "acc": 1,
    "serList": [
     "3-logic",

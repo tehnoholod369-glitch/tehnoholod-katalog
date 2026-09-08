@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-05",
+ "generated": "2026-09-08",
  "by_group": {
   "avtonomnoe-pitanie": {
    "brand": "EcoFlow",
@@ -29,13 +29,13 @@
    "brand": "Ballu",
    "url": "/novy-katalog?g=infrakrasnye-obogrevateli&brand=Ballu&stock=in",
    "n": 91,
-   "st": 51
+   "st": 49
   },
   "kaminy": {
-   "brand": "Royal Thermo",
-   "url": "/novy-katalog?g=kaminy&brand=Royal%20Thermo&stock=in",
-   "n": 34,
-   "st": 7
+   "brand": "Electrolux",
+   "url": "/novy-katalog?g=kaminy&brand=Electrolux&stock=in",
+   "n": 46,
+   "st": 3
   },
   "mini-vrf": {
    "brand": "AUX",
@@ -44,10 +44,10 @@
    "st": 10
   },
   "mobilnye": {
-   "brand": "Ballu",
-   "url": "/novy-katalog?g=mobilnye&brand=Ballu&stock=in",
-   "n": 16,
-   "st": 4
+   "brand": "Electrolux",
+   "url": "/novy-katalog?g=mobilnye&brand=Electrolux&stock=in",
+   "n": 9,
+   "st": 5
   },
   "multisplit": {
    "brand": "AERONIK",
@@ -65,7 +65,7 @@
    "brand": "Ballu",
    "url": "/novy-katalog?g=osushiteli&brand=Ballu&stock=in",
    "n": 30,
-   "st": 11
+   "st": 9
   },
   "poluprom": {
    "brand": "AUX",
@@ -83,37 +83,37 @@
    "brand": "Royal Thermo",
    "url": "/novy-katalog?g=radiatory&brand=Royal%20Thermo&stock=in",
    "n": 444,
-   "st": 148
+   "st": 144
   },
   "teplovye-pushki": {
    "brand": "Ballu",
    "url": "/novy-katalog?g=teplovye-pushki&brand=Ballu&stock=in",
    "n": 90,
-   "st": 52
+   "st": 51
   },
   "teplovye-zavesy": {
    "brand": "Ballu",
    "url": "/novy-katalog?g=teplovye-zavesy&brand=Ballu&stock=in",
    "n": 133,
-   "st": 39
+   "st": 41
   },
   "ventilyaciya": {
    "brand": "SHUFT",
    "url": "/novy-katalog?g=ventilyaciya&brand=SHUFT&stock=in",
    "n": 380,
-   "st": 71
+   "st": 65
   },
   "ventilyatory-prom": {
    "brand": "Ballu",
    "url": "/novy-katalog?g=ventilyatory-prom&brand=Ballu&stock=in",
    "n": 19,
-   "st": 9
+   "st": 10
   },
   "vodonagrevateli": {
    "brand": "Electrolux",
    "url": "/novy-katalog?g=vodonagrevateli&brand=Electrolux&stock=in",
    "n": 47,
-   "st": 34
+   "st": 33
   },
   "vodoochistka": {
    "brand": "DITREEX",
@@ -187,7 +187,7 @@
    "brand": "Ballu",
    "url": "/novy-katalog?g=infrakrasnye-obogrevateli&brand=Ballu&sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5&stock=in",
    "n": 74,
-   "st": 40
+   "st": 38
   },
   "kaminy|Биокамины": {
    "brand": "Firelight",
@@ -211,7 +211,7 @@
    "brand": "Royal Thermo",
    "url": "/novy-katalog?g=kaminy&brand=Royal%20Thermo&sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BE%D1%87%D0%B0%D0%B3%D0%B8%203D%20%D0%BF%D0%B0%D1%80%D0%BE%D0%B2%D1%8B%D0%B5&stock=in",
    "n": 6,
-   "st": 4
+   "st": 3
   },
   "mini-vrf|Канальные внутренние блоки": {
    "brand": "GREE",
@@ -250,10 +250,10 @@
    "st": 7
   },
   "mobilnye|Мобильные": {
-   "brand": "Ballu",
-   "url": "/novy-katalog?g=mobilnye&brand=Ballu&sub=%D0%9C%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
-   "n": 16,
-   "st": 4
+   "brand": "Electrolux",
+   "url": "/novy-katalog?g=mobilnye&brand=Electrolux&sub=%D0%9C%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
+   "n": 9,
+   "st": 5
   },
   "multisplit|Внутренние блоки": {
    "brand": "AERONIK",
@@ -283,7 +283,7 @@
    "brand": "Ballu",
    "url": "/novy-katalog?g=osushiteli&brand=Ballu&sub=%D0%91%D1%8B%D1%82%D0%BE%D0%B2%D1%8B%D0%B5&stock=in",
    "n": 15,
-   "st": 6
+   "st": 4
   },
   "osushiteli|Полупромышленные": {
    "brand": "Ballu",
@@ -337,13 +337,13 @@
    "brand": "Royal Thermo",
    "url": "/novy-katalog?g=radiatory&brand=Royal%20Thermo&sub=%D0%A1%20%D0%BD%D0%B8%D0%B6%D0%BD%D0%B8%D0%BC%20%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC&stock=in",
    "n": 121,
-   "st": 6
+   "st": 4
   },
   "radiatory|Секционные": {
    "brand": "Royal Thermo",
    "url": "/novy-katalog?g=radiatory&brand=Royal%20Thermo&sub=%D0%A1%D0%B5%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5&stock=in",
    "n": 171,
-   "st": 142
+   "st": 140
   },
   "teplovye-pushki|Газовые": {
    "brand": "Ballu",
@@ -355,7 +355,7 @@
    "brand": "Ballu",
    "url": "/novy-katalog?g=teplovye-pushki&brand=Ballu&sub=%D0%94%D0%B8%D0%B7%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BD%D0%B5%D0%BF%D1%80%D1%8F%D0%BC%D0%BE%D0%B3%D0%BE%20%D0%BD%D0%B0%D0%B3%D1%80%D0%B5%D0%B2%D0%B0&stock=in",
    "n": 8,
-   "st": 4
+   "st": 3
   },
   "teplovye-pushki|Дизельные прямого нагрева": {
    "brand": "Ballu",
@@ -379,7 +379,7 @@
    "brand": "Ballu",
    "url": "/novy-katalog?g=teplovye-zavesy&brand=Ballu&sub=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5&stock=in",
    "n": 80,
-   "st": 31
+   "st": 33
   },
   "ventilyaciya|Вытяжные бытовые": {
    "brand": "Royal Thermo",
@@ -391,19 +391,19 @@
    "brand": "SHUFT",
    "url": "/novy-katalog?g=ventilyaciya&brand=SHUFT&sub=%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D1%8B%D0%B5&stock=in",
    "n": 71,
-   "st": 25
+   "st": 24
   },
   "ventilyaciya|Канальные прямоугольные": {
    "brand": "SHUFT",
    "url": "/novy-katalog?g=ventilyaciya&brand=SHUFT&sub=%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BF%D1%80%D1%8F%D0%BC%D0%BE%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
    "n": 80,
-   "st": 25
+   "st": 23
   },
   "ventilyaciya|Осевые": {
    "brand": "SHUFT",
    "url": "/novy-katalog?g=ventilyaciya&brand=SHUFT&sub=%D0%9E%D1%81%D0%B5%D0%B2%D1%8B%D0%B5&stock=in",
    "n": 46,
-   "st": 9
+   "st": 8
   },
   "ventilyaciya|Приточно-вытяжные установки": {
    "brand": "FUNAI",
@@ -427,7 +427,13 @@
    "brand": "Ballu",
    "url": "/novy-katalog?g=ventilyatory-prom&brand=Ballu&sub=%D0%92%D0%B5%D0%BD%D1%82%D0%B8%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D1%8B&stock=in",
    "n": 13,
-   "st": 8
+   "st": 7
+  },
+  "ventilyatory-prom|Воздушные рукава": {
+   "brand": "Ballu",
+   "url": "/novy-katalog?g=ventilyatory-prom&brand=Ballu&sub=%D0%92%D0%BE%D0%B7%D0%B4%D1%83%D1%88%D0%BD%D1%8B%D0%B5%20%D1%80%D1%83%D0%BA%D0%B0%D0%B2%D0%B0&stock=in",
+   "n": 6,
+   "st": 3
   },
   "vodonagrevateli|Газовые колонки": {
    "brand": "Electrolux",
@@ -439,7 +445,7 @@
    "brand": "Electrolux",
    "url": "/novy-katalog?g=vodonagrevateli&brand=Electrolux&sub=%D0%9D%D0%B0%D0%BA%D0%BE%D0%BF%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&stock=in",
    "n": 32,
-   "st": 21
+   "st": 20
   },
   "vodonagrevateli|Проточные": {
    "brand": "Electrolux",
