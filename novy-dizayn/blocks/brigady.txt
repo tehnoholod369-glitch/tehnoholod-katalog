@@ -45,11 +45,11 @@
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:12px; align-items:start;">
       <div>
         <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">Кто приедет на монтаж</h1>
-        <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">На страницах сайта мы пишем «монтаж сертифицированными бригадами». Это не фигура речи: у каждой бригады есть номер сертификата, она даёт гарантию на свои работы, а каждый монтаж фиксируется в «Сервис-карте 369» — кто ставил и когда. Здесь тот же список, что и в нашем реестре, с оценками клиентов.</div>
+        <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">В Артель 369 каждая допущенная бригада имеет номер сертификата. Для монтажа нового оборудования действует единый обязательный стандарт — 12 месяцев гарантии на монтажные работы. Каждый монтаж фиксируется в «Сервис-карте 369»: кто выполнял работу и когда. Здесь тот же список, что и в нашем реестре, с оценками клиентов.</div>
       </div>
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#8593A6;">ПОЧЕМУ НОМЕР, А НЕ ИМЯ И ТЕЛЕФОН</div>
-        <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">До заказа бригада на витрине — это номер, специализация и оценки: так выбирают по работе, а не по знакомому имени. После монтажа у вас в «Сервис-карте 369» остаются имя и контакт монтажника — гарантия бригады привязана к ним. Заявку принимаем мы: одна точка входа, и обращение по номеру карты уходит той бригаде, которая ставила.</div>
+        <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">До заказа бригада на витрине — это номер сертификата, специализация и оценки: так выбирают по работе, а не по знакомому имени. После монтажа в «Сервис-карте 369» остаются конкретный МАСТЕР или бригада. Гарантия на монтаж нового оборудования — 12 месяцев, а обращение по номеру карты направляется именно тому исполнителю, который выполнял работу.</div>
       </div>
     </div>
 
@@ -380,8 +380,8 @@
           <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Срок гарантии — в карточке модели и в паспорте изделия. Гарантийный ремонт — в сертифицированных центрах бренда.</div>
         </div>
         <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Монтаж — бригада</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Герметичность, крепления, дренаж, пусконаладка. Срок гарантии — в карточке бригады; чинит тот же, кто ставил.</div>
+          <div style="font-size:15px; font-weight:700;">Монтаж — бригада Артель 369</div>
+          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Герметичность, крепления, дренаж и пусконаладка. Для монтажа нового оборудования действует единый срок гарантии — 12 месяцев; обращение направляется тому же МАСТЕРУ или бригаде, которые выполняли работу.</div>
         </div>
         <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
           <div style="font-size:15px; font-weight:700;">Сопровождение — мы</div>
@@ -709,7 +709,7 @@ class Component extends DCLogic {
         const ready = f.score >= 1 && f.text.trim().length >= 2;
         const factsShort = [
           c.city     ? { k: "ВЫЕЗД", v: c.city + (c.zone ? " · до " + c.zone : "") } : null,
-          c.warranty ? { k: "ГАРАНТИЯ НА МОНТАЖ", v: c.warranty + " мес — даёт бригада" } : null,
+          { k: "ГАРАНТИЯ НА МОНТАЖ", v: "12 мес — стандарт Артель 369" },
           c.since    ? { k: "ОПЫТ РАБОТЫ", v: "с " + c.since + " года" } : null,
           (c.withUsSince && (new Date().getFullYear() - c.withUsSince) >= 1)
             ? { k: "РАБОТАЕТ С НАМИ",
