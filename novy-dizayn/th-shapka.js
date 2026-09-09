@@ -47,7 +47,7 @@
     ["https://tehnoholod369.kz/kanalnye-kondicionery-almaty", "Канальные кондиционеры"],
     ["https://tehnoholod369.kz/kassetnye-kondicionery-almaty", "Кассетные кондиционеры"],
     ["https://tehnoholod369.kz/kondicioner-na-35-kvm", "Кондиционер на комнату 35 м²"],
-    ["https://tehnoholod369.kz/kaminy-almaty", "Камины и электроочаги"],
+    ["https://tehnoholod369.kz/katalog?g=kaminy", "Камины и электроочаги"],
     ["https://tehnoholod369.kz/vrf-sistemy-almaty", "VRF и мини-VRF системы"],
     ["https://tehnoholod369.kz/kondicionery-dlya-ofisa", "Кондиционеры для офиса"],
     ["https://tehnoholod369.kz/napolno-potolochnye-kondicionery-almaty", "Напольно-потолочные кондиционеры"],
