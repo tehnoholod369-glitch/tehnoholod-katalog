@@ -388,6 +388,8 @@ class Component extends DCLogic {
     if (wantBtu) this.pendingBtu = wantBtu;
     const wantBrand = p.get("brand");
     if (wantBrand) this.pendingBrand = wantBrand;
+    const wantSeries = p.get("series");
+    if (wantSeries) this.pendingSeries = wantSeries;
     this.pendingStock = p.get("stock") || "";
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/groups.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : {}).then(texts => this.setState({ texts })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-priority.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(brandPrio => this.setState({ brandPrio })).catch(() => {});
@@ -699,6 +701,13 @@ class Component extends DCLogic {
     // фасет перешёл на площадь ПОКУПАТЕЛЯ, и полосы врали в обе стороны — модель
     // «до 21 м²» не попадала в «до 20 м²», хотя подходит, а «до 36 м²» лежала
     // в «35–60» вместе с теми, кто 60 м² действительно тянет. Разбор — у askPass.
+    if (this.pendingSeries && items.length) {
+      const wantSer = this.pendingSeries;
+      this.pendingSeries = "";
+      if (items.some(x => x.ser === wantSer) && s.ser !== wantSer) {
+        setTimeout(() => this.setState({ ser: wantSer, shown: 12 }), 0);
+      }
+    }
     if (this.pendingBrand && items.length) {
       const want = this.pendingBrand;
       this.pendingBrand = "";
