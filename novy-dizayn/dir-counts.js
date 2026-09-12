@@ -53,16 +53,16 @@
     if (св) {
       var g = по[св.getAttribute("data-svodka") || ""];
       if (g) {
-        св.textContent = " В каталоге " + число(g.count) + " "
+        писать(св, " В каталоге " + число(g.count) + " "
           + склон(g.count, "позиция", "позиции", "позиций") + " от "
           + число(g.brands) + " "
-          + склон(g.brands, "производителя", "производителей", "производителей") + ".";
+          + склон(g.brands, "производителя", "производителей", "производителей") + ".");
       }
     }
 
     document.querySelectorAll("[data-group]").forEach(function (el) {
       var g = по[el.getAttribute("data-group")];
-      if (g) el.textContent = число(g.count);
+      if (g) писать(el, число(g.count));
     });
 
     document.querySelectorAll("[data-sub]").forEach(function (el) {
@@ -72,9 +72,15 @@
       if (!g) return;
       var имя = части.slice(1).join("|");
       (g.subs || []).forEach(function (s) {
-        if (s.name === имя) el.textContent = число(s.n);
+        if (s.name === имя) писать(el, число(s.n));
       });
     });
+  }
+
+  // Пишем только когда текст действительно другой: иначе каждое заполнение
+  // само поднимает волну мутаций, а на них подписан повторный проход ниже.
+  function писать(el, текст) {
+    if (el.textContent !== текст) el.textContent = текст;
   }
 
   function когдаПоявятся(готово) {
@@ -87,8 +93,53 @@
     })();
   }
 
+  /**
+   * Почему одного заполнения мало. НОГИ 12.09.2026 поймали пустые «позиций»
+   * на /vodonagrevateli и /otoplenie; причина найдена 13.09.2026 замером
+   * на живой странице: 13 мест из 13 пустые в БРАУЗЕРЕ, при этом
+   * data/index.json отдаёт 200 и нужные числа в нём есть, а сам скрипт
+   * с jsDelivr приходит целым.
+   *
+   * Дело в порядке. На страницах направлений блок лежит в Tilda ЦЕЛИКОМ,
+   * а не приезжает через th-page.js. Значит места под числа уже в DOM к моменту
+   * запуска — ожидание срабатывает сразу, числа проставляются. И только ПОСЛЕ
+   * этого support.js собирает разметку из <x-dc> и заменяет узлы новыми:
+   * свежие копии приходят из шаблона пустыми, а второго прохода не было.
+   *
+   * Лечение — не «ждать подольше»: гонку это не убирает, ожидание и так
+   * заканчивается успехом. Держим данные и повторяем заполнение, пока страница
+   * перестраивается. Наблюдаем за DOM, добиваем только когда есть пустые места,
+   * и через ДЕРЖАТЬ_МС отпускаем — наблюдатель не должен жить всю сессию.
+   */
+  var ДЕРЖАТЬ_МС = 20000, наблюдатель = null, отложено = null;
+
+  function пустых() {
+    var n = 0;
+    Array.prototype.forEach.call(
+      document.querySelectorAll("[data-sub],[data-group],#vt-svodka"),
+      function (el) { if (!(el.textContent || "").trim()) n++; });
+    return n;
+  }
+
+  function держать(d) {
+    заполнить(d);
+    if (!window.MutationObserver || !document.body) return;
+    наблюдатель = new MutationObserver(function () {
+      if (отложено) return;
+      отложено = setTimeout(function () {
+        отложено = null;
+        if (пустых()) заполнить(d);
+      }, 60);
+    });
+    наблюдатель.observe(document.body, { childList: true, subtree: true });
+    setTimeout(function () {
+      if (наблюдатель) { наблюдатель.disconnect(); наблюдатель = null; }
+      if (отложено) { clearTimeout(отложено); отложено = null; }
+    }, ДЕРЖАТЬ_МС);
+  }
+
   fetch(ДАННЫЕ, { cache: "no-cache" })
     .then(function (r) { return r.json(); })
-    .then(function (d) { когдаПоявятся(function () { заполнить(d); }); })
+    .then(function (d) { когдаПоявятся(function () { держать(d); }); })
     .catch(function () { /* данных нет — числа остаются пустыми */ });
 })();

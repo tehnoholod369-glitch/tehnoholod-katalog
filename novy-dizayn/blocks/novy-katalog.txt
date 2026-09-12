@@ -62,7 +62,7 @@
   @media (max-width: 860px) { .th-area-mob { display:block; } }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=591c7919"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=b9e2ad76"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
@@ -388,6 +388,11 @@ class Component extends DCLogic {
     if (wantBtu) this.pendingBtu = wantBtu;
     const wantBrand = p.get("brand");
     if (wantBrand) this.pendingBrand = wantBrand;
+    // ?series= — возврат в исходник 13.09.2026. Код жил в опубликованном
+    // blocks/novy-katalog.txt, но не в этом файле: правку когда-то внесли
+    // в собранный блок, и пересборка её молча стирала. Поймано при сверке
+    // перед выкатом T-006 — дифф показал, что уезжает не только SEO-голова,
+    // но и минус девять строк живой ?series=. Правим исходник, а не блок.
     const wantSeries = p.get("series");
     if (wantSeries) this.pendingSeries = wantSeries;
     this.pendingStock = p.get("stock") || "";
@@ -637,12 +642,67 @@ class Component extends DCLogic {
     };
   }
 
+  // NOGI REPAIR PACK 12.09.2026 (T-006). Фильтрованный каталог отдавал один и тот же
+  // <title> «Каталог кондиционеров — ИП «ТехноХолод» | Алматы, Казахстан» и одно и то
+  // же описание про 701 кондиционер на все 25 групп. Замер 12.09.2026 на живой
+  // /katalog?g=infrakrasnye-obogrevateli: H1 группы «Инфракрасные обогреватели» стоял,
+  // а заголовок вкладки и описание говорили про кондиционеры. Для поиска и AI это
+  // дубль страницы о кондиционерах, а не страница об обогревателях.
+  //
+  // Тексты под группу давно лежат в data/groups.json (поля seo и meta) и считались
+  // здесь же в seoTitle/seoMeta — но эти поля шаблон не использовал ни в одном месте.
+  // Ничего не выдумываем: берём то, что уже собрано генератором.
+  головаПодГруппу(meta, txt, s) {
+    try {
+      const выбрана = s.group && s.group !== "all";
+      const имя = txt.h1 || meta.title || "";
+      if (!выбрана || !имя || имя === "Каталог") return;
+
+      const title = txt.seo || (имя + " — купить в Алматы | ИП «ТехноХолод»");
+      if (document.title !== title) document.title = title;
+      this.ставитьМету("property", "og:title", title);
+
+      const описание = txt.meta || txt.intro || "";
+      if (описание) {
+        this.ставитьМету("name", "description", описание);
+        this.ставитьМету("property", "og:description", описание);
+      }
+
+      // Двух H1 на странице быть не должно. H1 группы рисует этот блок, а общий
+      // «Каталог климатической техники в Алматы» приходит отдельным серверным
+      // SEO-блоком (он и остаётся единственным H1, когда группа не выбрана).
+      // При выбранной группе общий понижаем до div: текст и вид сохраняются,
+      // из разметки уходит второй заголовок первого уровня.
+      const общий = document.querySelector("[data-th-seo] h1");
+      if (общий) {
+        const низший = document.createElement("div");
+        низший.setAttribute("style", общий.getAttribute("style") || "");
+        низший.setAttribute("data-th-was-h1", "1");
+        низший.innerHTML = общий.innerHTML;
+        общий.parentNode.replaceChild(низший, общий);
+      }
+    } catch (e) { /* SEO-голова не имеет права ронять выдачу */ }
+  }
+
+  ставитьМету(атрибут, имя, значение) {
+    let el = document.head.querySelector("meta[" + атрибут + "='" + имя + "']");
+    if (!el) {
+      el = document.createElement("meta");
+      el.setAttribute(атрибут, имя);
+      document.head.appendChild(el);
+    }
+    if (el.getAttribute("content") !== значение) el.setAttribute("content", значение);
+  }
+
   renderVals() {
     const s = this.state;
     const groups = s.index || [];
     const meta = groups.find(g => g.slug === s.group) || { title: "Каталог", count: 0, brandList: [], inStock: 0 };
 
     const txt = (s.texts || {})[s.group] || {};
+
+    // Заголовок вкладки, описание и og:* — под выбранную группу (NOGI 12.09.2026).
+    this.головаПодГруппу(meta, txt, s);
 
     const items = s.items || [];
     const picks = s.picks || [];
