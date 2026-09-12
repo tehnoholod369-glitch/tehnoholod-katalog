@@ -32,7 +32,14 @@
  */
 (function () {
   var ДАННЫЕ = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json";
-  var ЖДАТЬ_МС = 12000, ШАГ_МС = 200;
+  // Запасной адрес тех же данных. raw отвечает не всегда быстро: 13.09.2026
+  // при повторных прогонах НОГИ один раз из трёх все 13 чисел на живой
+  // /vodonagrevateli к десятой секунде так и остались пустыми, хотя разметка
+  // и скрипт были на месте. Числа группы меняются от сборки к сборке, поэтому
+  // кэш jsDelivr здесь допустим — пустое место хуже, чем счётчик суточной
+  // давности. Порядок не меняем: сначала raw, зеркало только если raw молчит.
+  var ЗЕРКАЛО = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/data/index.json";
+  var ЖДАТЬ_МС = 12000, ШАГ_МС = 200, ОТВЕТ_МС = 6000;
 
   function склон(n, один, два, много) {
     var a = Math.abs(n) % 100, b = a % 10;
@@ -138,8 +145,19 @@
     }, ДЕРЖАТЬ_МС);
   }
 
-  fetch(ДАННЫЕ, { cache: "no-cache" })
-    .then(function (r) { return r.json(); })
+  function взять(адрес, мс) {
+    return new Promise(function (готово, беда) {
+      var упал = false;
+      var таймер = setTimeout(function () { упал = true; беда(new Error("долго")); }, мс);
+      fetch(адрес, { cache: "no-cache" })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error(r.status)); })
+        .then(function (d) { if (!упал) { clearTimeout(таймер); готово(d); } })
+        .catch(function (e) { if (!упал) { clearTimeout(таймер); беда(e); } });
+    });
+  }
+
+  взять(ДАННЫЕ, ОТВЕТ_МС)
+    .catch(function () { return взять(ЗЕРКАЛО, ОТВЕТ_МС); })
     .then(function (d) { когдаПоявятся(function () { держать(d); }); })
     .catch(function () { /* данных нет — числа остаются пустыми */ });
 })();
