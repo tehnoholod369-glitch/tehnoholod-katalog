@@ -59,31 +59,31 @@
     </div>
 
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Радиаторы отопления</h2>
-    <div style="font-size:15px; color:#5A6675; margin-top:6px;">Royal Thermo, <span class="vt-n" data-group="radiatory"></span> позиций — для водяных систем в квартире, доме и на объекте.</div>
+    <div style="font-size:15px; color:#5A6675; margin-top:6px;">Royal Thermo, <span class="vt-n" data-group="radiatory">454</span> позиций — для водяных систем в квартире, доме и на объекте.</div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:14px; margin-top:14px;">
 
       <a class="vt-card" href="/katalog?g=radiatory&sub=Секционные">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Секционные</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Набираются по числу секций под теплопотери комнаты.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="radiatory|Секционные"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="radiatory|Секционные">171</span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=radiatory&sub=Трубчатые">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Трубчатые</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Ровная гладкая поверхность, легче мыть — для кухонь и детских.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="radiatory|Трубчатые"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="radiatory|Трубчатые">152</span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=radiatory&sub=С нижним подключением">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">С нижним подключением</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Трубы из пола или стены — подводка не на виду.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="radiatory|С нижним подключением"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="radiatory|С нижним подключением">121</span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=radiatory&sub=Комплектующие">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Комплектующие</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Монтажные наборы, кронштейны, краны и заглушки.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="radiatory|Комплектующие"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="radiatory|Комплектующие">10</span> →</div>
       </a>
 
     </div>
@@ -94,37 +94,37 @@
       <a class="vt-card" href="/katalog?g=infrakrasnye-obogrevateli">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Инфракрасные обогреватели</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Греют предметы и людей, а не воздух — работают и на открытых площадках. Есть электрические и газовые.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-group="infrakrasnye-obogrevateli"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="infrakrasnye-obogrevateli">98</span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=obogrevateli">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Конвекторы и масляные</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Для дома и офиса: настенные конвекторы, масляные радиаторы, тепловентиляторы.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-group="obogrevateli"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="obogrevateli">34</span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=teplovye-pushki&sub=Электрические">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Пушки электрические</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Быстрый обогрев цехов и строек там, где есть сеть.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="teplovye-pushki|Электрические"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="teplovye-pushki|Электрические">58</span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=teplovye-pushki&sub=Газовые">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Пушки газовые</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Автономный обогрев там, где сети нет или мощности не хватает.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="teplovye-pushki|Газовые"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="teplovye-pushki|Газовые">17</span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=teplovye-pushki&sub=Дизельные прямого нагрева">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Пушки дизельные</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Прямого нагрева — для открытых площадок и продуваемых объектов.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="teplovye-pushki|Дизельные прямого нагрева"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="teplovye-pushki|Дизельные прямого нагрева">14</span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=vodyanye-teploventilyatory">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Водяные тепловентиляторы</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Работают от контура отопления — для складов и производств.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-group="vodyanye-teploventilyatory"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="vodyanye-teploventilyatory">31</span> →</div>
       </a>
 
     </div>
@@ -135,25 +135,25 @@
       <a class="vt-card" href="/katalog?g=kaminy&sub=Каминокомплекты">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Каминокомплекты</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Очаг и портал вместе — готовое решение под комнату.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="kaminy|Каминокомплекты"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="kaminy|Каминокомплекты">69</span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=kaminy&sub=Биокамины">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Биокамины</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">На биотопливе: живое пламя без дымохода и проводки.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="kaminy|Биокамины"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="kaminy|Биокамины">41</span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=kaminy&sub=Электроочаги 2D">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Электроочаги</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Эффект пламени и подогрев от розетки, без топлива.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-sub="kaminy|Электроочаги 2D"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="kaminy|Электроочаги 2D">16</span> →</div>
       </a>
 
       <a class="vt-card" href="/katalog?g=teplovye-nasosy">
         <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Тепловые насосы</div>
         <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Воздух-вода: отопление дома от наружного блока. Под заказ.</div>
-        <div class="vt-go">Смотреть <span class="vt-n" data-group="teplovye-nasosy"></span> →</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="teplovye-nasosy">16</span> →</div>
       </a>
 
     </div>
@@ -184,6 +184,6 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=a41a2561"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=fee4b626"></script>
 
 </x-dc>
