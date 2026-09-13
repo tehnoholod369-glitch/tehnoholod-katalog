@@ -59,7 +59,7 @@
     </div>
 
     <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Радиаторы отопления</h2>
-    <div style="font-size:15px; color:#5A6675; margin-top:6px;">Royal Thermo, <span class="vt-n" data-group="radiatory">454</span> позиций — для водяных систем в квартире, доме и на объекте.</div>
+    <div style="font-size:15px; color:#5A6675; margin-top:6px;">Royal Thermo, <span class="vt-n" data-group="radiatory">454</span> позиции — для водяных систем в квартире, доме и на объекте.</div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:14px; margin-top:14px;">
 
       <a class="vt-card" href="/katalog?g=radiatory&sub=Секционные">
@@ -184,6 +184,6 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=fee4b626"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=f7d07d46"></script>
 
 </x-dc>

@@ -69,7 +69,7 @@
 
     document.querySelectorAll("[data-group]").forEach(function (el) {
       var g = по[el.getAttribute("data-group")];
-      if (g) писать(el, число(g.count));
+      if (g) писатьЧисло(el, g.count);
     });
 
     document.querySelectorAll("[data-sub]").forEach(function (el) {
@@ -79,7 +79,7 @@
       if (!g) return;
       var имя = части.slice(1).join("|");
       (g.subs || []).forEach(function (s) {
-        if (s.name === имя) писать(el, число(s.n));
+        if (s.name === имя) писатьЧисло(el, s.n);
       });
     });
   }
@@ -88,6 +88,19 @@
   // само поднимает волну мутаций, а на них подписан повторный проход ниже.
   function писать(el, текст) {
     if (el.textContent !== текст) el.textContent = текст;
+  }
+
+  // Число и слово рядом должны совпадать по падежу: «242 позиции», а не
+  // «242 позиций». При сборке блока слово уже согласовано, но здесь число
+  // может обновиться на другое — тогда правим и слово, оно идёт сразу за
+  // местом под число обычным текстом.
+  function писатьЧисло(el, n) {
+    писать(el, число(n));
+    var сосед = el.nextSibling;
+    if (!сосед || сосед.nodeType !== 3) return;
+    сосед.nodeValue = сосед.nodeValue.replace(
+      /^(\s*)позици[йия]/,
+      "$1" + склон(n, "позиция", "позиции", "позиций"));
   }
 
   function когдаПоявятся(готово) {
