@@ -149,7 +149,12 @@
 
     <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px; margin-top:10px;">
       <div style="max-width:760px;">
+<sc-if value="{{ groupIsH1 }}" hint-placeholder-val="{{ true }}">
         <h1 style="margin:0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.02em;">{{ groupTitle }}</h1>
+</sc-if>
+<sc-if value="{{ groupNotH1 }}" hint-placeholder-val="{{ false }}">
+        <div style="margin:0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.02em;">{{ groupTitle }}</div>
+</sc-if>
         <div style="font-size:15px; color:#5A6675; margin-top:8px; line-height:1.6;">{{ groupSub }}</div>
       </div>
       <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
@@ -377,6 +382,13 @@ class Component extends DCLogic {
     this.__onCart();
     const p = new URLSearchParams(location.search);
     const group = p.get("g") || "bytovye";
+    // Группа выбрана ЯВНО — адресом ?g= или кликом по разделу. Без этого признака
+    // /katalog открывает бытовые сплиты лишь как выдачу по умолчанию, а заголовок,
+    // описание и H1 у страницы — общего каталога. 15.09.2026, HUMAN QA 2/6: сервер
+    // Tilda уже отдавал «Каталог климатической техники», а скрипт через секунду
+    // переписывал вкладку на «Бытовые сплит-системы» и понижал общий H1 — у одного
+    // адреса было два SEO-лица. Выдача по умолчанию не менялась.
+    this.группаЯвно = p.has("g");
     const sub = p.get("sub");
     if (sub) this.pendingSub = sub;
     // площадь из подбора на главной: полосу выбираем ту, что накрывает значение
@@ -654,7 +666,7 @@ class Component extends DCLogic {
   // Ничего не выдумываем: берём то, что уже собрано генератором.
   головаПодГруппу(meta, txt, s) {
     try {
-      const выбрана = s.group && s.group !== "all";
+      const выбрана = this.группаЯвно && s.group && s.group !== "all";
       const имя = txt.h1 || meta.title || "";
       if (!выбрана) {
         const title = "Каталог климатической техники — купить в Алматы | ИП «ТехноХолод»";
@@ -1675,6 +1687,7 @@ class Component extends DCLogic {
         count: n || "",
         pick: () => {
           if (on || !list.length) return;
+          this.группаЯвно = true;
           this.setState({ group: list[0].slug, sub: "all" });
           this.loadGroup(list[0].slug);
         },
@@ -1712,7 +1725,7 @@ class Component extends DCLogic {
       return {
         title: g.title,
         count: g.count,
-        pick: () => { this.setState({ group: g.slug, sub: "all" }); this.loadGroup(g.slug); },
+        pick: () => { this.группаЯвно = true; this.setState({ group: g.slug, sub: "all" }); this.loadGroup(g.slug); },
         border: on ? "#0872D3" : "#DCE5F0",
         bg: on ? "#E6F2FD" : "#fff",
         fg: on ? "#0A4EA7" : "#2C3846",
@@ -2045,6 +2058,11 @@ class Component extends DCLogic {
       mobNavLabel: (DIRS.find(d => d.key === curDir) || DIRS[0]).label + " → " + (txt.h1 || meta.title),
       groupHref: "/katalog?g=" + s.group,
       groupTitle: txt.h1 || meta.title,
+      // Заголовок группы — H1 только при явно выбранной группе. На /katalog без ?g=
+      // единственный H1 — серверный «Каталог климатической техники в Алматы»;
+      // вид заголовка группы тот же, меняется лишь тег (см. головаПодГруппу).
+      groupIsH1: !!this.группаЯвно,
+      groupNotH1: !this.группаЯвно,
       groupSub: txt.intro || "",
       seoTitle: txt.seo || "",
       seoMeta: txt.meta || "",
