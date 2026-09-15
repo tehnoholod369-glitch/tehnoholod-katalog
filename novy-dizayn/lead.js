@@ -40,6 +40,29 @@
     } catch (e) { return ""; }
   }
 
+  /** Метка посетителя — то же, что `th_aid` у калькулятора подбора: живёт в
+   *  localStorage и переживает закрытие вкладки, поэтому по ней видно, что
+   *  сегодняшняя заявка и позавчерашние просмотры — один человек. Сессии на это
+   *  не хватает: она умирает вместе со вкладкой.
+   *
+   *  Новых колонок не нужно: приёмник уже кладёт `aid` в «Посетитель» —
+   *  и в LEAD_COLS, и в EVENT_COLS. Колонка стояла пустой только потому,
+   *  что витрина эту метку не заводила и не слала.
+   *
+   *  Формат тот же, что у калькулятора, но значения общими не будут:
+   *  podbor.tehnoholod369.kz — другой origin, у него своё хранилище.
+   *  Приватный режим запрещает запись — тогда пусто, а не падение. */
+  function aid() {
+    try {
+      var a = window.localStorage.getItem("th_aid");
+      if (!a) {
+        a = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+        window.localStorage.setItem("th_aid", a);
+      }
+      return a;
+    } catch (e) { return ""; }
+  }
+
   window.TH_LEAD = {
     /** Ссылка на WhatsApp с готовым текстом. Один формат номера на весь сайт. */
     wa: function (text) {
@@ -84,6 +107,7 @@
         unknown: p.unknown || "",
         src: (typeof location !== "undefined" ? location.pathname : ""),
         ses: ses(),
+        aid: aid(),
         ua: (typeof navigator !== "undefined" ? navigator.userAgent : "").slice(0, 260)
       };
       return fetch(EXEC, {
@@ -113,6 +137,7 @@
             brand: p.brand || "", type: p.type || "", model: p.model || "",
             src: (typeof location !== "undefined" ? location.pathname : ""),
             ses: ses(),
+            aid: aid(),
             ua: (typeof navigator !== "undefined" ? navigator.userAgent : "").slice(0, 260)
           }),
           keepalive: true

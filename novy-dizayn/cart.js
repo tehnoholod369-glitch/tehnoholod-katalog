@@ -20,6 +20,35 @@
   var DATA = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/";
   var mem = null;
 
+  /** Метки визита и посетителя — те же ключи, что заводит lead.js: один origin,
+   *  одно хранилище. До 12.09.2026 заказ не нёс ни одной из них, и колонка
+   *  «Сессия» в листе «Заказы» стояла пустой у всех заказов: покупку нельзя было
+   *  связать ни с одним просмотром. Читаем ТЕМИ ЖЕ функциями, что и lead.js,
+   *  но своими: на /korzina lead.js не подключён.
+   *
+   *  Пусто — допустимый ответ (приватный режим), а не повод не отправить заказ. */
+  function ses() {
+    try {
+      var s = window.sessionStorage.getItem("th_ses");
+      if (!s) {
+        s = Math.random().toString(36).slice(2, 10);
+        window.sessionStorage.setItem("th_ses", s);
+      }
+      return s;
+    } catch (e) { return ""; }
+  }
+
+  function aid() {
+    try {
+      var a = window.localStorage.getItem("th_aid");
+      if (!a) {
+        a = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+        window.localStorage.setItem("th_aid", a);
+      }
+      return a;
+    } catch (e) { return ""; }
+  }
+
   function read() {
     if (mem) return mem;
     try {
@@ -233,6 +262,13 @@
                  .filter(Boolean).join("; "),
         items: items,
         src: (typeof location !== "undefined" ? location.pathname : ""),
+        // `ses` приёмник кладёт в колонку «Сессия» листа «Заказы» (ORDER_COLS) —
+        // по ней заказ сходится с просмотрами того же визита.
+        // `aid` шлём тем же заходом, но колонки под него в «Заказах» пока НЕТ:
+        // приёмник лишнее поле молча игнорирует. Появится 'Посетитель' в
+        // ORDER_COLS — метка поедет без повторной публикации витрины.
+        ses: ses(),
+        aid: aid(),
         ua: (typeof navigator !== "undefined" ? navigator.userAgent : "")
       };
       return fetch(EXEC, {

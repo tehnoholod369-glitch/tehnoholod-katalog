@@ -18,7 +18,7 @@
   a:hover { color: #0872D3; }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=591c7919"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=b9e2ad76"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
@@ -111,8 +111,6 @@
           </sc-for>
         </div>
         <div style="font-size:13px; color:#9FBCD8; line-height:1.5; margin-top:10px;">{{ proektNote }}</div>
-        
-        <div style="font-size:12px; color:#7F9CBE; line-height:1.5; margin-top:14px;">Сайт работает в тестовом режиме и продолжает наполняться. Не нашли нужное или заметили неточность — напишите в <a href="https://wa.me/77000369369" style="color:#9FC4EA; text-decoration:underline;">WhatsApp</a>, поможем и поправим.</div>
       </div>
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:16px;">
@@ -205,17 +203,17 @@
     <sc-if value="{{ showPromo }}" hint-placeholder-val="{{ true }}">
       <div style="background:#FDECEA; border:1px solid #F8CBBE; border-radius:16px; padding:26px 28px; margin-top:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:26px; align-items:center;">
         <div>
-          <div style="display:inline-block; background:#E11A13; color:#fff; border-radius:6px; padding:5px 10px; font-size:12px; font-weight:700; letter-spacing:0.08em;">ХИТ СЕЗОНА</div>
-          <h2 style="margin:12px 0 0 0; font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; letter-spacing:-0.015em; line-height:1.2;">TCL FreshIN 3.0 — приток свежего воздуха без открытого окна</h2>
-          <div style="font-size:15px; color:#2C3846; margin-top:10px; line-height:1.55;">Инверторные сплит-системы на 25–50 м² с фильтрацией уличного воздуха, Wi-Fi и гарантией производителя. Установка в Алматы и области.</div>
+          <div style="display:inline-block; background:#E11A13; color:#fff; border-radius:6px; padding:5px 10px; font-size:12px; font-weight:700; letter-spacing:0.08em;">СЕЗОН ТЕПЛА</div>
+          <h2 style="margin:12px 0 0 0; font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; letter-spacing:-0.015em; line-height:1.2;">Камины и каминокомплекты — в фокусе сезона</h2>
+          <div style="font-size:15px; color:#2C3846; margin-top:10px; line-height:1.55;">Электрокамины, очаги, каминокомплекты, паровые 3D и биокамины. Актуальные цены и наличие — в каталоге; поможем подобрать вариант для квартиры, дома или коммерческого интерьера.</div>
           <div style="display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;">
-            <a href="/tcl-freshin" style="background:#E11A13; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">{{ promoPrice }}</a>
-            <a href="/freshin-sravnenie" style="border:2px solid #E11A13; color:#C21610; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Сравнить модели</a>
+            <a href="/katalog?g=kaminy" style="background:#E11A13; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">{{ promoPrice }}</a>
+            <a href="/kaminy-almaty" style="border:2px solid #E11A13; color:#C21610; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Как выбрать →</a>
           </div>
         </div>
         <div style="display:flex; justify-content:center;">
           <div style="background:#fff; border-radius:12px; padding:14px; max-width:320px; width:100%;">
-            <img ref="{{ promoRef }}" alt="TCL FreshIN 3.0" style="width:100%; height:200px; object-fit:contain; display:block;" />
+            <img ref="{{ promoRef }}" alt="Камины и каминокомплекты" style="width:100%; height:200px; object-fit:contain; display:block;" />
           </div>
         </div>
       </div>
@@ -467,7 +465,7 @@ class Component extends DCLogic {
     window.addEventListener("th-cart", this.__onCart);
     this.__onCart();
     const el = this.promoRef.current;
-    if (el) el.setAttribute("src", this.ph("img/TCL_FreshIN_White_01.jpg"));
+    if (el) el.setAttribute("src", "https://img.tehnoholod369.kz/img/kaminy/elektrokamin-072222843.jpg");
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(d => this.setState({ idx: d && (d.groups || d) })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(bytovye => this.setState({ bytovye })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/dir-preview.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(preview => this.setState({ preview })).catch(() => {});
@@ -563,17 +561,7 @@ class Component extends DCLogic {
       menuAria: this.state.menuOpen ? "true" : "false",
       cartLabel: (this.state.cartN || 0) ? "Корзина · " + this.state.cartN : "Корзина",
       // цена хита сезона — минимум по серии из data/bytovye.json; нет данных — нет числа
-      promoPrice: (() => {
-        // !x.acc обязателен: в серии есть сменные фильтры (HEPA 9 000 ₸, HEPA+уголь
-        // 10 000 ₸), и без этого условия кнопка обещала «от 9 000 ₸» за кондиционер,
-        // который стоит от 323 942 ₸ — расходник вместо аппарата, разница в 36 раз.
-        // Правило проекта: аксессуары в общую выдачу наравне с оборудованием не идут,
-        // признак — поле acc. Нашёл владелец на витрине 31.08.2026.
-        const list = (this.state.bytovye || []).filter(x => /freshin/i.test(x.n || "") && x.p && !x.acc);
-        if (!list.length) return "Подробнее о серии";
-        const min = Math.min.apply(null, list.map(x => x.p));
-        return "от " + String(min).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009") + " ₸ · подробнее";
-      })(),
+      promoPrice: "В каталог каминов →",
       menuBg: this.state.menuOpen ? "#0A4EA7" : "#0872D3",
       toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
       showPromo,
