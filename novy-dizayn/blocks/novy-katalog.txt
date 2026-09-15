@@ -656,7 +656,16 @@ class Component extends DCLogic {
     try {
       const выбрана = s.group && s.group !== "all";
       const имя = txt.h1 || meta.title || "";
-      if (!выбрана || !имя || имя === "Каталог") return;
+      if (!выбрана) {
+        const title = "Каталог климатической техники — купить в Алматы | ИП «ТехноХолод»";
+        const description = "Кондиционеры, вентиляция, отопление, водонагреватели, камины и проектные системы в Алматы. Подбор, доставка по Казахстану, монтаж по согласованию.";
+        if (document.title !== title) document.title = title;
+        this.ставитьМету("name", "description", description);
+        this.ставитьМету("property", "og:title", title);
+        this.ставитьМету("property", "og:description", description);
+        return;
+      }
+      if (!имя || имя === "Каталог") return;
 
       const title = txt.seo || (имя + " — купить в Алматы | ИП «ТехноХолод»");
       if (document.title !== title) document.title = title;
