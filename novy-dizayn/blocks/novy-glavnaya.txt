@@ -3,11 +3,7 @@
 
 <x-dc>
 <helmet>
-<title>Кондиционеры, вентиляция, отопление и водонагреватели в Алматы — ИП «ТехноХолод»</title>
-<meta name="description" content="Каталог климатической техники с ценами и наличием: кондиционеры, вентиляция, отопление, водонагреватели. Монтаж под ключ в Алматы и области, доставка по Казахстану, работаем с НДС." />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="ИП «ТехноХолод» — климатическая техника в Алматы" />
-<meta property="og:description" content="Кондиционеры, вентиляция, отопление и водонагреватели: актуальные цены и наличие, монтаж под ключ, доставка по Казахстану." />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -16,6 +12,22 @@
   h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
   a { color: #0A4EA7; text-decoration: none; }
   a:hover { color: #0872D3; }
+  /* Полоса разделов: пункты одного вида и одной высоты, равные интервалы,
+     крайний пункт по правому краю сетки. До 760 px строку ведёт th-mobile.js. */
+  [data-th-navstrip] { scrollbar-width: none; }
+  [data-th-navstrip]::-webkit-scrollbar { display: none; }
+  @media (min-width: 761px) and (max-width: 1299px) {
+    [data-th-navstrip] { display: grid !important; grid-template-columns: repeat(5, max-content); justify-content: space-between; column-gap: 16px; row-gap: 0; overflow: visible !important; }
+    [data-th-navstrip] > a:nth-child(5n) { justify-self: end; }
+  }
+  @media (max-width: 760px) {
+    [data-th-navstrip] > a { min-height: 0 !important; }
+    /* на телефоне двенадцать логотипов — шесть рядов; остальные на /brendy */
+    [data-th-brands] > a:nth-child(n+13) { display: none !important; }
+    /* хиты сезона на телефоне: кадр ниже, группы по две в ряд */
+    [data-th-hits] { padding: 18px 16px !important; }
+    [data-th-hits] img { height: 150px !important; }
+  }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=b9e2ad76"></script>
@@ -86,12 +98,11 @@
   </div>
 
   <div style="background:#F3F7FB; border-bottom:1px solid #DCE5F0;">
-    <div style="max-width:1320px; margin:0 auto; padding:11px 24px; display:flex; flex-wrap:wrap; gap:8px 24px; font-size:15px; font-weight:600; color:#2C3846;">
+    
+    <div data-th-navstrip style="max-width:1320px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:nowrap; align-items:center; justify-content:space-between; gap:0 18px; overflow-x:auto; font-size:14px; font-weight:600; line-height:1.25; color:#2C3846;">
       <sc-for list="{{ navStrip }}" as="n" hint-placeholder-count="4">
-        <a href="{{ n.href }}" style="color:#2C3846; display:inline-block; padding:5px 0;">{{ n.label }}</a>
+        <a href="{{ n.href }}" style="flex:none; display:flex; align-items:center; min-height:42px; padding:0; white-space:nowrap; color:{{ n.color }};">{{ n.label }}</a>
       </sc-for>
-
-      <a href="/b2b" style="margin-left:auto; color:#0A4EA7;">B2B и госзакупки</a>
     </div>
   </div>
 
@@ -146,11 +157,11 @@
           <div style="font-size:12px; color:#5A6675; line-height:1.45; margin-top:8px;">{{ leadNote }}</div>
         </div>
 
-        <a href="/katalog?g=bytovye" style="display:block; border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700;">Подобрать по площади в каталоге</a>
+        <a href="/katalog" style="display:block; border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700;">Открыть весь каталог</a>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
           <a href="https://maps.google.com/?cid=6985295064906783345" target="_blank" rel="noreferrer" style="background:#E6F2FD; color:#071C3B; border-radius:999px; padding:7px 12px; font-size:13px; font-weight:600;">★ Отзывы в Google</a>
           <a href="/uslugi" style="background:#E6F2FD; color:#071C3B; border-radius:999px; padding:7px 12px; font-size:13px; font-weight:600;">Гарантия производителя</a>
-          <a href="/uslugi" style="background:#E6F2FD; color:#071C3B; border-radius:999px; padding:7px 12px; font-size:13px; font-weight:600;">Монтаж 1–3 дня</a>
+          <a href="/uslugi" style="background:#E6F2FD; color:#071C3B; border-radius:999px; padding:7px 12px; font-size:13px; font-weight:600;">Монтаж по согласованию</a>
         </div>
       </div>
     </div>
@@ -175,67 +186,64 @@
       </sc-for>
     </div>
 
+    
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; margin-top:20px;">
       <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-        <h2 style="margin:0; font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700;">Бренды в наличии</h2>
-        <a href="/brendy" style="font-size:13px; font-weight:700; color:#0872D3;">О брендах →</a>
+        <h2 style="margin:0; font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700;">Бренды в каталоге</h2>
+        <a href="/brendy" style="font-size:13px; font-weight:700; color:#0872D3;">Все бренды →</a>
       </div>
-      <div ref="{{ brandsRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr)); gap:8px; margin-top:14px;">
+      <div ref="{{ brandsRef }}" data-th-brands style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(140px,100%),1fr)); gap:8px; margin-top:14px;">
         <sc-for list="{{ brands }}" as="b" hint-placeholder-count="12">
-          <a href="{{ b.href }}" style="border:1px solid #DCE5F0; border-radius:10px; padding:12px 14px; display:flex; flex-direction:column; gap:2px; color:#18212F;">
-            <span style="display:flex; align-items:center; gap:8px;">
-              <sc-if value="{{ b.logo }}" hint-placeholder-val="{{ false }}">
-                <img data-url="{{ b.logo }}" alt="{{ b.name }}" style="max-height:26px; max-width:120px; object-fit:contain; display:block; flex:none;" />
-              </sc-if>
-              <sc-if value="{{ b.mark }}" hint-placeholder-val="{{ false }}">
-                <img data-url="{{ b.mark }}" alt="" style="height:22px; width:auto; object-fit:contain; display:block; flex:none;" />
-              </sc-if>
-              <sc-if value="{{ b.noLogo }}" hint-placeholder-val="{{ true }}">
-                <span style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700;">{{ b.name }}</span>
-              </sc-if>
-            </span>
-            <span style="font-size:12px; color:#0E9F6E; font-weight:600;">{{ b.sub }}</span>
+          <a href="{{ b.href }}" title="{{ b.name }}" aria-label="{{ b.name }}" style="height:72px; border:1px solid #DCE5F0; border-radius:10px; background:#fff; display:flex; align-items:center; justify-content:center; padding:8px 10px; box-sizing:border-box;">
+            <img data-url="{{ b.logo }}" alt="{{ b.name }}" style="width:{{ b.w }}px; height:{{ b.h }}px; max-width:100%; object-fit:contain; display:block;" />
           </a>
         </sc-for>
       </div>
     </div>
 
-    <sc-if value="{{ showPromo }}" hint-placeholder-val="{{ true }}">
-      <div style="background:#FDECEA; border:1px solid #F8CBBE; border-radius:16px; padding:26px 28px; margin-top:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:26px; align-items:center;">
-        <div>
-          <div style="display:inline-block; background:#E11A13; color:#fff; border-radius:6px; padding:5px 10px; font-size:12px; font-weight:700; letter-spacing:0.08em;">СЕЗОН ТЕПЛА</div>
-          <h2 style="margin:12px 0 0 0; font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; letter-spacing:-0.015em; line-height:1.2;">Камины и каминокомплекты — в фокусе сезона</h2>
-          <div style="font-size:15px; color:#2C3846; margin-top:10px; line-height:1.55;">Электрокамины, очаги, каминокомплекты, паровые 3D и биокамины. Актуальные цены и наличие — в каталоге; поможем подобрать вариант для квартиры, дома или коммерческого интерьера.</div>
-          <div style="display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;">
-            <a href="/katalog?g=kaminy" style="background:#E11A13; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">{{ promoPrice }}</a>
-            <a href="/kaminy-almaty" style="border:2px solid #E11A13; color:#C21610; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Как выбрать →</a>
+    
+    <sc-if value="{{ showHits }}" hint-placeholder-val="{{ true }}">
+      <div data-th-hits style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; margin-top:20px;">
+        <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#C21610;">ХИТЫ СЕЗОНА</div>
+            <h2 style="margin:6px 0 0 0; font-family:'Montserrat',sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em;">{{ hitsTitle }}</h2>
+          </div>
+          <a href="/katalog" style="font-size:13px; font-weight:700; color:#0872D3;">Весь каталог →</a>
+        </div>
+        <div style="background:#FDECEA; border:1px solid #F8CBBE; border-radius:14px; padding:22px 24px; margin-top:16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:22px; align-items:center;">
+          <div>
+            <div style="display:inline-block; background:#E11A13; color:#fff; border-radius:6px; padding:4px 9px; font-size:12px; font-weight:700; letter-spacing:0.06em;">{{ heroBadge }}</div>
+            <h3 style="margin:10px 0 0 0; font-family:'Montserrat',sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em; line-height:1.2;">{{ heroTitle }}</h3>
+            <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;">
+              <sc-for list="{{ heroSubs }}" as="t" hint-placeholder-count="3">
+                <a href="{{ t.href }}" style="border:1px solid #F3B7AE; background:#fff; border-radius:6px; padding:5px 10px; font-size:13px; font-weight:600; color:#2C3846;">{{ t.label }}</a>
+              </sc-for>
+            </div>
+            <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
+              <a href="{{ heroHref }}" style="background:#E11A13; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">Смотреть в каталоге →</a>
+              <sc-if value="{{ heroHasArticle }}" hint-placeholder-val="{{ true }}">
+                <a href="{{ heroArticleHref }}" style="border:2px solid #E11A13; color:#C21610; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Как выбрать →</a>
+              </sc-if>
+            </div>
+          </div>
+          <div ref="{{ hitsRef }}" style="display:{{ heroImgDisplay }}; justify-content:center;">
+            <div style="background:#fff; border-radius:12px; padding:12px; max-width:320px; width:100%; box-sizing:border-box;">
+              <img data-url="{{ heroImg }}" alt="{{ heroTitle }}" style="width:100%; height:200px; object-fit:contain; display:block;" />
+            </div>
           </div>
         </div>
-        <div style="display:flex; justify-content:center;">
-          <div style="background:#fff; border-radius:12px; padding:14px; max-width:320px; width:100%;">
-            <img ref="{{ promoRef }}" alt="Камины и каминокомплекты" style="width:100%; height:200px; object-fit:contain; display:block;" />
-          </div>
+        <div data-th-hit-groups style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr)); gap:10px; margin-top:12px;">
+          <sc-for list="{{ hitGroups }}" as="h" hint-placeholder-count="5">
+            <a href="{{ h.href }}" style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:14px 16px; display:flex; flex-direction:column; gap:6px; color:#18212F;">
+              <span style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; line-height:1.3;">{{ h.title }}</span>
+              <span style="font-size:12px; color:#5A6675; line-height:1.45;">{{ h.subs }}</span>
+              <span style="font-size:13px; font-weight:700; color:#0872D3; margin-top:auto;">В каталог →</span>
+            </a>
+          </sc-for>
         </div>
       </div>
     </sc-if>
-
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:16px; margin-top:20px;">
-      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
-        <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Монтаж под ключ</div>
-        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Замер, установка, вакуумирование, пусконаладка, вывоз мусора. Срок 1–3 дня. Оборудование, комплект и работы — отдельными строками в счёте.</div>
-        <a href="/uslugi" style="display:inline-block; font-size:13px; font-weight:700; color:#0872D3; margin-top:12px;">Условия монтажа →</a>
-      </div>
-      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
-        <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Сервис и обслуживание</div>
-        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Чистка и заправка, диагностика, замена фильтров, ремонт по гарантии в сертифицированных центрах. Выезд по Алматы и области.</div>
-        <a href="/uslugi" style="display:inline-block; font-size:13px; font-weight:700; color:#0872D3; margin-top:12px;">Записаться на ТО →</a>
-      </div>
-      <div style="background:#071C3B; color:#fff; border-radius:14px; padding:24px;">
-        <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Карта обслуживания «369»</div>
-        <div style="font-size:14px; color:#CBDCEC; line-height:1.6; margin-top:8px;">Не заменяет гарантию производителя и не расширяет её. Фиксирует факты: что куплено, когда установлено, какой бригадой и куда обращаться.</div>
-        <a href="/uslugi" style="display:inline-block; font-size:13px; font-weight:700; color:#7FC4F2; margin-top:12px;">Как работает гарантия →</a>
-      </div>
-    </div>
 
     <a href="/proekt" style="display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px; background:#071C3B; border-radius:16px; padding:22px 24px; margin-top:20px; color:#fff;">
       <div style="flex:1; min-width:260px;">
@@ -261,11 +269,12 @@
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:26px;">
       <div>
         <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">ЮРЛИЦАМ И ЗАКУПКАМ</div>
-        <h2 style="margin:8px 0 0 0; font-family:'Montserrat',sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Работаем с НДС, выставляем счёт, участвуем в закупках</h2>
-        <div style="font-size:15px; color:#5A6675; line-height:1.6; margin-top:10px;">Прайс по запросу, договор, отсрочка по согласованию, поставка на объект. Отдельные условия для монтажных бригад.</div>
+        
+        <h2 style="margin:8px 0 0 0; font-family:'Montserrat',sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Работаем с НДС, готовим КП, участвуем в закупках</h2>
+        <div style="font-size:15px; color:#5A6675; line-height:1.6; margin-top:10px;">Подбор оборудования под задачу и бюджет, КП, счёт, договор, поставка на объект, монтаж и индивидуальные условия по объёму.</div>
         <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
-          <a href="/b2b" style="background:#0872D3; color:#fff; border-radius:8px; padding:12px 20px; font-size:15px; font-weight:700;">Запросить прайс</a>
-          <a href="/b2b" style="border:1px solid #DCE5F0; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:600; color:#2C3846;">Реквизиты</a>
+          <a href="{{ kpHref }}" target="_blank" rel="noreferrer" style="background:#0872D3; color:#fff; border-radius:8px; padding:12px 20px; font-size:15px; font-weight:700;">Получить КП</a>
+          <a href="/b2b" style="border:1px solid #DCE5F0; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:600; color:#2C3846;">Реквизиты компании</a>
         </div>
       </div>
       <div style="background:#F3F7FB; border-radius:12px; padding:20px;">
@@ -291,6 +300,7 @@
       <div style="font-size:14px; font-weight:700; color:#fff; background:#0872D3; border-radius:8px; padding:12px 18px; white-space:nowrap;">Подробнее →</div>
     </a>
 
+    
     <div style="margin-top:34px;">
       <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:14px;">
         <div>
@@ -299,12 +309,13 @@
         </div>
         <a href="/baza-znaniy" style="font-size:14px; font-weight:700; color:#0872D3;">Все статьи →</a>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:14px; margin-top:16px;">
-        <sc-for list="{{ articles }}" as="a" hint-placeholder-count="4">
-          <a href="{{ a.href }}" style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:18px; display:flex; flex-direction:column; gap:8px; color:#18212F;">
-            <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:600; line-height:1.35;">{{ a.title }}</div>
-            <div style="font-size:13px; color:#5A6675; line-height:1.5;">{{ a.sub }}</div>
-            <div style="font-size:13px; font-weight:700; color:#0872D3; margin-top:auto;">Читать →</div>
+      <div data-th-feed style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr)); gap:14px; margin-top:16px;">
+        <sc-for list="{{ articles }}" as="a" hint-placeholder-count="5">
+          <a href="{{ a.href }}" style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:16px 18px; display:flex; flex-direction:column; gap:8px; color:#18212F;">
+            <span style="align-self:flex-start; font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:{{ a.tagColor }}; background:{{ a.tagBg }}; border-radius:5px; padding:3px 8px;">{{ a.tag }}</span>
+            <span style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:600; line-height:1.35;">{{ a.title }}</span>
+            <span style="font-size:13px; color:#5A6675; line-height:1.5;">{{ a.sub }}</span>
+            <span style="font-size:13px; font-weight:700; color:#0872D3; margin-top:auto;">Читать →</span>
           </a>
         </sc-for>
       </div>
@@ -313,38 +324,7 @@
     
     
 
-    <div style="background:#18212F; color:#fff; border-radius:16px; padding:30px; margin-top:24px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr)); gap:26px;">
-      <div>
-        <div style="background:#fff; border-radius:10px; padding:10px 12px; display:inline-block;"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-vertical.png" alt="ИП «ТехноХолод»" style="height:72px; width:auto; display:block;" /></div>
-        <div style="font-size:13px; color:#9FB0C4; line-height:1.7; margin-top:12px;">ИИН/БИН 770313000379<br />Работаем с НДС<br />г. Алматы</div>
-      </div>
-      <div>
-        <div style="font-size:15px; font-weight:700;">Каталог</div>
-        <div style="display:flex; flex-direction:column; gap:0; margin-top:4px;">
-          <sc-for list="{{ footCatalog }}" as="f" hint-placeholder-count="6">
-            <a href="{{ f.href }}" style="font-size:13px; color:#9FB0C4; display:block; padding:5px 0;">{{ f.label }}</a>
-          </sc-for>
-        </div>
-      </div>
-      <div>
-        <div style="font-size:15px; font-weight:700;">Клиенту</div>
-        <div style="display:flex; flex-direction:column; gap:0; margin-top:4px;">
-          <sc-for list="{{ footClient }}" as="f" hint-placeholder-count="6">
-            <a href="{{ f.href }}" style="font-size:13px; color:#9FB0C4; display:block; padding:5px 0;">{{ f.label }}</a>
-          </sc-for>
-        </div>
-      </div>
-      <div>
-        <div style="font-size:15px; font-weight:700;">Контакты</div>
-        <div style="font-size:13px; color:#9FB0C4; line-height:1.9; margin-top:8px;"><a href="tel:+77000369369" style="color:#fff;">+77 000 369 369</a><br /><a href="tel:+77000336699" style="color:#fff;">+77 000 33 66 99</a><br /><a href="mailto:tehnoholod369@gmail.com" style="color:#9FB0C4;">tehnoholod369@gmail.com</a></div>
-        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
-          <sc-for list="{{ socials }}" as="s" hint-placeholder-count="4">
-            <a href="{{ s.href }}" target="_blank" rel="noreferrer" title="{{ s.label }}" style="width:34px; height:34px; border-radius:9px; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center;">{{ s.icon }}</a>
-          </sc-for>
-        </div>
-        <div style="font-size:13px; color:#9FB0C4; line-height:1.6; margin-top:12px;">г. Алматы, ул. Какимжана Казыбаева, 286Б<br />Пн–Пт 9:00–18:00<br /><span style="color:#8593A6;">Юридический адрес для счетов и договоров — мкр Алтай-1, д. 29/1, оф. 43</span></div>
-      </div>
-    </div>
+    
 
   </div>
 </div>
@@ -352,9 +332,20 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showPromo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Главная&quot;}}">
 class Component extends DCLogic {
-  state = { menuOpen: false, area: 25, idx: null, bytovye: null, preview: null };
-  promoRef = React.createRef();
+  state = { menuOpen: false, area: 25, idx: null, preview: null, articles: null, hitImg: "" };
+  hitsRef = React.createRef();
   brandsRef = React.createRef();
+
+  СЕЗОН = {
+    heat: {
+      badge: "СЕЗОН ТЕПЛА", title: "Готовимся к холодам",
+      groups: ["kaminy", "vodonagrevateli", "teplovye-zavesy", "teplovye-pushki", "infrakrasnye-obogrevateli", "osushiteli"]
+    },
+    climate: {
+      badge: "СЕЗОН ОХЛАЖДЕНИЯ", title: "Готовимся к жаре",
+      groups: ["bytovye", "multisplit", "mobilnye", "poluprom"]
+    }
+  };
 
   // сезон впереди: с марта по июль охлаждение, с августа по февраль тепло
   orderDirs(list) {
@@ -372,6 +363,103 @@ class Component extends DCLogic {
   seasonKey() {
     const m = new Date().getMonth() + 1;
     return (m >= 3 && m <= 7) ? "climate" : "heat";
+  }
+
+  // Группы текущего сезона в порядке контракта — только те, что есть в каталоге сейчас
+  // (data/index.json). Пока индекс не загружен, список пуст: блок не рисуется вслепую.
+  сезонныеГруппы() {
+    const сезон = this.СЕЗОН[this.seasonKey()] || { groups: [] };
+    const idx = (this.state && this.state.idx) || [];
+    return сезон.groups.filter(slug => idx.some(g => g.slug === slug && (g.count || 0) > 0));
+  }
+
+  подкатегории(slug, n) {
+    const g = ((this.state && this.state.idx) || []).find(x => x.slug === slug);
+    return ((g && g.subs) || []).filter(s => s && s.name && !/аксессуар|комплектующ/i.test(s.name)).slice(0, n || 3);
+  }
+
+  названиеГруппы(slug) {
+    const g = ((this.state && this.state.idx) || []).find(x => x.slug === slug);
+    return g ? g.title : "";
+  }
+
+  // «Хиты сезона»: HERO — первая группа сезона, ниже до пяти следующих. Только то, что
+  // есть в данных каталога: название, подкатегории, ссылка в выдачу, статья «как выбрать»
+  // из data/articles.json. Цен, остатков и меток «хит продаж» нет (см. контракт СЕЗОН).
+  блокХитов() {
+    const сезон = this.СЕЗОН[this.seasonKey()];
+    const группы = this.сезонныеГруппы();
+    if (!сезон || !группы.length) return { show: false };
+    const hero = группы[0];
+    const статья = (((this.state.articles || {}).items) || [])
+      .filter(a => a && a.s && a.g === hero)
+      .sort((a, b) => String(b.pub || "").localeCompare(String(a.pub || "")) || a.s.localeCompare(b.s))[0];
+    return {
+      show: true,
+      title: сезон.title,
+      badge: сезон.badge,
+      heroSlug: hero,
+      heroTitle: this.названиеГруппы(hero),
+      heroHref: "/katalog?g=" + hero,
+      heroSubs: this.подкатегории(hero, 4).map(s => ({
+        label: s.name,
+        href: "/katalog?g=" + hero + "&sub=" + encodeURIComponent(s.name)
+      })),
+      heroHasArticle: !!статья,
+      heroArticleHref: статья ? "/" + статья.s : "",
+      groups: группы.slice(1, 6).map(slug => ({
+        title: this.названиеГруппы(slug),
+        href: "/katalog?g=" + slug,
+        subs: this.подкатегории(slug, 3).map(s => s.name).join(" · ")
+      }))
+    };
+  }
+
+  // Кадр HERO — иллюстрация раздела из его же данных: первая позиция с фото, не аксессуар,
+  // от 100 000 ₸ (сезонная витрина — дорогой сегмент). Имени и цены рядом не пишем:
+  // это кадр раздела, а не обещание конкретной модели. Группу меняет только сезон —
+  // запрос идёт один раз на группу.
+  фотоHERO(slug) {
+    if (!slug || this.__heroSlug === slug) return;
+    this.__heroSlug = slug;
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/" + slug + ".json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(list => {
+      if (this.__heroSlug !== slug || !Array.isArray(list)) return;
+      const годные = list.filter(x => x && x.i && !x.acc);
+      const x = годные.find(y => (y.p || 0) >= 100000) || годные[0];
+      this.setState({ hitImg: x ? this.ph(x.i) : "" });
+    }).catch(() => {});
+  }
+
+  лентаЗнаний() {
+    const все = (((this.state && this.state.articles) || {}).items || []).filter(a => a && a.s && a.t);
+    if (!все.length) return [];
+    const сезон = this.seasonKey();
+    const порядок = this.сезонныеГруппы();
+    const сезонная = a => a.season ? a.season === сезон : порядок.indexOf(a.g) >= 0;
+    const всесезонная = a => a.season ? a.season === "all"
+      : (!сезонная(a) && a.r === "Монтаж" && (a.c === "byt-kond" || a.c === "vozduh"));
+    const свежее = (a, b) => String(b.pub || "").localeCompare(String(a.pub || "")) || a.s.localeCompare(b.s);
+    const поГруппам = {};
+    все.filter(сезонная).sort(свежее).forEach(a => { (поГруппам[a.g] = поГруппам[a.g] || []).push(a); });
+    const ключи = порядок.concat(Object.keys(поГруппам).filter(g => порядок.indexOf(g) < 0));
+    const сез = [];
+    for (let круг = 0; сез.length < 4 && круг < 12; круг++) {
+      ключи.forEach(g => { const a = (поГруппам[g] || [])[круг]; if (a && сез.length < 4) сез.push(a); });
+    }
+    const вс = все.filter(всесезонная).sort((a, b) => a.s.localeCompare(b.s));
+    const неделя = Math.floor(Date.now() / 6048e5);
+    const один = вс.length ? [вс[неделя % вс.length]] : [];
+    const коротко = s => {
+      s = String(s || "");
+      return s.length > 120 ? s.slice(0, 117).replace(/\s+\S*$/, "") + "…" : s;
+    };
+    return сез.map(a => ({
+      title: a.t, sub: коротко(a.d), href: "/" + a.s,
+      tag: this.названиеГруппы(a.g) || "Сезон", tagColor: "#C21610", tagBg: "#FDECEA"
+    })).concat(один.map(a => ({
+      title: a.t, sub: коротко(a.d), href: "/" + a.s,
+      tag: "Всегда актуально", tagColor: "#0A4EA7", tagBg: "#E6F2FD"
+    })));
   }
 
   // одно крупное фото + кликабельные подкатегории + наличие цифрой
@@ -402,12 +490,28 @@ class Component extends DCLogic {
     return g ? g.title.toLowerCase() : "";
   }
 
-  brandIcon(inner) {
-    return React.createElement("svg", {
-      viewBox: "0 0 24 24", width: 20, height: 20,
-      style: { display: "block" },
-      dangerouslySetInnerHTML: { __html: inner }
+  плиткиБрендов(LOGOS, RATIO) {
+    const ЛИНЕЙКА_ZILON = /\sby\s+ZILON$/i;
+    const ПЛОЩАДЬ = 2400;
+    const позиций = {};
+    ((this.state && this.state.brands) || []).forEach(b => {
+      const имя = ЛИНЕЙКА_ZILON.test(b.b || "") ? "ZILON" : (b.b || "").trim();
+      if (!имя || /^без\s+марки$/i.test(имя)) return;
+      позиций[имя] = (позиций[имя] || 0) + (b.n || 0);
     });
+    return Object.keys(позиций)
+      .filter(имя => позиций[имя] > 0 && LOGOS[имя] && RATIO[имя] > 0)
+      .sort((a, b) => позиций[b] - позиций[a] || a.localeCompare(b))
+      .map(имя => {
+        const r = RATIO[имя], h = Math.sqrt(ПЛОЩАДЬ / r);
+        return {
+          name: имя,
+          href: "/brendy?b=" + encodeURIComponent(имя),
+          logo: LOGOS[имя],
+          w: Math.round(h * r),
+          h: Math.round(h)
+        };
+      });
   }
 
   icon(paths, color, size) {
@@ -420,6 +524,8 @@ class Component extends DCLogic {
   }
 
   componentDidUpdate() {
+    const сезонные = this.сезонныеГруппы();
+    if (сезонные.length) this.фотоHERO(сезонные[0]);
     if (!window.PHOTO_LOCAL_SET) {
       if (!this.__waitPhoto) {
         this.__waitPhoto = true;
@@ -427,12 +533,14 @@ class Component extends DCLogic {
       }
       return;
     }
-    const bb = this.brandsRef.current;
-    if (bb) bb.querySelectorAll("img[data-url]").forEach(el => {
-      const u = el.getAttribute("data-url");
-      if (!u || u.indexOf("{{") >= 0 || el.getAttribute("src") === u) return;
-      el.onerror = () => { el.style.display = "none"; };
-      el.setAttribute("src", u);
+    [this.brandsRef.current, this.hitsRef.current].forEach(bb => {
+      if (bb) bb.querySelectorAll("img[data-url]").forEach(el => {
+        const u = el.getAttribute("data-url");
+        if (!u || u.indexOf("{{") >= 0 || el.getAttribute("src") === u) return;
+        el.onerror = () => { el.style.display = "none"; };
+        el.style.display = "";
+        el.setAttribute("src", u);
+      });
     });
     Object.keys(this.previewRefs).forEach(k => {
       const box = this.previewRefs[k].current;
@@ -451,7 +559,26 @@ class Component extends DCLogic {
     window.removeEventListener("th-cart", this.__onCart);
   }
 
+  // Один H1 на странице. H1 первого экрана рисует этот блок, а «Климатическая техника
+  // в Алматы» приходит серверным SEO-разделом Tilda — для робота без JS он и остаётся
+  // единственным H1. В браузере серверный заголовок понижаем до div: текст и вид те же,
+  // второго заголовка первого уровня нет. Тот же приём, что у /katalog (головаПодГруппу).
+  // Только когда раздел лежит ВНЕ блока редизайна: в локальном просмотре он внутри
+  // разметки шаблонизатора, и подменять там узел нельзя.
+  одинH1() {
+    try {
+      const общий = document.querySelector("[data-th-seo] h1");
+      if (!общий || !document.querySelector("[data-th-page]") || общий.closest("[data-th-page]")) return;
+      const низший = document.createElement("div");
+      низший.setAttribute("style", общий.getAttribute("style") || "");
+      низший.setAttribute("data-th-was-h1", "1");
+      низший.innerHTML = общий.innerHTML;
+      общий.parentNode.replaceChild(низший, общий);
+    } catch (e) { /* заголовок не имеет права ронять страницу */ }
+  }
+
   componentDidMount() {
+    this.одинH1();
     // системная настройка «меньше движения» и скрытая вкладка отменяют смену кадров
     const calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!calm) {
@@ -464,10 +591,10 @@ class Component extends DCLogic {
     this.__onCart = () => this.setState({ cartN: window.CART ? window.CART.count() : 0 });
     window.addEventListener("th-cart", this.__onCart);
     this.__onCart();
-    const el = this.promoRef.current;
-    if (el) el.setAttribute("src", "https://img.tehnoholod369.kz/img/kaminy/elektrokamin-072222843.jpg");
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(d => this.setState({ idx: d && (d.groups || d) })).catch(() => {});
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(bytovye => this.setState({ bytovye })).catch(() => {});
+    // data/bytovye.json (≈550 КБ) больше не грузим: он был нужен только цене промо FreshIN,
+    // которого на главной нет с 15.09.2026. Статьи — для ленты базы знаний и «Как выбрать».
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/articles.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(articles => this.setState({ articles })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/dir-preview.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(preview => this.setState({ preview })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brands-top.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(brands => this.setState({ brands })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logos.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(logos => this.setState({ logos })).catch(() => {});
@@ -554,18 +681,29 @@ class Component extends DCLogic {
     };
 
 
+    // свойство редактора showPromo теперь включает блок «Хиты сезона»: имя оставлено,
+    // чтобы не ломать сохранённые настройки страницы
     const showPromo = this.props.showPromo ?? true;
+    const хиты = this.блокХитов();
 
     return {
       menuOpen: this.state.menuOpen,
       menuAria: this.state.menuOpen ? "true" : "false",
       cartLabel: (this.state.cartN || 0) ? "Корзина · " + this.state.cartN : "Корзина",
-      // цена хита сезона — минимум по серии из data/bytovye.json; нет данных — нет числа
-      promoPrice: "В каталог каминов →",
       menuBg: this.state.menuOpen ? "#0A4EA7" : "#0872D3",
       toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
-      showPromo,
-      promoRef: this.promoRef,
+      showHits: !!(showPromo && хиты.show),
+      hitsTitle: хиты.title || "",
+      heroBadge: хиты.badge || "",
+      heroTitle: хиты.heroTitle || "",
+      heroHref: хиты.heroHref || "/katalog",
+      heroSubs: хиты.heroSubs || [],
+      heroHasArticle: !!хиты.heroHasArticle,
+      heroArticleHref: хиты.heroArticleHref || "",
+      heroImg: this.state.hitImg || "",
+      heroImgDisplay: this.state.hitImg ? "flex" : "none",
+      hitGroups: хиты.groups || [],
+      hitsRef: this.hitsRef,
 
       menu: [
         {
@@ -613,7 +751,8 @@ class Component extends DCLogic {
           // под словом «Водонагрев». У Русклимата «Фильтры для очистки воды», у БРИЗа
           // «Системы водоочистки» вынесены отдельными разделами; у нас их 46 позиций
           // против 242 — на отдельное направление мало, поэтому названы оба слова.
-          title: "Водонагрев и водоочистка", color: "#0A4EA7", icon: this.icon(P.drop, "#0A4EA7", 22),
+          // 15.09.2026: «Водонагрев» → «Водонагреватели» — одно слово с полосой разделов.
+          title: "Водонагреватели и водоочистка", color: "#0A4EA7", icon: this.icon(P.drop, "#0A4EA7", 22),
           items: [
             this.mi("Водонагреватели и бойлеры", "vodonagrevateli"),
             this.mi("Водоочистка и фильтры", "vodoochistka")
@@ -654,38 +793,6 @@ class Component extends DCLogic {
         return n ? "плюс " + this.plural(n, "позиция", "позиции", "позиций") +
           " под объект — VRF, чиллеры, фанкойлы и ПВУ: состав и цена по проекту" : "";
       })(),
-      // по две ссылки на каждое из четырёх направлений. До 30.08.2026 из шести
-      // ссылок четыре вели в кондиционирование, хотя отопление (1 037 позиций)
-      // и вентиляция (1 077) в каталоге не меньше кондиционирования (1 063).
-      footCatalog: [
-        { label: "Бытовые кондиционеры", href: "/katalog?g=bytovye" },
-        { label: "Полупромышленные", href: "/katalog?g=poluprom" },
-        { label: "Радиаторы отопления", href: "/katalog?g=radiatory" },
-        { label: "Тепловые завесы", href: "/katalog?g=teplovye-zavesy" },
-        { label: "Приточные установки", href: "/katalog?g=ventilyaciya" },
-        { label: "Осушители воздуха", href: "/katalog?g=osushiteli" },
-        { label: "Водонагреватели", href: "/katalog?g=vodonagrevateli" },
-        { label: "Водоочистка и фильтры", href: "/katalog?g=vodoochistka" }
-      ],
-      footClient: [
-        { label: "Расчёт мощности", href: "/kontakty#podbor" },
-        { label: "Монтаж и сервис", href: "/uslugi" },
-        { label: "Доставка и оплата", href: "/kontakty#dostavka" },
-        { label: "Рассрочка", href: "/kontakty#dostavka" },
-        { label: "Возврат и обмен", href: "https://tehnoholod369.kz/vozvrat" },
-        { label: "Сервис-карта 369", href: "/uslugi" },
-        { label: "База знаний", href: "/baza-znaniy" }
-      ],
-      socials: [
-        { label: "WhatsApp", href: "https://wa.me/77000369369",
-          icon: this.brandIcon('<path d="M12 2.5a9.4 9.4 0 0 0-8 14.3L2.5 21.5l4.8-1.4A9.4 9.4 0 1 0 12 2.5z" fill="#25D366"/><path d="M8.6 7.4c.3-.1.7 0 .9.4l.8 1.5c.1.3.1.6-.1.8l-.5.6c-.2.2-.2.4-.1.6.5 1 1.3 1.8 2.4 2.3.2.1.5 0 .6-.1l.6-.5c.2-.2.5-.2.8-.1l1.5.8c.4.2.5.6.4.9-.3.9-1.3 1.5-2.3 1.4-3-.3-5.6-2.8-5.9-5.9-.1-1 .5-2 1.4-2.3z" fill="#fff"/>') },
-        { label: "YouTube", href: "https://www.youtube.com/@Tehnoholod369",
-          icon: this.brandIcon('<rect x="2.5" y="5.5" width="19" height="13" rx="3.5" fill="#FF0000"/><path d="M10.3 9.4l5 2.6-5 2.6z" fill="#fff"/>') },
-        { label: "Google", href: "https://maps.google.com/?cid=6985295064906783345",
-          icon: this.brandIcon('<path d="M21.4 12.2c0-.7-.1-1.2-.2-1.8H12v3.5h5.3c-.1.9-.7 2.2-1.9 3l2.9 2.2c1.8-1.6 2.9-4 2.9-6.9z" fill="#4285F4"/><path d="M12 21.5c2.6 0 4.8-.9 6.3-2.4l-2.9-2.2c-.8.5-1.9.9-3.4.9-2.7 0-5-1.8-5.8-4.2l-3 2.3A9.5 9.5 0 0 0 12 21.5z" fill="#34A853"/><path d="M6.2 13.6a5.8 5.8 0 0 1 0-3.6l-3-2.3a9.5 9.5 0 0 0 0 8.2z" fill="#FBBC05"/><path d="M12 5.9c1.5 0 2.7.5 3.6 1.3l2.6-2.5A9.4 9.4 0 0 0 3.2 7.7l3 2.3C7 7.7 9.3 5.9 12 5.9z" fill="#EA4335"/>') },
-        { label: "2ГИС", href: "https://2gis.kz/almaty/firm/70000001115210880",
-          icon: this.brandIcon('<circle cx="12" cy="12" r="9.2" fill="#39B54A"/><path d="M9.4 9.1c0-1.3 1.2-2.2 2.7-2.2 1.5 0 2.6.9 2.6 2.1 0 1-.6 1.7-1.9 2.6-1.2.9-1.9 1.5-2.1 2.2h4.2v1.9H9.2c0-1.9.8-3 2.3-4.1 1-.8 1.3-1.1 1.3-1.6 0-.5-.4-.8-1-.8-.6 0-1 .4-1 1.1z" fill="#fff"/>') },
-      ],
       // навполоса и карточки берут направления из одного источника — иначе расходятся
       // кнопка и строка героя берут одно и то же поле uniq: 143 включают 17 моделей из каталога
       proektLink: (() => {
@@ -696,11 +803,7 @@ class Component extends DCLogic {
         { label: "Кондиционирование", href: "/katalog?g=bytovye" },
         { label: "Отопление", href: "/katalog?g=radiatory" },
         { label: "Вентиляция", href: "/katalog?g=ventilyaciya" },
-        // в навполосе короткое имя: полоса занята под 1320 px из 1320, длинное имя
-        // выталкивает «B2B и госзакупки» на вторую строку. Полное «Водонагрев
-        // и водоочистка» стоит там, где покупатель читает названия разделов, —
-        // в мегаменю, на карточке направления и в фильтре выдачи.
-        { label: "Водонагрев", href: "/katalog?g=vodonagrevateli" },
+        { label: "Водонагреватели", href: "/katalog?g=vodonagrevateli" },
         // проектные системы стоят после четырёх бытовых направлений, а не вторыми:
         // их выбирает проектировщик, а не частный покупатель. Так же у Русклимата —
         // «Системы промышленного кондиционирования» 22-я из 26 категорий каталога.
@@ -708,8 +811,9 @@ class Component extends DCLogic {
         { label: "Доставка и оплата", href: "/kontakty#dostavka" },
         { label: "Монтаж и сервис", href: "/uslugi" },
         { label: "Отзывы", href: "/otzyvy" },
-        { label: "Контакты", href: "/kontakty#kontakty" }
-      ],
+        { label: "Контакты", href: "/kontakty#kontakty" },
+        { label: "B2B и госзакупки", href: "/b2b" }
+      ].map(n => Object.assign({ color: /^B2B/.test(n.label) ? "#0A4EA7" : "#2C3846" }, n)),
       brandsRef: this.brandsRef,
       // быстрый запрос уходит в WhatsApp с заполненным текстом: бэкенда у сайта нет
       leadName: this.state.leadName || "",
@@ -721,6 +825,9 @@ class Component extends DCLogic {
             "Здравствуйте! " + (this.state.leadName || "").trim() + ", телефон " + (this.state.leadPhone || "").trim()
             + ". Прошу подобрать климатическую технику.")
         : "",
+      // КП для организаций — тем же каналом, что быстрый запрос: бэкенда у сайта нет
+      kpHref: "https://wa.me/77000369369?text=" + encodeURIComponent(
+        "Здравствуйте! Нужно коммерческое предложение (КП) для организации. Задача и объект: "),
       // без имени и телефона переход не даём: подпись обещает валидацию
       leadClick: e => { if (!leadOk) e.preventDefault(); },
       leadCursor: leadOk ? "pointer" : "not-allowed",
@@ -730,37 +837,20 @@ class Component extends DCLogic {
         ? "Запрос откроется в WhatsApp с вашими данными — останется нажать «Отправить»."
         : "Перезвоним в рабочее время. Можно просто позвонить — номер выше.",
       // полоса брендов вместо бегущей строки: статично, кликабельно, из данных
-      brands: ((this.state && this.state.brands) || []).filter(b => b.st > 0).map(b => ({
-        name: b.b,
-        href: "/brendy?b=" + encodeURIComponent(b.b),
-        // 25.08.2026: точное число остатков убрано; в полосу попадают только
-        // бренды с наличием (фильтр st > 0 выше), состояние — словом
-        sub: "в наличии",
-        group: this.groupTitle(b.g),
-        // логотип дополняет название, а не заменяет: мелкий значок бренд не опознаёт
-        // словесный знак (шире 2:1) заменяет название, эмблема идёт значком рядом с ним
-        logo: (LOGOS[b.b] && (RATIO[b.b] || 0) >= 2) ? LOGOS[b.b] : "",
-        mark: (LOGOS[b.b] && (RATIO[b.b] || 0) < 2) ? LOGOS[b.b] : "",
-        noLogo: !(LOGOS[b.b] && (RATIO[b.b] || 0) >= 2)
-      })),
+      brands: this.плиткиБрендов(LOGOS, RATIO),
       directionsList: this.orderDirs([
         { key: "climate", title: "Кондиционирование", tint: "#E6F2FD", sub: "Бытовые, полупром, мультисплит, мобильные", link: this.dirLink(["bytovye", "poluprom", "multisplit", "mobilnye", "prom-mobilnye", "vozduhoohladiteli"]), href: "/katalog?g=bytovye", color: "#0872D3", linkColor: "#0872D3", icon: this.icon(P.snow, "#0872D3", 22) },
         { key: "heat", title: "Отопление", tint: "#FDECEA", sub: "Радиаторы, пушки, завесы, ИК-обогреватели, камины", link: this.heatLink(), href: "/katalog?g=radiatory", color: "#F75B06", linkColor: "#0872D3", icon: this.icon(P.flame, "#F75B06", 22) },
         { key: "vent", title: "Вентиляция", tint: "#EAF6FE", sub: "Приточные установки, рекуператоры, вентиляторы, осушители", link: this.ventLink(), href: "/katalog?g=ventilyaciya", color: "#0F96E6", linkColor: "#0872D3", icon: this.icon(P.wind, "#0F96E6", 22) },
-        { key: "water", title: "Водонагрев и водоочистка", tint: "#E8EEFA", sub: "Накопительные, проточные, газовые колонки, фильтры и осмос", link: this.dirLink(["vodonagrevateli", "vodoochistka"]), href: "/katalog?g=vodonagrevateli", color: "#0A4EA7", linkColor: "#0872D3", icon: this.icon(P.drop, "#0A4EA7", 22) },
+        { key: "water", title: "Водонагреватели и водоочистка", tint: "#E8EEFA", sub: "Накопительные, проточные, газовые колонки, фильтры и осмос", link: this.dirLink(["vodonagrevateli", "vodoochistka"]), href: "/katalog?g=vodonagrevateli", color: "#0A4EA7", linkColor: "#0872D3", icon: this.icon(P.drop, "#0A4EA7", 22) },
         // 30.08.2026: шестое направление EcoFlow. Не климатическое — своя карточка,
         // а не строка внутри чужой: покупатель зарядной станции не ищет её в отоплении.
         { key: "power", title: "Автономное питание", tint: "#E8F6EE", sub: "Зарядные станции, солнечные панели, батареи, повербанки", link: this.dirLink(["avtonomnoe-pitanie"]), href: "/katalog?g=avtonomnoe-pitanie", color: "#1F9D55", linkColor: "#0872D3", icon: this.icon(P.bolt, "#1F9D55", 22) }
       ]),
 
-      // href у каждой карточки — адрес самой статьи. До 28.08.2026 все четыре вели
-      // на /baza-znaniy: карточка обещала конкретный разбор, а открывалось оглавление.
-      articles: [
-        { title: "Как работает кондиционер с притоком", sub: "Принцип работы приточной сплит-системы на примере TCL FreshIN 3.0", href: "/kak-rabotaet-konditsioner-s-pritokom" },
-        { title: "Как выбрать мощность по площади", sub: "BTU, квадратные метры и расчёт класса под вашу комнату", href: "/kak-vybrat-moshchnost-konditsionera" },
-        { title: "Бризер или кондиционер с притоком", sub: "Два решения для свежего воздуха — что выбрать", href: "/brizer-ili-konditsioner-s-pritokom" },
-        { title: "Почему душно даже с кондиционером", sub: "Причины духоты и как её убрать притоком свежего воздуха", href: "/pochemu-dushno-doma-s-konditsionerom" }
-      ]
+      // href у каждой карточки — адрес самой статьи (до 28.08.2026 все вели на оглавление).
+      // С 15.09.2026 четыре зашитые статьи про приток заменены лентой из данных: лентаЗнаний().
+      articles: this.лентаЗнаний()
     };
   }
 }
