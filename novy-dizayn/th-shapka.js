@@ -19,7 +19,19 @@
  * Вставлять в Tilda ОДНОЙ строкой — либо в «HTML-код в HEAD» настроек сайта
  * (тогда шапка появится сразу везде, включая /tproduct/), либо в самый верх
  * первого блока T123 конкретной старой страницы:
- *   <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-shapka.js"></script>
+ *   <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-shapka.js?v=369f1"></script>
+ *
+ * ⚠️ Только @main и только один адрес на весь сайт. 13.09.2026 замер показал
+ * обратное: шесть страниц были приколоты к @d8719ad, двадцать — к @d3803911…,
+ * и общий компонент разъехался по семействам страниц (дефект L-049
+ * COMPONENT_DRIFT). Приколотый коммит не обновляется никогда — правка едет
+ * только на те страницы, где ссылку переписали руками.
+ *
+ * Про ?v=. jsDelivr отдаёт файл с max-age=604800: у вернувшегося посетителя
+ * он лежит в браузере неделю, и purge CDN этого не меняет. Ссылка вставлена
+ * в Tilda руками, поэтому версию здесь тоже поднимают руками — как у
+ * ВЕРСИЯ_ПЛАШКИ ниже. Меняешь подвал или шапку и нужно сразу всем —
+ * подними ?v= в HEAD-коде проекта.
  *
  * Дальше правки едут сами — как у страниц редизайна.
  */
@@ -137,33 +149,41 @@
     return o;
   }
 
-  // Вторая строка подвала: путь из карточки /tproduct/ в разделы.
-  // До 31.08.2026 с карточки нельзя было попасть ни на одну посадочную —
-  // они жили только в карте сайта.
-  function строкаПодборок() {
-    if (!ПОДБОРКИ.length) return "";
-    var s = '<div style="max-width:1240px;margin:12px auto 0;padding:0 24px;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;line-height:1.7;">'
-      + '<span style="color:#6B7C93;">Подборки:</span>';
-    for (var i = 0; i < ПОДБОРКИ.length; i++) {
-      s += '<a href="' + ПОДБОРКИ[i][0] + '" style="color:#9FB0C4;text-decoration:none;">' + ПОДБОРКИ[i][1] + '</a>';
-    }
-    return s + '</div>';
+  function ссылкаПодвала(href, текст, ярко) {
+    return '<a href="' + href + '" style="color:' + (ярко ? "#fff" : "#9FB0C4")
+      + ';text-decoration:none;' + (ярко ? "font-weight:600;" : "") + '">' + текст + '</a>';
   }
 
   function подвал() {
     var o = document.createElement("div");
     o.setAttribute("data-th-podval", "1");
     o.innerHTML =
-      '<div style="background:#071C3B;color:#9FB0C4;padding:26px 0;margin-top:40px;font:14px/1.6 TildaSans,Arial,sans-serif;">'
-      + '<div style="max-width:1240px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;">'
-      + '<a href="/katalog" style="color:#fff;text-decoration:none;font-weight:600;">Каталог</a>'
-      + '<a href="/uslugi" style="color:#9FB0C4;text-decoration:none;">Монтаж и сервис</a>'
-      + '<a href="/kontakty" style="color:#9FB0C4;text-decoration:none;">Контакты</a>'
-      // /vozvrat — юридическая страница; с нового сайта на неё не вело ни одной ссылки
-      + '<a href="/vozvrat" style="color:#9FB0C4;text-decoration:none;">Возврат и обмен</a>'
-      + '<span style="margin-left:auto;">ИП «ТехноХолод» · Алматы · '
-      + '<a href="tel:' + ТЕЛЕФОН_МАШИНЕ + '" style="color:#fff;text-decoration:none;font-weight:700;">' + ТЕЛЕФОН_ЛЮДЯМ + '</a></span>'
-      + '</div>' + строкаПодборок() + '</div>';
+      // Отступ снизу на телефоне — под мобильную панель «Позвонить · WhatsApp ·
+      // Каталог»: она fixed и иначе накрывает последнюю строку реквизитов.
+      '<style>.th-foot{background:#071C3B;color:#9FB0C4;margin-top:40px;padding:26px 0;'
+      + 'font:14px/1.6 TildaSans,Arial,sans-serif;}'
+      + '.th-foot__row{max-width:1240px;margin:0 auto;padding:0 24px;display:flex;'
+      + 'flex-wrap:wrap;gap:10px 22px;align-items:center;}'
+      + '.th-foot__req{margin-top:12px;font-size:13px;color:#7E8FA5;gap:4px 18px;}'
+      + '@media(max-width:640px){.th-foot{padding:22px 0 86px;margin-top:28px;}'
+      + '.th-foot__row{padding:0 18px;gap:8px 16px;}.th-foot__req{font-size:12px;}}</style>'
+      + '<div class="th-foot">'
+      + '<div class="th-foot__row">'
+      + ссылкаПодвала("/katalog", "Каталог", true)
+      + ссылкаПодвала("/uslugi", "Монтаж и сервис")
+      + ссылкаПодвала("/baza-znaniy", "База знаний")
+      + ссылкаПодвала("/kontakty", "Контакты")
+      // /vozvrat — юридическая страница; с нового сайта на неё не вело ни одной
+      // ссылки, а её адрес указан в Google Merchant Center как политика возврата
+      + ссылкаПодвала("/vozvrat", "Возврат и обмен")
+      + ссылкаПодвала("/usloviya-ispolzovaniya", "Условия использования")
+      + '</div>'
+      + '<div class="th-foot__row th-foot__req">'
+      + '<span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б</span>'
+      + '<a href="tel:' + ТЕЛЕФОН_МАШИНЕ + '" style="color:#fff;text-decoration:none;font-weight:700;">' + ТЕЛЕФОН_ЛЮДЯМ + '</a>'
+      + '<a href="mailto:tehnoholod369@gmail.com" style="color:#9FB0C4;text-decoration:none;">tehnoholod369@gmail.com</a>'
+      + '<a href="https://wa.me/' + ТЕЛЕФОН_МАШИНЕ.replace("+", "") + '" style="color:#9FB0C4;text-decoration:none;">WhatsApp</a>'
+      + '</div></div>';
     return o;
   }
 
@@ -222,16 +242,18 @@
   }
 
   function вставить() {
-    if (document.querySelector("[data-th-page]")) return;
-    плашка();
-    if (document.querySelector("[data-th-shapka]")) return;   // идемпотентно
-    убратьСтарую();
-    var тело = document.body;
-    тело.insertBefore(шапка(), тело.firstChild);
-    тело.appendChild(подвал());
-    снятьЛокальнуюШапку();
-    починитьСсылки();
-    единыйТелефон();
+    var редизайн = !!document.querySelector("[data-th-page]");
+    if (!редизайн) {
+      плашка();
+      if (!document.querySelector("[data-th-shapka]")) {
+        убратьСтарую();
+        document.body.insertBefore(шапка(), document.body.firstChild);
+        снятьЛокальнуюШапку();
+        починитьСсылки();
+        единыйТелефон();
+      }
+    }
+    if (!document.querySelector("[data-th-podval]")) document.body.appendChild(подвал());
   }
 
   if (document.readyState === "loading") {
