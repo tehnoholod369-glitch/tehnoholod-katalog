@@ -20,13 +20,104 @@
     [data-th-navstrip] { display: grid !important; grid-template-columns: repeat(5, max-content); justify-content: space-between; column-gap: 16px; row-gap: 0; overflow: visible !important; }
     [data-th-navstrip] > a:nth-child(5n) { justify-self: end; }
   }
+  /* ── HUMAN QA 1/6, раунд 2 (16.09.2026) ─────────────────────────────────────
+     Подписи «для телефона» и «для широкого экрана» — атрибутами, а не копией блоков.
+     Селекторы с body впереди: правила th-mobile.js идут с !important и той же
+     специфичностью, а порядок стилей в head не гарантирован. */
+  [data-th-mob], [data-th-cart-badge], [data-th-nav-more], [data-th-brands-more] { display: none !important; }
+  /* меню каталога: полоса «Закрыть» прилипает к верху, пока меню на экране */
+  [data-th-menu-bar] { position: sticky; top: 0; z-index: 2; }
+  /* Серверный раздел в браузере — продолжение страницы, а не второй экран: без белой
+     полосы сверху и с тем же полем, что у блоков выше. Абзац «Куда дальше» повторяет
+     подвал FOOTER 369 (каталог, база знаний, контакты, адрес, телефон) — в браузере его
+     не показываем; для робота без JS он остаётся в серверном HTML. */
+  [data-th-seo] { margin-top: 0 !important; padding-top: 6px !important; padding-bottom: 10px !important; }
+  [data-th-seo] > div > div:last-child { display: none !important; }
+  @media (min-width: 900px) {
+    /* «Сервис и условия»: шесть коротких карточек — три колонки, два ряда */
+    [data-th-seo] ul { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  }
   @media (max-width: 760px) {
     [data-th-navstrip] > a { min-height: 0 !important; }
-    /* на телефоне двенадцать логотипов — шесть рядов; остальные на /brendy */
-    [data-th-brands] > a:nth-child(n+13) { display: none !important; }
-    /* хиты сезона на телефоне: кадр ниже, группы по две в ряд */
+    /* на телефоне двенадцать логотипов — шесть рядов; остальные — кнопкой «Ещё» и на /brendy */
+    [data-th-brands][data-open="0"] > a:nth-child(n+13) { display: none !important; }
+    [data-th-brands-more] { display: block !important; }
+    /* хиты сезона на телефоне: кадр ниже */
     [data-th-hits] { padding: 18px 16px !important; }
     [data-th-hits] img { height: 150px !important; }
+  }
+  @media (max-width: 640px) {
+    body [data-th-desk] { display: none !important; }
+    body [data-th-mob] { display: block !important; }
+    /* Первый экран. Тёмная полоса над шапкой снята: телефон — в нижней панели «Позвонить»,
+       город — первой строкой героя, «работаем с НДС» — в блоке для юрлиц. */
+    body [data-thm-top] { display: none !important; }
+    /* шапка одной строкой: логотип · поиск · сравнение · корзина · каталог */
+    body [data-th-hdr] { flex-wrap: nowrap !important; padding-top: 7px !important; padding-bottom: 7px !important; gap: 6px !important; }
+    body [data-th-hdr] > img[data-th-hdr-logo] { height: 28px !important; width: auto !important; margin-right: auto !important; flex: none !important; }
+    body [data-th-hdr] > [data-th-hdr-search] { order: 2 !important; flex: none !important; min-width: 0 !important; width: 38px !important; height: 38px !important; padding: 0 !important; justify-content: center !important; font-size: 0 !important; gap: 0 !important; border-width: 1.5px !important; }
+    body [data-th-hdr] > [data-th-hdr-tools] { order: 3 !important; flex: none !important; gap: 0 !important; font-size: 0 !important; }
+    body [data-th-hdr] > [data-th-hdr-tools] > a { width: 38px; height: 38px; justify-content: center; gap: 0 !important; position: relative; }
+    body [data-th-hdr] > [data-th-hdr-cat] { order: 4 !important; flex: none !important; height: 38px !important; padding: 0 11px !important; gap: 6px !important; font-size: 14px !important; }
+    body [data-th-hdr] [data-th-cart-badge] { display: flex !important; position: absolute; top: 1px; right: 0; min-width: 16px; height: 16px; padding: 0 4px; box-sizing: border-box; border-radius: 8px; background: #E11A13; color: #fff; font-size: 10px !important; font-weight: 700; line-height: 1; align-items: center; justify-content: center; }
+    /* лента разделов: чипы в одну строку; правый край гаснет и есть стрелка — видно,
+       что ленту можно листать; у конца ленты подсказки пропадают (data-end) */
+    body [data-th-navwrap] > [data-th-navstrip] { gap: 0 8px !important; padding: 7px 40px 7px 14px !important; -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 64px), transparent calc(100% - 8px)); mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 64px), transparent calc(100% - 8px)); }
+    body [data-th-navwrap][data-end] > [data-th-navstrip] { -webkit-mask-image: none; mask-image: none; }
+    body [data-th-navwrap] > [data-th-navstrip] > a { padding: 6px 12px !important; border: 1px solid #DCE5F0; border-radius: 999px; background: #fff; font-size: 13px !important; line-height: 1.25 !important; }
+    body [data-th-navwrap] > [data-th-nav-more] { display: flex !important; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; padding: 0; border-radius: 50%; border: 1px solid #DCE5F0; background: #fff; color: #0A4EA7; box-shadow: 0 2px 8px rgba(7, 28, 59, 0.14); align-items: center; justify-content: center; cursor: pointer; }
+    body [data-th-navwrap][data-end] > [data-th-nav-more] { display: none !important; }
+    body div[data-th-main] { padding-top: 12px !important; }
+    /* герой: город, H1, одна фраза и кнопка сезона — сразу к делу */
+    body div[data-th-hero] { padding: 20px 18px !important; }
+    body [data-th-hero] > div:first-child { font-size: 12px !important; letter-spacing: 0.06em !important; }
+    body [data-th-hero] h1 { margin-top: 10px !important; }
+    body [data-th-hero-lead] { font-size: 15px !important; line-height: 1.5 !important; margin-top: 10px !important; }
+    body [data-th-top-cta] { margin-top: 16px !important; }
+    body [data-th-top-cta] > a[data-th-season-cta] { background: #E11A13; border-color: #E11A13 !important; }
+    body [data-th-hero-stats] { gap: 6px 16px !important; margin-top: 16px !important; font-size: 12px !important; }
+    body [data-th-hero-stats] b { font-size: 17px !important; }
+    /* бренды: два логотипа в ряд, плитка ниже; все логотипы уменьшены одинаково —
+       равная оптическая площадь (00_ГДЕ_ПРАВДА §11) сохраняется */
+    body div[data-th-brands-box] { padding: 16px 14px !important; }
+    body [data-th-brands-box] > [data-th-brands] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 6px !important; margin-top: 12px !important; }
+    body [data-th-brands] > a { height: 50px !important; padding: 3px 8px !important; }
+    body [data-th-brands] img { transform: scale(0.8); }
+    /* хиты: P0 — строками, P1 — плитками по две */
+    body div[data-th-hit-hero] { padding: 16px !important; gap: 16px !important; }
+    body [data-th-hero-cta] { gap: 8px !important; }
+    body [data-th-hero-cta] > a { font-size: 14px !important; padding: 11px 12px !important; }
+    body [data-th-hero-subs] > a { font-size: 12px !important; padding: 4px 8px !important; }
+    body [data-th-hit-p0] { grid-template-columns: 1fr !important; gap: 8px !important; }
+    body [data-th-hit-p0] > a { flex-direction: row !important; flex-wrap: wrap !important; align-items: baseline !important; gap: 2px 10px !important; padding: 12px 14px !important; }
+    body [data-th-hit-p0] > a > span:nth-child(1) { flex: 1 1 auto; font-size: 15px !important; }
+    body [data-th-hit-p0] > a > span:nth-child(2) { order: 3; flex: 1 1 100%; }
+    body [data-th-hit-p0] > a > span:nth-child(3) { margin-top: 0 !important; }
+    body [data-th-hit-p1] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    body [data-th-hit-p1] > a > span:nth-child(2) { display: none !important; }
+    /* база знаний: описание в две строки */
+    body [data-th-feed] > a > span:nth-child(3) { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    /* «Сервис и условия» — компактно: шесть названий в две колонки, подробности — по ссылке */
+    body [data-th-seo] ul { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 8px !important; }
+    body [data-th-seo] li > a { display: flex !important; align-items: center; min-height: 44px; padding: 9px 12px !important; }
+    body [data-th-seo] li > a > span { display: none !important; }
+    body [data-th-seo] li > a > b { font-size: 14px !important; line-height: 1.3; }
+    body [data-th-seo] [data-th-was-h1], body [data-th-seo] h1 { font-size: 20px !important; }
+    body [data-th-seo] p { font-size: 14px !important; margin-top: 6px !important; }
+    body [data-th-seo] h2 { margin-top: 14px !important; font-size: 16px !important; }
+    /* нижняя панель: «Каталог» в ней дублирует кнопку «Каталог» шапки первого экрана */
+    #th-mobile-bar { grid-template-columns: repeat(2, 1fr) !important; padding-bottom: env(safe-area-inset-bottom, 0px); }
+    #th-mobile-bar > a[href="/katalog"], #th-mobile-bar > a[href*="Каталог"] { display: none !important; }
+    /* место под панель: у страницы с подвалом его держит подвал — без белой полосы под ним */
+    body:has([data-th-podval]) { padding-bottom: 0 !important; }
+    body [data-th-podval] .th-foot { padding-bottom: calc(86px + env(safe-area-inset-bottom, 0px)) !important; }
+  }
+  @media (max-width: 480px) {
+    /* серверный раздел — то же поле 14 px, что у блоков страницы (th-mobile.js) */
+    body [data-th-seo] { padding-left: 14px !important; padding-right: 14px !important; }
+  }
+  @media (max-width: 359px) {
+    body [data-th-hdr] > [data-th-hdr-tools] > a:first-child { display: none !important; }
   }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
@@ -50,22 +141,38 @@
   </div>
 
   <div style="background:#fff; border-bottom:1px solid #DCE5F0; position:relative;">
-    <div style="max-width:1320px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
-      <img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" />
-      <button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuAria }}" aria-controls="th-megamenu" style="display:flex; align-items:center; gap:8px; background:{{ menuBg }}; color:#fff; border:0; border-radius:8px; padding:10px 15px; font-size:15px; font-family:inherit; font-weight:600; cursor:pointer;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+    
+    <div data-th-hdr style="max-width:1320px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <img data-th-hdr-logo src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" />
+      <button type="button" data-th-hdr-cat onClick="{{ toggleMenu }}" aria-expanded="{{ menuAria }}" aria-controls="th-megamenu" style="display:flex; align-items:center; gap:8px; background:{{ menuBg }}; color:#fff; border:0; border-radius:8px; padding:10px 15px; font-size:15px; font-family:inherit; font-weight:600; cursor:pointer;">
+        <sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>
+        </sc-if>
+        <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:block; flex:none;"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </sc-if>
+        {{ menuLabel }}
       </button>
-      <button type="button" data-th-search aria-label="Поиск по каталогу" style="flex:1; min-width:220px; display:flex; align-items:center; gap:8px; border:2px solid #0872D3; background:#fff; border-radius:8px; padding:9px 14px; color:#8593A6; font-size:15px; font-family:inherit; text-align:left; cursor:pointer;">
+      <button type="button" data-th-search data-th-hdr-search aria-label="Поиск по каталогу" style="flex:1; min-width:220px; display:flex; align-items:center; gap:8px; border:2px solid #0872D3; background:#fff; border-radius:8px; padding:9px 14px; color:#8593A6; font-size:15px; font-family:inherit; text-align:left; cursor:pointer;">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>Поиск по модели или артикулу
       </button>
-      <div style="display:flex; gap:18px; font-size:13px; color:#5A6675; font-weight:600;">
+      <div data-th-hdr-tools style="display:flex; gap:18px; font-size:13px; color:#5A6675; font-weight:600;">
         <a href="/sravnenie" style="display:flex; flex-direction:column; align-items:center; gap:3px; color:#5A6675;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M4 8.5h13l-3-3M20 15.5H7l3 3" /></svg>Сравнение</a>
-        <a href="/korzina" style="display:flex; flex-direction:column; align-items:center; gap:3px; color:#0872D3;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M3 4h2.2l2.4 11.2h10.1" /><path d="M6.6 7.6h14L18.7 14H8" /><circle cx="9.5" cy="19" r="1.4" /><circle cx="17.5" cy="19" r="1.4" /></svg>{{ cartLabel }}</a>
+        <a href="/korzina" style="display:flex; flex-direction:column; align-items:center; gap:3px; color:#0872D3;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M3 4h2.2l2.4 11.2h10.1" /><path d="M6.6 7.6h14L18.7 14H8" /><circle cx="9.5" cy="19" r="1.4" /><circle cx="17.5" cy="19" r="1.4" /></svg>{{ cartLabel }}<sc-if value="{{ cartHas }}" hint-placeholder-val="{{ false }}"><span data-th-cart-badge>{{ cartN }}</span></sc-if></a>
       </div>
     </div>
 
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <div id="th-megamenu" style="border-top:1px solid #DCE5F0; background:#fff; box-shadow:0 18px 34px rgba(7,28,59,0.12);">
+        
+        <section data-th-menu-bar style="background:#fff; border-bottom:1px solid #E9EFF7;">
+          <div style="max-width:1320px; margin:0 auto; padding:8px 24px; box-sizing:border-box; display:flex; align-items:center; justify-content:space-between; gap:12px;">
+            <span style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#8593A6;">РАЗДЕЛЫ И ПОДКАТЕГОРИИ</span>
+            <button type="button" onClick="{{ closeMenu }}" aria-label="Закрыть меню каталога" style="display:flex; align-items:center; gap:6px; background:#F3F7FB; border:1px solid #DCE5F0; border-radius:8px; padding:7px 12px; font-family:inherit; font-size:14px; font-weight:700; color:#0A4EA7; cursor:pointer;">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:block; flex:none;"><path d="M6 6l12 12M18 6L6 18" /></svg>Закрыть
+            </button>
+          </div>
+        </section>
         <div style="max-width:1320px; margin:0 auto; padding:24px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); gap:26px;">
           <sc-for list="{{ menu }}" as="m" hint-placeholder-count="4">
             <div>
@@ -93,35 +200,49 @@
             </div>
           </sc-for>
         </div>
+        <section style="padding:0 0 20px;">
+          <div style="max-width:1320px; margin:0 auto; padding:0 24px; box-sizing:border-box;">
+            <button type="button" onClick="{{ closeMenu }}" style="display:block; width:100%; box-sizing:border-box; background:#F3F7FB; border:1px solid #DCE5F0; border-radius:8px; padding:11px; font-family:inherit; font-size:14px; font-weight:700; color:#0A4EA7; cursor:pointer;">Свернуть каталог ↑</button>
+          </div>
+        </section>
       </div>
     </sc-if>
   </div>
 
-  <div style="background:#F3F7FB; border-bottom:1px solid #DCE5F0;">
+  <div data-th-navwrap style="background:#F3F7FB; border-bottom:1px solid #DCE5F0; position:relative;">
     
-    <div data-th-navstrip style="max-width:1320px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:nowrap; align-items:center; justify-content:space-between; gap:0 18px; overflow-x:auto; font-size:14px; font-weight:600; line-height:1.25; color:#2C3846;">
+    <div data-th-navstrip ref="{{ navRef }}" style="max-width:1320px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:nowrap; align-items:center; justify-content:space-between; gap:0 18px; overflow-x:auto; font-size:14px; font-weight:600; line-height:1.25; color:#2C3846;">
       <sc-for list="{{ navStrip }}" as="n" hint-placeholder-count="4">
         <a href="{{ n.href }}" style="flex:none; display:flex; align-items:center; min-height:42px; padding:0; white-space:nowrap; color:{{ n.color }};">{{ n.label }}</a>
       </sc-for>
     </div>
+    
+    <button type="button" data-th-nav-more aria-label="Ещё разделы" onClick="{{ navMore }}"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M9 5l7 7-7 7" /></svg></button>
   </div>
 
-  <div style="max-width:1320px; margin:0 auto; padding:24px 24px 72px 24px;">
+  <div data-th-main style="max-width:1320px; margin:0 auto; padding:24px 24px 28px 24px;">
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr)); gap:20px; align-items:start;">
-      <div style="background:linear-gradient(125deg,#071C3B,#0A4EA7 70%,#0872D3); color:#fff; border-radius:16px; padding:38px;">
-        <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#7FC4F2;">КЛИМАТИЧЕСКАЯ ТЕХНИКА ДЛЯ ДОМА И БИЗНЕСА</div>
+      
+      <div data-th-hero style="background:linear-gradient(125deg,#071C3B,#0A4EA7 70%,#0872D3); color:#fff; border-radius:16px; padding:38px;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#7FC4F2;"><span data-th-desk>КЛИМАТИЧЕСКАЯ ТЕХНИКА ДЛЯ ДОМА И БИЗНЕСА</span><span data-th-mob>АЛМАТЫ · ДОСТАВКА ПО КАЗАХСТАНУ</span></div>
         <h1 style="margin:14px 0 0 0; font-size:clamp(21px,5.6vw,40px); font-weight:800; line-height:1.08; letter-spacing:-0.025em;">Кондиционеры, вентиляция, отопление и водонагреватели</h1>
-        <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px; max-width:460px;">Прямые поставки, монтаж под ключ в Алматы и области, доставка по Казахстану. На монтажные работы нового оборудования через Артель 369 — гарантия 12 месяцев; на оборудование действует только гарантия производителя. Доступна рассрочка.</div>
-        <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
-          <a href="/katalog" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Перейти в каталог</a>
+        <div data-th-hero-lead style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px; max-width:460px;">Прямые поставки, монтаж под ключ в Алматы и области, доставка по Казахстану.<span data-th-desk> На монтажные работы нового оборудования через Артель 369 — гарантия 12 месяцев; на оборудование действует только гарантия производителя.</span> Доступна рассрочка.</div>
+        <div data-th-top-cta style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
+          <a data-th-desk href="/katalog" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Перейти в каталог</a>
+          <sc-if value="{{ showHits }}" hint-placeholder-val="{{ true }}">
+            <a data-th-season-cta href="#hity" onClick="{{ toHits }}" style="border:2px solid rgba(255,255,255,0.55); color:#fff; border-radius:8px; padding:12px 20px; font-size:16px; font-weight:700;">{{ heroSeasonCta }}</a>
+          </sc-if>
         </div>
-        <div style="display:flex; gap:26px; margin-top:30px; flex-wrap:wrap; font-size:14px; color:#CBDCEC;">
+        <div data-th-hero-stats style="display:flex; gap:26px; margin-top:30px; flex-wrap:wrap; font-size:14px; color:#CBDCEC;">
           <sc-for list="{{ heroStats }}" as="h" hint-placeholder-count="3">
             <div><b style="display:block; font-size:22px; color:#fff; font-variant-numeric:tabular-nums;">{{ h.v }}</b>{{ h.k }}</div>
           </sc-for>
         </div>
-        <div style="font-size:13px; color:#9FBCD8; line-height:1.5; margin-top:10px;">{{ proektNote }}</div>
+        <div data-th-desk style="font-size:13px; color:#9FBCD8; line-height:1.5; margin-top:10px;">{{ proektNote }}</div>
+        <div data-th-mob style="font-size:12px; color:#9FBCD8; line-height:1.5; margin-top:12px;">На монтажные работы нового оборудования через Артель 369 — гарантия 12 месяцев; на оборудование действует только гарантия производителя.</div>
+        
+        <div style="font-size:12px; color:#7F9CBE; line-height:1.5; margin-top:12px;">Сайт работает в тестовом режиме и продолжает наполняться. Не нашли нужное или заметили неточность — напишите в <a href="https://wa.me/77000369369" style="color:#9FC4EA; text-decoration:underline;">WhatsApp</a>, поможем и поправим.</div>
       </div>
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:16px;">
@@ -187,23 +308,26 @@
     </div>
 
     
-    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; margin-top:20px;">
+    <div data-th-brands-box style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; margin-top:20px;">
       <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
         <h2 style="margin:0; font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700;">Бренды в каталоге</h2>
         <a href="/brendy" style="font-size:13px; font-weight:700; color:#0872D3;">Все бренды →</a>
       </div>
-      <div ref="{{ brandsRef }}" data-th-brands style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(140px,100%),1fr)); gap:8px; margin-top:14px;">
+      <div ref="{{ brandsRef }}" data-th-brands data-open="{{ brandsOpen }}" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(140px,100%),1fr)); gap:8px; margin-top:14px;">
         <sc-for list="{{ brands }}" as="b" hint-placeholder-count="12">
           <a href="{{ b.href }}" title="{{ b.name }}" aria-label="{{ b.name }}" style="height:72px; border:1px solid #DCE5F0; border-radius:10px; background:#fff; display:flex; align-items:center; justify-content:center; padding:8px 10px; box-sizing:border-box;">
             <img data-url="{{ b.logo }}" alt="{{ b.name }}" style="width:{{ b.w }}px; height:{{ b.h }}px; max-width:100%; object-fit:contain; display:block;" />
           </a>
         </sc-for>
       </div>
+      <sc-if value="{{ brandsMore }}" hint-placeholder-val="{{ false }}">
+        <button type="button" data-th-brands-more onClick="{{ toggleBrands }}" style="width:100%; box-sizing:border-box; margin-top:8px; background:#F3F7FB; border:1px solid #DCE5F0; border-radius:8px; padding:10px; font-family:inherit; font-size:14px; font-weight:700; color:#0A4EA7; cursor:pointer;">{{ brandsMoreLabel }}</button>
+      </sc-if>
     </div>
 
     
     <sc-if value="{{ showHits }}" hint-placeholder-val="{{ true }}">
-      <div data-th-hits style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; margin-top:20px;">
+      <div data-th-hits id="hity" style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; margin-top:20px; scroll-margin-top:12px;">
         <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;">
           <div>
             <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#C21610;">ХИТЫ СЕЗОНА</div>
@@ -211,17 +335,17 @@
           </div>
           <a href="/katalog" style="font-size:13px; font-weight:700; color:#0872D3;">Весь каталог →</a>
         </div>
-        <div style="background:#FDECEA; border:1px solid #F8CBBE; border-radius:14px; padding:22px 24px; margin-top:16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:22px; align-items:center;">
+        <div data-th-hit-hero style="background:#FDECEA; border:1px solid #F8CBBE; border-radius:14px; padding:22px 24px; margin-top:16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:22px; align-items:center;">
           <div>
             <div style="display:inline-block; background:#E11A13; color:#fff; border-radius:6px; padding:4px 9px; font-size:12px; font-weight:700; letter-spacing:0.06em;">{{ heroBadge }}</div>
             <h3 style="margin:10px 0 0 0; font-family:'Montserrat',sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em; line-height:1.2;">{{ heroTitle }}</h3>
-            <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;">
+            <div data-th-hero-subs style="display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;">
               <sc-for list="{{ heroSubs }}" as="t" hint-placeholder-count="3">
                 <a href="{{ t.href }}" style="border:1px solid #F3B7AE; background:#fff; border-radius:6px; padding:5px 10px; font-size:13px; font-weight:600; color:#2C3846;">{{ t.label }}</a>
               </sc-for>
             </div>
-            <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
-              <a href="{{ heroHref }}" style="background:#E11A13; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">Смотреть в каталоге →</a>
+            <div data-th-hero-cta style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
+              <a href="{{ heroHref }}" style="background:#E11A13; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;"><span data-th-desk>Смотреть в каталоге →</span><span data-th-mob>В каталог →</span></a>
               <sc-if value="{{ heroHasArticle }}" hint-placeholder-val="{{ true }}">
                 <a href="{{ heroArticleHref }}" style="border:2px solid #E11A13; color:#C21610; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Как выбрать →</a>
               </sc-if>
@@ -233,15 +357,30 @@
             </div>
           </div>
         </div>
-        <div data-th-hit-groups style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr)); gap:10px; margin-top:12px;">
-          <sc-for list="{{ hitGroups }}" as="h" hint-placeholder-count="5">
-            <a href="{{ h.href }}" style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:14px 16px; display:flex; flex-direction:column; gap:6px; color:#18212F;">
-              <span style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; line-height:1.3;">{{ h.title }}</span>
+        
+        <div data-th-hit-p0 style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr)); gap:10px; margin-top:12px;">
+          <sc-for list="{{ hitP0 }}" as="h" hint-placeholder-count="3">
+            <a href="{{ h.href }}" style="background:#fff; border:1px solid #F3B7AE; border-radius:12px; padding:14px 16px; display:flex; flex-direction:column; gap:6px; color:#18212F;">
+              <span style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700; line-height:1.3;">{{ h.title }}</span>
               <span style="font-size:12px; color:#5A6675; line-height:1.45;">{{ h.subs }}</span>
-              <span style="font-size:13px; font-weight:700; color:#0872D3; margin-top:auto;">В каталог →</span>
+              <span style="font-size:13px; font-weight:700; color:#C21610; margin-top:auto;">{{ h.link }}</span>
             </a>
           </sc-for>
         </div>
+        <sc-if value="{{ hasP1 }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div data-th-hit-p1-label style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#8593A6; margin-top:18px;">ТАКЖЕ В СЕЗОН</div>
+            <div data-th-hit-p1 style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr)); gap:8px; margin-top:8px;">
+              <sc-for list="{{ hitP1 }}" as="h" hint-placeholder-count="4">
+                <a href="{{ h.href }}" style="background:#F9FBFE; border:1px solid #DCE5F0; border-radius:10px; padding:10px 12px; display:flex; flex-direction:column; gap:4px; color:#18212F;">
+                  <span style="font-size:14px; font-weight:700; line-height:1.3;">{{ h.title }}</span>
+                  <span style="font-size:12px; color:#5A6675; line-height:1.4;">{{ h.subs }}</span>
+                  <span style="font-size:12px; font-weight:700; color:#0872D3; margin-top:auto;">{{ h.link }}</span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
       </div>
     </sc-if>
 
@@ -249,7 +388,7 @@
       <div style="flex:1; min-width:260px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">РАСЧЁТ ПОД ОБЪЕКТ</div>
         <h2 style="margin:6px 0 0 0; font-family:'Montserrat',sans-serif; font-size:20px; font-weight:800;">Оборудование под объект: VRF, чиллеры, фанкойлы, ПВУ</h2>
-        <div style="font-size:14px; color:#D5E9FA; line-height:1.6; margin-top:6px;">Состав и цена считаются по теплопритокам и схеме, а не берутся из прайса штукой. Отдельные модули этих серий есть и в каталоге — там их можно купить штукой по цене.</div>
+        <div style="font-size:14px; color:#D5E9FA; line-height:1.6; margin-top:6px;">Состав и цена считаются по теплопритокам и схеме объекта, а не складываются из штучных цен. Отдельные модули этих серий есть и в каталоге — там их можно купить штукой по цене.</div>
       </div>
       <div style="font-size:14px; font-weight:700; color:#fff; background:#0872D3; border-radius:8px; padding:12px 18px; white-space:nowrap;">{{ proektLink }}</div>
     </a>
@@ -332,18 +471,26 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showPromo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Главная&quot;}}">
 class Component extends DCLogic {
-  state = { menuOpen: false, area: 25, idx: null, preview: null, articles: null, hitImg: "" };
+  state = { menuOpen: false, area: 25, idx: null, preview: null, articles: null, hitImg: "", brandsOpen: false };
   hitsRef = React.createRef();
   brandsRef = React.createRef();
+  navRef = React.createRef();
 
   СЕЗОН = {
     heat: {
       badge: "СЕЗОН ТЕПЛА", title: "Готовимся к холодам",
-      groups: ["kaminy", "vodonagrevateli", "teplovye-zavesy", "teplovye-pushki", "infrakrasnye-obogrevateli", "osushiteli"]
+      groups: ["kaminy", "teplovye-zavesy", "vodonagrevateli", "osushiteli"],
+      p1: [
+        { group: "teplovye-pushki" },
+        { title: "Отопление кондиционером", article: "obogrev-kondicionerom-zimoy", subs: "Модель — по рабочей температуре обогрева" },
+        { group: "radiatory" },
+        { group: "obogrevateli" }
+      ]
     },
     climate: {
       badge: "СЕЗОН ОХЛАЖДЕНИЯ", title: "Готовимся к жаре",
-      groups: ["bytovye", "multisplit", "mobilnye", "poluprom"]
+      groups: ["bytovye", "multisplit", "mobilnye", "poluprom"],
+      p1: []
     }
   };
 
@@ -373,9 +520,25 @@ class Component extends DCLogic {
     return сезон.groups.filter(slug => idx.some(g => g.slug === slug && (g.count || 0) > 0));
   }
 
+  // Подкатегория, которая по смыслу — другая группа каталога. В «Инфракрасных
+  // обогревателях» (данные 08.09.2026) одна позиция подписана «Конвекторы электрические»:
+  // это конвектор DITREEX NDM-20J, а конвекторы — своя группа obogrevateli. Под ИК такую
+  // подкатегорию не показываем ни в хитах, ни в меню; позиция в каталоге остаётся,
+  // классификацию правят в данных каталога (GAP в EVIDENCE T-006, раунд 2).
+  ЧУЖИЕ_ПОДКАТЕГОРИИ = { "infrakrasnye-obogrevateli": /конвектор/i };
+
+  своя(slug, s) {
+    const чужая = this.ЧУЖИЕ_ПОДКАТЕГОРИИ[slug];
+    return !чужая || !чужая.test((s && s.name) || "");
+  }
+
   подкатегории(slug, n) {
     const g = ((this.state && this.state.idx) || []).find(x => x.slug === slug);
-    return ((g && g.subs) || []).filter(s => s && s.name && !/аксессуар|комплектующ/i.test(s.name)).slice(0, n || 3);
+    return ((g && g.subs) || []).filter(s => s && s.name && !/аксессуар|комплектующ/i.test(s.name) && this.своя(slug, s)).slice(0, n || 3);
+  }
+
+  статья(s) {
+    return (((this.state && this.state.articles) || {}).items || []).find(a => a && a.s === s) || null;
   }
 
   названиеГруппы(slug) {
@@ -383,14 +546,22 @@ class Component extends DCLogic {
     return g ? g.title : "";
   }
 
-  // «Хиты сезона»: HERO — первая группа сезона, ниже до пяти следующих. Только то, что
-  // есть в данных каталога: название, подкатегории, ссылка в выдачу, статья «как выбрать»
-  // из data/articles.json. Цен, остатков и меток «хит продаж» нет (см. контракт СЕЗОН).
+  // «Хиты сезона»: HERO — первая группа P0, ниже остальные P0 карточками и P1 плитками.
+  // Только то, что есть в данных каталога: название, подкатегории, ссылка в выдачу, статья
+  // «как выбрать» из data/articles.json. Цен, остатков и меток «хит продаж» нет (см. контракт СЕЗОН).
   блокХитов() {
     const сезон = this.СЕЗОН[this.seasonKey()];
     const группы = this.сезонныеГруппы();
     if (!сезон || !группы.length) return { show: false };
     const hero = группы[0];
+    const индекс = (this.state && this.state.idx) || [];
+    const есть = slug => индекс.some(g => g.slug === slug && (g.count || 0) > 0);
+    const группа = slug => ({
+      title: this.названиеГруппы(slug),
+      href: "/katalog?g=" + slug,
+      subs: this.подкатегории(slug, 3).map(s => s.name).join(" · "),
+      link: "В каталог →"
+    });
     const статья = (((this.state.articles || {}).items) || [])
       .filter(a => a && a.s && a.g === hero)
       .sort((a, b) => String(b.pub || "").localeCompare(String(a.pub || "")) || a.s.localeCompare(b.s))[0];
@@ -407,11 +578,12 @@ class Component extends DCLogic {
       })),
       heroHasArticle: !!статья,
       heroArticleHref: статья ? "/" + статья.s : "",
-      groups: группы.slice(1, 6).map(slug => ({
-        title: this.названиеГруппы(slug),
-        href: "/katalog?g=" + slug,
-        subs: this.подкатегории(slug, 3).map(s => s.name).join(" · ")
-      }))
+      p0: группы.slice(1).map(группа),
+      p1: (сезон.p1 || []).map(x => {
+        if (x.group) return есть(x.group) ? группа(x.group) : null;
+        const а = x.article ? this.статья(x.article) : null;
+        return а ? { title: x.title, href: "/" + а.s, subs: x.subs || "", link: "Как выбрать →" } : null;
+      }).filter(Boolean)
     };
   }
 
@@ -493,6 +665,10 @@ class Component extends DCLogic {
   плиткиБрендов(LOGOS, RATIO) {
     const ЛИНЕЙКА_ZILON = /\sby\s+ZILON$/i;
     const ПЛОЩАДЬ = 2400;
+    const ТОЛЬКО_ЧИСТЫЙ = ["Royal Thermo"];
+    const чистые = (this.state && this.state.logosClean) || {};
+    const L = Object.assign({}, LOGOS, чистые.logos || {});
+    const R = Object.assign({}, RATIO, чистые.ratio || {});
     const позиций = {};
     ((this.state && this.state.brands) || []).forEach(b => {
       const имя = ЛИНЕЙКА_ZILON.test(b.b || "") ? "ZILON" : (b.b || "").trim();
@@ -500,14 +676,15 @@ class Component extends DCLogic {
       позиций[имя] = (позиций[имя] || 0) + (b.n || 0);
     });
     return Object.keys(позиций)
-      .filter(имя => позиций[имя] > 0 && LOGOS[имя] && RATIO[имя] > 0)
-      .sort((a, b) => позиций[b] - позиций[a] || a.localeCompare(b))
+      .filter(имя => позиций[имя] > 0 && L[имя] && R[имя] > 0)
+      .filter(имя => ТОЛЬКО_ЧИСТЫЙ.indexOf(имя) < 0 || !!(чистые.logos || {})[имя])
+      .sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }))
       .map(имя => {
-        const r = RATIO[имя], h = Math.sqrt(ПЛОЩАДЬ / r);
+        const r = R[имя], h = Math.sqrt(ПЛОЩАДЬ / r);
         return {
           name: имя,
           href: "/brendy?b=" + encodeURIComponent(имя),
-          logo: LOGOS[имя],
+          logo: L[имя],
           w: Math.round(h * r),
           h: Math.round(h)
         };
@@ -524,6 +701,7 @@ class Component extends DCLogic {
   }
 
   componentDidUpdate() {
+    this.подключитьЛенту();
     const сезонные = this.сезонныеГруппы();
     if (сезонные.length) this.фотоHERO(сезонные[0]);
     if (!window.PHOTO_LOCAL_SET) {
@@ -557,6 +735,27 @@ class Component extends DCLogic {
   componentWillUnmount() {
     clearInterval(this.__shotTimer);
     window.removeEventListener("th-cart", this.__onCart);
+    window.removeEventListener("keydown", this.__onKey);
+    window.removeEventListener("resize", this.__navEnd);
+    if (this.__navEl) this.__navEl.removeEventListener("scroll", this.__navEnd);
+  }
+
+  // Лента разделов на телефоне: у конца ленты гаснут подсказки «листай дальше»
+  // (атрибут data-end на обёртке ленты, стили — в helmet).
+  подключитьЛенту() {
+    const лента = this.navRef.current;
+    if (!лента || this.__navEl === лента) return;
+    if (this.__navEl) this.__navEl.removeEventListener("scroll", this.__navEnd);
+    this.__navEl = лента;
+    лента.addEventListener("scroll", this.__navEnd, { passive: true });
+    this.__navEnd();
+  }
+
+  // Меню на телефоне длиной в пару экранов: после «Свернуть» возвращаем к шапке.
+  закрытьМеню() {
+    this.setState({ menuOpen: false });
+    const шапка = document.querySelector("[data-th-hdr]");
+    if (шапка && шапка.getBoundingClientRect().top < 0) шапка.scrollIntoView({ block: "start" });
   }
 
   // Один H1 на странице. H1 первого экрана рисует этот блок, а «Климатическая техника
@@ -579,6 +778,16 @@ class Component extends DCLogic {
 
   componentDidMount() {
     this.одинH1();
+    this.__navEnd = () => {
+      const лента = this.__navEl;
+      if (!лента || !лента.parentElement) return;
+      if (лента.scrollLeft + лента.clientWidth >= лента.scrollWidth - 4) лента.parentElement.setAttribute("data-end", "1");
+      else лента.parentElement.removeAttribute("data-end");
+    };
+    window.addEventListener("resize", this.__navEnd);
+    this.подключитьЛенту();
+    this.__onKey = e => { if (e.key === "Escape" && this.state.menuOpen) this.закрытьМеню(); };
+    window.addEventListener("keydown", this.__onKey);
     // системная настройка «меньше движения» и скрытая вкладка отменяют смену кадров
     const calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!calm) {
@@ -598,6 +807,9 @@ class Component extends DCLogic {
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/dir-preview.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(preview => this.setState({ preview })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brands-top.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(brands => this.setState({ brands })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logos.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(logos => this.setState({ logos })).catch(() => {});
+    // чистые варианты официальных логотипов (раунд 2): плитки брендов ждут и этот файл,
+    // чтобы порядок не перестраивался на глазах
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logos-clean.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(c => this.setState({ logosClean: c || {}, logosCleanReady: true })).catch(() => this.setState({ logosClean: {}, logosCleanReady: true }));
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/proektnye.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(proekt => this.setState({ proekt })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logo-ratio.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(logoRatio => this.setState({ logoRatio })).catch(() => {});
   }
@@ -648,7 +860,7 @@ class Component extends DCLogic {
       count: g ? this.fmt(g.count) : "",
       href: "/katalog?g=" + slug,
       subs: g && (g.subs || []).length > 1
-        ? g.subs.filter(s => s.name.toLowerCase() !== label.toLowerCase()).slice(0, 5).map(s => ({
+        ? g.subs.filter(s => s.name.toLowerCase() !== label.toLowerCase() && this.своя(slug, s)).slice(0, 5).map(s => ({
             label: s.name,
             n: s.n,
             href: "/katalog?g=" + slug + "&sub=" + encodeURIComponent(s.name)
@@ -685,13 +897,32 @@ class Component extends DCLogic {
     // чтобы не ломать сохранённые настройки страницы
     const showPromo = this.props.showPromo ?? true;
     const хиты = this.блокХитов();
+    const плитки = (this.state.logos && this.state.logosCleanReady) ? this.плиткиБрендов(LOGOS, RATIO) : [];
 
     return {
       menuOpen: this.state.menuOpen,
+      menuClosed: !this.state.menuOpen,
+      menuLabel: this.state.menuOpen ? "Закрыть" : "Каталог",
       menuAria: this.state.menuOpen ? "true" : "false",
       cartLabel: (this.state.cartN || 0) ? "Корзина · " + this.state.cartN : "Корзина",
+      cartN: this.state.cartN || 0,
+      cartHas: (this.state.cartN || 0) > 0,
       menuBg: this.state.menuOpen ? "#0A4EA7" : "#0872D3",
       toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      closeMenu: () => this.закрытьМеню(),
+      navRef: this.navRef,
+      navMore: () => {
+        const лента = this.navRef.current;
+        if (лента) лента.scrollBy({ left: Math.round(лента.clientWidth * 0.7), behavior: "smooth" });
+      },
+      // кнопка сезона в герое ведёт к «Хитам сезона» на этой же странице
+      heroSeasonCta: "Хиты сезона ↓",
+      toHits: e => {
+        const блок = document.getElementById("hity");
+        if (!блок) return;
+        if (e && e.preventDefault) e.preventDefault();
+        блок.scrollIntoView({ behavior: "smooth", block: "start" });
+      },
       showHits: !!(showPromo && хиты.show),
       hitsTitle: хиты.title || "",
       heroBadge: хиты.badge || "",
@@ -702,7 +933,9 @@ class Component extends DCLogic {
       heroArticleHref: хиты.heroArticleHref || "",
       heroImg: this.state.hitImg || "",
       heroImgDisplay: this.state.hitImg ? "flex" : "none",
-      hitGroups: хиты.groups || [],
+      hitP0: хиты.p0 || [],
+      hitP1: хиты.p1 || [],
+      hasP1: !!(хиты.p1 && хиты.p1.length),
       hitsRef: this.hitsRef,
 
       menu: [
@@ -837,7 +1070,11 @@ class Component extends DCLogic {
         ? "Запрос откроется в WhatsApp с вашими данными — останется нажать «Отправить»."
         : "Перезвоним в рабочее время. Можно просто позвонить — номер выше.",
       // полоса брендов вместо бегущей строки: статично, кликабельно, из данных
-      brands: this.плиткиБрендов(LOGOS, RATIO),
+      brands: плитки,
+      brandsOpen: this.state.brandsOpen ? "1" : "0",
+      brandsMore: плитки.length > 12,
+      brandsMoreLabel: this.state.brandsOpen ? "Свернуть" : "Ещё " + this.plural(плитки.length - 12, "бренд", "бренда", "брендов"),
+      toggleBrands: () => this.setState({ brandsOpen: !this.state.brandsOpen }),
       directionsList: this.orderDirs([
         { key: "climate", title: "Кондиционирование", tint: "#E6F2FD", sub: "Бытовые, полупром, мультисплит, мобильные", link: this.dirLink(["bytovye", "poluprom", "multisplit", "mobilnye", "prom-mobilnye", "vozduhoohladiteli"]), href: "/katalog?g=bytovye", color: "#0872D3", linkColor: "#0872D3", icon: this.icon(P.snow, "#0872D3", 22) },
         { key: "heat", title: "Отопление", tint: "#FDECEA", sub: "Радиаторы, пушки, завесы, ИК-обогреватели, камины", link: this.heatLink(), href: "/katalog?g=radiatory", color: "#F75B06", linkColor: "#0872D3", icon: this.icon(P.flame, "#F75B06", 22) },
