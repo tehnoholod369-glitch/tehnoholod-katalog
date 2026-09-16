@@ -50,6 +50,8 @@
  *  · состояние — атрибут data-th-state на <html>: loading → ready | error. По нему ждёт
  *    плашка наполнения (th-plashka.js).
  * Без JS заглушки нет вовсе — SEO-раздел виден сразу.
+ * Отказ support.js ловится слушателем события error: свойство onerror у всех <script>
+ * переписывает tilda-fallback (независимый QA 16.09.2026, D1) — подробности у подключитьСкрипты.
  */
 (function () {
   var RAW = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/blocks/";
@@ -243,13 +245,20 @@
 
   // Скрипты блока: качаются параллельно, выполняются по порядку вставки (async=false).
   // support.js обязан быть последним — он ищет <x-dc> и собирает страницу.
+  //
+  // Ошибку ловим слушателем, а не свойством onerror. tilda-fallback-1.0.min.js при своей
+  // загрузке и на DOMContentLoaded переписывает onerror у ВСЕХ <script> на
+  // t_fallback__reloadSRC(this), а для адресов jsDelivr тот ничего не делает. Если наш
+  // скрипт вставлен раньше этого прохода, обработчик пропадал, и отказ support.js
+  // показывался только по пределу 60 с (независимый QA 16.09.2026, D1: ошибка на 65-й
+  // секунде). Слушатель события Tilda не трогает.
   function подключитьСкрипты(srcs) {
     srcs.forEach(function (src) {
       var s = document.createElement("script");
       s.src = src;
       s.async = false;
       if (/support\.js/.test(src)) {
-        s.onerror = function () { fail("не загрузился " + src); };
+        s.addEventListener("error", function () { fail("не загрузился " + src); });
       }
       document.head.appendChild(s);
     });
@@ -292,7 +301,14 @@
           for (var k = 0; k < стар.attributes.length; k++) {
             нов.setAttribute(стар.attributes[k].name, стар.attributes[k].value);
           }
-          if (стар.src) { нов.onload = нов.onerror = function () { дальше(i + 1); }; }
+          if (стар.src) {
+            // слушатели, а не onload/onerror: onerror перепишет tilda-fallback (см. подключитьСкрипты),
+            // и цепочка после отказа одного скрипта встала бы
+            var пошли = false;
+            var следующий = function () { if (!пошли) { пошли = true; дальше(i + 1); } };
+            нов.addEventListener("load", следующий);
+            нов.addEventListener("error", следующий);
+          }
           нов.text = стар.text;
           стар.parentNode.replaceChild(нов, стар);
           if (!стар.src) дальше(i + 1);

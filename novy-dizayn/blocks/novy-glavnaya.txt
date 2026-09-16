@@ -114,9 +114,11 @@
     body [data-th-seo] [data-th-was-h1], body [data-th-seo] h1 { font-size: 20px !important; }
     body [data-th-seo] p { font-size: 14px !important; margin-top: 6px !important; }
     body [data-th-seo] h2 { margin-top: 14px !important; font-size: 16px !important; }
-    /* нижняя панель: «Каталог» в ней дублирует кнопку «Каталог» шапки первого экрана */
-    #th-mobile-bar { grid-template-columns: repeat(2, 1fr) !important; padding-bottom: env(safe-area-inset-bottom, 0px); }
-    #th-mobile-bar > a[href="/katalog"], #th-mobile-bar > a[href*="Каталог"] { display: none !important; }
+    /* нижняя панель — общий компонент (mobile-bar.js), канон FOOTER 369 / L-049:
+       «Позвонить · WhatsApp · Каталог» на всех страницах. Раунд 2 скрывал здесь «Каталог» —
+       локальная правка общего компонента, снята 16.09.2026 (независимый QA раунда 3, D3).
+       Остаётся только поле под системную полосу телефона. */
+    #th-mobile-bar { padding-bottom: env(safe-area-inset-bottom, 0px); }
     /* место под панель: у страницы с подвалом его держит подвал — без белой полосы под ним */
     body:has([data-th-podval]) { padding-bottom: 0 !important; }
     body [data-th-podval] .th-foot { padding-bottom: calc(86px + env(safe-area-inset-bottom, 0px)) !important; }
