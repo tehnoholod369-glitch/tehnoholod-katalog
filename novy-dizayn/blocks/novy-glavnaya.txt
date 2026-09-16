@@ -239,9 +239,8 @@
         <div data-th-hero-lead style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px; max-width:460px;">Прямые поставки, монтаж под ключ в Алматы и области, доставка по Казахстану.<span data-th-desk> На монтажные работы нового оборудования через Артель 369 — гарантия 12 месяцев; на оборудование действует только гарантия производителя.</span> Доступна рассрочка.</div>
         <div data-th-top-cta style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
           <a data-th-desk href="/katalog" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Перейти в каталог</a>
-          <sc-if value="{{ showHits }}" hint-placeholder-val="{{ true }}">
-            <a data-th-season-cta href="#hity" onClick="{{ toHits }}" style="border:2px solid rgba(255,255,255,0.55); color:#fff; border-radius:8px; padding:12px 20px; font-size:16px; font-weight:700;">{{ heroSeasonCta }}</a>
-          </sc-if>
+          
+          <a data-th-season-cta href="#hity" onClick="{{ toHits }}" style="border:2px solid rgba(255,255,255,0.55); color:#fff; border-radius:8px; padding:12px 20px; font-size:16px; font-weight:700;">{{ heroSeasonCta }}</a>
         </div>
         <div data-th-hero-stats style="display:flex; gap:26px; margin-top:30px; flex-wrap:wrap; font-size:14px; color:#CBDCEC;">
           <sc-for list="{{ heroStats }}" as="h" hint-placeholder-count="3">
@@ -934,9 +933,10 @@ class Component extends DCLogic {
       // кнопка сезона в герое ведёт к «Хитам сезона» на этой же странице
       heroSeasonCta: "Хиты сезона ↓",
       toHits: e => {
-        const блок = document.getElementById("hity");
-        if (!блок) return;
         if (e && e.preventDefault) e.preventDefault();
+        const блок = document.getElementById("hity");
+        // данных каталога ещё нет или блок хитов не показан — ведём в каталог, а не в пустоту
+        if (!блок) { window.location.href = "/katalog"; return; }
         блок.scrollIntoView({ behavior: "smooth", block: "start" });
       },
       showHits: !!(showPromo && хиты.show),
