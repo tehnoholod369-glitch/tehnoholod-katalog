@@ -33,9 +33,17 @@
      не показываем; для робота без JS он остаётся в серверном HTML. */
   [data-th-seo] { margin-top: 0 !important; padding-top: 6px !important; padding-bottom: 10px !important; }
   [data-th-seo] > div > div:last-child { display: none !important; }
+  /* Бренды (раунд 3): группа A — рамкой; на desktop 6 колонок, и группа A (6 брендов)
+     занимает весь первый ряд, на планшете 3 колонки — два ряда. Фон плитки не красим:
+     у части логотипов (Firelight, SHUFT) белый непрозрачный фон. */
+  [data-th-brands] > a[data-prio="A"] { border-color: #8FBDEB !important; box-shadow: 0 1px 4px rgba(8, 114, 211, 0.12); }
+  @media (min-width: 641px) and (max-width: 899px) {
+    [data-th-brands] { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  }
   @media (min-width: 900px) {
     /* «Сервис и условия»: шесть коротких карточек — три колонки, два ряда */
     [data-th-seo] ul { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+    [data-th-brands] { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
   }
   @media (max-width: 760px) {
     [data-th-navstrip] > a { min-height: 0 !important; }
@@ -126,7 +134,7 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=1810f723"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -316,7 +324,7 @@
       </div>
       <div ref="{{ brandsRef }}" data-th-brands data-open="{{ brandsOpen }}" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(140px,100%),1fr)); gap:8px; margin-top:14px;">
         <sc-for list="{{ brands }}" as="b" hint-placeholder-count="12">
-          <a href="{{ b.href }}" title="{{ b.name }}" aria-label="{{ b.name }}" style="height:72px; border:1px solid #DCE5F0; border-radius:10px; background:#fff; display:flex; align-items:center; justify-content:center; padding:8px 10px; box-sizing:border-box;">
+          <a href="{{ b.href }}" title="{{ b.name }}" aria-label="{{ b.name }}" data-prio="{{ b.prio }}" style="height:72px; border:1px solid #DCE5F0; border-radius:10px; background:#fff; display:flex; align-items:center; justify-content:center; padding:8px 10px; box-sizing:border-box;">
             <img data-url="{{ b.logo }}" alt="{{ b.name }}" style="width:{{ b.w }}px; height:{{ b.h }}px; max-width:100%; object-fit:contain; display:block;" />
           </a>
         </sc-for>
@@ -675,13 +683,19 @@ class Component extends DCLogic {
       if (!имя || /^без\s+марки$/i.test(имя)) return;
       позиций[имя] = (позиций[имя] || 0) + (b.n || 0);
     });
+    const группы = (((this.state && this.state.brandOrder) || {}).groups || []).filter(g => g && Array.isArray(g.brands));
+    const группаБренда = имя => {
+      const i = группы.findIndex(g => g.brands.indexOf(имя) >= 0);
+      return i < 0 ? { ранг: группы.length, ключ: "" } : { ранг: i, ключ: String(группы[i].key || "") };
+    };
     return Object.keys(позиций)
       .filter(имя => позиций[имя] > 0 && L[имя] && R[имя] > 0)
       .filter(имя => ТОЛЬКО_ЧИСТЫЙ.indexOf(имя) < 0 || !!(чистые.logos || {})[имя])
-      .sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }))
+      .sort((a, b) => (группаБренда(a).ранг - группаБренда(b).ранг) || a.localeCompare(b, "en", { sensitivity: "base" }))
       .map(имя => {
         const r = R[имя], h = Math.sqrt(ПЛОЩАДЬ / r);
         return {
+          prio: группаБренда(имя).ключ,
           name: имя,
           href: "/brendy?b=" + encodeURIComponent(имя),
           logo: L[имя],
@@ -810,6 +824,8 @@ class Component extends DCLogic {
     // чистые варианты официальных логотипов (раунд 2): плитки брендов ждут и этот файл,
     // чтобы порядок не перестраивался на глазах
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logos-clean.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(c => this.setState({ logosClean: c || {}, logosCleanReady: true })).catch(() => this.setState({ logosClean: {}, logosCleanReady: true }));
+    // порядок групп брендов (раунд 3); сбой — алфавит, но плитки не ждут вечно
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-order-home.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(o => this.setState({ brandOrder: o || {}, brandOrderReady: true })).catch(() => this.setState({ brandOrder: {}, brandOrderReady: true }));
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/proektnye.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(proekt => this.setState({ proekt })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logo-ratio.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(logoRatio => this.setState({ logoRatio })).catch(() => {});
   }
@@ -897,7 +913,7 @@ class Component extends DCLogic {
     // чтобы не ломать сохранённые настройки страницы
     const showPromo = this.props.showPromo ?? true;
     const хиты = this.блокХитов();
-    const плитки = (this.state.logos && this.state.logosCleanReady) ? this.плиткиБрендов(LOGOS, RATIO) : [];
+    const плитки = (this.state.logos && this.state.logosCleanReady && this.state.brandOrderReady) ? this.плиткиБрендов(LOGOS, RATIO) : [];
 
     return {
       menuOpen: this.state.menuOpen,

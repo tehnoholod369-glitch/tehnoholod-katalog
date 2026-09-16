@@ -21,6 +21,35 @@
  *    и support.js — последним: он ищет <x-dc> уже готовым в DOM;
  *  - <script type="text/x-dc" data-dc-script> выполнять НЕ нужно, support.js
  *    читает его как текст. innerHTML оставляет его в DOM — этого достаточно.
+ *
+ * ── Первый кадр (16.09.2026, T-006 HUMAN QA 1/6, раунд 3) ─────────────────────
+ * Владелец на телефоне, в новой вкладке, видел сначала серверный SEO-раздел
+ * («Климатическая техника в Алматы», «Сервис и условия», подвал), а через миг — страницу;
+ * однажды перед страницей мелькнуло «Страница не загрузилась».
+ * Причина, по замеру холодных загрузок (EVIDENCE/T-006_R3_QA):
+ *  1. Этот скрипт стоит в T123 между пустым контейнером и статическим SEO-разделом и до
+ *     прихода блока ничего не рисовал. Пока блок, семь скриптов, support.js и React ехали
+ *     по сети, единственным содержимым экрана были SEO-раздел и подвал; потом страница
+ *     вставала НАД ними. Замер: SEO без страницы 7,8–11,7 с на каждой холодной загрузке.
+ *  2. Скрипты блока грузились строго по одному — цепочка из восьми запросов подряд.
+ *  3. Сторож объявлял ошибку по таймеру (12 с), даже когда загрузка просто медленная, а
+ *     сбой запроса блока был окончательным, без повтора.
+ * Лечение — здесь же, без задержек:
+ *  · заглушка первого экрана ставится синхронно, до разбора SEO-раздела. SEO-раздел и
+ *    подвал остаются в разметке как есть, просто ниже экрана: ничего не прячем, робот
+ *    видит тот же HTML;
+ *  · заглушка снимается в тот момент, когда в #dc-root появилось содержимое (блоки без
+ *    шаблонизатора — сразу после вставки);
+ *  · скрипты блока качаются параллельно и выполняются в прежнем порядке (async=false);
+ *  · ошибка — только по факту: блок не получен после повторов, не загрузился support.js,
+ *    не загрузился React (отклонённый промис support.js) или за 60 с ничего не отрисовалось;
+ *  · если отрисовка идёт дольше 25 с, заглушка сжимается до строки «Загружаем страницу…»,
+ *    и SEO-раздел под ней становится доступен — полезный текст вместо ожидания. Порог
+ *    25 с, а не меньше: на «медленном 3G» с CPU×4 страница встаёт через ~19 с после
+ *    старта загрузчика, и более ранний порог показывал бы SEO-слой перед нормальной страницей;
+ *  · состояние — атрибут data-th-state на <html>: loading → ready | error. По нему ждёт
+ *    плашка наполнения (th-plashka.js).
+ * Без JS заглушки нет вовсе — SEO-раздел виден сразу.
  */
 (function () {
   var RAW = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/blocks/";
@@ -32,6 +61,73 @@
   if (!box || !page) {
     console.error("[th-page] нет <div data-th-page=\"…\"> — вставлять надо две строки, см. th-page.js");
     return;
+  }
+
+  var МЕДЛЕННО_МС = 25000;   // заглушка → строка «Загружаем…», SEO-раздел доступен
+  var ПРЕДЕЛ_МС = 60000;     // ничего не отрисовалось — честное сообщение об ошибке
+  var корень = document.documentElement;
+  var заглушка = null;
+  var итог = "";             // "" пока грузимся, потом "ready" или "error"
+  var наблюдатель = null, таймерМедленно = 0, таймерПредел = 0;
+
+  function состояние(s) {
+    try { корень.setAttribute("data-th-state", s); } catch (e) { /* не критично */ }
+  }
+
+  // ── заглушка первого экрана ──────────────────────────────────────────────
+  // Размеры повторяют каркас страниц редизайна: белая шапка, полоса разделов, первый
+  // блок. У Главной первый блок — синий герой, у остальных — белая карточка.
+  var СТИЛЬ_ЗАГЛУШКИ = [
+    "[data-th-skeleton]{min-height:100vh;background:#F3F7FB;box-sizing:border-box}",
+    ".th-sk-bar{height:99px;background:#fff;border-bottom:1px solid #DCE5F0}",
+    ".th-sk-nav{height:42px;border-bottom:1px solid #DCE5F0}",
+    ".th-sk-body{max-width:1320px;margin:0 auto;padding:24px;box-sizing:border-box}",
+    ".th-sk-hero{height:560px;border-radius:16px;background:#fff;border:1px solid #DCE5F0}",
+    "[data-th-skeleton=home] .th-sk-hero{background:linear-gradient(125deg,#071C3B,#0A4EA7 70%,#0872D3);border:0}",
+    ".th-sk-note{display:none;padding:14px 16px;font:14px/1.5 Inter,'Segoe UI',Arial,sans-serif;color:#5A6675;text-align:center}",
+    "[data-th-skeleton][data-slow]{min-height:0}",
+    "[data-th-skeleton][data-slow] .th-sk-bar,[data-th-skeleton][data-slow] .th-sk-nav,",
+    "[data-th-skeleton][data-slow] .th-sk-body{display:none}",
+    "[data-th-skeleton][data-slow] .th-sk-note{display:block}",
+    "@media (max-width:640px){.th-sk-bar{height:54px}.th-sk-nav{height:44px}",
+    ".th-sk-body{padding:12px 14px}.th-sk-hero{height:430px}}"
+  ].join("");
+
+  function поставитьЗаглушку() {
+    try {
+      var с = document.createElement("style");
+      с.id = "th-skeleton-css";
+      с.textContent = СТИЛЬ_ЗАГЛУШКИ;
+      (document.head || document.documentElement).appendChild(с);
+      заглушка = document.createElement("div");
+      заглушка.setAttribute("data-th-skeleton", page === "novy-glavnaya" ? "home" : "page");
+      заглушка.setAttribute("aria-hidden", "true");
+      заглушка.innerHTML = '<div class="th-sk-bar"></div><div class="th-sk-nav"></div>'
+        + '<div class="th-sk-body"><div class="th-sk-hero"></div></div>'
+        + '<div class="th-sk-note">Загружаем страницу…</div>';
+      // сразу за контейнером: SEO-раздел ещё не разобран и встанет ниже заглушки
+      box.parentNode.insertBefore(заглушка, box.nextSibling);
+    } catch (e) { заглушка = null; }
+  }
+
+  function снятьЗаглушку() {
+    if (заглушка && заглушка.parentNode) заглушка.parentNode.removeChild(заглушка);
+    заглушка = null;
+  }
+
+  function закончить(как) {
+    итог = как;
+    состояние(как);
+    снятьЗаглушку();
+    if (наблюдатель) { наблюдатель.disconnect(); наблюдатель = null; }
+    clearTimeout(таймерМедленно);
+    clearTimeout(таймерПредел);
+    window.removeEventListener("unhandledrejection", отказДвижка);
+  }
+
+  function готово() {
+    if (итог) return;
+    закончить("ready");
   }
 
   // Сырой шаблон не должен показываться никогда.
@@ -56,26 +152,44 @@
     (document.head || document.documentElement).appendChild(с);
   }
 
-  // Сторож на случай, когда support.js не пришёл: спрятать шаблон и оставить пустое
-  // место — это обмен одной беды на другую. Если через 12 с блок так и не собрался,
-  // показываем то же честное сообщение, что и при недоступном блоке.
-  function сторожГидратации() {
-    setTimeout(function () {
-      if (!box.querySelector("x-dc")) return;             // support.js убрал шаблон
-      if (box.innerText && box.innerText.trim()) return;  // что-то отрисовалось
-      fail("support.js не собрал страницу за 12 с");
-    }, 12000);
-  }
-
   function fail(why) {
+    if (итог) return;
     console.error("[th-page] " + why);
+    закончить("error");
     var с = document.getElementById("th-hide-raw");
     if (с && с.parentNode) с.parentNode.removeChild(с);
     box.innerHTML = '<div style="max-width:640px;margin:40px auto;padding:24px;font:16px/1.6 system-ui,sans-serif;'
       + 'color:#B25200;background:#FFF1E3;border:1px solid #F3D2AC;border-radius:12px;">'
       + 'Страница не загрузилась. Мы уже знаем об этом. '
       + 'Напишите нам: <a href="https://wa.me/77000369369" style="color:#0A4EA7;font-weight:700;">WhatsApp</a> '
-      + 'или +77 000 369 369.</div>';
+      + 'или +77 000 369 369.</div>';
+  }
+
+  // Отрисовано — когда в корне шаблонизатора появился текст.
+  function отрисовано() {
+    var r = box.querySelector("#dc-root");
+    return !!(r && (r.textContent || "").replace(/\s+/g, "").length > 0);
+  }
+
+  function ждатьОтрисовки() {
+    if (отрисовано()) { готово(); return; }
+    if (window.MutationObserver) {
+      наблюдатель = new MutationObserver(function () { if (!итог && отрисовано()) готово(); });
+      наблюдатель.observe(box, { childList: true, subtree: true, characterData: true });
+    } else {
+      (function опрос() {
+        if (итог) return;
+        if (отрисовано()) готово(); else setTimeout(опрос, 100);
+      })();
+    }
+  }
+
+  // support.js при сбое загрузки React или сборки страницы отклоняет свой промис —
+  // это настоящий отказ, ждать 60 с незачем.
+  function отказДвижка(e) {
+    var r = e && e.reason;
+    var текст = String((r && r.message) || r || "");
+    if (/failed to load|dc-runtime/i.test(текст)) fail("движок страницы: " + текст);
   }
 
   // На «/» с 14.06.2026 в head страницы Tilda висят два <style> старой Главной:
@@ -111,15 +225,51 @@
     });
   }
 
+  // Блок с raw. Сеть и 5xx/429 повторяем (до трёх попыток с паузой), 4xx — окончательно.
+  function взятьБлок(попытка) {
+    return fetch(RAW + encodeURIComponent(page) + ".txt", { cache: "no-cache" })
+      .then(function (r) {
+        if (r.ok) return r.text();
+        var e = new Error("блок " + page + ".txt отдал " + r.status);
+        e.повтор = r.status >= 500 || r.status === 429 || r.status === 408;
+        throw e;
+      })
+      .catch(function (e) {
+        if (e.повтор === false || попытка >= 3) throw e;
+        return new Promise(function (ok) { setTimeout(ok, 800 * попытка); })
+          .then(function () { return взятьБлок(попытка + 1); });
+      });
+  }
+
+  // Скрипты блока: качаются параллельно, выполняются по порядку вставки (async=false).
+  // support.js обязан быть последним — он ищет <x-dc> и собирает страницу.
+  function подключитьСкрипты(srcs) {
+    srcs.forEach(function (src) {
+      var s = document.createElement("script");
+      s.src = src;
+      s.async = false;
+      if (/support\.js/.test(src)) {
+        s.onerror = function () { fail("не загрузился " + src); };
+      }
+      document.head.appendChild(s);
+    });
+  }
+
   // До вставки блока: перекраска висит в head с загрузки страницы, снимаем сразу,
   // чтобы редизайн не успел показаться красным.
   снятьПерекраску();
 
-  fetch(RAW + encodeURIComponent(page) + ".txt", { cache: "no-cache" })
-    .then(function (r) {
-      if (!r.ok) throw new Error("блок " + page + ".txt отдал " + r.status);
-      return r.text();
-    })
+  состояние("loading");
+  поставитьЗаглушку();
+  window.addEventListener("unhandledrejection", отказДвижка);
+  таймерМедленно = setTimeout(function () {
+    if (!итог && заглушка) заглушка.setAttribute("data-slow", "");
+  }, МЕДЛЕННО_МС);
+  таймерПредел = setTimeout(function () {
+    if (!итог) fail("страница не отрисовалась за " + (ПРЕДЕЛ_МС / 1000) + " с");
+  }, ПРЕДЕЛ_МС);
+
+  взятьБлок(1)
     .then(function (html) {
       // Блоки бывают двух видов:
       //  · страницы редизайна — внутри <x-dc>, их собирает support.js;
@@ -129,10 +279,9 @@
       //             /podbor-ventilyacii показывала запасной текст вместо калькулятора.
       var сДвижком = html.indexOf("<x-dc") >= 0;
       if (!html.trim()) throw new Error("блок " + page + ".txt пуст");
-      спрятатьСыройШаблон();
+      if (сДвижком) спрятатьСыройШаблон();
       box.innerHTML = html;
       снятьПерекраску();
-      сторожГидратации();
 
       if (!сДвижком) {
         // Инлайн-скрипты innerHTML тоже не выполняет — пересоздаём ВСЕ по порядку.
@@ -148,6 +297,8 @@
           стар.parentNode.replaceChild(нов, стар);
           if (!стар.src) дальше(i + 1);
         })(0);
+        // содержимое такого блока видно сразу после вставки
+        готово();
         return;
       }
 
@@ -162,13 +313,8 @@
         return (/support\.js/.test(a) ? 1 : 0) - (/support\.js/.test(b) ? 1 : 0);
       });
 
-      (function next(i) {
-        if (i >= srcs.length) return;
-        var s = document.createElement("script");
-        s.src = srcs[i];
-        s.onload = s.onerror = function () { next(i + 1); };
-        document.head.appendChild(s);
-      })(0);
+      ждатьОтрисовки();
+      подключитьСкрипты(srcs);
     })
     .catch(function (e) { fail(String(e && e.message || e)); });
 })();
