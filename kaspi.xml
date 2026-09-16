@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><kaspi_catalog xmlns="kaspiShopping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://kaspi.kz/kaspishopping.xsd" date="2026-09-11 13:08">
+<?xml version="1.0" encoding="UTF-8"?><kaspi_catalog xmlns="kaspiShopping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://kaspi.kz/kaspishopping.xsd" date="2026-09-16 23:16">
     <company>13704016</company>
     <merchantid>13704016</merchantid>
     <offers>
@@ -6,17 +6,17 @@
             <model>Тепловентилятор Ballu BHP-W2-70-LN серый</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
             </availabilities>
             <cityprices>
-                <cityprice cityId="750000000">310890</cityprice>
+                <cityprice cityId="750000000">307290</cityprice>
             </cityprices>
         </offer>
         <offer sku="101762922_205555912">
             <model>Royal Clima CO-4C 12HNI/CO-E 12HNI/OUT белый</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">339000</cityprice>
@@ -26,7 +26,7 @@
             <model>Кондиционер ROYAL Clima RC-AN22HN черный</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="10.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">183235</cityprice>
@@ -36,7 +36,7 @@
             <model>Обогреватель инфракрасный газовый 4.2 кВт (без баллона)</model>
             <brand/>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="79.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">68068</cityprice>
@@ -46,7 +46,7 @@
             <model>TCL TAC-FR09HSV/P7W белый + монтажный комплект</model>
             <brand>TCL</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="8.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">379990</cityprice>
@@ -56,7 +56,7 @@
             <model>Ballu Aura BPAC-12 CP/N1_24Y белый</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="9.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">239990</cityprice>
@@ -66,7 +66,7 @@
             <model>TCL TAC-FR18HSV/P7B черный + монтажный комплект</model>
             <brand>TCL</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="7.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">499990</cityprice>
@@ -76,7 +76,7 @@
             <model>ROYAL Clima CO-4C 60HNXA белый</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">910000</cityprice>
@@ -86,7 +86,7 @@
             <model>Каминокомплект Fireplace Craftsman, 150×33×116</model>
             <brand/>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">428000</cityprice>
@@ -96,7 +96,7 @@
             <model>ROYAL Clima ES-S 48HRCX/ES-E 48HX белый</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">1050000</cityprice>
@@ -106,7 +106,7 @@
             <model>ROYAL Clima Riviera белый</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">2310000</cityprice>
@@ -116,7 +116,7 @@
             <model>Тепловая электрическая пушка Ballu BHP-M36, 36 кВт</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">252800</cityprice>
@@ -126,7 +126,7 @@
             <model>Ballu настенно-потолочный 19.7 BHP-W3-25-LN, (640х580х580 мм)</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">255900</cityprice>
@@ -136,7 +136,7 @@
             <model>Hisense Wi-Fi AS-10UW4RVETG01G черный</model>
             <brand>Hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">300500</cityprice>
@@ -146,7 +146,7 @@
             <model>Ballu BHC-L10-S06 (пульт BRC-S) настенный</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">144990</cityprice>
@@ -156,7 +156,7 @@
             <model>Осушитель воздуха Ballu Neo BDR-35LE белый</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="10.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">169880</cityprice>
@@ -166,7 +166,7 @@
             <model>Кондиционер Royal Clima RC-AN35HN черный</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">226530</cityprice>
@@ -176,7 +176,7 @@
             <model>Electrolux Crystal Air Super</model>
             <brand>electrolux</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="5.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">553267</cityprice>
@@ -186,7 +186,7 @@
             <model>Тепловая дизельная пушка Ballu BHDP-100, 100 кВт</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">867450</cityprice>
@@ -196,7 +196,7 @@
             <model>Ballu BDI-80L черный</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">794500</cityprice>
@@ -206,7 +206,7 @@
             <model>ROYAL Clima Pandora RC-PDC35 белый</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">211200</cityprice>
@@ -216,17 +216,17 @@
             <model>Ballu BHC-M10W12-PS (пульт BRC-D2) настенный</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
             </availabilities>
             <cityprices>
-                <cityprice cityId="750000000">322300</cityprice>
+                <cityprice cityId="750000000">315690</cityprice>
             </cityprices>
         </offer>
         <offer sku="131030798_841110106">
             <model>Royal Thermo напольный RTBFP-F700SB Siberia</model>
             <brand>royal-thermo</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">399990</cityprice>
@@ -236,7 +236,7 @@
             <model>Firelight настольный BFP/T-3520 Glass</model>
             <brand>firelight</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">71400</cityprice>
@@ -246,7 +246,7 @@
             <model>Кондиционер Hisense AS-13UW4RVETG01(S) серебристый</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">317317</cityprice>
@@ -256,7 +256,7 @@
             <model>Hisense AS-18HW4RMSCA00 белый</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="5.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">393000</cityprice>
@@ -266,7 +266,7 @@
             <model>Ballu Aura BPAC-09 CP/N1_24Y белый + монтажный комплект</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="8.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">195990</cityprice>
@@ -276,7 +276,7 @@
             <model>ROYAL Clima CO-4C 18HNX белый</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">370000</cityprice>
@@ -286,7 +286,7 @@
             <model>Кондиционер Hisense AS-10HW4SYDTG5B черный</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="3.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">244620</cityprice>
@@ -296,7 +296,7 @@
             <model>Hisense AS-24HW4RBSCA00 белый</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">484650</cityprice>
@@ -306,7 +306,7 @@
             <model>Hisense GOAL DC Inverter AS-09UW4RYRCA05 белый</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">208980</cityprice>
@@ -316,7 +316,7 @@
             <model>Hisense AS-09HW4RLRCA01A белый</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">168750</cityprice>
@@ -326,7 +326,7 @@
             <model>Фильтр Philips AUT3015/10, степеней очистки: 3</model>
             <brand>philips</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">207000</cityprice>
@@ -336,7 +336,7 @@
             <model>ROYAL Clima Perfetto RCI-PFD30HN белый</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">219230</cityprice>
@@ -346,17 +346,17 @@
             <model>Тепловентилятор Ballu BHP-W4-20-D серый</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
             </availabilities>
             <cityprices>
-                <cityprice cityId="750000000">265400</cityprice>
+                <cityprice cityId="750000000">187790</cityprice>
             </cityprices>
         </offer>
         <offer sku="166365642_393098400">
             <model>TCL TAC-FR09HSV/P7S серебристый</model>
             <brand>TCL</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="10.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">399990</cityprice>
@@ -366,7 +366,7 @@
             <model>Очиститель воздуха Ballu ONEAIR ASP-200SP белый</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">345490</cityprice>
@@ -376,7 +376,7 @@
             <model>Firelight настольный BFP/T-4025 Wood</model>
             <brand>firelight</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">149990</cityprice>
@@ -386,7 +386,7 @@
             <model>Electrolux Crystal Air Super DC EACS/I-10HFA/N8_V2</model>
             <brand>electrolux</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="5.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">455000</cityprice>
@@ -396,7 +396,7 @@
             <model>Electrolux EACM-12 AZ/N6 серый + монтажный комплект</model>
             <brand>electrolux</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="24.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">200000</cityprice>
@@ -406,7 +406,7 @@
             <model>Приточный очиститель Ballu ONEAIR ASP-100W белый</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="3.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">220950</cityprice>
@@ -416,7 +416,7 @@
             <model>Электрокамин</model>
             <brand/>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">571000</cityprice>
@@ -426,7 +426,7 @@
             <model>Electrolux EACM-09 AZ/N6 серый + монтажный комплект</model>
             <brand>electrolux</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="19.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">170000</cityprice>
@@ -436,7 +436,7 @@
             <model>Ballu Heavy Duty Plus BD80HP черный</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">719933</cityprice>
@@ -446,7 +446,7 @@
             <model>Ballu BHC-L15-S09 (пульт BRC-S) настенный</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">179600</cityprice>
@@ -456,7 +456,7 @@
             <model>QUATTROCLIMA QV-BE24WB Bergamo белый</model>
             <brand>quattroclima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">317317</cityprice>
@@ -466,17 +466,17 @@
             <model>Ballu BHC-M20T18-PS (пульт BRC-D1) настенный</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
             </availabilities>
             <cityprices>
-                <cityprice cityId="750000000">385500</cityprice>
+                <cityprice cityId="750000000">377590</cityprice>
             </cityprices>
         </offer>
         <offer sku="164385651_278551013">
             <model>ROYAL Clima CO-D 36HNXA/CO-E 36HNX серый</model>
             <brand>ROYAL Clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">661700</cityprice>
@@ -486,7 +486,7 @@
             <model>Очиститель воздуха Ballu ASP-80 белый</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="8.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">114990</cityprice>
@@ -496,7 +496,7 @@
             <model>Кондиционер ROYAL Clima CO-4C 24HNXA белый</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">487800</cityprice>
@@ -506,7 +506,7 @@
             <model>Hisense серии ZOOM DC Inverter Wi-Fi AS-07UW4RYRKB00 белый</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">201825</cityprice>
@@ -516,7 +516,7 @@
             <model>Electrolux EACS/I-09HIX-BLACK/N8_V2/WF черный + монтажный комплект</model>
             <brand>Electrolux</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="5.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">264990</cityprice>
@@ -526,7 +526,7 @@
             <model>Royal Thermo напольный RTBFP-F500L Lens</model>
             <brand>royal-thermo</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">349990</cityprice>
@@ -536,7 +536,7 @@
             <model>Электрокамин</model>
             <brand/>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">571000</cityprice>
@@ -546,7 +546,7 @@
             <model>Система обратного осмоса Philips AUT7006/10, степеней очистки: 5</model>
             <brand>philips</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">389300</cityprice>
@@ -556,7 +556,7 @@
             <model>Тепловая дизельная пушка Ballu BHDP-30, 30 кВт</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">194390</cityprice>
@@ -566,7 +566,7 @@
             <model>Royal Thermo RWH 30 Smalto Inverter 30 л</model>
             <brand>royal-thermo</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">120990</cityprice>
@@ -576,7 +576,7 @@
             <model>Тепловая электрическая пушка Ballu BHP-M2-30, 30 кВт</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">299990</cityprice>
@@ -586,7 +586,7 @@
             <model>Firelight настольный BFP/T-5025 Tale</model>
             <brand>firelight</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">179900</cityprice>
@@ -596,7 +596,7 @@
             <model>Hisense AS-07HR4RYDDC00 белый</model>
             <brand>Hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">149850</cityprice>
@@ -606,7 +606,7 @@
             <model>Hisense AS-12HW4RLRCA01A белый</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">225450</cityprice>
@@ -616,7 +616,7 @@
             <model>Electrolux NPX 12-18 Sensomatic Pro</model>
             <brand>electrolux</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">170690</cityprice>
@@ -626,7 +626,7 @@
             <model>Hisense GOAL DC Inverter AS-07UW4RYRCA00 белый</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">199800</cityprice>
@@ -636,7 +636,7 @@
             <model>Electrolux EACM-11 CL/N3 белый</model>
             <brand>electrolux</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="9.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">222000</cityprice>
@@ -649,14 +649,14 @@
                 <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
             </availabilities>
             <cityprices>
-                <cityprice cityId="750000000">259100</cityprice>
+                <cityprice cityId="750000000">239900</cityprice>
             </cityprices>
         </offer>
         <offer sku="143189464_193068434">
             <model>Тепловая электрическая пушка Ballu BHP-M-30, 30 кВт</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">221200</cityprice>
@@ -666,7 +666,7 @@
             <model>MBO MBO-12HN1 белый</model>
             <brand>mbo</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">159990</cityprice>
@@ -676,7 +676,7 @@
             <model>Ballu BHC-M15W20-PS (пульт BRC-D2) настенный</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">402000</cityprice>
@@ -686,7 +686,7 @@
             <model>Газовый обогреватель каминного типа Ballu BIGH-10 (10 кВт инфракрасный обогрев до 100 кв.м)</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">99941</cityprice>
@@ -696,7 +696,7 @@
             <model>TCL TAC-FR18HSV/P7W белый + монтажный комплект</model>
             <brand>TCL</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="10.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">459990</cityprice>
@@ -706,7 +706,7 @@
             <model>Кондиционер ROYAL Clima RCI-AN28HN черный</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">227500</cityprice>
@@ -716,7 +716,7 @@
             <model>Кондиционер ROYAL Clima RC-PD28HN белый</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">140140</cityprice>
@@ -726,7 +726,7 @@
             <model>Рекуператор ROYAL Clima RCS-250-P</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">573573</cityprice>
@@ -736,7 +736,7 @@
             <model>Ballu настенно-потолочный 59.6 BHP-W2-100-LN, (590х610х610 мм)</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">423400</cityprice>
@@ -746,7 +746,7 @@
             <model>Инфракрасный обогреватель Ballu Plaza Solar BIHP/S-1900 черный</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">102990</cityprice>
@@ -756,7 +756,7 @@
             <model>TCL TAC-FR12HSV/P7W белый + монтажный комплект</model>
             <brand>TCL</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="10.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">399990</cityprice>
@@ -766,7 +766,7 @@
             <model>Система обратного осмоса Philips AUT4030R400/10, степеней очистки: 4</model>
             <brand>philips</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">248000</cityprice>
@@ -776,7 +776,7 @@
             <model>Ballu Ballu BIF-20DB черный</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">251900</cityprice>
@@ -786,7 +786,7 @@
             <model>Hisense серии ZOOM DC Inverter Wi-Fi AS-09UW4RYRKB05 белый</model>
             <brand>Hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">208170</cityprice>
@@ -796,7 +796,7 @@
             <model>ROYAL Clima DAR 100 белый</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">1400000</cityprice>
@@ -806,7 +806,7 @@
             <model>Осушитель воздуха Ballu BDI-70L красный, черный</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">649935</cityprice>
@@ -816,7 +816,7 @@
             <model>ROYAL Clima CO-4C 12HNX белый</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">340000</cityprice>
@@ -826,7 +826,7 @@
             <model>Кондиционер Hisense AS-10UW4RVETG00(R) красный</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">264264</cityprice>
@@ -836,7 +836,7 @@
             <model>ROYAL Clima Riviera DAR 204 белый</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">2200000</cityprice>
@@ -846,7 +846,7 @@
             <model>Hisense AUV-36HR4SB1 белый</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">768000</cityprice>
@@ -856,7 +856,7 @@
             <model>Система обратного осмоса Philips AUT3015/10, степеней очистки: 3</model>
             <brand>philips</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">252700</cityprice>
@@ -866,7 +866,7 @@
             <model>Вентиляционная установка приточно-вытяжная ROYAL Clima FIATO RCF 70 LUX</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">175900</cityprice>
@@ -876,7 +876,7 @@
             <model>Кондиционер ROYAL Clima RC-AN28HN черный</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="6.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">193150</cityprice>
@@ -886,7 +886,7 @@
             <model>Electrolux EWH 200 AXIOmatic Proff</model>
             <brand>electrolux</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">409590</cityprice>
@@ -896,7 +896,7 @@
             <model>Тепловая электрическая пушка Ballu BHP-M2-40, 40 кВт</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">419990</cityprice>
@@ -906,7 +906,7 @@
             <model>Hisense AS-09HR4RYDDC00G белый</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">162675</cityprice>
@@ -916,7 +916,7 @@
             <model>Electrolux EACM-14 AZ/N6 серый + монтажный комплект</model>
             <brand>electrolux</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="5.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">225000</cityprice>
@@ -926,7 +926,7 @@
             <model>Тепловая электрическая пушка Ballu BHP-M-36, 36 кВт</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">240100</cityprice>
@@ -936,7 +936,7 @@
             <model>Осушитель воздуха Ballu Comfort BD30T CL белый</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="9.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">139990</cityprice>
@@ -946,7 +946,7 @@
             <model>Осушитель воздуха Ballu Comfort BD20T CL белый</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="9.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">129990</cityprice>
@@ -956,7 +956,7 @@
             <model>ROYAL Clima CO-4C 48HNX белый</model>
             <brand>royal-clima</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">828000</cityprice>
@@ -966,7 +966,7 @@
             <model>Ballu настенно-потолочный 20.3 BHP-W4-15-S, (420х535х535 мм)</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">227700</cityprice>
@@ -976,7 +976,7 @@
             <model>Тепловая дизельная пушка Ballu BHDP-100, 100 кВт</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="2.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">761690</cityprice>
@@ -986,7 +986,7 @@
             <model>TCL TAC-FR13HSV/P7B черный + монтажный комплект</model>
             <brand>TCL</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="10.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">449990</cityprice>
@@ -996,7 +996,7 @@
             <model>Кондиционер Hisense AS-10UW4RVETG01(S) серебристый</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="3.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">264264</cityprice>
@@ -1006,7 +1006,7 @@
             <model>Фильтр TCL HEPA белый, светло-серый</model>
             <brand>tcl</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="30.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">9500</cityprice>
@@ -1016,7 +1016,7 @@
             <model>Кондиционер TCL FreshIN 3.0 серебристый</model>
             <brand>tcl</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="65.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">400400</cityprice>
@@ -1026,10 +1026,90 @@
             <model>Кондиционер Hisense AS-13UW4RVETG00(R) белый</model>
             <brand>hisense</brand>
             <availabilities>
-                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">286286</cityprice>
+            </cityprices>
+        </offer>
+        <offer sku="153276027_13704016">
+            <model>Ballu BHC-H20T36-PS (пульт BRC-D1) настенный</model>
+            <brand>ballu</brand>
+            <availabilities>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+            </availabilities>
+            <cityprices>
+                <cityprice cityId="750000000">495900</cityprice>
+            </cityprices>
+        </offer>
+        <offer sku="145823383_13704016">
+            <model>Ballu BHC-H20T24-PS BRC-D1 настенный</model>
+            <brand>ballu</brand>
+            <availabilities>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+            </availabilities>
+            <cityprices>
+                <cityprice cityId="750000000">443890</cityprice>
+            </cityprices>
+        </offer>
+        <offer sku="135619090_13704016">
+            <model>Ballu BHC-M20W30-PS (пульт BRC-D2) настенный</model>
+            <brand>ballu</brand>
+            <availabilities>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+            </availabilities>
+            <cityprices>
+                <cityprice cityId="750000000">451790</cityprice>
+            </cityprices>
+        </offer>
+        <offer sku="135619091_13704016">
+            <model>Ballu BHC-M20T12-PS (пульт BRC-D1) настенный</model>
+            <brand>ballu</brand>
+            <availabilities>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+            </availabilities>
+            <cityprices>
+                <cityprice cityId="750000000">343490</cityprice>
+            </cityprices>
+        </offer>
+        <offer sku="135619089_13704016">
+            <model>Ballu BHC-M15T09-PS (пульт BRC-D1) настенный</model>
+            <brand>ballu</brand>
+            <availabilities>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+            </availabilities>
+            <cityprices>
+                <cityprice cityId="750000000">309490</cityprice>
+            </cityprices>
+        </offer>
+        <offer sku="145324807_13704016">
+            <model>Ballu BHC-B15W15-PS настенный</model>
+            <brand>ballu</brand>
+            <availabilities>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+            </availabilities>
+            <cityprices>
+                <cityprice cityId="750000000">290890</cityprice>
+            </cityprices>
+        </offer>
+        <offer sku="145324802_13704016">
+            <model>Ballu BHC-B10W10-PS настенный</model>
+            <brand>ballu</brand>
+            <availabilities>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+            </availabilities>
+            <cityprices>
+                <cityprice cityId="750000000">207290</cityprice>
+            </cityprices>
+        </offer>
+        <offer sku="108118611_13704016">
+            <model>Ballu BHC-L06S03-S настенный</model>
+            <brand>ballu</brand>
+            <availabilities>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
+            </availabilities>
+            <cityprices>
+                <cityprice cityId="750000000">61090</cityprice>
             </cityprices>
         </offer>
     </offers>
