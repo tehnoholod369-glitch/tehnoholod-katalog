@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-08",
+ "updated": "2026-09-20",
  "groups": [
   {
    "slug": "avtonomnoe-pitanie",
@@ -249,7 +249,7 @@
     "DITREEX",
     "ROYAL CLIMA"
    ],
-   "inStock": 51,
+   "inStock": 50,
    "acc": 0,
    "serList": [
     "AP4",
