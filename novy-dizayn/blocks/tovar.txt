@@ -17,7 +17,7 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=1810f723"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -515,7 +515,7 @@
             <div>
               <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Отзывы</h2>
               <sc-if value="{{ rv.none }}" hint-placeholder-val="{{ true }}">
-                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> Отзывов на эту модель пока нет — мы не покупаем и не пишем их сами.</div>
+                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> На Kaspi.kz отзывов на эту модель пока нет. Подтверждённые отзывы наших покупателей показываем отдельно ниже, если они есть.</div>
               </sc-if>
               <sc-if value="{{ rv.own }}" hint-placeholder-val="{{ false }}">
                 <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> <span style="color:#B25200; font-weight:700;"><span style="color:#E8A33D;">&#9733;</span> {{ rv.rating }}</span> &middot; {{ rv.otzyvLabel }} покупателей этой модели на Kaspi.kz — публикуем как есть, обновлено {{ rv.dt }}.</div>
@@ -529,7 +529,35 @@
               <div style="font-size:13px; color:#5A6675; line-height:1.4;">отзывы и текущая оценка компании<br /><span style="color:#0872D3; font-weight:600;">Смотреть отзывы →</span></div>
             </a>
           </div>
+
+          <sc-if value="{{ postRv.loading }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:14px; padding:14px 16px; background:#F7F9FC; border:1px solid #E5EAF1; border-radius:12px; color:#5A6675; font-size:13px;">Проверяем отзывы, связанные с этой моделью…</div>
+          </sc-if>
+
+          <sc-if value="{{ postRv.has }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:14px; padding:16px 18px; background:#F2FBF7; border:1px solid #BFE6D4; border-radius:12px;">
+              <div style="display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap;">
+                <div style="font-size:14px; font-weight:800; color:#0B6B45;">Покупка подтверждена Сервис-картой</div>
+                <div style="font-size:12px; font-weight:700; color:#0B6B45;">{{ postRv.summary }}</div>
+              </div>
+              <sc-for list="{{ postRv.list }}" as="o" hint-placeholder-count="2">
+                <div style="margin-top:12px; padding-top:12px; border-top:1px solid #D4EEE2;">
+                  <div style="display:flex; gap:7px; align-items:center; flex-wrap:wrap; font-size:13px; color:#5A6675;">
+                    <span style="color:#E8A33D;">{{ o.stars }}</span>
+                    <span style="font-weight:700; color:#2C3846;">{{ o.a }}</span>
+                    <span>{{ o.d }}</span>
+                    <sc-if value="{{ o.photo }}" hint-placeholder-val="{{ false }}">
+                      <span style="font-size:11px; font-weight:700; color:#0B6B45; background:#E7F7F0; border-radius:5px; padding:3px 7px;">Фото клиента получено</span>
+                    </sc-if>
+                  </div>
+                  <div style="font-size:15px; line-height:1.6; color:#2C3846; margin-top:6px; text-wrap:pretty;">{{ o.t }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+
           <sc-if value="{{ rv.has }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size:12px; font-weight:700; color:#8593A6; letter-spacing:0.05em; margin-top:16px;">ОТЗЫВЫ ПОКУПАТЕЛЕЙ НА KASPI.KZ</div>
             <sc-for list="{{ rv.list }}" as="o" hint-placeholder-count="3">
               <div style="margin-top:12px; padding:14px 16px; background:#F7F9FC; border:1px solid #E5EAF1; border-radius:12px;">
                 <div style="font-size:13px; color:#8593A6;"><span style="color:#E8A33D;">{{ o.stars }}</span> &middot; {{ o.a }} &middot; {{ o.d }}</div>
@@ -541,10 +569,10 @@
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:14px; margin-top:16px;">
             <div style="background:#F3F7FB; border-radius:12px; padding:16px 18px;">
               <div style="font-size:14px; font-weight:700;">Купили эту модель?</div>
-              <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">Напишите пару строк в WhatsApp — опубликуем с вашим именем и датой покупки. Отзыв привязывается к артикулу.</div>
-              <a href="https://wa.me/77000369369" style="display:inline-block; font-size:13px; font-weight:700; color:#0872D3; margin-top:8px;">Оставить отзыв →</a>
+              <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">После покупки мы отправляем персональную анкету, связанную с заказом и Сервис-картой. Так отзыв попадает именно к купленной модели, а не привязывается по имени или телефону.</div>
+              <a href="https://wa.me/77000369369" style="display:inline-block; font-size:13px; font-weight:700; color:#0872D3; margin-top:8px;">Не получили анкету? Написать нам →</a>
             </div>
-            <sc-if value="{{ rv.none }}" hint-placeholder-val="{{ true }}">
+            <sc-if value="{{ productReviewsNone }}" hint-placeholder-val="{{ true }}">
               <div style="background:#F3F7FB; border-radius:12px; padding:16px 18px;">
                 <div style="font-size:14px; font-weight:700;">Что вместо отзывов</div>
                 <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">Пока их мало, работают монтажи с датой и городом: там видно, что модель реально ставили.</div>
@@ -553,8 +581,11 @@
             </sc-if>
             <div style="background:#FFF6E9; border-radius:12px; padding:16px 18px;">
               <div style="font-size:14px; font-weight:700; color:#7A4A00;">Честно о рейтинге</div>
-              <sc-if value="{{ rv.none }}" hint-placeholder-val="{{ true }}">
-                <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">Звёзд у товаров нет — оценок по моделям в базе не существует. Рисовать «4,8» из воздуха не будем: рейтинг без отзывов виден сразу.</div>
+              <sc-if value="{{ productReviewsNone }}" hint-placeholder-val="{{ true }}">
+                <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">Оценок по этой модели пока нет ни в нашей подтверждённой базе, ни на подключённой карточке Kaspi. Рисовать рейтинг из воздуха не будем.</div>
+              </sc-if>
+              <sc-if value="{{ postRv.has }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">Отзывы с отметкой «Сервис-карта» оставили клиенты после реальной покупки у нас. Среднюю оценку начинаем показывать только после накопления нескольких подтверждённых отзывов.</div>
               </sc-if>
               <sc-if value="{{ rv.has }}" hint-placeholder-val="{{ false }}">
                 <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">Звёзды выше — не наши: их поставили покупатели этой модели на Kaspi.kz после выкупа. Сами себе оценок не рисуем, проверить можно по ссылке на карточку.</div>
@@ -592,7 +623,7 @@
 class Component extends DCLogic {
   state = { group: "bytovye", idx: 0, items: null, details: null, index: null, loading: true, photo: 0, tab: 0, zoom: false,
             crewCity: "", crewData: null, crewFailed: false, crewSort: "rating", crewDocs: false,
-            vypuski: null };
+            vypuski: null, postSaleProduct: null, postSaleSku: "", postSaleProductFailed: false };
   photoRef = React.createRef();
   zoomRef = React.createRef();
   galRef = React.createRef();
@@ -603,6 +634,25 @@ class Component extends DCLogic {
   fmt(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009"); }
 
   PRIEMNIK = "https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec";
+
+  loadPostSaleProduct(sku) {
+    const key = String(sku || "").trim();
+    if (!key) {
+      this.__postSaleSku = "";
+      this.setState({ postSaleProduct: [], postSaleSku: "", postSaleProductFailed: false });
+      return;
+    }
+    if (this.__postSaleSku === key) return;
+    this.__postSaleSku = key;
+    this.setState({ postSaleProduct: null, postSaleSku: key, postSaleProductFailed: false });
+    fetch(this.PRIEMNIK + "?data=postsale&sku=" + encodeURIComponent(key), { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (!d || !d.ok) { this.setState({ postSaleProductFailed: true }); return; }
+        this.setState({ postSaleProduct: d.product || [], postSaleSku: key, postSaleProductFailed: false });
+      })
+      .catch(() => this.setState({ postSaleProductFailed: true }));
+  }
 
   loadCrews(group) {
     if (!group || this.__crewGroup === group) { return; }
@@ -721,7 +771,9 @@ class Component extends DCLogic {
         const found = items.findIndex(x => x.sl === sl);
         if (found >= 0) i = found;
       }
-      this.setState({ items, details, aux, vypuski, idx: Math.min(i, Math.max(0, items.length - 1)), loading: false });
+      const selected = Math.min(i, Math.max(0, items.length - 1));
+      this.setState({ items, details, aux, vypuski, idx: selected, loading: false });
+      this.loadPostSaleProduct(items[selected] && items[selected].s);
     }).catch(() => this.setState({ items: [], details: [], loading: false }));
   }
 
@@ -730,6 +782,7 @@ class Component extends DCLogic {
     if (!items.length) return;
     const next = (idx + items.length) % items.length;
     this.setState({ idx: next, photo: 0, tab: 0 });
+    this.loadPostSaleProduct(items[next] && items[next].s);
     const url = location.pathname + "?g=" + this.state.group + "&i=" + next;
     history.replaceState(null, "", url);
   }
@@ -1455,6 +1508,35 @@ class Component extends DCLogic {
       videoHref: det.vd || "",
       manualHref: det.mn || "",
       hasManual: !!det.mn,
+      // Подтверждённые post-sale отзывы именно этого SKU.
+      // Они живут отдельно от Kaspi: источник — реальный заказ + Сервис-карта.
+      postRv: (() => {
+        const list = (s.postSaleSku === (it.s || "") && Array.isArray(s.postSaleProduct))
+          ? s.postSaleProduct : [];
+        const n = list.length;
+        const avg = n ? list.reduce((sum, r) => sum + (+r.score || 0), 0) / n : 0;
+        const word = k => (k % 10 === 1 && k % 100 !== 11) ? "отзыв"
+          : (k % 10 >= 2 && k % 10 <= 4 && (k % 100 < 10 || k % 100 >= 20)) ? "отзыва" : "отзывов";
+        return {
+          loading: s.postSaleSku === (it.s || "") && s.postSaleProduct === null && !s.postSaleProductFailed,
+          has: n > 0,
+          summary: n >= 5
+            ? "★ " + avg.toFixed(1).replace(".", ",") + " · " + n + " " + word(n)
+            : (n === 1 ? "1 подтверждённый отзыв" : n + " подтверждённых " + word(n))
+              + " · рейтинг накапливается",
+          list: list.slice(0, 10).map(r => ({
+            a: r.name || "Покупатель",
+            d: r.date || "",
+            t: r.text || "",
+            stars: "★".repeat(Math.max(1, Math.min(5, +r.score || 5))),
+            photo: !!(r.hasPhoto && r.photoPublic)
+          }))
+        };
+      })(),
+      productReviewsNone: !(
+        (s.postSaleSku === (it.s || "") && Array.isArray(s.postSaleProduct) && s.postSaleProduct.length)
+        || (((det.rv || {}).list || []).length && (det.rv || {}).url)
+      ),
       rv: (() => {
         const r = det.rv || {};
         const n = (r.list || []).length;

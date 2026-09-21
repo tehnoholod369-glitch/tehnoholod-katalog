@@ -14,7 +14,7 @@
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=1810f723"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -45,7 +45,7 @@
     
     <div style="margin-top:12px;">
       <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">Отзывы о нашей работе</h1>
-      <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6; max-width:760px;">Отзывы клиентов — в Google, 2ГИС и на YouTube: с фото объектов, датами и именами авторов. Ниже — прямые ссылки на все три площадки.</div>
+      <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6; max-width:820px;">Внешние отзывы о компании остаются в Google, 2ГИС и на YouTube. Ниже отдельно показываем обратную связь после реальной покупки у нас — только когда заказ связан с Сервис-картой и клиент разрешил публикацию.</div>
     </div>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:22px;">
@@ -66,6 +66,34 @@
         </a>
       </sc-for>
     </div>
+
+    <sc-if value="{{ psLoading }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:20px 24px; margin-top:20px; color:#5A6675; font-size:14px;">Загружаем подтверждённые отзывы после покупки…</div>
+    </sc-if>
+
+    <sc-if value="{{ psHas }}" hint-placeholder-val="{{ true }}">
+      <div id="verified-after-purchase" style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:20px;">
+        <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0B6B45;">ПОКУПКА ПОДТВЕРЖДЕНА</div>
+            <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Отзывы после покупки у нас</h2>
+          </div>
+          <div style="font-size:13px; font-weight:700; color:#0B6B45; background:#E7F7F0; border:1px solid #BFE6D4; border-radius:999px; padding:7px 12px;">{{ psSummary }}</div>
+        </div>
+        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px; max-width:900px;">Это оценка сервиса ИП «ТехноХолод»: консультации, оформления, связи и сопровождения. Она не подменяет рейтинг Google или 2ГИС.</div>
+        <sc-for list="{{ psReviews }}" as="r" hint-placeholder-count="2">
+          <div style="background:#F7F9FC; border:1px solid #E5EAF1; border-radius:12px; padding:16px 18px; margin-top:14px;">
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              <span style="color:#E8A33D; font-size:15px;">{{ r.stars }}</span>
+              <span style="font-size:14px; font-weight:700;">{{ r.name }}</span>
+              <span style="font-size:12px; color:#8593A6;">{{ r.date }}</span>
+              <span style="font-size:11px; font-weight:700; color:#0B6B45; background:#E7F7F0; border-radius:5px; padding:3px 7px;">Сервис-карта подтверждена</span>
+            </div>
+            <div style="font-size:15px; line-height:1.6; color:#2C3846; margin-top:8px; text-wrap:pretty;">{{ r.text }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:20px;">
       <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px;">
@@ -117,9 +145,44 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
+  PRIEMNIK = "https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec";
+  state = { postSale: null, postSaleFailed: false };
+
+  componentDidMount() {
+    fetch(this.PRIEMNIK + "?data=postsale", { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (!d || !d.ok) { this.setState({ postSaleFailed: true }); return; }
+        this.setState({ postSale: d, postSaleFailed: false });
+      })
+      .catch(() => this.setState({ postSaleFailed: true }));
+  }
+
+  reviewWord(n) {
+    const a = n % 10, b = n % 100;
+    if (a === 1 && b !== 11) return "отзыв";
+    if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return "отзыва";
+    return "отзывов";
+  }
+
   renderVals() {
+    const company = (this.state.postSale && this.state.postSale.company) || [];
+    const n = company.length;
+    const avg = n ? company.reduce((s, r) => s + (+r.score || 0), 0) / n : 0;
+    const psSummary = n >= 5
+      ? "★ " + avg.toFixed(1).replace(".", ",") + " · " + n + " " + this.reviewWord(n)
+      : "Рейтинг накапливается · " + n + " " + this.reviewWord(n);
     return {
-      // Оценку не переписываем на сайт ни по одной площадке — включая Google.
+      psLoading: !this.state.postSale && !this.state.postSaleFailed,
+      psHas: n > 0,
+      psSummary,
+      psReviews: company.slice(0, 10).map(r => ({
+        name: r.name || "Покупатель",
+        date: r.date || "",
+        text: r.text || "",
+        stars: "★".repeat(Math.max(1, Math.min(5, +r.score || 5)))
+      })),
+      // Внешнюю оценку не переписываем на сайт ни по одной площадке — включая Google.
       // Зашитая «5,0» устаревала бы молча: первый же четырёхзвёздочный отзыв делает
       // её неправдой, а страница рядом сама пишет «смотрите оценку в первоисточнике»
       // (26.08.2026). Ведём читателя туда, где цифра живая.
