@@ -1,0 +1,177 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo-arts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:12px;margin-top:12px}
+.thgeo-art{display:flex;flex-direction:column;gap:6px;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:16px;text-decoration:none;color:inherit}
+.thgeo-art__r{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#0A4EA7}
+.thgeo-art__t{font-size:16px;font-weight:700;line-height:1.3}
+.thgeo-art__s{font-size:13px;color:#5A6675;line-height:1.5}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:12px 0 18px}
+.thgeo-card{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #DCE5F0;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(21,43,68,.06)}
+.thgeo-card__img{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:#f7f9fc;padding:12px;text-decoration:none}
+/* width/height 100%, а не auto. НОГИ AUTO 13.09.2026 поймали на живых
+   /vodonagrevateli и /kaminy-almaty: 15 карточек из 15 без фотографии,
+   и на телефоне, и на десктопе. Причина — замкнутый круг: у незагруженной
+   картинки нет собственных размеров, при width:auto она раскладывается
+   в 0x0, а loading="lazy" не грузит то, что не занимает места. Файлы при
+   этом отдаются: прямая загрузка того же адреса через new Image() дала
+   600 px. Задаём коробку от контейнера — картинка получает площадь до
+   загрузки, ленивый загрузчик срабатывает, object-fit держит пропорции. */
+.thgeo-card__img img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}
+.thgeo-card__img--empty{color:#7a8796;font-size:13px}
+.thgeo-card__body{display:flex;flex-direction:column;gap:7px;padding:13px 14px 14px;min-height:220px}
+.thgeo-card__brand{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#5A6675}
+.thgeo-card__name{font-size:17px;font-weight:700;line-height:1.3;color:#17324d;text-decoration:none}
+.thgeo-card__spec{display:flex;flex-wrap:wrap;gap:6px}
+.thgeo-card__spec span{font-size:12px;line-height:1.2;padding:5px 8px;border-radius:999px;background:#f1f5f9;color:#46566a}
+.thgeo-card__stock{font-size:12px;color:#5a6675}
+.thgeo-card__price{margin-top:auto;font-size:20px;font-weight:800;line-height:1.2}
+.thgeo-card__actions{display:grid;grid-template-columns:1fr;gap:7px;margin-top:3px}
+.thgeo-card__actions a{display:flex;align-items:center;justify-content:center;min-height:42px;border-radius:9px;padding:8px 10px;text-decoration:none;font-weight:700;font-size:14px}
+.thgeo-card__more{background:#eef3f8;color:#17324d!important}
+.thgeo-card__wa{background:#0e7d3f;color:#fff!important}
+.thgeo-rev{background:#f4f9ff;border:1px solid #cfe3f7;border-radius:12px;padding:14px 16px;margin:14px 0}
+.thgeo-rev__t{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0a4ea7}
+.thgeo-rev__q{font-size:16px;line-height:1.55;margin-top:6px}
+.thgeo-rev__a{font-size:13px;color:#5a6b80;margin-top:8px}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+.thgeo-also{margin-top:26px}
+.thgeo-also p{font-size:14px;line-height:2;color:#5a6676}
+.thgeo-mont{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:12px;margin:14px 0}
+.thgeo-mont__c{background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:14px 16px}
+.thgeo-mont__t{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0A4EA7;margin-bottom:8px}
+.thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
+.thgeo-mont ul{margin:0;padding-left:18px}
+.thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+.thgeo-mobile-catalog{display:none}
+@media (max-width:480px){
+.thgeo-cards{grid-template-columns:1fr;gap:12px}
+.thgeo-card{display:grid;grid-template-columns:112px minmax(0,1fr)}
+/* квадрат сверху, а не колонка во всю высоту карточки: при min-height:100%
+   слот растягивался на 112x335 и картинка тонула в пустом поле (замер 13.09.2026) */
+.thgeo-card__img{aspect-ratio:1/1;align-self:start;min-height:0;padding:8px}
+.thgeo-card__body{min-height:0;padding:11px 12px}
+.thgeo-card__name{font-size:16px}
+.thgeo-card__price{font-size:19px}
+.thgeo--mobile-catalog-first .thgeo-products{display:none}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog{display:block;background:#f4f9ff;border:1px solid #cfe3f7;border-radius:14px;padding:16px;margin:18px 0}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog h2{margin:0 0 6px;font-size:20px}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog p{margin:0 0 12px;color:#46566a}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog a{display:block;min-height:48px;padding:12px 16px;border-radius:10px;background:#0b62c4;color:#fff;text-decoration:none;font-weight:700;text-align:center}
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
+</style>
+<div class="thgeo">
+<h1>Приточные очистители воздуха Ballu ONEAIR в Алматы</h1>
+<p>ONEAIR — серия приточных очистителей воздуха Ballu: прибор на стене
+берёт воздух с улицы через одно отверстие, очищает его фильтрами
+и зимой подогревает. Разводка воздуховодов не нужна: достаточно
+одного сквозного отверстия в наружной стене. При аккуратном монтаже
+и подходящих условиях на месте переделка отделки обычно не требуется,
+поэтому серию ставят и в готовую квартиру. В Казахстане такие приборы
+чаще называют бризерами; производитель называет их приточными
+очистителями воздуха.</p>
+<div class="thgeo-cta">
+<a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="tg2" href="tel:+77000369369">+7 700 036 93 69</a>
+<a class="tg2" href="https://tehnoholod369.kz/katalog?g=ventilyaciya">Весь каталог</a>
+
+</div>
+
+
+<div class="thgeo-products">
+<h2>Модели серии, заведённые в каталоге</h2>
+<div class="thgeo-cards"><article class="thgeo-card"><a class="thgeo-card__img" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-80"><img src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-80.jpg" alt="Ballu ONEAIR ASP-80" width="600" height="450" loading="eager" fetchpriority="high" decoding="async"></a><div class="thgeo-card__body"><div class="thgeo-card__brand">Ballu</div><a class="thgeo-card__name" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-80">ONEAIR ASP-80</a><div class="thgeo-card__spec"><span>80 м³/ч</span><span>15 Вт (макс. 615 Вт)</span><span>24–36 дБ</span></div><div class="thgeo-card__stock">Наличие подтверждаем в день обращения</div><a class="thgeo-card__price thgeo-card__price--ask" style="font-size:17px;color:#0e7d3f;text-decoration:none" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D1%86%D0%B5%D0%BD%D1%83%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%3A%20Ballu%20ONEAIR%20ASP-80">Уточнить цену</a><div class="thgeo-card__actions"><a class="thgeo-card__more" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-80">Подробнее</a><a class="thgeo-card__wa" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D1%86%D0%B5%D0%BD%D1%83%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%3A%20Ballu%20ONEAIR%20ASP-80">Уточнить в WhatsApp</a></div></div></article><article class="thgeo-card"><a class="thgeo-card__img" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100"><img src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-100.jpg" alt="Ballu ONEAIR ASP-100" width="600" height="450" loading="eager" fetchpriority="high" decoding="async"></a><div class="thgeo-card__body"><div class="thgeo-card__brand">Ballu</div><a class="thgeo-card__name" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100">ONEAIR ASP-100</a><div class="thgeo-card__spec"><span>125 м³/ч</span><span>24 Вт (макс. 1024 Вт)</span><span>19–47 дБ</span></div><div class="thgeo-card__stock">Наличие подтверждаем в день обращения</div><a class="thgeo-card__price thgeo-card__price--ask" style="font-size:17px;color:#0e7d3f;text-decoration:none" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D1%86%D0%B5%D0%BD%D1%83%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%3A%20Ballu%20ONEAIR%20ASP-100">Уточнить цену</a><div class="thgeo-card__actions"><a class="thgeo-card__more" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100">Подробнее</a><a class="thgeo-card__wa" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D1%86%D0%B5%D0%BD%D1%83%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%3A%20Ballu%20ONEAIR%20ASP-100">Уточнить в WhatsApp</a></div></div></article><article class="thgeo-card"><a class="thgeo-card__img" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100w"><img src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-100w.jpg" alt="Ballu ONEAIR ASP-100W" width="600" height="450" loading="eager" fetchpriority="high" decoding="async"></a><div class="thgeo-card__body"><div class="thgeo-card__brand">Ballu</div><a class="thgeo-card__name" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100w">ONEAIR ASP-100W</a><div class="thgeo-card__spec"><span>125 м³/ч</span><span>24 Вт (макс. 1024 Вт)</span><span>19–47 дБ</span></div><div class="thgeo-card__stock">Наличие подтверждаем в день обращения</div><a class="thgeo-card__price thgeo-card__price--ask" style="font-size:17px;color:#0e7d3f;text-decoration:none" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D1%86%D0%B5%D0%BD%D1%83%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%3A%20Ballu%20ONEAIR%20ASP-100W">Уточнить цену</a><div class="thgeo-card__actions"><a class="thgeo-card__more" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100w">Подробнее</a><a class="thgeo-card__wa" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D1%86%D0%B5%D0%BD%D1%83%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%3A%20Ballu%20ONEAIR%20ASP-100W">Уточнить в WhatsApp</a></div></div></article><article class="thgeo-card"><a class="thgeo-card__img" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200s"><img src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-200s.jpg" alt="Ballu ONEAIR ASP-200S" width="600" height="450" loading="eager" fetchpriority="high" decoding="async"></a><div class="thgeo-card__body"><div class="thgeo-card__brand">Ballu</div><a class="thgeo-card__name" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200s">ONEAIR ASP-200S</a><div class="thgeo-card__spec"><span>200 м³/ч</span><span>85 Вт (макс. 1285 Вт)</span><span>19–45 дБ</span></div><div class="thgeo-card__stock">Наличие подтверждаем в день обращения</div><a class="thgeo-card__price thgeo-card__price--ask" style="font-size:17px;color:#0e7d3f;text-decoration:none" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D1%86%D0%B5%D0%BD%D1%83%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%3A%20Ballu%20ONEAIR%20ASP-200S">Уточнить цену</a><div class="thgeo-card__actions"><a class="thgeo-card__more" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200s">Подробнее</a><a class="thgeo-card__wa" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D1%86%D0%B5%D0%BD%D1%83%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%3A%20Ballu%20ONEAIR%20ASP-200S">Уточнить в WhatsApp</a></div></div></article><article class="thgeo-card"><a class="thgeo-card__img" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sp"><img src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-200sp.jpg" alt="Ballu ONEAIR ASP-200SP" width="600" height="450" loading="lazy" decoding="async"></a><div class="thgeo-card__body"><div class="thgeo-card__brand">Ballu</div><a class="thgeo-card__name" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sp">ONEAIR ASP-200SP</a><div class="thgeo-card__spec"><span>200 м³/ч</span><span>85 Вт (макс. 1285 Вт)</span><span>19–45 дБ</span></div><div class="thgeo-card__stock">Наличие подтверждаем в день обращения</div><a class="thgeo-card__price thgeo-card__price--ask" style="font-size:17px;color:#0e7d3f;text-decoration:none" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D1%86%D0%B5%D0%BD%D1%83%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%3A%20Ballu%20ONEAIR%20ASP-200SP">Уточнить цену</a><div class="thgeo-card__actions"><a class="thgeo-card__more" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sp">Подробнее</a><a class="thgeo-card__wa" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%83%D1%8E%20%D1%86%D0%B5%D0%BD%D1%83%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%3A%20Ballu%20ONEAIR%20ASP-200SP">Уточнить в WhatsApp</a></div></div></article></div>
+
+<p class="thgeo-note">Цену на этой странице не указываем: актуальную цену и наличие по каждой модели подтверждаем в день обращения — в WhatsApp или по телефону +7 700 036 93 69. Все модели раздела — в <a href="https://tehnoholod369.kz/katalog?g=ventilyaciya">каталоге</a>.</p>
+</div>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<h2>Чем модели серии отличаются друг от друга</h2>
+<p>Выбирают по двум числам: сколько воздуха прибор подаёт в час
+и на какую площадь его рекомендует производитель. Всё остальное —
+глубина очистки, шум и датчик углекислого газа — идёт следом.
+Значения ниже взяты с сайта серии oneair.ballu.ru.</p>
+<div class="thgeo-tw">
+<table>
+<thead><tr><th>Модель</th><th>Воздухообмен</th><th>Площадь</th><th>Очистка</th><th>Шум</th><th>Датчик CO₂</th></tr></thead>
+<tbody>
+<tr><td data-label="Модель">ONEAIR ASP-80</td><td data-label="Воздухообмен">до 80 м³/ч</td><td data-label="Площадь">до 26 м²</td><td data-label="Очистка">2 ступени, HEPA H13</td><td data-label="Шум">от 24 дБ(А)</td><td data-label="Датчик CO₂">нет</td></tr><tr><td data-label="Модель">ONEAIR ASP-100 · ASP-100W</td><td data-label="Воздухообмен">до 125 м³/ч</td><td data-label="Площадь">до 40 м²</td><td data-label="Очистка">2 ступени, HEPA H13</td><td data-label="Шум">от 19 дБ(А)</td><td data-label="Датчик CO₂">есть</td></tr><tr><td data-label="Модель">ONEAIR ASP-200S · ASP-200SP</td><td data-label="Воздухообмен">до 200 м³/ч</td><td data-label="Площадь">до 75 м²</td><td data-label="Очистка">6 ступеней, приток и рециркуляция</td><td data-label="Шум">от 19 дБ(А)</td><td data-label="Датчик CO₂">есть</td></tr>
+</tbody>
+</table>
+</div>
+<p>ASP-100W отличается от ASP-100 только исполнением корпуса: белая
+ткань вместо серой. Воздухообмен, площадь и фильтрация у них одинаковые.
+ASP-200SP отличается от ASP-200S тем же — отделкой корпуса.
+В серии ASP-200 продаются модели с литерой S: ASP-200S и ASP-200SP.</p>
+<h2>Какую брать под комнату</h2>
+<p>Спальня, детская или кабинет до 26 м² — ASP-80: младшая
+и самая компактная модель серии. Комната до 40 м² или спальня, где важно
+видеть уровень CO₂, — ASP-100. Гостиная, студия или небольшой офис
+до 75 м² — ASP-200S: у него шесть ступеней очистки и режим
+рециркуляции, когда воздух с улицы брать не нужно.</p>
+<p><a href="https://tehnoholod369.kz/ballu-oneair-asp-80">Подробно про Ballu ONEAIR
+ASP-80</a> — характеристики, работа зимой в Алматы, монтаж и замена
+фильтров. У остальных моделей серии подробности — в карточках выше.</p>
+<h2>Комплектации под заказ</h2>
+<p>Кроме базовых моделей у серии есть комплектации с нагревательным
+элементом и с датчиком CO₂ — в прайсе поставщика они идут отдельными
+позициями. В наличии их нет, поставка под заказ; срок и цену называем
+после запроса поставщику, а не на странице.</p>
+<h2>Что нужно для установки</h2>
+<p>Сквозное отверстие в наружной стене, розетка рядом и место на стене
+под сам прибор. Разводка воздуховодов и подвесной потолок не нужны —
+этим серия и отличается от приточных установок с разводкой.
+Бурят алмазной коронкой с пылесосом, отверстие делают с уклоном
+наружу, чтобы внутрь не затекали осадки. Отверстие в стене —
+обязательная часть монтажа. Капитальный ремонт и переделка отделки
+при аккуратной работе обычно не нужны, но это зависит от материала
+стены, отделки и доступа к месту: бригада оценивает их на объекте
+до начала работ. Если нужна вентиляция
+на несколько комнат сразу, смотрите
+<a href="https://tehnoholod369.kz/pritochno-vytyazhnye-ustanovki-almaty">приточно-вытяжные
+установки с рекуперацией</a>.</p>
+
+<h2>Разбираем подробнее</h2><div class="thgeo-arts"><a class="thgeo-art" href="https://tehnoholod369.kz/svezhii-vozduh-zimoi"><span class="thgeo-art__r">Выбор · 3 мин чтения</span><span class="thgeo-art__t">Свежий воздух зимой без открытых окон: как решить проблему духоты и</span><span class="thgeo-art__s">Зимой окна закрыты — в квартире духота и высокий CO₂. Разбираем, как подавать свежий воздух с улицы, не открывая окно и </span></a><a class="thgeo-art" href="https://tehnoholod369.kz/suhoi-vozduh-zimoi"><span class="thgeo-art__r">Выбор · 3 мин чтения</span><span class="thgeo-art__t">Сухой воздух зимой: увлажнитель или приточный кондиционер</span><span class="thgeo-art__s">Зимой в квартире сухой воздух — пересыхает кожа, тяжело дышать. Сравниваем увлажнитель и приточный кондиционер: что реал</span></a><a class="thgeo-art" href="https://tehnoholod369.kz/pritochnaya-ventilyaciya"><span class="thgeo-art__r">Монтаж · 5 мин чтения</span><span class="thgeo-art__t">Приточная вентиляция в квартиру: что это и зачем нужна</span><span class="thgeo-art__s">Как работает приточка, чем отличается от бризера и проветривателя, кому нужна в Алматы. Мощность, шум, установка, фильтр</span></a></div>
+<h2>Монтаж, гарантия, доставка</h2>
+<p>Монтаж выполняют бригады Артель 369. На монтажные работы нового оборудования —
+12 месяцев гарантии; на само оборудование действует только гарантия производителя,
+срок указан в паспорте изделия. Сервис-карта 369 фиксирует, кто выполнял монтаж,
+и помогает направить обращение тому же исполнителю. Для б/у оборудования стандарт
+12 месяцев не применяется автоматически. Доставка по Алматы и Казахстану,
+возможна рассрочка.</p>
+<h2>Вопросы и ответы</h2>
+<details class="thgeo-faq"><summary>Чем бризер отличается от приточной установки?</summary><p>Это одно и то же по сути: прибор подаёт в комнату уличный воздух через отверстие в стене, фильтрует его и зимой подогревает. «Бризер» — разговорное название, которым пользуются покупатели в Казахстане; производитель называет серию приточными очистителями воздуха. Отличие от приточной установки с воздуховодами — в том, что ONEAIR обслуживает одну комнату и работает без разводки воздуховодов: нужно одно сквозное отверстие в наружной стене.</p></details>
+<details class="thgeo-faq"><summary>Какую модель ONEAIR выбрать под комнату?</summary><p>По рекомендации производителя: ASP-80 — до 26 м², ASP-100 и ASP-100W — до 40 м², ASP-200S и ASP-200SP — до 75 м². Если в комнате постоянно больше двух человек, берите на ступень выше: запас по воздухообмену позволяет держать прибор на средней скорости, где он тише.</p></details>
+<details class="thgeo-faq"><summary>Нужен ли ремонт, чтобы поставить ONEAIR?</summary><p>Разводка воздуховодов и подвесной потолок не нужны. Нужны сквозное отверстие в наружной стене, розетка рядом и место на стене под прибор — отверстие обязательно. Его бурят алмазной коронкой с пылесосом, поэтому при аккуратном монтаже капитальный ремонт и переделка отделки обычно не требуются. Насколько это верно для вашей квартиры, зависит от стены, отделки и доступа к месту установки — бригада оценивает это на объекте до начала работ.</p></details>
+<details class="thgeo-faq"><summary>Работают ли эти приборы зимой в Алматы?</summary><p>Да, в пределах, которые задаёт производитель. У ASP-80 диапазон уличной температуры — от −25 до +50 °C, подогрев приточного воздуха включается автоматически. Ниже −25 °C прибор эксплуатировать нельзя: это нарушение условий и снятие с гарантии.</p></details>
+<details class="thgeo-faq"><summary>Как узнать актуальную цену и наличие?</summary><p>Цену на этой странице не указываем. Актуальную цену и наличие конкретной модели подтверждаем в день обращения — напишите в WhatsApp или позвоните по номеру +7 700 036 93 69.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>На оборудование действует гарантия производителя, срок указан в паспорте изделия: у ASP-80 это 1 год. На монтажные работы нового оборудования через Артель 369 — 12 месяцев. Сервис-карта 369 фиксирует исполнителя и помогает направить обращение той же бригаде.</p></details>
+<nav class="thgeo-also" aria-label="Другие подборки"><h2>Другие подборки</h2><p><a href="https://tehnoholod369.kz/ventilyaciya">Вентиляция</a> · <a href="https://tehnoholod369.kz/pritochnaya-ustanovka-almaty">Приточные установки</a> · <a href="https://tehnoholod369.kz/pritochno-vytyazhnye-ustanovki-almaty">Приточно-вытяжные установки с рекуперацией</a> · <a href="https://tehnoholod369.kz/vytyazhnye-ventilyatory-almaty">Вытяжные вентиляторы</a> · <a href="https://tehnoholod369.kz/ballu-oneair-asp-80">Приточный очиститель воздуха Ballu ONEAIR ASP-80</a></p></nav>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "Вентиляция", "item": "https://tehnoholod369.kz/ventilyaciya"}, {"@type": "ListItem", "position": 3, "name": "Ballu ONEAIR", "item": "https://tehnoholod369.kz/ballu-oneair-almaty"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HVACBusiness", "@id": "https://tehnoholod369.kz/#business", "name": "ТехноХолод", "legalName": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Приточные очистители Ballu ONEAIR в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ballu ONEAIR ASP-80", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-80"}, {"@type": "ListItem", "position": 2, "name": "Ballu ONEAIR ASP-100", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-100"}, {"@type": "ListItem", "position": 3, "name": "Ballu ONEAIR ASP-100W", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-100w"}, {"@type": "ListItem", "position": 4, "name": "Ballu ONEAIR ASP-200S", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200s"}, {"@type": "ListItem", "position": 5, "name": "Ballu ONEAIR ASP-200SP", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200sp"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чем бризер отличается от приточной установки?", "acceptedAnswer": {"@type": "Answer", "text": "Это одно и то же по сути: прибор подаёт в комнату уличный воздух через отверстие в стене, фильтрует его и зимой подогревает. «Бризер» — разговорное название, которым пользуются покупатели в Казахстане; производитель называет серию приточными очистителями воздуха. Отличие от приточной установки с воздуховодами — в том, что ONEAIR обслуживает одну комнату и работает без разводки воздуховодов: нужно одно сквозное отверстие в наружной стене."}}, {"@type": "Question", "name": "Какую модель ONEAIR выбрать под комнату?", "acceptedAnswer": {"@type": "Answer", "text": "По рекомендации производителя: ASP-80 — до 26 м², ASP-100 и ASP-100W — до 40 м², ASP-200S и ASP-200SP — до 75 м². Если в комнате постоянно больше двух человек, берите на ступень выше: запас по воздухообмену позволяет держать прибор на средней скорости, где он тише."}}, {"@type": "Question", "name": "Нужен ли ремонт, чтобы поставить ONEAIR?", "acceptedAnswer": {"@type": "Answer", "text": "Разводка воздуховодов и подвесной потолок не нужны. Нужны сквозное отверстие в наружной стене, розетка рядом и место на стене под прибор — отверстие обязательно. Его бурят алмазной коронкой с пылесосом, поэтому при аккуратном монтаже капитальный ремонт и переделка отделки обычно не требуются. Насколько это верно для вашей квартиры, зависит от стены, отделки и доступа к месту установки — бригада оценивает это на объекте до начала работ."}}, {"@type": "Question", "name": "Работают ли эти приборы зимой в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "Да, в пределах, которые задаёт производитель. У ASP-80 диапазон уличной температуры — от −25 до +50 °C, подогрев приточного воздуха включается автоматически. Ниже −25 °C прибор эксплуатировать нельзя: это нарушение условий и снятие с гарантии."}}, {"@type": "Question", "name": "Как узнать актуальную цену и наличие?", "acceptedAnswer": {"@type": "Answer", "text": "Цену на этой странице не указываем. Актуальную цену и наличие конкретной модели подтверждаем в день обращения — напишите в WhatsApp или позвоните по номеру +7 700 036 93 69."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "На оборудование действует гарантия производителя, срок указан в паспорте изделия: у ASP-80 это 1 год. На монтажные работы нового оборудования через Артель 369 — 12 месяцев. Сервис-карта 369 фиксирует исполнителя и помогает направить обращение той же бригаде."}}]}</script>
