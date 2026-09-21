@@ -635,23 +635,36 @@ class Component extends DCLogic {
 
   PRIEMNIK = "https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec";
 
-  loadPostSaleProduct(sku) {
+  loadPostSaleProduct(sku, attempt = 0) {
     const key = String(sku || "").trim();
     if (!key) {
       this.__postSaleSku = "";
       this.setState({ postSaleProduct: [], postSaleSku: "", postSaleProductFailed: false });
       return;
     }
-    if (this.__postSaleSku === key) return;
-    this.__postSaleSku = key;
-    this.setState({ postSaleProduct: null, postSaleSku: key, postSaleProductFailed: false });
+    if (attempt === 0) {
+      if (this.__postSaleSku === key) return;
+      this.__postSaleSku = key;
+      this.setState({ postSaleProduct: null, postSaleSku: key, postSaleProductFailed: false });
+    } else if (this.__postSaleSku !== key) {
+      return;
+    }
+
     fetch(this.PRIEMNIK + "?data=postsale&sku=" + encodeURIComponent(key), { cache: "no-cache" })
-      .then(r => r.ok ? r.json() : null)
+      .then(r => r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status)))
       .then(d => {
-        if (!d || !d.ok) { this.setState({ postSaleProductFailed: true }); return; }
+        if (!d || !d.ok) throw new Error("POSTSALE_BAD_PAYLOAD");
+        if (this.__postSaleSku !== key) return;
         this.setState({ postSaleProduct: d.product || [], postSaleSku: key, postSaleProductFailed: false });
       })
-      .catch(() => this.setState({ postSaleProductFailed: true }));
+      .catch(() => {
+        if (this.__postSaleSku !== key) return;
+        if (attempt < 2) {
+          setTimeout(() => this.loadPostSaleProduct(key, attempt + 1), 1500 * (attempt + 1));
+        } else {
+          this.setState({ postSaleProductFailed: true });
+        }
+      });
   }
 
   loadCrews(group) {
