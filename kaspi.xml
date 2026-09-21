@@ -126,10 +126,10 @@
             <model>Ballu настенно-потолочный 19.7 BHP-W3-25-LN, (640х580х580 мм)</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
             </availabilities>
             <cityprices>
-                <cityprice cityId="750000000">255900</cityprice>
+                <cityprice cityId="750000000">239900</cityprice>
             </cityprices>
         </offer>
         <offer sku="158991760_406109160">
@@ -486,10 +486,10 @@
             <model>Очиститель воздуха Ballu ASP-80 белый</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
             </availabilities>
             <cityprices>
-                <cityprice cityId="750000000">114990</cityprice>
+                <cityprice cityId="750000000">114980</cityprice>
             </cityprices>
         </offer>
         <offer sku="110436842_244997747">
@@ -736,10 +736,10 @@
             <model>Ballu настенно-потолочный 59.6 BHP-W2-100-LN, (590х610х610 мм)</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
             </availabilities>
             <cityprices>
-                <cityprice cityId="750000000">423400</cityprice>
+                <cityprice cityId="750000000">341490</cityprice>
             </cityprices>
         </offer>
         <offer sku="135146649_127837137">
@@ -966,10 +966,10 @@
             <model>Ballu настенно-потолочный 20.3 BHP-W4-15-S, (420х535х535 мм)</model>
             <brand>ballu</brand>
             <availabilities>
-                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
             </availabilities>
             <cityprices>
-                <cityprice cityId="750000000">227700</cityprice>
+                <cityprice cityId="750000000">170790</cityprice>
             </cityprices>
         </offer>
         <offer sku="6200852_131580500">
