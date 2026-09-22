@@ -62,6 +62,7 @@
   @media (max-width: 860px) { .th-area-mob { display:block; } }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/lead.js?v=20260922-ci"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=b9e2ad76"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
@@ -435,7 +436,11 @@ class Component extends DCLogic {
     this.setState(Object.assign({ loading: true, items: null, shown: 12, sub: sub || "all", mobNav: false }, this.facetsOff()));
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/" + slug + ".json", {cache:"no-cache"})
       .then(r => r.ok ? r.json() : [])
-      .then(items => { this.setState({ items, loading: false, sub: this.pendingSub || "all" }); this.pendingSub = null; })
+      .then(items => {
+        this.setState({ items, loading: false, sub: this.pendingSub || "all" });
+        this.pendingSub = null;
+        if (window.TH_LEAD) window.TH_LEAD.event({ channel:"каталог", ev:"view_catalog", val:slug, type:slug });
+      })
       .catch(() => this.setState({ items: [], loading: false }));
   }
 
@@ -1933,13 +1938,17 @@ class Component extends DCLogic {
         cartTitle: !it.p ? "Цену этой позиции считаем по запросу" : "Добавить в заказ",
         addToCart: () => {
           if (!it.p) {
+            if (window.TH_LEAD) window.TH_LEAD.event({ channel:"каталог", ev:"click_whatsapp", val:"price_request", brand:it.b, type:s.group, model:it.s });
             location.href = "https://wa.me/77000369369?text=" + encodeURIComponent(
               "Здравствуйте! Прошу цену: " + (it.b ? it.b + " " : "") + it.n + (it.s ? " (арт. " + it.s + ")" : "") + ".");
             return;
           }
           if (!window.CART) return;
           if (window.CART.has(it.sl)) location.href = "/korzina";
-          else window.CART.add(Object.assign({}, it, { g: s.group }), 1);
+          else {
+            window.CART.add(Object.assign({}, it, { g: s.group }), 1);
+            if (window.TH_LEAD) window.TH_LEAD.event({ channel:"каталог", ev:"add_to_cart", val:it.pt || it.p, brand:it.b, type:s.group, model:it.s });
+          }
         },
         brand: it.b,
         name: it.n,

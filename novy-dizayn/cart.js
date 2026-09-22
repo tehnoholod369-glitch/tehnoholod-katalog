@@ -49,6 +49,11 @@
     } catch (e) { return ""; }
   }
 
+  function entrySource() {
+    try { return window.sessionStorage.getItem("th_src") || ""; }
+    catch (e) { return ""; }
+  }
+
   function read() {
     if (mem) return mem;
     try {
@@ -262,13 +267,12 @@
                  .filter(Boolean).join("; "),
         items: items,
         src: (typeof location !== "undefined" ? location.pathname : ""),
-        // `ses` приёмник кладёт в колонку «Сессия» листа «Заказы» (ORDER_COLS) —
-        // по ней заказ сходится с просмотрами того же визита.
-        // `aid` шлём тем же заходом, но колонки под него в «Заказах» пока НЕТ:
-        // приёмник лишнее поле молча игнорирует. Появится 'Посетитель' в
-        // ORDER_COLS — метка поедет без повторной публикации витрины.
+        // `ses` и `aid` — те же метки, что у событий каталога/карточки.
+        // Приёмник хранит обе в «Заказах», поэтому заказ сходится и с текущим
+        // визитом, и с повторным визитом того же браузера.
         ses: ses(),
         aid: aid(),
+        entry_src: entrySource(),
         ua: (typeof navigator !== "undefined" ? navigator.userAgent : "")
       };
       return fetch(EXEC, {

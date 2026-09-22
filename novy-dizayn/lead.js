@@ -26,6 +26,30 @@
 
   var PHONE = "77000369369";
 
+  /** Первый источник визита + текущий путь. Не используем fingerprinting: только UTM/from,
+   *  referrer и псевдонимные browser IDs. Источник фиксируем один раз на сессию,
+   *  чтобы переходы /katalog → /tovar → /korzina не затирали атрибуцию. */
+  function src() {
+    try {
+      var first = window.sessionStorage.getItem("th_src");
+      if (!first) {
+        var q = new URLSearchParams(location.search || "");
+        var utm = q.get("utm_source") || q.get("from") || "";
+        var medium = q.get("utm_medium") || "";
+        var campaign = q.get("utm_campaign") || "";
+        first = utm ? ["utm=" + utm, medium ? "medium=" + medium : "", campaign ? "campaign=" + campaign : ""].filter(Boolean).join(";")
+          : ((document.referrer || "").slice(0, 180) || "direct");
+        window.sessionStorage.setItem("th_src", first);
+      }
+      return first + " | " + (location.pathname || "/");
+    } catch (e) { return (typeof location !== "undefined" ? location.pathname : "") || ""; }
+  }
+
+  function scr() {
+    try { return (window.innerWidth || screen.width || 0) + "x" + (window.innerHeight || screen.height || 0); }
+    catch (e) { return ""; }
+  }
+
   /** Метка сессии — та же, что у отзывов: по ней видно, что заявка и просмотры
    *  каталога принадлежат одному человеку. Приватный режим её запрещает —
    *  тогда просто пусто, а не падение. */
@@ -105,7 +129,7 @@
         install: p.install || "",
         comment: comment,
         unknown: p.unknown || "",
-        src: (typeof location !== "undefined" ? location.pathname : ""),
+        src: src(),
         ses: ses(),
         aid: aid(),
         ua: (typeof navigator !== "undefined" ? navigator.userAgent : "").slice(0, 260)
@@ -135,7 +159,7 @@
             ev: p.ev || "", val: p.val || "",
             area: p.area || "", height: p.height || "", corr: p.corr || "",
             brand: p.brand || "", type: p.type || "", model: p.model || "",
-            src: (typeof location !== "undefined" ? location.pathname : ""),
+            src: src(), scr: scr(),
             ses: ses(),
             aid: aid(),
             ua: (typeof navigator !== "undefined" ? navigator.userAgent : "").slice(0, 260)

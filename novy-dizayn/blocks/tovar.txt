@@ -13,6 +13,7 @@
   a:hover { color: #0872D3; }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/lead.js?v=20260922-ci"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=b9e2ad76"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
@@ -787,6 +788,7 @@ class Component extends DCLogic {
       const selected = Math.min(i, Math.max(0, items.length - 1));
       this.setState({ items, details, aux, vypuski, idx: selected, loading: false });
       this.loadPostSaleProduct(items[selected] && items[selected].s);
+      if (window.TH_LEAD && items[selected]) window.TH_LEAD.event({ channel:"карточка товара", ev:"view_item", val:items[selected].n || "", brand:items[selected].b, type:group, model:items[selected].s });
     }).catch(() => this.setState({ items: [], details: [], loading: false }));
   }
 
@@ -796,6 +798,7 @@ class Component extends DCLogic {
     const next = (idx + items.length) % items.length;
     this.setState({ idx: next, photo: 0, tab: 0 });
     this.loadPostSaleProduct(items[next] && items[next].s);
+    if (window.TH_LEAD && items[next]) window.TH_LEAD.event({ channel:"карточка товара", ev:"view_item", val:items[next].n || "", brand:items[next].b, type:this.state.group, model:items[next].s });
     const url = location.pathname + "?g=" + this.state.group + "&i=" + next;
     history.replaceState(null, "", url);
   }
@@ -1352,9 +1355,14 @@ class Component extends DCLogic {
         : "/korzina",
       // кладём в корзину прямо здесь: уход на страницу заказа — уже следующий шаг клиента
       ctaClick: e => {
-        if (!it.pt || inCart || !window.CART) return;
+        if (!it.pt) {
+          if (window.TH_LEAD) window.TH_LEAD.event({ channel:"карточка товара", ev:"click_whatsapp", val:"price_request", brand:it.b, type:s.group, model:it.s });
+          return;
+        }
+        if (inCart || !window.CART) return;
         e.preventDefault();
         window.CART.add(Object.assign({}, it, { g: s.group }), 1);
+        if (window.TH_LEAD) window.TH_LEAD.event({ channel:"карточка товара", ev:"add_to_cart", val:it.pt || it.p, brand:it.b, type:s.group, model:it.s });
       },
       cartLabel: cartN ? "Корзина · " + cartN : "Корзина",
       cartBg: cartN ? "#0872D3" : "#E6F2FD",

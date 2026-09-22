@@ -21,7 +21,8 @@
   @media (max-width: 900px) { .th-cart-grid { grid-template-columns:minmax(0,1fr); } }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=b9e2ad76"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/lead.js?v=20260922-ci"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=20260922-ci"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
@@ -284,6 +285,9 @@ class Component extends DCLogic {
 
   componentDidMount() {
     this.syncFromCart();
+    if (window.TH_LEAD && window.CART && window.CART.count()) {
+      window.TH_LEAD.event({ channel:"корзина", ev:"begin_checkout", val:"items=" + window.CART.count() + ";sum=" + window.CART.total(), type:"order" });
+    }
     // названия групп берём из данных: захардкоженный список устаревает при новой группе
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(d => {
       const titles = {};
@@ -568,6 +572,7 @@ class Component extends DCLogic {
         this.setState({ sending: true });
         const done = (no) => {
           this.setState({ sending: false, orderNo: no || "" });
+          if (no && window.TH_LEAD) window.TH_LEAD.event({ channel:"корзина", ev:"order_created", val:no, type:"order" });
           const href = cart.orderHref(form, no);
           if (w) { w.location.href = href; } else { window.location.href = href; }
         };
