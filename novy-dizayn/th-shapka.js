@@ -42,6 +42,15 @@
   // пробелы неразрывные — номер пишется одной строкой (правило 01.09.2026)
   var CDN = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/";
 
+  // FIRST-PAINT GUARD 22.09.2026: legacy .thnav приходит в server HTML и раньше
+  // успевала отрисоваться до DOMContentLoaded. Скрипт подключён синхронно в HEAD,
+  // поэтому скрываем только legacy chrome ещё до разбора BODY. Новые страницы без
+  // .thnav этим правилом не затрагиваются.
+  var стражПервогоКадра = document.createElement("style");
+  стражПервогоКадра.setAttribute("data-th-guard", "1");
+  стражПервогоКадра.textContent = ".thnav{display:none !important;}";
+  (document.head || document.documentElement).appendChild(стражПервогоКадра);
+
   // Посадочные страницы для подвала. Список переписывает gen_geo_landing.py
   // из PAGES — руками не править, разъедется с блоками.
   /* GEO-ПОДБОРКИ-НАЧАЛО */
@@ -254,6 +263,30 @@
       }
     }
     if (!document.querySelector("[data-th-podval]")) document.body.appendChild(подвал());
+  }
+
+  // На legacy GEO-страницах новую шапку вставляем в microtask MutationObserver,
+  // как только parser добавил .thnav. Observer выполняется до следующего paint.
+  // НЕ используем x-dc как триггер: новые /otoplenie, /ventilyaciya,
+  // /vodonagrevateli имеют свой server-rendered chrome и не должны менять layout.
+  if (document.readyState === "loading" && window.MutationObserver) {
+    var раннийНаблюдатель = new MutationObserver(function () {
+      if (!document.body) return;
+      if (document.querySelector("[data-th-page]")) {
+        раннийНаблюдатель.disconnect();
+        return;
+      }
+      if (!document.querySelector(".thnav")) return;
+      if (!document.querySelector("[data-th-shapka]")) {
+        убратьСтарую();
+        var ранняя = шапка();
+        ранняя.setAttribute("data-th-rano", "1");
+        document.body.insertBefore(ранняя, document.body.firstChild);
+      }
+      раннийНаблюдатель.disconnect();
+    });
+    раннийНаблюдатель.observe(document.documentElement, {childList:true, subtree:true});
+    document.addEventListener("DOMContentLoaded", function(){ раннийНаблюдатель.disconnect(); });
   }
 
   if (document.readyState === "loading") {
