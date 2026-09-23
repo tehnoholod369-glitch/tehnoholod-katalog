@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><kaspi_catalog xmlns="kaspiShopping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://kaspi.kz/kaspishopping.xsd" date="2026-09-22 23:32">
+<?xml version="1.0" encoding="UTF-8"?><kaspi_catalog xmlns="kaspiShopping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://kaspi.kz/kaspishopping.xsd" date="2026-09-23 13:01">
     <company>13704016</company>
     <merchantid>13704016</merchantid>
     <offers>
@@ -176,10 +176,10 @@
             <model>Electrolux Crystal Air Super</model>
             <brand>electrolux</brand>
             <availabilities>
-                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
             </availabilities>
             <cityprices>
-                <cityprice cityId="750000000">553267</cityprice>
+                <cityprice cityId="750000000">498990</cityprice>
             </cityprices>
         </offer>
         <offer sku="149092695_491955672">
@@ -386,10 +386,10 @@
             <model>Electrolux Crystal Air Super DC EACS/I-10HFA/N8_V2</model>
             <brand>electrolux</brand>
             <availabilities>
-                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
             </availabilities>
             <cityprices>
-                <cityprice cityId="750000000">455000</cityprice>
+                <cityprice cityId="750000000">453990</cityprice>
             </cityprices>
         </offer>
         <offer sku="164683141_480301466">
@@ -516,7 +516,7 @@
             <model>Electrolux EACS/I-09HIX-BLACK/N8_V2/WF черный + монтажный комплект</model>
             <brand>Electrolux</brand>
             <availabilities>
-                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1.0"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">264990</cityprice>
