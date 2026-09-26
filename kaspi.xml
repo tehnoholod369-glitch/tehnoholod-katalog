@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><kaspi_catalog xmlns="kaspiShopping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://kaspi.kz/kaspishopping.xsd" date="2026-09-23 21:10">
+<?xml version="1.0" encoding="UTF-8"?><kaspi_catalog xmlns="kaspiShopping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://kaspi.kz/kaspishopping.xsd" date="2026-09-26 19:31">
     <company>13704016</company>
     <merchantid>13704016</merchantid>
     <offers>
@@ -46,7 +46,7 @@
             <model>TCL TAC-FR09HSV/P7W белый + монтажный комплект</model>
             <brand>TCL</brand>
             <availabilities>
-                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">379990</cityprice>
@@ -66,7 +66,7 @@
             <model>TCL TAC-FR18HSV/P7B черный + монтажный комплект</model>
             <brand>TCL</brand>
             <availabilities>
-                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">499990</cityprice>
@@ -356,7 +356,7 @@
             <model>TCL TAC-FR09HSV/P7S серебристый</model>
             <brand>TCL</brand>
             <availabilities>
-                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">399990</cityprice>
@@ -696,7 +696,7 @@
             <model>TCL TAC-FR18HSV/P7W белый + монтажный комплект</model>
             <brand>TCL</brand>
             <availabilities>
-                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">459990</cityprice>
@@ -756,7 +756,7 @@
             <model>TCL TAC-FR12HSV/P7W белый + монтажный комплект</model>
             <brand>TCL</brand>
             <availabilities>
-                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">399990</cityprice>
@@ -986,7 +986,7 @@
             <model>TCL TAC-FR13HSV/P7B черный + монтажный комплект</model>
             <brand>TCL</brand>
             <availabilities>
-                <availability available="no" storeId="13704016_PP1" preOrder="0" stockCount="0.0"/>
+                <availability available="yes" storeId="13704016_PP1" preOrder="0" stockCount="1"/>
             </availabilities>
             <cityprices>
                 <cityprice cityId="750000000">449990</cityprice>
