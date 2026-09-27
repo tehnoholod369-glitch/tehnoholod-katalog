@@ -141,7 +141,7 @@
               <div style="font-size:14px; color:#5A6675; margin-top:4px;">{{ mountNote }}</div>
               <div style="display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;">
                 <a href="{{ ctaHref }}" onClick="{{ ctaClick }}" style="flex:1; min-width:150px; background:{{ ctaBg }}; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700; cursor:pointer;">{{ cta }}</a>
-                <a href="https://wa.me/77000369369" style="flex:1; min-width:130px; border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px; text-align:center; font-size:16px; font-weight:700;">WhatsApp</a>
+                <a href="{{ waModelHref }}" style="flex:1; min-width:130px; border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px; text-align:center; font-size:16px; font-weight:700;">WhatsApp</a>
               </div>
             </div>
 
@@ -1353,6 +1353,11 @@ class Component extends DCLogic {
         ? "https://wa.me/77000369369?text=" + encodeURIComponent(
             "Здравствуйте! Прошу цену: " + (it.b ? it.b + " " : "") + it.n + (it.s ? " (арт. " + it.s + ")" : "") + ".")
         : "/korzina",
+      // T-006 F07, 24.09.2026: WhatsApp с карточки несёт модель — бренд, модель, артикул
+      // и адрес страницы. Без текста заявка теряла, о каком товаре речь.
+      waModelHref: "https://wa.me/77000369369?text=" + encodeURIComponent(
+        "Здравствуйте! Интересует " + (it.b ? it.b + " " : "") + it.n
+        + (it.s ? " (арт. " + it.s + ")" : "") + ". " + location.href),
       // кладём в корзину прямо здесь: уход на страницу заказа — уже следующий шаг клиента
       ctaClick: e => {
         if (!it.pt) {
