@@ -62,12 +62,11 @@
   @media (max-width: 860px) { .th-area-mob { display:block; } }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@4fe14f92/novy-dizayn/lead.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=b9e2ad76"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=be2fdc8d"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=1810f723"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -285,6 +284,9 @@
                   </sc-for>
                 </div>
                 <div style="margin-top:12px; display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;">
+                  <sc-if value="{{ c.hasOldPrice }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-size:14px; color:#8593A6; text-decoration:line-through; font-variant-numeric:tabular-nums;">{{ c.oldPrice }}</div>
+                  </sc-if>
                   <div style="font-size:20px; font-weight:700; font-variant-numeric:tabular-nums; color:{{ c.priceColor }};">{{ c.price }}</div>
                   <div style="font-size:12px; color:#8593A6;">{{ c.priceNote }}</div>
                 </div>
@@ -436,11 +438,7 @@ class Component extends DCLogic {
     this.setState(Object.assign({ loading: true, items: null, shown: 12, sub: sub || "all", mobNav: false }, this.facetsOff()));
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/" + slug + ".json", {cache:"no-cache"})
       .then(r => r.ok ? r.json() : [])
-      .then(items => {
-        this.setState({ items, loading: false, sub: this.pendingSub || "all" });
-        this.pendingSub = null;
-        if (window.TH_LEAD) window.TH_LEAD.event({ channel:"каталог", ev:"view_catalog", val:slug, type:slug });
-      })
+      .then(items => { this.setState({ items, loading: false, sub: this.pendingSub || "all" }); this.pendingSub = null; })
       .catch(() => this.setState({ items: [], loading: false }));
   }
 
@@ -593,7 +591,23 @@ class Component extends DCLogic {
 
   saleOf(it) {
     const m = this.state.sale || {};
-    return (it && it.s && m[it.s]) || null;
+    const sale = (it && it.s && m[it.s]) || null;
+    if (!sale) return null;
+    const dmy = v => {
+      const a = String(v || "").match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+      return a ? new Date(+a[3], +a[2] - 1, +a[1], 0, 0, 0, 0) : null;
+    };
+    const now = new Date(); now.setHours(0, 0, 0, 0);
+    const from = dmy(sale.from), till = dmy(sale.till);
+    if (from && now < from) return null;
+    if (till) { till.setHours(23, 59, 59, 999); if (now > till) return null; }
+    return sale;
+  }
+
+  priceOf(it) {
+    const sale = this.saleOf(it);
+    const p = sale && +sale.price > 0 ? +sale.price : (it && +it.p || 0);
+    return p || 0;
   }
 
   hitOf(it) {
@@ -1660,8 +1674,8 @@ class Component extends DCLogic {
     const refEnough = items.filter(x => refOf(x)).length >= MIN_FACET;
     const effEnough = items.filter(x => effOf(x)).length >= MIN_FACET;
 
-    if (s.sort === "asc") list = list.slice().sort((a, b) => (a.x.p || 9e9) - (b.x.p || 9e9));
-    else if (s.sort === "desc") list = list.slice().sort((a, b) => (b.x.p || 0) - (a.x.p || 0));
+    if (s.sort === "asc") list = list.slice().sort((a, b) => (this.priceOf(a.x) || 9e9) - (this.priceOf(b.x) || 9e9));
+    else if (s.sort === "desc") list = list.slice().sort((a, b) => (this.priceOf(b.x) || 0) - (this.priceOf(a.x) || 0));
     else list = list.slice().sort((a, b) => this.recScore(b.x, picks) - this.recScore(a.x, picks));
 
     list = this.poPrioritetu(list, s);
@@ -1927,28 +1941,29 @@ class Component extends DCLogic {
       const it = o.x;
       const inStock = /налич/i.test(it.st);
       const badges = this.badgesOf(it);
-      const monthlyBase = this.num(it.r) || (it.p ? it.p * 1.175 : 0);
+      const sale = this.saleOf(it);
+      const salePrice = sale && +sale.price > 0 ? +sale.price : 0;
+      const pNow = this.priceOf(it);
+      const ptNow = pNow ? this.fmt(pNow) + " ₸" : "";
+      const cartIt = salePrice ? Object.assign({}, it, { p: pNow, pt: ptNow, promoWas: it.p, promoTill: sale.till || "" }) : it;
+      const monthlyBase = pNow ? (salePrice ? pNow * 1.175 : (this.num(it.r) || pNow * 1.175)) : 0;
       return {
         href: "/tovar?g=" + s.group + "&sl=" + encodeURIComponent(it.sl || "") + "&i=" + o.i,
         // корзина общая: состояние кнопки читаем из неё, а не держим второй список
-        cartLabel: !it.p ? "Уточнить цену" : (window.CART && window.CART.has(it.sl) ? "В корзине ✓" : "В корзину"),
-        cartBg: !it.p ? "#fff" : (window.CART && window.CART.has(it.sl) ? "#E7F7F0" : "#E6F2FD"),
-        cartFg: !it.p ? "#B25200" : (window.CART && window.CART.has(it.sl) ? "#0B6B45" : "#0A4EA7"),
-        cartBorder: !it.p ? "#F3D2AC" : (window.CART && window.CART.has(it.sl) ? "#BFE6D4" : "#B9DBF7"),
-        cartTitle: !it.p ? "Цену этой позиции считаем по запросу" : "Добавить в заказ",
+        cartLabel: !pNow ? "Уточнить цену" : (window.CART && window.CART.has(it.sl) ? "В корзине ✓" : "В корзину"),
+        cartBg: !pNow ? "#fff" : (window.CART && window.CART.has(it.sl) ? "#E7F7F0" : "#E6F2FD"),
+        cartFg: !pNow ? "#B25200" : (window.CART && window.CART.has(it.sl) ? "#0B6B45" : "#0A4EA7"),
+        cartBorder: !pNow ? "#F3D2AC" : (window.CART && window.CART.has(it.sl) ? "#BFE6D4" : "#B9DBF7"),
+        cartTitle: !pNow ? "Цену этой позиции считаем по запросу" : "Добавить в заказ",
         addToCart: () => {
-          if (!it.p) {
-            if (window.TH_LEAD) window.TH_LEAD.event({ channel:"каталог", ev:"click_whatsapp", val:"price_request", brand:it.b, type:s.group, model:it.s });
+          if (!pNow) {
             location.href = "https://wa.me/77000369369?text=" + encodeURIComponent(
               "Здравствуйте! Прошу цену: " + (it.b ? it.b + " " : "") + it.n + (it.s ? " (арт. " + it.s + ")" : "") + ".");
             return;
           }
           if (!window.CART) return;
           if (window.CART.has(it.sl)) location.href = "/korzina";
-          else {
-            window.CART.add(Object.assign({}, it, { g: s.group }), 1);
-            if (window.TH_LEAD) window.TH_LEAD.event({ channel:"каталог", ev:"add_to_cart", val:it.pt || it.p, brand:it.b, type:s.group, model:it.s });
-          }
+          else window.CART.add(Object.assign({}, cartIt, { g: s.group }), 1);
         },
         brand: it.b,
         name: it.n,
@@ -1968,13 +1983,15 @@ class Component extends DCLogic {
             return v === t || v.replace(/а/g, "a") === t.replace(/а/g, "a");
           });
         }).slice(0, 4),
-        price: it.pt || "Цена по запросу",
-        priceColor: it.pt ? "#18212F" : "#5A6675",
+        price: ptNow || "Цена по запросу",
+        oldPrice: salePrice && sale.was ? this.fmt(+sale.was) + " ₸" : "",
+        hasOldPrice: !!(salePrice && sale.was),
+        priceColor: pNow ? (salePrice ? "#E11A13" : "#18212F") : "#5A6675",
         // Позиция без цены раньше говорила одно и то же пятью способами разом:
         // «Цена по запросу», под ней «считаем по запросу», ссылка «Запросить цену →»,
         // кнопка «Уточнить цену» и подсказка к ней. Оставляем цену и две РАЗНЫЕ
         // по смыслу кнопки: ссылка открывает карточку, кнопка спрашивает цену.
-        priceNote: it.pt ? "с НДС" : "",
+        priceNote: pNow ? (salePrice ? "акционная цена · с НДС" : "с НДС") : "",
         monthly: monthlyBase ? "рассрочка 12 мес — " + this.fmt(monthlyBase / 12) + " ₸/мес" : "",
         cta: "Открыть карточку →",
         pickScore: this.isPick(it, picks) ? this.recScore(it, picks) : -1,

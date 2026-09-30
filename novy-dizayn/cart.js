@@ -20,6 +20,20 @@
   var DATA = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/";
   var mem = null;
 
+  function dmy(v) {
+    var a = String(v || "").match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+    return a ? new Date(+a[3], +a[2] - 1, +a[1], 0, 0, 0, 0) : null;
+  }
+
+  function activeSale(sale) {
+    if (!sale) return null;
+    var now = new Date(); now.setHours(0, 0, 0, 0);
+    var from = dmy(sale.from), till = dmy(sale.till);
+    if (from && now < from) return null;
+    if (till) { till.setHours(23, 59, 59, 999); if (now > till) return null; }
+    return sale;
+  }
+
   /** Метки визита и посетителя — те же ключи, что заводит lead.js: один origin,
    *  одно хранилище. До 12.09.2026 заказ не нёс ни одной из них, и колонка
    *  «Сессия» в листе «Заказы» стояла пустой у всех заказов: покупку нельзя было
@@ -139,12 +153,17 @@
       list.forEach(function (x) { if (x.g) groups[x.g] = 1; });
       var names = Object.keys(groups);
       if (!names.length) return Promise.resolve({ list: list, changed: [] });
-      return Promise.all(names.map(function (g) {
-        return fetch(DATA + g + ".json").then(function (r) {
-          return r.ok ? r.json().then(function (items) { return { g: g, items: items, ok: true }; })
-                      : { g: g, items: [], ok: false };
-        }).catch(function () { return { g: g, items: [], ok: false }; });
-      })).then(function (packs) {
+      return Promise.all([
+        Promise.all(names.map(function (g) {
+          return fetch(DATA + g + ".json").then(function (r) {
+            return r.ok ? r.json().then(function (items) { return { g: g, items: items, ok: true }; })
+                        : { g: g, items: [], ok: false };
+          }).catch(function () { return { g: g, items: [], ok: false }; });
+        })),
+        fetch(DATA + "akcii.json").then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
+      ]).then(function (loadedData) {
+        var packs = loadedData[0] || [];
+        var sales = (loadedData[1] && loadedData[1].items) || {};
         var byGroup = {}, loaded = {};
         packs.forEach(function (p) { byGroup[p.g] = p.items; loaded[p.g] = p.ok; });
         var changed = [];
@@ -159,9 +178,12 @@
           }
           if (!cur) { changed.push({ sl: x.sl, n: x.n, what: "позиции больше нет в каталоге" }); return x; }
           var y = Object.assign({}, x);
-          if (cur.p !== x.p) {
-            changed.push({ sl: x.sl, n: x.n, what: "цена изменилась", was: x.pt, now: cur.pt });
-            y.p = cur.p; y.pt = cur.pt;
+          var sale = activeSale(sales[cur.s]);
+          var curP = sale && +sale.price > 0 ? +sale.price : (cur.p || 0);
+          var curPt = curP ? fmt(curP) + " ₸" : "";
+          if (curP !== x.p) {
+            changed.push({ sl: x.sl, n: x.n, what: "цена изменилась", was: x.pt, now: curPt });
+            y.p = curP; y.pt = curPt;
           }
           if (cur.st !== x.st) {
             changed.push({ sl: x.sl, n: x.n, what: "наличие изменилось", was: x.st, now: cur.st });

@@ -14,7 +14,7 @@
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@4fe14f92/novy-dizayn/lead.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=b9e2ad76"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=be2fdc8d"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
@@ -132,6 +132,9 @@
 
             <div style="background:#F3F7FB; border-radius:12px; padding:20px; margin-top:18px;">
               <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;">
+                <sc-if value="{{ hasOldPrice }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:18px; color:#8593A6; text-decoration:line-through; font-variant-numeric:tabular-nums;">{{ oldPrice }}</div>
+                </sc-if>
                 <div style="font-size:32px; font-weight:700; color:{{ priceColor }}; font-variant-numeric:tabular-nums; letter-spacing:-0.02em;">{{ price }}</div>
                 <div style="font-size:13px; color:#5A6675;">{{ priceNote }}</div>
               </div>
@@ -624,7 +627,7 @@
 class Component extends DCLogic {
   state = { group: "bytovye", idx: 0, items: null, details: null, index: null, loading: true, photo: 0, tab: 0, zoom: false,
             crewCity: "", crewData: null, crewFailed: false, crewSort: "rating", crewDocs: false,
-            vypuski: null, postSaleProduct: null, postSaleSku: "", postSaleProductFailed: false };
+            vypuski: null, sale: {}, postSaleProduct: null, postSaleSku: "", postSaleProductFailed: false };
   photoRef = React.createRef();
   zoomRef = React.createRef();
   galRef = React.createRef();
@@ -633,6 +636,26 @@ class Component extends DCLogic {
   accRef = React.createRef();
 
   fmt(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009"); }
+
+  saleOf(it) {
+    const m = this.state.sale || {};
+    const sale = (it && it.s && m[it.s]) || null;
+    if (!sale) return null;
+    const dmy = v => {
+      const a = String(v || "").match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+      return a ? new Date(+a[3], +a[2] - 1, +a[1], 0, 0, 0, 0) : null;
+    };
+    const now = new Date(); now.setHours(0, 0, 0, 0);
+    const from = dmy(sale.from), till = dmy(sale.till);
+    if (from && now < from) return null;
+    if (till) { till.setHours(23, 59, 59, 999); if (now > till) return null; }
+    return sale;
+  }
+
+  priceOf(it) {
+    const sale = this.saleOf(it);
+    return sale && +sale.price > 0 ? +sale.price : (it && +it.p || 0);
+  }
 
   PRIEMNIK = "https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec";
 
@@ -777,8 +800,9 @@ class Component extends DCLogic {
       // Выпуски одной модели: у части товара производитель меняет артикул от года
       // к году, аппарат тот же. Файл маленький; не загрузился — карточка просто
       // не покажет плашку, остальное работает (31.08.2026).
-      fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/vypuski.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : {}).catch(() => ({}))
-    ]).then(([items, details, aux, vypuski]) => {
+      fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/vypuski.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : {}).catch(() => ({})),
+      fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/akcii.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : {}).catch(() => ({}))
+    ]).then(([items, details, aux, vypuski, saleData]) => {
       // ключ sl устойчив к пересборке данных, номер в массиве — нет
       let i = idx;
       if (sl) {
@@ -786,7 +810,7 @@ class Component extends DCLogic {
         if (found >= 0) i = found;
       }
       const selected = Math.min(i, Math.max(0, items.length - 1));
-      this.setState({ items, details, aux, vypuski, idx: selected, loading: false });
+      this.setState({ items, details, aux, vypuski, sale: (saleData && saleData.items) || {}, idx: selected, loading: false });
       this.loadPostSaleProduct(items[selected] && items[selected].s);
       if (window.TH_LEAD && items[selected]) window.TH_LEAD.event({ channel:"карточка товара", ev:"view_item", val:items[selected].n || "", brand:items[selected].b, type:group, model:items[selected].s });
     }).catch(() => this.setState({ items: [], details: [], loading: false }));
@@ -885,7 +909,7 @@ class Component extends DCLogic {
       const адрес = location.origin + "/tovar?g=" + encodeURIComponent(s.group || "")
                   + "&sl=" + encodeURIComponent(it.sl || "");
       const имя = it.n;
-      const цена = it.p || 0;
+      const цена = this.priceOf(it);
       const вНаличии = /налич/i.test(it.st || "");
 
       const заголовок = (it.s ? it.b + " " + it.s : имя.slice(0, 60))
@@ -1149,7 +1173,12 @@ class Component extends DCLogic {
       .filter(f => f.hint)
       .slice(0, 4);
 
-    const monthlyBase = this.num(it.r) || (it.p ? it.p * 1.175 : 0);
+    const sale = this.saleOf(it);
+    const salePrice = sale && +sale.price > 0 ? +sale.price : 0;
+    const pNow = this.priceOf(it);
+    const ptNow = pNow ? this.fmt(pNow) + " ₸" : "";
+    const cartIt = salePrice ? Object.assign({}, it, { p: pNow, pt: ptNow, promoWas: it.p, promoTill: sale.till || "" }) : it;
+    const monthlyBase = pNow ? (salePrice ? pNow * 1.175 : (this.num(it.r) || pNow * 1.175)) : 0;
     // расход электричества считаем только там, где есть мощность и класс — иначе вкладки нет
     // мощность бывает и в кВт, и в ваттах; класс — с кириллической «А» и комбинированный «A++/A+»
     // мощность пишут по-разному, и старое чтение «число вплотную к единице» теряло
@@ -1303,13 +1332,15 @@ class Component extends DCLogic {
       stockFg: inStock ? "#0E9F6E" : "#B25200",
       stockBg: inStock ? "#E7F7F0" : "#FFF1E3",
       pills: it.pl || [],
-      price: it.pt || "Цена по запросу",
-      priceColor: it.pt ? "#E11A13" : "#5A6675",
+      price: ptNow || "Цена по запросу",
+      oldPrice: salePrice && sale.was ? this.fmt(+sale.was) + " ₸" : "",
+      hasOldPrice: !!(salePrice && sale.was),
+      priceColor: pNow ? "#E11A13" : "#5A6675",
       // про наличие здесь молчать: «нет цены» и «нет на складе» — разные вещи.
       // Было «считаем по запросу — позиция под заказ», и у Ballu BHC-H15T18-PS страница
       // спорила сама с собой: строкой выше «В наличии», строкой ниже «под заказ».
       // Наличие показывает своя плашка, из поля мастера.
-      priceNote: it.pt ? "цена с НДС" : "считаем по запросу",
+      priceNote: pNow ? (salePrice ? "акционная цена · с НДС" : "цена с НДС") : "считаем по запросу",
       hasInstallment: !!monthlyBase,
       installment: monthlyBase ? "Рассрочка 12 мес — " + this.fmt(monthlyBase / 12) + " ₸/мес · Kaspi, ForteBank, Halyk" : "",
       mountNote: m ? m.note : (it.acc ? "" : "Монтаж и подключение обсуждаем при заказе."),
@@ -1347,9 +1378,9 @@ class Component extends DCLogic {
           else window.CART.add(Object.assign({}, x, { g: s.group }), 1);
         }
       })),
-      cta: !it.pt ? "Запросить цену" : (inCart ? "В корзине — оформить" : "В корзину"),
-      ctaBg: !it.pt ? "#0872D3" : (inCart ? "#0E9F6E" : "#0872D3"),
-      ctaHref: !it.pt
+      cta: !pNow ? "Запросить цену" : (inCart ? "В корзине — оформить" : "В корзину"),
+      ctaBg: !pNow ? "#0872D3" : (inCart ? "#0E9F6E" : "#0872D3"),
+      ctaHref: !pNow
         ? "https://wa.me/77000369369?text=" + encodeURIComponent(
             "Здравствуйте! Прошу цену: " + (it.b ? it.b + " " : "") + it.n + (it.s ? " (арт. " + it.s + ")" : "") + ".")
         : "/korzina",
@@ -1360,14 +1391,14 @@ class Component extends DCLogic {
         + (it.s ? " (арт. " + it.s + ")" : "") + ". " + location.href),
       // кладём в корзину прямо здесь: уход на страницу заказа — уже следующий шаг клиента
       ctaClick: e => {
-        if (!it.pt) {
+        if (!pNow) {
           if (window.TH_LEAD) window.TH_LEAD.event({ channel:"карточка товара", ev:"click_whatsapp", val:"price_request", brand:it.b, type:s.group, model:it.s });
           return;
         }
         if (inCart || !window.CART) return;
         e.preventDefault();
-        window.CART.add(Object.assign({}, it, { g: s.group }), 1);
-        if (window.TH_LEAD) window.TH_LEAD.event({ channel:"карточка товара", ev:"add_to_cart", val:it.pt || it.p, brand:it.b, type:s.group, model:it.s });
+        window.CART.add(Object.assign({}, cartIt, { g: s.group }), 1);
+        if (window.TH_LEAD) window.TH_LEAD.event({ channel:"карточка товара", ev:"add_to_cart", val:ptNow || pNow, brand:it.b, type:s.group, model:it.s });
       },
       cartLabel: cartN ? "Корзина · " + cartN : "Корзина",
       cartBg: cartN ? "#0872D3" : "#E6F2FD",
