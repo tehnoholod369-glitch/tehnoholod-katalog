@@ -265,14 +265,15 @@ class Component extends DCLogic {
         ]
       },
       {
-        kind: "Квартира", city: "Алматы", date: "объект добавим",
-        title: "Монтаж в квартире",
-        text: "Объект добавим после фото: город, месяц, оборудование и площадь помещения.",
+        kind: "Квартира", city: "Алматы", date: "осень 2026",
+        title: "Сплит-система THAICON SensAIR в квартире",
+        text: "Монтаж настенной сплит-системы THAICON SensAIR: внутренний блок на стене, трасса убрана в короб. Работу выполнила бригада 3.",
         slotId: "work-3", slotHint: "Фото монтажа в квартире",
+        photo: "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/kvartira-almaty-thaicon-sensair-2026.jpg",
+        model: "TL-RWS35-FR / TL-ROS35-FR",
         rows: [
-          { k: "Оборудование", v: need.v, color: need.color },
-          { k: "Площадь", v: need.v, color: need.color },
-          { k: "Срок работ", v: need.v, color: need.color }
+          { k: "Оборудование", v: "THAICON SensAIR TL-RWS35-FR / TL-ROS35-FR", color: "#18212F" },
+          { k: "Работы", v: "монтаж блоков, трасса", color: "#18212F" }
         ]
       },
       {
