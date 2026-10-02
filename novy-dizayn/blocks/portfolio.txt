@@ -293,8 +293,8 @@ class Component extends DCLogic {
       },
       {
         kind: "Дом", city: "Талгар", date: "осень 2026",
-        title: "Канальный кондиционер на даче",
-        text: "Монтаж канальной сплит-системы TCL: наружный блок на стойке у дома, внутренний блок под потолком, дренаж и трасса.",
+        title: "Канальный инверторный кондиционер TCL на даче",
+        text: "Монтаж канальной инверторной сплит-системы TCL LCAC на 24 000 BTU: наружный блок на стойке у дома, внутренний блок под потолком, дренаж и трасса.",
         brig: "369-BR-02-001",
         slotId: "work-7", slotHint: "Фото объекта: дача, Талгар",
         photo: "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/dacha-talgar-tcl-2026.jpg",
