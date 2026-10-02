@@ -9,8 +9,14 @@
   "369-BR-02-002": {
    "u": "https://img.tehnoholod369.kz/sertifikaty/369-BR-02-002.pdf",
    "p": 4,
-   "kb": 1105,
+   "kb": 1102,
    "lvl": "partner"
+  },
+  "369-BR-02-003": {
+   "u": "https://img.tehnoholod369.kz/sertifikaty/369-BR-02-003.pdf",
+   "p": 3,
+   "kb": 768,
+   "lvl": "master"
   }
  }
 }
