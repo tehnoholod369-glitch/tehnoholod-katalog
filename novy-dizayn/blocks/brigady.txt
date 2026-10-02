@@ -409,18 +409,38 @@ class Component extends DCLogic {
 
   state = { data: null, failed: false, dir: "", city: "", lang: "", open: {}, form: {}, sent: {}, verify: false, shown: ПОРЦИЯ };
 
+  // Снимок реестра лежит в репозитории и отдаётся за доли секунды.
+  // Apps Script на холодном контейнере отвечает 17–18 секунд, а иногда
+  // 404 или не отвечает вовсе (замер 02.10.2026), поэтому он не первый путь,
+  // а фоновое обновление: пришёл живой ответ — он заменяет снимок.
+  SNIMOK = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brigady.json";
+  ZERKALO = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/data/brigady.json";
+
+  loadSnapshot() {
+    const взять = (url) => fetch(url, { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status)))
+      .then(d => (d && d.brigady && d.brigady.length) ? d : Promise.reject(new Error("SNAPSHOT_BAD")));
+    взять(this.SNIMOK)
+      .catch(() => взять(this.ZERKALO))
+      .then(d => { if (!this.state.data) { this.setState({ data: d, failed: false }); } })
+      .catch(() => {});
+  }
+
   loadRegistry(attempt = 0) {
-    // Apps Script иногда рвёт первое обращение на холодном контейнере.
-    // После 15 секунд показываем сбой честно, но не сдаёмся: ещё две попытки
-    // идут в фоне. Успех сам заменяет сообщение на живой реестр.
+    // Живой реестр: если снимок уже на экране, сбой здесь молчаливый.
+    // Если снимка нет, через 15 секунд показываем сбой честно, но не сдаёмся:
+    // ещё две попытки идут в фоне. Успех сам заменяет сообщение на реестр.
     const срок = setTimeout(() => {
       if (!this.state.data) { this.setState({ failed: true }); }
     }, 15000);
+    // Зависший запрос не должен блокировать повтор.
+    const ctl = (typeof AbortController !== "undefined") ? new AbortController() : null;
+    const обрыв = ctl ? setTimeout(() => ctl.abort(), 30000) : null;
 
-    fetch(this.PRIEMNIK + "?data=brigady", { cache: "no-cache" })
+    fetch(this.PRIEMNIK + "?data=brigady", { cache: "no-cache", signal: ctl ? ctl.signal : undefined })
       .then(r => r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status)))
       .then(d => {
-        clearTimeout(срок);
+        clearTimeout(срок); if (обрыв) clearTimeout(обрыв);
         if (!d || !d.brigady) throw new Error("BRIGADY_BAD_PAYLOAD");
         this.setState({ data: d, failed: false });
         if (d.brigady.length) {
@@ -428,7 +448,7 @@ class Component extends DCLogic {
         }
       })
       .catch(() => {
-        clearTimeout(срок);
+        clearTimeout(срок); if (обрыв) clearTimeout(обрыв);
         if (this.state.data) return;
         this.setState({ failed: true });
         if (attempt < 2) {
@@ -451,6 +471,7 @@ class Component extends DCLogic {
       .then(r => { if (r && r.ok) this.setState({ verify: true }); })
       .catch(() => {});
 
+    this.loadSnapshot();
     this.loadRegistry();
   }
 
