@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=b9e2ad76"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=be2fdc8d"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
 
 
@@ -165,7 +165,7 @@
     <label>Дополнительно — каждая строка отдельным пунктом</label>
     <textarea id="kpЕщё" rows="3"></textarea>
     <label style="display:flex;gap:8px;align-items:center;margin-top:12px">
-      <input type="checkbox" id="kpДоки" style="width:auto"><span>Блок закрывающих документов (НДС, ЭДО)</span></label>
+      <input type="checkbox" id="kpДоки" style="width:auto"><span>Блок закрывающих документов (с НДС)</span></label>
     <label style="display:flex;gap:8px;align-items:center">
       <input type="checkbox" id="kpМонтажНДС" style="width:auto"><span>Монтаж бригадой — она не плательщик НДС</span></label>
   </div>
@@ -384,9 +384,10 @@ function условия(){
   $("kpЕщё").value.split("\n").map(function(s){return s.trim();}).filter(Boolean)
     .forEach(function(s){ у.push(s); });
   if($("kpДоки").checked){
-    у.push("Закрывающие документы: договор, счёт на оплату, накладную, счёт-фактуру.");
-    у.push(ОРГ.имя+" — плательщик НДС: счёт-фактура выписывается с НДС "+(НДС*100)+" %, обмен документами через "+ОРГ.эдо+".");
+    у.push("Закрывающие документы: счёт на оплату, накладная, счёт-фактура.");
+    у.push(ОРГ.имя+" — плательщик НДС: счёт-фактура выписывается с НДС "+(НДС*100)+" %.");
   }
+  у.push("Работаем с "+ОРГ.эдо+".");
   if($("kpМонтажНДС").checked)
     у.push("Монтаж выполняет сертифицированная бригада и выдаёт свои закрывающие документы. "+
            "Бригада не является плательщиком НДС: её документы идут без НДС, к зачёту по монтажным работам НДС не принимается.");

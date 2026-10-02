@@ -14,7 +14,7 @@
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=1810f723"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -45,7 +45,7 @@
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:12px; align-items:start;">
       <div>
         <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">Кто приедет на монтаж</h1>
-        <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">В Артель 369 каждая допущенная бригада имеет номер сертификата. Для монтажа нового оборудования действует единый обязательный стандарт — 12 месяцев гарантии на монтажные работы. Каждый монтаж фиксируется в «Сервис-карте 369»: кто выполнял работу и когда. Здесь тот же список, что и в нашем реестре, с оценками клиентов.</div>
+        <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">В АРТЕЛЬ каждая допущенная бригада имеет номер сертификата. Для монтажа нового оборудования действует единый обязательный стандарт — 12 месяцев гарантии на монтажные работы. Каждый монтаж фиксируется в «Сервис-карте 369»: кто выполнял работу и когда. Здесь тот же список, что и в нашем реестре, с оценками клиентов.</div>
       </div>
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#8593A6;">ПОЧЕМУ НОМЕР, А НЕ ИМЯ И ТЕЛЕФОН</div>
@@ -380,7 +380,7 @@
           <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Срок гарантии — в карточке модели и в паспорте изделия. Гарантийный ремонт — в сертифицированных центрах бренда.</div>
         </div>
         <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Монтаж — бригада Артель 369</div>
+          <div style="font-size:15px; font-weight:700;">Монтаж — бригада АРТЕЛЬ</div>
           <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Герметичность, крепления, дренаж и пусконаладка. Для монтажа нового оборудования действует единый срок гарантии — 12 месяцев; обращение направляется тому же МАСТЕРУ или бригаде, которые выполняли работу.</div>
         </div>
         <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
@@ -409,6 +409,34 @@ class Component extends DCLogic {
 
   state = { data: null, failed: false, dir: "", city: "", lang: "", open: {}, form: {}, sent: {}, verify: false, shown: ПОРЦИЯ };
 
+  loadRegistry(attempt = 0) {
+    // Apps Script иногда рвёт первое обращение на холодном контейнере.
+    // После 15 секунд показываем сбой честно, но не сдаёмся: ещё две попытки
+    // идут в фоне. Успех сам заменяет сообщение на живой реестр.
+    const срок = setTimeout(() => {
+      if (!this.state.data) { this.setState({ failed: true }); }
+    }, 15000);
+
+    fetch(this.PRIEMNIK + "?data=brigady", { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status)))
+      .then(d => {
+        clearTimeout(срок);
+        if (!d || !d.brigady) throw new Error("BRIGADY_BAD_PAYLOAD");
+        this.setState({ data: d, failed: false });
+        if (d.brigady.length) {
+          try { sessionStorage.setItem("th_brigady", JSON.stringify(d)); } catch (_) {}
+        }
+      })
+      .catch(() => {
+        clearTimeout(срок);
+        if (this.state.data) return;
+        this.setState({ failed: true });
+        if (attempt < 2) {
+          setTimeout(() => this.loadRegistry(attempt + 1), 1500 * (attempt + 1));
+        }
+      });
+  }
+
   componentDidMount() {
     const q = new URLSearchParams(window.location.search);
     this.setState({ dir: q.get("napravlenie") || "", city: q.get("gorod") || "",
@@ -423,30 +451,7 @@ class Component extends DCLogic {
       .then(r => { if (r && r.ok) this.setState({ verify: true }); })
       .catch(() => {});
 
-    // Приёмник — Apps Script: на остывшем контейнере первый ответ идёт под минуту.
-    // Запрос не обрываем — данные всё равно нужны, — но держать страницу всё это
-    // время на «Загружаем список бригад…» нельзя: пустое ожидание читается как
-    // «бригад нет». Через 15 секунд говорим про сбой; дойдёт ответ позже —
-    // список встанет на место сам.
-    const срок = setTimeout(() => {
-      if (!this.state.data) { this.setState({ failed: true }); }
-    }, 15000);
-
-    fetch(this.PRIEMNIK + "?data=brigady", { cache: "no-cache" })
-      .then(r => r.ok ? r.json() : null)
-      .then(d => {
-        clearTimeout(срок);
-        if (!d || !d.brigady) { this.setState({ failed: true }); return; }
-        this.setState({ data: d, failed: false });
-        // Пустой ответ в кэш не кладём: иначе один пустой ответ заставит страницу
-        // весь визит утверждать «бригад нет» — даже когда реестр уже заполнен.
-        if (d.brigady.length) {
-          try { sessionStorage.setItem("th_brigady", JSON.stringify(d)); } catch (_) {}
-        }
-      })
-      // Молча пустую страницу не показываем: пустота читается как «бригад нет»,
-      // а это неправда — это сбой связи.
-      .catch(() => { clearTimeout(срок); this.setState({ failed: true }); });
+    this.loadRegistry();
   }
 
   componentDidUpdate() {
@@ -709,7 +714,7 @@ class Component extends DCLogic {
         const ready = f.score >= 1 && f.text.trim().length >= 2;
         const factsShort = [
           c.city     ? { k: "ВЫЕЗД", v: c.city + (c.zone ? " · до " + c.zone : "") } : null,
-          { k: "ГАРАНТИЯ НА МОНТАЖ", v: "12 мес — стандарт Артель 369" },
+          { k: "ГАРАНТИЯ НА МОНТАЖ", v: "12 мес — стандарт АРТЕЛЬ" },
           c.since    ? { k: "ОПЫТ РАБОТЫ", v: "с " + c.since + " года" } : null,
           (c.withUsSince && (new Date().getFullYear() - c.withUsSince) >= 1)
             ? { k: "РАБОТАЕТ С НАМИ",
@@ -798,9 +803,9 @@ class Component extends DCLogic {
         // Имена ступеней держим здесь: приёмник отдаёт текущий уровень,
         // а сама лестница — свойство программы, а не бригады.
         const СТУПЕНИ = [
-          { key: "uchastnik", n: "УЧАСТНИК 369" },
-          { key: "master",    n: "МАСТЕР 369" },
-          { key: "partner",   n: "ПАРТНЁР 369" }
+          { key: "uchastnik", n: "СПЕЦИАЛИСТ" },
+          { key: "master",    n: "МАСТЕР" },
+          { key: "partner",   n: "ПАРТНЁР" }
         ];
         // Подписи ступеней — из положения о программе, дословно.
         const ОТМЕТКА = {
