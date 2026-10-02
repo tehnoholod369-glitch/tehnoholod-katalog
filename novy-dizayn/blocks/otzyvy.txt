@@ -95,6 +95,56 @@
       </div>
     </sc-if>
 
+    <sc-if value="{{ prHas }}" hint-placeholder-val="{{ true }}">
+      <div id="verified-products" style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:20px;">
+        <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0B6B45;">ПОКУПКА ПОДТВЕРЖДЕНА</div>
+            <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Отзывы о технике</h2>
+          </div>
+          <div style="font-size:13px; font-weight:700; color:#0B6B45; background:#E7F7F0; border:1px solid #BFE6D4; border-radius:999px; padding:7px 12px;">{{ prSummary }}</div>
+        </div>
+        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px; max-width:900px;">Что покупатели пишут о самой модели после покупки у нас. Показываем только отзывы, которые привязаны к заказу и Сервис-карте.</div>
+        <sc-for list="{{ prReviews }}" as="r" hint-placeholder-count="2">
+          <div style="background:#F7F9FC; border:1px solid #E5EAF1; border-radius:12px; padding:16px 18px; margin-top:14px;">
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              <span style="color:#E8A33D; font-size:15px;">{{ r.stars }}</span>
+              <span style="font-size:14px; font-weight:700;">{{ r.name }}</span>
+              <span style="font-size:12px; color:#8593A6;">{{ r.date }}</span>
+              <span style="font-size:11px; font-weight:700; color:#0B6B45; background:#E7F7F0; border-radius:5px; padding:3px 7px;">Сервис-карта подтверждена</span>
+            </div>
+            <div style="font-size:12px; font-weight:700; color:#8593A6; margin-top:8px;">Модель: {{ r.sku }}</div>
+            <div style="font-size:15px; line-height:1.6; color:#2C3846; margin-top:6px; text-wrap:pretty;">{{ r.text }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ mnHas }}" hint-placeholder-val="{{ true }}">
+      <div id="verified-montage" style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:20px;">
+        <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0B6B45;">МОНТАЖ ПО КАРТЕ 369</div>
+            <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Отзывы о монтаже</h2>
+          </div>
+          <a href="/brigady" style="font-size:14px; font-weight:700; color:#0872D3;">Бригады и оценки →</a>
+        </div>
+        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px; max-width:900px;">Оценки работы монтажных бригад от клиентов, у которых есть Сервис-карта 369 на этот монтаж.</div>
+        <sc-for list="{{ mnReviews }}" as="r" hint-placeholder-count="2">
+          <div style="background:#F7F9FC; border:1px solid #E5EAF1; border-radius:12px; padding:16px 18px; margin-top:14px;">
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              <span style="color:#E8A33D; font-size:15px;">{{ r.stars }}</span>
+              <span style="font-size:14px; font-weight:700;">{{ r.name }}</span>
+              <span style="font-size:12px; color:#8593A6;">{{ r.date }}</span>
+              <span style="font-size:11px; font-weight:700; color:#0B6B45; background:#E7F7F0; border-radius:5px; padding:3px 7px;">✓ монтаж по карте 369</span>
+            </div>
+            <div style="font-size:12px; font-weight:700; color:#8593A6; margin-top:8px;">Бригада {{ r.cert }}</div>
+            <div style="font-size:15px; line-height:1.6; color:#2C3846; margin-top:6px; text-wrap:pretty;">{{ r.text }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:20px;">
       <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px;">
         <div>
@@ -146,7 +196,7 @@
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
   PRIEMNIK = "https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec";
-  state = { postSale: null, postSaleFailed: false };
+  state = { postSale: null, postSaleFailed: false, brig: null };
 
   componentDidMount() {
     fetch(this.PRIEMNIK + "?data=postsale", { cache: "no-cache" })
@@ -156,6 +206,13 @@ class Component extends DCLogic {
         this.setState({ postSale: d, postSaleFailed: false });
       })
       .catch(() => this.setState({ postSaleFailed: true }));
+    // Отзывы о монтаже живут в реестре бригад (у каждой бригады свой список reviews).
+    // Ответ тяжёлый и на холодном кеше идёт долго, поэтому блок появляется,
+    // когда данные пришли; не пришли — страница просто обходится без него.
+    fetch(this.PRIEMNIK + "?data=brigady", { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => { if (d && d.ok !== false) { this.setState({ brig: d }); } })
+      .catch(() => {});
   }
 
   reviewWord(n) {
@@ -172,7 +229,38 @@ class Component extends DCLogic {
     const psSummary = n >= 5
       ? "★ " + avg.toFixed(1).replace(".", ",") + " · " + n + " " + this.reviewWord(n)
       : "Рейтинг накапливается · " + n + " " + this.reviewWord(n);
+    // Отзывы о технике: приёмник без фильтра sku отдаёт все подтверждённые по заказу и карте.
+    const prod = (this.state.postSale && this.state.postSale.product) || [];
+    const prN = prod.length;
+    const prAvg = prN ? prod.reduce((s, r) => s + (+r.score || 0), 0) / prN : 0;
+    const prSummary = prN >= 5
+      ? "★ " + prAvg.toFixed(1).replace(".", ",") + " · " + prN + " " + this.reviewWord(prN)
+      : "Рейтинг накапливается · " + prN + " " + this.reviewWord(prN);
+    // Отзывы о монтаже: у каждой бригады свой список; берём только подтверждённые картой (v) и с текстом.
+    const crews = (this.state.brig && this.state.brig.brigady) || [];
+    const mn = [];
+    crews.forEach(b => (b.reviews || []).forEach(r => {
+      if (r && r.v && String(r.text || "").trim()) { mn.push({ cert: b.cert, r }); }
+    }));
+    mn.sort((a, b) => String(b.r.date || "").localeCompare(String(a.r.date || "")));
     return {
+      prHas: prN > 0,
+      prSummary,
+      prReviews: prod.slice(0, 20).map(r => ({
+        name: r.name || "Покупатель",
+        date: r.date || "",
+        text: r.text || "",
+        sku: r.sku || "",
+        stars: "★".repeat(Math.max(1, Math.min(5, +r.score || 5)))
+      })),
+      mnHas: mn.length > 0,
+      mnReviews: mn.slice(0, 20).map(x => ({
+        name: x.r.name || "Клиент",
+        date: x.r.date || "",
+        text: x.r.text || "",
+        cert: x.cert || "",
+        stars: "★".repeat(Math.max(1, Math.min(5, +x.r.score || 5)))
+      })),
       psLoading: !this.state.postSale && !this.state.postSaleFailed,
       psHas: n > 0,
       psSummary,
