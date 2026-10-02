@@ -66,7 +66,7 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F3F7FB;">
@@ -689,7 +689,7 @@ class Component extends DCLogic {
       const имя = txt.h1 || meta.title || "";
       if (!выбрана) {
         const title = "Каталог климатической техники — купить в Алматы | ИП «ТехноХолод»";
-        const description = "Кондиционеры, вентиляция, отопление, водонагреватели, камины и проектные системы в Алматы. Подбор, доставка по Казахстану, монтаж по согласованию.";
+        const description = "Климатическая техника в Алматы от официального дилера: кондиционеры, вентиляция, отопление, камины. Официальная гарантия, монтаж, сервис.";
         if (document.title !== title) document.title = title;
         this.ставитьМету("name", "description", description);
         this.ставитьМету("property", "og:title", title);

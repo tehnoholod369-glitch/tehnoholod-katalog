@@ -1,7 +1,7 @@
 <div data-th-seo style="background:#F3F7FB; font-family:'Inter','Segoe UI',sans-serif; color:#18212F; padding:32px 24px 44px; margin-top:22px;">
       <div style="max-width:1240px; margin:0 auto;">
       <h1 style="margin:0; font-family:'Montserrat','Inter',sans-serif; font-size:26px; font-weight:800; letter-spacing:-0.015em; color:#18212F;">Каталог климатической техники в Алматы</h1>
-      <p style="margin:10px 0 0; font-size:15px; line-height:1.65; color:#5A6675; max-width:780px;">Кондиционеры, вентиляция, отопление, водонагреватели, камины и проектные системы в Алматы. Подбор, доставка по Казахстану, монтаж по согласованию.</p>
+      <p style="margin:10px 0 0; font-size:15px; line-height:1.65; color:#5A6675; max-width:780px;">Климатическая техника в Алматы от официального дилера: кондиционеры, вентиляция, отопление, камины. Официальная гарантия, монтаж, сервис.</p>
       <h2 style="margin:26px 0 0; font-family:'Montserrat','Inter',sans-serif; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#18212F;">Что есть в каталоге и как в нём искать</h2>
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; margin-top:16px; font-size:15px; line-height:1.7; color:#2C3846;">

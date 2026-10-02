@@ -14,7 +14,7 @@
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/lead.js?v=5c4686e2"></script>
 </helmet>
 
@@ -180,6 +180,11 @@
             </div>
             <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:12px;">Пример на реальной цене TCL FreshIN 09. Рассрочка оформляется банком — Kaspi, ForteBank, Halyk; условия и одобрение на стороне банка. Монтаж в рассрочку не входит, оплачивается отдельно.</div>
           </div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:16px;" id="garantiya">
+          <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Гарантия и сервис</div>
+          <div style="font-size:15px; color:#5A6675; line-height:1.65; margin-top:10px; max-width:900px;">ИП «ТехноХолод» — официальный дилер. На оборудование действует официальная гарантия производителя; обслуживание выполняют авторизованные сервисные центры. Срок гарантии зависит от модели и бренда и указан в карточке товара. На монтажные работы гарантия 12 месяцев, на каждую работу оформляется Сервис-карта 369.</div>
         </div>
 
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:16px;">
