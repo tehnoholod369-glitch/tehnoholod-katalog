@@ -47,10 +47,6 @@
       <div>
         <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">Наши работы</h1>
         <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">Объекты, где мы ставили оборудование: город, дата, что установлено. Без стоковых картинок — только собственные фото с монтажей.</div>
-        <div style="display:inline-flex; align-items:center; gap:8px; background:#E6F2FD; border:1px solid #B9DBF7; border-radius:8px; padding:8px 14px; margin-top:12px; font-size:14px; color:#0A4EA7; font-weight:600;">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex:none;"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg>
-          Раздел заполняется — фото работ появятся в ближайшее время
-        </div>
       </div>
       <div style="display:flex; gap:8px; flex-wrap:wrap;">
         <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
@@ -352,6 +348,15 @@ class Component extends DCLogic {
         ]
       }
     ];
+
+    // Порядок — по дате объекта, от старых к новым. Месяц или сезон из подписи
+    // («март 2026», «осень 2026»); при равной дате остаётся порядок в списке.
+    const MES = { "янв": 1, "фев": 2, "мар": 3, "апр": 4, "май": 5, "мая": 5, "июн": 6, "июл": 7, "авг": 8, "сен": 9, "окт": 10, "ноя": 11, "дек": 12, "зим": 1, "вес": 4, "лет": 7, "осе": 10 };
+    const dateKey = s => {
+      const m = String(s || "").toLowerCase().match(/^\s*([а-яё]{3})\S*\s+(\d{4})/);
+      return m && MES[m[1]] ? Number(m[2]) * 100 + MES[m[1]] : Infinity;
+    };
+    all.sort((a, b) => dateKey(a.date) - dateKey(b.date));
 
     const names = ["Все", "Квартира", "Дом", "Офис", "Магазин", "Сервис"];
     const f = this.state.filter;
