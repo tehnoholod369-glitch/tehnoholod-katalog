@@ -146,7 +146,7 @@
 </table>
 </div></details>
 
-<p class="thgeo-note">Модели разложены по задачам, а в каждой полке — от младшей модели к старшей, а не по цене. Цены и наличие — по данным каталога <span class="thgeo-fresh">от <span class="thgeo-date">20.09.2026</span></span>; <span class="thgeo-live">цены на странице обновляются автоматически</span>. Наличие и цену подтверждаем при заказе. Полный список — в <a href="https://tehnoholod369.kz/katalog?g=ventilyaciya">каталоге</a>.</p>
+<p class="thgeo-note">Модели разложены по задачам, а в каждой полке — от младшей модели к старшей, а не по цене. Цены и наличие — по данным каталога <span class="thgeo-fresh">от <span class="thgeo-date">03.10.2026</span></span>; <span class="thgeo-live">цены на странице обновляются автоматически</span>. Наличие и цену подтверждаем при заказе. Полный список — в <a href="https://tehnoholod369.kz/katalog?g=ventilyaciya">каталоге</a>.</p>
 </div>
 <!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
 <h2>Как подобрать вентиляцию</h2>
