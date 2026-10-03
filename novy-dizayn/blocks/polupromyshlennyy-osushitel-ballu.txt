@@ -143,6 +143,7 @@
 .thv .thgeo-final .tg2{background:transparent;color:#fff;border:1.5px solid #fff}
 .thv h2{font:700 24px/32px Inter,sans-serif;margin:32px 0 10px}
 .thv .thgeo-note,.thv .thgeo-also p{font:400 13px/20px Inter,sans-serif;color:#475569}
+[data-th-shapka] div[style*="max-width:1240px"]{box-sizing:border-box!important;max-width:1232px!important;padding-left:16px!important;padding-right:16px!important}
 .thv-live{margin:0 0 14px}
 .thv-live:empty{display:none}
 .thv-live:not(:empty){border-left:4px solid #E81C1C;background:#FFF4F4;border-radius:0 12px 12px 0;padding:12px 16px;font:500 14px/22px Inter,sans-serif;color:#7A1111}
@@ -179,10 +180,24 @@
 .thv-next a{display:block;border:1px solid #DCE5F0;border-radius:12px;padding:14px 16px;text-decoration:none;font:600 16px/22px Inter,sans-serif;color:#0033A0;background:#fff}
 .thv-next small{display:block;font:400 14px/20px Inter,sans-serif;color:#475569;margin-top:2px}
 @media(min-width:900px){
+ .thv-hero--model{grid-template-columns:1.05fr 1fr!important;align-items:start!important}
+ .thv-keyfacts{grid-template-columns:repeat(4,minmax(0,1fr))}
  .thv-hero h1{font-size:36px;line-height:44px}
  .thv-next{grid-template-columns:repeat(2,minmax(0,1fr))}
  .thv-prose{max-width:820px}
 }
+.thv-modelcol{display:grid;gap:12px;align-content:start}
+.thv-photo{background:#fff;border:1px solid #DCE5F0;border-radius:16px;padding:16px;display:grid;place-items:center}
+.thv-photo img{width:100%;max-width:420px;height:auto;aspect-ratio:1/1;object-fit:contain;display:block}
+.thv-buy{background:#fff;border:1px solid #DCE5F0;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.thv-buy .thv-pp{font:800 30px/36px Inter,sans-serif}
+.thv-keyfacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.thv .thv-spec{border-collapse:collapse;width:100%;min-width:0;max-width:860px;font-size:15px}
+.thv .thv-spec td{padding:11px 12px;border-bottom:1px solid #E2E8F0;font:400 15px/22px Inter,sans-serif;white-space:normal;vertical-align:top}
+.thv .thv-spec td:first-child{color:#475569;width:42%}
+.thv .thv-spec td:last-child{color:#1A1A1A;font-weight:500}
+.thv-video{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#0f172a;margin:0 0 8px}
+.thv-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 </style>
 <div class="thgeo thv">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">

@@ -143,6 +143,7 @@
 .thv .thgeo-final .tg2{background:transparent;color:#fff;border:1.5px solid #fff}
 .thv h2{font:700 24px/32px Inter,sans-serif;margin:32px 0 10px}
 .thv .thgeo-note,.thv .thgeo-also p{font:400 13px/20px Inter,sans-serif;color:#475569}
+[data-th-shapka] div[style*="max-width:1240px"]{box-sizing:border-box!important;max-width:1232px!important;padding-left:16px!important;padding-right:16px!important}
 .thv-live{margin:0 0 14px}
 .thv-live:empty{display:none}
 .thv-live:not(:empty){border-left:4px solid #E81C1C;background:#FFF4F4;border-radius:0 12px 12px 0;padding:12px 16px;font:500 14px/22px Inter,sans-serif;color:#7A1111}
