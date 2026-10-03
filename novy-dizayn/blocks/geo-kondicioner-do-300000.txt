@@ -15,14 +15,7 @@
 .thgeo-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:12px 0 18px}
 .thgeo-card{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #DCE5F0;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(21,43,68,.06)}
 .thgeo-card__img{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:#f7f9fc;padding:12px;text-decoration:none}
-/* width/height 100%, а не auto. НОГИ AUTO 13.09.2026 поймали на живых
-   /vodonagrevateli и /kaminy-almaty: 15 карточек из 15 без фотографии,
-   и на телефоне, и на десктопе. Причина — замкнутый круг: у незагруженной
-   картинки нет собственных размеров, при width:auto она раскладывается
-   в 0x0, а loading="lazy" не грузит то, что не занимает места. Файлы при
-   этом отдаются: прямая загрузка того же адреса через new Image() дала
-   600 px. Задаём коробку от контейнера — картинка получает площадь до
-   загрузки, ленивый загрузчик срабатывает, object-fit держит пропорции. */
+
 .thgeo-card__img img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}
 .thgeo-card__img--empty{color:#7a8796;font-size:13px}
 .thgeo-card__body{display:flex;flex-direction:column;gap:7px;padding:13px 14px 14px;min-height:220px}
@@ -61,8 +54,7 @@
 @media (max-width:480px){
 .thgeo-cards{grid-template-columns:1fr;gap:12px}
 .thgeo-card{display:grid;grid-template-columns:112px minmax(0,1fr)}
-/* квадрат сверху, а не колонка во всю высоту карточки: при min-height:100%
-   слот растягивался на 112x335 и картинка тонула в пустом поле (замер 13.09.2026) */
+
 .thgeo-card__img{aspect-ratio:1/1;align-self:start;min-height:0;padding:8px}
 .thgeo-card__body{min-height:0;padding:11px 12px}
 .thgeo-card__name{font-size:16px}
@@ -124,7 +116,7 @@ On/Off до инверторов среднего класса. В наличи�
 </table>
 </div>
 
-<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога от <span class="thgeo-date">03.10.2026</span>; <span class="thgeo-live">цены на странице обновляются автоматически</span>. Наличие и цену подтверждаем при заказе. Полный список — в <a href="https://tehnoholod369.kz/katalog?g=bytovye">каталоге</a>.</p>
+<p class="thgeo-note">Показаны самые доступные модели из наличия, по данным каталога; <span class="thgeo-live">цены на странице обновляются автоматически</span>. Наличие и цену подтверждаем при заказе. Полный список — в <a href="https://tehnoholod369.kz/katalog?g=bytovye">каталоге</a>.</p>
 </div>
 <!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
 <h2>На чём в этом бюджете не стоит экономить</h2>
@@ -182,26 +174,6 @@ On/Off до инверторов среднего класса. В наличи�
 <script>
 (function(){
   var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json"];
-  // Штамп свежести обязан описывать ТЕ данные, которые видит посетитель.
-  // Цены подставляются здесь же, в браузере, из живого data/*.json — а дата
-  // до 04.09.2026 бралась из mtime локального файла в момент сборки блока.
-  // Это дата сборки, а не данных: страница писала «по данным каталога
-  // от 01.09.2026», когда в export-state.json стояло 2026-09-03. ТЗ п.27:
-  // фиктивной даты обновления быть не должно.
-  fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/export-state.json",{cache:"no-cache"})
-    .then(function(r){return r.json()})
-    .then(function(st){
-      var d=st&&st.dataUpdated; if(!d)return;
-      var p=String(d).split("-"); if(p.length!==3)return;
-      var t=p[2]+"."+p[1]+"."+p[0];
-      document.querySelectorAll(".thgeo-date").forEach(function(el){el.textContent=t});
-    })
-    .catch(function(){});
-  // ТЗ п.28 / FAIL-01: источник недоступен — старую цену нельзя показывать как
-  // гарантированно актуальную. Раньше сбой глотался (.catch -> []), цены сборки
-  // оставались на экране, а страница продолжала утверждать, что они обновляются
-  // сами. Цены не прячем: они настоящие, из последней сборки, и снимать их
-  // с витрины из-за сетевого сбоя дороже, чем сказать правду. Снимаем ОБЕЩАНИЕ.
   var bad=false;
   Promise.all(srcs.map(function(u){
     return fetch(u,{cache:"no-cache"}).then(function(r){
@@ -210,8 +182,6 @@ On/Off до инверторов среднего класса. В наличи�
     }).catch(function(){bad=true; return []});
   })).then(function(all){
     if(bad){
-      // Частичное обновление хуже полного отказа: часть цен свежая, часть нет,
-      // и отличить их на экране нечем. Поэтому не переписываем ничего.
       document.querySelectorAll(".thgeo-live").forEach(function(el){
         el.textContent="обновить цены сейчас не удалось — уточните актуальную цену "
           +"по телефону или в WhatsApp";
@@ -227,10 +197,6 @@ On/Off до инверторов среднего класса. В наличи�
       var x=by[td.getAttribute("data-art")];
       if(x&&x.pt)td.textContent=x.pt;
     });
-    // «Цены от …» в абзаце — цена КОНКРЕТНОЙ модели, самой доступной из тех,
-    // что подходят под фильтр страницы. Минимум по всей группе сюда брать нельзя:
-    // на «кондиционер на 25 м²» он подставил бы модель на 7 000 BTU, которая
-    // эти 25 м² не закрывает, — страница обещала бы не то (31.08.2026).
     document.querySelectorAll(".thgeo-pmin").forEach(function(el){
       var a=el.getAttribute("data-min-art"), x=a?by[a]:null, v=(x&&x.p)?x.p:null;
       if(v===null){
