@@ -1,0 +1,324 @@
+<div data-th-shapka="1" data-th-server="1"><div style="background:#071C3B;color:#fff;padding:9px 0;font-size:13px;font-family:TildaSans,Arial,sans-serif;"><div style="max-width:1240px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;"><span style="opacity:.85;">Алматы · доставка по Казахстану</span><span style="margin-left:auto;opacity:.85;">Продажа · монтаж · сервис</span><a href="tel:+77000369369" style="color:#fff;font-weight:700;text-decoration:none;">+77 000 369 369</a></div></div><div style="background:#fff;border-bottom:1px solid #DCE5F0;font-family:TildaSans,Arial,sans-serif;"><div style="max-width:1240px;margin:0 auto;padding:12px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;"><a href="/" style="text-decoration:none;"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px;width:auto;display:block;" /></a><a href="/katalog" style="display:flex;align-items:center;gap:8px;background:#0872D3;color:#fff;border-radius:8px;padding:10px 15px;font-size:15px;font-weight:600;text-decoration:none;"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block;flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/></svg>Каталог</a><div style="flex:1;"></div><a href="/korzina" style="color:#0A4EA7;font-size:15px;font-weight:600;text-decoration:none;">Корзина</a><a href="/baza-znaniy" style="color:#0A4EA7;font-size:15px;font-weight:600;text-decoration:none;">База знаний</a><a href="/kontakty" style="color:#0A4EA7;font-size:15px;font-weight:600;text-decoration:none;">Контакты</a><a href="https://wa.me/77000369369" style="background:#E6F2FD;color:#0A4EA7;border-radius:8px;padding:10px 16px;font-size:15px;font-weight:700;text-decoration:none;">WhatsApp</a></div></div></div>
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo-arts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:12px;margin-top:12px}
+.thgeo-art{display:flex;flex-direction:column;gap:6px;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:16px;text-decoration:none;color:inherit}
+.thgeo-art__r{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#0A4EA7}
+.thgeo-art__t{font-size:16px;font-weight:700;line-height:1.3}
+.thgeo-art__s{font-size:13px;color:#5A6675;line-height:1.5}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:12px 0 18px}
+.thgeo-card{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #DCE5F0;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(21,43,68,.06)}
+.thgeo-card__img{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:#f7f9fc;padding:12px;text-decoration:none}
+/* width/height 100%, а не auto. НОГИ AUTO 13.09.2026 поймали на живых
+   /vodonagrevateli и /kaminy-almaty: 15 карточек из 15 без фотографии,
+   и на телефоне, и на десктопе. Причина — замкнутый круг: у незагруженной
+   картинки нет собственных размеров, при width:auto она раскладывается
+   в 0x0, а loading="lazy" не грузит то, что не занимает места. Файлы при
+   этом отдаются: прямая загрузка того же адреса через new Image() дала
+   600 px. Задаём коробку от контейнера — картинка получает площадь до
+   загрузки, ленивый загрузчик срабатывает, object-fit держит пропорции. */
+.thgeo-card__img img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}
+.thgeo-card__img--empty{color:#7a8796;font-size:13px}
+.thgeo-card__body{display:flex;flex-direction:column;gap:7px;padding:13px 14px 14px;min-height:220px}
+.thgeo-card__brand{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#5A6675}
+.thgeo-card__name{font-size:17px;font-weight:700;line-height:1.3;color:#17324d;text-decoration:none}
+.thgeo-card__spec{display:flex;flex-wrap:wrap;gap:6px}
+.thgeo-card__spec span{font-size:12px;line-height:1.2;padding:5px 8px;border-radius:999px;background:#f1f5f9;color:#46566a}
+.thgeo-card__stock{font-size:12px;color:#5a6675}
+.thgeo-card__price{margin-top:auto;font-size:20px;font-weight:800;line-height:1.2}
+.thgeo-card__actions{display:grid;grid-template-columns:1fr;gap:7px;margin-top:3px}
+.thgeo-card__actions a{display:flex;align-items:center;justify-content:center;min-height:42px;border-radius:9px;padding:8px 10px;text-decoration:none;font-weight:700;font-size:14px}
+.thgeo-card__more{background:#eef3f8;color:#17324d!important}
+.thgeo-card__wa{background:#0e7d3f;color:#fff!important}
+.thgeo-rev{background:#f4f9ff;border:1px solid #cfe3f7;border-radius:12px;padding:14px 16px;margin:14px 0}
+.thgeo-rev__t{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0a4ea7}
+.thgeo-rev__q{font-size:16px;line-height:1.55;margin-top:6px}
+.thgeo-rev__a{font-size:13px;color:#5a6b80;margin-top:8px}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+.thgeo-also{margin-top:26px}
+.thgeo-also p{font-size:14px;line-height:2;color:#5a6676}
+.thgeo-mont{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:12px;margin:14px 0}
+.thgeo-mont__c{background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:14px 16px}
+.thgeo-mont__t{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0A4EA7;margin-bottom:8px}
+.thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
+.thgeo-mont ul{margin:0;padding-left:18px}
+.thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+.thgeo-mobile-catalog{display:none}
+@media (max-width:480px){
+.thgeo-cards{grid-template-columns:1fr;gap:12px}
+.thgeo-card{display:grid;grid-template-columns:112px minmax(0,1fr)}
+/* квадрат сверху, а не колонка во всю высоту карточки: при min-height:100%
+   слот растягивался на 112x335 и картинка тонула в пустом поле (замер 13.09.2026) */
+.thgeo-card__img{aspect-ratio:1/1;align-self:start;min-height:0;padding:8px}
+.thgeo-card__body{min-height:0;padding:11px 12px}
+.thgeo-card__name{font-size:16px}
+.thgeo-card__price{font-size:19px}
+.thgeo--mobile-catalog-first .thgeo-products{display:none}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog{display:block;background:#f4f9ff;border:1px solid #cfe3f7;border-radius:14px;padding:16px;margin:18px 0}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog h2{margin:0 0 6px;font-size:20px}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog p{margin:0 0 12px;color:#46566a}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog a{display:block;min-height:48px;padding:12px 16px;border-radius:10px;background:#0b62c4;color:#fff;text-decoration:none;font-weight:700;text-align:center}
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
+</style>
+<style>
+.thv{max-width:1200px;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1A1A1A;padding:0 16px 40px}
+.thv h1,.thv h2,.thv h3{color:#0033A0;font-family:Inter,system-ui,sans-serif}
+.thv a{color:#0066FF}
+.thv-hero{background:#E9F4FF;padding:20px 16px 26px;margin:0 -16px}
+.thv-hero h1{font:700 30px/38px Inter,sans-serif;margin:0}
+.thv-lead{font:400 17px/26px Inter,sans-serif;color:#2b3a52;margin:12px 0 18px}
+.thv-cta{display:grid;gap:10px}
+.thv-btn{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:8px;font:600 16px/1 Inter,sans-serif;text-decoration:none;padding:0 18px;box-sizing:border-box}
+.thv .thv-red{background:#E81C1C;color:#fff}
+.thv .thv-out{background:#fff;color:#0066FF;border:1.5px solid #0066FF}
+.thv .thv-blue{background:#0066FF;color:#fff}
+.thv-fine{font:400 13px/18px Inter,sans-serif;color:#475569;margin:12px 0 0}
+.thv-facts{display:grid;gap:12px;margin-top:20px}
+.thv-fact{background:#fff;border:1px solid #cfe3ff;border-radius:12px;padding:14px 16px}
+.thv-fact b{display:block;font:800 24px/30px Inter,sans-serif;color:#0033A0}
+.thv-fact span{font:400 14px/20px Inter,sans-serif;color:#475569}
+.thv-fact b .thgeo-pmin{display:inline;font:inherit;color:inherit}
+.thv-sec{padding-top:32px}
+.thv-sec h2{font:700 24px/32px Inter,sans-serif;margin:0 0 6px}
+.thv-sub{margin:0 0 16px;color:#475569;font:400 15px/22px Inter,sans-serif}
+.thv-routes{display:grid;gap:12px}
+.thv-route{border:1px solid #DCE5F0;border-radius:12px;box-shadow:0 1px 2px rgba(0,51,160,.06);background:#fff;min-width:0}
+.thv-row{display:flex;align-items:center;gap:12px;min-height:76px;padding:12px 16px;text-decoration:none;color:#0033A0}
+.thv-row b{display:block;font:600 17px/24px Inter,sans-serif}
+.thv-row small{display:block;font:400 14px/20px Inter,sans-serif;color:#475569}
+.thv-row .thv-ar{margin-left:auto;color:#0066FF;font-size:22px;flex:none}
+.thv-route .thv-more{display:block;padding:0 16px 12px;font:600 14px/20px Inter,sans-serif;text-decoration:none}
+.thv-pl{display:grid;gap:12px}
+.thv-card{display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-areas:"im pb" "pf pf";gap:0 12px;border:1px solid #DCE5F0;border-radius:12px;background:#fff;padding:12px;min-width:0}
+.thv-im{grid-area:im;display:grid;place-items:center;height:140px;align-self:start}
+.thv-im img{max-width:100%;max-height:140px;width:auto;height:auto;object-fit:contain}
+.thv-pb{grid-area:pb;display:flex;flex-direction:column;gap:3px;min-width:0}
+.thv-pb small{font:600 12px/16px Inter,sans-serif;color:#475569}
+.thv-pn{font:700 16px/22px Inter,sans-serif;color:#0033A0;text-decoration:none}
+.thv-mk{display:flex;gap:6px;flex-wrap:wrap}
+.thv-tag--ord{color:#475569!important;border-color:#DCE5F0!important;background:#F1F5F9!important}
+.thv-tag{padding:1px 8px;border-radius:10px;color:#0066FF;border:1px solid #B8D4FF;background:#E9F4FF;font:600 11px/18px Inter,sans-serif;white-space:nowrap}
+.thv-sp{border-collapse:collapse;width:100%;margin-top:4px;min-width:0!important;font-size:13px}
+.thv-sp td{font:400 13px/18px Inter,sans-serif;padding:3px 0!important;border:0;border-top:1px solid #F1F5F9;vertical-align:top;white-space:normal!important}
+.thv-sp td:first-child{color:#475569;width:46%;padding-right:6px!important}
+.thv-sp td:last-child{color:#1A1A1A;font-weight:500}
+.thv-pf{grid-area:pf;margin-top:10px;padding-top:10px;border-top:1px solid #DCE5F0}
+.thv-pp{font:800 22px/28px Inter,sans-serif;color:#1A1A1A}
+.thv-av{font:400 12px/16px Inter,sans-serif;color:#475569;margin-top:2px}
+.thv-bs{display:flex;gap:8px;margin-top:8px}
+.thv-bs .thv-btn{flex:1;min-height:44px;font-size:15px;padding:0 8px}
+.thv-steps{display:grid;gap:10px}
+.thv-step{display:flex;gap:14px;padding:14px 16px;border:1px solid #DCE5F0;border-radius:12px;background:#fff}
+.thv-step i{flex:none;width:32px;height:32px;border-radius:50%;background:#0066FF;color:#fff;display:grid;place-items:center;font:700 15px/1 Inter,sans-serif;font-style:normal}
+.thv-step b{display:block;font:700 16px/22px Inter,sans-serif;color:#0033A0}
+.thv-step span{font:400 15px/22px Inter,sans-serif;color:#223046}
+.thv .thgeo-faq{border:1px solid #DCE5F0;border-radius:12px;padding:0 16px;margin-bottom:10px;background:#fff}
+.thv .thgeo-faq summary{min-height:52px;display:flex;align-items:center;font:600 16px/22px Inter,sans-serif;color:#0033A0}
+.thv .thgeo-faq p{margin:0 0 14px;font:400 15px/24px Inter,sans-serif;color:#223046}
+.thv .thgeo-final{background:#0033A0;border:0;border-radius:16px;padding:20px 16px;color:#fff;margin-top:28px}
+.thv .thgeo-final h2{color:#fff;font:700 20px/28px Inter,sans-serif;margin:0 0 8px}
+.thv .thgeo-final p{color:#dbe7ff;font:400 14px/20px Inter,sans-serif;margin:0 0 14px}
+.thv .thgeo-final .thgeo-cta{display:grid;gap:10px;margin:0}
+.thv .thgeo-final .thgeo-cta a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:8px;font:600 16px/1 Inter,sans-serif;text-decoration:none}
+.thv .thgeo-final .tg1{background:#fff;color:#0033A0}
+.thv .thgeo-final .tg2{background:transparent;color:#fff;border:1.5px solid #fff}
+.thv h2{font:700 24px/32px Inter,sans-serif;margin:32px 0 10px}
+.thv .thgeo-note,.thv .thgeo-also p{font:400 13px/20px Inter,sans-serif;color:#475569}
+.thv-live{margin:0 0 14px}
+.thv-live:empty{display:none}
+.thv-live:not(:empty){border-left:4px solid #E81C1C;background:#FFF4F4;border-radius:0 12px 12px 0;padding:12px 16px;font:500 14px/22px Inter,sans-serif;color:#7A1111}
+@media(min-width:900px){
+ .thv-hero{padding:48px 40px 52px;margin:0;border-radius:0 0 24px 24px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+ .thv-hero h1{font:800 44px/52px Inter,sans-serif}
+ .thv-cta{grid-template-columns:1fr 1fr;max-width:520px}
+ .thv-sec{padding:56px 40px 0}
+ .thv-routes{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .thv-pl{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .thv-card{grid-template-columns:96px minmax(0,1fr)}
+ .thv-im img{max-height:120px}
+ .thv-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .thv-faqwrap,.thv .thgeo-final,.thv .thgeo-also{margin-left:40px;margin-right:40px}
+ .thv .thgeo-final{display:grid;grid-template-columns:1fr auto;grid-template-areas:"t c" "p c";column-gap:40px;row-gap:6px;align-items:center;padding:32px 40px}
+ .thv .thgeo-final h2{grid-area:t;margin:0}
+ .thv .thgeo-final p{grid-area:p;margin:0;font-size:15px;line-height:22px}
+ .thv .thgeo-final .thgeo-cta{grid-area:c;grid-template-columns:auto auto}
+ .thv .thgeo-final .thgeo-cta a{white-space:nowrap;padding:0 28px}
+}
+</style>
+<style>
+.thv-crumbs{font:400 13px/20px Inter,sans-serif;color:#475569;padding:12px 0 0}
+.thv-crumbs a{color:#475569;text-decoration:none}
+.thv-meta{font:500 13px/20px Inter,sans-serif;color:#475569;margin:12px 0 0}
+.thv-tiles{display:grid;gap:12px;margin-top:20px}
+.thv-prose p,.thv-prose li{font:400 16px/26px Inter,sans-serif;color:#223046}
+.thv-prose p{margin:0 0 14px}
+.thv-prose ul{margin:0 0 14px;padding-left:20px}
+.thv-prose li{margin:0 0 6px}
+.thv-prose h3{font:700 20px/28px Inter,sans-serif;color:#0033A0;margin:24px 0 10px}
+.thv-note{border-left:4px solid #0066FF;background:#F1F5F9;border-radius:0 12px 12px 0;padding:14px 16px;margin:0 0 14px;font:400 15px/24px Inter,sans-serif;color:#223046}
+.thv-next{display:grid;gap:10px}
+.thv-next a{display:block;border:1px solid #DCE5F0;border-radius:12px;padding:14px 16px;text-decoration:none;font:600 16px/22px Inter,sans-serif;color:#0033A0;background:#fff}
+.thv-next small{display:block;font:400 14px/20px Inter,sans-serif;color:#475569;margin-top:2px}
+@media(min-width:900px){
+ .thv-hero h1{font-size:36px;line-height:44px}
+ .thv-next{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .thv-prose{max-width:820px}
+}
+</style>
+<div class="thgeo thv">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<section class="thv-hero"><div><div class="thv-crumbs"><a href="https://tehnoholod369.kz/">Главная</a> › <a href="https://tehnoholod369.kz/baza-znaniy">База знаний</a> › Полупромышленный осушитель Ballu BDI</div><h1>Полупромышленный осушитель Ballu BDI: как выбрать для подвала, склада, цеха</h1><p class="thv-lead">Подвал, склад, мастерская или цех: бытовые осушители рассчитаны на квартиру, а здесь нужен запас по производительности и расходу воздуха. У Ballu для этого две линейки, полупромышленные BDI и сушильные мультикомплексы. Ниже все модели из каталога: выберите по площади и напишите нам.</p><div class="thv-cta"><a class="thv-btn thv-red" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D0%B1%D0%B5%D1%80%D0%B8%D1%82%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D0%BF%D1%80%D0%BE%D0%BC%D1%8B%D1%88%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%81%D1%83%D1%88%D0%B8%D1%82%D0%B5%D0%BB%D1%8C.%0A%D0%A7%D1%82%D0%BE%20%D0%BE%D1%81%D1%83%D1%88%D0%B0%D0%B5%D0%BC%20%28%D0%BF%D0%BE%D0%B4%D0%B2%D0%B0%D0%BB%2C%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%2C%20%D1%86%D0%B5%D1%85%29%3A%20%0A%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C%2C%20%D0%BC%C2%B2%3A%20%0A%D0%92%D1%8B%D1%81%D0%BE%D1%82%D0%B0%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BB%D0%BA%D0%B0%2C%20%D0%BC%3A%20%0A%D0%9E%D1%82%D0%B0%D0%BF%D0%BB%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BB%D0%B8%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%3A%20">Подобрать в WhatsApp</a><a class="thv-btn thv-out" href="tel:+77000369369">+77 000 369 369</a></div><p class="thv-meta">Страница сверена с каталогом 03.10.2026. Данные каталога от <span class="thgeo-date">20.09.2026</span>.</p></div><div><div class="thv-tiles"><div class="thv-fact"><b>50–100 л/сут</b><span>BDI: производительность</span></div><div class="thv-fact"><b>75–150 м²</b><span>BDI: площадь, на которую рассчитаны</span></div><div class="thv-fact"><b>60–120 л/сут</b><span>мультикомплексы: производительность</span></div></div></div></section>
+<section class="thv-sec"><h2>Полупромышленные Ballu BDI</h2><p class="thv-sub">Серия Heavy Industrial: 5 моделей, от 50 до 100 л/сут.</p><p class="thv-live thgeo-live" role="status"></p><div class="thv-pl"><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-50l"><img src="https://img.tehnoholod369.kz/img/osushiteli/os_1299844.jpg" alt="Ballu BDI-50L" width="600" height="450" loading="lazy" decoding="async"></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-50l">BDI-50L</a><div class="thv-mk"><span class="thv-tag">В наличии</span></div><table class="thv-sp"><tr><td>Осушение</td><td>50 л/сут</td></tr><tr><td>Площадь до</td><td>75 м2</td></tr><tr><td>Шум</td><td>50 дБ</td></tr><tr><td>Бак</td><td>7 л</td></tr><tr><td>Гигростат</td><td>Да</td></tr><tr><td>Wi-Fi</td><td>нет</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="BDI-50L">473 990 ₸</div><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-50l">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-50l">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-70lp"><img src="https://img.tehnoholod369.kz/img/osushiteli/os_1710970.jpg" alt="Ballu BDI-70LP" width="600" height="450" loading="lazy" decoding="async"></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-70lp">BDI-70LP</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Осушение</td><td>70 л/сут</td></tr><tr><td>Площадь до</td><td>100 м2</td></tr><tr><td>Шум</td><td>55 дБ</td></tr><tr><td>Гигростат</td><td>Да</td></tr><tr><td>Wi-Fi</td><td>нет</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="BDI-70LP">497 990 ₸</div><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-70lp">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-70lp">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-70l"><img src="https://img.tehnoholod369.kz/img/osushiteli/os_1421660.jpg" alt="Ballu BDI-70L" width="600" height="450" loading="lazy" decoding="async"></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-70l">BDI-70L</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Осушение</td><td>70 л/сут</td></tr><tr><td>Площадь до</td><td>100 м2</td></tr><tr><td>Шум</td><td>50 дБ</td></tr><tr><td>Гигростат</td><td>Да</td></tr><tr><td>Wi-Fi</td><td>нет</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="BDI-70L">591 990 ₸</div><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-70l">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-70l">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-80l"><img src="https://img.tehnoholod369.kz/img/osushiteli/os_1307732.jpg" alt="Ballu BDI-80L" width="600" height="450" loading="lazy" decoding="async"></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-80l">BDI-80L</a><div class="thv-mk"><span class="thv-tag">В наличии</span></div><table class="thv-sp"><tr><td>Осушение</td><td>80 л/сут</td></tr><tr><td>Площадь до</td><td>115 м2</td></tr><tr><td>Шум</td><td>50 дБ</td></tr><tr><td>Гигростат</td><td>Да</td></tr><tr><td>Wi-Fi</td><td>нет</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="BDI-80L">722 990 ₸</div><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-80l">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-80l">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-100l"><img src="https://img.tehnoholod369.kz/img/osushiteli/os_1421663.jpg" alt="Ballu BDI-100L" width="600" height="450" loading="lazy" decoding="async"></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-100l">BDI-100L</a><div class="thv-mk"><span class="thv-tag">В наличии</span></div><table class="thv-sp"><tr><td>Осушение</td><td>100 л/сут</td></tr><tr><td>Площадь до</td><td>150 м2</td></tr><tr><td>Шум</td><td>50 дБ</td></tr><tr><td>Гигростат</td><td>Да</td></tr><tr><td>Wi-Fi</td><td>нет</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="BDI-100L">828 990 ₸</div><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-100l">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bdi-100l">Выбрать</a></div></div></article></div><div class="thv-prose" style="margin-top:16px"><ul><li>BDI-70LP и BDI-70L дают одинаковые 70 л/сут и площадь до 100 м², но различаются шумом и расходом воздуха: 55 дБ и 450 м³/ч у BDI-70LP, 50 дБ и 500 м³/ч у BDI-70L.</li><li>BDI-100L: 100 л/сут и расход воздуха 900 м³/ч, у остальных BDI он 350–500 м³/ч.</li><li>У всех пяти в карточках указан гигростат и электронное управление, встроенного Wi-Fi нет.</li></ul></div></section>
+<section class="thv-sec"><h2>Сушильные мультикомплексы Ballu</h2><p class="thv-sub">Серии Smart Duty Wi-Fi и Heavy Duty Plus: от 60 до 120 л/сут.</p><p class="thv-live thgeo-live" role="status"></p><div class="thv-pl"><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd60t-sd"><img src="https://img.tehnoholod369.kz/img/osushiteli/os_1705252.jpg" alt="Ballu BD60T SD" width="600" height="450" loading="lazy" decoding="async"></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd60t-sd">BD60T SD</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span><span class="thv-tag">Wi-Fi</span></div><table class="thv-sp"><tr><td>Осушение</td><td>60 л/сут</td></tr><tr><td>Площадь до</td><td>85 м2</td></tr><tr><td>Шум</td><td>47 дБ</td></tr><tr><td>Бак</td><td>7,1 л</td></tr><tr><td>Гигростат</td><td>Да</td></tr><tr><td>Wi-Fi</td><td>есть</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="BD60T SD">213 990 ₸</div><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd60t-sd">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd60t-sd">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd60ci"><img src="https://img.tehnoholod369.kz/img/osushiteli/os_1612613.jpg" alt="Ballu BD60CI" width="600" height="450" loading="lazy" decoding="async"></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd60ci">BD60CI</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Осушение</td><td>60 л/сут</td></tr><tr><td>Площадь до</td><td>70 м2</td></tr><tr><td>Шум</td><td>25 дБ</td></tr><tr><td>Бак</td><td>7 л</td></tr><tr><td>Гигростат</td><td>Да</td></tr><tr><td>Wi-Fi</td><td>нет</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="BD60CI">272 990 ₸</div><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd60ci">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd60ci">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd70t-sd"><img src="https://img.tehnoholod369.kz/img/osushiteli/os_1705258.jpg" alt="Ballu BD70T SD" width="600" height="450" loading="lazy" decoding="async"></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd70t-sd">BD70T SD</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span><span class="thv-tag">Wi-Fi</span></div><table class="thv-sp"><tr><td>Осушение</td><td>70 л/сут</td></tr><tr><td>Площадь до</td><td>100 м2</td></tr><tr><td>Шум</td><td>47 дБ</td></tr><tr><td>Бак</td><td>7,1 л</td></tr><tr><td>Гигростат</td><td>Да</td></tr><tr><td>Wi-Fi</td><td>есть</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="BD70T SD">248 990 ₸</div><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd70t-sd">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd70t-sd">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd80hp"><img src="https://img.tehnoholod369.kz/img/osushiteli/os_1613518.jpg" alt="Ballu BD80HP" width="600" height="450" loading="lazy" decoding="async"></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd80hp">BD80HP</a><div class="thv-mk"><span class="thv-tag">В наличии</span></div><table class="thv-sp"><tr><td>Осушение</td><td>80 л/сут</td></tr><tr><td>Площадь до</td><td>95 м2</td></tr><tr><td>Шум</td><td>50 дБ</td></tr><tr><td>Бак</td><td>8 л</td></tr><tr><td>Гигростат</td><td>Да</td></tr><tr><td>Wi-Fi</td><td>нет</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="BD80HP">639 990 ₸</div><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd80hp">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd80hp">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd120hp"><img src="https://img.tehnoholod369.kz/img/osushiteli/os_1613522.jpg" alt="Ballu BD120HP" width="600" height="450" loading="lazy" decoding="async"></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd120hp">BD120HP</a><div class="thv-mk"><span class="thv-tag">В наличии</span></div><table class="thv-sp"><tr><td>Осушение</td><td>120 л/сут</td></tr><tr><td>Площадь до</td><td>140 м2</td></tr><tr><td>Шум</td><td>50 дБ</td></tr><tr><td>Бак</td><td>12 л</td></tr><tr><td>Гигростат</td><td>Да</td></tr><tr><td>Wi-Fi</td><td>нет</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="BD120HP">864 990 ₸</div><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd120hp">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=osushiteli&amp;sl=ballu-bd120hp">Выбрать</a></div></div></article></div><div class="thv-prose" style="margin-top:16px"><ul><li>BD60T SD и BD70T SD со встроенным Wi-Fi: в карточках указано дистанционное управление.</li><li>BD60CI: 60 л/сут при шуме 25 дБ по данным каталога, у остальных моделей этого раздела 47–50 дБ.</li><li>BD80HP и BD120HP: Wi-Fi нет, класс защиты IP21; BD120HP единственная на 120 л/сут.</li></ul></div></section>
+<section class="thv-sec thv-prose"><h2>Как читать «площадь до» и литры в сутки</h2><p>Производительность и площадь «до» это паспортные значения производителя. В вашем помещении результат зависит от температуры воздуха, исходной влажности, высоты потолка и источника влаги. Два помещения по 100 м², сухой склад и сырой подвал с постоянным притоком влаги, требуют разной производительности.</p><div class="thv-note">Минимальная рабочая температура в карточках каталога не указана: нет данных. </div></section>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<section class="thv-sec"><h2>Как подобрать</h2><p class="thv-sub">Достаточно четырёх вводных. Напишите их в WhatsApp, и мы назовём модель.</p><div class="thv-steps"><div class="thv-step"><i>1</i><div><b>Площадь и высота потолка</b><span>По ним считается объём воздуха.</span></div></div><div class="thv-step"><i>2</i><div><b>Что осушаем</b><span>Подвал, склад, цех, мастерскую, стройку после затопления или сушку материалов.</span></div></div><div class="thv-step"><i>3</i><div><b>Откуда берётся влага</b><span>Грунт, протечки, технологический процесс, люди.</span></div></div><div class="thv-step"><i>4</i><div><b>Условия</b><span>Отапливается ли помещение и какая там температура.</span></div></div></div></section>
+<section class="thv-sec"><h2>Частые вопросы</h2><details class="thgeo-faq"><summary>Какой осушитель Ballu нужен для подвала?</summary><p>Зависит от площади, высоты потолка и источника влаги. По каталогу ориентир такой: BDI-50L рассчитан на площадь до 75 м², BDI-100L до 150 м². Мы уточняем у вас площадь, высоту потолка и температуру в подвале, затем называем модель.</p></details><details class="thgeo-faq"><summary>Чем BDI-70LP отличается от BDI-70L?</summary><p>Производительность и площадь у них одинаковые: 70 л/сут и до 100 м². Разница в шуме (55 дБ у BDI-70LP, 50 дБ у BDI-70L), расходе воздуха (450 и 500 м³/ч) и хладагенте (R410a у BDI-70LP, R290 у BDI-70L).</p></details><details class="thgeo-faq"><summary>Есть ли у BDI гигростат и Wi-Fi?</summary><p>Гигростат указан у всех моделей BDI и мультикомплексов в этой статье. Встроенный Wi-Fi есть у BD60T SD и BD70T SD; у BDI и остальных мультикомплексов его нет.</p></details><details class="thgeo-faq"><summary>Эти модели в наличии?</summary><p>Статус разный: часть моделей бывает в наличии, часть поставляется под заказ. Актуальный статус показан в карточке модели в каталоге.</p></details><details class="thgeo-faq"><summary>Какая гарантия на осушители Ballu?</summary><p>Гарантия производителя, срок в паспорте.</p></details><details class="thgeo-faq"><summary>Нужен ли монтаж?</summary><p>В карточках каталога монтаж не указан, это нет данных. Условия установки и подключения в карточках не указаны: нет данных.</p></details></section>
+<section class="thgeo-final"><h2>Не уверены, какая модель подойдёт?</h2><p>Напишите площадь, высоту потолка и что осушаем. Подскажем модель.</p><div class="thgeo-cta"><a class="tg1" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D0%B1%D0%B5%D1%80%D0%B8%D1%82%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D0%BF%D1%80%D0%BE%D0%BC%D1%8B%D1%88%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%81%D1%83%D1%88%D0%B8%D1%82%D0%B5%D0%BB%D1%8C.%0A%D0%A7%D1%82%D0%BE%20%D0%BE%D1%81%D1%83%D1%88%D0%B0%D0%B5%D0%BC%20%28%D0%BF%D0%BE%D0%B4%D0%B2%D0%B0%D0%BB%2C%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%2C%20%D1%86%D0%B5%D1%85%29%3A%20%0A%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C%2C%20%D0%BC%C2%B2%3A%20%0A%D0%92%D1%8B%D1%81%D0%BE%D1%82%D0%B0%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BB%D0%BA%D0%B0%2C%20%D0%BC%3A%20%0A%D0%9E%D1%82%D0%B0%D0%BF%D0%BB%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BB%D0%B8%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%3A%20">Написать в WhatsApp</a><a class="tg2" href="tel:+77000369369">+77 000 369 369</a></div></section>
+<section class="thv-sec"><h2>Читайте также</h2><div class="thv-next"><a href="https://tehnoholod369.kz/osushitel">Осушитель для квартиры и дома<small>Бытовые модели и как их выбрать</small></a><a href="https://tehnoholod369.kz/promyshlennyy-osushitel-ballu">Промышленные осушители Ballu BDH<small>Если помещение крупнее или нужна трёхфазная сеть</small></a></div></section>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Полупромышленный осушитель Ballu BDI: как выбрать для подвала, склада, цеха", "inLanguage": "ru", "mainEntityOfPage": "https://tehnoholod369.kz/polupromyshlennyy-osushitel-ballu", "dateModified": "2026-10-03", "datePublished": "2026-10-03", "author": {"@id": "https://tehnoholod369.kz/#business"}, "publisher": {"@id": "https://tehnoholod369.kz/#business"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Полупромышленный осушитель Ballu BDI: как выбрать для подвала, склада, цеха", "item": "https://tehnoholod369.kz/polupromyshlennyy-osushitel-ballu"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Полупромышленный осушитель Ballu BDI: как выбрать для подвала, склада, цеха", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ballu BDI-50L", "url": "https://tehnoholod369.kz/tovar?g=osushiteli&sl=ballu-bdi-50l"}, {"@type": "ListItem", "position": 2, "name": "Ballu BDI-70LP", "url": "https://tehnoholod369.kz/tovar?g=osushiteli&sl=ballu-bdi-70lp"}, {"@type": "ListItem", "position": 3, "name": "Ballu BDI-70L", "url": "https://tehnoholod369.kz/tovar?g=osushiteli&sl=ballu-bdi-70l"}, {"@type": "ListItem", "position": 4, "name": "Ballu BDI-80L", "url": "https://tehnoholod369.kz/tovar?g=osushiteli&sl=ballu-bdi-80l"}, {"@type": "ListItem", "position": 5, "name": "Ballu BDI-100L", "url": "https://tehnoholod369.kz/tovar?g=osushiteli&sl=ballu-bdi-100l"}, {"@type": "ListItem", "position": 6, "name": "Ballu BD60T SD", "url": "https://tehnoholod369.kz/tovar?g=osushiteli&sl=ballu-bd60t-sd"}, {"@type": "ListItem", "position": 7, "name": "Ballu BD60CI", "url": "https://tehnoholod369.kz/tovar?g=osushiteli&sl=ballu-bd60ci"}, {"@type": "ListItem", "position": 8, "name": "Ballu BD70T SD", "url": "https://tehnoholod369.kz/tovar?g=osushiteli&sl=ballu-bd70t-sd"}, {"@type": "ListItem", "position": 9, "name": "Ballu BD80HP", "url": "https://tehnoholod369.kz/tovar?g=osushiteli&sl=ballu-bd80hp"}, {"@type": "ListItem", "position": 10, "name": "Ballu BD120HP", "url": "https://tehnoholod369.kz/tovar?g=osushiteli&sl=ballu-bd120hp"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Какой осушитель Ballu нужен для подвала?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от площади, высоты потолка и источника влаги. По каталогу ориентир такой: BDI-50L рассчитан на площадь до 75 м², BDI-100L до 150 м². Мы уточняем у вас площадь, высоту потолка и температуру в подвале, затем называем модель."}}, {"@type": "Question", "name": "Чем BDI-70LP отличается от BDI-70L?", "acceptedAnswer": {"@type": "Answer", "text": "Производительность и площадь у них одинаковые: 70 л/сут и до 100 м². Разница в шуме (55 дБ у BDI-70LP, 50 дБ у BDI-70L), расходе воздуха (450 и 500 м³/ч) и хладагенте (R410a у BDI-70LP, R290 у BDI-70L)."}}, {"@type": "Question", "name": "Есть ли у BDI гигростат и Wi-Fi?", "acceptedAnswer": {"@type": "Answer", "text": "Гигростат указан у всех моделей BDI и мультикомплексов в этой статье. Встроенный Wi-Fi есть у BD60T SD и BD70T SD; у BDI и остальных мультикомплексов его нет."}}, {"@type": "Question", "name": "Эти модели в наличии?", "acceptedAnswer": {"@type": "Answer", "text": "Статус разный: часть моделей бывает в наличии, часть поставляется под заказ. Актуальный статус показан в карточке модели в каталоге."}}, {"@type": "Question", "name": "Какая гарантия на осушители Ballu?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия производителя, срок в паспорте."}}, {"@type": "Question", "name": "Нужен ли монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "В карточках каталога монтаж не указан, это нет данных. Условия установки и подключения в карточках не указаны: нет данных."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/osushiteli.json"];
+  // Штамп свежести обязан описывать ТЕ данные, которые видит посетитель.
+  // Цены подставляются здесь же, в браузере, из живого data/*.json — а дата
+  // до 04.09.2026 бралась из mtime локального файла в момент сборки блока.
+  // Это дата сборки, а не данных: страница писала «по данным каталога
+  // от 01.09.2026», когда в export-state.json стояло 2026-09-03. ТЗ п.27:
+  // фиктивной даты обновления быть не должно.
+  fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/export-state.json",{cache:"no-cache"})
+    .then(function(r){return r.json()})
+    .then(function(st){
+      var d=st&&st.dataUpdated; if(!d)return;
+      var p=String(d).split("-"); if(p.length!==3)return;
+      var t=p[2]+"."+p[1]+"."+p[0];
+      document.querySelectorAll(".thgeo-date").forEach(function(el){el.textContent=t});
+    })
+    .catch(function(){});
+  // ТЗ п.28 / FAIL-01: источник недоступен — старую цену нельзя показывать как
+  // гарантированно актуальную. Раньше сбой глотался (.catch -> []), цены сборки
+  // оставались на экране, а страница продолжала утверждать, что они обновляются
+  // сами. Цены не прячем: они настоящие, из последней сборки, и снимать их
+  // с витрины из-за сетевого сбоя дороже, чем сказать правду. Снимаем ОБЕЩАНИЕ.
+  var bad=false;
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){
+      if(!r.ok) throw 0;
+      return r.json();
+    }).catch(function(){bad=true; return []});
+  })).then(function(all){
+    if(bad){
+      // Частичное обновление хуже полного отказа: часть цен свежая, часть нет,
+      // и отличить их на экране нечем. Поэтому не переписываем ничего.
+      document.querySelectorAll(".thgeo-live").forEach(function(el){
+        el.textContent="обновить цены сейчас не удалось — уточните актуальную цену "
+          +"по телефону или в WhatsApp";
+      });
+      return;
+    }
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    // «Цены от …» в абзаце — цена КОНКРЕТНОЙ модели, самой доступной из тех,
+    // что подходят под фильтр страницы. Минимум по всей группе сюда брать нельзя:
+    // на «кондиционер на 25 м²» он подставил бы модель на 7 000 BTU, которая
+    // эти 25 м² не закрывает, — страница обещала бы не то (31.08.2026).
+    document.querySelectorAll(".thgeo-pmin").forEach(function(el){
+      var a=el.getAttribute("data-min-art"), x=a?by[a]:null, v=(x&&x.p)?x.p:null;
+      if(v===null){
+        [].forEach.call(document.querySelectorAll(".thgeo-p"),function(td){
+          var y=by[td.getAttribute("data-art")];
+          if(y&&y.p&&(v===null||y.p<v))v=y.p;
+        });
+      }
+      if(v)el.textContent=v.toLocaleString("ru-RU").replace(/ /g," ");
+    });
+  });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=be2fdc8d"></script>
+<script>
+(function(){
+  var URL="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/osushiteli.json", GROUP="osushiteli";
+  function norm(s){return String(s||"").replace(/[\u00a0\u202f]/g," ")}
+  function status(card,x){
+    var mk=card.querySelector(".thv-mk");
+    if(!mk||!x) return;
+    var inStock=(x.st==="В наличии");
+    var wifi=[].filter.call(mk.children,function(k){ return k.textContent==="Wi-Fi"; });
+    mk.innerHTML="";
+    var s=document.createElement("span");
+    s.className="thv-tag"+(inStock?"":" thv-tag--ord"); s.textContent=inStock?"В наличии":"Под заказ"; mk.appendChild(s);
+    wifi.forEach(function(w){ mk.appendChild(w); });
+  }
+  function cartBtn(btn,x){
+    if(!btn||!x||!x.p||!x.sl||!window.CART) return;
+    function label(){ btn.textContent=window.CART.has(x.sl)?"Оформить":"В корзину"; }
+    label();
+    btn.addEventListener("click",function(e){
+      if(!window.CART) return;
+      e.preventDefault();
+      if(window.CART.has(x.sl)){ location.href="/korzina"; return; }
+      window.CART.add(Object.assign({},x,{g:GROUP}),1);
+      label();
+    });
+    window.addEventListener("th-cart",label);
+  }
+  function go(all){
+    var by={}; all.forEach(function(x){ if(x.s) by[norm(x.s)]=x; });
+    var allOrder=true;
+    [].forEach.call(document.querySelectorAll(".thgeo-p"),function(pe){
+      var x=by[norm(pe.getAttribute("data-art"))], card=pe.closest("article");
+      if(!card||!x) return;
+      status(card,x);
+      if(x.st==="В наличии") allOrder=false;
+      cartBtn(card.querySelector(".thgeo-cart"),x);
+    });
+    if(!allOrder){
+      [].forEach.call(document.querySelectorAll(".thgeo-ord"),function(el){ el.textContent=el.getAttribute("data-alt"); });
+    }
+  }
+  var tries=0;
+  function start(){
+    // cart.js ставится отдельным <script src>; даём ему до 3 секунд, иначе остаёмся на «Выбрать»
+    if(!window.CART&&tries++<15){ return setTimeout(start,200); }
+    fetch(URL,{cache:"no-cache"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(go).catch(function(){});
+  }
+  start();
+})();
+</script>
