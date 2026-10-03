@@ -490,11 +490,12 @@
   {
    "slug": "multisplit",
    "title": "Мультисплит-системы",
-   "count": 233,
-   "brands": 11,
+   "count": 244,
+   "brands": 12,
    "brandList": [
     "AERONIK",
     "AUX",
+    "Ballu",
     "CHERBROOKE",
     "DITREEX",
     "GREE",
@@ -505,17 +506,17 @@
     "ROYAL CLIMA",
     "THAICON"
    ],
-   "inStock": 113,
+   "inStock": 118,
    "acc": 5,
    "serList": [],
    "subs": [
     {
      "name": "Внутренние блоки",
-     "n": 150
+     "n": 155
     },
     {
      "name": "Наружные блоки",
-     "n": 78
+     "n": 84
     },
     {
      "name": "Комплектующие",
