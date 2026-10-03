@@ -81,6 +81,7 @@
               <div style="font-size:14px; color:#2C3846; line-height:1.5; margin-top:4px;">{{ c.when }}</div>
             </div>
             <div style="font-size:13px; color:#B25200; line-height:1.5; margin-top:10px;">{{ c.limit }}</div>
+            <a href="{{ c.href }}" style="display:inline-flex; align-items:center; min-height:44px; margin-top:6px; font-size:14px; font-weight:700; color:#0872D3;">Смотреть в каталоге →</a>
           </div>
         </sc-for>
       </div>
@@ -442,7 +443,14 @@ class Component extends DCLogic {
     ].map(c => ({
       ...c,
       count: cnt(c.slug) ? cnt(c.slug) + ' поз.' : 'нет данных',
-      pick: () => this.setState({ group: c.slug, sub: 'Все', showTable: true })
+      href: ({
+        vrf: 'https://tehnoholod369.kz/katalog?g=mini-vrf',
+        chillery: 'https://tehnoholod369.kz/katalog?g=chillery',
+        fankoyly: 'https://tehnoholod369.kz/katalog?g=fankoyly',
+        pvu: 'https://tehnoholod369.kz/katalog?g=ventilyaciya&sub=%D0%9F%D1%80%D0%B8%D1%82%D0%BE%D1%87%D0%BD%D0%BE-%D0%B2%D1%8B%D1%82%D1%8F%D0%B6%D0%BD%D1%8B%D0%B5%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8',
+        precizionnye: 'https://tehnoholod369.kz/katalog?g=precizionnye',
+        rekuperatory: 'https://tehnoholod369.kz/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B'
+      })[c.slug]
     }));
 
     const capHeader = this.state.group === 'pvu' ? 'РАСХОД ВОЗДУХА / ДАВЛЕНИЕ' : 'МОЩНОСТЬ, КВТ';
