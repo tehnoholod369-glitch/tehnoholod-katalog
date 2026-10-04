@@ -1,0 +1,354 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  
+
+  
+  body { margin: 0; background: #fff; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0033A0; }
+
+  
+  .art-page-main { width: 100%; max-width: 1248px; box-sizing: border-box; margin: 0 auto; padding: 18px 24px 72px;
+    display: grid; grid-template-columns: 300px minmax(0, 1fr); column-gap: 56px;
+    grid-template-areas: "crumbs crumbs" "toc top" "toc body"; align-items: start; }
+  .art-page-main > * { grid-column: 1 / -1; min-width: 0; }
+  .art-page-main > .art-crumbs { grid-area: crumbs; }
+  .art-page-main > .art-top { grid-area: top; max-width: 844px; }
+  .art-page-main > .art-toc-wrap { grid-area: toc; }
+  .art-page-main > .art { grid-area: body; max-width: 844px; }
+  .art-page-main.art-solo { grid-template-columns: minmax(0, 760px); grid-template-areas: "crumbs" "top" "body"; justify-content: center; }
+  .art-crumbs { font: 400 13px/20px Inter, sans-serif; color: #64748B; }
+  .art-crumbs a { color: #64748B; }
+  .art-crumbs span { color: #1A1A1A; }
+
+  .art-top { margin-top: 20px; }
+  .art-tag { display: inline-block; background: #E9F4FF; color: #0033A0; border-radius: 999px; padding: 4px 12px; font: 700 12px/18px Inter, sans-serif; }
+  .art-top h1 { margin: 12px 0 0; font: 700 38px/46px Inter, sans-serif; letter-spacing: -0.02em; color: #0033A0; overflow-wrap: anywhere; }
+  .art-meta { margin-top: 12px; font: 500 14px/20px Inter, sans-serif; color: #64748B; }
+  .art-page-lead { margin-top: 14px; font: 400 18px/30px Inter, sans-serif; color: #223046; }
+
+  
+  .art-toc-wrap { margin-top: 20px; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow: auto; }
+  .art-toc__t { font: 700 14px/20px Inter, sans-serif; color: #0033A0; margin: 0 0 10px; }
+  .art-toc { counter-reset: t; list-style: none; margin: 0; padding: 0; border: 1px solid #E2E8F0; border-radius: 12px; background: #fff; }
+  .art-toc li { counter-increment: t; border-top: 1px solid #E2E8F0; }
+  .art-toc li:first-child { border-top: 0; }
+  .art-toc a { display: flex; gap: 10px; align-items: flex-start; padding: 12px 16px; font: 500 15px/22px Inter, sans-serif; color: #0033A0; }
+  .art-toc a::before { content: counter(t); flex: none; width: 26px; height: 26px; border-radius: 50%; background: #E9F4FF; display: grid; place-items: center; font: 700 13px/1 Inter, sans-serif; }
+  .art-toc a:hover { color: #0066FF; }
+
+  
+  .t-body .art-local-chrome { display: none !important; }
+
+  .art { width: 100%; }
+  .art h2 { margin: 36px 0 0; font: 700 28px/36px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; scroll-margin-top: 20px; }
+  .art h3 { margin: 24px 0 0; font: 700 20px/28px Inter, sans-serif; color: #0033A0; }
+  .art p { margin: 14px 0 0; font: 400 18px/30px Inter, sans-serif; color: #223046; }
+  .art ul, .art ol { margin: 14px 0 0; padding-left: 24px; }
+  .art li { font: 400 18px/30px Inter, sans-serif; color: #223046; margin-top: 6px; }
+  .art b, .art strong { color: #1A1A1A; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 16px; border: 1px solid #E2E8F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font: 400 16px/24px Inter, sans-serif; }
+  .art-t th { background: #F1F5F9; text-align: left; padding: 12px 16px; font-weight: 700; color: #0033A0; border-bottom: 1px solid #E2E8F0; white-space: nowrap; }
+  .art-t td { padding: 12px 16px; color: #223046; border-bottom: 1px solid #EEF2F7; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #1A1A1A; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E9F4FF; border: 1px solid #CFE3FA; border-radius: 12px; padding: 16px 20px; margin-top: 18px; font: 400 16px/26px Inter, sans-serif; color: #223046; }
+  .art-warn { background: #fff; border-left: 4px solid #E81C1C; border-radius: 0 12px 12px 0; box-shadow: 0 1px 2px rgba(0,51,160,.08); padding: 16px 20px; margin-top: 18px; font: 500 17px/26px Inter, sans-serif; color: #223046; }
+  .art-note b, .art-warn b { color: #1A1A1A; }
+
+  
+  .art-tldr { background: #fff; border: 1.5px solid #0033A0; border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .art-tldr__t { font: 700 13px/18px Inter, sans-serif; letter-spacing: 0.08em; color: #0066FF; }
+  .art-tldr__b { font: 500 17px/27px Inter, sans-serif; color: #1A1A1A; margin-top: 6px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; margin-top: 16px; }
+  .art-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 18px 20px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0066FF; box-shadow: 0 2px 14px rgba(0,102,255,.10); color: inherit; }
+  .art-card__t { font: 700 17px/24px Inter, sans-serif; color: #0033A0; }
+  .art-card__s { font: 400 14px/22px Inter, sans-serif; color: #475569; margin-top: 6px; }
+  .art-card__go { display: block; margin-top: 10px; font: 600 14px/20px Inter, sans-serif; color: #0066FF; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 700; color: #0033A0; }
+
+  
+  .art-q { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px 20px; margin-top: 12px; }
+  .art-q__q { font: 700 17px/24px Inter, sans-serif; color: #0033A0; }
+  .art-q__a { font: 400 16px/26px Inter, sans-serif; color: #223046; margin-top: 8px; }
+
+  
+  .art-src { font: 400 13px/20px Inter, sans-serif; color: #64748B; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px 20px;
+              margin-top: 16px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0066FF; box-shadow: 0 2px 14px rgba(0,102,255,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0066FF; color: #fff; border-radius: 6px; padding: 3px 8px; font: 700 12px/16px Inter, sans-serif; }
+  .art-pick__brand { font: 700 12px/16px Inter, sans-serif; letter-spacing: 0.06em; color: #0066FF; margin-top: 8px; }
+  .art-pick__name { font: 700 16px/22px Inter, sans-serif; color: #0033A0; margin-top: 4px; }
+  .art-pick__price { font: 800 20px/28px Inter, sans-serif; color: #1A1A1A; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font: 600 14px/20px Inter, sans-serif; color: #0066FF; flex: none; }
+
+  
+  .art-cta { background: #E9F4FF; border: 1px solid #CFE3FA; border-radius: 16px; padding: 28px 32px; margin-top: 36px;
+             display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; align-items: center; }
+  .art-cta__t { font: 700 24px/32px Inter, sans-serif; color: #0033A0; letter-spacing: -0.01em; }
+  .art-cta__s { font: 400 16px/26px Inter, sans-serif; color: #223046; margin-top: 8px; }
+  .art-cta__ph { font: 400 16px/26px Inter, sans-serif; color: #223046; margin-top: 12px; }
+  .art-cta__ph a { font-weight: 700; }
+  .art-cta__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .art-cta__actions a { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 26px; border-radius: 8px; font: 700 16px/1 Inter, sans-serif; }
+  .art-cta__actions .art-btn-main { background: #E81C1C; color: #fff; }
+  .art-cta__actions .art-btn-alt { background: #fff; color: #0066FF; border: 1.5px solid #0066FF; }
+
+  .art-next-h { margin: 40px 0 0; font: 700 28px/36px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; }
+
+  @media (max-width: 760px) {
+    .art-page-main { padding: 14px 16px 56px; grid-template-columns: minmax(0, 1fr); grid-template-areas: "crumbs" "top" "toc" "body"; }
+    .art-page-main.art-solo { grid-template-columns: minmax(0, 1fr); grid-template-areas: "crumbs" "top" "body"; }
+    .art-top h1 { font-size: clamp(25px, 7vw, 30px); line-height: 1.2; }
+    .art-page-lead { font-size: 16px; line-height: 26px; }
+    .art-toc-wrap { position: static; max-height: none; overflow: visible; }
+    .art h2 { margin-top: 30px; font-size: 22px; line-height: 30px; }
+    .art h3 { font-size: 18px; line-height: 26px; }
+    .art p, .art li { font-size: 16px; line-height: 27px; }
+    .art-note, .art-warn, .art-tldr, .art-q { padding: 14px 16px; }
+    .art-cta { padding: 20px; gap: 18px; }
+    .art-cta__actions { display: grid; grid-template-columns: 1fr; width: 100%; }
+    .art-cta__actions > a { width: 100%; box-sizing: border-box; }
+    .art-next-h { font-size: 24px; line-height: 32px; }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#fff;">
+
+  
+  <div class="art-local-chrome" style="background:#F1F5F9; color:#1A1A1A; padding:9px 0; font:13px/20px Inter,sans-serif;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 22px;">
+      <b style="color:#0033A0;">Доставка по Казахстану</b>
+      <span><a href="tel:+77000369369" style="color:#0033A0; font-weight:700;">+77 000 369 369</a> · пн–пт 9:00–18:00</span>
+    </div>
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#fff; border-bottom:1px solid #E2E8F0;">
+    <div style="max-width:1280px; margin:0 auto; padding:12px 40px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 20px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" style="height:44px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0066FF; color:#fff; border-radius:8px; padding:10px 16px; font:600 15px/1 Inter,sans-serif;">☰ Каталог товаров</a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E9F4FF; color:#0033A0; border-radius:8px; padding:10px 16px; font:700 15px/1 Inter,sans-serif;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="art-page-main">
+
+    
+    <div class="art-crumbs">
+      <a href="/">Главная</a> › <a href="/baza-znaniy">База знаний</a> › <span>Отопление частного дома</span>
+    </div>
+
+    
+    <div class="art-top">
+      <span class="art-tag">Выбор</span>
+      <h1>Отопление частного дома: сравнение вариантов для Алматы</h1>
+      <div class="art-meta">8 минут чтения</div>
+      <div class="art-page-lead">
+        Электрокотёл, газовый котёл, тепловой насос, конвекторы, ИК-панели — что выбрать для дома в Алматы. Расчёт стоимости и окупаемости.
+      </div>
+    </div>
+
+    
+    <aside class="art-toc-wrap"><div class="art-toc__t">Содержание</div><ol class="art-toc"><li><a href="#razdel-1">Что реально решает выбор</a></li><li><a href="#razdel-2">Расчёт теплопотерь: сколько нужно тепла</a></li><li><a href="#razdel-3">Варианты отопления</a></li><li><a href="#razdel-4">Сравнение — сводная таблица (дом 100 м², 12 кВт, сезон 6 мес.)</a></li><li><a href="#razdel-5">Что выбрать по ситуации</a></li><li><a href="#razdel-6">Тёплый пол — отдельная история</a></li><li><a href="#razdel-7">Частые ошибки</a></li><li><a href="#razdel-8">Вывод</a></li><li><a href="#razdel-9">Что посмотреть в каталоге</a></li><li><a href="#razdel-10">Частые вопросы</a></li></ol></aside>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">если есть магистральный газ — газовый котёл (самое дешёвое отопление). Если газа нет — тепловой насос воздух-вода (в 3 раза экономичнее электрокотла) или электрические конвекторы (просто и дёшево при покупке, но дорого в эксплуатации). Твёрдотопливные и дизельные котлы — только когда электричества тоже нет. Ниже — сравнение по деньгам, автономности, монтажу и окупаемости.</div></div>
+      <h2 id="razdel-1">Что реально решает выбор</h2>
+      <p>Не «какое отопление лучше вообще», а три вопроса:</p>
+      <ol><li><b>Есть ли магистральный газ на участке?</b> Если да — почти всегда газовый котёл.</li><li><b>Какая выделенная электрическая мощность?</b> До 15 кВт — конвекторы и ИК-панели, 15+ кВт — можно электрокотёл или тепловой насос.</li><li><b>Дом для постоянного проживания или дача?</b> Дача — простые и автономные варианты, постоянно — с автоматикой и низкими эксплуатационными расходами.</li></ol>
+      <h2 id="razdel-2">Расчёт теплопотерь: сколько нужно тепла</h2>
+      <p><b>Норматив для дома в Алматы: 100–130 Вт на 1 м² при средней утеплённости.</b></p>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Тип дома</sc-raw-th><sc-raw-th>Ватт на м²</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Утеплённый (сэндвич, современные материалы)</sc-raw-td><sc-raw-td>60–80</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Средне утеплённый (кирпич 25 см + утеплитель)</sc-raw-td><sc-raw-td>80–120</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Плохо утеплённый (тонкие стены, старые окна)</sc-raw-td><sc-raw-td>130–180</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Открытая веранда, гараж</sc-raw-td><sc-raw-td>180–250</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <h3>Примеры</h3>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Дом</sc-raw-th><sc-raw-th>Площадь</sc-raw-th><sc-raw-th>Утепление</sc-raw-th><sc-raw-th>Мощность отопления</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Дача 60 м²</sc-raw-td><sc-raw-td>60 м²</sc-raw-td><sc-raw-td>среднее</sc-raw-td><sc-raw-td>6–8 кВт</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Постоянный дом 100 м²</sc-raw-td><sc-raw-td>100 м²</sc-raw-td><sc-raw-td>среднее</sc-raw-td><sc-raw-td>10–13 кВт</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Большой дом 200 м²</sc-raw-td><sc-raw-td>200 м²</sc-raw-td><sc-raw-td>утеплённый</sc-raw-td><sc-raw-td>15–18 кВт</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Плохо утеплённый 150 м²</sc-raw-td><sc-raw-td>150 м²</sc-raw-td><sc-raw-td>плохое</sc-raw-td><sc-raw-td>20–25 кВт</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p>Все дальнейшие расчёты — для стандартного дома <b>100 м², среднее утепление, 12 кВт мощности, отопительный сезон 6 месяцев (1 800 часов работы отопления)</b>.</p>
+      <h2 id="razdel-3">Варианты отопления</h2>
+      <h3>1. Газовый котёл (магистральный газ)</h3>
+      <p><b>Как работает:</b> сжигает природный газ, греет теплоноситель (воду), гоняет по радиаторам или тёплому полу.</p>
+      <p><b>Плюсы:</b></p>
+      <ul><li>Самое дешёвое отопление в эксплуатации.</li><li>Полностью автоматическое: температура, погодозависимая автоматика.</li><li>Долгий срок службы (15–20 лет).</li><li>Мощность любая — от 12 до 60 кВт для дома.</li></ul>
+      <p><b>Минусы:</b></p>
+      <ul><li>Нужен магистральный газ на участке (в Алматы не везде проведён).</li><li>Разрешения, проект, согласования — 3–6 месяцев.</li><li>Стоимость подключения от 300 000 до 1 500 000 тг (провод + проект + пуск).</li><li>Дымоход обязателен.</li></ul>
+      <p><b>Стоимость эксплуатации:</b> зависит от тарифа на газ (уточняйте у ГазКазТоргу или своего поставщика). Ориентировочно: <b>50 000–80 000 тг/сезон</b> на дом 100 м² в Алматы.</p>
+      <h3>2. Электрокотёл</h3>
+      <p><b>Как работает:</b> нагревает воду ТЭНами, гоняет по системе радиаторов/тёплого пола.</p>
+      <p><b>Плюсы:</b></p>
+      <ul><li>Простой монтаж, без дымохода, без разрешений.</li><li>Дёшево при покупке (котёл 12 кВт — 80 000–200 000 тг).</li><li>Автоматика, программируемый термостат.</li><li>Долговечный (15–20 лет).</li></ul>
+      <p><b>Минусы:</b></p>
+      <ul><li><b>Самая дорогая эксплуатация из электрических вариантов.</b></li><li>Нужен ввод от 15 кВт (для дома 100 м² — трёхфазный 380 В).</li><li>Зависит от сети (при отключении — ноль тепла).</li></ul>
+      <p><b>Стоимость эксплуатации:</b> 12 кВт × 1 800 ч × средняя нагрузка 60% = 12 960 кВт·ч × 27 тг = <b>~350 000 тг/сезон</b> (тариф ориентировочный).</p>
+      <h3>3. Тепловой насос воздух-вода</h3>
+      <p><b>Как работает:</b> забирает тепло из наружного воздуха, отдаёт в систему отопления. Соотношение тепла к электричеству — 1 кВт·ч электро = 3–4 кВт·ч тепла.</p>
+      <p><b>Плюсы:</b></p>
+      <ul><li><b>В 3 раза экономичнее электрокотла.</b></li><li>Летом может работать на охлаждение.</li><li>Автоматика погодозависимая.</li><li>Долгий срок службы (12–15 лет).</li></ul>
+      <p><b>Минусы:</b></p>
+      <ul><li>Высокая стоимость покупки (12 кВт — цена в каталоге).</li><li>Работает эффективно до −25 °C; ниже — переходит в резервный режим (ТЭН).</li><li>Нужен внешний блок (шумит, ставится снаружи).</li><li>Проект и монтаж — от 3–4 недель.</li></ul>
+      <p><b>Стоимость эксплуатации:</b> тепловая мощность 12 кВт делится на COP ~3–4 (ниже в сильный мороз). За сезон: около 3 700–4 800 кВт·ч × 27 тг = <b>около 100 000–130 000 тг/сезон</b>.</p>
+      <p>Подробно про этот вариант — <a href="https://tehnoholod369.kz/teplovoy-nasos">«Тепловой насос воздух-вода»</a>.</p>
+      <h3>4. Электрические конвекторы (без котла и труб)</h3>
+      <p><b>Как работает:</b> отдельные приборы в каждой комнате греют воздух напрямую. Нет труб, нет теплоносителя.</p>
+      <p><b>Плюсы:</b></p>
+      <ul><li><b>Самый простой монтаж:</b> повесил и включил в розетку.</li><li>Дёшево при покупке (на дом 100 м² нужно 6–8 конвекторов; цены — в каталоге).</li><li>Точный термостат в каждой комнате — экономия при неравномерном использовании.</li><li>Не боится отключений — при возврате электричества сразу работает.</li></ul>
+      <p><b>Минусы:</b></p>
+      <ul><li>Дорого в эксплуатации (примерно как электрокотёл, ~350 000 тг/сезон).</li><li>Занимают место на стене.</li><li>Нет тёплого пола.</li><li>Нужна разводка электричества по стенам (нагрузка на розетки).</li></ul>
+      <p><b>Куда:</b> дача (не отапливается зимой полностью), маленький дом до 80 м², временное решение до газа.</p>
+      <h3>5. Инфракрасные панели</h3>
+      <p><b>Как работает:</b> нагревают не воздух, а поверхности (пол, мебель, вас). Крепятся на потолок или стены.</p>
+      <p><b>Плюсы:</b></p>
+      <ul><li>Быстрое ощущение тепла (30 секунд).</li><li>Точечный обогрев (греется только там, где нужно).</li><li>Не занимают место на полу.</li><li>Работают от обычной розетки.</li></ul>
+      <p><b>Минусы:</b></p>
+      <ul><li>Дороже конвекторов при покупке (панель 1 кВт — цена в каталоге).</li><li>Для сплошного отопления дома нужно много панелей — считать по площади.</li><li>Работают, только когда включены (нет инерции — комната остывает быстро).</li></ul>
+      <p>Подробно — <a href="https://tehnoholod369.kz/ik-obogrevatel">«Инфракрасный обогреватель»</a>.</p>
+      <h3>6. Твёрдотопливный котёл (уголь, дрова, пеллеты)</h3>
+      <p><b>Как работает:</b> горит топливо, нагревает теплоноситель.</p>
+      <p><b>Плюсы:</b></p>
+      <ul><li>Автономность от электричества (для гравитационных систем).</li><li>Дешёвое топливо (уголь, дрова).</li><li>Пеллетные — автоматическая подача.</li></ul>
+      <p><b>Минусы:</b></p>
+      <ul><li>Ручная загрузка топлива (кроме пеллетных).</li><li>Дым, зола, грязь.</li><li>Нужны склад топлива и котельная.</li><li>Пожароопасность.</li></ul>
+      <p><b>Куда:</b> удалённый дом без газа и с проблемами электричества. Или как резерв к другому котлу.</p>
+      <h3>7. Дизельный котёл</h3>
+      <p>Такой же принцип, как газовый, но на солярке. Топливо привозят и заливают в бак 500–2 000 л.</p>
+      <p><b>Плюсы:</b> автономность (только запас топлива), высокая мощность. <b>Минусы:</b> запах, солярка на 15–20% дороже газа, нужен бак с обвалованием.</p>
+      <p><b>Куда:</b> большой дом далеко от газа и с невозможностью подвода нормальной электросети.</p>
+      <h2 id="razdel-4">Сравнение — сводная таблица (дом 100 м², 12 кВт, сезон 6 мес.)</h2>
+      <p>Цены в таблице — порядок величин по рынку на осень 2026 года, они нужны, чтобы сравнить варианты между собой. Наши актуальные цены на конвекторы, ИК-панели и радиаторы — в <a href="/katalog?g=radiatory">каталоге</a>, стоимость монтажа считает бригада по объекту.</p>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Тип</sc-raw-th><sc-raw-th>Стоимость установки</sc-raw-th><sc-raw-th>Эксплуатация/сезон</sc-raw-th><sc-raw-th>Автоматика</sc-raw-th><sc-raw-th>Автономность</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td><b>Газовый котёл + подключение</b></sc-raw-td><sc-raw-td>500 000–2 000 000 тг</sc-raw-td><sc-raw-td>50 000–80 000 тг</sc-raw-td><sc-raw-td>⭐⭐⭐⭐⭐</sc-raw-td><sc-raw-td>средняя</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Тепловой насос воздух-вода</b></sc-raw-td><sc-raw-td>3 000 000–5 000 000 тг</sc-raw-td><sc-raw-td>100 000–130 000 тг</sc-raw-td><sc-raw-td>⭐⭐⭐⭐⭐</sc-raw-td><sc-raw-td>средняя</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Электрокотёл</b></sc-raw-td><sc-raw-td>200 000–400 000 тг</sc-raw-td><sc-raw-td>300 000–400 000 тг</sc-raw-td><sc-raw-td>⭐⭐⭐⭐</sc-raw-td><sc-raw-td>нет</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Конвекторы (комплект)</b></sc-raw-td><sc-raw-td>100 000–200 000 тг</sc-raw-td><sc-raw-td>300 000–400 000 тг</sc-raw-td><sc-raw-td>⭐⭐⭐</sc-raw-td><sc-raw-td>нет</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>ИК-панели (комплект)</b></sc-raw-td><sc-raw-td>200 000–350 000 тг</sc-raw-td><sc-raw-td>250 000–350 000 тг</sc-raw-td><sc-raw-td>⭐⭐⭐</sc-raw-td><sc-raw-td>нет</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Твёрдотопливный котёл</b></sc-raw-td><sc-raw-td>250 000–500 000 тг</sc-raw-td><sc-raw-td>100 000–200 000 тг</sc-raw-td><sc-raw-td>⭐⭐</sc-raw-td><sc-raw-td><b>высокая</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td><b>Дизельный котёл</b></sc-raw-td><sc-raw-td>400 000–700 000 тг</sc-raw-td><sc-raw-td>200 000–350 000 тг</sc-raw-td><sc-raw-td>⭐⭐⭐⭐</sc-raw-td><sc-raw-td><b>высокая</b></sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p><b>Данные ориентировочные, уточняйте под свой дом на замере.</b></p>
+      <h2 id="razdel-5">Что выбрать по ситуации</h2>
+      <p><b>✅ Есть магистральный газ</b> → газовый котёл. Точка. Ничего дешевле в эксплуатации не будет.</p>
+      <p><b>✅ Газа нет, но есть 15+ кВт электричества, дом от 120 м², постоянное проживание</b> → тепловой насос воздух-вода. Окупает разницу с электрокотлом за 5–8 сезонов.</p>
+      <p><b>✅ Газа нет, электричества до 15 кВт, дом до 100 м²</b> → конвекторы или ИК-панели по комнатам.</p>
+      <p><b>✅ Дача на выходные, дом 40–80 м²</b> → конвекторы (простые, надёжные, при отключении не размерзнётся система).</p>
+      <p><b>✅ Дом далеко от сети, только генератор</b> → твёрдотопливный или дизельный котёл + резерв.</p>
+      <p><b>❌ Не берите электрокотёл</b>, если есть возможность поставить тепловой насос — переплата на эксплуатации быстро съест разницу.</p>
+      <h2 id="razdel-6">Тёплый пол — отдельная история</h2>
+      <p>Тёплый пол не отопление сам по себе, а способ отдачи тепла. Может быть:</p>
+      <p><b>Водяной от котла или теплового насоса.</b> Основное отопление, самое комфортное. Требует стяжки и планирования на этапе строительства.</p>
+      <p><b>Электрический.</b> Дополнительное отопление (в ванной, на кухне, у кровати). Для отопления всего дома дорого — сопоставимо с электрокотлом.</p>
+      <p><b>ПВХ инфракрасная плёнка.</b> Быстрый монтаж под ламинат/линолеум. Хорошо для локальных зон.</p>
+      <h2 id="razdel-7">Частые ошибки</h2>
+      <ol><li><b>Выбирают отопление по цене покупки, а не по эксплуатации.</b> Электрокотёл дешевле теплового насоса на 2,5 миллиона тг, но за 8 сезонов теплового насоса переплата на электричестве превысит эту разницу.</li><li><b>Ставят электрокотёл в дом без 380 В.</b> Приезжает электрик, говорит «нужна замена ввода за 500 000 тг» — сюрприз при монтаже.</li><li><b>Экономят на теплоизоляции дома.</b> Дешевле утеплить дом за 500 000 тг, чем каждый сезон переплачивать 100 000 тг за отопление плохо утеплённого.</li><li><b>Не считают резерв.</b> Тепловой насос на предельные −25 °C выдаёт 50% мощности. Нужен ТЭН-догрев или резервный источник.</li></ol>
+      <h2 id="razdel-8">Вывод</h2>
+      <p>Для частного дома в Алматы:</p>
+      <ul><li><b>Газ есть</b> → газовый котёл (окупает всё быстро).</li><li><b>Газа нет, дом большой</b> → тепловой насос воздух-вода.</li><li><b>Газа нет, дом маленький или дача</b> → конвекторы / ИК-панели.</li></ul>
+      <p>Разница в эксплуатации за 10 сезонов может достигать 2–3 миллионов тг — считайте не только цену покупки.</p>
+      <p>Посмотреть модели: <a href="/katalog?g=radiatory">котлы, радиаторы, конвекторы, тепловые насосы</a>. Приедем на замер, посчитаем теплопотери вашего дома и подберём оптимальный вариант — <a href="https://wa.me/77000369369">WhatsApp</a>. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж силами проверенной бригады по Алматы.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/teplovoy-nasos">«Тепловой насос воздух-вода»</a>, <a href="https://tehnoholod369.kz/kak-vybrat-radiator">«Как выбрать радиатор»</a>, <a href="https://tehnoholod369.kz/konvektor-obogrevatel">«Конвектор или обогреватель»</a>, <a href="https://tehnoholod369.kz/ik-obogrevatel">«ИК-обогреватель»</a>.</p>
+      <h2 id="razdel-9">Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=radiatory&amp;brand=Royal%20Thermo&amp;stock=in"><div class="art-card__t">Royal Thermo</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">444 модели</span> →</div></a>
+      <a class="art-card" href="/katalog?g=radiatory"><div class="art-card__t">Радиаторы отопления</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="radiatory"></span> →</div></a>
+      <a class="art-card" href="/katalog?g=teplovye-nasosy"><div class="art-card__t">Тепловые насосы</div><div class="art-card__s">Соседний раздел — если задача решается им.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="teplovye-nasosy"></span> →</div></a>
+      </div>
+      <a class="art-pick" data-pick="radiatory" href="/katalog?g=radiatory"
+         title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
+        <img class="art-pick__img" data-pick-img alt="" />
+        <div class="art-pick__b">
+          <div class="art-pick__tag" data-pick-tag>Наш выбор</div>
+          <div class="art-pick__brand" data-pick-brand></div>
+          <div class="art-pick__name" data-pick-name></div>
+          <div class="art-pick__price" data-pick-price></div>
+        </div>
+        <div class="art-pick__go">Открыть карточку →</div>
+      </a>
+      <h2 id="razdel-10">Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Что дешевле: газ или электричество для отопления?</div><div class="art-q__a">Магистральный газ — в 5–7 раз дешевле электричества. Пропан-бутан из баллона (без магистрали) — уже сопоставим с электричеством.</div></div>
+      <div class="art-q"><div class="art-q__q">Стоит ли ставить два разных котла (газ + твердотопливный)?</div><div class="art-q__a">Да, для постоянного дома в удалённом месте. Газ — основной, твердотопливный — резерв при аварии газовой сети.</div></div>
+      <div class="art-q"><div class="art-q__q">Правда, что тепловой насос не работает в мороз?</div><div class="art-q__a">Работает до −25 °C. Ниже — с резервным ТЭНом или снижением мощности. В Алматы такие морозы редко, но нужна страховка.</div></div>
+      <div class="art-q"><div class="art-q__q">Сколько стоит подвести газ к дому в Алматы?</div><div class="art-q__a">От 300 000 до 1 500 000 тг в зависимости от расстояния до магистрали, разрешений, оборудования. Окупается за 3–5 сезонов сравнением с электричеством.</div></div>
+      <div class="art-q"><div class="art-q__q">Можно ли смонтировать систему отопления «своими руками»?</div><div class="art-q__a">Электрокотёл, конвекторы, ИК-панели — можно с базовыми навыками. Газовый котёл — <b>только сертифицированные монтажники</b> с допусками, иначе не согласуют. Тепловой насос — нужен фреоновый контур, обязательно специалисты.</div></div>
+    </div>
+
+    
+    <div class="art-cta">
+      <div>
+        <div class="art-cta__t">Подберём модель под вашу задачу</div>
+        <div class="art-cta__s">Напишите площадь комнаты и этаж — пришлём подбор и цену. Нужен монтаж — посчитаем отдельно.</div>
+        <div class="art-cta__ph">Телефон и WhatsApp: <a href="tel:+77000369369">+77 000 369 369</a></div>
+      </div>
+      <div class="art-cta__actions">
+        <a class="art-btn-main" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+        <a class="art-btn-alt" href="/katalog?g=radiatory">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0;" class="art-next-h">Читайте дальше</h2>
+    <div class="art-cards" data-art-next="otoplenie-chastnogo-doma|otoplenie|radiatory|teplovoy-nasos,ik-obogrevatel,kak-vybrat-radiator,konvektor-obogrevatel">
+        <a class="art-card" href="https://tehnoholod369.kz/teplovoy-nasos"><div class="art-card__t">Тепловой насос воздух-вода: экономика отопления в Алматы</div><div class="art-card__s">Сколько реально экономит тепловой насос воздух-вода по сравнению с газом и электричеством. Окупаемость, минусы</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/ik-obogrevatel"><div class="art-card__t">Инфракрасный обогреватель: плюсы, минусы и где реально работает</div><div class="art-card__s">Как работает ИК-обогреватель, где он выигрывает у конвектора, а где проигрывает. Плюсы, минусы, для каких поме</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-radiator"><div class="art-card__t">Как выбрать радиатор отопления для квартиры: типы и советы</div><div class="art-card__s">Разбираем биметаллические, алюминиевые и стальные радиаторы: плюсы, минусы, для каких квартир и домов подходят</div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#0033A0; color:#CFE3FA; padding:26px 0; font:13px/20px Inter,sans-serif;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 40px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+  
+  <div data-th-copyright style="box-sizing:border-box; max-width:1248px; margin:0 auto; padding:18px 24px 40px; font:12px/20px Inter,sans-serif; color:#64748B;">
+    © 2026 ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
+    Перепечатка целиком или существенной частью — только с письменного разрешения.
+    Цитата с активной ссылкой на источник разрешена без запроса.
+    <a href="/usloviya-ispolzovaniya" style="color:#64748B; text-decoration:underline;">Условия использования</a>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Отопление частного дома: сравнение вариантов для Алматы", "description": "Электрокотёл, газовый котёл, тепловой насос, конвекторы, ИК-панели — что выбрать для дома в Алматы. Расчёт стоимости и окупаемости.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/otoplenie-chastnogo-doma"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightYear": 2026}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Отопление частного дома: сравнение вариантов для Алматы", "item": "https://tehnoholod369.kz/otoplenie-chastnogo-doma"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Что дешевле: газ или электричество для отопления?","acceptedAnswer":{"@type":"Answer","text":"Магистральный газ — в 5–7 раз дешевле электричества. Пропан-бутан из баллона (без магистрали) — уже сопоставим с электричеством."}},
+    {"@type":"Question","name":"Стоит ли ставить два разных котла?","acceptedAnswer":{"@type":"Answer","text":"Да, для постоянного дома в удалённом месте. Газ — основной, твердотопливный — резерв при аварии газовой сети."}},
+    {"@type":"Question","name":"Правда, что тепловой насос не работает в мороз?","acceptedAnswer":{"@type":"Answer","text":"Работает до −25 °C. Ниже — с резервным ТЭНом или снижением мощности. В Алматы такие морозы редко, но нужна страховка."}},
+    {"@type":"Question","name":"Сколько стоит подвести газ к дому в Алматы?","acceptedAnswer":{"@type":"Answer","text":"От 300 000 до 1 500 000 тг в зависимости от расстояния до магистрали и разрешений. Окупается за 3–5 сезонов по сравнению с электричеством."}},
+    {"@type":"Question","name":"Можно ли смонтировать систему отопления самому?","acceptedAnswer":{"@type":"Answer","text":"Электрокотёл, конвекторы, ИК-панели — можно. Газовый котёл — только сертифицированные монтажники с допусками. Тепловой насос — нужны специалисты по фреоновому контуру."}}
+  ]
+}
+</script>
+</x-dc>
