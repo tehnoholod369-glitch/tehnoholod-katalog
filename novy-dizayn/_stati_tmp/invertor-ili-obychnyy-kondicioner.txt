@@ -1,0 +1,290 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  
+
+  
+  body { margin: 0; background: #fff; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0033A0; }
+
+  
+  .art-page-main { width: 100%; max-width: 1248px; box-sizing: border-box; margin: 0 auto; padding: 18px 24px 72px;
+    display: grid; grid-template-columns: 300px minmax(0, 1fr); column-gap: 56px;
+    grid-template-areas: "crumbs crumbs" "toc top" "toc body"; align-items: start; }
+  .art-page-main > * { grid-column: 1 / -1; min-width: 0; }
+  .art-page-main > .art-crumbs { grid-area: crumbs; }
+  .art-page-main > .art-top { grid-area: top; max-width: 844px; }
+  .art-page-main > .art-toc-wrap { grid-area: toc; }
+  .art-page-main > .art { grid-area: body; max-width: 844px; }
+  .art-page-main.art-solo { grid-template-columns: minmax(0, 760px); grid-template-areas: "crumbs" "top" "body"; justify-content: center; }
+  .art-crumbs { font: 400 13px/20px Inter, sans-serif; color: #64748B; }
+  .art-crumbs a { color: #64748B; }
+  .art-crumbs span { color: #1A1A1A; }
+
+  .art-top { margin-top: 20px; }
+  .art-tag { display: inline-block; background: #E9F4FF; color: #0033A0; border-radius: 999px; padding: 4px 12px; font: 700 12px/18px Inter, sans-serif; }
+  .art-top h1 { margin: 12px 0 0; font: 700 38px/46px Inter, sans-serif; letter-spacing: -0.02em; color: #0033A0; overflow-wrap: anywhere; }
+  .art-meta { margin-top: 12px; font: 500 14px/20px Inter, sans-serif; color: #64748B; }
+  .art-page-lead { margin-top: 14px; font: 400 18px/30px Inter, sans-serif; color: #223046; }
+
+  
+  .art-toc-wrap { margin-top: 20px; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow: auto; }
+  .art-toc__t { font: 700 14px/20px Inter, sans-serif; color: #0033A0; margin: 0 0 10px; }
+  .art-toc { counter-reset: t; list-style: none; margin: 0; padding: 0; border: 1px solid #E2E8F0; border-radius: 12px; background: #fff; }
+  .art-toc li { counter-increment: t; border-top: 1px solid #E2E8F0; }
+  .art-toc li:first-child { border-top: 0; }
+  .art-toc a { display: flex; gap: 10px; align-items: flex-start; padding: 12px 16px; font: 500 15px/22px Inter, sans-serif; color: #0033A0; }
+  .art-toc a::before { content: counter(t); flex: none; width: 26px; height: 26px; border-radius: 50%; background: #E9F4FF; display: grid; place-items: center; font: 700 13px/1 Inter, sans-serif; }
+  .art-toc a:hover { color: #0066FF; }
+
+  
+  .t-body .art-local-chrome { display: none !important; }
+
+  .art { width: 100%; }
+  .art h2 { margin: 36px 0 0; font: 700 28px/36px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; scroll-margin-top: 20px; }
+  .art h3 { margin: 24px 0 0; font: 700 20px/28px Inter, sans-serif; color: #0033A0; }
+  .art p { margin: 14px 0 0; font: 400 18px/30px Inter, sans-serif; color: #223046; }
+  .art ul, .art ol { margin: 14px 0 0; padding-left: 24px; }
+  .art li { font: 400 18px/30px Inter, sans-serif; color: #223046; margin-top: 6px; }
+  .art b, .art strong { color: #1A1A1A; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 16px; border: 1px solid #E2E8F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font: 400 16px/24px Inter, sans-serif; }
+  .art-t th { background: #F1F5F9; text-align: left; padding: 12px 16px; font-weight: 700; color: #0033A0; border-bottom: 1px solid #E2E8F0; white-space: nowrap; }
+  .art-t td { padding: 12px 16px; color: #223046; border-bottom: 1px solid #EEF2F7; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #1A1A1A; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E9F4FF; border: 1px solid #CFE3FA; border-radius: 12px; padding: 16px 20px; margin-top: 18px; font: 400 16px/26px Inter, sans-serif; color: #223046; }
+  .art-warn { background: #fff; border-left: 4px solid #E81C1C; border-radius: 0 12px 12px 0; box-shadow: 0 1px 2px rgba(0,51,160,.08); padding: 16px 20px; margin-top: 18px; font: 500 17px/26px Inter, sans-serif; color: #223046; }
+  .art-note b, .art-warn b { color: #1A1A1A; }
+
+  
+  .art-tldr { background: #fff; border: 1.5px solid #0033A0; border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .art-tldr__t { font: 700 13px/18px Inter, sans-serif; letter-spacing: 0.08em; color: #0066FF; }
+  .art-tldr__b { font: 500 17px/27px Inter, sans-serif; color: #1A1A1A; margin-top: 6px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; margin-top: 16px; }
+  .art-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 18px 20px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0066FF; box-shadow: 0 2px 14px rgba(0,102,255,.10); color: inherit; }
+  .art-card__t { font: 700 17px/24px Inter, sans-serif; color: #0033A0; }
+  .art-card__s { font: 400 14px/22px Inter, sans-serif; color: #475569; margin-top: 6px; }
+  .art-card__go { display: block; margin-top: 10px; font: 600 14px/20px Inter, sans-serif; color: #0066FF; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 700; color: #0033A0; }
+
+  
+  .art-q { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px 20px; margin-top: 12px; }
+  .art-q__q { font: 700 17px/24px Inter, sans-serif; color: #0033A0; }
+  .art-q__a { font: 400 16px/26px Inter, sans-serif; color: #223046; margin-top: 8px; }
+
+  
+  .art-src { font: 400 13px/20px Inter, sans-serif; color: #64748B; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px 20px;
+              margin-top: 16px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0066FF; box-shadow: 0 2px 14px rgba(0,102,255,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0066FF; color: #fff; border-radius: 6px; padding: 3px 8px; font: 700 12px/16px Inter, sans-serif; }
+  .art-pick__brand { font: 700 12px/16px Inter, sans-serif; letter-spacing: 0.06em; color: #0066FF; margin-top: 8px; }
+  .art-pick__name { font: 700 16px/22px Inter, sans-serif; color: #0033A0; margin-top: 4px; }
+  .art-pick__price { font: 800 20px/28px Inter, sans-serif; color: #1A1A1A; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font: 600 14px/20px Inter, sans-serif; color: #0066FF; flex: none; }
+
+  
+  .art-cta { background: #E9F4FF; border: 1px solid #CFE3FA; border-radius: 16px; padding: 28px 32px; margin-top: 36px;
+             display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; align-items: center; }
+  .art-cta__t { font: 700 24px/32px Inter, sans-serif; color: #0033A0; letter-spacing: -0.01em; }
+  .art-cta__s { font: 400 16px/26px Inter, sans-serif; color: #223046; margin-top: 8px; }
+  .art-cta__ph { font: 400 16px/26px Inter, sans-serif; color: #223046; margin-top: 12px; }
+  .art-cta__ph a { font-weight: 700; }
+  .art-cta__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .art-cta__actions a { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 26px; border-radius: 8px; font: 700 16px/1 Inter, sans-serif; }
+  .art-cta__actions .art-btn-main { background: #E81C1C; color: #fff; }
+  .art-cta__actions .art-btn-alt { background: #fff; color: #0066FF; border: 1.5px solid #0066FF; }
+
+  .art-next-h { margin: 40px 0 0; font: 700 28px/36px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; }
+
+  @media (max-width: 760px) {
+    .art-page-main { padding: 14px 16px 56px; grid-template-columns: minmax(0, 1fr); grid-template-areas: "crumbs" "top" "toc" "body"; }
+    .art-page-main.art-solo { grid-template-columns: minmax(0, 1fr); grid-template-areas: "crumbs" "top" "body"; }
+    .art-top h1 { font-size: clamp(25px, 7vw, 30px); line-height: 1.2; }
+    .art-page-lead { font-size: 16px; line-height: 26px; }
+    .art-toc-wrap { position: static; max-height: none; overflow: visible; }
+    .art h2 { margin-top: 30px; font-size: 22px; line-height: 30px; }
+    .art h3 { font-size: 18px; line-height: 26px; }
+    .art p, .art li { font-size: 16px; line-height: 27px; }
+    .art-note, .art-warn, .art-tldr, .art-q { padding: 14px 16px; }
+    .art-cta { padding: 20px; gap: 18px; }
+    .art-cta__actions { display: grid; grid-template-columns: 1fr; width: 100%; }
+    .art-cta__actions > a { width: 100%; box-sizing: border-box; }
+    .art-next-h { font-size: 24px; line-height: 32px; }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#fff;">
+
+  
+  <div class="art-local-chrome" style="background:#F1F5F9; color:#1A1A1A; padding:9px 0; font:13px/20px Inter,sans-serif;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 22px;">
+      <b style="color:#0033A0;">Доставка по Казахстану</b>
+      <span><a href="tel:+77000369369" style="color:#0033A0; font-weight:700;">+77 000 369 369</a> · пн–пт 9:00–18:00</span>
+    </div>
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#fff; border-bottom:1px solid #E2E8F0;">
+    <div style="max-width:1280px; margin:0 auto; padding:12px 40px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 20px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" style="height:44px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0066FF; color:#fff; border-radius:8px; padding:10px 16px; font:600 15px/1 Inter,sans-serif;">☰ Каталог товаров</a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E9F4FF; color:#0033A0; border-radius:8px; padding:10px 16px; font:700 15px/1 Inter,sans-serif;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="art-page-main">
+
+    
+    <div class="art-crumbs">
+      <a href="/">Главная</a> › <a href="/baza-znaniy">База знаний</a> › <span>Инверторный или обычный кондиционер</span>
+    </div>
+
+    
+    <div class="art-top">
+      <span class="art-tag">Выбор</span>
+      <h1>Инверторный или обычный кондиционер: что выгоднее</h1>
+      <div class="art-meta">4 минуты чтения</div>
+      <div class="art-page-lead">
+        Чем инвертор отличается от on/off: расход электричества, шум, ресурс, цена ремонта. Когда переплата за инвертор окупается, а когда нет.
+      </div>
+    </div>
+
+    
+    <aside class="art-toc-wrap"><div class="art-toc__t">Содержание</div><ol class="art-toc"><li><a href="#razdel-1">Как работают оба типа</a></li><li><a href="#razdel-2">Расход электричества: где именно разница</a></li><li><a href="#razdel-3">Что ещё меняется, кроме счёта</a></li><li><a href="#razdel-4">Где инвертор проигрывает</a></li><li><a href="#razdel-5">Кому что брать</a></li><li><a href="#razdel-6">Как отличить инвертор при покупке</a></li><li><a href="#razdel-7">Про приток — отдельный вопрос</a></li><li><a href="#razdel-8">Что посмотреть в каталоге</a></li><li><a href="#razdel-9">Частые вопросы</a></li></ol></aside>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">инвертор выгоднее там, где кондиционер работает подолгу — в квартире и офисе; обычный on/off разумен там, где его включают на пару часов и выключают. Разница не в том, насколько холодно, а в том, как эта температура удерживается — и уже отсюда растут расход, шум и ресурс. Ниже — что стоит за словом «инвертор» и как понять, окупится ли переплата именно у вас.</div></div>
+      <h2 id="razdel-1">Как работают оба типа</h2>
+      <p><b>On/off.</b> Компрессор умеет только два состояния: включён на полную мощность или выключен. Кондиционер охлаждает комнату до заданной температуры, отключается, ждёт, пока станет теплее, и снова стартует на полную. Так весь день, циклами.</p>
+      <p><b>Инвертор.</b> Компрессор плавно меняет обороты. Сначала он выходит на высокую мощность, чтобы быстро охладить комнату, а потом снижает обороты и работает почти непрерывно на малой мощности — ровно столько, сколько нужно, чтобы компенсировать приток тепла с улицы.</p>
+      <p>Аналогия из машины: on/off — это езда «газ в пол — накат — газ в пол», инвертор — ровное движение с постоянной скоростью. Расход в этих двух режимах разный.</p>
+      <h2 id="razdel-2">Расход электричества: где именно разница</h2>
+      <p>Больше всего энергии компрессор потребляет в момент запуска. У on/off такой запуск повторяется десятки раз за день, у инвертора он один — при включении.</p>
+      <p>Отсюда правило: <b>экономия инвертора набегает временем работы.</b></p>
+      <ul><li>Кондиционер работает по 8–12 часов в жару — инвертор экономит заметно.</li><li>Кондиционер включают на час вечером — разница почти незаметна, а переплата при покупке остаётся.</li></ul>
+      <p>Точную цифру экономии заранее не назовёт никто: она зависит от площади, утепления, этажа, солнечной стороны и того, насколько часто открывают окна. Заявленные в паспортах классы энергоэффективности сравнивают модели между собой, а не предсказывают ваш счёт.</p>
+      <h2 id="razdel-3">Что ещё меняется, кроме счёта</h2>
+      <p><b>Ровная температура.</b> On/off даёт «пилу»: то прохладно, то снова душно, и это чувствуется. Инвертор держит заданную температуру почти без колебаний.</p>
+      <p><b>Шум.</b> У on/off слышен щелчок пуска и рывок вентилятора при каждом старте — ночью это будит. Инвертор на малых оборотах работает заметно тише. Если блок висит в спальне, этот пункт часто перевешивает экономию.</p>
+      <p><b>Нагрузка на проводку.</b> Пусковой ток on/off в разы выше рабочего. В старом доме со слабой проводкой и общей нагрузкой это имеет значение.</p>
+      <p><b>Обогрев.</b> В режиме тепла инвертор лучше держит мощность при низких уличных температурах — он не выключается, а подстраивается. Насколько выгодно вообще греться кондиционером, посчитано в статье <a href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy">«Обогрев кондиционером зимой»</a>.</p>
+      <h2 id="razdel-4">Где инвертор проигрывает</h2>
+      <p>Честно про минусы — их два.</p>
+      <p><b>Цена покупки.</b> В одной линейке инверторная модель дороже. Если кондиционер нужен «на две недели жары на даче», переплата не вернётся.</p>
+      <p><b>Цена ремонта.</b> У инвертора есть плата управления инвертором — сложный и недешёвый узел. У on/off ломаться там почти нечему. При этом инвертор реже доводит компрессор до износа частыми пусками, так что по совокупному сроку службы картина неоднозначная — но одна конкретная поломка обойдётся дороже.</p>
+      <p><b>Чувствительность к перепадам напряжения.</b> Электроника не любит скачки. Если в сети бывают провалы, стабилизатор для инверторной модели — разумная страховка.</p>
+      <h2 id="razdel-5">Кому что брать</h2>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Ситуация</sc-raw-th><sc-raw-th>Разумный выбор</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Квартира, кондиционер работает целыми днями летом</sc-raw-td><sc-raw-td>Инвертор</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Спальня, важна тишина ночью</sc-raw-td><sc-raw-td>Инвертор</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Офис с рабочим днём 9–18</sc-raw-td><sc-raw-td>Инвертор</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Дача, приезжаете на выходные</sc-raw-td><sc-raw-td>On/off</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Комната, где включают на час вечером</sc-raw-td><sc-raw-td>On/off</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Планируете греться в межсезонье</sc-raw-td><sc-raw-td>Инвертор</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Слабая проводка, старый дом</sc-raw-td><sc-raw-td>Инвертор (нет пусковых токов)</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p>Перед выбором типа стоит закрыть вопрос мощности — ошибка там дороже, чем выбор между инвертором и on/off. Как считать — в статье <a href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera">«Как выбрать мощность кондиционера по площади»</a>.</p>
+      <h2 id="razdel-6">Как отличить инвертор при покупке</h2>
+      <ul><li>В названии модели или в описании обычно есть слово Inverter, DC Inverter или пометка «инверторный».</li><li>В паспорте мощность указана диапазоном (например, «от 0,9 до 3,5 кВт»), а не одним числом. Диапазон — признак плавного регулирования.</li><li>Класс энергоэффективности у инверторных моделей, как правило, выше в пределах одной линейки.</li></ul>
+      <p>Если сомневаетесь — спросите продавца прямо, инверторный ли компрессор: это однозначная характеристика, а не маркетинговое описание.</p>
+      <h2 id="razdel-7">Про приток — отдельный вопрос</h2>
+      <p>Тип компрессора не решает задачу духоты. Обычный кондиционер, инверторный или нет, гоняет по кругу воздух той же комнаты. Если при закрытых окнах становится тяжело дышать — это про углекислый газ, а не про холод. Разобрано в статье <a href="https://tehnoholod369.kz/pochemu-dushno-doma-s-konditsionerom">«Почему дома душно даже с кондиционером»</a>.</p>
+      <p>Кондиционеры, которые дополнительно подают воздух с улицы, — отдельная категория; сравнение с бризером есть в статье <a href="https://tehnoholod369.kz/brizer-ili-konditsioner-s-pritokom">«Бризер или кондиционер с притоком»</a>.</p>
+      <h2 id="razdel-8">Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=bytovye&amp;brand=TCL&amp;stock=in"><div class="art-card__t">TCL</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">10 моделей</span> →</div></a>
+      <a class="art-card" href="/katalog?g=bytovye"><div class="art-card__t">Бытовые сплит-системы</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-group="bytovye"></span> →</div></a>
+      <a class="art-card" href="/invertornyy-kondicioner-almaty"><div class="art-card__t">Инверторные кондиционеры в Алматы</div><div class="art-card__s">Тише и экономичнее, работают на обогрев.</div><div class="art-card__go">Открыть раздел →</div></a>
+      </div>
+      <h2 id="razdel-9">Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Насколько инвертор экономичнее в деньгах?</div><div class="art-q__a">Зависит от того, сколько часов в сутки работает кондиционер, от площади, утепления и этажа. Экономия набегает временем работы: при 8–12 часах в день она заметна, при часе вечером — почти нет.</div></div>
+      <div class="art-q"><div class="art-q__q">Инвертор дольше служит?</div><div class="art-q__a">Он реже изнашивает компрессор частыми пусками, но имеет более сложную электронику. По сроку службы однозначного перевеса нет, а вот одна конкретная поломка платы обойдётся дороже, чем ремонт простого on/off.</div></div>
+      <div class="art-q"><div class="art-q__q">Правда ли, что инвертор тише?</div><div class="art-q__a">Да, на малых оборотах. Главное отличие слышно ночью: инвертор работает ровно, on/off стартует и останавливается.</div></div>
+      <div class="art-q"><div class="art-q__q">Нужен ли стабилизатор напряжения?</div><div class="art-q__a">Если в вашей сети бывают заметные скачки — да, это разумная страховка для любой техники с электроникой, включая инверторный кондиционер.</div></div>
+      <div class="art-q"><div class="art-q__q">Можно ли по названию понять, инверторная ли модель?</div><div class="art-q__a">Обычно да: в названии или описании есть Inverter либо «инверторный», а в паспорте мощность указана диапазоном, а не одним числом.</div></div>
+    </div>
+
+    
+    <div class="art-cta">
+      <div>
+        <div class="art-cta__t">Подберём модель под вашу задачу</div>
+        <div class="art-cta__s">Напишите площадь комнаты и этаж — пришлём подбор и цену. Нужен монтаж — посчитаем отдельно.</div>
+        <div class="art-cta__ph">Телефон и WhatsApp: <a href="tel:+77000369369">+77 000 369 369</a></div>
+      </div>
+      <div class="art-cta__actions">
+        <a class="art-btn-main" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+        <a class="art-btn-alt" href="/katalog?g=bytovye">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0;" class="art-next-h">Читайте дальше</h2>
+    <div class="art-cards" data-art-next="invertor-ili-obychnyy-kondicioner|byt-kond|bytovye|obogrev-kondicionerom-zimoy,kak-vybrat-moshchnost-konditsionera,pochemu-dushno-doma-s-konditsionerom,brizer-ili-konditsioner-s-pritokom">
+        <a class="art-card" href="https://tehnoholod369.kz/obogrev-kondicionerom-zimoy"><div class="art-card__t">Можно ли греться кондиционером зимой в Алматы: честный расчёт</div><div class="art-card__s">Разбираем, до какой температуры инверторный кондиционер греет, сколько это стоит и выгоднее ли он обогревателя</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera"><div class="art-card__t">Как выбрать мощность кондиционера по площади комнаты</div><div class="art-card__s">Как подобрать мощность кондиционера по площади комнаты: правило 100 Вт на м², перевод BTU в кВт, классы 9/12/1</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/pochemu-dushno-doma-s-konditsionerom"><div class="art-card__t">Почему дома душно даже с включённым кондиционером</div><div class="art-card__s">Кондиционер охлаждает, но не приносит свежий воздух — копится CO₂ и появляется духота. Разбираем причину и раб</div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#0033A0; color:#CFE3FA; padding:26px 0; font:13px/20px Inter,sans-serif;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 40px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+  
+  <div data-th-copyright style="box-sizing:border-box; max-width:1248px; margin:0 auto; padding:18px 24px 40px; font:12px/20px Inter,sans-serif; color:#64748B;">
+    © 2026 ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
+    Перепечатка целиком или существенной частью — только с письменного разрешения.
+    Цитата с активной ссылкой на источник разрешена без запроса.
+    <a href="/usloviya-ispolzovaniya" style="color:#64748B; text-decoration:underline;">Условия использования</a>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Инверторный или обычный кондиционер: что выгоднее", "description": "Чем инвертор отличается от on/off: расход электричества, шум, ресурс, цена ремонта. Когда переплата за инвертор окупается, а когда нет.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/invertor-ili-obychnyy-kondicioner"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightYear": 2026}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Инверторный или обычный кондиционер: что выгоднее", "item": "https://tehnoholod369.kz/invertor-ili-obychnyy-kondicioner"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Насколько инвертор экономичнее в деньгах?","acceptedAnswer":{"@type":"Answer","text":"Зависит от того, сколько часов в сутки работает кондиционер, от площади, утепления и этажа. Экономия набегает временем работы: при 8–12 часах в день она заметна, при часе вечером — почти нет."}},
+    {"@type":"Question","name":"Инвертор дольше служит?","acceptedAnswer":{"@type":"Answer","text":"Он реже изнашивает компрессор частыми пусками, но имеет более сложную электронику. По сроку службы однозначного перевеса нет, а одна поломка платы обойдётся дороже ремонта простого on/off."}},
+    {"@type":"Question","name":"Правда ли, что инвертор тише?","acceptedAnswer":{"@type":"Answer","text":"Да, на малых оборотах. Главное отличие слышно ночью: инвертор работает ровно, on/off стартует и останавливается."}},
+    {"@type":"Question","name":"Нужен ли стабилизатор напряжения?","acceptedAnswer":{"@type":"Answer","text":"Если в сети бывают заметные скачки — да, это разумная страховка для любой техники с электроникой, включая инверторный кондиционер."}},
+    {"@type":"Question","name":"Можно ли по названию понять, инверторная ли модель?","acceptedAnswer":{"@type":"Answer","text":"Обычно да: в названии или описании есть Inverter либо «инверторный», а в паспорте мощность указана диапазоном, а не одним числом."}}
+  ]
+}
+</script>
+</x-dc>
