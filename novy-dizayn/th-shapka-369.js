@@ -240,20 +240,20 @@
     o.setAttribute("data-th-podval", "1");
     var WA = "https://wa.me/" + ТЕЛЕФОН_МАШИНЕ.replace("+", "");
     o.innerHTML =
-      '<style>.th-foot{background:#0033A0;color:#fff;margin-top:48px;font:14px/1.6 Inter,TildaSans,Arial,sans-serif}'
+      '<style>.th-foot{background:#F5F9FE;border-top:1px solid #DCE5F0;color:#1A1A1A;margin-top:48px;font:14px/1.6 Inter,TildaSans,Arial,sans-serif}'
       + '.th-foot__cols{max-width:1248px;margin:0 auto;padding:44px 24px 28px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;box-sizing:border-box}'
-      + '.th-foot h4{margin:0 0 10px;font:700 15px/22px Inter,TildaSans,Arial,sans-serif;color:#fff}'
-      + '.th-foot a{display:block;color:#CFE3FA;text-decoration:none;font-size:14px;line-height:30px}'
-      + '.th-foot a:hover{color:#fff}'
+      + '.th-foot h4{margin:0 0 10px;font:700 15px/22px Inter,TildaSans,Arial,sans-serif;color:#0033A0}'
+      + '.th-foot a{display:block;color:#4B5E7A;text-decoration:none;font-size:14px;line-height:30px}'
+      + '.th-foot a:hover{color:#0066FF}'
       + '.th-foot img{height:44px;width:auto;display:block}'
-      + '.th-foot .th-ph{font:800 22px/30px Inter,TildaSans,Arial,sans-serif;color:#fff;margin-top:14px;display:block}'
-      + '.th-foot .th-sm{color:#CFE3FA;font-size:13px}'
-      + '.th-foot__req{max-width:1248px;margin:0 auto;padding:18px 24px;border-top:1px solid rgba(255,255,255,.18);display:flex;flex-wrap:wrap;gap:6px 22px;font-size:13px;color:#CFE3FA;box-sizing:border-box}'
+      + '.th-foot .th-ph{font:800 22px/30px Inter,TildaSans,Arial,sans-serif;color:#1A1A1A;margin-top:14px;display:block}'
+      + '.th-foot .th-sm{color:#606F85;font-size:13px}'
+      + '.th-foot__req{max-width:1248px;margin:0 auto;padding:18px 24px;border-top:1px solid #DCE5F0;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:13px;color:#606F85;box-sizing:border-box}'
       + '.th-foot__req a{display:inline;line-height:1.6}'
       + '@media(max-width:760px){.th-foot{margin-top:32px}.th-foot__cols{grid-template-columns:1fr 1fr;padding:30px 18px 18px;gap:24px}'
       + '.th-foot__cols>div:first-child{grid-column:1/-1}.th-foot__cols>div:nth-child(3){order:5;grid-column:1/-1;display:flex;flex-wrap:wrap;gap:0 22px}.th-foot__cols>div:nth-child(3) h4{flex:0 0 100%}.th-foot__req{padding:16px 18px calc(86px + env(safe-area-inset-bottom,0px))}}</style>'
       + '<div class="th-foot"><div class="th-foot__cols">'
-      + '<div><img src="' + CDN + 'assets/logo-369-horizontal-compact-dark.png" alt="ТЕХНОХОЛОД 369">'
+      + '<div><img src="' + CDN + 'assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369">'
       + '<a class="th-ph" href="tel:' + ТЕЛЕФОН_МАШИНЕ + '">' + ТЕЛЕФОН_ЛЮДЯМ + '</a><span class="th-sm">Звонки и WhatsApp</span></div>'
       + колонка("Каталог", [["/kondicionery-almaty", "Кондиционирование"], ["/otoplenie", "Отопление"], ["/ventilyaciya", "Вентиляция"], ["/vodonagrevateli", "Водонагреватели"]])
       + колонка("Компания", [["/brendy", "Бренды"], ["/baza-znaniy", "База знаний"], ["/kontakty", "Контакты"]])
