@@ -448,3 +448,18 @@
     вставить();
   }
 })();
+
+/* Оглавление статьи: sticky ограничен контейнером сетки, поэтому у конца статьи упираем его вручную (05.10.2026) */
+(function () {
+  function fit() {
+    var t = document.querySelector('.art-toc-wrap'), a = document.querySelector('.art');
+    if (!t || !a) return;
+    t.style.transform = '';
+    if (getComputedStyle(t).position !== 'sticky') return;
+    var o = t.getBoundingClientRect().bottom - a.getBoundingClientRect().bottom;
+    if (o > 0) t.style.transform = 'translateY(' + (-o) + 'px)';
+  }
+  addEventListener('scroll', fit, { passive: true });
+  addEventListener('resize', fit);
+  setInterval(fit, 250);
+})();
