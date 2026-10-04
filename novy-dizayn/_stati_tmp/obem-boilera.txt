@@ -1,0 +1,348 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  
+
+  
+  body { margin: 0; background: #fff; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0033A0; }
+
+  
+  .art-page-main { width: 100%; max-width: 1248px; box-sizing: border-box; margin: 0 auto; padding: 18px 24px 72px;
+    display: grid; grid-template-columns: 300px minmax(0, 1fr); column-gap: 56px;
+    grid-template-areas: "crumbs crumbs" "toc top" "toc body"; align-items: start; }
+  .art-page-main > * { grid-column: 1 / -1; min-width: 0; }
+  .art-page-main > .art-crumbs { grid-area: crumbs; }
+  .art-page-main > .art-top { grid-area: top; max-width: 844px; }
+  .art-page-main > .art-toc-wrap { grid-area: toc; }
+  .art-page-main > .art { grid-area: body; max-width: 844px; }
+  .art-page-main.art-solo { grid-template-columns: minmax(0, 760px); grid-template-areas: "crumbs" "top" "body"; justify-content: center; }
+  .art-crumbs { font: 400 13px/20px Inter, sans-serif; color: #64748B; }
+  .art-crumbs a { color: #64748B; }
+  .art-crumbs span { color: #1A1A1A; }
+
+  .art-top { margin-top: 20px; }
+  .art-tag { display: inline-block; background: #E9F4FF; color: #0033A0; border-radius: 999px; padding: 4px 12px; font: 700 12px/18px Inter, sans-serif; }
+  .art-top h1 { margin: 12px 0 0; font: 700 38px/46px Inter, sans-serif; letter-spacing: -0.02em; color: #0033A0; overflow-wrap: anywhere; }
+  .art-meta { margin-top: 12px; font: 500 14px/20px Inter, sans-serif; color: #64748B; }
+  .art-page-lead { margin-top: 14px; font: 400 18px/30px Inter, sans-serif; color: #223046; }
+
+  
+  .art-toc-wrap { margin-top: 20px; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow: auto; }
+  .art-toc__t { font: 700 14px/20px Inter, sans-serif; color: #0033A0; margin: 0 0 10px; }
+  .art-toc { counter-reset: t; list-style: none; margin: 0; padding: 0; border: 1px solid #E2E8F0; border-radius: 12px; background: #fff; }
+  .art-toc li { counter-increment: t; border-top: 1px solid #E2E8F0; }
+  .art-toc li:first-child { border-top: 0; }
+  .art-toc a { display: flex; gap: 10px; align-items: flex-start; padding: 12px 16px; font: 500 15px/22px Inter, sans-serif; color: #0033A0; }
+  .art-toc a::before { content: counter(t); flex: none; width: 26px; height: 26px; border-radius: 50%; background: #E9F4FF; display: grid; place-items: center; font: 700 13px/1 Inter, sans-serif; }
+  .art-toc a:hover { color: #0066FF; }
+
+  
+  .t-body .art-local-chrome { display: none !important; }
+
+  .art { width: 100%; }
+  .art h2 { margin: 36px 0 0; font: 700 28px/36px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; scroll-margin-top: 20px; }
+  .art h3 { margin: 24px 0 0; font: 700 20px/28px Inter, sans-serif; color: #0033A0; }
+  .art p { margin: 14px 0 0; font: 400 18px/30px Inter, sans-serif; color: #223046; }
+  .art ul, .art ol { margin: 14px 0 0; padding-left: 24px; }
+  .art li { font: 400 18px/30px Inter, sans-serif; color: #223046; margin-top: 6px; }
+  .art b, .art strong { color: #1A1A1A; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 16px; border: 1px solid #E2E8F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font: 400 16px/24px Inter, sans-serif; }
+  .art-t th { background: #F1F5F9; text-align: left; padding: 12px 16px; font-weight: 700; color: #0033A0; border-bottom: 1px solid #E2E8F0; white-space: nowrap; }
+  .art-t td { padding: 12px 16px; color: #223046; border-bottom: 1px solid #EEF2F7; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #1A1A1A; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E9F4FF; border: 1px solid #CFE3FA; border-radius: 12px; padding: 16px 20px; margin-top: 18px; font: 400 16px/26px Inter, sans-serif; color: #223046; }
+  .art-warn { background: #fff; border-left: 4px solid #E81C1C; border-radius: 0 12px 12px 0; box-shadow: 0 1px 2px rgba(0,51,160,.08); padding: 16px 20px; margin-top: 18px; font: 500 17px/26px Inter, sans-serif; color: #223046; }
+  .art-note b, .art-warn b { color: #1A1A1A; }
+
+  
+  .art-tldr { background: #fff; border: 1.5px solid #0033A0; border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .art-tldr__t { font: 700 13px/18px Inter, sans-serif; letter-spacing: 0.08em; color: #0066FF; }
+  .art-tldr__b { font: 500 17px/27px Inter, sans-serif; color: #1A1A1A; margin-top: 6px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; margin-top: 16px; }
+  .art-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 18px 20px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0066FF; box-shadow: 0 2px 14px rgba(0,102,255,.10); color: inherit; }
+  .art-card__t { font: 700 17px/24px Inter, sans-serif; color: #0033A0; }
+  .art-card__s { font: 400 14px/22px Inter, sans-serif; color: #475569; margin-top: 6px; }
+  .art-card__go { display: block; margin-top: 10px; font: 600 14px/20px Inter, sans-serif; color: #0066FF; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 700; color: #0033A0; }
+
+  
+  .art-q { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px 20px; margin-top: 12px; }
+  .art-q__q { font: 700 17px/24px Inter, sans-serif; color: #0033A0; }
+  .art-q__a { font: 400 16px/26px Inter, sans-serif; color: #223046; margin-top: 8px; }
+
+  
+  .art-src { font: 400 13px/20px Inter, sans-serif; color: #64748B; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px 20px;
+              margin-top: 16px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0066FF; box-shadow: 0 2px 14px rgba(0,102,255,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0066FF; color: #fff; border-radius: 6px; padding: 3px 8px; font: 700 12px/16px Inter, sans-serif; }
+  .art-pick__brand { font: 700 12px/16px Inter, sans-serif; letter-spacing: 0.06em; color: #0066FF; margin-top: 8px; }
+  .art-pick__name { font: 700 16px/22px Inter, sans-serif; color: #0033A0; margin-top: 4px; }
+  .art-pick__price { font: 800 20px/28px Inter, sans-serif; color: #1A1A1A; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font: 600 14px/20px Inter, sans-serif; color: #0066FF; flex: none; }
+
+  
+  .art-cta { background: #E9F4FF; border: 1px solid #CFE3FA; border-radius: 16px; padding: 28px 32px; margin-top: 36px;
+             display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; align-items: center; }
+  .art-cta__t { font: 700 24px/32px Inter, sans-serif; color: #0033A0; letter-spacing: -0.01em; }
+  .art-cta__s { font: 400 16px/26px Inter, sans-serif; color: #223046; margin-top: 8px; }
+  .art-cta__ph { font: 400 16px/26px Inter, sans-serif; color: #223046; margin-top: 12px; }
+  .art-cta__ph a { font-weight: 700; }
+  .art-cta__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .art-cta__actions a { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 26px; border-radius: 8px; font: 700 16px/1 Inter, sans-serif; }
+  .art-cta__actions .art-btn-main { background: #E81C1C; color: #fff; }
+  .art-cta__actions .art-btn-alt { background: #fff; color: #0066FF; border: 1.5px solid #0066FF; }
+
+  .art-next-h { margin: 40px 0 0; font: 700 28px/36px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; }
+
+  @media (max-width: 760px) {
+    .art-page-main { padding: 14px 16px 56px; grid-template-columns: minmax(0, 1fr); grid-template-areas: "crumbs" "top" "toc" "body"; }
+    .art-page-main.art-solo { grid-template-columns: minmax(0, 1fr); grid-template-areas: "crumbs" "top" "body"; }
+    .art-top h1 { font-size: clamp(25px, 7vw, 30px); line-height: 1.2; }
+    .art-page-lead { font-size: 16px; line-height: 26px; }
+    .art-toc-wrap { position: static; max-height: none; overflow: visible; }
+    .art h2 { margin-top: 30px; font-size: 22px; line-height: 30px; }
+    .art h3 { font-size: 18px; line-height: 26px; }
+    .art p, .art li { font-size: 16px; line-height: 27px; }
+    .art-note, .art-warn, .art-tldr, .art-q { padding: 14px 16px; }
+    .art-cta { padding: 20px; gap: 18px; }
+    .art-cta__actions { display: grid; grid-template-columns: 1fr; width: 100%; }
+    .art-cta__actions > a { width: 100%; box-sizing: border-box; }
+    .art-next-h { font-size: 24px; line-height: 32px; }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#fff;">
+
+  
+  <div class="art-local-chrome" style="background:#F1F5F9; color:#1A1A1A; padding:9px 0; font:13px/20px Inter,sans-serif;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 22px;">
+      <b style="color:#0033A0;">Доставка по Казахстану</b>
+      <span><a href="tel:+77000369369" style="color:#0033A0; font-weight:700;">+77 000 369 369</a> · пн–пт 9:00–18:00</span>
+    </div>
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#fff; border-bottom:1px solid #E2E8F0;">
+    <div style="max-width:1280px; margin:0 auto; padding:12px 40px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 20px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" style="height:44px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0066FF; color:#fff; border-radius:8px; padding:10px 16px; font:600 15px/1 Inter,sans-serif;">☰ Каталог товаров</a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E9F4FF; color:#0033A0; border-radius:8px; padding:10px 16px; font:700 15px/1 Inter,sans-serif;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="art-page-main">
+
+    
+    <div class="art-crumbs">
+      <a href="/">Главная</a> › <a href="/baza-znaniy">База знаний</a> › <span>Какого объёма нужен бойлер</span>
+    </div>
+
+    
+    <div class="art-top">
+      <span class="art-tag">Выбор</span>
+      <h1>Какого объёма нужен бойлер: расчёт на семью</h1>
+      <div class="art-meta">14 минут чтения</div>
+      <div class="art-page-lead">
+        Как рассчитать объём накопительного водонагревателя на 1, 2, 3, 4 человек. Готовые таблицы под квартиру и частный дом в Алматы.
+      </div>
+    </div>
+
+    
+    <aside class="art-toc-wrap"><div class="art-toc__t">Содержание</div><ol class="art-toc"><li><a href="#razdel-1">Как объём считают там, где это давно стандартизировано</a></li><li><a href="#razdel-2">Шаг 1. Посчитайте свой пиковый час</a></li><li><a href="#razdel-3">Готовые таблицы</a></li><li><a href="#razdel-4">Шаг 2. Проверьте, успевает ли бак нагреться</a></li><li><a href="#razdel-5">Шаг 3. Температура: 60–65 °C в баке, 40 °C в кране</a></li><li><a href="#razdel-6">Шаг 4. Что в железе действительно влияет на срок службы</a></li><li><a href="#razdel-7">Electrolux: рабочий выбор для квартиры</a></li><li><a href="#razdel-8">Royal Thermo: новый бренд, который закрывает то, чего нет у Electrolux</a></li><li><a href="#razdel-9">Как выбрать между двумя брендами</a></li><li><a href="#razdel-10">Почему «взять с запасом» — плохая экономия</a></li><li><a href="#razdel-11">Монтаж и обвязка: что проверить до покупки</a></li><li><a href="#razdel-12">Частые ошибки</a></li><li><a href="#razdel-13">Вывод</a></li><li><a href="#razdel-14">Что посмотреть в каталоге</a></li><li><a href="#razdel-15">Частые вопросы</a></li></ol></aside>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">объём считают не по суткам, а по одному пиковому часу. Сложите литры тёплой воды (~40 °C), которые семья расходует в самый нагруженный час, и разделите на 1,6 — получите объём бака. Для квартиры это обычно 1 человек — 50 л, 2 — 80 л, 3 — 100 л, 4 — 150 л, 5+ — 200 л. Ниже — сам расчёт, проверка на скорость нагрева и разбор по моделям Electrolux и Royal Thermo.</div></div>
+      <h2 id="razdel-1">Как объём считают там, где это давно стандартизировано</h2>
+      <p>Три инженерные школы пришли к одному и тому же: бытовой водонагреватель подбирают под <b>пиковый час</b>, а не под дневное потребление.</p>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Где</sc-raw-th><sc-raw-th>Как называется</sc-raw-th><sc-raw-th>Что берут за основу</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>США — DOE, методики AHRI</sc-raw-td><sc-raw-td>First Hour Rating (FHR)</sc-raw-td><sc-raw-td>Сколько литров горячей воды прибор отдаёт за первый час, начиная с полного горячего бака</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>ЕС — регламент ErP 812/2013</sc-raw-td><sc-raw-td>V40 и профиль нагрузки</sc-raw-td><sc-raw-td>Сколько литров смешанной воды 40 °C прибор отдаёт по заданной суточной последовательности водоразборов</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Германия — DVGW W 551</sc-raw-td><sc-raw-td>Температурный режим и объём хранения</sc-raw-td><sc-raw-td>Хранить горячо, объём хранения держать минимально достаточным</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p>Что из этого стоит забрать:</p>
+      <p><b>1. Считается «первый час», а не бак.</b> По методике FHR прибор оценивают по тому, сколько он отдаст за час: сам запас бака даёт примерно 50–70 % результата, остальное добирается нагревом по ходу разбора. Поэтому 80-литровый бак с быстрым ТЭНом может обслужить семью лучше, чем 100-литровый с медленным.</p>
+      <p><b>2. Считаются литры смеси, а не литры бака.</b> Европейская маркировка описывает прибор величиной V40 — сколько литров воды 40 °C он выдаёт. Измеряют её честно: бак прогревают, потом сливают на максимальном расходе, пока температура на выходе не упадёт ниже 40 °C. Из крана вы получаете именно смесь, и планировать нужно её.</p>
+      <p><b>3. Температура хранения — часть расчёта, а не вкусовщина.</b> Немецкая практика (W 551) и американские рекомендации по контролю легионеллы совпадают: бак держат от 60 °C, а на выходе ограничивают термостатическим смесителем, а не понижением уставки.</p>
+      <div class="art-note">В Казахстане энергетическая маркировка водонагревателей не обязательна, и V40 в паспортах поставщики не публикуют. Поэтому в нашем каталоге класс энергоэффективности указан лишь у части моделей — там, где производитель заявил его сам. Считать пиковый час всё равно можно: ниже это сделано через коэффициент смешивания.</div>
+      <h2 id="razdel-2">Шаг 1. Посчитайте свой пиковый час</h2>
+      <p>Возьмите самый нагруженный час — как правило, утро буднего дня или вечер выходного. Выпишите, что в этот час происходит.</p>
+      <p>Главный множитель — не время в душе, а <b>расход лейки</b>. Обычная даёт около 9 л/мин, экономичная — 6–7, тропическая — 10–12.</p>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Что происходит</sc-raw-th><sc-raw-th>Литров смеси ~40 °C</sc-raw-th><sc-raw-th>Из бака при 60 °C</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Душ 5 мин, экономичная лейка (7 л/мин)</sc-raw-td><sc-raw-td>35 л</sc-raw-td><sc-raw-td>20 л</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Душ 8 мин, обычная лейка (9 л/мин)</sc-raw-td><sc-raw-td>72 л</sc-raw-td><sc-raw-td>40 л</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Душ 10 мин, тропическая лейка (12 л/мин)</sc-raw-td><sc-raw-td>120 л</sc-raw-td><sc-raw-td>67 л</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Ванна, налить на две трети</sc-raw-td><sc-raw-td>110–140 л</sc-raw-td><sc-raw-td>60–80 л</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Мытьё посуды руками, 5 мин</sc-raw-td><sc-raw-td>20–25 л</sc-raw-td><sc-raw-td>12–14 л</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Мойка головы под краном, 3 мин</sc-raw-td><sc-raw-td>15–20 л</sc-raw-td><sc-raw-td>8–11 л</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Умыться, побриться</sc-raw-td><sc-raw-td>5–8 л</sc-raw-td><sc-raw-td>3–5 л</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p><b>Откуда берётся коэффициент.</b> Из бака идёт вода 60 °C, в смесителе она разбавляется холодной (в Алматы зимой это примерно 10–15 °C). На один литр из бака приходится около 1,8 литра смеси 40 °C. На практике часть запаса теряется на перемешивании слоёв в баке, поэтому для расчёта берут не 1,8, а <b>1,6</b> — так же пересчитывают и паспортные V40.</p>
+      <div class="art-note"><b>Формула.</b> Объём бака = (литры смеси 40 °C за пиковый час) ÷ 1,6. Два душа по 8 минут подряд — это 144 л смеси, значит бак от 90 л. Округляем к ближайшему ходовому размеру вверх: 100 л.</div>
+      <h2 id="razdel-3">Готовые таблицы</h2>
+      <p>Ниже — тот же расчёт, уже посчитанный за вас.</p>
+      <h3>Квартира, только душ</h3>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Кто</sc-raw-th><sc-raw-th>Что в пиковый час</sc-raw-th><sc-raw-th>Литров смеси</sc-raw-th><sc-raw-th>Объём бака</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>1 человек</sc-raw-td><sc-raw-td>душ 8 мин + умыться</sc-raw-td><sc-raw-td>~80 л</sc-raw-td><sc-raw-td><b>50 л</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>2 человека</sc-raw-td><sc-raw-td>2 душа подряд</sc-raw-td><sc-raw-td>~160 л</sc-raw-td><sc-raw-td><b>80–100 л</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>3 человека</sc-raw-td><sc-raw-td>2 душа + посуда + голова</sc-raw-td><sc-raw-td>~185 л</sc-raw-td><sc-raw-td><b>100 л</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>4 человека</sc-raw-td><sc-raw-td>3 душа + посуда</sc-raw-td><sc-raw-td>~240 л</sc-raw-td><sc-raw-td><b>150 л</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>5+ человек</sc-raw-td><sc-raw-td>4 душа + посуда + голова</sc-raw-td><sc-raw-td>~330 л</sc-raw-td><sc-raw-td><b>200 л</b></sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p>Если лейка тропическая или душ длится 10–12 минут — поднимайтесь на одну ступень: расход растёт быстрее, чем кажется.</p>
+      <h3>Квартира с ванной</h3>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Кто</sc-raw-th><sc-raw-th>Что в пиковый час</sc-raw-th><sc-raw-th>Литров смеси</sc-raw-th><sc-raw-th>Объём бака</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>1 человек, ванна изредка</sc-raw-td><sc-raw-td>ванна</sc-raw-td><sc-raw-td>~130 л</sc-raw-td><sc-raw-td><b>80 л</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>2 человека, ванна часто</sc-raw-td><sc-raw-td>ванна + душ</sc-raw-td><sc-raw-td>~200 л</sc-raw-td><sc-raw-td><b>100–120 л</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>3+ человек, ванна регулярно</sc-raw-td><sc-raw-td>ванна + 2 душа</sc-raw-td><sc-raw-td>~275 л</sc-raw-td><sc-raw-td><b>150 л</b></sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <h3>Частный дом</h3>
+      <p>В доме точек разбора больше — два-три санузла, кухня, иногда стиральная и посудомоечная машина с подачей горячей. Магистральной горячей воды нет, вся нагрузка ложится на бойлер.</p>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Дом</sc-raw-th><sc-raw-th>Точек воды</sc-raw-th><sc-raw-th>Объём бака</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Дача, приезжаете на выходные</sc-raw-td><sc-raw-td>1–2</sc-raw-td><sc-raw-td><b>80–100 л</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Постоянное проживание, семья 3</sc-raw-td><sc-raw-td>2–3 санузла</sc-raw-td><sc-raw-td><b>150 л</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Постоянное проживание, семья 5+</sc-raw-td><sc-raw-td>3+ санузла</sc-raw-td><sc-raw-td><b>200–300 л</b></sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Большой дом, гости, две ванные одновременно</sc-raw-td><sc-raw-td>4+ санузла</sc-raw-td><sc-raw-td><b>300–500 л или два бойлера</b></sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p>Два бойлера вместо одного большого — рабочий вариант, когда санузлы разнесены по этажам: короче трубы, меньше ждать горячую воду в дальней точке, и при поломке одного дом не остаётся без горячей воды совсем.</p>
+      <p>Посмотреть, что есть по объёмам: <a href="/katalog?g=vodonagrevateli&amp;sub=%D0%9D%D0%B0%D0%BA%D0%BE%D0%BF%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5">накопительные водонагреватели в каталоге</a> — ряд от 7 до 500 л.</p>
+      <h2 id="razdel-4">Шаг 2. Проверьте, успевает ли бак нагреться</h2>
+      <p>Объём отвечает за первый час. Дальше вопрос в мощности: если вечером понадобится второй пиковый час, бак должен успеть восстановиться.</p>
+      <p>Время нагрева считается точно: <b>литры × разница температур × 1,163 ÷ мощность в ваттах</b>. Ниже — реальные мощности моделей из нашего каталога, а не усреднённые.</p>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Объём</sc-raw-th><sc-raw-th>Мощность у моделей в каталоге</sc-raw-th><sc-raw-th>Нагрев с 15 до 60 °C</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>30 л</sc-raw-td><sc-raw-td>1,5 кВт / 2 кВт</sc-raw-td><sc-raw-td>1 ч 05 мин / 50 мин</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>50 л</sc-raw-td><sc-raw-td>1,5 кВт / 2 кВт</sc-raw-td><sc-raw-td>1 ч 45 мин / 1 ч 20 мин</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>80 л</sc-raw-td><sc-raw-td>1,5 кВт / 2 кВт</sc-raw-td><sc-raw-td>2 ч 50 мин / 2 ч 05 мин</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>100 л</sc-raw-td><sc-raw-td>1,5 кВт / 2 кВт</sc-raw-td><sc-raw-td>3 ч 30 мин / 2 ч 40 мин</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>150 л</sc-raw-td><sc-raw-td>1,5 кВт</sc-raw-td><sc-raw-td>5 ч 15 мин</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>200 л</sc-raw-td><sc-raw-td>6 кВт (два ТЭНа)</sc-raw-td><sc-raw-td>1 ч 45 мин</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>300 л</sc-raw-td><sc-raw-td>6 кВт (два ТЭНа)</sc-raw-td><sc-raw-td>2 ч 40 мин</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>500 л</sc-raw-td><sc-raw-td>6 кВт (два ТЭНа)</sc-raw-td><sc-raw-td>4 ч 20 мин</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p>Добавьте 5–10 % на теплопотери — в таблице чистый расчёт.</p>
+      <div class="art-note"><b>Ловушка 150 литров.</b> Модели на 150 л в бытовом сегменте чаще всего идут с ТЭНом 1,5 кВт: полный нагрев занимает больше пяти часов. Для семьи с одним утренним пиком это нормально — бак успевает за ночь. Для семьи с утренним и вечерним пиком лучше взять 100 л с ТЭНом 2 кВт: он восстановится за 2 ч 40 мин и к вечеру снова полный.</div>
+      <p><b>Электрика.</b> ТЭН до 2 кВт садится на обычную розетку с заземлением. Модели на 200 л и больше идут с двумя ТЭНами суммарно 6 кВт — это около 26 А, отдельная линия, свой автомат и кабель по расчёту. Планировать это надо до покупки, а не после.</p>
+      <h2 id="razdel-5">Шаг 3. Температура: 60–65 °C в баке, 40 °C в кране</h2>
+      <p>Уставка бака — это не только про бактерии, это ещё и про объём. Чем горячее бак, тем больше смеси он даёт.</p>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Уставка бака</sc-raw-th><sc-raw-th>Множитель смеси 40 °C</sc-raw-th><sc-raw-th>Бак 80 л работает как</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>75 °C</sc-raw-td><sc-raw-td>2,4</sc-raw-td><sc-raw-td>~190 л</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>65 °C</sc-raw-td><sc-raw-td>2,0</sc-raw-td><sc-raw-td>~160 л</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>60 °C</sc-raw-td><sc-raw-td>1,8</sc-raw-td><sc-raw-td>~145 л</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>55 °C</sc-raw-td><sc-raw-td>1,6</sc-raw-td><sc-raw-td>~130 л</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>45 °C</sc-raw-td><sc-raw-td>1,2</sc-raw-td><sc-raw-td>~95 л</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p>Это расчётные значения; на практике вычитайте около 10 % на перемешивание слоёв. Большинство накопительных моделей в нашем каталоге держат до 75 °C по паспорту.</p>
+      <p><b>Что из этого следует.</b> Бойлер, выставленный на 45 °C «чтобы не обжигаться», работает примерно как бак вдвое меньшего объёма. Плюс ниже 55 °C в баке начинает размножаться легионелла — бактерия, вызывающая тяжёлую пневмонию.</p>
+      <p><b>Как эту задачу решают правильно.</b> Не понижают уставку, а ставят <b>термостатический смеситель</b> на выходе из бойлера: бак живёт при 60–65 °C, а в трубу уходит вода стабильных 38–43 °C. Это стандартная практика в Европе и США — ровно то, что рекомендуют и санитарные службы, и производители: горячее хранение плюс ограничение температуры на выходе. Для семьи с маленькими детьми это единственный способ получить одновременно безопасный кран и безопасный бак.</p>
+      <p>Раз в 1–3 месяца поднимайте уставку до 70–75 °C на сутки — термическая дезинфекция.</p>
+      <h2 id="razdel-6">Шаг 4. Что в железе действительно влияет на срок службы</h2>
+      <p><b>Бак.</b> Эмалированная сталь дешевле, но живёт за счёт магниевого анода: анод расходуется и требует проверки примерно раз в два года. Нержавеющая сталь дороже, анод ей не нужен. Косвенный, но честный индикатор — <b>гарантия производителя на бак</b>: у бюджетных эмалированных серий это 60 месяцев, у нержавеющих — 84, у топовых — 96.</p>
+      <p><b>ТЭН.</b> Мокрый погружён в воду и при жёсткой воде обрастает накипью за 3–5 лет. Сухой стоит в защитной колбе, не контактирует с водой и меняется без слива бака. В Алматы вода средней жёсткости, но по районам есть известь — сухой ТЭН окупается.</p>
+      <p><b>Управление.</b> Механика дешевле и проще в ремонте. Электроника даёт точную уставку. Инверторные модели с Wi-Fi добавляют расписание нагрева: можно греть ночью и к утру иметь полный бак.</p>
+      <p><b>Ориентация и место.</b> Почти все серии Electrolux в каталоге допускают и вертикальный, и горизонтальный монтаж (исключение — Citadel) — это выручает при низком потолке или установке над дверью. Серии Royal Thermo DRYver и Heatronic монтируются только вертикально. Баки от 200 л — напольные: 200-литровый весит 60 кг пустым и около 260 кг полным, стена такой не держит.</p>
+      <h2 id="razdel-7">Electrolux: рабочий выбор для квартиры</h2>
+      <p>В нашем каталоге Electrolux закрывает квартирный ряд — 30, 50, 80 и 100 л. Все модели держат до 75 °C. Горизонтальный монтаж допускают все серии, кроме Citadel — она вешается только вертикально.</p>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Серия</sc-raw-th><sc-raw-th>Бак</sc-raw-th><sc-raw-th>ТЭН</sc-raw-th><sc-raw-th>Гарантия на бак</sc-raw-th><sc-raw-th>Для кого</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Citadel</sc-raw-td><sc-raw-td>нержавейка</sc-raw-td><sc-raw-td>мокрый</sc-raw-td><sc-raw-td>84 мес</sc-raw-td><sc-raw-td>Механика без электроники, самый простой вход в нержавейку. Только вертикально</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Major LZR 3</sc-raw-td><sc-raw-td>нержавейка</sc-raw-td><sc-raw-td>мокрый</sc-raw-td><sc-raw-td>84 мес</sc-raw-td><sc-raw-td>Электронное управление, точная уставка</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Formax DL</sc-raw-td><sc-raw-td>эмаль</sc-raw-td><sc-raw-td>два сухих</sc-raw-td><sc-raw-td>84 мес</sc-raw-td><sc-raw-td>Два сухих ТЭНа: быстрее восстановление, компактный корпус</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Centurio IQ 3.0</sc-raw-td><sc-raw-td>нержавейка</sc-raw-td><sc-raw-td>сухой</sc-raw-td><sc-raw-td>96 мес</sc-raw-td><sc-raw-td>Основной вариант «поставил и забыл»</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>SmartInverter</sc-raw-td><sc-raw-td>нержавейка</sc-raw-td><sc-raw-td>сухой</sc-raw-td><sc-raw-td>96 мес</sc-raw-td><sc-raw-td>Инверторное управление, Wi-Fi, расписание нагрева</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p><b>Наглядная иллюстрация к разговору про «взять с запасом».</b> SmartInverter — единственная серия в разделе, где производитель заявил класс энергоэффективности, и внутри одной серии он меняется вместе с объёмом: 30 л — класс A, 50 и 80 л — B, 100 л — C. Прибор один и тот же, разница только в размере бака. Лишние литры оплачиваются каждый месяц, даже если вы ими не пользуетесь.</p>
+      <h2 id="razdel-8">Royal Thermo: новый бренд, который закрывает то, чего нет у Electrolux</h2>
+      <p>Royal Thermo — марка группы «Русклимат», у нас она появилась недавно и в разделе накопительных водонагревателей сейчас самая широкая по ряду: от 10 до 500 л. Для статьи про объём это ключевое — именно здесь есть размеры, которых у Electrolux нет.</p>
+      <p><b>Малые объёмы, 10 и 15 л — Genie ECO и Stilla.</b> Ставятся под раковину или над ней (исполнения U и O различаются стороной подключения). Это не «бойлер для семьи», а решение для кухни, дачного умывальника или второй точки далеко от основного бака.</p>
+      <p><b>Средний ряд, 30–100 л:</b></p>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Серия</sc-raw-th><sc-raw-th>Бак</sc-raw-th><sc-raw-th>ТЭН</sc-raw-th><sc-raw-th>Гарантия на бак</sc-raw-th><sc-raw-th>Чем интересна</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Trend, Optimal</sc-raw-td><sc-raw-td>эмаль</sc-raw-td><sc-raw-td>мокрый</sc-raw-td><sc-raw-td>60 мес</sc-raw-td><sc-raw-td>Бюджетный вход, механика</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>DRYver, Heatronic DryHeat</sc-raw-td><sc-raw-td>эмаль</sc-raw-td><sc-raw-td>сухой</sc-raw-td><sc-raw-td>60 мес</sc-raw-td><sc-raw-td>Сухой ТЭН по цене эмалированного бака</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Citadel Unic, Interio, Fidelity</sc-raw-td><sc-raw-td>нержавейка</sc-raw-td><sc-raw-td>мокрый</sc-raw-td><sc-raw-td>84 мес</sc-raw-td><sc-raw-td>Нержавейка в среднем сегменте</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Lagom, Major Inverter, Centurio DL Inverter</sc-raw-td><sc-raw-td>нержавейка</sc-raw-td><sc-raw-td>мокрый</sc-raw-td><sc-raw-td>96 мес</sc-raw-td><sc-raw-td>Максимальная гарантия на бак</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Aqua Inverter, Smalto Inverter</sc-raw-td><sc-raw-td>эмаль</sc-raw-td><sc-raw-td>сухой</sc-raw-td><sc-raw-td>84 мес</sc-raw-td><sc-raw-td>Сухой ТЭН, инвертор, Wi-Fi</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Aqua Inox Inverter</sc-raw-td><sc-raw-td>нержавейка</sc-raw-td><sc-raw-td>сухой</sc-raw-td><sc-raw-td>96 мес</sc-raw-td><sc-raw-td>Полный набор: нержавейка, сухой ТЭН, Wi-Fi</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <p><b>Большие объёмы, которых в разделе больше ни у кого нет:</b></p>
+      <ul><li><b>DRYver 150 л</b> — настенный, сухой ТЭН, 128 см в высоту при габарите 46 × 48,5 см. ТЭН 1,5 кВт, полный нагрев больше пяти часов: вариант под ночной нагрев.</li><li><b>XL 200, 300 и 500 л</b> — напольные, два ТЭНа суммарно 6 кВт. Нагрев 200 л — меньше двух часов. Это уже оборудование для дома, а не для квартиры: нужна отдельная линия питания и место на полу.</li></ul>
+      <h2 id="razdel-9">Как выбрать между двумя брендами</h2>
+      <div class="art-tw"><sc-raw-table class="art-t"><sc-raw-thead><sc-raw-tr><sc-raw-th>Задача</sc-raw-th><sc-raw-th>Куда смотреть</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td>Квартира 30–100 л, нужен горизонтальный монтаж</sc-raw-td><sc-raw-td>Electrolux</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Квартира, максимум ресурса на 100 л</sc-raw-td><sc-raw-td>Electrolux Centurio IQ 3.0 или SmartInverter</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Нужен сухой ТЭН, но бюджет ограничен</sc-raw-td><sc-raw-td>Royal Thermo DRYver, Heatronic DryHeat</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Нужны 150 л</sc-raw-td><sc-raw-td>Royal Thermo DRYver 150</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Дом, 200 л и больше</sc-raw-td><sc-raw-td>Royal Thermo XL</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Кухня или дальняя точка, 10–15 л</sc-raw-td><sc-raw-td>Royal Thermo Genie ECO, Stilla</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td>Нужен Wi-Fi и расписание нагрева</sc-raw-td><sc-raw-td>Electrolux SmartInverter или Royal Thermo Aqua Inox Inverter</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></div>
+      <h2 id="razdel-10">Почему «взять с запасом» — плохая экономия</h2>
+      <p><b>1. Потери растут вместе с баком.</b> Тепло уходит через поверхность, а она увеличивается медленнее объёма: переход с 80 на 150 л добавляет примерно 40 % к постоянным теплопотерям. Эти 40 % вы оплачиваете круглый год, в том числе пока в отпуске.</p>
+      <p><b>2. Класс энергоэффективности падает с объёмом.</b> Внутри одной серии, на одном и том же железе: 30 л — A, 50–80 л — B, 100 л — C.</p>
+      <p><b>3. Место.</b> Бак на 150 л — это 128 см высоты и почти полметра по обеим сторонам. В типовой алматинской ванной такой уже некуда вешать, а 200-литровый на стену не встанет вовсе.</p>
+      <p><b>4. Долгий нагрев.</b> 150 л на ТЭНе 1,5 кВт — больше пяти часов с холодного бака.</p>
+      <p>Немецкая практика формулирует это прямо: объём хранения держат минимально достаточным — большой бак с застоявшейся водой хуже маленького и по гигиене, и по деньгам. <b>Оптимум — пиковый час плюс 15–20 %, не больше.</b></p>
+      <h2 id="razdel-11">Монтаж и обвязка: что проверить до покупки</h2>
+      <ul><li><b>Предохранительный клапан</b> обязателен — он сбрасывает давление, которое растёт при нагреве. Ставится на входе холодной, без запорной арматуры между ним и баком.</li><li><b>Расширительный бак</b> нужен, если на входе стоит обратный клапан или редуктор: иначе при каждом нагреве вода будет капать из предохранительного клапана. Для бойлера 80–100 л обычно берут расширительный бак на 8 л.</li><li><b>Отдельная линия</b> для моделей на 6 кВт. Для 1,5–2 кВт хватит обычной розетки с заземлением, но линия должна быть исправной.</li><li><b>Пол вместо стены</b> для баков от 200 л.</li><li><b>Доступ к аноду и сливу.</b> Если бак вплотную к потолку или зашит в короб, обслуживать его будет некому.</li></ul>
+      <h2 id="razdel-12">Частые ошибки</h2>
+      <ol><li><b>Считают по суткам.</b> «Нам хватает 200 литров в день» — и берут 200 л. Считать нужно один час, а не сутки: 200-литровый бак для двоих будет греть неиспользуемую воду весь год.</li><li><b>Берут 30 л на троих.</b> Хватает на один душ, дальше ждать час. Реальный минимум для семьи из трёх — 80–100 л.</li><li><b>Ставят уставку 45 °C.</b> Бак начинает работать как вдвое меньший, плюс риск легионеллы. Правильно — 60–65 °C в баке и термостатический смеситель на выходе.</li><li><b>Не учитывают лейку.</b> Тропический душ 12 л/мин расходует вдвое больше экономичного. При такой лейке расчёт по «среднему душу» промахивается на целую ступень объёма.</li><li><b>Забывают про анод.</b> У эмалированного бака анод — расходник. Не проверили за 3–5 лет — получили сквозную коррозию, и гарантия здесь не поможет.</li><li><b>Берут 150 л, не посмотрев мощность.</b> С ТЭНом 1,5 кВт бак восстанавливается больше пяти часов — второй пик в тот же день он не отработает.</li></ol>
+      <h2 id="razdel-13">Вывод</h2>
+      <p>Объём бойлера считают по пиковому часу: сумму литров смеси 40 °C делят на 1,6. Для квартиры в Алматы это 50 л на одного, 80–100 л на двоих, 100 л на троих, 150 л на четверых, 200 л на пятерых и больше. Для дома — от 150 л, а с двумя санузлами и гостями разумнее 300 л или два бака.</p>
+      <p>Дальше проверьте мощность: бак должен восстановиться к следующему пику. И ставьте уставку 60–65 °C с термостатическим смесителем на выходе — так вы получаете и полный расчётный объём, и безопасный кран.</p>
+      <p>Не хотите считать сами — напишите в <a href="https://wa.me/77000369369">WhatsApp</a>: сколько человек в семье, есть ли ванна и какая лейка в душе. Подберём объём и пришлём цену — приезжать для этого не нужно. Нужен монтаж — посчитаем его отдельно. Гарантия, рассрочка Kaspi/Halyk/Forte, монтаж по Алматы.</p>
+      <p>Читайте также: <a href="https://tehnoholod369.kz/nakopitelnyi-ili-protochnyi">«Накопительный или проточный водонагреватель»</a>, <a href="https://tehnoholod369.kz/kak-vybrat-radiator">«Как выбрать радиатор отопления»</a>.</p>
+      <h2 id="razdel-14">Что посмотреть в каталоге</h2>
+      <div class="art-cards">
+      <a class="art-card" href="/katalog?g=vodonagrevateli&amp;brand=Electrolux&amp;sub=%D0%9D%D0%B0%D0%BA%D0%BE%D0%BF%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5&amp;stock=in"><div class="art-card__t">Electrolux · Накопительные</div><div class="art-card__s">Марка, которую мы рекомендуем в этом разделе.</div><div class="art-card__go">В каталоге <span class="art-card__n">32 модели</span> →</div></a>
+      <a class="art-card" href="/katalog?g=vodonagrevateli&amp;sub=%D0%9D%D0%B0%D0%BA%D0%BE%D0%BF%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5"><div class="art-card__t">Водонагреватели · Накопительные</div><div class="art-card__s">Смотреть весь раздел без фильтра по марке.</div><div class="art-card__go">В каталоге <span class="art-card__n" data-sub="vodonagrevateli|Накопительные"></span> →</div></a>
+      <a class="art-card" href="/nakopitelnyy-vodonagrevatel-almaty"><div class="art-card__t">Накопительные водонагреватели</div><div class="art-card__s">Бойлеры в наличии, объёмы и цены.</div><div class="art-card__go">Открыть раздел →</div></a>
+      </div>
+      <a class="art-pick" data-pick="vodonagrevateli" href="/katalog?g=vodonagrevateli"
+         title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
+        <img class="art-pick__img" data-pick-img alt="" />
+        <div class="art-pick__b">
+          <div class="art-pick__tag" data-pick-tag>Наш выбор</div>
+          <div class="art-pick__brand" data-pick-brand></div>
+          <div class="art-pick__name" data-pick-name></div>
+          <div class="art-pick__price" data-pick-price></div>
+        </div>
+        <div class="art-pick__go">Открыть карточку →</div>
+      </a>
+      <h2 id="razdel-15">Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Считать по холодной или горячей воде?</div><div class="art-q__a">По воде из крана — той самой смеси примерно 40 °C. Затем разделите сумму на 1,6 и получите объём бака, который её обеспечит.</div></div>
+      <div class="art-q"><div class="art-q__q">Хватит ли 50 л на семью из двух человек?</div><div class="art-q__a">Только если душ короткий и не подряд. Два душа по 8 минут — это около 160 л смеси, нужен бак от 90 л. Берите 80 л как минимум, 100 л — с запасом.</div></div>
+      <div class="art-q"><div class="art-q__q">Почему нельзя просто взять бак побольше?</div><div class="art-q__a">Большой бак круглый год греет воду, которой вы не пользуетесь. Переход с 80 на 150 л добавляет около 40 % постоянных теплопотерь, а внутри одной серии класс энергоэффективности падает с A на C по мере роста объёма.</div></div>
+      <div class="art-q"><div class="art-q__q">Как понять, что бойлер маленький?</div><div class="art-q__a">Второму человеку достаётся тёплая вода вместо горячей, или перед следующим душем приходится ждать 40 минут и больше.</div></div>
+      <div class="art-q"><div class="art-q__q">Какую температуру ставить на бойлере?</div><div class="art-q__a">60–65 °C. Ниже 55 °C размножается легионелла, а объём смеси падает: при 45 °C бак отдаёт примерно вдвое меньше, чем при 60 °C. Раз в 1–3 месяца — 70–75 °C на сутки.</div></div>
+      <div class="art-q"><div class="art-q__q">Как сделать кран безопасным для ребёнка, не понижая уставку?</div><div class="art-q__a">Поставить термостатический смеситель на выходе из бойлера. Бак остаётся при 60–65 °C, в трубу идут стабильные 38–43 °C. Это стандартное решение в европейской и американской практике.</div></div>
+    </div>
+
+    
+    <div class="art-cta">
+      <div>
+        <div class="art-cta__t">Подберём модель под вашу задачу</div>
+        <div class="art-cta__s">Напишите площадь комнаты и этаж — пришлём подбор и цену. Нужен монтаж — посчитаем отдельно.</div>
+        <div class="art-cta__ph">Телефон и WhatsApp: <a href="tel:+77000369369">+77 000 369 369</a></div>
+      </div>
+      <div class="art-cta__actions">
+        <a class="art-btn-main" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+        <a class="art-btn-alt" href="/katalog?g=vodonagrevateli">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0;" class="art-next-h">Читайте дальше</h2>
+    <div class="art-cards" data-art-next="obem-boilera|voda|vodonagrevateli|nakopitelnyi-ili-protochnyi,kak-vybrat-radiator">
+        <a class="art-card" href="https://tehnoholod369.kz/nakopitelnyi-ili-protochnyi"><div class="art-card__t">Накопительный или проточный водонагреватель: что выбрать</div><div class="art-card__s">Сравнение накопительного и проточного бойлера: мощность, скорость, электросеть, цена. Что выбрать для квартиры</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-radiator"><div class="art-card__t">Как выбрать радиатор отопления для квартиры: типы и советы</div><div class="art-card__s">Разбираем биметаллические, алюминиевые и стальные радиаторы: плюсы, минусы, для каких квартир и домов подходят</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/skolko-sekcii-radiatora"><div class="art-card__t">Сколько секций радиатора нужно на комнату: расчёт с примерами</div><div class="art-card__s">Формула расчёта секций радиатора на комнату для квартиры и частного дома. Готовые таблицы для 15, 18, 20, 25 м</div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#0033A0; color:#CFE3FA; padding:26px 0; font:13px/20px Inter,sans-serif;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 40px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+  
+  <div data-th-copyright style="box-sizing:border-box; max-width:1248px; margin:0 auto; padding:18px 24px 40px; font:12px/20px Inter,sans-serif; color:#64748B;">
+    © 2026 ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
+    Перепечатка целиком или существенной частью — только с письменного разрешения.
+    Цитата с активной ссылкой на источник разрешена без запроса.
+    <a href="/usloviya-ispolzovaniya" style="color:#64748B; text-decoration:underline;">Условия использования</a>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Какого объёма нужен бойлер: расчёт на семью", "description": "Как рассчитать объём накопительного водонагревателя на 1, 2, 3, 4 человек. Готовые таблицы под квартиру и частный дом в Алматы.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/obem-boilera"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightYear": 2026}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Какого объёма нужен бойлер: расчёт на семью", "item": "https://tehnoholod369.kz/obem-boilera"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Считать по холодной или горячей воде?","acceptedAnswer":{"@type":"Answer","text":"По воде из крана — смеси примерно 40 °C. Сумму литров за пиковый час делят на 1,6 и получают объём бака."}},
+    {"@type":"Question","name":"Хватит ли 50 л на семью из двух человек?","acceptedAnswer":{"@type":"Answer","text":"Только если душ короткий и не подряд. Два душа по 8 минут — около 160 л смеси, нужен бак от 90 л. Минимум 80 л, с запасом 100 л."}},
+    {"@type":"Question","name":"Почему нельзя просто взять бак побольше?","acceptedAnswer":{"@type":"Answer","text":"Большой бак круглый год греет воду, которой вы не пользуетесь. Переход с 80 на 150 л добавляет около 40 % постоянных теплопотерь, а класс энергоэффективности внутри одной серии падает с A на C по мере роста объёма."}},
+    {"@type":"Question","name":"Как понять, что бойлер маленький?","acceptedAnswer":{"@type":"Answer","text":"Второму человеку достаётся тёплая вода вместо горячей, или перед следующим душем нужно ждать 40 минут и больше."}},
+    {"@type":"Question","name":"Какую температуру ставить на бойлере?","acceptedAnswer":{"@type":"Answer","text":"60–65 °C. Ниже 55 °C размножается легионелла, а объём смеси падает: при 45 °C бак отдаёт примерно вдвое меньше, чем при 60 °C. Раз в 1–3 месяца — 70–75 °C на сутки."}},
+    {"@type":"Question","name":"Как сделать кран безопасным для ребёнка, не понижая уставку?","acceptedAnswer":{"@type":"Answer","text":"Поставить термостатический смеситель на выходе из бойлера: бак остаётся при 60–65 °C, в трубу идут стабильные 38–43 °C. Это стандартное решение в европейской и американской практике."}}
+  ]
+}
+</script>
+</x-dc>
