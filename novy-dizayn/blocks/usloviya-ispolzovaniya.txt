@@ -3,28 +3,28 @@
 <x-dc>
 
 <style>
-  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #182122; }
-  h1, h2 { font-family: "Montserrat", "Inter", sans-serif; }
-  a { color: #0A4EA7; text-decoration: none; }
-  a:hover { color: #0872D3; }
+  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2 { font-family: "Inter", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0052D6; }
 
   .doc-page { width: 100%; max-width: 888px; box-sizing: border-box; margin: 0 auto; padding: 18px 24px 72px; }
   .doc-page > h1 { max-width: none !important; overflow-wrap: anywhere; }
   .t-body .t-local-chrome { display: none !important; }
 
-  .doc h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
-  .doc p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .doc h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #0033A0; }
+  .doc p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #1A1A1A; }
   .doc ul { margin: 12px 0 0; padding-left: 22px; }
-  .doc li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
-  .doc b, .doc strong { color: #18212F; }
+  .doc li { font-size: 16px; line-height: 1.7; color: #1A1A1A; margin-top: 6px; }
+  .doc b, .doc strong { color: #1A1A1A; }
 
-  .doc-note { background: #E6F2FD; border: 1px solid #B9D8F7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.7; }
-  .doc-note b { color: #071C3B; }
+  .doc-note { background: #E9F4FF; border: 1px solid #DCE5F0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.7; }
+  .doc-note b { color: #0033A0; }
 
-  .doc-crumbs { font-size: 13px; color: #6B7C93; }
-  .doc-crumbs a { color: #6B7C93; }
-  .doc-lead { font-size: 17px; line-height: 1.7; color: #2C3846; margin-top: 14px; }
-  .doc-upd { font-size: 13px; color: #6B7C93; margin-top: 26px; }
+  .doc-crumbs { font-size: 13px; color: #606F85; }
+  .doc-crumbs a { color: #606F85; }
+  .doc-lead { font-size: 17px; line-height: 1.7; color: #1A1A1A; margin-top: 14px; }
+  .doc-upd { font-size: 13px; color: #606F85; margin-top: 26px; }
 
   .art-local-chrome { display: none !important; }  /* шапку и подвал рисует th-shapka.js */
 </style>
@@ -35,7 +35,7 @@
     <a href="/">Главная</a> → Условия использования материалов
   </div>
 
-  <h1 style="margin:10px 0 0; font-size:34px; font-weight:800; letter-spacing:-0.02em; color:#071C3B; line-height:1.2;">Условия использования материалов сайта</h1>
+  <h1 style="margin:10px 0 0; font-size:34px; font-weight:800; letter-spacing:-0.02em; color:#0033A0; line-height:1.2;">Условия использования материалов сайта</h1>
 
   <p class="doc-lead">Коротко: <b>цитировать нас со ссылкой можно и без спроса. Перепечатывать статью целиком — нельзя.</b> Ниже то же самое подробнее.</p>
 
@@ -72,10 +72,9 @@
 
   <h2>Реквизиты</h2>
   <p>ИП «ТехноХолод», Алматы, ул. Какимжана Казыбаева, 286Б.<br />
-  Телефон и WhatsApp: <a href="tel:+77000369369">+77&nbsp;000&nbsp;369&nbsp;369</a>. Дополнительный: <a href="tel:+77000336699">+77&nbsp;000&nbsp;33&nbsp;66&nbsp;99</a>.<br />
+  Телефон и WhatsApp: <a href="tel:+77000369369">+77&nbsp;000&nbsp;369&nbsp;369</a>.<br />
   Почта: <a href="mailto:tehnoholod369@gmail.com">tehnoholod369@gmail.com</a></p>
 
-  <p class="doc-upd">Действует с 3 сентября 2026 года.</p>
 
 </div>
 
