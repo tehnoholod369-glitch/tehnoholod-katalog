@@ -1,0 +1,202 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0052D6; }
+  .dv-page { max-width: 1248px; box-sizing: border-box; margin: 0 auto; padding: 18px 24px 72px; }
+  .dv-crumbs { font-size: 13px; line-height: 20px; color: #64748B; }
+  .dv-crumbs a { color: #64748B; }
+  .dv-crumbs span { color: #1A1A1A; }
+  .dv-h1 { margin: 14px 0 0; font: 700 48px/56px Inter, sans-serif; letter-spacing: -0.02em; color: #0033A0; overflow-wrap: anywhere; }
+  .dv-h2 { margin: 44px 0 0; font: 700 32px/40px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; }
+  .dv-lead { font: 400 18px/28px Inter, sans-serif; color: #1A1A1A; margin-top: 14px; max-width: 880px; }
+  .dv-sub { font: 400 16px/24px Inter, sans-serif; color: #64748B; margin-top: 8px; }
+  .dv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 16px; margin-top: 16px; }
+  .dv-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+  .dv-btn { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; height: 48px; padding: 0 22px; border-radius: 8px; font: 600 16px/1 Inter, sans-serif; }
+  .dv-btn--blue { background: #0066FF; color: #fff; }
+  .dv-btn--blue:hover { background: #0052D6; color: #fff; }
+  .dv-btn--red { background: #E81C1C; color: #fff; }
+  .dv-btn--red:hover { background: #C41212; color: #fff; }
+  .dv-btn--line { border: 1.5px solid #0066FF; color: #0066FF; background: #fff; }
+  .dv-btn--line:hover { background: #E9F4FF; color: #0052D6; }
+  .vt-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 20px; display: block; color: inherit; transition: .15s; }
+  .vt-card:hover { border-color: #0066FF; box-shadow: 0 4px 16px rgba(0,102,255,.12); color: inherit; }
+  .vt-t { font: 600 20px/28px Inter, sans-serif; color: #0033A0; }
+  .vt-d { font: 400 14px/20px Inter, sans-serif; color: #64748B; margin-top: 8px; }
+  .vt-n { font-variant-numeric: tabular-nums; font-weight: 700; color: #0033A0; }
+  .vt-go { display: block; margin-top: 12px; font: 600 14px/20px Inter, sans-serif; color: #0066FF; }
+  .dv-note { background: #E9F4FF; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 20px; margin-top: 24px; max-width: 880px; font: 400 16px/26px Inter, sans-serif; color: #1A1A1A; }
+  .dv-note b { color: #0033A0; }
+  .dv-cta { background: #E9F4FF; border: 1px solid #DCE5F0; border-radius: 16px; padding: 28px; margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; align-items: center; }
+  .dv-cta__t { font: 700 24px/32px Inter, sans-serif; color: #0033A0; letter-spacing: -0.015em; }
+  .dv-cta__s { font: 400 16px/24px Inter, sans-serif; color: #1A1A1A; margin-top: 8px; }
+  @media (max-width: 760px) {
+    .dv-page { padding: 14px 16px 56px; }
+    .dv-h1 { font-size: 32px; line-height: 40px; }
+    .dv-h2 { margin-top: 36px; font-size: 24px; line-height: 32px; }
+    .dv-lead { font-size: 16px; line-height: 24px; }
+  }
+  .dv-box { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 20px; }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F1F5F9;">
+
+  
+
+  <div class="dv-page">
+    <div class="dv-crumbs"><a href="/">Главная</a> → <span>Вентиляция</span></div>
+
+    <h1 class="dv-h1">Вентиляция в Алматы и по Казахстану</h1>
+
+    <div class="dv-lead">
+      Приточные и приточно-вытяжные установки, канальные и осевые вентиляторы, кухонные и крышные,
+      рекуператоры и аксессуары. Подбираем по расходу воздуха и площади, считаем монтаж,
+      обслуживаем после установки.
+      <span id="vt-svodka" data-svodka="ventilyaciya"></span>
+    </div>
+
+    <div class="dv-btns">
+      <a href="/katalog?g=ventilyaciya" class="dv-btn dv-btn--blue">Смотреть в каталоге</a>
+      <a href="https://tehnoholod369.kz/podbor-ventilyacii" class="dv-btn dv-btn--line">Рассчитать по площади</a>
+    </div>
+
+    <h2 class="dv-h2">Что поставляем</h2>
+    <div class="dv-grid">
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Приточно-вытяжные установки">
+        <div class="vt-t">Приточно-вытяжные установки</div>
+        <div class="vt-d">С рекуперацией тепла: свежий воздух без потери тепла зимой.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Приточно-вытяжные установки"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Приточные установки">
+        <div class="vt-t">Приточные установки</div>
+        <div class="vt-d">Подача свежего воздуха с улицы, с нагревом и фильтрацией.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Приточные установки"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Канальные прямоугольные">
+        <div class="vt-t">Канальные прямоугольные</div>
+        <div class="vt-d">В прямоугольный воздуховод — для приточных и вытяжных систем.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Канальные прямоугольные"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Канальные круглые">
+        <div class="vt-t">Канальные круглые</div>
+        <div class="vt-d">В круглый воздуховод, компактнее в стеснённых узлах.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Канальные круглые"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Вытяжные бытовые">
+        <div class="vt-t">Вытяжные бытовые</div>
+        <div class="vt-d">Для санузлов и небольших помещений.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Вытяжные бытовые"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Осевые">
+        <div class="vt-t">Осевые</div>
+        <div class="vt-d">Большой расход при малом напоре — вытяжка без длинных трасс.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Осевые"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Кухонные">
+        <div class="vt-t">Кухонные</div>
+        <div class="vt-d">Для кухонных зон и вытяжных зонтов.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Кухонные"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Крышные">
+        <div class="vt-t">Крышные</div>
+        <div class="vt-d">Устанавливаются на кровле, для зданий и цехов.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Крышные"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Рекуператоры">
+        <div class="vt-t">Рекуператоры</div>
+        <div class="vt-d">Возвращают тепло вытяжного воздуха приточному.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Рекуператоры"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyatory-prom">
+        <div class="vt-t">Промышленные вентиляторы</div>
+        <div class="vt-d">Крышные и производственные — для объектов и цехов.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="ventilyatory-prom"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=osushiteli">
+        <div class="vt-t">Осушители воздуха</div>
+        <div class="vt-d">Для бассейнов, подвалов и помещений с повышенной влажностью.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="osushiteli"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=teplovye-zavesy">
+        <div class="vt-t">Тепловые завесы</div>
+        <div class="vt-d">Отсекают холод на входе — для магазинов, складов и цехов.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="teplovye-zavesy"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=uvlazhniteli">
+        <div class="vt-t">Промышленные увлажнители</div>
+        <div class="vt-d">Для производств, серверных, типографий и складов. Под заказ.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="uvlazhniteli"></span> →</div>
+      </a>
+
+    </div>
+
+    <div class="dv-note">
+      <div>
+        <b>Аксессуары и комплектующие</b> — воздуховоды, решётки, фильтры, автоматика — идут
+        отдельной подкатегорией: в общую выдачу оборудования они не попадают.
+        Совместимость с конкретной моделью подтверждаем при подборе.
+        <a href="/katalog?g=ventilyaciya&sub=Аксессуары вентиляции">Смотреть аксессуары →</a>
+      </div>
+    </div>
+
+    <h2 class="dv-h2">Как подбираем</h2>
+    <div class="dv-grid">
+      <div class="dv-box">
+        <div class="vt-t">1. Считаем расход воздуха</div>
+        <div class="dv-cta__s">По площади и назначению помещения. Быстрый расчёт — в <a href="https://tehnoholod369.kz/podbor-ventilyacii">калькуляторе</a>, он же покажет подходящие установки.</div>
+      </div>
+      <div class="dv-box">
+        <div class="vt-t">2. Подбираем оборудование</div>
+        <div class="dv-cta__s">Под расход, напор и место установки. Если данных по напору у производителя нет — пишем об этом прямо, а не подставляем похожее.</div>
+      </div>
+      <div class="dv-box">
+        <div class="vt-t">3. Считаем монтаж</div>
+        <div class="dv-cta__s">Стоимость работ — после замера: трассы, воздуховоды и высотные работы у каждого объекта свои.</div>
+      </div>
+    </div>
+
+    <div class="dv-cta">
+      <div>
+        <div class="dv-cta__t">Нужна вентиляция под объект?</div>
+        <div class="dv-cta__s">Напишите площадь, назначение помещения и этаж — подберём и посчитаем с монтажом.</div>
+        <div class="dv-cta__s" style="margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a></div>
+      </div>
+      <div class="dv-btns" style="margin-top:0;">
+        <a href="https://wa.me/77000369369" class="dv-btn dv-btn--red">Написать в WhatsApp</a>
+        <a href="/proekt" class="dv-btn dv-btn--line">Проектные системы</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js"></script>
+
+</x-dc>
