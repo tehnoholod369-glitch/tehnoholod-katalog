@@ -1,0 +1,173 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+  .vt-card { background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:18px; display:block; color:inherit; transition:.15s; }
+  .vt-card:hover { border-color:#0872D3; box-shadow:0 2px 14px rgba(8,114,211,.10); color:inherit; }
+  .vt-n { font-variant-numeric: tabular-nums; font-weight:800; color:#0A4EA7; }
+  .vt-go { display:block; margin-top:10px; font-size:13px; font-weight:700; color:#0872D3; }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  <div class="th-t1"><div class="th-w"><b>Доставка по Казахстану</b><span><a href="tel:+77000369369">+77 000 369 369</a> · пн–пт 9:00–18:00 · <a href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B2%D0%BE%D0%BD%D0%B8%D1%82%D1%8C.">Заказать звонок</a></span></div></div>
+<header class="th-hd"><div class="th-w"><button type="button" class="th-bg" data-th-burger aria-label="Меню">☰<span>Меню</span></button><a class="th-lg" href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" /></a><button type="button" class="th-sr" data-th-search aria-label="Поиск по каталогу"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg><span>Поиск по каталогу</span></button><nav class="th-ic"><a href="/izbrannoe"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg><span>Избранное</span><i class="th-bd" data-th-fav-count style="display:none"></i></a><a href="/sravnenie"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg><span>Сравнение</span><i class="th-bd" data-th-cmp-count style="display:none"></i></a><a href="/korzina"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h2l2.4 11h10.2L20 8H6.2" /><circle cx="9" cy="19" r="1.5" /><circle cx="17" cy="19" r="1.5" /></svg><span>Корзина</span><i class="th-bd" data-th-cart-count></i></a></nav></div></header>
+<nav class="th-mn"><div class="th-w"><a class="th-home" href="/" aria-label="На главную" title="На главную"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 11l9-7 9 7" /><path d="M5 10v10h5v-6h4v6h5V10" /></svg><span>Главная</span></a><a class="th-cat" href="/katalog" data-th-cat aria-expanded="false" aria-controls="th-panel"><span class="th-ci">☰</span><span class="th-ct">Каталог товаров</span></a><div class="th-dd"><a href="/kondicionery-almaty">Кондиционирование</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Кондиционирование" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div></div><div class="th-dd"><a href="/otoplenie">Отопление</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Отопление" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div></div><div class="th-dd"><a href="/ventilyaciya">Вентиляция</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Вентиляция" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div></div><div class="th-dd"><a href="/vodonagrevateli">Водонагреватели</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Водонагреватели" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div></div><a href="/katalog?g=avtonomnoe-pitanie">Автономное питание</a><a href="/brendy">Бренды</a><a href="/baza-znaniy">База знаний</a><a href="/kontakty">Контакты</a></div><div class="th-pn" id="th-panel"><div class="th-w th-pg"><div class="th-pc"><b>Кондиционирование</b><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div><div class="th-pc"><b>Отопление</b><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div><div class="th-pc"><b>Вентиляция</b><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div><div class="th-pc"><b>Водонагреватели и водоочистка</b><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div><div class="th-pc"><b>Автономное питание</b><a href="/katalog?g=avtonomnoe-pitanie">Зарядные станции и солнечные панели</a></div><div class="th-pc"><b>VRF, фанкойлы, чиллеры</b><a href="/katalog?g=mini-vrf">Мини-VRF и мультизональные</a><a href="/katalog?g=fankoyly">Фанкойлы</a><a href="/katalog?g=chillery">Чиллеры</a><a href="/katalog?g=precizionnye">Прецизионные кондиционеры</a><a href="/proekt">Расчёт под объект</a></div></div><div class="th-w th-pf"><a href="/katalog">Весь каталог →</a></div></div></nav>
+
+  <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:18px 24px 72px 24px;">
+    <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <span style="color:#18212F;">Вентиляция</span></div>
+
+    <h1 style="margin:14px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em;">Вентиляция в Алматы и по Казахстану</h1>
+
+    <div style="font-size:16px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:880px;">
+      Приточные и приточно-вытяжные установки, канальные и осевые вентиляторы, кухонные и крышные,
+      рекуператоры и аксессуары. Подбираем по расходу воздуха и площади, считаем монтаж,
+      обслуживаем после установки.
+      <span id="vt-svodka" data-svodka="ventilyaciya"></span>
+    </div>
+
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
+      <a href="/katalog?g=ventilyaciya" style="background:#0872D3; color:#fff; border-radius:8px; padding:13px 22px; font-size:16px; font-weight:700;">Смотреть в каталоге</a>
+      <a href="https://tehnoholod369.kz/podbor-ventilyacii" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:11px 22px; font-size:16px; font-weight:700;">Рассчитать по площади</a>
+    </div>
+
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Что поставляем</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:14px; margin-top:14px;">
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Приточно-вытяжные установки">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Приточно-вытяжные установки</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">С рекуперацией тепла: свежий воздух без потери тепла зимой.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Приточно-вытяжные установки"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Приточные установки">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Приточные установки</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Подача свежего воздуха с улицы, с нагревом и фильтрацией.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Приточные установки"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Канальные прямоугольные">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Канальные прямоугольные</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">В прямоугольный воздуховод — для приточных и вытяжных систем.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Канальные прямоугольные"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Канальные круглые">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Канальные круглые</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">В круглый воздуховод, компактнее в стеснённых узлах.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Канальные круглые"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Вытяжные бытовые">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Вытяжные бытовые</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Для санузлов и небольших помещений.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Вытяжные бытовые"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Осевые">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Осевые</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Большой расход при малом напоре — вытяжка без длинных трасс.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Осевые"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Кухонные">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Кухонные</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Для кухонных зон и вытяжных зонтов.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Кухонные"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Крышные">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Крышные</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Устанавливаются на кровле, для зданий и цехов.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Крышные"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyaciya&sub=Рекуператоры">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Рекуператоры</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Возвращают тепло вытяжного воздуха приточному.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="ventilyaciya|Рекуператоры"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=ventilyatory-prom">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Промышленные вентиляторы</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Крышные и производственные — для объектов и цехов.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="ventilyatory-prom"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=osushiteli">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Осушители воздуха</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Для бассейнов, подвалов и помещений с повышенной влажностью.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="osushiteli"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=teplovye-zavesy">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Тепловые завесы</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Отсекают холод на входе — для магазинов, складов и цехов.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="teplovye-zavesy"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=uvlazhniteli">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:17px; color:#071C3B;">Промышленные увлажнители</div>
+        <div style="font-size:14px; color:#5A6675; margin-top:6px; line-height:1.55;">Для производств, серверных, типографий и складов. Под заказ.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="uvlazhniteli"></span> →</div>
+      </a>
+
+    </div>
+
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:18px; max-width:880px;">
+      <div style="font-size:15px; color:#2C3846; line-height:1.65;">
+        <b>Аксессуары и комплектующие</b> — воздуховоды, решётки, фильтры, автоматика — идут
+        отдельной подкатегорией: в общую выдачу оборудования они не попадают.
+        Совместимость с конкретной моделью подтверждаем при подборе.
+        <a href="/katalog?g=ventilyaciya&sub=Аксессуары вентиляции">Смотреть аксессуары →</a>
+      </div>
+    </div>
+
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Как подбираем</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:14px; margin-top:14px;">
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:18px;">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:16px; color:#071C3B;">1. Считаем расход воздуха</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">По площади и назначению помещения. Быстрый расчёт — в <a href="https://tehnoholod369.kz/podbor-ventilyacii">калькуляторе</a>, он же покажет подходящие установки.</div>
+      </div>
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:18px;">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:16px; color:#071C3B;">2. Подбираем оборудование</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Под расход, напор и место установки. Если данных по напору у производителя нет — пишем об этом прямо, а не подставляем похожее.</div>
+      </div>
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:18px;">
+        <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:16px; color:#071C3B;">3. Считаем монтаж</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Стоимость работ — после замера: трассы, воздуховоды и высотные работы у каждого объекта свои.</div>
+      </div>
+    </div>
+
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Нужна вентиляция под объект?</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите площадь, назначение помещения и этаж — подберём и посчитаем с монтажом.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a></div>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/proekt" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Проектные системы</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js"></script>
+
+</x-dc>
