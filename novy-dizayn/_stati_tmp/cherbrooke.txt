@@ -1,67 +1,7 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
 
-<script>
-(function () {
-  // Модели CHERBROOKE в наличии: список строится из data/bytovye.json при каждом открытии страницы.
-  // Ничего не хранится в тексте: пропала модель с остатка — пропала и из списка.
-  var RAW = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json";
-  function поле(x, имя) {
-    var s = x.sp || [];
-    for (var i = 0; i < s.length; i++) if (s[i][0] === имя) return s[i][1];
-    return "";
-  }
-  function btu(x) { return parseInt(поле(x, "BTU"), 10) || 0; }
-  function рисовать(узел, список) {
-    узел.innerHTML = "";
-    список.forEach(function (x) {
-      var a = document.createElement("a");
-      a.className = "art-card";
-      a.href = "/tovar?g=bytovye&sl=" + encodeURIComponent(x.sl);
-      var t = document.createElement("div");
-      t.className = "art-card__t";
-      t.textContent = btu(x) + " BTU · " + (x.inv === "inv" ? "инвертор" : "On/Off");
-      var s = document.createElement("div");
-      s.className = "art-card__s";
-      s.textContent = (x.nb || "").split("/")[0] + (x.num ? " · до " + x.num + " м²" : "");
-      var g = document.createElement("div");
-      g.className = "art-card__go";
-      g.textContent = "Открыть карточку →";
-      a.appendChild(t);
-      a.appendChild(s);
-      a.appendChild(g);
-      узел.appendChild(a);
-    });
-  }
-  function скрыть(узел) {
-    var p = узел.previousElementSibling, h = p && p.previousElementSibling;
-    if (p) p.style.display = "none";
-    if (h) h.style.display = "none";
-    узел.style.display = "none";
-  }
-  var ждём = 0;
-  var таймер = setInterval(function () {
-    ждём += 200;
-    var узел = document.getElementById("cherb-models");
-    if (!узел && ждём < 12000) return;
-    clearInterval(таймер);
-    if (!узел) return;
-    fetch(RAW, { cache: "no-cache" })
-      .then(function (r) { return r.ok ? r.json() : []; })
-      .then(function (d) {
-        var список = d.filter(function (x) {
-          return (x.b || "").toLowerCase() === "cherbrooke" && !x.acc && /налич/i.test(x.st || "") && x.sl;
-        }).sort(function (p, q) {
-          return btu(p) - btu(q) || (p.inv === "inv" ? -1 : 1) - (q.inv === "inv" ? -1 : 1);
-        });
-        if (!список.length) { скрыть(узел); return; }
-        рисовать(узел, список);
-      })
-      .catch(function () { скрыть(узел); });
-  }, 200);
-})();
-</script>
-
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-modeli-marki.js?v=4c7f9cd3"></script>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -266,7 +206,7 @@
       <ul><li><b>Бытовые сплит-системы Mistral.</b> Настенные модели двух типов: классические On/Off и инверторные (серия UR4K1). Классы мощности — от самых компактных до моделей для больших помещений.</li><li><b>Полупромышленные кондиционеры.</b> Кассетные, канальные, напольно-потолочные и колонные, линейки Mistral и CHERBROOKE 2024 — для офисов, магазинов и больших квартир.</li><li><b>Мультисплит.</b> Наружные блоки и внутренние блоки разных типов (настенные, канальные, кассетные) для сборки системы на несколько комнат.</li></ul>
       <h2>Модели CHERBROOKE в наличии сейчас</h2>
       <p>Список строится из каталога при каждом открытии страницы: что есть на складе, то и показано. Цену и характеристики смотрите в карточке модели.</p>
-      <div class="art-cards" id="cherb-models"></div>
+      <div class="art-cards" id="cherb-models" data-marka-modeli data-brand="CHERBROOKE" data-group="bytovye"></div>
       <h2>Перейти к моделям CHERBROOKE</h2>
       <div class="art-cards"><a class="art-card" href="/brendy?b=CHERBROOKE"><div class="art-card__t">Смотреть CHERBROOKE → бренд целиком</div><div class="art-card__s">Все линейки бренда: бытовые, полупромышленные и мультисплит. Состав и наличие берутся из каталога.</div><div class="art-card__go">Открыть бренд →</div></a><a class="art-card" href="/katalog?g=poluprom&amp;brand=CHERBROOKE"><div class="art-card__t">Полупромышленные CHERBROOKE</div><div class="art-card__s">Кассетные, канальные, напольно-потолочные и колонные.</div><div class="art-card__go">Смотреть модели →</div></a><a class="art-card" href="/tovar?g=bytovye&amp;sl=cherbrooke-asv-09ur4k1-aov-09ur4k1"><div class="art-card__t">CHERBROOKE Mistral Inverter 09</div><div class="art-card__s">Инверторная «девятка»: характеристики, цена и наличие — из актуальной карточки.</div><div class="art-card__go">Открыть карточку →</div></a></div>
       <p>Хотите сравнить с другими марками? Откройте <a href="/katalog?g=bytovye">все кондиционеры в каталоге</a> или <a href="/invertornyy-kondicioner-almaty">инверторные кондиционеры в Алматы</a>.</p>
