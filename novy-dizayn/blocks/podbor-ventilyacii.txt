@@ -203,11 +203,7 @@
   
   <div id="out"></div>
 
-  <div class="foot">
-    ИП «ТехноХолод» · Истигечев Вячеслав Викторович · ИИН/БИН 770313000379<br>
-    Юридический адрес: 050000, г. Алматы, Турксибский р-н, мкр Алтай-1, д. 29/1, оф. 43 · +77 000 369 369 · tehnoholod369@gmail.com<br>
-    <span id="buildline"></span>
-  </div>
+  <span id="buildline" hidden></span>
 </div>
 
 <script>
