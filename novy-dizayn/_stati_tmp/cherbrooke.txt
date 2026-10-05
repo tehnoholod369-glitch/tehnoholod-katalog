@@ -1,0 +1,279 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  
+
+  
+  body { margin: 0; background: #fff; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0033A0; }
+
+  
+  .art-page-main { width: 100%; max-width: 1280px; box-sizing: border-box; margin: 0 auto; padding: 18px 40px 72px;
+    display: grid; grid-template-columns: 300px minmax(0, 1fr); column-gap: 56px;
+    grid-template-areas: "crumbs crumbs" "toc top" "toc body"; align-items: start; }
+  .art-page-main > * { grid-column: 1 / -1; min-width: 0; }
+  .art-page-main > .art-crumbs { grid-area: crumbs; }
+  .art-page-main > .art-top { grid-area: top; max-width: 760px; }
+  .art-page-main > .art-toc-wrap { grid-area: toc; }
+  .art-page-main > .art { grid-area: body; max-width: 760px; }
+  .art-page-main.art-solo { grid-template-columns: minmax(0, 760px); grid-template-areas: "crumbs" "top" "body"; justify-content: center; }
+  .art-crumbs { font: 400 13px/20px Inter, sans-serif; color: #64748B; }
+  .art-crumbs a { color: #64748B; }
+  .art-crumbs span { color: #1A1A1A; }
+
+  .art-top { margin-top: 20px; }
+  .art-tag { display: inline-block; background: #E9F4FF; color: #0033A0; border-radius: 999px; padding: 4px 12px; font: 700 12px/18px Inter, sans-serif; }
+  .art-top h1 { margin: 12px 0 0; font: 700 48px/56px Inter, sans-serif; letter-spacing: -0.02em; color: #0033A0; overflow-wrap: anywhere; }
+  .art-meta { margin-top: 12px; font: 500 14px/20px Inter, sans-serif; color: #64748B; }
+  .art-page-lead { margin-top: 14px; font: 400 18px/30px Inter, sans-serif; color: #1A1A1A; }
+
+  
+  .art-toc-wrap { margin-top: 20px; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow: auto; }
+  .art-toc__t { font: 700 14px/20px Inter, sans-serif; color: #0033A0; margin: 0 0 10px; }
+  .art-toc { counter-reset: t; list-style: none; margin: 0; padding: 0; border: 1px solid #E2E8F0; border-radius: 12px; background: #fff; }
+  .art-toc li { counter-increment: t; border-top: 1px solid #E2E8F0; }
+  .art-toc li:first-child { border-top: 0; }
+  .art-toc a { display: flex; gap: 10px; align-items: flex-start; padding: 12px 16px; font: 500 15px/22px Inter, sans-serif; color: #0033A0; }
+  .art-toc a::before { content: counter(t); flex: none; width: 26px; height: 26px; border-radius: 50%; background: #E9F4FF; display: grid; place-items: center; font: 700 13px/1 Inter, sans-serif; }
+  .art-toc a:hover { color: #0066FF; }
+
+  
+  .t-body .art-local-chrome { display: none !important; }
+
+  .art { width: 100%; }
+  .art h2 { margin: 36px 0 0; font: 700 32px/40px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; scroll-margin-top: 20px; }
+  .art h3 { margin: 24px 0 0; font: 700 20px/28px Inter, sans-serif; color: #0033A0; }
+  .art p { margin: 14px 0 0; font: 400 18px/30px Inter, sans-serif; color: #1A1A1A; }
+  .art ul, .art ol { margin: 14px 0 0; padding-left: 24px; }
+  .art li { font: 400 18px/30px Inter, sans-serif; color: #1A1A1A; margin-top: 6px; }
+  .art b, .art strong { color: #1A1A1A; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 16px; border: 1px solid #E2E8F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font: 400 16px/24px Inter, sans-serif; }
+  .art-t th { background: #F1F5F9; text-align: left; padding: 12px 16px; font-weight: 700; color: #0033A0; border-bottom: 1px solid #E2E8F0; white-space: nowrap; }
+  .art-t td { padding: 12px 16px; color: #1A1A1A; border-bottom: 1px solid #EEF2F7; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #1A1A1A; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E9F4FF; border: 1px solid #CFE3FA; border-radius: 12px; padding: 16px 20px; margin-top: 18px; font: 400 16px/26px Inter, sans-serif; color: #1A1A1A; }
+  .art-warn { background: #fff; border-left: 4px solid #E81C1C; border-radius: 0 12px 12px 0; box-shadow: 0 1px 2px rgba(0,51,160,.08); padding: 16px 20px; margin-top: 18px; font: 500 17px/26px Inter, sans-serif; color: #1A1A1A; }
+  .art-note b, .art-warn b { color: #1A1A1A; }
+
+  
+  .art-tldr { background: #fff; border: 1.5px solid #0033A0; border-radius: 12px; padding: 18px 22px; margin-top: 20px; }
+  .art-tldr__t { font: 700 13px/18px Inter, sans-serif; letter-spacing: 0.08em; color: #0066FF; }
+  .art-tldr__b { font: 500 17px/27px Inter, sans-serif; color: #1A1A1A; margin-top: 6px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; margin-top: 16px; }
+  .art-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 18px 20px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0066FF; box-shadow: 0 2px 14px rgba(0,102,255,.10); color: inherit; }
+  .art-card__t { font: 700 17px/24px Inter, sans-serif; color: #0033A0; }
+  .art-card__s { font: 400 14px/22px Inter, sans-serif; color: #475569; margin-top: 6px; }
+  .art-card__go { display: block; margin-top: 10px; font: 600 14px/20px Inter, sans-serif; color: #0066FF; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 700; color: #0033A0; }
+
+  
+  .art-q { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px 20px; margin-top: 12px; }
+  .art-q__q { font: 700 17px/24px Inter, sans-serif; color: #0033A0; }
+  .art-q__a { font: 400 16px/26px Inter, sans-serif; color: #1A1A1A; margin-top: 8px; }
+
+  
+  .art-src { font: 400 13px/20px Inter, sans-serif; color: #64748B; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px 20px;
+              margin-top: 16px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0066FF; box-shadow: 0 2px 14px rgba(0,102,255,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0066FF; color: #fff; border-radius: 6px; padding: 3px 8px; font: 700 12px/16px Inter, sans-serif; }
+  .art-pick__brand { font: 700 12px/16px Inter, sans-serif; letter-spacing: 0.06em; color: #0066FF; margin-top: 8px; }
+  .art-pick__name { font: 700 16px/22px Inter, sans-serif; color: #0033A0; margin-top: 4px; }
+  .art-pick__price { font: 800 20px/28px Inter, sans-serif; color: #1A1A1A; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font: 600 14px/20px Inter, sans-serif; color: #0066FF; flex: none; }
+
+  
+  .art-cta { background: #E9F4FF; border: 1px solid #CFE3FA; border-radius: 16px; padding: 28px 32px; margin-top: 36px;
+             display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; align-items: center; }
+  .art-cta__t { font: 700 24px/32px Inter, sans-serif; color: #0033A0; letter-spacing: -0.01em; }
+  .art-cta__s { font: 400 16px/26px Inter, sans-serif; color: #1A1A1A; margin-top: 8px; }
+  .art-cta__ph { font: 400 16px/26px Inter, sans-serif; color: #1A1A1A; margin-top: 12px; }
+  .art-cta__ph a { font-weight: 700; }
+  .art-cta__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .art-cta__actions a { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 26px; border-radius: 8px; font: 700 16px/1 Inter, sans-serif; }
+  .art-cta__actions .art-btn-main { background: #E81C1C; color: #fff; }
+  .art-cta__actions .art-btn-alt { background: #fff; color: #0066FF; border: 1.5px solid #0066FF; }
+
+  .art-next-h { margin: 40px 0 0; font: 700 28px/36px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; }
+
+  @media (max-width: 1100px) {
+    .art-page-main { padding-left: 24px; padding-right: 24px; grid-template-columns: minmax(0, 1fr); grid-template-areas: "crumbs" "top" "toc" "body"; }
+    .art-page-main.art-solo { grid-template-columns: minmax(0, 1fr); grid-template-areas: "crumbs" "top" "body"; }
+    .art-toc-wrap { position: static; max-height: none; overflow: visible; }
+  }
+
+  @media (max-width: 760px) {
+    .art-page-main { padding: 14px 16px 56px; grid-template-columns: minmax(0, 1fr); grid-template-areas: "crumbs" "top" "toc" "body"; }
+    .art-page-main.art-solo { grid-template-columns: minmax(0, 1fr); grid-template-areas: "crumbs" "top" "body"; }
+    .art-top h1 { font-size: 28px; line-height: 36px; }
+    .art-page-lead { font-size: 16px; line-height: 26px; }
+    .art-toc-wrap { position: static; max-height: none; overflow: visible; }
+    .art h2 { margin-top: 30px; font-size: 24px; line-height: 32px; }
+    .art h3 { font-size: 18px; line-height: 26px; }
+    .art p, .art li { font-size: 16px; line-height: 27px; }
+    .art-note, .art-warn, .art-tldr, .art-q { padding: 14px 16px; }
+    .art-cta { padding: 20px; gap: 18px; }
+    .art-cta__actions { display: grid; grid-template-columns: 1fr; width: 100%; }
+    .art-cta__actions > a { width: 100%; box-sizing: border-box; }
+    .art-next-h { font-size: 24px; line-height: 32px; }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#fff;">
+
+  
+  <div class="art-local-chrome" style="background:#F1F5F9; color:#1A1A1A; padding:9px 0; font:13px/20px Inter,sans-serif;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 22px;">
+      <b style="color:#0033A0;">Доставка по Казахстану</b>
+      <span><a href="tel:+77000369369" style="color:#0033A0; font-weight:700;">+77 000 369 369</a> · пн–пт 9:00–18:00</span>
+    </div>
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#fff; border-bottom:1px solid #E2E8F0;">
+    <div style="max-width:1280px; margin:0 auto; padding:12px 40px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 20px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" style="height:44px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0066FF; color:#fff; border-radius:8px; padding:10px 16px; font:600 15px/1 Inter,sans-serif;">☰ Каталог товаров</a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E9F4FF; color:#0033A0; border-radius:8px; padding:10px 16px; font:700 15px/1 Inter,sans-serif;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="art-page-main">
+
+    
+    <div class="art-crumbs">
+      <a href="/">Главная</a> › <a href="/baza-znaniy">База знаний</a> › <span>CHERBROOKE</span>
+    </div>
+
+    
+    <div class="art-top">
+      <span class="art-tag">Выбор</span>
+      <h1>CHERBROOKE: история марки и что в ассортименте</h1>
+      <div class="art-meta">3 минуты чтения</div>
+      <div class="art-page-lead">
+        История и ассортимент CHERBROOKE: кто стоит за маркой, с какими производителями работает, какие кондиционеры есть в каталоге в Алматы и на что смотреть при выборе.
+      </div>
+    </div>
+
+    
+    <aside class="art-toc-wrap"><div class="art-toc__t">Содержание</div><ol class="art-toc"><li><a href="#razdel-1">Кто стоит за маркой</a></li><li><a href="#razdel-2">Как устроена линейка и откуда берётся техника</a></li><li><a href="#razdel-3">Что у нас в каталоге</a></li><li><a href="#razdel-4">На что смотреть при выборе</a></li><li><a href="#razdel-5">Частые вопросы</a></li></ol></aside>
+
+    <div class="art">
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">CHERBROOKE — марка климатической техники компании-дистрибьютора, которая работает с 1994 года. Завод марка поимённо не называет, но открыто пишет, какие компрессоры ставит. Ниже — откуда она взялась, с кем работает и что из неё можно купить в Алматы.</div></div>
+      <div class="art-cta__actions" style="margin:22px 0 4px"><a class="art-btn-main" href="/katalog?g=bytovye&amp;brand=CHERBROOKE&amp;stock=in">Смотреть CHERBROOKE в наличии</a><a class="art-btn-alt" href="https://wa.me/77000369369">Подобрать под вашу комнату</a></div>
+      <a class="art-pick" data-pick="bytovye" data-pick-only="CHERBROOKE|ASV-09|ASA-09" href="/katalog?g=bytovye"
+         title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и полными характеристиками. Это наш выбор, а не статистика продаж.">
+        <img class="art-pick__img" data-pick-img alt="" />
+        <div class="art-pick__b">
+          <div class="art-pick__tag" data-pick-tag>Наш выбор</div>
+          <div class="art-pick__brand" data-pick-brand></div>
+          <div class="art-pick__name" data-pick-name></div>
+          <div class="art-pick__price" data-pick-price></div>
+        </div>
+        <div class="art-pick__go">Открыть карточку →</div>
+      </a>
+      <h2 id="razdel-1">Кто стоит за маркой</h2>
+      <p>По данным самой компании, она основана в марте 1994 года и начинала как небольшая команда, занимавшаяся поставками и монтажом климатического оборудования. Дальше путь был таким:</p>
+      <ul><li>компания получила статус официального дистрибьютора кондиционеров TOSHIBA, а позже вошла в число дистрибьюторов HITACHI, LG (с 2000 года) и PANASONIC (с 2001 года);</li><li>расширила ассортимент полупромышленными кондиционерами, вентиляцией и очистителями воздуха и наладила деловые отношения с европейскими производителями;</li><li>к 2003 году вошла, по собственным данным, в десятку крупнейших оптовых поставщиков климатической техники на своём рынке;</li><li>открыла филиалы и региональные склады в нескольких крупных городах, а сервисную службу авторизовала для обслуживания техники Panasonic, LG и HITACHI;</li><li>с 2006 года представляет бренд AERONIK на эксклюзивных условиях;</li><li>в 2007 году создала подразделение собственного производства вентиляционного оборудования и аксессуаров.</li></ul>
+      <p>Компания состоит в отраслевых ассоциациях AVOC и АПИК, регулярно проводит технические семинары и участвует в выставках.</p>
+      <p>Почему это важно покупателю: за маркой стоит давно работающий бизнес, а не новичок. Но качество конкретной модели это не гарантирует — его по-прежнему показывает только паспорт.</p>
+      <h2 id="razdel-2">Как устроена линейка и откуда берётся техника</h2>
+      <p>CHERBROOKE — пример OEM-подхода: марка формирует задание и ассортимент, а собирают технику заводы, с которыми марка работает. Это обычная схема для отрасли, и она не означает ни хорошего, ни плохого качества сама по себе — всё определяет задание и контроль. Подробнее об этом — в статье <span data-art-link="pochemu-kondicionery-9000-btu-stoyat-po-raznomu">почему кондиционеры 9000 BTU стоят по-разному</span>.</p>
+      <p>Что известно точно:</p>
+      <ul><li>компания пишет, что оборудование создаётся на производственных площадях лидеров климатического бизнеса, и сотрудничает с такими заводами, как GREE, Midea, TCL, Hisense, ChangHong, Galanz и Nedfon;</li><li>в моделях марки стоят компрессоры GMCC, LANDA и HIGHLY;</li><li>все линейки CHERBROOKE из нашего каталога — бытовые Mistral (инверторные UR4K1 и On/Off HR4K1), полупромышленные и мультисплит — производит Hisense; это подтверждено нами по артикулам. Детали конкретной модели смотрите в её паспорте.</li></ul>
+      <h2 id="razdel-3">Что у нас в каталоге</h2>
+      <p>Состав и наличие меняются, поэтому мы не называем цифры в тексте: актуальное всегда видно в каталоге. Из чего складывается линейка:</p>
+      <ul><li><b>Бытовые сплит-системы Mistral.</b> Настенные модели двух типов: классические On/Off и инверторные (серия UR4K1). Классы мощности — от самых компактных до моделей для больших помещений.</li><li><b>Полупромышленные кондиционеры.</b> Кассетные, канальные, напольно-потолочные и колонные, линейки Mistral и CHERBROOKE 2024 — для офисов, магазинов и больших квартир.</li><li><b>Мультисплит.</b> Наружные блоки и внутренние блоки разных типов (настенные, канальные, кассетные) для сборки системы на несколько комнат.</li></ul>
+      <h2>Перейти к моделям CHERBROOKE</h2>
+      <div class="art-cards" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))"><a class="art-card" href="/brendy?b=CHERBROOKE"><div class="art-card__t">Смотреть CHERBROOKE → бренд целиком</div><div class="art-card__s">Все линейки бренда: бытовые, полупромышленные и мультисплит. Состав и наличие берутся из каталога.</div><div class="art-card__go">Открыть бренд →</div></a><a class="art-card" href="/katalog?g=bytovye&amp;brand=CHERBROOKE"><div class="art-card__t">Бытовые сплит-системы CHERBROOKE</div><div class="art-card__s">Настенные Mistral: On/Off и инверторные. Наличие и цены — в каталоге.</div><div class="art-card__go">Смотреть модели →</div></a><a class="art-card" href="/katalog?g=poluprom&amp;brand=CHERBROOKE"><div class="art-card__t">Полупромышленные CHERBROOKE</div><div class="art-card__s">Кассетные, канальные, напольно-потолочные и колонные.</div><div class="art-card__go">Смотреть модели →</div></a><a class="art-card" href="/tovar?g=bytovye&amp;sl=cherbrooke-asv-09ur4k1-aov-09ur4k1"><div class="art-card__t">CHERBROOKE Mistral Inverter 09</div><div class="art-card__s">Инверторная «девятка»: характеристики, цена и наличие — из актуальной карточки.</div><div class="art-card__go">Открыть карточку →</div></a></div>
+      <p>Хотите сравнить с другими марками? Откройте <a href="/katalog?g=bytovye">все кондиционеры в каталоге</a> или <a href="/invertornyy-kondicioner-almaty">инверторные кондиционеры в Алматы</a>.</p>
+      <h2 id="razdel-4">На что смотреть при выборе</h2>
+      <p>Название марки не заменяет паспорт модели. Прежде чем покупать, сверьте три вещи:</p>
+      <ol><li><b>Тип компрессора и диапазон мощности.</b> Инвертор с широким диапазоном ровнее держит температуру и тише работает; On/off проще и дешевле. Разбор — в статье <a href="https://tehnoholod369.kz/invertor-ili-obychnyy-kondicioner">инверторный или обычный кондиционер</a>.</li><li><b>Мощность под вашу комнату.</b> Её считают по площади и условиям, а не по названию серии: <a href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera">как выбрать мощность кондиционера</a>.</li><li><b>Монтаж и сервис.</b> Хорошая техника, плохо установленная, ведёт себя как плохая. Что входит в монтаж — в статье <a href="https://tehnoholod369.kz/skolko-stoit-ustanovka-kondicionera">сколько стоит установка кондиционера</a>. Сравнение марок между собой — в материале <a href="https://tehnoholod369.kz/kak-vybrat-marku-kondicionera">какую марку кондиционера выбрать</a>.</li></ol>
+      <h2 id="razdel-5">Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Чья это марка?</div><div class="art-q__a">CHERBROOKE принадлежит компании-дистрибьютору климатической техники, которая работает с 1994 года. Она же представляет AERONIK на эксклюзивных условиях с 2006 года.</div></div>
+      <div class="art-q"><div class="art-q__q">Кто делает кондиционеры CHERBROOKE?</div><div class="art-q__a">Завод марка поимённо не называет: пишет, что техника создаётся на площадях лидеров отрасли, и перечисляет заводы, с которыми работает. Все линейки CHERBROOKE из нашего каталога — бытовые, полупромышленные и мультисплит — производит Hisense; это подтверждено нами по артикулам. Детали конкретной модели смотрите в её паспорте.</div></div>
+      <div class="art-q"><div class="art-q__q">Какие компрессоры стоят в моделях?</div><div class="art-q__a">По данным марки — GMCC, LANDA и HIGHLY. Конкретный компрессор указан в паспорте каждой модели.</div></div>
+      <div class="art-q"><div class="art-q__q">Есть ли модели с инвертором?</div><div class="art-q__a">Да. Инверторные модели есть среди бытовых настенных (серия Mistral Inverter UR4K1) и в мультисплит-системах; у полупромышленных моделей тип компрессора смотрите в паспорте.</div></div>
+      <div class="art-q"><div class="art-q__q">Как купить и поставить в Алматы?</div><div class="art-q__a">Выберите модель в каталоге, а с подбором мощности и монтажом поможем: напишите площадь комнаты и этаж. Монтаж под ключ и гарантия на работы оформляются по «Сервис-карте 369».</div></div>
+    </div>
+
+    
+    <div class="art-cta">
+      <div>
+        <div class="art-cta__t">Подберём модель под вашу задачу</div>
+        <div class="art-cta__s">Напишите площадь комнаты и этаж — пришлём подбор и цену. Нужен монтаж — посчитаем отдельно.</div>
+        <div class="art-cta__ph">Телефон и WhatsApp: <a href="tel:+77000369369">+77 000 369 369</a></div>
+      </div>
+      <div class="art-cta__actions">
+        <a class="art-btn-main" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+        <a class="art-btn-alt" href="/katalog?g=bytovye">Смотреть в каталоге</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0;" class="art-next-h">Читайте дальше</h2>
+    <div class="art-cards" data-art-next="cherbrooke-istoriya-i-assortiment-marki|byt-kond|bytovye|invertor-ili-obychnyy-kondicioner,kak-vybrat-moshchnost-konditsionera,skolko-stoit-ustanovka-kondicionera,kak-vybrat-marku-kondicionera">
+        <a class="art-card" href="https://tehnoholod369.kz/invertor-ili-obychnyy-kondicioner"><div class="art-card__t">Инверторный или обычный кондиционер: что выгоднее</div><div class="art-card__s">Чем инвертор отличается от on/off: расход электричества, шум, ресурс, цена ремонта. Когда переплата за…</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera"><div class="art-card__t">Как выбрать мощность кондиционера по площади комнаты</div><div class="art-card__s">Как подобрать мощность кондиционера по площади комнаты: правило 100 Вт на м², перевод BTU в кВт, классы…</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/skolko-stoit-ustanovka-kondicionera"><div class="art-card__t">Сколько стоит установка кондиционера в Алматы: из чего складывается цена</div><div class="art-card__s">Из чего складывается цена монтажа кондиционера: что входит в стандартную установку, что считается отдельно и…</div><div class="art-card__go">Читать →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#0033A0; color:#CFE3FA; padding:26px 0; font:13px/20px Inter,sans-serif;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 40px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+  </div>
+
+  
+  <div data-th-copyright style="max-width:1280px; margin:0 auto; padding:18px 40px 40px; font:12px/20px Inter,sans-serif; color:#64748B;">
+    © 2026 ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
+    Перепечатка целиком или существенной частью — только с письменного разрешения.
+    Цитата с активной ссылкой на источник разрешена без запроса.
+    <a href="/usloviya-ispolzovaniya" style="color:#64748B; text-decoration:underline;">Условия использования</a>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=aa7da59c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=1543bbf5"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "CHERBROOKE: история марки и что в ассортименте", "description": "История и ассортимент CHERBROOKE: кто стоит за маркой, с какими производителями работает, какие кондиционеры есть в каталоге в Алматы и на что смотреть при выборе.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/cherbrooke-istoriya-i-assortiment-marki"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightYear": 2026}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "CHERBROOKE: история марки и что в ассортименте", "item": "https://tehnoholod369.kz/cherbrooke-istoriya-i-assortiment-marki"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чья это марка?", "acceptedAnswer": {"@type": "Answer", "text": "CHERBROOKE принадлежит компании-дистрибьютору климатической техники, которая работает с 1994 года. Она же представляет AERONIK на эксклюзивных условиях с 2006 года."}}, {"@type": "Question", "name": "Кто делает кондиционеры CHERBROOKE?", "acceptedAnswer": {"@type": "Answer", "text": "Завод марка поимённо не называет: пишет, что техника создаётся на площадях лидеров отрасли, и перечисляет заводы, с которыми работает. Все линейки CHERBROOKE из нашего каталога — бытовые, полупромышленные и мультисплит — производит Hisense; это подтверждено нами по артикулам. Детали конкретной модели смотрите в её паспорте."}}, {"@type": "Question", "name": "Какие компрессоры стоят в моделях?", "acceptedAnswer": {"@type": "Answer", "text": "По данным марки — GMCC, LANDA и HIGHLY. Конкретный компрессор указан в паспорте каждой модели."}}, {"@type": "Question", "name": "Есть ли модели с инвертором?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Инверторные модели есть среди бытовых настенных (серия Mistral Inverter UR4K1) и в мультисплит-системах; у полупромышленных моделей тип компрессора смотрите в паспорте."}}, {"@type": "Question", "name": "Как купить и поставить в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "Выберите модель в каталоге, а с подбором мощности и монтажом поможем: напишите площадь комнаты и этаж. Монтаж под ключ и гарантия на работы оформляются по «Сервис-карте 369»."}}]}</script>
+</x-dc>
