@@ -1,0 +1,177 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0052D6; }
+  .dv-page { max-width: 1248px; box-sizing: border-box; margin: 0 auto; padding: 18px 24px 72px; }
+  .dv-crumbs { font-size: 13px; line-height: 20px; color: #64748B; }
+  .dv-crumbs a { color: #64748B; }
+  .dv-crumbs span { color: #1A1A1A; }
+  .dv-h1 { margin: 14px 0 0; font: 700 48px/56px Inter, sans-serif; letter-spacing: -0.02em; color: #0033A0; overflow-wrap: anywhere; }
+  .dv-h2 { margin: 44px 0 0; font: 700 32px/40px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; }
+  .dv-lead { font: 400 18px/28px Inter, sans-serif; color: #1A1A1A; margin-top: 14px; max-width: 880px; }
+  .dv-sub { font: 400 16px/24px Inter, sans-serif; color: #64748B; margin-top: 8px; }
+  .dv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 16px; margin-top: 16px; }
+  .dv-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+  .dv-btn { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; height: 48px; padding: 0 22px; border-radius: 8px; font: 600 16px/1 Inter, sans-serif; }
+  .dv-btn--blue { background: #0066FF; color: #fff; }
+  .dv-btn--blue:hover { background: #0052D6; color: #fff; }
+  .dv-btn--red { background: #E81C1C; color: #fff; }
+  .dv-btn--red:hover { background: #C41212; color: #fff; }
+  .dv-btn--line { border: 1.5px solid #0066FF; color: #0066FF; background: #fff; }
+  .dv-btn--line:hover { background: #E9F4FF; color: #0052D6; }
+  .vt-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 20px; display: block; color: inherit; transition: .15s; }
+  .vt-card:hover { border-color: #0066FF; box-shadow: 0 4px 16px rgba(0,102,255,.12); color: inherit; }
+  .vt-t { font: 600 20px/28px Inter, sans-serif; color: #0033A0; }
+  .vt-d { font: 400 14px/20px Inter, sans-serif; color: #64748B; margin-top: 8px; }
+  .vt-n { font-variant-numeric: tabular-nums; font-weight: 700; color: #0033A0; }
+  .vt-go { display: block; margin-top: 12px; font: 600 14px/20px Inter, sans-serif; color: #0066FF; }
+  .dv-note { background: #E9F4FF; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 20px; margin-top: 24px; max-width: 880px; font: 400 16px/26px Inter, sans-serif; color: #1A1A1A; }
+  .dv-note b { color: #0033A0; }
+  .dv-cta { background: #E9F4FF; border: 1px solid #DCE5F0; border-radius: 16px; padding: 28px; margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; align-items: center; }
+  .dv-cta__t { font: 700 24px/32px Inter, sans-serif; color: #0033A0; letter-spacing: -0.015em; }
+  .dv-cta__s { font: 400 16px/24px Inter, sans-serif; color: #1A1A1A; margin-top: 8px; }
+  @media (max-width: 760px) {
+    .dv-page { padding: 14px 16px 56px; }
+    .dv-h1 { font-size: 32px; line-height: 40px; }
+    .dv-h2 { margin-top: 36px; font-size: 24px; line-height: 32px; }
+    .dv-lead { font-size: 16px; line-height: 24px; }
+  }
+  .dv-box { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 20px; }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F1F5F9;">
+
+  
+
+  <div class="dv-page">
+    <div class="dv-crumbs"><a href="/">Главная</a> → <span>Водонагреватели</span></div>
+
+    <h1 class="dv-h1">Водонагреватели в Алматы</h1>
+
+    <div class="dv-lead">
+      Накопительные баки, проточные нагреватели и газовые колонки — для квартиры, дома и объекта.
+      Рядом фильтры и водоочистка: их ставят до нагревателя. Подбираем объём и мощность под разбор
+      воды, привозим и устанавливаем.
+      <span id="vt-svodka" data-svodka="vodonagrevateli"></span>
+    </div>
+
+    <div class="dv-btns">
+      <a href="/katalog?g=vodonagrevateli" class="dv-btn dv-btn--blue">Водонагреватели в каталоге</a>
+      <a href="/katalog?g=vodoochistka" class="dv-btn dv-btn--line">Водоочистка и фильтры</a>
+    </div>
+
+    <h2 class="dv-h2">Водонагреватели</h2>
+    <div class="dv-sub">Ballu, Electrolux, Royal Thermo, ROYAL CLIMA и PHILIPS — <span class="vt-n" data-group="vodonagrevateli"></span> позиций.</div>
+    <div class="dv-grid">
+
+      <a class="vt-card" href="/katalog?g=vodonagrevateli&sub=Накопительные">
+        <div class="vt-t">Накопительные</div>
+        <div class="vt-d">Греют воду про запас в баке — большой разбор без высокой мощности сети.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="vodonagrevateli|Накопительные"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=vodonagrevateli&sub=Проточные">
+        <div class="vt-t">Проточные</div>
+        <div class="vt-d">Греют в момент разбора, бака нет — занимают меньше места, но требуют мощности сети.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="vodonagrevateli|Проточные"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=vodonagrevateli&sub=Газовые колонки">
+        <div class="vt-t">Газовые колонки</div>
+        <div class="vt-d">Проточный нагрев на газе — когда электрической мощности под бак не хватает.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="vodonagrevateli|Газовые колонки"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=vodonagrevateli&sub=Комплектующие">
+        <div class="vt-t">Комплектующие</div>
+        <div class="vt-d">Дымоход к газовой колонке Turbo.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="vodonagrevateli|Комплектующие"></span> →</div>
+      </a>
+
+    </div>
+
+    <h2 class="dv-h2">Водоочистка и фильтры</h2>
+    <div class="dv-sub">DITREEX, Hidrotek, Vontron и PHILIPS — <span class="vt-n" data-group="vodoochistka"></span> позиций.</div>
+    <div class="dv-grid">
+
+      <a class="vt-card" href="/katalog?g=vodoochistka&sub=Системы обратного осмоса">
+        <div class="vt-t">Системы обратного осмоса</div>
+        <div class="vt-d">Мембранная очистка под мойку — для питьевой воды.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="vodoochistka|Системы обратного осмоса"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=vodoochistka&sub=Фильтры магистральные">
+        <div class="vt-t">Фильтры магистральные</div>
+        <div class="vt-d">Ставятся на ввод — механическая очистка до бытовой техники.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="vodoochistka|Фильтры магистральные"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=vodoochistka&sub=Комплектующие для водоочистки">
+        <div class="vt-t">Сменные картриджи</div>
+        <div class="vt-d">Картриджи и модули к фильтрам: механические, угольные, полипропиленовые.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="vodoochistka|Комплектующие для водоочистки"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=vodoochistka&sub=Пурифайеры">
+        <div class="vt-t">Пурифайеры</div>
+        <div class="vt-d">Очистка и раздача воды в одном корпусе — для офиса и точки продаж.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="vodoochistka|Пурифайеры"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=vodoochistka&sub=Фильтры для душа и стиральной машины">
+        <div class="vt-t">Для душа и стиральной машины</div>
+        <div class="vt-d">Компактные — ставятся на одну точку разбора, без переделки разводки.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="vodoochistka|Фильтры для душа и стиральной машины"></span> →</div>
+      </a>
+
+      <a class="vt-card" href="/katalog?g=vodoochistka&sub=Системы ультрафильтрации">
+        <div class="vt-t">Системы ультрафильтрации</div>
+        <div class="vt-d">Тонкая очистка без обратного осмоса и без бака под давлением.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="vodoochistka|Системы ультрафильтрации"></span> →</div>
+      </a>
+
+    </div>
+
+    <div class="dv-note">
+      <div>
+        <b>Фильтр ставят до водонагревателя, а не после.</b> Механические примеси и накипь
+        сокращают срок службы бака и ТЭНа — магистральный фильтр на вводе дешевле замены
+        нагревателя. Если берёте накопительный, посмотрите заодно
+        <a href="/katalog?g=vodoochistka&sub=Фильтры магистральные">магистральные фильтры</a>.
+        Жёсткость воды по вашему адресу мы не знаем и не гадаем — скажите район, подберём
+        под конкретный ввод.
+      </div>
+    </div>
+
+    <div class="dv-cta">
+      <div>
+        <div class="dv-cta__t">Подобрать объём и мощность</div>
+        <div class="dv-cta__s">Напишите, сколько точек разбора и сколько человек в доме — посчитаем объём бака и предложим варианты.</div>
+        <div class="dv-cta__s" style="margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a></div>
+      </div>
+      <div class="dv-btns" style="margin-top:0;">
+        <a href="https://wa.me/77000369369" class="dv-btn dv-btn--red">Написать в WhatsApp</a>
+        <a href="/uslugi" class="dv-btn dv-btn--line">Монтаж и сервис</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js"></script>
+
+</x-dc>
