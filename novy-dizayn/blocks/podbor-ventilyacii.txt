@@ -87,12 +87,23 @@
 .thvc .fbnote{font-size:14px;color:var(--muted);}
 .thvc .foot{text-align:center;font-size:14px;color:var(--muted);margin-top:22px;line-height:22px;}
 .thvc .srcline{font-size:14px;color:var(--muted);margin-top:10px;line-height:22px;}
+.thvc .fsec{font-size:20px;line-height:28px;font-weight:600;color:var(--blue-d);margin:4px 0 14px;}
+.thvc .grid2+.fsec{margin-top:10px;padding-top:18px;border-top:1px solid var(--line);}
+.thvc .side{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 4px 16px rgba(21,43,68,.06);}
+.thvc .side h3{font-size:20px;line-height:28px;font-weight:600;color:var(--blue-d);margin:0 0 14px;}
+.thvc .side ol{list-style:none;display:grid;gap:14px;margin:0;padding:0;counter-reset:s;}
+.thvc .side li{position:relative;padding-left:40px;font-size:14px;line-height:20px;color:#334155;counter-increment:s;}
+.thvc .side li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:#EAF3FF;color:var(--blue-d);font-weight:700;font-size:14px;display:grid;place-items:center;}
+.thvc .side li b{display:block;font-size:16px;line-height:24px;color:var(--ink);font-weight:600;}
+.thvc .side .help{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);}
+.thvc .side .help p{font-size:14px;line-height:20px;color:#334155;margin:0 0 12px;}
+.thvc .side .wa{display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:10px;background:var(--red);color:#fff;font-weight:700;font-size:14px;text-decoration:none;}
 @media print{.thvc{background:#fff;padding:0;}
 .thvc .noprint{display:none!important;}
 .thvc .card{box-shadow:none;border:1px solid #ddd;page-break-inside:avoid;}
 .thvc .model{page-break-inside:avoid;}}
 .thvc .kpbar{display:none!important}
-.thvc{display:block;min-height:0;justify-content:normal;padding:18px 24px 40px;}.thvc .wrap{min-width:0;max-width:min(1248px,100%);margin-left:auto;margin-right:auto;}.thvc .card{min-width:0;max-width:min(960px,100%);overflow-wrap:break-word;}.thvc .howto{max-width:min(960px,100%);}.thvc .foot{min-width:0;max-width:100%;overflow-wrap:break-word;}.thvc .head{display:none;}.thvc .thvc-crumbs{font-size:14px;color:var(--muted);margin:0 0 12px;line-height:1.5;}.thvc .thvc-crumbs a{color:var(--blue-d);text-decoration:none;}@media(max-width:640px){.thvc table.calc{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}.thvc table.calc th,.thvc table.calc td{padding:7px 8px;min-width:112px;}.thvc .card{padding:16px;}}</style>
+.thvc{display:block;min-height:0;justify-content:normal;padding:18px 24px 40px;}.thvc .wrap{min-width:0;max-width:min(1248px,100%);margin-left:auto;margin-right:auto;}.thvc .card{min-width:0;max-width:100%;overflow-wrap:break-word;}.thvc .foot{min-width:0;max-width:100%;overflow-wrap:break-word;}.thvc .wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;column-gap:32px;align-items:start;}.thvc .wrap>*{grid-column:1/-1;min-width:0;}.thvc .wrap>.card,.thvc .wrap>#out{grid-column:1;}.thvc .wrap>.side{grid-column:2;grid-row:5/span 3;position:sticky;top:96px;}.thvc .grid2:has(#customer){display:none;}@media(max-width:900px){.thvc .wrap{display:block;}.thvc .wrap>.side{position:static;margin-bottom:16px;}}.thvc .head{display:none;}.thvc .thvc-crumbs{font-size:14px;color:var(--muted);margin:0 0 12px;line-height:1.5;}.thvc .thvc-crumbs a{color:var(--blue-d);text-decoration:none;}@media(max-width:640px){.thvc table.calc{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}.thvc table.calc th,.thvc table.calc td{padding:7px 8px;min-width:112px;}.thvc .card{padding:16px;}}</style>
 <div class="thvc">
 <div class="wrap">
 <nav class="thvc-crumbs" aria-label="Навигация"><a href="/">Главная</a> › <a href="/ventilyaciya">Вентиляция</a> › <span>Подбор приточно-вытяжной системы</span></nav>
@@ -111,10 +122,11 @@
 
   <div id="staleBanner"></div>
 
-  <details class="howto noprint"><summary>Как это работает — 1 минута</summary><div class="howto-body"><p><b>1. Заполните три поля:</b> тип помещения, площадь и высота потолка. Число людей и свою кратность укажите, если знаете: это уточняет расчёт.</p><p><b>2. Нажмите «Рассчитать и подобрать».</b> Сверху покажем нужный расход воздуха и откуда он взялся, ниже — подходящие приточно-вытяжные установки из каталога с ценами и наличием.</p><p><b>3. Расчёт предварительный.</b> Сеть воздуховодов он не считает: воздуховоды, фильтры и решётки снижают расход, поэтому точную величину подтверждаем на замере. Цены и наличие могут измениться — уточните у нас перед заказом.</p></div></details>
+  <aside class="side noprint"><h3>Как это работает</h3><ol><li><b>Заполните три поля</b>Тип помещения, площадь и высота потолка. Людей и свою кратность укажите, если знаете.</li><li><b>Нажмите «Рассчитать»</b>Покажем нужный расход воздуха и подходящие установки из каталога с ценами и наличием.</li><li><b>Уточните у нас</b>Расчёт предварительный: сеть воздуховодов он не считает. Точную величину подтверждаем на замере, цену и наличие — перед заказом.</li></ol><div class="help"><h3>Нужна помощь?</h3><p>Напишите площадь и назначение помещения — подскажем установку.</p><a class="wa" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%B2%D0%B5%D0%BD%D1%82%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D1%8F%2C%20%D0%BF%D0%BE%D0%BC%D0%BE%D0%B3%D0%B8%D1%82%D0%B5%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C.">Написать в WhatsApp</a></div></aside>
 
   
   <div class="card noprint">
+    <div class="fsec">Помещение</div>
     <div class="grid2">
       <div class="fld">
         <label class="f" for="room">Тип помещения</label>
@@ -142,6 +154,7 @@
       </div>
     </div>
 
+    <div class="fsec">Уточнения — по желанию</div>
     <div class="grid2">
       <div class="fld">
         <label class="f" for="people">Людей постоянно <small>— пусто = не учитывать</small></label>
@@ -164,6 +177,7 @@
       </div>
     </div>
 
+    <div class="fsec">Условия подбора</div>
     <div class="grid2">
       <div class="fld">
         <label class="f" for="zapas">Запас на сопротивление сети, %</label>
