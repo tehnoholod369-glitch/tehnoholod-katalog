@@ -77,6 +77,15 @@
     return беру;
   }
 
+  // Режем по границе слова: прежний slice(0, 110) обрывал подпись на полуслове.
+  function кратко(s, n) {
+    s = String(s == null ? "" : s);
+    if (s.length <= n) return s;
+    var c = s.slice(0, n), k = c.lastIndexOf(" ");
+    if (k > n * 0.6) c = c.slice(0, k);
+    return c.replace(/[\s,;:.\-—]+$/, "") + "…";
+  }
+
   function экран(s) {
     return String(s == null ? "" : s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;")
@@ -87,7 +96,7 @@
     узел.innerHTML = статьи.map(function (a) {
       return '<a class="art-card" href="' + САЙТ + "/" + экран(a.s) + '">' +
              '<div class="art-card__t">' + экран(a.t) + "</div>" +
-             '<div class="art-card__s">' + экран((a.d || "").slice(0, 110)) + "</div>" +
+             '<div class="art-card__s">' + экран(кратко(a.d, 110)) + "</div>" +
              '<div class="art-card__go">Читать →</div></a>';
     }).join("");
   }
