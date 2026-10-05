@@ -1,0 +1,207 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0052D6; }
+  .dv-page { max-width: 1248px; box-sizing: border-box; margin: 0 auto; padding: 18px 24px 72px; }
+  .dv-crumbs { font-size: 13px; line-height: 20px; color: #64748B; }
+  .dv-crumbs a { color: #64748B; }
+  .dv-crumbs span { color: #1A1A1A; }
+  .dv-h1 { margin: 14px 0 0; font: 700 48px/56px Inter, sans-serif; letter-spacing: -0.02em; color: #0033A0; overflow-wrap: anywhere; }
+  .dv-h2 { margin: 44px 0 0; font: 700 32px/40px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; }
+  .dv-lead { font: 400 18px/28px Inter, sans-serif; color: #1A1A1A; margin-top: 14px; max-width: 880px; }
+  .dv-sub { font: 400 16px/24px Inter, sans-serif; color: #64748B; margin-top: 8px; }
+  .dv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 16px; margin-top: 16px; }
+  .dv-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+  .dv-btn { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; height: 48px; padding: 0 22px; border-radius: 8px; font: 600 16px/1 Inter, sans-serif; }
+  .dv-btn--blue { background: #0066FF; color: #fff; }
+  .dv-btn--blue:hover { background: #0052D6; color: #fff; }
+  .dv-btn--red { background: #E81C1C; color: #fff; }
+  .dv-btn--red:hover { background: #C41212; color: #fff; }
+  .dv-btn--line { border: 1.5px solid #0066FF; color: #0066FF; background: #fff; }
+  .dv-btn--line:hover { background: #E9F4FF; color: #0052D6; }
+  .vt-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 20px; display: block; color: inherit; transition: .15s; }
+  .vt-card:hover { border-color: #0066FF; box-shadow: 0 4px 16px rgba(0,102,255,.12); color: inherit; }
+  .vt-t { font: 600 20px/28px Inter, sans-serif; color: #0033A0; }
+  .vt-d { font: 400 14px/20px Inter, sans-serif; color: #64748B; margin-top: 8px; }
+  .vt-n { font-variant-numeric: tabular-nums; font-weight: 700; color: #0033A0; }
+  .vt-go { display: block; margin-top: 12px; font: 600 14px/20px Inter, sans-serif; color: #0066FF; }
+  .dv-note { background: #E9F4FF; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 20px; margin-top: 24px; max-width: 880px; font: 400 16px/26px Inter, sans-serif; color: #1A1A1A; }
+  .dv-note b { color: #0033A0; }
+  .dv-cta { background: #E9F4FF; border: 1px solid #DCE5F0; border-radius: 16px; padding: 28px; margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; align-items: center; }
+  .dv-cta__t { font: 700 24px/32px Inter, sans-serif; color: #0033A0; letter-spacing: -0.015em; }
+  .dv-cta__s { font: 400 16px/24px Inter, sans-serif; color: #1A1A1A; margin-top: 8px; }
+  @media (max-width: 760px) {
+    .dv-page { padding: 14px 16px 56px; }
+    .dv-h1 { font-size: 32px; line-height: 40px; }
+    .dv-h2 { margin-top: 36px; font-size: 24px; line-height: 32px; }
+    .dv-lead { font-size: 16px; line-height: 24px; }
+  }
+  .dv-box { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 20px; }
+  .fr-tbl { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .fr-tbl th, .fr-tbl td { padding: 11px 12px; text-align: left; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .fr-tbl th { font-family: "Inter", sans-serif; font-weight: 700; color: #0033A0; background: #F1F5F9; }
+  .fr-tbl tr:last-child td { border-bottom: 0; }
+  .fr-num { font-variant-numeric: tabular-nums; }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F1F5F9;">
+
+  
+
+  <div class="art-page-main" style="width:100%; max-width:1248px; box-sizing:border-box; margin:0 auto; padding:18px 24px 72px 24px;">
+    <div class="dv-crumbs"><a href="/">Главная</a> → <a href="/tcl-freshin">TCL FreshIN 3.0</a> → <span>Сравнение моделей</span></div>
+
+    <h1 class="dv-h1">Как выбрать TCL FreshIN 3.0: сравнение всех девяти исполнений</h1>
+
+    <div style="font-size:16px; color:#1A1A1A; line-height:1.65; margin-top:14px;">
+      Все FreshIN 3.0 — это кондиционер с притоком свежего воздуха с улицы: окно открывать не нужно.
+      Фильтрация, Wi-Fi, голосовое управление, самоочистка и инверторный компрессор одинаковы у всех.
+      Различаются <b>мощность, рекомендуемая площадь, цвет корпуса и цена</b>.
+    </div>
+
+    <div style="background:#E9F4FF; border:1px solid #DCE5F0; border-radius:12px; padding:16px 18px; margin-top:18px;">
+      <div style="font-weight:700; color:#1A1A1A; font-size:15px;">Главное, что стоит знать до выбора цвета</div>
+      <div style="font-size:15px; color:#1A1A1A; line-height:1.6; margin-top:6px;">
+        Чёрная серия — это <b>не тот же аппарат в другом корпусе</b>, а отдельный ряд мощностей.
+        Вместо 9 000 и 12 000 BTU в ней 10 000 и 13 000, площадь и потребление тоже другие.
+        Белая и серебристая серии между собой совпадают по технике и различаются только ценой.
+      </div>
+    </div>
+
+    <h2 class="dv-h2">Все девять исполнений рядом</h2>
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; margin-top:14px; overflow-x:auto;">
+      <sc-raw-table class="fr-tbl">
+        <sc-raw-thead>
+          <sc-raw-tr>
+            <sc-raw-th>Модель</sc-raw-th><sc-raw-th>Цвет</sc-raw-th><sc-raw-th>Площадь</sc-raw-th><sc-raw-th>BTU</sc-raw-th>
+            <sc-raw-th>Охлаждение</sc-raw-th><sc-raw-th>Класс</sc-raw-th><sc-raw-th>Цена</sc-raw-th>
+          </sc-raw-tr>
+        </sc-raw-thead>
+        <sc-raw-tbody>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR09HSV/P7W</b></sc-raw-td><sc-raw-td>белый</sc-raw-td><sc-raw-td class="fr-num">до 25 м²</sc-raw-td><sc-raw-td class="fr-num">9 000</sc-raw-td><sc-raw-td class="fr-num">2,80 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>323 942 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR09HSV/P7S</b></sc-raw-td><sc-raw-td>серебристый</sc-raw-td><sc-raw-td class="fr-num">до 25 м²</sc-raw-td><sc-raw-td class="fr-num">9 000</sc-raw-td><sc-raw-td class="fr-num">2,80 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>340 992 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR10HSV/P7B</b></sc-raw-td><sc-raw-td>чёрный</sc-raw-td><sc-raw-td class="fr-num">до 28 м²</sc-raw-td><sc-raw-td class="fr-num">10 000</sc-raw-td><sc-raw-td class="fr-num">2,90 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>340 992 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR12HSV/P7W</b></sc-raw-td><sc-raw-td>белый</sc-raw-td><sc-raw-td class="fr-num">до 35 м²</sc-raw-td><sc-raw-td class="fr-num">12 000</sc-raw-td><sc-raw-td class="fr-num">3,65 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>340 992 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR12HSV/P7S</b></sc-raw-td><sc-raw-td>серебристый</sc-raw-td><sc-raw-td class="fr-num">до 35 м²</sc-raw-td><sc-raw-td class="fr-num">12 000</sc-raw-td><sc-raw-td class="fr-num">3,65 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>375 092 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR13HSV/P7B</b></sc-raw-td><sc-raw-td>чёрный</sc-raw-td><sc-raw-td class="fr-num">до 38 м²</sc-raw-td><sc-raw-td class="fr-num">13 000</sc-raw-td><sc-raw-td class="fr-num">3,85 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>383 617 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR18HSV/P7W</b></sc-raw-td><sc-raw-td>белый</sc-raw-td><sc-raw-td class="fr-num">до 50 м²</sc-raw-td><sc-raw-td class="fr-num">18 000</sc-raw-td><sc-raw-td class="fr-num">5,40 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>392 142 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR18HSV/P7S</b></sc-raw-td><sc-raw-td>серебристый</sc-raw-td><sc-raw-td class="fr-num">до 50 м²</sc-raw-td><sc-raw-td class="fr-num">18 000</sc-raw-td><sc-raw-td class="fr-num">5,40 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>409 192 ₸</b></sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td><b>TAC-FR18HSV/P7B</b></sc-raw-td><sc-raw-td>чёрный</sc-raw-td><sc-raw-td class="fr-num">до 50 м²</sc-raw-td><sc-raw-td class="fr-num">18 000</sc-raw-td><sc-raw-td class="fr-num">5,57 кВт</sc-raw-td><sc-raw-td>A+++</sc-raw-td><sc-raw-td class="fr-num"><b>426 242 ₸</b></sc-raw-td></sc-raw-tr>
+        </sc-raw-tbody>
+      </sc-raw-table>
+    </div>
+    <div style="font-size:13px; color:#64748B; margin-top:10px; line-height:1.6;">
+      Цены розничные, действуют на дату сборки страницы. Доступна рассрочка. Наличие уточняйте —
+      актуальное показано в <a href="/katalog">каталоге</a>.
+    </div>
+
+    <h2 class="dv-h2">Какую взять под вашу комнату</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:14px; margin-top:14px;">
+
+      <div class="dv-box">
+        <div class="vt-t">Спальня, детская, кабинет</div>
+        <div style="font-size:14px; color:#64748B; margin-top:4px;">до 25–28 м²</div>
+        <div style="font-size:15px; color:#1A1A1A; line-height:1.6; margin-top:10px;">
+          <b>FR09</b> — в белом или серебристом корпусе. В чёрном ближайший — <b>FR10</b>, он немного мощнее и берёт до 28 м².
+        </div>
+      </div>
+
+      <div class="dv-box">
+        <div class="vt-t">Гостиная, кухня-студия, офис</div>
+        <div style="font-size:14px; color:#64748B; margin-top:4px;">до 35–38 м²</div>
+        <div style="font-size:15px; color:#1A1A1A; line-height:1.6; margin-top:10px;">
+          <b>FR12</b> — белый или серебристый. В чёрном — <b>FR13</b> на 13 000 BTU и до 38 м².
+        </div>
+      </div>
+
+      <div class="dv-box">
+        <div class="vt-t">Просторная гостиная, студия</div>
+        <div style="font-size:14px; color:#64748B; margin-top:4px;">до 50 м²</div>
+        <div style="font-size:15px; color:#1A1A1A; line-height:1.6; margin-top:10px;">
+          <b>FR18</b> — есть во всех трёх цветах. Это единственный размер, где корпус действительно
+          не меняет ни площадь, ни класс.
+        </div>
+      </div>
+
+    </div>
+
+    <div style="background:#E9F4FF; border:1px solid #DCE5F0; border-radius:12px; padding:16px 18px; margin-top:16px;">
+      <div style="font-size:15px; color:#1A1A1A; line-height:1.65;">
+        <b>Берите на размер больше</b>, если комната на солнечной стороне, это кухня, высокие потолки
+        или панорамные окна, либо людей регулярно много. Площадь в таблице — ориентир для обычной
+        комнаты; точный расчёт делаем по замеру. Сомневаетесь — напишите площадь и особенности,
+        подберём.
+      </div>
+    </div>
+
+    <h2 class="dv-h2">Что одинаково у всех девяти</h2>
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:20px; margin-top:14px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:10px 28px; font-size:15px; color:#1A1A1A; line-height:1.6;">
+        <div>· Приток свежего воздуха с улицы до 60 м³/ч — без открывания окна</div>
+        <div>· Многоступенчатая очистка QuadruPuri</div>
+        <div>· Датчик качества воздуха VOC</div>
+        <div>· Мягкий обдув Gentle Breeze</div>
+        <div>· Самоочистка со стерилизацией при 58 °C</div>
+        <div>· Wi-Fi, приложение TCL Home, голосовое управление</div>
+        <div>· DC-инверторный компрессор, класс A+++</div>
+        <div>· Обогрев до −20 °C, охлаждение до +53 °C</div>
+        <div>· Трасса до 25 м, перепад высот до 10 м</div>
+        <div>· Питание 220–240 В, 50 Гц, одна фаза</div>
+      </div>
+      <div style="font-size:13px; color:#64748B; margin-top:14px; line-height:1.6;">
+        Гарантия — по паспорту модели: срок указывает производитель, мы его не назначаем.
+      </div>
+    </div>
+
+    <h2 class="dv-h2">Чем именно отличается чёрная серия</h2>
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; margin-top:14px; overflow-x:auto;">
+      <sc-raw-table class="fr-tbl">
+        <sc-raw-thead><sc-raw-tr><sc-raw-th>Параметр</sc-raw-th><sc-raw-th>Белый и серебристый</sc-raw-th><sc-raw-th>Чёрный</sc-raw-th></sc-raw-tr></sc-raw-thead>
+        <sc-raw-tbody>
+          <sc-raw-tr><sc-raw-td>Младшая модель</sc-raw-td><sc-raw-td>FR09 · 9 000 BTU · до 25 м²</sc-raw-td><sc-raw-td>FR10 · 10 000 BTU · до 28 м²</sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td>Средняя модель</sc-raw-td><sc-raw-td>FR12 · 12 000 BTU · до 35 м²</sc-raw-td><sc-raw-td>FR13 · 13 000 BTU · до 38 м²</sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td>Старшая модель</sc-raw-td><sc-raw-td>FR18 · 18 000 BTU · до 50 м²</sc-raw-td><sc-raw-td>FR18 · 18 000 BTU · до 50 м²</sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td>SEER младшей модели</sc-raw-td><sc-raw-td class="fr-num">9,00</sc-raw-td><sc-raw-td class="fr-num">7,60</sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td>Охлаждение старшей FR18</sc-raw-td><sc-raw-td class="fr-num">5,40 кВт</sc-raw-td><sc-raw-td class="fr-num">5,57 кВт</sc-raw-td></sc-raw-tr>
+        </sc-raw-tbody>
+      </sc-raw-table>
+    </div>
+
+    <div class="dv-cta">
+      <div>
+        <div class="dv-cta__t">Не уверены, какая подойдёт?</div>
+        <div class="dv-cta__s">Напишите площадь комнаты и этаж — подберём модель и посчитаем монтаж. Подбор бесплатный.</div>
+        <div class="dv-cta__s" style="margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a></div>
+      </div>
+      <div class="dv-btns" style="margin-top:0;">
+        <a href="https://wa.me/77000369369" class="dv-btn dv-btn--red">Написать в WhatsApp</a>
+        <a href="/tcl-freshin" class="dv-btn dv-btn--line">Про серию FreshIN</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div data-th-copyright style="max-width:888px; margin:0 auto; padding:18px 24px 40px; font-size:12px; line-height:1.7; color:#64748B;">
+  © 2026 ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
+  Перепечатка целиком или существенной частью — только с письменного разрешения.
+  Цитата с активной ссылкой на источник разрешена без запроса.
+  <a href="/usloviya-ispolzovaniya" style="color:#64748B; text-decoration:underline;">Условия использования</a>
+</div>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Как выбрать TCL FreshIN 3.0: сравнение всех девяти исполнений", "description": "Все девять исполнений TCL FreshIN 3.0 рядом: мощность, площадь, класс и цена. Чёрная серия — отдельный ряд мощностей, а не тот же аппарат в другом корпусе.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/freshin-sravnenie"}, "author": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "publisher": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/"}, "copyrightHolder": {"@type": "Organization", "name": "ИП «ТехноХолод»"}, "copyrightYear": 2026, "datePublished": "2026-08-08"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "База знаний", "item": "https://tehnoholod369.kz/baza-znaniy"}, {"@type": "ListItem", "position": 3, "name": "Как выбрать TCL FreshIN 3.0: сравнение всех девяти исполнений", "item": "https://tehnoholod369.kz/freshin-sravnenie"}]}</script>
+</x-dc>
