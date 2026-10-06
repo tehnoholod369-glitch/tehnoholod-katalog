@@ -34,9 +34,9 @@
 
     <div style="background:linear-gradient(125deg,#0033A0,#0033A0 72%,#0066FF); color:#fff; border-radius:16px; padding:36px; margin-top:12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:30px; align-items:center;">
       <div>
-        <div style="display:inline-block; background:#E81C1C; border-radius:6px; padding:5px 10px; font-size:12px; font-weight:700; letter-spacing:0.08em;">НОВИНКА 2026</div>
+        <div style="display:inline-block; background:#fff; color:#0033A0; border-radius:6px; padding:5px 10px; font-size:12px; font-weight:700; letter-spacing:0.08em;">НОВИНКА 2026</div>
         <h1 style="margin:14px 0 0 0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em;">TCL FreshIN 3.0 — кондиционер, который приносит воздух с улицы</h1>
-        <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px;">Инверторная сплит-система с притоком свежего воздуха через дефлектор Blue Wing: кислород в комнате без открытого окна, пыли и шума. Класс A+++, гарантия производителя, монтаж в Алматы и области.</div>
+        <div style="font-size:17px; line-height:1.55; color:rgba(255,255,255,0.88); margin-top:14px;">Инверторная сплит-система с притоком свежего воздуха через дефлектор Blue Wing: кислород в комнате без открытого окна, пыли и шума. Класс A+++, гарантия производителя, монтаж в Алматы и области.</div>
         <div style="display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;">
           <a href="/katalog?g=bytovye" style="background:#0066FF; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Выбрать модель — от 323 942 ₸</a>
           <a href="https://wa.me/77000369369" style="border:2px solid rgba(255,255,255,0.55); color:#fff; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Задать вопрос в WhatsApp</a>
@@ -60,7 +60,7 @@
           <div style="font-size:15px; font-weight:700; color:#64748B;">Обычная сплит-система</div>
           <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Гоняет по кругу один и тот же воздух: охлаждает, но не проветривает. К вечеру в закрытой спальне растёт CO₂ — отсюда духота и тяжёлая голова при работающем кондиционере.</div>
         </div>
-        <div style="background:#E9F4FF; border:1px solid #B9DBF7; border-radius:12px; padding:20px;">
+        <div style="background:#E9F4FF; border:1px solid #DCE5F0; border-radius:12px; padding:20px;">
           <div style="font-size:15px; font-weight:700; color:#0033A0;">FreshIN 3.0</div>
           <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">Забирает наружный воздух через верхнюю панель, пропускает через фильтрацию QuadruPuri и подаёт в комнату. Режим Fresh Air работает без компрессора — только вентиляция притока.</div>
         </div>
@@ -182,7 +182,7 @@
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:16px; margin-top:18px;">
         <sc-for list="{{ models }}" as="m" hint-placeholder-count="3">
           <div style="border:1px solid #DCE5F0; border-radius:12px; padding:18px;">
-            <div ref="{{ m.boxRef }}" style="position:relative; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:10px; height:170px; display:flex; align-items:center; justify-content:center; padding:12px; font-size:12px; color:#64748B; text-align:center;">
+            <div ref="{{ m.boxRef }}" style="position:relative; background:#F9FBFE; border:1px solid #DCE5F0; border-radius:10px; height:170px; display:flex; align-items:center; justify-content:center; padding:12px; font-size:12px; color:#64748B; text-align:center;">
               <sc-if value="{{ m.hasPhoto }}" hint-placeholder-val="{{ false }}">
                 <div onClick="{{ m.zoom }}" title="Открыть фото крупно" style="display:flex; align-items:center; justify-content:center; width:100%; height:100%; cursor:zoom-in;"><img data-url="{{ m.img }}" alt="{{ m.sku }}" style="max-width:100%; max-height:100%; object-fit:contain; display:block;" /></div>
               </sc-if>
@@ -265,7 +265,32 @@
       </div>
     </div>
 
-    <div style="background:#E9F4FF; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+    <sc-if value="{{ hasReviews }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:26px;">
+        <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:14px;">
+          <div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ОТЗЫВЫ</div>
+            <h2 style="margin:6px 0 0 0; font-size:26px; font-weight:800; letter-spacing:-0.018em; color:#0033A0;">Что пишут покупатели</h2>
+          </div>
+          <a href="/otzyvy" style="font-size:14px; font-weight:700; color:#0066FF;">Все отзывы →</a>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:16px; margin-top:16px;">
+          <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
+            <div style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:22px; display:flex; flex-direction:column; gap:12px;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div style="font-family:Inter,sans-serif; font-size:16px; font-weight:700; color:#0033A0;">{{ r.name }}</div>
+                <div style="color:#F59E0B; letter-spacing:2px; font-size:15px;">{{ r.stars }}</div>
+              </div>
+              <div style="font-size:15px; line-height:1.6; color:#1A1A1A;">{{ r.text }}</div>
+              <div style="font-size:13px; color:#64748B;">Покупатель Kaspi.kz</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="font-size:13px; color:#64748B; margin-top:12px;">{{ revNote }}</div>
+      </div>
+    </sc-if>
+
+    <div style="background:#E9F4FF; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
       <div>
         <div style="font-family:Inter,sans-serif; font-size:24px; font-weight:800; color:#0033A0; letter-spacing:-0.015em;">Не уверены, какой класс нужен?</div>
         <div style="font-size:15px; color:#1A1A1A; line-height:1.6; margin-top:8px;">Скажите площадь помещения — посчитаем мощность и назовём цену вместе с монтажом. Если приток вам не нужен, честно предложим модель дешевле.</div>
@@ -282,7 +307,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Белый&quot;,&quot;Серебристый&quot;,&quot;Чёрный&quot;],&quot;default&quot;:&quot;Белый&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Лендинг&quot;}}">
 class Component extends DCLogic {
-  state = { color: null, open: 0 };
+  state = { color: null, open: 0, rev: null };
   heroRef = React.createRef();
   cdn = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/img/TCL_FreshIN_White_0";
 
@@ -325,6 +350,7 @@ class Component extends DCLogic {
   componentDidMount() {
     this.syncPhotos();
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []).then(bytovye => this.setState({ bytovye })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/kaspi-reviews.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(all => this.setState({ rev: (all && all["TAC-FR12INV/R3"]) || { list: [] } })).catch(() => {});
   }
   componentDidUpdate() { this.syncPhotos(); }
 
@@ -395,7 +421,15 @@ class Component extends DCLogic {
       { q: "Что с гарантией?", a: "На оборудование действует только гарантия производителя, её срок указан в карточке модели и в паспорте изделия; гарантийное обслуживание — по правилам производителя. На монтаж нового оборудования через АРТЕЛЬ действует гарантия 12 месяцев. Сервис-карта 369 фиксирует исполнителя, чтобы обращение по качеству монтажа направить тому же мастеру или бригаде." }
     ];
 
+    // отзывы Kaspi.kz: берём только оценки 5, без дат; только по той модели, где они реально есть
+    const rv = this.state.rev || { list: [] };
+    const reviews = (rv.list || []).filter(x => x.r >= 5 && x.t && x.t.length > 60 && x.t.length < 260).slice(0, 3)
+      .map(x => ({ name: x.a, text: "\u00AB" + x.t + "\u00BB", stars: "\u2605\u2605\u2605\u2605\u2605" }));
+    const revNote = reviews.length
+      ? "Отзывы покупателей Kaspi.kz о TCL FreshIN, модель TAC-FR12INV/R3 (серия 2025): рейтинг " + String(rv.rating).replace(".", ",") + ", оценок " + rv.count + "."
+      : "";
     return {
+      reviews, revNote, hasReviews: reviews.length > 0,
       heroRef: this.heroRef,
       colors: Object.keys(sets).map(c => ({
         label: c,
