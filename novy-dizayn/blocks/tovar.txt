@@ -1287,9 +1287,13 @@ class Component extends DCLogic {
       return m ? +m[1] : 0;
     };
     const myVol = volOf(it);
+    // T-006, 07.10.2026: у модели с притоком воздуха аналоги — только тоже с притоком (в разделе «Аналоги» иначе попадали обычные сплиты)
+    const inflowOf = x => /приток/i.test(String(x.n || "")) || (x.sp || []).some(v => /^приток воздуха/i.test(String(v[0]).trim()) && /^(да|есть)/i.test(String(v[1]).trim()));
+    const myInflow = inflowOf(it);
     const analogs = items
       .map((x, i) => ({ x, i }))
       .filter(o => o.i !== s.idx && o.x.b !== it.b && o.x.sub === it.sub && o.x.p
+        && (!myInflow || inflowOf(o.x))
         && (!myComp || !compOf(o.x) || compOf(o.x) === myComp)
         // у бойлеров близость определяет объём бака, а не мощность: 500 л и 10 л — не аналоги
         && (!myVol || !volOf(o.x) || Math.abs(volOf(o.x) - myVol) <= myVol * 0.35)
