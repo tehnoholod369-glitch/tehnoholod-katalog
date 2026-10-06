@@ -156,10 +156,9 @@
           <iframe src="https://www.youtube.com/embed/I1vlUCxNgOA?rel=0" title="TCL FreshIN 3.0 — кондиционер с притоком воздуха" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="display:block; width:100%; height:100%; border:0;"></iframe>
         </div>
         <div style="font-size:14px; font-weight:600; margin-top:10px;">Обзор TCL FreshIN 3.0</div>
-        <a href="https://youtu.be/0W4LPZl4yss" target="_blank" rel="noreferrer" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; margin-top:18px; border-radius:12px; background:#071C3B; color:#fff; aspect-ratio:16/9; text-align:center; padding:16px;">
-          <span style="display:block; width:54px; height:38px; border-radius:10px; background:#E81C1C; position:relative;"><span style="position:absolute; left:21px; top:11px; border-left:14px solid #fff; border-top:8px solid transparent; border-bottom:8px solid transparent;"></span></span>
-          <span style="font-size:15px; font-weight:700;">Смотреть на YouTube</span>
-        </a>
+        <div style="margin-top:18px; border-radius:12px; overflow:hidden; background:#000; aspect-ratio:16/9;">
+          <iframe src="https://www.youtube.com/embed/0W4LPZl4yss?rel=0" title="TCL FreshIN 3.0 в белом цвете — кондиционер с притоком свежего воздуха" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="display:block; width:100%; height:100%; border:0;"></iframe>
+        </div>
         <div style="font-size:14px; font-weight:600; margin-top:10px;">TCL FreshIN 3.0 в белом цвете</div>
         <div style="font-size:13px; color:#5A6675; line-height:1.5; margin-top:10px;">Канал: <a href="https://www.youtube.com/@Tehnoholod369" target="_blank" rel="noreferrer">@Tehnoholod369</a></div>
       </div>
