@@ -5,48 +5,37 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/image-slot.js?v=3cc2dce3"></script>
 <style>
-  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
-  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
-  a { color: #0A4EA7; text-decoration: none; }
-  a:hover { color: #0872D3; }
+  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0052D6; }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=e8476510"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
 </helmet>
 
-<div style="min-height:100vh; background:#F3F7FB;">
+<div style="min-height:100vh; background:#F1F5F9;">
 
-  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
-    <div style="max-width:1280px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
-      <span style="opacity:0.85;">Алматы · объекты по Казахстану</span>
-      <span style="margin-left:auto; opacity:0.85;">Монтаж под ключ · Сервис-карта 369 на каждый объект</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
-    </div>
-  </div>
+  <div class="th-t1"><div class="th-w"><b>Доставка по Казахстану</b><span><a href="tel:+77000369369">+77 000 369 369</a> · пн–пт 9:00–18:00 · <a href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B2%D0%BE%D0%BD%D0%B8%D1%82%D1%8C.">Заказать звонок</a></span></div></div>
+<header class="th-hd"><div class="th-w"><button type="button" class="th-bg" data-th-burger aria-label="Меню">☰<span>Меню</span></button><a class="th-lg" href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" /></a><button type="button" class="th-sr" data-th-search aria-label="Поиск по каталогу"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg><span>Поиск по каталогу</span></button><nav class="th-ic"><a href="/izbrannoe"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg><span>Избранное</span><i class="th-bd" data-th-fav-count style="display:none"></i></a><a href="/sravnenie"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg><span>Сравнение</span><i class="th-bd" data-th-cmp-count style="display:none"></i></a><a href="/korzina"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h2l2.4 11h10.2L20 8H6.2" /><circle cx="9" cy="19" r="1.5" /><circle cx="17" cy="19" r="1.5" /></svg><span>Корзина</span><i class="th-bd" data-th-cart-count></i></a></nav></div></header>
+<nav class="th-mn"><div class="th-w"><a class="th-home" href="/" aria-label="На главную" title="На главную"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 11l9-7 9 7" /><path d="M5 10v10h5v-6h4v6h5V10" /></svg><span>Главная</span></a><a class="th-cat" href="/katalog" data-th-cat aria-expanded="false" aria-controls="th-panel"><span class="th-ci">☰</span><span class="th-ct">Каталог товаров</span></a><div class="th-dd"><a href="/kondicionery-almaty">Кондиционирование</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Кондиционирование" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div></div><div class="th-dd"><a href="/otoplenie">Отопление</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Отопление" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div></div><div class="th-dd"><a href="/ventilyaciya">Вентиляция</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Вентиляция" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div></div><div class="th-dd"><a href="/vodonagrevateli">Водонагреватели</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Водонагреватели" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div></div><a href="/katalog?g=avtonomnoe-pitanie">Автономное питание</a><a href="/brendy">Бренды</a><a href="/baza-znaniy">База знаний</a><a href="/kontakty">Контакты</a></div><div class="th-pn" id="th-panel"><div class="th-w th-pg"><div class="th-pc"><b>Кондиционирование</b><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div><div class="th-pc"><b>Отопление</b><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div><div class="th-pc"><b>Вентиляция</b><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div><div class="th-pc"><b>Водонагреватели и водоочистка</b><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div><div class="th-pc"><b>Автономное питание</b><a href="/katalog?g=avtonomnoe-pitanie">Зарядные станции и солнечные панели</a></div><div class="th-pc"><b>VRF, фанкойлы, чиллеры</b><a href="/katalog?g=mini-vrf">Мини-VRF и мультизональные</a><a href="/katalog?g=fankoyly">Фанкойлы</a><a href="/katalog?g=chillery">Чиллеры</a><a href="/katalog?g=precizionnye">Прецизионные кондиционеры</a><a href="/proekt">Расчёт под объект</a></div></div><div class="th-w th-pf"><a href="/katalog">Весь каталог →</a></div></div></nav>
 
-  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
-    <div style="max-width:1280px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
-      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
-      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
-      </a>
-      <div style="flex:1;"></div>
-      <a href="/uslugi" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">Условия монтажа</a>
-    </div>
-  </div>
-
-  <div style="max-width:1280px; margin:0 auto; padding:20px 24px 72px 24px;">
-    <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <span style="color:#18212F;">Наши работы</span></div>
+  <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:20px 24px 72px 24px;">
+    <div style="font-size:13px; color:#64748B;"><a href="/">Главная</a> → <span style="color:#1A1A1A;">Наши работы</span></div>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:12px; align-items:end;">
       <div>
-        <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">Наши работы</h1>
-        <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">Объекты, где мы ставили оборудование: город, дата, что установлено. Без стоковых картинок — только собственные фото с монтажей.</div>
+        <h1 style="margin:0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Наши работы</h1>
+        <div style="font-size:16px; color:#64748B; margin-top:10px; line-height:1.6;">Объекты, где мы ставили оборудование: город, дата, что установлено. Без стоковых картинок — только собственные фото с монтажей.</div>
+        <div style="display:inline-flex; align-items:center; gap:8px; background:#E9F4FF; border:1px solid #B9DBF7; border-radius:8px; padding:8px 14px; margin-top:12px; font-size:14px; color:#0033A0; font-weight:600;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex:none;"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg>
+          Раздел заполняется — фото работ появятся в ближайшее время
+        </div>
       </div>
       <div style="display:flex; gap:8px; flex-wrap:wrap;">
         <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
@@ -62,7 +51,7 @@
             <image-slot id="{{ w.slotId }}" shape="rect" src="{{ w.photo }}" placeholder="{{ w.slotHint }}"></image-slot>
             <div style="position:absolute; top:12px; left:12px; display:flex; gap:6px; flex-wrap:wrap; pointer-events:none;">
               <div style="background:rgba(7,28,59,0.86); color:#fff; border-radius:6px; padding:5px 9px; font-size:12px; font-weight:700; letter-spacing:0.04em;">{{ w.city }}</div>
-              <div style="background:rgba(255,255,255,0.94); color:#18212F; border-radius:6px; padding:5px 9px; font-size:12px; font-weight:700;">{{ w.date }}</div>
+              <div style="background:rgba(255,255,255,0.94); color:#1A1A1A; border-radius:6px; padding:5px 9px; font-size:12px; font-weight:700;">{{ w.date }}</div>
             </div>
             <sc-if value="{{ w.hasGal }}" hint-placeholder-val="{{ false }}">
               <div style="position:absolute; right:12px; bottom:12px; background:rgba(7,28,59,0.86); color:#fff; border-radius:6px; padding:5px 9px; font-size:12px; font-weight:700; pointer-events:none; display:flex; align-items:center; gap:6px;">
@@ -71,34 +60,31 @@
             </sc-if>
           </div>
           <div style="padding:20px; display:flex; flex-direction:column; flex:1;">
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">{{ w.kind }}</div>
-            <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; line-height:1.3; margin-top:8px;">{{ w.title }}</div>
-            <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">{{ w.text }}</div>
-            <sc-if value="{{ w.hasBrig }}" hint-placeholder-val="{{ false }}">
-              <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:4px;">Работу выполнила бригада <a href="{{ w.brigHref }}" style="font-weight:700;">{{ w.brig }} →</a></div>
-            </sc-if>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#64748B;">{{ w.kind }}</div>
+            <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0; line-height:1.3; margin-top:8px;">{{ w.title }}</div>
+            <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">{{ w.text }}</div>
             <div style="display:flex; flex-direction:column; gap:7px; margin-top:14px;">
               <sc-for list="{{ w.rows }}" as="r" hint-placeholder-count="3">
                 <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:12px; border-bottom:1px solid #E9EFF7; padding-bottom:6px; font-size:13px;">
-                  <span style="color:#5A6675;">{{ r.k }}</span><b style="text-align:right; color:{{ r.color }};">{{ r.v }}</b>
+                  <span style="color:#64748B;">{{ r.k }}</span><b style="text-align:right; color:{{ r.color }};">{{ r.v }}</b>
                 </div>
               </sc-for>
             </div>
 
             <sc-if value="{{ w.hasLink }}" hint-placeholder-val="{{ false }}">
-              <a href="{{ w.link.href }}" style="display:flex; gap:12px; align-items:center; background:#F5FAFF; border:1px solid #B9DBF7; border-radius:12px; padding:12px; margin-top:14px; color:#18212F;">
+              <a href="{{ w.link.href }}" style="display:flex; gap:12px; align-items:center; background:#F5FAFF; border:1px solid #B9DBF7; border-radius:12px; padding:12px; margin-top:14px; color:#1A1A1A;">
                 <div style="width:76px; height:62px; flex:none; background:#fff; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:5px; overflow:hidden;">
                   <img data-url="{{ w.link.img }}" alt="{{ w.link.name }}" style="width:100%; height:100%; object-fit:contain; display:block;" />
                 </div>
                 <div style="flex:1; min-width:0;">
                   <div style="display:flex; align-items:center; gap:7px; flex-wrap:wrap;">
-                    <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#0A4EA7;">ХОЧУ ТАКОЙ ЖЕ</div>
+                    <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#0033A0;">ХОЧУ ТАКОЙ ЖЕ</div>
                     <div style="font-size:12px; font-weight:700; color:{{ w.link.stockFg }}; background:{{ w.link.stockBg }}; border-radius:4px; padding:2px 6px;">{{ w.link.stock }}</div>
                   </div>
                   <div style="font-size:13px; font-weight:600; line-height:1.35; margin-top:4px;">{{ w.link.name }}</div>
                   <div style="display:flex; align-items:baseline; gap:8px; margin-top:4px;">
                     <div style="font-size:15px; font-weight:700; color:{{ w.link.priceFg }}; font-variant-numeric:tabular-nums;">{{ w.link.price }}</div>
-                    <div style="font-size:12px; font-weight:700; color:#0872D3;">в каталоге →</div>
+                    <div style="font-size:12px; font-weight:700; color:#0066FF;">в каталоге →</div>
                   </div>
                 </div>
               </a>
@@ -127,36 +113,36 @@
 
     <sc-if value="{{ editMode }}" hint-placeholder-val="{{ false }}">
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
-      <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Как заполнить эту страницу</div>
-      <div style="font-size:15px; color:#5A6675; line-height:1.65; margin-top:10px; max-width:940px;">Фото объектов передайте в сессию Claude — файлами в чат или в папку «Единый источник данных\06_САЙТ_И_КОНТЕНТ\ПОРТФОЛИО_НАШИ_РАБОТЫ». Перетаскивание в рамку на этой странице фото НЕ сохраняет: после перезагрузки оно пропадает. К каждому объекту нужны четыре факта: город, месяц и год, что установили и площадь помещения. Пустые поля не показываются — карточка с двумя фактами выглядит законченной, а не недоделанной.</div>
-      <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:14px;">
-        <div style="font-size:14px; font-weight:700; color:#0A4EA7;">Главное — назовите модель или артикул</div>
-        <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:6px;">По ней объект связывается с каталогом: под кейсом появляется карточка «Хочу такой же» с фото, ценой и наличием. Клиент из портфолио попадает сразу в покупку, а не в тупик. Ищется и по артикулу («TAC-FR09HSV/P7W»), и по названию модели («TCL FreshIN 3.0»). Если модели нет в каталоге, блок просто не покажется.</div>
+      <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:700; color:#0033A0;">Как заполнить эту страницу</div>
+      <div style="font-size:15px; color:#64748B; line-height:1.65; margin-top:10px; max-width:940px;">Фото объектов передайте в сессию Claude — файлами в чат или в папку «Единый источник данных\06_САЙТ_И_КОНТЕНТ\ПОРТФОЛИО_НАШИ_РАБОТЫ». Перетаскивание в рамку на этой странице фото НЕ сохраняет: после перезагрузки оно пропадает. К каждому объекту нужны четыре факта: город, месяц и год, что установили и площадь помещения. Пустые поля не показываются — карточка с двумя фактами выглядит законченной, а не недоделанной.</div>
+      <div style="background:#E9F4FF; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:14px;">
+        <div style="font-size:14px; font-weight:700; color:#0033A0;">Главное — назовите модель или артикул</div>
+        <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:6px;">По ней объект связывается с каталогом: под кейсом появляется карточка «Хочу такой же» с фото, ценой и наличием. Клиент из портфолио попадает сразу в покупку, а не в тупик. Ищется и по артикулу («TAC-FR09HSV/P7W»), и по названию модели («TCL FreshIN 3.0»). Если модели нет в каталоге, блок просто не покажется.</div>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:14px; margin-top:16px;">
-        <div style="background:#F3F7FB; border-radius:12px; padding:16px 18px;">
+        <div style="background:#F1F5F9; border-radius:12px; padding:16px 18px;">
           <div style="font-size:14px; font-weight:700;">Что снимать</div>
-          <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">Готовый внутренний блок на стене, аккуратную трассу, наружный блок на кронштейнах. Общий план помещения — не крупный план коробки.</div>
+          <div style="font-size:13px; color:#64748B; line-height:1.55; margin-top:6px;">Готовый внутренний блок на стене, аккуратную трассу, наружный блок на кронштейнах. Общий план помещения — не крупный план коробки.</div>
         </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:16px 18px;">
+        <div style="background:#F1F5F9; border-radius:12px; padding:16px 18px;">
           <div style="font-size:14px; font-weight:700;">Чего избегать</div>
-          <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">Людей без согласия, номеров квартир и адресов на фото, чужих логотипов и беспорядка на объекте.</div>
+          <div style="font-size:13px; color:#64748B; line-height:1.55; margin-top:6px;">Людей без согласия, номеров квартир и адресов на фото, чужих логотипов и беспорядка на объекте.</div>
         </div>
         <div style="background:#FDECEA; border-radius:12px; padding:16px 18px;">
-          <div style="font-size:14px; font-weight:700; color:#C21610;">Чего здесь не будет</div>
-          <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">Стоковых фотографий чужих монтажей и объектов, которых вы не делали. Пустая карточка честнее выдуманной.</div>
+          <div style="font-size:14px; font-weight:700; color:#D73D3D;">Чего здесь не будет</div>
+          <div style="font-size:13px; color:#1A1A1A; line-height:1.55; margin-top:6px;">Стоковых фотографий чужих монтажей и объектов, которых вы не делали. Пустая карточка честнее выдуманной.</div>
         </div>
       </div>
     </div>
 
-    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+    <div style="background:#E9F4FF; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
       <div>
-        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Хотите так же на своём объекте?</div>
-        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Пришлите площадь помещения и фото стены, где планируете блок — скажем, что подойдёт, и назовём стоимость после замера.</div>
+        <div style="font-family:Inter,sans-serif; font-size:22px; font-weight:800; color:#0033A0; letter-spacing:-0.015em;">Хотите так же на своём объекте?</div>
+        <div style="font-size:15px; color:#1A1A1A; line-height:1.6; margin-top:8px;">Пришлите площадь помещения и фото стены, где планируете блок — скажем, что подойдёт, и назовём стоимость после замера.</div>
       </div>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
-        <a href="/uslugi" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Вызвать замерщика</a>
+        <a href="https://wa.me/77000369369" style="background:#0066FF; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/uslugi" style="border:2px solid #0066FF; color:#0033A0; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Вызвать замерщика</a>
       </div>
     </div>
   </div>
@@ -227,14 +213,14 @@ class Component extends DCLogic {
     const inSt = /налич/i.test(m.st || "");
     return {
       has: true,
-      href: "/tovar?g=" + m.g + (m.sl ? "&sl=" + m.sl : "") + "&i=" + (m.gi != null ? m.gi : 0),
+      href: "/tovar?g=" + m.g + "&i=" + (m.gi != null ? m.gi : 0),
       img: (window.photoUrl ? window.photoUrl(m.i) : m.i || ""),
       brand: m.b,
       name: m.n.length > 54 ? m.n.slice(0, 54) + "…" : m.n,
       price: m.pt || "цена по запросу",
-      priceFg: m.p ? "#18212F" : "#5A6675",
+      priceFg: m.p ? "#1A1A1A" : "#64748B",
       stock: inSt ? "В наличии" : "Под заказ",
-      stockFg: inSt ? "#0E9F6E" : "#B25200",
+      stockFg: inSt ? "#178841" : "#B25200",
       stockBg: inSt ? "#E7F7F0" : "#FFF1E3"
     };
   }
@@ -247,55 +233,38 @@ class Component extends DCLogic {
         title: "Распаковка и монтаж TCL FreshIN 3.0",
         text: "Установка приточной сплит-системы: канал наружного воздуха, дренаж приточного канала, пусконаладка режима Fresh Air.",
         slotId: "work-1", slotHint: "Фото объекта: Алматы, май 2025",
-        photo: "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/kvartira-almaty-tcl-freshin-2025.jpg",
-        gallery: [
-          "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/kvartira-almaty-tcl-freshin-2025.jpg",
-          "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/kvartira-almaty-tcl-freshin-2025_2.jpg"
-        ],
-        brig: "369-BR-02-001",
-        model: "TAC-FR18HSV/P7W",
+        model: "TCL FreshIN 3.0",
         rows: [
-          { k: "Оборудование", v: "TCL FreshIN 3.0 TAC-FR18HSV/P7W", color: "#18212F" }
+          { k: "Оборудование", v: "TCL FreshIN 3.0", color: "#1A1A1A" }
         ]
       },
       {
-        kind: "Квартира", city: "Алматы", date: "март 2026",
-        title: "Мультисплит THAICON на три комнаты",
-        text: "Доставка на адрес и монтаж мультисплит-системы THAICON Multi Comfort: один наружный блок и три настенных внутренних блока.",
-        slotId: "work-2", slotHint: "Фото объекта: Алматы, март 2026",
-        photo: "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/kvartira-almaty-thaicon-multi-2026.jpg",
-        gallery: [
-          "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/kvartira-almaty-thaicon-multi-2026.jpg",
-          "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/kvartira-almaty-thaicon-multi-2026_2.jpg"
-        ],
-        brig: "369-BR-02-001",
-        model: "TL-MO3U80-FR",
+        kind: "Квартира", city: "Алматы", date: "август 2025",
+        title: "Доставка и установка климатического оборудования",
+        text: "Объект из портфолио компании: доставка на адрес, монтаж блоков, вывоз мусора после работ.",
+        slotId: "work-2", slotHint: "Фото объекта: Алматы, август 2025",
         rows: [
-          { k: "Система", v: "THAICON Multi Comfort, 3 комнаты", color: "#18212F" },
-          { k: "Наружный блок", v: "TL-MO3U80-FR", color: "#18212F" },
-          { k: "Комната 1 · 20 м²", v: "TL-RWC20-FR", color: "#18212F" },
-          { k: "Комната 2 · 30 м²", v: "TL-RWC35-FR", color: "#18212F" },
-          { k: "Комната 3 · 20 м²", v: "TL-RWC20-FR", color: "#18212F" }
+          { k: "Оборудование", v: need.v, color: need.color },
+          { k: "Площадь", v: need.v, color: need.color },
+          { k: "Срок работ", v: need.v, color: need.color }
         ]
       },
       {
         kind: "Квартира", city: "Алматы", date: "осень 2026",
         title: "Сплит-система THAICON SensAIR в квартире",
-        text: "Монтаж настенной сплит-системы THAICON SensAIR: внутренний блок на стене, трасса убрана в короб.",
-        brig: "369-BR-02-003",
+        text: "Монтаж настенной сплит-системы THAICON SensAIR: внутренний блок на стене, трасса убрана в короб. Работу выполнила бригада 3.",
         slotId: "work-3", slotHint: "Фото монтажа в квартире",
         photo: "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/kvartira-almaty-thaicon-sensair-2026.jpg",
         model: "TL-RWS35-FR / TL-ROS35-FR",
         rows: [
-          { k: "Оборудование", v: "THAICON SensAIR TL-RWS35-FR / TL-ROS35-FR", color: "#18212F" },
-          { k: "Работы", v: "монтаж блоков, трасса", color: "#18212F" }
+          { k: "Оборудование", v: "THAICON SensAIR TL-RWS35-FR / TL-ROS35-FR", color: "#1A1A1A" },
+          { k: "Работы", v: "монтаж блоков, трасса", color: "#1A1A1A" }
         ]
       },
       {
         kind: "Дом", city: "Талгар", date: "осень 2026",
-        title: "Канальный инверторный кондиционер TCL на даче",
-        text: "Монтаж канальной инверторной сплит-системы TCL LCAC на 24 000 BTU: наружный блок на стойке у дома, внутренний блок под потолком, дренаж и трасса.",
-        brig: "369-BR-02-001",
+        title: "Канальный кондиционер на даче",
+        text: "Монтаж канальной сплит-системы TCL: наружный блок на стойке у дома, внутренний блок под потолком, дренаж и трасса. Работу выполнила бригада 1.",
         slotId: "work-7", slotHint: "Фото объекта: дача, Талгар",
         photo: "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/works/dacha-talgar-tcl-2026.jpg",
         gallery: [
@@ -304,8 +273,8 @@ class Component extends DCLogic {
         ],
         model: "TCC-24D1HWH/DVI(05)",
         rows: [
-          { k: "Оборудование", v: "TCL TCC-24D1HWH/DVI(05) + TCC-24HH/DVO(05)", color: "#18212F" },
-          { k: "Работы", v: "монтаж блоков, дренаж, трасса", color: "#18212F" }
+          { k: "Оборудование", v: "TCL TCC-24D1HWH/DVI(05) + TCC-24HH/DVO(05)", color: "#1A1A1A" },
+          { k: "Работы", v: "монтаж блоков, дренаж, трасса", color: "#1A1A1A" }
         ]
       },
       {
@@ -321,8 +290,8 @@ class Component extends DCLogic {
         ],
         model: "ERW-150X.D",
         rows: [
-          { k: "Оборудование", v: "FUNAI FUJI ERW-150X.D", color: "#18212F" },
-          { k: "Работы", v: "доставка, бурение, монтаж, пусконаладка", color: "#18212F" }
+          { k: "Оборудование", v: "FUNAI FUJI ERW-150X.D", color: "#1A1A1A" },
+          { k: "Работы", v: "доставка, бурение, монтаж, пусконаладка", color: "#1A1A1A" }
         ]
       },
       {
@@ -349,15 +318,6 @@ class Component extends DCLogic {
       }
     ];
 
-    // Порядок — по дате объекта, от старых к новым. Месяц или сезон из подписи
-    // («март 2026», «осень 2026»); при равной дате остаётся порядок в списке.
-    const MES = { "янв": 1, "фев": 2, "мар": 3, "апр": 4, "май": 5, "мая": 5, "июн": 6, "июл": 7, "авг": 8, "сен": 9, "окт": 10, "ноя": 11, "дек": 12, "зим": 1, "вес": 4, "лет": 7, "осе": 10 };
-    const dateKey = s => {
-      const m = String(s || "").toLowerCase().match(/^\s*([а-яё]{3})\S*\s+(\d{4})/);
-      return m && MES[m[1]] ? Number(m[2]) * 100 + MES[m[1]] : Infinity;
-    };
-    all.sort((a, b) => dateKey(a.date) - dateKey(b.date));
-
     const names = ["Все", "Квартира", "Дом", "Офис", "Магазин", "Сервис"];
     const f = this.state.filter;
 
@@ -373,8 +333,6 @@ class Component extends DCLogic {
       w.galN = g.length;
       w.curs = w.hasGal ? "zoom-in" : "default";
       w.openGal = w.hasGal ? (() => this.setState({ gal: { list: g, i: 0, title: w.title } })) : (() => {});
-      w.hasBrig = !!w.brig;
-      w.brigHref = w.brig ? "/brigady#" + w.brig : "";
       w.link = this.linkCard(w.model || "");
       w.hasLink = !!w.link.has;
     });
@@ -395,9 +353,9 @@ class Component extends DCLogic {
       filters: names.map(n => ({
         label: n,
         pick: () => this.setState({ filter: n }),
-        border: f === n ? "#0872D3" : "#DCE5F0",
-        bg: f === n ? "#E6F2FD" : "#fff",
-        fg: f === n ? "#0A4EA7" : "#5A6675"
+        border: f === n ? "#0066FF" : "#DCE5F0",
+        bg: f === n ? "#E9F4FF" : "#fff",
+        fg: f === n ? "#0033A0" : "#64748B"
       })),
       editMode: edit,
       galOpen: !!gal,
