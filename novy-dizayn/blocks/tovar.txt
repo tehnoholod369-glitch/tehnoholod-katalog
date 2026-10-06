@@ -110,6 +110,18 @@
                 </div>
               </sc-for>
             </div>
+            <!-- T-006, 07.10.2026: видеообзор под фото: одно место, и только если ссылка на видео есть в данных (det.vd) -->
+            <sc-if value="{{ hasVideoEmbed }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:16px;">
+                <div style="font-size:15px; font-weight:700; margin-bottom:8px;">Видеообзор</div>
+                <div style="position:relative; aspect-ratio:16/9; border-radius:12px; overflow:hidden; background:#0B1B33; border:1px solid #DCE5F0;">
+                  <iframe src="{{ videoEmbed }}" title="Видеообзор" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="position:absolute; left:0; top:0; width:100%; height:100%; border:0;"></iframe>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ hasVideoLinkOnly }}" hint-placeholder-val="{{ false }}">
+              <a href="{{ videoHref }}" target="_blank" rel="noreferrer" style="display:inline-block; margin-top:14px; font-size:14px; font-weight:600; color:#0066FF;">Смотреть видеообзор →</a>
+            </sc-if>
           </div>
 
           <div style="display:flex; flex-direction:column;">
@@ -380,21 +392,6 @@
                       <div style="font-size:12px; font-weight:700; color:{{ d.fg }}; background:{{ d.bg }}; border-radius:5px; padding:4px 9px; white-space:nowrap;">{{ d.state }}</div>
                     </div>
                   </sc-for>
-                </div>
-              </div>
-              <div>
-                <div style="font-family:'Inter',sans-serif; font-size:16px; font-weight:700;">Видеообзор</div>
-                <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
-                  <a href="{{ videoHref }}" target="_blank" rel="noreferrer" style="margin-top:12px; border:1px solid #DCE5F0; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center; color:#0066FF;" style-hover="border-color:#0066FF; background:#F5FAFF;">
-                    <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#0066FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
-                    <div style="font-size:15px; font-weight:700;">Смотреть обзор модели</div>
-                    <div style="font-size:13px; color:#606F85;">Откроется в новой вкладке</div>
-                  </a>
-                </sc-if>
-                <div style="display:{{ videoStubDisplay }}; margin-top:12px; border:2px dashed #B9DBF7; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center;">
-                  <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#0066FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
-                  <div style="font-size:14px; font-weight:600; color:#1A1A1A;">Место под видео с вашего канала</div>
-                  <div style="font-size:13px; color:#606F85; line-height:1.5; max-width:300px;">Пришлите ссылку на обзор — встрою плеер. Канал: <a href="https://www.youtube.com/@Tehnoholod369" target="_blank" rel="noreferrer">@Tehnoholod369</a></div>
                 </div>
               </div>
             </div>
@@ -1590,6 +1587,16 @@ class Component extends DCLogic {
         + ": так сохраняется гарантия производителя. Выезд сертифицированной бригады по Алматы и области.",
       // ссылка на инструкцию и обзор приходит из данных, если она там есть
       hasVideo: !!det.vd,
+      // T-006, 07.10.2026: видеообзор под фото
+      videoEmbed: (function (v) {
+        v = String(v || "");
+        var m = v.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:[^#]*&)?v=|embed\/|shorts\/))([\w-]{6,})/);
+        if (m) return "https://www.youtube.com/embed/" + m[1] + "?rel=0";
+        m = v.match(/rutube\.ru\/(?:video|play\/embed)\/([0-9a-f]{16,})/i);
+        return m ? "https://rutube.ru/play/embed/" + m[1] : "";
+      })(det.vd),
+      hasVideoEmbed: /(youtu\.be\/|youtube\.com\/|rutube\.ru\/(video|play\/embed)\/)/i.test(String(det.vd || "")),
+      hasVideoLinkOnly: !!det.vd && !/(youtu\.be\/|youtube\.com\/|rutube\.ru\/(video|play\/embed)\/)/i.test(String(det.vd || "")),
       // T-006, 07.10.2026: заглушка «Место под видео с вашего канала — пришлите ссылку, встрою плеер» показывалась клиенту
       // у каждой карточки без видео (в мастере видео есть у 110 из 1 043 позиций). Служебный текст клиенту не показываем:
       // блок появится сам, когда в данных будет ссылка (det.vd).
