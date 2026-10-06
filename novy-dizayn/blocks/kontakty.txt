@@ -152,11 +152,6 @@
               </sc-for>
             </div>
           </div>
-
-          <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px;">
-    <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:700; color:#0033A0;">Рассрочка до 24 месяцев</div>
-    <div style="font-size:15px; color:#64748B; line-height:1.65; margin-top:10px; max-width:900px;">Рассрочка оформляется банком, условия и одобрение на стороне банка. Монтаж в рассрочку не входит, оплачивается отдельно.</div>
-  </div>
         </div>
 
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:16px;" id="garantiya">
@@ -525,7 +520,7 @@ class Component extends DCLogic {
       payment: [
         { title: "Счёт на оплату для юрлиц", text: "С НДС, договор и закрывающие документы. Реквизиты — в разделе B2B." },
         { title: "Kaspi и банковский перевод", text: "Оплата на счёт в АО «Kaspi Bank» либо переводом по реквизитам." },
-        { title: "Рассрочка до 24 месяцев", text: "Оформляет банк, решение об одобрении — на его стороне." },
+        { title: "Рассрочка до 24 месяцев", text: "Оформляет банк, решение об одобрении — на его стороне. Монтаж в рассрочку не входит, оплачивается отдельно." },
         { title: "Оплата после монтажа", text: "Не практикуем: оборудование отгружается после оплаты, работы оплачиваются по факту сдачи объекта." }
       ],
 
