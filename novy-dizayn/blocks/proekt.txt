@@ -82,7 +82,7 @@
       <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px;">
         <div>
           <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ОБОРУДОВАНИЕ ПОД ПРОЕКТ</div>
-          <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Соберите список моделей — мы посчитаем спецификацию</h2>
+          <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Соберите список моделей — мы посчитаем спецификацию</h2>
         </div>
         <div style="font-size:14px; color:#64748B; max-width:320px; line-height:1.5;">Цена по проектным системам считается по объекту: состав, трассы, автоматика и пусконаладка входят в расчёт.</div>
       </div>
@@ -183,7 +183,7 @@
         <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
           <div>
             <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#0A7A3C;">ЗАПРОС ОТПРАВЛЕН</div>
-            <h2 style="margin:8px 0 0 0; font-size:22px; font-weight:800;">Спецификация в работе</h2>
+            <h2 style="margin:8px 0 0 0; font-size:22px; font-weight:800; color:#0033A0;">Спецификация в работе</h2>
             <div style="font-size:15px; color:#64748B; line-height:1.6; margin-top:12px;">{{ sentNote }}</div>
             <div onClick="{{ reset }}" style="display:inline-block; margin-top:18px; border:1px solid #DCE5F0; border-radius:8px; padding:11px 18px; font-size:14px; font-weight:700; color:#0033A0; cursor:pointer;">Отправить ещё один запрос</div>
           </div>
@@ -194,7 +194,7 @@
               <div onClick="{{ goEst }}" style="flex:1; min-width:140px; text-align:center; border:1px solid {{ estTab.border }}; background:{{ estTab.bg }}; color:{{ estTab.fg }}; border-radius:8px; padding:11px 12px; font-size:14px; font-weight:700; cursor:pointer;">Есть проект</div>
               <div onClick="{{ goNet }}" style="flex:1; min-width:140px; text-align:center; border:1px solid {{ netTab.border }}; background:{{ netTab.bg }}; color:{{ netTab.fg }}; border-radius:8px; padding:11px 12px; font-size:14px; font-weight:700; cursor:pointer;">Проекта нет</div>
             </div>
-            <h2 style="margin:18px 0 0 0; font-size:22px; font-weight:800;">{{ formTitle }}</h2>
+            <h2 style="margin:18px 0 0 0; font-size:22px; font-weight:800; color:#0033A0;">{{ formTitle }}</h2>
             <div style="font-size:14px; color:#64748B; line-height:1.55; margin-top:6px;">{{ formLead }}</div>
 
             <sc-if value="{{ isNet }}" hint-placeholder-val="{{ false }}">
@@ -305,7 +305,7 @@
     </div>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:22px;">
-      <h2 style="margin:0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Как идёт работа по объекту</h2>
+      <h2 style="margin:0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Как идёт работа по объекту</h2>
       <div style="display:flex; flex-wrap:wrap; gap:10px 8px; align-items:center; margin-top:16px; font-size:15px; font-weight:700;">
         <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
           <span style="display:inline-flex; align-items:center; gap:8px; background:#E9F4FF; color:#0033A0; border-radius:8px; padding:9px 14px;"><span style="font-size:12px; color:#0066FF;">{{ s.n }}</span>{{ s.title }}</span>
