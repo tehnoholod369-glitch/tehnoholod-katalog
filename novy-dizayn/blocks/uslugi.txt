@@ -48,7 +48,7 @@
     <div style="background:linear-gradient(120deg,#071C3B,#0A4EA7 75%); color:#fff; border-radius:16px; padding:38px; margin-top:12px;">
       <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#7FC4F2;">УСЛУГИ ИП «ТЕХНОХОЛОД»</div>
       <h1 style="margin:14px 0 0 0; font-size:clamp(21px,5.6vw,38px); font-weight:800; line-height:1.1; letter-spacing:-0.025em; max-width:760px;">Монтаж под ключ, сервис и понятная зона ответственности</h1>
-      <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px; max-width:640px;">На монтажные работы нового оборудования через АРТЕЛЬ действует единый срок гарантии — 12 месяцев. На само оборудование действует только гарантия производителя. Сервис-карта 369 фиксирует исполнителя, а обращение по монтажу направляется тому же МАСТЕРУ или бригаде. Оборудование, соединительный комплект и работы идут отдельными строками — вы видите, за что платите.</div>
+      <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px; max-width:640px;">Оборудование идёт с гарантией производителя, срок указан в паспорте изделия. На монтажные работы нового оборудования через АРТЕЛЬ даётся 12 месяцев гарантии. Сервис-карта 369 записывает, кто выполнял монтаж, и помогает обратиться к тому же исполнителю. Оборудование, соединительный комплект и работы идут отдельными строками — вы видите, за что платите.</div>
       <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
         <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Вызвать замерщика</a>
         <a href="https://wa.me/77000369369" style="border:2px solid rgba(255,255,255,0.55); color:#fff; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Записаться на ТО</a>
@@ -210,7 +210,7 @@
         </div>
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
           <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Гарантия на монтаж — 12 месяцев</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Стандарт АРТЕЛЬ для монтажа нового оборудования: 12 месяцев на монтажные работы. Покрывает качество выполненных соединений, креплений, дренажа и пусконаладки. Обращение направляется тому же МАСТЕРУ или бригаде, которые выполняли монтаж. На само оборудование действует только гарантия производителя. Для б/у оборудования обязательный стандарт 12 месяцев не применяется.</div>
+          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Монтаж нового оборудования через АРТЕЛЬ: 12 месяцев гарантии на монтажные работы. Они покрывают качество соединений, креплений, дренажа и пусконаладки. Обращение направляется тому же мастеру или бригаде, которые выполняли монтаж. Оборудование идёт с гарантией производителя, срок указан в паспорте изделия. На б/у оборудование условия называем отдельно, при заказе.</div>
           
           <a href="/brigady" style="font-size:13px; font-weight:700; color:#0872D3; display:inline-block; margin-top:10px;">Кто приедет: бригады и оценки →</a>
         </div>
