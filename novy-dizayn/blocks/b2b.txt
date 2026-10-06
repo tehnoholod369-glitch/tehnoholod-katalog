@@ -29,7 +29,7 @@
     <div style="background:#0033A0; color:#fff; border-radius:16px; padding:38px; margin-top:12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:30px; align-items:center;">
       <div>
         <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#E9F4FF;">ЮРИДИЧЕСКИМ ЛИЦАМ, ЗАКУПКАМ И МОНТАЖНИКАМ</div>
-        <h1 style="margin:14px 0 0 0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Поставка климатического оборудования с НДС и закрывающими документами</h1>
+        <h1 style="margin:14px 0 0 0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em;">Поставка климатического оборудования с НДС и закрывающими документами</h1>
         <div style="font-size:17px; line-height:1.55; color:rgba(255,255,255,0.88); margin-top:14px;">Счёт на оплату, договор, накладные, поставка на объект по Казахстану. Монтаж сертифицированными бригадами, гарантия на работы — по договору.</div>
         <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
           <a href="https://wa.me/77000369369?text=%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BF%D1%80%D0%B0%D0%B9%D1%81%20%D0%B4%D0%BB%D1%8F%20%D1%8E%D1%80%D0%BB%D0%B8%D1%86%D0%B0" style="background:#0066FF; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Запросить прайс</a>
