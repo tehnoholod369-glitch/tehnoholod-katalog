@@ -246,6 +246,11 @@
           <div style="font-size:14px; color:#606F85;">{{ counterText }}</div>
           <div style="font-size:13px; color:#606F85;">{{ dateNote }}</div>
         </div>
+        <div style="display:flex; flex-wrap:wrap; gap:0 8px;">
+          <sc-for list="{{ activeChips }}" as="a" hint-placeholder-count="0">
+            <div onClick="{{ a.clear }}" role="button" aria-label="Снять фильтр" style="margin-top:10px; display:flex; align-items:center; gap:7px; border:1px solid #0066FF; background:#E9F4FF; color:#0033A0; border-radius:8px; padding:6px 10px; font-size:13px; font-weight:600; cursor:pointer;"><span>{{ a.label }}</span><span style="color:#0066FF; font-size:16px; line-height:1;">×</span></div>
+          </sc-for>
+        </div>
 
         <div ref="{{ gridRef }}" style="display:grid; grid-template-columns:{{ gridCols }}; gap:16px; margin-top:14px;">
           <sc-for list="{{ cards }}" as="c" hint-placeholder-count="9">
@@ -1794,7 +1799,11 @@ class Component extends DCLogic {
       title: "Мультисплит-системы",
       count: msGroup ? msGroup.count : "конструктор",
       href: "/multisplit",
-      border: "#DCE5F0", bg: "#fff", fg: "#1A1A1A", countFg: "#606F85", order: 1
+      // как у остальных разделов: тёмно-синий, а на странице самого мультисплита — подсветка текущего
+      border: s.group === "multisplit" ? "#0066FF" : "#DCE5F0",
+      bg: s.group === "multisplit" ? "#E9F4FF" : "#fff",
+      fg: s.group === "multisplit" ? "#0066FF" : "#0033A0",
+      countFg: "#606F85", order: 1
     }] : [];
     [
       { title: "Уценённый товар", n: s.ucenkaN, href: "/ucenka",
@@ -1959,7 +1968,7 @@ class Component extends DCLogic {
         )
       },
       (F.yes || F.opt || F.part || W.yes || W.opt || W.no) ? {
-        key: "feat", activeLabel: s.feat ? "выбрано" : "",
+        key: "feat", activeLabel: s.feat ? ({ fresh: "Приток воздуха", freshpart: "Приток ограниченный", freshopt: "Приток опцией", wifi: "Wi-Fi встроенный", wifiopt: "Wi-Fi модулем", nowifi: "Без Wi-Fi" }[s.feat] || "выбрано") : "",
         title: "Возможности",
         note: [
           (W.opt || F.opt) ? "«Опцией» — модуль докупается отдельно" : "",
@@ -2229,6 +2238,15 @@ class Component extends DCLogic {
         : (activeFilters ? this.plural(activeFilters, "фильтр выбран", "фильтра выбрано", "фильтров выбрано") : "Показать фильтры"),
       showMore: () => this.setState({ shown: s.shown + 12 }),
       filterGroups,
+      // Включённые фильтры видны над списком, каждый снимается крестиком: раньше сработавший
+      // фильтр прятался в свёрнутой панели, и «две марки из двенадцати» читались как пропажа (07.10.2026)
+      activeChips: filterGroups.filter(g => g && g.active).map(g => ({
+        label: g.title + ": " + g.active,
+        clear: () => this.setState(Object.assign({ shown: 12 },
+          g.key === "feat" ? { feat: "" }
+            : g.key === "pick" ? { onlyPick: false, onlySale: false }
+            : { [g.key]: "all" }))
+      })),
       cards,
       isLoading: s.loading,
       isEmpty: !s.loading && list.length === 0,
