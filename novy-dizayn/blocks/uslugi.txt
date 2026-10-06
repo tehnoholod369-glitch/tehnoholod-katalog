@@ -5,52 +5,34 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
-  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
-  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
-  a { color: #0A4EA7; text-decoration: none; }
-  a:hover { color: #0872D3; }
+  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0052D6; }
 </style>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=e8476510"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/lead.js?v=5c4686e2"></script>
 </helmet>
 
-<div style="min-height:100vh; background:#F3F7FB;">
+<div style="min-height:100vh; background:#F1F5F9;">
 
-  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
-    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
-      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
-      <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
-      <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
-    </div>
-  </div>
+  <div class="th-t1"><div class="th-w"><b>Доставка по Казахстану</b><span><a href="tel:+77000369369">+77 000 369 369</a> · пн–пт 9:00–18:00 · <a href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B2%D0%BE%D0%BD%D0%B8%D1%82%D1%8C.">Заказать звонок</a></span></div></div>
+<header class="th-hd"><div class="th-w"><button type="button" class="th-bg" data-th-burger aria-label="Меню">☰<span>Меню</span></button><a class="th-lg" href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" /></a><button type="button" class="th-sr" data-th-search aria-label="Поиск по каталогу"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg><span>Поиск по каталогу</span></button><nav class="th-ic"><a href="/izbrannoe"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg><span>Избранное</span><i class="th-bd" data-th-fav-count style="display:none"></i></a><a href="/sravnenie"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg><span>Сравнение</span><i class="th-bd" data-th-cmp-count style="display:none"></i></a><a href="/korzina"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h2l2.4 11h10.2L20 8H6.2" /><circle cx="9" cy="19" r="1.5" /><circle cx="17" cy="19" r="1.5" /></svg><span>Корзина</span><i class="th-bd" data-th-cart-count></i></a></nav></div></header>
+<nav class="th-mn"><div class="th-w"><a class="th-home" href="/" aria-label="На главную" title="На главную"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 11l9-7 9 7" /><path d="M5 10v10h5v-6h4v6h5V10" /></svg><span>Главная</span></a><a class="th-cat" href="/katalog" data-th-cat aria-expanded="false" aria-controls="th-panel"><span class="th-ci">☰</span><span class="th-ct">Каталог товаров</span></a><div class="th-dd"><a href="/kondicionery-almaty">Кондиционирование</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Кондиционирование" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div></div><div class="th-dd"><a href="/otoplenie">Отопление</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Отопление" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div></div><div class="th-dd"><a href="/ventilyaciya">Вентиляция</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Вентиляция" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div></div><div class="th-dd"><a href="/vodonagrevateli">Водонагреватели</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Водонагреватели" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div></div><a href="/katalog?g=avtonomnoe-pitanie">Автономное питание</a><a href="/brendy">Бренды</a><a href="/baza-znaniy">База знаний</a><a href="/kontakty">Контакты</a></div><div class="th-pn" id="th-panel"><div class="th-w th-pg"><div class="th-pc"><b>Кондиционирование</b><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div><div class="th-pc"><b>Отопление</b><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div><div class="th-pc"><b>Вентиляция</b><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div><div class="th-pc"><b>Водонагреватели и водоочистка</b><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div><div class="th-pc"><b>Автономное питание</b><a href="/katalog?g=avtonomnoe-pitanie">Зарядные станции и солнечные панели</a></div><div class="th-pc"><b>VRF, фанкойлы, чиллеры</b><a href="/katalog?g=mini-vrf">Мини-VRF и мультизональные</a><a href="/katalog?g=fankoyly">Фанкойлы</a><a href="/katalog?g=chillery">Чиллеры</a><a href="/katalog?g=precizionnye">Прецизионные кондиционеры</a><a href="/proekt">Расчёт под объект</a></div></div><div class="th-w th-pf"><a href="/katalog">Весь каталог →</a></div></div></nav>
 
-  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
-    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
-      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
-      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
-      </a>
-      <div style="flex:1; min-width:200px; display:flex; align-items:center; gap:8px; border:2px solid #0872D3; border-radius:8px; padding:9px 14px; color:#8593A6; font-size:15px;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>Поиск по модели или артикулу
-      </div>
-      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
-    </div>
-  </div>
+  <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:18px 24px 72px 24px;">
+    <div style="font-size:13px; color:#64748B;"><a href="/">Главная</a> → <span style="color:#1A1A1A;">Монтаж, сервис и зона ответственности</span></div>
 
-  <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
-    <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <span style="color:#18212F;">Монтаж, сервис и зона ответственности</span></div>
-
-    <div style="background:linear-gradient(120deg,#071C3B,#0A4EA7 75%); color:#fff; border-radius:16px; padding:38px; margin-top:12px;">
-      <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#7FC4F2;">УСЛУГИ ИП «ТЕХНОХОЛОД»</div>
-      <h1 style="margin:14px 0 0 0; font-size:clamp(21px,5.6vw,38px); font-weight:800; line-height:1.1; letter-spacing:-0.025em; max-width:760px;">Монтаж под ключ, сервис и понятная зона ответственности</h1>
-      <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px; max-width:640px;">Оборудование идёт с гарантией производителя, срок указан в паспорте изделия. На монтажные работы нового оборудования через АРТЕЛЬ даётся 12 месяцев гарантии. Сервис-карта 369 записывает, кто выполнял монтаж, и помогает обратиться к тому же исполнителю. Оборудование, соединительный комплект и работы идут отдельными строками — вы видите, за что платите.</div>
+    <div style="background:linear-gradient(120deg,#0033A0,#0033A0 75%); color:#fff; border-radius:16px; padding:38px; margin-top:12px;">
+      <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#E9F4FF;">УСЛУГИ ИП «ТЕХНОХОЛОД»</div>
+      <h1 style="margin:14px 0 0 0;     max-width:760px; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Монтаж под ключ, сервис и понятная зона ответственности</h1>
+      <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px; max-width:640px;">На монтажные работы нового оборудования через АРТЕЛЬ действует единый срок гарантии — 12 месяцев. На само оборудование действует только гарантия производителя. Сервис-карта 369 фиксирует исполнителя, а обращение по монтажу направляется тому же МАСТЕРУ или бригаде. Оборудование, соединительный комплект и работы идут отдельными строками — вы видите, за что платите.</div>
       <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
-        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Вызвать замерщика</a>
+        <a href="https://wa.me/77000369369" style="background:#0066FF; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Вызвать замерщика</a>
         <a href="https://wa.me/77000369369" style="border:2px solid rgba(255,255,255,0.55); color:#fff; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Записаться на ТО</a>
       </div>
     </div>
@@ -73,44 +55,44 @@
     <sc-if value="{{ isMount }}" hint-placeholder-val="{{ true }}">
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:14px;">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0A4EA7;">{{ includedTitle }}</div>
+          <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">{{ includedTitle }}</div>
           <div style="display:flex; flex-direction:column; gap:10px; margin-top:14px;">
             <sc-for list="{{ included }}" as="i" hint-placeholder-count="6">
               <div style="display:flex; gap:10px; align-items:flex-start; font-size:15px; line-height:1.5;">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0E9F6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none; margin-top:1px;"><path d="M4.5 12.5l5 5 10-11" /></svg>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#178841" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none; margin-top:1px;"><path d="M4.5 12.5l5 5 10-11" /></svg>
                 <span>{{ i }}</span>
               </div>
             </sc-for>
           </div>
           <sc-if value="{{ includedNote }}" hint-placeholder-val="{{ false }}">
-            <div style="font-size:13px; color:#5A6675; margin-top:14px; line-height:1.6;">{{ includedNote }}</div>
+            <div style="font-size:13px; color:#64748B; margin-top:14px; line-height:1.6;">{{ includedNote }}</div>
           </sc-if>
         </div>
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#C21610;">Считается отдельной строкой</div>
+          <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#D73D3D;">Считается отдельной строкой</div>
           <div style="display:flex; flex-direction:column; gap:10px; margin-top:14px;">
             <sc-for list="{{ extra }}" as="e" hint-placeholder-count="6">
               <div style="display:flex; gap:10px; align-items:flex-start; font-size:15px; line-height:1.5;">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#E11A13" stroke-width="2" stroke-linecap="round" style="display:block; flex:none; margin-top:1px;"><path d="M12 5v14M5 12h14" /></svg>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#E81C1C" stroke-width="2" stroke-linecap="round" style="display:block; flex:none; margin-top:1px;"><path d="M12 5v14M5 12h14" /></svg>
                 <span>{{ e }}</span>
               </div>
             </sc-for>
           </div>
-          <div style="font-size:13px; color:#5A6675; margin-top:14px; line-height:1.6;">Так честнее: обещанная на витрине цена «монтаж от такой-то суммы» почти всегда превращается на объекте в другую. Мы называем состав работ, а цену — после замера.</div>
+          <div style="font-size:13px; color:#64748B; margin-top:14px; line-height:1.6;">Так честнее: обещанная на витрине цена «монтаж от такой-то суммы» почти всегда превращается на объекте в другую. Мы называем состав работ, а цену — после замера.</div>
         </div>
       </div>
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:26px; margin-top:16px;">
-        <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Как проходит установка</div>
+        <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:700; color:#0033A0;">Как проходит установка</div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr)); gap:18px; margin-top:18px;">
           <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
             <div>
               <div style="display:flex; align-items:center; gap:10px;">
-                <div style="width:30px; height:30px; border-radius:50%; background:#E6F2FD; color:#0A4EA7; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; flex:none;">{{ s.n }}</div>
-                <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">{{ s.when }}</div>
+                <div style="width:30px; height:30px; border-radius:50%; background:#E9F4FF; color:#0033A0; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; flex:none;">{{ s.n }}</div>
+                <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#64748B;">{{ s.when }}</div>
               </div>
-              <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:600; margin-top:10px;">{{ s.title }}</div>
-              <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;">{{ s.text }}</div>
+              <div style="font-family:Inter,sans-serif; font-size:16px; font-weight:600; margin-top:10px;">{{ s.title }}</div>
+              <div style="font-size:14px; color:#64748B; line-height:1.55; margin-top:6px;">{{ s.text }}</div>
             </div>
           </sc-for>
         </div>
@@ -118,8 +100,8 @@
 
       <sc-if value="{{ isPritok }}" hint-placeholder-val="{{ true }}">
           <div style="background:#FDECEA; border:1px solid #F8CBBE; border-radius:14px; padding:22px 24px; margin-top:16px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700; color:#C21610;">Особый случай: модели с притоком воздуха</div>
-          <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px; max-width:900px;">У приточных сплит-систем монтаж сложнее обычного: нужен канал для наружного воздуха, дренаж приточного канала на случай конденсата и повышенная герметичность — лишние щели снижают КПД воздухообмена. Зимой отдельно контролируем качество герметиков и креплений на морозе. Поэтому такие объекты считаем только после замера.</div>
+          <div style="font-family:Inter,sans-serif; font-size:17px; font-weight:700; color:#D73D3D;">Особый случай: модели с притоком воздуха</div>
+          <div style="font-size:15px; color:#1A1A1A; line-height:1.6; margin-top:8px; max-width:900px;">У приточных сплит-систем монтаж сложнее обычного: нужен канал для наружного воздуха, дренаж приточного канала на случай конденсата и повышенная герметичность — лишние щели снижают КПД воздухообмена. Зимой отдельно контролируем качество герметиков и креплений на морозе. Поэтому такие объекты считаем только после замера.</div>
         </div>
       </sc-if>
     </sc-if>
@@ -127,40 +109,40 @@
     <sc-if value="{{ isService }}" hint-placeholder-val="{{ false }}">
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:14px;">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#0A4EA7;">{{ serviceTitle }}</div>
+          <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">{{ serviceTitle }}</div>
           <div style="display:flex; flex-direction:column; gap:10px; margin-top:14px;">
             <sc-for list="{{ service }}" as="s" hint-placeholder-count="6">
               <div style="display:flex; gap:10px; align-items:flex-start; font-size:15px; line-height:1.5;">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0E9F6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none; margin-top:1px;"><path d="M4.5 12.5l5 5 10-11" /></svg>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#178841" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none; margin-top:1px;"><path d="M4.5 12.5l5 5 10-11" /></svg>
                 <span>{{ s }}</span>
               </div>
             </sc-for>
           </div>
-          <div style="font-size:13px; color:#5A6675; margin-top:14px; line-height:1.6;">{{ serviceNote }}</div>
+          <div style="font-size:13px; color:#64748B; margin-top:14px; line-height:1.6;">{{ serviceNote }}</div>
         </div>
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#C21610;">Считается отдельной строкой</div>
+          <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#D73D3D;">Считается отдельной строкой</div>
           <div style="display:flex; flex-direction:column; gap:10px; margin-top:14px;">
             <sc-for list="{{ serviceExtra }}" as="e" hint-placeholder-count="6">
               <div style="display:flex; gap:10px; align-items:flex-start; font-size:15px; line-height:1.5;">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#E11A13" stroke-width="2" stroke-linecap="round" style="display:block; flex:none; margin-top:1px;"><path d="M12 5v14M5 12h14" /></svg>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#E81C1C" stroke-width="2" stroke-linecap="round" style="display:block; flex:none; margin-top:1px;"><path d="M12 5v14M5 12h14" /></svg>
                 <span>{{ e }}</span>
               </div>
             </sc-for>
           </div>
-          <div style="font-size:13px; color:#5A6675; margin-top:14px; line-height:1.6;">Выезд, подъём оборудования и работа в неурочное время считаются так же, как на монтаже.</div>
+          <div style="font-size:13px; color:#64748B; margin-top:14px; line-height:1.6;">Выезд, подъём оборудования и работа в неурочное время считаются так же, как на монтаже.</div>
         </div>
       </div>
 
       
       <sc-if value="{{ isFreon }}" hint-placeholder-val="{{ true }}">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:26px; margin-top:16px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Когда пора вызывать МАСТЕРА</div>
+          <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:700; color:#0033A0;">Когда пора вызывать МАСТЕРА</div>
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:16px; margin-top:16px;">
             <sc-for list="{{ symptoms }}" as="s" hint-placeholder-count="4">
-              <div style="background:#F3F7FB; border-radius:10px; padding:16px 18px;">
+              <div style="background:#F1F5F9; border-radius:10px; padding:16px 18px;">
                 <div style="font-size:15px; font-weight:600;">{{ s.q }}</div>
-                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;">{{ s.a }}</div>
+                <div style="font-size:14px; color:#64748B; line-height:1.55; margin-top:6px;">{{ s.a }}</div>
               </div>
             </sc-for>
           </div>
@@ -170,69 +152,69 @@
     </sc-if>
 
     <sc-if value="{{ isWarranty }}" hint-placeholder-val="{{ false }}">
-      <div style="background:#071C3B; color:#fff; border-radius:16px; padding:30px; margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:28px; align-items:center;">
+      <div style="background:#0033A0; color:#fff; border-radius:16px; padding:30px; margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:28px; align-items:center;">
         <div>
-          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">КАРТА ОБСЛУЖИВАНИЯ</div>
-          <div style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; margin-top:10px; letter-spacing:-0.02em; line-height:1.15;">Сервис-карта 369</div>
-          <div style="font-size:16px; color:#CBDCEC; line-height:1.6; margin-top:12px;">Карта не заменяет гарантию производителя и не расширяет её. Она фиксирует факты: что куплено, когда установлено, какой бригадой, куда обращаться. По номеру мы находим вашу продажу в реестре — даже если карта потерялась.</div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#E9F4FF;">КАРТА ОБСЛУЖИВАНИЯ</div>
+          <div style="font-family:Inter,sans-serif; font-size:26px; font-weight:800; margin-top:10px; letter-spacing:-0.02em; line-height:1.15;">Сервис-карта 369</div>
+          <div style="font-size:16px; color:rgba(255,255,255,0.88); line-height:1.6; margin-top:12px;">Карта не заменяет гарантию производителя и не расширяет её. Она фиксирует факты: что куплено, когда установлено, какой бригадой, куда обращаться. По номеру мы находим вашу продажу в реестре — даже если карта потерялась.</div>
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
             <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.22); border-radius:8px; padding:9px 14px; font-size:14px; font-weight:600;">Формат A6, печать 300 dpi</div>
             <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.22); border-radius:8px; padding:9px 14px; font-size:14px; font-weight:600;">Активация по QR через WhatsApp</div>
           </div>
         </div>
-        <div style="background:#fff; color:#18212F; border-radius:12px; padding:20px;">
-          <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#8593A6;">НОМЕР КАРТЫ УСТРОЕН ТАК</div>
-          <div style="font-family:ui-monospace,monospace; font-size:17px; font-weight:700; margin-top:10px; color:#0A4EA7; word-break:break-all;">369-РЕГ-ТИП-АРТ-ГГММ-NNNN</div>
-          <div style="font-size:13px; color:#5A6675; line-height:1.7; margin-top:10px;">регион · тип оборудования · артикул · год и месяц · порядковый номер</div>
-          <div style="border-top:1px solid #E9EFF7; margin-top:14px; padding-top:14px; font-size:14px; line-height:1.6; color:#2C3846;">По номеру находим продажу, модель, дату монтажа и бригаду. Серийный номер вписывает клиент при активации — мы его не придумываем.</div>
+        <div style="background:#fff; color:#1A1A1A; border-radius:12px; padding:20px;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#64748B;">НОМЕР КАРТЫ УСТРОЕН ТАК</div>
+          <div style="font-family:ui-monospace,monospace; font-size:17px; font-weight:700; margin-top:10px; color:#0033A0; word-break:break-all;">369-РЕГ-ТИП-АРТ-ГГММ-NNNN</div>
+          <div style="font-size:13px; color:#64748B; line-height:1.7; margin-top:10px;">регион · тип оборудования · артикул · год и месяц · порядковый номер</div>
+          <div style="border-top:1px solid #E9EFF7; margin-top:14px; padding-top:14px; font-size:14px; line-height:1.6; color:#1A1A1A;">По номеру находим продажу, модель, дату монтажа и бригаду. Серийный номер вписывает клиент при активации — мы его не придумываем.</div>
         </div>
       </div>
 
-      <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:14px; padding:22px 24px; margin-top:16px;">
-        <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#071C3B;">Гарантия на работы и сезонное обслуживание</div>
-        <div style="font-size:15px; color:#2C3846; line-height:1.65; margin-top:8px; max-width:940px;">Гарантия АРТЕЛЬ на монтаж нового оборудования — 12 месяцев. Сезонное обслуживание рекомендуем проводить регулярно: оно снижает риск загрязнения, проблем с дренажом и потери эффективности, но не подменяет гарантию на качество выполненного монтажа.</div>
+      <div style="background:#E9F4FF; border:1px solid #B9DBF7; border-radius:14px; padding:22px 24px; margin-top:16px;">
+        <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">Гарантия на работы и сезонное обслуживание</div>
+        <div style="font-size:15px; color:#1A1A1A; line-height:1.65; margin-top:8px; max-width:940px;">Гарантия АРТЕЛЬ на монтаж нового оборудования — 12 месяцев. Сезонное обслуживание рекомендуем проводить регулярно: оно снижает риск загрязнения, проблем с дренажом и потери эффективности, но не подменяет гарантию на качество выполненного монтажа.</div>
       </div>
 
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr)); gap:16px; margin-top:16px;">
         <sc-for list="{{ warrantySteps }}" as="w" hint-placeholder-count="4">
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:20px;">
-            <div style="width:30px; height:30px; border-radius:50%; background:#E6F2FD; color:#0A4EA7; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700;">{{ w.n }}</div>
-            <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:600; margin-top:10px;">{{ w.title }}</div>
-            <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;">{{ w.text }}</div>
+            <div style="width:30px; height:30px; border-radius:50%; background:#E9F4FF; color:#0033A0; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700;">{{ w.n }}</div>
+            <div style="font-family:Inter,sans-serif; font-size:16px; font-weight:600; margin-top:10px;">{{ w.title }}</div>
+            <div style="font-size:14px; color:#64748B; line-height:1.55; margin-top:6px;">{{ w.text }}</div>
           </div>
         </sc-for>
       </div>
 
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:16px; margin-top:16px;">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Гарантия на оборудование — производителя</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Срок устанавливает производитель, он указан в карточке модели и в её паспорте. Гарантийный ремонт выполняют сервисные центры, сертифицированные на этот бренд: обращение в сторонний сервис аннулирует гарантию. Поможем оформить обращение и доведём его до решения. Само оборудование в сервисный центр мы не перевозим — порядок передачи подскажем при обращении.</div>
+          <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">Гарантия на оборудование — производителя</div>
+          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Срок устанавливает производитель, он указан в карточке модели и в её паспорте. Гарантийный ремонт выполняют сервисные центры, сертифицированные на этот бренд: обращение в сторонний сервис аннулирует гарантию. Поможем оформить обращение и доведём его до решения. Само оборудование в сервисный центр мы не перевозим — порядок передачи подскажем при обращении.</div>
         </div>
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Гарантия на монтаж — 12 месяцев</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Монтаж нового оборудования через АРТЕЛЬ: 12 месяцев гарантии на монтажные работы. Они покрывают качество соединений, креплений, дренажа и пусконаладки. Обращение направляется тому же мастеру или бригаде, которые выполняли монтаж. Оборудование идёт с гарантией производителя, срок указан в паспорте изделия. На б/у оборудование условия называем отдельно, при заказе.</div>
+          <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">Гарантия на монтаж — 12 месяцев</div>
+          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Стандарт АРТЕЛЬ для монтажа нового оборудования: 12 месяцев на монтажные работы. Покрывает качество выполненных соединений, креплений, дренажа и пусконаладки. Обращение направляется тому же МАСТЕРУ или бригаде, которые выполняли монтаж. На само оборудование действует только гарантия производителя. Для б/у оборудования обязательный стандарт 12 месяцев не применяется.</div>
           
-          <a href="/brigady" style="font-size:13px; font-weight:700; color:#0872D3; display:inline-block; margin-top:10px;">Кто приедет: бригады и оценки →</a>
+          <a href="/brigady" style="font-size:13px; font-weight:700; color:#0066FF; display:inline-block; margin-top:10px;">Кто приедет: бригады и оценки →</a>
         </div>
-        <div style="background:#F3F7FB; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Что не относится к нашим работам</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Заводские дефекты оборудования, механические повреждения, скачки напряжения, эксплуатация вне паспортного диапазона, неисправности из-за загрязнения и отсутствия необходимого обслуживания, вмешательство третьих лиц в блоки и трассу, строительная пыль в помещении после монтажа. Эти причины не являются дефектом выполненного монтажа.</div>
+        <div style="background:#F1F5F9; border:1px solid #DCE5F0; border-radius:14px; padding:24px;">
+          <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">Что не относится к нашим работам</div>
+          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Заводские дефекты оборудования, механические повреждения, скачки напряжения, эксплуатация вне паспортного диапазона, неисправности из-за загрязнения и отсутствия необходимого обслуживания, вмешательство третьих лиц в блоки и трассу, строительная пыль в помещении после монтажа. Эти причины не являются дефектом выполненного монтажа.</div>
         </div>
       </div>
     </sc-if>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:26px;">
       <div>
-        <div style="font-family:'Montserrat',sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Вызвать замерщика или МАСТЕРА</div>
-        <div style="font-size:15px; color:#5A6675; line-height:1.6; margin-top:10px;">Оставьте имя, номер и адрес объекта. Перезвоним в рабочее время, подскажем срок и назовём стоимость после замера.</div>
-        <div style="font-size:14px; color:#5A6675; line-height:1.7; margin-top:14px;">Телефон и WhatsApp: <b style="color:#18212F;">+77 000 369 369</b><br />Дополнительный: <b style="color:#18212F;">+77 000 33 66 99</b></div>
+        <div style="font-family:Inter,sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Вызвать замерщика или МАСТЕРА</div>
+        <div style="font-size:15px; color:#64748B; line-height:1.6; margin-top:10px;">Оставьте имя, номер и адрес объекта. Перезвоним в рабочее время, подскажем срок и назовём стоимость после замера.</div>
+        <div style="font-size:14px; color:#64748B; line-height:1.7; margin-top:14px;">Телефон и WhatsApp: <b style="color:#1A1A1A;">+77 000 369 369</b><br />Дополнительный: <b style="color:#1A1A1A;">+77 000 33 66 99</b></div>
       </div>
       <div style="display:flex; flex-direction:column; gap:10px;">
-        <input type="text" placeholder="Имя" value="{{ fName }}" onInput="{{ onName }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#18212F;" />
-        <input type="tel" placeholder="+7 (___) ___-__-__" value="{{ fPhone }}" onInput="{{ onPhone }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#18212F;" />
-        <input type="text" placeholder="Адрес объекта и площадь помещения" value="{{ fAddr }}" onInput="{{ onAddr }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#18212F;" />
+        <input type="text" placeholder="Имя" value="{{ fName }}" onInput="{{ onName }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#1A1A1A;" />
+        <input type="tel" placeholder="+7 (___) ___-__-__" value="{{ fPhone }}" onInput="{{ onPhone }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#1A1A1A;" />
+        <input type="text" placeholder="Адрес объекта и площадь помещения" value="{{ fAddr }}" onInput="{{ onAddr }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#1A1A1A;" />
         <a href="{{ formHref }}" onClick="{{ onSend }}" target="_blank" rel="noreferrer" style="background:{{ sendBg }}; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700;">{{ sendLabel }}</a>
-        <div style="font-size:12px; color:#8593A6; line-height:1.5;">{{ sendNote }}</div>
+        <div style="font-size:12px; color:#64748B; line-height:1.5;">{{ sendNote }}</div>
       </div>
     </div>
 
@@ -334,7 +316,7 @@ class Component extends DCLogic {
       || { basket: [], works: [], extra: [], service: [], serviceExtra: [] };
     const dirs = РАБОТЫ.map((d, i) => ({
       label: d.label,
-      bg: this.state.dir === i ? "#0872D3" : "#EEF4FB",
+      bg: this.state.dir === i ? "#0066FF" : "#EEF4FB",
       fg: this.state.dir === i ? "#FFFFFF" : "#3B4A5C",
       pick: () => this.setState({ dir: i })
     }));
@@ -357,8 +339,8 @@ class Component extends DCLogic {
     const labels = ["Монтаж под ключ", "Сервис и обслуживание", "Гарантия и Сервис-карта 369"];
     const tabs = labels.map((label, i) => ({
       label,
-      line: this.state.tab === i ? "#0872D3" : "transparent",
-      fg: this.state.tab === i ? "#18212F" : "#8593A6",
+      line: this.state.tab === i ? "#0066FF" : "transparent",
+      fg: this.state.tab === i ? "#1A1A1A" : "#64748B",
       pick: () => this.setState({ tab: i })
     }));
 
@@ -372,7 +354,7 @@ class Component extends DCLogic {
       onAddr: setField("addr"),
       formHref,
       onSend,
-      sendBg: this.state.sending ? "#9FB0C4" : "#0872D3",
+      sendBg: this.state.sending ? "rgba(255,255,255,0.78)" : "#0066FF",
       sendLabel: this.state.sending ? "Отправляем…"
         : this.state.sent ? "Заявка принята — открыть WhatsApp"
         : "Отправить заявку",
