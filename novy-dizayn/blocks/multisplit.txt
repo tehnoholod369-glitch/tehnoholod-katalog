@@ -235,15 +235,15 @@
       </div>
 
       
-      <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
+      <sc-for list="{{ videos }}" as="v" hint-placeholder-count="0">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
-          <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">{{ videoTitle }}</div>
+          <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">{{ v.title }}</div>
           <div style="position:relative; width:100%; aspect-ratio:16/9; margin-top:14px; border-radius:12px; overflow:hidden; background:#F1F5F9;">
-            <iframe src="{{ videoSrc }}" title="Видео про мультисплит-системы" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen style="position:absolute; left:0; top:0; width:100%; height:100%; border:0;"></iframe>
+            <iframe src="{{ v.src }}" title="{{ v.title }}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen style="position:absolute; left:0; top:0; width:100%; height:100%; border:0;"></iframe>
           </div>
-          <div style="font-size:13px; color:#606F85; line-height:1.5; margin-top:10px;">{{ videoNote }} <a href="{{ videoHref }}" target="_blank" rel="noopener noreferrer">Смотреть на YouTube</a></div>
+          <div style="font-size:13px; color:#606F85; line-height:1.5; margin-top:10px;">{{ v.note }} <a href="{{ v.href }}" target="_blank" rel="noopener noreferrer">Смотреть на YouTube</a></div>
         </div>
-      </sc-if>
+      </sc-for>
       </div>
 
       <div style="display:flex; flex-direction:column; gap:16px;">
@@ -440,9 +440,14 @@ class Component extends DCLogic {
     if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return n + " " + few;
     return n + " " + many;
   }
-  MS_VIDEO = "https://www.youtube.com/watch?v=vDCyKxImAEM";
-  MS_VIDEO_TITLE = "Видео: обзор мультисплита Ballu Platinum Evolution";
-  MS_VIDEO_NOTE = "Подробный разбор мульти-сплит системы: внутренний и наружный блоки, что внутри, итоги. Ролик канала «Центр Климат», 56 минут; цены и наличие в видео не наши — смотрите в каталоге.";
+  MS_VIDEOS = [
+    { url: "https://www.youtube.com/watch?v=vDCyKxImAEM",
+      title: "Видео: обзор мультисплита Ballu Platinum Evolution",
+      note: "Подробный разбор мульти-сплит системы: внутренний и наружный блоки, что внутри, итоги. Ролик канала «Центр Климат», 56 минут; цены и наличие в видео не наши — смотрите в каталоге." },
+    { url: "https://www.youtube.com/watch?v=zlMjxxDmBwA",
+      title: "Видео: мультисплиты Ballu — новинки Aquatherm 2025",
+      note: "Эксперт разбирает новые внутренние блоки, умный дом, чёрный зеркальный блок, цветные панели и новую линейку наружных блоков. Ролик холдинга «Русклимат», 6 минут." }
+  ];
   videoEmbed(u) {
     u = String(u || "").trim(); let m;
     if (!u) return "";
@@ -879,11 +884,7 @@ class Component extends DCLogic {
         { k: "Наличие", v: md.st || "нет данных", c: md.ok ? "#178841" : "#B25200" },
         { k: "Цена блока", v: md.pt || "по запросу", c: md.pt ? "#1A1A1A" : "#B25200" }
       ] : [],
-      videoSrc: this.videoEmbed(this.MS_VIDEO),
-      videoTitle: this.MS_VIDEO_TITLE,
-      videoNote: this.MS_VIDEO_NOTE,
-      videoHref: this.MS_VIDEO,
-      hasVideo: !!this.videoEmbed(this.MS_VIDEO),
+      videos: this.MS_VIDEOS.map(v => ({ title: v.title, note: v.note, href: v.url, src: this.videoEmbed(v.url) })).filter(v => v.src),
       poolLine: data.indoor.length
         ? "наружные модули и внутренние блоки брендов каталога."
         : "загружаем данные каталога…",
