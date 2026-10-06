@@ -174,7 +174,8 @@
     guardSeo(window.TH_CARD_QS);
     var st = document.createElement("style");
     st.setAttribute("data-th-prod", "embed");
-    st.textContent = "body.th-embed{background:#F1F5F9!important}.th-vh{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;border:0!important;padding:0!important;margin:-1px!important}";
+    // у встроенной карточки есть собственная шапка (для /tovar); на /tproduct шапку уже даёт th-shapka-369.js — вторую прячем (на ширине от ~1100 px шапка двоилась)
+    st.textContent = "[data-th-page=tovar] .th-t1,[data-th-page=tovar] header.th-hd,[data-th-page=tovar] nav.th-mn,[data-th-page=tovar] .th-pn{display:none!important}body.th-embed{background:#F1F5F9!important}.th-vh{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;border:0!important;padding:0!important;margin:-1px!important}";
     document.head.appendChild(st);
     document.body.classList.add("th-embed");
     var mount = document.createElement("div");
