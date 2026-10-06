@@ -5,84 +5,68 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
-  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
-  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
-  a { color: #0A4EA7; text-decoration: none; }
-  a:hover { color: #0872D3; }
+  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0052D6; }
 </style>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=e8476510"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
 </helmet>
 
-<div style="min-height:100vh; background:#F3F7FB;">
+<div style="min-height:100vh; background:#F1F5F9;">
 
-  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
-    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
-      <span style="opacity:0.85;">Алматы · выезд по области</span>
-      <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
-      <span style="margin-left:auto; opacity:0.85;">Сервис-карта 369 — на каждом монтаже</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
-    </div>
-  </div>
+  <div class="th-t1"><div class="th-w"><b>Доставка по Казахстану</b><span><a href="tel:+77000369369">+77 000 369 369</a> · пн–пт 9:00–18:00 · <a href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B2%D0%BE%D0%BD%D0%B8%D1%82%D1%8C.">Заказать звонок</a></span></div></div>
+<header class="th-hd"><div class="th-w"><button type="button" class="th-bg" data-th-burger aria-label="Меню">☰<span>Меню</span></button><a class="th-lg" href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" /></a><button type="button" class="th-sr" data-th-search aria-label="Поиск по каталогу"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg><span>Поиск по каталогу</span></button><nav class="th-ic"><a href="/izbrannoe"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg><span>Избранное</span><i class="th-bd" data-th-fav-count style="display:none"></i></a><a href="/sravnenie"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg><span>Сравнение</span><i class="th-bd" data-th-cmp-count style="display:none"></i></a><a href="/korzina"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h2l2.4 11h10.2L20 8H6.2" /><circle cx="9" cy="19" r="1.5" /><circle cx="17" cy="19" r="1.5" /></svg><span>Корзина</span><i class="th-bd" data-th-cart-count></i></a></nav></div></header>
+<nav class="th-mn"><div class="th-w"><a class="th-home" href="/" aria-label="На главную" title="На главную"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 11l9-7 9 7" /><path d="M5 10v10h5v-6h4v6h5V10" /></svg><span>Главная</span></a><a class="th-cat" href="/katalog" data-th-cat aria-expanded="false" aria-controls="th-panel"><span class="th-ci">☰</span><span class="th-ct">Каталог товаров</span></a><div class="th-dd"><a href="/kondicionery-almaty">Кондиционирование</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Кондиционирование" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div></div><div class="th-dd"><a href="/otoplenie">Отопление</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Отопление" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div></div><div class="th-dd"><a href="/ventilyaciya">Вентиляция</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Вентиляция" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div></div><div class="th-dd"><a href="/vodonagrevateli">Водонагреватели</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Водонагреватели" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div></div><a href="/katalog?g=avtonomnoe-pitanie">Автономное питание</a><a href="/brendy">Бренды</a><a href="/baza-znaniy">База знаний</a><a href="/kontakty">Контакты</a></div><div class="th-pn" id="th-panel"><div class="th-w th-pg"><div class="th-pc"><b>Кондиционирование</b><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div><div class="th-pc"><b>Отопление</b><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div><div class="th-pc"><b>Вентиляция</b><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div><div class="th-pc"><b>Водонагреватели и водоочистка</b><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div><div class="th-pc"><b>Автономное питание</b><a href="/katalog?g=avtonomnoe-pitanie">Зарядные станции и солнечные панели</a></div><div class="th-pc"><b>VRF, фанкойлы, чиллеры</b><a href="/katalog?g=mini-vrf">Мини-VRF и мультизональные</a><a href="/katalog?g=fankoyly">Фанкойлы</a><a href="/katalog?g=chillery">Чиллеры</a><a href="/katalog?g=precizionnye">Прецизионные кондиционеры</a><a href="/proekt">Расчёт под объект</a></div></div><div class="th-w th-pf"><a href="/katalog">Весь каталог →</a></div></div></nav>
 
-  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
-    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
-      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
-      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
-      </a>
-      <div style="flex:1;"></div>
-      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
-    </div>
-  </div>
-
-  <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
-    <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <a href="/uslugi">Услуги</a> → <span style="color:#18212F;">Бригады</span></div>
+  <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:18px 24px 72px 24px;">
+    <div style="font-size:13px; color:#64748B;"><a href="/">Главная</a> → <a href="/uslugi">Услуги</a> → <span style="color:#1A1A1A;">Бригады</span></div>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:12px; align-items:start;">
       <div>
-        <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">Кто приедет на монтаж</h1>
-        <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">В АРТЕЛЬ каждая допущенная бригада имеет номер сертификата. Для монтажа нового оборудования действует единый обязательный стандарт — 12 месяцев гарантии на монтажные работы. Каждый монтаж фиксируется в «Сервис-карте 369»: кто выполнял работу и когда. Здесь тот же список, что и в нашем реестре, с оценками клиентов.</div>
+        <h1 style="margin:0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Кто приедет на монтаж</h1>
+        <div style="font-size:16px; color:#64748B; margin-top:10px; line-height:1.6;">В АРТЕЛЬ каждая допущенная бригада имеет номер сертификата. Для монтажа нового оборудования действует единый обязательный стандарт — 12 месяцев гарантии на монтажные работы. Каждый монтаж фиксируется в «Сервис-карте 369»: кто выполнял работу и когда. Здесь тот же список, что и в нашем реестре, с оценками клиентов.</div>
       </div>
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
-        <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#8593A6;">ПОЧЕМУ НОМЕР, А НЕ ИМЯ И ТЕЛЕФОН</div>
-        <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">До заказа бригада на витрине — это номер сертификата, специализация и оценки: так выбирают по работе, а не по знакомому имени. После монтажа в «Сервис-карте 369» остаются конкретный МАСТЕР или бригада. Гарантия на монтаж нового оборудования — 12 месяцев, а обращение по номеру карты направляется именно тому исполнителю, который выполнял работу.</div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#64748B;">ПОЧЕМУ НОМЕР, А НЕ ИМЯ И ТЕЛЕФОН</div>
+        <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">До заказа бригада на витрине — это номер сертификата, специализация и оценки: так выбирают по работе, а не по знакомому имени. После монтажа в «Сервис-карте 369» остаются конкретный МАСТЕР или бригада. Гарантия на монтаж нового оборудования — 12 месяцев, а обращение по номеру карты направляется именно тому исполнителю, который выполнял работу.</div>
       </div>
     </div>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:24px; margin-top:18px;">
-      <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">КАК ЧИТАТЬ ОЦЕНКИ НА ЭТОЙ СТРАНИЦЕ</div>
+      <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">КАК ЧИТАТЬ ОЦЕНКИ НА ЭТОЙ СТРАНИЦЕ</div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:12px;">
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+        <div style="background:#F1F5F9; border-radius:12px; padding:18px 20px;">
           <div style="font-size:15px; font-weight:700;">Оценка компании — не здесь</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Отзыв о нас как о продавце оставляйте в Google или 2ГИС: там он привязан к вашему аккаунту, и его нельзя переписать. Мы специально не переносим ту оценку на сайт.</div>
-          <a href="/otzyvy" style="font-size:13px; font-weight:700; color:#0872D3; display:inline-block; margin-top:8px;">Отзывы о компании →</a>
+          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:6px;">Отзыв о нас как о продавце оставляйте в Google или 2ГИС: там он привязан к вашему аккаунту, и его нельзя переписать. Мы специально не переносим ту оценку на сайт.</div>
+          <a href="/otzyvy" style="font-size:13px; font-weight:700; color:#0066FF; display:inline-block; margin-top:8px;">Отзывы о компании →</a>
         </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+        <div style="background:#F1F5F9; border-radius:12px; padding:18px 20px;">
           <div style="font-size:15px; font-weight:700;">В рейтинг идут только подтверждённые оценки</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Оценка засчитывается бригаде, когда по работе заполнена «Сервис-карта 369» — монтаж это, сервис или ремонт: работа подтверждена документом, а не словами. Отзывы без карты публикуются с пометкой, но в цифру рейтинга не входят.</div>
+          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:6px;">Оценка засчитывается бригаде, когда по работе заполнена «Сервис-карта 369» — монтаж это, сервис или ремонт: работа подтверждена документом, а не словами. Отзывы без карты публикуются с пометкой, но в цифру рейтинга не входят.</div>
         </div>
         <div style="background:#FFF7E6; border-radius:12px; padding:18px 20px;">
           <div style="font-size:15px; font-weight:700; color:#8A5A00;">Цифру показываем после {{ pubMinLabel }}</div>
-          <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:6px;">Средняя из одной-двух оценок — лотерея, а не рейтинг. Пока подтверждённых оценок меньше {{ pubMinLabel }}, пишем «рейтинг накапливается» — и это честнее, чем красивая цифра на пустом месте. Негатив не удаляем: чистим только оскорбления, спам и чужие персональные данные.</div>
+          <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:6px;">Средняя из одной-двух оценок — лотерея, а не рейтинг. Пока подтверждённых оценок меньше {{ pubMinLabel }}, пишем «рейтинг накапливается» — и это честнее, чем красивая цифра на пустом месте. Негатив не удаляем: чистим только оскорбления, спам и чужие персональные данные.</div>
         </div>
       </div>
     </div>
 
     <sc-if value="{{ isLoading }}" hint-placeholder-val="{{ false }}">
-      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:40px; margin-top:16px; text-align:center; color:#5A6675; font-size:15px;">Загружаем список бригад…</div>
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:40px; margin-top:16px; text-align:center; color:#64748B; font-size:15px;">Загружаем список бригад…</div>
     </sc-if>
 
     <sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
       <div style="background:#FDECEA; border:1px solid #F5C6C2; border-radius:16px; padding:26px; margin-top:16px;">
-        <div style="font-size:17px; font-weight:700; color:#C21610;">Список бригад сейчас не загрузился</div>
-        <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">Это сбой на нашей стороне, а не признак того, что бригад нет. Напишите нам — назначим бригаду и назовём её номер в ответе.</div>
+        <div style="font-size:17px; font-weight:700; color:#D73D3D;">Список бригад сейчас не загрузился</div>
+        <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">Это сбой на нашей стороне, а не признак того, что бригад нет. Напишите нам — назначим бригаду и назовём её номер в ответе.</div>
         <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;">
-          <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">Написать в WhatsApp</a>
-          <a href="tel:+77000369369" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">+77 000 369 369</a>
+          <a href="https://wa.me/77000369369" style="background:#0066FF; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">Написать в WhatsApp</a>
+          <a href="tel:+77000369369" style="border:2px solid #0066FF; color:#0033A0; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">+77 000 369 369</a>
         </div>
       </div>
     </sc-if>
@@ -90,15 +74,15 @@
     <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:16px;">
         <div style="font-size:17px; font-weight:700;">Реестр бригад заполняется</div>
-        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Пока в реестре нет ни одной активной бригады. Мы не показываем выдуманные карточки, чтобы страница выглядела наполненной — вернитесь позже или напишите нам, бригаду на монтаж назначим в любом случае.</div>
-        <a href="https://wa.me/77000369369" style="display:inline-block; background:#0872D3; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700; margin-top:14px;">Написать в WhatsApp</a>
+        <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Пока в реестре нет ни одной активной бригады. Мы не показываем выдуманные карточки, чтобы страница выглядела наполненной — вернитесь позже или напишите нам, бригаду на монтаж назначим в любом случае.</div>
+        <a href="https://wa.me/77000369369" style="display:inline-block; background:#0066FF; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700; margin-top:14px;">Написать в WhatsApp</a>
       </div>
     </sc-if>
 
     <sc-if value="{{ hasAny }}" hint-placeholder-val="{{ true }}">
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:20px 24px; margin-top:18px;">
-      <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">Направление</div>
+      <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#64748B;">Направление</div>
       <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
         <sc-for list="{{ dirChips }}" as="d" hint-placeholder-count="4">
           <div onClick="{{ d.pick }}" style="border:1px solid {{ d.border }}; background:{{ d.bg }}; color:{{ d.fg }}; border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:6px;">
@@ -108,7 +92,7 @@
       </div>
 
       <sc-if value="{{ manyLangs }}" hint-placeholder-val="{{ false }}">
-        <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6; margin-top:16px;">Язык</div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#64748B; margin-top:16px;">Язык</div>
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
           <sc-for list="{{ langChips }}" as="l" hint-placeholder-count="3">
             <div onClick="{{ l.pick }}" style="border:1px solid {{ l.border }}; background:{{ l.bg }}; color:{{ l.fg }}; border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:6px;">
@@ -119,7 +103,7 @@
       </sc-if>
 
       <sc-if value="{{ manyCities }}" hint-placeholder-val="{{ true }}">
-        <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6; margin-top:16px;">Город</div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#64748B; margin-top:16px;">Город</div>
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
           <sc-for list="{{ cityChips }}" as="g" hint-placeholder-count="3">
             <div onClick="{{ g.pick }}" style="border:1px solid {{ g.border }}; background:{{ g.bg }}; color:{{ g.fg }}; border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:6px;">
@@ -132,16 +116,16 @@
 
     <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:12px; margin-top:22px;">
       <h2 style="margin:0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">{{ crewsTitle }}</h2>
-      <div style="font-size:13px; color:#8593A6;">{{ updatedNote }}</div>
+      <div style="font-size:13px; color:#64748B;">{{ updatedNote }}</div>
     </div>
 
     <sc-if value="{{ nothingFound }}" hint-placeholder-val="{{ false }}">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:14px;">
         <div style="font-size:16px; font-weight:700;">По этому фильтру бригад нет</div>
-        <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Это не значит, что работу не возьмём: напишите задачу, и мы скажем, кого назначим и поедем ли в ваш город.</div>
+        <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:6px;">Это не значит, что работу не возьмём: напишите задачу, и мы скажем, кого назначим и поедем ли в ваш город.</div>
         <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;">
-          <div onClick="{{ resetFilters }}" style="border:1px solid #DCE5F0; color:#2C3846; border-radius:8px; padding:11px 18px; font-size:15px; font-weight:600; cursor:pointer;">Показать все бригады</div>
-          <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:12px 18px; font-size:15px; font-weight:700;">Написать в WhatsApp</a>
+          <div onClick="{{ resetFilters }}" style="border:1px solid #DCE5F0; color:#1A1A1A; border-radius:8px; padding:11px 18px; font-size:15px; font-weight:600; cursor:pointer;">Показать все бригады</div>
+          <a href="https://wa.me/77000369369" style="background:#0066FF; color:#fff; border-radius:8px; padding:12px 18px; font-size:15px; font-weight:700;">Написать в WhatsApp</a>
         </div>
       </div>
     </sc-if>
@@ -149,13 +133,13 @@
     
     <sc-if value="{{ hasOsnCommon }}" hint-placeholder-val="{{ false }}">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:16px 18px; margin-top:14px;">
-        <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">ЕСТЬ У КАЖДОЙ БРИГАДЫ В СПИСКЕ</div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#64748B;">ЕСТЬ У КАЖДОЙ БРИГАДЫ В СПИСКЕ</div>
         <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:9px;">
           <sc-for list="{{ osnCommon }}" as="it" hint-placeholder-count="6">
-            <span style="font-size:13px; color:#2A3646; background:#F3F7FB; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
+            <span style="font-size:13px; color:#2A3646; background:#F1F5F9; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
           </sc-for>
         </div>
-        <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:9px;">{{ osnCommonNote }}</div>
+        <div style="font-size:12px; color:#64748B; line-height:1.55; margin-top:9px;">{{ osnCommonNote }}</div>
       </div>
     </sc-if>
 
@@ -169,24 +153,24 @@
               <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
                 <div style="display:inline-flex; align-items:center; gap:7px; background:#E7F7F0; border:1px solid #BFE6D4; border-radius:6px; padding:5px 10px;">
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#0B6B45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M20 6 9 17l-5-5" /></svg>
-                  <span style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:#0B6B45; font-variant-numeric:tabular-nums; letter-spacing:0.01em;">{{ c.cert }}</span>
+                  <span style="font-family:Inter,sans-serif; font-size:15px; font-weight:700; color:#0B6B45; font-variant-numeric:tabular-nums; letter-spacing:0.01em;">{{ c.cert }}</span>
                 </div>
                 
                 <sc-if value="{{ c.hasLevel }}" hint-placeholder-val="{{ true }}">
                   <div style="background:{{ c.levelBg }}; border:1px solid {{ c.levelBd }}; border-radius:6px; padding:6px 10px; font-size:12px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:{{ c.levelFg }};">{{ c.levelName }}</div>
                 </sc-if>
               </div>
-              <div style="font-size:12px; color:#8593A6; margin-top:5px;">сертификация ИП «ТехноХолод», реестр «Сервис-карта 369»<sc-if value="{{ c.canVerify }}" hint-placeholder-val="{{ true }}"> · <a href="{{ c.verifyHref }}" style="color:#0872D3; font-weight:600;">проверить сертификат</a></sc-if></div>
-              <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700; line-height:1.3; margin-top:10px;">{{ c.dirShort }}</div>
+              <div style="font-size:12px; color:#64748B; margin-top:5px;">сертификация ИП «ТехноХолод», реестр «Сервис-карта 369»<sc-if value="{{ c.canVerify }}" hint-placeholder-val="{{ true }}"> · <a href="{{ c.verifyHref }}" style="color:#0066FF; font-weight:600;">проверить сертификат</a></sc-if></div>
+              <div style="font-family:Inter,sans-serif; font-size:17px; font-weight:700; color:#0033A0; line-height:1.3; margin-top:10px;">{{ c.dirShort }}</div>
             </div>
             <div style="text-align:right; flex:none;">
               <sc-if value="{{ c.hasRating }}" hint-placeholder-val="{{ true }}">
-                <div style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; letter-spacing:-0.02em; line-height:1;">{{ c.rating }}</div>
-                <div style="font-size:12px; color:#5A6675; margin-top:4px; white-space:nowrap;">{{ c.votesLabel }}</div>
+                <div style="font-family:Inter,sans-serif; font-size:26px; font-weight:800; letter-spacing:-0.02em; line-height:1;">{{ c.rating }}</div>
+                <div style="font-size:12px; color:#64748B; margin-top:4px; white-space:nowrap;">{{ c.votesLabel }}</div>
               </sc-if>
               <sc-if value="{{ c.accruing }}" hint-placeholder-val="{{ false }}">
-                <div style="font-size:12px; font-weight:700; color:#0A4EA7; background:#E6F2FD; border:1px solid #B9DBF7; border-radius:6px; padding:6px 10px; white-space:nowrap;">Рейтинг накапливается</div>
-                <div style="font-size:12px; color:#8593A6; margin-top:4px; white-space:nowrap;">{{ c.accruingNote }}</div>
+                <div style="font-size:12px; font-weight:700; color:#0033A0; background:#E9F4FF; border:1px solid #B9DBF7; border-radius:6px; padding:6px 10px; white-space:nowrap;">Рейтинг накапливается</div>
+                <div style="font-size:12px; color:#64748B; margin-top:4px; white-space:nowrap;">{{ c.accruingNote }}</div>
               </sc-if>
               <sc-if value="{{ c.noRating }}" hint-placeholder-val="{{ false }}">
                 <div style="font-size:12px; font-weight:700; color:#B25200; background:#FFF1E3; border:1px solid #F3D2AC; border-radius:6px; padding:6px 10px; white-space:nowrap;">Пока нет оценок</div>
@@ -197,9 +181,9 @@
           
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; align-items:start; margin-top:14px;">
             <sc-for list="{{ c.factsKey }}" as="f" hint-placeholder-count="2">
-              <div style="background:#F3F7FB; border-radius:10px; padding:11px 13px;">
-                <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ f.k }}</div>
-                <div style="font-size:14px; color:#18212F; line-height:1.45; margin-top:3px;">{{ f.v }}</div>
+              <div style="background:#F1F5F9; border-radius:10px; padding:11px 13px;">
+                <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#64748B;">{{ f.k }}</div>
+                <div style="font-size:14px; color:#1A1A1A; line-height:1.45; margin-top:3px;">{{ f.v }}</div>
               </div>
             </sc-for>
           </div>
@@ -212,15 +196,15 @@
           </div>
 
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
-            <a href="{{ c.callHref }}" style="background:#0872D3; color:#fff; border-radius:8px; padding:12px 18px; font-size:15px; font-weight:700;">Хочу эту бригаду</a>
-            <div onClick="{{ c.toggle }}" style="border:1px solid #DCE5F0; color:#2C3846; border-radius:8px; padding:11px 18px; font-size:15px; font-weight:600; cursor:pointer;">{{ c.toggleLabel }}</div>
+            <a href="{{ c.callHref }}" style="background:#0066FF; color:#fff; border-radius:8px; padding:12px 18px; font-size:15px; font-weight:700;">Хочу эту бригаду</a>
+            <div onClick="{{ c.toggle }}" style="border:1px solid #DCE5F0; color:#1A1A1A; border-radius:8px; padding:11px 18px; font-size:15px; font-weight:600; cursor:pointer;">{{ c.toggleLabel }}</div>
           </div>
 
           <sc-if value="{{ c.open }}" hint-placeholder-val="{{ false }}">
             <div style="border-top:1px solid #DCE5F0; margin-top:18px; padding-top:16px;">
 
               <sc-if value="{{ c.hasLevel }}" hint-placeholder-val="{{ true }}">
-                <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">СТУПЕНЬ В ПРОГРАММЕ</div>
+                <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#64748B;">СТУПЕНЬ В ПРОГРАММЕ</div>
                 <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:8px; margin-top:8px; max-width:620px;">
                   <sc-for list="{{ c.levels }}" as="st" hint-placeholder-count="3">
                     <div style="background:{{ st.bg }}; border:1px solid {{ st.bd }}; border-radius:8px; padding:9px 12px; text-align:center;">
@@ -233,19 +217,19 @@
 
               <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; align-items:start; margin-top:14px;">
                 <sc-for list="{{ c.factsMore }}" as="f" hint-placeholder-count="3">
-                  <div style="background:#F3F7FB; border-radius:10px; padding:11px 13px;">
-                    <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ f.k }}</div>
-                    <div style="font-size:14px; color:#18212F; line-height:1.45; margin-top:3px;">{{ f.v }}</div>
+                  <div style="background:#F1F5F9; border-radius:10px; padding:11px 13px;">
+                    <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#64748B;">{{ f.k }}</div>
+                    <div style="font-size:14px; color:#1A1A1A; line-height:1.45; margin-top:3px;">{{ f.v }}</div>
                   </div>
                 </sc-for>
               </div>
 
               <div style="display:grid; grid-template-columns:1fr; gap:10px; margin-top:10px;">
                 <sc-for list="{{ c.factsWide }}" as="f" hint-placeholder-count="2">
-                  <div style="background:#F3F7FB; border-radius:10px; padding:12px 14px;">
-                    <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ f.k }}</div>
+                  <div style="background:#F1F5F9; border-radius:10px; padding:12px 14px;">
+                    <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#64748B;">{{ f.k }}</div>
                     <sc-if value="{{ f.hasV }}" hint-placeholder-val="{{ true }}">
-                      <div style="font-size:14px; color:#18212F; line-height:1.5; margin-top:4px;">{{ f.v }}</div>
+                      <div style="font-size:14px; color:#1A1A1A; line-height:1.5; margin-top:4px;">{{ f.v }}</div>
                     </sc-if>
                     <sc-if value="{{ f.hasItems }}" hint-placeholder-val="{{ false }}">
                       <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;">
@@ -255,7 +239,7 @@
                       </div>
                     </sc-if>
                     <sc-if value="{{ f.hasNote }}" hint-placeholder-val="{{ false }}">
-                      <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:8px;">{{ f.note }}</div>
+                      <div style="font-size:12px; color:#64748B; line-height:1.5; margin-top:8px;">{{ f.note }}</div>
                     </sc-if>
                   </div>
                 </sc-for>
@@ -264,51 +248,51 @@
               <sc-if value="{{ c.vremya }}" hint-placeholder-val="{{ true }}">
                 <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
                   <sc-for list="{{ c.vremyaFacts }}" as="v" hint-placeholder-count="2">
-                    <div style="background:#F3F7FB; border-radius:8px; padding:8px 12px;">
-                      <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ v.k }}</div>
-                      <div style="font-size:15px; font-weight:700; color:#18212F; margin-top:2px;">{{ v.v }}</div>
+                    <div style="background:#F1F5F9; border-radius:8px; padding:8px 12px;">
+                      <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#64748B;">{{ v.k }}</div>
+                      <div style="font-size:15px; font-weight:700; color:#1A1A1A; margin-top:2px;">{{ v.v }}</div>
                     </div>
                   </sc-for>
                 </div>
-                <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:6px;">{{ c.vremyaNote }}</div>
+                <div style="font-size:12px; color:#64748B; line-height:1.55; margin-top:6px;">{{ c.vremyaNote }}</div>
               </sc-if>
 
               <sc-if value="{{ c.hasSkills }}" hint-placeholder-val="{{ true }}">
                 <div style="border:1px solid #DCE5F0; border-radius:10px; padding:13px 15px; margin-top:14px;">
-                  <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">ЧТО ДЕЛАЕТ ЭТА БРИГАДА</div>
+                  <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#64748B;">ЧТО ДЕЛАЕТ ЭТА БРИГАДА</div>
                   <sc-for list="{{ c.skills }}" as="s" hint-placeholder-count="2">
                     <div style="margin-top:9px;">
-                      <div style="font-size:13px; font-weight:700; color:#18212F;">{{ s.title }}</div>
-                      <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:2px;">{{ s.items }}</div>
+                      <div style="font-size:13px; font-weight:700; color:#1A1A1A;">{{ s.title }}</div>
+                      <div style="font-size:13px; color:#1A1A1A; line-height:1.55; margin-top:2px;">{{ s.items }}</div>
                     </div>
                   </sc-for>
-                  <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:11px;">{{ c.skillsNote }}</div>
+                  <div style="font-size:12px; color:#64748B; line-height:1.55; margin-top:11px;">{{ c.skillsNote }}</div>
                 </div>
               </sc-if>
 
               <sc-if value="{{ c.hasPhotos }}" hint-placeholder-val="{{ true }}">
                 <div style="border:1px solid #DCE5F0; border-radius:10px; padding:13px 15px; margin-top:14px;">
-                  <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">РАБОТЫ ЭТОЙ БРИГАДЫ</div>
+                  <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#64748B;">РАБОТЫ ЭТОЙ БРИГАДЫ</div>
                   <sc-for list="{{ c.photos }}" as="g" hint-placeholder-count="2">
                     <div style="margin-top:11px;">
-                      <div style="font-size:13px; font-weight:700; color:#18212F;">{{ g.title }}</div>
+                      <div style="font-size:13px; font-weight:700; color:#1A1A1A;">{{ g.title }}</div>
                       <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(104px,1fr)); gap:8px; margin-top:7px;">
                         <sc-for list="{{ g.items }}" as="p" hint-placeholder-count="3">
                           <a href="{{ p.url }}" target="_blank" rel="noopener" style="display:block;">
-                            <img src="{{ p.url }}" alt="{{ p.alt }}" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; background:#F3F7FB; display:block;">
+                            <img src="{{ p.url }}" alt="{{ p.alt }}" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; background:#F1F5F9; display:block;">
                           </a>
                         </sc-for>
                       </div>
                     </div>
                   </sc-for>
-                  <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:11px;">{{ c.photosNote }}</div>
+                  <div style="font-size:12px; color:#64748B; line-height:1.55; margin-top:11px;">{{ c.photosNote }}</div>
                 </div>
               </sc-if>
 
-              <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6; margin-top:18px; margin-bottom:10px;">ОТЗЫВЫ</div>
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#64748B; margin-top:18px; margin-bottom:10px;">ОТЗЫВЫ</div>
 
               <sc-if value="{{ c.noReviews }}" hint-placeholder-val="{{ false }}">
-                <div style="font-size:14px; color:#5A6675; line-height:1.6;">У этой бригады ещё нет опубликованных отзывов. Она не хуже других — просто новее или работала с теми, кто отзыв не оставил.</div>
+                <div style="font-size:14px; color:#64748B; line-height:1.6;">У этой бригады ещё нет опубликованных отзывов. Она не хуже других — просто новее или работала с теми, кто отзыв не оставил.</div>
               </sc-if>
 
               <sc-for list="{{ c.reviews }}" as="r" hint-placeholder-count="2">
@@ -320,32 +304,32 @@
                         <span style="font-size:12px; font-weight:700; color:#0B6B45; background:#E7F7F0; border-radius:4px; padding:2px 7px;">✓ монтаж по карте 369</span>
                       </sc-if>
                       <sc-if value="{{ r.plain }}" hint-placeholder-val="{{ false }}">
-                        <span style="font-size:12px; color:#8593A6;">без подтверждения покупки</span>
+                        <span style="font-size:12px; color:#64748B;">без подтверждения покупки</span>
                       </sc-if>
                     </div>
-                    <div style="font-size:12px; color:#8593A6; white-space:nowrap; font-variant-numeric:tabular-nums;">{{ r.date }}</div>
+                    <div style="font-size:12px; color:#64748B; white-space:nowrap; font-variant-numeric:tabular-nums;">{{ r.date }}</div>
                   </div>
                   <div style="font-size:13px; font-weight:700; color:#B25200; margin-top:4px;">{{ r.stars }}</div>
-                  <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:6px;">{{ r.text }}</div>
+                  <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:6px;">{{ r.text }}</div>
                 </div>
               </sc-for>
 
-              <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:12px;">
+              <div style="background:#E9F4FF; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:12px;">
                 <sc-if value="{{ c.formSent }}" hint-placeholder-val="{{ false }}">
                   <div style="font-size:15px; font-weight:700; color:#0B6B45;">Спасибо, отзыв отправлен на модерацию</div>
-                  <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">На странице он появится после проверки — обычно в течение рабочего дня. Мы публикуем и низкие оценки: удаляем только оскорбления, спам и чужие персональные данные.</div>
+                  <div style="font-size:13px; color:#1A1A1A; line-height:1.55; margin-top:6px;">На странице он появится после проверки — обычно в течение рабочего дня. Мы публикуем и низкие оценки: удаляем только оскорбления, спам и чужие персональные данные.</div>
                 </sc-if>
                 <sc-if value="{{ c.formOpen }}" hint-placeholder-val="{{ true }}">
                   <div style="font-size:15px; font-weight:700;">Принимали работу этой бригады? Оцените</div>
-                  <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:5px;">Телефон не спрашиваем и не храним. Укажите номер «Сервис-карты 369» — тогда оценка войдёт в рейтинг как подтверждённая.</div>
+                  <div style="font-size:13px; color:#1A1A1A; line-height:1.55; margin-top:5px;">Телефон не спрашиваем и не храним. Укажите номер «Сервис-карты 369» — тогда оценка войдёт в рейтинг как подтверждённая.</div>
                   <div style="display:flex; gap:7px; flex-wrap:wrap; margin-top:12px;">
                     <sc-for list="{{ c.scoreButtons }}" as="s" hint-placeholder-count="5">
                       <div onClick="{{ s.pick }}" style="border:1px solid {{ s.border }}; background:{{ s.bg }}; color:{{ s.fg }}; border-radius:8px; padding:8px 14px; font-size:14px; font-weight:700; cursor:pointer;">{{ s.label }}</div>
                     </sc-for>
                   </div>
-                  <input type="text" placeholder="Как вас зовут" value="{{ c.formName }}" onInput="{{ c.onName }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#18212F; outline:none; margin-top:10px; background:#fff;" />
-                  <input type="text" placeholder="Номер Сервис-карты 369 (если есть) — 369-…" value="{{ c.formCard }}" onInput="{{ c.onCard }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#18212F; outline:none; margin-top:8px; background:#fff;" />
-                  <textarea placeholder="Что делали, как приехали, что понравилось и что нет" value="{{ c.formText }}" onInput="{{ c.onText }}" rows="3" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#18212F; outline:none; margin-top:8px; resize:vertical; background:#fff;"></textarea>
+                  <input type="text" placeholder="Как вас зовут" value="{{ c.formName }}" onInput="{{ c.onName }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#1A1A1A; outline:none; margin-top:10px; background:#fff;" />
+                  <input type="text" placeholder="Номер Сервис-карты 369 (если есть) — 369-…" value="{{ c.formCard }}" onInput="{{ c.onCard }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#1A1A1A; outline:none; margin-top:8px; background:#fff;" />
+                  <textarea placeholder="Что делали, как приехали, что понравилось и что нет" value="{{ c.formText }}" onInput="{{ c.onText }}" rows="3" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#1A1A1A; outline:none; margin-top:8px; resize:vertical; background:#fff;"></textarea>
                   
                   <div style="font-size:13px; font-weight:700; margin-top:12px;">Оцените и купленную технику — по желанию</div>
                   <div style="display:flex; gap:7px; flex-wrap:wrap; margin-top:8px;">
@@ -353,7 +337,7 @@
                       <div onClick="{{ s.pick }}" style="border:1px solid {{ s.border }}; background:{{ s.bg }}; color:{{ s.fg }}; border-radius:8px; padding:8px 14px; font-size:14px; font-weight:700; cursor:pointer;">{{ s.label }}</div>
                     </sc-for>
                   </div>
-                  <input type="text" placeholder="Пара слов о технике — по желанию" value="{{ c.formTovarText }}" onInput="{{ c.onTovarText }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#18212F; outline:none; margin-top:8px; background:#fff;" />
+                  <input type="text" placeholder="Пара слов о технике — по желанию" value="{{ c.formTovarText }}" onInput="{{ c.onTovarText }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#1A1A1A; outline:none; margin-top:8px; background:#fff;" />
                   <div onClick="{{ c.send }}" style="background:{{ c.sendBg }}; color:#fff; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700; margin-top:10px; cursor:{{ c.sendCursor }};">{{ c.sendLabel }}</div>
                 </sc-if>
               </div>
@@ -367,7 +351,7 @@
 
     <sc-if value="{{ hasMore }}" hint-placeholder-val="{{ false }}">
       <div style="display:flex; justify-content:center; margin-top:16px;">
-        <div onClick="{{ showMore }}" style="border:1px solid #DCE5F0; background:#fff; color:#2C3846; border-radius:8px; padding:12px 22px; font-size:15px; font-weight:600; cursor:pointer;">{{ moreLabel }}</div>
+        <div onClick="{{ showMore }}" style="border:1px solid #DCE5F0; background:#fff; color:#1A1A1A; border-radius:8px; padding:12px 22px; font-size:15px; font-weight:600; cursor:pointer;">{{ moreLabel }}</div>
       </div>
     </sc-if>
     </sc-if>
@@ -375,26 +359,26 @@
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:16px;">
       <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Кто за что отвечает</h2>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:14px;">
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+        <div style="background:#F1F5F9; border-radius:12px; padding:18px 20px;">
           <div style="font-size:15px; font-weight:700;">Оборудование — производитель</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Срок гарантии — в карточке модели и в паспорте изделия. Гарантийный ремонт — в сертифицированных центрах бренда.</div>
+          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:6px;">Срок гарантии — в карточке модели и в паспорте изделия. Гарантийный ремонт — в сертифицированных центрах бренда.</div>
         </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+        <div style="background:#F1F5F9; border-radius:12px; padding:18px 20px;">
           <div style="font-size:15px; font-weight:700;">Монтаж — бригада АРТЕЛЬ</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">Герметичность, крепления, дренаж и пусконаладка. Для монтажа нового оборудования действует единый срок гарантии — 12 месяцев; обращение направляется тому же МАСТЕРУ или бригаде, которые выполняли работу.</div>
+          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:6px;">Герметичность, крепления, дренаж и пусконаладка. Для монтажа нового оборудования действует единый срок гарантии — 12 месяцев; обращение направляется тому же МАСТЕРУ или бригаде, которые выполняли работу.</div>
         </div>
-        <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+        <div style="background:#F1F5F9; border-radius:12px; padding:18px 20px;">
           <div style="font-size:15px; font-weight:700;">Сопровождение — мы</div>
-          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:6px;">«Сервис-карта 369» фиксирует, что куплено, когда установлено и кем. По её номеру принимаем обращение и направляем его нужной стороне: заводской случай — в сервисный центр бренда, монтажный — бригаде, которая ставила. Оформляем и ведём обращение; оборудование в сервисный центр не перевозим.</div>
+          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:6px;">«Сервис-карта 369» фиксирует, что куплено, когда установлено и кем. По её номеру принимаем обращение и направляем его нужной стороне: заводской случай — в сервисный центр бренда, монтажный — бригаде, которая ставила. Оформляем и ведём обращение; оборудование в сервисный центр не перевозим.</div>
         </div>
       </div>
       <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
-        <a href="/uslugi" style="background:#0872D3; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">Зона ответственности</a>
-        <a href="/portfolio" style="border:1px solid #DCE5F0; color:#2C3846; border-radius:8px; padding:12px 20px; font-size:15px; font-weight:600;">Наши работы</a>
+        <a href="/uslugi" style="background:#0066FF; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">Зона ответственности</a>
+        <a href="/portfolio" style="border:1px solid #DCE5F0; color:#1A1A1A; border-radius:8px; padding:12px 20px; font-size:15px; font-weight:600;">Наши работы</a>
       </div>
     </div>
 
-    <div style="font-size:13px; color:#8593A6; line-height:1.6; margin-top:18px;">Оценки бригад собраны нами и проходят модерацию — это не независимая площадка, и мы её так не называем. В рейтинг входят только оценки, подтверждённые «Сервис-картой 369». Оценку компании смотрите в Google и 2ГИС, ссылки на странице «Отзывы».</div>
+    <div style="font-size:13px; color:#64748B; line-height:1.6; margin-top:18px;">Оценки бригад собраны нами и проходят модерацию — это не независимая площадка, и мы её так не называем. В рейтинг входят только оценки, подтверждённые «Сервис-картой 369». Оценку компании смотрите в Google и 2ГИС, ссылки на странице «Отзывы».</div>
   </div>
 </div>
 
@@ -409,38 +393,18 @@ class Component extends DCLogic {
 
   state = { data: null, failed: false, dir: "", city: "", lang: "", open: {}, form: {}, sent: {}, verify: false, shown: ПОРЦИЯ };
 
-  // Снимок реестра лежит в репозитории и отдаётся за доли секунды.
-  // Apps Script на холодном контейнере отвечает 17–18 секунд, а иногда
-  // 404 или не отвечает вовсе (замер 02.10.2026), поэтому он не первый путь,
-  // а фоновое обновление: пришёл живой ответ — он заменяет снимок.
-  SNIMOK = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brigady.json";
-  ZERKALO = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/data/brigady.json";
-
-  loadSnapshot() {
-    const взять = (url) => fetch(url, { cache: "no-cache" })
-      .then(r => r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status)))
-      .then(d => (d && d.brigady && d.brigady.length) ? d : Promise.reject(new Error("SNAPSHOT_BAD")));
-    взять(this.SNIMOK)
-      .catch(() => взять(this.ZERKALO))
-      .then(d => { if (!this.state.data) { this.setState({ data: d, failed: false }); } })
-      .catch(() => {});
-  }
-
   loadRegistry(attempt = 0) {
-    // Живой реестр: если снимок уже на экране, сбой здесь молчаливый.
-    // Если снимка нет, через 15 секунд показываем сбой честно, но не сдаёмся:
-    // ещё две попытки идут в фоне. Успех сам заменяет сообщение на реестр.
+    // Apps Script иногда рвёт первое обращение на холодном контейнере.
+    // После 15 секунд показываем сбой честно, но не сдаёмся: ещё две попытки
+    // идут в фоне. Успех сам заменяет сообщение на живой реестр.
     const срок = setTimeout(() => {
       if (!this.state.data) { this.setState({ failed: true }); }
     }, 15000);
-    // Зависший запрос не должен блокировать повтор.
-    const ctl = (typeof AbortController !== "undefined") ? new AbortController() : null;
-    const обрыв = ctl ? setTimeout(() => ctl.abort(), 30000) : null;
 
-    fetch(this.PRIEMNIK + "?data=brigady", { cache: "no-cache", signal: ctl ? ctl.signal : undefined })
+    fetch(this.PRIEMNIK + "?data=brigady", { cache: "no-cache" })
       .then(r => r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status)))
       .then(d => {
-        clearTimeout(срок); if (обрыв) clearTimeout(обрыв);
+        clearTimeout(срок);
         if (!d || !d.brigady) throw new Error("BRIGADY_BAD_PAYLOAD");
         this.setState({ data: d, failed: false });
         if (d.brigady.length) {
@@ -448,7 +412,7 @@ class Component extends DCLogic {
         }
       })
       .catch(() => {
-        clearTimeout(срок); if (обрыв) clearTimeout(обрыв);
+        clearTimeout(срок);
         if (this.state.data) return;
         this.setState({ failed: true });
         if (attempt < 2) {
@@ -471,7 +435,6 @@ class Component extends DCLogic {
       .then(r => { if (r && r.ok) this.setState({ verify: true }); })
       .catch(() => {});
 
-    this.loadSnapshot();
     this.loadRegistry();
   }
 
@@ -541,8 +504,8 @@ class Component extends DCLogic {
 
   chip(on) {
     return on
-      ? { bg: "#0872D3", fg: "#fff", border: "#0872D3", countFg: "#BFDCF7" }
-      : { bg: "#fff", fg: "#2C3846", border: "#DCE5F0", countFg: "#8593A6" };
+      ? { bg: "#0066FF", fg: "#fff", border: "#0066FF", countFg: "#BFDCF7" }
+      : { bg: "#fff", fg: "#1A1A1A", border: "#DCE5F0", countFg: "#64748B" };
   }
 
   cap(s) { s = String(s || ""); return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
@@ -766,8 +729,8 @@ class Component extends DCLogic {
         const работ = (c.skills || []).reduce((n, s) => n + ((s.items || []).length), 0);
 
         const ЗЕЛ = { bg: "#E7F7F0", bd: "#BFE6D4", fg: "#0B6B45" };
-        const СИН = { bg: "#E6F2FD", bd: "#B9DBF7", fg: "#0A4EA7" };
-        const НЕЙТР = { bg: "#F3F7FB", bd: "#DCE5F0", fg: "#5A6675" };
+        const СИН = { bg: "#E9F4FF", bd: "#B9DBF7", fg: "#0033A0" };
+        const НЕЙТР = { bg: "#F1F5F9", bd: "#DCE5F0", fg: "#64748B" };
         const badges = [
           c.vremya && c.vremya.let_ >= 1
             ? Object.assign({ t: "✓ Проверена временем · на рынке " + c.vremya.let_
@@ -935,9 +898,9 @@ class Component extends DCLogic {
           scoreButtons: [1, 2, 3, 4, 5].map(n => ({
             label: "★ " + n,
             pick: () => this.setForm(c.cert, { score: n }),
-            bg:     f.score === n ? "#0872D3" : "#fff",
-            fg:     f.score === n ? "#fff"    : "#2C3846",
-            border: f.score === n ? "#0872D3" : "#DCE5F0"
+            bg:     f.score === n ? "#0066FF" : "#fff",
+            fg:     f.score === n ? "#fff"    : "#1A1A1A",
+            border: f.score === n ? "#0066FF" : "#DCE5F0"
           })),
           formTovarText: f.tovarText || "",
           tovarButtons: [1, 2, 3, 4, 5].map(n => ({
@@ -945,16 +908,16 @@ class Component extends DCLogic {
             // Повторный клик снимает оценку: поле необязательное, и передумать
             // можно без перезагрузки.
             pick: () => this.setForm(c.cert, { tovar: f.tovar === n ? 0 : n }),
-            bg:     f.tovar === n ? "#0872D3" : "#fff",
-            fg:     f.tovar === n ? "#fff"    : "#2C3846",
-            border: f.tovar === n ? "#0872D3" : "#DCE5F0"
+            bg:     f.tovar === n ? "#0066FF" : "#fff",
+            fg:     f.tovar === n ? "#fff"    : "#1A1A1A",
+            border: f.tovar === n ? "#0066FF" : "#DCE5F0"
           })),
           onTovarText: e => this.setForm(c.cert, { tovarText: e.target.value }),
           onName: e => this.setForm(c.cert, { name: e.target.value }),
           onCard: e => this.setForm(c.cert, { card: e.target.value }),
           onText: e => this.setForm(c.cert, { text: e.target.value }),
           send: () => this.sendReview(c.cert),
-          sendBg: ready ? "#0872D3" : "#8FB6E4",
+          sendBg: ready ? "#0066FF" : "#8FB6E4",
           sendCursor: ready ? "pointer" : "not-allowed",
           sendLabel: ready ? "Отправить на модерацию"
                    : (f.score < 1 ? "Поставьте оценку" : "Напишите пару слов")
