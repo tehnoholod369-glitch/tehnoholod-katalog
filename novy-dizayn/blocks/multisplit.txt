@@ -237,11 +237,11 @@
       
       <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
-          <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">Видео: как устроен мультисплит</div>
+          <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">{{ videoTitle }}</div>
           <div style="position:relative; width:100%; aspect-ratio:16/9; margin-top:14px; border-radius:12px; overflow:hidden; background:#F1F5F9;">
             <iframe src="{{ videoSrc }}" title="Видео про мультисплит-системы" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen style="position:absolute; left:0; top:0; width:100%; height:100%; border:0;"></iframe>
           </div>
-          <div style="font-size:13px; color:#606F85; line-height:1.5; margin-top:10px;">Что такое мультисплит, когда он выгоднее отдельных кондиционеров и на что смотреть при выборе.</div>
+          <div style="font-size:13px; color:#606F85; line-height:1.5; margin-top:10px;">{{ videoNote }} <a href="{{ videoHref }}" target="_blank" rel="noopener noreferrer">Смотреть на YouTube</a></div>
         </div>
       </sc-if>
       </div>
@@ -440,8 +440,9 @@ class Component extends DCLogic {
     if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return n + " " + few;
     return n + " " + many;
   }
-  // Ссылка на ролик про мультисплит (YouTube, Rutube или VK Video). Пока пусто — карточка видео не показывается.
-  MS_VIDEO = "";
+  MS_VIDEO = "https://www.youtube.com/watch?v=vDCyKxImAEM";
+  MS_VIDEO_TITLE = "Видео: обзор мультисплита Ballu Platinum Evolution";
+  MS_VIDEO_NOTE = "Подробный разбор мульти-сплит системы: внутренний и наружный блоки, что внутри, итоги. Ролик канала «Центр Климат», 56 минут; цены и наличие в видео не наши — смотрите в каталоге.";
   videoEmbed(u) {
     u = String(u || "").trim(); let m;
     if (!u) return "";
@@ -879,6 +880,9 @@ class Component extends DCLogic {
         { k: "Цена блока", v: md.pt || "по запросу", c: md.pt ? "#1A1A1A" : "#B25200" }
       ] : [],
       videoSrc: this.videoEmbed(this.MS_VIDEO),
+      videoTitle: this.MS_VIDEO_TITLE,
+      videoNote: this.MS_VIDEO_NOTE,
+      videoHref: this.MS_VIDEO,
       hasVideo: !!this.videoEmbed(this.MS_VIDEO),
       poolLine: data.indoor.length
         ? "наружные модули и внутренние блоки брендов каталога."
