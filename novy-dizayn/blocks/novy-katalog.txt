@@ -940,7 +940,8 @@ class Component extends DCLogic {
     const powerOf = x => {
       const v = specOf(x, /^электропитани/i) || specOf(x, /энергопотреблени/i);
       if (!v) return "";
-      const n = numIn(v);
+      const fv = String(v).match(/\b([13])\s*\/\s*(\d{3})\s*\/\s*\d{2}\b/);
+      const n = fv ? +fv[2] : numIn(v);
       if (n >= 340) return "380 В (три фазы)";
       if (n >= 180 && n <= 260) return "220 В (одна фаза)";
       return "";
