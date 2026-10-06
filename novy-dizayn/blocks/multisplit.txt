@@ -75,7 +75,7 @@
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:12px; align-items:end;">
       <div>
         
-        <h2 style="margin:0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em;">Мультисплит: соберём комплект под вашу планировку</h2>
+        <h2 style="margin:0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Мультисплит: соберём комплект под вашу планировку</h2>
         <div style="font-size:16px; color:#64748B; margin-top:10px; line-height:1.6;">Один наружный модуль на 2–5 комнат: меньше блоков на фасаде, одна трасса, единый монтаж. Комплект собирается из реальных позиций каталога — {{ poolLine }}</div>
       </div>
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:18px 20px;">
@@ -238,8 +238,14 @@
       <sc-for list="{{ videos }}" as="v" hint-placeholder-count="0">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
           <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">{{ v.title }}</div>
-          <div style="position:relative; width:100%; aspect-ratio:16/9; margin-top:14px; border-radius:12px; overflow:hidden; background:#F1F5F9;">
-            <iframe src="{{ v.src }}" title="{{ v.title }}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen style="position:absolute; left:0; top:0; width:100%; height:100%; border:0;"></iframe>
+          
+          <div style="position:relative; width:100%; aspect-ratio:16/9; margin-top:14px; border-radius:12px; overflow:hidden; background:#0F1B33;">
+            <div onClick="{{ v.play }}" role="button" aria-label="Смотреть видео" style="display:{{ v.facadeDisplay }}; position:absolute; left:0; top:0; width:100%; height:100%; cursor:pointer;">
+              <img src="{{ v.thumb }}" alt="" loading="lazy" style="position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover;" />
+              <div style="position:absolute; left:50%; top:50%; width:68px; height:68px; margin:-34px 0 0 -34px; border-radius:50%; background:#fff; box-shadow:0 4px 12px rgba(0,51,160,0.25);"></div>
+              <div style="position:absolute; left:50%; top:50%; margin:-13px 0 0 -8px; border-style:solid; border-width:13px 0 13px 22px; border-color:transparent transparent transparent #0066FF;"></div>
+            </div>
+            <iframe src="{{ v.src }}" title="{{ v.title }}" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen style="display:{{ v.frameDisplay }}; position:absolute; left:0; top:0; width:100%; height:100%; border:0;"></iframe>
           </div>
           <div style="font-size:13px; color:#606F85; line-height:1.5; margin-top:10px;">{{ v.note }} <a href="{{ v.href }}" target="_blank" rel="noopener noreferrer">Смотреть на YouTube</a></div>
         </div>
@@ -356,7 +362,8 @@ class Component extends DCLogic {
     data: null, prices: null,
     brand: "MDV",
     rooms: [{ area: 20, type: "Настенный" }, { area: 30, type: "Настенный" }],
-    mode: "По очереди"
+    mode: "По очереди",
+    playing: {}
   };
   galRef = React.createRef();
   outRef = React.createRef();
@@ -884,7 +891,18 @@ class Component extends DCLogic {
         { k: "Наличие", v: md.st || "нет данных", c: md.ok ? "#178841" : "#B25200" },
         { k: "Цена блока", v: md.pt || "по запросу", c: md.pt ? "#1A1A1A" : "#B25200" }
       ] : [],
-      videos: this.MS_VIDEOS.map(v => ({ title: v.title, note: v.note, href: v.url, src: this.videoEmbed(v.url) })).filter(v => v.src),
+      videos: this.MS_VIDEOS.map((v, i) => {
+        const src = this.videoEmbed(v.url);
+        const id = ((src.match(/youtube\.com\/embed\/([\w-]{6,})/) || [])[1]) || "";
+        // без картинки-превью (Rutube, VK) показываем плеер сразу, как есть
+        const on = !id || !!(this.state.playing || {})[i];
+        return {
+          title: v.title, note: v.note, href: v.url, src: on ? (id ? src + "&autoplay=1" : src) : "",
+          thumb: id ? "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg" : "",
+          facadeDisplay: on ? "none" : "block", frameDisplay: on ? "block" : "none",
+          play: () => this.setState(st => ({ playing: Object.assign({}, st.playing, { [i]: true }) }))
+        };
+      }).filter(v => v.src || v.thumb),
       poolLine: data.indoor.length
         ? "наружные модули и внутренние блоки брендов каталога."
         : "загружаем данные каталога…",
