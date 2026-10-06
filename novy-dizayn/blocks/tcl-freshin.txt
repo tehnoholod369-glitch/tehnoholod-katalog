@@ -74,18 +74,59 @@
       <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:14px;">
         <div>
           <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ТЕХНОЛОГИИ</div>
-          <h2 style="margin:6px 0 0 0; font-size:26px; font-weight:800; letter-spacing:-0.018em; color:#0033A0;">Что стоит за притоком</h2>
+          <h2 style="margin:6px 0 0 0; font-size:26px; font-weight:800; letter-spacing:-0.018em; color:#0033A0;">Технологии FreshIN 3.0 подробно</h2>
         </div>
         <div style="font-size:14px; color:#64748B;">Данные производителя · подтверждаются в карточке модели</div>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:16px;">
-        <sc-for list="{{ tech }}" as="t" hint-placeholder-count="6">
-          <div style="background:linear-gradient(180deg,#FFF7F7 0%,#FFFFFF 62%); border:1px solid {{ t.bd }}; box-shadow:inset 0 4px 0 {{ t.ac }}, 0 10px 28px rgba(0,51,160,0.08); border-radius:16px; padding:28px 24px 24px 24px;">
-            <div style="display:inline-block; background:{{ t.pill }}; color:{{ t.pf }}; border-radius:999px; padding:5px 12px; font-size:12px; font-weight:800; letter-spacing:0.08em;">{{ t.tag }}</div>
-            <div style="font-family:Inter,sans-serif; font-size:17px; font-weight:700; color:#0033A0; margin-top:8px; line-height:1.3;">{{ t.title }}</div>
-            <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">{{ t.text }}</div>
-          </div>
-        </sc-for>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:16px; margin-top:20px;">
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px; box-shadow:0 6px 20px rgba(0,51,160,0.06);">
+          <span style="flex:none; display:grid; place-items:center; width:48px; height:48px; border-radius:12px; background:#E9F4FF;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0066FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M3 9h11a3 3 0 1 0-3-3M3 15h15a3 3 0 1 1-3 3M3 12h7"/></svg></span>
+          <div style="min-width:0;"><div style="font:700 17px/1.3 Inter,sans-serif; color:#0033A0;">Свежий воздух с улицы</div><div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Подаётся через верхнюю панель при закрытом окне: до 60 м³/ч. Кондиционер сообщит о поступлении воздуха. Режим Fresh Air — вентиляция без охлаждения.</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px; box-shadow:0 6px 20px rgba(0,51,160,0.06);">
+          <span style="flex:none; display:grid; place-items:center; width:48px; height:48px; border-radius:12px; background:#E9F4FF;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0066FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M4 5h16l-6 8v6l-4-2v-4z"/></svg></span>
+          <div style="min-width:0;"><div style="font:700 17px/1.3 Inter,sans-serif; color:#0033A0;">Очистка QuadruPuri в 4 этапа</div><div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Фильтр предварительной очистки, антибактериальный слой с ионами серебра, HEPA-фильтр и фильтр высокой плотности. Сменные фильтры есть в каталоге.</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px; box-shadow:0 6px 20px rgba(0,51,160,0.06);">
+          <span style="flex:none; display:grid; place-items:center; width:48px; height:48px; border-radius:12px; background:#E9F4FF;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0066FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><circle cx="12" cy="12" r="3"/><path d="M5 12a7 7 0 0 1 14 0M2 12a10 10 0 0 1 20 0"/></svg></span>
+          <div style="min-width:0;"><div style="font:700 17px/1.3 Inter,sans-serif; color:#0033A0;">Видно, чем вы дышите</div><div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Встроенный датчик TVOC (летучие органические соединения) показывает качество воздуха на индикации в реальном времени. Напомнит о замене фильтра, когда его ресурс меньше 20%.</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px; box-shadow:0 6px 20px rgba(0,51,160,0.06);">
+          <span style="flex:none; display:grid; place-items:center; width:48px; height:48px; border-radius:12px; background:#E9F4FF;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0066FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M4 8h9a2.5 2.5 0 1 0-2.5-2.500M4 12h14a2.5 2.5 0 1 1-2.5 2.500M4 16h7"/></svg></span>
+          <div style="min-width:0;"><div style="font:700 17px/1.3 Inter,sans-serif; color:#0033A0;">Мягкий обдув Gentle Breeze</div><div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Воздух выходит через 1222 микроотверстия и распределяется без прямого холодного потока. Температура поддерживается с точностью до ±0,3 °C (данные производителя).</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px; box-shadow:0 6px 20px rgba(0,51,160,0.06);">
+          <span style="flex:none; display:grid; place-items:center; width:48px; height:48px; border-radius:12px; background:#E9F4FF;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0066FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3M10 14l2-4 2 4M10.7 12.800h2.6"/></svg></span>
+          <div style="min-width:0;"><div style="font:700 17px/1.3 Inter,sans-serif; color:#0033A0;">ИИ-алгоритм T-AI</div><div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Анализирует колебания температуры в комнате, компрессор заранее подстраивает мощность. По данным производителя (тест SGS), экономия электроэнергии до 37% против моделей без ИИ; расход виден в приложении TCL Home. Фактические показатели зависят от условий.</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px; box-shadow:0 6px 20px rgba(0,51,160,0.06);">
+          <span style="flex:none; display:grid; place-items:center; width:48px; height:48px; border-radius:12px; background:#E9F4FF;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0066FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M2 9a15 15 0 0 1 20 0M5 12.500a10.5 10.5 0 0 1 14 0M8.5 16a5.5 5.5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/></svg></span>
+          <div style="min-width:0;"><div style="font:700 17px/1.3 Inter,sans-serif; color:#0033A0;">Встроенный Wi-Fi</div><div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Удалённое управление через приложение TCL Home: включайте и настраивайте кондиционер с телефона, следите за расходом электроэнергии.</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px; box-shadow:0 6px 20px rgba(0,51,160,0.06);">
+          <span style="flex:none; display:grid; place-items:center; width:48px; height:48px; border-radius:12px; background:#E9F4FF;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0066FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
+          <div style="min-width:0;"><div style="font:700 17px/1.3 Inter,sans-serif; color:#0033A0;">Голосовое управление без интернета</div><div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Автономный голосовой модуль работает без подключения к интернету. Через приложение доступны также Яндекс Алиса и Google Ассистент.</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px; box-shadow:0 6px 20px rgba(0,51,160,0.06);">
+          <span style="flex:none; display:grid; place-items:center; width:48px; height:48px; border-radius:12px; background:#E9F4FF;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0066FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M12 3l1.8 4.700L18.5 9.5 13.8 11.3 12 16l-1.8-4.700L5.5 9.500l4.7-1.800zM18 15l.8 2.200L21 18l-2.2.8L18 21l-.8-2.200L15 18l2.2-.8z"/></svg></span>
+          <div style="min-width:0;"><div style="font:700 17px/1.3 Inter,sans-serif; color:#0033A0;">Самоочистка</div><div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Испаритель: увлажнение, обледенение, разморозка, сушка и стерилизация при 58 °C. Наружный блок: обратная очистка удаляет пыль.</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px; box-shadow:0 6px 20px rgba(0,51,160,0.06);">
+          <span style="flex:none; display:grid; place-items:center; width:48px; height:48px; border-radius:12px; background:#E9F4FF;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0066FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <div style="min-width:0;"><div style="font:700 17px/1.3 Inter,sans-serif; color:#0033A0;">Функция антиплесень</div><div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Защита внутреннего блока от плесени.</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px; box-shadow:0 6px 20px rgba(0,51,160,0.06);">
+          <span style="flex:none; display:grid; place-items:center; width:48px; height:48px; border-radius:12px; background:#E9F4FF;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0066FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M10 14V5a2 2 0 0 1 4 0v9a4 4 0 1 1-4 0zM12 8v8"/></svg></span>
+          <div style="min-width:0;"><div style="font:700 17px/1.3 Inter,sans-serif; color:#0033A0;">Мороз и жара</div><div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Обогрев до −20 °C (компрессор подогревается при запуске), охлаждение до +53 °C.</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px; box-shadow:0 6px 20px rgba(0,51,160,0.06);">
+          <span style="flex:none; display:grid; place-items:center; width:48px; height:48px; border-radius:12px; background:#E9F4FF;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0066FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M20 14.500A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.500z"/></svg></span>
+          <div style="min-width:0;"><div style="font:700 17px/1.3 Inter,sans-serif; color:#0033A0;">Тихий приток</div><div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">16 дБ в режиме притока на низкой скорости (данные производителя, белые и серебристые). У чёрных значение для этого режима не указано, минимум 24 дБ(А).</div></div>
+        </div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px; box-shadow:0 6px 20px rgba(0,51,160,0.06);">
+          <span style="flex:none; display:grid; place-items:center; width:48px; height:48px; border-radius:12px; background:#E9F4FF;"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0066FF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M3 8h8v8H3zM11 12h10M17 9v6"/></svg></span>
+          <div style="min-width:0;"><div style="font:700 17px/1.3 Inter,sans-serif; color:#0033A0;">Монтажный комплект 3 м</div><div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">В комплекте медные трубы 3 м. Максимальная трасса до 25 м, перепад высот до 10 м.</div></div>
+        </div>
       </div>
     </div>
 
