@@ -172,14 +172,9 @@
           </div>
 
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px;">
-            <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Рассрочка: как считается платёж</div>
-            <div style="background:#F3F7FB; border-radius:12px; padding:20px; margin-top:14px;">
-              <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:14px; border-bottom:1px solid #E9EFF7; padding-bottom:9px;"><span style="color:#5A6675;">Цена оборудования</span><b style="font-variant-numeric:tabular-nums;">379 990 ₸</b></div>
-              <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:14px; border-bottom:1px solid #E9EFF7; padding:9px 0;"><span style="color:#5A6675;">Сумма в рассрочку на 12 месяцев</span><b style="font-variant-numeric:tabular-nums;">446 489 ₸</b></div>
-              <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; font-size:15px; padding-top:9px;"><span style="color:#5A6675;">Платёж в месяц</span><b style="font-variant-numeric:tabular-nums; color:#E11A13; font-size:18px;">37 207 ₸</b></div>
-            </div>
-            <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:12px;">Пример на реальной цене TCL FreshIN 09. Рассрочка оформляется банком — Kaspi, ForteBank, Halyk; условия и одобрение на стороне банка. Монтаж в рассрочку не входит, оплачивается отдельно.</div>
-          </div>
+    <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Рассрочка до 24 месяцев</div>
+    <div style="font-size:15px; color:#5A6675; line-height:1.65; margin-top:10px; max-width:900px;">Рассрочка оформляется банком, условия и одобрение на стороне банка. Монтаж в рассрочку не входит, оплачивается отдельно.</div>
+  </div>
         </div>
 
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:16px;" id="garantiya">
@@ -549,7 +544,7 @@ class Component extends DCLogic {
       payment: [
         { title: "Счёт на оплату для юрлиц", text: "С НДС, договор и закрывающие документы. Реквизиты — в разделе B2B." },
         { title: "Kaspi и банковский перевод", text: "Оплата на счёт в АО «Kaspi Bank» либо переводом по реквизитам." },
-        { title: "Рассрочка 12 месяцев", text: "Kaspi, ForteBank, Halyk. Оформляет банк, решение по одобрению — на его стороне." },
+        { title: "Рассрочка до 24 месяцев", text: "Оформляет банк, решение об одобрении — на его стороне." },
         { title: "Оплата после монтажа", text: "Не практикуем: оборудование отгружается после оплаты, работы оплачиваются по факту сдачи объекта." }
       ],
 
