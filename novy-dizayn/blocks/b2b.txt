@@ -65,7 +65,7 @@
         <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;">
           <div>
             <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ДЛЯ ДОГОВОРА И ПЛАТЁЖКИ</div>
-            <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Реквизиты</h2>
+            <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Реквизиты</h2>
           </div>
           <div onClick="{{ copy }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:10px 16px; font-size:14px; font-weight:600; color:{{ copyFg }}; cursor:pointer;">{{ copyLabel }}</div>
         </div>
@@ -81,7 +81,7 @@
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ЗАПРОС ПРАЙСА И СПЕЦИФИКАЦИИ</div>
-        <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Пришлём цены под ваш объект</h2>
+        <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Пришлём цены под ваш объект</h2>
         <div style="font-size:15px; color:#64748B; line-height:1.6; margin-top:10px;">Цены для юрлиц зависят от объёма, сроков и условий поставки — поэтому не публикуем общий прайс, а считаем по вашему списку.</div>
         <div style="display:flex; flex-direction:column; gap:10px; margin-top:16px;">
           <input type="text" placeholder="Организация" style="border:1px solid #DCE5F0; border-radius:8px; padding:13px 14px; font-family:inherit; font-size:15px; outline:none; color:#1A1A1A;" />
@@ -94,7 +94,7 @@
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ФИЗЛИЦАМ — УДАЛЁННАЯ ОПЛАТА</div>
-        <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Оплата переводом, без визита в магазин</h2>
+        <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Оплата переводом, без визита в магазин</h2>
         <div style="font-size:15px; color:#64748B; line-height:1.6; margin-top:10px;">Частным покупателям принимаем удалённую оплату через приложения банков:</div>
         <div style="display:flex; flex-direction:column; gap:9px; margin-top:14px; font-size:14px; color:#1A1A1A;">
           <div>· Kaspi.kz</div>
@@ -111,7 +111,7 @@
       <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;">
         <div>
           <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ГОСЗАКУПКИ И ТЕНДЕРЫ</div>
-          <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Участвуем в закупках: goszakup.gov.kz и omarket.kz</h2>
+          <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Участвуем в закупках: goszakup.gov.kz и omarket.kz</h2>
         </div>
         <div style="font-size:14px; color:#64748B;">Кондиционирование · вентиляция · отопление · водонагрев · сервис</div>
       </div>
@@ -140,7 +140,7 @@
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:20px;">
       <div style="background:#1A1A1A; color:#fff; border-radius:16px; padding:26px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#E9F4FF;">МОНТАЖНЫМ БРИГАДАМ И УСТАНОВЩИКАМ</div>
-        <h2 style="margin:8px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Оборудование для ваших объектов</h2>
+        <h2 style="margin:8px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Оборудование для ваших объектов</h2>
         <div style="font-size:15px; color:rgba(255,255,255,0.88); line-height:1.6; margin-top:10px;">Работаем с бригадами напрямую: подбор по ТТХ, наличие и сроки без посредников, отгрузка на объект. Условия по объёму — по запросу, в переписке с менеджером.</div>
         <div style="display:flex; flex-direction:column; gap:9px; margin-top:16px; font-size:14px; color:rgba(255,255,255,0.88);">
           <div>· Подбираем аналог, если позиции нет в наличии</div>
