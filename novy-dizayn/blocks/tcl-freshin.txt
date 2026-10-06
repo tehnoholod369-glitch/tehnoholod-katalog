@@ -80,8 +80,8 @@
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:16px;">
         <sc-for list="{{ tech }}" as="t" hint-placeholder-count="6">
-          <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px;">
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:{{ t.tc }};">{{ t.tag }}</div>
+          <div style="background:{{ t.bg }}; border:1px solid {{ t.bd }}; box-shadow:inset 0 4px 0 {{ t.ac }}; border-radius:14px; padding:26px 22px 22px 22px;">
+            <div style="display:inline-block; background:{{ t.pill }}; color:{{ t.pf }}; border-radius:999px; padding:5px 12px; font-size:12px; font-weight:800; letter-spacing:0.08em;">{{ t.tag }}</div>
             <div style="font-family:Inter,sans-serif; font-size:17px; font-weight:700; color:#0033A0; margin-top:8px; line-height:1.3;">{{ t.title }}</div>
             <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">{{ t.text }}</div>
           </div>
@@ -327,15 +327,15 @@ class Component extends DCLogic {
       zoomRef: this.zoomRef,
       closeZoom: () => this.setState({ zoom: "" }),
       tech: [
-        { tag: "ПРИТОК", tc: "#E81C1C", title: "Дефлектор Blue Wing", text: "Запатентованная подача наружного воздуха через верхнюю панель — равномерно, без сквозняка в лицо." },
-        { tag: "ФИЛЬТРАЦИЯ", tc: "#0066FF", title: "QuadruPuri: HEPA, серебро, фотокатализ, ультрафильтр", text: "Уличный воздух проходит четыре ступени очистки, прежде чем попасть в комнату." },
-        { tag: "РЕЖИМ", tc: "#0066FF", title: "Fresh Air без компрессора", text: "Работает только дефлектор и вентилятор притока: проветривание без охлаждения и без лишнего расхода электричества." },
-        { tag: "ЭКОНОМИЯ", tc: "#0066FF", title: "Класс A+++ и управление T-AI", text: "Наивысший класс энергоэффективности; система сама регулирует мощность и объём притока." },
-        { tag: "КОНТРОЛЬ", tc: "#0066FF", title: "Датчик качества воздуха VOC", text: "Индикатор на корпусе показывает состояние воздуха, приток усиливается автоматически при ухудшении." },
-        { tag: "КОМФОРТ", tc: "#E81C1C", title: "Gentle Breeze", text: "Тысячи микроотверстий в панели превращают холодный поток в мягкий бриз." },
-        { tag: "УПРАВЛЕНИЕ", tc: "#0066FF", title: "Wi-Fi, TCL Home, голос", text: "Встроенный модуль без докупки: приложение, Алиса, Google Home, Alexa. VoxIN понимает команды офлайн, на английском." },
-        { tag: "ГИГИЕНА", tc: "#E81C1C", title: "Самоочистка со стерилизацией 58 °C", text: "Увлажнение, заморозка, разморозка, сушка и нагрев — цикл очистки блока без разборки." },
-        { tag: "УСЛОВИЯ", tc: "#0066FF", title: "Охлаждение до +53 °C, обогрев до −20 °C", text: "Рассчитан на резкие перепады: работает и в июльскую жару, и в межсезонье." }
+        { tag: "ПРИТОК", bg: "#FFF6F6", bd: "#F5C6C6", ac: "#E81C1C", pill: "#E81C1C", pf: "#FFFFFF", title: "Дефлектор Blue Wing", text: "Запатентованная подача наружного воздуха через верхнюю панель — равномерно, без сквозняка в лицо." },
+        { tag: "ФИЛЬТРАЦИЯ", bg: "#FFFFFF", bd: "#DCE5F0", ac: "#DCE5F0", pill: "#E9F4FF", pf: "#0066FF", title: "QuadruPuri: HEPA, серебро, фотокатализ, ультрафильтр", text: "Уличный воздух проходит четыре ступени очистки, прежде чем попасть в комнату." },
+        { tag: "РЕЖИМ", bg: "#FFFFFF", bd: "#DCE5F0", ac: "#DCE5F0", pill: "#E9F4FF", pf: "#0066FF", title: "Fresh Air без компрессора", text: "Работает только дефлектор и вентилятор притока: проветривание без охлаждения и без лишнего расхода электричества." },
+        { tag: "ЭКОНОМИЯ", bg: "#FFFFFF", bd: "#DCE5F0", ac: "#DCE5F0", pill: "#E9F4FF", pf: "#0066FF", title: "Класс A+++ и управление T-AI", text: "Наивысший класс энергоэффективности; система сама регулирует мощность и объём притока." },
+        { tag: "КОНТРОЛЬ", bg: "#FFFFFF", bd: "#DCE5F0", ac: "#DCE5F0", pill: "#E9F4FF", pf: "#0066FF", title: "Датчик качества воздуха VOC", text: "Индикатор на корпусе показывает состояние воздуха, приток усиливается автоматически при ухудшении." },
+        { tag: "КОМФОРТ", bg: "#FFF6F6", bd: "#F5C6C6", ac: "#E81C1C", pill: "#E81C1C", pf: "#FFFFFF", title: "Gentle Breeze", text: "Тысячи микроотверстий в панели превращают холодный поток в мягкий бриз." },
+        { tag: "УПРАВЛЕНИЕ", bg: "#FFFFFF", bd: "#DCE5F0", ac: "#DCE5F0", pill: "#E9F4FF", pf: "#0066FF", title: "Wi-Fi, TCL Home, голос", text: "Встроенный модуль без докупки: приложение, Алиса, Google Home, Alexa. VoxIN понимает команды офлайн, на английском." },
+        { tag: "ГИГИЕНА", bg: "#FFF6F6", bd: "#F5C6C6", ac: "#E81C1C", pill: "#E81C1C", pf: "#FFFFFF", title: "Самоочистка со стерилизацией 58 °C", text: "Увлажнение, заморозка, разморозка, сушка и нагрев — цикл очистки блока без разборки." },
+        { tag: "УСЛОВИЯ", bg: "#FFFFFF", bd: "#DCE5F0", ac: "#DCE5F0", pill: "#E9F4FF", pf: "#0066FF", title: "Охлаждение до +53 °C, обогрев до −20 °C", text: "Рассчитан на резкие перепады: работает и в июльскую жару, и в межсезонье." }
       ],
       faq: faqItems.map((f, i) => ({
         q: f.q,
