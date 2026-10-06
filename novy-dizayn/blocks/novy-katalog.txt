@@ -317,7 +317,7 @@ class Component extends DCLogic {
   // Один список ключей фасетов на три места: старт, смена группы и «Сбросить».
   // Раньше он был переписан трижды — новый фасет забывали сбросить, и он тянулся
   // за пользователем в другую группу (25.08.2026)
-  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "colorAc", "korp", "watt", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "pit", "thermo", "stock"];
+  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "colorAc", "korp", "watt", "pkw", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "pit", "thermo", "stock"];
   facetsOff() {
     const o = { feat: "", q: "", qF: {} };
     (this.facetKeys || []).forEach(k => { o[k] = "all"; });
@@ -377,6 +377,9 @@ class Component extends DCLogic {
     const wantSeries = p.get("series");
     if (wantSeries) this.pendingSeries = wantSeries;
     this.pendingStock = p.get("stock") || "";
+    // 06.10.2026: ссылки со сценарной таблицы водонагревателей ведут сюда с готовым фильтром: ?fv=vol:30 л (полоса фасета) и stock=in
+    this.pendingFv = p.get("fv") || "";
+    this.pendingFvStock = p.get("stock") === "in";
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/groups.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : {}).then(texts => this.setState({ texts })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-priority.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(brandPrio => this.setState({ brandPrio })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/picks.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(p => this.setState({ picks: (p && p.skus) || [] })).catch(() => {});
@@ -787,6 +790,17 @@ class Component extends DCLogic {
         setTimeout(() => this.setState({ ser: wantSer, shown: 12 }), 0);
       }
     }
+    if (this.pendingFv && items.length) {
+      const fvЗадано = this.pendingFv, fvНаличие = this.pendingFvStock;
+      this.pendingFv = ""; this.pendingFvStock = false;
+      const upd = { shown: 12 };
+      fvЗадано.split("|").forEach(пара => {
+        const i = пара.indexOf(":");
+        if (i > 0 && ["vol", "pkw"].indexOf(пара.slice(0, i)) >= 0) upd[пара.slice(0, i)] = пара.slice(i + 1);
+      });
+      if (fvНаличие) upd.stock = "in";
+      setTimeout(() => this.setState(upd), 0);
+    }
     if (this.pendingBrand && items.length) {
       const want = this.pendingBrand;
       this.pendingBrand = "";
@@ -1065,6 +1079,8 @@ class Component extends DCLogic {
       return "";
     };
     const wattOf = x => numIn(specOf(x, /^теплоотдача/i));
+    // мощность проточного водонагревателя, кВт: «5,5 кВт», у части — «8,5/-/-» (берём первое число)
+    const wkwOf = x => (x.sub === "Проточные") ? numIn(specOf(x, /^мощность/i)) : 0;
     const heightOf = x => numIn(specOf(x, /^высота$/i));
     const sectOf = x => numIn(specOf(x, /^количество секций/i));
 
@@ -1307,6 +1323,9 @@ class Component extends DCLogic {
       { key: "fuel", title: "Объём топливного бака", of: fuelOf, only: ["teplovye-pushki"],
         bands: [["до 20 л", 1, 20], ["20–50 л", 21, 50], ["50 л и больше", 51, 9999]],
         note: "Только дизельные: чем больше бак, тем реже дозаправка" },
+      { key: "pkw", title: "Мощность проточного", of: wkwOf, only: ["vodonagrevateli"],
+        bands: [["до 5,5 кВт", 0.1, 5.5], ["5,6–12 кВт", 5.6, 12.9], ["13 кВт и больше", 13, 999]],
+        note: "До 5,5 кВт хватает на мойку от обычной розетки; душу нужна отдельная линия, а выше 12 кВт — трёхфазный ввод" },
       { key: "watt", title: "Теплоотдача", of: wattOf, only: ["radiatory"],
         bands: [["до 1000 Вт", 1, 1000], ["1000–1500 Вт", 1001, 1500], ["1500–2500 Вт", 1501, 2500], ["2500 Вт и больше", 2501, 999999]],
         note: "Тепло от всего радиатора по паспорту. Ориентир для комнаты — около 100 Вт на м² при потолке 2,7 м" },
@@ -1357,7 +1376,7 @@ class Component extends DCLogic {
     });
     // порядок в панели задаём явно, а не тем, в каком массиве объявлен фасет:
     // размер — первый вопрос покупателя, цвет — последний
-    const FACET_ORDER = ["btu", "coolkw", "doorw", "zavkw", "diag", "fireline", "dry", "mezh", "watt", "conn", "sect", "height", "mat",
+    const FACET_ORDER = ["btu", "coolkw", "doorw", "zavkw", "diag", "fireline", "dry", "mezh", "watt", "pkw", "conn", "sect", "height", "mat",
       "tank", "ctrl", "orient", "wave", "mount", "warm", "glass", "burn", "clean", "recup", "seg",
       "install", "thermo", "fuel", "power", "motor", "duct",
       "noise", "cold", "press", "bar", "ip", "color", "colorRad"];
