@@ -426,8 +426,8 @@ class Component extends DCLogic {
     if (a >= 2 && a <= 4 && (b < 10 || b >= 20)) return n + " " + few;
     return n + " " + many;
   }
-  // та же база, что и в подборе: 100 Вт/м² x 3,412 = 341,2 BTU на м²
-  needBtu(area) { return Math.round(area * 341.2); }
+  // та же база, что и в подборе (07.10.2026): средние условия — потолок 2,7 м, 35 Вт/м³, двое людей по 100 Вт
+  needBtu(area) { return Math.round((area * 2.7 * 35 + 200) * 3.412); }
   clsOf(btu) { return btu <= 7500 ? "07" : btu <= 10000 ? "09" : btu <= 14000 ? "12" : btu <= 20000 ? "18" : "24"; }
 
   chip(active, label, pick, sub) {
