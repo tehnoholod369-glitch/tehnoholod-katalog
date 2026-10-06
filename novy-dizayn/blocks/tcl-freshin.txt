@@ -313,7 +313,7 @@ class Component extends DCLogic {
       title: "до " + m.area + " м²",
       rooms: roomsFor(m.area),
       price: this.fmt(m.price) + " ₸",
-      monthly: "рассрочка 12 мес — " + this.fmt(m.price * 1.175 / 12) + " ₸/мес",
+      monthly: "рассрочка до 24 месяцев",
       href: this.cardHref(m.sku),
       zoom: () => this.setState({ zoom: m.photo || "" }),
       img: m.photo || "",
