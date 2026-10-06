@@ -5,12 +5,12 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
-  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
-  a { color: #0A4EA7; text-decoration: none; }
-  a:hover { color: #0872D3; }
+  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0066FF; }
   /* Раскладка выдачи. Инлайновым style медиазапрос не задать, поэтому сетка вынесена
      в класс: до 860px панель фильтров уходит наверх одной колонкой. Без этого на
      телефоне колонка фильтров 244px съедала всю ширину, на карточки оставалось 63px,
@@ -38,11 +38,7 @@
      переносятся в столбик и съедают 564 px — больше половины первого экрана
      (замерено 26.08.2026 на 375 px). Прячем обе полосы за строку с текущим
      разделом; на десктопе они на месте, там места хватает. */
-  .th-nav-toggle { display:none; }
-  @media (max-width: 860px) {
-    .th-nav-toggle { display:flex; }
-    .th-nav-body.th-closed { display:none; }
-  }
+  /* переключатель разделов и чипы разделов убраны 04.10.2026: направления и разделы — в выпадающем меню шапки (th-shapka.js) */
   /* Статьи базы знаний перед выбором (05.09.2026). Полоска стоит ДО сетки товаров,
      поэтому на телефоне она обязана быть одной строкой: три раскрытые ссылки
      отодвигают первую карточку так же, как это делали фильтры и навигация.
@@ -64,77 +60,21 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=be2fdc8d"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=e8476510"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
 </helmet>
 
-<div style="min-height:100vh; background:#F3F7FB;">
+<div style="min-height:100vh; background:#F1F5F9;">
 
-  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
-    <div style="max-width:1320px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
-      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
-      <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
-      <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
-    </div>
-  </div>
-
-  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
-    <div style="max-width:1320px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
-      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
-      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
-      </a>
-      <div style="flex:1; min-width:220px; display:flex; align-items:center; gap:8px; border:2px solid #0872D3; border-radius:8px; padding:7px 12px;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#8593A6" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
-        <input type="search" placeholder="Поиск по модели или артикулу" value="{{ query }}" onInput="{{ onSearch }}" style="flex:1; min-width:0; border:none; outline:none; font-family:inherit; font-size:15px; color:#18212F; background:transparent; padding:4px 0;" />
-      </div>
-      <button type="button" data-th-search title="Поиск по всему каталогу" style="display:flex; align-items:center; gap:7px; border:1px solid #DCE5F0; background:#fff; border-radius:8px; padding:9px 13px; font-size:13px; font-weight:600; color:#5A6675; cursor:pointer;">
-        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>По всему каталогу
-      </button>
-      <a href="/korzina" style="display:flex; align-items:center; gap:7px; background:{{ cartBg }}; color:{{ cartFg }}; border-radius:8px; padding:9px 13px; font-size:13px; font-weight:700;">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M3 4h2.2l2.4 11.2h10.1" /><path d="M6.6 7.6h14L18.7 14H8" /><circle cx="9.5" cy="19" r="1.4" /><circle cx="17.5" cy="19" r="1.4" /></svg>{{ cartLabel }}
-      </a>
-    </div>
-  </div>
-
-  <div onClick="{{ toggleMobNav }}" class="th-nav-toggle" style="background:#071C3B; color:#fff; padding:12px 24px; align-items:center; justify-content:space-between; gap:12px; cursor:pointer; border-bottom:1px solid #0A4EA7;">
-    <span style="font-size:14px; font-weight:700;">{{ mobNavLabel }}</span>
-    <span style="font-size:12px; opacity:0.75;">{{ mobNavCaret }}</span>
-  </div>
-
-  <div class="th-nav-body {{ mobNavClass }}">
-  <div style="background:#071C3B; border-bottom:1px solid #0A4EA7;">
-    <div style="max-width:1320px; margin:0 auto; padding:0 24px; display:flex; gap:2px; flex-wrap:wrap;">
-      <sc-for list="{{ dirTabs }}" as="d" hint-placeholder-count="4">
-        <div onClick="{{ d.pick }}" style="background:{{ d.bg }}; color:{{ d.fg }}; padding:13px 20px; font-size:15px; font-weight:700; cursor:pointer; display:flex; align-items:baseline; gap:7px;">
-          <span>{{ d.label }}</span><span style="font-size:12px; color:{{ d.countFg }}; font-variant-numeric:tabular-nums;">{{ d.count }}</span>
-        </div>
-      </sc-for>
-    </div>
-  </div>
-
-  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
-    <div style="max-width:1320px; margin:0 auto; padding:12px 24px; display:flex; gap:8px; flex-wrap:wrap;">
-      <sc-for list="{{ extraTabs }}" as="e" hint-placeholder-count="0">
-        <a href="{{ e.href }}" style="border:1px solid {{ e.border }}; background:{{ e.bg }}; color:{{ e.fg }}; border-radius:8px; padding:9px 14px; font-size:14px; font-weight:600; display:flex; align-items:baseline; gap:7px; order:{{ e.order }};">
-          <span>{{ e.title }}</span><span style="font-size:12px; color:{{ e.countFg }};">{{ e.count }}</span>
-        </a>
-      </sc-for>
-      <sc-for list="{{ groupTabs }}" as="g" hint-placeholder-count="4">
-        <div onClick="{{ g.pick }}" style="border:1px solid {{ g.border }}; background:{{ g.bg }}; color:{{ g.fg }}; border-radius:8px; padding:9px 14px; font-size:14px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:7px; order:{{ g.order }};">
-          <span>{{ g.title }}</span><span style="font-size:12px; color:{{ g.countFg }}; font-variant-numeric:tabular-nums;">{{ g.count }}</span>
-        </div>
-      </sc-for>
-    </div>
-  </div>
-  </div>
+  <div class="th-t1"><div class="th-w"><b>Доставка по Казахстану</b><span><a href="tel:+77000369369">+77 000 369 369</a> · пн–пт 9:00–18:00 · <a href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B2%D0%BE%D0%BD%D0%B8%D1%82%D1%8C.">Заказать звонок</a></span></div></div>
+<header class="th-hd"><div class="th-w"><button type="button" class="th-bg" data-th-burger aria-label="Меню">☰<span>Меню</span></button><a class="th-lg" href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" /></a><button type="button" class="th-sr" data-th-search aria-label="Поиск по каталогу"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg><span>Поиск по каталогу</span></button><nav class="th-ic"><a href="/izbrannoe"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg><span>Избранное</span><i class="th-bd" data-th-fav-count style="display:none"></i></a><a href="/sravnenie"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg><span>Сравнение</span><i class="th-bd" data-th-cmp-count style="display:none"></i></a><a href="/korzina"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h2l2.4 11h10.2L20 8H6.2" /><circle cx="9" cy="19" r="1.5" /><circle cx="17" cy="19" r="1.5" /></svg><span>Корзина</span><i class="th-bd" data-th-cart-count></i></a></nav></div></header>
+<nav class="th-mn"><div class="th-w"><a class="th-home" href="/" aria-label="На главную" title="На главную"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 11l9-7 9 7" /><path d="M5 10v10h5v-6h4v6h5V10" /></svg><span>Главная</span></a><a class="th-cat" href="/katalog" data-th-cat aria-expanded="false" aria-controls="th-panel"><span class="th-ci">☰</span><span class="th-ct">Каталог товаров</span></a><div class="th-dd"><a href="/kondicionery-almaty">Кондиционирование</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Кондиционирование" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div></div><div class="th-dd"><a href="/otoplenie">Отопление</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Отопление" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div></div><div class="th-dd"><a href="/ventilyaciya">Вентиляция</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Вентиляция" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div></div><div class="th-dd"><a href="/vodonagrevateli">Водонагреватели</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Водонагреватели" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div></div><a href="/katalog?g=avtonomnoe-pitanie">Автономное питание</a><a href="/brendy">Бренды</a><a href="/baza-znaniy">База знаний</a><a href="/kontakty">Контакты</a></div><div class="th-pn" id="th-panel"><div class="th-w th-pg"><div class="th-pc"><b>Кондиционирование</b><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div><div class="th-pc"><b>Отопление</b><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div><div class="th-pc"><b>Вентиляция</b><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div><div class="th-pc"><b>Водонагреватели и водоочистка</b><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div><div class="th-pc"><b>Автономное питание</b><a href="/katalog?g=avtonomnoe-pitanie">Зарядные станции и солнечные панели</a></div><div class="th-pc"><b>VRF, фанкойлы, чиллеры</b><a href="/katalog?g=mini-vrf">Мини-VRF и мультизональные</a><a href="/katalog?g=fankoyly">Фанкойлы</a><a href="/katalog?g=chillery">Чиллеры</a><a href="/katalog?g=precizionnye">Прецизионные кондиционеры</a><a href="/proekt">Расчёт под объект</a></div></div><div class="th-w th-pf"><a href="/katalog">Весь каталог →</a></div></div></nav>
 
   <sc-if value="{{ hasSubs }}" hint-placeholder-val="{{ false }}">
     <div style="background:#F9FBFE; border-bottom:1px solid #DCE5F0;">
-      <div style="max-width:1320px; margin:0 auto; padding:10px 24px; display:flex; gap:7px; flex-wrap:wrap; align-items:center;">
-        <span style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6; margin-right:4px;">Подкатегории</span>
+      <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:10px 24px; display:flex; gap:7px; flex-wrap:wrap; align-items:center;">
+        <span style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#606F85; margin-right:4px;">Подкатегории</span>
         <sc-for list="{{ subTabs }}" as="t" hint-placeholder-count="4">
           <div onClick="{{ t.pick }}" style="border:1px solid {{ t.border }}; background:{{ t.bg }}; color:{{ t.fg }}; border-radius:999px; padding:6px 13px; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:6px;">
             <span>{{ t.label }}</span><span style="font-size:12px; color:{{ t.countFg }}; font-variant-numeric:tabular-nums;">{{ t.count }}</span>
@@ -144,22 +84,33 @@
     </div>
   </sc-if>
 
-  <div style="max-width:1320px; margin:0 auto; padding:18px 24px 64px 24px;">
-    <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <span>Каталог</span> → <span>{{ dirLabel }}</span> → <a href="{{ groupHref }}">{{ groupTitle }}</a>{{ crumbSub }}</div>
+  <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:18px 24px 64px 24px;">
+    <div style="font-size:13px; color:#606F85;"><a href="/">Главная</a> → <span>Каталог</span> → <span>{{ dirLabel }}</span> → <a href="{{ groupHref }}">{{ groupTitle }}</a>{{ crumbSub }}</div>
 
-    <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px; margin-top:10px;">
+    <div style="background:#E9F4FF; border-radius:16px; padding:28px 32px; margin-top:12px;">
       <div style="max-width:760px;">
 <sc-if value="{{ groupIsH1 }}" hint-placeholder-val="{{ true }}">
-        <h1 style="margin:0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.02em;">{{ groupTitle }}</h1>
+        <h1 style="margin:0; font:800 clamp(24px,5.6vw,34px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">{{ groupTitle }}</h1>
 </sc-if>
 <sc-if value="{{ groupNotH1 }}" hint-placeholder-val="{{ false }}">
-        <div style="margin:0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.02em;">{{ groupTitle }}</div>
+        <div style="margin:0; font:800 clamp(24px,5.6vw,34px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">{{ groupTitle }}</div>
 </sc-if>
-        <div style="font-size:15px; color:#5A6675; margin-top:8px; line-height:1.6;">{{ groupSub }}</div>
+        <div style="font:400 16px/24px Inter,sans-serif; color:#1A1A1A; margin-top:10px;">{{ groupSub }}</div>
       </div>
+      <sc-if value="{{ hasHeroBrands }}" hint-placeholder-val="{{ false }}">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(140px,30%),1fr)); gap:10px; margin-top:20px;">
+          <sc-for list="{{ heroBrands }}" as="hb" hint-placeholder-count="5">
+            <div onClick="{{ hb.pick }}" title="{{ hb.title }}" style="background:#fff; border:{{ hb.bd }}; border-radius:12px; height:64px; display:flex; align-items:center; justify-content:center; padding:10px 12px; box-sizing:border-box; cursor:pointer;">
+              <img src="{{ hb.logo }}" alt="{{ hb.name }}" style="max-width:100%; max-height:42px; object-fit:contain; display:block;" />
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; justify-content:flex-end; margin-top:14px;">
       <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
         <div style="border:1px solid #DCE5F0; background:#fff; border-radius:8px; padding:0 8px; display:flex; align-items:center;">
-          <select onChange="{{ onSort }}" style="border:none; outline:none; background:transparent; font-family:inherit; font-size:14px; font-weight:600; color:#18212F; padding:10px 6px;">
+          <select onChange="{{ onSort }}" style="border:none; outline:none; background:transparent; font-family:inherit; font-size:14px; font-weight:600; color:#1A1A1A; padding:10px 6px;">
             <option value="rec">Сначала рекомендуемые</option>
             <option value="asc">Сначала дешёвые</option>
             <option value="desc">Сначала дорогие</option>
@@ -175,16 +126,16 @@
     <sc-if value="{{ hasArts }}" hint-placeholder-val="{{ false }}">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:13px 16px; margin-top:14px;">
         <div onClick="{{ toggleMobArts }}" class="th-arts-toggle" style="align-items:center; justify-content:space-between; gap:10px; cursor:pointer;">
-          <span style="font-size:14px; font-weight:700; color:#0A4EA7;">{{ artsLabel }}</span>
-          <span style="font-size:12px; color:#8593A6;">{{ artsCaret }}</span>
+          <span style="font-size:14px; font-weight:700; color:#0066FF;">{{ artsLabel }}</span>
+          <span style="font-size:12px; color:#606F85;">{{ artsCaret }}</span>
         </div>
         <div class="th-arts-body {{ artsClass }}">
-          <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">{{ artsTitle }}</div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#606F85;">{{ artsTitle }}</div>
           <div style="display:flex; flex-direction:column; gap:7px; margin-top:8px;">
             <sc-for list="{{ arts }}" as="a" hint-placeholder-count="3">
               <div style="display:flex; align-items:baseline; gap:8px; font-size:14px; line-height:1.45;">
-                <a href="{{ a.href }}" style="font-weight:600; color:#0A4EA7;">{{ a.t }}</a>
-                <span style="font-size:12px; color:#8593A6; white-space:nowrap;">{{ a.m }}</span>
+                <a href="{{ a.href }}" style="font-weight:600; color:#0066FF;">{{ a.t }}</a>
+                <span style="font-size:12px; color:#606F85; white-space:nowrap;">{{ a.m }}</span>
               </div>
             </sc-for>
           </div>
@@ -193,39 +144,43 @@
     </sc-if>
 
     <div class="th-cat-grid">
-      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:20px;">
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:18px 20px;">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-          <div style="font-size:15px; font-weight:700;">Фильтры</div>
-          <div onClick="{{ reset }}" style="font-size:13px; color:#0872D3; font-weight:600; cursor:pointer;">Сбросить</div>
+          <div style="font:700 18px/24px Inter,sans-serif; color:#1A1A1A;">Фильтры</div>
+          <div onClick="{{ reset }}" style="font-size:13px; color:#0066FF; font-weight:600; cursor:pointer;">Сбросить</div>
         </div>
         <div onClick="{{ toggleMobFilters }}" class="th-filters-toggle" style="align-items:center; justify-content:space-between; gap:10px; border:1px solid #DCE5F0; background:#F9FBFE; border-radius:10px; padding:11px 14px; margin-top:12px; cursor:pointer;">
-          <span style="font-size:14px; font-weight:700; color:#0A4EA7;">{{ mobFiltersLabel }}</span>
-          <span style="font-size:12px; color:#8593A6;">{{ mobFiltersCaret }}</span>
+          <span style="font-size:14px; font-weight:700; color:#0066FF;">{{ mobFiltersLabel }}</span>
+          <span style="font-size:12px; color:#606F85;">{{ mobFiltersCaret }}</span>
         </div>
         <div class="th-filters-body {{ mobFiltersClass }}">
         <sc-for list="{{ filterGroups }}" as="g" hint-placeholder-count="3">
           <div style="border-top:1px solid #E9EFF7; padding-top:12px; margin-top:12px;">
             <div onClick="{{ g.toggle }}" style="display:flex; align-items:center; justify-content:space-between; gap:8px; cursor:pointer;">
-              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">{{ g.title }}</div>
+              <div style="font:700 15px/22px Inter,sans-serif; color:#1A1A1A;">{{ g.title }}</div>
               <div style="display:flex; align-items:center; gap:7px;">
-                <span style="font-size:12px; font-weight:700; color:#0A4EA7;">{{ g.active }}</span>
-                <span style="font-size:12px; color:#8593A6;">{{ g.caret }}</span>
+                <span style="font-size:12px; font-weight:700; color:#0066FF;">{{ g.active }}</span>
+                <span style="font-size:12px; color:#606F85;">{{ g.caret }}</span>
               </div>
             </div>
             <div style="display:{{ g.body }};">
                 <div style="display:{{ g.searchBox }}; align-items:center; gap:7px; border:1px solid #DCE5F0; border-radius:7px; padding:6px 10px; margin-top:9px;">
-                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#8593A6" stroke-width="1.8" stroke-linecap="round" style="display:block; flex:none;"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
-                  <input type="search" placeholder="{{ g.placeholder }}" value="{{ g.sq }}" onInput="{{ g.onQuery }}" style="flex:1; min-width:0; border:none; outline:none; font-family:inherit; font-size:14px; color:#18212F; background:transparent; padding:2px 0;" />
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#606F85" stroke-width="1.8" stroke-linecap="round" style="display:block; flex:none;"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+                  <input type="search" placeholder="{{ g.placeholder }}" value="{{ g.sq }}" onInput="{{ g.onQuery }}" style="flex:1; min-width:0; border:none; outline:none; font-family:inherit; font-size:14px; color:#1A1A1A; background:transparent; padding:2px 0;" />
                 </div>
-                <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:9px;">
+                <div style="display:flex; flex-direction:column; gap:1px; margin-top:8px;">
                   <sc-for list="{{ g.options }}" as="o" hint-placeholder-count="4">
-                    <div onClick="{{ o.pick }}" style="border:1px solid {{ o.border }}; background:{{ o.bg }}; color:{{ o.fg }}; border-radius:6px; padding:6px 10px; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:5px;"><span>{{ o.label }}</span><span style="font-size:12px; color:#8593A6; font-variant-numeric:tabular-nums;">{{ o.sub }}</span></div>
+                    <div onClick="{{ o.pick }}" style="display:flex; align-items:center; gap:10px; padding:7px 2px; cursor:pointer; font:400 14px/20px Inter,sans-serif;">
+                      <span style="width:18px; height:18px; flex:none; border:1.5px solid {{ o.boxBd }}; background:{{ o.boxBg }}; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#fff; font:700 12px/1 Inter,sans-serif;">{{ o.tick }}</span>
+                      <span style="flex:1; min-width:0; color:#1A1A1A; font-weight:{{ o.fw }};">{{ o.label }}</span>
+                      <span style="font-size:13px; color:#606F85; font-variant-numeric:tabular-nums;">{{ o.sub }}</span>
+                    </div>
                   </sc-for>
                 </div>
-                <div style="font-size:12px; color:#8593A6; margin-top:8px;">{{ g.nores }}</div>
-                <div onClick="{{ g.expand }}" style="font-size:12px; font-weight:600; color:#0872D3; margin-top:8px; cursor:pointer;">{{ g.more }}</div>
-                <div style="font-size:12px; color:#8593A6; margin-top:6px; line-height:1.4;">{{ g.note }}</div>
-                <a href="{{ g.linkHref }}" style="display:{{ g.linkShow }}; font-size:12px; font-weight:700; color:#0872D3; margin-top:7px;">{{ g.linkText }}</a>
+                <div style="font-size:12px; color:#606F85; margin-top:8px;">{{ g.nores }}</div>
+                <div onClick="{{ g.expand }}" style="font-size:12px; font-weight:600; color:#0066FF; margin-top:8px; cursor:pointer;">{{ g.more }}</div>
+                <div style="font-size:12px; color:#606F85; margin-top:6px; line-height:1.4;">{{ g.note }}</div>
+                <a href="{{ g.linkHref }}" style="display:{{ g.linkShow }}; font-size:12px; font-weight:700; color:#0066FF; margin-top:7px;">{{ g.linkText }}</a>
             </div>
           </div>
         </sc-for>
@@ -236,66 +191,74 @@
         
         <sc-if value="{{ hasAreaMob }}" hint-placeholder-val="{{ false }}">
           <div class="th-area-mob" style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:13px 14px; margin-bottom:14px;">
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">Площадь помещения</div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#606F85;">Площадь помещения</div>
             <div style="display:flex; gap:6px; margin-top:9px; overflow-x:auto; padding-bottom:3px;">
               <sc-for list="{{ areaChips }}" as="a" hint-placeholder-count="6">
-                <div onClick="{{ a.pick }}" style="flex:none; border:1px solid {{ a.border }}; background:{{ a.bg }}; color:{{ a.fg }}; border-radius:6px; padding:7px 11px; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:5px;"><span>{{ a.label }}</span><span style="font-size:12px; color:#8593A6; font-variant-numeric:tabular-nums;">{{ a.sub }}</span></div>
+                <div onClick="{{ a.pick }}" style="flex:none; border:1px solid {{ a.border }}; background:{{ a.bg }}; color:{{ a.fg }}; border-radius:6px; padding:7px 11px; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:5px;"><span>{{ a.label }}</span><span style="font-size:12px; color:#606F85; font-variant-numeric:tabular-nums;">{{ a.sub }}</span></div>
               </sc-for>
             </div>
-            <div style="font-size:12px; color:#8593A6; margin-top:8px; line-height:1.4;">{{ areaNoteMob }}</div>
+            <div style="font-size:12px; color:#606F85; margin-top:8px; line-height:1.4;">{{ areaNoteMob }}</div>
           </div>
         </sc-if>
 
         <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px;">
-          <div style="font-size:14px; color:#5A6675;">{{ counterText }}</div>
-          <div style="font-size:13px; color:#8593A6;">{{ dateNote }}</div>
+          <div style="font-size:14px; color:#606F85;">{{ counterText }}</div>
+          <div style="font-size:13px; color:#606F85;">{{ dateNote }}</div>
         </div>
 
         <div ref="{{ gridRef }}" style="display:grid; grid-template-columns:{{ gridCols }}; gap:16px; margin-top:14px;">
           <sc-for list="{{ cards }}" as="c" hint-placeholder-count="9">
-            <div style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:10px;">
-            <a href="{{ c.href }}" style="display:flex; flex-direction:{{ cardDir }}; gap:14px; color:#18212F;">
+            <div class="thk-card" style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:16px; display:flex; flex-direction:column; gap:12px;">
+            <a href="{{ c.href }}" style="display:flex; flex-direction:{{ cardDir }}; gap:14px; color:#1A1A1A; text-decoration:none; flex:1;">
               <div style="position:relative; width:{{ photoW }}; flex:none;">
-                <div style="height:{{ photoH }}; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:10px; overflow:hidden;">
+                <div style="height:{{ photoH }}; background:#fff; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:6px; overflow:hidden;">
                   <img data-url="{{ c.img }}" alt="{{ c.name }}" loading="lazy" style="width:100%; height:100%; object-fit:contain; display:block;" />
                 </div>
-                <div style="position:absolute; top:8px; right:8px; font-size:12px; font-weight:700; color:{{ c.stockFg }}; background:{{ c.stockBg }}; border-radius:5px; padding:3px 8px;">{{ c.stock }}</div>
+                <div class="th-act">
+                  <button type="button" data-th-fav data-g="{{ c.g }}" data-sl="{{ c.sl }}" data-n="{{ c.name }}" data-b="{{ c.brand }}" data-i="{{ c.img }}" aria-label="В избранное" title="В избранное"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg></button>
+                  <button type="button" data-th-cmp data-g="{{ c.g }}" data-sl="{{ c.sl }}" data-n="{{ c.name }}" data-b="{{ c.brand }}" data-i="{{ c.img }}" aria-label="Сравнить" title="Сравнить"><svg viewBox="0 0 24 24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg></button>
+                </div>
                 <sc-if value="{{ c.isHit }}" hint-placeholder-val="{{ false }}">
-                  <div title="{{ c.hitTitle }}" style="position:absolute; top:8px; left:8px; font-size:12px; font-weight:700; color:#fff; background:#0A4EA7; border-radius:5px; padding:3px 8px; cursor:help;">Хит продаж</div>
+                  <div title="{{ c.hitTitle }}" style="position:absolute; top:8px; left:8px; font:600 12px/18px Inter,sans-serif; color:#fff; background:#178841; border-radius:6px; padding:3px 8px; cursor:help;">Хит</div>
                 </sc-if>
                 <sc-if value="{{ c.isPick }}" hint-placeholder-val="{{ false }}">
-                  <div title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и артикулом. Это наш выбор, а не статистика продаж." style="position:absolute; top:8px; left:8px; font-size:12px; font-weight:700; color:#fff; background:#0872D3; border-radius:5px; padding:3px 8px; cursor:help;">Наш выбор</div>
+                  <div title="Рекомендация ИП «ТехноХолод»: есть в наличии, с фото и артикулом. Это наш выбор, а не статистика продаж." style="position:absolute; top:8px; left:8px; font:600 12px/18px Inter,sans-serif; color:#fff; background:#0066FF; border-radius:6px; padding:3px 8px; cursor:help;">Наш выбор</div>
                 </sc-if>
                 <sc-if value="{{ c.isSale }}" hint-placeholder-val="{{ false }}">
-                  <div title="{{ c.saleTitle }}" style="position:absolute; bottom:8px; left:8px; font-size:12px; font-weight:700; color:#fff; background:#C62828; border-radius:5px; padding:3px 8px; cursor:help;">Акция</div>
+                  <div title="{{ c.saleTitle }}" style="position:absolute; top:34px; left:8px; font:600 12px/18px Inter,sans-serif; color:#fff; background:#E81C1C; border-radius:6px; padding:3px 8px; cursor:help;">Акция</div>
                 </sc-if>
               </div>
               <div style="flex:1; min-width:0; display:flex; flex-direction:column;">
-                <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#0872D3;">{{ c.brand }}</div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:600; line-height:1.35; margin-top:6px;">{{ c.name }}</div>
-                <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:9px;">
-                  <sc-for list="{{ c.badges }}" as="b" hint-placeholder-count="2">
-                    <div style="background:{{ b.bg }}; color:{{ b.fg }}; border-radius:5px; padding:4px 8px; font-size:12px; font-weight:700;">{{ b.t }}</div>
-                  </sc-for>
-                </div>
-                <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:6px;">
-                  <sc-for list="{{ c.pills }}" as="p" hint-placeholder-count="3">
-                    <div style="background:#F3F7FB; border-radius:5px; padding:4px 8px; font-size:12px; font-weight:600; color:#2C3846;">{{ p }}</div>
-                  </sc-for>
-                </div>
-                <div style="margin-top:12px; display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;">
-                  <sc-if value="{{ c.hasOldPrice }}" hint-placeholder-val="{{ false }}">
-                    <div style="font-size:14px; color:#8593A6; text-decoration:line-through; font-variant-numeric:tabular-nums;">{{ c.oldPrice }}</div>
-                  </sc-if>
-                  <div style="font-size:20px; font-weight:700; font-variant-numeric:tabular-nums; color:{{ c.priceColor }};">{{ c.price }}</div>
-                  <div style="font-size:12px; color:#8593A6;">{{ c.priceNote }}</div>
-                </div>
-                <div style="font-size:12px; color:#5A6675; margin-top:2px;">{{ c.monthly }}</div>
+                <div style="align-self:flex-start; padding:1px 8px; border:1px solid {{ c.stkBd }}; border-radius:10px; color:{{ c.stkFg }}; font:600 11px/18px Inter,sans-serif;">{{ c.stock }}</div>
+                <div style="font:600 12px/16px Inter,sans-serif; color:#606F85; margin-top:8px;">{{ c.brand }}</div>
+                <div style="font:700 17px/24px Inter,sans-serif; color:#0033A0; margin-top:2px;">{{ c.name }}</div>
+                <sc-if value="{{ c.hasSpecs }}" hint-placeholder-val="{{ true }}">
+                  <div style="margin-top:10px;">
+                    <sc-for list="{{ c.specs }}" as="r" hint-placeholder-count="5">
+                      <div style="display:flex; justify-content:space-between; gap:12px; padding:5px 0; border-bottom:1px solid #EEF2F7; font:400 13px/19px Inter,sans-serif;">
+                        <span style="color:#606F85;">{{ r.k }}</span><span style="font-weight:500; text-align:right;">{{ r.v }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ c.noSpecs }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:10px;">
+                    <sc-for list="{{ c.pills }}" as="p" hint-placeholder-count="3">
+                      <div style="background:#F1F5F9; border-radius:999px; padding:4px 10px; font:600 12px/16px Inter,sans-serif; color:#606F85;">{{ p }}</div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+                <div style="margin-top:auto; padding-top:8px; font:600 14px/20px Inter,sans-serif; color:#0066FF;">{{ c.cta }}</div>
               </div>
             </a>
-            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-              <a href="{{ c.href }}" style="font-size:13px; font-weight:700; color:#0872D3;">{{ c.cta }}</a>
-              <div onClick="{{ c.addToCart }}" title="{{ c.cartTitle }}" style="margin-left:auto; background:{{ c.cartBg }}; color:{{ c.cartFg }}; border:1px solid {{ c.cartBorder }}; border-radius:8px; padding:8px 13px; font-size:13px; font-weight:700; cursor:pointer;">{{ c.cartLabel }}</div>
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding-top:14px; border-top:1px solid #DCE5F0;">
+              <div style="display:flex; flex-direction:column; min-width:0;">
+                <sc-if value="{{ c.hasOldPrice }}" hint-placeholder-val="{{ false }}">
+                  <div style="font:400 13px/16px Inter,sans-serif; color:#606F85; text-decoration:line-through; font-variant-numeric:tabular-nums;">{{ c.oldPrice }}</div>
+                </sc-if>
+                <div style="font:800 22px/28px Inter,sans-serif; font-variant-numeric:tabular-nums; color:{{ c.priceColor }};">{{ c.price }}</div>
+              </div>
+              <div onClick="{{ c.addToCart }}" title="{{ c.cartTitle }}" style="background:{{ c.cartBg }}; color:{{ c.cartFg }}; border:1.5px solid {{ c.cartBorder }}; border-radius:8px; height:44px; padding:0 18px; display:flex; align-items:center; font:600 15px/1 Inter,sans-serif; cursor:pointer; white-space:nowrap;">{{ c.cartLabel }}</div>
             </div>
             </div>
           </sc-for>
@@ -303,40 +266,40 @@
 
         <sc-if value="{{ isLoading }}" hint-placeholder-val="{{ true }}">
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:44px 24px; text-align:center; margin-top:14px;">
-            <div style="font-size:16px; font-weight:600; color:#5A6675;">Загружаем группу…</div>
+            <div style="font-size:16px; font-weight:600; color:#606F85;">Загружаем группу…</div>
           </div>
         </sc-if>
 
         <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:40px 24px; text-align:center; margin-top:14px;">
             <div style="font-size:17px; font-weight:700;">{{ emptyTitle }}</div>
-            <div style="font-size:15px; color:#5A6675; margin-top:8px; line-height:1.6; max-width:620px; margin-left:auto; margin-right:auto;">{{ emptyText }}</div>
+            <div style="font-size:15px; color:#606F85; margin-top:8px; line-height:1.6; max-width:620px; margin-left:auto; margin-right:auto;">{{ emptyText }}</div>
           </div>
         </sc-if>
 
         <sc-if value="{{ hasMore }}" hint-placeholder-val="{{ false }}">
           <div style="display:flex; justify-content:center; margin-top:20px;">
-            <div onClick="{{ showMore }}" style="border:2px solid #0872D3; color:#0872D3; border-radius:8px; padding:12px 28px; font-size:15px; font-weight:700; cursor:pointer;">Показать ещё</div>
+            <div onClick="{{ showMore }}" style="border:2px solid #0066FF; color:#0066FF; border-radius:8px; padding:12px 28px; font-size:15px; font-weight:700; cursor:pointer;">Показать ещё</div>
           </div>
         </sc-if>
 
-        <div style="background:#E6F2FD; border-radius:12px; padding:16px 20px; margin-top:16px; font-size:14px; color:#071C3B; line-height:1.55;">Не нашли модель? Напишите в WhatsApp, что нужно, — подберём и посчитаем с доставкой: <b>+77 000 369 369</b></div>
-        <div style="font-size:13px; color:#8593A6; margin-top:14px; line-height:1.6;">{{ footNote }}</div>
+        <div style="background:#E9F4FF; border-radius:12px; padding:16px 20px; margin-top:16px; font-size:14px; color:#0033A0; line-height:1.55;">Не нашли модель? Напишите в WhatsApp, что нужно, — подберём и посчитаем с доставкой: <b>+77 000 369 369</b></div>
+        <div style="font-size:13px; color:#606F85; margin-top:14px; line-height:1.6;">{{ footNote }}</div>
       </div>
     </div>
 
     <sc-if value="{{ hasArts }}" hint-placeholder-val="{{ false }}">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:24px; margin-top:20px;">
         <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Читать по теме</div>
-          <a href="/baza-znaniy" style="font-size:13px; font-weight:700; color:#0872D3;">Вся база знаний →</a>
+          <div style="font-family:'Inter',sans-serif; font-size:18px; font-weight:700;">Читать по теме</div>
+          <a href="/baza-znaniy" style="font-size:13px; font-weight:700; color:#0066FF;">Вся база знаний →</a>
         </div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:14px;">
           <sc-for list="{{ arts }}" as="a" hint-placeholder-count="3">
-            <a href="{{ a.href }}" style="background:#F9FBFE; border:1px solid #E9EFF7; border-radius:12px; padding:18px; display:block; color:#18212F;">
-              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">{{ a.r }} · {{ a.m }}</div>
-              <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700; margin-top:8px; color:#0A4EA7; line-height:1.3;">{{ a.t }}</div>
-              <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:8px;">{{ a.d }}</div>
+            <a href="{{ a.href }}" style="background:#F9FBFE; border:1px solid #E9EFF7; border-radius:12px; padding:18px; display:block; color:#1A1A1A;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#606F85;">{{ a.r }} · {{ a.m }}</div>
+              <div style="font-family:'Inter',sans-serif; font-size:16px; font-weight:700; margin-top:8px; color:#0066FF; line-height:1.3;">{{ a.t }}</div>
+              <div style="font-size:14px; color:#606F85; line-height:1.55; margin-top:8px;">{{ a.d }}</div>
             </a>
           </sc-for>
         </div>
@@ -383,6 +346,9 @@ class Component extends DCLogic {
     this.__onCart = () => this.setState({ cartN: window.CART ? window.CART.count() : 0 });
     window.addEventListener("th-cart", this.__onCart);
     this.__onCart();
+    // логотипы брендов для голубой шапки раздела: те же файлы, что у главной (brand-logos.json и чистые варианты)
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logos.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(logos => this.setState({ logos: logos || {} })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logos-clean.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(c => this.setState({ logosClean: c || {} })).catch(() => {});
     const p = new URLSearchParams(location.search);
     const group = p.get("g") || "bytovye";
     // Группа выбрана ЯВНО — адресом ?g= или кликом по разделу. Без этого признака
@@ -443,6 +409,18 @@ class Component extends DCLogic {
   }
 
   // цветные бейджи из фактических ТТХ: серые пилюли не показывают главное отличие
+  // Строки характеристик карточки по утверждённому макету каталога (03.10.2026): до 6 строк, пустые не показываем,
+  // длинные значения и служебные поля (тип, серия, страна, цвет) не берём. Нет данных — карточка показывает чипы.
+  specRows(it) {
+    const ВАЖНЫЕ = ["Объём", "Мощность", "Площадь помещения", "Производительность", "Расход воздуха", "Тип управления", "Управление",
+      "Нагреватель", "Тип нагревателя", "Wi-Fi", "Покрытие бака", "Бак", "Гарантия"];
+    const sp = (it.sp || []).filter(x => x && x[0] && x[1] !== "" && x[1] != null && String(x[1]).length <= 34 && !/^(Тип$|Серия|Страна|Бренд|Артикул|Цвет)/.test(String(x[0])));
+    const out = [];
+    ВАЖНЫЕ.forEach(k => sp.forEach(x => { if (x[0] === k && out.length < 6 && !out.some(o => o[0] === k)) out.push(x); }));
+    sp.forEach(x => { if (out.length < 6 && !out.some(o => o[0] === x[0])) out.push(x); });
+    return out.slice(0, 6).map(x => ({ k: String(x[0]), v: String(x[1]) }));
+  }
+
   badgesOf(it) {
     const spec = k => {
       const row = (it.sp || []).find(v => k.test(String(v[0]).trim()));
@@ -452,7 +430,7 @@ class Component extends DCLogic {
     const cls = spec(/^класс$|энергоэффектив/i);
     if (/^A\+{1,3}$/i.test(cls.replace(/А/g, "A"))) out.push({ t: "Класс " + cls, fg: "#0B6B45", bg: "#E7F7EF" });
     const fresh = spec(/приток/i);
-    if (/^да$/i.test(fresh)) out.push({ t: "Приток воздуха", fg: "#0A4EA7", bg: "#E6F2FD" });
+    if (/^да$/i.test(fresh)) out.push({ t: "Приток воздуха", fg: "#0066FF", bg: "#E9F4FF" });
     const comp = spec(/^тип$|компрессор/i);
     if (/инверт/i.test(comp)) out.push({ t: "Инвертор", fg: "#1B4C9C", bg: "#EAF1FD" });
     const wifi = spec(/^wi-?fi$/i);
@@ -561,7 +539,7 @@ class Component extends DCLogic {
         el.style.display = "none";
         const note = document.createElement("div");
         note.setAttribute("data-nophoto", "1");
-        note.style.cssText = "font-size:12px;line-height:1.4;color:#8593A6;text-align:center;padding:8px;";
+        note.style.cssText = "font-size:12px;line-height:1.4;color:#606F85;text-align:center;padding:8px;";
         note.textContent = "Фото уточняется";
         box.appendChild(note);
       };
@@ -667,9 +645,10 @@ class Component extends DCLogic {
   chip(active, label, onPick, sub) {
     return {
       label, pick: onPick, sub: sub || "",
-      border: active ? "#0872D3" : "#DCE5F0",
-      bg: active ? "#E6F2FD" : "#fff",
-      fg: active ? "#0A4EA7" : "#5A6675"
+      border: active ? "#0066FF" : "#DCE5F0",
+      bg: active ? "#E9F4FF" : "#fff",
+      fg: active ? "#0066FF" : "#606F85",
+      boxBd: active ? "#0066FF" : "#CBD5E1", boxBg: active ? "#0066FF" : "#fff", tick: active ? "✓" : "", fw: active ? "600" : "400"
     };
   }
 
@@ -1690,7 +1669,7 @@ class Component extends DCLogic {
       { key: "climate", label: "Кондиционирование", slugs: ["bytovye", "poluprom", "mobilnye", "prom-mobilnye", "vozduhoohladiteli"], plus: ["multisplit"] },
       { key: "heat", label: "Отопление", slugs: ["radiatory", "teplovye-pushki", "teplovye-zavesy", "infrakrasnye-obogrevateli", "vodyanye-teploventilyatory", "kaminy", "obogrevateli", "teplovye-nasosy"] },
       { key: "vent", label: "Вентиляция", slugs: ["ventilyaciya", "ventilyatory-prom", "osushiteli", "rekuperatory"] },
-      { key: "water", label: "Водонагрев и водоочистка", slugs: ["vodonagrevateli", "vodoochistka"] },
+      { key: "water", label: "Водонагреватели и водоочистка", slugs: ["vodonagrevateli", "vodoochistka"] },
       { key: "proekt", label: "VRF, фанкойлы, чиллеры", slugs: ["mini-vrf", "fankoyly", "chillery", "precizionnye"] }
     ];
     const dirOf = slug => (DIRS.find(d => d.slugs.indexOf(slug) >= 0) || DIRS[0]).key;
@@ -1710,10 +1689,10 @@ class Component extends DCLogic {
           this.setState({ group: list[0].slug, sub: "all" });
           this.loadGroup(list[0].slug);
         },
-        border: on ? "#0872D3" : "#DCE5F0",
-        bg: on ? "#0872D3" : "#fff",
-        fg: on ? "#fff" : "#2C3846",
-        countFg: on ? "rgba(255,255,255,0.7)" : "#8593A6"
+        border: on ? "#0066FF" : "#DCE5F0",
+        bg: on ? "#0066FF" : "#fff",
+        fg: on ? "#fff" : "#1A1A1A",
+        countFg: on ? "rgba(255,255,255,0.7)" : "#606F85"
       };
     });
     const dirOrder = (DIRS.find(d => d.key === curDir) || DIRS[0]).slugs;
@@ -1725,13 +1704,13 @@ class Component extends DCLogic {
       title: "Мультисплит-системы",
       count: msGroup ? msGroup.count : "конструктор",
       href: "/multisplit",
-      border: "#DCE5F0", bg: "#fff", fg: "#2C3846", countFg: "#8593A6", order: 1
+      border: "#DCE5F0", bg: "#fff", fg: "#1A1A1A", countFg: "#606F85", order: 1
     }] : [];
     [
       { title: "Уценённый товар", n: s.ucenkaN, href: "/ucenka",
         border: "#F3D9B0", bg: "#FFF6E9", fg: "#B25200", countFg: "#B25200", order: 900 },
       { title: "Товар б/у", n: s.buN, href: "/obyavleniya-bu",
-        border: "#DCE5F0", bg: "#fff", fg: "#0A4EA7", countFg: "#0872D3", order: 901 }
+        border: "#DCE5F0", bg: "#fff", fg: "#0066FF", countFg: "#0066FF", order: 901 }
     ].forEach(v => {
       if (!(v.n > 0)) return;
       extraTab.push({ title: v.title, count: String(v.n), href: v.href,
@@ -1745,10 +1724,10 @@ class Component extends DCLogic {
         title: g.title,
         count: g.count,
         pick: () => { this.группаЯвно = true; this.setState({ group: g.slug, sub: "all" }); this.loadGroup(g.slug); },
-        border: on ? "#0872D3" : "#DCE5F0",
-        bg: on ? "#E6F2FD" : "#fff",
-        fg: on ? "#0A4EA7" : "#2C3846",
-        countFg: on ? "#0872D3" : "#8593A6",
+        border: on ? "#0066FF" : "#DCE5F0",
+        bg: on ? "#E9F4FF" : "#fff",
+        fg: on ? "#0066FF" : "#1A1A1A",
+        countFg: on ? "#0066FF" : "#606F85",
         order: g.slug === "bytovye" ? 0 : gi + 2
       };
     });
@@ -1764,6 +1743,17 @@ class Component extends DCLogic {
     const sortedBrands = (meta.brandList || [])
       .filter(b => brandCount[b] > 0 || b === s.brand)
       .sort((a, b) => rank(a) - rank(b) || a.localeCompare(b, "ru"));
+    // Логотипы брендов раздела для голубой шапки (макет 03.10.2026): до шести брендов с известным логотипом, нажатие включает фильтр.
+    const _Л = Object.assign({}, (s.logos || {}), ((s.logosClean || {}).logos || {}));
+    const _ТОЛЬКО_ЧИСТЫЙ = ["Royal Thermo"];
+    const heroBrands = sortedBrands
+      .filter(b => _Л[b] && (_ТОЛЬКО_ЧИСТЫЙ.indexOf(b) < 0 || !!((s.logosClean || {}).logos || {})[b]))
+      .slice(0, 6)
+      .map(b => ({
+        name: b, title: b + (s.brand === b ? " — показаны только эти модели, нажмите ещё раз, чтобы снять" : ""), logo: _Л[b],
+        bd: s.brand === b ? "2px solid #0066FF" : "1px solid #DCE5F0",
+        pick: () => this.setState({ brand: s.brand === b ? "all" : b, shown: 12 })
+      }));
     const brandOptions = ["all"].concat(sortedBrands).map(b => this.chip(
       s.brand === b,
       b === "all" ? "Все" : b,
@@ -1927,7 +1917,7 @@ class Component extends DCLogic {
       },
       {
         key: "stock", activeLabel: s.stock === "all" ? "" : (s.stock === "in" ? "В наличии" : "Под заказ"),
-        title: "Наличие", note: "«В наличии» — есть в Алматы на дату выгрузки. «Под заказ» — привозим в срок поставки",
+        title: "Наличие", note: "«В наличии» — есть в Алматы. «Под заказ» — привозим в срок поставки",
         options: [
           this.chip(s.stock === "all", "Всё", () => this.setState({ stock: "all", shown: 12 })),
           this.chip(s.stock === "in", "В наличии", () => this.setState({ stock: "in", shown: 12 })),
@@ -1951,9 +1941,9 @@ class Component extends DCLogic {
         href: "/tovar?g=" + s.group + "&sl=" + encodeURIComponent(it.sl || "") + "&i=" + o.i,
         // корзина общая: состояние кнопки читаем из неё, а не держим второй список
         cartLabel: !pNow ? "Уточнить цену" : (window.CART && window.CART.has(it.sl) ? "В корзине ✓" : "В корзину"),
-        cartBg: !pNow ? "#fff" : (window.CART && window.CART.has(it.sl) ? "#E7F7F0" : "#E6F2FD"),
-        cartFg: !pNow ? "#B25200" : (window.CART && window.CART.has(it.sl) ? "#0B6B45" : "#0A4EA7"),
-        cartBorder: !pNow ? "#F3D2AC" : (window.CART && window.CART.has(it.sl) ? "#BFE6D4" : "#B9DBF7"),
+        cartBg: !pNow ? "#fff" : (window.CART && window.CART.has(it.sl) ? "#fff" : "#0066FF"),
+        cartFg: !pNow ? "#0066FF" : (window.CART && window.CART.has(it.sl) ? "#178841" : "#fff"),
+        cartBorder: !pNow ? "#0066FF" : (window.CART && window.CART.has(it.sl) ? "#178841" : "#0066FF"),
         cartTitle: !pNow ? "Цену этой позиции считаем по запросу" : "Добавить в заказ",
         addToCart: () => {
           if (!pNow) {
@@ -1965,6 +1955,13 @@ class Component extends DCLogic {
           if (window.CART.has(it.sl)) location.href = "/korzina";
           else window.CART.add(Object.assign({}, cartIt, { g: s.group }), 1);
         },
+        g: s.group,
+        sl: it.sl || "",
+        specs: this.specRows(it),
+        hasSpecs: this.specRows(it).length > 0,
+        noSpecs: this.specRows(it).length === 0,
+        stkFg: inStock ? "#178841" : "#606F85",
+        stkBd: inStock ? "#BFE3CC" : "#CBD5E1",
         brand: it.b,
         name: it.n,
         img: (window.photoUrl ? window.photoUrl(it.i) : it.i || ""),
@@ -1986,14 +1983,14 @@ class Component extends DCLogic {
         price: ptNow || "Цена по запросу",
         oldPrice: salePrice && sale.was ? this.fmt(+sale.was) + " ₸" : "",
         hasOldPrice: !!(salePrice && sale.was),
-        priceColor: pNow ? (salePrice ? "#E11A13" : "#18212F") : "#5A6675",
+        priceColor: pNow ? (salePrice ? "#E11A13" : "#1A1A1A") : "#606F85",
         // Позиция без цены раньше говорила одно и то же пятью способами разом:
         // «Цена по запросу», под ней «считаем по запросу», ссылка «Запросить цену →»,
         // кнопка «Уточнить цену» и подсказка к ней. Оставляем цену и две РАЗНЫЕ
         // по смыслу кнопки: ссылка открывает карточку, кнопка спрашивает цену.
         priceNote: pNow ? (salePrice ? "акционная цена · с НДС" : "с НДС") : "",
         monthly: monthlyBase ? "рассрочка 12 мес — " + this.fmt(monthlyBase / 12) + " ₸/мес" : "",
-        cta: "Открыть карточку →",
+        cta: "Подробнее →",
         pickScore: this.isPick(it, picks) ? this.recScore(it, picks) : -1,
         isPick: false,
         // Хит и «Наш выбор» на одной карточке не показываем: две плашки об одном
@@ -2074,15 +2071,17 @@ class Component extends DCLogic {
           label: t.name === "all" ? "Все" : t.name,
           count: t.n,
           pick: () => this.setState({ sub: key, shown: 12 }),
-          border: on ? "#0872D3" : "#DCE5F0",
-          bg: on ? "#E6F2FD" : "#fff",
-          fg: on ? "#0A4EA7" : "#2C3846",
-          countFg: on ? "#0872D3" : "#8593A6"
+          border: on ? "#0066FF" : "#DCE5F0",
+          bg: on ? "#E9F4FF" : "#fff",
+          fg: on ? "#0066FF" : "#1A1A1A",
+          countFg: on ? "#0066FF" : "#606F85"
         };
       }),
       crumbSub: s.sub === "all" ? "" : " → " + s.sub,
       mobNavLabel: (DIRS.find(d => d.key === curDir) || DIRS[0]).label + " → " + (txt.h1 || meta.title),
       groupHref: "/katalog?g=" + s.group,
+      heroBrands,
+      hasHeroBrands: heroBrands.length > 0,
       groupTitle: txt.h1 || meta.title,
       // Заголовок группы — H1 только при явно выбранной группе. На /katalog без ?g=
       // единственный H1 — серверный «Каталог климатической техники в Алматы»;
@@ -2093,8 +2092,8 @@ class Component extends DCLogic {
       seoTitle: txt.seo || "",
       seoMeta: txt.meta || "",
       cartLabel: (s.cartN || 0) ? "Корзина · " + s.cartN : "Корзина",
-      cartBg: (s.cartN || 0) ? "#0872D3" : "#E6F2FD",
-      cartFg: (s.cartN || 0) ? "#fff" : "#0A4EA7",
+      cartBg: (s.cartN || 0) ? "#0066FF" : "#E9F4FF",
+      cartFg: (s.cartN || 0) ? "#fff" : "#0066FF",
       query: s.q,
       onSearch: e => this.setState({ q: e.target.value, shown: 12 }),
       onSort: e => this.setState({ sort: e.target.value }),
@@ -2138,7 +2137,7 @@ class Component extends DCLogic {
           : "Показано " + visible.length + " из " + list.length + " · в группе "
             + (meta.count - (meta.acc || 0)) + ", в наличии " + meta.inStock
             + ((meta.acc || 0) ? " · плюс " + meta.acc + " сопутствующих" : ""),
-      dateNote: s.updated ? "Цены и остатки — выгрузка от " + String(s.updated).split("-").reverse().join(".") : "",
+      dateNote: "",
       footNote: "В каталоге " + this.plural(total, "позиция", "позиции", "позиций")
         + " в " + this.plural(groups.length, "группе", "группах", "группах")
         + ". Рассрочка рассчитана на 12 месяцев.",
@@ -2146,8 +2145,8 @@ class Component extends DCLogic {
       cardDir: grid ? "column" : "row",
       photoW: grid ? "100%" : "200px",
       photoH: grid ? "170px" : "150px",
-      gridFg: grid ? "#0872D3" : "#8593A6",
-      listFg: grid ? "#8593A6" : "#0872D3"
+      gridFg: grid ? "#0066FF" : "#606F85",
+      listFg: grid ? "#606F85" : "#0066FF"
     };
   }
 }
