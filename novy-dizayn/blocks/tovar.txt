@@ -110,6 +110,23 @@
                 </div>
               </sc-for>
             </div>
+            <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:16px;">
+                <div style="font-family:'Inter',sans-serif; font-size:16px; font-weight:700; color:#0033A0;">Видеообзор</div>
+                <sc-if value="{{ hasEmbed }}" hint-placeholder-val="{{ false }}">
+                  <div style="margin-top:10px; border-radius:12px; overflow:hidden; background:#E9F4FF; aspect-ratio:16/9;">
+                    <iframe src="{{ videoEmbed }}" title="Видеообзор" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="display:block; width:100%; height:100%; border:0;"></iframe>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ noEmbed }}" hint-placeholder-val="{{ false }}">
+                  <a href="{{ videoHref }}" target="_blank" rel="noreferrer" style="margin-top:10px; border:1px solid #DCE5F0; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:20px; text-align:center; color:#0066FF; text-decoration:none;">
+                    <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#0066FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
+                    <div style="font-size:15px; font-weight:700;">Смотреть обзор модели</div>
+                    <div style="font-size:13px; color:#606F85;">Откроется в новой вкладке</div>
+                  </a>
+                </sc-if>
+              </div>
+            </sc-if>
           </div>
 
           <div style="display:flex; flex-direction:column;">
@@ -380,21 +397,6 @@
                       <div style="font-size:12px; font-weight:700; color:{{ d.fg }}; background:{{ d.bg }}; border-radius:5px; padding:4px 9px; white-space:nowrap;">{{ d.state }}</div>
                     </div>
                   </sc-for>
-                </div>
-              </div>
-              <div>
-                <div style="font-family:'Inter',sans-serif; font-size:16px; font-weight:700;">Видеообзор</div>
-                <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
-                  <a href="{{ videoHref }}" target="_blank" rel="noreferrer" style="margin-top:12px; border:1px solid #DCE5F0; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center; color:#0066FF;" style-hover="border-color:#0066FF; background:#F5FAFF;">
-                    <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#0066FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
-                    <div style="font-size:15px; font-weight:700;">Смотреть обзор модели</div>
-                    <div style="font-size:13px; color:#606F85;">Откроется в новой вкладке</div>
-                  </a>
-                </sc-if>
-                <div style="display:{{ videoStubDisplay }}; margin-top:12px; border:2px dashed #B9DBF7; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center;">
-                  <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#0066FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
-                  <div style="font-size:14px; font-weight:600; color:#1A1A1A;">Место под видео с вашего канала</div>
-                  <div style="font-size:13px; color:#606F85; line-height:1.5; max-width:300px;">Пришлите ссылку на обзор — встрою плеер. Канал: <a href="https://www.youtube.com/@Tehnoholod369" target="_blank" rel="noreferrer">@Tehnoholod369</a></div>
                 </div>
               </div>
             </div>
@@ -1232,11 +1234,27 @@ class Component extends DCLogic {
     const isAC = ["bytovye", "poluprom", "mobilnye", "prom-mobilnye"].indexOf(s.group) >= 0;
     const canPower = isAC && coolKw > 0 && seer > 0;
 
+    // видео: в данных может быть несколько ссылок через «; » — берём первую, которую умеем встроить
+    const _ролики = String(det.vd || "").split(/;\s*/).filter(x => /^https?:\/\//.test(x));
+    const _встроить = u => {
+      let m;
+      if ((m = u.match(/youtube\.com\/embed\/([\w-]{6,})/))) return "https://www.youtube.com/embed/" + m[1] + "?rel=0";
+      if ((m = u.match(/[?&]v=([\w-]{6,})/)) && /youtube\.com/.test(u)) return "https://www.youtube.com/embed/" + m[1] + "?rel=0";
+      if ((m = u.match(/youtu\.be\/([\w-]{6,})/))) return "https://www.youtube.com/embed/" + m[1] + "?rel=0";
+      if ((m = u.match(/youtube\.com\/shorts\/([\w-]{6,})/))) return "https://www.youtube.com/embed/" + m[1] + "?rel=0";
+      if ((m = u.match(/rutube\.ru\/video\/([a-f0-9]{16,})/))) return "https://rutube.ru/play/embed/" + m[1];
+      if (/rutube\.ru\/play\/embed\//.test(u) || /vkvideo\.ru\/video_ext/.test(u) || /vk\.com\/video_ext/.test(u)) return u;
+      return "";
+    };
+    const _видео = _ролики[0] || "";
+    const _встройка = _ролики.map(_встроить).find(x => x) || "";
+    const _видео2 = _встройка ? _ролики.find(u => _встроить(u) === _встройка) : _видео;
+
     // вкладки собираем ключами: вкладка монтажа есть не у всех, а на номера завязаны
     // «Документы» и «Гарантия» — сдвиг ломал бы их молча.
     const TABS = [{ k: "specs", label: "Характеристики" }, { k: "desc", label: "Описание" }]
       .concat(m ? [{ k: "mount", label: m.tab }] : [])
-      .concat([{ k: "docs", label: "Документы и видео" }])
+      .concat([{ k: "docs", label: "Документы" }])
       // у расходника вкладки гарантии нет: ни срока производителя, ни сервисного центра
       // у сменного фильтра не существует, а заглушки вместо них — пустое место на витрине
       .concat(it.exp ? [] : [{ k: "warranty", label: "Гарантия и сервис" }])
@@ -1561,7 +1579,7 @@ class Component extends DCLogic {
       isDocs: curTab === "docs",
       isWarranty: curTab === "warranty",
       isPower: curTab === "power",
-      // ссылки (видеообзор, инструкция) живут на вкладке «Документы и видео» —
+      // ссылки (видеообзор, инструкция) живут на вкладке «Документы» —
       // в таблице характеристик они дублировались и занимали место настоящих ТТХ
       specs: specs.filter(x => !/^https?:\/\//i.test(String(x[1] || "")))
         .map(x => ({
@@ -1590,9 +1608,11 @@ class Component extends DCLogic {
         : "Обслуживание в сервисных центрах, сертифицированных на работу с оборудованием " + (it.b || "этого бренда")
         + ": так сохраняется гарантия производителя. Выезд сертифицированной бригады по Алматы и области.",
       // ссылка на инструкцию и обзор приходит из данных, если она там есть
-      hasVideo: !!det.vd,
-      videoStubDisplay: det.vd ? "none" : "flex",
-      videoHref: det.vd || "",
+      hasVideo: !!_видео,
+      hasEmbed: !!_встройка,
+      noEmbed: !!_видео && !_встройка,
+      videoEmbed: _встройка,
+      videoHref: _видео2,
       manualHref: det.mn || "",
       hasManual: !!det.mn,
       // Подтверждённые post-sale отзывы именно этого SKU.
