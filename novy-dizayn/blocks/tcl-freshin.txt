@@ -71,6 +71,17 @@
     </div>
 
     <div style="margin-top:26px;">
+      <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">В ИНТЕРЬЕРЕ</div>
+      <h2 style="margin:6px 0 0 0; font-size:26px; font-weight:800; letter-spacing:-0.018em; color:#0033A0;">FreshIN 3.0 в жилых комнатах</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:16px; margin-top:16px;">
+        <div style="border-radius:16px; overflow:hidden; background:#F1F5F9; border:1px solid #DCE5F0;"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/freshin/lifestyle-1.webp" alt="TCL FreshIN 3.0 в интерьере — комната 1" loading="lazy" style="display:block; width:100%; aspect-ratio:4/3; object-fit:cover;" /></div>
+        <div style="border-radius:16px; overflow:hidden; background:#F1F5F9; border:1px solid #DCE5F0;"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/freshin/lifestyle-2.webp" alt="TCL FreshIN 3.0 в интерьере — комната 2" loading="lazy" style="display:block; width:100%; aspect-ratio:4/3; object-fit:cover;" /></div>
+        <div style="border-radius:16px; overflow:hidden; background:#F1F5F9; border:1px solid #DCE5F0;"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/freshin/lifestyle-3.webp" alt="TCL FreshIN 3.0 в интерьере — комната 3" loading="lazy" style="display:block; width:100%; aspect-ratio:4/3; object-fit:cover;" /></div>
+        <div style="border-radius:16px; overflow:hidden; background:#F1F5F9; border:1px solid #DCE5F0;"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/freshin/lifestyle-4.webp" alt="TCL FreshIN 3.0 в интерьере — комната 4" loading="lazy" style="display:block; width:100%; aspect-ratio:4/3; object-fit:cover;" /></div>
+      </div>
+    </div>
+
+    <div style="margin-top:26px;">
       <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:14px;">
         <div>
           <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ТЕХНОЛОГИИ</div>
