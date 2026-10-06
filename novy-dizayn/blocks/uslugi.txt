@@ -29,7 +29,7 @@
 
     <div style="background:linear-gradient(120deg,#0033A0,#0033A0 75%); color:#fff; border-radius:16px; padding:38px; margin-top:12px;">
       <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#E9F4FF;">УСЛУГИ ИП «ТЕХНОХОЛОД»</div>
-      <h1 style="margin:14px 0 0 0;     max-width:760px; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Монтаж под ключ, сервис и понятная зона ответственности</h1>
+      <h1 style="margin:14px 0 0 0;     max-width:760px; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em;">Монтаж под ключ, сервис и понятная зона ответственности</h1>
       <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px; max-width:640px;">На монтажные работы нового оборудования через АРТЕЛЬ действует единый срок гарантии — 12 месяцев. На само оборудование действует только гарантия производителя. Сервис-карта 369 фиксирует исполнителя, а обращение по монтажу направляется тому же МАСТЕРУ или бригаде. Оборудование, соединительный комплект и работы идут отдельными строками — вы видите, за что платите.</div>
       <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
         <a href="https://wa.me/77000369369" style="background:#0066FF; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Вызвать замерщика</a>
