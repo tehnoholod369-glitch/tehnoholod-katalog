@@ -2223,7 +2223,7 @@ class Component extends DCLogic {
       dateNote: "",
       footNote: "В каталоге " + this.plural(total, "позиция", "позиции", "позиций")
         + " в " + this.plural(groups.length, "группе", "группах", "группах")
-        + ". Рассрочка рассчитана на 12 месяцев.",
+        + ". Рассрочка до 24 месяцев.",
       gridCols: grid ? "repeat(auto-fit,minmax(min(250px,100%),1fr))" : "minmax(0,1fr)",
       cardDir: grid ? "column" : "row",
       photoW: grid ? "100%" : "200px",
