@@ -592,7 +592,21 @@ class Component extends DCLogic {
     });
   }
 
-  componentDidUpdate() { this.syncPhotos(); }
+  // Адрес страницы помнит раздел и подкатегорию (07.10.2026): ссылкой «Рекуператоры» можно поделиться, она откроется сразу на нужной выдаче.
+  // Меняем только ?g= и ?sub=, остальные параметры не трогаем; история не растёт (replaceState).
+  syncUrl() {
+    try {
+      const st = this.state;
+      if (st.loading || !st.index) return;
+      if (!this.группаЯвно && (!st.sub || st.sub === "all")) return;
+      const q = new URLSearchParams(location.search);
+      if (this.группаЯвно) q.set("g", st.group);
+      if (st.sub && st.sub !== "all") q.set("sub", st.sub); else q.delete("sub");
+      const now = q.toString();
+      if (now !== location.search.replace(/^\?/, "")) history.replaceState(null, "", location.pathname + (now ? "?" + now : "") + location.hash);
+    } catch (e) {}
+  }
+  componentDidUpdate() { this.syncPhotos(); this.syncUrl(); }
 
   picksZdes(picks) {
     if (!picks || !picks.length) return false;
