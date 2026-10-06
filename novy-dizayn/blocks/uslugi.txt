@@ -205,7 +205,7 @@
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:26px;">
       <div>
-        <div style="font-family:Inter,sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Вызвать замерщика или МАСТЕРА</div>
+        <div style="font-family:Inter,sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Вызвать замерщика или МАСТЕРА</div>
         <div style="font-size:15px; color:#64748B; line-height:1.6; margin-top:10px;">Оставьте имя, номер и адрес объекта. Перезвоним в рабочее время, подскажем срок и назовём стоимость после замера.</div>
         <div style="font-size:14px; color:#64748B; line-height:1.7; margin-top:14px;">Телефон и WhatsApp: <b style="color:#1A1A1A;">+77 000 369 369</b><br />Дополнительный: <b style="color:#1A1A1A;">+77 000 33 66 99</b></div>
       </div>
