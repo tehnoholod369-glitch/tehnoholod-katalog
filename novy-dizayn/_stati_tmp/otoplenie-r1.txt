@@ -1,0 +1,221 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0052D6; }
+  .dv-page { max-width: 1248px; box-sizing: border-box; margin: 0 auto; padding: 18px 24px 72px; }
+  .dv-crumbs { font-size: 13px; line-height: 20px; color: #64748B; }
+  .dv-crumbs a { color: #64748B; }
+  .dv-crumbs span { color: #1A1A1A; }
+  .dv-h1 { margin: 14px 0 0; font: 700 48px/56px Inter, sans-serif; letter-spacing: -0.02em; color: #0033A0; overflow-wrap: anywhere; }
+  .dv-h2 { margin: 44px 0 0; font: 700 32px/40px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; }
+  .dv-lead { font: 400 18px/28px Inter, sans-serif; color: #1A1A1A; margin-top: 14px; max-width: 880px; }
+  .dv-sub { font: 400 16px/24px Inter, sans-serif; color: #64748B; margin-top: 8px; }
+  .dv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 16px; margin-top: 16px; }
+  .dv-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+  .dv-btn { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; height: 48px; padding: 0 22px; border-radius: 8px; font: 600 16px/1 Inter, sans-serif; }
+  .dv-btn--blue { background: #0066FF; color: #fff; }
+  .dv-btn--blue:hover { background: #0052D6; color: #fff; }
+  .dv-btn--red { background: #E81C1C; color: #fff; }
+  .dv-btn--red:hover { background: #C41212; color: #fff; }
+  .dv-btn--line { border: 1.5px solid #0066FF; color: #0066FF; background: #fff; }
+  .dv-btn--line:hover { background: #E9F4FF; color: #0052D6; }
+  .vt-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 20px; display: block; color: inherit; transition: .15s; }
+  .vt-card:hover { border-color: #0066FF; box-shadow: 0 4px 16px rgba(0,102,255,.12); color: inherit; }
+  .vt-t { font: 600 20px/28px Inter, sans-serif; color: #0033A0; }
+  .vt-d { font: 400 14px/20px Inter, sans-serif; color: #64748B; margin-top: 8px; }
+  .vt-n { font-variant-numeric: tabular-nums; font-weight: 700; color: #0033A0; }
+  .vt-go { display: block; margin-top: 12px; font: 600 14px/20px Inter, sans-serif; color: #0066FF; }
+  .dv-note { background: #E9F4FF; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 20px; margin-top: 24px; max-width: 880px; font: 400 16px/26px Inter, sans-serif; color: #1A1A1A; }
+  .dv-note b { color: #0033A0; }
+  .dv-cta { background: #E9F4FF; border: 1px solid #DCE5F0; border-radius: 16px; padding: 28px; margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; align-items: center; }
+  .dv-cta__t { font: 700 24px/32px Inter, sans-serif; color: #0033A0; letter-spacing: -0.015em; }
+  .dv-cta__s { font: 400 16px/24px Inter, sans-serif; color: #1A1A1A; margin-top: 8px; }
+  @media (max-width: 760px) {
+    .dv-page { padding: 14px 16px 56px; }
+    .dv-h1 { font-size: 32px; line-height: 40px; }
+    .dv-h2 { margin-top: 36px; font-size: 24px; line-height: 32px; }
+    .dv-lead { font-size: 16px; line-height: 24px; }
+  }
+
+  /* витрина направления: фото в плитках и полка «Наш выбор» (05.10.2026) */
+  .vt-card--ph { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+  .vt-ph { position: relative; aspect-ratio: 4/3; background: #fff; border-bottom: 1px solid #EEF2F7; flex: none; overflow: hidden; }
+  .vt-ph img { position: absolute; left: 10px; top: 10px; width: calc(100% - 20px); height: calc(100% - 20px); object-fit: contain; }
+  .vt-b { padding: 16px 20px 20px; display: flex; flex-direction: column; flex: 1 1 auto; }
+  .vt-b .vt-go { margin-top: auto; padding-top: 12px; }
+  .dv-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .dv-shelf { margin-top: 44px; background: #E9F4FF; border: 1px solid #DCE5F0; border-radius: 16px; padding: 28px; }
+  .dv-shelf__t { margin: 0; font: 700 32px/40px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; }
+  .dv-shelf__s { margin: 8px 0 0; font: 400 16px/24px Inter, sans-serif; color: #1A1A1A; max-width: 760px; }
+  .dv-shelf__g { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+  .dv-sc { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; color: inherit; }
+  .dv-sc:hover { border-color: #0066FF; box-shadow: 0 4px 16px rgba(0,102,255,.12); color: inherit; }
+  .dv-sc__img { position: relative; aspect-ratio: 4/3; border-bottom: 1px solid #EEF2F7; flex: none; overflow: hidden; }
+  .dv-sc__img img { position: absolute; left: 12px; top: 12px; width: calc(100% - 24px); height: calc(100% - 24px); object-fit: contain; }
+  .dv-sc__bd { position: absolute; left: 12px; top: 12px; z-index: 1; background: #0066FF; color: #fff; font: 600 12px/24px Inter, sans-serif; padding: 0 10px; border-radius: 6px; }
+  .dv-sc__b { padding: 14px 18px 18px; display: flex; flex-direction: column; flex: 1 1 auto; gap: 4px; }
+  .dv-sc__br { font: 600 12px/16px Inter, sans-serif; color: #606F85; letter-spacing: .04em; text-transform: uppercase; }
+  .dv-sc__n { font: 600 18px/26px Inter, sans-serif; color: #0033A0; }
+  .dv-sc__pl { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+  .dv-sc__pl span { background: #F1F5F9; border-radius: 999px; padding: 3px 10px; font: 400 12px/16px Inter, sans-serif; color: #606F85; }
+  .dv-sc__pr { margin-top: auto; padding-top: 12px; font: 700 24px/32px Inter, sans-serif; color: #1A1A1A; }
+  .dv-sc__st { font: 600 13px/20px Inter, sans-serif; color: #178841; }
+  .dv-sc__go { margin-top: 6px; font: 600 14px/20px Inter, sans-serif; color: #0066FF; }
+  .dv-shelf__note { font: 400 13px/20px Inter, sans-serif; color: #606F85; margin-top: 14px; }
+  @media (max-width: 1100px) { .dv-shelf__g { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { .dv-shelf { padding: 20px 16px; } .dv-shelf__t { font-size: 24px; line-height: 32px; } .dv-shelf__g { grid-template-columns: 1fr; } .dv-grid--3 { grid-template-columns: 1fr; } }
+  .dv-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @media (max-width: 1100px) { .dv-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { .dv-grid--4 { grid-template-columns: 1fr; } }
+  .dv-grid--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  @media (max-width: 1100px) { .dv-grid--5 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { .dv-grid--5 { grid-template-columns: 1fr; } }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F1F5F9;">
+
+  
+
+  <div class="dv-page">
+    <div class="dv-crumbs"><a href="/">Главная</a> → <span>Отопление</span></div>
+
+    <h1 class="dv-h1">Отопление и обогрев помещений в Алматы</h1>
+
+    <div class="dv-lead">
+      Радиаторы для водяных систем, электрические и газовые обогреватели, тепловые пушки для
+      складов и строек, камины и электроочаги. Подбираем мощность по площади, привозим и
+      устанавливаем.
+    </div>
+
+    <div class="dv-btns">
+      <a href="/katalog?g=radiatory" class="dv-btn dv-btn--blue">Радиаторы в каталоге</a>
+      <a href="/katalog?g=teplovye-pushki" class="dv-btn dv-btn--line">Тепловые пушки</a>
+    </div>
+
+    <h2 class="dv-h2">Радиаторы отопления и тепловые насосы</h2>
+    <div class="dv-sub">Royal Thermo, <span class="vt-n" data-group="radiatory"></span> позиций — для водяных систем в квартире, доме и на объекте.</div>
+    <div class="dv-grid dv-grid--5">
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=radiatory&sub=Секционные"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/radiatory/royal-thermo-pianoforte-tower-bianco-traffico-22-sekc.jpg" alt="Секционные" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Секционные</div>
+        <div class="vt-d">Набираются по числу секций под теплопотери комнаты.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="radiatory|Секционные"></span> →</div></div></a>
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=radiatory&sub=Трубчатые"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/radiatory/rad_Insignia_white.jpg" alt="Трубчатые" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Трубчатые</div>
+        <div class="vt-d">Ровная гладкая поверхность, легче мыть — для кухонь и детских.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="radiatory|Трубчатые"></span> →</div></div></a>
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=radiatory&sub=С нижним подключением"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/radiatory/rt_pianoforte-v_black.jpg" alt="С нижним подключением" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">С нижним подключением</div>
+        <div class="vt-d">Трубы из пола или стены — подводка не на виду.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="radiatory|С нижним подключением"></span> →</div></div></a>
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=radiatory&sub=Комплектующие"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/radiatory/rad_1450293.jpg" alt="Комплектующие" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Комплектующие</div>
+        <div class="vt-d">Монтажные наборы, кронштейны, краны и заглушки.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="radiatory|Комплектующие"></span> →</div></div></a>
+
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=teplovye-nasosy"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/haier/au082fycra-hw.jpg" alt="Тепловые насосы" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Тепловые насосы</div>
+        <div class="vt-d">Воздух-вода: отопление дома от наружного блока. Под заказ.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="teplovye-nasosy"></span> →</div></div></a>
+    </div>
+
+    
+    <div class="dv-shelf"><h2 class="dv-shelf__t">Наш выбор в отоплении</h2><p class="dv-shelf__s">Модели, которые мы рекомендуем из наличия: понятная цена, проверенный бренд, фото и характеристики в карточке.</p><div class="dv-shelf__g"><a class="dv-sc" href="https://tehnoholod369.kz/tovar?g=kaminy&amp;sl=royal-thermo-rtfp-w-al80ls"><div class="dv-sc__img"><span class="dv-sc__bd">Наш выбор</span><img src="https://img.tehnoholod369.kz/img/kaminy/royal-thermo-rtfp-w-al80ls.jpg" alt="Royal Thermo Allira RTFP/W-AL80LS" width="600" height="450" loading="lazy" decoding="async"></div><div class="dv-sc__b"><div class="dv-sc__br">Royal Thermo</div><div class="dv-sc__n">Allira RTFP/W-AL80LS</div><div class="dv-sc__pl"><span>80 дюйм</span><span>до 30</span><span>2D</span></div><div class="dv-sc__pr">699 990 ₸</div><div class="dv-sc__st">В наличии по данным каталога</div><div class="dv-sc__go">Подробнее →</div></div></a><a class="dv-sc" href="https://tehnoholod369.kz/tovar?g=teplovye-pushki&amp;sl=ballu-bhp-p2-30"><div class="dv-sc__img"><span class="dv-sc__bd">Наш выбор</span><img src="https://img.tehnoholod369.kz/img/teplovye-pushki/tp_1204786.jpg" alt="Ballu BHP-P2-30" width="600" height="450" loading="lazy" decoding="async"></div><div class="dv-sc__b"><div class="dv-sc__br">Ballu</div><div class="dv-sc__n">BHP-P2-30</div><div class="dv-sc__pl"><span>27 кВт</span><span>до 270 м²</span><span>Трубчатый электронагреватель (ТЭН)</span></div><div class="dv-sc__pr">227 500 ₸</div><div class="dv-sc__st">В наличии по данным каталога</div><div class="dv-sc__go">Подробнее →</div></div></a><a class="dv-sc" href="https://tehnoholod369.kz/tovar?g=obogrevateli&amp;sl=royal-clima-rec-at2000e"><div class="dv-sc__img"><span class="dv-sc__bd">Наш выбор</span><img src="https://img.tehnoholod369.kz/img/royal-clima/rec-at1000e.jpg" alt="ROYAL CLIMA REC-AT2000E" width="600" height="450" loading="lazy" decoding="async"></div><div class="dv-sc__b"><div class="dv-sc__br">ROYAL CLIMA</div><div class="dv-sc__n">REC-AT2000E</div><div class="dv-sc__pl"><span>2 кВт</span><span>до 25 м²</span><span>электронное</span></div><div class="dv-sc__pr">49 900 ₸</div><div class="dv-sc__st">В наличии по данным каталога</div><div class="dv-sc__go">Подробнее →</div></div></a></div><div class="dv-shelf__note">«Наш выбор» — рекомендация магазина, а не утверждение о продажах. Наличие и цена — из каталога, подтверждаем при заказе.</div></div>
+    
+
+    <h2 class="dv-h2">Обогреватели, тепловые пушки и завесы</h2>
+    <div class="dv-grid dv-grid--4">
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=infrakrasnye-obogrevateli"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/ballu-bih-gtw-1-3.jpg" alt="Инфракрасные обогреватели" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Инфракрасные обогреватели</div>
+        <div class="vt-d">Греют предметы и людей, а не воздух — работают и на открытых площадках. Есть электрические и газовые.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="infrakrasnye-obogrevateli"></span> →</div></div></a>
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=obogrevateli"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/royal-clima/rec-at1000e.jpg" alt="Конвекторы и масляные" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Конвекторы и масляные</div>
+        <div class="vt-d">Для дома и офиса: настенные конвекторы, масляные радиаторы, тепловентиляторы.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="obogrevateli"></span> →</div></div></a>
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=teplovye-pushki&sub=Электрические"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/teplovye-pushki/tp_1298566.jpg" alt="Пушки электрические" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Пушки электрические</div>
+        <div class="vt-d">Быстрый обогрев цехов и строек там, где есть сеть.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="teplovye-pushki|Электрические"></span> →</div></div></a>
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=teplovye-pushki&sub=Газовые"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/teplovye-pushki/tp_1011969.jpg" alt="Пушки газовые" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Пушки газовые</div>
+        <div class="vt-d">Автономный обогрев там, где сети нет или мощности не хватает.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="teplovye-pushki|Газовые"></span> →</div></div></a>
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=teplovye-pushki&sub=Дизельные прямого нагрева"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/teplovye-pushki/ballu-bhdp-100.jpg" alt="Пушки дизельные" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Пушки дизельные</div>
+        <div class="vt-d">Прямого нагрева — для открытых площадок и продуваемых объектов.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="teplovye-pushki|Дизельные прямого нагрева"></span> →</div></div></a>
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=vodyanye-teploventilyatory"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/vodyanye-teploventilyatory/ballu-bhp-w2-100-ln.jpg" alt="Водяные тепловентиляторы" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Водяные тепловентиляторы</div>
+        <div class="vt-d">Работают от контура отопления — для складов и производств.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-group="vodyanye-teploventilyatory"></span> →</div></div></a>
+
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=teplovye-zavesy&sub=Электрические"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/teplovye-zavesy/ballu-bhc-h20t36-ps-2.jpg" alt="Электрические тепловые завесы" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Электрические тепловые завесы</div>
+        <div class="vt-d">Для входов в магазины, офисы и склады.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="teplovye-zavesy|Электрические"></span> →</div></div></a>
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=teplovye-zavesy&sub=Водяные"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/teplovye-zavesy/ballu-bhc-h20w45-ps-2.jpg" alt="Водяные тепловые завесы" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Водяные тепловые завесы</div>
+        <div class="vt-d">Для ворот и цехов: работают от системы отопления.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="teplovye-zavesy|Водяные"></span> →</div></div></a>
+    </div>
+
+    <h2 class="dv-h2">Камины и электроочаги</h2>
+    <div class="dv-grid dv-grid--3">
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=kaminy&sub=Каминокомплекты"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/kaminy/elektrokamin-392s.jpg" alt="Каминокомплекты" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Каминокомплекты</div>
+        <div class="vt-d">Очаг и портал вместе — готовое решение под комнату.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="kaminy|Каминокомплекты"></span> →</div></div></a>
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=kaminy&sub=Биокамины"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/kaminy/firelight-bfp-p-3020.jpg" alt="Биокамины" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Биокамины</div>
+        <div class="vt-d">На биотопливе: живое пламя без дымохода и проводки.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="kaminy|Биокамины"></span> →</div></div></a>
+
+      <a class="vt-card vt-card--ph" href="/katalog?g=kaminy&sub=Электроочаги 2D"><div class="vt-ph"><img src="https://img.tehnoholod369.kz/img/kaminy/royal-thermo-rtfp-w-al80ls.jpg" alt="Электроочаги" width="600" height="450" loading="lazy" decoding="async"></div><div class="vt-b"><div class="vt-t">Электроочаги</div>
+        <div class="vt-d">Эффект пламени и подогрев от розетки, без топлива.</div>
+        <div class="vt-go">Смотреть <span class="vt-n" data-sub="kaminy|Электроочаги 2D"></span> →</div></div></a>
+
+
+    </div>
+
+    <div class="dv-note">
+      <div>
+        <b>Кондиционер тоже греет.</b> Инверторные сплит-системы работают на обогрев до −15…−20 °C
+        по паспорту модели и обходятся дешевле электрообогревателя той же мощности. Если нужен
+        и холод, и тепло — посмотрите <a href="/katalog?g=bytovye">бытовые сплит-системы</a>.
+        Точную нижнюю температуру смотрите в характеристиках: у моделей она разная, и мы её
+        не додумываем.
+      </div>
+    </div>
+
+    <div class="dv-cta">
+      <div>
+        <div class="dv-cta__t">Подобрать мощность по площади</div>
+        <div class="dv-cta__s">Напишите площадь, высоту потолков и что за помещение — посчитаем и предложим варианты.</div>
+        <div class="dv-cta__s" style="margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a></div>
+      </div>
+      <div class="dv-btns" style="margin-top:0;">
+        <a href="https://wa.me/77000369369" class="dv-btn dv-btn--red">Написать в WhatsApp</a>
+        <a href="/uslugi" class="dv-btn dv-btn--line">Монтаж и сервис</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js"></script>
+
+</x-dc>
