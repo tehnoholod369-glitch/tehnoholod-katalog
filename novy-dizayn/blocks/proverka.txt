@@ -5,23 +5,23 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
-  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
-  a { color: #0A4EA7; text-decoration: none; }
-  a:hover { color: #0872D3; }
+  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0052D6; }
   /* Поле номера: моноширинное и крупное — номер сверяют с бумагой символ в символ,
      а на телефоне это делают одной рукой. Кнопка 48 px, как остальные на витрине. */
   .th-pv-inp { width:100%; box-sizing:border-box; border:1px solid #C9D6E4; border-radius:10px;
     padding:14px 15px; font-size:19px; font-family:ui-monospace,Consolas,monospace;
     letter-spacing:0.06em; text-transform:uppercase; background:#fff; }
   .th-pv-btn { width:100%; margin-top:10px; min-height:48px; border:0; border-radius:10px;
-    background:#0872D3; color:#fff; font-size:16px; font-weight:700; font-family:inherit; cursor:pointer; }
+    background:#0066FF; color:#fff; font-size:16px; font-weight:700; font-family:inherit; cursor:pointer; }
   .th-pv-btn[disabled] { background:#9BB8D6; cursor:default; }
   .th-pv-row { display:grid; grid-template-columns:minmax(140px,38%) 1fr; gap:10px 16px;
     padding:11px 0; border-top:1px solid #EEF2F7; font-size:15px; line-height:1.5; }
-  .th-pv-k { color:#5A6675; }
+  .th-pv-k { color:#606F85; }
   .th-pv-v { font-weight:600; }
   /* minmax(0,1fr), а не голый 1fr: у grid-колонки min-width по умолчанию `auto`,
      и длинное значение без пробелов (номер карты, ссылка) растянуло бы строку за
@@ -29,36 +29,20 @@
      а не по симптому (Г-299, 07.09.2026). */
   @media (max-width:520px) { .th-pv-row { grid-template-columns:minmax(0,1fr); gap:2px; } }
 </style>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=e8476510"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
 </helmet>
 
-<div style="min-height:100vh; background:#F3F7FB;">
+<div style="min-height:100vh; background:#F1F5F9;">
 
-  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
-    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
-      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
-      <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
-      <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
-    </div>
-  </div>
+  <div class="th-t1"><div class="th-w"><b>Доставка по Казахстану</b><span><a href="tel:+77000369369">+77 000 369 369</a> · пн–пт 9:00–18:00 · <a href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B2%D0%BE%D0%BD%D0%B8%D1%82%D1%8C.">Заказать звонок</a></span></div></div>
+<header class="th-hd"><div class="th-w"><button type="button" class="th-bg" data-th-burger aria-label="Меню">☰<span>Меню</span></button><a class="th-lg" href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" /></a><button type="button" class="th-sr" data-th-search aria-label="Поиск по каталогу"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg><span>Поиск по каталогу</span></button><nav class="th-ic"><a href="/izbrannoe"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg><span>Избранное</span><i class="th-bd" data-th-fav-count style="display:none"></i></a><a href="/sravnenie"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg><span>Сравнение</span><i class="th-bd" data-th-cmp-count style="display:none"></i></a><a href="/korzina"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h2l2.4 11h10.2L20 8H6.2" /><circle cx="9" cy="19" r="1.5" /><circle cx="17" cy="19" r="1.5" /></svg><span>Корзина</span><i class="th-bd" data-th-cart-count></i></a></nav></div></header>
+<nav class="th-mn"><div class="th-w"><a class="th-home" href="/" aria-label="На главную" title="На главную"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 11l9-7 9 7" /><path d="M5 10v10h5v-6h4v6h5V10" /></svg><span>Главная</span></a><a class="th-cat" href="/katalog" data-th-cat aria-expanded="false" aria-controls="th-panel"><span class="th-ci">☰</span><span class="th-ct">Каталог товаров</span></a><div class="th-dd"><a href="/kondicionery-almaty">Кондиционирование</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Кондиционирование" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div></div><div class="th-dd"><a href="/otoplenie">Отопление</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Отопление" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div></div><div class="th-dd"><a href="/ventilyaciya">Вентиляция</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Вентиляция" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div></div><div class="th-dd"><a href="/vodonagrevateli">Водонагреватели</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Водонагреватели" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div></div><a href="/katalog?g=avtonomnoe-pitanie">Автономное питание</a><a href="/brendy">Бренды</a><a href="/baza-znaniy">База знаний</a><a href="/kontakty">Контакты</a></div><div class="th-pn" id="th-panel"><div class="th-w th-pg"><div class="th-pc"><b>Кондиционирование</b><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div><div class="th-pc"><b>Отопление</b><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div><div class="th-pc"><b>Вентиляция</b><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div><div class="th-pc"><b>Водонагреватели и водоочистка</b><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div><div class="th-pc"><b>Автономное питание</b><a href="/katalog?g=avtonomnoe-pitanie">Зарядные станции и солнечные панели</a></div><div class="th-pc"><b>VRF, фанкойлы, чиллеры</b><a href="/katalog?g=mini-vrf">Мини-VRF и мультизональные</a><a href="/katalog?g=fankoyly">Фанкойлы</a><a href="/katalog?g=chillery">Чиллеры</a><a href="/katalog?g=precizionnye">Прецизионные кондиционеры</a><a href="/proekt">Расчёт под объект</a></div></div><div class="th-w th-pf"><a href="/katalog">Весь каталог →</a></div></div></nav>
 
-  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
-    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
-      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
-      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
-      </a>
-      <div style="flex:1;"></div>
-      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
-    </div>
-  </div>
-
-  <div style="max-width:820px; margin:0 auto; padding:18px 24px 72px 24px;">
-    <div style="font-size:13px; color:#8593A6; display:flex; align-items:center; gap:8px;">
-      <span><a href="/">{{ t.crumbHome }}</a> → <a href="/brigady">{{ t.crumbBrigady }}</a> → <span style="color:#18212F;">{{ t.crumbHere }}</span></span>
+  <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:18px 24px 72px 24px;">
+    <div style="font-size:13px; color:#606F85; display:flex; align-items:center; gap:8px;">
+      <span><a href="/">{{ t.crumbHome }}</a> → <a href="/brigady">{{ t.crumbBrigady }}</a> → <span style="color:#1A1A1A;">{{ t.crumbHere }}</span></span>
       
       <span style="margin-left:auto; display:flex; gap:10px; font-weight:700;">
         <span onClick="{{ setKz }}" style="cursor:pointer; color:{{ kzColor }};">KZ</span>
@@ -68,12 +52,12 @@
 
     <div style="margin-top:12px;">
       <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">{{ t.h1 }}</h1>
-      <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">{{ t.intro }} <b>369-BR-02-001</b>{{ t.introMaster }} <b>369-M-02-001</b>.</div>
+      <div style="font-size:16px; color:#606F85; margin-top:10px; line-height:1.6;">{{ t.intro }} <b>369-BR-02-001</b>{{ t.introMaster }} <b>369-M-02-001</b>.</div>
     </div>
 
     
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:18px 16px; margin-top:20px;">
-      <label for="th-pv-cert" style="display:block; font-size:13px; font-weight:600; color:#5A6675;">{{ t.fieldLabel }}</label>
+      <label for="th-pv-cert" style="display:block; font-size:13px; font-weight:600; color:#606F85;">{{ t.fieldLabel }}</label>
       <input id="th-pv-cert" class="th-pv-inp" type="text" value="{{ cert }}" onInput="{{ onCert }}" placeholder="369-BR-02-001" autocomplete="off" spellcheck="false" style="margin-top:6px;" />
       <button type="button" class="th-pv-btn" onClick="{{ onCheck }}" disabled="{{ busy }}">{{ btnText }}</button>
     </div>
@@ -83,7 +67,7 @@
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:18px 16px; margin-top:14px;">
         <div style="display:flex; gap:10px; align-items:center; font-weight:800; font-size:17px; border-radius:10px; padding:12px 14px; color:{{ plashFg }}; background:{{ plashBg }};">{{ plash }}</div>
 
-        <div style="font-size:13px; color:#5A6675; margin-top:12px;">Номер: <span style="font-family:ui-monospace,Consolas,monospace; font-size:15px; letter-spacing:0.06em; color:#18212F;">{{ shownCert }}</span></div>
+        <div style="font-size:13px; color:#606F85; margin-top:12px;">Номер: <span style="font-family:ui-monospace,Consolas,monospace; font-size:15px; letter-spacing:0.06em; color:#1A1A1A;">{{ shownCert }}</span></div>
 
         <sc-if value="{{ hasRows }}" hint-placeholder-val="{{ true }}">
           <div style="margin-top:8px;">
@@ -94,31 +78,31 @@
         </sc-if>
 
         <sc-if value="{{ trusted }}" hint-placeholder-val="{{ true }}">
-          <div style="display:inline-block; margin-top:14px; background:#E6F2FD; color:#0C447C; border-radius:999px; padding:6px 12px; font-size:13px; font-weight:700;">{{ t.trustedBadge }}</div>
+          <div style="display:inline-block; margin-top:14px; background:#E9F4FF; color:#0C447C; border-radius:999px; padding:6px 12px; font-size:13px; font-weight:700;">{{ t.trustedBadge }}</div>
         </sc-if>
 
         
         <sc-if value="{{ hasRating }}" hint-placeholder-val="{{ true }}">
           <div style="border-top:1px solid #EEF3F9; margin-top:16px; padding-top:14px;">
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ t.ratingH }}</div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#606F85;">{{ t.ratingH }}</div>
             <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:10px;">
               <sc-if value="{{ hasRatingValue }}" hint-placeholder-val="{{ true }}">
-                <span style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; color:#18212F;">{{ ratingValue }}</span>
-                <span style="font-size:13px; color:#5A6675;">{{ ratingVotes }}</span>
+                <span style="font-family:'Inter', sans-serif; font-size:26px; font-weight:800; color:#1A1A1A;">{{ ratingValue }}</span>
+                <span style="font-size:13px; color:#606F85;">{{ ratingVotes }}</span>
               </sc-if>
               <sc-if value="{{ ratingAccruing }}" hint-placeholder-val="{{ false }}">
-                <span style="font-size:13px; font-weight:700; color:#0A4EA7; background:#E6F2FD; border:1px solid #B9DBF7; border-radius:6px; padding:6px 10px;">{{ t.ratingWait }}</span>
-                <span style="font-size:13px; color:#5A6675;">{{ ratingVotes }}{{ t.ratingOf }}</span>
+                <span style="font-size:13px; font-weight:700; color:#0066FF; background:#E9F4FF; border:1px solid #B9DBF7; border-radius:6px; padding:6px 10px;">{{ t.ratingWait }}</span>
+                <span style="font-size:13px; color:#606F85;">{{ ratingVotes }}{{ t.ratingOf }}</span>
               </sc-if>
               <sc-if value="{{ ratingNone }}" hint-placeholder-val="{{ false }}">
                 <span style="font-size:13px; font-weight:700; color:#B25200; background:#FFF1E3; border:1px solid #F3D2AC; border-radius:6px; padding:6px 10px;">{{ t.ratingNo }}</span>
               </sc-if>
             </div>
             <sc-if value="{{ hasWorks }}" hint-placeholder-val="{{ true }}">
-              <div style="font-size:14px; color:#18212F; line-height:1.6; margin-top:10px;">{{ t.worksH }}: <b>{{ worksLine }}</b></div>
+              <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:10px;">{{ t.worksH }}: <b>{{ worksLine }}</b></div>
             </sc-if>
             <sc-if value="{{ noWorks }}" hint-placeholder-val="{{ false }}">
-              <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:10px;">{{ t.worksNo }}</div>
+              <div style="font-size:12px; color:#606F85; line-height:1.55; margin-top:10px;">{{ t.worksNo }}</div>
             </sc-if>
           </div>
         </sc-if>
@@ -126,20 +110,20 @@
         
         <sc-if value="{{ hasTovary }}" hint-placeholder-val="{{ false }}">
           <div style="border-top:1px solid #EEF3F9; margin-top:16px; padding-top:14px;">
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ t.tovaryH }}</div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#606F85;">{{ t.tovaryH }}</div>
             <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;">
               <sc-for list="{{ tovary }}" as="tv" hint-placeholder-count="3">
-                <a href="{{ tv.u }}" target="_blank" rel="noopener" style="display:inline-block; background:#F3F7FB; border:1px solid #DCE5F0; border-radius:999px; padding:8px 14px; font-size:14px; color:#0872D3; text-decoration:none; font-weight:600;">{{ tv.n }} →</a>
+                <a href="{{ tv.u }}" target="_blank" rel="noopener" style="display:inline-block; background:#F1F5F9; border:1px solid #DCE5F0; border-radius:999px; padding:8px 14px; font-size:14px; color:#0066FF; text-decoration:none; font-weight:600;">{{ tv.n }} →</a>
               </sc-for>
             </div>
-            <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:10px;">{{ t.tovaryNote }}</div>
+            <div style="font-size:12px; color:#606F85; line-height:1.55; margin-top:10px;">{{ t.tovaryNote }}</div>
           </div>
         </sc-if>
 
         
         <sc-if value="{{ hasLevel }}" hint-placeholder-val="{{ true }}">
           <div style="border-top:1px solid #EEF3F9; margin-top:16px; padding-top:14px;">
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ t.levelH }}</div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#606F85;">{{ t.levelH }}</div>
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; margin-top:10px;">
               <sc-for list="{{ levels }}" as="st" hint-placeholder-count="3">
                 <div style="background:{{ st.bg }}; border:1px solid {{ st.bd }}; border-radius:10px; padding:12px 14px; text-align:center;">
@@ -148,40 +132,40 @@
                 </div>
               </sc-for>
             </div>
-            <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:10px;">{{ t.levelNote }}</div>
+            <div style="font-size:12px; color:#606F85; line-height:1.55; margin-top:10px;">{{ t.levelNote }}</div>
           </div>
         </sc-if>
 
         <sc-if value="{{ hasRazdely }}" hint-placeholder-val="{{ true }}">
           
           <div style="border-top:1px solid #EEF3F9; margin-top:16px; padding-top:14px;">
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ t.razdelyH }}</div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#606F85;">{{ t.razdelyH }}</div>
             <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;">
               <sc-for list="{{ razdely }}" as="rz" hint-placeholder-count="3">
-                <a href="{{ rz.u }}" target="_blank" rel="noopener" style="display:inline-block; background:#F3F7FB; border:1px solid #DCE5F0; border-radius:999px; padding:8px 14px; font-size:14px; color:#0872D3; text-decoration:none; font-weight:600;">{{ rz.n }} →</a>
+                <a href="{{ rz.u }}" target="_blank" rel="noopener" style="display:inline-block; background:#F1F5F9; border:1px solid #DCE5F0; border-radius:999px; padding:8px 14px; font-size:14px; color:#0066FF; text-decoration:none; font-weight:600;">{{ rz.n }} →</a>
               </sc-for>
             </div>
-            <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:10px;">{{ t.razdelyNote }}</div>
+            <div style="font-size:12px; color:#606F85; line-height:1.55; margin-top:10px;">{{ t.razdelyNote }}</div>
           </div>
         </sc-if>
 
         
         <sc-if value="{{ hasBlank }}" hint-placeholder-val="{{ true }}">
           <div style="border-top:1px solid #EEF3F9; margin-top:16px; padding-top:14px;">
-            <a href="{{ blankUrl }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:10px; background:#0872D3; border-radius:10px; padding:12px 18px; font-size:15px; font-weight:700; color:#fff; text-decoration:none;">{{ t.blankBtn }}</a>
-            <div style="font-size:12px; color:#8593A6; line-height:1.55; margin-top:10px;">{{ blankLine }} · {{ t.blankNote }}</div>
+            <a href="{{ blankUrl }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:10px; background:#0066FF; border-radius:10px; padding:12px 18px; font-size:15px; font-weight:700; color:#fff; text-decoration:none;">{{ t.blankBtn }}</a>
+            <div style="font-size:12px; color:#606F85; line-height:1.55; margin-top:10px;">{{ blankLine }} · {{ t.blankNote }}</div>
           </div>
         </sc-if>
 
         <sc-if value="{{ hasHint }}" hint-placeholder-val="{{ true }}">
-          <div style="font-size:14px; color:#5A6675; margin-top:14px; line-height:1.6;">{{ hint }}</div>
+          <div style="font-size:14px; color:#606F85; margin-top:14px; line-height:1.6;">{{ hint }}</div>
         </sc-if>
       </div>
     </sc-if>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:18px 16px; margin-top:14px;">
       <h2 style="margin:0 0 8px; font-size:18px; font-weight:800;">{{ t.aboutH2 }}</h2>
-      <div style="font-size:15px; color:#5A6675; line-height:1.65;">
+      <div style="font-size:15px; color:#606F85; line-height:1.65;">
         {{ t.aboutP1a }} <b>{{ t.aboutOurPass }}</b>{{ t.aboutP1b }}<br /><br />
         {{ t.aboutP2a }} <a href="/brigady">{{ t.aboutP2link }}</a>. {{ t.amanat }}<br /><br />
         {{ t.aboutP3a }} <a href="https://wa.me/77000369369">WhatsApp</a> {{ t.aboutP3b }} <a href="tel:+77000369369">+77 000 369 369</a> {{ t.aboutP3c }}
@@ -269,7 +253,7 @@ class Component extends DCLogic {
       aboutP1a: "Номер получает бригада, которую мы проверили перед допуском к заказам: профессиональный инструмент и оснащение, направления и виды работ, готовность соблюдать единый стандарт АРТЕЛЬ — 12 месяцев гарантии на монтаж нового оборудования. Сертификат — это",
       aboutOurPass: "наш допуск",
       aboutP1b: ", а не лицензия и не разрешительный документ: обучение у производителя, разряд и квалификационные удостоверения он не подтверждает.",
-      aboutP2a: "На монтаж нового оборудования действует единый стандарт АРТЕЛЬ — 12 месяцев гарантии. На оборудование действует только гарантия производителя. Обращение по качеству монтажа принимаем мы и направляем тому же мастеру или бригаде, которые выполняли работу. Рейтинг бригады складывается только из оценок клиентов по подтверждённым работам — монтажам, сервису и ремонту — и публикуется после пяти оценок —",
+      aboutP2a: "На монтаж нового оборудования действует единый стандарт АРТЕЛЬ — 12 месяцев гарантии. Оборудование идёт с гарантией производителя. Обращение по качеству монтажа принимаем мы и направляем тому же мастеру или бригаде, которые выполняли работу. Рейтинг бригады складывается только из оценок клиентов по подтверждённым работам — монтажам, сервису и ремонту — и публикуется после пяти оценок —",
       aboutP2link: "смотрите на странице бригад",
       amanat: "То, что вы нам доверили, — наш аманат: обращение примем и после окончания гарантии.",
       aboutP3a: "Если сертификат не действует, а бригада приехала — напишите нам в",
@@ -458,7 +442,7 @@ class Component extends DCLogic {
     const бланк = (d && d.ok && d.valid && this.state.blanki)
       ? this.state.blanki[d.cert] : null;
     const rows = [];
-    let plash = "", plashBg = "#EEF3F9", plashFg = "#5A6675", hint = "", trusted = false;
+    let plash = "", plashBg = "#EEF3F9", plashFg = "#606F85", hint = "", trusted = false;
 
     if (this.state.err) {
       plash = t.failed;
@@ -556,8 +540,8 @@ class Component extends DCLogic {
       blankUrl: бланк ? бланк.u : "",
       blankLine: бланк ? (this.skl(бланк.p, t.blankPages) + " · " + бланк.kb + " КБ") : "",
       hint: hint, hasHint: !!hint,
-      kzColor: this.state.lang === "kz" ? "#0872D3" : "#8593A6",
-      ruColor: this.state.lang === "kz" ? "#8593A6" : "#0872D3",
+      kzColor: this.state.lang === "kz" ? "#0066FF" : "#606F85",
+      ruColor: this.state.lang === "kz" ? "#606F85" : "#0066FF",
       setKz: () => this.setLang("kz"),
       setRu: () => this.setLang("ru"),
       onCert: (e) => this.onCert(e),
