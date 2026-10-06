@@ -41,7 +41,7 @@
     <sc-if value="{{ isPodbor }}" hint-placeholder-val="{{ true }}">
       <div>
         <h1 style="margin:0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Расчёт мощности кондиционера</h1>
-        <div style="font-size:16px; color:#64748B; margin-top:10px; line-height:1.6; max-width:820px;">Считаем так же, как наш подбор: 100 Вт на квадратный метр при потолке 2,7 м, поправка на высоту потолка и надбавки за солнечную сторону, верхний этаж и кухню или технику. Окончательную мощность подтверждаем при замере.</div>
+        <div style="font-size:16px; color:#64748B; margin-top:10px; line-height:1.6; max-width:820px;">Считаем теплопритоки по слагаемым: помещение по объёму с учётом солнца, плюс окна, люди и техника в ваттах — так считают производители кондиционеров. Результат — диапазон, а не одна «точная» цифра. Окончательную мощность подтверждаем при замере.</div>
         <div style="margin-top:12px;"><a href="/katalog?g=bytovye" style="font-size:14px; font-weight:700; color:#0066FF;">Быстрый подбор в каталоге →</a></div>
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:20px; margin-top:20px; align-items:start;">
@@ -111,12 +111,12 @@
                   </div>
                 </sc-for>
               </div>
-              <div style="font-size:13px; color:#64748B; line-height:1.6; margin-top:12px;">Базовая формула — 100 Вт на квадратный метр при потолке 2,7 м, выше потолок — пропорционально больше. Надбавки складываются: солнечная сторона +20 %, верхний этаж +10 %, кухня или много техники +20 % — теплопритоки суммируются, а не умножаются друг на друга. Перевод в BTU — ×3,412, класс — ближайший больший с допуском −5 %: гнать на ступень вверх из-за пары процентов незачем, лишний класс хуже осушает воздух и чаще тактует.</div>
+              <div style="font-size:13px; color:#64748B; line-height:1.6; margin-top:12px;">Помещение считаем по объёму: 30, 35 или 40 Вт на кубометр в зависимости от солнца (так в методиках производителей, например Samsung и LG). Человек даёт около 100 Вт, компьютер около 300, телевизор 100–150, плита до 700. Большие окна добавляют 150–250 Вт. Класс — ближайший, который покрывает нагрузку с допуском −5 %: лишний класс хуже осушает воздух и чаще включается и выключается. Коэффициенты ориентировочные, точную мощность подтверждает замер.</div>
             </div>
 
             <div style="background:#FDECEA; border:1px solid #F8CBBE; border-radius:16px; padding:20px 22px;">
               <div style="font-size:15px; font-weight:700; color:#C21610;">Чего этот расчёт не знает</div>
-              <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">Остекления в пол, угловой квартиры, серверной с постоянной нагрузкой, крыши без утепления. В таких случаях мощность считаем на замере — иначе кондиционер либо не справится, либо вы переплатите за лишний класс.</div>
+              <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">Точной площади остекления, угловой квартиры с двумя наружными стенами, серверной или мастерской с постоянной нагрузкой, плохо утеплённых стен. В таких случаях мощность считаем на замере — иначе кондиционер либо не справится, либо вы переплатите за лишний класс.</div>
             </div>
           </div>
         </div>
@@ -265,7 +265,9 @@ class Component extends DCLogic {
   // «Расчёт мощности» значит обманывать адрес: покупатель шёл за телефоном.
   // Ссылки на калькулятор и доставку дают хеш явно (#podbor, #dostavka).
   state = { screen: 2, area: 25, areaRaw: "25", height: 270, heightRaw: "2,7",
-            sun: "Обычная / север", floor: "Не последний", tech: "Нет",
+            // Расчёт v2 (07.10.2026): сумма в ваттах вместо процентов поверх запасной базы
+            sun: "Восток / запад", glass: "Обычные окна", floor: "Не последний",
+            people: "2", tech: "Нет", winter: "Только охлаждение",
             // Форма «Написать нам» до 31.08.2026 не была привязана к состоянию
             // вовсе: поля стояли без value/onInput, кнопка вела на пустой чат.
             // Человек писал вопрос, жал «Отправить» — и текст исчезал.
@@ -487,21 +489,30 @@ class Component extends DCLogic {
       pick: () => this.goScreen(i)
     }));
 
-    const baseW = s.area * 100;
-    const heightK = s.height / 270;          // 100 Вт/м² верны при потолке 2,7 м
-    const sunA = s.sun === "Юг, много солнца" ? 0.2 : 0;
-    const floorA = s.floor === "Верхний этаж" ? 0.1 : 0;
-    const techA = s.tech === "Кухня или много техники" ? 0.2 : 0;
-    const total = baseW * heightK * (1 + sunA + floorA + techA);
-    // кВт в шапке — ровно то же число, что «Итого» в разборе ниже: округление
-    // вверх до 0,1 кВт показывало «3,8 кВт» над строкой «3 750 Вт» в одном блоке.
-    const kw = Math.round(total / 10) / 100;
+    const V = s.area * s.height / 100;                       // объём, м³
+    const SUN = { "Север / тень": 30, "Восток / запад": 35, "Юг, много солнца": 40 };
+    const PEOPLE = { "1": 1, "2": 2, "3": 3, "4": 4, "5 и больше": 5 };
+    const TECH = { "Нет": 0, "Телевизор или ноутбук": 150, "Компьютер, несколько устройств": 450, "Кухня (холодильник, плита)": 700 };
+    const qV = SUN[s.sun] || 35;
+    const bigGlass = s.glass === "Большие окна, больше 2 м²";
+    const glassW = bigGlass ? (s.sun === "Юг, много солнца" ? 250 : 150) : 0;
+    const floorA = s.floor === "Последний этаж" ? 0.10 : 0;
+    const envW = V * qV * (1 + floorA) + glassW;
+    const peopleN = PEOPLE[s.people] || 2;
+    const peopleW = peopleN * 100;
+    const techW = TECH[s.tech] || 0;
+    const total = envW + peopleW + techW;
+    const heatWinter = s.winter === "Нужен обогрев зимой";
+    // диапазон выбора: −5 % … +15 % к расчётной нагрузке
+    const kwLow = total * 0.95, kwHigh = total * 1.15;
+    const kw1 = w => (Math.round(w / 100) / 10).toFixed(1).replace(".", ",");
     const req = Math.round(total * 3.412);
 
     const CLASSES = [7000, 9000, 12000, 18000, 24000, 36000, 48000, 60000];
     // допуск -5 %: класс чуть ниже расчёта не гоним на ступень вверх (Royal Clima: -5 %...+15 %)
     const need = req * 0.95;
     const clsBtu = CLASSES.find(c => c >= need);
+    const clsIdx = CLASSES.indexOf(clsBtu);
     const overload = !clsBtu;
     const cls = clsBtu ? { 7000: "07", 9000: "09", 12000: "12", 18000: "18", 24000: "24", 36000: "36", 48000: "48", 60000: "60" }[clsBtu] : "60+";
     const btu = clsBtu ? this.fmt(clsBtu) : "60 000+";
@@ -510,9 +521,11 @@ class Component extends DCLogic {
     // в «События» приёмника — чтобы было видно, по каким площадям считают.
     const расчётТекст = "Расчёт по подбору. Площадь " + s.area + " м²"
       + ", потолок " + (s.height / 100).toFixed(1).replace(".", ",") + " м"
-      + (sunA ? ", солнечная сторона" : "") + (floorA ? ", верхний этаж" : "") + (techA ? ", кухня/техника" : "")
-      + ". " + (overload ? "Нагрузка " + this.fmt(req) + " BTU — выше бытового ряда, нужен расчёт на замере."
-                         : "Нужен класс " + cls + " (" + btu + " BTU).");
+      + ", окна: " + s.sun.toLowerCase() + (glassW ? ", " + s.glass.toLowerCase() : "")
+      + (floorA ? ", последний этаж" : "") + ", людей: " + s.people
+      + (techW ? ", техника: " + s.tech.toLowerCase() : "") + (heatWinter ? ", нужен обогрев зимой" : "")
+      + ". " + (overload ? "Нагрузка " + kw1(total) + " кВт — выше бытового ряда, нужен расчёт на замере."
+                         : "Нагрузка " + kw1(kwLow) + "–" + kw1(kwHigh) + " кВт, нужен класс " + cls + " (" + btu + " BTU).");
 
     const ask = this.state.ask || { name: "", phone: "", text: "" };
     const setAsk = k => e => this.setState({ ask: Object.assign({}, ask, { [k]: e.target.value }) });
@@ -525,6 +538,45 @@ class Component extends DCLogic {
     // Отправляем, если есть чем ответить (телефон или имя) и есть что спросить.
     const можноОтправить = !!(String(ask.phone || "").trim() || String(ask.name || "").trim())
       && !!String(ask.text || "").trim();
+
+    // Пояснение: почему именно этот класс, и что будет с соседними — вместо общей фразы
+    const classKw = b => b / 3412;
+    let explainText;
+    if (overload) {
+      explainText = "Для помещения " + s.area + " м² с выбранными условиями нагрузка " + kw1(total) + " кВт — выше бытового ряда, одним бытовым блоком её не закрыть. Нужна мультисплит- или полупромышленная система, мощность посчитаем на замере.";
+    } else {
+      const parts = ["Нагрузка около " + kw1(total) + " кВт, в сильную жару до " + kw1(kwHigh) + ". Класс " + cls + " даёт ≈ " + kw1(classKw(clsBtu) * 1000) + " кВт."];
+      if (clsIdx > 0) {
+        const lo = CLASSES[clsIdx - 1], loKw = classKw(lo) * 1000;
+        const short = Math.round((1 - loKw / total) * 100);
+        parts.push("Класс " + (lo / 1000 < 10 ? "0" : "") + lo / 1000 + " (≈ " + kw1(loKw) + " кВт) " + (short <= 10
+          ? "почти хватает, но в самую жару будет работать на пределе."
+          : "не хватит: на " + short + " % меньше нагрузки."));
+      }
+      if (clsIdx === 0 && classKw(clsBtu) * 1000 > total * 1.6) {
+        parts.push("Это самый малый класс в ряду: запас большой, но меньшего не бывает. Инвертор при малой нагрузке сбавляет мощность.");
+      } else if (clsIdx < CLASSES.length - 1) {
+        const hi = CLASSES[clsIdx + 1], hiKw = classKw(hi) * 1000;
+        if (hiKw > total * 1.4) {
+          parts.push("Класс " + (hi / 1000 < 10 ? "0" : "") + hi / 1000 + " (≈ " + kw1(hiKw) + " кВт) — запас " + Math.round((hiKw / total - 1) * 100) + " %: дороже без выигрыша в комфорте.");
+        }
+      }
+      if (heatWinter) {
+        parts.push("Расчёт — на охлаждение. Для обогрева зимой смотрите в карточке мощность в режиме тепла и нижний температурный предел работы: на сильном морозе она заметно ниже номинальной.");
+      }
+      explainText = parts.join(" ");
+    }
+    const num2 = x => String(Math.round(x * 100) / 100).replace(".", ",");
+    const breakdownRows = [
+      { k: "Помещение: " + s.area + " м² × " + (s.height / 100).toFixed(1).replace(".", ",") + " м = " + this.fmt(Math.round(V)) + " м³, по " + qV + " Вт/м³", v: this.fmt(V * qV) + " Вт" },
+      { k: "Последний этаж", v: floorA ? "+10 % → " + this.fmt(V * qV * (1 + floorA)) + " Вт" : "нет" },
+      { k: "Большие окна, больше 2 м²", v: glassW ? "+" + glassW + " Вт" : "нет" },
+      { k: "Люди: " + peopleN + " × 100 Вт", v: this.fmt(peopleW) + " Вт" },
+      { k: "Техника: " + (techW ? s.tech.toLowerCase() : "нет"), v: this.fmt(techW) + " Вт" },
+      { k: "Итого нагрузка", v: this.fmt(total) + " Вт" },
+      { k: "Диапазон выбора (−5 % … +15 %)", v: kw1(kwLow) + "–" + kw1(kwHigh) + " кВт" },
+      { k: "Класс (допуск −5 %)", v: overload ? "60 000+ BTU" : btu + " BTU" }
+    ];
 
     const chooser = (title, key, options) => ({
       title,
@@ -566,12 +618,15 @@ class Component extends DCLogic {
         heightRaw: (st.height / 100).toFixed(1).replace(".", ",")
       })),
       choices: [
-        chooser("Окна и солнце", "sun", ["Обычная / север", "Юг, много солнца"]),
-        chooser("Этаж", "floor", ["Не последний", "Верхний этаж"]),
-        chooser("Кухня и техника", "tech", ["Нет", "Кухня или много техники"])
+        chooser("Сторона света окон", "sun", ["Север / тень", "Восток / запад", "Юг, много солнца"]),
+        chooser("Остекление", "glass", ["Обычные окна", "Большие окна, больше 2 м²"]),
+        chooser("Этаж", "floor", ["Не последний", "Последний этаж"]),
+        chooser("Сколько людей обычно в комнате", "people", ["1", "2", "3", "4", "5 и больше"]),
+        chooser("Техника в комнате", "tech", ["Нет", "Телевизор или ноутбук", "Компьютер, несколько устройств", "Кухня (холодильник, плита)"]),
+        chooser("Режим работы", "winter", ["Только охлаждение", "Нужен обогрев зимой"])
       ],
 
-      kwLabel: String(kw).replace(".", ",") + " кВт",
+      kwLabel: kw1(kwLow) + "–" + kw1(kwHigh) + " кВт",
       calcHref: "https://wa.me/77000369369?text=" + encodeURIComponent(расчётТекст),
       // Контактов здесь не спрашиваем, значит это не заявка, а событие: пишем
       // площадь, потолок, поправки и класс — по ним видно, с каким запросом
@@ -582,8 +637,8 @@ class Component extends DCLogic {
           channel: "подбор на /kontakty", ev: "расчёт отправлен в WhatsApp",
           val: overload ? "выше бытового ряда" : cls + " · " + btu + " BTU",
           area: s.area, height: (s.height / 100).toFixed(1).replace(".", ","),
-          corr: [sunA ? "солнце" : "", floorA ? "верхний этаж" : "", techA ? "кухня/техника" : ""]
-            .filter(Boolean).join(", ")
+          corr: [s.sun, glassW ? s.glass : "", floorA ? s.floor : "", "людей " + s.people,
+                 techW ? s.tech : "", heatWinter ? s.winter : ""].filter(Boolean).join(", ")
         });
       },
 
@@ -630,19 +685,8 @@ class Component extends DCLogic {
       modelsHref: overload
         ? "/poluprom"
         : "/katalog?g=" + (clsBtu >= 36000 ? "poluprom" : "bytovye") + "&btu=" + clsBtu,
-      explain: overload
-        ? "Для помещения " + s.area + " м² с выбранными условиями нагрузка выше 60 000 BTU — одним бытовым блоком её не закрыть. Нужна мультисплит- или полупромышленная система, мощность посчитаем на замере."
-        : "Для помещения " + s.area + " м² нужен кондиционер класса " + cls + ". Меньший класс будет работать без остановки и не выйдет на комфортную температуру в жару.",
-      breakdown: [
-        { k: "Базовая нагрузка (" + s.area + " м² × 100 Вт/м²)", v: this.fmt(baseW) + " Вт" },
-        { k: "Потолок " + (s.height / 100).toFixed(1).replace(".", ",") + " м", v: heightK === 1 ? "базовый, ×1" : "×" + heightK.toFixed(2).replace(".", ",") },
-        { k: "Поправки (складываются)", v: (sunA + floorA + techA)
-            ? [sunA ? "солнце +20 %" : "", floorA ? "верхний этаж +10 %" : "", techA ? "кухня/техника +20 %" : ""].filter(Boolean).join(" · ")
-            : "нет" },
-        { k: "Итого мощность холода", v: this.fmt(total) + " Вт" },
-        { k: "В BTU (×3,412)", v: this.fmt(req) + " BTU" },
-        { k: "Класс (допуск −5 %)", v: btu + " BTU" }
-      ],
+      explain: explainText,
+      breakdown: breakdownRows,
 
       delivery: [
         { title: "Алматы", text: "Доставка до подъезда или на объект. Подъём и занос — по договорённости с бригадой при монтаже. За пределы города стоимость называем при оформлении.", price: "бесплатно от 100 000 ₸", color: "#178841", note: "при заказе от 100 000 ₸; на меньшую сумму стоимость называем при оформлении" },
