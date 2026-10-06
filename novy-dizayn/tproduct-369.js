@@ -130,12 +130,48 @@
   // как отдала Tilda (их читает поиск и Merchant Center); поверх них рисуется карточка из data/<группа>.json.
   var RAW = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/";
   var CDN = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/";
+  // Страховка (T-006, 07.10.2026): блок карточки правят из других чатов, и флаги TH_CARD_* уже дважды пропадали.
+  // Тогда блок читает адрес страницы и берёт первый товар каталога, а заодно меняет title и canonical.
+  // Поэтому: (1) на время загрузки подставляем в адрес параметры карточки, (2) после отрисовки возвращаем адрес,
+  // (3) всё, что блок меняет в title/canonical/meta, откатываем к тому, что отдала Tilda.
+  function guardSeo(qs) {
+    var orig = location.pathname + location.search + location.hash;
+    var can = $('link[rel="canonical"]');
+    var snap = { title: document.title, can: can ? can.getAttribute("href") : null, metas: [] };
+    var ms = document.querySelectorAll('meta[name="description"],meta[property^="og:"]');
+    for (var i = 0; i < ms.length; i++) snap.metas.push([ms[i], ms[i].getAttribute("content")]);
+    try { history.replaceState(null, "", location.pathname + qs); } catch (e) {}
+    var busy = false;
+    function restore() {
+      if (busy) return;
+      busy = true;
+      try {
+        if (document.title !== snap.title) document.title = snap.title;
+        var c = $('link[rel="canonical"]');
+        if (c && snap.can !== null && c.getAttribute("href") !== snap.can) c.setAttribute("href", snap.can);
+        for (var k = 0; k < snap.metas.length; k++) {
+          if (snap.metas[k][0].getAttribute("content") !== snap.metas[k][1]) snap.metas[k][0].setAttribute("content", snap.metas[k][1]);
+        }
+      } catch (e) {}
+      busy = false;
+    }
+    new MutationObserver(restore).observe(document.head, { subtree: true, childList: true, attributes: true, characterData: true });
+    var n = 0, t = setInterval(function () {
+      var h = document.documentElement.getAttribute("data-th-state") === "ready" && document.querySelector("[data-th-page] h1");
+      if (h || ++n > 60) {
+        clearInterval(t);
+        try { history.replaceState(null, "", orig); } catch (e) {}
+        restore();
+      }
+    }, 250);
+  }
   function embed(g, sl) {
     var snip = $(".t-store__prod-snippet__container");
     if (!snip) { restyle(); return; }
     // место под карточку держим пустым, но не оставляем белую страницу: заглушка первого экрана — из th-page.js
     window.TH_CARD_EMBED = 1;
     window.TH_CARD_QS = "?g=" + encodeURIComponent(g) + "&sl=" + encodeURIComponent(sl);
+    guardSeo(window.TH_CARD_QS);
     var st = document.createElement("style");
     st.setAttribute("data-th-prod", "embed");
     st.textContent = "body.th-embed{background:#F1F5F9!important}.th-vh{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;border:0!important;padding:0!important;margin:-1px!important}";
