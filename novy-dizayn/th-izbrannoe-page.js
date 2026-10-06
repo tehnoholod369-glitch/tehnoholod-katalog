@@ -39,6 +39,14 @@
   var ИК_СЕРДЦЕ = '<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>';
   var ИК_КРЕСТ = '<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>';
   function атр(x) { return 'data-g="' + esc(x.g) + '" data-sl="' + esc(x.sl) + '" data-n="' + esc(x.n) + '" data-b="' + esc(x.b) + '" data-i="' + esc(x.i) + '"'; }
+  function урлФото(путь) {
+    var s = String(путь || "");
+    if (!s) return "";
+    if (/^https?:\/\//.test(s)) return s;
+    if (window.photoUrl) return window.photoUrl(s);
+    return "https://img.tehnoholod369.kz/" + s.replace(/^\/+/, "");
+  }
+  var ПРИ_ОШИБКЕ = ' onerror="this.onerror=null;var a=window.photoAlt&&window.photoAlt(this.src);if(a)this.src=a;"';
   function адресМодели(x) { return "/tovar?g=" + encodeURIComponent(x.g) + "&sl=" + encodeURIComponent(x.sl); }
   function вКорзину(it, g) {
     if (window.CART && window.CART.add) window.CART.add(Object.assign({}, it, { g: g }), 1);
@@ -50,12 +58,13 @@
   function крошки(имя) { return '<div class="thp-cr"><a href="/">Главная</a> › ' + esc(имя) + '</div>'; }
 
   var ВАЖНЫЕ_ПОЛЯ = ["Мощность", "Объём", "Площадь помещения", "Производительность", "Тип управления", "Управление", "Диагональ экрана", "Вид установки", "Размер", "Цвет"];
-  function краткие(it) {
+  function краткие(it, сколько) {
+    сколько = сколько || 3;
     var sp = (it.sp || []).filter(function (s) { return s && s[1] && String(s[1]).length < 40; });
     var вых = [];
-    ВАЖНЫЕ_ПОЛЯ.forEach(function (имя) { sp.forEach(function (s) { if (s[0] === имя && вых.length < 3 && !вых.some(function (v) { return v[0] === имя; })) вых.push(s); }); });
-    sp.forEach(function (s) { if (вых.length < 3 && !/^(Тип|Серия|Страна|Гарантия|Бренд)/.test(s[0]) && !вых.some(function (v) { return v[0] === s[0]; })) вых.push(s); });
-    return вых.slice(0, 3);
+    ВАЖНЫЕ_ПОЛЯ.forEach(function (имя) { sp.forEach(function (s) { if (s[0] === имя && вых.length < сколько && !вых.some(function (v) { return v[0] === имя; })) вых.push(s); }); });
+    sp.forEach(function (s) { if (вых.length < сколько && !/^(Тип|Серия|Страна|Бренд)/.test(s[0]) && !вых.some(function (v) { return v[0] === s[0]; })) вых.push(s); });
+    return вых.slice(0, сколько);
   }
 
   // ───────── Избранное ─────────
@@ -66,14 +75,14 @@
     найти(список).then(function (пары) {
       var html = пары.map(function (п) {
         var z = п.z, it = п.it;
-        var имя = it ? (it.nb || it.n) : z.n, бренд = it ? it.b : z.b, фото = it ? it.i : z.i;
-        var спец = it ? краткие(it).map(function (s) { return '<div class="thp-r"><span>' + esc(s[0]) + '</span><b>' + esc(s[1]) + '</b></div>'; }).join("") : '<div class="thp-r"><span>Модель снята с витрины</span></div>';
+        var имя = it ? (it.nb || it.n) : z.n, бренд = it ? it.b : z.b, фото_ = it ? it.i : z.i, фото = !!фото_;
+        var спец = it ? краткие(it, 6).map(function (s) { return '<div class="thp-r"><span>' + esc(s[0]) + '</span><b>' + esc(s[1]) + '</b></div>'; }).join("") : '<div class="thp-r"><span>Модель снята с витрины</span></div>';
         var цена = it && it.p ? '<div class="thp-p">' + esc(it.pt || "") + '</div>' : '<div class="thp-p thp-np">Цена по запросу</div>';
         var кнопка = it ? '<button type="button" class="thp-btn" data-cart="' + esc(z.g + "/" + z.sl) + '">' + (it.p ? "В корзину" : "Запросить цену") + '</button>' : "";
         return '<article class="thp-card">'
-          + '<div class="thp-im">' + (фото ? '<img src="' + esc(фото) + '" alt="' + esc(бренд + " " + имя) + '" loading="lazy">' : '') + '</div>'
-          + '<div class="thp-bd"><div class="thp-top"><span class="thp-br">' + esc(бренд) + '</span><button type="button" class="thp-heart th-on" data-th-fav ' + атр(z) + ' aria-label="Убрать из избранного">' + ИК_СЕРДЦЕ + '</button></div>'
-          + '<a class="thp-nm" href="' + адресМодели(z) + '">' + esc(имя) + '</a>' + спец + '<a class="thp-more" href="' + адресМодели(z) + '">Подробнее →</a></div>'
+          + '<div class="thp-im">' + (фото ? '<img src="' + esc(урлФото(фото_)) + '" alt="' + esc(бренд + " " + имя) + '" loading="lazy"' + ПРИ_ОШИБКЕ + '>' : '') + '</div>'
+          + '<div class="thp-bd"><div class="thp-top"><span class="thp-br">' + esc(бренд) + (it && /налич/i.test(it.st || "") ? ' <span class="thp-st">В наличии</span>' : '') + '</span><button type="button" class="thp-heart th-on" data-th-fav ' + атр(z) + ' aria-label="Убрать из избранного">' + ИК_СЕРДЦЕ + '</button></div>'
+          + '<a class="thp-nm" href="' + адресМодели(z) + '">' + esc(имя) + '</a>' + (it && it.s ? '<div class="thp-sku">арт. ' + esc(it.s) + '</div>' : '') + спец + '<a class="thp-more" href="' + адресМодели(z) + '">Подробнее →</a></div>'
           + '<div class="thp-ft">' + цена + кнопка + '</div></article>';
       }).join("");
       document.getElementById("thp-grid").innerHTML = html;
@@ -107,8 +116,8 @@
       var шапка = модели.map(function (п) {
         var z = п.z, it = п.it, имя = it ? (it.nb || it.n) : z.n;
         return '<div class="thp-cc"><button type="button" class="thp-x" data-th-cmp ' + атр(z) + ' aria-label="Убрать из сравнения">' + ИК_КРЕСТ + '</button>'
-          + '<div class="thp-cim">' + ((it ? it.i : z.i) ? '<img src="' + esc(it ? it.i : z.i) + '" alt="">' : '') + '</div>'
-          + '<span class="thp-br">' + esc(it ? it.b : z.b) + '</span><a class="thp-nm" href="' + адресМодели(z) + '">' + esc(имя) + '</a>'
+          + '<div class="thp-cim">' + ((it ? it.i : z.i) ? '<img src="' + esc(урлФото(it ? it.i : z.i)) + '" alt=""' + ПРИ_ОШИБКЕ + '>' : '') + '</div>'
+          + '<span class="thp-br">' + esc(it ? it.b : z.b) + (it && /налич/i.test(it.st || "") ? ' <span class="thp-st">В наличии</span>' : '') + '</span><a class="thp-nm" href="' + адресМодели(z) + '">' + esc(имя) + '</a>' + (it && it.s ? '<div class="thp-sku">арт. ' + esc(it.s) + '</div>' : '')
           + '<div class="thp-p">' + (it && it.p ? esc(it.pt || "") : "Цена по запросу") + '</div>'
           + (it && it.p ? '<button type="button" class="thp-btn" data-cart="' + esc(z.g + "/" + z.sl) + '">В корзину</button>' : '') + '</div>';
       }).join("");
@@ -145,6 +154,8 @@
       + ".thp-heart{width:32px;height:32px;padding:0;border:0;background:none;cursor:pointer;color:#E81C1C}.thp-heart svg{width:22px;height:22px;fill:#E81C1C;stroke:#E81C1C;stroke-width:1.8;stroke-linejoin:round}"
       + ".thp-nm{display:block;margin:2px 0 8px;font:700 17px/24px Inter,Arial,sans-serif;color:#0033A0;text-decoration:none}"
       + ".thp-r{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px solid #EEF2F7;font-size:14px;line-height:20px}.thp-r span{color:#606F85}.thp-r b{font-weight:500;text-align:right}"
+      + ".thp-st{display:inline-block;margin-left:8px;padding:2px 8px;border:1px solid #BFE6D4;border-radius:999px;background:#fff;color:#178841;font:600 12px/16px Inter,Arial,sans-serif}"
+      + ".thp-sku{margin:-4px 0 8px;font:500 12px/16px ui-monospace,Consolas,monospace;color:#606F85}"
       + ".thp-more{display:inline-block;margin-top:8px;font:600 14px/20px Inter,Arial,sans-serif;color:#0066FF;text-decoration:none}"
       + ".thp-ft{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding-top:14px;border-top:1px solid #DCE5F0}"
       + ".thp-p{font:800 22px/28px Inter,Arial,sans-serif}.thp-np{font:700 16px/22px Inter,Arial,sans-serif;color:#0033A0}"
