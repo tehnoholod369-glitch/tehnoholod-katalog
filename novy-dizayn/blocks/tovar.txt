@@ -185,7 +185,7 @@
                 <sc-if value="{{ hasInstallment }}" hint-placeholder-val="{{ false }}">
                 <div style="display:flex; gap:12px; padding:13px 16px; border-top:1px solid #DCE5F0;">
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#178841" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:1px;"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
-                  <div style="min-width:0;"><div style="font:700 15px/22px Inter,sans-serif; color:#0033A0;">Рассрочка 12 месяцев</div><div style="font:400 14px/20px Inter,sans-serif; color:#606F85;">Kaspi, ForteBank, Halyk: оформляет банк, решение по одобрению на его стороне</div></div>
+                  <div style="min-width:0;"><div style="font:700 15px/22px Inter,sans-serif; color:#0033A0;">Рассрочка до 24 месяцев</div><div style="font:400 14px/20px Inter,sans-serif; color:#606F85;">Оформляет банк, решение об одобрении на его стороне</div></div>
                 </div>
                 </sc-if>
                 <div style="display:flex; gap:12px; padding:13px 16px; border-top:1px solid #DCE5F0;">
@@ -1367,7 +1367,7 @@ class Component extends DCLogic {
       // Наличие показывает своя плашка, из поля мастера.
       priceNote: pNow ? (salePrice ? "акционная цена · с НДС" : "цена с НДС") : "считаем по запросу",
       hasInstallment: !!monthlyBase,
-      installment: monthlyBase ? "Рассрочка 12 мес — " + this.fmt(monthlyBase / 12) + " ₸/мес · Kaspi, ForteBank, Halyk" : "",
+      installment: monthlyBase ? "Рассрочка до 24 месяцев" : "",
       mountNote: m ? m.note : (it.acc ? "" : "Монтаж и подключение обсуждаем при заказе."),
       // сопутствующие: аксессуары и комплектующие своей группы, сначала того же бренда.
       // Совместимость по данным не подтверждена — так и написано в подписи, не обещаем.
