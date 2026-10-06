@@ -37,7 +37,7 @@
               <img data-url="{{ c.logo }}" alt="{{ c.name }}" style="width:{{ c.logoW }}px; height:{{ c.logoH }}px; object-fit:contain; display:block;" />
             </span>
             <sc-if value="{{ c.noLogo }}" hint-placeholder-val="{{ false }}">
-              <h2 style="margin:0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">{{ c.name }}</h2>
+              <h2 style="margin:0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">{{ c.name }}</h2>
             </sc-if>
             <a href="{{ c.href }}" style="margin-left:auto; font-size:14px; font-weight:700; color:#0066FF;">{{ c.linkLabel }}</a>
           </div>
