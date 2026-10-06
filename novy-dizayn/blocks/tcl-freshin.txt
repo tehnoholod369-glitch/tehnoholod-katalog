@@ -248,22 +248,6 @@
       </div>
     </div>
 
-    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
-      <div style="font-family:Inter,sans-serif; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Частые вопросы</div>
-      <div style="display:flex; flex-direction:column; gap:10px; margin-top:16px;">
-        <sc-for list="{{ faq }}" as="f" hint-placeholder-count="5">
-          <div onClick="{{ f.toggle }}" style="border:1px solid #DCE5F0; border-radius:10px; padding:15px 17px; cursor:pointer;">
-            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:12px; align-items:flex-start;">
-              <div style="font-size:15px; font-weight:600; line-height:1.4;">{{ f.q }}</div>
-              <div style="font-size:18px; color:#0066FF; font-weight:700; line-height:1;">{{ f.sign }}</div>
-            </div>
-            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
-              <div style="font-size:14px; color:#64748B; line-height:1.65; margin-top:9px;">{{ f.a }}</div>
-            </sc-if>
-          </div>
-        </sc-for>
-      </div>
-    </div>
 
     <sc-if value="{{ hasReviews }}" hint-placeholder-val="{{ false }}">
       <div style="margin-top:26px;">
@@ -352,7 +336,22 @@ class Component extends DCLogic {
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []).then(bytovye => this.setState({ bytovye })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/kaspi-reviews.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(all => this.setState({ rev: (all && all["TAC-FR12INV/R3"]) || { list: [] } })).catch(() => {});
   }
-  componentDidUpdate() { this.syncPhotos(); }
+  componentDidUpdate() { this.syncPhotos(); this.ldProduct(); }
+  ldProduct() {
+    const list = this.state.bytovye || [];
+    if (!list.length || this.__ld) return;
+    const m = list.filter(x => /^tcl-tac-fr\d+hsv-p7[wsb]$/.test(x.sl || "") && /FreshIN 3\.0/i.test(x.n || ""));
+    if (!m.length) return;
+    this.__ld = true;
+    const ph = u => !u ? "" : /^https?:/.test(u) ? u : "https://img.tehnoholod369.kz/" + u.replace(/^\//, "");
+    const data = { "@context": "https://schema.org", "@type": "ItemList", "name": "TCL FreshIN 3.0", "itemListElement": m.map((x, i) => {
+      const o = { "@type": "Product", "name": "Кондиционер TCL FreshIN 3.0 " + x.s, "sku": x.s, "brand": { "@type": "Brand", "name": "TCL" }, "image": ph(x.i), "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=" + x.sl };
+      if (x.p) o.offers = { "@type": "Offer", "priceCurrency": "KZT", "price": String(x.p), "availability": /налич/i.test(x.st || "") ? "https://schema.org/InStock" : "https://schema.org/PreOrder", "url": o.url };
+      return { "@type": "ListItem", "position": i + 1, "item": o };
+    }) };
+    const el = document.createElement("script"); el.type = "application/ld+json"; el.text = JSON.stringify(data); document.head.appendChild(el);
+  }
+
 
   renderVals() {
     const color = this.state.color ?? (this.props.variant ?? "Белый");
@@ -418,7 +417,7 @@ class Component extends DCLogic {
       { q: "Обогрев зимой в Алматы вытянет?", a: "Заявленный диапазон обогрева — до −20 °C. Для межсезонья и типичной алматинской зимы этого достаточно, но кондиционер не заменяет основное отопление в морозы и при плохом утеплении." },
       { q: "Нужно ли что-то докупать к кондиционеру?", a: "Соединительный комплект с медными трубами уже входит в поставку — это указано в описании всех моделей линейки. Отдельно считается монтаж, а по ситуации кронштейны, короб и стабилизатор." },
       { q: "Как часто менять фильтр?", a: "Фильтры внутреннего блока моются, HEPA-элемент меняется по регламенту производителя. У приточных моделей отдельно проверяется фильтр канала наружного воздуха — обычная чистка внутреннего блока его не заменяет." },
-      { q: "Что с гарантией?", a: "На оборудование действует только гарантия производителя, её срок указан в карточке модели и в паспорте изделия; гарантийное обслуживание — по правилам производителя. На монтаж нового оборудования через АРТЕЛЬ действует гарантия 12 месяцев. Сервис-карта 369 фиксирует исполнителя, чтобы обращение по качеству монтажа направить тому же мастеру или бригаде." }
+      { q: "Что с гарантией?", a: "Оборудование идёт с гарантией производителя: срок указан в карточке модели и в паспорте изделия; гарантийное обслуживание — по правилам производителя. На монтаж нового оборудования через АРТЕЛЬ действует гарантия 12 месяцев. Сервис-карта 369 фиксирует исполнителя, чтобы обращение по качеству монтажа направить тому же мастеру или бригаде." }
     ];
 
     // отзывы Kaspi.kz: берём только оценки 5, без дат; только по той модели, где они реально есть
