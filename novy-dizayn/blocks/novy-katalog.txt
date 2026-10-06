@@ -399,7 +399,7 @@ class Component extends DCLogic {
     // адреса было два SEO-лица. Выдача по умолчанию не менялась.
     this.группаЯвно = p.has("g");
     const sub = p.get("sub");
-    if (sub) this.pendingSub = sub;
+    if (sub) this.pendingSub = (sub === "Рекуператоры" && group === "ventilyaciya") ? "С рекуперацией" : sub;
     // площадь из подбора на главной: полосу выбираем ту, что накрывает значение
     const wantArea = +(p.get("area") || 0) || 0;
     if (wantArea) this.pendingArea = wantArea;
@@ -856,6 +856,10 @@ class Component extends DCLogic {
       }
     }
     const isAccSub = name => /аксессуар|комплектующ/i.test(String(name || ""));
+    const SUB_RECUP = "С рекуперацией";
+    const recupLike = x => s.group === "ventilyaciya" && !isAccSub(x.sub)
+      && (/рекуператор/i.test(String(x.t || "") + " " + String(x.n || "")) || (x.sp || []).some(r => /рекуператор|рекуперац/i.test(String(r[0]))));
+    const inSub = (x, sub) => sub === SUB_RECUP ? recupLike(x) : x.sub === sub;
     const accMode = isAccSub(s.sub);
 
     // счётчики фасетов считаем по набору с учётом прочих активных фильтров, кроме самого фасета
@@ -868,7 +872,7 @@ class Component extends DCLogic {
       if (needle && (it.n + " " + it.b).toLowerCase().indexOf(needle) < 0) return false;
       return true;
     });
-    const subList = s.sub === "all" ? baseList : baseList.filter(x => x.sub === s.sub);
+    const subList = s.sub === "all" ? baseList : baseList.filter(x => inSub(x, s.sub));
 
     // литраж и тип нагрева — как на сайте Ballu: главные критерии выбора бойлера.
     // 25.08.2026: фасет привязан к водонагревателям явно. До этого он ловил ЛЮБОЕ поле
@@ -1601,7 +1605,7 @@ class Component extends DCLogic {
     let list = items.map((x, i) => ({ x, i })).filter(o => {
       const it = o.x;
       if (!accMode && it.acc) return false;
-      if (s.sub !== "all" && it.sub !== s.sub) return false;
+      if (s.sub !== "all" && !inSub(it, s.sub)) return false;
       if (s.onlyPick && !this.isPick(it, picks)) return false;
       if (s.onlySale && !this.saleOf(it)) return false;
       if (s.brand !== "all" && it.b !== s.brand) return false;
@@ -1641,7 +1645,7 @@ class Component extends DCLogic {
     // один предикат на всё: skip исключает фасет, для которого считаем его же счётчики
     const matches = (it, skip) => {
       if (!accMode && it.acc) return false;
-      if (skip !== "sub" && s.sub !== "all" && it.sub !== s.sub) return false;
+      if (skip !== "sub" && s.sub !== "all" && !inSub(it, s.sub)) return false;
       if (s.onlyPick && !this.isPick(it, picks)) return false;
       if (s.onlySale && !this.saleOf(it)) return false;
       if (skip !== "brand" && s.brand !== "all" && it.b !== s.brand) return false;
@@ -2131,6 +2135,7 @@ class Component extends DCLogic {
       // Скрываем, пока подкатегория не выбрана (выбрана — ряд нужен, чтобы вернуться).
       hasSubs: _hasSubs,
       subTabs: [{ name: "all", n: this.__fac.sub.length }].concat((meta.subs || [])
+        .filter(t => !(s.group === "ventilyaciya" && t.name === "Рекуператоры"))
         .map(t => ({
           name: t.name,
           n: isAccSub(t.name)
@@ -2138,6 +2143,8 @@ class Component extends DCLogic {
             : this.__fac.sub.filter(x => x.sub === t.name).length
         }))
         .filter(t => t.n > 0)
+      ).concat(s.group === "ventilyaciya" && this.__fac.sub.filter(recupLike).length > 0
+        ? [{ name: SUB_RECUP, n: this.__fac.sub.filter(recupLike).length }] : []
       ).map(t => {
         const key = t.name === "all" ? "all" : t.name;
         const on = s.sub === key;
