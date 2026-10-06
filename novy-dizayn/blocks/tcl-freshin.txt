@@ -5,45 +5,60 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
-  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
-  a { color: #0066FF; text-decoration: none; }
-  a:hover { color: #0052D6; }
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=e8476510"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
 </helmet>
 
-<div style="min-height:100vh; background:#F1F5F9;">
+<div style="min-height:100vh; background:#F3F7FB;">
 
-  <div class="th-t1"><div class="th-w"><b>Доставка по Казахстану</b><span><a href="tel:+77000369369">+77 000 369 369</a> · пн–пт 9:00–18:00 · <a href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B2%D0%BE%D0%BD%D0%B8%D1%82%D1%8C.">Заказать звонок</a></span></div></div>
-<header class="th-hd"><div class="th-w"><button type="button" class="th-bg" data-th-burger aria-label="Меню">☰<span>Меню</span></button><a class="th-lg" href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" /></a><button type="button" class="th-sr" data-th-search aria-label="Поиск по каталогу"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg><span>Поиск по каталогу</span></button><nav class="th-ic"><a href="/izbrannoe"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg><span>Избранное</span><i class="th-bd" data-th-fav-count style="display:none"></i></a><a href="/sravnenie"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg><span>Сравнение</span><i class="th-bd" data-th-cmp-count style="display:none"></i></a><a href="/korzina"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h2l2.4 11h10.2L20 8H6.2" /><circle cx="9" cy="19" r="1.5" /><circle cx="17" cy="19" r="1.5" /></svg><span>Корзина</span><i class="th-bd" data-th-cart-count></i></a></nav></div></header>
-<nav class="th-mn"><div class="th-w"><a class="th-home" href="/" aria-label="На главную" title="На главную"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 11l9-7 9 7" /><path d="M5 10v10h5v-6h4v6h5V10" /></svg><span>Главная</span></a><a class="th-cat" href="/katalog" data-th-cat aria-expanded="false" aria-controls="th-panel"><span class="th-ci">☰</span><span class="th-ct">Каталог товаров</span></a><div class="th-dd"><a href="/kondicionery-almaty">Кондиционирование</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Кондиционирование" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div></div><div class="th-dd"><a href="/otoplenie">Отопление</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Отопление" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div></div><div class="th-dd"><a href="/ventilyaciya">Вентиляция</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Вентиляция" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div></div><div class="th-dd"><a href="/vodonagrevateli">Водонагреватели</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Водонагреватели" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div></div><a href="/katalog?g=avtonomnoe-pitanie">Автономное питание</a><a href="/brendy">Бренды</a><a href="/baza-znaniy">База знаний</a><a href="/kontakty">Контакты</a></div><div class="th-pn" id="th-panel"><div class="th-w th-pg"><div class="th-pc"><b>Кондиционирование</b><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div><div class="th-pc"><b>Отопление</b><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div><div class="th-pc"><b>Вентиляция</b><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div><div class="th-pc"><b>Водонагреватели и водоочистка</b><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div><div class="th-pc"><b>Автономное питание</b><a href="/katalog?g=avtonomnoe-pitanie">Зарядные станции и солнечные панели</a></div><div class="th-pc"><b>VRF, фанкойлы, чиллеры</b><a href="/katalog?g=mini-vrf">Мини-VRF и мультизональные</a><a href="/katalog?g=fankoyly">Фанкойлы</a><a href="/katalog?g=chillery">Чиллеры</a><a href="/katalog?g=precizionnye">Прецизионные кондиционеры</a><a href="/proekt">Расчёт под объект</a></div></div><div class="th-w th-pf"><a href="/katalog">Весь каталог →</a></div></div></nav>
+  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="opacity:0.85;">Монтаж от 75 000 ₸ · гарантия производителя на оборудование</span>
+      <a href="tel:+77000369369" style="margin-left:auto; color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
 
   <sc-if value="{{ zoomOpen }}" hint-placeholder-val="{{ false }}">
     <div onClick="{{ closeZoom }}" style="position:fixed; inset:0; background:rgba(7,28,59,0.92); z-index:60; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; cursor:zoom-out;">
       <img ref="{{ zoomRef }}" alt="TCL FreshIN 3.0" style="max-width:100%; max-height:80vh; object-fit:contain; display:block;" />
-      <div style="color:rgba(255,255,255,0.88); font-size:13px; margin-top:14px;">Клик по фону закрывает</div>
+      <div style="color:#CBDCEC; font-size:13px; margin-top:14px;">Клик по фону закрывает</div>
     </div>
   </sc-if>
 
-  <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:18px 24px 72px 24px;">
-    <div style="font-size:13px; color:#64748B;"><a href="/">Главная</a> → <a href="/katalog">Каталог</a> → <a href="/katalog?g=bytovye">Бытовые кондиционеры</a> → <span style="color:#1A1A1A;">TCL FreshIN 3.0</span></div>
+  <div style="max-width:1240px; margin:0 auto; padding:18px 24px 72px 24px;">
+    <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <a href="/katalog">Каталог</a> → <a href="/katalog?g=bytovye">Бытовые кондиционеры</a> → <span style="color:#18212F;">TCL FreshIN 3.0</span></div>
 
-    <div style="background:linear-gradient(125deg,#0033A0,#0033A0 72%,#0066FF); color:#fff; border-radius:16px; padding:36px; margin-top:12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:30px; align-items:center;">
+    <div style="background:linear-gradient(125deg,#071C3B,#0A4EA7 72%,#0872D3); color:#fff; border-radius:16px; padding:36px; margin-top:12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:30px; align-items:center;">
       <div>
-        <div style="display:inline-block; background:#E81C1C; border-radius:6px; padding:5px 10px; font-size:12px; font-weight:700; letter-spacing:0.08em;">НОВИНКА 2026</div>
-        <h1 style="margin:14px 0 0 0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em;">TCL FreshIN 3.0 — кондиционер, который приносит воздух с улицы</h1>
+        <div style="display:inline-block; background:#E11A13; border-radius:6px; padding:5px 10px; font-size:12px; font-weight:700; letter-spacing:0.08em;">НОВИНКА 2026</div>
+        <h1 style="margin:14px 0 0 0; font-size:clamp(21px,5.6vw,38px); font-weight:800; line-height:1.1; letter-spacing:-0.025em;">TCL FreshIN 3.0 — кондиционер, который приносит воздух с улицы</h1>
         <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px;">Инверторная сплит-система с притоком свежего воздуха через дефлектор Blue Wing: кислород в комнате без открытого окна, пыли и шума. Класс A+++, гарантия производителя, монтаж в Алматы и области.</div>
         <div style="display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;">
-          <a href="/katalog?g=bytovye" style="background:#0066FF; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Выбрать модель — от 323 942 ₸</a>
+          <a href="/katalog?g=bytovye" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Выбрать модель — от 323 942 ₸</a>
           <a href="https://wa.me/77000369369" style="border:2px solid rgba(255,255,255,0.55); color:#fff; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Задать вопрос в WhatsApp</a>
         </div>
-        <div style="display:flex; gap:22px; margin-top:26px; flex-wrap:wrap; font-size:13px; color:rgba(255,255,255,0.88);">
+        <div style="display:flex; gap:22px; margin-top:26px; flex-wrap:wrap; font-size:13px; color:#CBDCEC;">
           <div><b style="display:block; font-size:20px; color:#fff;">16 дБ</b>шум притока</div>
           <div><b style="display:block; font-size:20px; color:#fff;">A+++</b>энергоэффективность</div>
           <div><b style="display:block; font-size:20px; color:#fff;">+53 / −20 °C</b>рабочий диапазон</div>
@@ -55,20 +70,20 @@
     </div>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:20px;">
-      <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">В ЧЁМ РАЗНИЦА</div>
+      <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">В ЧЁМ РАЗНИЦА</div>
       <h2 style="margin:8px 0 0 0; font-size:26px; font-weight:800; letter-spacing:-0.018em;">Обычный кондиционер против приточного</h2>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:18px;">
-        <div style="background:#F1F5F9; border-radius:12px; padding:20px;">
-          <div style="font-size:15px; font-weight:700; color:#64748B;">Обычная сплит-система</div>
-          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Гоняет по кругу один и тот же воздух: охлаждает, но не проветривает. К вечеру в закрытой спальне растёт CO₂ — отсюда духота и тяжёлая голова при работающем кондиционере.</div>
+        <div style="background:#F3F7FB; border-radius:12px; padding:20px;">
+          <div style="font-size:15px; font-weight:700; color:#5A6675;">Обычная сплит-система</div>
+          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Гоняет по кругу один и тот же воздух: охлаждает, но не проветривает. К вечеру в закрытой спальне растёт CO₂ — отсюда духота и тяжёлая голова при работающем кондиционере.</div>
         </div>
-        <div style="background:#E9F4FF; border:1px solid #B9DBF7; border-radius:12px; padding:20px;">
-          <div style="font-size:15px; font-weight:700; color:#0033A0;">FreshIN 3.0</div>
-          <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">Забирает наружный воздух через верхнюю панель, пропускает через фильтрацию QuadruPuri и подаёт в комнату. Режим Fresh Air работает без компрессора — только вентиляция притока.</div>
+        <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:12px; padding:20px;">
+          <div style="font-size:15px; font-weight:700; color:#0A4EA7;">FreshIN 3.0</div>
+          <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">Забирает наружный воздух через верхнюю панель, пропускает через фильтрацию QuadruPuri и подаёт в комнату. Режим Fresh Air работает без компрессора — только вентиляция притока.</div>
         </div>
-        <div style="background:#F1F5F9; border-radius:12px; padding:20px;">
-          <div style="font-size:15px; font-weight:700; color:#64748B;">Открытое окно</div>
-          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Даёт воздух, но вместе с пылью, шумом улицы и жарой. Летом сводит на нет работу кондиционера, зимой выстуживает комнату.</div>
+        <div style="background:#F3F7FB; border-radius:12px; padding:20px;">
+          <div style="font-size:15px; font-weight:700; color:#5A6675;">Открытое окно</div>
+          <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">Даёт воздух, но вместе с пылью, шумом улицы и жарой. Летом сводит на нет работу кондиционера, зимой выстуживает комнату.</div>
         </div>
       </div>
     </div>
@@ -76,17 +91,17 @@
     <div style="margin-top:26px;">
       <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:14px;">
         <div>
-          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ТЕХНОЛОГИИ</div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">ТЕХНОЛОГИИ</div>
           <h2 style="margin:6px 0 0 0; font-size:26px; font-weight:800; letter-spacing:-0.018em;">Что стоит за притоком</h2>
         </div>
-        <div style="font-size:14px; color:#64748B;">Данные производителя · подтверждаются в карточке модели</div>
+        <div style="font-size:14px; color:#5A6675;">Данные производителя · подтверждаются в карточке модели</div>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:16px;">
         <sc-for list="{{ tech }}" as="t" hint-placeholder-count="6">
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px;">
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0066FF;">{{ t.tag }}</div>
-            <div style="font-family:Inter,sans-serif; font-size:17px; font-weight:700; color:#0033A0; margin-top:8px; line-height:1.3;">{{ t.title }}</div>
-            <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">{{ t.text }}</div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0872D3;">{{ t.tag }}</div>
+            <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700; margin-top:8px; line-height:1.3;">{{ t.title }}</div>
+            <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:8px;">{{ t.text }}</div>
           </div>
         </sc-for>
       </div>
@@ -95,7 +110,7 @@
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:26px;">
       <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px;">
         <div>
-          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">МОДЕЛЬНЫЙ РЯД И ЦЕНЫ</div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#8593A6;">МОДЕЛЬНЫЙ РЯД И ЦЕНЫ</div>
           <h2 style="margin:6px 0 0 0; font-size:26px; font-weight:800; letter-spacing:-0.018em;">Три цвета, три размера</h2>
         </div>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
@@ -108,7 +123,7 @@
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:16px; margin-top:18px;">
         <sc-for list="{{ models }}" as="m" hint-placeholder-count="3">
           <div style="border:1px solid #DCE5F0; border-radius:12px; padding:18px;">
-            <div ref="{{ m.boxRef }}" style="background:#F9FBFE; border:1px solid #E9EFF7; border-radius:10px; height:170px; display:flex; align-items:center; justify-content:center; padding:12px; font-size:12px; color:#64748B; text-align:center;">
+            <div ref="{{ m.boxRef }}" style="background:#F9FBFE; border:1px solid #E9EFF7; border-radius:10px; height:170px; display:flex; align-items:center; justify-content:center; padding:12px; font-size:12px; color:#8593A6; text-align:center;">
               <sc-if value="{{ m.hasPhoto }}" hint-placeholder-val="{{ false }}">
                 <div onClick="{{ m.zoom }}" title="Открыть фото крупно" style="display:flex; align-items:center; justify-content:center; width:100%; height:100%; cursor:zoom-in;"><img data-url="{{ m.img }}" alt="{{ m.sku }}" style="max-width:100%; max-height:100%; object-fit:contain; display:block;" /></div>
               </sc-if>
@@ -116,70 +131,92 @@
                 <span>Фото этого цвета уточняется — пришлём по запросу</span>
               </sc-if>
             </div>
-            <div style="font-size:12px; color:#64748B; font-family:ui-monospace,monospace; margin-top:12px;">{{ m.sku }}</div>
-            <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0; margin-top:4px;">{{ m.title }}</div>
-            <div style="font-size:14px; color:#64748B; line-height:1.5; margin-top:6px;">{{ m.rooms }}</div>
+            <div style="font-size:12px; color:#8593A6; font-family:ui-monospace,monospace; margin-top:12px;">{{ m.sku }}</div>
+            <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; margin-top:4px;">{{ m.title }}</div>
+            <div style="font-size:14px; color:#5A6675; line-height:1.5; margin-top:6px;">{{ m.rooms }}</div>
             <div style="display:flex; align-items:baseline; gap:8px; margin-top:12px;">
               <div style="font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;">{{ m.price }}</div>
-              <div style="font-size:12px; color:#64748B;">с НДС</div>
+              <div style="font-size:12px; color:#8593A6;">с НДС</div>
             </div>
-            <div style="font-size:13px; color:#64748B; margin-top:2px;">{{ m.monthly }}</div>
+            <div style="font-size:13px; color:#5A6675; margin-top:2px;">{{ m.monthly }}</div>
             <div style="display:flex; gap:8px; margin-top:14px;">
-              <a href="/korzina" style="flex:1; background:#0066FF; color:#fff; border-radius:8px; padding:11px; text-align:center; font-size:14px; font-weight:700;">Купить</a>
-              <a href="{{ m.href }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-size:14px; font-weight:600; color:#64748B;">Подробнее</a>
+              <a href="/korzina" style="flex:1; background:#0872D3; color:#fff; border-radius:8px; padding:11px; text-align:center; font-size:14px; font-weight:700;">Купить</a>
+              <a href="{{ m.href }}" style="border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-size:14px; font-weight:600; color:#5A6675;">Подробнее</a>
             </div>
           </div>
         </sc-for>
       </div>
-      <div style="font-size:13px; color:#64748B; margin-top:14px; line-height:1.6;">Цены — на оборудование. Соединительный комплект с медными трубами входит в поставку. Монтаж считается отдельно — стоимость называем после замера.</div>
+      <div style="font-size:13px; color:#5A6675; margin-top:14px; line-height:1.6;">Цены — на оборудование. Соединительный комплект с медными трубами входит в поставку. Монтаж считается отдельно: от 75 000 ₸ для кондиционеров с притоком воздуха.</div>
     </div>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:20px;">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px;">
-        <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:700; color:#0033A0;">Видеообзор</div>
-        <div style="margin-top:12px; border:2px dashed #B9DBF7; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center;">
-          <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#0066FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
-          <div style="font-size:15px; font-weight:600; color:#1A1A1A;">Распаковка и обзор FreshIN 3.0</div>
-          <div style="font-size:13px; color:#64748B; line-height:1.5; max-width:320px;">Пришлите ссылку на видео — встрою плеер. Канал: <a href="https://www.youtube.com/@Tehnoholod369" target="_blank" rel="noreferrer">@Tehnoholod369</a></div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Видеообзор</div>
+        <div style="margin-top:12px; border-radius:12px; overflow:hidden; background:#000; aspect-ratio:16/9;">
+          <iframe src="https://www.youtube.com/embed/I1vlUCxNgOA?rel=0" title="TCL FreshIN 3.0 — кондиционер с притоком воздуха" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="display:block; width:100%; height:100%; border:0;"></iframe>
         </div>
+        <div style="font-size:14px; font-weight:600; margin-top:10px;">Обзор TCL FreshIN 3.0</div>
+        <a href="https://youtu.be/0W4LPZl4yss" target="_blank" rel="noreferrer" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; margin-top:18px; border-radius:12px; background:#071C3B; color:#fff; aspect-ratio:16/9; text-align:center; padding:16px;">
+          <span style="display:block; width:54px; height:38px; border-radius:10px; background:#E81C1C; position:relative;"><span style="position:absolute; left:21px; top:11px; border-left:14px solid #fff; border-top:8px solid transparent; border-bottom:8px solid transparent;"></span></span>
+          <span style="font-size:15px; font-weight:700;">Смотреть на YouTube</span>
+        </a>
+        <div style="font-size:14px; font-weight:600; margin-top:10px;">TCL FreshIN 3.0 в белом цвете</div>
+        <div style="font-size:13px; color:#5A6675; line-height:1.5; margin-top:10px;">Канал: <a href="https://www.youtube.com/@Tehnoholod369" target="_blank" rel="noreferrer">@Tehnoholod369</a></div>
       </div>
-      <div style="background:#0033A0; color:#fff; border-radius:16px; padding:26px;">
-        <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:700;">Монтаж приточной системы</div>
-        <div style="font-size:15px; color:rgba(255,255,255,0.88); line-height:1.65; margin-top:10px;">Приток добавляет работы: канал для наружного воздуха, дренаж канала на случай конденсата, повышенная герметичность контура — лишние щели снижают КПД воздухообмена. Зимой отдельно контролируем герметики и крепления на морозе.</div>
-        <div style="display:flex; flex-direction:column; gap:8px; margin-top:14px; font-size:14px; color:rgba(255,255,255,0.88);">
-          <div>· Замер до покупки — бесплатно, по Алматы и области</div>
-          <div>· На монтаж нового оборудования через АРТЕЛЬ — гарантия 12 месяцев; оборудование идёт с гарантией производителя</div>
+      <div style="background:#071C3B; color:#fff; border-radius:16px; padding:26px;">
+        <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Монтаж приточной системы</div>
+        <div style="font-size:15px; color:#CBDCEC; line-height:1.65; margin-top:10px;">Приток добавляет работы: канал для наружного воздуха, дренаж канала на случай конденсата, повышенная герметичность контура — лишние щели снижают КПД воздухообмена. Зимой отдельно контролируем герметики и крепления на морозе.</div>
+        <div style="font-size:13px; font-weight:700; color:#fff; letter-spacing:0.04em; text-transform:uppercase; margin-top:16px;">Входит в стандартный монтаж</div>
+        <div style="display:flex; flex-direction:column; gap:6px; margin-top:8px; font-size:14px; color:#CBDCEC;">
+          <div>· Выезд на замер и выбор места установки блоков</div>
+          <div>· Установка внутреннего и наружного блоков</div>
+          <div>· Трасса до 3 м, одно бурение, дренаж самотёком</div>
+          <div>· Подключение к розетке рядом (до 1,5 м)</div>
           <div>· Пусконаладка с проверкой режима Fresh Air и приложения TCL Home</div>
+          <div>· Сухая уборка за собой</div>
         </div>
-        <a href="https://wa.me/77000369369" style="display:block; background:#0066FF; color:#fff; border-radius:8px; padding:13px; text-align:center; font-size:15px; font-weight:700; margin-top:18px;">Вызвать замерщика</a>
+        <div style="font-size:13px; font-weight:700; color:#fff; letter-spacing:0.04em; text-transform:uppercase; margin-top:16px;">Считается отдельной строкой</div>
+        <div style="display:flex; flex-direction:column; gap:6px; margin-top:8px; font-size:14px; color:#CBDCEC;">
+          <div>· Дополнительные метры трассы и межблочного кабеля</div>
+          <div>· Надбавка за монолит, штробление, алмазное бурение</div>
+          <div>· Дренажная помпа, вывод дренажа в канализацию</div>
+          <div>· Зимний комплект</div>
+          <div>· Демонтаж и обратная сборка окна для проноса блока</div>
+        </div>
+        <div style="font-size:14px; color:#CBDCEC; line-height:1.65; margin-top:14px;">Стандартный монтаж от 75 000 ₸. Всё, что сверх списка выше, называем до начала работ и делаем только после вашего согласия. Срок монтажа — 1–3 дня.</div>
+        <div style="display:flex; flex-direction:column; gap:6px; margin-top:12px; font-size:14px; color:#CBDCEC;">
+          <div>· На монтаж нового оборудования через АРТЕЛЬ — гарантия 12 месяцев; на оборудование действует только гарантия производителя</div>
+          <div>· В день монтажа выдаём «Сервис-карту 369»: номер продажи, дата монтажа и бригада</div>
+        </div>
+        <a href="https://wa.me/77000369369" style="display:block; background:#0872D3; color:#fff; border-radius:8px; padding:13px; text-align:center; font-size:15px; font-weight:700; margin-top:18px;">Вызвать замерщика</a>
       </div>
     </div>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
-      <div style="font-family:Inter,sans-serif; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Частые вопросы</div>
+      <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Частые вопросы</div>
       <div style="display:flex; flex-direction:column; gap:10px; margin-top:16px;">
         <sc-for list="{{ faq }}" as="f" hint-placeholder-count="5">
           <div onClick="{{ f.toggle }}" style="border:1px solid #DCE5F0; border-radius:10px; padding:15px 17px; cursor:pointer;">
             <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:12px; align-items:flex-start;">
               <div style="font-size:15px; font-weight:600; line-height:1.4;">{{ f.q }}</div>
-              <div style="font-size:18px; color:#0066FF; font-weight:700; line-height:1;">{{ f.sign }}</div>
+              <div style="font-size:18px; color:#0872D3; font-weight:700; line-height:1;">{{ f.sign }}</div>
             </div>
             <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
-              <div style="font-size:14px; color:#64748B; line-height:1.65; margin-top:9px;">{{ f.a }}</div>
+              <div style="font-size:14px; color:#5A6675; line-height:1.65; margin-top:9px;">{{ f.a }}</div>
             </sc-if>
           </div>
         </sc-for>
       </div>
     </div>
 
-    <div style="background:#E9F4FF; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+    <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
       <div>
-        <div style="font-family:Inter,sans-serif; font-size:24px; font-weight:800; color:#0033A0; letter-spacing:-0.015em;">Не уверены, какой класс нужен?</div>
-        <div style="font-size:15px; color:#1A1A1A; line-height:1.6; margin-top:8px;">Скажите площадь помещения — посчитаем мощность и назовём цену вместе с монтажом. Если приток вам не нужен, честно предложим модель дешевле.</div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:24px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Не уверены, какой класс нужен?</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Скажите площадь помещения — посчитаем мощность и назовём цену вместе с монтажом. Если приток вам не нужен, честно предложим модель дешевле.</div>
       </div>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="/kontakty#podbor" style="background:#0066FF; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Подбор по площади</a>
-        <a href="https://wa.me/77000369369" style="border:2px solid #0066FF; color:#0033A0; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/kontakty#podbor" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Подбор по площади</a>
+        <a href="https://wa.me/77000369369" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
       </div>
     </div>
 
@@ -297,7 +334,7 @@ class Component extends DCLogic {
       { q: "Обогрев зимой в Алматы вытянет?", a: "Заявленный диапазон обогрева — до −20 °C. Для межсезонья и типичной алматинской зимы этого достаточно, но кондиционер не заменяет основное отопление в морозы и при плохом утеплении." },
       { q: "Нужно ли что-то докупать к кондиционеру?", a: "Соединительный комплект с медными трубами уже входит в поставку — это указано в описании всех моделей линейки. Отдельно считается монтаж, а по ситуации кронштейны, короб и стабилизатор." },
       { q: "Как часто менять фильтр?", a: "Фильтры внутреннего блока моются, HEPA-элемент меняется по регламенту производителя. У приточных моделей отдельно проверяется фильтр канала наружного воздуха — обычная чистка внутреннего блока его не заменяет." },
-      { q: "Что с гарантией?", a: "Оборудование идёт с гарантией производителя, её срок указан в карточке модели и в паспорте изделия; гарантийное обслуживание — по правилам производителя. На монтаж нового оборудования через АРТЕЛЬ действует гарантия 12 месяцев. Сервис-карта 369 фиксирует исполнителя, чтобы обращение по качеству монтажа направить тому же мастеру или бригаде." }
+      { q: "Что с гарантией?", a: "На оборудование действует только гарантия производителя, её срок указан в карточке модели и в паспорте изделия; гарантийное обслуживание — по правилам производителя. На монтаж нового оборудования через АРТЕЛЬ действует гарантия 12 месяцев. Сервис-карта 369 фиксирует исполнителя, чтобы обращение по качеству монтажа направить тому же мастеру или бригаде." }
     ];
 
     return {
@@ -305,9 +342,9 @@ class Component extends DCLogic {
       colors: Object.keys(sets).map(c => ({
         label: c,
         pick: () => this.setState({ color: c }),
-        border: color === c ? "#0066FF" : "#DCE5F0",
-        bg: color === c ? "#E9F4FF" : "#fff",
-        fg: color === c ? "#0033A0" : "#64748B"
+        border: color === c ? "#0872D3" : "#DCE5F0",
+        bg: color === c ? "#E6F2FD" : "#fff",
+        fg: color === c ? "#0A4EA7" : "#5A6675"
       })),
       models,
       zoomOpen: !!zoomSrc,
