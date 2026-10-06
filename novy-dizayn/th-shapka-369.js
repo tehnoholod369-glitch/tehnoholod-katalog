@@ -255,7 +255,10 @@
       + '.th-foot__cols>div:first-child{grid-column:1/-1}.th-foot__cols>div:nth-child(3){order:5;grid-column:1/-1;display:flex;flex-wrap:wrap;gap:0 22px}.th-foot__cols>div:nth-child(3) h4{flex:0 0 100%}.th-foot__req{margin:0 18px;padding:16px 0 calc(86px + env(safe-area-inset-bottom,0px))}}</style>'
       + '<div class="th-foot"><div class="th-foot__card"><div class="th-foot__cols">'
       + '<div><img src="' + CDN + 'assets/logo-369-horizontal-compact-dark.png" alt="ТЕХНОХОЛОД 369">'
-      + '<a class="th-ph" href="tel:' + ТЕЛЕФОН_МАШИНЕ + '">' + ТЕЛЕФОН_ЛЮДЯМ + '</a><span class="th-sm">Звонки и WhatsApp</span></div>'
+      + '<a class="th-ph" href="tel:' + ТЕЛЕФОН_МАШИНЕ + '">' + ТЕЛЕФОН_ЛЮДЯМ + '</a><span class="th-sm">Звонки и WhatsApp</span>'
+      // второй рабочий номер (владелец, 06.10.2026): принимает звонки и WhatsApp; главный остаётся в шапке и кнопках
+      + '<a class="th-sm" href="tel:+77000336699" style="margin-top:6px">Второй номер: +77 000 33 66 99</a>'
+      + '</div>'
       + колонка("Каталог", [["/kondicionery-almaty", "Кондиционирование"], ["/otoplenie", "Отопление"], ["/ventilyaciya", "Вентиляция"], ["/vodonagrevateli", "Водонагреватели"]])
       + колонка("Компания", [["/brendy", "Бренды"], ["/baza-znaniy", "База знаний"], ["/kontakty", "Контакты"]])
       // /vozvrat — юридическая страница; её адрес указан в Google Merchant Center как политика возврата
