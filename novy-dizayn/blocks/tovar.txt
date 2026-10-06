@@ -5,55 +5,50 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
-  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
-  a { color: #0A4EA7; text-decoration: none; }
-  a:hover { color: #0872D3; }
+  /* Липкая панель покупки на телефоне (макет 02.10.2026): цена и главное действие страницы модели. Общую нижнюю панель навигации
+     (mobile-bar.js) на этой странице скрываем: навигация остаётся в меню «Меню» шапки. */
+  .thk-buybar { display:none; }
+  @media (max-width: 760px) {
+    #th-mobile-bar { display:none !important; }
+    .thk-buybar { display:flex; align-items:center; justify-content:space-between; gap:12px; position:fixed; left:0; right:0; bottom:0; z-index:41;
+      background:#fff; border-top:1px solid #DCE5F0; box-shadow:0 -4px 16px rgba(0,51,160,0.08); padding:10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); }
+  }
+  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0066FF; }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@4fe14f92/novy-dizayn/lead.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=be2fdc8d"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=e8476510"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
 </helmet>
 
-<div style="min-height:100vh; background:#F3F7FB;">
-
-  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
-    <div style="max-width:1280px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
-      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
-      <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
-      <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+<div style="min-height:100vh; background:#F1F5F9;">
+<div class="thk-buybar">
+    <div style="min-width:0;">
+      <div style="font:800 20px/24px Inter,sans-serif; color:{{ priceColor }}; font-variant-numeric:tabular-nums; white-space:nowrap;">{{ price }}</div>
+      <div style="font:400 12px/16px Inter,sans-serif; color:#606F85; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:52vw;">{{ mountNote }}</div>
     </div>
+    <a href="{{ ctaHref }}" onClick="{{ ctaClick }}" style="flex:none; background:{{ buyBg }}; color:#fff; border-radius:8px; height:48px; padding:0 22px; display:flex; align-items:center; font:700 16px/1 Inter,sans-serif; cursor:pointer; text-decoration:none;">{{ cta }}</a>
   </div>
 
-  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
-    <div style="max-width:1280px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
-      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
-      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
-      </a>
-      <button type="button" data-th-search aria-label="Поиск по каталогу" style="flex:1; min-width:200px; display:flex; align-items:center; gap:8px; border:2px solid #0872D3; background:#fff; border-radius:8px; padding:9px 14px; color:#8593A6; font-size:15px; text-align:left; cursor:pointer;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>Поиск по модели или артикулу
-      </button>
-      <a href="/korzina" style="display:flex; align-items:center; gap:7px; background:{{ cartBg }}; color:{{ cartFg }}; border-radius:8px; padding:10px 14px; font-size:15px; font-weight:700;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M3 4h2.2l2.4 11.2h10.1" /><path d="M6.6 7.6h14L18.7 14H8" /><circle cx="9.5" cy="19" r="1.4" /><circle cx="17.5" cy="19" r="1.4" /></svg>{{ cartLabel }}
-      </a>
-      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
-    </div>
-  </div>
+
+  <div class="th-t1"><div class="th-w"><b>Доставка по Казахстану</b><span><a href="tel:+77000369369">+77 000 369 369</a> · пн–пт 9:00–18:00 · <a href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B2%D0%BE%D0%BD%D0%B8%D1%82%D1%8C.">Заказать звонок</a></span></div></div>
+<header class="th-hd"><div class="th-w"><button type="button" class="th-bg" data-th-burger aria-label="Меню">☰<span>Меню</span></button><a class="th-lg" href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" /></a><button type="button" class="th-sr" data-th-search aria-label="Поиск по каталогу"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg><span>Поиск по каталогу</span></button><nav class="th-ic"><a href="/izbrannoe"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg><span>Избранное</span><i class="th-bd" data-th-fav-count style="display:none"></i></a><a href="/sravnenie"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg><span>Сравнение</span><i class="th-bd" data-th-cmp-count style="display:none"></i></a><a href="/korzina"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h2l2.4 11h10.2L20 8H6.2" /><circle cx="9" cy="19" r="1.5" /><circle cx="17" cy="19" r="1.5" /></svg><span>Корзина</span><i class="th-bd" data-th-cart-count></i></a></nav></div></header>
+<nav class="th-mn"><div class="th-w"><a class="th-home" href="/" aria-label="На главную" title="На главную"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 11l9-7 9 7" /><path d="M5 10v10h5v-6h4v6h5V10" /></svg><span>Главная</span></a><a class="th-cat" href="/katalog" data-th-cat aria-expanded="false" aria-controls="th-panel"><span class="th-ci">☰</span><span class="th-ct">Каталог товаров</span></a><div class="th-dd"><a href="/kondicionery-almaty">Кондиционирование</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Кондиционирование" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div></div><div class="th-dd"><a href="/otoplenie">Отопление</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Отопление" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div></div><div class="th-dd"><a href="/ventilyaciya">Вентиляция</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Вентиляция" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div></div><div class="th-dd"><a href="/vodonagrevateli">Водонагреватели</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Водонагреватели" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div></div><a href="/katalog?g=avtonomnoe-pitanie">Автономное питание</a><a href="/brendy">Бренды</a><a href="/baza-znaniy">База знаний</a><a href="/kontakty">Контакты</a></div><div class="th-pn" id="th-panel"><div class="th-w th-pg"><div class="th-pc"><b>Кондиционирование</b><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div><div class="th-pc"><b>Отопление</b><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div><div class="th-pc"><b>Вентиляция</b><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div><div class="th-pc"><b>Водонагреватели и водоочистка</b><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div><div class="th-pc"><b>Автономное питание</b><a href="/katalog?g=avtonomnoe-pitanie">Зарядные станции и солнечные панели</a></div><div class="th-pc"><b>VRF, фанкойлы, чиллеры</b><a href="/katalog?g=mini-vrf">Мини-VRF и мультизональные</a><a href="/katalog?g=fankoyly">Фанкойлы</a><a href="/katalog?g=chillery">Чиллеры</a><a href="/katalog?g=precizionnye">Прецизионные кондиционеры</a><a href="/proekt">Расчёт под объект</a></div></div><div class="th-w th-pf"><a href="/katalog">Весь каталог →</a></div></div></nav>
 
   <sc-if value="{{ zoomOpen }}" hint-placeholder-val="{{ false }}">
     <div onClick="{{ closeZoom }}" style="position:fixed; inset:0; background:rgba(7,28,59,0.92); z-index:60; display:flex; flex-direction:column; padding:20px; cursor:zoom-out;">
       <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap; color:#fff; flex:none;">
         <div>
           <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#7FC4F2;">{{ brand }} · {{ skuLabel }}</div>
-          <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:600; margin-top:2px;">{{ zoomCounter }}</div>
+          <div style="font-family:'Inter',sans-serif; font-size:16px; font-weight:600; margin-top:2px;">{{ zoomCounter }}</div>
         </div>
         <div style="margin-left:auto; display:flex; gap:10px; align-items:center;">
           <a href="{{ zoomSrc }}" target="_blank" rel="noreferrer" onClick="{{ stop }}" style="border:1px solid rgba(255,255,255,0.45); color:#fff; border-radius:8px; padding:8px 14px; font-size:13px; font-weight:600;">Открыть оригинал</a>
@@ -73,21 +68,21 @@
     </div>
   </sc-if>
 
-  <div style="max-width:1280px; margin:0 auto; padding:18px 24px 64px 24px;">
+  <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:18px 24px 64px 24px;">
 
     <sc-if value="{{ loading }}" hint-placeholder-val="{{ true }}">
-      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:60px 24px; text-align:center; font-size:16px; color:#5A6675;">Загружаем данные модели…</div>
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:60px 24px; text-align:center; font-size:16px; color:#606F85;">Загружаем данные модели…</div>
     </sc-if>
 
     <sc-if value="{{ ready }}" hint-placeholder-val="{{ false }}">
       <div>
         <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;">
-          <div class="th-crumbs" style="font-size:13px; color:#8593A6;">
-            <a href="/">Главная</a> → <a href="/katalog">Каталог</a> → <span>{{ dirLabel }}</span> → <a href="{{ groupHref }}">{{ groupTitle }}</a> → <span style="color:#18212F;">{{ short }}</span>
+          <div class="th-crumbs" style="font-size:13px; color:#606F85;">
+            <a href="/">Главная</a> → <a href="/katalog">Каталог</a> → <span>{{ dirLabel }}</span> → <a href="{{ groupHref }}">{{ groupTitle }}</a> → <span style="color:#1A1A1A;">{{ short }}</span>
           </div>
           <div style="display:flex; gap:8px;">
-            <div onClick="{{ prev }}" style="border:1px solid #DCE5F0; background:#fff; border-radius:8px; padding:7px 12px; font-size:13px; font-weight:600; color:#5A6675; cursor:pointer;">← Предыдущая</div>
-            <div onClick="{{ next }}" style="border:1px solid #DCE5F0; background:#fff; border-radius:8px; padding:7px 12px; font-size:13px; font-weight:600; color:#5A6675; cursor:pointer;">Следующая →</div>
+            <div onClick="{{ prev }}" style="border:1px solid #DCE5F0; background:#fff; border-radius:8px; padding:7px 12px; font-size:13px; font-weight:600; color:#606F85; cursor:pointer;">← Предыдущая</div>
+            <div onClick="{{ next }}" style="border:1px solid #DCE5F0; background:#fff; border-radius:8px; padding:7px 12px; font-size:13px; font-weight:600; color:#606F85; cursor:pointer;">Следующая →</div>
           </div>
         </div>
 
@@ -98,7 +93,7 @@
                 <img ref="{{ photoRef }}" alt="{{ name }}" style="width:100%; height:100%; object-fit:contain; display:block;" />
               </sc-if>
               <sc-if value="{{ noPhoto }}" hint-placeholder-val="{{ false }}">
-                <span style="font-size:13px; color:#8593A6;">Фото уточняется — пришлём по запросу</span>
+                <span style="font-size:13px; color:#606F85;">Фото уточняется — пришлём по запросу</span>
               </sc-if>
               <sc-if value="{{ hasPhoto }}" hint-placeholder-val="{{ false }}">
                 <div style="position:absolute; right:12px; bottom:12px; display:flex; align-items:center; gap:6px; background:rgba(7,28,59,0.82); color:#fff; border-radius:8px; padding:6px 10px; font-size:12px; font-weight:600; pointer-events:none;">
@@ -118,45 +113,49 @@
 
           <div style="display:flex; flex-direction:column;">
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-              <div style="font-size:13px; font-weight:700; color:#0872D3; letter-spacing:0.06em;">{{ brand }}</div>
+              <div style="font-size:13px; font-weight:700; color:#0066FF; letter-spacing:0.06em;">{{ brand }}</div>
               <div style="font-size:13px; color:{{ skuFg }}; font-family:ui-monospace,monospace;">{{ skuLabel }}</div>
               <div style="font-size:12px; font-weight:700; color:{{ stockFg }}; background:{{ stockBg }}; border-radius:5px; padding:4px 9px;">{{ stock }}</div>
+              <div class="th-act" style="position:static; margin-left:auto;">
+                <button type="button" data-th-fav data-g="{{ favG }}" data-sl="{{ favSl }}" data-n="{{ name }}" data-b="{{ brand }}" data-i="{{ favImg }}" aria-label="В избранное" title="В избранное"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg></button>
+                <button type="button" data-th-cmp data-g="{{ favG }}" data-sl="{{ favSl }}" data-n="{{ name }}" data-b="{{ brand }}" data-i="{{ favImg }}" aria-label="Сравнить" title="Сравнить"><svg viewBox="0 0 24 24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg></button>
+              </div>
             </div>
             <h1 style="margin:12px 0 0 0; font-size:26px; font-weight:700; line-height:1.28; letter-spacing:-0.015em;">{{ name }}</h1>
 
             <div style="display:flex; gap:7px; flex-wrap:wrap; margin-top:14px;">
               <sc-for list="{{ pills }}" as="p" hint-placeholder-count="4">
-                <div style="background:#F3F7FB; border-radius:6px; padding:6px 11px; font-size:13px; font-weight:600; color:#2C3846;">{{ p }}</div>
+                <div style="background:#F1F5F9; border-radius:6px; padding:6px 11px; font-size:13px; font-weight:600; color:#1A1A1A;">{{ p }}</div>
               </sc-for>
             </div>
 
-            <div style="background:#F3F7FB; border-radius:12px; padding:20px; margin-top:18px;">
+            <div style="background:#F1F5F9; border-radius:12px; padding:20px; margin-top:18px;">
               <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;">
                 <sc-if value="{{ hasOldPrice }}" hint-placeholder-val="{{ false }}">
-                  <div style="font-size:18px; color:#8593A6; text-decoration:line-through; font-variant-numeric:tabular-nums;">{{ oldPrice }}</div>
+                  <div style="font-size:18px; color:#606F85; text-decoration:line-through; font-variant-numeric:tabular-nums;">{{ oldPrice }}</div>
                 </sc-if>
                 <div style="font-size:32px; font-weight:700; color:{{ priceColor }}; font-variant-numeric:tabular-nums; letter-spacing:-0.02em;">{{ price }}</div>
-                <div style="font-size:13px; color:#5A6675;">{{ priceNote }}</div>
+                <div style="font-size:13px; color:#606F85;">{{ priceNote }}</div>
               </div>
               <sc-if value="{{ hasInstallment }}" hint-placeholder-val="{{ false }}">
-                <div style="font-size:14px; color:#2C3846; margin-top:6px;">{{ installment }}</div>
+                <div style="font-size:14px; color:#1A1A1A; margin-top:6px;">{{ installment }}</div>
               </sc-if>
-              <div style="font-size:14px; color:#5A6675; margin-top:4px;">{{ mountNote }}</div>
+              <div style="font-size:14px; color:#606F85; margin-top:4px;">{{ mountNote }}</div>
               <div style="display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;">
                 <a href="{{ ctaHref }}" onClick="{{ ctaClick }}" style="flex:1; min-width:150px; background:{{ ctaBg }}; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700; cursor:pointer;">{{ cta }}</a>
-                <a href="{{ waModelHref }}" style="flex:1; min-width:130px; border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px; text-align:center; font-size:16px; font-weight:700;">WhatsApp</a>
+                <a href="{{ waModelHref }}" style="flex:1; min-width:130px; border:2px solid #0066FF; color:#0066FF; border-radius:8px; padding:12px; text-align:center; font-size:16px; font-weight:700;">WhatsApp</a>
               </div>
             </div>
 
             <sc-if value="{{ hasVy }}" hint-placeholder-val="{{ false }}">
               <sc-for list="{{ vy }}" as="v" hint-placeholder-count="1">
                 <a href="{{ v.href }}" style="display:block; background:{{ v.bg }}; border:1px solid {{ v.br }}; border-radius:12px; padding:14px 16px; margin-top:12px; text-decoration:none;">
-                  <div style="font-size:15px; font-weight:700; color:#18212F;">{{ v.title }}</div>
-                  <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:4px;">{{ v.note }}</div>
+                  <div style="font-size:15px; font-weight:700; color:#1A1A1A;">{{ v.title }}</div>
+                  <div style="font-size:13px; color:#1A1A1A; line-height:1.55; margin-top:4px;">{{ v.note }}</div>
                   <sc-if value="{{ v.hasStock }}" hint-placeholder-val="{{ true }}">
-                    <div style="font-size:12px; color:#5A6675; margin-top:4px;">{{ v.stock }}</div>
+                    <div style="font-size:12px; color:#606F85; margin-top:4px;">{{ v.stock }}</div>
                   </sc-if>
-                  <div style="font-size:13px; font-weight:700; color:#0872D3; margin-top:8px;">{{ v.label }}</div>
+                  <div style="font-size:13px; font-weight:700; color:#0066FF; margin-top:8px;">{{ v.label }}</div>
                 </a>
               </sc-for>
             </sc-if>
@@ -166,20 +165,40 @@
               <sc-for list="{{ facts }}" as="f" hint-placeholder-count="4">
                 <div style="border:1px solid #DCE5F0; border-radius:8px; padding:12px 14px;">
                   <div style="font-size:14px; font-weight:600;">{{ f.v }}</div>
-                  <div style="font-size:12px; color:#8593A6; margin-top:2px;">{{ f.k }}</div>
-                  <div style="font-size:12px; color:#5A6675; line-height:1.45; margin-top:5px;">{{ f.hint }}</div>
+                  <div style="font-size:12px; color:#606F85; margin-top:2px;">{{ f.k }}</div>
+                  <div style="font-size:12px; color:#606F85; line-height:1.45; margin-top:5px;">{{ f.hint }}</div>
                   <sc-if value="{{ f.hasLink }}" hint-placeholder-val="{{ false }}">
-                    <a href="{{ f.href }}" style="display:inline-block; font-size:12px; font-weight:700; color:#0872D3; margin-top:6px;">{{ f.link }}</a>
+                    <a href="{{ f.href }}" style="display:inline-block; font-size:12px; font-weight:700; color:#0066FF; margin-top:6px;">{{ f.link }}</a>
                   </sc-if>
                 </div>
               </sc-for>
             </div>
             </sc-if>
 
-            <div style="display:flex; gap:16px; margin-top:16px; flex-wrap:wrap; font-size:13px; color:#5A6675;">
-              <div>Доставка по Казахстану</div>
-              <div>{{ mount.strip }}</div>
-              <div>{{ warrantyStrip }}</div>
+            <div style="margin-top:20px;">
+              <div style="font:700 18px/24px Inter,sans-serif; color:#0033A0;">Покупка</div>
+              <div style="margin-top:10px; background:#fff; border:1px solid #DCE5F0; border-radius:12px; overflow:hidden;">
+                <div style="display:flex; gap:12px; padding:13px 16px;">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#178841" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:1px;"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+                  <div style="min-width:0;"><div style="font:700 15px/22px Inter,sans-serif; color:#0033A0;">Доставка по Алматы бесплатно</div><div style="font:400 14px/20px Inter,sans-serif; color:#606F85;">при заказе от 100 000 ₸; по Казахстану — транспортной компанией, срок называем при оформлении</div></div>
+                </div>
+                <sc-if value="{{ hasInstallment }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex; gap:12px; padding:13px 16px; border-top:1px solid #DCE5F0;">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#178841" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:1px;"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+                  <div style="min-width:0;"><div style="font:700 15px/22px Inter,sans-serif; color:#0033A0;">Рассрочка 12 месяцев</div><div style="font:400 14px/20px Inter,sans-serif; color:#606F85;">Kaspi, ForteBank, Halyk: оформляет банк, решение по одобрению на его стороне</div></div>
+                </div>
+                </sc-if>
+                <div style="display:flex; gap:12px; padding:13px 16px; border-top:1px solid #DCE5F0;">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#178841" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:1px;"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+                  <div style="min-width:0;"><div style="font:700 15px/22px Inter,sans-serif; color:#0033A0;">{{ mount.strip }}</div></div>
+                </div>
+                <sc-if value="{{ hasWarrantyTab }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex; gap:12px; padding:13px 16px; border-top:1px solid #DCE5F0;">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#178841" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:1px;"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+                  <div style="min-width:0;"><div style="font:700 15px/22px Inter,sans-serif; color:#0033A0;">Гарантия</div><div style="font:400 14px/20px Inter,sans-serif; color:#606F85;">{{ warrantyStrip }}</div></div>
+                </div>
+                </sc-if>
+              </div>
             </div>
           </div>
         </div>
@@ -195,57 +214,57 @@
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:0 40px; margin-top:18px;">
               <sc-for list="{{ specs }}" as="s" hint-placeholder-count="12">
                 <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:16px; padding:10px 0; border-bottom:1px solid #E9EFF7; font-size:14px;">
-                  <span style="color:#5A6675;">{{ s.k }}</span>
+                  <span style="color:#606F85;">{{ s.k }}</span>
                   <b style="text-align:right; color:{{ s.color }};">
                     <sc-if value="{{ s.isText }}" hint-placeholder-val="{{ true }}">
                       <span>{{ s.v }}</span>
                     </sc-if>
                     <sc-if value="{{ s.isLink }}" hint-placeholder-val="{{ false }}">
-                      <a href="{{ s.href }}" target="_blank" rel="noreferrer" style="color:#0872D3;">{{ s.v }}</a>
+                      <a href="{{ s.href }}" target="_blank" rel="noreferrer" style="color:#0066FF;">{{ s.v }}</a>
                     </sc-if>
                   </b>
                 </div>
               </sc-for>
             </div>
-            <div style="font-size:13px; color:#8593A6; margin-top:14px; line-height:1.6;">{{ specsNote }}</div>
+            <div style="font-size:13px; color:#606F85; margin-top:14px; line-height:1.6;">{{ specsNote }}</div>
           </sc-if>
 
           <sc-if value="{{ isDesc }}" hint-placeholder-val="{{ false }}">
-            <div style="font-size:16px; line-height:1.7; color:#2C3846; margin-top:18px; max-width:920px; text-wrap:pretty;">{{ desc }}</div>
+            <div style="font-size:16px; line-height:1.7; color:#1A1A1A; margin-top:18px; max-width:920px; text-wrap:pretty;">{{ desc }}</div>
           </sc-if>
 
           <sc-if value="{{ isMount }}" hint-placeholder-val="{{ false }}">
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:18px;">
-              <div style="background:#E6F2FD; border-radius:12px; padding:18px 20px;">
-                <div style="font-size:16px; font-weight:700; color:#071C3B;">{{ mount.t1 }}</div>
-                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">{{ mount.a }}</div>
+              <div style="background:#E9F4FF; border-radius:12px; padding:18px 20px;">
+                <div style="font-size:16px; font-weight:700; color:#0033A0;">{{ mount.t1 }}</div>
+                <div style="font-size:14px; line-height:1.6; color:#1A1A1A; margin-top:8px;">{{ mount.a }}</div>
               </div>
-              <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+              <div style="background:#F1F5F9; border-radius:12px; padding:18px 20px;">
                 <div style="font-size:16px; font-weight:700;">{{ mount.t2 }}</div>
-                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">{{ mount.b }}</div>
+                <div style="font-size:14px; line-height:1.6; color:#1A1A1A; margin-top:8px;">{{ mount.b }}</div>
               </div>
               <div style="background:{{ mount.bg }}; border-radius:12px; padding:18px 20px;">
                 <div style="font-size:16px; font-weight:700; color:{{ mount.fg }};">{{ mount.t3 }}</div>
-                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">{{ mount.c }} <a href="/uslugi">{{ mount.link }}</a></div>
+                <div style="font-size:14px; line-height:1.6; color:#1A1A1A; margin-top:8px;">{{ mount.c }} <a href="/uslugi">{{ mount.link }}</a></div>
               </div>
             </div>
 
             <sc-if value="{{ showCrews }}" hint-placeholder-val="{{ true }}">
               <div style="border:1px solid #DCE5F0; border-radius:12px; padding:18px 20px; margin-top:18px;">
-                <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; color:#071C3B;">Кто смонтирует</div>
-                <div style="font-size:14px; line-height:1.6; color:#5A6675; margin-top:6px;">{{ crewsIntro }}</div>
+                <div style="font-family:'Inter',sans-serif; font-size:18px; font-weight:700; color:#0033A0;">Кто смонтирует</div>
+                <div style="font-size:14px; line-height:1.6; color:#606F85; margin-top:6px;">{{ crewsIntro }}</div>
 
                 <sc-if value="{{ crewsLoading }}" hint-placeholder-val="{{ false }}">
-                  <div style="font-size:14px; color:#8593A6; margin-top:14px;">Загружаем реестр бригад…</div>
+                  <div style="font-size:14px; color:#606F85; margin-top:14px;">Загружаем реестр бригад…</div>
                 </sc-if>
 
                 <sc-if value="{{ crewsFailed }}" hint-placeholder-val="{{ false }}">
-                  <div style="font-size:14px; color:#B25200; line-height:1.6; margin-top:14px;">Реестр бригад сейчас не загрузился — это сбой связи, а не отсутствие бригад. Напишите нам, подберём бригаду вручную: <a href="https://wa.me/77000369369" style="color:#0872D3; font-weight:700;">+77 000 369 369</a>.</div>
-                  <div onClick="{{ retryCrews }}" style="display:inline-block; border:1px solid #0872D3; color:#0872D3; border-radius:8px; padding:9px 15px; margin-top:10px; font-size:14px; font-weight:700; cursor:pointer;">Попробовать снова</div>
+                  <div style="font-size:14px; color:#B25200; line-height:1.6; margin-top:14px;">Реестр бригад сейчас не загрузился — это сбой связи, а не отсутствие бригад. Напишите нам, подберём бригаду вручную: <a href="https://wa.me/77000369369" style="color:#0066FF; font-weight:700;">+77 000 369 369</a>.</div>
+                  <div onClick="{{ retryCrews }}" style="display:inline-block; border:1px solid #0066FF; color:#0066FF; border-radius:8px; padding:9px 15px; margin-top:10px; font-size:14px; font-weight:700; cursor:pointer;">Попробовать снова</div>
                 </sc-if>
 
                 <sc-if value="{{ hasCrewCities }}" hint-placeholder-val="{{ true }}">
-                  <div style="font-size:13px; font-weight:700; letter-spacing:0.05em; color:#8593A6; margin-top:16px;">ШАГ 2 — ГОРОД МОНТАЖА</div>
+                  <div style="font-size:13px; font-weight:700; letter-spacing:0.05em; color:#606F85; margin-top:16px;">ШАГ 2 — ГОРОД МОНТАЖА</div>
                   <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
                     <sc-for list="{{ crewCities }}" as="g" hint-placeholder-count="3">
                       <div onClick="{{ g.pick }}" style="border:1px solid {{ g.border }}; background:{{ g.bg }}; color:{{ g.fg }}; border-radius:999px; padding:8px 15px; font-size:14px; font-weight:600; cursor:pointer;">{{ g.label }}</div>
@@ -255,7 +274,7 @@
 
                 <sc-if value="{{ showSort }}" hint-placeholder-val="{{ false }}">
                   <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:12px;">
-                    <div style="font-size:13px; color:#8593A6;">Порядок:</div>
+                    <div style="font-size:13px; color:#606F85;">Порядок:</div>
                     <sc-for list="{{ sortChips }}" as="ss" hint-placeholder-count="2">
                       <div onClick="{{ ss.pick }}" style="border:1px solid {{ ss.border }}; background:{{ ss.bg }}; color:{{ ss.fg }}; border-radius:999px; padding:6px 13px; font-size:13px; font-weight:600; cursor:pointer;">{{ ss.label }}</div>
                     </sc-for>
@@ -263,44 +282,44 @@
                 </sc-if>
 
                 <sc-if value="{{ crewsNone }}" hint-placeholder-val="{{ false }}">
-                  <div style="background:#FFF1E3; border-radius:10px; padding:14px 16px; margin-top:12px; font-size:14px; color:#2C3846; line-height:1.6;">Сертифицированной бригады на эту технику в реестре пока нет — набор идёт. Монтаж всё равно организуем: подберём и проверим монтажника перед выездом, гарантию на работу зафиксируем в заявке. <a href="https://wa.me/77000369369" style="color:#0872D3; font-weight:700;">Написать нам</a>.</div>
+                  <div style="background:#FFF1E3; border-radius:10px; padding:14px 16px; margin-top:12px; font-size:14px; color:#1A1A1A; line-height:1.6;">Сертифицированной бригады на эту технику в реестре пока нет — набор идёт. Монтаж всё равно организуем: подберём и проверим монтажника перед выездом, гарантию на работу зафиксируем в заявке. <a href="https://wa.me/77000369369" style="color:#0066FF; font-weight:700;">Написать нам</a>.</div>
                 </sc-if>
 
                 <sc-if value="{{ hasCrewCities }}" hint-placeholder-val="{{ true }}">
                   <div onClick="{{ toggleDocs }}" style="display:inline-flex; align-items:center; gap:9px; border:1px solid {{ docsBorder }}; background:{{ docsBg }}; border-radius:10px; padding:10px 14px; margin-top:12px; cursor:pointer;">
                     <div style="width:18px; height:18px; border-radius:4px; border:2px solid {{ docsMark }}; background:{{ docsFill }}; flex:none;"></div>
                     <div>
-                      <div style="font-size:14px; font-weight:600; color:#18212F;">Нужны закрывающие документы</div>
-                      <div style="font-size:12px; color:#5A6675; line-height:1.5; margin-top:2px;">Договор и акт для юрлица или объекта. Частному заказу это не нужно.</div>
+                      <div style="font-size:14px; font-weight:600; color:#1A1A1A;">Нужны закрывающие документы</div>
+                      <div style="font-size:12px; color:#606F85; line-height:1.5; margin-top:2px;">Договор и акт для юрлица или объекта. Частному заказу это не нужно.</div>
                     </div>
                   </div>
                 </sc-if>
 
                 <sc-if value="{{ crewsNoCity }}" hint-placeholder-val="{{ false }}">
-                  <div style="font-size:14px; color:#5A6675; line-height:1.6; margin-top:12px;">Выберите город — покажем бригады, которые ставят именно эту технику, с их ценами и гарантией.</div>
+                  <div style="font-size:14px; color:#606F85; line-height:1.6; margin-top:12px;">Выберите город — покажем бригады, которые ставят именно эту технику, с их ценами и гарантией.</div>
                 </sc-if>
 
                 <sc-if value="{{ crewsNoDocs }}" hint-placeholder-val="{{ false }}">
-                  <div style="background:#FFF1E3; border-radius:10px; padding:14px 16px; margin-top:12px; font-size:14px; color:#2C3846; line-height:1.6;">В этом городе бригад, выдающих договор и акт, у нас пока нет. Снимите галочку, чтобы увидеть остальных, или <a href="https://wa.me/77000369369" style="color:#0872D3; font-weight:700;">напишите нам</a> — подберём под ваши документы отдельно.</div>
+                  <div style="background:#FFF1E3; border-radius:10px; padding:14px 16px; margin-top:12px; font-size:14px; color:#1A1A1A; line-height:1.6;">В этом городе бригад, выдающих договор и акт, у нас пока нет. Снимите галочку, чтобы увидеть остальных, или <a href="https://wa.me/77000369369" style="color:#0066FF; font-weight:700;">напишите нам</a> — подберём под ваши документы отдельно.</div>
                 </sc-if>
 
                 <sc-if value="{{ crewsEmpty }}" hint-placeholder-val="{{ false }}">
-                  <div style="background:#FFF1E3; border-radius:10px; padding:14px 16px; margin-top:12px; font-size:14px; color:#2C3846; line-height:1.6;">В этом городе сертифицированной бригады на эту технику у нас пока нет. Заявку примем — найдём и проверим монтажника перед выездом: <a href="https://wa.me/77000369369" style="color:#0872D3; font-weight:700;">написать нам</a>.</div>
+                  <div style="background:#FFF1E3; border-radius:10px; padding:14px 16px; margin-top:12px; font-size:14px; color:#1A1A1A; line-height:1.6;">В этом городе сертифицированной бригады на эту технику у нас пока нет. Заявку примем — найдём и проверим монтажника перед выездом: <a href="https://wa.me/77000369369" style="color:#0066FF; font-weight:700;">написать нам</a>.</div>
                 </sc-if>
 
                 <sc-for list="{{ crewList }}" as="b" hint-placeholder-count="2">
                   <div style="border:1px solid #DCE5F0; border-radius:12px; padding:15px 17px; margin-top:12px;">
                     <div style="display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap; justify-content:space-between;">
                       <div>
-                        <div style="font-size:16px; font-weight:700; color:#071C3B;">{{ b.cert }}</div>
-                        <div style="font-size:13px; color:#5A6675; margin-top:3px;">{{ b.zoneLine }}</div>
+                        <div style="font-size:16px; font-weight:700; color:#0033A0;">{{ b.cert }}</div>
+                        <div style="font-size:13px; color:#606F85; margin-top:3px;">{{ b.zoneLine }}</div>
                       </div>
                       <div style="font-size:13px; font-weight:700; color:{{ b.ratingFg }}; background:{{ b.ratingBg }}; border-radius:8px; padding:6px 11px; white-space:nowrap;">{{ b.ratingLine }}</div>
                     </div>
 
                     <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
                       <sc-for list="{{ b.facts }}" as="f" hint-placeholder-count="3">
-                        <div style="background:#F3F7FB; border-radius:8px; padding:7px 11px; font-size:13px; color:#2C3846;">{{ f.v }}</div>
+                        <div style="background:#F1F5F9; border-radius:8px; padding:7px 11px; font-size:13px; color:#1A1A1A;">{{ f.v }}</div>
                       </sc-for>
                     </div>
 
@@ -308,34 +327,34 @@
                       <div style="border-top:1px solid #EEF3F9; margin-top:12px; padding-top:11px;">
                         <div style="display:flex; gap:12px; justify-content:space-between; align-items:baseline;">
                           <div style="flex:1; min-width:0;">
-                            <div style="font-size:14px; color:#18212F;">{{ b.otLabel }}</div>
-                            <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:2px;">{{ b.otNote }}</div>
+                            <div style="font-size:14px; color:#1A1A1A;">{{ b.otLabel }}</div>
+                            <div style="font-size:12px; color:#606F85; line-height:1.5; margin-top:2px;">{{ b.otNote }}</div>
                           </div>
                           <div style="text-align:right; white-space:nowrap;">
-                            <div style="font-size:16px; font-weight:700; color:#18212F;">{{ b.otVal }}</div>
+                            <div style="font-size:16px; font-weight:700; color:#1A1A1A;">{{ b.otVal }}</div>
                           </div>
                         </div>
                       </div>
                     </sc-if>
 
                     <sc-if value="{{ b.noPrices }}" hint-placeholder-val="{{ false }}">
-                      <div style="font-size:13px; color:#8593A6; line-height:1.55; margin-top:11px;">{{ b.noPricesNote }}</div>
+                      <div style="font-size:13px; color:#606F85; line-height:1.55; margin-top:11px;">{{ b.noPricesNote }}</div>
                     </sc-if>
 
                     <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:13px;">
-                      <a href="{{ b.waHref }}" style="background:#0872D3; color:#fff; border-radius:8px; padding:11px 17px; font-size:14px; font-weight:700;">Хочу эту бригаду</a>
-                      <a href="{{ b.profileHref }}" style="border:1px solid #DCE5F0; color:#2C3846; border-radius:8px; padding:10px 17px; font-size:14px; font-weight:600;">Профиль и отзывы →</a>
+                      <a href="{{ b.waHref }}" style="background:#0066FF; color:#fff; border-radius:8px; padding:11px 17px; font-size:14px; font-weight:700;">Хочу эту бригаду</a>
+                      <a href="{{ b.profileHref }}" style="border:1px solid #DCE5F0; color:#1A1A1A; border-radius:8px; padding:10px 17px; font-size:14px; font-weight:600;">Профиль и отзывы →</a>
                     </div>
                   </div>
                 </sc-for>
 
                 <sc-if value="{{ crewsNoPrice }}" hint-placeholder-val="{{ false }}">
-                  <div style="background:#E6F2FD; border-radius:10px; padding:14px 16px; margin-top:12px; font-size:14px; color:#2C3846; line-height:1.6;">Эти бригады ставят такую технику, но цену на этот вид работ в наш прайс ещё не подали — назовём её при подтверждении заявки, после замера. Гарантия на монтаж и Сервис-карта 369 при этом те же.</div>
+                  <div style="background:#E9F4FF; border-radius:10px; padding:14px 16px; margin-top:12px; font-size:14px; color:#1A1A1A; line-height:1.6;">Эти бригады ставят такую технику, но цену на этот вид работ в наш прайс ещё не подали — назовём её при подтверждении заявки, после замера. Гарантия на монтаж и Сервис-карта 369 при этом те же.</div>
                 </sc-if>
 
                 <sc-if value="{{ crewsShown }}" hint-placeholder-val="{{ false }}">
-                  <div style="font-size:12px; color:#8593A6; line-height:1.6; margin-top:14px;">{{ crewsFooter }}</div>
-                  <div style="font-size:12px; color:#8593A6; line-height:1.6; margin-top:8px;">{{ crewsDopusk }}</div>
+                  <div style="font-size:12px; color:#606F85; line-height:1.6; margin-top:14px;">{{ crewsFooter }}</div>
+                  <div style="font-size:12px; color:#606F85; line-height:1.6; margin-top:8px;">{{ crewsDopusk }}</div>
                 </sc-if>
               </div>
             </sc-if>
@@ -344,16 +363,16 @@
           <sc-if value="{{ isDocs }}" hint-placeholder-val="{{ false }}">
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:18px;">
               <div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700;">Документы</div>
+                <div style="font-family:'Inter',sans-serif; font-size:16px; font-weight:700;">Документы</div>
                 <div style="display:flex; flex-direction:column; gap:8px; margin-top:12px;">
                   <sc-for list="{{ docs }}" as="d" hint-placeholder-count="2">
                     <div style="display:flex; align-items:center; gap:12px; border:1px solid #DCE5F0; border-radius:10px; padding:12px 14px;">
-                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0872D3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5z" /><path d="M14 3v4.5h4.5" /><path d="M9 13h6M9 16.5h4" /></svg>
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0066FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5z" /><path d="M14 3v4.5h4.5" /><path d="M9 13h6M9 16.5h4" /></svg>
                       <div style="flex:1; min-width:0;">
                         <div style="font-size:14px; font-weight:600;">{{ d.title }}</div>
-                        <div style="font-size:12px; color:#8593A6; margin-top:2px;">{{ d.note }}</div>
+                        <div style="font-size:12px; color:#606F85; margin-top:2px;">{{ d.note }}</div>
                         <sc-if value="{{ d.hasHref }}" hint-placeholder-val="{{ false }}">
-                          <a href="{{ d.href }}" target="_blank" rel="noreferrer" style="font-size:12px; font-weight:700; color:#0872D3;">Открыть PDF →</a>
+                          <a href="{{ d.href }}" target="_blank" rel="noreferrer" style="font-size:12px; font-weight:700; color:#0066FF;">Открыть PDF →</a>
                         </sc-if>
                       </div>
                       <div style="font-size:12px; font-weight:700; color:{{ d.fg }}; background:{{ d.bg }}; border-radius:5px; padding:4px 9px; white-space:nowrap;">{{ d.state }}</div>
@@ -362,18 +381,18 @@
                 </div>
               </div>
               <div>
-                <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700;">Видеообзор</div>
+                <div style="font-family:'Inter',sans-serif; font-size:16px; font-weight:700;">Видеообзор</div>
                 <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
-                  <a href="{{ videoHref }}" target="_blank" rel="noreferrer" style="margin-top:12px; border:1px solid #DCE5F0; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center; color:#0A4EA7;" style-hover="border-color:#0872D3; background:#F5FAFF;">
-                    <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#0872D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
+                  <a href="{{ videoHref }}" target="_blank" rel="noreferrer" style="margin-top:12px; border:1px solid #DCE5F0; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center; color:#0066FF;" style-hover="border-color:#0066FF; background:#F5FAFF;">
+                    <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#0066FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
                     <div style="font-size:15px; font-weight:700;">Смотреть обзор модели</div>
-                    <div style="font-size:13px; color:#5A6675;">Откроется в новой вкладке</div>
+                    <div style="font-size:13px; color:#606F85;">Откроется в новой вкладке</div>
                   </a>
                 </sc-if>
                 <div style="display:{{ videoStubDisplay }}; margin-top:12px; border:2px dashed #B9DBF7; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center;">
-                  <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#0872D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
-                  <div style="font-size:14px; font-weight:600; color:#2C3846;">Место под видео с вашего канала</div>
-                  <div style="font-size:13px; color:#5A6675; line-height:1.5; max-width:300px;">Пришлите ссылку на обзор — встрою плеер. Канал: <a href="https://www.youtube.com/@Tehnoholod369" target="_blank" rel="noreferrer">@Tehnoholod369</a></div>
+                  <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#0066FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
+                  <div style="font-size:14px; font-weight:600; color:#1A1A1A;">Место под видео с вашего канала</div>
+                  <div style="font-size:13px; color:#606F85; line-height:1.5; max-width:300px;">Пришлите ссылку на обзор — встрою плеер. Канал: <a href="https://www.youtube.com/@Tehnoholod369" target="_blank" rel="noreferrer">@Tehnoholod369</a></div>
                 </div>
               </div>
             </div>
@@ -386,23 +405,23 @@
                   <div style="font-size:15px; font-weight:700;">Сколько работает кондиционер</div>
                   
                   <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:center; gap:12px; margin-top:12px;">
-                    <span style="font-size:14px; color:#5A6675;">Часов в сутки</span>
-                    <input type="number" inputmode="numeric" min="2" max="24" step="1" value="{{ power.hours }}" onInput="{{ power.onHours }}" aria-label="Часов работы в сутки" style="width:96px; border:1px solid #DCE5F0; border-radius:8px; padding:8px 10px; font-family:inherit; font-size:16px; font-weight:700; color:#0A4EA7; text-align:right;" />
+                    <span style="font-size:14px; color:#606F85;">Часов в сутки</span>
+                    <input type="number" inputmode="numeric" min="2" max="24" step="1" value="{{ power.hours }}" onInput="{{ power.onHours }}" aria-label="Часов работы в сутки" style="width:96px; border:1px solid #DCE5F0; border-radius:8px; padding:8px 10px; font-family:inherit; font-size:16px; font-weight:700; color:#0066FF; text-align:right;" />
                   </div>
                   <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:center; gap:12px; margin-top:16px;">
-                    <span style="font-size:14px; color:#5A6675;">Ваш тариф, ₸ за кВт·ч</span>
+                    <span style="font-size:14px; color:#606F85;">Ваш тариф, ₸ за кВт·ч</span>
                     <span style="display:flex; align-items:center; gap:6px;">
-                      <input type="number" inputmode="decimal" min="1" max="300" step="0.01" value="{{ power.tariff }}" onInput="{{ power.onTariff }}" style="width:96px; border:1px solid #DCE5F0; border-radius:8px; padding:8px 10px; font-family:inherit; font-size:16px; font-weight:700; color:#0A4EA7; text-align:right;" />
-                      <span style="font-size:14px; color:#5A6675;">₸</span>
+                      <input type="number" inputmode="decimal" min="1" max="300" step="0.01" value="{{ power.tariff }}" onInput="{{ power.onTariff }}" style="width:96px; border:1px solid #DCE5F0; border-radius:8px; padding:8px 10px; font-family:inherit; font-size:16px; font-weight:700; color:#0066FF; text-align:right;" />
+                      <span style="font-size:14px; color:#606F85;">₸</span>
                     </span>
                   </div>
-                  <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:8px;">{{ power.tariffNote }}</div>
-                  <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:10px;">{{ power.seer }}</div>
+                  <div style="font-size:12px; color:#606F85; line-height:1.5; margin-top:8px;">{{ power.tariffNote }}</div>
+                  <div style="font-size:12px; color:#606F85; line-height:1.5; margin-top:10px;">{{ power.seer }}</div>
                 </div>
 
-                <div style="background:#071C3B; color:#fff; border-radius:12px; padding:22px;">
+                <div style="background:#0033A0; color:#fff; border-radius:12px; padding:22px;">
                   <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">ЗА СЕЗОН ОХЛАЖДЕНИЯ</div>
-                  <div style="font-family:'Montserrat',sans-serif; font-size:32px; font-weight:800; letter-spacing:-0.02em; margin-top:10px;">{{ power.cost }}</div>
+                  <div style="font-family:'Inter',sans-serif; font-size:32px; font-weight:800; letter-spacing:-0.02em; margin-top:10px;">{{ power.cost }}</div>
                   <div style="font-size:14px; color:#CBDCEC; margin-top:4px;">{{ power.kwh }} за три месяца</div>
                   <sc-if value="{{ power.save }}" hint-placeholder-val="{{ false }}">
                     <div style="border-top:1px solid rgba(255,255,255,0.16); margin-top:16px; padding-top:14px;">
@@ -416,16 +435,16 @@
               </div>
 
               <sc-if value="{{ power.payback }}" hint-placeholder-val="{{ false }}">
-                <div style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:16px;">
-                  <div style="font-size:15px; font-weight:700; color:#071C3B;">{{ power.paybackTitle }}</div>
+                <div style="background:#E9F4FF; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:16px;">
+                  <div style="font-size:15px; font-weight:700; color:#0033A0;">{{ power.paybackTitle }}</div>
                   <sc-if value="{{ power.cmpFresh }}" hint-placeholder-val="{{ false }}">
-                    <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:6px;">{{ power.cmpLead1 }}<a href="{{ power.cmpHref1 }}" style="color:#0872D3; font-weight:600;">{{ power.cmpName1 }}</a>{{ power.cmpMid1 }}<a href="{{ power.brizHref }}" style="color:#0872D3; font-weight:600;">{{ power.brizName }}</a>{{ power.cmpTail1 }}</div>
+                    <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:6px;">{{ power.cmpLead1 }}<a href="{{ power.cmpHref1 }}" style="color:#0066FF; font-weight:600;">{{ power.cmpName1 }}</a>{{ power.cmpMid1 }}<a href="{{ power.brizHref }}" style="color:#0066FF; font-weight:600;">{{ power.brizName }}</a>{{ power.cmpTail1 }}</div>
                     <sc-if value="{{ power.cmpName2 }}" hint-placeholder-val="{{ false }}">
-                      <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">{{ power.cmpLead2 }}<a href="{{ power.cmpHref2 }}" style="color:#0872D3; font-weight:600;">{{ power.cmpName2 }}</a>{{ power.cmpTail2 }}</div>
+                      <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">{{ power.cmpLead2 }}<a href="{{ power.cmpHref2 }}" style="color:#0066FF; font-weight:600;">{{ power.cmpName2 }}</a>{{ power.cmpTail2 }}</div>
                     </sc-if>
                   </sc-if>
                   <sc-if value="{{ power.cmpPlain }}" hint-placeholder-val="{{ false }}">
-                    <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:6px;">{{ power.cmpLead1 }}<a href="{{ power.cmpHref1 }}" style="color:#0872D3; font-weight:600;">{{ power.cmpName1 }}</a>{{ power.cmpTail1 }}</div>
+                    <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:6px;">{{ power.cmpLead1 }}<a href="{{ power.cmpHref1 }}" style="color:#0066FF; font-weight:600;">{{ power.cmpName1 }}</a>{{ power.cmpTail1 }}</div>
                   </sc-if>
                   <sc-if value="{{ power.paybackNote }}" hint-placeholder-val="{{ false }}">
                     <div style="font-size:13px; color:#5A6B80; line-height:1.6; margin-top:8px;">{{ power.paybackNote }}</div>
@@ -433,25 +452,25 @@
                 </div>
               </sc-if>
 
-              <div style="font-size:13px; color:#8593A6; line-height:1.6; margin-top:14px;">{{ power.note }}</div>
+              <div style="font-size:13px; color:#606F85; line-height:1.6; margin-top:14px;">{{ power.note }}</div>
             </div>
           </sc-if>
 
           <sc-if value="{{ isWarranty }}" hint-placeholder-val="{{ false }}">
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:18px;">
-              <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+              <div style="background:#F1F5F9; border-radius:12px; padding:18px 20px;">
                 <div style="font-size:16px; font-weight:700;">{{ warrantyTitle }}</div>
-                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">{{ warrantyText }} — по условиям производителя, при соблюдении руководства по эксплуатации.</div>
+                <div style="font-size:14px; line-height:1.6; color:#1A1A1A; margin-top:8px;">{{ warrantyText }} — по условиям производителя, при соблюдении руководства по эксплуатации.</div>
               </div>
               <sc-if value="{{ hasBrigada }}" hint-placeholder-val="{{ true }}">
-              <div style="background:#E6F2FD; border-radius:12px; padding:18px 20px;">
-                <div style="font-size:16px; font-weight:700; color:#071C3B;">Гарантия на монтаж — от бригады</div>
-                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">Монтаж выполняет сертифицированная бригада и даёт на него гарантию — срок в «Сервис-карте 369», условие — сезонное обслуживание раз в год. За само оборудование отвечает производитель. <a href="/uslugi">Что покрывается →</a></div>
+              <div style="background:#E9F4FF; border-radius:12px; padding:18px 20px;">
+                <div style="font-size:16px; font-weight:700; color:#0033A0;">Гарантия на монтаж — от бригады</div>
+                <div style="font-size:14px; line-height:1.6; color:#1A1A1A; margin-top:8px;">Монтаж выполняет сертифицированная бригада и даёт на него гарантию — срок в «Сервис-карте 369», условие — сезонное обслуживание раз в год. За само оборудование отвечает производитель. <a href="/uslugi">Что покрывается →</a></div>
               </div>
               </sc-if>
-              <div style="background:#F3F7FB; border-radius:12px; padding:18px 20px;">
+              <div style="background:#F1F5F9; border-radius:12px; padding:18px 20px;">
                 <div style="font-size:16px; font-weight:700;">Сервис</div>
-                <div style="font-size:14px; line-height:1.6; color:#2C3846; margin-top:8px;">{{ serviceNote }} <a href="/uslugi">Записаться на ТО →</a></div>
+                <div style="font-size:14px; line-height:1.6; color:#1A1A1A; margin-top:8px;">{{ serviceNote }} <a href="/uslugi">Записаться на ТО →</a></div>
               </div>
             </div>
           </sc-if>
@@ -464,7 +483,7 @@
             <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap;">
               <div>
                 <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Аналоги других брендов</h2>
-                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px; max-width:760px;">{{ analogsNote }}</div>
+                <div style="font-size:14px; color:#606F85; line-height:1.55; margin-top:6px; max-width:760px;">{{ analogsNote }}</div>
               </div>
             </div>
             <div ref="{{ analogRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr)); gap:14px; margin-top:16px;">
@@ -474,7 +493,7 @@
                     <img data-url="{{ a.img }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:contain; display:block;" />
                   </div>
                   <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:10px;">
-                    <div style="font-size:12px; font-weight:700; color:#0872D3; letter-spacing:0.06em;">{{ a.brand }}</div>
+                    <div style="font-size:12px; font-weight:700; color:#0066FF; letter-spacing:0.06em;">{{ a.brand }}</div>
                     <div style="font-size:12px; font-weight:700; color:{{ a.stockFg }};">{{ a.stock }}</div>
                   </div>
                   <div style="font-size:13px; font-weight:600; line-height:1.35; margin-top:5px;">{{ a.name }}</div>
@@ -491,9 +510,9 @@
             <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;">
               <div>
                 <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Сопутствующие товары</h2>
-                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px; max-width:760px;">{{ accNote }}</div>
+                <div style="font-size:14px; color:#606F85; line-height:1.55; margin-top:6px; max-width:760px;">{{ accNote }}</div>
               </div>
-              <a href="{{ accAllHref }}" style="font-size:13px; font-weight:700; color:#0872D3;">{{ accAllLabel }}</a>
+              <a href="{{ accAllHref }}" style="font-size:13px; font-weight:700; color:#0066FF;">{{ accAllLabel }}</a>
             </div>
             <div ref="{{ accRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr)); gap:14px; margin-top:16px;">
               <sc-for list="{{ accessories }}" as="a" hint-placeholder-count="4">
@@ -502,10 +521,10 @@
                     <img data-url="{{ a.img }}" alt="{{ a.name }}" loading="lazy" style="max-width:100%; max-height:100%; object-fit:contain; display:block;" />
                   </a>
                   <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                    <div style="font-size:12px; font-weight:700; color:#0872D3; letter-spacing:0.06em;">{{ a.brand }}</div>
+                    <div style="font-size:12px; font-weight:700; color:#0066FF; letter-spacing:0.06em;">{{ a.brand }}</div>
                     <div style="font-size:12px; font-weight:700; color:{{ a.stockFg }};">{{ a.stock }}</div>
                   </div>
-                  <a href="{{ a.href }}" style="font-size:13px; font-weight:600; line-height:1.35; color:#18212F;">{{ a.name }}</a>
+                  <a href="{{ a.href }}" style="font-size:13px; font-weight:600; line-height:1.35; color:#1A1A1A;">{{ a.name }}</a>
                   <div style="font-size:16px; font-weight:700; font-variant-numeric:tabular-nums;">{{ a.price }}</div>
                   <div onClick="{{ a.add }}" style="border:1px solid {{ a.btnBorder }}; background:{{ a.btnBg }}; color:{{ a.btnFg }}; border-radius:8px; padding:8px 12px; font-size:13px; font-weight:700; text-align:center; cursor:pointer; margin-top:auto;">{{ a.btnLabel }}</div>
                 </div>
@@ -519,23 +538,23 @@
             <div>
               <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Отзывы</h2>
               <sc-if value="{{ rv.none }}" hint-placeholder-val="{{ true }}">
-                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> На Kaspi.kz отзывов на эту модель пока нет. Подтверждённые отзывы наших покупателей показываем отдельно ниже, если они есть.</div>
+                <div style="font-size:14px; color:#606F85; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> На Kaspi.kz отзывов на эту модель пока нет. Подтверждённые отзывы наших покупателей показываем отдельно ниже, если они есть.</div>
               </sc-if>
               <sc-if value="{{ rv.own }}" hint-placeholder-val="{{ false }}">
-                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> <span style="color:#B25200; font-weight:700;"><span style="color:#E8A33D;">&#9733;</span> {{ rv.rating }}</span> &middot; {{ rv.otzyvLabel }} покупателей этой модели на Kaspi.kz — публикуем как есть, обновлено {{ rv.dt }}.</div>
+                <div style="font-size:14px; color:#606F85; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> <span style="color:#B25200; font-weight:700;"><span style="color:#E8A33D;">&#9733;</span> {{ rv.rating }}</span> &middot; {{ rv.otzyvLabel }} покупателей этой модели на Kaspi.kz — публикуем как есть, обновлено {{ rv.dt }}.</div>
               </sc-if>
               <sc-if value="{{ rv.fromTwin }}" hint-placeholder-val="{{ false }}">
-                <div style="font-size:14px; color:#5A6675; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> <span style="color:#B25200; font-weight:700;"><span style="color:#E8A33D;">&#9733;</span> {{ rv.rating }}</span> &middot; {{ rv.otzyvLabel }} на Kaspi.kz. {{ rv.srcNote }}. Публикуем как есть, обновлено {{ rv.dt }}.</div>
+                <div style="font-size:14px; color:#606F85; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> <span style="color:#B25200; font-weight:700;"><span style="color:#E8A33D;">&#9733;</span> {{ rv.rating }}</span> &middot; {{ rv.otzyvLabel }} на Kaspi.kz. {{ rv.srcNote }}. Публикуем как есть, обновлено {{ rv.dt }}.</div>
               </sc-if>
             </div>
-            <a href="https://maps.google.com/?cid=6985295064906783345" target="_blank" rel="noreferrer" style="display:flex; align-items:center; gap:10px; background:#F3F7FB; border-radius:12px; padding:12px 16px;">
-              <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#18212F;">Google</div>
-              <div style="font-size:13px; color:#5A6675; line-height:1.4;">отзывы и текущая оценка компании<br /><span style="color:#0872D3; font-weight:600;">Смотреть отзывы →</span></div>
+            <a href="https://maps.google.com/?cid=6985295064906783345" target="_blank" rel="noreferrer" style="display:flex; align-items:center; gap:10px; background:#F1F5F9; border-radius:12px; padding:12px 16px;">
+              <div style="font-family:'Inter',sans-serif; font-size:22px; font-weight:800; color:#1A1A1A;">Google</div>
+              <div style="font-size:13px; color:#606F85; line-height:1.4;">отзывы и текущая оценка компании<br /><span style="color:#0066FF; font-weight:600;">Смотреть отзывы →</span></div>
             </a>
           </div>
 
           <sc-if value="{{ postRv.loading }}" hint-placeholder-val="{{ false }}">
-            <div style="margin-top:14px; padding:14px 16px; background:#F7F9FC; border:1px solid #E5EAF1; border-radius:12px; color:#5A6675; font-size:13px;">Проверяем отзывы, связанные с этой моделью…</div>
+            <div style="margin-top:14px; padding:14px 16px; background:#F7F9FC; border:1px solid #E5EAF1; border-radius:12px; color:#606F85; font-size:13px;">Проверяем отзывы, связанные с этой моделью…</div>
           </sc-if>
 
           <sc-if value="{{ postRv.has }}" hint-placeholder-val="{{ false }}">
@@ -546,53 +565,53 @@
               </div>
               <sc-for list="{{ postRv.list }}" as="o" hint-placeholder-count="2">
                 <div style="margin-top:12px; padding-top:12px; border-top:1px solid #D4EEE2;">
-                  <div style="display:flex; gap:7px; align-items:center; flex-wrap:wrap; font-size:13px; color:#5A6675;">
+                  <div style="display:flex; gap:7px; align-items:center; flex-wrap:wrap; font-size:13px; color:#606F85;">
                     <span style="color:#E8A33D;">{{ o.stars }}</span>
-                    <span style="font-weight:700; color:#2C3846;">{{ o.a }}</span>
+                    <span style="font-weight:700; color:#1A1A1A;">{{ o.a }}</span>
                     <span>{{ o.d }}</span>
                     <sc-if value="{{ o.photo }}" hint-placeholder-val="{{ false }}">
                       <span style="font-size:11px; font-weight:700; color:#0B6B45; background:#E7F7F0; border-radius:5px; padding:3px 7px;">Фото клиента получено</span>
                     </sc-if>
                   </div>
-                  <div style="font-size:15px; line-height:1.6; color:#2C3846; margin-top:6px; text-wrap:pretty;">{{ o.t }}</div>
+                  <div style="font-size:15px; line-height:1.6; color:#1A1A1A; margin-top:6px; text-wrap:pretty;">{{ o.t }}</div>
                 </div>
               </sc-for>
             </div>
           </sc-if>
 
           <sc-if value="{{ rv.has }}" hint-placeholder-val="{{ false }}">
-            <div style="font-size:12px; font-weight:700; color:#8593A6; letter-spacing:0.05em; margin-top:16px;">ОТЗЫВЫ ПОКУПАТЕЛЕЙ НА KASPI.KZ</div>
+            <div style="font-size:12px; font-weight:700; color:#606F85; letter-spacing:0.05em; margin-top:16px;">ОТЗЫВЫ ПОКУПАТЕЛЕЙ НА KASPI.KZ</div>
             <sc-for list="{{ rv.list }}" as="o" hint-placeholder-count="3">
               <div style="margin-top:12px; padding:14px 16px; background:#F7F9FC; border:1px solid #E5EAF1; border-radius:12px;">
-                <div style="font-size:13px; color:#8593A6;"><span style="color:#E8A33D;">{{ o.stars }}</span> &middot; {{ o.a }} &middot; {{ o.d }}</div>
-                <div style="font-size:15px; line-height:1.6; color:#2C3846; margin-top:6px; text-wrap:pretty;">{{ o.t }}</div>
+                <div style="font-size:13px; color:#606F85;"><span style="color:#E8A33D;">{{ o.stars }}</span> &middot; {{ o.a }} &middot; {{ o.d }}</div>
+                <div style="font-size:15px; line-height:1.6; color:#1A1A1A; margin-top:6px; text-wrap:pretty;">{{ o.t }}</div>
               </div>
             </sc-for>
-            <a href="{{ rv.url }}" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; font-size:14px; font-weight:700; color:#0872D3; text-decoration:none;">Все отзывы на карточке товара в Kaspi.kz &rarr;</a>
+            <a href="{{ rv.url }}" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; font-size:14px; font-weight:700; color:#0066FF; text-decoration:none;">Все отзывы на карточке товара в Kaspi.kz &rarr;</a>
           </sc-if>
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:14px; margin-top:16px;">
-            <div style="background:#F3F7FB; border-radius:12px; padding:16px 18px;">
+            <div style="background:#F1F5F9; border-radius:12px; padding:16px 18px;">
               <div style="font-size:14px; font-weight:700;">Купили эту модель?</div>
-              <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">После покупки мы отправляем персональную анкету, связанную с заказом и Сервис-картой. Так отзыв попадает именно к купленной модели, а не привязывается по имени или телефону.</div>
-              <a href="https://wa.me/77000369369" style="display:inline-block; font-size:13px; font-weight:700; color:#0872D3; margin-top:8px;">Не получили анкету? Написать нам →</a>
+              <div style="font-size:13px; color:#606F85; line-height:1.55; margin-top:6px;">После покупки мы отправляем персональную анкету, связанную с заказом и Сервис-картой. Так отзыв попадает именно к купленной модели, а не привязывается по имени или телефону.</div>
+              <a href="https://wa.me/77000369369" style="display:inline-block; font-size:13px; font-weight:700; color:#0066FF; margin-top:8px;">Не получили анкету? Написать нам →</a>
             </div>
             <sc-if value="{{ productReviewsNone }}" hint-placeholder-val="{{ true }}">
-              <div style="background:#F3F7FB; border-radius:12px; padding:16px 18px;">
+              <div style="background:#F1F5F9; border-radius:12px; padding:16px 18px;">
                 <div style="font-size:14px; font-weight:700;">Что вместо отзывов</div>
-                <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">Пока их мало, работают монтажи с датой и городом: там видно, что модель реально ставили.</div>
-                <a href="/portfolio" style="display:inline-block; font-size:13px; font-weight:700; color:#0872D3; margin-top:8px;">Наши работы →</a>
+                <div style="font-size:13px; color:#606F85; line-height:1.55; margin-top:6px;">Пока их мало, работают монтажи с датой и городом: там видно, что модель реально ставили.</div>
+                <a href="/portfolio" style="display:inline-block; font-size:13px; font-weight:700; color:#0066FF; margin-top:8px;">Наши работы →</a>
               </div>
             </sc-if>
             <div style="background:#FFF6E9; border-radius:12px; padding:16px 18px;">
               <div style="font-size:14px; font-weight:700; color:#7A4A00;">Честно о рейтинге</div>
               <sc-if value="{{ productReviewsNone }}" hint-placeholder-val="{{ true }}">
-                <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">Оценок по этой модели пока нет ни в нашей подтверждённой базе, ни на подключённой карточке Kaspi. Рисовать рейтинг из воздуха не будем.</div>
+                <div style="font-size:13px; color:#1A1A1A; line-height:1.55; margin-top:6px;">Оценок по этой модели пока нет ни в нашей подтверждённой базе, ни на подключённой карточке Kaspi. Рисовать рейтинг из воздуха не будем.</div>
               </sc-if>
               <sc-if value="{{ postRv.has }}" hint-placeholder-val="{{ false }}">
-                <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">Отзывы с отметкой «Сервис-карта» оставили клиенты после реальной покупки у нас. Среднюю оценку начинаем показывать только после накопления нескольких подтверждённых отзывов.</div>
+                <div style="font-size:13px; color:#1A1A1A; line-height:1.55; margin-top:6px;">Отзывы с отметкой «Сервис-карта» оставили клиенты после реальной покупки у нас. Среднюю оценку начинаем показывать только после накопления нескольких подтверждённых отзывов.</div>
               </sc-if>
               <sc-if value="{{ rv.has }}" hint-placeholder-val="{{ false }}">
-                <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">Звёзды выше — не наши: их поставили покупатели этой модели на Kaspi.kz после выкупа. Сами себе оценок не рисуем, проверить можно по ссылке на карточку.</div>
+                <div style="font-size:13px; color:#1A1A1A; line-height:1.55; margin-top:6px;">Звёзды выше — не наши: их поставили покупатели этой модели на Kaspi.kz после выкупа. Сами себе оценок не рисуем, проверить можно по ссылке на карточку.</div>
               </sc-if>
             </div>
           </div>
@@ -601,7 +620,7 @@
         <div style="margin-top:24px;">
           <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap;">
             <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Другие модели {{ brand }}</h2>
-            <a href="{{ groupHref }}" style="font-size:14px; font-weight:700; color:#0872D3;">Вся группа →</a>
+            <a href="{{ groupHref }}" style="font-size:14px; font-weight:700; color:#0066FF;">Вся группа →</a>
           </div>
           <div ref="{{ relRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr)); gap:14px; margin-top:14px;">
             <sc-for list="{{ related }}" as="r" hint-placeholder-count="4">
@@ -609,7 +628,7 @@
                 <div style="height:120px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:8px;">
                   <img data-url="{{ r.img }}" alt="{{ r.name }}" loading="lazy" style="width:100%; height:100%; object-fit:contain; display:block;" />
                 </div>
-                <div style="font-size:12px; font-weight:700; color:#0872D3; letter-spacing:0.06em; margin-top:10px;">{{ r.brand }}</div>
+                <div style="font-size:12px; font-weight:700; color:#0066FF; letter-spacing:0.06em; margin-top:10px;">{{ r.brand }}</div>
                 <div style="font-size:13px; font-weight:600; line-height:1.35; margin-top:4px;">{{ r.name }}</div>
                 <div style="font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; margin-top:8px;">{{ r.price }}</div>
               </div>
@@ -864,7 +883,7 @@ class Component extends DCLogic {
         el.style.display = "none";
         const note = document.createElement("div");
         note.setAttribute("data-nophoto", "1");
-        note.style.cssText = "font-size:12px;line-height:1.4;color:#8593A6;text-align:center;padding:8px;";
+        note.style.cssText = "font-size:12px;line-height:1.4;color:#606F85;text-align:center;padding:8px;";
         note.textContent = "Фото уточняется";
         box.appendChild(note);
       };
@@ -1027,7 +1046,7 @@ class Component extends DCLogic {
       kaminy: "Камины и электроочаги", "teplovye-pushki": "Тепловые пушки", "ventilyatory-prom": "Промышленные вентиляторы"
     }, fromIndex);
     // монтаж у каждой группы свой: пушке не нужна трасса, бойлеру — вакуумирование
-    const RED = { bg: "#FDECEA", fg: "#C21610" }, GREY = { bg: "#F3F7FB", fg: "#18212F" };
+    const RED = { bg: "#FDECEA", fg: "#C21610" }, GREY = { bg: "#F1F5F9", fg: "#1A1A1A" };
     const MOUNT = {
       bytovye: { tab: "Монтаж", strip: "Монтаж 1–3 дня", t1: "Что входит в монтаж", a: "Замер, установка внутреннего и наружного блоков, вакуумирование контура, пусконаладка, вывоз мусора. Срок 1–3 дня после доставки.", t2: "Что считается отдельно", b: "Трасса и соединительный комплект, штробление, кронштейны нестандартной длины, высотные работы.", t3: "Стоимость монтажа", c: "Называем после замера: зависит от длины трассы, этажа и доступа к наружному блоку.", link: "Условия монтажа →", bg: RED.bg, fg: RED.fg, note: "Монтаж под ключ считается отдельно — оборудование ≠ монтаж ≠ комплект.", brigada: true },
       poluprom: { tab: "Монтаж", strip: "Монтаж по графику объекта", t1: "Что входит в монтаж", a: "Замер на объекте, установка блоков, вакуумирование, подключение к электрике, пусконаладка и инструктаж персонала.", t2: "Что нужно от объекта", b: "Подвесной потолок с запасом 25–35 см для кассетных, место под воздуховоды для канальных, отдельная линия питания — часть моделей работает от 380 В.", t3: "Стоимость монтажа", c: "Считаем по объекту: число блоков, длина трасс, работа на высоте и в действующем зале влияют на смету.", link: "Условия монтажа →", bg: RED.bg, fg: RED.fg, note: "Монтаж под ключ считается отдельно — оборудование ≠ монтаж ≠ комплект.", brigada: true },
@@ -1069,7 +1088,7 @@ class Component extends DCLogic {
     if (s.loading || !it) {
       return { loading: true, ready: false, groupTitle: titles[s.group] || "Каталог",
                cartLabel: cartN ? "Корзина · " + cartN : "Корзина",
-               cartBg: cartN ? "#0872D3" : "#E6F2FD", cartFg: cartN ? "#fff" : "#0A4EA7" };
+               cartBg: cartN ? "#0066FF" : "#E9F4FF", cartFg: cartN ? "#fff" : "#0066FF" };
     }
 
     // корзина общая для всех страниц: состояние читаем из неё, а не держим своё
@@ -1108,7 +1127,8 @@ class Component extends DCLogic {
       if (!map["Ш"] || !map["В"] || !map["Г"]) return v;
       return "Ш×В×Г " + map["Ш"] + "×" + map["В"] + "×" + map["Г"] + (m[7] || "");
     };
-    const specs = (it.sp || []).map(x => [x[0], normDims(x[1])]);
+    const безДаты = v => String(v == null ? "" : v).replace(/\s*\((?:[^()]*?,\s*)?\d{2}\.\d{2}\.\d{4}\)/g, "").replace(/\s*[—-]\s*\d{2}\.\d{2}\.\d{4}\s*$/, "");
+    const specs = (it.sp || []).map(x => [x[0], безДаты(normDims(x[1]))]);
     const specMap = {};
     specs.forEach(x => { specMap[x[0]] = x[1]; });
 
@@ -1220,8 +1240,8 @@ class Component extends DCLogic {
     const curTab = (TABS[s.tab] || TABS[0]).k;
     const tabs = TABS.map((t, i) => ({
       label: t.label,
-      line: s.tab === i ? "#0872D3" : "transparent",
-      fg: s.tab === i ? "#18212F" : "#8593A6",
+      line: s.tab === i ? "#0066FF" : "transparent",
+      fg: s.tab === i ? "#1A1A1A" : "#606F85",
       pick: () => this.setState({ tab: i })
     }));
 
@@ -1263,7 +1283,7 @@ class Component extends DCLogic {
           stock: /налич/i.test(o.x.st || "") ? "В наличии" : "Под заказ",
           stockFg: /налич/i.test(o.x.st || "") ? "#0E9F6E" : "#B25200",
           diff: !it.p ? "" : diff === 0 ? "та же цена" : diff < 0 ? "дешевле на " + money(-diff) : "дороже на " + money(diff),
-          diffFg: diff < 0 ? "#0E9F6E" : diff > 0 ? "#5A6675" : "#5A6675",
+          diffFg: diff < 0 ? "#0E9F6E" : diff > 0 ? "#606F85" : "#606F85",
           open: () => this.go(o.i)
         };
       });
@@ -1319,14 +1339,19 @@ class Component extends DCLogic {
       ready: true,
       groupTitle: titles[s.group] || "Каталог",
       groupHref: "/katalog?g=" + s.group,
-      dirLabel: (["radiatory","teplovye-pushki","teplovye-zavesy","infrakrasnye-obogrevateli","vodyanye-teploventilyatory","kaminy"].indexOf(s.group) >= 0 ? "Отопление"
-        : ["ventilyaciya","ventilyatory-prom","osushiteli"].indexOf(s.group) >= 0 ? "Вентиляция"
-        : s.group === "vodonagrevateli" ? "Водонагрев" : "Кондиционирование"),
+      dirLabel: (["radiatory","teplovye-pushki","teplovye-zavesy","infrakrasnye-obogrevateli","vodyanye-teploventilyatory","kaminy","obogrevateli","teplovye-nasosy"].indexOf(s.group) >= 0 ? "Отопление"
+        : ["ventilyaciya","ventilyatory-prom","osushiteli","uvlazhniteli"].indexOf(s.group) >= 0 ? "Вентиляция"
+        : ["vodonagrevateli","vodoochistka"].indexOf(s.group) >= 0 ? "Водонагреватели и водоочистка"
+        : s.group === "avtonomnoe-pitanie" ? "Автономное питание"
+        : ["mini-vrf","fankoyly","chillery","precizionnye"].indexOf(s.group) >= 0 ? "VRF, фанкойлы, чиллеры" : "Кондиционирование"),
       short,
       brand: it.b,
       sku,
+      favG: s.group,
+      favSl: it.sl || "",
+      favImg: it.i || "",
       skuLabel: it.s ? "арт. " + it.s : "артикул уточняется",
-      skuFg: it.s ? "#8593A6" : "#B25200",
+      skuFg: it.s ? "#606F85" : "#B25200",
       name: it.n,
       stock: it.st || "уточняется",
       stockFg: inStock ? "#0E9F6E" : "#B25200",
@@ -1335,7 +1360,7 @@ class Component extends DCLogic {
       price: ptNow || "Цена по запросу",
       oldPrice: salePrice && sale.was ? this.fmt(+sale.was) + " ₸" : "",
       hasOldPrice: !!(salePrice && sale.was),
-      priceColor: pNow ? "#E11A13" : "#5A6675",
+      priceColor: pNow ? "#E11A13" : "#606F85",
       // про наличие здесь молчать: «нет цены» и «нет на складе» — разные вещи.
       // Было «считаем по запросу — позиция под заказ», и у Ballu BHC-H15T18-PS страница
       // спорила сама с собой: строкой выше «В наличии», строкой ниже «под заказ».
@@ -1364,8 +1389,8 @@ class Component extends DCLogic {
         stockFg: /налич/i.test(x.st || "") ? "#0E9F6E" : "#B25200",
         href: "/tovar?g=" + s.group + "&sl=" + encodeURIComponent(x.sl || ""),
         btnLabel: !x.p ? "Уточнить цену" : (window.CART && window.CART.has(x.sl) ? "В корзине ✓" : "В корзину"),
-        btnBg: !x.p ? "#fff" : (window.CART && window.CART.has(x.sl) ? "#E7F7F0" : "#E6F2FD"),
-        btnFg: !x.p ? "#B25200" : (window.CART && window.CART.has(x.sl) ? "#0B6B45" : "#0A4EA7"),
+        btnBg: !x.p ? "#fff" : (window.CART && window.CART.has(x.sl) ? "#E7F7F0" : "#E9F4FF"),
+        btnFg: !x.p ? "#B25200" : (window.CART && window.CART.has(x.sl) ? "#0B6B45" : "#0066FF"),
         btnBorder: !x.p ? "#F3D2AC" : (window.CART && window.CART.has(x.sl) ? "#BFE6D4" : "#B9DBF7"),
         add: () => {
           if (!x.p) {
@@ -1379,7 +1404,8 @@ class Component extends DCLogic {
         }
       })),
       cta: !pNow ? "Запросить цену" : (inCart ? "В корзине — оформить" : "В корзину"),
-      ctaBg: !pNow ? "#0872D3" : (inCart ? "#0E9F6E" : "#0872D3"),
+      ctaBg: !pNow ? "#0066FF" : (inCart ? "#0E9F6E" : "#0066FF"),
+      buyBg: !pNow ? "#0066FF" : (inCart ? "#178841" : "#E81C1C"),
       ctaHref: !pNow
         ? "https://wa.me/77000369369?text=" + encodeURIComponent(
             "Здравствуйте! Прошу цену: " + (it.b ? it.b + " " : "") + it.n + (it.s ? " (арт. " + it.s + ")" : "") + ".")
@@ -1401,8 +1427,8 @@ class Component extends DCLogic {
         if (window.TH_LEAD) window.TH_LEAD.event({ channel:"карточка товара", ev:"add_to_cart", val:ptNow || pNow, brand:it.b, type:s.group, model:it.s });
       },
       cartLabel: cartN ? "Корзина · " + cartN : "Корзина",
-      cartBg: cartN ? "#0872D3" : "#E6F2FD",
-      cartFg: cartN ? "#fff" : "#0A4EA7",
+      cartBg: cartN ? "#0066FF" : "#E9F4FF",
+      cartFg: cartN ? "#fff" : "#0066FF",
       facts,
       hasFacts: facts.length > 0,
       hasPhoto: gal.length > 0,
@@ -1425,7 +1451,7 @@ class Component extends DCLogic {
       relRef: this.relRef,
       thumbs: gal.length > 1 ? gal.map((url, i) => ({
         url: this.ph(url),
-        border: s.photo === i ? "#0872D3" : "#DCE5F0",
+        border: s.photo === i ? "#0066FF" : "#DCE5F0",
         pick: () => this.setState({ photo: i })
       })) : [],
       tabs,
@@ -1453,10 +1479,10 @@ class Component extends DCLogic {
       // лечится снятием галочки, и сказать об этом надо прямо.
       crewsNoDocs: !!cd && !!crewCity && inCityAll.length > 0 && inCity.length === 0,
       toggleDocs: () => this.setState({ crewDocs: !s.crewDocs }),
-      docsBorder: s.crewDocs ? "#0872D3" : "#DCE5F0",
-      docsBg: s.crewDocs ? "#E6F2FD" : "#fff",
-      docsMark: s.crewDocs ? "#0872D3" : "#B9C6D6",
-      docsFill: s.crewDocs ? "#0872D3" : "transparent",
+      docsBorder: s.crewDocs ? "#0066FF" : "#DCE5F0",
+      docsBg: s.crewDocs ? "#E9F4FF" : "#fff",
+      docsMark: s.crewDocs ? "#0066FF" : "#B9C6D6",
+      docsFill: s.crewDocs ? "#0066FF" : "transparent",
       crewsShown: !!crewCity && inCity.length > 0,
       crewsNoPrice: inCity.length > 0 && inCity.every(b => b && b.noPrice),
       crewsDopusk: "Подключение к электросети выполняет Мастер с действующим допуском по "
@@ -1478,16 +1504,16 @@ class Component extends DCLogic {
         { key: "cena", label: "Сначала дешевле" }
       ].map(o => ({
         label: o.label,
-        border: crewSort === o.key ? "#0872D3" : "#DCE5F0",
-        bg: crewSort === o.key ? "#E6F2FD" : "#fff",
-        fg: crewSort === o.key ? "#0A4EA7" : "#2C3846",
+        border: crewSort === o.key ? "#0066FF" : "#DCE5F0",
+        bg: crewSort === o.key ? "#E9F4FF" : "#fff",
+        fg: crewSort === o.key ? "#0066FF" : "#1A1A1A",
         pick: () => this.pickSort(o.key)
       })),
       crewCities: cityList.map(x => ({
         label: x.label + " · " + x.n,
-        border: crewCity === x.key ? "#0872D3" : "#DCE5F0",
-        bg: crewCity === x.key ? "#E6F2FD" : "#fff",
-        fg: crewCity === x.key ? "#0A4EA7" : "#2C3846",
+        border: crewCity === x.key ? "#0066FF" : "#DCE5F0",
+        bg: crewCity === x.key ? "#E9F4FF" : "#fff",
+        fg: crewCity === x.key ? "#0066FF" : "#1A1A1A",
         pick: () => this.pickCity(x.key)
       })),
 
@@ -1540,7 +1566,7 @@ class Component extends DCLogic {
           href: "",
           isLink: false,
           isText: true,
-          color: x[1] ? "#18212F" : "#8593A6"
+          color: x[1] ? "#1A1A1A" : "#606F85"
         })),
       desc: det.d || "Описание для этой позиции пока не заполнено — уточним характеристики по паспорту производителя.",
       warranty: wLabel ? wVal : "срок уточняется",
@@ -1657,7 +1683,7 @@ class Component extends DCLogic {
             label: цвет ? "Смотреть " + вЦвете + " →"
                         : "Смотреть выпуск " + rec.twinLabel + " года →",
             // Дешевле — подсвечиваем: это выгода покупателя, а не наша реклама.
-            bg: дешевле ? "#E7F7F0" : "#F3F7FB",
+            bg: дешевле ? "#E7F7F0" : "#F1F5F9",
             br: дешевле ? "#9FDCC2" : "#DCE5F0"
           };
         });
