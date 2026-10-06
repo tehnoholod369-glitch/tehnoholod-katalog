@@ -114,8 +114,56 @@
     }
   }
 
-  function run() { try { build(); } catch (e) {} }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run); else run();
-  setTimeout(run, 800);
-  setTimeout(run, 2500);
+  // облегчённое оформление: для карточек, у которых нет пары в полной карточке /tovar, и как запасной путь
+  function restyle() {
+    try { build(); } catch (e) {}
+    setTimeout(function () { try { build(); } catch (e) {} }, 800);
+    setTimeout(function () { try { build(); } catch (e) {} }, 2500);
+  }
+
+  // Полная карточка /tovar внутри этой страницы. Адрес, заголовок, текст, цена и разметка страницы /tproduct остаются
+  // как отдала Tilda (их читает поиск и Merchant Center); поверх них рисуется карточка из data/<группа>.json.
+  var RAW = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/";
+  var CDN = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/";
+  function embed(g, sl) {
+    var snip = $(".t-store__prod-snippet__container");
+    if (!snip) { restyle(); return; }
+    window.TH_CARD_EMBED = 1;
+    window.TH_CARD_QS = "?g=" + encodeURIComponent(g) + "&sl=" + encodeURIComponent(sl);
+    var st = document.createElement("style");
+    st.setAttribute("data-th-prod", "embed");
+    st.textContent = "body.th-embed{background:#F1F5F9!important}.th-vh{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;border:0!important;padding:0!important;margin:-1px!important}";
+    document.head.appendChild(st);
+    document.body.classList.add("th-embed");
+    var mount = document.createElement("div");
+    mount.setAttribute("data-th-page", "tovar");
+    snip.parentNode.insertBefore(mount, snip);
+    snip.classList.add("th-vh"); // остаётся в DOM для поиска, но не двоит карточку на экране
+    var s = document.createElement("script");
+    s.src = CDN + "th-page.js";
+    document.head.appendChild(s);
+    // запасной путь: за 20 секунд карточка не отрисовалась — возвращаем прежнюю и оформляем её
+    setTimeout(function () {
+      var ok = document.documentElement.getAttribute("data-th-state") === "ready" && mount.querySelector("h1");
+      if (!ok) {
+        snip.classList.remove("th-vh");
+        if (mount.parentNode) mount.parentNode.removeChild(mount);
+        window.TH_CARD_EMBED = 0;
+        restyle();
+      }
+    }, 20000);
+  }
+
+  function start() {
+    var m = location.pathname.match(/\/tproduct\/(\d+)-/);
+    if (!m) { restyle(); return; }
+    fetch(RAW + "data/tproduct-map.json?x=" + Math.floor(Date.now() / 600000), { cache: "default" })
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .then(function (map) {
+        var e = map[m[1]];
+        if (e && e[0] && e[1]) embed(e[0], e[1]); else restyle();
+      })
+      .catch(function () { restyle(); });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
 })();
