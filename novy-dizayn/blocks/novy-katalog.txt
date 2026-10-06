@@ -97,12 +97,12 @@
             <div class="th-pill-row">
               <sc-for list="{{ groupTabs }}" as="g" hint-placeholder-count="4">
                 <div class="th-chip" onClick="{{ g.pick }}" style="border-color:{{ g.border }}; background:{{ g.bg }}; color:{{ g.fg }}; order:{{ g.order }};">
-                  <span>{{ g.title }}</span><i style="color:{{ g.countFg }};">{{ g.count }}</i>
+                  <span>{{ g.title }}</span>
                 </div>
               </sc-for>
               <sc-for list="{{ extraTabs }}" as="e" hint-placeholder-count="0">
                 <a class="th-chip" href="{{ e.href }}" style="border-color:{{ e.border }}; background:{{ e.bg }}; color:{{ e.fg }}; order:{{ e.order }};">
-                  <span>{{ e.title }}</span><i style="color:{{ e.countFg }};">{{ e.count }}</i>
+                  <span>{{ e.title }}</span>
                 </a>
               </sc-for>
             </div>
@@ -1790,7 +1790,7 @@ class Component extends DCLogic {
         pick: () => { this.группаЯвно = true; this.setState({ group: g.slug, sub: "all" }); this.loadGroup(g.slug); },
         border: on ? "#0066FF" : "#DCE5F0",
         bg: on ? "#E9F4FF" : "#fff",
-        fg: on ? "#0066FF" : "#1A1A1A",
+        fg: on ? "#0066FF" : "#0033A0",
         countFg: on ? "#0066FF" : "#606F85",
         order: g.slug === "bytovye" ? 0 : gi + 2
       };
@@ -2146,7 +2146,7 @@ class Component extends DCLogic {
           pick: () => this.setState({ sub: key, shown: 12 }),
           border: on ? "#0066FF" : "#DCE5F0",
           bg: on ? "#E9F4FF" : "#fff",
-          fg: on ? "#0066FF" : "#1A1A1A",
+          fg: on ? "#0066FF" : "#0033A0",
           countFg: on ? "#0066FF" : "#606F85"
         };
       }),
