@@ -31,7 +31,7 @@
     <div style="background:linear-gradient(125deg,#0033A0,#0033A0 78%); color:#fff; border-radius:16px; padding:36px; margin-top:12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:28px; align-items:center;">
       <div>
         <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#E9F4FF;">КОНДИЦИОНИРОВАНИЕ И ВЕНТИЛЯЦИЯ ОБЪЕКТОВ</div>
-        <h1 style="margin:14px 0 0 0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Проектные системы: VRF, чиллеры, фанкойлы, приточно-вытяжные установки</h1>
+        <h1 style="margin:14px 0 0 0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em;">Проектные системы: VRF, чиллеры, фанкойлы, приточно-вытяжные установки</h1>
         <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px;">Оборудование, которое не продаётся штукой из каталога. Есть проект или техзадание — пришлите, посчитаем по нему. Проекта нет — ответьте на несколько вопросов об объекте, и мы сделаем предварительный расчёт.</div>
         <div style="display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;">
           <a href="#zapros" onClick="{{ goEst }}" style="background:#0066FF; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Отправить проект</a>
