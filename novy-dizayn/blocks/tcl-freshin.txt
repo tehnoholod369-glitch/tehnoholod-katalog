@@ -161,10 +161,27 @@
       <div style="background:#071C3B; color:#fff; border-radius:16px; padding:26px;">
         <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700;">Монтаж приточной системы</div>
         <div style="font-size:15px; color:#CBDCEC; line-height:1.65; margin-top:10px;">Приток добавляет работы: канал для наружного воздуха, дренаж канала на случай конденсата, повышенная герметичность контура — лишние щели снижают КПД воздухообмена. Зимой отдельно контролируем герметики и крепления на морозе.</div>
-        <div style="display:flex; flex-direction:column; gap:8px; margin-top:14px; font-size:14px; color:#CBDCEC;">
-          <div>· Замер до покупки — бесплатно, по Алматы и области</div>
-          <div>· На монтаж нового оборудования через АРТЕЛЬ — гарантия 12 месяцев; на оборудование действует только гарантия производителя</div>
+        <div style="font-size:13px; font-weight:700; color:#fff; letter-spacing:0.04em; text-transform:uppercase; margin-top:16px;">Входит в монтаж под ключ</div>
+        <div style="display:flex; flex-direction:column; gap:6px; margin-top:8px; font-size:14px; color:#CBDCEC;">
+          <div>· Выезд на замер и выбор места установки блоков — бесплатно, по Алматы и области</div>
+          <div>· Установка внутреннего и наружного блоков</div>
+          <div>· Трасса до 3 м, одно бурение, дренаж самотёком</div>
+          <div>· Подключение к розетке рядом (до 1,5 м)</div>
           <div>· Пусконаладка с проверкой режима Fresh Air и приложения TCL Home</div>
+          <div>· Сухая уборка за собой</div>
+        </div>
+        <div style="font-size:13px; font-weight:700; color:#fff; letter-spacing:0.04em; text-transform:uppercase; margin-top:16px;">Считается отдельной строкой</div>
+        <div style="display:flex; flex-direction:column; gap:6px; margin-top:8px; font-size:14px; color:#CBDCEC;">
+          <div>· Дополнительные метры трассы и межблочного кабеля</div>
+          <div>· Надбавка за монолит, штробление, алмазное бурение</div>
+          <div>· Дренажная помпа, вывод дренажа в канализацию</div>
+          <div>· Зимний комплект</div>
+          <div>· Демонтаж и обратная сборка окна для проноса блока</div>
+        </div>
+        <div style="font-size:14px; color:#CBDCEC; line-height:1.65; margin-top:14px;">Окончательную стоимость называем после замера: цена «от» на объекте почти всегда становится другой, поэтому мы называем состав работ и считаем точно. Срок монтажа — 1–3 дня.</div>
+        <div style="display:flex; flex-direction:column; gap:6px; margin-top:12px; font-size:14px; color:#CBDCEC;">
+          <div>· На монтаж нового оборудования через АРТЕЛЬ — гарантия 12 месяцев; на оборудование действует только гарантия производителя</div>
+          <div>· В день монтажа выдаём «Сервис-карту 369»: номер продажи, дата монтажа и бригада</div>
         </div>
         <a href="https://wa.me/77000369369" style="display:block; background:#0872D3; color:#fff; border-radius:8px; padding:13px; text-align:center; font-size:15px; font-weight:700; margin-top:18px;">Вызвать замерщика</a>
       </div>
