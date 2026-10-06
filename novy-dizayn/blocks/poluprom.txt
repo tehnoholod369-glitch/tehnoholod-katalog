@@ -29,7 +29,7 @@
     <div style="background:linear-gradient(125deg,#0033A0,#0033A0 78%); color:#fff; border-radius:16px; padding:36px; margin-top:12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:28px; align-items:center;">
       <div>
         <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#E9F4FF;">ДЛЯ МАГАЗИНОВ, ОФИСОВ И ПРОИЗВОДСТВ</div>
-        <h1 style="margin:14px 0 0 0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Полупромышленный климат: кассетные, канальные, колонные системы</h1>
+        <h1 style="margin:14px 0 0 0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em;">Полупромышленный климат: кассетные, канальные, колонные системы</h1>
         <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px;">Оборудование на площади, где бытовой сплит не справляется: торговые залы, опенспейсы, серверные, цеха. Подбираем по теплопритокам объекта, а не по метражу «на глаз».</div>
         <div style="display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;">
           <a href="/katalog?g=poluprom" style="background:#0066FF; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">{{ ctaLabel }}</a>
@@ -107,7 +107,7 @@
             </div>
             <div>
               <div style="font-size:13px; color:rgba(255,255,255,0.78);">Рекомендуемая схема</div>
-              <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0; margin-top:4px;">{{ scheme }}</div>
+              <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; margin-top:4px;">{{ scheme }}</div>
             </div>
           </div>
           <div style="font-size:14px; color:rgba(255,255,255,0.88); line-height:1.6; margin-top:12px;">{{ explain }}</div>
