@@ -90,12 +90,12 @@
     <div style="background:#E9F4FF; border-radius:16px; padding:28px 32px; margin-top:12px;">
       <div style="max-width:760px;">
 <sc-if value="{{ groupIsH1 }}" hint-placeholder-val="{{ true }}">
-        <h1 style="margin:0; font:800 clamp(24px,5.6vw,34px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">{{ groupTitle }}</h1>
+        <h1 style="margin:0; font:800 clamp(24px,5.6vw,34px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">{{ heroTitle }}</h1>
 </sc-if>
 <sc-if value="{{ groupNotH1 }}" hint-placeholder-val="{{ false }}">
-        <div style="margin:0; font:800 clamp(24px,5.6vw,34px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">{{ groupTitle }}</div>
+        <div style="margin:0; font:800 clamp(24px,5.6vw,34px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">{{ heroTitle }}</div>
 </sc-if>
-        <div style="font:400 16px/24px Inter,sans-serif; color:#1A1A1A; margin-top:10px;">{{ groupSub }}</div>
+        <div style="font:400 16px/24px Inter,sans-serif; color:#1A1A1A; margin-top:10px;">{{ heroSub }}</div>
       </div>
       <sc-if value="{{ hasHeroBrands }}" hint-placeholder-val="{{ false }}">
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(140px,30%),1fr)); gap:10px; margin-top:20px;">
@@ -680,11 +680,15 @@ class Component extends DCLogic {
       }
       if (!имя || имя === "Каталог") return;
 
-      const title = txt.seo || (имя + " — купить в Алматы | ИП «ТехноХолод»");
+      const подк = s.sub && s.sub !== "all" ? s.sub : "";
+      const title = подк ? (подк + " — " + имя.toLowerCase() + ", купить в Алматы | ИП «ТехноХолод»")
+        : (txt.seo || (имя + " — купить в Алматы | ИП «ТехноХолод»"));
       if (document.title !== title) document.title = title;
       this.ставитьМету("property", "og:title", title);
 
-      const описание = txt.meta || txt.intro || "";
+      const описание = подк
+        ? (подк + " в разделе «" + имя + "»: цены, характеристики, подбор модели, монтаж и доставка по Казахстану. +77 000 369 369")
+        : (txt.meta || txt.intro || "");
       if (описание) {
         this.ставитьМету("name", "description", описание);
         this.ставитьМету("property", "og:description", описание);
@@ -1768,6 +1772,7 @@ class Component extends DCLogic {
     const heroBrands = sortedBrands
       .filter(b => _Л[b] && (_ТОЛЬКО_ЧИСТЫЙ.indexOf(b) < 0 || !!((s.logosClean || {}).logos || {})[b]))
       .slice(0, 6)
+      .filter((x, i, a) => a.length > 1)
       .map(b => ({
         name: b, title: b + (s.brand === b ? " — показаны только эти модели, нажмите ещё раз, чтобы снять" : ""), logo: _Л[b],
         bd: s.brand === b ? "2px solid #0066FF" : "1px solid #DCE5F0",
@@ -2053,9 +2058,10 @@ class Component extends DCLogic {
     // технику хуже, чем не показать ничего.
     const ВЕС_РУБРИКИ = { "Выбор": 0, "Расчёт": 1, "Вентиляция": 2, "Монтаж": 3, "Эксплуатация": 4 };
     const субТаб = s.sub && s.sub !== "all" ? s.sub : "";
-    const весСтатьи = a => (субТаб && a.sub === субТаб ? 0 : 10)
+    const весСтатьи = a => (субТаб && (a.sub === субТаб || a.sub2 === субТаб) ? 0 : 10)
       + (ВЕС_РУБРИКИ[a.r] == null ? 5 : ВЕС_РУБРИКИ[a.r]);
-    const arts = (s.arts || []).filter(a => a.g === s.group).slice()
+    const _подходит = a => !субТаб || a.sub === субТаб || a.sub2 === субТаб;
+    const arts = (s.arts || []).filter(a => a.g === s.group && _подходит(a)).slice()
       .sort((x, y) => весСтатьи(x) - весСтатьи(y)).slice(0, 3)
       .map(a => ({ t: a.t, d: a.d, r: a.r,
                    m: this.plural(a.m, "минута", "минуты", "минут"),
@@ -2102,6 +2108,10 @@ class Component extends DCLogic {
       heroBrands,
       hasHeroBrands: heroBrands.length > 0,
       groupTitle: txt.h1 || meta.title,
+      heroTitle: s.sub && s.sub !== "all" ? s.sub : (txt.h1 || meta.title),
+      heroSub: s.sub && s.sub !== "all"
+        ? "Раздел «" + (txt.h1 || meta.title) + "»: цены, характеристики и подбор модели. Монтаж и доставка по Казахстану."
+        : (txt.intro || ""),
       // Заголовок группы — H1 только при явно выбранной группе. На /katalog без ?g=
       // единственный H1 — серверный «Каталог климатической техники в Алматы»;
       // вид заголовка группы тот же, меняется лишь тег (см. головаПодГруппу).
@@ -2153,9 +2163,7 @@ class Component extends DCLogic {
       counterText: s.loading ? "Загружаем…"
         : accMode
           ? "Показано " + visible.length + " из " + list.length + " · сопутствующие товары к оборудованию, совместимость уточняйте по модели"
-          : "Показано " + visible.length + " из " + list.length + " · в группе "
-            + (meta.count - (meta.acc || 0)) + ", в наличии " + meta.inStock
-            + ((meta.acc || 0) ? " · плюс " + meta.acc + " сопутствующих" : ""),
+          : "Показано " + visible.length + " из " + list.length,
       dateNote: "",
       footNote: "В каталоге " + this.plural(total, "позиция", "позиции", "позиций")
         + " в " + this.plural(groups.length, "группе", "группах", "группах")
