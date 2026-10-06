@@ -5,40 +5,24 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
-  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
-  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
-  a { color: #0A4EA7; text-decoration: none; }
-  a:hover { color: #0872D3; }
+  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
+  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
+  a { color: #0066FF; text-decoration: none; }
+  a:hover { color: #0052D6; }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=b7926459"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=e8476510"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
 </helmet>
 
-<div style="min-height:100vh; background:#F3F7FB;">
+<div style="min-height:100vh; background:#F1F5F9;">
 
-  <div style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
-    <div style="max-width:1280px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
-      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
-      <span style="opacity:0.85;">Пн–Пт 9:00–18:00</span>
-      <span style="margin-left:auto; opacity:0.85;">Работаем с НДС · выставим счёт</span>
-      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
-    </div>
-  </div>
-
-  <div style="background:#fff; border-bottom:1px solid #DCE5F0;">
-    <div style="max-width:1280px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
-      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
-      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
-      </a>
-      <div style="flex:1;"></div>
-      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
-    </div>
-  </div>
+  <div class="th-t1"><div class="th-w"><b>Доставка по Казахстану</b><span><a href="tel:+77000369369">+77 000 369 369</a> · пн–пт 9:00–18:00 · <a href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B2%D0%BE%D0%BD%D0%B8%D1%82%D1%8C.">Заказать звонок</a></span></div></div>
+<header class="th-hd"><div class="th-w"><button type="button" class="th-bg" data-th-burger aria-label="Меню">☰<span>Меню</span></button><a class="th-lg" href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" /></a><button type="button" class="th-sr" data-th-search aria-label="Поиск по каталогу"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg><span>Поиск по каталогу</span></button><nav class="th-ic"><a href="/izbrannoe"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg><span>Избранное</span><i class="th-bd" data-th-fav-count style="display:none"></i></a><a href="/sravnenie"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg><span>Сравнение</span><i class="th-bd" data-th-cmp-count style="display:none"></i></a><a href="/korzina"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h2l2.4 11h10.2L20 8H6.2" /><circle cx="9" cy="19" r="1.5" /><circle cx="17" cy="19" r="1.5" /></svg><span>Корзина</span><i class="th-bd" data-th-cart-count></i></a></nav></div></header>
+<nav class="th-mn"><div class="th-w"><a class="th-home" href="/" aria-label="На главную" title="На главную"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 11l9-7 9 7" /><path d="M5 10v10h5v-6h4v6h5V10" /></svg><span>Главная</span></a><a class="th-cat" href="/katalog" data-th-cat aria-expanded="false" aria-controls="th-panel"><span class="th-ci">☰</span><span class="th-ct">Каталог товаров</span></a><div class="th-dd"><a href="/kondicionery-almaty">Кондиционирование</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Кондиционирование" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div></div><div class="th-dd"><a href="/otoplenie">Отопление</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Отопление" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div></div><div class="th-dd"><a href="/ventilyaciya">Вентиляция</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Вентиляция" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div></div><div class="th-dd"><a href="/vodonagrevateli">Водонагреватели</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Водонагреватели" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div></div><a href="/katalog?g=avtonomnoe-pitanie">Автономное питание</a><a href="/brendy">Бренды</a><a href="/baza-znaniy">База знаний</a><a href="/kontakty">Контакты</a></div><div class="th-pn" id="th-panel"><div class="th-w th-pg"><div class="th-pc"><b>Кондиционирование</b><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div><div class="th-pc"><b>Отопление</b><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div><div class="th-pc"><b>Вентиляция</b><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div><div class="th-pc"><b>Водонагреватели и водоочистка</b><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div><div class="th-pc"><b>Автономное питание</b><a href="/katalog?g=avtonomnoe-pitanie">Зарядные станции и солнечные панели</a></div><div class="th-pc"><b>VRF, фанкойлы, чиллеры</b><a href="/katalog?g=mini-vrf">Мини-VRF и мультизональные</a><a href="/katalog?g=fankoyly">Фанкойлы</a><a href="/katalog?g=chillery">Чиллеры</a><a href="/katalog?g=precizionnye">Прецизионные кондиционеры</a><a href="/proekt">Расчёт под объект</a></div></div><div class="th-w th-pf"><a href="/katalog">Весь каталог →</a></div></div></nav>
 
   <sc-if value="{{ hasModal }}" hint-placeholder-val="{{ false }}">
     <div onClick="{{ closeModal }}" style="position:fixed; inset:0; background:rgba(7,28,59,0.62); z-index:50; display:flex; align-items:center; justify-content:center; padding:24px;">
@@ -49,7 +33,7 @@
               <img data-url="{{ mdImg }}" alt="{{ mdTitle }}" style="width:100%; height:100%; object-fit:contain; display:block;" />
             </sc-if>
             <sc-if value="{{ mdNoPhoto }}" hint-placeholder-val="{{ false }}">
-              <span style="font-size:13px; color:#8593A6; text-align:center; line-height:1.5;">Фото нет в каталоге</span>
+              <span style="font-size:13px; color:#64748B; text-align:center; line-height:1.5;">Фото нет в каталоге</span>
             </sc-if>
           </div>
           <sc-if value="{{ mdPhotoNote }}" hint-placeholder-val="{{ false }}">
@@ -58,51 +42,51 @@
           <sc-if value="{{ mdNoPhoto }}" hint-placeholder-val="{{ false }}">
             <div style="font-size:13px; color:#B25200; line-height:1.5; margin-top:8px;">Фото этой модели нет в каталоге — пришлём по запросу в WhatsApp.</div>
           </sc-if>
-          <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:8px;">Оценить габариты по снимку нельзя — точные размеры уточняем у поставщика перед заказом.</div>
+          <div style="font-size:12px; color:#64748B; line-height:1.5; margin-top:8px;">Оценить габариты по снимку нельзя — точные размеры уточняем у поставщика перед заказом.</div>
         </div>
         <div>
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
             <div>
-              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#8593A6;">ВНУТРЕННИЙ БЛОК</div>
-              <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700; line-height:1.3; margin-top:6px;">{{ mdTitle }}</div>
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#64748B;">ВНУТРЕННИЙ БЛОК</div>
+              <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:700; color:#0033A0; line-height:1.3; margin-top:6px;">{{ mdTitle }}</div>
             </div>
-            <div onClick="{{ closeModal }}" style="font-size:22px; line-height:1; color:#8593A6; cursor:pointer; padding:2px 6px;">×</div>
+            <div onClick="{{ closeModal }}" style="font-size:22px; line-height:1; color:#64748B; cursor:pointer; padding:2px 6px;">×</div>
           </div>
-          <div style="font-size:13px; color:#5A6675; line-height:1.5; margin-top:8px;">{{ mdName }}</div>
+          <div style="font-size:13px; color:#64748B; line-height:1.5; margin-top:8px;">{{ mdName }}</div>
           <div style="display:flex; flex-direction:column; gap:8px; margin-top:14px;">
             <sc-for list="{{ mdRows }}" as="m" hint-placeholder-count="8">
               <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid #E9EFF7; padding-bottom:7px; font-size:13px;">
-                <span style="color:#5A6675;">{{ m.k }}</span><b style="text-align:right; color:{{ m.c }};">{{ m.v }}</b>
+                <span style="color:#64748B;">{{ m.k }}</span><b style="text-align:right; color:{{ m.c }};">{{ m.v }}</b>
               </div>
             </sc-for>
           </div>
           <sc-if value="{{ mdManual }}" hint-placeholder-val="{{ false }}">
-            <a href="{{ mdManual }}" target="_blank" rel="noopener" style="display:block; margin-top:12px; font-size:13px; color:#0872D3; text-decoration:none;">Инструкция по эксплуатации (PDF) →</a>
+            <a href="{{ mdManual }}" target="_blank" rel="noopener" style="display:block; margin-top:12px; font-size:13px; color:#0066FF; text-decoration:none;">Инструкция по эксплуатации (PDF) →</a>
           </sc-if>
-          <div onClick="{{ closeModal }}" style="background:#0872D3; color:#fff; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700; margin-top:16px; cursor:pointer;">Закрыть</div>
+          <div onClick="{{ closeModal }}" style="background:#0066FF; color:#fff; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700; margin-top:16px; cursor:pointer;">Закрыть</div>
         </div>
       </div>
     </div>
   </sc-if>
 
-  <div style="max-width:1280px; margin:0 auto; padding:18px 24px 72px 24px;">
-    <div style="font-size:13px; color:#8593A6;"><a href="/">Главная</a> → <a href="/katalog">Каталог</a> → <a href="/katalog">Кондиционеры</a> → <span style="color:#18212F;">Мультисплит-системы</span></div>
+  <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:18px 24px 72px 24px;">
+    <div style="font-size:13px; color:#64748B;"><a href="/">Главная</a> → <a href="/katalog">Каталог</a> → <a href="/katalog">Кондиционеры</a> → <span style="color:#1A1A1A;">Мультисплит-системы</span></div>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:12px; align-items:end;">
       <div>
-        <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">Мультисплит: соберём комплект под вашу планировку</h1>
-        <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">Один наружный модуль на 2–5 комнат: меньше блоков на фасаде, одна трасса, единый монтаж. Комплект собирается из реальных позиций каталога — {{ poolLine }}</div>
+        <h1 style="margin:0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Мультисплит: соберём комплект под вашу планировку</h1>
+        <div style="font-size:16px; color:#64748B; margin-top:10px; line-height:1.6;">Один наружный модуль на 2–5 комнат: меньше блоков на фасаде, одна трасса, единый монтаж. Комплект собирается из реальных позиций каталога — {{ poolLine }}</div>
       </div>
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:18px 20px;">
-        <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#8593A6;">КОГДА МУЛЬТИСПЛИТ ВЫГОДЕН</div>
-        <div style="font-size:14px; color:#2C3846; line-height:1.6; margin-top:8px;">Фасад нельзя завешивать блоками · балкон один на несколько комнат · важен единый внешний вид · комнаты используются по очереди, а не все сразу.</div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#64748B;">КОГДА МУЛЬТИСПЛИТ ВЫГОДЕН</div>
+        <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">Фасад нельзя завешивать блоками · балкон один на несколько комнат · важен единый внешний вид · комнаты используются по очереди, а не все сразу.</div>
       </div>
     </div>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr)); gap:20px; margin-top:22px; align-items:start;">
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px;">
-        <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">Бренд</div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#64748B;">Бренд</div>
         <div style="display:flex; gap:7px; flex-wrap:wrap; margin-top:9px;">
           <sc-for list="{{ brands }}" as="b" hint-placeholder-count="8">
             <div onClick="{{ b.pick }}" style="border:1px solid {{ b.border }}; background:{{ b.bg }}; color:{{ b.fg }}; border-radius:8px; padding:8px 13px; font-size:14px; font-weight:600; cursor:pointer; display:flex; align-items:baseline; gap:6px;">
@@ -110,11 +94,11 @@
             </div>
           </sc-for>
         </div>
-        <div style="font-size:12px; color:#5A6675; line-height:1.5; margin-top:8px;">{{ brandNote }}</div>
+        <div style="font-size:12px; color:#64748B; line-height:1.5; margin-top:8px;">{{ brandNote }}</div>
 
         <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:22px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700;">Комнаты</div>
-          <div style="font-size:13px; color:#8593A6;">от 2 до 5 внутренних блоков</div>
+          <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">Комнаты</div>
+          <div style="font-size:13px; color:#64748B;">от 2 до 5 внутренних блоков</div>
         </div>
 
         <div ref="{{ galRef }}" style="display:flex; flex-direction:column; gap:14px; margin-top:14px;">
@@ -132,44 +116,44 @@
               </div>
 
               <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:baseline; gap:12px; margin-top:14px;">
-                <div style="font-size:13px; font-weight:600; color:#5A6675;">Площадь</div>
-                <span style="display:flex; align-items:center; gap:6px; font-size:15px; font-weight:700; color:#0A4EA7;">
-                  <span onClick="{{ r.areaMinus }}" role="button" aria-label="Меньше на 1 м²" style="width:44px; height:44px; flex:none; display:flex; align-items:center; justify-content:center; border:1px solid #DCE5F0; background:#F5F8FC; border-radius:10px; font-size:20px; cursor:pointer; user-select:none;">−</span>
-                  <input type="text" inputmode="numeric" autocomplete="off" aria-label="Площадь комнаты в квадратных метрах" value="{{ r.areaRaw }}" onInput="{{ r.onAreaText }}" onBlur="{{ r.onAreaBlur }}" style="width:74px; box-sizing:border-box; text-align:right; border:1px solid #DCE5F0; border-radius:8px; padding:11px 10px; font-family:inherit; font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; color:#0A4EA7; outline:none;" />
-                  <span onClick="{{ r.areaPlus }}" role="button" aria-label="Больше на 1 м²" style="width:44px; height:44px; flex:none; display:flex; align-items:center; justify-content:center; border:1px solid #DCE5F0; background:#F5F8FC; border-radius:10px; font-size:20px; cursor:pointer; user-select:none;">+</span>
+                <div style="font-size:13px; font-weight:600; color:#64748B;">Площадь</div>
+                <span style="display:flex; align-items:center; gap:6px; font-size:15px; font-weight:700; color:#0033A0;">
+                  <span onClick="{{ r.areaMinus }}" role="button" aria-label="Меньше на 1 м²" style="width:44px; height:44px; flex:none; display:flex; align-items:center; justify-content:center; border:1px solid #DCE5F0; background:#F9FBFE; border-radius:10px; font-size:20px; cursor:pointer; user-select:none;">−</span>
+                  <input type="text" inputmode="numeric" autocomplete="off" aria-label="Площадь комнаты в квадратных метрах" value="{{ r.areaRaw }}" onInput="{{ r.onAreaText }}" onBlur="{{ r.onAreaBlur }}" style="width:74px; box-sizing:border-box; text-align:right; border:1px solid #DCE5F0; border-radius:8px; padding:11px 10px; font-family:inherit; font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; color:#0033A0; outline:none;" />
+                  <span onClick="{{ r.areaPlus }}" role="button" aria-label="Больше на 1 м²" style="width:44px; height:44px; flex:none; display:flex; align-items:center; justify-content:center; border:1px solid #DCE5F0; background:#F9FBFE; border-radius:10px; font-size:20px; cursor:pointer; user-select:none;">+</span>
                   <span>м²</span>
                 </span>
               </div>
 
-              <div onClick="{{ r.open }}" title="Открыть блок крупно" style="display:flex; gap:14px; align-items:center; margin-top:12px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:10px; padding:12px; cursor:pointer;" style-hover="border-color:#0872D3; background:#F5FAFF;">
+              <div onClick="{{ r.open }}" title="Открыть блок крупно" style="display:flex; gap:14px; align-items:center; margin-top:12px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:10px; padding:12px; cursor:pointer;" style-hover="border-color:#0066FF; background:#F5FAFF;">
                 <div style="width:92px; height:74px; flex:none; background:#fff; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:6px; overflow:hidden; text-align:center;">
                   <sc-if value="{{ r.hasBlockImg }}" hint-placeholder-val="{{ true }}">
                     <img data-url="{{ r.blockImg }}" alt="{{ r.blockModel }}" style="width:100%; height:100%; object-fit:contain; display:block;" />
                   </sc-if>
                   <sc-if value="{{ r.noBlockImg }}" hint-placeholder-val="{{ false }}">
-                    <span style="font-size:12px; line-height:1.3; color:#8593A6;">фото в каталоге нет</span>
+                    <span style="font-size:12px; line-height:1.3; color:#64748B;">фото в каталоге нет</span>
                   </sc-if>
                 </div>
                 <div style="flex:1; min-width:0;">
                   <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                    <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#8593A6;">{{ r.sectionLabel }}</div>
+                    <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#64748B;">{{ r.sectionLabel }}</div>
                     <div style="font-size:12px; font-weight:700; color:{{ r.stockFg }}; background:{{ r.stockBg }}; border-radius:4px; padding:2px 6px;">{{ r.stock }}</div>
                   </div>
                   <div style="font-size:13px; font-weight:600; line-height:1.35; margin-top:4px;">{{ r.blockModel }}</div>
-                  <div style="font-size:12px; color:#5A6675; margin-top:3px;">{{ r.blockMeta }}</div>
+                  <div style="font-size:12px; color:#64748B; margin-top:3px;">{{ r.blockMeta }}</div>
                   <div style="display:flex; align-items:center; gap:6px; margin-top:5px;">
                     <span style="width:12px; height:12px; border-radius:50%; background:{{ r.colorDot }}; border:1px solid {{ r.colorBorder }}; display:inline-block; flex:none;"></span>
                     <span style="font-size:12px; color:{{ r.colorFg }};">{{ r.colorLabel }}</span>
-                    <span style="font-size:12px; color:#8593A6;">{{ r.seriesLabel }}</span>
+                    <span style="font-size:12px; color:#64748B;">{{ r.seriesLabel }}</span>
                   </div>
                   <div style="font-size:12px; color:#B25200; line-height:1.4; margin-top:3px;">{{ r.blockNote }}</div>
-                  <div style="font-size:12px; font-weight:700; color:#0872D3; margin-top:5px;">{{ r.openLabel }}</div>
+                  <div style="font-size:12px; font-weight:700; color:#0066FF; margin-top:5px;">{{ r.openLabel }}</div>
                 </div>
               </div>
 
               <sc-if value="{{ r.hasVariants }}" hint-placeholder-val="{{ false }}">
                 <div style="margin-top:12px;">
-                  <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">Исполнение — {{ r.variantsLabel }}</div>
+                  <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#64748B;">Исполнение — {{ r.variantsLabel }}</div>
                   <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:8px;">
                     <sc-for list="{{ r.variants }}" as="v" hint-placeholder-count="2">
                       <div onClick="{{ v.pick }}" style="border:1px solid {{ v.border }}; background:{{ v.bg }}; color:{{ v.fg }}; border-radius:8px; padding:7px 10px; font-size:12px; font-weight:600; cursor:pointer; display:flex; align-items:center; gap:7px;">
@@ -179,11 +163,11 @@
                           </span>
                         </sc-if>
                         <sc-if value="{{ v.noThumb }}" hint-placeholder-val="{{ false }}">
-                          <span style="font-size:12px; color:#8593A6; font-weight:500;">без фото</span>
+                          <span style="font-size:12px; color:#64748B; font-weight:500;">без фото</span>
                         </sc-if>
                         <span style="width:12px; height:12px; border-radius:50%; background:{{ v.dot }}; border:1px solid {{ v.dotBorder }}; display:inline-block; flex:none;"></span>
                         <span>{{ v.label }}</span>
-                        <span style="color:#8593A6; font-weight:500;">{{ v.price }}</span>
+                        <span style="color:#64748B; font-weight:500;">{{ v.price }}</span>
                         <span style="color:{{ v.stockFg }}; font-weight:600;">{{ v.stock }}</span>
                       </div>
                     </sc-for>
@@ -195,7 +179,7 @@
         </div>
 
         <div onClick="{{ addRoom }}" style="border:2px dashed {{ addBorder }}; color:{{ addFg }}; border-radius:12px; padding:14px; text-align:center; font-size:15px; font-weight:700; margin-top:14px; cursor:pointer;">{{ addLabel }}</div>
-        <div style="font-size:12px; color:#8593A6; line-height:1.5; margin-top:8px;">{{ sliderNote }}</div>
+        <div style="font-size:12px; color:#64748B; line-height:1.5; margin-top:8px;">{{ sliderNote }}</div>
 
         <sc-if value="{{ simulCaveat }}" hint-placeholder-val="{{ false }}">
           <div style="background:#FFF6E9; border:1px solid #F5D8AE; border-radius:12px; padding:14px 16px; margin-top:14px;">
@@ -206,8 +190,8 @@
         <sc-if value="{{ overLimit }}" hint-placeholder-val="{{ false }}">
           <div style="background:{{ overBg }}; border:1px solid {{ overBorder }}; border-radius:12px; padding:16px 18px; margin-top:14px;">
             <div style="font-size:15px; font-weight:700; color:{{ overFg }};">{{ overTitle }}</div>
-            <div style="font-size:14px; color:#2C3846; line-height:1.55; margin-top:6px;">{{ overText }}</div>
-            <a href="/poluprom" style="display:inline-block; font-size:14px; font-weight:700; color:#0A4EA7; margin-top:8px;">{{ overCta }}</a>
+            <div style="font-size:14px; color:#1A1A1A; line-height:1.55; margin-top:6px;">{{ overText }}</div>
+            <a href="/poluprom" style="display:inline-block; font-size:14px; font-weight:700; color:#0033A0; margin-top:8px;">{{ overCta }}</a>
           </div>
         </sc-if>
 
@@ -219,41 +203,41 @@
 
         <sc-if value="{{ hasSplit }}" hint-placeholder-val="{{ false }}">
           <div style="background:#F5FAFF; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:12px;">
-            <div style="font-size:15px; font-weight:700; color:#0A4EA7;">{{ splitTitle }}</div>
-            <div style="font-size:13px; color:#2C3846; line-height:1.55; margin-top:6px;">{{ splitSubtitle }}</div>
+            <div style="font-size:15px; font-weight:700; color:#0033A0;">{{ splitTitle }}</div>
+            <div style="font-size:13px; color:#1A1A1A; line-height:1.55; margin-top:6px;">{{ splitSubtitle }}</div>
             <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px;">
               <sc-for list="{{ splitLines }}" as="l" hint-placeholder-count="2">
                 <div style="background:#fff; border:1px solid #DCE5F0; border-radius:10px; padding:12px 14px;">
-                  <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#8593A6;">{{ l.k }}</div>
-                  <div style="font-size:13px; color:#5A6675; margin-top:3px;">{{ l.rooms }}</div>
+                  <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#64748B;">{{ l.k }}</div>
+                  <div style="font-size:13px; color:#64748B; margin-top:3px;">{{ l.rooms }}</div>
                   <div style="font-size:13px; font-weight:600; color:{{ l.color }}; margin-top:5px;">{{ l.v }}</div>
                 </div>
               </sc-for>
             </div>
             <div style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-top:12px;">
-              <div style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:800; color:#0A4EA7; font-variant-numeric:tabular-nums;">{{ splitTotal }}</div>
-              <div style="font-size:12px; color:#5A6675;">{{ splitNote }}</div>
+              <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:800; color:#0033A0; font-variant-numeric:tabular-nums;">{{ splitTotal }}</div>
+              <div style="font-size:12px; color:#64748B;">{{ splitNote }}</div>
             </div>
           </div>
         </sc-if>
 
         <div style="margin-top:20px;">
-          <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8593A6;">Как используете комнаты</div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#64748B;">Как используете комнаты</div>
           <div style="display:flex; gap:7px; flex-wrap:wrap; margin-top:9px;">
             <sc-for list="{{ modes }}" as="m" hint-placeholder-count="2">
               <div onClick="{{ m.pick }}" style="border:1px solid {{ m.border }}; background:{{ m.bg }}; color:{{ m.fg }}; border-radius:8px; padding:9px 13px; font-size:14px; font-weight:600; cursor:pointer;">{{ m.label }}</div>
             </sc-for>
           </div>
-          <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:8px;">{{ modeNote }}</div>
+          <div style="font-size:13px; color:#64748B; line-height:1.55; margin-top:8px;">{{ modeNote }}</div>
         </div>
       </div>
 
       <div style="display:flex; flex-direction:column; gap:16px;">
-        <div style="background:#071C3B; color:#fff; border-radius:16px; padding:26px;">
-          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">КОМПЛЕКТ ПО КАТАЛОГУ</div>
+        <div style="background:#0033A0; color:#fff; border-radius:16px; padding:26px;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#E9F4FF;">КОМПЛЕКТ ПО КАТАЛОГУ</div>
           <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:14px; margin-top:12px;">
-            <div style="font-family:'Montserrat',sans-serif; font-size:34px; font-weight:800; letter-spacing:-0.02em; font-variant-numeric:tabular-nums;">{{ totalLabel }}</div>
-            <div style="font-size:13px; color:#9FB0C4;">{{ totalNote }}</div>
+            <div style="font-family:Inter,sans-serif; font-size:34px; font-weight:800; letter-spacing:-0.02em; font-variant-numeric:tabular-nums;">{{ totalLabel }}</div>
+            <div style="font-size:13px; color:rgba(255,255,255,0.78);">{{ totalNote }}</div>
           </div>
 
           <div ref="{{ outRef }}" style="display:{{ outCardDisplay }}; gap:14px; align-items:center; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.14); border-radius:12px; padding:14px; margin-top:16px;">
@@ -262,43 +246,43 @@
             </div>
             <div style="flex:1; min-width:0;">
               <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#7FC4F2;">НАРУЖНЫЙ МОДУЛЬ</div>
+                <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#E9F4FF;">НАРУЖНЫЙ МОДУЛЬ</div>
                 <div style="font-size:12px; font-weight:700; color:{{ outStockFg }}; background:{{ outStockBg }}; border-radius:4px; padding:2px 6px;">{{ outStock }}</div>
               </div>
               <div style="font-size:14px; font-weight:600; line-height:1.35; margin-top:4px;">{{ outModel }}</div>
-              <div style="font-size:12px; color:#CBDCEC; margin-top:3px;">{{ outMeta }}</div>
+              <div style="font-size:12px; color:rgba(255,255,255,0.88); margin-top:3px;">{{ outMeta }}</div>
             </div>
           </div>
 
-          <div style="font-size:14px; color:#CBDCEC; line-height:1.6; margin-top:14px;">{{ explain }}</div>
-          <a href="{{ specHref }}" target="_blank" rel="noreferrer" style="display:block; background:#0872D3; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700; margin-top:16px;">Отправить спецификацию на расчёт</a>
+          <div style="font-size:14px; color:rgba(255,255,255,0.88); line-height:1.6; margin-top:14px;">{{ explain }}</div>
+          <a href="{{ specHref }}" target="_blank" rel="noreferrer" style="display:block; background:#0066FF; color:#fff; border-radius:8px; padding:14px; text-align:center; font-size:16px; font-weight:700; margin-top:16px;">Отправить спецификацию на расчёт</a>
           <a href="https://wa.me/77000369369" style="display:block; border:2px solid rgba(255,255,255,0.5); color:#fff; border-radius:8px; padding:12px; text-align:center; font-size:15px; font-weight:700; margin-top:10px;">Обсудить в WhatsApp</a>
         </div>
 
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
           <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-            <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700;">Сравнение с отдельными системами</div>
-            <div style="font-size:12px; color:#8593A6;">по вашим {{ roomCount }}</div>
+            <div style="font-family:Inter,sans-serif; font-size:17px; font-weight:700; color:#0033A0;">Сравнение с отдельными системами</div>
+            <div style="font-size:12px; color:#64748B;">по вашим {{ roomCount }}</div>
           </div>
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr)); gap:12px; margin-top:14px;">
             <div style="border:1px solid #B9DBF7; background:#F5FAFF; border-radius:12px; padding:16px;">
-              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#0A4EA7;">{{ multiTitle }}</div>
-              <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; font-variant-numeric:tabular-nums; margin-top:8px; color:#0A4EA7;">{{ multiPrice }}</div>
-              <div style="font-size:12px; color:#5A6675; line-height:1.5; margin-top:6px;">{{ multiNote }}</div>
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#0033A0;">{{ multiTitle }}</div>
+              <div style="font-family:Inter,sans-serif; font-size:22px; font-weight:800; font-variant-numeric:tabular-nums; margin-top:8px; color:#0033A0;">{{ multiPrice }}</div>
+              <div style="font-size:12px; color:#64748B; line-height:1.5; margin-top:6px;">{{ multiNote }}</div>
             </div>
             <div style="border:1px solid #DCE5F0; border-radius:12px; padding:16px;">
-              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#8593A6;">ОТДЕЛЬНЫЕ СИСТЕМЫ</div>
-              <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; font-variant-numeric:tabular-nums; margin-top:8px;">{{ sepFrom }}</div>
-              <div style="font-size:12px; color:#5A6675; line-height:1.5; margin-top:6px;">{{ sepNote }}</div>
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#64748B;">ОТДЕЛЬНЫЕ СИСТЕМЫ</div>
+              <div style="font-family:Inter,sans-serif; font-size:22px; font-weight:800; font-variant-numeric:tabular-nums; margin-top:8px;">{{ sepFrom }}</div>
+              <div style="font-size:12px; color:#64748B; line-height:1.5; margin-top:6px;">{{ sepNote }}</div>
             </div>
           </div>
-          <div style="font-size:13px; color:#2C3846; line-height:1.6; margin-top:12px;">{{ verdict }}</div>
+          <div style="font-size:13px; color:#1A1A1A; line-height:1.6; margin-top:12px;">{{ verdict }}</div>
         </div>
 
         <sc-if value="{{ hasBrandRows }}" hint-placeholder-val="{{ false }}">
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
-            <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700;">Та же конфигурация у других брендов</div>
-            <div style="font-size:13px; color:#5A6675; line-height:1.55; margin-top:6px;">{{ brandCompareNote }}</div>
+            <div style="font-family:Inter,sans-serif; font-size:17px; font-weight:700; color:#0033A0;">Та же конфигурация у других брендов</div>
+            <div style="font-size:13px; color:#64748B; line-height:1.55; margin-top:6px;">{{ brandCompareNote }}</div>
             <div ref="{{ brandsRef }}" style="display:flex; flex-direction:column; gap:8px; margin-top:14px;">
               <sc-for list="{{ brandRows }}" as="k" hint-placeholder-count="4">
                 <div onClick="{{ k.pick }}" style="border:1px solid {{ k.border }}; background:{{ k.bg }}; border-radius:10px; padding:12px 14px; cursor:pointer; display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px;">
@@ -315,31 +299,31 @@
                   </div>
                   <div style="font-size:16px; font-weight:700; font-variant-numeric:tabular-nums;">{{ k.price }}</div>
                   <div style="font-size:12px; color:{{ k.diffFg }};">{{ k.diff }}</div>
-                  <div style="font-size:12px; color:#8593A6; margin-left:auto;">{{ k.mod }}</div>
+                  <div style="font-size:12px; color:#64748B; margin-left:auto;">{{ k.mod }}</div>
                   <div style="font-size:12px; color:{{ k.stockFg }}; width:100%;">{{ k.stock }}</div>
                   <div style="font-size:12px; color:#B25200; width:100%;">{{ k.swapNote }}</div>
                 </div>
               </sc-for>
             </div>
-            <div style="font-size:13px; color:#0A4EA7; font-weight:600; line-height:1.55; margin-top:10px;">{{ savingLine }}</div>
+            <div style="font-size:13px; color:#0033A0; font-weight:600; line-height:1.55; margin-top:10px;">{{ savingLine }}</div>
           </div>
         </sc-if>
 
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
-          <div style="font-family:'Montserrat',sans-serif; font-size:17px; font-weight:700;">Спецификация</div>
+          <div style="font-family:Inter,sans-serif; font-size:17px; font-weight:700; color:#0033A0;">Спецификация</div>
           <div style="display:flex; flex-direction:column; gap:9px; margin-top:12px;">
             <sc-for list="{{ spec }}" as="s" hint-placeholder-count="5">
               <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid #E9EFF7; padding-bottom:8px; font-size:14px;">
-                <span style="color:#5A6675;">{{ s.k }}</span><b style="text-align:right; color:{{ s.color }};">{{ s.v }}</b>
+                <span style="color:#64748B;">{{ s.k }}</span><b style="text-align:right; color:{{ s.color }};">{{ s.v }}</b>
               </div>
             </sc-for>
           </div>
-          <div style="font-size:13px; color:#5A6675; line-height:1.6; margin-top:12px;">Цены — на оборудование с НДС по каталогу. Монтаж, трассы и соединительные комплекты считаются отдельно после замера: у мультисплита длина трасс к каждой комнате разная.</div>
+          <div style="font-size:13px; color:#64748B; line-height:1.6; margin-top:12px;">Цены — на оборудование с НДС по каталогу. Монтаж, трассы и соединительные комплекты считаются отдельно после замера: у мультисплита длина трасс к каждой комнате разная.</div>
         </div>
 
         <div style="background:#FDECEA; border:1px solid #F8CBBE; border-radius:16px; padding:20px 22px;">
-          <div style="font-size:15px; font-weight:700; color:#C21610;">Что важно знать до решения</div>
-          <div style="display:flex; flex-direction:column; gap:8px; margin-top:10px; font-size:14px; color:#2C3846; line-height:1.55;">
+          <div style="font-size:15px; font-weight:700; color:#D73D3D;">Что важно знать до решения</div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:10px; font-size:14px; color:#1A1A1A; line-height:1.55;">
             <div>· Если все комнаты работают одновременно на максимуме — мультисплит проигрывает отдельным системам по эффективности.</div>
             <div>· Поломка наружного модуля останавливает все комнаты сразу, а не одну.</div>
             <div>· Трассы к каждой комнате прокладываются отдельно: монтаж дороже и требует места под коммуникации.</div>
@@ -395,7 +379,7 @@ class Component extends DCLogic {
             if (box2 && !box2.querySelector("[data-nophoto]")) {
               const note = document.createElement("div");
               note.setAttribute("data-nophoto", "1");
-              note.style.cssText = "font-size:12px;color:#8593A6;text-align:center;padding:4px;";
+              note.style.cssText = "font-size:12px;color:#64748B;text-align:center;padding:4px;";
               note.textContent = "фото нет";
               box2.appendChild(note);
             }
@@ -418,7 +402,7 @@ class Component extends DCLogic {
           el.style.display = "none";
           const note = document.createElement("div");
           note.setAttribute("data-nophoto", "1");
-          note.style.cssText = "font-size:12px;color:#8593A6;text-align:center;padding:4px;";
+          note.style.cssText = "font-size:12px;color:#64748B;text-align:center;padding:4px;";
           note.textContent = "фото уточняется";
           wrap.appendChild(note);
         };
@@ -449,10 +433,10 @@ class Component extends DCLogic {
   chip(active, label, pick, sub) {
     return {
       label, pick, sub: sub || "",
-      border: active ? "#0872D3" : "#DCE5F0",
-      bg: active ? "#E6F2FD" : "#fff",
-      fg: active ? "#0A4EA7" : "#5A6675",
-      subFg: active ? "#0872D3" : "#8593A6"
+      border: active ? "#0066FF" : "#DCE5F0",
+      bg: active ? "#E9F4FF" : "#fff",
+      fg: active ? "#0033A0" : "#64748B",
+      subFg: active ? "#0066FF" : "#64748B"
     };
   }
 
@@ -573,11 +557,11 @@ class Component extends DCLogic {
             hasThumb: !!v.i,
             noThumb: !v.i,
             stock: v.st || "нет данных",
-            stockFg: v.ok ? "#0E9F6E" : "#B25200",
+            stockFg: v.ok ? "#178841" : "#B25200",
             pick: () => this.setRoom(i, { sku: v.s }),
-            border: on ? "#0872D3" : "#DCE5F0",
-            bg: on ? "#E6F2FD" : "#fff",
-            fg: on ? "#0A4EA7" : "#5A6675"
+            border: on ? "#0066FF" : "#DCE5F0",
+            bg: on ? "#E9F4FF" : "#fff",
+            fg: on ? "#0033A0" : "#64748B"
           };
         }),
         sectionLabel: "ВНУТРЕННИЙ БЛОК",
@@ -589,7 +573,7 @@ class Component extends DCLogic {
         colorLabel: it ? (it.c || "цвет в каталоге не указан") : "",
         colorDot: it ? this.colorDot(it) : "#DCE5F0",
         colorBorder: it && it.hex ? "transparent" : "#C3CFDD",
-        colorFg: it && it.c ? "#2C3846" : "#B25200",
+        colorFg: it && it.c ? "#1A1A1A" : "#B25200",
         // серия, повторяющая бренд, ничего не добавляет и читается как ошибка рядом с цветом
         seriesLabel: (it && it.ser && it.ser !== it.b) ? it.ser : "",
         blockImg: (it && it.i) ? (window.photoUrl ? window.photoUrl(it.i) : it.i) : "",
@@ -602,14 +586,14 @@ class Component extends DCLogic {
           ? "Нужно " + need + " BTU, а максимум в линейке " + brand + " — " + it.btu + " BTU. Для этой комнаты нужен другой бренд или отдельная система."
           : "",
         stock: it ? it.st : "нет данных",
-        stockFg: it && it.ok ? "#0E9F6E" : "#B25200",
+        stockFg: it && it.ok ? "#178841" : "#B25200",
         stockBg: it && it.ok ? "#E7F7F0" : "#FFF1E3",
         price: it ? (it.p || 0) : 0,
         btu: it ? it.btu : 0,
         model: it ? it.b + " " + it.s : "",
         remove: () => { if (s.rooms.length > 2) this.setState({ rooms: s.rooms.filter((_, k) => k !== i) }); },
         removeLabel: s.rooms.length > 2 ? "Убрать" : "минимум 2 комнаты",
-        removeFg: s.rooms.length > 2 ? "#C21610" : "#8593A6"
+        removeFg: s.rooms.length > 2 ? "#D73D3D" : "#64748B"
       };
     });
 
@@ -694,7 +678,7 @@ class Component extends DCLogic {
               ? p.mod.b + " " + p.mod.s + " · " + p.mod.btu + " BTU" + (p.mod.pt ? " · " + p.mod.pt : "") + (p.portsSure ? "" : " · порты уточняем")
               : "модуль подберём по наличию",
           rooms: p.g.rooms.map(r => r.title + " (" + r.area + " м²)").join(", "),
-          color: p.single ? "#B25200" : (p.mod && p.mod.p ? "#18212F" : "#B25200")
+          color: p.single ? "#B25200" : (p.mod && p.mod.p ? "#1A1A1A" : "#B25200")
         })),
         total: allFound && !singles.length ? this.money(modSum + indoorSum) : "",
         partial: allFound ? this.money(modSum + multiRoomsSum) : "",
@@ -704,7 +688,7 @@ class Component extends DCLogic {
           v: p.mod
             ? p.mod.b + " " + p.mod.s + " · " + p.mod.btu + " BTU" + (p.mod.pt ? " · " + p.mod.pt : "") + (p.portsSure ? "" : " · порты уточняем")
             : "модуль подберём по наличию",
-          color: p.mod && p.mod.p ? "#18212F" : "#B25200"
+          color: p.mod && p.mod.p ? "#1A1A1A" : "#B25200"
         })),
         singleRooms: singleRooms.map(r => r.title),
         singleIdx: singleRooms.map(r => r.idx),
@@ -810,17 +794,17 @@ class Component extends DCLogic {
         price: this.money(k.total),
         mod: k.mod.s + " · " + k.mod.btu + " BTU",
         stock: k.mod.ok ? "модуль в наличии" : "модуль под заказ",
-        stockFg: k.mod.ok ? "#0E9F6E" : "#B25200",
+        stockFg: k.mod.ok ? "#178841" : "#B25200",
         diff: diff ? "+" + this.money(diff) : "самый доступный",
-        diffFg: diff ? "#5A6675" : "#0E9F6E",
+        diffFg: diff ? "#64748B" : "#178841",
         swapNote: [
           k.swapped ? this.plural(k.swapped, "комната", "комнаты", "комнат") + " с другим типом блока — этого типа в линейке нет" : "",
           k.unknownType ? "тип блока в каталоге не указан — сравниваем по мощности и цене" : "",
           k.portsSure ? "" : "число портов модуля в каталоге не указано — уточним при расчёте"
         ].filter(Boolean).join(" · "),
         current: k.brand === brand,
-        border: k.brand === brand ? "#0872D3" : "#DCE5F0",
-        bg: k.brand === brand ? "#E6F2FD" : "#fff",
+        border: k.brand === brand ? "#0066FF" : "#DCE5F0",
+        bg: k.brand === brand ? "#E9F4FF" : "#fff",
         pick: () => this.setState({ brand: k.brand, rooms: s.rooms.map(r => ({ area: r.area, type: r.type })) })
       };
     });
@@ -856,18 +840,18 @@ class Component extends DCLogic {
       mdPhotoNote: md && md.i ? "1 фото из 3 — второй ракурс и пульт пришлём по запросу" : "",
       mdManual: md && md.man ? md.man : "",
       mdRows: md ? [
-        { k: "Тип блока", v: md.t || "нет данных", c: md.t ? "#18212F" : "#B25200" },
-        { k: "Мощность", v: md.btu ? md.btu + " BTU" : "нет данных", c: md.btu ? "#18212F" : "#B25200" },
-        { k: "Площадь", v: md.area ? "до " + md.area + " м²" : "нет данных", c: md.area ? "#18212F" : "#B25200" },
-        { k: "Хладагент", v: md.gas || "нет данных", c: md.gas ? "#18212F" : "#B25200" },
-        { k: "Цвет корпуса", v: md.c || "в каталоге не указан", c: md.c ? "#18212F" : "#B25200" },
-        { k: "Серия", v: md.ser || "не указана", c: md.ser ? "#18212F" : "#B25200" },
+        { k: "Тип блока", v: md.t || "нет данных", c: md.t ? "#1A1A1A" : "#B25200" },
+        { k: "Мощность", v: md.btu ? md.btu + " BTU" : "нет данных", c: md.btu ? "#1A1A1A" : "#B25200" },
+        { k: "Площадь", v: md.area ? "до " + md.area + " м²" : "нет данных", c: md.area ? "#1A1A1A" : "#B25200" },
+        { k: "Хладагент", v: md.gas || "нет данных", c: md.gas ? "#1A1A1A" : "#B25200" },
+        { k: "Цвет корпуса", v: md.c || "в каталоге не указан", c: md.c ? "#1A1A1A" : "#B25200" },
+        { k: "Серия", v: md.ser || "не указана", c: md.ser ? "#1A1A1A" : "#B25200" },
         // 26.08.2026: строка была зашита текстом и данные не читала вовсе, хотя
         // габариты и вес лежат в мастере и доезжают до собранной страницы.
         { k: "Габариты, вес", v: [md.dim, md.wt].filter(Boolean).join(" · ") || "уточним при расчёте",
-          c: (md.dim || md.wt) ? "#18212F" : "#B25200" },
-        { k: "Наличие", v: md.st || "нет данных", c: md.ok ? "#0E9F6E" : "#B25200" },
-        { k: "Цена блока", v: md.pt || "по запросу", c: md.pt ? "#18212F" : "#B25200" }
+          c: (md.dim || md.wt) ? "#1A1A1A" : "#B25200" },
+        { k: "Наличие", v: md.st || "нет данных", c: md.ok ? "#178841" : "#B25200" },
+        { k: "Цена блока", v: md.pt || "по запросу", c: md.pt ? "#1A1A1A" : "#B25200" }
       ] : [],
       poolLine: data.indoor.length
         ? this.plural(data.outdoor.length, "наружный модуль", "наружных модуля", "наружных модулей")
@@ -881,7 +865,7 @@ class Component extends DCLogic {
       rooms,
       addLabel: ports < 5 ? "+ Добавить комнату" : "Больше 5 блоков — это уже VRF-система, посчитаем отдельно",
       addBorder: ports < 5 ? "#B9DBF7" : "#DCE5F0",
-      addFg: ports < 5 ? "#0A4EA7" : "#8593A6",
+      addFg: ports < 5 ? "#0033A0" : "#64748B",
       addRoom: () => { if (ports < 5) this.setState({ rooms: s.rooms.concat([{ area: 20, type: types[0] || "Настенный" }]) }); },
       modes: ["По очереди", "Все сразу"].map(m => this.chip(s.mode === m, m, () => this.setState({ mode: m }))),
       modeNote: s.mode === "Все сразу"
@@ -953,7 +937,7 @@ class Component extends DCLogic {
       overCta: (planBuilt || altBrand) ? "" : "Полупромышленное оборудование →",
       overBg: (planBuilt || altBrand) ? "#F5FAFF" : "#FDECEA",
       overBorder: (planBuilt || altBrand) ? "#B9DBF7" : "#F8CBBE",
-      overFg: (planBuilt || altBrand) ? "#0A4EA7" : "#C21610",
+      overFg: (planBuilt || altBrand) ? "#0033A0" : "#D73D3D",
       hasSplit: planBuilt,
       splitTitle: splitPlan
         ? (splitPlan.count === 1
@@ -991,12 +975,12 @@ class Component extends DCLogic {
           v: moved
             ? r.area + " м² → в мультисплит-часть не входит, считаем отдельной системой"
             : r.area + " м² → " + (r.model || "подбор") + (r.price ? " · " + this.money(r.price) : ""),
-          color: moved || !r.price ? "#B25200" : "#18212F"
+          color: moved || !r.price ? "#B25200" : "#1A1A1A"
         };
       }).concat(
         planBuilt
           ? splitPlan.specRows
-          : [{ k: "Наружный модуль", v: !out ? "подбор" : outOk ? out.s + " · " + out.btu + " BTU" + (out.p ? " · " + this.money(out.p) : "") : "не подобран в линейке " + brand, color: outOk && out && out.p ? "#18212F" : "#B25200" }]
+          : [{ k: "Наружный модуль", v: !out ? "подбор" : outOk ? out.s + " · " + out.btu + " BTU" + (out.p ? " · " + this.money(out.p) : "") : "не подобран в линейке " + brand, color: outOk && out && out.p ? "#1A1A1A" : "#B25200" }]
       ).concat([
         // наличие комплекта — по худшему звену: модуль под заказ означает ожидание поставки
         (() => {
@@ -1010,17 +994,17 @@ class Component extends DCLogic {
           return {
             k: "Наличие комплекта",
             v: bothOk ? "блоки и модуль в наличии" : outTxt + ", " + blocksTxt,
-            color: bothOk ? "#0E9F6E" : "#B25200"
+            color: bothOk ? "#178841" : "#B25200"
           };
         })(),
-        { k: "Режим использования", v: s.mode, color: "#18212F" },
+        { k: "Режим использования", v: s.mode, color: "#1A1A1A" },
         {
           k: "Оборудование итого",
           v: allPriced ? this.money(total)
             : planOk ? splitPlan.total
             : planBuilt ? splitPlan.partial + " + отдельный кондиционер"
             : (outOk ? "по запросу" : "комплект не собирается"),
-          color: (allPriced || planOk) ? "#18212F" : "#B25200"
+          color: (allPriced || planOk) ? "#1A1A1A" : "#B25200"
         },
         { k: "Трассы, комплект, монтаж", v: "по факту замера", color: "#B25200" }
       ])
