@@ -60,7 +60,7 @@
         <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;">
           <div>
             <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0B6B45;">ПОКУПКА ПОДТВЕРЖДЕНА</div>
-            <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Отзывы после покупки у нас</h2>
+            <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Отзывы после покупки у нас</h2>
           </div>
           <div style="font-size:13px; font-weight:700; color:#0B6B45; background:#E7F7F0; border:1px solid #BFE6D4; border-radius:999px; padding:7px 12px;">{{ psSummary }}</div>
         </div>
@@ -84,7 +84,7 @@
         <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;">
           <div>
             <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0B6B45;">ПОКУПКА ПОДТВЕРЖДЕНА</div>
-            <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Отзывы о технике</h2>
+            <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Отзывы о технике</h2>
           </div>
           <div style="font-size:13px; font-weight:700; color:#0B6B45; background:#E7F7F0; border:1px solid #BFE6D4; border-radius:999px; padding:7px 12px;">{{ prSummary }}</div>
         </div>
@@ -109,7 +109,7 @@
         <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;">
           <div>
             <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#0B6B45;">МОНТАЖ ПО КАРТЕ 369</div>
-            <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Отзывы о монтаже</h2>
+            <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Отзывы о монтаже</h2>
           </div>
           <a href="/brigady" style="font-size:14px; font-weight:700; color:#0066FF;">Бригады и оценки →</a>
         </div>
@@ -133,7 +133,7 @@
       <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px;">
         <div>
           <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ЧЕМ МОЖНО ПРОВЕРИТЬ НАС ДО ПОКУПКИ</div>
-          <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Не только оценки</h2>
+          <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Не только оценки</h2>
         </div>
         <a href="/portfolio" style="font-size:14px; font-weight:700; color:#0066FF;">Смотреть объекты →</a>
       </div>
@@ -164,7 +164,7 @@
     </div>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; margin-top:16px;">
-      <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Если что-то пошло не так</h2>
+      <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Если что-то пошло не так</h2>
       <div style="font-size:15px; color:#64748B; line-height:1.65; margin-top:8px; max-width:940px;">Напишите нам до отзыва — почти всё решается за день. Претензии по монтажу принимаем по номеру «Сервис-карты 369»: по нему видно дату работ и бригаду. По оборудованию — оформляем обращение в сервисный центр производителя и сопровождаем его.</div>
       <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
         <a href="https://wa.me/77000369369" style="background:#0066FF; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">Написать в WhatsApp</a>
