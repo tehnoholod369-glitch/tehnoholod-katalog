@@ -115,8 +115,13 @@
   }
 
   // облегчённое оформление: для карточек, у которых нет пары в полной карточке /tovar, и как запасной путь
+  // Загрузчик в служебной шапке сразу прячет сырую страницу Tilda и старую шапку (стиль #th-prod-hide), чтобы клиент не видел
+  // её, пока рисуется карточка. Здесь стиль снимаем, когда карточка встроена или включено облегчённое оформление.
+  function unhide() { var h = document.getElementById("th-prod-hide"); if (h && h.parentNode) h.parentNode.removeChild(h); }
+
   function restyle() {
     try { build(); } catch (e) {}
+    unhide();
     setTimeout(function () { try { build(); } catch (e) {} }, 800);
     setTimeout(function () { try { build(); } catch (e) {} }, 2500);
   }
@@ -128,6 +133,7 @@
   function embed(g, sl) {
     var snip = $(".t-store__prod-snippet__container");
     if (!snip) { restyle(); return; }
+    // место под карточку держим пустым, но не оставляем белую страницу: заглушка первого экрана — из th-page.js
     window.TH_CARD_EMBED = 1;
     window.TH_CARD_QS = "?g=" + encodeURIComponent(g) + "&sl=" + encodeURIComponent(sl);
     var st = document.createElement("style");
@@ -139,6 +145,7 @@
     mount.setAttribute("data-th-page", "tovar");
     snip.parentNode.insertBefore(mount, snip);
     snip.classList.add("th-vh"); // остаётся в DOM для поиска, но не двоит карточку на экране
+    unhide();
     var s = document.createElement("script");
     s.src = CDN + "th-page.js";
     document.head.appendChild(s);
