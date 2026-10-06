@@ -49,7 +49,7 @@
     </div>
 
     <div style="margin-top:24px;">
-      <h2 style="margin:0; font-size:26px; font-weight:800; letter-spacing:-0.018em;">Типы систем и когда какая нужна</h2>
+      <h2 style="margin:0; font-size:26px; font-weight:800; letter-spacing:-0.018em; color:#0033A0;">Типы систем и когда какая нужна</h2>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:16px;">
         <sc-for list="{{ types }}" as="t" hint-placeholder-count="4">
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px; display:flex; flex-direction:column;">
@@ -73,7 +73,7 @@
       <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px;">
         <div>
           <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ПОДБОР ПО ОБЪЕКТУ</div>
-          <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em;">Какой объект нужно охладить?</h2>
+          <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Какой объект нужно охладить?</h2>
         </div>
         <div style="font-size:14px; color:#64748B;">Расчёт предварительный — точный делаем на объекте</div>
       </div>
