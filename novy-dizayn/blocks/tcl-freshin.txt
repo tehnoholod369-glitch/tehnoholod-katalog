@@ -107,16 +107,6 @@
     </div>
 
     <div style="margin-top:26px;">
-      <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">В ДВУХ СЛОВАХ</div>
-      <h2 style="margin:6px 0 0 0; font-size:26px; font-weight:800; letter-spacing:-0.018em; color:#0033A0;">Главное о серии</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:16px; margin-top:16px;">
-        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 16px 16px; display:flex; flex-direction:column; align-items:center; gap:14px;"><div style="height:160px; display:flex; align-items:center; justify-content:center;"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/freshin/badge-voxin.webp" alt="TCL VoxIN: голосовое управление работает без интернета" loading="lazy" style="display:block; max-height:160px; max-width:100%; width:auto; height:auto;" /></div><div style="font-size:14px; font-weight:600; color:#0033A0; text-align:center;">Голос без интернета</div></div>
-        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 16px 16px; display:flex; flex-direction:column; align-items:center; gap:14px;"><div style="height:160px; display:flex; align-items:center; justify-content:center;"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/freshin/badge-50m2.webp" alt="Старшая модель FreshIN 3.0 — до 50 м²" loading="lazy" style="display:block; max-height:160px; max-width:100%; width:auto; height:auto;" /></div><div style="font-size:14px; font-weight:600; color:#0033A0; text-align:center;">Старшая модель — до 50 м²</div></div>
-        <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 16px 16px; display:flex; flex-direction:column; align-items:center; gap:14px;"><div style="height:160px; display:flex; align-items:center; justify-content:center;"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/freshin/badge-seria-2026.webp" alt="Серия 2026 года" loading="lazy" style="display:block; max-height:160px; max-width:100%; width:auto; height:auto;" /></div><div style="font-size:14px; font-weight:600; color:#0033A0; text-align:center;">Серия 2026 года</div></div>
-      </div>
-    </div>
-
-    <div style="margin-top:26px;">
       <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:14px;">
         <div>
           <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ТЕХНОЛОГИИ</div>
