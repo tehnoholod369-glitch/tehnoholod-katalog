@@ -27,6 +27,7 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=e8476510"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-share.js?v=7ae04008"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F1F5F9;">
@@ -119,6 +120,7 @@
               <div class="th-act" style="position:static; margin-left:auto;">
                 <button type="button" data-th-fav data-g="{{ favG }}" data-sl="{{ favSl }}" data-n="{{ name }}" data-b="{{ brand }}" data-i="{{ favImg }}" aria-label="В избранное" title="В избранное"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg></button>
                 <button type="button" data-th-cmp data-g="{{ favG }}" data-sl="{{ favSl }}" data-n="{{ name }}" data-b="{{ brand }}" data-i="{{ favImg }}" aria-label="Сравнить" title="Сравнить"><svg viewBox="0 0 24 24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg></button>
+                <button type="button" data-th-share data-g="{{ favG }}" data-sl="{{ favSl }}" data-n="{{ name }}" data-b="{{ brand }}" aria-label="Поделиться" title="Поделиться"><svg viewBox="0 0 24 24"><path d="M12 15V4M8 8l4-4 4 4M5 12v6.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V12" /></svg></button>
               </div>
             </div>
             <h1 style="margin:12px 0 0 0; font-size:26px; font-weight:700; line-height:1.28; letter-spacing:-0.015em;">{{ name }}</h1>
