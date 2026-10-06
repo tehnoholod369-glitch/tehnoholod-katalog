@@ -80,6 +80,7 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=e8476510"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-share.js?v=7ae04008"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F1F5F9;">
@@ -257,6 +258,7 @@
                 <div class="th-act">
                   <button type="button" data-th-fav data-g="{{ c.g }}" data-sl="{{ c.sl }}" data-n="{{ c.name }}" data-b="{{ c.brand }}" data-i="{{ c.img }}" aria-label="В избранное" title="В избранное"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg></button>
                   <button type="button" data-th-cmp data-g="{{ c.g }}" data-sl="{{ c.sl }}" data-n="{{ c.name }}" data-b="{{ c.brand }}" data-i="{{ c.img }}" aria-label="Сравнить" title="Сравнить"><svg viewBox="0 0 24 24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg></button>
+                  <button type="button" data-th-share data-g="{{ c.g }}" data-sl="{{ c.sl }}" data-n="{{ c.name }}" data-b="{{ c.brand }}" aria-label="Поделиться" title="Поделиться"><svg viewBox="0 0 24 24"><path d="M12 15V4M8 8l4-4 4 4M5 12v6.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V12" /></svg></button>
                 </div>
                 <sc-if value="{{ c.isHit }}" hint-placeholder-val="{{ false }}">
                   <div title="{{ c.hitTitle }}" style="position:absolute; top:8px; left:8px; font:600 12px/18px Inter,sans-serif; color:#fff; background:#178841; border-radius:6px; padding:3px 8px; cursor:help;">Хит</div>
