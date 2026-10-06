@@ -242,6 +242,17 @@
           </div>
         </sc-if>
 
+        
+        <sc-if value="{{ isMultisplit }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 20px; background:#E9F4FF; border:1px solid #DCE5F0; border-radius:12px; padding:16px 18px; margin-bottom:14px;">
+            <div style="flex:1 1 320px; min-width:0;">
+              <div style="font-size:16px; font-weight:700; color:#0033A0;">Соберите комплект под вашу планировку</div>
+              <div style="font-size:14px; color:#1A1A1A; line-height:1.5; margin-top:4px;">Выберите марку, укажите комнаты и площади — конструктор подберёт внутренние блоки и наружный модуль и посчитает цену оборудования (монтаж отдельно).</div>
+            </div>
+            <a href="{{ multisplitHref }}" style="flex:none; border:2px solid #0066FF; background:#fff; color:#0066FF; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Открыть конструктор →</a>
+          </div>
+        </sc-if>
+
         <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px;">
           <div style="font-size:14px; color:#606F85;">{{ counterText }}</div>
           <div style="font-size:13px; color:#606F85;">{{ dateNote }}</div>
@@ -2251,6 +2262,7 @@ class Component extends DCLogic {
       isLoading: s.loading,
       isEmpty: !s.loading && list.length === 0,
       multisplitHref: "/multisplit",
+      isMultisplit: s.group === "multisplit",
       emptyTitle: "По этим условиям ничего нет",
       emptyText: "Сбросьте фильтры или напишите в WhatsApp, что нужно, — подберём вручную.",
       hasMore: list.length > visible.length,
