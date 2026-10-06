@@ -801,7 +801,7 @@ class Component extends DCLogic {
   }
 
   componentDidMount() {
-    const p = new URLSearchParams(window.TH_CARD_QS || location.search); // T-006: встраивание в /tproduct
+    const p = new URLSearchParams(location.search);
     const group = p.get("g") || "bytovye";
     const idx = Math.max(0, parseInt(p.get("i") || "0", 10) || 0);
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(index => this.setState({ index })).catch(() => {});
@@ -849,7 +849,7 @@ class Component extends DCLogic {
     this.loadPostSaleProduct(items[next] && items[next].s);
     if (window.TH_LEAD && items[next]) window.TH_LEAD.event({ channel:"карточка товара", ev:"view_item", val:items[next].n || "", brand:items[next].b, type:this.state.group, model:items[next].s });
     const url = location.pathname + "?g=" + this.state.group + "&i=" + next;
-    if (!window.TH_CARD_EMBED) history.replaceState(null, "", url);
+    history.replaceState(null, "", url);
   }
 
   // не подставляем src, пока не известно, где лежит файл — иначе лишний 404 на CDN
@@ -927,7 +927,6 @@ class Component extends DCLogic {
    * что Merchant Center видит цену.
    */
   syncSeo() {
-    if (window.TH_CARD_EMBED) return; // T-006: на /tproduct title/canonical не трогаем
     try {
       const s = this.state;
       const it = (s.items || [])[s.idx];
@@ -1819,8 +1818,8 @@ class Component extends DCLogic {
           // Названия эталонов — ссылки на их карточки: покупатель должен иметь
           // возможность проверить, с чем мы сравниваем, а не верить на слово.
           // Поэтому текст разложен на части: разметка соберёт его со ссылками.
-          cmpFresh: !!(briz && cheapestOnoff),
-          cmpPlain: !!(!briz && years > 0 && cheapestOnoff),
+          cmpFresh: false,
+          cmpPlain: false,
           cmpLead1: briz ? "Дешевле всего собрать то же самое так: " : "Сравнили с ",
           cmpName1: cheapestOnoff ? (cheapestOnoff.b + (cheapestOnoff.s ? " " + cheapestOnoff.s : "")) : "",
           cmpHref1: cheapestOnoff ? ("/tovar?g=" + s.group + "&sl=" + (cheapestOnoff.sl || "")) : "",
@@ -1846,7 +1845,7 @@ class Component extends DCLogic {
               + (priceGap2 > 0 ? "эта модель дороже на " + this.fmt(priceGap2) + " ₸."
                                : "эта модель дешевле на " + this.fmt(-priceGap2) + " ₸.")
             : "",
-          payback: (briz && cheapestOnoff) || years > 0 ? "1" : "",
+          payback: "",
           note: "Расчёт ориентировочный: сезон охлаждения принят за 90 дней, реальный расход зависит от жары, площади и настроек. Тариф поставьте свой — он у каждого дома свой."
         };
       })(),
