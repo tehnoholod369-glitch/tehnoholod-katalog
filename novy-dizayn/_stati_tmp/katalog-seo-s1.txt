@@ -1,0 +1,30 @@
+<div data-th-seo style="background:#F1F5F9; font-family:'Inter','Segoe UI',sans-serif; color:#1A1A1A; padding:32px 24px 44px; margin-top:22px;">
+      <div style="max-width:1248px; box-sizing:border-box; margin:0 auto;">
+      <h1 style="margin:0; font:700 clamp(28px,5vw,40px)/1.2 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Каталог климатической техники в Алматы</h1>
+      <p style="margin:12px 0 0; font:400 16px/24px Inter,sans-serif; color:#1A1A1A; max-width:780px;">Климатическая техника в Алматы от официального дилера: кондиционеры, вентиляция, отопление, камины. Официальная гарантия, монтаж, сервис.</p>
+      <h2 style="margin:32px 0 0; font:700 clamp(24px,4vw,32px)/1.25 Inter,sans-serif; letter-spacing:-0.015em; color:#0033A0;">Что есть в каталоге и как в нём искать</h2>
+
+      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:24px 28px; margin-top:16px; font:400 16px/24px Inter,sans-serif; color:#1A1A1A;">
+        <p style="margin:0;">Каталог собран из шести направлений: <b>кондиционирование</b> — настенные сплит-системы для квартир и офисов, полупромышленные кассетные, канальные и напольно-потолочные, мультисплит на несколько комнат и мобильные моноблоки; <b>вентиляция</b> — приточные и приточно-вытяжные установки с рекуперацией, канальные и вытяжные вентиляторы, осушители; <b>отопление</b> — радиаторы, конвекторы, инфракрасные обогреватели, тепловые пушки и завесы, электрокамины; <b>водонагреватели и водоочистка</b> — накопительные и проточные нагреватели, газовые колонки, фильтры; <b>проектные системы</b> — VRF и мини-VRF, чиллеры и фанкойлы; <b>автономное питание</b> — зарядные станции и солнечные панели.</p>
+
+        <p style="margin:14px 0 0;">Подбор начинается с площади помещения: в фильтрах каталога задаётся площадь, а каталог сам оставляет модели подходящей мощности. Дальше сужаем по типу, бренду и наличию, а у кондиционеров — ещё по Wi-Fi, обогреву зимой и уровню шума. У каждой позиции указано состояние наличия: <b>в наличии</b> — доступность подтверждена на момент последнего обновления каталога; перед оплатой подтверждаем конкретный склад и срок отгрузки. <b>Под заказ</b> — привозим под заявку, срок называем при подтверждении. Цена и характеристики публикуются по последней подтверждённой выгрузке; перед оформлением заказа актуальность цены и наличия подтверждаем; стоимость монтажа в неё не входит и считается отдельно.</p>
+
+        <p style="margin:14px 0 0;">Если модель на витрине не подходит по бюджету, посмотрите <a href="/ucenka" style="color:#0066FF;">уценённую технику</a> — там может быть новое оборудование с повреждённой упаковкой или косметическим дефектом; фактическое состояние указываем в карточке и показываем на фото. Не нашли нужное — напишите в WhatsApp <a href="tel:+77000369369" style="color:#0066FF;">+77&nbsp;000&nbsp;369&nbsp;369</a> с площадью и задачей: подберём и посчитаем.</p>
+      </div>
+
+      <div style="font:400 16px/28px Inter,sans-serif; color:#64748B; margin-top:16px;">
+        Популярные подборки:
+        <a href="https://tehnoholod369.kz/kondicionery-almaty" style="color:#0066FF;">кондиционеры в Алматы</a> ·
+        <a href="https://tehnoholod369.kz/invertornyy-kondicioner-almaty" style="color:#0066FF;">инверторные</a> ·
+        <a href="https://tehnoholod369.kz/kondicioner-s-pritokom" style="color:#0066FF;">с притоком свежего воздуха</a> ·
+        <a href="https://tehnoholod369.kz/kanalnye-kondicionery-almaty" style="color:#0066FF;">канальные</a> ·
+        <a href="https://tehnoholod369.kz/kassetnye-kondicionery-almaty" style="color:#0066FF;">кассетные</a> ·
+        <a href="https://tehnoholod369.kz/mobilnye-kondicionery-almaty" style="color:#0066FF;">мобильные</a> ·
+        <a href="https://tehnoholod369.kz/pritochnaya-ustanovka-almaty" style="color:#0066FF;">приточные установки</a> ·
+        <a href="https://tehnoholod369.kz/radiatory-otopleniya-almaty" style="color:#0066FF;">радиаторы отопления</a> ·
+        <a href="https://tehnoholod369.kz/teplovye-zavesy-almaty" style="color:#0066FF;">тепловые завесы</a> ·
+        <a href="https://tehnoholod369.kz/nakopitelnyy-vodonagrevatel-almaty" style="color:#0066FF;">накопительные водонагреватели</a>.
+        <br />Монтаж и сервис — <a href="/uslugi" style="color:#0066FF;">монтаж через АРТЕЛЬ с заранее согласованным составом работ и условиями гарантии</a>, юридическим лицам — <a href="/b2b" style="color:#0066FF;">счёт с НДС и договор</a>, условия обмена — на странице <a href="/vozvrat" style="color:#0066FF;">«Возврат и обмен»</a>.
+      </div>
+      </div>
+    </div>
