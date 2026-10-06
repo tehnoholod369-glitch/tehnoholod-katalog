@@ -110,18 +110,6 @@
                 </div>
               </sc-for>
             </div>
-            <!-- T-006, 07.10.2026: видеообзор под фото: одно место, и только если ссылка на видео есть в данных (det.vd) -->
-            <sc-if value="{{ hasVideoEmbed }}" hint-placeholder-val="{{ false }}">
-              <div style="margin-top:16px;">
-                <div style="font-size:15px; font-weight:700; margin-bottom:8px;">Видеообзор</div>
-                <div style="position:relative; aspect-ratio:16/9; border-radius:12px; overflow:hidden; background:#0B1B33; border:1px solid #DCE5F0;">
-                  <iframe src="{{ videoEmbed }}" title="Видеообзор" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="position:absolute; left:0; top:0; width:100%; height:100%; border:0;"></iframe>
-                </div>
-              </div>
-            </sc-if>
-            <sc-if value="{{ hasVideoLinkOnly }}" hint-placeholder-val="{{ false }}">
-              <a href="{{ videoHref }}" target="_blank" rel="noreferrer" style="display:inline-block; margin-top:14px; font-size:14px; font-weight:600; color:#0066FF;">Смотреть видеообзор →</a>
-            </sc-if>
           </div>
 
           <div style="display:flex; flex-direction:column;">
@@ -394,6 +382,21 @@
                   </sc-for>
                 </div>
               </div>
+              <div>
+                <div style="font-family:'Inter',sans-serif; font-size:16px; font-weight:700;">Видеообзор</div>
+                <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
+                  <a href="{{ videoHref }}" target="_blank" rel="noreferrer" style="margin-top:12px; border:1px solid #DCE5F0; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center; color:#0066FF;" style-hover="border-color:#0066FF; background:#F5FAFF;">
+                    <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#0066FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
+                    <div style="font-size:15px; font-weight:700;">Смотреть обзор модели</div>
+                    <div style="font-size:13px; color:#606F85;">Откроется в новой вкладке</div>
+                  </a>
+                </sc-if>
+                <div style="display:{{ videoStubDisplay }}; margin-top:12px; border:2px dashed #B9DBF7; border-radius:12px; background:#F9FBFE; aspect-ratio:16/9; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center;">
+                  <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#0066FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" /></svg>
+                  <div style="font-size:14px; font-weight:600; color:#1A1A1A;">Место под видео с вашего канала</div>
+                  <div style="font-size:13px; color:#606F85; line-height:1.5; max-width:300px;">Пришлите ссылку на обзор — встрою плеер. Канал: <a href="https://www.youtube.com/@Tehnoholod369" target="_blank" rel="noreferrer">@Tehnoholod369</a></div>
+                </div>
+              </div>
             </div>
           </sc-if>
 
@@ -477,11 +480,12 @@
           </div>
         </div>
 
+        <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:0 24px 64px 24px;">
         <sc-if value="{{ hasAnalogs }}" hint-placeholder-val="{{ false }}">
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
             <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap;">
               <div>
-                <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Аналоги других брендов</h2>
+                <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Аналоги других брендов</h2>
                 <div style="font-size:14px; color:#606F85; line-height:1.55; margin-top:6px; max-width:760px;">{{ analogsNote }}</div>
               </div>
             </div>
@@ -508,7 +512,7 @@
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
             <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;">
               <div>
-                <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Сопутствующие товары</h2>
+                <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Сопутствующие товары</h2>
                 <div style="font-size:14px; color:#606F85; line-height:1.55; margin-top:6px; max-width:760px;">{{ accNote }}</div>
               </div>
               <a href="{{ accAllHref }}" style="font-size:13px; font-weight:700; color:#0066FF;">{{ accAllLabel }}</a>
@@ -535,7 +539,7 @@
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
           <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;">
             <div>
-              <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Отзывы</h2>
+              <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Отзывы</h2>
               <sc-if value="{{ rv.none }}" hint-placeholder-val="{{ true }}">
                 <div style="font-size:14px; color:#606F85; line-height:1.55; margin-top:6px;"><a href="/otzyvy">Все отзывы о компании →</a> На Kaspi.kz отзывов на эту модель пока нет. Подтверждённые отзывы наших покупателей показываем отдельно ниже, если они есть.</div>
               </sc-if>
@@ -618,7 +622,7 @@
 
         <div style="margin-top:24px;">
           <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap;">
-            <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em;">Другие модели {{ brand }}</h2>
+            <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Другие модели {{ brand }}</h2>
             <a href="{{ groupHref }}" style="font-size:14px; font-weight:700; color:#0066FF;">Вся группа →</a>
           </div>
           <div ref="{{ relRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr)); gap:14px; margin-top:14px;">
@@ -633,6 +637,7 @@
               </div>
             </sc-for>
           </div>
+        </div>
         </div>
       </div>
     </sc-if>
@@ -794,7 +799,7 @@ class Component extends DCLogic {
   }
 
   componentDidMount() {
-    const p = new URLSearchParams(window.TH_CARD_QS || location.search); // T-006, 07.10.2026: встраивание карточки в /tproduct/
+    const p = new URLSearchParams(location.search);
     const group = p.get("g") || "bytovye";
     const idx = Math.max(0, parseInt(p.get("i") || "0", 10) || 0);
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(index => this.setState({ index })).catch(() => {});
@@ -842,7 +847,7 @@ class Component extends DCLogic {
     this.loadPostSaleProduct(items[next] && items[next].s);
     if (window.TH_LEAD && items[next]) window.TH_LEAD.event({ channel:"карточка товара", ev:"view_item", val:items[next].n || "", brand:items[next].b, type:this.state.group, model:items[next].s });
     const url = location.pathname + "?g=" + this.state.group + "&i=" + next;
-    if (!window.TH_CARD_EMBED) history.replaceState(null, "", url);
+    history.replaceState(null, "", url);
   }
 
   // не подставляем src, пока не известно, где лежит файл — иначе лишний 404 на CDN
@@ -921,7 +926,6 @@ class Component extends DCLogic {
    */
   syncSeo() {
     try {
-      if (window.TH_CARD_EMBED) return;
       const s = this.state;
       const it = (s.items || [])[s.idx];
       if (!it || !it.n) return;
@@ -1232,7 +1236,7 @@ class Component extends DCLogic {
     // «Документы» и «Гарантия» — сдвиг ломал бы их молча.
     const TABS = [{ k: "specs", label: "Характеристики" }, { k: "desc", label: "Описание" }]
       .concat(m ? [{ k: "mount", label: m.tab }] : [])
-      .concat([{ k: "docs", label: "Документы" }]) // T-006, 07.10.2026: видео вынесено под фото, во вкладке остались только документы
+      .concat([{ k: "docs", label: "Документы и видео" }])
       // у расходника вкладки гарантии нет: ни срока производителя, ни сервисного центра
       // у сменного фильтра не существует, а заглушки вместо них — пустое место на витрине
       .concat(it.exp ? [] : [{ k: "warranty", label: "Гарантия и сервис" }])
@@ -1587,20 +1591,7 @@ class Component extends DCLogic {
         + ": так сохраняется гарантия производителя. Выезд сертифицированной бригады по Алматы и области.",
       // ссылка на инструкцию и обзор приходит из данных, если она там есть
       hasVideo: !!det.vd,
-      // T-006, 07.10.2026: видеообзор под фото
-      videoEmbed: (function (v) {
-        v = String(v || "");
-        var m = v.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:[^#]*&)?v=|embed\/|shorts\/))([\w-]{6,})/);
-        if (m) return "https://www.youtube.com/embed/" + m[1] + "?rel=0";
-        m = v.match(/rutube\.ru\/(?:video|play\/embed)\/([0-9a-f]{16,})/i);
-        return m ? "https://rutube.ru/play/embed/" + m[1] : "";
-      })(det.vd),
-      hasVideoEmbed: /(youtu\.be\/|youtube\.com\/|rutube\.ru\/(video|play\/embed)\/)/i.test(String(det.vd || "")),
-      hasVideoLinkOnly: !!det.vd && !/(youtu\.be\/|youtube\.com\/|rutube\.ru\/(video|play\/embed)\/)/i.test(String(det.vd || "")),
-      // T-006, 07.10.2026: заглушка «Место под видео с вашего канала — пришлите ссылку, встрою плеер» показывалась клиенту
-      // у каждой карточки без видео (в мастере видео есть у 110 из 1 043 позиций). Служебный текст клиенту не показываем:
-      // блок появится сам, когда в данных будет ссылка (det.vd).
-      videoStubDisplay: "none",
+      videoStubDisplay: det.vd ? "none" : "flex",
       videoHref: det.vd || "",
       manualHref: det.mn || "",
       hasManual: !!det.mn,
