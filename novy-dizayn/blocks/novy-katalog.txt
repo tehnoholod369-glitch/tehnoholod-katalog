@@ -508,7 +508,7 @@ class Component extends DCLogic {
     // размер очага для каминов раскрыт сразу — это первый вопрос покупателя,
     // как расход воздуха у вентиляции и литраж у бойлера (25.08.2026)
     const OPEN_BY_DEFAULT = window.innerWidth >= 860
-      ? ["brand", "area", "air", "vol", "heat", "diag", "fireline", "dry", "mezh", "watt", "price", "pick", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "ohkw", "ohtype", "ohctrl", "wconn", "wcase", "wbar", "wmic"] : [];
+      ? ["brand", "area", "air", "vol", "heat", "diag", "fireline", "dry", "mezh", "watt", "price", "pick", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "ohkw", "ohtype", "ohctrl", "wconn", "wcase", "wbar", "wmic", "eff"] : [] // T-006, 07.10.2026: класс энергоэффективности раскрыт сразу — свёрнутая секция читалась как «фильтра нет»;
     const open = this.state.openF || {};
     const shownAll = this.state.moreF || {};
     const queries = this.state.qF || {};
