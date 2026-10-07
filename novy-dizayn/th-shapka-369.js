@@ -303,7 +303,7 @@
   function подключитьИзбранное() {
     if (document.querySelector('script[src*="th-izbrannoe.js"]') || window.THFav) return;
     var s = document.createElement("script");
-    s.src = CDN + "th-izbrannoe.js?v=20261005";
+    s.src = CDN + "th-izbrannoe.js?v=20261007";
     document.head.appendChild(s);
   }
   function плашка() {
