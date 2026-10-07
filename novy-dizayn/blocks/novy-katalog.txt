@@ -79,7 +79,7 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=e8476510"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=6ae050cd"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-share.js?v=7ae04008"></script>
 </helmet>
 
@@ -435,6 +435,8 @@ class Component extends DCLogic {
     const wantSeries = p.get("series");
     if (wantSeries) this.pendingSeries = wantSeries;
     this.pendingStock = p.get("stock") || "";
+    // ?sale=1 — ссылка со страницы «Акции»: сразу включённый чип «Акция» в секции «Отбор» (07.10.2026)
+    if (p.get("sale") === "1") this.setState({ onlySale: true, onlyPick: false });
     // 06.10.2026: ссылки со сценарной таблицы водонагревателей ведут сюда с готовым фильтром: ?fv=vol:30 л (полоса фасета) и stock=in
     this.pendingFv = p.get("fv") || "";
     this.pendingFvStock = p.get("stock") === "in";
@@ -506,7 +508,7 @@ class Component extends DCLogic {
     // размер очага для каминов раскрыт сразу — это первый вопрос покупателя,
     // как расход воздуха у вентиляции и литраж у бойлера (25.08.2026)
     const OPEN_BY_DEFAULT = window.innerWidth >= 860
-      ? ["brand", "area", "air", "vol", "heat", "diag", "fireline", "dry", "mezh", "watt", "price", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "ohkw", "ohtype", "ohctrl", "wconn", "wcase", "wbar", "wmic"] : [];
+      ? ["brand", "area", "air", "vol", "heat", "diag", "fireline", "dry", "mezh", "watt", "price", "pick", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "ohkw", "ohtype", "ohctrl", "wconn", "wcase", "wbar", "wmic"] : [];
     const open = this.state.openF || {};
     const shownAll = this.state.moreF || {};
     const queries = this.state.qF || {};
