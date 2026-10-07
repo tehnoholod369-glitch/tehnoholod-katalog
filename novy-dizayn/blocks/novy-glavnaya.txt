@@ -158,7 +158,7 @@
         </div>
         <div data-th-desk style="font-size:13px; color:#606F85; line-height:1.5; margin-top:10px;">{{ proektNote }}</div>
         <div data-th-mob style="font-size:12px; color:#606F85; line-height:1.5; margin-top:12px;">На монтажные работы нового оборудования через АРТЕЛЬ — гарантия 12 месяцев; оборудование идёт с гарантией производителя.</div>
-        <div style="font-size:12px; color:#606F85; line-height:1.5; margin-top:12px;">Сайт работает в тестовом режиме и продолжает наполняться. Не нашли нужное или заметили неточность — напишите в <a href="https://wa.me/77000369369" style="color:#9FC4EA; text-decoration:underline;">WhatsApp</a>, поможем и поправим.</div>
+        <div style="font-size:12px; color:#606F85; line-height:1.5; margin-top:12px;">Сайт работает в тестовом режиме и продолжает наполняться. Не нашли нужное или заметили неточность — напишите в <a href="https://wa.me/77000369369" style="color:rgba(255,255,255,0.88); text-decoration:underline;">WhatsApp</a>, поможем и поправим.</div>
       </div>
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:16px;">
@@ -172,14 +172,14 @@
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M6.5 3.5h3l1.5 4-2 1.4a12 12 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z" /></svg>
             <span style="display:flex; flex-direction:column;">
               <span style="font-family:'Inter',sans-serif; font-size:18px; font-weight:700;">+77 000 369 369</span>
-              <span style="font-size:12px; color:#9FB0C4;">Позвонить — ответим на вопросы по подбору</span>
+              <span style="font-size:12px; color:rgba(255,255,255,0.88);">Позвонить — ответим на вопросы по подбору</span>
             </span>
           </a>
-          <a href="https://wa.me/77000369369" style="display:flex; align-items:center; gap:12px; background:#E7F7EF; border:1px solid #BFE6D4; color:#0B6B45; border-radius:12px; padding:14px 18px;">
+          <a href="https://wa.me/77000369369" style="display:flex; align-items:center; gap:12px; background:#E7F7EF; border:1px solid #BFE6D4; color:#178841; border-radius:12px; padding:14px 18px;">
             <svg viewBox="0 0 24 24" width="22" height="22" style="display:block; flex:none;"><path d="M12 2.5a9.4 9.4 0 0 0-8 14.3L2.5 21.5l4.8-1.4A9.4 9.4 0 1 0 12 2.5z" fill="#25D366" /><path d="M8.6 7.4c.3-.1.7 0 .9.4l.8 1.5c.1.3.1.6-.1.8l-.5.6c-.2.2-.2.4-.1.6.5 1 1.3 1.8 2.4 2.3.2.1.5 0 .6-.1l.6-.5c.2-.2.5-.2.8-.1l1.5.8c.4.2.5.6.4.9-.3.9-1.3 1.5-2.3 1.4-3-.3-5.6-2.8-5.9-5.9-.1-1 .5-2 1.4-2.3z" fill="#fff" /></svg>
             <span style="display:flex; flex-direction:column;">
               <span style="font-family:'Inter',sans-serif; font-size:17px; font-weight:700;">Написать в WhatsApp</span>
-              <span style="font-size:12px; color:#2C7A57;">Пришлите фото стены — скажем, что подойдёт</span>
+              <span style="font-size:12px; color:#178841;">Пришлите фото стены — скажем, что подойдёт</span>
             </span>
           </a>
         </div>
@@ -255,7 +255,7 @@
       <div data-th-hits id="hity" style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; margin-top:20px; scroll-margin-top:12px;">
         <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;">
           <div>
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#C21610;">ХИТЫ СЕЗОНА</div>
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#D73D3D;">ХИТЫ СЕЗОНА</div>
             <h2 style="margin:6px 0 0 0; font-family:'Inter',sans-serif; font-size:24px; font-weight:800; letter-spacing:-0.015em;">{{ hitsTitle }}</h2>
           </div>
           <a href="/katalog" style="font-size:13px; font-weight:700; color:#0066FF;">Весь каталог →</a>
@@ -272,7 +272,7 @@
             <div data-th-hero-cta style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
               <a href="{{ heroHref }}" style="background:#E81C1C; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;"><span data-th-desk>Смотреть в каталоге →</span><span data-th-mob>В каталог →</span></a>
               <sc-if value="{{ heroHasArticle }}" hint-placeholder-val="{{ true }}">
-                <a href="{{ heroArticleHref }}" style="border:2px solid #E81C1C; color:#C21610; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Как выбрать →</a>
+                <a href="{{ heroArticleHref }}" style="border:2px solid #E81C1C; color:#D73D3D; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">Как выбрать →</a>
               </sc-if>
             </div>
           </div>
@@ -288,7 +288,7 @@
             <a href="{{ h.href }}" style="background:#fff; border:1px solid #F3B7AE; border-radius:12px; padding:14px 16px; display:flex; flex-direction:column; gap:6px; color:#1A1A1A;">
               <span style="font-family:'Inter',sans-serif; font-size:16px; font-weight:700; line-height:1.3;">{{ h.title }}</span>
               <span style="font-size:12px; color:#606F85; line-height:1.45;">{{ h.subs }}</span>
-              <span style="font-size:13px; font-weight:700; color:#C21610; margin-top:auto;">{{ h.link }}</span>
+              <span style="font-size:13px; font-weight:700; color:#D73D3D; margin-top:auto;">{{ h.link }}</span>
             </a>
           </sc-for>
         </div>
@@ -311,9 +311,9 @@
 
     <a href="/proekt" style="display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px; background:#0033A0; border-radius:16px; padding:22px 24px; margin-top:20px; color:#fff;">
       <div style="flex:1; min-width:260px;">
-        <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#7FC4F2;">РАСЧЁТ ПОД ОБЪЕКТ</div>
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:rgba(255,255,255,0.88);">РАСЧЁТ ПОД ОБЪЕКТ</div>
         <h2 style="margin:6px 0 0 0; font-family:'Inter',sans-serif; font-size:20px; font-weight:800;">Оборудование под объект: VRF, чиллеры, фанкойлы, ПВУ</h2>
-        <div style="font-size:14px; color:#D5E9FA; line-height:1.6; margin-top:6px;">Состав и цена считаются по теплопритокам и схеме объекта, а не складываются из штучных цен. Отдельные модули этих серий есть и в каталоге — там их можно купить штукой по цене.</div>
+        <div style="font-size:14px; color:rgba(255,255,255,0.88); line-height:1.6; margin-top:6px;">Состав и цена считаются по теплопритокам и схеме объекта, а не складываются из штучных цен. Отдельные модули этих серий есть и в каталоге — там их можно купить штукой по цене.</div>
       </div>
       <div style="font-size:14px; font-weight:700; color:#fff; background:#0066FF; border-radius:8px; padding:12px 18px; white-space:nowrap;">{{ proektLink }}</div>
     </a>
@@ -551,7 +551,7 @@ class Component extends DCLogic {
     };
     return сез.map(a => ({
       title: a.t, sub: коротко(a.d), href: "/" + a.s,
-      tag: this.названиеГруппы(a.g) || "Сезон", tagColor: "#C21610", tagBg: "#FDECEA"
+      tag: this.названиеГруппы(a.g) || "Сезон", tagColor: "#D73D3D", tagBg: "#FDECEA"
     })).concat(один.map(a => ({
       title: a.t, sub: коротко(a.d), href: "/" + a.s,
       tag: "Всегда актуально", tagColor: "#0066FF", tagBg: "#E9F4FF"
