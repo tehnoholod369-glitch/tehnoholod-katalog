@@ -41,4 +41,11 @@
   var n = 0;
   var t = setInterval(function () { шаг(); if ((ГОТОВО.меню && ГОТОВО.подвал) || ++n > 40) clearInterval(t); }, 400);
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", шаг); else шаг();
+
+  // Фото FreshIN на /akcii: белый корпус с multiply сливался с голубым фоном (07.10.2026)
+  (function () {
+    var st = document.createElement("style");
+    st.textContent = ".ak-fr-ph img{mix-blend-mode:normal !important}";
+    document.head.appendChild(st);
+  })();
 })();
