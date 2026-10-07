@@ -160,7 +160,7 @@
               </div>
               <div style="font-size:12px; color:#64748B; margin-top:5px;">сертификация ИП «ТехноХолод», реестр «Сервис-карта 369»<sc-if value="{{ c.canVerify }}" hint-placeholder-val="{{ true }}"> · <a href="{{ c.verifyHref }}" style="color:#0066FF; font-weight:600;">проверить сертификат</a></sc-if></div>
             </div>
-            <div style="text-align:right; flex:none; width:152px;">
+            <div style="text-align:right; flex:none; width:176px;">
               <sc-if value="{{ c.hasRating }}" hint-placeholder-val="{{ true }}">
                 <div style="font-family:Inter,sans-serif; font-size:26px; font-weight:800; letter-spacing:-0.02em; line-height:1;">{{ c.rating }}</div>
                 <div style="font-size:12px; color:#64748B; margin-top:4px; white-space:nowrap;">{{ c.votesLabel }}</div>
