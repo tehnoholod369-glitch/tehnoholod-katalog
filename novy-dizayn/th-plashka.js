@@ -158,3 +158,12 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function () { setTimeout(пуск, ЗАДЕРЖКА); });
   else setTimeout(пуск, ЗАДЕРЖКА);
 })();
+
+/* 07.10.2026: пункт «Акции» в меню и подвале всех страниц — отдельным файлом th-akcii.js */
+(function () {
+  if (document.querySelector('script[src*="th-akcii.js"]')) return;
+  var s = document.createElement("script");
+  s.src = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-akcii.js?v=1";
+  s.async = true;
+  (document.head || document.documentElement).appendChild(s);
+})();
