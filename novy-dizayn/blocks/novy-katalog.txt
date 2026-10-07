@@ -375,7 +375,7 @@ class Component extends DCLogic {
   // Один список ключей фасетов на три места: старт, смена группы и «Сбросить».
   // Раньше он был переписан трижды — новый фасет забывали сбросить, и он тянулся
   // за пользователем в другую группу (25.08.2026)
-  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "colorAc", "korp", "watt", "pkw", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "pit", "thermo", "stock"];
+  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "colorAc", "korp", "watt", "pkw", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "pit", "thermo", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "stock"];
   facetsOff() {
     const o = { feat: "", q: "", qF: {} };
     (this.facetKeys || []).forEach(k => { o[k] = "all"; });
@@ -1094,6 +1094,30 @@ class Component extends DCLogic {
       return nums ? Math.max.apply(null, nums.map(n => parseFloat(n.replace(",", ".")))) : 0;
     };
     const barOf = x => specOf(x, /^макс\.? рабочее давление/i).trim();
+    // ─── Фасеты водоочистки, увлажнителей, водяных тепловентиляторов и автономного питания (07.10.2026) ───
+    // Только поля, которые есть в характеристиках у большинства моделей подгруппы; нет данных — в фильтр не попадает.
+    const stagesOf = x => {
+      const n = numIn(specOf(x, /^ступеней очистки/i));
+      return n >= 2 && n <= 9 ? (n === 5 || n >= 5 ? n + " ступеней" : n + " ступени") : "";
+    };
+    const cylOf = x => {
+      const n = numIn(specOf(x, /^количество цилиндров/i));
+      return n >= 1 && n <= 9 ? (n === 1 ? "1 цилиндр" : n + " цилиндра") : "";
+    };
+    const hhtOf = x => {
+      const v = specOf(x, /^рекомендуемая высота установки/i).toLowerCase();
+      if (/более 6/.test(v)) return "Более 6 м";
+      if (/от 4 до 6/.test(v)) return "От 4 до 6 м";
+      if (/до 4/.test(v)) return "До 4 м";
+      return "";
+    };
+    // производительность по пару у увлажнителей: кг/ч или л/ч, «в сутки» и расход воды сюда не входят
+    const humCapOf = x => /(кг|л)\s*\/\s*(ч|час)/i.test(specOf(x, /^производительность$/i)) ? numIn(specOf(x, /^производительность$/i)) : 0;
+    const hKwOf = x => /кВт/i.test(specOf(x, /^тепловая мощность$/i)) ? numIn(specOf(x, /^тепловая мощность$/i)) : 0;
+    const hAirOf = x => numIn(specOf(x, /^производительность по воздуху/i));
+    // ёмкость в Вт·ч есть у станций и дополнительных батарей; у повербанков она в мА·ч — их не смешиваем
+    const capWhOf = x => (x.sub === "Зарядная станция" || x.sub === "Дополнительная батарея") ? numIn(specOf(x, /^[её]мкость/i)) : 0;
+    const outWOf = x => x.sub === "Зарядная станция" ? numIn(specOf(x, /^выходная мощность/i)) : 0;
     // Очистка воздуха: в мастере пять написаний, из них «нет» и «уточнить» — это
     // отсутствие функции и отсутствие данных. В фильтр идут только те три, что
     // что-то утверждают, и подписаны они словами покупателя, а не значением ячейки.
@@ -1276,6 +1300,15 @@ class Component extends DCLogic {
     };
 
     const VALUE_FACETS = [
+      { key: "stages", title: "Ступеней очистки", of: stagesOf, only: ["vodoochistka"],
+        order: ["3 ступени", "4 ступени", "5 ступеней"],
+        note: "Из характеристик модели: сколько фильтров проходит вода" },
+      { key: "cyl", title: "Цилиндров", of: cylOf, only: ["uvlazhniteli"],
+        order: ["1 цилиндр", "2 цилиндра", "4 цилиндра"],
+        note: "Из характеристик парогенератора" },
+      { key: "hht", title: "Высота установки", of: hhtOf, only: ["vodyanye-teploventilyatory"],
+        order: ["До 4 м", "От 4 до 6 м", "Более 6 м"],
+        note: "Рекомендация производителя по высоте подвеса" },
       { key: "bar", title: "Макс. рабочее давление", of: barOf, only: ["radiatory"],
         order: ["20 бар", "25 бар", "30 бар"],
         note: "По паспорту поставщика. В многоэтажке давление в стояке выше, чем в частном доме, и запас лишним не бывает" },
@@ -1399,6 +1432,21 @@ class Component extends DCLogic {
       { key: "fireline", title: "Длина линии огня", of: fireLineOf, only: ["kaminy"],
         bands: [["до 25 см", 1, 25], ["25–45 см", 26, 45], ["45 см и больше", 46, 999]],
         note: "Размер пламени у биокамина: чем длиннее линия огня, тем крупнее очаг и заметнее пламя" },
+      { key: "humcap", title: "Производительность по пару", of: humCapOf, only: ["uvlazhniteli"],
+        bands: [["до 5 кг/ч", 0.1, 5], ["5–10 кг/ч", 5.01, 10], ["10–25 кг/ч", 10.01, 25], ["25 кг/ч и больше", 25.01, 9999]],
+        note: "Сколько пара даёт увлажнитель в час по паспорту" },
+      { key: "hkw", title: "Тепловая мощность", of: hKwOf, only: ["vodyanye-teploventilyatory"],
+        bands: [["до 15 кВт", 0.1, 15], ["15–30 кВт", 15.01, 30], ["30–60 кВт", 30.01, 60], ["60 кВт и больше", 60.01, 9999]],
+        note: "Паспортная тепловая мощность при параметрах теплоносителя производителя" },
+      { key: "hair", title: "Производительность по воздуху", of: hAirOf, only: ["vodyanye-teploventilyatory"],
+        bands: [["до 2 000 м³/ч", 1, 2000], ["2 000–4 000 м³/ч", 2001, 4000], ["4 000–6 000 м³/ч", 4001, 6000], ["больше 6 000 м³/ч", 6001, 99999]],
+        note: "Сколько воздуха прогоняет тепловентилятор за час" },
+      { key: "capwh", title: "Ёмкость", of: capWhOf, only: ["avtonomnoe-pitanie"],
+        bands: [["до 500 Вт·ч", 1, 500], ["500–1 000 Вт·ч", 501, 1000], ["1 000–2 000 Вт·ч", 1001, 2000], ["2 000 Вт·ч и больше", 2001, 99999]],
+        note: "Сколько энергии хранит станция или батарея" },
+      { key: "outw", title: "Выходная мощность", of: outWOf, only: ["avtonomnoe-pitanie"],
+        bands: [["до 500 Вт", 1, 500], ["500–1 000 Вт", 501, 1000], ["1 000–2 000 Вт", 1001, 2000], ["2 000 Вт и больше", 2001, 99999]],
+        note: "Какую нагрузку станция потянет одновременно (первое число из паспорта, без режима X-Boost)" },
       { key: "dry", title: "Производительность осушения", of: dryOf, only: ["osushiteli"],
         bands: [["до 20 л/сут", 1, 20], ["20–40 л/сут", 21, 40], ["40–80 л/сут", 41, 80], ["80 л/сут и больше", 81, 99999]],
         note: "Сколько литров влаги осушитель убирает за сутки по паспорту" },
@@ -1458,7 +1506,7 @@ class Component extends DCLogic {
     });
     // порядок в панели задаём явно, а не тем, в каком массиве объявлен фасет:
     // размер — первый вопрос покупателя, цвет — последний
-    const FACET_ORDER = ["btu", "coolkw", "doorw", "zavkw", "diag", "fireline", "dry", "mezh", "watt", "pkw", "conn", "sect", "height", "mat",
+    const FACET_ORDER = ["btu", "coolkw", "humcap", "hkw", "hair", "capwh", "outw", "stages", "cyl", "hht", "doorw", "zavkw", "diag", "fireline", "dry", "mezh", "watt", "pkw", "conn", "sect", "height", "mat",
       "tank", "ctrl", "orient", "wave", "mount", "warm", "glass", "burn", "clean", "recup", "seg",
       "install", "thermo", "fuel", "power", "motor", "duct",
       "noise", "cold", "press", "bar", "ip", "color", "colorRad"];
