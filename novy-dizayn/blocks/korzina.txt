@@ -13,7 +13,7 @@
   h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
   a { color: #0066FF; text-decoration: none; }
   a:hover { color: #0052D6; }
-  input, textarea { font-family: inherit; }
+  input, textarea, select, button { font-family: inherit; }
   /* Две колонки — только пока помещаются. Инлайн-грид без медиазапроса на 375 px
      не схлопывался: правая колонка держала 280 px, левой доставалось 47 px, и
      карточки товара вместе с кнопкой «Убрать из заказа» превращались в полоску. */
