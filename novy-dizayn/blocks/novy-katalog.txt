@@ -211,9 +211,9 @@
                 </div>
                 <div style="display:flex; flex-direction:column; gap:1px; margin-top:8px;">
                   <sc-for list="{{ g.options }}" as="o" hint-placeholder-count="4">
-                    <div onClick="{{ o.pick }}" style="display:flex; align-items:center; gap:10px; padding:7px 2px; cursor:pointer; font:400 14px/20px Inter,sans-serif;">
+                    <div onClick="{{ o.pick }}" style="display:flex; align-items:center; gap:10px; padding:7px 2px; cursor:{{ o.cur }}; font:400 14px/20px Inter,sans-serif;">
                       <span style="width:18px; height:18px; flex:none; border:1.5px solid {{ o.boxBd }}; background:{{ o.boxBg }}; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#fff; font:700 12px/1 Inter,sans-serif;">{{ o.tick }}</span>
-                      <span style="flex:1; min-width:0; color:#1A1A1A; font-weight:{{ o.fw }};">{{ o.label }}</span>
+                      <span style="flex:1; min-width:0; color:{{ o.lbl }}; font-weight:{{ o.fw }};">{{ o.label }}</span>
                       <span style="font-size:13px; color:#606F85; font-variant-numeric:tabular-nums;">{{ o.sub }}</span>
                     </div>
                   </sc-for>
@@ -721,7 +721,7 @@ class Component extends DCLogic {
 
   chip(active, label, onPick, sub) {
     return {
-      label, pick: onPick, sub: sub || "",
+      label, pick: onPick, sub: sub || "", lbl: "#1A1A1A", cur: "pointer",
       border: active ? "#0066FF" : "#DCE5F0",
       bg: active ? "#E9F4FF" : "#fff",
       fg: active ? "#0066FF" : "#606F85",
@@ -1977,7 +1977,7 @@ class Component extends DCLogic {
       }));
     // T-006, 07.10.2026: в списке брендов стоят ВСЕ бренды раздела; те, у кого под выбранные фильтры моделей нет, показаны бледными со счётом 0
     // и не нажимаются (раньше они пропадали, и казалось, что Ballu, Electrolux и остальных в каталоге нет)
-    const allBrandsSorted = (meta.brandList || []).slice().sort((a, b) => rank(a) - rank(b) || a.localeCompare(b, "ru"));
+    const allBrandsSorted = (meta.brandList || []).filter(b => !/^без марки$/i.test(b)).slice().sort((a, b) => rank(a) - rank(b) || a.localeCompare(b, "ru"));
     const brandOptions = ["all"].concat(allBrandsSorted).map(b => {
       const n = b === "all" ? exceptBrand.length : (brandCount[b] || 0);
       const c = this.chip(
@@ -1986,7 +1986,7 @@ class Component extends DCLogic {
         () => { if (n || b === "all" || s.brand === b) this.setState({ brand: b, shown: 12 }); },
         String(n)
       );
-      if (b !== "all" && !n && s.brand !== b) { c.fg = "#94A3B8"; c.border = "#E9EFF7"; c.boxBg = "#F1F5F9"; c.boxBd = "#E2E8F0"; }
+      if (b !== "all" && !n && s.brand !== b) { c.fg = "#94A3B8"; c.border = "#E9EFF7"; c.boxBg = "#F1F5F9"; c.boxBd = "#E2E8F0"; c.lbl = "#94A3B8"; c.cur = "default"; }
       return c;
     });
 
