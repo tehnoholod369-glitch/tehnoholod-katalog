@@ -8,6 +8,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
+  .th-dirs { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:16px; margin-top:20px; align-items:stretch; }
+  @media (max-width:1099px) { .th-dirs { grid-template-columns:repeat(2, minmax(0, 1fr)); } .th-dirs > :nth-child(5) { grid-column:1 / -1; } }
+  @media (max-width:639px) { .th-dirs { grid-template-columns:1fr; } }
+  .th-strip { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:16px; margin-top:16px; align-items:stretch; }
+  @media (max-width:899px) { .th-strip { grid-template-columns:1fr; } }
   body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
   h1, h2, h3 { font-family: "Inter", sans-serif; }
   a { color: #0066FF; text-decoration: none; }
@@ -202,7 +207,7 @@
       </div>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr)); gap:16px; margin-top:20px;">
+    <div class="th-dirs">
       <sc-for list="{{ directionsList }}" as="d" hint-placeholder-count="4">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:20px; display:flex; flex-direction:column; gap:9px; color:#1A1A1A;">
           <div ref="{{ d.previewRef }}" style="position:relative; background:#F9FBFE; border-radius:12px; height:124px; display:flex; align-items:center; justify-content:center; padding:8px; overflow:hidden;">
@@ -317,18 +322,26 @@
       </div>
       <div style="font-size:14px; font-weight:700; color:#fff; background:#0066FF; border-radius:8px; padding:12px 18px; white-space:nowrap;">{{ proektLink }}</div>
     </a>
-    
-    <a href="/ucenka" style="display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px; background:#FFF6E9; border:1px solid #F3D9B0; border-radius:16px; padding:22px 24px; margin-top:16px; color:#1A1A1A;">
-      <div style="flex:1; min-width:260px;">
-        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#B25200;">УЦЕНЁННЫЙ ТОВАР</div>
-          <div style="font-size:12px; font-weight:700; color:#B25200; background:#FBE7CE; border-radius:5px; padding:4px 9px;">раздел в разработке</div>
-        </div>
-        <h2 style="margin:6px 0 0 0; font-family:'Inter',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.015em;">Новая техника с повреждённой упаковкой или царапиной — дешевле</h2>
-        <div style="font-size:14px; color:#606F85; line-height:1.6; margin-top:6px;">Собираем раздел штучных позиций: у каждой будет описан дефект и снят на фото именно тот аппарат, который вы купите. Ищете конкретную модель — напишите, скажем, есть ли на неё уценённый экземпляр.</div>
-      </div>
-      <div style="font-size:14px; font-weight:700; color:#fff; background:#B25200; border-radius:8px; padding:12px 18px; white-space:nowrap;">Что это →</div>
-    </a>
+    <div class="th-strip">
+      <a href="/akcii" style="display:flex; flex-direction:column; gap:8px; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; color:#1A1A1A; box-sizing:border-box;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#E81C1C;">АКЦИИ</div>
+        <h2 style="margin:0; font-family:'Inter',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.015em; color:#0033A0; line-height:1.25;">Специальные условия поставщиков</h2>
+        <div style="font-size:14px; color:#606F85; line-height:1.6;">Скидки на отдельные модели кондиционеров. Размер скидки и срок указаны на карточке акции.</div>
+        <div style="margin-top:auto; padding-top:10px; font-size:14px; font-weight:700; color:#0066FF;">Смотреть акции →</div>
+      </a>
+      <a href="/ucenka" style="display:flex; flex-direction:column; gap:8px; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; color:#1A1A1A; box-sizing:border-box;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#606F85;">УЦЕНЁННЫЙ ТОВАР</div>
+        <h2 style="margin:0; font-family:'Inter',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.015em; color:#0033A0; line-height:1.25;">Новая техника с повреждённой упаковкой или царапиной — дешевле</h2>
+        <div style="font-size:14px; color:#606F85; line-height:1.6;">Раздел наполняется: у каждой позиции описан дефект и снято фото именно того аппарата, который вы купите. Ищете конкретную модель — напишите, скажем, есть ли уценённый экземпляр.</div>
+        <div style="margin-top:auto; padding-top:10px; font-size:14px; font-weight:700; color:#0066FF;">Что это →</div>
+      </a>
+      <a href="/obyavleniya-bu" style="display:flex; flex-direction:column; gap:8px; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; color:#1A1A1A; box-sizing:border-box;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#606F85;">Б/У ОБОРУДОВАНИЕ</div>
+        <h2 style="margin:0; font-family:'Inter',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.015em; color:#0033A0; line-height:1.25;">Объявления от владельцев и монтажных бригад</h2>
+        <div style="font-size:14px; color:#606F85; line-height:1.6;">Раздел готовится: технику здесь продают её владельцы, а не мы — состояние не проверяем и в сделке не участвуем. Размещение объявления бесплатное.</div>
+        <div style="margin-top:auto; padding-top:10px; font-size:14px; font-weight:700; color:#0066FF;">Подробнее →</div>
+      </a>
+    </div>
 
     <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:26px;">
       <div>
@@ -352,18 +365,6 @@
     </div>
 
     
-    <a href="/obyavleniya-bu" style="display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; margin-top:16px; color:#1A1A1A;">
-      <div style="flex:1; min-width:260px;">
-        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#0066FF;">Б/У ОБОРУДОВАНИЕ</div>
-          <div style="font-size:12px; font-weight:700; color:#0066FF; background:#E9F4FF; border-radius:5px; padding:4px 9px;">раздел в разработке</div>
-        </div>
-        <h2 style="margin:6px 0 0 0; font-family:'Inter',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.015em;">Объявления от владельцев и монтажных бригад</h2>
-        <div style="font-size:14px; color:#606F85; line-height:1.6; margin-top:6px;">Готовим доску: технику здесь будут продавать её хозяева, а не мы — состояние не проверяем и в сделке не участвуем. Уже хотите продать? Разместим бесплатно, как только раздел откроется.</div>
-      </div>
-      <div style="font-size:14px; font-weight:700; color:#fff; background:#0066FF; border-radius:8px; padding:12px 18px; white-space:nowrap;">Подробнее →</div>
-    </a>
-
     
     <div style="margin-top:34px;">
       <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:14px;">
