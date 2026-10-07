@@ -134,24 +134,24 @@
         <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; color:#64748B;">ЕСТЬ У КАЖДОЙ БРИГАДЫ В СПИСКЕ</div>
         <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:9px;">
           <sc-for list="{{ osnCommon }}" as="it" hint-placeholder-count="6">
-            <span style="font-size:13px; color:#2A3646; background:#F1F5F9; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
+            <span style="font-size:13px; color:#1A1A1A; background:#F1F5F9; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
           </sc-for>
         </div>
         <div style="font-size:12px; color:#64748B; line-height:1.55; margin-top:9px;">{{ osnCommonNote }}</div>
       </div>
     </sc-if>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr)); gap:16px; margin-top:14px; align-items:start;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr)); gap:16px; margin-top:14px; align-items:stretch;">
       <sc-for list="{{ crews }}" as="c" hint-placeholder-count="3">
-        <div id="{{ c.cert }}" style="background:#fff; border:1px solid {{ c.cardBorder }}; border-radius:16px; padding:20px 22px; scroll-margin-top:16px;">
+        <div id="{{ c.cert }}" style="background:#fff; border:1px solid {{ c.cardBorder }}; border-radius:16px; padding:20px 22px; scroll-margin-top:16px; display:flex; flex-direction:column;">
 
           
           <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:14px;">
             <div style="min-width:0;">
               <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
                 <div style="display:inline-flex; align-items:center; gap:7px; background:#E7F7F0; border:1px solid #BFE6D4; border-radius:6px; padding:5px 10px;">
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#0B6B45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M20 6 9 17l-5-5" /></svg>
-                  <span style="font-family:Inter,sans-serif; font-size:15px; font-weight:700; color:#0B6B45; font-variant-numeric:tabular-nums; letter-spacing:0.01em;">{{ c.cert }}</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#178841" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block; flex:none;"><path d="M20 6 9 17l-5-5" /></svg>
+                  <span style="font-family:Inter,sans-serif; font-size:15px; font-weight:700; color:#178841; font-variant-numeric:tabular-nums; letter-spacing:0.01em;">{{ c.cert }}</span>
                 </div>
                 
                 <sc-if value="{{ c.hasLevel }}" hint-placeholder-val="{{ true }}">
@@ -167,7 +167,7 @@
                 <div style="font-size:12px; color:#64748B; margin-top:4px; white-space:nowrap;">{{ c.votesLabel }}</div>
               </sc-if>
               <sc-if value="{{ c.accruing }}" hint-placeholder-val="{{ false }}">
-                <div style="font-size:12px; font-weight:700; color:#0033A0; background:#E9F4FF; border:1px solid #B9DBF7; border-radius:6px; padding:6px 10px; white-space:nowrap;">Рейтинг накапливается</div>
+                <div style="font-size:12px; font-weight:700; color:#0033A0; background:#E9F4FF; border:1px solid #DCE5F0; border-radius:6px; padding:6px 10px; white-space:nowrap;">Рейтинг накапливается</div>
                 <div style="font-size:12px; color:#64748B; margin-top:4px; white-space:nowrap;">{{ c.accruingNote }}</div>
               </sc-if>
               <sc-if value="{{ c.noRating }}" hint-placeholder-val="{{ false }}">
@@ -232,7 +232,7 @@
                     <sc-if value="{{ f.hasItems }}" hint-placeholder-val="{{ false }}">
                       <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;">
                         <sc-for list="{{ f.items }}" as="it" hint-placeholder-count="4">
-                          <span style="font-size:13px; color:#2A3646; background:#FFFFFF; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
+                          <span style="font-size:13px; color:#1A1A1A; background:#FFFFFF; border:1px solid #DCE5F0; border-radius:6px; padding:4px 9px; line-height:1.35;">{{ it }}</span>
                         </sc-for>
                       </div>
                     </sc-if>
@@ -299,7 +299,7 @@
                     <div style="display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;">
                       <div style="font-size:14px; font-weight:700;">{{ r.name }}</div>
                       <sc-if value="{{ r.verified }}" hint-placeholder-val="{{ false }}">
-                        <span style="font-size:12px; font-weight:700; color:#0B6B45; background:#E7F7F0; border-radius:4px; padding:2px 7px;">✓ монтаж по карте 369</span>
+                        <span style="font-size:12px; font-weight:700; color:#178841; background:#E7F7F0; border-radius:4px; padding:2px 7px;">✓ монтаж по карте 369</span>
                       </sc-if>
                       <sc-if value="{{ r.plain }}" hint-placeholder-val="{{ false }}">
                         <span style="font-size:12px; color:#64748B;">без подтверждения покупки</span>
@@ -312,9 +312,9 @@
                 </div>
               </sc-for>
 
-              <div style="background:#E9F4FF; border:1px solid #B9DBF7; border-radius:12px; padding:16px 18px; margin-top:12px;">
+              <div style="background:#E9F4FF; border:1px solid #DCE5F0; border-radius:12px; padding:16px 18px; margin-top:12px;">
                 <sc-if value="{{ c.formSent }}" hint-placeholder-val="{{ false }}">
-                  <div style="font-size:15px; font-weight:700; color:#0B6B45;">Спасибо, отзыв отправлен на модерацию</div>
+                  <div style="font-size:15px; font-weight:700; color:#178841;">Спасибо, отзыв отправлен на модерацию</div>
                   <div style="font-size:13px; color:#1A1A1A; line-height:1.55; margin-top:6px;">На странице он появится после проверки — обычно в течение рабочего дня. Мы публикуем и низкие оценки: удаляем только оскорбления, спам и чужие персональные данные.</div>
                 </sc-if>
                 <sc-if value="{{ c.formOpen }}" hint-placeholder-val="{{ true }}">
@@ -523,7 +523,7 @@ class Component extends DCLogic {
 
   chip(on) {
     return on
-      ? { bg: "#0066FF", fg: "#fff", border: "#0066FF", countFg: "#BFDCF7" }
+      ? { bg: "#0066FF", fg: "#fff", border: "#0066FF", countFg: "#DCE5F0" }
       : { bg: "#fff", fg: "#1A1A1A", border: "#DCE5F0", countFg: "#64748B" };
   }
 
@@ -747,8 +747,8 @@ class Component extends DCLogic {
         const своёОсн = (c.osn || []).filter(x => общееОсн.indexOf(x) < 0);
         const работ = (c.skills || []).reduce((n, s) => n + ((s.items || []).length), 0);
 
-        const ЗЕЛ = { bg: "#E7F7F0", bd: "#BFE6D4", fg: "#0B6B45" };
-        const СИН = { bg: "#E9F4FF", bd: "#B9DBF7", fg: "#0033A0" };
+        const ЗЕЛ = { bg: "#E7F7F0", bd: "#BFE6D4", fg: "#178841" };
+        const СИН = { bg: "#E9F4FF", bd: "#DCE5F0", fg: "#0033A0" };
         const НЕЙТР = { bg: "#F1F5F9", bd: "#DCE5F0", fg: "#64748B" };
         const badges = [
           c.vremya && c.vremya.let_ >= 1
@@ -797,8 +797,8 @@ class Component extends DCLogic {
         // документ или бланк, узнаёт тот же цвет.
         const ЦВЕТ = {
           uchastnik: { bg: "#EAF4FA", bd: "#C9E3F2", fg: "#2079B5" },
-          master:    { bg: "#F5F7FA", bd: "#D6DEE9", fg: "#123B67" },
-          partner:   { bg: "#FCEDE8", bd: "#F3CBBB", fg: "#E4572E" }
+          master:    { bg: "#F1F5F9", bd: "#DCE5F0", fg: "#0033A0" },
+          partner:   { bg: "#E9F4FF", bd: "#DCE5F0", fg: "#0033A0" }
         };
         // Ступень, на которой бригада не стоит: без заливки и серым. Это
         // не «плохо», а «ещё не здесь» — поэтому не красный и не зачёркнутый.
@@ -847,7 +847,7 @@ class Component extends DCLogic {
           levelBg: ((ЦВЕТ[(ур && ур.key) || ""] || ЦВЕТ.uchastnik)).bg,
           levelBd: ((ЦВЕТ[(ур && ур.key) || ""] || ЦВЕТ.uchastnik)).bd,
           levelFg: ((ЦВЕТ[(ур && ур.key) || ""] || ЦВЕТ.uchastnik)).fg,
-          cardBorder: open ? "#B9DBF7" : "#DCE5F0",
+          cardBorder: open ? "#DCE5F0" : "#DCE5F0",
           hasRating: c.rating !== null,
           accruing: !!c.accruing,
           accruingNote: "уже " + this.votesLabel(c.votes) + " из " + pubMin,
