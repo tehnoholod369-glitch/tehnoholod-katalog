@@ -102,3 +102,6 @@
     if (++tries < 40) setTimeout(wait, 250);
   })();
 })();
+
+/* Фото FreshIN: белый корпус с multiply сливался с фоном (07.10.2026) */
+(function () { var st = document.createElement("style"); st.textContent = ".ak-fr-ph img{mix-blend-mode:normal !important}"; document.head.appendChild(st); })();
