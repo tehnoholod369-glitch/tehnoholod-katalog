@@ -483,6 +483,21 @@
         </div>
 
         <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:0 24px 64px 24px;">
+        <sc-if value="{{ hasFaq }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
+            <h2 style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Вопросы о модели</h2>
+            <div style="font-size:14px; color:#606F85; line-height:1.55; margin-top:6px;">Ответы — по данным производителя и нашего каталога.</div>
+            <div style="margin-top:14px;">
+              <sc-for list="{{ faq }}" as="f" hint-placeholder-count="3">
+                <div style="border-top:1px solid #E9EFF7; padding:12px 0;">
+                  <h3 style="margin:0; font-size:16px; font-weight:700; color:#1A1A1A; line-height:1.4;">{{ f.q }}</h3>
+                  <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:4px;">{{ f.a }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
         <sc-if value="{{ hasAnalogs }}" hint-placeholder-val="{{ false }}">
           <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
             <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap;">
@@ -910,6 +925,44 @@ class Component extends DCLogic {
   componentDidUpdate() { this.syncPhotos(); this.syncSeo(); }
 
   /**
+   * Вопросы и ответы о модели (07.10.2026) — для людей, поисковых ответов и ИИ.
+   *
+   * Правило правдивости: вопрос появляется, только если ответ есть в данных позиции
+   * (it.sp, цена, наличие). Нет параметра — нет вопроса; текст ответа не додумываем.
+   * Про возврат и обмен не пишем вовсе (решение владельца). Пояснения простым
+   * языком — те же, что в подсказках характеристик на этой странице.
+   * Один источник и для блока на странице (renderVals), и для FAQPage (syncSeo).
+   */
+  faqFor(it, group, цена, вНаличии) {
+    if (!it) return [];
+    const м = {};
+    (it.sp || []).forEach(x => {
+      м[String(x[0]).trim()] = String(x[1] == null ? "" : x[1])
+        .replace(/\s*\((?:[^()]*?,\s*)?\d{2}\.\d{2}\.\d{4}\)/g, "").replace(/\s*[—-]\s*\d{2}\.\d{2}\.\d{4}\s*$/, "").trim();
+    });
+    const модель = it.s || it.nb || "модель";
+    const out = [];
+    const площадь = м["Площадь помещения"] || м["Площадь"];
+    if (площадь) out.push({ q: "На какую площадь рассчитан " + модель + "?",
+      a: "Площадь помещения по данным производителя: " + площадь + (м["BTU"] ? ", мощность " + м["BTU"] + " BTU" : "") + "." });
+    if (/^да$/i.test(м["Приток воздуха"] || "")) out.push({ q: "Нужно ли открывать окно, если у кондиционера есть приток воздуха?",
+      a: "Модель берёт воздух с улицы, а не перегоняет комнатный: можно не открывать окно." });
+    if (/инверт/i.test(м["Тип"] || "")) out.push({ q: "Это инверторный кондиционер?",
+      a: "Да, инвертор: держит температуру плавно, не выключаясь — тише и экономичнее обычного, компрессор живёт дольше." });
+    else if (/on\/off/i.test(м["Тип"] || "")) out.push({ q: "Это инверторный кондиционер?",
+      a: "Нет, On/Off: набрал температуру — отключился, остыло — включился. Дешевле, но шумнее, перепады температуры заметнее." });
+    if (м["Обогрев до"]) out.push({ q: "До какой уличной температуры работает на обогрев?",
+      a: "Режим обогрева заявлен производителем до " + м["Обогрев до"] + "." });
+    if (м["Wi-Fi"]) out.push({ q: "Есть ли Wi-Fi и управление с телефона?",
+      a: "Wi-Fi: " + м["Wi-Fi"] + "." + (м["Голосовое управление"] ? " Голосовое управление: " + м["Голосовое управление"] + "." : "") });
+    if (цена || вНаличии !== undefined) out.push({ q: "Сколько стоит " + модель + " и есть ли в наличии?",
+      a: (цена ? "Цена " + цена.toLocaleString("ru-RU") + " ₸ с НДС, " : "") + (вНаличии ? "в наличии в Алматы." : "под заказ.") + " Цена указана за оборудование." });
+    if (["bytovye", "poluprom", "multisplit"].indexOf(group) >= 0) out.push({ q: "Входит ли монтаж в цену?",
+      a: "Нет. Монтаж под ключ считается отдельно — оборудование ≠ монтаж ≠ комплект. Предложим его отдельно, если он нужен." });
+    return out.slice(0, 7);
+  }
+
+  /**
    * Заголовок, описание, canonical и микроразметка — под конкретный товар.
    *
    * Зачем. Страница /tovar одна на все 3 500 товаров, и Tilda отдаёт её статикой:
@@ -938,8 +991,27 @@ class Component extends DCLogic {
       const цена = this.priceOf(it);
       const вНаличии = /налич/i.test(it.st || "");
 
-      const заголовок = (it.s ? it.b + " " + it.s : имя.slice(0, 60))
-                      + " — купить в Алматы, цена и характеристики | ИП «ТехноХолод»";
+      // Заголовок (07.10.2026). Было: «<бренд> <артикул> — купить в Алматы, цена и
+      // характеристики | ИП «ТехноХолод»» — 77 знаков при 60 в окне выдачи, без слова
+      // «кондиционер» и без главного отличия модели. Стало: вид товара + бренд + модель
+      // (без цвета и года в скобках) + «с притоком», если приток подтверждён данными,
+      // + город. Помещаемся в ~66 знаков; не помещаемся — город уходит первым.
+      const спец = {};
+      (it.sp || []).forEach(x => { спец[String(x[0]).trim()] = String(x[1] == null ? "" : x[1]).trim(); });
+      const приток = /^да$/i.test(спец["Приток воздуха"] || "");
+      const моделька = String(it.nb || it.s || "").replace(/\s*\([^)]*\)/g, " ").replace(/\s+/g, " ").trim();
+      const первое = (имя.split(/[\s,]/)[0] || "");
+      const вид = /^[А-ЯЁ][а-яё-]+$/.test(первое) && первое.toLowerCase() !== String(it.b || "").toLowerCase() ? первое : "";
+      // бренд дописываем, только если его нет в самом названии модели
+      const бренд = it.b && моделька.toLowerCase().indexOf(String(it.b).toLowerCase()) < 0 ? it.b : "";
+      const основа = [вид, бренд, моделька].filter(Boolean).join(" ") + (приток ? " с притоком" : "");
+      let заголовок;
+      if (!моделька) {
+        заголовок = имя.slice(0, 60) + " — купить в Алматы";
+      } else {
+        заголовок = основа + " — Алматы";
+        if (заголовок.length > 66) заголовок = основа;
+      }
       if (document.title !== заголовок) document.title = заголовок;
 
       const поставить = (селектор, создать, атрибут, значение) => {
@@ -949,12 +1021,46 @@ class Component extends DCLogic {
         return el;
       };
       // описание: что это, сколько стоит и есть ли в наличии — без обещаний
-      const описание = имя + (цена ? ". Цена " + цена.toLocaleString("ru-RU") + " ₸ с НДС." : ".")
-                     + " " + (вНаличии ? "В наличии в Алматы." : "Под заказ.")
-                     + " Доставка по Казахстану, монтаж под ключ.";
+      // 07.10.2026: было 186 знаков (имя целиком + цена + хвост) — сниппет обрезался.
+      // Теперь предложения идут по важности и лишние снимаются с конца, пока не
+      // уложимся в 160. Ключевые параметры — из it.pl (площадь, BTU, класс).
+      const ядро = (основа.replace(/\s+с притоком$/, "") || имя.slice(0, 60))
+                 + (приток ? " с притоком свежего воздуха" : "");
+      // в it.pl попадают обрывки вроде «<31» (шум без единицы) — без букв в описание не берём
+      const ключ = (it.pl || []).filter(x => /[A-Za-zА-Яа-яЁё]/.test(String(x))).slice(0, 3).join(", ");
+      // «монтаж под ключ» обещаем только там, где он есть в предложении (не пушкам и вентиляторам)
+      const сМонтажом = ["bytovye", "poluprom", "multisplit"].indexOf(s.group) >= 0;
+      const куски = [
+        ядро + (ключ ? ": " + ключ : "") + ".",
+        цена ? "Цена " + цена.toLocaleString("ru-RU") + " ₸ с НДС." : "",
+        вНаличии ? "В наличии в Алматы." : "Под заказ.",
+        сМонтажом ? "Монтаж под ключ." : ""
+      ].filter(Boolean);
+      while (куски.length > 2 && куски.join(" ").length > 160) куски.pop();
+      const описание = куски.join(" ");
       поставить('meta[name="description"]',
                 () => { const m = document.createElement("meta"); m.setAttribute("name", "description"); return m; },
                 "content", описание);
+      // Open Graph: Tilda отдаёт «Карточка товара» для всех — превью в WhatsApp и
+      // Telegram и ответы ИИ-поиска брали его. Подменяем на данные позиции.
+      const og = (св, зн) => поставить('meta[property="' + св + '"]',
+                () => { const m = document.createElement("meta"); m.setAttribute("property", св); return m; },
+                "content", зн);
+      og("og:title", заголовок);
+      og("og:description", описание);
+      og("og:url", адрес);
+      og("og:type", "product");
+      // Адрес фото: относительный путь вёл на tehnoholod369.kz/img/…, где файла нет
+      // (404) — настоящий лежит на CDN; photoUrl знает, где именно. 07.10.2026.
+      const фотоАбс = u => {
+        let a = u ? this.ph(u) : "";
+        if (a && a.indexOf("http") !== 0) a = location.origin + "/" + String(a).replace(/^\//, "");
+        return a;
+      };
+      const галерея = ((s.details || [])[s.idx] || {}).gl;
+      const фото = (галерея && галерея.length ? галерея : (it.i ? [it.i] : []))
+        .map(фотоАбс).filter(Boolean).slice(0, 6);
+      if (фото[0]) og("og:image", фото[0]);
       поставить('link[rel="canonical"]',
                 () => { const l = document.createElement("link"); l.setAttribute("rel", "canonical"); return l; },
                 "href", адрес);
@@ -967,8 +1073,26 @@ class Component extends DCLogic {
         "brand": { "@type": "Brand", "name": it.b || "" },
         "url": адрес
       };
-      if (it.s) данные.sku = it.s;
-      if (it.i) данные.image = it.i.indexOf("http") === 0 ? it.i : (location.origin + "/" + String(it.i).replace(/^\//, ""));
+      if (it.s) { данные.sku = it.s; данные.mpn = it.s; }
+      // описание и характеристики — из мастера как есть; нет данных — поля нет
+      // (07.10.2026). Даты в скобках чистим так же, как при показе на странице.
+      const безДат = v => String(v == null ? "" : v).replace(/\s*\((?:[^()]*?,\s*)?\d{2}\.\d{2}\.\d{4}\)/g, "").replace(/\s*[—-]\s*\d{2}\.\d{2}\.\d{4}\s*$/, "").trim();
+      const дет = (s.details || [])[s.idx];
+      const текстОписания = дет && дет.d ? String(дет.d).replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim() : "";
+      if (текстОписания) {
+        // режем по границе предложения, а не посреди слова
+        let кусок = текстОписания.slice(0, 500);
+        if (текстОписания.length > 500) {
+          const точка = кусок.lastIndexOf(". ");
+          if (точка > 200) кусок = кусок.slice(0, точка + 1);
+        }
+        данные.description = кусок;
+      }
+      const свойства = (it.sp || [])
+        .map(x => ({ "@type": "PropertyValue", "name": String(x[0]).trim(), "value": безДат(x[1]) }))
+        .filter(x => x.name && x.value).slice(0, 30);
+      if (свойства.length) данные.additionalProperty = свойства;
+      if (фото.length) данные.image = фото.length > 1 ? фото : фото[0];
       if (цена) {
         данные.offers = {
           "@type": "Offer",
@@ -976,7 +1100,8 @@ class Component extends DCLogic {
           "priceCurrency": "KZT",
           "availability": вНаличии ? "https://schema.org/InStock" : "https://schema.org/BackOrder",
           "url": адрес,
-          "itemCondition": "https://schema.org/NewCondition"
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": { "@type": "Organization", "name": "ИП «ТехноХолод»", "url": location.origin + "/" }
         };
       }
       // Хлебные крошки в разметке (06.09.2026). Берём их из ОТРИСОВАННЫХ крошек,
@@ -1024,6 +1149,24 @@ class Component extends DCLogic {
       }
       const текст = JSON.stringify(данные);
       if (ld.textContent !== текст) ld.textContent = текст;
+
+      // FAQPage — из ТЕХ ЖЕ вопросов, что показаны на странице (faqFor): разметка
+      // не может описывать то, чего человек не видит. Нет вопросов — блок убираем.
+      const вопросы = this.faqFor(it, s.group, цена, вНаличии);
+      let lf = document.getElementById("th-ld-faq");
+      if (!вопросы.length) { if (lf) lf.remove(); }
+      else {
+        if (!lf) {
+          lf = document.createElement("script");
+          lf.type = "application/ld+json";
+          lf.id = "th-ld-faq";
+          document.head.appendChild(lf);
+        }
+        const т = JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage",
+          "mainEntity": вопросы.map(v => ({ "@type": "Question", "name": v.q,
+            "acceptedAnswer": { "@type": "Answer", "text": v.a } })) });
+        if (lf.textContent !== т) lf.textContent = т;
+      }
     } catch (e) { /* SEO-обвязка не должна ронять карточку */ }
   }
 
@@ -1204,6 +1347,7 @@ class Component extends DCLogic {
     const salePrice = sale && +sale.price > 0 ? +sale.price : 0;
     const pNow = this.priceOf(it);
     const ptNow = pNow ? this.fmt(pNow) + " ₸" : "";
+    const faqList = this.faqFor(it, s.group, pNow, inStock);
     const cartIt = salePrice ? Object.assign({}, it, { p: pNow, pt: ptNow, promoWas: it.p, promoTill: sale.till || "" }) : it;
     const monthlyBase = pNow ? (salePrice ? pNow * 1.175 : (this.num(it.r) || pNow * 1.175)) : 0;
     // расход электричества считаем только там, где есть мощность и класс — иначе вкладки нет
@@ -1856,6 +2000,8 @@ class Component extends DCLogic {
       })(),
       related,
       hasRelated: related.length > 0,
+      faq: faqList,
+      hasFaq: faqList.length > 0,
       analogs,
       hasAnalogs: analogs.length > 0,
       analogsNote: analogs.length
