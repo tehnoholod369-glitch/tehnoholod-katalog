@@ -375,7 +375,7 @@ class Component extends DCLogic {
   // Один список ключей фасетов на три места: старт, смена группы и «Сбросить».
   // Раньше он был переписан трижды — новый фасет забывали сбросить, и он тянулся
   // за пользователем в другую группу (25.08.2026)
-  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "colorAc", "korp", "watt", "pkw", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "pit", "thermo", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "stock"];
+  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "colorAc", "korp", "watt", "pkw", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "pit", "thermo", "ohkw", "ohtype", "ohctrl", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "stock"];
   facetsOff() {
     const o = { feat: "", q: "", qF: {} };
     (this.facetKeys || []).forEach(k => { o[k] = "all"; });
@@ -1096,6 +1096,19 @@ class Component extends DCLogic {
     const barOf = x => specOf(x, /^макс\.? рабочее давление/i).trim();
     // ─── Фасеты водоочистки, увлажнителей, водяных тепловентиляторов и автономного питания (07.10.2026) ───
     // Только поля, которые есть в характеристиках у большинства моделей подгруппы; нет данных — в фильтр не попадает.
+    // электрообогреватели: мощность, тип нагревателя и управление есть у всех моделей подгрупп
+    const ohkwOf = x => {
+      const n = numIn(specOf(x, /^мощность$/i));
+      return n > 0 && n <= 10 ? String(n).replace(".", ",") + " кВт" : "";
+    };
+    const ohtypeOf = x => {
+      const v = specOf(x, /^тип нагревателя/i).trim();
+      return /х-образн|x-образн/i.test(v) ? "X-образный ТЭН" : /стич/i.test(v) ? "СТИЧ" : "";
+    };
+    const ohctrlOf = x => {
+      const v = specOf(x, /^тип управления/i).toLowerCase();
+      return /механ/.test(v) ? "Механическое" : /электрон/.test(v) ? "Электронное" : "";
+    };
     const stagesOf = x => {
       const n = numIn(specOf(x, /^ступеней очистки/i));
       return n >= 2 && n <= 9 ? (n === 5 || n >= 5 ? n + " ступеней" : n + " ступени") : "";
@@ -1300,6 +1313,15 @@ class Component extends DCLogic {
     };
 
     const VALUE_FACETS = [
+      { key: "ohkw", title: "Мощность", of: ohkwOf, only: ["obogrevateli"],
+        order: ["1 кВт", "1,5 кВт", "2 кВт", "2,5 кВт"],
+        note: "Паспортная мощность обогревателя" },
+      { key: "ohtype", title: "Тип нагревателя", of: ohtypeOf, only: ["obogrevateli"],
+        order: ["X-образный ТЭН", "СТИЧ"],
+        note: "Из характеристик конвекторов" },
+      { key: "ohctrl", title: "Управление", of: ohctrlOf, only: ["obogrevateli"],
+        order: ["Механическое", "Электронное"],
+        note: "Из характеристик модели" },
       { key: "stages", title: "Ступеней очистки", of: stagesOf, only: ["vodoochistka"],
         order: ["3 ступени", "4 ступени", "5 ступеней"],
         note: "Из характеристик модели: сколько фильтров проходит вода" },
@@ -1506,7 +1528,7 @@ class Component extends DCLogic {
     });
     // порядок в панели задаём явно, а не тем, в каком массиве объявлен фасет:
     // размер — первый вопрос покупателя, цвет — последний
-    const FACET_ORDER = ["btu", "coolkw", "humcap", "hkw", "hair", "capwh", "outw", "stages", "cyl", "hht", "doorw", "zavkw", "diag", "fireline", "dry", "mezh", "watt", "pkw", "conn", "sect", "height", "mat",
+    const FACET_ORDER = ["btu", "ohkw", "ohtype", "ohctrl", "coolkw", "humcap", "hkw", "hair", "capwh", "outw", "stages", "cyl", "hht", "doorw", "zavkw", "diag", "fireline", "dry", "mezh", "watt", "pkw", "conn", "sect", "height", "mat",
       "tank", "ctrl", "orient", "wave", "mount", "warm", "glass", "burn", "clean", "recup", "seg",
       "install", "thermo", "fuel", "power", "motor", "duct",
       "noise", "cold", "press", "bar", "ip", "color", "colorRad"];
