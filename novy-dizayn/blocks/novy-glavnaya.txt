@@ -163,7 +163,6 @@
         </div>
         <div data-th-desk style="font-size:13px; color:#606F85; line-height:1.5; margin-top:10px;">{{ proektNote }}</div>
         <div data-th-mob style="font-size:12px; color:#606F85; line-height:1.5; margin-top:12px;">На монтажные работы нового оборудования через АРТЕЛЬ — гарантия 12 месяцев; оборудование идёт с гарантией производителя.</div>
-        <div style="font-size:12px; color:#606F85; line-height:1.5; margin-top:12px;">Сайт работает в тестовом режиме и продолжает наполняться. Не нашли нужное или заметили неточность — напишите в <a href="https://wa.me/77000369369" style="color:rgba(255,255,255,0.88); text-decoration:underline;">WhatsApp</a>, поможем и поправим.</div>
       </div>
 
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:16px;">
