@@ -375,7 +375,7 @@ class Component extends DCLogic {
   // Один список ключей фасетов на три места: старт, смена группы и «Сбросить».
   // Раньше он был переписан трижды — новый фасет забывали сбросить, и он тянулся
   // за пользователем в другую группу (25.08.2026)
-  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "colorAc", "korp", "watt", "pkw", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "pit", "thermo", "ohkw", "ohtype", "ohctrl", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "stock"];
+  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "colorAc", "korp", "watt", "pkw", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "pit", "thermo", "wconn", "wcase", "wbar", "wmic", "ohkw", "ohtype", "ohctrl", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "stock"];
   facetsOff() {
     const o = { feat: "", q: "", qF: {} };
     (this.facetKeys || []).forEach(k => { o[k] = "all"; });
@@ -506,7 +506,7 @@ class Component extends DCLogic {
     // размер очага для каминов раскрыт сразу — это первый вопрос покупателя,
     // как расход воздуха у вентиляции и литраж у бойлера (25.08.2026)
     const OPEN_BY_DEFAULT = window.innerWidth >= 860
-      ? ["brand", "area", "air", "vol", "heat", "diag", "fireline", "dry", "mezh", "watt", "price"] : [];
+      ? ["brand", "area", "air", "vol", "heat", "diag", "fireline", "dry", "mezh", "watt", "price", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "ohkw", "ohtype", "ohctrl", "wconn", "wcase", "wbar", "wmic"] : [];
     const open = this.state.openF || {};
     const shownAll = this.state.moreF || {};
     const queries = this.state.qF || {};
@@ -1109,6 +1109,31 @@ class Component extends DCLogic {
       const v = specOf(x, /^тип управления/i).toLowerCase();
       return /механ/.test(v) ? "Механическое" : /электрон/.test(v) ? "Электронное" : "";
     };
+    const MAG = x => x.sub === "Фильтры магистральные";
+    const wconnOf = x => {
+      if (!MAG(x)) return "";
+      const v = specOf(x, /^подключение/i).toLowerCase();
+      if (/1\/2|15\s*мм/.test(v)) return "1/2 дюйма";
+      if (/1\s*дюйм|25\s*мм/.test(v)) return "1 дюйм";
+      return "";
+    };
+    const wcaseOf = x => {
+      if (!MAG(x)) return "";
+      const v = specOf(x, /^тип корпуса/i);
+      const size = (v.match(/(\d+)\s*дюйм/i) || [])[1];
+      const style = /slim/i.test(v) ? "Slim" : /big\s*blue/i.test(v) ? "Big Blue" : "";
+      return size && style ? size + "\u2033 " + style : "";
+    };
+    const wbarOf = x => {
+      if (!MAG(x)) return "";
+      const n = numIn(specOf(x, /^максимальное давление/i));
+      return n > 0 && n <= 30 ? n + " атм" : "";
+    };
+    const wmicOf = x => {
+      if (!MAG(x)) return "";
+      const n = numIn(specOf(x, /^степень очистки/i));
+      return n >= 1 && n <= 200 ? n + " мкм" : "";
+    };
     const stagesOf = x => {
       const n = numIn(specOf(x, /^ступеней очистки/i));
       return n >= 2 && n <= 9 ? (n === 5 || n >= 5 ? n + " ступеней" : n + " ступени") : "";
@@ -1313,6 +1338,18 @@ class Component extends DCLogic {
     };
 
     const VALUE_FACETS = [
+      { key: "wconn", title: "Подключение", of: wconnOf, only: ["vodoochistka"],
+        order: ["1/2 дюйма", "1 дюйм"],
+        note: "Диаметр резьбового подключения магистрального фильтра по характеристикам модели" },
+      { key: "wcase", title: "Корпус", of: wcaseOf, only: ["vodoochistka"],
+        order: ["10\u2033 Slim", "20\u2033 Slim", "10\u2033 Big Blue", "20\u2033 Big Blue"],
+        note: "Размер колбы и типоразмер: от него зависит, какие картриджи подойдут" },
+      { key: "wbar", title: "Макс. давление", of: wbarOf, only: ["vodoochistka"],
+        order: ["6 атм", "8 атм", "10 атм"],
+        note: "По паспорту модели; в многоэтажке давление в стояке выше, чем в частном доме" },
+      { key: "wmic", title: "Степень очистки", of: wmicOf, only: ["vodoochistka"],
+        order: ["1 мкм", "5 мкм", "10 мкм", "20 мкм", "50 мкм"],
+        note: "Размер частиц, которые задерживает картридж, по характеристикам модели" },
       { key: "ohkw", title: "Мощность", of: ohkwOf, only: ["obogrevateli"],
         order: ["1 кВт", "1,5 кВт", "2 кВт", "2,5 кВт"],
         note: "Паспортная мощность обогревателя" },
@@ -1528,7 +1565,7 @@ class Component extends DCLogic {
     });
     // порядок в панели задаём явно, а не тем, в каком массиве объявлен фасет:
     // размер — первый вопрос покупателя, цвет — последний
-    const FACET_ORDER = ["btu", "ohkw", "ohtype", "ohctrl", "coolkw", "humcap", "hkw", "hair", "capwh", "outw", "stages", "cyl", "hht", "doorw", "zavkw", "diag", "fireline", "dry", "mezh", "watt", "pkw", "conn", "sect", "height", "mat",
+    const FACET_ORDER = ["btu", "wconn", "wcase", "wbar", "wmic", "ohkw", "ohtype", "ohctrl", "coolkw", "humcap", "hkw", "hair", "capwh", "outw", "stages", "cyl", "hht", "doorw", "zavkw", "diag", "fireline", "dry", "mezh", "watt", "pkw", "conn", "sect", "height", "mat",
       "tank", "ctrl", "orient", "wave", "mount", "warm", "glass", "burn", "clean", "recup", "seg",
       "install", "thermo", "fuel", "power", "motor", "duct",
       "noise", "cold", "press", "bar", "ip", "color", "colorRad"];
