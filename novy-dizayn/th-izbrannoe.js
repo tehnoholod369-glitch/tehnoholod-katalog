@@ -123,4 +123,23 @@
       .observe(document.documentElement, { childList: true, subtree: true });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", обновить); else обновить();
+  // T-006, 07.10.2026: приём списков из подборщика. Подборщик стоит на другом адресе (podbor.tehnoholod369.kz), хранилище браузера у него своё,
+  // поэтому он передаёт избранное и сравнение в ссылке: ?th_import=<base64url от JSON {f:[...], c:[...]}>. Здесь они сливаются с сохранённым, параметр убирается из адреса.
+  (function () {
+    try {
+      var m = location.search.match(/[?&]th_import=([^&]+)/);
+      if (!m) return;
+      var d = JSON.parse(decodeURIComponent(escape(atob(m[1].replace(/-/g, "+").replace(/_/g, "/")))));
+      var чист = function (t, n) { return String(t || "").replace(/[<>"'`]/g, "").slice(0, n); };
+      var ок = function (x) { return x && typeof x.g === "string" && typeof x.sl === "string" && /^[a-z0-9-]{1,40}$/i.test(x.g) && /^[a-z0-9._-]{1,120}$/i.test(x.sl); };
+      var копия = function (x) { return { g: x.g, sl: x.sl, n: чист(x.n, 200), b: чист(x.b, 80), i: /^https?:\/\//i.test(x.i || "") ? чист(x.i, 300) : "" }; };
+      var f = читать(KEY_FAV), c = читать(KEY_CMP);
+      (d.f || []).filter(ок).slice(0, 100).forEach(function (x) { if (!есть(f, x)) f.push(копия(x)); });
+      (d.c || []).filter(ок).slice(0, МАКС_СРАВНЕНИЕ).forEach(function (x) { if (!есть(c, x) && c.length < МАКС_СРАВНЕНИЕ && (!c.length || c[0].g === x.g)) c.push(копия(x)); });
+      писать(KEY_FAV, f); писать(KEY_CMP, c);
+      var q = location.search.replace(/([?&])th_import=[^&]*(&|$)/, function (a, p, e) { return e ? p : ""; }).replace(/[?&]$/, "");
+      history.replaceState(null, "", location.pathname + q + location.hash);
+      изменилось();
+    } catch (e) {}
+  })();
 })();
