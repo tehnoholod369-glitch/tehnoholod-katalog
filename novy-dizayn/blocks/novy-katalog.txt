@@ -1975,12 +1975,20 @@ class Component extends DCLogic {
         bd: s.brand === b ? "2px solid #0066FF" : "1px solid #DCE5F0",
         pick: () => this.setState({ brand: s.brand === b ? "all" : b, shown: 12 })
       }));
-    const brandOptions = ["all"].concat(sortedBrands).map(b => this.chip(
-      s.brand === b,
-      b === "all" ? "Все" : b,
-      () => this.setState({ brand: b, shown: 12 }),
-      b === "all" ? String(exceptBrand.length) : String(brandCount[b] || 0)
-    ));
+    // T-006, 07.10.2026: в списке брендов стоят ВСЕ бренды раздела; те, у кого под выбранные фильтры моделей нет, показаны бледными со счётом 0
+    // и не нажимаются (раньше они пропадали, и казалось, что Ballu, Electrolux и остальных в каталоге нет)
+    const allBrandsSorted = (meta.brandList || []).slice().sort((a, b) => rank(a) - rank(b) || a.localeCompare(b, "ru"));
+    const brandOptions = ["all"].concat(allBrandsSorted).map(b => {
+      const n = b === "all" ? exceptBrand.length : (brandCount[b] || 0);
+      const c = this.chip(
+        s.brand === b,
+        b === "all" ? "Все" : b,
+        () => { if (n || b === "all" || s.brand === b) this.setState({ brand: b, shown: 12 }); },
+        String(n)
+      );
+      if (b !== "all" && !n && s.brand !== b) { c.fg = "#94A3B8"; c.border = "#E9EFF7"; c.boxBg = "#F1F5F9"; c.boxBd = "#E2E8F0"; }
+      return c;
+    });
 
     // Серия: счётчик по набору без самой серии, пустые значения в фильтр не идут.
     const serCount = {};
