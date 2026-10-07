@@ -11,8 +11,8 @@
   .th-dirs { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:16px; margin-top:20px; align-items:stretch; }
   @media (max-width:1099px) { .th-dirs { grid-template-columns:repeat(2, minmax(0, 1fr)); } .th-dirs > :nth-child(5) { grid-column:1 / -1; } }
   @media (max-width:639px) { .th-dirs { grid-template-columns:1fr; } }
-  .th-strip { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:16px; margin-top:16px; align-items:stretch; }
-  @media (max-width:899px) { .th-strip { grid-template-columns:1fr; } }
+  .th-strip { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; margin-top:16px; align-items:stretch; }
+  @media (max-width:759px) { .th-strip { grid-template-columns:1fr; } }
   body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
   h1, h2, h3 { font-family: "Inter", sans-serif; }
   a { color: #0066FF; text-decoration: none; }
@@ -207,6 +207,15 @@
       </div>
     </div>
 
+    <a href="/akcii" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px 24px; background:#fff; border:1px solid #DCE5F0; border-left:6px solid #E81C1C; border-radius:16px; padding:22px 26px; margin-top:20px; color:#1A1A1A;">
+      <div style="flex:1; min-width:260px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#E81C1C;">АКЦИИ</div>
+        <h2 style="margin:6px 0 0 0; font-family:'Inter',sans-serif; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Специальные условия на модели в наличии</h2>
+        <div style="font-size:14px; color:#606F85; line-height:1.6; margin-top:6px;">Скидки поставщиков на отдельные кондиционеры. Размер скидки и срок указаны на карточке акции; в каталоге такие модели собраны фильтром «Акция».</div>
+      </div>
+      <div style="font-size:15px; font-weight:700; color:#fff; background:#0066FF; border-radius:10px; padding:13px 22px; white-space:nowrap;">Смотреть акции →</div>
+    </a>
+
     <div class="th-dirs">
       <sc-for list="{{ directionsList }}" as="d" hint-placeholder-count="4">
         <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:20px; display:flex; flex-direction:column; gap:9px; color:#1A1A1A;">
@@ -323,13 +332,7 @@
       <div style="font-size:14px; font-weight:700; color:#fff; background:#0066FF; border-radius:8px; padding:12px 18px; white-space:nowrap;">{{ proektLink }}</div>
     </a>
     <div class="th-strip">
-      <a href="/akcii" style="display:flex; flex-direction:column; gap:8px; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; color:#1A1A1A; box-sizing:border-box;">
-        <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#E81C1C;">АКЦИИ</div>
-        <h2 style="margin:0; font-family:'Inter',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.015em; color:#0033A0; line-height:1.25;">Специальные условия поставщиков</h2>
-        <div style="font-size:14px; color:#606F85; line-height:1.6;">Скидки на отдельные модели кондиционеров. Размер скидки и срок указаны на карточке акции.</div>
-        <div style="margin-top:auto; padding-top:10px; font-size:14px; font-weight:700; color:#0066FF;">Смотреть акции →</div>
-      </a>
-      <a href="/ucenka" style="display:flex; flex-direction:column; gap:8px; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; color:#1A1A1A; box-sizing:border-box;">
+<a href="/ucenka" style="display:flex; flex-direction:column; gap:8px; background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px 24px; color:#1A1A1A; box-sizing:border-box;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#606F85;">УЦЕНЁННЫЙ ТОВАР</div>
         <h2 style="margin:0; font-family:'Inter',sans-serif; font-size:20px; font-weight:800; letter-spacing:-0.015em; color:#0033A0; line-height:1.25;">Новая техника с повреждённой упаковкой или царапиной — дешевле</h2>
         <div style="font-size:14px; color:#606F85; line-height:1.6;">Раздел наполняется: у каждой позиции описан дефект и снято фото именно того аппарата, который вы купите. Ищете конкретную модель — напишите, скажем, есть ли уценённый экземпляр.</div>
