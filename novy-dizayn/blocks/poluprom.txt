@@ -30,7 +30,7 @@
       <div>
         <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#E9F4FF;">ДЛЯ МАГАЗИНОВ, ОФИСОВ И ПРОИЗВОДСТВ</div>
         <h1 style="margin:14px 0 0 0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em;">Полупромышленный климат: кассетные, канальные, колонные системы</h1>
-        <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px;">Оборудование на площади, где бытовой сплит не справляется: торговые залы, опенспейсы, серверные, цеха. Подбираем по теплопритокам объекта, а не по метражу «на глаз».</div>
+        <div style="font-size:17px; line-height:1.55; color:rgba(255,255,255,0.88); margin-top:14px;">Оборудование на площади, где бытовой сплит не справляется: торговые залы, опенспейсы, серверные, цеха. Подбираем по теплопритокам объекта, а не по метражу «на глаз».</div>
         <div style="display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;">
           <a href="/katalog?g=poluprom" style="background:#0066FF; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">{{ ctaLabel }}</a>
           <a href="/b2b" style="border:2px solid rgba(255,255,255,0.55); color:#fff; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Запросить прайс</a>
@@ -84,8 +84,8 @@
         </sc-for>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:20px; margin-top:20px; align-items:start;">
-        <div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:20px; margin-top:20px; align-items:stretch;">
+        <div style="background:#F9FBFE; border:1px solid #DCE5F0; border-radius:12px; padding:22px;">
           <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:baseline; gap:12px;">
             <label style="font-size:14px; font-weight:600;" for="poluprom-area">Площадь объекта</label>
             <span style="display:flex; align-items:center; gap:6px; font-size:17px; font-weight:700; color:#0033A0;">
