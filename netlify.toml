@@ -17,25 +17,33 @@
   publish = "."
   command = ""
 
+# Страницы каталога и данные с этого адреса не раздаются как витрина — они здесь
+# только потому, что лежат в том же репозитории. Поисковикам их отсюда не надо:
+# основной адрес витрины один, дубли вредят. Поэтому noindex стоит по умолчанию.
+# Правило обязано идти ПЕРВЫМ: более поздние правила переопределяют его значение
+# (проверено на черновом деплое 07.10.2026).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+    X-Content-Type-Options = "nosniff"
+
+# Фотографии — исключение (T-008, 07.10.2026). Google Merchant / Googlebot-Image
+# не принимает картинку с noindex: товары фида не проходили проверку image_link.
+# "all" = без ограничений; прежнее значение для картинок не возвращать.
+#
 # Имя файла у фотографии не переиспользуется: новый кадр — новое имя.
 # Поэтому кэшируем на год и не заставляем браузер перепроверять.
 [[headers]]
   for = "/img/*"
   [headers.values]
+    X-Robots-Tag = "all"
     Cache-Control = "public, max-age=31536000, immutable"
     Access-Control-Allow-Origin = "*"
 
 [[headers]]
   for = "/img-dobor/*"
   [headers.values]
+    X-Robots-Tag = "all"
     Cache-Control = "public, max-age=31536000, immutable"
     Access-Control-Allow-Origin = "*"
-
-# Страницы каталога и данные с этого адреса не раздаются как витрина — они здесь
-# только потому, что лежат в том же репозитории. Поисковикам их отсюда не надо:
-# основной адрес витрины один, дубли вредят.
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Robots-Tag = "noindex"
-    X-Content-Type-Options = "nosniff"
