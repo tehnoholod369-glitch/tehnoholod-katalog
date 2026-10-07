@@ -32,7 +32,7 @@
       <div>
         <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#E9F4FF;">КОНДИЦИОНИРОВАНИЕ И ВЕНТИЛЯЦИЯ ОБЪЕКТОВ</div>
         <h1 style="margin:14px 0 0 0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em;">Проектные системы: VRF, чиллеры, фанкойлы, приточно-вытяжные установки</h1>
-        <div style="font-size:17px; line-height:1.55; color:#D5E9FA; margin-top:14px;">Оборудование, которое не продаётся штукой из каталога. Есть проект или техзадание — пришлите, посчитаем по нему. Проекта нет — ответьте на несколько вопросов об объекте, и мы сделаем предварительный расчёт.</div>
+        <div style="font-size:17px; line-height:1.55; color:rgba(255,255,255,0.88); margin-top:14px;">Оборудование, которое не продаётся штукой из каталога. Есть проект или техзадание — пришлите, посчитаем по нему. Проекта нет — ответьте на несколько вопросов об объекте, и мы сделаем предварительный расчёт.</div>
         <div style="display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;">
           <a href="#zapros" onClick="{{ goEst }}" style="background:#0066FF; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Отправить проект</a>
           <a href="#zapros" onClick="{{ goNet }}" style="border:2px solid rgba(255,255,255,0.55); color:#fff; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Проекта нет — предварительный расчёт</a>
@@ -142,12 +142,12 @@
     </div>
     </sc-if>
 
-    <div id="zapros" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:20px; margin-top:22px; align-items:start;">
+    <div id="zapros" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:20px; margin-top:22px; align-items:stretch;">
 
       <div style="background:#0033A0; color:#fff; border-radius:16px; padding:26px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#E9F4FF;">ПРИСЛАТЬ НАПРЯМУЮ</div>
         <h2 style="margin:6px 0 0 0; font-size:22px; font-weight:800; color:#fff;">Проект, техзадание, планировки</h2>
-        <div style="font-size:14px; color:#D5E9FA; line-height:1.6; margin-top:12px;">Подойдёт любой материал: проект, ТЗ, планировки, спецификация, фото помещений. Форматы — PDF, DWG, XLSX, JPG.</div>
+        <div style="font-size:14px; color:rgba(255,255,255,0.88); line-height:1.6; margin-top:12px;">Подойдёт любой материал: проект, ТЗ, планировки, спецификация, фото помещений. Форматы — PDF, DWG, XLSX, JPG.</div>
         <div style="display:flex; flex-direction:column; gap:10px; margin-top:16px;">
           <a href="mailto:tehnoholod369@gmail.com?subject=%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%BD%D0%B0%20%D1%80%D0%B0%D1%81%D1%87%D1%91%D1%82" style="display:block; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.16); border-radius:10px; padding:12px 14px; color:#fff;">
             <div style="font-size:12px; color:rgba(255,255,255,0.78);">На почту</div>
