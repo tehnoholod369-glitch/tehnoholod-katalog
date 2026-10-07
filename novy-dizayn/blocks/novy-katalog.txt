@@ -375,7 +375,7 @@ class Component extends DCLogic {
   // Один список ключей фасетов на три места: старт, смена группы и «Сбросить».
   // Раньше он был переписан трижды — новый фасет забывали сбросить, и он тянулся
   // за пользователем в другую группу (25.08.2026)
-  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "colorAc", "korp", "watt", "pkw", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "pit", "thermo", "wconn", "wcase", "wbar", "wmic", "ohkw", "ohtype", "ohctrl", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "stock"];
+  facetKeys = ["brand", "ser", "price", "comp", "ref", "eff", "btu", "coolkw", "area", "seg", "power", "motor", "duct", "cold", "ip", "noise", "press", "air", "vol", "heat", "diag", "fireline", "mount", "warm", "glass", "burn", "color", "dry", "fuel", "mezh", "conn", "mat", "colorRad", "colorAc", "korp", "watt", "pkw", "sect", "height", "tank", "ctrl", "orient", "wave", "install", "pit", "thermo", "heatlow", "maxin", "wconn", "wcase", "wbar", "wmic", "ohkw", "ohtype", "ohctrl", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "stock"];
   facetsOff() {
     const o = { feat: "", q: "", qF: {} };
     (this.facetKeys || []).forEach(k => { o[k] = "all"; });
@@ -508,7 +508,7 @@ class Component extends DCLogic {
     // размер очага для каминов раскрыт сразу — это первый вопрос покупателя,
     // как расход воздуха у вентиляции и литраж у бойлера (25.08.2026)
     const OPEN_BY_DEFAULT = window.innerWidth >= 860
-      ? ["brand", "area", "air", "vol", "heat", "diag", "fireline", "dry", "mezh", "watt", "price", "pick", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "ohkw", "ohtype", "ohctrl", "wconn", "wcase", "wbar", "wmic", "eff"] : [] // T-006, 07.10.2026: класс энергоэффективности раскрыт сразу — свёрнутая секция читалась как «фильтра нет»;
+      ? ["brand", "area", "air", "vol", "heat", "diag", "fireline", "dry", "mezh", "watt", "price", "pick", "heatlow", "maxin", "stages", "cyl", "hht", "humcap", "hkw", "hair", "capwh", "outw", "ohkw", "ohtype", "ohctrl", "wconn", "wcase", "wbar", "wmic", "eff"] : [] // T-006, 07.10.2026: класс энергоэффективности раскрыт сразу — свёрнутая секция читалась как «фильтра нет»;
     const open = this.state.openF || {};
     const shownAll = this.state.moreF || {};
     const queries = this.state.qF || {};
@@ -1043,6 +1043,13 @@ class Component extends DCLogic {
       if (/пластинч/.test(v)) return "Пластинчатый";
       return "Тип не указан";
     };
+    // «Обогрев до» у наружного блока: нижняя граница, при которой он греет. Берём само число:
+    // «-15 ~ +24 °C» читается как −15, «уточнить °C» — нет данных, в фильтр не попадает
+    const heatLowOf = x => {
+      const nums = (specOf(x, /^обогрев до/i).match(/-?\d+/g) || []).map(Number);
+      return nums.length ? Math.min.apply(null, nums) : NaN;
+    };
+    const maxInOf = x => { const n = numIn(specOf(x, /макс\.? кол-во внутренних/i)); return n > 0 ? n : 0; };
     const noiseOf = x => { const v = numIn(specOf(x, /уровень шума/i)); return v > 0 ? v : 0; };
     const pressOf = x => { const v = numIn(specOf(x, /напор/i)); return v > 0 ? v : 0; };
     // Класс мощности кондиционера. У мультисплита пилюли «BTU» нет, а строка ТТХ есть
@@ -1473,6 +1480,15 @@ class Component extends DCLogic {
         bands: [["до 5 кВт", 0.1, 5], ["5–10 кВт", 5.01, 10], ["10–20 кВт", 10.01, 20],
                 ["20–35 кВт", 20.01, 35], ["35 кВт и больше", 35.01, 9999]],
         note: "Мощность нагрева на максимальной ступени. У завесы без нагрева её нет — такие позиции в фильтр не попадают" },
+      // пороговый, как «Рабочая температура»: «−20 °С и ниже» показывает и модели на −25
+      { key: "heatlow", title: "Обогрев в мороз", of: heatLowOf,
+        only: ["bytovye", "multisplit", "poluprom"],
+        has: x => !isNaN(heatLowOf(x)),
+        bands: [["до −15 °С и ниже", -999, -15], ["до −20 °С и ниже", -999, -20], ["до −25 °С и ниже", -999, -25]],
+        note: "Нижняя граница, при которой наружный блок греет, по паспорту. Для Алматы зимой полезен запас до −20 °С. У части моделей производитель границу не указал — они в фильтр не попадают" },
+      { key: "maxin", title: "Подключаемых внутренних блоков", of: maxInOf, only: ["mini-vrf"],
+        bands: [["до 8", 1, 8], ["9–16", 9, 16], ["17–32", 17, 32], ["больше 32", 33, 999]],
+        note: "Максимум внутренних блоков на один наружный блок VRF по паспорту; считается только у наружных блоков" },
       { key: "noise", title: "Уровень шума", of: noiseOf,
         bands: [["до 35 дБ", 1, 35], ["35–45 дБ", 36, 45], ["45–55 дБ", 46, 55], ["55 дБ+", 56, 999]],
         note: "Тише 35 дБ — можно ставить в спальне" },
@@ -1567,7 +1583,7 @@ class Component extends DCLogic {
     });
     // порядок в панели задаём явно, а не тем, в каком массиве объявлен фасет:
     // размер — первый вопрос покупателя, цвет — последний
-    const FACET_ORDER = ["btu", "wconn", "wcase", "wbar", "wmic", "ohkw", "ohtype", "ohctrl", "coolkw", "humcap", "hkw", "hair", "capwh", "outw", "stages", "cyl", "hht", "doorw", "zavkw", "diag", "fireline", "dry", "mezh", "watt", "pkw", "conn", "sect", "height", "mat",
+    const FACET_ORDER = ["btu", "wconn", "wcase", "wbar", "wmic", "ohkw", "ohtype", "ohctrl", "coolkw", "maxin", "heatlow", "humcap", "hkw", "hair", "capwh", "outw", "stages", "cyl", "hht", "doorw", "zavkw", "diag", "fireline", "dry", "mezh", "watt", "pkw", "conn", "sect", "height", "mat",
       "tank", "ctrl", "orient", "wave", "mount", "warm", "glass", "burn", "clean", "recup", "seg",
       "install", "thermo", "fuel", "power", "motor", "duct",
       "noise", "cold", "press", "bar", "ip", "color", "colorRad"];
