@@ -891,7 +891,7 @@ class Component extends DCLogic {
         { k: "Наличие", v: md.st || "нет данных", c: md.ok ? "#178841" : "#B25200" },
         { k: "Цена блока", v: md.pt || "по запросу", c: md.pt ? "#1A1A1A" : "#B25200" }
       ] : [],
-      videos: this.MS_VIDEOS.map((v, i) => {
+      videos: [].map((v, i) => { // видео отключено по решению владельца 07.10.2026; вернуть: this.MS_VIDEOS.map
         const src = this.videoEmbed(v.url);
         const id = ((src.match(/youtube\.com\/embed\/([\w-]{6,})/) || [])[1]) || "";
         // без картинки-превью (Rutube, VK) показываем плеер сразу, как есть
