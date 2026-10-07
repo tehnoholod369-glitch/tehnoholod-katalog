@@ -30,6 +30,20 @@
  * (поймано 27.08.2026 на живой /ventilyaciya). Ломаешь договор разметки —
  * меняй ИМЯ файла: у нового адреса кэша нет.
  */
+/* 07.10.2026, решение владельца: в карточках «Что посмотреть в каталоге» (статьи) число моделей не показываем —
+   «В каталоге N моделей →» заменяется на «Смотреть в каталоге →». Числа остаются только там, где они нужны (разделы каталога). */
+(function () {
+  function убратьЧисла() {
+    [].forEach.call(document.querySelectorAll(".art-card__go"), function (e) {
+      if (e.getAttribute("data-th-nocnt")) return;
+      e.setAttribute("data-th-nocnt", "1");
+      e.textContent = "Смотреть в каталоге \u2192";
+    });
+  }
+  убратьЧисла();
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", убратьЧисла);
+  setTimeout(убратьЧисла, 600);
+})();
 (function () {
   var ДАННЫЕ = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json";
   // Запасной адрес тех же данных. raw отвечает не всегда быстро: 13.09.2026
