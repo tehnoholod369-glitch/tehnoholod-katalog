@@ -22,9 +22,6 @@
 .pk-sec { margin-top: 48px; }
 .pk-h2 { margin: 0; font: 700 28px/36px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; }
 .pk-sub { margin: 10px 0 0; font: 400 16px/26px Inter, sans-serif; color: #64748B; max-width: 860px; }
-.pk-tool { margin-top: 20px; background: #fff; border: 1px solid #DCE5F0; border-radius: 16px; overflow: hidden; }
-.pk-tool { scroll-margin-top: 72px; }
-.pk-tool iframe { display: block; width: 100%; height: calc(100vh - 96px); min-height: 560px; max-height: 1100px; border: 0; background: #fff; }
 .pk-det { margin-top: 32px; background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 0 22px; }
 .pk-det > summary, .pk-q > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .pk-det > summary::-webkit-details-marker, .pk-q > summary::-webkit-details-marker { display: none; }
@@ -65,10 +62,74 @@
   .pk-lead { font-size: 16px; line-height: 26px; }
   .pk-facts, .pk-g3 { grid-template-columns: 1fr; }
   .pk-h2 { font-size: 24px; line-height: 32px; }
-  .pk-tool iframe { height: calc(100vh - 88px); min-height: 520px; }
-  .pk-cta { padding: 24px 20px; }
+    .pk-cta { padding: 24px 20px; }
   .pk-btn { width: 100%; }
 }
+.pkc { --blue:#0066FF; --navy:#0033A0; --text:#1A1A1A; --mute:#64748B; --bg:#F1F5F9; --tint:#E9F4FF; --line:#DCE5F0; --ok:#178841; margin-top: 20px; font-family: "Inter", "Segoe UI", sans-serif; color: var(--text); }
+.pkc *, .pkc *::before, .pkc *::after { box-sizing: border-box; }
+.pkc a { color: var(--blue); text-decoration: none; }
+.pkc-grid { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 24px; align-items: start; }
+.pkc-card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+.pkc-step { display: flex; align-items: center; gap: 12px; margin: 0 0 14px; }
+.pkc-step i { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--blue); color: #fff; font: 700 14px/28px Inter, sans-serif; text-align: center; font-style: normal; }
+.pkc-step b { font: 700 18px/26px Inter, sans-serif; color: var(--navy); }
+.pkc-sec + .pkc-sec { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line); }
+.pkc-lab { font: 600 13px/18px Inter, sans-serif; color: var(--mute); letter-spacing: .04em; text-transform: uppercase; margin: 16px 0 8px; }
+.pkc-step + .pkc-lab { margin-top: 0; }
+.pkc-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.pkc-chip { height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid var(--line); background: #fff; font: 600 15px/42px Inter, sans-serif; color: var(--text); white-space: nowrap; cursor: pointer; }
+.pkc-chip:hover { border-color: var(--blue); }
+.pkc-chip.on { background: var(--navy); border-color: var(--navy); color: #fff; }
+.pkc-exact { display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; font: 400 14px/20px Inter, sans-serif; color: var(--mute); }
+.pkc-exact input { width: 84px; height: 40px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px; font: 700 18px/38px Inter, sans-serif; color: var(--navy); text-align: right; }
+.pkc-opts { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; }
+.pkc-opt { text-align: left; border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: #fff; cursor: pointer; font-family: Inter, sans-serif; }
+.pkc-opt:hover { border-color: var(--blue); }
+.pkc-opt.on { border-color: var(--blue); background: var(--tint); }
+.pkc-opt b { display: block; font: 700 15px/22px Inter, sans-serif; color: var(--navy); }
+.pkc-opt span { font: 400 13px/18px Inter, sans-serif; color: var(--mute); }
+.pkc-res { position: sticky; top: 16px; background: var(--navy); border-radius: 16px; padding: 28px; color: #fff; }
+.pkc-k { font: 600 13px/18px Inter, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: #BFD3FF; }
+.pkc-big { display: flex; align-items: baseline; gap: 12px; margin-top: 10px; }
+.pkc-big b { font: 800 72px/72px Inter, sans-serif; letter-spacing: -0.03em; }
+.pkc-big span { font: 600 20px/28px Inter, sans-serif; color: #DCE5F0; }
+.pkc-kw { margin-top: 6px; font: 500 16px/24px Inter, sans-serif; color: #DCE5F0; }
+.pkc-how { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.2); font: 400 14px/22px Inter, sans-serif; color: #DCE5F0; }
+.pkc-how b { color: #fff; }
+.pkc-res a { color: #fff; text-decoration: underline; }
+.pkc-note { margin-top: 14px; font: 400 12px/18px Inter, sans-serif; color: #BFD3FF; }
+.pkc-models { margin-top: 32px; }
+.pkc-h { margin: 0; font: 700 24px/32px Inter, sans-serif; letter-spacing: -0.015em; color: var(--navy); }
+.pkc-info { margin: 10px 0 0; font: 400 15px/24px Inter, sans-serif; color: var(--mute); }
+.pkc-cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; margin-top: 16px; }
+.pkc-m { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; }
+.pkc-ph { display: grid; place-items: center; height: 170px; border-radius: 12px; background: #fff; border: 1px solid var(--bg); }
+.pkc-ph img { max-width: 100%; max-height: 160px; object-fit: contain; }
+.pkc-tag { margin-top: 14px; font: 700 12px/16px Inter, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); }
+.pkc-m h3 { margin: 4px 0 0; font: 700 17px/24px Inter, sans-serif; }
+.pkc-m h3 a { color: var(--navy); }
+.pkc-facts { margin: 10px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.pkc-facts li { padding: 4px 10px; border-radius: 999px; background: var(--bg); font: 500 13px/18px Inter, sans-serif; color: var(--text); }
+.pkc-price { margin-top: auto; padding-top: 16px; font: 800 28px/34px Inter, sans-serif; color: var(--text); }
+.pkc-stock { font: 600 13px/18px Inter, sans-serif; color: var(--ok); }
+.pkc-stock--o { color: var(--mute); }
+.pkc a.pkc-btn, .pkc-btn { display: flex; align-items: center; justify-content: center; height: 48px; margin-top: 12px; padding: 0 22px; border-radius: 8px; font: 600 16px/1 Inter, sans-serif; background: var(--blue); color: #fff; text-decoration: none; }
+.pkc a.pkc-btn:hover { background: #0052D6; color: #fff; }
+.pkc a.pkc-btn--line, .pkc-btn--line { background: #fff; border: 1.5px solid var(--blue); color: var(--blue); }
+.pkc a.pkc-btn--line:hover { background: var(--tint); color: #0052D6; }
+.pkc-more { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
+.pkc-more .pkc-btn { margin-top: 0; }
+@media (max-width: 900px) {
+  .pkc-grid { grid-template-columns: 1fr; }
+  .pkc-res { position: static; order: -1; padding: 22px; }
+  .pkc-big b { font-size: 60px; line-height: 60px; }
+  .pkc-card { padding: 20px; }
+  .pkc-opts { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .pkc-cards { grid-template-columns: 1fr; }
+  .pkc-chip { height: 42px; padding: 0 14px; font-size: 14px; line-height: 40px; }
+  .pkc-more .pkc-btn { width: 100%; }
+}
+
 </style>
 
 <div class="pk-wrap">
@@ -91,13 +152,10 @@
     <div class="pk-f"><b>Монтаж и доставка по Казахстану</b><span>Рассчитываются отдельно, от длины трассы и этажа</span></div>
   </div>
 
-  <section class="pk-sec" id="pk-tool">
-    <h2 class="pk-h2">Калькулятор подбора кондиционера</h2>
-    <p class="pk-sub">Введите площадь комнаты и высоту потолка. Уточните условия — солнечная сторона, верхний этаж, кухня, — и подбор станет точнее. Можно оставить только модели со свежим воздухом с улицы или отфильтровать по типу компрессора.</p>
-    <div class="pk-tool" id="pk-calc">
-      <iframe id="pk-frame" src="https://podbor.tehnoholod369.kz/?embed=1" title="Калькулятор подбора кондиционера по площади" loading="lazy"></iframe>
-    </div>
-    <noscript><p class="pk-note">Калькулятор работает при включённом JavaScript. Без него позвоните +77 000 369 369 — подберём кондиционер по телефону.</p></noscript>
+  <section class="pk-sec" id="pk-calc">
+    <h2 class="pk-h2">Подберите кондиционер за три шага</h2>
+    <p class="pk-sub">Ответ меняется сразу, пока вы выбираете: сначала класс мощности, ниже три подходящие модели с фото, ценой и наличием.</p>
+    <div id="pk-app" class="pkc"><noscript><p class="pk-note">Калькулятор работает при включённом JavaScript. Без него позвоните +77 000 369 369 или напишите в <a href="https://wa.me/77000369369">WhatsApp</a>: подберём кондиционер по телефону.</p></noscript></div>
   </section>
 
   <details class="pk-det">
@@ -147,6 +205,8 @@
   </div>
 </div>
 
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@b3e80c2ad1d85329f63e072f67a8baeab7a5f593/novy-dizayn/podbor-calc.js"></script>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
