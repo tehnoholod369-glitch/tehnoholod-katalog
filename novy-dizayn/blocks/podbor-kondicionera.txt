@@ -65,7 +65,7 @@
     .pk-cta { padding: 24px 20px; }
   .pk-btn { width: 100%; }
 }
-.pkc { --blue:#0066FF; --navy:#0033A0; --text:#1A1A1A; --mute:#64748B; --bg:#F1F5F9; --tint:#E9F4FF; --line:#DCE5F0; --ok:#178841; margin-top: 20px; font-family: "Inter", "Segoe UI", sans-serif; color: var(--text); }
+.pkc { --blue:#0066FF; --navy:#0033A0; --text:#1A1A1A; --mute:#64748B; --bg:#F1F5F9; --tint:#E9F4FF; --line:#DCE5F0; --ok:#178841; margin-top: 20px; min-height: 900px; font-family: "Inter", "Segoe UI", sans-serif; color: var(--text); }
 .pkc *, .pkc *::before, .pkc *::after { box-sizing: border-box; }
 .pkc a { color: var(--blue); text-decoration: none; }
 .pkc-grid { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 24px; align-items: start; }
