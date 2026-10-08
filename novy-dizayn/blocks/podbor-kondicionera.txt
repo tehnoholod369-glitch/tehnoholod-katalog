@@ -230,7 +230,7 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@9abeea327a6fd83540fa82574243894f0b6aecc3/novy-dizayn/podbor-calc.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@b11b5ccda463830affbbda89161563430b94486b/novy-dizayn/podbor-calc.js"></script>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
