@@ -25,7 +25,9 @@
   var BUDGETS = [[150000, "до 150 000 ₸"], [250000, "до 250 000 ₸"], [350000, "до 350 000 ₸"], [0, "любой"]];
   var PREFS = [["quiet", "тишина"], ["econ", "экономия"], ["fresh", "приток"], ["wifi", "Wi-Fi"]];
   var QUIET_DB = 25;
-  var S = { area: 25, h: 2.7, sun: false, top: false, kit: false, quiet: false, econ: false, fresh: false, wifi: false, budget: 0 };
+  var S = { area: 25, h: 2.7, sun: false, top: false, kit: false, quiet: false, econ: false, fresh: false, wifi: false, budget: 0, color: "" };
+  // цвет корпуса: имя -> [код для адреса, цвет кружка-образца]; кружок показывает цвет товара, это не цвет интерфейса
+  var COLORS = { "Белый": ["white", "#FFFFFF"], "Чёрный": ["black", "#1A1A1A"], "Серебристый": ["silver", "#C5CCD6"], "Серый": ["gray", "#8A94A3"], "Красный": ["red", "#E81C1C"], "Золотистый": ["gold", "#D4A93A"], "Тёмно-синий": ["navy", "#0B2A6B"], "Бежевый": ["beige", "#E8D9BF"], "Зелёный": ["green", "#3D8F4F"] };
   var DATA = null, DATAP = null, PSTATE = 0;
   var TYPES = { "Кассетные": "кассетный", "Канальные": "канальный", "Напольно-потолочные": "напольно-потолочный", "Колонные": "колонный", "Консольные": "консольный" };
 
@@ -36,6 +38,7 @@
       n = Math.round(+q.get("area")); if (n >= 5 && n <= 300) S.area = n;
       n = +String(q.get("h") || "").replace(",", "."); if (n >= 2.4 && n <= 4.5) S.h = HEIGHTS.reduce(function (b, a) { return Math.abs(a[0] - n) < Math.abs(b - n) ? a[0] : b; }, 2.7);
       ["sun", "top", "kit", "quiet", "econ", "fresh", "wifi"].forEach(function (k) { if (q.get(k) === "1") S[k] = true; });
+      var cq = q.get("color"); Object.keys(COLORS).forEach(function (k) { if (COLORS[k][0] === cq) S.color = k; });
       n = +q.get("budget"); if (BUDGETS.some(function (b) { return b[0] === n; })) S.budget = n;
     } catch (e) { /* адрес без параметров — остаются значения по умолчанию */ }
   }
@@ -72,11 +75,25 @@
     var n = (v.match(/\d+(?:[.,]\d+)?/g) || []).map(function (x) { return parseFloat(x.replace(",", ".")); }).filter(function (x) { return x >= 10; });
     return n.length ? Math.min.apply(null, n) : null;
   }
+  function colorOf(m) {
+    var v = String(spv(m, /^цвет/i) || "").toLowerCase();
+    if (!v) return "";
+    if (/серебр/.test(v)) return "Серебристый";
+    if (/бел/.test(v)) return "Белый";
+    if (/ч[её]рн/.test(v)) return "Чёрный";
+    if (/красн/.test(v)) return "Красный";
+    if (/золот/.test(v)) return "Золотистый";
+    if (/син/.test(v)) return "Тёмно-синий";
+    if (/беж/.test(v)) return "Бежевый";
+    if (/зел[её]н/.test(v)) return "Зелёный";
+    if (/сер/.test(v)) return "Серый";
+    return "";
+  }
   function effRank(e) { return e === "A+++" ? 3 : e === "A++" ? 2 : e === "A+" ? 1 : 0; }
   function info(m, c) {
     var wf = spv(m, /^wi-?fi/i), v = btuOf(m);
     var x = {
-      m: m, btu: v, noise: noiseOf(m), inv: m.inv === "inv",
+      m: m, btu: v, noise: noiseOf(m), inv: m.inv === "inv", color: colorOf(m),
       eff: (spv(m, /^класс энергоэфф/i).match(/A\+*/) || [""])[0],
       fresh: /^да/i.test(spv(m, /^приток/i)),
       wifi: /встроен/i.test(wf) ? 1 : /^есть/i.test(wf) ? 0.5 : 0
@@ -124,7 +141,10 @@
     return true;
   }
   function pick(c) {
-    var pool = poolFor(c);
+    var poolAll = poolFor(c), cc = {};
+    poolAll.forEach(function (x) { if (x.color) cc[x.color] = (cc[x.color] || 0) + 1; });
+    var colors = Object.keys(cc).sort(function (a, b) { return cc[b] - cc[a]; });
+    var pool = S.color ? poolAll.filter(function (x) { return x.color === S.color; }) : poolAll;
     var inStock = pool.filter(function (x) { return x.m.st === "В наличии"; });
     var nSel = pool.length ? pool[0].nSel : 0;
     function budgeted(arr) { return S.budget ? arr.filter(function (x) { return x.m.p <= S.budget; }) : arr; }
@@ -178,7 +198,7 @@
     // лучшее совпадение слева, остальные по цене
     var best = out.filter(function (o) { return o.best; }), rest = out.filter(function (o) { return !o.best; }).sort(function (a, b) { return a.x.m.p - b.x.m.p; });
     var btus = pool.length ? pool.map(function (x) { return x.btu; }).filter(function (v, i, a) { return a.indexOf(v) === i; }).sort(function (a, b) { return a - b; }) : [];
-    return { list: best.concat(rest), note: note, strict: strict, total: cand.length, btus: btus, cls: btus.length ? btus[0] : null };
+    return { list: best.concat(rest), note: note, strict: strict, colors: colors, poolN: poolAll.length, total: cand.length, btus: btus, cls: btus.length ? btus[0] : null };
   }
   function ensureP(cb) {
     if (DATAP || PSTATE === 1) return;
@@ -194,12 +214,13 @@
     if (TYPES[m.sub]) f.push([TYPES[m.sub], 0]);
     f.push([fmt(x.btu) + " BTU", 0]);
     f.push(["до " + m.num + " м²", 0]);
+    if (x.color) f.push([x.color.toLowerCase(), S.color === x.color]);
     f.push([x.inv ? "Инвертор" : "ON/OFF", S.econ && x.hit.econ]);
     if (x.noise != null) f.push(["от " + String(x.noise).replace(".", ",") + " дБ", S.quiet && x.hit.quiet]);
     if (x.fresh) f.push(["приток воздуха", S.fresh && x.hit.fresh]);
     if (x.wifi === 1) f.push(["Wi-Fi", S.wifi && x.hit.wifi === 1]);
     if (x.eff) f.push(["класс " + x.eff, 0]);
-    return f.slice(0, 7);
+    return f.slice(0, 8);
   }
   function matchRow(x) {
     if (!x.nSel) return "";
@@ -259,25 +280,38 @@
     }).join("") + "</dl>";
   }
 
-  function render() {
-    var c = calc();
-    var steps =
-      '<div class="pkc-sec"><div class="pkc-step"><i>1</i><b>Ваша комната</b></div>' +
+  function colorRow(cols) {
+    var list = cols.slice();
+    if (S.color && list.indexOf(S.color) < 0) list.push(S.color);
+    if (!list.length) return "";
+    var btns = '<button type="button" class="pkc-chip' + (S.color ? "" : " on") + '" aria-pressed="' + !S.color + '" data-color="">Любой</button>' + list.map(function (n) {
+      var on = S.color === n;
+      return '<button type="button" class="pkc-chip' + (on ? " on" : "") + '" aria-pressed="' + on + '" data-color="' + esc(n) + '"><i class="pkc-sw" style="background:' + COLORS[n][1] + '"></i>' + esc(n) + "</button>";
+    }).join("");
+    return '<div class="pkc-lab">Цвет корпуса</div><div class="pkc-chips">' + btns + '</div><p class="pkc-hint">Цвет указан не у всех моделей. Если нужного цвета нет в списке, напишите нам в <a href="https://wa.me/77000369369">WhatsApp</a>.</p>';
+  }
+  function stepsHtml(cols) {
+    return '<div class="pkc-sec"><div class="pkc-step"><i>1</i><b>Ваша комната</b></div>' +
       '<div class="pkc-lab">Площадь</div><div class="pkc-chips">' + chips(AREAS, areaCur(), "area") + "</div>" +
       '<label class="pkc-exact">или точнее: <input type="number" inputmode="numeric" min="5" max="300" value="' + (S.area > 300 ? "" : S.area) + '" aria-label="Площадь комнаты в квадратных метрах" data-exact> м²</label>' +
       '<div class="pkc-lab">Высота потолка</div><div class="pkc-chips">' + chips(HEIGHTS, S.h, "h") + "</div>" +
       '<div class="pkc-lab">Условия</div><div class="pkc-chips">' + tog("sun", "Солнечная сторона", S.sun) + tog("top", "Верхний этаж", S.top) + tog("kit", "Кухня или много техники", S.kit) + "</div></div>" +
       '<div class="pkc-sec"><div class="pkc-step"><i>2</i><b>Что для вас важно</b></div><div class="pkc-opts">' +
-      opt("quiet", "Тихая работа", "не громче " + QUIET_DB + " дБ") + opt("econ", "Экономия", "инвертор A++ и выше") + opt("fresh", "Свежий воздух", "приток с улицы") + opt("wifi", "Wi-Fi", "встроенный модуль") + "</div></div>" +
+      opt("quiet", "Тихая работа", "не громче " + QUIET_DB + " дБ") + opt("econ", "Экономия", "инвертор A++ и выше") + opt("fresh", "Свежий воздух", "приток с улицы") + opt("wifi", "Wi-Fi", "встроенный модуль") + "</div>" +
+      colorRow(cols) + "</div>" +
       '<div class="pkc-sec"><div class="pkc-step"><i>3</i><b>Бюджет</b></div><div class="pkc-chips">' + chips(BUDGETS, S.budget, "budget") + "</div></div>";
+  }
 
+  function render() {
+    var c = calc(), p = null, res, models = "";
     if (c.mode === "big" && !DATAP) {
       ensureP(render);
-      ROOT.innerHTML = '<div class="pkc-grid"><div class="pkc-card">' + steps + '</div><aside class="pkc-res"><div class="pkc-k">Считаем</div><div class="pkc-kw">Подбираем модели для большого помещения…</div></aside></div>';
+      ROOT.innerHTML = '<div class="pkc-grid"><div class="pkc-card">' + stepsHtml([]) + '</div><aside class="pkc-res"><div class="pkc-k">Считаем</div><div class="pkc-kw">Подбираем модели для большого помещения…</div></aside></div>';
       return;
     }
-    var p = c.mode === "proj" ? null : pick(c), res, models = "";
-    if (!p || (!p.list.length && c.mode !== "std")) {
+    if (c.mode !== "proj") p = pick(c);
+    var steps = stepsHtml(p ? p.colors : []);
+    if (!p || (!p.list.length && c.mode !== "std" && !p.poolN)) {
       res = '<aside class="pkc-res"><div class="pkc-k">Для такой площади</div><div class="pkc-kw">Нужен расчёт по проекту</div>' + (c.mode === "proj" ? "" : "") +
         '<div class="pkc-how"><b>Как посчитано</b>' + howRows(c) + 'Для больших помещений и нескольких комнат подбираем <a href="/multisplit">мультисплит</a>, <a href="/katalog?g=poluprom">полупромышленные</a> и <a href="/vrf-sistemy-almaty">VRF-системы</a>: состав и цену считаем по проекту.</div>' +
         '<div class="pkc-note">Напишите в <a href="https://wa.me/77000369369">WhatsApp</a> или позвоните +77 000 369 369.</div></aside>';
@@ -294,7 +328,7 @@
       var grp = c.mode === "big" ? "poluprom" : "bytovye";
       models = '<div class="pkc-models"><h3 class="pkc-h">Подходящие модели</h3>' + (p.note ? '<p class="pkc-info">' + esc(p.note) + "</p>" : "") + (p.strict ? '<p class="pkc-info">Показаны только модели, которые закрывают все выбранные пожелания.</p>' : "") +
         (p.list.length ? '<div class="pkc-cards">' + p.list.map(card).join("") + "</div>" :
-          '<p class="pkc-info">Модели этого класса сейчас не найдены. Напишите нам в WhatsApp, подберём.</p>') +
+          '<p class="pkc-info">' + (S.color ? "Подходящей мощности в цвете «" + esc(S.color) + "» сейчас нет. Выберите другой цвет или напишите нам в WhatsApp: подберём под заказ." : "Модели этого класса сейчас не найдены. Напишите нам в WhatsApp, подберём.") + '</p>') +
         '<div class="pkc-more"><a class="pkc-btn pkc-btn--line" href="/katalog?g=' + grp + "&btu=" + (cls || c.btu) + '&stock=in">Все подходящие модели в каталоге →</a>' +
         '<a class="pkc-btn pkc-btn--line" href="https://wa.me/77000369369">Нужна помощь? WhatsApp</a></div></div>';
     }
@@ -306,6 +340,7 @@
     if (b.hasAttribute("data-area")) S.area = +b.getAttribute("data-area");
     else if (b.hasAttribute("data-h")) S.h = +b.getAttribute("data-h");
     else if (b.hasAttribute("data-budget")) S.budget = +b.getAttribute("data-budget");
+    else if (b.hasAttribute("data-color")) S.color = b.getAttribute("data-color");
     else if (b.hasAttribute("data-tog")) { var k = b.getAttribute("data-tog"); S[k] = !S[k]; }
     else return;
     render();
