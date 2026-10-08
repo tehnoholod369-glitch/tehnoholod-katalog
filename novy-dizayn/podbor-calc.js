@@ -127,14 +127,20 @@
     function first(arr, fn, sortFn) { var f = arr.filter(fn); if (sortFn) f = f.slice().sort(sortFn); return f[0]; }
     var nSel = cand.length ? cand[0].nSel : 0;
     if (nSel > 0) {
+      // Все три карточки берём только из моделей, которые лучше всего совпадают с пожеланиями:
+      // порог — не хуже «лучший результат минус 1» и не меньше половины выбранного; если таких меньше трёх, порог снижаем.
       var ranked = cand.slice().sort(function (a, b) { return b.score - a.score || a.marg - b.marg || a.m.p - b.m.p; });
       var top = ranked[0];
+      var thr = Math.max(top.score - 1, nSel / 2), P = ranked.filter(function (x) { return x.score >= thr; });
+      while (P.length < 3 && thr > 0) { thr -= 0.5; P = ranked.filter(function (x) { return x.score >= thr; }); }
+      if (P.length < 3) P = ranked;
+      var byP = P.slice().sort(function (a, b) { return a.m.p - b.m.p; });
       add(top, top.score >= nSel ? "Подходит под все ваши пожелания" : "Лучшее совпадение с вашим выбором", true);
-      add(cand[0], "Самый доступный");
-      // если лучшая модель идёт «на пределе» мощности (запас меньше 5 %), добавляем лучшую по совпадению с запасом от 15 %
-      if (top.marg < 0.05) add(first(ranked, function (x) { return x.marg >= 0.15; }), "С запасом мощности");
-      add(first(cand, function (x) { return x.marg >= 0; }, function (a, b) { return a.marg - b.marg || a.m.p - b.m.p; }), "Ближе всего по мощности");
-      ranked.forEach(function (x) { add(x, "Ещё вариант"); });
+      add(byP[0], "Самый доступный из подходящих");
+      // если лучшая модель идёт «на пределе» мощности (запас меньше 5 %), добавляем подходящую с запасом от 15 %
+      if (top.marg < 0.05) add(first(P, function (x) { return x.marg >= 0.15; }), "С запасом мощности");
+      add(first(P, function (x) { return x.marg >= 0; }, function (a, b) { return a.marg - b.marg || a.m.p - b.m.p; }), "Ближе всего по мощности");
+      P.forEach(function (x) { add(x, "Ещё вариант"); });
     } else {
       add(cand[0], "Самый доступный");
       add(first(cand, function (x) { return x.noise != null; }, function (a, b) { return a.noise - b.noise || a.m.p - b.m.p; }), "Самый тихий");
