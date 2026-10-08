@@ -25,10 +25,11 @@
 .pk-tool { margin-top: 20px; background: #fff; border: 1px solid #DCE5F0; border-radius: 16px; overflow: hidden; }
 .pk-tool iframe { display: block; width: 100%; height: 900px; border: 0; background: #fff; }
 .pk-tbl-wrap { margin-top: 20px; overflow-x: auto; background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; }
-.pk-tbl { width: 100%; border-collapse: collapse; font: 400 16px/24px Inter, sans-serif; min-width: 520px; }
-.pk-tbl th { text-align: left; background: #F1F5F9; color: #64748B; font: 600 13px/18px Inter, sans-serif; letter-spacing: 0.04em; text-transform: uppercase; padding: 12px 18px; }
-.pk-tbl td { padding: 14px 18px; border-top: 1px solid #DCE5F0; }
-.pk-tbl td:first-child { font-weight: 700; color: #0033A0; }
+.pk-tbl { width: 100%; border-collapse: collapse; font: 400 15px/22px Inter, sans-serif; min-width: 560px; }
+.pk-tbl th, .pk-tbl td { padding: 10px 16px; text-align: left; border-top: 1px solid #DCE5F0; }
+.pk-tbl thead th { background: #F1F5F9; color: #0033A0; font: 700 16px/22px Inter, sans-serif; border-top: 0; }
+.pk-tbl thead th:first-child, .pk-tbl tbody th { color: #64748B; font: 600 13px/18px Inter, sans-serif; letter-spacing: 0.04em; text-transform: uppercase; }
+.pk-tbl tbody th { background: #fff; white-space: nowrap; }
 .pk-note { margin: 14px 0 0; font: 400 15px/24px Inter, sans-serif; color: #64748B; max-width: 860px; }
 .pk-g3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 20px; }
 .pk-c { display: flex; flex-direction: column; gap: 6px; background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 20px; color: #1A1A1A; }
@@ -88,25 +89,16 @@
 
   <section class="pk-sec">
     <h2 class="pk-h2">Какой класс мощности нужен по площади</h2>
-    <p class="pk-sub">Ориентир для потолка до 3 м и средних условий. Класс — привычная маркировка мощности: 09 означает 9 000 BTU.</p>
     <div class="pk-tbl-wrap">
       <table class="pk-tbl">
-        <thead><tr><th>Класс</th><th>Мощность</th><th>Площадь комнаты</th></tr></thead>
+        <thead><tr><th scope="col">Класс</th><th scope="col">07</th><th scope="col">09</th><th scope="col">12</th><th scope="col">18</th><th scope="col">24</th></tr></thead>
         <tbody>
-          <tr><td>07</td><td>7 000 BTU</td><td>до 20 м²</td></tr>
-          <tr><td>09</td><td>9 000 BTU</td><td>до 25 м²</td></tr>
-          <tr><td>12</td><td>12 000 BTU</td><td>до 35 м²</td></tr>
-          <tr><td>18</td><td>18 000 BTU</td><td>до 50 м²</td></tr>
-          <tr><td>24</td><td>24 000 BTU</td><td>до 70 м²</td></tr>
+          <tr><th scope="row">Мощность</th><td>7 000 BTU</td><td>9 000 BTU</td><td>12 000 BTU</td><td>18 000 BTU</td><td>24 000 BTU</td></tr>
+          <tr><th scope="row">Площадь комнаты</th><td>до 20 м²</td><td>до 25 м²</td><td>до 35 м²</td><td>до 50 м²</td><td>до 70 м²</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="pk-note">Больше 70 м² или несколько комнат — смотрите <a href="/multisplit">мультисплит-системы</a>, <a href="/katalog?g=poluprom">полупромышленные кондиционеры</a> или <a href="/vrf-sistemy-almaty">VRF-системы</a>: состав и цену считаем по проекту.</p>
-  </section>
-
-  <section class="pk-sec">
-    <h2 class="pk-h2">Как считается мощность</h2>
-    <p class="pk-sub">Базовый ориентир — 100 Вт холода на 1 м² при потолке до 3 м. Дальше учитываются поправки: солнечная сторона, площадь остекления, техника в комнате и число людей. Кондиционер меньшего класса будет работать без остановки и не справится в жару, больший — переплата и частые включения. Точный расчёт делаем по опросному листу: <a href="/kontakty#podbor">расчёт мощности</a> или звонок по телефону +77 000 369 369.</p>
+    <p class="pk-note">Ориентир для потолка до 3 м: 100 Вт холода на 1 м², плюс поправки на солнечную сторону, остекление, технику и людей. Больше 70 м² или несколько комнат — <a href="/multisplit">мультисплит</a>, <a href="/katalog?g=poluprom">полупромышленные</a> или <a href="/vrf-sistemy-almaty">VRF-системы</a>. Точный расчёт — <a href="/kontakty#podbor">расчёт мощности</a> или звонок +77 000 369 369.</p>
   </section>
 
   <section class="pk-sec">
