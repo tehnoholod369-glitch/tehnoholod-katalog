@@ -51,9 +51,9 @@
 .pk-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 18px 22px; }
 .pk-q h3 { margin: 0; font: 700 17px/26px Inter, sans-serif; color: #1A1A1A; }
 .pk-q p { margin: 8px 0 0; font: 400 16px/26px Inter, sans-serif; color: #1A1A1A; }
-.pk-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; margin-top: 48px; background: #0033A0; border-radius: 16px; padding: 30px 36px; }
-.pk-cta h2 { margin: 0; font: 700 24px/32px Inter, sans-serif; color: #fff; }
-.pk-cta span { display: block; margin-top: 6px; font: 400 15px/24px Inter, sans-serif; color: #DCE5F0; }
+.pk-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; margin-top: 48px; background: #E9F4FF; border: 1px solid #DCE5F0; border-radius: 16px; padding: 30px 36px; }
+.pk-cta h2 { margin: 0; font: 700 24px/32px Inter, sans-serif; color: #0033A0; }
+.pk-cta span { display: block; margin-top: 6px; font: 400 15px/24px Inter, sans-serif; color: #64748B; }
 .pk-cta .pk-btns { margin-top: 0; }
 @media (max-width: 899px) {
   .pk-wrap { padding: 14px 16px 56px; }
@@ -79,7 +79,7 @@
 .pkc-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .pkc-chip { height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid var(--line); background: #fff; font: 600 15px/42px Inter, sans-serif; color: var(--text); white-space: nowrap; cursor: pointer; }
 .pkc-chip:hover { border-color: var(--blue); }
-.pkc-chip.on { background: var(--navy); border-color: var(--navy); color: #fff; }
+.pkc-chip.on { background: var(--tint); border-color: var(--blue); color: var(--blue); }
 .pkc-exact { display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; font: 400 14px/20px Inter, sans-serif; color: var(--mute); }
 .pkc-exact input { width: 84px; height: 40px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px; font: 700 18px/38px Inter, sans-serif; color: var(--navy); text-align: right; }
 .pkc-opts { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; }
@@ -88,16 +88,16 @@
 .pkc-opt.on { border-color: var(--blue); background: var(--tint); }
 .pkc-opt b { display: block; font: 700 15px/22px Inter, sans-serif; color: var(--navy); }
 .pkc-opt span { font: 400 13px/18px Inter, sans-serif; color: var(--mute); }
-.pkc-res { position: sticky; top: 16px; background: var(--navy); border-radius: 16px; padding: 28px; color: #fff; }
-.pkc-k { font: 600 13px/18px Inter, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: #BFD3FF; }
+.pkc-res { position: sticky; top: 16px; background: var(--tint); border: 1px solid var(--line); border-radius: 16px; padding: 28px; color: var(--text); }
+.pkc-k { font: 600 13px/18px Inter, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: var(--mute); }
 .pkc-big { display: flex; align-items: baseline; gap: 12px; margin-top: 10px; }
-.pkc-big b { font: 800 72px/72px Inter, sans-serif; letter-spacing: -0.03em; }
-.pkc-big span { font: 600 20px/28px Inter, sans-serif; color: #DCE5F0; }
-.pkc-kw { margin-top: 6px; font: 500 16px/24px Inter, sans-serif; color: #DCE5F0; }
-.pkc-how { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.2); font: 400 14px/22px Inter, sans-serif; color: #DCE5F0; }
-.pkc-how b { color: #fff; }
-.pkc-res a { color: #fff; text-decoration: underline; }
-.pkc-note { margin-top: 14px; font: 400 12px/18px Inter, sans-serif; color: #BFD3FF; }
+.pkc-big b { font: 800 72px/72px Inter, sans-serif; letter-spacing: -0.03em; color: var(--navy); }
+.pkc-big span { font: 600 20px/28px Inter, sans-serif; color: var(--text); }
+.pkc-kw { margin-top: 6px; font: 500 16px/24px Inter, sans-serif; color: var(--text); }
+.pkc-how { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); font: 400 14px/22px Inter, sans-serif; color: var(--text); }
+.pkc-how b { color: var(--navy); }
+.pkc-res a { color: var(--blue); text-decoration: underline; }
+.pkc-note { margin-top: 14px; font: 400 12px/18px Inter, sans-serif; color: var(--mute); }
 .pkc-models { margin-top: 32px; }
 .pkc-h { margin: 0; font: 700 24px/32px Inter, sans-serif; letter-spacing: -0.015em; color: var(--navy); }
 .pkc-info { margin: 10px 0 0; font: 400 15px/24px Inter, sans-serif; color: var(--mute); }
@@ -117,6 +117,8 @@
 .pkc a.pkc-btn:hover { background: #0052D6; color: #fff; }
 .pkc a.pkc-btn--line, .pkc-btn--line { background: #fff; border: 1.5px solid var(--blue); color: var(--blue); }
 .pkc a.pkc-btn--line:hover { background: var(--tint); color: #0052D6; }
+.pkc-m a.pkc-btn { background: #fff; border: 1.5px solid var(--blue); color: var(--blue); }
+.pkc-m a.pkc-btn:hover { background: var(--tint); color: #0052D6; }
 .pkc-more { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
 .pkc-more .pkc-btn { margin-top: 0; }
 @media (max-width: 900px) {
@@ -199,14 +201,14 @@
   <div class="pk-cta">
     <div><h2>Нужна помощь с выбором?</h2><span>Ответим в WhatsApp и по телефону, поможем подобрать модель под вашу комнату.</span></div>
     <div class="pk-btns">
-      <a class="pk-btn pk-btn--blue" href="https://wa.me/77000369369" style="background:#fff;color:#0033A0;">Написать в WhatsApp</a>
+      <a class="pk-btn pk-btn--blue" href="https://wa.me/77000369369">Написать в WhatsApp</a>
       <a class="pk-btn pk-btn--line" href="tel:+77000369369">+77 000 369 369</a>
     </div>
   </div>
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@173fe5f2976772c222c1d29a06f064f3947d6c1c/novy-dizayn/podbor-calc.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@ea977e3664ab38dd981016916d36b05157035b33/novy-dizayn/podbor-calc.js"></script>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
