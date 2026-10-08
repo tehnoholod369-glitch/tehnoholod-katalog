@@ -23,7 +23,20 @@
 .pk-h2 { margin: 0; font: 700 28px/36px Inter, sans-serif; letter-spacing: -0.015em; color: #0033A0; }
 .pk-sub { margin: 10px 0 0; font: 400 16px/26px Inter, sans-serif; color: #64748B; max-width: 860px; }
 .pk-tool { margin-top: 20px; background: #fff; border: 1px solid #DCE5F0; border-radius: 16px; overflow: hidden; }
-.pk-tool iframe { display: block; width: 100%; height: 900px; border: 0; background: #fff; }
+.pk-tool { scroll-margin-top: 72px; }
+.pk-tool iframe { display: block; width: 100%; height: calc(100vh - 96px); min-height: 560px; max-height: 1100px; border: 0; background: #fff; }
+.pk-det { margin-top: 32px; background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 0 22px; }
+.pk-det > summary, .pk-q > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.pk-det > summary::-webkit-details-marker, .pk-q > summary::-webkit-details-marker { display: none; }
+.pk-det > summary::after, .pk-q > summary::after { content: "+"; flex: none; font: 600 24px/1 Inter, sans-serif; color: #0066FF; }
+.pk-det[open] > summary::after, .pk-q[open] > summary::after { content: "–"; }
+.pk-det > summary { padding: 16px 0; }
+.pk-det > summary .pk-h2 { font-size: 22px; line-height: 30px; }
+.pk-det[open] { padding-bottom: 18px; }
+.pk-det .pk-tbl-wrap { margin-top: 4px; }
+.pk-q > summary h3 { margin: 0; }
+.pk-q > summary { padding: 0; }
+.pk-q[open] > summary { margin-bottom: 0; }
 .pk-tbl-wrap { margin-top: 20px; overflow-x: auto; background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; }
 .pk-tbl { width: 100%; border-collapse: collapse; font: 400 15px/22px Inter, sans-serif; min-width: 560px; }
 .pk-tbl th, .pk-tbl td { padding: 10px 16px; text-align: left; border-top: 1px solid #DCE5F0; }
@@ -52,7 +65,7 @@
   .pk-lead { font-size: 16px; line-height: 26px; }
   .pk-facts, .pk-g3 { grid-template-columns: 1fr; }
   .pk-h2 { font-size: 24px; line-height: 32px; }
-  .pk-tool iframe { height: 82vh; min-height: 560px; }
+  .pk-tool iframe { height: calc(100vh - 88px); min-height: 520px; }
   .pk-cta { padding: 24px 20px; }
   .pk-btn { width: 100%; }
 }
@@ -67,7 +80,7 @@
     <h1 class="pk-h1">Подбор кондиционера по площади комнаты в Алматы</h1>
     <p class="pk-lead">Для комнаты 25 м² с потолком до 3 м обычно подходит кондиционер класса 09 (9 000 BTU): базовый расчёт — 100 Вт холода на 1 м². Укажите площадь и высоту потолка в калькуляторе ниже — он покажет нужный класс мощности и подходящие модели с фото, ценой и наличием.</p>
     <div class="pk-btns">
-      <a class="pk-btn pk-btn--blue" href="#pk-tool">Открыть калькулятор</a>
+      <a class="pk-btn pk-btn--blue" href="#pk-calc">Открыть калькулятор</a>
       <a class="pk-btn pk-btn--line" href="https://wa.me/77000369369">Спросить в WhatsApp</a>
     </div>
   </section>
@@ -81,14 +94,14 @@
   <section class="pk-sec" id="pk-tool">
     <h2 class="pk-h2">Калькулятор подбора кондиционера</h2>
     <p class="pk-sub">Введите площадь комнаты и высоту потолка. Уточните условия — солнечная сторона, верхний этаж, кухня, — и подбор станет точнее. Можно оставить только модели со свежим воздухом с улицы или отфильтровать по типу компрессора.</p>
-    <div class="pk-tool">
+    <div class="pk-tool" id="pk-calc">
       <iframe id="pk-frame" src="https://podbor.tehnoholod369.kz/?embed=1" title="Калькулятор подбора кондиционера по площади" loading="lazy"></iframe>
     </div>
     <noscript><p class="pk-note">Калькулятор работает при включённом JavaScript. Без него позвоните +77 000 369 369 — подберём кондиционер по телефону.</p></noscript>
   </section>
 
-  <section class="pk-sec">
-    <h2 class="pk-h2">Какой класс мощности нужен по площади</h2>
+  <details class="pk-det">
+    <summary><h2 class="pk-h2">Какой класс мощности нужен по площади</h2></summary>
     <div class="pk-tbl-wrap">
       <table class="pk-tbl">
         <thead><tr><th scope="col">Класс</th><th scope="col">07</th><th scope="col">09</th><th scope="col">12</th><th scope="col">18</th><th scope="col">24</th></tr></thead>
@@ -99,7 +112,7 @@
       </table>
     </div>
     <p class="pk-note">Ориентир для потолка до 3 м: 100 Вт холода на 1 м², плюс поправки на солнечную сторону, остекление, технику и людей. Больше 70 м² или несколько комнат — <a href="/multisplit">мультисплит</a>, <a href="/katalog?g=poluprom">полупромышленные</a> или <a href="/vrf-sistemy-almaty">VRF-системы</a>. Точный расчёт — <a href="/kontakty#podbor">расчёт мощности</a> или звонок +77 000 369 369.</p>
-  </section>
+  </details>
 
   <section class="pk-sec">
     <h2 class="pk-h2">Кондиционеры под вашу комнату</h2>
@@ -116,12 +129,12 @@
   <section class="pk-sec">
     <h2 class="pk-h2">Вопросы и ответы</h2>
     <div class="pk-faq">
-      <div class="pk-q"><h3>Как подобрать кондиционер по площади комнаты?</h3><p>Базовый ориентир — 100 Вт холода на 1 м² при потолке до 3 м: класс 07 закрывает примерно до 20 м², 09 — до 25 м², 12 — до 35 м², 18 — до 50 м², 24 — до 70 м². Запас нужен для солнечной стороны, панорамных окон, кухни и техники в комнате. Калькулятор на этой странице считает по площади и сразу показывает модели.</p></div>
-      <div class="pk-q"><h3>Какой кондиционер нужен для комнаты 25 м²?</h3><p>Для комнаты 25 м² с потолком до 3 м подходит класс 09 (9 000 BTU). Для 35 м² нужен класс 12, для 50 м² — класс 18. Если комната солнечная, на верхнем этаже или с большой кухней, берут класс выше.</p></div>
-      <div class="pk-q"><h3>Сколько стоит кондиционер в Алматы?</h3><p>Цена зависит от класса мощности, типа компрессора (инвертор или ON/OFF) и бренда. Актуальные цены и наличие показаны в калькуляторе и в каталоге. Монтаж считается отдельно и зависит от длины трассы и этажа.</p></div>
-      <div class="pk-q"><h3>Чем инвертор отличается от ON/OFF?</h3><p>Инвертор плавно меняет мощность: тише, экономичнее, точнее держит температуру, дороже при покупке. ON/OFF включается и выключается целиком — проще и дешевле. Для спальни и постоянной работы обычно берут инвертор.</p></div>
-      <div class="pk-q"><h3>Можно ли подобрать систему на несколько комнат?</h3><p>Да: один наружный блок на несколько комнат и внутренние блоки того же бренда — это <a href="/multisplit">мультисплит-система</a>. Итоговую совместимость и монтаж подтверждает менеджер.</p></div>
-      <div class="pk-q"><h3>Кто даёт гарантию на оборудование и монтаж?</h3><p>Гарантия на оборудование — производителя, срок в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></div>
+      <details class="pk-q"><summary><h3>Как подобрать кондиционер по площади комнаты?</h3></summary><p>Базовый ориентир — 100 Вт холода на 1 м² при потолке до 3 м: класс 07 закрывает примерно до 20 м², 09 — до 25 м², 12 — до 35 м², 18 — до 50 м², 24 — до 70 м². Запас нужен для солнечной стороны, панорамных окон, кухни и техники в комнате. Калькулятор на этой странице считает по площади и сразу показывает модели.</p></details>
+      <details class="pk-q"><summary><h3>Какой кондиционер нужен для комнаты 25 м²?</h3></summary><p>Для комнаты 25 м² с потолком до 3 м подходит класс 09 (9 000 BTU). Для 35 м² нужен класс 12, для 50 м² — класс 18. Если комната солнечная, на верхнем этаже или с большой кухней, берут класс выше.</p></details>
+      <details class="pk-q"><summary><h3>Сколько стоит кондиционер в Алматы?</h3></summary><p>Цена зависит от класса мощности, типа компрессора (инвертор или ON/OFF) и бренда. Актуальные цены и наличие показаны в калькуляторе и в каталоге. Монтаж считается отдельно и зависит от длины трассы и этажа.</p></details>
+      <details class="pk-q"><summary><h3>Чем инвертор отличается от ON/OFF?</h3></summary><p>Инвертор плавно меняет мощность: тише, экономичнее, точнее держит температуру, дороже при покупке. ON/OFF включается и выключается целиком — проще и дешевле. Для спальни и постоянной работы обычно берут инвертор.</p></details>
+      <details class="pk-q"><summary><h3>Можно ли подобрать систему на несколько комнат?</h3></summary><p>Да: один наружный блок на несколько комнат и внутренние блоки того же бренда — это <a href="/multisplit">мультисплит-система</a>. Итоговую совместимость и монтаж подтверждает менеджер.</p></details>
+      <details class="pk-q"><summary><h3>Кто даёт гарантию на оборудование и монтаж?</h3></summary><p>Гарантия на оборудование — производителя, срок в паспорте изделия. Гарантия на монтаж — монтажной бригады, срок в её карточке и в Сервис-карте 369. Мы ведём сопровождение: реестр установок, рейтинг бригад, напоминания о сервисе.</p></details>
     </div>
   </section>
 
