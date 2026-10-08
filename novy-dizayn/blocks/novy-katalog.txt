@@ -139,10 +139,10 @@
         <div style="font:400 16px/24px Inter,sans-serif; color:#1A1A1A; margin-top:10px;">{{ heroSub }}</div>
       </div>
       <sc-if value="{{ hasHeroBrands }}" hint-placeholder-val="{{ false }}">
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(140px,30%),1fr)); gap:10px; margin-top:20px;">
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:20px;">
           <sc-for list="{{ heroBrands }}" as="hb" hint-placeholder-count="5">
-            <div onClick="{{ hb.pick }}" title="{{ hb.title }}" style="background:#fff; border:{{ hb.bd }}; border-radius:12px; height:64px; display:flex; align-items:center; justify-content:center; padding:10px 12px; box-sizing:border-box; cursor:pointer;">
-              <img src="{{ hb.logo }}" alt="{{ hb.name }}" style="max-width:100%; max-height:42px; object-fit:contain; display:block;" />
+            <div onClick="{{ hb.pick }}" title="{{ hb.title }}" style="background:#fff; border:{{ hb.bd }}; border-radius:12px; width:150px; flex:none; height:64px; display:flex; align-items:center; justify-content:center; padding:10px 12px; box-sizing:border-box; cursor:pointer;">
+              <img src="{{ hb.logo }}" alt="{{ hb.name }}" style="max-width:100%; height:{{ hb.lh }}; width:auto; object-fit:contain; display:block;" />
             </div>
           </sc-for>
         </div>
@@ -406,6 +406,7 @@ class Component extends DCLogic {
     this.__onCart();
     // логотипы брендов для голубой шапки раздела: те же файлы, что у главной (brand-logos.json и чистые варианты)
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logos.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(logos => this.setState({ logos: logos || {} })).catch(() => {});
+    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logo-ratio.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(d => this.setState({ logoRatio: d || {} })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/brand-logos-clean.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(c => this.setState({ logosClean: c || {} })).catch(() => {});
     const p = new URLSearchParams(location.search);
     const group = p.get("g") || "bytovye";
@@ -1984,9 +1985,10 @@ class Component extends DCLogic {
     const _ТОЛЬКО_ЧИСТЫЙ = ["Royal Thermo"];
     const heroBrands = sortedBrands
       .filter(b => _Л[b] && (_ТОЛЬКО_ЧИСТЫЙ.indexOf(b) < 0 || !!((s.logosClean || {}).logos || {})[b]))
-      .slice(0, 6)
       .filter((x, i, a) => a.length > 1)
       .map(b => ({
+        // 08.10.2026: показываем все бренды раздела; высота — по равной оптической площади, иначе узкий TCL теряется рядом с широкими
+        lh: Math.max(22, Math.min(46, Math.round(Math.sqrt(3000 / (((s.logoRatio || {})[b]) || 2.5))))) + "px",
         name: b, title: b + (s.brand === b ? " — показаны только эти модели, нажмите ещё раз, чтобы снять" : ""), logo: _Л[b],
         bd: s.brand === b ? "2px solid #0066FF" : "1px solid #DCE5F0",
         pick: () => this.setState({ brand: s.brand === b ? "all" : b, shown: 12 })
