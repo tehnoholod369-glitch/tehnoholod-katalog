@@ -206,7 +206,7 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@b3e80c2ad1d85329f63e072f67a8baeab7a5f593/novy-dizayn/podbor-calc.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@897f66899177884c46357b0b257c523062ba791d/novy-dizayn/podbor-calc.js"></script>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
