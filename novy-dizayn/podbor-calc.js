@@ -11,7 +11,7 @@
   if (!ROOT || ROOT.getAttribute("data-ready")) return;
   var RAW = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/bytovye.json";
   var CLASSES = [7000, 9000, 12000, 18000, 24000, 36000, 48000, 60000];
-  var AREAS = [[15, "до 15 м²"], [20, "15–20 м²"], [25, "20–25 м²"], [35, "25–35 м²"], [50, "35–50 м²"], [70, "50–70 м²"], [999, "больше 70 м²"]];
+  var AREAS = [[20, "до 20 м²"], [25, "20–25 м²"], [35, "25–35 м²"], [50, "35–50 м²"], [70, "50–70 м²"], [999, "больше 70 м²"]];
   var HEIGHTS = [[2.5, "2,5 м"], [2.7, "2,7 м"], [3.0, "3 м"], [3.5, "3,5 м и выше"]];
   var BUDGETS = [[150000, "до 150 000 ₸"], [250000, "до 250 000 ₸"], [350000, "до 350 000 ₸"], [0, "любой"]];
   var S = { area: 25, h: 2.7, sun: false, top: false, kit: false, quiet: false, econ: false, fresh: false, wifi: false, budget: 0 };
