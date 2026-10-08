@@ -47,8 +47,14 @@
     var r = (m.sp || []).filter(function (x) { return re.test(String(x[0])); })[0];
     return r ? String(r[1]) : "";
   }
+  // Шум внутреннего блока, дБ: берём только внутренний блок и только режим охлаждения, значения меньше 10 — «нет данных»
+  // (в данных LG встречается «нагрев … 0 дБ»), из диапазона берём минимум — самый тихий режим.
   function noiseOf(m) {
-    var v = spv(m, /^шум/i), n = (v.match(/\d+(?:[.,]\d+)?/g) || []).map(function (x) { return parseFloat(x.replace(",", ".")); });
+    var rows = (m.sp || []).filter(function (r) { return /^шум/i.test(String(r[0])) && !/наружн/i.test(String(r[0])); });
+    if (!rows.length) return null;
+    var v = String(rows[0][1]), part = v.match(/охлажд[^;]*/i);
+    if (part) v = part[0];
+    var n = (v.match(/\d+(?:[.,]\d+)?/g) || []).map(function (x) { return parseFloat(x.replace(",", ".")); }).filter(function (x) { return x >= 10; });
     return n.length ? Math.min.apply(null, n) : null;
   }
   function info(m) {
