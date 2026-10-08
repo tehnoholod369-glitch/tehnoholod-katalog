@@ -114,33 +114,60 @@
     return pool;
   }
 
+  // Выбранное пожелание — условие, а не «баллы»: модель без притока при выбранном «Свежем воздухе» не показываем.
+  // Wi-Fi «есть, комплектацию уточняйте» считаем подходящим (с пометкой на карточке).
+  function fullMatch(x) {
+    for (var i = 0; i < PREFS.length; i++) {
+      var k = PREFS[i][0];
+      if (S[k] && x.hit[k] < (k === "wifi" ? 0.5 : 1)) return false;
+    }
+    return true;
+  }
   function pick(c) {
     var pool = poolFor(c);
     var inStock = pool.filter(function (x) { return x.m.st === "В наличии"; });
-    var base = inStock.length >= 3 ? inStock : pool;
-    var note = "";
-    var cand = S.budget ? base.filter(function (x) { return x.m.p <= S.budget; }) : base;
-    if (S.budget && !cand.length) { cand = base; note = "В выбранный бюджет моделей этого класса нет, показываем ближайшие по цене."; }
+    var nSel = pool.length ? pool[0].nSel : 0;
+    function budgeted(arr) { return S.budget ? arr.filter(function (x) { return x.m.p <= S.budget; }) : arr; }
+    var note = "", cand = [], strict = false;
+    if (nSel > 0) {
+      var sets = inStock.length ? [inStock, pool] : [pool];
+      for (var si = 0; si < sets.length && !strict; si++) {
+        var st = budgeted(sets[si]).filter(fullMatch);
+        if (st.length) { cand = st; strict = true; }
+      }
+      if (!strict) {
+        var exists = sets.some(function (s) { return s.some(fullMatch); });
+        var b0 = budgeted(sets[0]);
+        if (S.budget && !b0.length) b0 = sets[0];
+        cand = b0;
+        note = (exists ? "Модели, закрывающие все пожелания, есть, но не в выбранный бюджет." : "Модели, которая закрывает все выбранные пожелания, нет.") + " Показываем ближайшие по совпадению: чего не хватает, видно в строке «Ваш выбор».";
+      }
+    } else {
+      var base = inStock.length >= 3 ? inStock : pool;
+      cand = budgeted(base);
+      if (S.budget && !cand.length) { cand = base; note = "В выбранный бюджет моделей этого класса нет, показываем ближайшие по цене."; }
+    }
     cand = cand.slice().sort(function (a, b) { return a.m.p - b.m.p; });
     var out = [], used = [];
     function add(x, tag, best) { if (x && used.indexOf(x) < 0 && out.length < 3) { used.push(x); out.push({ x: x, tag: tag, best: !!best }); } }
     function first(arr, fn, sortFn) { var f = arr.filter(fn); if (sortFn) f = f.slice().sort(sortFn); return f[0]; }
-    var nSel = cand.length ? cand[0].nSel : 0;
-    if (nSel > 0) {
-      // Все три карточки берём только из моделей, которые лучше всего совпадают с пожеланиями:
-      // порог — не хуже «лучший результат минус 1» и не меньше половины выбранного; если таких меньше трёх, порог снижаем.
+    if (nSel > 0 && cand.length) {
       var ranked = cand.slice().sort(function (a, b) { return b.score - a.score || a.marg - b.marg || a.m.p - b.m.p; });
-      var top = ranked[0];
-      var thr = Math.max(top.score - 1, nSel / 2), P = ranked.filter(function (x) { return x.score >= thr; });
-      while (P.length < 3 && thr > 0) { thr -= 0.5; P = ranked.filter(function (x) { return x.score >= thr; }); }
-      if (P.length < 3) P = ranked;
-      var byP = P.slice().sort(function (a, b) { return a.m.p - b.m.p; });
-      add(top, top.score >= nSel ? "Подходит под все ваши пожелания" : "Лучшее совпадение с вашим выбором", true);
-      add(byP[0], "Самый доступный из подходящих");
+      var top = ranked[0], P2 = ranked;
+      if (!strict) {
+        // полного совпадения нет: берём ближайшие — не хуже «лучший результат минус 1» и не меньше половины выбранного
+        var thr = Math.max(top.score - 1, nSel / 2);
+        P2 = ranked.filter(function (x) { return x.score >= thr; });
+        while (P2.length < 3 && thr > 0) { thr -= 0.5; P2 = ranked.filter(function (x) { return x.score >= thr; }); }
+        if (P2.length < 3) P2 = ranked;
+      }
+      var byP = P2.slice().sort(function (a, b) { return a.m.p - b.m.p; });
+      add(top, strict ? "Подходит под все ваши пожелания" : "Лучшее совпадение с вашим выбором", true);
+      add(byP[0], strict ? "Самый доступный из подходящих" : "Самый доступный из ближайших");
       // если лучшая модель идёт «на пределе» мощности (запас меньше 5 %), добавляем подходящую с запасом от 15 %
-      if (top.marg < 0.05) add(first(P, function (x) { return x.marg >= 0.15; }), "С запасом мощности");
-      add(first(P, function (x) { return x.marg >= 0; }, function (a, b) { return a.marg - b.marg || a.m.p - b.m.p; }), "Ближе всего по мощности");
-      P.forEach(function (x) { add(x, "Ещё вариант"); });
+      if (top.marg < 0.05) add(first(P2, function (x) { return x.marg >= 0.15; }), "С запасом мощности");
+      add(first(P2, function (x) { return x.marg >= 0; }, function (a, b) { return a.marg - b.marg || a.m.p - b.m.p; }), "Ближе всего по мощности");
+      P2.forEach(function (x) { add(x, "Ещё вариант"); });
     } else {
       add(cand[0], "Самый доступный");
       add(first(cand, function (x) { return x.noise != null; }, function (a, b) { return a.noise - b.noise || a.m.p - b.m.p; }), "Самый тихий");
@@ -151,7 +178,7 @@
     // лучшее совпадение слева, остальные по цене
     var best = out.filter(function (o) { return o.best; }), rest = out.filter(function (o) { return !o.best; }).sort(function (a, b) { return a.x.m.p - b.x.m.p; });
     var btus = pool.length ? pool.map(function (x) { return x.btu; }).filter(function (v, i, a) { return a.indexOf(v) === i; }).sort(function (a, b) { return a - b; }) : [];
-    return { list: best.concat(rest), note: note, total: cand.length, btus: btus, cls: btus.length ? btus[0] : null };
+    return { list: best.concat(rest), note: note, strict: strict, total: cand.length, btus: btus, cls: btus.length ? btus[0] : null };
   }
   function ensureP(cb) {
     if (DATAP || PSTATE === 1) return;
@@ -265,7 +292,7 @@
         '<div class="pkc-how"><b>Как посчитано</b>' + howRows(c) + (c.mode === "big" ? "Для таких площадей подходят полупромышленные кондиционеры (кассетные, канальные, напольно-потолочные, колонные) и крупные настенные." : "Берём ближайший стандартный класс не ниже этого значения.") + "</div>" +
         '<div class="pkc-note">Это ориентир. Точный расчёт подтвердим при замере.</div></aside>';
       var grp = c.mode === "big" ? "poluprom" : "bytovye";
-      models = '<div class="pkc-models"><h3 class="pkc-h">Подходящие модели</h3>' + (p.note ? '<p class="pkc-info">' + esc(p.note) + "</p>" : "") +
+      models = '<div class="pkc-models"><h3 class="pkc-h">Подходящие модели</h3>' + (p.note ? '<p class="pkc-info">' + esc(p.note) + "</p>" : "") + (p.strict ? '<p class="pkc-info">Показаны только модели, которые закрывают все выбранные пожелания.</p>' : "") +
         (p.list.length ? '<div class="pkc-cards">' + p.list.map(card).join("") + "</div>" :
           '<p class="pkc-info">Модели этого класса сейчас не найдены. Напишите нам в WhatsApp, подберём.</p>') +
         '<div class="pkc-more"><a class="pkc-btn pkc-btn--line" href="/katalog?g=' + grp + "&btu=" + (cls || c.btu) + '&stock=in">Все подходящие модели в каталоге →</a>' +
