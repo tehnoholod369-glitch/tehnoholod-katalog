@@ -154,6 +154,9 @@
   .pkc-chip { height: 42px; padding: 0 14px; font-size: 14px; line-height: 40px; }
   .pkc-more .pkc-btn { width: 100%; }
 }
+.pkc-sw { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--line); margin-right: 8px; vertical-align: -1px; }
+.pkc-hint { margin: 10px 0 0; font: 400 13px/20px Inter, sans-serif; color: var(--mute); }
+.pkc-hint a { text-decoration: underline; }
 </style>
 
 <div class="pk-wrap">
@@ -230,7 +233,7 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@b11b5ccda463830affbbda89161563430b94486b/novy-dizayn/podbor-calc.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@bdd54368307b8c07c88d6d09b68d80d07acb3ba1/novy-dizayn/podbor-calc.js"></script>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
