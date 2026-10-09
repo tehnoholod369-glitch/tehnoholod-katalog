@@ -140,6 +140,7 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=e8476510"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=6ae050cd"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/podbor-menu.js?v=42b9f45f"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F1F5F9;">
@@ -158,7 +159,7 @@
         <div style="margin:14px 0 0 0; font:800 clamp(28px,6vw,44px)/1.1 Inter,sans-serif; letter-spacing:-0.025em; color:#0033A0;">Комфорт сегодня. Здоровый климат завтра.</div>
         <h1 data-th-hero-lead style="margin:18px 0 0 0; max-width:620px; font:600 22px/1.4 Inter,sans-serif; color:#1A1A1A;">Кондиционеры, вентиляция, отопление, камины и водонагреватели. Подбор и доставка по Казахстану. Монтаж и сервис в Алматы и области.</h1>
         <div data-th-top-cta style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
-          <a href="/kontakty#podbor" style="background:#E81C1C; color:#fff; border-radius:8px; height:52px; padding:0 26px; display:inline-flex; align-items:center; font:600 16px/1 Inter,sans-serif; text-decoration:none;">Подобрать решение →</a>
+          <a href="/podbor-kondicionera" data-th-podbor-open style="background:#E81C1C; color:#fff; border-radius:8px; height:52px; padding:0 26px; display:inline-flex; align-items:center; font:600 16px/1 Inter,sans-serif; text-decoration:none;">Подобрать решение →</a>
           <a href="/katalog" style="background:#fff; border:1.5px solid #0066FF; color:#0066FF; border-radius:8px; height:52px; padding:0 26px; display:inline-flex; align-items:center; font:600 16px/1 Inter,sans-serif; text-decoration:none;">Каталог товаров</a>
         </div>
         <div data-th-desk style="font-size:13px; color:#606F85; line-height:1.5; margin-top:10px;">{{ proektNote }}</div>
