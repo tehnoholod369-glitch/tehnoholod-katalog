@@ -1,0 +1,393 @@
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo-arts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:12px;margin-top:12px}
+.thgeo-art{display:flex;flex-direction:column;gap:6px;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:16px;text-decoration:none;color:inherit}
+.thgeo-art__r{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#0A4EA7}
+.thgeo-art__t{font-size:16px;font-weight:700;line-height:1.3}
+.thgeo-art__s{font-size:13px;color:#5A6675;line-height:1.5}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:12px 0 18px}
+.thgeo-card{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #DCE5F0;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(21,43,68,.06)}
+.thgeo-card__img{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:#f7f9fc;padding:12px;text-decoration:none}
+
+.thgeo-card__img img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}
+.thgeo-card__img--empty{color:#7a8796;font-size:13px}
+.thgeo-card__body{display:flex;flex-direction:column;gap:7px;padding:13px 14px 14px;min-height:220px}
+.thgeo-card__brand{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#5A6675}
+.thgeo-card__name{font-size:17px;font-weight:700;line-height:1.3;color:#17324d;text-decoration:none}
+.thgeo-card__spec{display:flex;flex-wrap:wrap;gap:6px}
+.thgeo-card__spec span{font-size:12px;line-height:1.2;padding:5px 8px;border-radius:999px;background:#f1f5f9;color:#46566a}
+.thgeo-card__stock{font-size:12px;color:#5a6675}
+.thgeo-card__price{margin-top:auto;font-size:20px;font-weight:800;line-height:1.2}
+.thgeo-card__actions{display:grid;grid-template-columns:1fr;gap:7px;margin-top:3px}
+.thgeo-card__actions a{display:flex;align-items:center;justify-content:center;min-height:42px;border-radius:9px;padding:8px 10px;text-decoration:none;font-weight:700;font-size:14px}
+.thgeo-card__more{background:#eef3f8;color:#17324d!important}
+.thgeo-card__wa{background:#0e7d3f;color:#fff!important}
+.thgeo-rev{background:#f4f9ff;border:1px solid #cfe3f7;border-radius:12px;padding:14px 16px;margin:14px 0}
+.thgeo-rev__t{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0a4ea7}
+.thgeo-rev__q{font-size:16px;line-height:1.55;margin-top:6px}
+.thgeo-rev__a{font-size:13px;color:#5a6b80;margin-top:8px}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+.thgeo-also{margin-top:26px}
+.thgeo-also p{font-size:14px;line-height:2;color:#5a6676}
+.thgeo-mont{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:12px;margin:14px 0}
+.thgeo-mont__c{background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:14px 16px}
+.thgeo-mont__t{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0A4EA7;margin-bottom:8px}
+.thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
+.thgeo-mont ul{margin:0;padding-left:18px}
+.thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+.thgeo-mobile-catalog{display:none}
+@media (max-width:480px){
+.thgeo-cards{grid-template-columns:1fr;gap:12px}
+.thgeo-card{display:grid;grid-template-columns:112px minmax(0,1fr)}
+
+.thgeo-card__img{aspect-ratio:1/1;align-self:start;min-height:0;padding:8px}
+.thgeo-card__body{min-height:0;padding:11px 12px}
+.thgeo-card__name{font-size:16px}
+.thgeo-card__price{font-size:19px}
+.thgeo--mobile-catalog-first .thgeo-products{display:none}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog{display:block;background:#f4f9ff;border:1px solid #cfe3f7;border-radius:14px;padding:16px;margin:18px 0}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog h2{margin:0 0 6px;font-size:20px}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog p{margin:0 0 12px;color:#46566a}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog a{display:block;min-height:48px;padding:12px 16px;border-radius:10px;background:#0b62c4;color:#fff;text-decoration:none;font-weight:700;text-align:center}
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
+</style>
+<style>
+.thv{max-width:1200px;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1A1A1A;padding:0 16px 40px}
+.thv h1,.thv h2,.thv h3{color:#0033A0;font-family:Inter,system-ui,sans-serif}
+.thv a{color:#0066FF}
+.thv-hero{background:#E9F4FF;padding:20px 16px 26px;margin:0 -16px}
+.thv-hero h1{font:700 30px/38px Inter,sans-serif;margin:0}
+.thv-lead{font:400 17px/26px Inter,sans-serif;color:#2b3a52;margin:12px 0 18px}
+.thv-cta{display:grid;gap:10px}
+.thv-btn{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:8px;font:600 16px/1 Inter,sans-serif;text-decoration:none;padding:0 18px;box-sizing:border-box}
+.thv .thv-red{background:#E81C1C;color:#fff}
+.thv .thv-out{background:#fff;color:#0066FF;border:1.5px solid #0066FF}
+.thv .thv-blue{background:#0066FF;color:#fff}
+.thv-fine{font:400 13px/18px Inter,sans-serif;color:#475569;margin:12px 0 0}
+.thv-facts{display:grid;gap:12px;margin-top:20px}
+.thv-fact{background:#fff;border:1px solid #cfe3ff;border-radius:12px;padding:14px 16px}
+.thv-fact b{display:block;font:800 24px/30px Inter,sans-serif;color:#0033A0}
+.thv-fact span{font:400 14px/20px Inter,sans-serif;color:#475569}
+.thv-fact b .thgeo-pmin{display:inline;font:inherit;color:inherit}
+.thv-sec{padding-top:32px}
+.thv-sec h2{font:700 24px/32px Inter,sans-serif;margin:0 0 6px}
+.thv-sub{margin:0 0 16px;color:#475569;font:400 15px/22px Inter,sans-serif}
+.thv-routes{display:grid;gap:12px}
+.thv-route{border:1px solid #DCE5F0;border-radius:12px;box-shadow:0 1px 2px rgba(0,51,160,.06);background:#fff;min-width:0}
+.thv-row{display:flex;align-items:center;gap:12px;min-height:76px;padding:12px 16px;text-decoration:none;color:#0033A0}
+.thv-row b{display:block;font:600 17px/24px Inter,sans-serif}
+.thv-row small{display:block;font:400 14px/20px Inter,sans-serif;color:#475569}
+.thv-row .thv-ar{margin-left:auto;color:#0066FF;font-size:22px;flex:none}
+.thv-route .thv-more{display:block;padding:0 16px 12px;font:600 14px/20px Inter,sans-serif;text-decoration:none}
+.thv-pl{display:grid;gap:12px}
+.thv-card{display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-areas:"im pb" "pf pf";grid-template-rows:1fr auto;gap:0 12px;border:1px solid #DCE5F0;border-radius:12px;background:#fff;padding:12px;min-width:0}
+.thv-im{grid-area:im;display:grid;place-items:center;height:140px;align-self:start}
+.thv-im img{max-width:100%;max-height:140px;width:auto;height:auto;object-fit:contain}
+.thv-pb{grid-area:pb;display:flex;flex-direction:column;gap:3px;min-width:0}
+.thv-pb small{font:600 12px/16px Inter,sans-serif;color:#475569}
+.thv-pn{font:700 16px/22px Inter,sans-serif;color:#0033A0;text-decoration:none}
+.thv-mk{display:flex;gap:6px;flex-wrap:wrap}
+.thv-tag--ord{color:#475569!important;border-color:#CBD5E1!important;background:#F1F5F9!important}
+.thv-tag--stock{color:#178841!important;border-color:#B7E3C6!important;background:#EAF7EE!important}
+.thv-tag--stock::before,.thv-tag--ord::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:currentColor;margin-right:6px;vertical-align:1px}
+.thv-tag{padding:2px 10px;border-radius:12px;color:#0066FF;border:1px solid #B8D4FF;background:#E9F4FF;font:600 12px/20px Inter,sans-serif;white-space:nowrap}
+.thv-sp{border-collapse:collapse;width:100%;margin-top:4px;min-width:0!important;font-size:13px}
+.thv-sp td{font:400 13px/18px Inter,sans-serif;padding:3px 0!important;border:0;border-top:1px solid #F1F5F9;vertical-align:top;white-space:normal!important}
+.thv-sp td:first-child{color:#475569;width:46%;padding-right:6px!important}
+.thv-sp td:last-child{color:#1A1A1A;font-weight:500}
+.thv-pf{grid-area:pf;margin-top:10px;padding-top:10px;border-top:1px solid #DCE5F0}
+.thv-pp{font:800 22px/28px Inter,sans-serif;color:#1A1A1A}
+.thv-av{font:400 12px/16px Inter,sans-serif;color:#475569;margin-top:2px}
+.thv-bs{display:flex;gap:8px;margin-top:8px}
+.thv-bs .thv-btn{flex:1;min-height:44px;font-size:15px;padding:0 8px}
+.thv-steps{display:grid;gap:10px}
+.thv-step{display:flex;gap:14px;padding:14px 16px;border:1px solid #DCE5F0;border-radius:12px;background:#fff}
+.thv-step i{flex:none;width:32px;height:32px;border-radius:50%;background:#0066FF;color:#fff;display:grid;place-items:center;font:700 15px/1 Inter,sans-serif;font-style:normal}
+.thv-step b{display:block;font:700 16px/22px Inter,sans-serif;color:#0033A0}
+.thv-step span{font:400 15px/22px Inter,sans-serif;color:#223046}
+.thv .thgeo-faq{border:1px solid #DCE5F0;border-radius:12px;padding:0 16px;margin-bottom:10px;background:#fff}
+.thv .thgeo-faq summary{min-height:52px;display:flex;align-items:center;font:600 16px/22px Inter,sans-serif;color:#0033A0}
+.thv .thgeo-faq p{margin:0 0 14px;font:400 15px/24px Inter,sans-serif;color:#223046}
+.thv .thgeo-final{background:#0033A0;border:0;border-radius:16px;padding:20px 16px;color:#fff;margin-top:28px}
+.thv .thgeo-final h2{color:#fff;font:700 20px/28px Inter,sans-serif;margin:0 0 8px}
+.thv .thgeo-final p{color:#dbe7ff;font:400 14px/20px Inter,sans-serif;margin:0 0 14px}
+.thv .thgeo-final .thgeo-cta{display:grid;gap:10px;margin:0}
+.thv .thgeo-final .thgeo-cta a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:8px;font:600 16px/1 Inter,sans-serif;text-decoration:none}
+.thv .thgeo-final .tg1{background:#fff;color:#0033A0}
+.thv .thgeo-final .tg2{background:transparent;color:#fff;border:1.5px solid #fff}
+.thv h2{font:700 24px/32px Inter,sans-serif;margin:32px 0 10px}
+.thv .thgeo-note,.thv .thgeo-also p{font:400 13px/20px Inter,sans-serif;color:#475569}
+[data-th-shapka] div[style*="max-width:1240px"]{box-sizing:border-box!important;max-width:1232px!important;padding-left:16px!important;padding-right:16px!important}
+.thv-live{margin:0 0 14px}
+.thv-live:empty{display:none}
+.thv-live:not(:empty){border-left:4px solid #E81C1C;background:#FFF4F4;border-radius:0 12px 12px 0;padding:12px 16px;font:500 14px/22px Inter,sans-serif;color:#7A1111}
+@media(min-width:900px){
+ .thv-hero{padding:48px 40px 52px;margin:0;border-radius:0 0 24px 24px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+ .thv-hero h1{font:800 44px/52px Inter,sans-serif}
+ .thv-cta{grid-template-columns:1fr 1fr;max-width:520px}
+ .thv-sec{padding:56px 40px 0}
+ .thv-routes{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .thv-pl{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .thv-card{grid-template-columns:96px minmax(0,1fr)}
+ .thv-im img{max-height:120px}
+ .thv-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .thv-faqwrap,.thv .thgeo-final,.thv .thgeo-also{margin-left:40px;margin-right:40px}
+ .thv .thgeo-final{display:grid;grid-template-columns:1fr auto;grid-template-areas:"t c" "p c";column-gap:40px;row-gap:6px;align-items:center;padding:32px 40px}
+ .thv .thgeo-final h2{grid-area:t;margin:0}
+ .thv .thgeo-final p{grid-area:p;margin:0;font-size:15px;line-height:22px}
+ .thv .thgeo-final .thgeo-cta{grid-area:c;grid-template-columns:auto auto}
+ .thv .thgeo-final .thgeo-cta a{white-space:nowrap;padding:0 28px}
+}
+</style>
+<style>
+.thv-crumbs{font:400 13px/20px Inter,sans-serif;color:#475569;padding:12px 0 0}
+.thv-crumbs a{color:#475569;text-decoration:none}
+.thv-meta{font:500 13px/20px Inter,sans-serif;color:#475569;margin:12px 0 0}
+.thv-tiles{display:grid;gap:12px;margin-top:20px}
+.thv-prose p,.thv-prose li{font:400 16px/26px Inter,sans-serif;color:#223046}
+.thv-prose p{margin:0 0 14px}
+.thv-prose ul{margin:0 0 14px;padding-left:20px}
+.thv-prose li{margin:0 0 6px}
+.thv-prose h3{font:700 20px/28px Inter,sans-serif;color:#0033A0;margin:24px 0 10px}
+.thv-note{border-left:4px solid #0066FF;background:#F1F5F9;border-radius:0 12px 12px 0;padding:14px 16px;margin:0 0 14px;font:400 15px/24px Inter,sans-serif;color:#223046}
+.thv-next{display:grid;gap:10px}
+.thv-next a{display:block;border:1px solid #DCE5F0;border-radius:12px;padding:14px 16px;text-decoration:none;font:600 16px/22px Inter,sans-serif;color:#0033A0;background:#fff}
+.thv-next small{display:block;font:400 14px/20px Inter,sans-serif;color:#475569;margin-top:2px}
+@media(min-width:900px){
+ .thv-hero--model{grid-template-columns:1.05fr 1fr!important;align-items:start!important}
+ .thv-keyfacts{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .thv-hero h1{font-size:36px;line-height:44px}
+ .thv-next{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .thv-prose{max-width:820px}
+}
+.thv-modelcol{display:grid;gap:12px;align-content:start}
+.thv-photo{background:#fff;border:1px solid #DCE5F0;border-radius:16px;padding:16px;display:grid;place-items:center}
+.thv-photo img{width:100%;max-width:420px;height:auto;aspect-ratio:1/1;object-fit:contain;display:block}
+.thv-buy{background:#fff;border:1px solid #DCE5F0;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.thv-buy .thv-pp{font:800 30px/36px Inter,sans-serif}
+.thv-keyfacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.thv .thv-spec{border-collapse:collapse;width:100%;min-width:0;max-width:860px;font-size:15px}
+.thv .thv-spec td{padding:11px 12px;border-bottom:1px solid #E2E8F0;font:400 15px/22px Inter,sans-serif;white-space:normal;vertical-align:top}
+.thv .thv-spec td:first-child{color:#475569;width:42%}
+.thv .thv-spec td:last-child{color:#1A1A1A;font-weight:500}
+.thv-video{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#0f172a;margin:0 0 8px}
+.thv-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.thv-mprice{display:none}
+@media(max-width:899px){.thv-mprice{display:grid;gap:10px;margin:14px 0 4px}.thv-mprice .thv-pp{font:800 30px/36px Inter,sans-serif}.thv-mprice .thv-btn{width:100%}}
+.thv-band{position:relative;border-radius:16px;overflow:hidden;margin:0;background:#0b1730}
+.thv-band img{display:block;width:100%;height:auto;max-height:480px;object-fit:cover}
+.thv-band figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 20px 16px;background:linear-gradient(transparent,rgba(5,15,40,.8));color:#fff;font:700 22px/30px Inter,sans-serif}
+.thv-band small,.thv-cap{display:block;font:400 12px/16px Inter,sans-serif;color:#64748B;margin-top:6px}
+.thv-band small{color:#fff;opacity:.8}
+.thv-why{display:grid;gap:14px;margin-top:14px}
+.thv-whyc{background:#fff;border:1px solid #DCE5F0;border-radius:14px;overflow:hidden}
+.thv-whyc img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;background:#0f172a}
+.thv-whyc div{padding:14px 16px 16px}
+.thv-whyc b{display:block;font:700 18px/26px Inter,sans-serif;color:#0033A0}
+.thv-whyc p{margin:6px 0 0;font:400 15px/23px Inter,sans-serif;color:#223046}
+@media(min-width:900px){.thv-why{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.thv-calc{background:#E9F4FF;border:1px solid #CFE3FF;border-radius:16px;padding:18px 18px 20px;margin-top:14px}
+.thv-calc label{display:block;font:600 16px/24px Inter,sans-serif;color:#0033A0}
+.thv-calc input{height:48px;width:150px;margin-top:8px;font:700 20px/1 Inter,sans-serif;border:1.5px solid #0066FF;border-radius:8px;padding:0 12px;box-sizing:border-box}
+.thv-calc output{display:block;margin-top:12px;font:800 24px/32px Inter,sans-serif;color:#0033A0}
+.thv-tw2{overflow-x:auto}
+.thv .thv-cmp{border-collapse:collapse;width:100%;min-width:640px;font-size:15px}
+.thv .thv-cmp th{background:#F1F5F9;text-align:left;padding:11px 12px;font:700 14px/20px Inter,sans-serif;color:#0033A0;border-bottom:1px solid #E2E8F0;white-space:nowrap}
+.thv .thv-cmp td{padding:11px 12px;border-bottom:1px solid #E2E8F0;font:400 15px/22px Inter,sans-serif;vertical-align:top}
+.thv .thv-cmp tr.me td{background:#F3F8FF;font-weight:600}
+.thv-gal{display:grid;gap:10px}
+.thv-gal .thv-photo{padding:0;overflow:hidden;background:#fff}
+.thv-gal .thv-photo img{width:100%;max-width:none;height:auto;aspect-ratio:1/1;object-fit:contain;background:#fff;display:block}
+.thv-thumbs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.thv-thumb{display:block;width:100%;aspect-ratio:1/1;border:1.5px solid #DCE5F0;border-radius:8px;background:#fff;padding:0;cursor:pointer;overflow:hidden}
+.thv-thumb[aria-current=true]{border-color:#0066FF}
+.thv-thumb img{width:100%;height:100%;object-fit:contain;display:block;background:#fff}
+.thv-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 0}
+.thv-tabs a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid #DCE5F0;background:#fff;font:600 14px/1 Inter,sans-serif;color:#0033A0;text-decoration:none}
+@media(min-width:900px){.thv-why--5{grid-template-columns:repeat(6,minmax(0,1fr))}.thv-why--5 .thv-whyc{grid-column:span 2}.thv-why--5 .thv-whyc:nth-child(n+4){grid-column:span 3}.thv-why--5 .thv-whyc:nth-child(n+4) img{aspect-ratio:2/1}}
+.thv-hero.thv-h2col{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"t" "g" "b";gap:14px;align-items:start}
+.thv-h2col .thv-ht{grid-area:t}.thv-h2col .thv-hg{grid-area:g}.thv-h2col .thv-hb{grid-area:b}
+.thv-h2col .thv-lead{margin:0 0 14px}
+.thv-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.thv-chip{padding:6px 12px;border-radius:999px;background:#fff;border:1px solid #CFE3FF;font:600 14px/20px Inter,sans-serif;color:#0033A0}
+.thv-phone{margin-top:12px}
+@media(min-width:900px){.thv-hero.thv-h2col{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;grid-template-areas:"g t" "g b";grid-template-rows:auto 1fr;gap:6px 44px;align-items:start!important}.thv-h2col .thv-ht{padding-top:6px}.thv-h2col .thv-hero h1,.thv-h2col h1{font-size:34px;line-height:42px}}
+.thv-files{margin:10px 0 0;padding-left:20px}
+.thv-files li{margin:0 0 8px;font:400 16px/24px Inter,sans-serif}
+
+</style>
+<div class="thgeo thv">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<section class="thv-hero thv-hero--model thv-h2col"><div class="thv-ht"><div class="thv-crumbs"><a href="https://tehnoholod369.kz/">Главная</a> › <a href="https://tehnoholod369.kz/otoplenie">Отопление</a> › <a href="https://tehnoholod369.kz/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a> › BOGH-15E</div><h1>Уличный газовый инфракрасный обогреватель Ballu BOGH-15E, 13 кВт</h1><div class="thv-mprice"><div class="thv-pp thgeo-p" data-art="BOGH-15E">309 490 ₸</div><a class="thv-btn thv-red" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%20Ballu%20BOGH-15E%20%28%D1%83%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%BE%D0%B1%D0%BE%D0%B3%D1%80%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%2013%20%D0%BA%D0%92%D1%82%29.%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%3A%20" data-goal="bogh15_whatsapp_top">Заказать в WhatsApp</a></div></div><div class="thv-hg"><div class="thv-gal"><div class="thv-photo"><img id="bg15-main" src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15e-g1.jpg" alt="Уличный газовый инфракрасный обогреватель Ballu BOGH-15E, серия Flame" width="800" height="800" decoding="async"></div><div class="thv-thumbs" role="group" aria-label="Фотографии товара"><button type="button" class="thv-thumb" data-src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15e-g1.jpg" data-alt="Ballu BOGH-15E: общий вид с пультом" aria-label="Фото: общий вид" aria-current="true"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15e-g1.jpg" alt="" width="76" height="56" loading="lazy" decoding="async"></button><button type="button" class="thv-thumb" data-src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15e-g2.jpg" data-alt="Ballu BOGH-15E: баллон внутри корпуса" aria-label="Фото: баллон внутри корпуса"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15e-g2.jpg" alt="" width="76" height="56" loading="lazy" decoding="async"></button><button type="button" class="thv-thumb" data-src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15e-g3.jpg" data-alt="Ballu BOGH-15E: пульт управления" aria-label="Фото: пульт управления"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15e-g3.jpg" alt="" width="76" height="56" loading="lazy" decoding="async"></button><button type="button" class="thv-thumb" data-src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15e-g4.jpg" data-alt="Ballu BOGH-15E: отражатель" aria-label="Фото: отражатель"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15e-g4.jpg" alt="" width="76" height="56" loading="lazy" decoding="async"></button><button type="button" class="thv-thumb" data-src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15e-g5.jpg" data-alt="Ballu BOGH-15E: блок управления и баллон" aria-label="Фото: блок управления и баллон"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15e-g5.jpg" alt="" width="76" height="56" loading="lazy" decoding="async"></button></div></div></div><div class="thv-hb"><p class="thv-lead">Живое пламя, мощность 13 кВт и обогрев до 25 м² (данные производителя). Работает на пропан-бутане, включается с пульта и питается от батареек, сеть не нужна: для террасы, веранды и площадки у входа. Доставка по Казахстану.</p><div class="thv-chips"><span class="thv-chip">13 кВт</span><span class="thv-chip">до 25 м²</span><span class="thv-chip">Пропан-бутан</span><span class="thv-chip">С пультом</span><span class="thv-chip">IP44</span></div><article class="thv-buy"><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><div class="thv-pp thgeo-p" data-art="BOGH-15E">309 490 ₸</div><div class="thv-bs"><a class="thv-btn thv-red thgeo-cart" href="https://tehnoholod369.kz/tovar?g=infrakrasnye-obogrevateli&amp;sl=ballu-bogh-15e">В корзину</a><a class="thv-btn thv-out" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%20Ballu%20BOGH-15E%20%28%D1%83%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%BE%D0%B1%D0%BE%D0%B3%D1%80%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%2013%20%D0%BA%D0%92%D1%82%29.%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%3A%20">Спросить в WhatsApp</a></div><p class="thv-fine">Наличие и цену подтверждаем перед оплатой. Установка и подключение газа считаются отдельно от цены прибора.</p></article><p class="thv-fine thv-phone">Позвонить: <a href="tel:+77000369369">+77 000 369 369</a>, пн–пт 9:00–18:00</p></div></section>
+<nav class="thv-tabs" aria-label="Разделы страницы"><a href="#bg15-why">Преимущества</a><a href="#bg15-specs">Характеристики</a><a href="#bg15-files">Файлы</a><a href="#bg15-faq">Вопросы</a></nav>
+
+<section class="thv-sec thv-kf-sec"><div class="thv-keyfacts"><div class="thv-fact"><b>13 кВт</b><span>тепловая мощность</span></div><div class="thv-fact"><b>до 25 м²</b><span>площадь обогрева по данным производителя</span></div><div class="thv-fact"><b>Пропан-бутан</b><span>вид топлива</span></div><div class="thv-fact"><b>IP44</b><span>класс защиты</span></div></div></section>
+<section class="thv-sec"><figure class="thv-band"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15-vecher.jpg" alt="Вечер на террасе рядом с уличным газовым обогревателем Ballu" width="1600" height="900" decoding="async"><figcaption>Тёплый вечер на открытой террасе<small>Фото: Ballu</small></figcaption></figure></section>
+<section class="thv-sec" id="bg15-why"><h2>Почему BOGH-15E</h2><div class="thv-why thv-why--5"><article class="thv-whyc"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15-teplo.jpg" alt="Тепло — Ballu BOGH-15E" width="630" height="424" loading="lazy" decoding="async"><div><b>Тепло</b><p>Мощность 13 кВт, обогрев площади до 25 м² (данные производителя). Мощность регулируется бесступенчато, расход газа от 0,3 до 0,97 кг/ч.</p></div></article><article class="thv-whyc"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15-plamya.jpg" alt="Свет — Ballu BOGH-15E" width="630" height="424" loading="lazy" decoding="async"><div><b>Свет</b><p>Живое пламя в колбе из боросиликатного стекла: вечером прибор работает ещё и как декоративный светильник.</p></div></article><article class="thv-whyc"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15-bezopasno.jpg" alt="Безопасность — Ballu BOGH-15E" width="630" height="424" loading="lazy" decoding="async"><div><b>Безопасность</b><p>Подача газа прекращается при затухании пламени, сильном наклоне или опрокидывании. Есть датчик уровня кислорода и защита от перегрева; колба закрыта решёткой из нержавеющей стали, класс защиты IP44.</p></div></article><article class="thv-whyc"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15e-g3.jpg" alt="Пульт управления Ballu BOGH-15E" width="630" height="424" loading="lazy" decoding="async"><div><b>Удобство</b><p>Включение и регулировка пламени с пульта (радиус действия до 3 м), электронный розжиг. Питание от батареек, сеть не нужна; на колёсной базе с блокировкой колёс прибор можно переставить по террасе.</p></div></article><article class="thv-whyc"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15-ballon.jpg" alt="Надёжность — Ballu BOGH-15E" width="630" height="424" loading="lazy" decoding="async"><div><b>Надёжность</b><p>Корпус из стали, срок службы 5 лет, гарантия 12 месяцев. Баллон 27 л размещается внутри корпуса; редуктор и шланг входят в комплект.</p></div></article></div><span class="thv-cap">Фото: Ballu. Характеристики — данные производителя.</span></section>
+<section class="thv-sec"><h2>Где ставить</h2><div class="thv-why"><article class="thv-whyc"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15-dom.jpg" alt="Терраса дома и летняя кухня — обогреватель Ballu" width="630" height="424" loading="lazy" decoding="async"><div><b>Терраса дома и летняя кухня</b><p>Греет людей рядом с прибором, а не весь воздух, поэтому подходит для открытых мест, где обычный обогреватель бесполезен.</p></div></article><article class="thv-whyc"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15-veranda.jpg" alt="Веранда и беседка — обогреватель Ballu" width="630" height="424" loading="lazy" decoding="async"><div><b>Веранда и беседка</b><p>Полуоткрытые зоны с навесом: прибор работает на открытом воздухе, пламя видно со всех сторон.</p></div></article><article class="thv-whyc"><img src="https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15-dvor.jpg" alt="Двор и зона отдыха — обогреватель Ballu" width="630" height="424" loading="lazy" decoding="async"><div><b>Двор и зона отдыха</b><p>Стоит на колёсах: можно подкатить к столу или месту, где собираются люди, и зафиксировать колёса.</p></div></article></div><p class="thv-fine">Ставьте прибор на ровную устойчивую площадку на открытом воздухе, вдали от горючих материалов. Поверхность должна быть ровной (наклон до 10°) и негорючей: не ставьте на дерево, линолеум и синтетические покрытия. Не накрывайте прибор, не используйте в подвалах и не оставляйте работать надолго без присмотра. По рисунку 1в руководства: от верха прибора до потолка или навеса не менее 0,5 м; прибор разворачивают к центру площадки и не ставят рядом со стенами, занавесками и мебелью. Порядок подключения газа — в руководстве производителя. Фото: Ballu.</p></section>
+<section class="thv-sec"><h2>На сколько хватит баллона</h2><div class="thv-calc"><label for="bg15-kg">Сколько килограммов газа в баллоне</label><input id="bg15-kg" type="number" inputmode="decimal" min="1" max="50" step="0.5" value="10"><output id="bg15-out" aria-live="polite"></output><p class="thv-fine">Расход по данным производителя: от 0,3 кг/ч на минимальной мощности до 0,97 кг/ч на максимальной. Реальное время зависит от выставленной мощности и ветра. Массу газа смотрите на паспорте баллона.</p></div></section>
+<section class="thv-sec"><h2>Условия покупки</h2><div class="thv-keyfacts"><div class="thv-fact"><b>Официальный дилер</b><span>гарантия 12 месяцев</span></div><div class="thv-fact"><b>Доставка</b><span>по Алматы бесплатно при заказе от 100 000 ₸; по Казахстану рассчитаем и согласуем</span></div><div class="thv-fact"><b>Рассрочка</b><span>до 24 месяцев</span></div><div class="thv-fact"><b>Оплата</b><span>удалённая оплата по QR</span></div></div></section>
+<section class="thv-sec thgeo-products" id="bg15-specs"><h2>Характеристики Ballu BOGH-15E</h2><p class="thv-live thgeo-live" role="status"></p><table class="thv-spec"><tr><td>Тип</td><td>Обогреватель инфракрасный газовый (уличный)</td></tr><tr><td>Бренд</td><td>Ballu</td></tr><tr><td>Серия</td><td>Flame</td></tr><tr><td>Артикул</td><td>BOGH-15E</td></tr><tr><td>Тепловая мощность</td><td>13 кВт</td></tr><tr><td>Площадь обогрева</td><td>до 25 м²</td></tr><tr><td>Вид топлива</td><td>Пропан-бутан</td></tr><tr><td>Регулировка мощности</td><td>бесступенчатая, электронная: с пульта или с блока на корпусе, до 13 кВт</td></tr><tr><td>Расход газа</td><td>0,3–0,97 кг/ч</td></tr><tr><td>Радиус обогрева</td><td>2,0–2,8 м</td></tr><tr><td>Рабочая температура</td><td>от −20 до +30 °C</td></tr><tr><td>Тип газа</td><td>пропан, пропан-бутан (G30/G31), категория I3B/P</td></tr><tr><td>Розжиг</td><td>электронный, автоматический</td></tr><tr><td>Управление</td><td>дистанционное беспроводное: пульт в комплекте, радиус действия до 3 м; электронный блок на корпусе</td></tr><tr><td>Питание</td><td>от батареек: прибор — 2 шт. типа D (LR20), пульт — 2 шт. типа AAA; от сети не нужно</td></tr><tr><td>Класс защиты</td><td>IP44</td></tr><tr><td>Установка</td><td>Напольная, на колёсах с блокировкой</td></tr><tr><td>Давление газа</td><td>37 мбар</td></tr><tr><td>Материал корпуса</td><td>Сталь, цвет серый графитовый</td></tr><tr><td>Газовый баллон</td><td>отсек в корпусе, баллон до 27 л приобретается отдельно</td></tr><tr><td>В комплекте</td><td>пульт управления, редуктор давления, гибкий шланг</td></tr><tr><td>Габариты В×Ш×Г</td><td>230,5 × 80 × 72 см</td></tr><tr><td>Вес</td><td>32 кг</td></tr><tr><td>Упаковка В×Ш×Г</td><td>61 × 26,5 × 145 см, вес брутто 39 кг</td></tr><tr><td>Гарантия</td><td>12 месяцев</td></tr><tr><td>Срок службы</td><td>5 лет</td></tr><tr><td>Сборка</td><td>требуется, порядок сборки — в руководстве по эксплуатации (раздел «Файлы»)</td></tr><tr><td>Страны назначения по паспорту</td><td>Армения, Беларусь, Казахстан, Киргизия, Россия</td></tr><tr><td>Страна производства</td><td>Россия</td></tr><tr><td>Сертификат</td><td>соответствия, файл производителя в разделе «Файлы»</td></tr></table><a class="thv-btn thv-blue thv-more-btn" href="https://tehnoholod369.kz/katalog?g=infrakrasnye-obogrevateli">Все инфракрасные обогреватели</a><p class="thv-fine">Цена и наличие обновляются на странице автоматически.</p></section>
+<section class="thv-sec"><h2>BOGH-15E и другие модели серии</h2><div class="thv-tw2"><table class="thv-cmp"><thead><tr><th>Модель</th><th>Мощность</th><th>Площадь обогрева</th><th>Управление</th><th>Вес</th><th>Цена</th></tr></thead><tbody><tr class="me"><td><b>BOGH-15E</b> (эта страница)</td><td>13 кВт</td><td>до 25 м²</td><td>дистанционное, пульт</td><td>32 кг</td><td class="thgeo-p" data-art="BOGH-15E">—</td></tr><tr><td><a href="https://tehnoholod369.kz/tovar?g=infrakrasnye-obogrevateli&amp;sl=ballu-bogh-15">BOGH-15</a></td><td>13 кВт</td><td>до 25 м²</td><td>механическое</td><td>30,3 кг</td><td class="thgeo-p" data-art="BOGH-15">—</td></tr><tr><td><a href="https://tehnoholod369.kz/tovar?g=infrakrasnye-obogrevateli&amp;sl=ballu-bogh-16">BOGH-16</a></td><td>13 кВт</td><td>до 12 м²</td><td>механическое</td><td>—</td><td class="thgeo-p" data-art="BOGH-16">—</td></tr><tr><td><a href="https://tehnoholod369.kz/tovar?g=infrakrasnye-obogrevateli&amp;sl=ballu-bogh-18">BOGH-18</a></td><td>13 кВт</td><td>до 12 м²</td><td>механическое</td><td>—</td><td class="thgeo-p" data-art="BOGH-18">—</td></tr></tbody></table></div><p class="thv-fine">Модели 16 и 18 рассчитаны на меньшую площадь (12 м²), BOGH-15E — на 25 м². Цены обновляются автоматически.</p></section>
+<section class="thv-sec"><h2>Видео</h2><div class="thv-video"><iframe src="https://www.youtube-nocookie.com/embed/APwvevZw_io" title="Камин уличный газовый инфракрасный Ballu BOGH-15E — обзор ТехноХолод" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div><p class="thv-fine">Обзор с канала ТехноХолод.</p><div class="thv-video" style="margin-top:14px"><iframe src="https://www.youtube-nocookie.com/embed/aHQI_7-3CoY" title="Официальное видео Ballu про серию Flame" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div><p class="thv-fine">Официальный ролик Ballu.</p></section>
+<section class="thv-sec" id="bg15-files"><h2>Файлы</h2><ul class="thv-files"><li><a href="https://www.ballu.ru/upload/iblock/b1f/b1f75cdfae6d53b3a7bad05e1da5ef57.pdf" target="_blank" rel="noopener nofollow">Руководство по эксплуатации и гарантийный талон, PDF 2,2 МБ</a></li><li><a href="https://www.ballu.ru/upload/iblock/b45/b45fa8f9f16103051f7e13533a8c6c5d.pdf" target="_blank" rel="noopener nofollow">Сертификат соответствия, PDF 2,2 МБ</a></li><li><a href="https://www.ballu.ru/catalog/tekhnika_dlya_doma_i_ofisa/teplovoe_oborudovanie/infrakrasnye_obogrevateli_gazovye/gazovye_ulichnye_obogrevateli/kamin_ulichnyy_infrakrasnyy_gazovyy_ballu_bogh_15e/" target="_blank" rel="noopener nofollow">Страница модели на сайте производителя</a></li></ul><p class="thv-fine">Файлы производителя Ballu, открываются на его сайте.</p></section>
+<section class="thv-sec" id="bg15-faq"><h2>Вопросы и ответы</h2><details class="thgeo-faq"><summary>Работает ли BOGH-15E зимой и в мороз?</summary><p>Рабочая температура по инструкции — от −20 до +30 °C. В морозную или сырую погоду сначала включают минимальное пламя, чтобы прогреть стекло и убрать конденсат, затем высоту пламени увеличивают. Если газ в баллоне холоднее 0 °C, давление падает и пламя может стать ниже; при воздухе ниже +10 °C производитель советует качественный газ, лучше чистый пропан. Если прибор привезли на морозе, перед запуском его выдерживают в тепле не менее 2 часов.</p></details><details class="thgeo-faq"><summary>Задувает ли ветер пламя?</summary><p>Порыв ветра сильнее 3 м/с может погасить пламя. Инструкция советует ставить прибор вдали от прямых порывов ветра и при запуске поворачивать его от ветра, чтобы не задуло пламя запала.</p></details><details class="thgeo-faq"><summary>Нужно ли собирать прибор и как подключить баллон?</summary><p>Да, прибор собирается по инструкции (она есть в разделе «Файлы»). Редуктор подключается к баллону: резьба на баллоне и редукторе левая, гайку затягивают ключом на 27. Перед первым запуском из баллона стравливают воздух, открыв вентиль на 5–10 секунд, только в хорошо проветриваемом месте.</p></details><details class="thgeo-faq"><summary>На сколько квадратных метров рассчитан Ballu BOGH-15E?</summary><p>Производитель заявляет площадь обогрева до 25 м² при тепловой мощности 13 кВт. Это уличный прибор: на открытой площадке результат зависит от ветра и укрытия, поэтому цифру стоит брать как ориентир.</p></details><details class="thgeo-faq"><summary>На каком топливе работает BOGH-15E?</summary><p>На пропан-бутане. Максимальная мощность 13 кВт, расход газа от 0,3 до 0,97 кг/ч. Регулировка мощности бесступенчатая, электронная: с пульта или с блока на корпусе; розжиг электронный, автоматический.</p></details><details class="thgeo-faq"><summary>Это уличный обогреватель или его можно ставить в помещении?</summary><p>Это уличный газовый инфракрасный обогреватель, в каталогах производителя он называется «камин уличный». Класс защиты — IP44. Газовые приборы нельзя эксплуатировать в помещении без вентиляции; порядок использования и подключения газа — в руководстве производителя.</p></details><details class="thgeo-faq"><summary>Какая у BOGH-15E защита?</summary><p>Защита от перегрева, контроль наличия пламени, автоматическое отключение при опрокидывании и датчик уровня кислорода.</p></details><details class="thgeo-faq"><summary>На сколько хватит одного баллона?</summary><p>Время зависит от массы газа в баллоне и выставленной мощности. Расход — от 0,3 до 0,97 кг/ч (данные производителя): например, 10 кг газа хватит примерно на 10–33 часа. Посчитать для вашего баллона можно в калькуляторе на этой странице.</p></details><details class="thgeo-faq"><summary>Что входит в комплект и нужен ли отдельный баллон?</summary><p>В комплекте: пульт управления, редуктор давления и гибкий шланг. Прибор стоит на колёсной базе с блокировкой колёс. Газовый баллон до 27 л размещается внутри корпуса и приобретается отдельно.</p></details><details class="thgeo-faq"><summary>Чем BOGH-15E отличается от BOGH-15?</summary><p>Управлением и розжигом. У BOGH-15E пульт управления в комплекте (радиус действия до 3 м), электронный блок на корпусе и автоматический электророзжиг; прибор питается от батареек. У BOGH-15 управление механическое, розжиг пьезоэлектрический, батарейки не нужны. Мощность, топливо и класс защиты у них одинаковые: 13 кВт, пропан-бутан, IP44.</p></details><details class="thgeo-faq"><summary>Как работает пульт и чем питается BOGH-15E?</summary><p>Пульт входит в комплект: им включают прибор, регулируют высоту пламени и выключают его, радиус действия пульта — до 3 метров. Прибор питается от двух батареек типа D (LR20), пульт — от двух батареек типа AAA, подключение к сети не нужно. Есть и электронный блок на корпусе, так что управлять можно и без пульта. Газ подаётся из баллона до 27 л, который стоит внутри корпуса.</p></details><details class="thgeo-faq"><summary>Какие габариты и вес у BOGH-15E?</summary><p>Габариты (В×Ш×Г) — 230,5 × 80 × 72 см, вес — 32 кг (данные производителя). Это напольная модель на колёсной базе с блокировкой колёс: устанавливается на ровное устойчивое основание.</p></details><details class="thgeo-faq"><summary>Какая гарантия на Ballu BOGH-15E?</summary><p>Гарантия на BOGH-15E, купленный у нас, — 12 месяцев, срок эксплуатации по данным производителя — 5 лет. Подробности гарантийного обслуживания расскажет менеджер: напишите в WhatsApp. Страна производства — Россия, серия Flame.</p></details><details class="thgeo-faq"><summary>Доставляете ли вы BOGH-15E по Казахстану?</summary><p>Да, доставка по Казахстану. По Алматы доставка бесплатна при заказе от 100 000 ₸; для других городов срок и стоимость рассчитаем и согласуем — напишите в WhatsApp или позвоните по номеру +77 000 369 369.</p></details><details class="thgeo-faq"><summary>Какая цена на Ballu BOGH-15E?</summary><p>Актуальная цена указана в карточке выше и обновляется автоматически из каталога. Если нужно уточнить цену для вашего города, напишите в WhatsApp или позвоните по номеру +77 000 369 369.</p></details></section>
+<section class="thgeo-final"><h2>Подберём обогрев для вашей площадки</h2><p>Напишите размер площадки, есть ли навес или стены и в каком городе вы находитесь: подскажем модель и уточним условия доставки.</p><div class="thgeo-cta"><a class="tg1" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%20Ballu%20BOGH-15E%20%28%D1%83%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%BE%D0%B1%D0%BE%D0%B3%D1%80%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%2013%20%D0%BA%D0%92%D1%82%29.%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%3A%20">Написать в WhatsApp</a><a class="tg2" href="tel:+77000369369">+77 000 369 369</a></div></section>
+<nav class="thgeo-also" aria-label="Другие подборки"><h2>Другие подборки</h2><p><a href="https://tehnoholod369.kz/otoplenie">Отопление</a> · <a href="https://tehnoholod369.kz/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a> · <a href="https://tehnoholod369.kz/ik-obogrevatel">Инфракрасный обогреватель: плюсы и минусы</a> · <a href="https://tehnoholod369.kz/teplovye-pushki-almaty">Тепловые пушки</a> · <a href="https://tehnoholod369.kz/kaminy-almaty">Камины</a></p></nav>
+</div>
+<script id="ld-bogh15-product" type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "@id": "https://tehnoholod369.kz/ballu-bogh-15e#product", "name": "Ballu BOGH-15E", "alternateName": "Обогреватель инфракрасный газовый Ballu BOGH-15E, 13 кВт", "brand": {"@type": "Brand", "name": "Ballu"}, "url": "https://tehnoholod369.kz/ballu-bogh-15e", "mpn": "BOGH-15E", "sku": "ballu-bogh-15e", "category": "Отопление / Инфракрасные обогреватели / Газовые", "image": ["https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/ik_1119542.jpg", "https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/bogh15-vecher.jpg"], "description": "Уличный газовый инфракрасный обогреватель Ballu BOGH-15E: тепловая мощность 13 кВт, площадь обогрева до 25 м², пропан-бутан, бесступенчатая регулировка, электророзжиг, пульт управления в комплекте, класс защиты IP44. Защита от перегрева и опрокидывания, контроль пламени, датчик кислорода.", "additionalProperty": [{"@type": "PropertyValue", "name": "Серия", "value": "Flame"}, {"@type": "PropertyValue", "name": "Тепловая мощность", "value": "13 кВт"}, {"@type": "PropertyValue", "name": "Площадь обогрева", "value": "до 25 м²"}, {"@type": "PropertyValue", "name": "Вид топлива", "value": "Пропан-бутан"}, {"@type": "PropertyValue", "name": "Регулировка мощности", "value": "Бесступенчатая, электронная: с пульта или с блока на корпусе, до 13 кВт"}, {"@type": "PropertyValue", "name": "Расход газа", "value": "0,3–0,97 кг/ч"}, {"@type": "PropertyValue", "name": "Розжиг", "value": "электронный, автоматический"}, {"@type": "PropertyValue", "name": "Управление", "value": "Дистанционное беспроводное, пульт в комплекте, до 3 м"}, {"@type": "PropertyValue", "name": "Класс защиты", "value": "IP44"}, {"@type": "PropertyValue", "name": "Установка", "value": "Напольная, на колёсах с блокировкой"}, {"@type": "PropertyValue", "name": "Давление газа", "value": "37 мбар"}, {"@type": "PropertyValue", "name": "Габариты В×Ш×Г", "value": "230,5 × 80 × 72 см"}, {"@type": "PropertyValue", "name": "Вес", "value": "32 кг"}, {"@type": "PropertyValue", "name": "Гарантия", "value": "12 месяцев"}, {"@type": "PropertyValue", "name": "Срок службы", "value": "5 лет"}], "countryOfOrigin": {"@type": "Country", "name": "Россия"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "Отопление", "item": "https://tehnoholod369.kz/otoplenie"}, {"@type": "ListItem", "position": 3, "name": "Инфракрасные обогреватели", "item": "https://tehnoholod369.kz/katalog?g=infrakrasnye-obogrevateli"}, {"@type": "ListItem", "position": 4, "name": "BOGH-15E"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Работает ли BOGH-15E зимой и в мороз?", "acceptedAnswer": {"@type": "Answer", "text": "Рабочая температура по инструкции — от −20 до +30 °C. В морозную или сырую погоду сначала включают минимальное пламя, чтобы прогреть стекло и убрать конденсат, затем высоту пламени увеличивают. Если газ в баллоне холоднее 0 °C, давление падает и пламя может стать ниже; при воздухе ниже +10 °C производитель советует качественный газ, лучше чистый пропан. Если прибор привезли на морозе, перед запуском его выдерживают в тепле не менее 2 часов."}}, {"@type": "Question", "name": "Задувает ли ветер пламя?", "acceptedAnswer": {"@type": "Answer", "text": "Порыв ветра сильнее 3 м/с может погасить пламя. Инструкция советует ставить прибор вдали от прямых порывов ветра и при запуске поворачивать его от ветра, чтобы не задуло пламя запала."}}, {"@type": "Question", "name": "Нужно ли собирать прибор и как подключить баллон?", "acceptedAnswer": {"@type": "Answer", "text": "Да, прибор собирается по инструкции (она есть в разделе «Файлы»). Редуктор подключается к баллону: резьба на баллоне и редукторе левая, гайку затягивают ключом на 27. Перед первым запуском из баллона стравливают воздух, открыв вентиль на 5–10 секунд, только в хорошо проветриваемом месте."}}, {"@type": "Question", "name": "На сколько квадратных метров рассчитан Ballu BOGH-15E?", "acceptedAnswer": {"@type": "Answer", "text": "Производитель заявляет площадь обогрева до 25 м² при тепловой мощности 13 кВт. Это уличный прибор: на открытой площадке результат зависит от ветра и укрытия, поэтому цифру стоит брать как ориентир."}}, {"@type": "Question", "name": "На каком топливе работает BOGH-15E?", "acceptedAnswer": {"@type": "Answer", "text": "На пропан-бутане. Максимальная мощность 13 кВт, расход газа от 0,3 до 0,97 кг/ч. Регулировка мощности бесступенчатая, электронная: с пульта или с блока на корпусе; розжиг электронный, автоматический."}}, {"@type": "Question", "name": "Это уличный обогреватель или его можно ставить в помещении?", "acceptedAnswer": {"@type": "Answer", "text": "Это уличный газовый инфракрасный обогреватель, в каталогах производителя он называется «камин уличный». Класс защиты — IP44. Газовые приборы нельзя эксплуатировать в помещении без вентиляции; порядок использования и подключения газа — в руководстве производителя."}}, {"@type": "Question", "name": "Какая у BOGH-15E защита?", "acceptedAnswer": {"@type": "Answer", "text": "Защита от перегрева, контроль наличия пламени, автоматическое отключение при опрокидывании и датчик уровня кислорода."}}, {"@type": "Question", "name": "На сколько хватит одного баллона?", "acceptedAnswer": {"@type": "Answer", "text": "Время зависит от массы газа в баллоне и выставленной мощности. Расход — от 0,3 до 0,97 кг/ч (данные производителя): например, 10 кг газа хватит примерно на 10–33 часа. Посчитать для вашего баллона можно в калькуляторе на этой странице."}}, {"@type": "Question", "name": "Что входит в комплект и нужен ли отдельный баллон?", "acceptedAnswer": {"@type": "Answer", "text": "В комплекте: пульт управления, редуктор давления и гибкий шланг. Прибор стоит на колёсной базе с блокировкой колёс. Газовый баллон до 27 л размещается внутри корпуса и приобретается отдельно."}}, {"@type": "Question", "name": "Чем BOGH-15E отличается от BOGH-15?", "acceptedAnswer": {"@type": "Answer", "text": "Управлением и розжигом. У BOGH-15E пульт управления в комплекте (радиус действия до 3 м), электронный блок на корпусе и автоматический электророзжиг; прибор питается от батареек. У BOGH-15 управление механическое, розжиг пьезоэлектрический, батарейки не нужны. Мощность, топливо и класс защиты у них одинаковые: 13 кВт, пропан-бутан, IP44."}}, {"@type": "Question", "name": "Как работает пульт и чем питается BOGH-15E?", "acceptedAnswer": {"@type": "Answer", "text": "Пульт входит в комплект: им включают прибор, регулируют высоту пламени и выключают его, радиус действия пульта — до 3 метров. Прибор питается от двух батареек типа D (LR20), пульт — от двух батареек типа AAA, подключение к сети не нужно. Есть и электронный блок на корпусе, так что управлять можно и без пульта. Газ подаётся из баллона до 27 л, который стоит внутри корпуса."}}, {"@type": "Question", "name": "Какие габариты и вес у BOGH-15E?", "acceptedAnswer": {"@type": "Answer", "text": "Габариты (В×Ш×Г) — 230,5 × 80 × 72 см, вес — 32 кг (данные производителя). Это напольная модель на колёсной базе с блокировкой колёс: устанавливается на ровное устойчивое основание."}}, {"@type": "Question", "name": "Какая гарантия на Ballu BOGH-15E?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на BOGH-15E, купленный у нас, — 12 месяцев, срок эксплуатации по данным производителя — 5 лет. Подробности гарантийного обслуживания расскажет менеджер: напишите в WhatsApp. Страна производства — Россия, серия Flame."}}, {"@type": "Question", "name": "Доставляете ли вы BOGH-15E по Казахстану?", "acceptedAnswer": {"@type": "Answer", "text": "Да, доставка по Казахстану. По Алматы доставка бесплатна при заказе от 100 000 ₸; для других городов срок и стоимость рассчитаем и согласуем — напишите в WhatsApp или позвоните по номеру +77 000 369 369."}}, {"@type": "Question", "name": "Какая цена на Ballu BOGH-15E?", "acceptedAnswer": {"@type": "Answer", "text": "Актуальная цена указана в карточке выше и обновляется автоматически из каталога. Если нужно уточнить цену для вашего города, напишите в WhatsApp или позвоните по номеру +77 000 369 369."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/infrakrasnye-obogrevateli.json"];
+  var bad=false;
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){
+      if(!r.ok) throw 0;
+      return r.json();
+    }).catch(function(){bad=true; return []});
+  })).then(function(all){
+    if(bad){
+      document.querySelectorAll(".thgeo-live").forEach(function(el){
+        el.textContent="обновить цены сейчас не удалось — уточните актуальную цену "
+          +"по телефону или в WhatsApp";
+      });
+      return;
+    }
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    document.querySelectorAll(".thgeo-pmin").forEach(function(el){
+      var a=el.getAttribute("data-min-art"), x=a?by[a]:null, v=(x&&x.p)?x.p:null;
+      if(v===null){
+        [].forEach.call(document.querySelectorAll(".thgeo-p"),function(td){
+          var y=by[td.getAttribute("data-art")];
+          if(y&&y.p&&(v===null||y.p<v))v=y.p;
+        });
+      }
+      if(v)el.textContent=v.toLocaleString("ru-RU").replace(/ /g," ");
+    });
+  });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=be2fdc8d"></script>
+<script>
+(function(){
+  var URL="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/infrakrasnye-obogrevateli.json", GROUP="infrakrasnye-obogrevateli";
+  function norm(s){return String(s||"").replace(/[\u00a0\u202f]/g," ")}
+  function status(card,x){
+    var mk=card.querySelector(".thv-mk");
+    if(!mk||!x) return;
+    var inStock=(x.st==="В наличии");
+    var wifi=[].filter.call(mk.children,function(k){ return k.textContent==="Wi-Fi"; });
+    mk.innerHTML="";
+    var s=document.createElement("span");
+    s.className="thv-tag "+(inStock?"thv-tag--stock":"thv-tag--ord"); s.textContent=inStock?"В наличии":"Под заказ"; mk.appendChild(s);
+    wifi.forEach(function(w){ mk.appendChild(w); });
+  }
+  function cartBtn(btn,x){
+    if(!btn||!x||!x.p||!x.sl||!window.CART) return;
+    function label(){ btn.textContent=window.CART.has(x.sl)?"Оформить":"В корзину"; }
+    label();
+    btn.addEventListener("click",function(e){
+      if(!window.CART) return;
+      e.preventDefault();
+      if(window.CART.has(x.sl)){ location.href="/korzina"; return; }
+      window.CART.add(Object.assign({},x,{g:GROUP}),1);
+      label();
+    });
+    window.addEventListener("th-cart",label);
+  }
+  function go(all){
+    var by={}; all.forEach(function(x){ if(x.s) by[norm(x.s)]=x; });
+    var allOrder=true;
+    [].forEach.call(document.querySelectorAll(".thgeo-p"),function(pe){
+      var x=by[norm(pe.getAttribute("data-art"))], card=pe.closest("article");
+      if(!card||!x) return;
+      status(card,x);
+      if(x.st==="В наличии") allOrder=false;
+      cartBtn(card.querySelector(".thgeo-cart"),x);
+    });
+    if(!allOrder){
+      [].forEach.call(document.querySelectorAll(".thgeo-ord"),function(el){ el.textContent=el.getAttribute("data-alt"); });
+    }
+  }
+  var tries=0;
+  function start(){
+    if(!window.CART&&tries++<15){ return setTimeout(start,200); }
+    fetch(URL,{cache:"no-cache"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(go).catch(function(){});
+  }
+  start();
+})();
+</script>
+<script>
+(function(){
+  var URL="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/infrakrasnye-obogrevateli.json";
+  fetch(URL,{cache:"no-cache"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(all){
+    var x=null; all.forEach(function(d){ if(d&&d.s==="BOGH-15E") x=d; });
+    var el=document.getElementById("ld-bogh15-product");
+    if(!x||!x.p||!el) return;
+    var o=JSON.parse(el.textContent);
+    o.offers={"@type":"Offer","url":"https://tehnoholod369.kz/ballu-bogh-15e","priceCurrency":"KZT","price":String(x.p),
+      "availability":(x.st==="В наличии"?"https://schema.org/InStock":"https://schema.org/PreOrder"),
+      "itemCondition":"https://schema.org/NewCondition","seller":{"@type":"Organization","name":"ИП «ТехноХолод»"}};
+    el.textContent=JSON.stringify(o);
+  }).catch(function(){});
+})();
+</script>
+<script>
+(function(){var i=document.getElementById('bg15-kg'),o=document.getElementById('bg15-out');if(!i||!o)return;
+function f(){var m=parseFloat(String(i.value).replace(',','.'));if(!(m>0)){o.textContent='Введите массу газа в кг';return;}
+var lo=m/0.97,hi=m/0.3;o.textContent='Хватит примерно на '+Math.round(lo)+'–'+Math.round(hi)+' ч работы';}
+i.addEventListener('input',f);f();})();
+(function(){var m=document.getElementById('bg15-main');if(!m)return;var t=document.querySelectorAll('.thv-thumb');
+t.forEach(function(b){b.addEventListener('click',function(){m.src=b.getAttribute('data-src');m.alt=b.getAttribute('data-alt')||m.alt;
+t.forEach(function(x){x.removeAttribute('aria-current');});b.setAttribute('aria-current','true');});});})();
+</script>
+<script>
+(function(){
+  var ID=109494414;
+  function goal(n){ try{ if(window.ym) ym(ID,'reachGoal',n); }catch(e){} try{ (window.dataLayer=window.dataLayer||[]).push({event:n}); }catch(e){} }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a,button'); if(!a||!a.closest('.thv')) return;
+    var h=a.getAttribute('href')||'', n=a.getAttribute('data-goal');
+    if(!n){
+      if(h.indexOf('wa.me')>=0) n='bogh15_whatsapp';
+      else if(h.indexOf('tel:')===0) n='bogh15_tel';
+      else if(a.classList.contains('thgeo-cart')) n='bogh15_cart';
+      else if(h.indexOf('/tovar')>=0) n='bogh15_details';
+    }
+    if(n) goal(n);
+  },true);
+})();
+</script>
