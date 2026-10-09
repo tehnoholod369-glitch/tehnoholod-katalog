@@ -288,7 +288,7 @@
       var on = S.color === n;
       return '<button type="button" class="pkc-chip' + (on ? " on" : "") + '" aria-pressed="' + on + '" data-color="' + esc(n) + '"><i class="pkc-sw" style="background:' + COLORS[n][1] + '"></i>' + esc(n) + "</button>";
     }).join("");
-    return '<div class="pkc-lab">Цвет корпуса</div><div class="pkc-chips">' + btns + '</div><p class="pkc-hint">Цвет указан не у всех моделей. Если нужного цвета нет в списке, напишите нам в <a href="https://wa.me/77000369369">WhatsApp</a>.</p>';
+    return '<div class="pkc-lab">Цвет корпуса</div><div class="pkc-chips pkc-chips--c">' + btns + '</div><p class="pkc-hint">Цвет указан не у всех моделей. Если нужного цвета нет в списке, напишите нам в <a href="https://wa.me/77000369369">WhatsApp</a>.</p>';
   }
   function stepsHtml(cols) {
     return '<div class="pkc-sec"><div class="pkc-step"><i>1</i><b>Ваша комната</b></div>' +
