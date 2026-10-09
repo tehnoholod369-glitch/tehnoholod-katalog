@@ -42,7 +42,9 @@
             <a href="{{ c.href }}" style="margin-left:auto; font-size:14px; font-weight:700; color:#0066FF;">{{ c.linkLabel }}</a>
           </div>
 
-          <div style="font-size:15px; color:#1A1A1A; line-height:1.7; margin-top:14px; max-width:900px; text-wrap:pretty;">{{ c.about }}</div>
+          <sc-if value="{{ c.hasAbout }}" hint-placeholder-val="{{ true }}">
+            <div style="font-size:15px; color:#1A1A1A; line-height:1.7; margin-top:14px; max-width:900px; text-wrap:pretty;">{{ c.about }}</div>
+          </sc-if>
 
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr)); gap:10px; margin-top:16px;">
             <sc-for list="{{ c.groups }}" as="g" hint-placeholder-count="3">
@@ -227,7 +229,8 @@ class Component extends DCLogic {
         logoW: this.logoBox(n).w,
         logoH: this.logoBox(n).h,
         logoRef: this.logoRefs[n],
-        about: ABOUT[n] || "Описание бренда не заполнено — ниже только то, что есть в каталоге: состав линейки, наличие и цены.",
+        about: ABOUT[n] || "",
+        hasAbout: !!ABOUT[n],
         geo: GEO[n] || "",
         hasGeo: !!GEO[n],
         href: src[n].top === "multisplit"
