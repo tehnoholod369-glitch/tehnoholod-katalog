@@ -197,7 +197,7 @@ class Component extends DCLogic {
     // порядок карточек: сначала приоритетные бренды (тот же список, что и на Главной),
     // остальные — по убыванию числа позиций в каталоге, а не как попало из данных
     const priority = this.state.priority || [];
-    const names = Object.keys(src).sort((a, b) => {
+    const names = Object.keys(src).filter(n => n !== "БЕЗ МАРКИ").sort((a, b) => {
       const pa = priority.indexOf(a), pb = priority.indexOf(b);
       if (pa >= 0 || pb >= 0) return (pa < 0 ? 999 : pa) - (pb < 0 ? 999 : pb);
       const na = (src[a].groups || []).reduce((s, g) => s + (g.n || 0), 0);
