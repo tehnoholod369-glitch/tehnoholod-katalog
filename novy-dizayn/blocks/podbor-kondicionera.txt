@@ -155,6 +155,8 @@
   .pkc-more .pkc-btn { width: 100%; }
 }
 .pkc-sw { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--line); margin-right: 8px; vertical-align: -1px; }
+.pkc-chips--c { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.pkc-chips--c .pkc-chip { display: flex; align-items: center; padding: 0 14px; white-space: normal; text-align: left; }
 .pkc-hint { margin: 10px 0 0; font: 400 13px/20px Inter, sans-serif; color: var(--mute); }
 .pkc-hint a { text-decoration: underline; }
 </style>
@@ -233,7 +235,7 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@bdd54368307b8c07c88d6d09b68d80d07acb3ba1/novy-dizayn/podbor-calc.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@0047504701e2625a9de27ed0e12b076aef3b3583/novy-dizayn/podbor-calc.js"></script>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
