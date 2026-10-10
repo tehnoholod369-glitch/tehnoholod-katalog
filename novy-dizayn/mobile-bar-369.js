@@ -20,7 +20,7 @@
     bar.style.cssText = "position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid #DCE5F0;box-shadow:0 -4px 16px rgba(0,51,160,0.08);display:grid;grid-template-columns:repeat(5,1fr)";
     bar.innerHTML =
       '<a href="/" style="' + СТИЛЬ_ССЫЛКИ + '">' + svg('<path d="M3 11l9-7 9 7"/><path d="M5 10v10h5v-6h4v6h5V10"/>') + 'Главная</a>'
-      + '<a href="/katalog" style="' + СТИЛЬ_ССЫЛКИ + '">' + svg('<path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/>') + 'Каталог</a>'
+      + '<a href="/katalog" data-th-open-menu style="' + СТИЛЬ_ССЫЛКИ + '">' + svg('<path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"/>') + 'Каталог</a>'
       + '<a href="/korzina" style="' + СТИЛЬ_ССЫЛКИ + '">' + svg('<path d="M3 4h2l2.4 11h10.2L20 8H6.2"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/>') + 'Корзина'
         + '<i data-th-cart-count style="display:none;position:absolute;top:3px;left:calc(50% + 6px);min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:#E81C1C;color:#fff;font:700 10px/16px Inter,Arial,sans-serif;font-style:normal;text-align:center;box-sizing:border-box"></i></a>'
       + '<a href="tel:+77000369369" style="' + СТИЛЬ_ССЫЛКИ + '">' + svg('<path d="M6.5 3.5h3l1.5 4-2 1.4a12 12 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z"/>') + 'Позвонить</a>'
@@ -41,8 +41,42 @@
     if (б) { б.textContent = n > 99 ? "99+" : String(n); б.style.display = n > 0 ? "block" : "none"; }
   }
 
+  // Один каталог на телефоне (10.10.2026, решение владельца): «Каталог» внизу открывает то же меню,
+  // что значок вверху слева. Раньше было три входа: значок, эта кнопка (страница /katalog) и синяя
+  // кнопка «Каталог товаров» внутри меню, которая раскрывала третий, неоформленный список разделов.
+  // Над значком подпись «Каталог», синюю кнопку и её список на телефоне прячем: разделы уже в меню.
+  // Нет меню на странице — кнопка остаётся обычной ссылкой на /katalog.
+  document.addEventListener("click", function (e) {
+    var a = e.target && e.target.closest ? e.target.closest("a[data-th-open-menu]") : null;
+    var m = document.querySelector(".th-mn");
+    if (!a || !m || e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+    e.preventDefault();
+    if (m.classList.contains("th-open")) { m.classList.remove("th-open"); return; }
+    m.classList.add("th-open");
+    window.scrollTo(0, 0);
+  });
+
+  function подписьМеню(need) {
+    var st = document.getElementById("th-menu-cap");
+    if (!need) { if (st) st.parentNode.removeChild(st); return; }
+    if (!st) {
+      st = document.createElement("style");
+      st.id = "th-menu-cap";
+      st.textContent = "[data-th-burger]{flex-direction:column!important;gap:2px!important}"
+        + "[data-th-burger] span{display:block!important;font-size:10px!important;line-height:12px!important;font-weight:600!important}"
+        + "[data-th-cat],#th-panel{display:none!important}";
+      document.head.appendChild(st);
+    }
+    [].forEach.call(document.querySelectorAll("[data-th-burger]"), function (b) {
+      b.setAttribute("aria-label", "Каталог");
+      var s = b.querySelector("span");
+      if (s && s.textContent !== "Каталог") s.textContent = "Каталог";
+    });
+  }
+
   function sync() {
     var need = window.innerWidth <= BREAK;
+    подписьМеню(need);
     var bar = document.getElementById(ID);
     var подвал = !!document.querySelector("[data-th-podval]");
     if (need && !bar) {
