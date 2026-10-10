@@ -110,6 +110,30 @@
     дом.insertAdjacentElement("afterend", a);
   }
 
+  // События «звонок» и «WhatsApp» (11.10.2026, решение владельца, карта воронки FUNNEL_MAP_20261011):
+  // до этого клики по телефону и WhatsApp нигде не фиксировались, кроме одного места на карточке товара.
+  // Пишем в лист «События» тем же приёмником, что lead.js: ev «tel» / «whatsapp» (имя «whatsapp» уже есть
+  // в листе), в «Деталь» — откуда нажали (панель, шапка, страница). Контакты и текст сообщения не передаём.
+  // Ссылку не трогаем и ничего не ждём: звонок и переход в WhatsApp идут как раньше.
+  document.addEventListener("click", function (e) {
+    try {
+      var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+      if (!a) return;
+      var h = a.getAttribute("href") || "";
+      var ev = h.indexOf("tel:") === 0 ? "tel" : (/^https?:\/\/(wa\.me|api\.whatsapp\.com)\//.test(h) ? "whatsapp" : "");
+      if (!ev) return;
+      var где = a.closest("#th-mobile-bar") ? "панель" : (a.closest("header,.th-hd") ? "шапка" : "страница");
+      var L = window.TH_LEAD;
+      if (L && typeof L.event === "function") { L.event({ ev: ev, val: где }); return; }
+      // lead.js на странице нет: шлём напрямую, sendBeacon переживает переход. Адрес тот же, что в lead.js.
+      var ss = function (k) { try { return window.sessionStorage.getItem(k) || ""; } catch (x) { return ""; } };
+      var ls = function (k) { try { return window.localStorage.getItem(k) || ""; } catch (x) { return ""; } };
+      var src = (ss("th_src") || (document.referrer || "").slice(0, 180) || "direct") + " | " + (location.pathname || "/");
+      var body = JSON.stringify({ channel: "сайт", ev: ev, val: где, src: src, scr: (window.innerWidth || 0) + "x" + (window.innerHeight || 0), ses: ss("th_ses"), aid: ls("th_aid"), ua: (navigator.userAgent || "").slice(0, 260) });
+      navigator.sendBeacon("https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec", new Blob([body], { type: "text/plain;charset=utf-8" }));
+    } catch (x) { /* учёт не должен мешать звонку и переходу */ }
+  }, true);
+
   window.addEventListener("resize", sync);
   window.addEventListener("storage", счётчик);
   window.addEventListener("th-cart", счётчик);
