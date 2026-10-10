@@ -73,17 +73,24 @@
      узких экранах: на десктопе панель раскрыта, и второй такой ряд там лишний. */
   .th-area-mob { display:none; }
   @media (max-width: 860px) { .th-area-mob { display:block; } }
+  /* Хаб направлений (10.10.2026): /katalog без ?g= открывает выбор направления, а не бытовые сплиты */
+  .th-hub { display:none; }
+  .th-hubmode .th-hub { display:block; }
+  .th-hubmode .th-band, .th-hubmode .th-main { display:none; }
+  .th-hub-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; margin-top:18px; }
+  .th-hub-card { background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:18px 20px; }
+  .th-hub-t { font:700 18px/24px Inter,sans-serif; color:#0033A0; margin:0 0 6px; }
+  .th-hub-l a { display:block; padding:12px 0; min-height:20px; border-top:1px solid #E9EFF7; font:600 14px/20px Inter,sans-serif; color:#0066FF; text-decoration:none; }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=be2fdc8d"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/search.js?v=8e6f6377"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=e8476510"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=6ae050cd"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-share.js?v=7ae04008"></script>
 </helmet>
 
-<div style="min-height:100vh; background:#F1F5F9;">
+<div class="{{ hubClass }}" style="min-height:100vh; background:#F1F5F9;">
 
   <div class="th-t1"><div class="th-w"><b>Доставка по Казахстану</b><span><a href="tel:+77000369369">+77 000 369 369</a> · пн–пт 9:00–18:00 · <a href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B2%D0%BE%D0%BD%D0%B8%D1%82%D1%8C.">Заказать звонок</a></span></div></div>
 <header class="th-hd"><div class="th-w"><button type="button" class="th-bg" data-th-burger aria-label="Меню">☰<span>Меню</span></button><a class="th-lg" href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" /></a><button type="button" class="th-sr" data-th-search aria-label="Поиск по каталогу"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg><span>Поиск по каталогу</span></button><nav class="th-ic"><a href="/izbrannoe"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg><span>Избранное</span><i class="th-bd" data-th-fav-count style="display:none"></i></a><a href="/sravnenie"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg><span>Сравнение</span><i class="th-bd" data-th-cmp-count style="display:none"></i></a><a href="/korzina"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h2l2.4 11h10.2L20 8H6.2" /><circle cx="9" cy="19" r="1.5" /><circle cx="17" cy="19" r="1.5" /></svg><span>Корзина</span><i class="th-bd" data-th-cart-count></i></a></nav></div></header>
@@ -125,7 +132,31 @@
     </div>
   </sc-if>
 
-  <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:18px 24px 64px 24px;">
+  <div class="th-hub">
+    <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:18px 24px 64px 24px;">
+      <div style="font-size:13px; color:#606F85;"><a href="/">Главная</a> → <span>Каталог</span></div>
+      <div style="background:#E9F4FF; border-radius:16px; padding:28px 32px; margin-top:12px;">
+        <div style="max-width:760px;">
+          <div style="margin:0; font:800 clamp(24px,5.6vw,34px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Каталог климатической техники</div>
+          <div style="font:400 16px/24px Inter,sans-serif; color:#1A1A1A; margin-top:10px;">Выберите направление и раздел. Доставка по Казахстану из Алматы.</div>
+        </div>
+      </div>
+      <div class="th-hub-grid">
+        <sc-for list="{{ hubTiles }}" as="h" hint-placeholder-count="6">
+          <div class="th-hub-card">
+            <div class="th-hub-t">{{ h.label }}</div>
+            <div class="th-hub-l">
+              <sc-for list="{{ h.items }}" as="i" hint-placeholder-count="3">
+                <a href="{{ i.href }}">{{ i.title }}</a>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div class="th-main" style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:18px 24px 64px 24px;">
     <div style="font-size:13px; color:#606F85;"><a href="/">Главная</a> → <span>Каталог</span> → <span>{{ dirLabel }}</span> → <a href="{{ groupHref }}">{{ groupTitle }}</a>{{ crumbSub }}</div>
 
     <div style="background:#E9F4FF; border-radius:16px; padding:28px 32px; margin-top:12px;">
@@ -382,6 +413,7 @@ class Component extends DCLogic {
     return o;
   }
   state = Object.assign({
+    hub: !/[?&](g|sub|area|btu|brand|series|stock|sale|fv)=/.test(location.search),
     index: null, updated: "", group: "bytovye", sub: "all", items: null, loading: true, picks: [], onlyPick: false,
     sale: {}, onlySale: false, prio: [], prioQuota: 2, hits: {},
     sort: "rec", view: "grid", shown: 12, mobFilters: false, mobNav: false, mobArts: false
@@ -459,7 +491,10 @@ class Component extends DCLogic {
       .then(a => this.setState({ arts: (a && a.items) || [] })).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"})
       .then(r => r.json())
-      .then(idx => { this.setState({ index: idx.groups || idx, updated: idx.updated || "", group }); this.loadGroup(group, sub || "all"); })
+      .then(idx => {
+        if (this.state.hub) { this.setState({ index: idx.groups || idx, updated: idx.updated || "", loading: false }); return; }
+        this.setState({ index: idx.groups || idx, updated: idx.updated || "", group }); this.loadGroup(group, sub || "all");
+      })
       .catch(() => this.setState({ loading: false, items: [] }));
   }
 
@@ -2292,11 +2327,21 @@ class Component extends DCLogic {
 
     const total = groups.reduce((n, g) => n + g.count, 0);
 
+    // хаб направлений: те же DIRS, что у ряда направлений; мультисплит и полупром открываются своими страницами, как в меню
+    const HUB_HREF = { multisplit: "/multisplit", poluprom: "/poluprom" };
+    const hubTiles = DIRS.map(dr => ({
+      label: dr.label,
+      items: dr.slugs.concat(dr.plus || []).map(sl => groups.find(g => g.slug === sl)).filter(Boolean)
+        .map(g => ({ title: g.title, href: HUB_HREF[g.slug] || ("/katalog?g=" + g.slug) }))
+    })).filter(h => h.items.length);
+
     const _hasGroups = !s.loading && groupTabs.length > 1;
     const _hasSubs = !s.loading && (meta.subs || []).length > 1 && baseList.length > 0
       && (s.sub !== "all" || !(this.__fac.sub.length > 0 && (meta.subs || []).some(t => this.__fac.sub.filter(x => x.sub === t.name).length / this.__fac.sub.length >= 0.95)));
     return {
       gridRef: this.gridRef,
+      hubClass: s.hub ? "th-hubmode" : "",
+      hubTiles,
       dirTabs,
       extraTabs: extraTab,
       // строка площади над выдачей: те же чипы и та же подпись, что в фасете,
