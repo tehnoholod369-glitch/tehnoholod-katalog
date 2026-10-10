@@ -1,0 +1,99 @@
+{
+ "groups": {
+  "avtonomnoe-pitanie": {
+   "from": 13720,
+   "img": "https://img.tehnoholod369.kz/img/ecoflow/5009004003_01.jpg"
+  },
+  "bytovye": {
+   "from": 97505,
+   "img": "https://img.tehnoholod369.kz/img/funai/rac-sn20hp-d04.jpg"
+  },
+  "chillery": {
+   "from": 3775980,
+   "img": "https://img.tehnoholod369.kz/img/chillery/aux-acmh-h65_01.jpg"
+  },
+  "fankoyly": {
+   "from": 93751,
+   "img": "https://img.tehnoholod369.kz/img/fankoyly/gree-fp-85lm-d-k_01.jpg"
+  },
+  "infrakrasnye-obogrevateli": {
+   "from": 11990,
+   "img": "https://img.tehnoholod369.kz/img/infrakrasnye-obogrevateli/ik_1275204.jpg"
+  },
+  "kaminy": {
+   "from": 99990,
+   "img": "https://img.tehnoholod369.kz/img/kaminy/electrolux-ultra-dlinnyy-ochag-efp-p-1600uls-n-dlina-1-53m.jpg"
+  },
+  "mini-vrf": {
+   "from": 122654,
+   "img": "https://img.tehnoholod369.kz/img/mini-vrf/gree-gmv-nd80pls-a-t_01.jpg"
+  },
+  "mobilnye": {
+   "from": 144990,
+   "img": "https://img.tehnoholod369.kz/img/royal-clima/rm-mt28ch-e.jpg"
+  },
+  "multisplit": {
+   "img": "https://img.tehnoholod369.kz/img/mdv/mdv-mdsalf-09hrfn8.png"
+  },
+  "obogrevateli": {
+   "from": 9100,
+   "img": "https://img.tehnoholod369.kz/img/royal-clima/ror-fr11-2500m.jpg"
+  },
+  "osushiteli": {
+   "from": 78990,
+   "img": "https://img.tehnoholod369.kz/img/osushiteli/os_1299844.jpg"
+  },
+  "poluprom": {
+   "from": 153400,
+   "img": "https://img.tehnoholod369.kz/img/poluprom/ballu-blc-cf-60hn1-21y.jpg"
+  },
+  "precizionnye": {
+   "from": 3413914,
+   "img": "https://img.tehnoholod369.kz/img/poluprom/gree-jkfd15qsr-na-m.png"
+  },
+  "radiatory": {
+   "from": 20581,
+   "img": "https://img.tehnoholod369.kz/img/radiatory/royal-thermo-rtbw335012.jpg"
+  },
+  "teplovye-nasosy": {
+   "from": 1566000,
+   "img": "https://img.tehnoholod369.kz/img/haier/au112fycra-hw.jpg"
+  },
+  "teplovye-pushki": {
+   "from": 11300,
+   "img": "https://img.tehnoholod369.kz/img/teplovye-pushki/tp_1275317.jpg"
+  },
+  "teplovye-zavesy": {
+   "from": 50221,
+   "img": "https://img.tehnoholod369.kz/img/teplovye-zavesy/tz_1136141.jpg"
+  },
+  "uvlazhniteli": {
+   "from": 1090800,
+   "img": "https://img.tehnoholod369.kz/img/uvlazhniteli/uv_1511982.jpg"
+  },
+  "ventilyaciya": {
+   "from": 8290,
+   "img": "https://img.tehnoholod369.kz/img/royal-clima/rcs-200-p-3-0.jpg"
+  },
+  "ventilyatory-prom": {
+   "from": 25200,
+   "img": "https://img.tehnoholod369.kz/img/ventilyatory-prom/ballu-bif-10sb.jpg"
+  },
+  "vodonagrevateli": {
+   "from": 15590,
+   "img": "https://img.tehnoholod369.kz/img/vodonagrevateli/royal-thermo-rwh-100-heatronic-dl-dryheat.jpg"
+  },
+  "vodoochistka": {
+   "from": 4365,
+   "img": "https://img.tehnoholod369.kz/img/vodoochistka/ditreex-ro50-a-typ-2_01.jpg"
+  },
+  "vodyanye-teploventilyatory": {
+   "from": 170600,
+   "img": "https://img.tehnoholod369.kz/img/vodyanye-teploventilyatory/ballu-bhp-w3-15-ln.jpg"
+  },
+  "vozduhoohladiteli": {
+   "from": 110094,
+   "img": "https://img.tehnoholod369.kz/img/vozduhoohladiteli/ditreex-vab06-eq_01.jpg"
+  }
+ }
+}
