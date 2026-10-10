@@ -24,7 +24,7 @@
     css.textContent =
       '[data-th-pm]{position:fixed;inset:0;z-index:100000;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(7,28,59,.55);font-family:Inter,"Segoe UI",sans-serif}' +
       '[data-th-pm][data-open]{display:flex}' +
-      '[data-th-pm] .pm-card{position:relative;box-sizing:border-box;width:100%;max-width:760px;max-height:calc(100vh - 32px);overflow:auto;background:#fff;border-radius:16px;padding:28px;color:#1A1A1A}' +
+      '[data-th-pm] .pm-card{position:relative;box-sizing:border-box;width:100%;max-width:760px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain;background:#fff;border-radius:16px;padding:28px;color:#1A1A1A}' +
       '[data-th-pm] .pm-x{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;border-radius:10px;background:transparent;color:#606F85;font-size:26px;line-height:1;cursor:pointer}' +
       '[data-th-pm] .pm-x:hover{background:#F1F5F9}' +
       '[data-th-pm] h2{margin:0 44px 4px 0;font-size:24px;font-weight:800;letter-spacing:-.015em;color:#0033A0}' +
@@ -36,7 +36,7 @@
       '[data-th-pm] .pm-grid span{display:block;margin-top:3px;font-size:13px;line-height:1.4;color:#606F85}' +
       '[data-th-pm] .pm-wa{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:16px;padding-top:16px;border-top:1px solid #DCE5F0;font-size:14px;color:#606F85}' +
       '[data-th-pm] .pm-wa a{display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:8px;background:#0066FF;color:#fff;font-weight:600;text-decoration:none}' +
-      '@media (max-width:520px){[data-th-pm]{align-items:flex-end;padding:0}[data-th-pm] .pm-card{max-width:none;border-radius:16px 16px 0 0;padding:22px 16px 18px}[data-th-pm] h2{font-size:21px}}';
+      '@media (max-width:520px){[data-th-pm]{align-items:flex-end;padding:0}[data-th-pm]{height:100vh;height:100dvh}[data-th-pm] .pm-card{max-width:none;max-height:calc(100vh - 56px);max-height:calc(100dvh - 56px);border-radius:16px 16px 0 0;padding:22px 16px calc(28px + env(safe-area-inset-bottom))}[data-th-pm] h2{font-size:21px}}';
     document.head.appendChild(css);
 
     box = document.createElement('div');
