@@ -67,14 +67,14 @@
       st = document.createElement("style");
       st.id = "th-menu-cap";
       st.textContent = "[data-th-burger]{flex-direction:column!important;gap:2px!important}"
-        + "[data-th-burger] span{display:block!important;font-size:10px!important;line-height:12px!important;font-weight:600!important}"
+        // подпись рисуем стилем, а не меняем текст: шапку страница перерисовывает позже, и текст возвращался в «Меню»
+        + "[data-th-burger] span{display:block!important;font-size:0!important;line-height:0!important}"
+        + "[data-th-burger] span::after{content:'Каталог';font-size:10px;line-height:12px;font-weight:600}"
         + "[data-th-cat],#th-panel{display:none!important}";
       document.head.appendChild(st);
     }
     [].forEach.call(document.querySelectorAll("[data-th-burger]"), function (b) {
-      b.setAttribute("aria-label", "Каталог");
-      var s = b.querySelector("span");
-      if (s && s.textContent !== "Каталог") s.textContent = "Каталог";
+      if (b.getAttribute("aria-label") !== "Каталог") b.setAttribute("aria-label", "Каталог");
     });
   }
 
