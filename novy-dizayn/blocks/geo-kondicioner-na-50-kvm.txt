@@ -85,10 +85,10 @@
 <a class="tg1" href="https://wa.me/77000369369">Написать в WhatsApp</a>
 <a class="tg2" href="tel:+77000369369">+77 000 369 369</a>
 <a class="tg2" href="https://tehnoholod369.kz/katalog?g=bytovye">Весь каталог</a>
-<a class="tg2" href="https://podbor.tehnoholod369.kz/">Подобрать по площади</a>
+<a class="tg2" href="https://tehnoholod369.kz/podbor-kondicionera?area=50">Подобрать по площади</a>
 </div>
 <h2>Кондиционер по площади помещения</h2>
-<div class="thgeo-area"><a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">до 25 м²</a><a href="https://tehnoholod369.kz/kondicioner-na-35-kvm">до 35 м²</a><a href="https://podbor.tehnoholod369.kz/">Другая площадь</a></div>
+<div class="thgeo-area"><a href="https://tehnoholod369.kz/kondicioner-na-25-kvm">до 25 м²</a><a href="https://tehnoholod369.kz/kondicioner-na-35-kvm">до 35 м²</a><a href="https://tehnoholod369.kz/podbor-kondicionera">Другая площадь</a></div>
 <p class="thgeo-note">Площадь — первый ориентир, а не весь расчёт. На мощность влияют окна и сторона света, высота потолков, сколько людей и техники в комнате. Точный подбор — в калькуляторе или по опросному листу.</p>
 
 <div class="thgeo-products">
