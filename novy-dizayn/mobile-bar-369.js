@@ -92,6 +92,22 @@
     // Место под панель: у страницы с общим подвалом его держит подвал (padding-bottom 86px), иначе под подвалом была бы белая полоса.
     document.body.style.paddingBottom = (need && !подвал) ? "64px" : "";
     счётчик();
+    весьКаталог(need);
+  }
+
+  // Пункт «Весь каталог» в меню на телефоне (10.10.2026, решение владельца): ведёт на хаб /katalog.
+  // Без него хаб был достижим только синей кнопкой на главной. Ссылка со своей меткой: [data-th-cat] на телефоне скрыт.
+  function весьКаталог(need) {
+    var m = document.querySelector(".th-mn");
+    var есть = document.querySelector("[data-th-all]");
+    if (!need) { if (есть && есть.parentNode) есть.parentNode.removeChild(есть); return; }
+    var дом = m && m.querySelector(".th-home");
+    if (!дом || есть) return;
+    var a = document.createElement("a");
+    a.href = "/katalog";
+    a.setAttribute("data-th-all", "");
+    a.textContent = "Весь каталог";
+    дом.insertAdjacentElement("afterend", a);
   }
 
   window.addEventListener("resize", sync);
