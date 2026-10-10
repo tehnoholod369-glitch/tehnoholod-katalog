@@ -79,8 +79,11 @@
   .th-hubmode .th-band, .th-hubmode .th-main { display:none; }
   .th-hub-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; margin-top:18px; }
   .th-hub-card { background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:18px 20px; }
+  .th-hub-top { display:block; color:inherit; text-decoration:none; }
+  .th-hub-img { display:block; width:100%; aspect-ratio:3/2; object-fit:contain; background:#fff; border:1px solid #E9EFF7; border-radius:10px; margin:0 0 12px; }
   .th-hub-t { font:700 18px/24px Inter,sans-serif; color:#0033A0; margin:0 0 6px; }
-  .th-hub-l a { display:block; padding:12px 0; min-height:20px; border-top:1px solid #E9EFF7; font:600 14px/20px Inter,sans-serif; color:#0066FF; text-decoration:none; }
+  .th-hub-p { flex:none; font:500 13px/20px Inter,sans-serif; color:#606F85; white-space:nowrap; }
+  .th-hub-l a { display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:12px 0; min-height:20px; border-top:1px solid #E9EFF7; font:600 14px/20px Inter,sans-serif; color:#0066FF; text-decoration:none; }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=be2fdc8d"></script>
@@ -144,10 +147,15 @@
       <div class="th-hub-grid">
         <sc-for list="{{ hubTiles }}" as="h" hint-placeholder-count="6">
           <div class="th-hub-card">
-            <div class="th-hub-t">{{ h.label }}</div>
+            <a class="th-hub-top" href="{{ h.href }}">
+              <sc-if value="{{ h.hasImg }}" hint-placeholder-val="{{ false }}">
+                <img class="th-hub-img" src="{{ h.img }}" alt="{{ h.label }}" loading="lazy" />
+              </sc-if>
+              <div class="th-hub-t">{{ h.label }}</div>
+            </a>
             <div class="th-hub-l">
               <sc-for list="{{ h.items }}" as="i" hint-placeholder-count="3">
-                <a href="{{ i.href }}">{{ i.title }}</a>
+                <a href="{{ i.href }}"><span>{{ i.title }}</span><span class="th-hub-p">{{ i.from }}</span></a>
               </sc-for>
             </div>
           </div>
@@ -413,7 +421,7 @@ class Component extends DCLogic {
     return o;
   }
   state = Object.assign({
-    hub: !/[?&](g|sub|area|btu|brand|series|stock|sale|fv)=/.test(location.search),
+    hub: !/[?&](g|sub|area|btu|brand|series|stock|sale|fv)=/.test(location.search), hubData: {},
     index: null, updated: "", group: "bytovye", sub: "all", items: null, loading: true, picks: [], onlyPick: false,
     sale: {}, onlySale: false, prio: [], prioQuota: 2, hits: {},
     sort: "rec", view: "grid", shown: 12, mobFilters: false, mobNav: false, mobArts: false
@@ -489,6 +497,7 @@ class Component extends DCLogic {
     // дальше» на самих статьях — второго списка не заводим.
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/articles.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null)
       .then(a => this.setState({ arts: (a && a.items) || [] })).catch(() => {});
+    if (this.state.hub) fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/hub.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : null).then(d => { if (d && d.groups) this.setState({ hubData: d.groups }); }).catch(() => {});
     fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/index.json", {cache:"no-cache"})
       .then(r => r.json())
       .then(idx => {
@@ -2329,11 +2338,23 @@ class Component extends DCLogic {
 
     // хаб направлений: те же DIRS, что у ряда направлений; мультисплит и полупром открываются своими страницами, как в меню
     const HUB_HREF = { multisplit: "/multisplit", poluprom: "/poluprom" };
-    const hubTiles = DIRS.map(dr => ({
-      label: dr.label,
-      items: dr.slugs.concat(dr.plus || []).map(sl => groups.find(g => g.slug === sl)).filter(Boolean)
-        .map(g => ({ title: g.title, href: HUB_HREF[g.slug] || ("/katalog?g=" + g.slug) }))
-    })).filter(h => h.items.length);
+    const hubD = s.hubData || {};
+    const hubFrom = n => "от\u00a0" + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0") + "\u00a0₸";
+    const hubTiles = DIRS.map(dr => {
+      const gs = dr.slugs.concat(dr.plus || []).map(sl => groups.find(g => g.slug === sl)).filter(Boolean);
+      const withImg = gs.find(g => hubD[g.slug] && hubD[g.slug].img);
+      return {
+        label: dr.label,
+        href: gs.length ? (HUB_HREF[gs[0].slug] || ("/katalog?g=" + gs[0].slug)) : "/katalog",
+        hasImg: !!withImg,
+        img: withImg ? hubD[withImg.slug].img : "",
+        items: gs.map(g => ({
+          title: g.title,
+          href: HUB_HREF[g.slug] || ("/katalog?g=" + g.slug),
+          from: hubD[g.slug] && hubD[g.slug].from ? hubFrom(hubD[g.slug].from) : ""
+        }))
+      };
+    }).filter(h => h.items.length);
 
     const _hasGroups = !s.loading && groupTabs.length > 1;
     const _hasSubs = !s.loading && (meta.subs || []).length > 1 && baseList.length > 0
