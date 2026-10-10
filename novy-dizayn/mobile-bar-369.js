@@ -51,7 +51,8 @@
   // Над значком подпись «Каталог», синюю кнопку и её список на телефоне прячем: разделы уже в меню.
   // Нет меню на странице — кнопка остаётся обычной ссылкой на /katalog.
   document.addEventListener("click", function (e) {
-    var a = e.target && e.target.closest ? e.target.closest("a[data-th-open-menu]") : null;
+    // по адресу, а не по метке: на телефоне со старым кэшем панель может нарисовать прежняя версия скрипта, без метки
+    var a = e.target && e.target.closest ? e.target.closest('#th-mobile-bar a[href="/katalog"]') : null;
     var m = document.querySelector(".th-mn");
     if (!a || !m || e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
     e.preventDefault();
