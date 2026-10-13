@@ -1,0 +1,712 @@
+<style>
+/* @base — общий слой. Нарезка кладёт его в каждый блок.
+   Всё — с префиксом .th, переменные — на .th, а не на :root */
+.th,.th *{box-sizing:border-box}
+.th input,.th textarea,.th select,.th button{font:inherit}
+.th{
+  /* цвета, шрифты, шкала — из brand.css дизайн-кода, своими именами */
+  --ink:#1A1A1A;--bg:#E9F4FF;--accent:#E81C1C;--line:#DCE5F0;
+  --bl:#0066FF;--blh:#0052D6;--bd:#0033A0;--rd:#E81C1C;--rdh:#C41212;--rdp:#A30D0D;
+  --lb:#E9F4FF;--gr:#F1F5F9;--mut:#64748B;--mut2:#606F85;--ok:#178841;
+  --sh-s:0 1px 2px rgba(0,51,160,.06);--sh-m:0 4px 12px rgba(0,51,160,.08);--sh-l:0 12px 32px rgba(0,51,160,.12);
+  --f-head:'Inter',system-ui,sans-serif;--f-body:'Inter',system-ui,sans-serif;
+  position:relative;font-family:var(--f-body);color:var(--ink);background:var(--bg);
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow:clip;
+}
+.th :where(img){display:block;max-width:100%;height:auto}
+/* сбросы — через :where: вес ноль, любое правило блока одним классом сильнее */
+.th :where(h2,h3,p,ul,ol,figure,blockquote,summary){margin:0;padding:0}
+.th :where(ul,ol){list-style:none}
+.th :where(a){color:inherit;text-decoration:none}
+.th :where(p,li){text-wrap:pretty}
+/* дальше в общем слое — только один класс на правило: .th-btn, .th-h2.
+   Своё правило блока после нарезки получит вес двух классов и победит общее */
+.th-w{max-width:1200px;margin:0 auto;padding:0 24px}
+@media (max-width:640px){.th-w{padding:0 18px}}
+/* заголовки — классом, не тегом */
+.th-h1{font:700 clamp(32px,4.6vw,56px)/1.08 var(--f-head);letter-spacing:-.02em;color:var(--bd);text-wrap:balance}
+.th-h2{font:700 clamp(26px,3.3vw,40px)/1.14 var(--f-head);letter-spacing:-.015em;color:var(--bd);text-wrap:balance}
+.th-h3{font:600 19px/1.3 var(--f-head);color:var(--bd)}
+.th-lbl{display:inline-flex;align-items:center;gap:10px;font:600 12px/16px var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--bl)}
+.th-lbl::before{content:"";width:28px;height:2px;background:currentColor;border-radius:2px}
+/* кнопки: одна главная красная, остальные синие и контурные; наведение у каждой */
+.th-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:8px;background:var(--rd);color:#fff;font:600 16px/1.2 var(--f-body);text-align:center;cursor:pointer;border:0;transition:background .2s,box-shadow .2s,transform .2s}
+.th-btn:hover{background:var(--rdh);box-shadow:var(--sh-m)}
+.th-btn:active{background:var(--rdp);transform:translateY(1px)}
+.th-btn:focus-visible{outline:3px solid var(--bl);outline-offset:2px}
+.th-btn--blue{background:var(--bl)}
+.th-btn--blue:hover{background:var(--blh)}
+.th-btn--line{background:#fff;color:var(--bl);box-shadow:inset 0 0 0 1.5px var(--bl)}
+.th-btn--line:hover{background:var(--lb);color:var(--bd);box-shadow:inset 0 0 0 1.5px var(--bl)}
+.th-btn--wh{background:#fff;color:var(--bd)}
+.th-btn--wh:hover{background:var(--lb);color:var(--bd)}
+.th-btn--ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.75)}
+.th-btn--ghost:hover{background:rgba(255,255,255,.14);color:#fff}
+@media (max-width:640px){.th-btn{width:100%}}
+/* иконка: маска в цвет текста, фоном а не картинкой */
+.th-i{display:block;width:24px;height:24px;flex:none;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+/* появление при прокрутке: прячет помощник, а не CSS — упал скрипт, текст виден */
+.th-rv{transition:opacity .7s ease,transform .7s ease}
+.th-rv.th-hide{opacity:0;transform:translateY(24px)}
+@media (prefers-reduced-motion:reduce){.th *{animation:none!important;transition:none!important}.th-rv.th-hide{opacity:1;transform:none}}
+</style>
+<script>
+window.__th=window.__th||(function(){
+var tiho=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+function run(fn){var s=document.currentScript,R=s;while(R&&R.tagName!=='SECTION')R=R.previousElementSibling;if(!R)return;
+var q=function(x){return R.querySelector(x)},qa=function(x){return Array.prototype.slice.call(R.querySelectorAll(x))};
+try{fn(R,q,qa,tiho)}catch(e){if(window.console)console.error('блок '+(R.getAttribute('data-blk')||''),e)}}
+function vidno(el,cb){if(!('IntersectionObserver' in window)){cb(true);return}var v=false;
+var io=new IntersectionObserver(function(es){v=es[0].isIntersecting;cb(v&&!document.hidden)});io.observe(el);
+document.addEventListener('visibilitychange',function(){cb(v&&!document.hidden)})}
+function poyavlenie(){if(tiho||!('IntersectionObserver' in window))return;
+var els=document.querySelectorAll('.th-rv:not([data-rv])');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('th-hide');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+els.forEach(function(e){e.setAttribute('data-rv','1');var r=e.getBoundingClientRect();if(r.top>innerHeight){e.classList.add('th-hide');io.observe(e)}})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',poyavlenie);else setTimeout(poyavlenie,0);
+return {run:run,vidno:vidno,tiho:tiho};
+})();
+</script>
+<!-- @blk 02 Обложка -->
+<section class="th th-hero" id="hero">
+<style>
+.th-hero{background:linear-gradient(180deg,#fff 0%,var(--lb) 100%);padding:clamp(32px,5vw,72px) 0 clamp(48px,6vw,88px)}
+.th-hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(0,102,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,102,255,.07) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%);pointer-events:none}
+.th-hero-mt{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto;mix-blend-mode:multiply;pointer-events:none}
+.th-hero-g{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,5vw,64px);align-items:center}
+.th-hero-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:99px;background:#fff;color:var(--bd);font:600 13px/1.2 var(--f-body);box-shadow:var(--sh-s);border:1px solid var(--line)}
+.th-hero-badge .th-i{width:16px;height:16px;color:var(--bl)}
+.th-hero-copy{display:grid;gap:20px;justify-items:start}
+.th-hero-h b{color:var(--bl);font-weight:700}
+.th-hero-sub{font-size:clamp(16px,1.5vw,19px);line-height:1.5;color:#334155;max-width:34em}
+.th-hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.th-hero-nw{white-space:nowrap}
+.th-hero-note{display:inline-flex;align-items:center;gap:8px;font:500 14px/1.4 var(--f-body);color:var(--mut2)}
+.th-hero-note .th-i{width:18px;height:18px;color:var(--ok)}
+.th-hero-fr{position:relative;justify-self:center;width:100%;max-width:460px}
+.th-hero-fr::before{content:"";position:absolute;inset:0;transform:translate(14px,14px);border:2px solid var(--bl);border-radius:16px;opacity:.35}
+.th-hero-ph{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:var(--gr);box-shadow:var(--sh-l)}
+.th-hero-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+.th-hero-cap{position:absolute;left:12px;bottom:12px;display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.94);color:var(--bd);font:600 13px/1.2 var(--f-body);box-shadow:var(--sh-m)}
+.th-hero-cap .th-i{width:16px;height:16px;color:var(--rd)}
+.th-hero-pts{position:relative;grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:8px}
+.th-hero-pt{display:flex;align-items:center;gap:14px;padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh-s);position:relative}
+.th-hero-pt::after{content:"";position:absolute;right:10px;top:10px;width:10px;height:10px;border-top:2px solid var(--bl);border-right:2px solid var(--bl);opacity:.4}
+.th-hero-pt .th-i{width:26px;height:26px;color:var(--bl)}
+.th-hero-ic{flex:none;width:48px;height:48px;border-radius:12px;background:var(--lb);display:grid;place-items:center}
+.th-hero-pt p{font:600 16px/1.3 var(--f-head);color:var(--bd)}
+@media (max-width:960px){
+  .th-hero-g{grid-template-columns:1fr}
+  .th-hero-fr{max-width:420px;order:3;margin-top:8px}
+  .th-hero-pts{grid-template-columns:1fr;order:4}
+}
+@media (max-width:640px){
+  .th-hero{padding-top:24px}
+  .th-hero-copy{gap:16px}
+  .th-hero-btns{width:100%;flex-direction:column}
+  .th-hero-fr::before{transform:translate(8px,8px)}
+}
+@media (max-width:960px) and (max-height:760px){.th-hero{padding-top:16px}.th-hero-copy{gap:12px}.th-hero-sub{font-size:15px}}
+.th-ic-pin{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E")}
+.th-ic-arrow{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E")}
+.th-ic-wa{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z'/%3E%3C/svg%3E")}
+.th-ic-checkc{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E")}
+.th-ic-camera{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z'/%3E%3Ccircle cx='12' cy='13' r='3'/%3E%3C/svg%3E")}
+.th-ic-wrench{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/%3E%3C/svg%3E")}
+.th-ic-shield{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E")}
+.th-ic-card{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='5' width='20' height='14' rx='2'/%3E%3Cpath d='M2 10h20'/%3E%3C/svg%3E")}
+</style>
+  <img class="th-hero-mt" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gen/gory-hero.webp" alt="Горы вокруг Алматы" width="1800" height="450" loading="lazy">
+  <div class="th-w th-hero-g">
+    <div class="th-hero-copy">
+      <p class="th-hero-badge"><span class="th-i th-ic-pin" aria-hidden="true"></span>Алматы и область · доставка по Казахстану</p>
+      <h2 class="th-h1 th-hero-h">Климатическая техника в Алматы. Монтаж кондиционера <b>за 1⁠–⁠3 дня</b></h2>
+      <p class="th-hero-sub">Скажите площадь или пришлите фото стены: назовём модель, цену и срок. Отвечаем в рабочее время, <span class="th-hero-nw">Пн–Пт 9:00⁠–⁠18:00</span></p>
+      <div class="th-hero-btns">
+        <a class="th-btn" href="#popup:kviz">Подобрать за 5 вопросов <span class="th-i th-ic-arrow" aria-hidden="true"></span></a>
+        <a class="th-btn th-btn--line" href="https://wa.me/77000369369"><span class="th-i th-ic-wa" aria-hidden="true"></span>Прислать фото стены в WhatsApp</a>
+      </div>
+      <p class="th-hero-note"><span class="th-i th-ic-checkc" aria-hidden="true"></span>Ни к чему не обязывает: сначала цена и срок, потом решение.</p>
+    </div>
+    <div class="th-hero-fr">
+      <div class="th-hero-ph">
+        <img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gostinaya.webp" alt="Настенный кондиционер в гостиной, установлен ровно по линии потолка, провода не видно" width="1200" height="1380" fetchpriority="high">
+        <p class="th-hero-cap"><span class="th-i th-ic-camera" aria-hidden="true"></span>Наш объект: сплит в гостиной</p>
+      </div>
+    </div>
+    <ul class="th-hero-pts">
+      <li class="th-hero-pt"><span class="th-hero-ic"><span class="th-i th-ic-wrench" aria-hidden="true"></span></span><p>Более 5000 монтажей</p></li>
+      <li class="th-hero-pt"><span class="th-hero-ic"><span class="th-i th-ic-shield" aria-hidden="true"></span></span><p>Гарантия на монтаж от 12 месяцев</p></li>
+      <li class="th-hero-pt"><span class="th-hero-ic"><span class="th-i th-ic-card" aria-hidden="true"></span></span><p>Рассрочка до 24 месяцев, оформляет банк</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- @blk 03 Почему у нас -->
+<section class="th th-adv" id="advantages">
+<style>
+.th-adv{background:#fff;padding:clamp(56px,8vw,104px) 0}
+.th-adv-head{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,48px);max-width:820px}
+.th-adv-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.th-adv-c{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--sh-s);transition:box-shadow .25s,transform .25s}
+.th-adv-c:hover{box-shadow:var(--sh-l);transform:translateY(-3px)}
+.th-adv-ic{width:52px;height:52px;border-radius:14px;background:var(--lb);color:var(--bl);display:grid;place-items:center}
+.th-adv-ic .th-i{width:26px;height:26px}
+.th-adv-c p{color:#475569;font-size:15px;line-height:1.55}
+.th-adv-big{grid-column:1/3;grid-row:1/3;background:var(--bd);border-color:var(--bd);color:#fff;position:relative;overflow:hidden;justify-content:flex-end;min-height:420px;padding:34px}
+.th-adv-big:hover{box-shadow:var(--sh-l)}
+.th-adv-bg{position:absolute;right:0;top:0;bottom:0;width:46%;height:100%;object-fit:cover;object-position:50% 30%;opacity:.55;-webkit-mask-image:linear-gradient(90deg,transparent,#000 55%);mask-image:linear-gradient(90deg,transparent,#000 55%)}
+.th-adv-big .th-adv-ic{background:rgba(255,255,255,.14);color:#fff;position:relative}
+.th-adv-bh{position:relative;font:700 clamp(30px,3.6vw,46px)/1.08 var(--f-head);color:#fff;letter-spacing:-.02em;max-width:9em}
+.th-adv-big h3 em{font-style:normal;color:#8CC0FF;font-variant-numeric:tabular-nums}
+.th-adv-big p{position:relative;color:#DCE8FF;font-size:17px;max-width:20em}
+@media (max-width:760px){
+  .th-adv-g{grid-template-columns:1fr;gap:14px}
+  .th-adv-big{grid-column:auto;grid-row:auto;min-height:340px;padding:26px 22px}
+  .th-adv-bg{width:60%}
+  .th-adv-c{padding:22px}
+}
+.th-ic-award{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='6'/%3E%3Cpath d='M15.48 12.89 17 22l-5-3-5 3 1.52-9.11'/%3E%3C/svg%3E")}
+.th-ic-calendar{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2'/%3E%3Cpath d='M16 2v4M8 2v4M3 10h18'/%3E%3C/svg%3E")}
+.th-ic-shield{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E")}
+.th-ic-card{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='5' width='20' height='14' rx='2'/%3E%3Cpath d='M2 10h20'/%3E%3C/svg%3E")}
+.th-ic-truck{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62L18.3 9.38a1 1 0 0 0-.78-.38H14'/%3E%3Ccircle cx='7' cy='18' r='2'/%3E%3Ccircle cx='17' cy='18' r='2'/%3E%3C/svg%3E")}
+.th-ic-badge{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E")}
+</style>
+  <div class="th-w">
+    <div class="th-adv-head th-rv">
+      <p class="th-lbl">Преимущества</p>
+      <h2 class="th-h2">Почему кондиционеры и отопление заказывают у нас</h2>
+    </div>
+    <ul class="th-adv-g">
+      <li class="th-adv-c th-adv-big th-rv">
+        <img class="th-adv-bg" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/fasad.webp" alt="Три наружных блока кондиционера в ряд на фасаде многоэтажного дома" width="630" height="788" loading="lazy">
+        <span class="th-adv-ic"><span class="th-i th-ic-award" aria-hidden="true"></span></span>
+        <h3 class="th-adv-bh">Более <em class="th-adv-cnt" data-to="5000">5000</em> монтажей</h3>
+        <p>Работаем более 5 лет. Ставим кондиционеры, отопление, вентиляцию, водонагреватели.</p>
+      </li>
+      <li class="th-adv-c th-rv"><span class="th-adv-ic"><span class="th-i th-ic-calendar" aria-hidden="true"></span></span><h3 class="th-h3">Монтаж за 1⁠–⁠3 дня</h3><p>Стандартный объект: от одного до трёх дней. Мультисплит и системы под объект считаем после замера.</p></li>
+      <li class="th-adv-c th-rv"><span class="th-adv-ic"><span class="th-i th-ic-shield" aria-hidden="true"></span></span><h3 class="th-h3">Гарантия на монтаж от 12 месяцев</h3><p>Срок и номер бригады записаны в Сервис-карте 369. Присылаем её в WhatsApp при покупке.</p></li>
+      <li class="th-adv-c th-rv"><span class="th-adv-ic"><span class="th-i th-ic-card" aria-hidden="true"></span></span><h3 class="th-h3">Рассрочка до 24 месяцев</h3><p>Оформляет банк: решение и условия на его стороне. Мы не обещаем того, что решаем не мы.</p></li>
+      <li class="th-adv-c th-rv"><span class="th-adv-ic"><span class="th-i th-ic-truck" aria-hidden="true"></span></span><h3 class="th-h3">Доставка по Казахстану</h3><p>По Алматы бесплатно при заказе от 100 000 ₸. В другие города отправляем транспортной компанией.</p></li>
+      <li class="th-adv-c th-rv"><span class="th-adv-ic"><span class="th-i th-ic-badge" aria-hidden="true"></span></span><h3 class="th-h3">Техника известных брендов</h3><p>Ballu, Electrolux, Gree, Haier, LG, Midea, Samsung, TCL, Toshiba и другие.</p></li>
+    </ul>
+  </div>
+</section>
+<script>__th.run(function(R,q,qa,tiho){
+  var el=q('.th-adv-cnt'),to=+el.getAttribute('data-to'),done=false;
+  __th.vidno(el,function(ok){if(!ok||done||tiho)return;done=true;var t0=performance.now(),d=1400;
+    (function f(t){var k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);el.textContent=Math.round(to*e);if(k<1)requestAnimationFrame(f);else el.textContent=to})(t0)});
+});</script>
+
+<!-- @blk 04 Направления -->
+<section class="th th-sv" id="services">
+<style>
+.th-sv{background:var(--gr);padding:clamp(56px,8vw,104px) 0}
+.th-sv-head{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,48px);max-width:820px}
+.th-sv-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.th-sv-c{position:relative;display:flex;flex-direction:column;gap:10px;height:100%;padding:0 0 26px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh-s);overflow:hidden;transition:box-shadow .25s,transform .25s,border-color .25s}
+.th-sv-c--a:hover{box-shadow:var(--sh-l);transform:translateY(-3px);border-color:var(--bl)}
+.th-sv-c--a:focus-visible{outline:3px solid var(--bl);outline-offset:2px}
+.th-sv-ph{display:block;aspect-ratio:3/2;overflow:hidden;background:var(--lb)}
+.th-sv-ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.th-sv-c--a:hover .th-sv-ph img{transform:scale(1.04)}
+.th-sv-b{display:grid;gap:8px;padding:0 24px}
+.th-sv-ic{width:56px;height:56px;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh-m);color:var(--bl);display:grid;place-items:center;margin:-30px 0 4px 24px;position:relative}
+.th-sv-ic .th-i{width:28px;height:28px}
+.th-sv-b p{color:#475569;font-size:15px;line-height:1.55;padding-right:40px}
+.th-sv-go{position:absolute;right:20px;bottom:18px;width:40px;height:40px;border-radius:50%;background:var(--lb);color:var(--bl);display:grid;place-items:center;transition:background .2s,color .2s}
+.th-sv-go .th-i{width:18px;height:18px}
+.th-sv-c--a:hover .th-sv-go{background:var(--bl);color:#fff}
+.th-sv-all{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font:600 16px/1 var(--f-body);color:var(--bl);padding:10px 0}
+.th-sv-all:hover{color:var(--bd)}
+.th-sv-all .th-i{width:18px;height:18px}
+@media (max-width:960px){.th-sv-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){
+  .th-sv-g{grid-template-columns:1fr;gap:12px}
+  .th-sv-ph{aspect-ratio:16/10}
+  .th-sv-b{padding:0 20px}
+  .th-sv-ic{margin-left:20px}
+}
+.th-ic-snow{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5M3.5 9l2.5 3-2.5 3M20.5 9 18 12l2.5 3'/%3E%3C/svg%3E")}
+.th-ic-arrow{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E")}
+.th-ic-flame{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z'/%3E%3C/svg%3E")}
+.th-ic-fan{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2M9.6 4.6A2 2 0 1 1 11 8H2M12.6 19.4A2 2 0 1 0 14 16H2'/%3E%3C/svg%3E")}
+.th-ic-drop{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z'/%3E%3C/svg%3E")}
+.th-ic-filter{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 3H2l8 9.46V19l4 2v-8.54L22 3z'/%3E%3C/svg%3E")}
+.th-ic-industry{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 20h20M4 20V9l5 3V9l5 3V4h6v16'/%3E%3Cpath d='M8 16h1M13 16h1M17 16h1'/%3E%3C/svg%3E")}
+</style>
+  <div class="th-w">
+    <div class="th-sv-head th-rv">
+      <p class="th-lbl">Направления</p>
+      <h2 class="th-h2">Кондиционеры, отопление, вентиляция и водонагреватели в Алматы</h2>
+    </div>
+    <ul class="th-sv-g">
+      <li class="th-rv"><a class="th-sv-c th-sv-c--a" href="/kondicionery-almaty"><span class="th-sv-ph"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gen/napr-kond.webp" alt="Настенный кондиционер в светлой гостиной с видом на горы" width="1200" height="800" loading="lazy"></span><span class="th-sv-ic"><span class="th-i th-ic-snow" aria-hidden="true"></span></span><span class="th-sv-b"><h3 class="th-h3">Кондиционеры</h3><p>Для квартиры, дома и офиса: настенные, мультисплит, с притоком свежего воздуха.</p></span><span class="th-sv-go"><span class="th-i th-ic-arrow" aria-hidden="true"></span></span></a></li>
+      <li class="th-rv"><a class="th-sv-c th-sv-c--a" href="/otoplenie"><span class="th-sv-ph"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gen/napr-otopl.webp" alt="Электрокамин и радиатор в уютной гостиной" width="1200" height="800" loading="lazy"></span><span class="th-sv-ic"><span class="th-i th-ic-flame" aria-hidden="true"></span></span><span class="th-sv-b"><h3 class="th-h3">Отопление</h3><p>Радиаторы, камины и электроочаги, тепловые завесы, тепловые пушки.</p></span><span class="th-sv-go"><span class="th-i th-ic-arrow" aria-hidden="true"></span></span></a></li>
+      <li class="th-rv"><a class="th-sv-c th-sv-c--a" href="/ventilyaciya"><span class="th-sv-ph"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gen/napr-vent.webp" alt="Бризер на стене у окна в спальне" width="1200" height="800" loading="lazy"></span><span class="th-sv-ic"><span class="th-i th-ic-fan" aria-hidden="true"></span></span><span class="th-sv-b"><h3 class="th-h3">Вентиляция</h3><p>Приточная вентиляция в квартиру, бризеры, приточные установки.</p></span><span class="th-sv-go"><span class="th-i th-ic-arrow" aria-hidden="true"></span></span></a></li>
+      <li class="th-rv"><a class="th-sv-c th-sv-c--a" href="/vodonagrevateli"><span class="th-sv-ph"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gen/napr-vodon.webp" alt="Накопительный водонагреватель в хозяйственной нише с клапаном и кранами" width="1200" height="800" loading="lazy"></span><span class="th-sv-ic"><span class="th-i th-ic-drop" aria-hidden="true"></span></span><span class="th-sv-b"><h3 class="th-h3">Водонагреватели</h3><p>Накопительные и проточные для квартиры и дома.</p></span><span class="th-sv-go"><span class="th-i th-ic-arrow" aria-hidden="true"></span></span></a></li>
+      <li class="th-rv"><div class="th-sv-c"><span class="th-sv-ph"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gen/napr-filtr.webp" alt="Фильтры для воды под кухонной раковиной" width="1200" height="800" loading="lazy"></span><span class="th-sv-ic"><span class="th-i th-ic-filter" aria-hidden="true"></span></span><span class="th-sv-b"><h3 class="th-h3">Водоочистка</h3><p>Фильтры для воды в квартиру и дом.</p></span></div></li>
+      <li class="th-rv"><div class="th-sv-c"><span class="th-sv-ph"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gen/napr-obekt.webp" alt="Наружные блоки VRF и чиллер на крыше здания" width="1200" height="800" loading="lazy"></span><span class="th-sv-ic"><span class="th-i th-ic-industry" aria-hidden="true"></span></span><span class="th-sv-b"><h3 class="th-h3">Оборудование под объект</h3><p>VRF, чиллеры, фанкойлы, приточно-вытяжные установки: состав и цену считаем по схеме объекта.</p></span></div></li>
+    </ul>
+    <a class="th-sv-all" href="/katalog">Весь каталог <span class="th-i th-ic-arrow" aria-hidden="true"></span></a>
+  </div>
+</section>
+
+<!-- @blk 05 Подбор за 5 вопросов -->
+<section class="th th-qz" id="quiz">
+<style>
+.th-qz{background:var(--bd);color:#fff;padding:clamp(72px,10vw,128px) 0}
+.th-qz-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;transform:scaleX(-1)}
+.th-qz::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,51,160,.96) 0%,rgba(0,51,160,.9) 38%,rgba(0,51,160,.25) 72%,rgba(0,51,160,0) 100%);pointer-events:none}
+.th-qz-g{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,5vw,64px);align-items:center}
+.th-qz-copy{display:grid;gap:18px;justify-items:start}
+.th-qz .th-lbl{color:#8CC0FF}
+.th-qz .th-h2{color:#fff}
+.th-qz-copy p.th-qz-t{font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:#DCE8FF;max-width:30em}
+.th-qz-copy .th-btn{margin-top:6px}
+@media (max-width:860px){.th-qz-g{grid-template-columns:1fr}.th-qz::before{background:linear-gradient(180deg,rgba(0,51,160,.95) 0%,rgba(0,51,160,.88) 55%,rgba(0,51,160,.55) 100%)}}
+.th-ic-arrow{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E")}
+</style>
+  <img class="th-qz-bg" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gen/podbor-fon.webp" alt="Светлая гостиная с настенным кондиционером" width="1600" height="900" loading="lazy">
+  <div class="th-w th-qz-g">
+    <div class="th-qz-copy th-rv">
+      <p class="th-lbl">Подбор</p>
+      <h2 class="th-h2">Ответьте на 5 вопросов: назовём модель, цену и срок монтажа</h2>
+      <p class="th-qz-t">Одна минута, везде есть готовые варианты. Не знаете площадь? Отметьте «не знаю», подскажем.</p>
+      <a class="th-btn" href="#popup:kviz">Подобрать за 5 вопросов <span class="th-i th-ic-arrow" aria-hidden="true"></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- @blk 06 Цены на монтаж -->
+<section class="th th-pr" id="pricing">
+<style>
+.th-pr{background:#fff;padding:clamp(56px,8vw,104px) 0}
+.th-pr-head{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,48px);max-width:860px}
+.th-pr-g{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:20px;align-items:stretch}
+.th-pr-main{position:relative;background:#fff;border:2px solid var(--bl);border-radius:16px;padding:clamp(24px,3vw,36px);box-shadow:var(--sh-l);display:flex;flex-direction:column;justify-content:center;gap:22px;overflow:hidden}
+.th-pr-wm{position:absolute;right:-24px;bottom:-24px;width:220px;height:220px;color:var(--lb);pointer-events:none}
+.th-pr-wm .th-i{width:100%;height:100%}
+.th-pr-mh,.th-pr-ck{position:relative;z-index:1}
+.th-pr-main::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,var(--bl),var(--bd))}
+.th-pr-mh{font:600 clamp(18px,2vw,22px)/1.3 var(--f-head);color:var(--bd)}
+.th-pr-mh b{display:block;margin-top:10px;font:700 clamp(44px,6vw,76px)/1 var(--f-head);color:var(--rd);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.th-pr-ck{display:grid;gap:12px}
+.th-pr-ck li{display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.5;color:#334155}
+.th-pr-ck .th-i{width:22px;height:22px;margin-top:1px;color:var(--ok)}
+.th-pr-side{display:grid;gap:16px;grid-template-rows:repeat(3,auto)}
+.th-pr-c{display:grid;grid-template-columns:48px 1fr;gap:6px 16px;background:var(--gr);border:1px solid var(--line);border-radius:12px;padding:20px 22px;align-items:start}
+.th-pr-c .th-pr-ic{grid-row:1/3;width:48px;height:48px;border-radius:12px;background:#fff;color:var(--bl);display:grid;place-items:center;border:1px solid var(--line)}
+.th-pr-c .th-pr-ic .th-i{width:24px;height:24px}
+.th-pr-c p{color:#475569;font-size:15px;line-height:1.55}
+.th-pr-note{background:#FFF3C4;color:#5C4400;border-radius:4px;padding:2px 6px;font-weight:600}
+.th-pr-foot{display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center;justify-content:space-between;margin-top:clamp(24px,3vw,40px);padding:24px 28px;background:var(--lb);border-radius:16px}
+.th-pr-foot p{max-width:46em;color:#334155;font-size:16px;line-height:1.55}
+@media (max-width:860px){.th-pr-g{grid-template-columns:1fr}}
+@media (max-width:640px){.th-pr-foot{padding:20px}.th-pr-c{padding:18px}.th-pr-wm{right:0;bottom:-20px;width:160px;height:160px}}
+.th-ic-snow{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5M3.5 9l2.5 3-2.5 3M20.5 9 18 12l2.5 3'/%3E%3C/svg%3E")}
+.th-ic-checkc{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E")}
+.th-ic-plus{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E")}
+.th-ic-calc{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='2' width='16' height='20' rx='2'/%3E%3Cpath d='M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01'/%3E%3C/svg%3E")}
+.th-ic-wrench{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/%3E%3C/svg%3E")}
+.th-ic-arrow{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E")}
+</style>
+  <div class="th-w">
+    <div class="th-pr-head th-rv">
+      <p class="th-lbl">Цены</p>
+      <h2 class="th-h2">Цены на монтаж кондиционера от 45 000 ₸ и что в них входит</h2>
+    </div>
+    <div class="th-pr-g">
+      <div class="th-pr-main th-rv">
+        <span class="th-pr-wm"><span class="th-i th-ic-snow" aria-hidden="true"></span></span>
+        <h3 class="th-pr-mh">Монтаж кондиционера без притока: <b>от 45 000 ₸</b></h3>
+        <ul class="th-pr-ck">
+          <li><span class="th-i th-ic-checkc" aria-hidden="true"></span><span>В цену входят кронштейн и 3 м инсталляции.</span></li>
+          <li><span class="th-i th-ic-checkc" aria-hidden="true"></span><span>Срок: от одного до трёх дней.</span></li>
+        </ul>
+      </div>
+      <ul class="th-pr-side">
+        <li class="th-pr-c th-rv"><span class="th-pr-ic"><span class="th-i th-ic-plus" aria-hidden="true"></span></span><h3 class="th-h3">Что считаем отдельно</h3><p>Трасса свыше 3 м, штроба, алмазное бурение, высотные работы, демонтаж. Считаем при расчёте по вашему объекту.</p></li>
+        <li class="th-pr-c th-rv"><span class="th-pr-ic"><span class="th-i th-ic-calc" aria-hidden="true"></span></span><h3 class="th-h3">Кондиционер с притоком, мультисплит, VRF</h3><p>Цена зависит от объекта. Мультисплит и VRF считаем после замера.</p></li>
+        <li class="th-pr-c th-rv"><span class="th-pr-ic"><span class="th-i th-ic-wrench" aria-hidden="true"></span></span><h3 class="th-h3">Отопление, вентиляция, водонагреватели, водоочистка</h3><p>Монтаж считаем по вашему объекту. <span class="th-pr-note">[уточнить: цена монтажа «от» по этим направлениям]</span></p></li>
+      </ul>
+    </div>
+    <div class="th-pr-foot th-rv">
+      <p>Цена на сайте — для стандартного монтажа. Нестандартный объект считаем отдельно. После заявки пришлём памятку «Семь строк сметы на монтаж кондиционера»: что проверить в смете до предоплаты.</p>
+      <a class="th-btn" href="#popup:zayavka">Получить расчёт монтажа <span class="th-i th-ic-arrow" aria-hidden="true"></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- @blk 07 Наши работы -->
+<section class="th th-pf" id="portfolio">
+<style>
+.th-pf{background:var(--gr);padding:clamp(56px,8vw,104px) 0}
+.th-pf-head{display:grid;gap:14px;margin-bottom:clamp(24px,3.5vw,40px);max-width:860px}
+.th-pf-head p.th-pf-t{color:#475569;font-size:16px;line-height:1.55}
+.th-pf-note{background:#FFF3C4;color:#5C4400;border-radius:4px;padding:2px 6px;font-weight:600}
+.th-pf-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.th-pf-c{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--sh-s);transition:box-shadow .25s,transform .25s;height:100%}
+.th-pf-c:hover{box-shadow:var(--sh-l);transform:translateY(-3px)}
+.th-pf-a{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:var(--lb);cursor:zoom-in}
+.th-pf-a:focus-visible{outline:3px solid var(--bl);outline-offset:-3px}
+.th-pf-a img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.th-pf-c:hover .th-pf-a img{transform:scale(1.04)}
+.th-pf-zoom{position:absolute;right:10px;top:10px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--bd);display:grid;place-items:center;box-shadow:var(--sh-m)}
+.th-pf-zoom .th-i{width:18px;height:18px}
+.th-pf-b{padding:14px 16px 18px;display:grid;gap:4px}
+.th-pf-bh{font:600 16px/1.3 var(--f-head);color:var(--bd)}
+.th-pf-b p{font-size:14px;line-height:1.5;color:#475569}
+.th-pf-lb{position:fixed;inset:0;z-index:100;background:rgba(7,28,59,.94);display:none;align-items:center;justify-content:center;padding:56px 16px 24px;flex-direction:column;gap:14px}
+.th-pf-lb.th-open{display:flex}
+.th-pf-lb img{max-width:min(96vw,1000px);max-height:76vh;width:auto;height:auto;border-radius:10px;object-fit:contain}
+.th-pf-lbt{color:#fff;font:600 16px/1.4 var(--f-body);text-align:center;max-width:36em}
+.th-pf-lbb{position:absolute;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;display:grid;place-items:center;cursor:pointer;padding:0;transition:background .2s}
+.th-pf-lbb:hover{background:rgba(255,255,255,.3)}
+.th-pf-lbb:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.th-pf-lbb .th-i{width:22px;height:22px}
+.th-pf-x{top:12px;right:12px}
+.th-pf-pv{left:12px;top:50%;margin-top:-24px}
+.th-pf-nx{right:12px;top:50%;margin-top:-24px}
+.th-pf-nx .th-i{transform:none}
+.th-pf-pv .th-i{transform:scaleX(-1)}
+@media (max-width:960px){.th-pf-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.th-pf-g{gap:12px}.th-pf-b{padding:12px 12px 14px}.th-pf-bh{font-size:15px}.th-pf-b p{font-size:13px}.th-pf-pv,.th-pf-nx{top:auto;bottom:16px;margin:0}}
+.th-ic-search{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E")}
+.th-ic-x{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E")}
+.th-ic-arrow{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E")}
+</style>
+  <div class="th-w">
+    <div class="th-pf-head th-rv">
+      <p class="th-lbl">Работы</p>
+      <h2 class="th-h2">Наши работы: монтаж кондиционеров, бризеров и завес</h2>
+      <p class="th-pf-t">Фото с наших объектов. Адреса и лица клиентов не показываем. <span class="th-pf-note">[уточнить: район и месяц работ у каждого объекта]</span></p>
+    </div>
+    <ul class="th-pf-g">
+      <li class="th-rv"><figure class="th-pf-c"><a class="th-pf-a" href="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/zavesa.webp"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/zavesa.webp" alt="Тепловая завеса над входной дверью, провод убран в короб" width="900" height="1600" loading="lazy"><span class="th-pf-zoom"><span class="th-i th-ic-search" aria-hidden="true"></span></span></a><figcaption class="th-pf-b"><h3 class="th-pf-bh">Тепловая завеса над входной дверью</h3><p>Установлена над входом, провод убран в короб.</p></figcaption></figure></li>
+      <li class="th-rv"><figure class="th-pf-c"><a class="th-pf-a" href="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/kassetnyj.webp"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/kassetnyj.webp" alt="Кассетный кондиционер в офисе: блок встроен в потолок" width="1500" height="1500" loading="lazy"><span class="th-pf-zoom"><span class="th-i th-ic-search" aria-hidden="true"></span></span></a><figcaption class="th-pf-b"><h3 class="th-pf-bh">Кассетный кондиционер в офисе</h3><p>Блок встроен в потолок, трасса скрыта.</p></figcaption></figure></li>
+      <li class="th-rv"><figure class="th-pf-c"><a class="th-pf-a" href="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/kanal-2.webp"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/kanal-2.webp" alt="Канальный блок кондиционера над потолком технического помещения" width="1600" height="1200" loading="lazy" style="object-position:30% 50%"><span class="th-pf-zoom"><span class="th-i th-ic-search" aria-hidden="true"></span></span></a><figcaption class="th-pf-b"><h3 class="th-pf-bh">Канальный блок над потолком</h3><p>Блок в межпотолочном пространстве технического помещения.</p></figcaption></figure></li>
+      <li class="th-rv"><figure class="th-pf-c"><a class="th-pf-a" href="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/brizer.webp"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/brizer.webp" alt="Бризер на стене у окна: свежий воздух с улицы без открытого окна" width="960" height="1280" loading="lazy"><span class="th-pf-zoom"><span class="th-i th-ic-search" aria-hidden="true"></span></span></a><figcaption class="th-pf-b"><h3 class="th-pf-bh">Бризер на стене</h3><p>Свежий воздух с улицы без открытого окна.</p></figcaption></figure></li>
+      <li class="th-rv"><figure class="th-pf-c"><a class="th-pf-a" href="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/fasad.webp"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/fasad.webp" alt="Три наружных блока кондиционера в ряд на стене многоэтажного дома" width="630" height="788" loading="lazy"><span class="th-pf-zoom"><span class="th-i th-ic-search" aria-hidden="true"></span></span></a><figcaption class="th-pf-b"><h3 class="th-pf-bh">Наружные блоки на фасаде</h3><p>Три блока в ряд на стене многоэтажного дома.</p></figcaption></figure></li>
+      <li class="th-rv"><figure class="th-pf-c"><a class="th-pf-a" href="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/vysota.webp"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/vysota.webp" alt="Монтаж наружного блока кондиционера на высоте, верёвочный доступ" width="1200" height="1600" loading="lazy" style="object-position:30% 50%"><span class="th-pf-zoom"><span class="th-i th-ic-search" aria-hidden="true"></span></span></a><figcaption class="th-pf-b"><h3 class="th-pf-bh">Монтаж на высоте</h3><p>Наружный блок ставят на фасаде с верёвочным доступом.</p></figcaption></figure></li>
+      <li class="th-rv"><figure class="th-pf-c"><a class="th-pf-a" href="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/shtroba.webp"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/shtroba.webp" alt="Трасса кондиционера в штробе: трубки уложены в стену и закрыты" width="1204" height="1600" loading="lazy"><span class="th-pf-zoom"><span class="th-i th-ic-search" aria-hidden="true"></span></span></a><figcaption class="th-pf-b"><h3 class="th-pf-bh">Трасса в штробе</h3><p>Трубки уложены в стену и закрыты.</p></figcaption></figure></li>
+      <li class="th-rv"><figure class="th-pf-c"><a class="th-pf-a" href="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gostinaya.webp"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gostinaya.webp" alt="Настенный кондиционер в гостиной ровно по линии потолка, без видимых проводов" width="1200" height="1380" loading="lazy" style="object-position:50% 20%"><span class="th-pf-zoom"><span class="th-i th-ic-search" aria-hidden="true"></span></span></a><figcaption class="th-pf-b"><h3 class="th-pf-bh">Сплит в гостиной</h3><p>Настенный блок ровно по линии потолка, без видимых проводов.</p></figcaption></figure></li>
+    </ul>
+  </div>
+  <div class="th-pf-lb" role="dialog" aria-label="Фото объекта" aria-hidden="true">
+    <button class="th-pf-lbb th-pf-x" type="button" aria-label="Закрыть"><span class="th-i th-ic-x" aria-hidden="true"></span></button>
+    <button class="th-pf-lbb th-pf-pv" type="button" aria-label="Предыдущее фото"><span class="th-i th-ic-arrow" aria-hidden="true"></span></button>
+    <img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gostinaya.webp" alt="Фото объекта" width="1200" height="1380">
+    <p class="th-pf-lbt"></p>
+    <button class="th-pf-lbb th-pf-nx" type="button" aria-label="Следующее фото"><span class="th-i th-ic-arrow" aria-hidden="true"></span></button>
+  </div>
+</section>
+<script>__th.run(function(R,q,qa){
+  var lb=q('.th-pf-lb'),im=lb.querySelector('img'),tx=q('.th-pf-lbt'),as=qa('.th-pf-a'),i=0;
+  function show(n){i=(n+as.length)%as.length;var a=as[i],t=a.parentNode.querySelector('h3');im.src=a.getAttribute('href');im.alt=a.querySelector('img').alt;tx.textContent=t?t.textContent:''}
+  function open(n){show(n);lb.classList.add('th-open');lb.setAttribute('aria-hidden','false');lb.querySelector('.th-pf-x').focus()}
+  function close(){lb.classList.remove('th-open');lb.setAttribute('aria-hidden','true')}
+  as.forEach(function(a,n){a.addEventListener('click',function(e){e.preventDefault();open(n)})});
+  q('.th-pf-x').addEventListener('click',close);
+  q('.th-pf-pv').addEventListener('click',function(){show(i-1)});
+  q('.th-pf-nx').addEventListener('click',function(){show(i+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)close()});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('th-open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});
+});</script>
+
+<!-- @blk 08 Отзывы клиентов -->
+<section class="th th-rw" id="reviews">
+<style>
+.th-rw{background:var(--lb);padding:clamp(56px,8vw,104px) 0}
+.th-rw-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,4vw,56px);align-items:end;margin-bottom:clamp(28px,4vw,44px)}
+.th-rw-title{display:grid;gap:14px}
+.th-rw-title p.th-rw-t{color:#475569;font-size:16px;line-height:1.55;max-width:34em}
+.th-rw-rt{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.th-rw-r{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:4px;box-shadow:var(--sh-s)}
+.th-rw-src{display:flex;align-items:center;gap:8px;font:600 14px/1 var(--f-body);color:var(--mut2)}
+.th-rw-src .th-i{width:16px;height:16px}
+.th-rw-k{color:#F14635}
+.th-rw-n{font:700 38px/1 var(--f-head);color:var(--bd);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.th-rw-st{display:flex;gap:2px;color:#F5A300}
+.th-rw-st .th-i{width:16px;height:16px}
+.th-rw-sm{font:500 13px/1.3 var(--f-body);color:var(--mut2)}
+.th-rw-g{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.th-rw-c{grid-column:span 2;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--sh-s);position:relative}
+.th-rw-c:first-child{grid-column:span 4}
+.th-rw-c::before{content:"\201C";position:absolute;right:20px;top:6px;font:700 72px/1 var(--f-head);color:var(--lb)}
+.th-rw-c blockquote{font:500 17px/1.55 var(--f-body);color:var(--ink);position:relative}
+.th-rw-c:first-child blockquote{font-size:clamp(21px,2.4vw,28px);line-height:1.45}
+.th-rw-c figcaption{margin-top:auto;font:500 13px/1.3 var(--f-body);color:var(--mut)}
+@media (max-width:960px){.th-rw-head{grid-template-columns:1fr}.th-rw-g{grid-template-columns:repeat(2,minmax(0,1fr))}.th-rw-c{grid-column:span 1}.th-rw-c:first-child,.th-rw-c:last-child{grid-column:span 2}}
+@media (max-width:640px){.th-rw-g{grid-template-columns:1fr}.th-rw-c:first-child,.th-rw-c:last-child{grid-column:span 1}.th-rw-rt{gap:10px}.th-rw-r{padding:14px}.th-rw-n{font-size:32px}.th-rw-c{padding:20px}}
+.th-ic-star{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E")}
+.th-ic-google{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z'/%3E%3C/svg%3E")}
+</style>
+  <div class="th-w">
+    <div class="th-rw-head th-rv">
+      <div class="th-rw-title">
+        <p class="th-lbl">Отзывы</p>
+        <h2 class="th-h2">Отзывы о монтаже и доставке кондиционеров</h2>
+        <p class="th-rw-t">Оценка на Kaspi: 4,85 по 278 оценкам. В Google: 5,0 по 9 оценкам. Все отзывы лежат на Kaspi и в Google Maps.</p>
+      </div>
+      <div class="th-rw-rt" aria-hidden="true">
+        <div class="th-rw-r"><span class="th-rw-src"><b class="th-rw-k">Kaspi</b></span><span class="th-rw-n">4,85</span><span class="th-rw-st"><span class="th-i th-ic-star" aria-hidden="true"></span><span class="th-i th-ic-star" aria-hidden="true"></span><span class="th-i th-ic-star" aria-hidden="true"></span><span class="th-i th-ic-star" aria-hidden="true"></span><span class="th-i th-ic-star" aria-hidden="true"></span></span><span class="th-rw-sm">по 278 оценкам</span></div>
+        <div class="th-rw-r"><span class="th-rw-src"><span class="th-i th-ic-google" aria-hidden="true"></span>Google</span><span class="th-rw-n">5,0</span><span class="th-rw-st"><span class="th-i th-ic-star" aria-hidden="true"></span><span class="th-i th-ic-star" aria-hidden="true"></span><span class="th-i th-ic-star" aria-hidden="true"></span><span class="th-i th-ic-star" aria-hidden="true"></span><span class="th-i th-ic-star" aria-hidden="true"></span></span><span class="th-rw-sm">по 9 оценкам</span></div>
+      </div>
+    </div>
+    <div class="th-rw-g">
+      <article class="th-rw-c th-rv"><figure style="display:contents"><blockquote>«Кондиционер очень хорошего качества. Работает отлично. Установили аккуратно. Спасибо ИП Техно Холод.»</blockquote><figcaption>Kaspi, 28.07.2025</figcaption></figure></article>
+      <article class="th-rw-c th-rv"><figure style="display:contents"><blockquote>«Очень компетентный менеджер, все рассказал, помог выбрать. На следующий день привезли кондиционер.»</blockquote><figcaption>Kaspi, 11.07.2024</figcaption></figure></article>
+      <article class="th-rw-c th-rv"><figure style="display:contents"><blockquote>«Доставили быстро, раньше срока.»</blockquote><figcaption>Kaspi, 04.08.2025</figcaption></figure></article>
+      <article class="th-rw-c th-rv"><figure style="display:contents"><blockquote>«Перед отправкой позвонили, дали рекомендации по монтажу. Сегодня встретил. Упаковано хорошо.»</blockquote><figcaption>Kaspi, 15.12.2023</figcaption></figure></article>
+      <article class="th-rw-c th-rv"><figure style="display:contents"><blockquote>«Отдельное спасибо менеджеру ИП Технохолод, что порекомендовал этот бренд. Установщики оценили наш выбор.»</blockquote><figcaption>Kaspi, 01.05.2025</figcaption></figure></article>
+    </div>
+  </div>
+</section>
+
+<!-- @blk 09 Как проходит установка -->
+<section class="th th-hw" id="how-it-works">
+<style>
+.th-hw{background:#fff;padding:clamp(56px,8vw,104px) 0}
+.th-hw-g{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:start}
+.th-hw-head{display:grid;gap:14px;position:sticky;top:24px;align-content:start}
+.th-hw-ph{margin-top:18px;aspect-ratio:4/3;border-radius:16px;overflow:hidden;box-shadow:var(--sh-l);background:var(--lb)}
+.th-hw-ph img{width:100%;height:100%;object-fit:cover;object-position:35% 45%}
+.th-hw-st{position:relative;display:grid;gap:18px;counter-reset:s}
+.th-hw-st::before{content:"";position:absolute;left:27px;top:28px;bottom:28px;width:2px;background:repeating-linear-gradient(180deg,var(--bl) 0 6px,transparent 6px 12px);opacity:.45}
+.th-hw-s{position:relative;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start}
+.th-hw-n{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:#fff;border:2px solid var(--bl);color:var(--bl);display:grid;place-items:center}
+.th-hw-n .th-i{width:24px;height:24px}
+.th-hw-b{background:var(--gr);border:1px solid var(--line);border-radius:14px;padding:18px 22px;display:grid;gap:6px}
+.th-hw-b p{color:#475569;font-size:15px;line-height:1.55}
+.th-hw-s--key .th-hw-n{background:var(--bl);color:#fff}
+.th-hw-s--key .th-hw-b{background:var(--lb);border-color:var(--bl);box-shadow:var(--sh-m)}
+@media (max-width:860px){.th-hw-g{grid-template-columns:1fr}.th-hw-head{position:static}.th-hw-ph{display:none}}
+@media (max-width:640px){.th-hw-s{grid-template-columns:44px 1fr;gap:12px}.th-hw-n{width:44px;height:44px}.th-hw-n .th-i{width:20px;height:20px}.th-hw-st::before{left:21px}.th-hw-b{padding:16px}}
+.th-ic-chat{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7.9 20A9 9 0 1 0 4 16.1L2 22Z'/%3E%3C/svg%3E")}
+.th-ic-calc{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='2' width='16' height='20' rx='2'/%3E%3Cpath d='M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01'/%3E%3C/svg%3E")}
+.th-ic-truck{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62L18.3 9.38a1 1 0 0 0-.78-.38H14'/%3E%3Ccircle cx='7' cy='18' r='2'/%3E%3Ccircle cx='17' cy='18' r='2'/%3E%3C/svg%3E")}
+.th-ic-wrench{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/%3E%3C/svg%3E")}
+.th-ic-doc{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M14 2v6h6M16 13H8M16 17H8M10 9H8'/%3E%3C/svg%3E")}
+</style>
+  <div class="th-w th-hw-g">
+    <div class="th-hw-head th-rv">
+      <p class="th-lbl">Установка</p>
+      <h2 class="th-h2">Как проходит установка кондиционера: от заявки до Сервис-карты</h2>
+      <div class="th-hw-ph"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/vysota.webp" alt="Бригада ставит наружный блок кондиционера на фасаде дома" width="1200" height="1600" loading="lazy"></div>
+    </div>
+    <ol class="th-hw-st">
+      <li class="th-hw-s th-rv"><span class="th-hw-n"><span class="th-i th-ic-chat" aria-hidden="true"></span></span><div class="th-hw-b"><h3 class="th-h3">1. Вы пишете или звоните</h3><p>Называете площадь помещения или присылаете фото стены в WhatsApp.</p></div></li>
+      <li class="th-hw-s th-rv"><span class="th-hw-n"><span class="th-i th-ic-calc" aria-hidden="true"></span></span><div class="th-hw-b"><h3 class="th-h3">2. Мы считаем</h3><p>Подбираем модель, называем стоимость и срок. Отвечаем в рабочее время.</p></div></li>
+      <li class="th-hw-s th-rv"><span class="th-hw-n"><span class="th-i th-ic-truck" aria-hidden="true"></span></span><div class="th-hw-b"><h3 class="th-h3">3. Привозим технику</h3><p>По Алматы бесплатно при заказе от 100 000 ₸. В другие города отправляем транспортной компанией.</p></div></li>
+      <li class="th-hw-s th-hw-s--key th-rv"><span class="th-hw-n"><span class="th-i th-ic-wrench" aria-hidden="true"></span></span><div class="th-hw-b"><h3 class="th-h3">4. Бригада ставит за 1⁠–⁠3 дня</h3><p>Алматы и область. Бригады работают со строительными пылесосами, отверстия в бетоне делают алмазным бурением, чтобы в комнате не оседала строительная пыль. Мультисплит и крупные системы: сначала замер.</p></div></li>
+      <li class="th-hw-s th-rv"><span class="th-hw-n"><span class="th-i th-ic-doc" aria-hidden="true"></span></span><div class="th-hw-b"><h3 class="th-h3">5. Присылаем Сервис-карту в WhatsApp</h3><p>В ней номер бригады, срок гарантии на монтаж и крайняя дата планового обслуживания.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- @blk 10 Гарантия -->
+<section class="th th-gr" id="guarantee">
+<style>
+.th-gr{background:var(--gr);padding:clamp(56px,8vw,104px) 0}
+.th-gr-head{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,48px);max-width:860px}
+.th-gr-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.th-gr-c{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 24px 24px;display:grid;gap:10px;align-content:start;box-shadow:var(--sh-s)}
+.th-gr-c::before{content:"";position:absolute;left:18px;right:18px;top:0;border-top:2px dashed var(--line)}
+.th-gr-ic{width:48px;height:48px;border-radius:12px;background:var(--lb);color:var(--bl);display:grid;place-items:center}
+.th-gr-ic .th-i{width:24px;height:24px}
+.th-gr-c p{color:#475569;font-size:15px;line-height:1.55}
+.th-gr-c--key{background:var(--lb);border-color:var(--bl)}
+.th-gr-c--key .th-gr-ic{background:var(--bl);color:#fff}
+.th-gr-foot{margin-top:clamp(24px,3vw,36px);display:flex}
+@media (max-width:960px){.th-gr-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.th-gr-g{grid-template-columns:1fr;gap:14px}.th-gr-c{padding:26px 20px 20px}}
+.th-ic-badge{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E")}
+.th-ic-shield{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E")}
+.th-ic-id{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='16' rx='2'/%3E%3Ccircle cx='9' cy='11' r='2'/%3E%3Cpath d='M15 9h3M15 13h3M6 17c.5-2 2-3 3-3s2.5 1 3 3'/%3E%3C/svg%3E")}
+.th-ic-clock{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 6v6l4 2'/%3E%3C/svg%3E")}
+.th-ic-back{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8'/%3E%3Cpath d='M3 3v5h5'/%3E%3C/svg%3E")}
+.th-ic-book{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'/%3E%3Cpath d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'/%3E%3C/svg%3E")}
+.th-ic-wa{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z'/%3E%3C/svg%3E")}
+</style>
+  <div class="th-w">
+    <div class="th-gr-head th-rv">
+      <p class="th-lbl">Гарантия</p>
+      <h2 class="th-h2">Что гарантируем на монтаж и оборудование и на какой срок</h2>
+    </div>
+    <ul class="th-gr-g">
+      <li class="th-gr-c th-rv"><span class="th-gr-ic"><span class="th-i th-ic-badge" aria-hidden="true"></span></span><h3 class="th-h3">Оборудование</h3><p>Гарантия производителя, срок указан в паспорте на технику. Ремонт идёт в авторизованных сервисных центрах бренда.</p></li>
+      <li class="th-gr-c th-gr-c--key th-rv"><span class="th-gr-ic"><span class="th-i th-ic-shield" aria-hidden="true"></span></span><h3 class="th-h3">Монтаж</h3><p>Не меньше 12 месяцев. Срок записан в Сервис-карте 369. Недостатки монтажа исправляет та же бригада, а если она занята, исправляем своими силами.</p></li>
+      <li class="th-gr-c th-rv"><span class="th-gr-ic"><span class="th-i th-ic-id" aria-hidden="true"></span></span><h3 class="th-h3">Бригаду можно проверить</h3><p>У каждой бригады свой номер сертификата, проверка по номеру на нашем сайте.</p></li>
+      <li class="th-gr-c th-gr-c--key th-rv"><span class="th-gr-ic"><span class="th-i th-ic-clock" aria-hidden="true"></span></span><h3 class="th-h3">Срок монтажа</h3><p>Сорвём согласованный срок — платим 1% от стоимости оборудования за каждый день задержки, с четвёртого дня, но не больше 3%. Перенос по вашей просьбе и отсутствие доступа в помещение не считаются.</p></li>
+      <li class="th-gr-c th-rv"><span class="th-gr-ic"><span class="th-i th-ic-back" aria-hidden="true"></span></span><h3 class="th-h3">Возврат</h3><p>14 календарных дней для неустановленного оборудования в заводской упаковке.</p></li>
+      <li class="th-gr-c th-rv"><span class="th-gr-ic"><span class="th-i th-ic-book" aria-hidden="true"></span></span><h3 class="th-h3">Вы вправе обратиться к нам как к продавцу</h3><p>По недостаткам товара это право даёт закон, Сервис-карта его не отменяет.</p></li>
+    </ul>
+    <div class="th-gr-foot th-rv">
+      <a class="th-btn th-btn--blue" href="https://wa.me/77000369369"><span class="th-i th-ic-wa" aria-hidden="true"></span>Задать вопрос по гарантии</a>
+    </div>
+  </div>
+</section>
+
+<!-- @blk 11 Юрлицам -->
+<section class="th th-bz" id="business">
+<style>
+.th-bz{background:var(--bd);color:#fff;padding:clamp(56px,8vw,96px) 0}
+.th-bz-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.th-bz::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,51,160,.97) 0%,rgba(0,51,160,.9) 45%,rgba(0,51,160,.78) 100%);pointer-events:none}
+.th-bz-g{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.th-bz-copy{display:grid;gap:20px;justify-items:start}
+.th-bz .th-lbl{color:#8CC0FF}
+.th-bz .th-h2{color:#fff}
+.th-bz-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.th-bz-l{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.th-bz-i{display:grid;gap:10px;align-content:start;padding:20px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);font-size:15px;line-height:1.5;color:#DCE8FF}
+.th-bz-i b{display:block;font:600 16px/1.3 var(--f-head);color:#fff}
+.th-bz-ic{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center}
+.th-bz-ic .th-i{width:22px;height:22px}
+@media (max-width:860px){.th-bz-g{grid-template-columns:1fr}}
+@media (max-width:480px){.th-bz-l{grid-template-columns:1fr}.th-bz-btns{flex-direction:column;width:100%}}
+.th-ic-arrow{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E")}
+.th-ic-percent{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 5 5 19'/%3E%3Ccircle cx='6.5' cy='6.5' r='2.5'/%3E%3Ccircle cx='17.5' cy='17.5' r='2.5'/%3E%3C/svg%3E")}
+.th-ic-doc{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M14 2v6h6M16 13H8M16 17H8M10 9H8'/%3E%3C/svg%3E")}
+.th-ic-card{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='5' width='20' height='14' rx='2'/%3E%3Cpath d='M2 10h20'/%3E%3C/svg%3E")}
+.th-ic-id{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='16' rx='2'/%3E%3Ccircle cx='9' cy='11' r='2'/%3E%3Cpath d='M15 9h3M15 13h3M6 17c.5-2 2-3 3-3s2.5 1 3 3'/%3E%3C/svg%3E")}
+</style>
+  <img class="th-bz-bg" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gen/biznes-fon.webp" alt="Светлый офис с потолочными кассетными кондиционерами" width="1600" height="900" loading="lazy">
+  <div class="th-w th-bz-g">
+    <div class="th-bz-copy th-rv">
+      <p class="th-lbl">Бизнесу</p>
+      <h2 class="th-h2">Климатическая техника для бизнеса: работаем с НДС, готовим КП, участвуем в закупках</h2>
+      <div class="th-bz-btns">
+        <a class="th-btn" href="#popup:zayavka">Получить КП <span class="th-i th-ic-arrow" aria-hidden="true"></span></a>
+        <a class="th-btn th-btn--ghost" href="/rekvizity">Реквизиты компании</a>
+      </div>
+    </div>
+    <ul class="th-bz-l">
+      <li class="th-bz-i th-rv"><span class="th-bz-ic"><span class="th-i th-ic-percent" aria-hidden="true"></span></span><span><b>Налогообложение:</b> работаем с НДС</span></li>
+      <li class="th-bz-i th-rv"><span class="th-bz-ic"><span class="th-i th-ic-doc" aria-hidden="true"></span></span><span><b>Документы:</b> счёт, договор, счёт-фактура</span></li>
+      <li class="th-bz-i th-rv"><span class="th-bz-ic"><span class="th-i th-ic-card" aria-hidden="true"></span></span><span><b>Оплата:</b> по счёту, Kaspi, рассрочка</span></li>
+      <li class="th-bz-i th-rv"><span class="th-bz-ic"><span class="th-i th-ic-id" aria-hidden="true"></span></span><span>ИП «ТехноХолод», ИИН/БИН 770313000379</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- @blk 12 Вопросы и ответы -->
+<section class="th th-fq" id="faq">
+<style>
+.th-fq{background:#fff;padding:clamp(56px,8vw,104px) 0}
+.th-fq-g{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:start}
+.th-fq-side{display:grid;gap:22px;position:sticky;top:24px}
+.th-fq-side .th-fq-h{display:grid;gap:14px}
+.th-fq-ask{display:grid;gap:12px;padding:22px;background:var(--lb);border-radius:16px}
+.th-fq-ask p.th-fq-at{font:600 18px/1.3 var(--f-head);color:var(--bd)}
+.th-fq-ask .th-btn{min-height:48px}
+.th-fq-ask a.th-btn[href^="tel"]{color:var(--bl)}
+.th-fq-ask a.th-btn[href^="tel"]:hover{color:var(--bd)}
+.th-fq-l{display:grid;gap:12px}
+.th-fq-d{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-s);transition:border-color .2s,box-shadow .2s}
+.th-fq-d[open]{border-color:var(--bl);box-shadow:var(--sh-m)}
+.th-fq-s{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;cursor:pointer;list-style:none}
+.th-fq-s::-webkit-details-marker{display:none}
+.th-fq-s:focus-visible{outline:3px solid var(--bl);outline-offset:2px;border-radius:14px}
+.th-fq-q{font:600 17px/1.35 var(--f-head);color:var(--bd)}
+.th-fq-pm{flex:none;width:32px;height:32px;border-radius:50%;background:var(--lb);color:var(--bl);display:grid;place-items:center;transition:transform .25s,background .2s,color .2s}
+.th-fq-pm .th-i{width:18px;height:18px}
+.th-fq-d[open] .th-fq-pm{transform:rotate(45deg);background:var(--bl);color:#fff}
+.th-fq-d p{padding:0 20px 20px;color:#475569;font-size:16px;line-height:1.6;max-width:44em}
+.th-fq-note{background:#FFF3C4;color:#5C4400;border-radius:4px;padding:2px 6px;font-weight:600}
+@media (max-width:860px){.th-fq-g{grid-template-columns:1fr}.th-fq-side{position:static}}
+@media (max-width:640px){.th-fq-s{padding:16px}.th-fq-d p{padding:0 16px 18px}.th-fq-q{font-size:16px}}
+.th-ic-wa{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z'/%3E%3C/svg%3E")}
+.th-ic-phone{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E")}
+.th-ic-plus{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E")}
+</style>
+  <div class="th-w th-fq-g">
+    <div class="th-fq-side th-rv">
+      <div class="th-fq-h">
+        <p class="th-lbl">Вопросы</p>
+        <h2 class="th-h2">Частые вопросы про покупку и установку кондиционера</h2>
+      </div>
+      <div class="th-fq-ask">
+        <p class="th-fq-at">Не нашли ответ?</p>
+        <a class="th-btn th-btn--blue" href="https://wa.me/77000369369"><span class="th-i th-ic-wa" aria-hidden="true"></span>Написать в WhatsApp</a>
+        <a class="th-btn th-btn--line" href="tel:+77000369369"><span class="th-i th-ic-phone" aria-hidden="true"></span>+77 000 369 369</a>
+      </div>
+    </div>
+    <div class="th-fq-l">
+      <details class="th-fq-d th-rv" open><summary class="th-fq-s"><h3 class="th-fq-q">Сколько стоит монтаж кондиционера?</h3><span class="th-fq-pm"><span class="th-i th-ic-plus" aria-hidden="true"></span></span></summary><p>Стандартный монтаж кондиционера без притока стоит от 45 000 ₸. В цену входят кронштейн и 3 м инсталляции. Трасса свыше 3 м, штроба, алмазное бурение, высотные работы и демонтаж считаются отдельно.</p></details>
+      <details class="th-fq-d th-rv"><summary class="th-fq-s"><h3 class="th-fq-q">За сколько дней установят кондиционер?</h3><span class="th-fq-pm"><span class="th-i th-ic-plus" aria-hidden="true"></span></span></summary><p>Стандартный объект ставим от одного до трёх дней. Мультисплит и крупные системы считаем после замера.</p></details>
+      <details class="th-fq-d th-rv"><summary class="th-fq-s"><h3 class="th-fq-q">Что делать, если мощность кондиционера не подойдёт?</h3><span class="th-fq-pm"><span class="th-i th-ic-plus" aria-hidden="true"></span></span></summary><p>Мощность подбираем до покупки по площади и расположению комнаты. Если купили, но не ставили, вернуть можно в течение 14 календарных дней в заводской упаковке. <span class="th-fq-note">[уточнить: условия обмена после монтажа]</span></p></details>
+      <details class="th-fq-d th-rv"><summary class="th-fq-s"><h3 class="th-fq-q">Кто даёт гарантию на кондиционер и на монтаж?</h3><span class="th-fq-pm"><span class="th-i th-ic-plus" aria-hidden="true"></span></span></summary><p>На оборудование — производитель, срок указан в паспорте. На монтаж — не меньше года, срок записан в Сервис-карте.</p></details>
+      <details class="th-fq-d th-rv"><summary class="th-fq-s"><h3 class="th-fq-q">Как оформить кондиционер в рассрочку?</h3><span class="th-fq-pm"><span class="th-i th-ic-plus" aria-hidden="true"></span></span></summary><p>Рассрочка до 24 месяцев. Оформляет банк: решение и условия на его стороне.</p></details>
+      <details class="th-fq-d th-rv"><summary class="th-fq-s"><h3 class="th-fq-q">Будет ли пыль при установке кондиционера?</h3><span class="th-fq-pm"><span class="th-i th-ic-plus" aria-hidden="true"></span></span></summary><p>Все наши бригады работают со строительными пылесосами, а отверстия в бетоне делают алмазным бурением. Алмазное бурение считается отдельно, мы назовём его цену при расчёте.</p></details>
+      <details class="th-fq-d th-rv"><summary class="th-fq-s"><h3 class="th-fq-q">Можно ли заказать кондиционер в другом городе?</h3><span class="th-fq-pm"><span class="th-i th-ic-plus" aria-hidden="true"></span></span></summary><p>В другие города Казахстана отправляем транспортной компанией. Монтаж и сервис у нас в Алматы и области. В других регионах исполнителя подскажем при звонке.</p></details>
+      <details class="th-fq-d th-rv"><summary class="th-fq-s"><h3 class="th-fq-q">Можно ли поставить кондиционер своими мастерами?</h3><span class="th-fq-pm"><span class="th-i th-ic-plus" aria-hidden="true"></span></span></summary><p>Можно. Если нужна наша бригада, назовём срок и цену по вашему объекту: напишите в WhatsApp или ответьте на 5 вопросов.</p></details>
+    </div>
+  </div>
+</section>
+<script>__th.run(function(R,q,qa){
+  var ds=qa('.th-fq-d');
+  ds.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)ds.forEach(function(o){if(o!==d)o.removeAttribute('open')})})});
+});</script>
+
+<!-- @blk 13 Контакты -->
+<section class="th th-ct" id="contacts">
+<style>
+.th-ct{background:var(--gr);padding:clamp(56px,8vw,104px) 0}
+.th-ct-g{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,64px);align-items:stretch}
+.th-ct-copy{display:grid;gap:18px;align-content:start}
+.th-ct-copy p.th-ct-t{font-size:clamp(16px,1.5vw,18px);color:#334155;line-height:1.55}
+.th-ct-l{display:grid;gap:12px;margin-top:4px}
+.th-ct-l li{display:flex;gap:14px;align-items:flex-start;font-size:16px;line-height:1.5;color:#334155}
+.th-ct-ic{flex:none;width:44px;height:44px;border-radius:12px;background:#fff;color:var(--bl);display:grid;place-items:center;border:1px solid var(--line)}
+.th-ct-ic .th-i{width:22px;height:22px}
+.th-ct-l b{color:var(--bd);font-weight:600}
+.th-ct a.th-ct-a{color:var(--bd);font-weight:600;border-bottom:1px solid rgba(0,51,160,.3)}
+.th-ct a.th-ct-a:hover{color:var(--bl);border-bottom-color:var(--bl)}
+.th-ct-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.th-ct a.th-btn[href^="tel"]{color:#fff}
+.th-ct-map{position:relative;border-radius:16px;overflow:hidden;min-height:340px;background:#DDEBFA;border:1px solid var(--line);box-shadow:var(--sh-m)}
+.th-ct-map svg{position:absolute;inset:0;width:100%;height:100%}
+.th-ct-lab{position:absolute;left:16px;right:16px;bottom:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:#fff;border-radius:12px;padding:14px 16px;box-shadow:var(--sh-l)}
+.th-ct-lab p{font:600 15px/1.35 var(--f-body);color:var(--bd)}
+.th-ct-lab small{display:block;font:400 12px/1.4 var(--f-body);color:var(--mut2)}
+.th-ct-lab .th-btn{min-height:44px;padding:0 18px;font-size:15px}
+@media (max-width:860px){.th-ct-g{grid-template-columns:1fr}.th-ct-map{min-height:320px}}
+@media (max-width:640px){.th-ct-btns{flex-direction:column}.th-ct-lab .th-btn{width:100%}}
+.th-ic-pin{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E")}
+.th-ic-clock{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 6v6l4 2'/%3E%3C/svg%3E")}
+.th-ic-phone{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E")}
+.th-ic-wa{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z'/%3E%3C/svg%3E")}
+.th-ic-mail{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='20' height='16' rx='2'/%3E%3Cpath d='m22 7-10 5L2 7'/%3E%3C/svg%3E")}
+.th-ic-arrow{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E")}
+</style>
+  <div class="th-w th-ct-g">
+    <div class="th-ct-copy th-rv">
+      <p class="th-lbl">Контакты</p>
+      <h2 class="th-h2">Позвоните или напишите: подскажем, что выбрать для вашего помещения</h2>
+      <p class="th-ct-t">Чем раньше определитесь с моделью, тем раньше назначим монтаж.</p>
+      <ul class="th-ct-l">
+        <li><span class="th-ct-ic"><span class="th-i th-ic-pin" aria-hidden="true"></span></span><span><b>Адрес:</b> Алматы, ул. Какимжана Казыбаева, 286Б</span></li>
+        <li><span class="th-ct-ic"><span class="th-i th-ic-clock" aria-hidden="true"></span></span><span><b>График:</b> Пн–Пт 9:00⁠–⁠18:00</span></li>
+        <li><span class="th-ct-ic"><span class="th-i th-ic-phone" aria-hidden="true"></span></span><span><b>Телефоны:</b> <a class="th-ct-a" href="tel:+77000369369">+77 000 369 369</a>, <a class="th-ct-a" href="tel:+77000336699">+77 000 33 66 99</a></span></li>
+        <li><span class="th-ct-ic"><span class="th-i th-ic-wa" aria-hidden="true"></span></span><span><b>WhatsApp:</b> на первый номер</span></li>
+        <li><span class="th-ct-ic"><span class="th-i th-ic-mail" aria-hidden="true"></span></span><span><b>Почта:</b> <a class="th-ct-a" href="mailto:tehnoholod369@gmail.com">tehnoholod369@gmail.com</a></span></li>
+      </ul>
+      <div class="th-ct-btns">
+        <a class="th-btn th-btn--blue" href="tel:+77000369369"><span class="th-i th-ic-phone" aria-hidden="true"></span>Позвонить</a>
+        <a class="th-btn th-btn--line" href="https://wa.me/77000369369"><span class="th-i th-ic-wa" aria-hidden="true"></span>Написать в WhatsApp</a>
+        <a class="th-btn" href="#popup:kviz">Подобрать за 5 вопросов <span class="th-i th-ic-arrow" aria-hidden="true"></span></a>
+      </div>
+    </div>
+    <div class="th-ct-map th-rv">
+      <svg viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="600" height="420" fill="#DDEBFA"/><g fill="#F4F8FD"><rect x="20" y="20" width="150" height="90" rx="6"/><rect x="200" y="20" width="110" height="90" rx="6"/><rect x="340" y="20" width="240" height="90" rx="6"/><rect x="20" y="140" width="150" height="110" rx="6"/><rect x="340" y="140" width="110" height="110" rx="6"/><rect x="480" y="140" width="100" height="110" rx="6"/><rect x="20" y="280" width="110" height="120" rx="6"/><rect x="160" y="280" width="150" height="120" rx="6"/><rect x="480" y="280" width="100" height="120" rx="6"/></g><g stroke="#fff" stroke-width="14" stroke-linecap="round"><path d="M0 125h600M0 265h600M185 0v420M325 0v420M465 0v420"/></g><path d="M0 330 600 190" stroke="#fff" stroke-width="10" stroke-linecap="round"/><g transform="translate(325 265)"><circle r="34" fill="#0066FF" opacity=".18"/><circle r="18" fill="#fff"/><path d="M0 -26a14 14 0 0 1 14 14c0 11-14 26-14 26s-14-15-14-26a14 14 0 0 1 14-14z" fill="#E81C1C" transform="translate(0 -4)"/><circle cx="0" cy="-16" r="5" fill="#fff"/></g></svg>
+      <div class="th-ct-lab">
+        <p>Алматы, ул. Какимжана Казыбаева, 286Б<small>Схема, не в масштабе. Точное место — на карте.</small></p>
+        <a class="th-btn th-btn--blue" href="https://2gis.kz/almaty/search/%D0%9A%D0%B0%D0%BA%D0%B8%D0%BC%D0%B6%D0%B0%D0%BD%D0%B0%20%D0%9A%D0%B0%D0%B7%D1%8B%D0%B1%D0%B0%D0%B5%D0%B2%D0%B0%20286%D0%91" target="_blank" rel="noopener"><span class="th-i th-ic-pin" aria-hidden="true"></span>Открыть на карте</a>
+      </div>
+    </div>
+  </div>
+</section>
+
