@@ -160,14 +160,14 @@
     var n = state.step;
     if (n === 0) {
       box.appendChild(el("h2", "thp-h", "Ответьте на 5 вопросов: назовём модель, цену и срок монтажа"));
-      box.appendChild(el("p", "thp-t", "Пять вопросов займут минуту, на каждый есть готовые варианты. После ответов назовём модель, цену и срок и пришлём памятку «Семь строк сметы на монтаж кондиционера»."));
+      box.appendChild(el("p", "thp-t", "Пять вопросов займут минуту, на каждый есть готовые варианты. После ответов назовём модель, цену и срок."));
     }
     var QUIZ = quizSteps();
     var pr = el("div", "thp-pr");
     for (var i = 0; i < QUIZ.length; i++) pr.appendChild(el("i", i <= n ? "thp-d" : ""));
     if (n >= QUIZ.length) {
       box.appendChild(el("h2", "thp-h", "Последний шаг"));
-      box.appendChild(el("p", "thp-t", "Перезвоним с расчётом в рабочее время. Ни к чему не обязывает. Памятку про смету пришлём сразу после заявки."));
+      box.appendChild(el("p", "thp-t", "Перезвоним с расчётом в рабочее время. Ни к чему не обязывает." + (state.answers[0] === "Кондиционер" ? " Памятку про смету пришлём сразу после заявки." : "")));
       var f = contactFields("Телефон или WhatsApp", "Получить расчёт");
       box.appendChild(f);
       bindSend(f, function () {
@@ -220,10 +220,17 @@
     box.appendChild(closer());
     box.appendChild(el("div", "thp-ok", "&#10003;"));
     box.appendChild(el("h2", "thp-h", "Заявку получили. Перезвоним в рабочее время"));
-    box.appendChild(el("p", "thp-t", "Пока ждёте звонка, скачайте памятку: семь строк, которые нужно проверить в смете на монтаж кондиционера до предоплаты."));
+    // памятка — про смету на монтаж кондиционера, остальным направлениям её не предлагаем
+    var memo = state && state.kind === "kviz" && state.answers[0] === "Кондиционер";
     var g = el("div", "thp-f");
-    g.innerHTML = '<a class="thp-b" href="' + PAMYATKA + '" target="_blank" rel="noopener">Скачать памятку про смету</a>'
-      + '<a class="thp-b thp-b--line" href="' + WA + '" target="_blank" rel="noopener">Написать в WhatsApp</a>';
+    if (memo) {
+      box.appendChild(el("p", "thp-t", "Пока ждёте звонка, скачайте памятку: семь строк, которые нужно проверить в смете на монтаж кондиционера до предоплаты."));
+      g.innerHTML = '<a class="thp-b" href="' + PAMYATKA + '" target="_blank" rel="noopener">Скачать памятку про смету</a>'
+        + '<a class="thp-b thp-b--line" href="' + WA + '" target="_blank" rel="noopener">Написать в WhatsApp</a>';
+    } else {
+      box.appendChild(el("p", "thp-t", "Если хотите ускорить, напишите нам в WhatsApp: ответим в рабочее время, Пн–Пт 9:00–18:00."));
+      g.innerHTML = '<a class="thp-b" href="' + WA + '" target="_blank" rel="noopener">Написать в WhatsApp</a>';
+    }
     box.appendChild(g);
   }
 
