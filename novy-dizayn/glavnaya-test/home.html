@@ -21,8 +21,8 @@
 .th :where(p,li){text-wrap:pretty}
 /* дальше в общем слое — только один класс на правило: .th-btn, .th-h2.
    Своё правило блока после нарезки получит вес двух классов и победит общее */
-.th-w{max-width:1200px;margin:0 auto;padding:0 24px}
-@media (max-width:640px){.th-w{padding:0 18px}}
+.th-cn{max-width:1200px;margin:0 auto;padding:0 24px}
+@media (max-width:640px){.th-cn{padding:0 18px}}
 /* заголовки — классом, не тегом */
 .th-h1{font:700 clamp(32px,4.6vw,56px)/1.08 var(--f-head);letter-spacing:-.02em;color:var(--bd);text-wrap:balance}
 .th-h2{font:700 clamp(26px,3.3vw,40px)/1.14 var(--f-head);letter-spacing:-.015em;color:var(--bd);text-wrap:balance}
@@ -117,14 +117,14 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-ic-card{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='5' width='20' height='14' rx='2'/%3E%3Cpath d='M2 10h20'/%3E%3C/svg%3E")}
 </style>
   <img class="th-hero-mt" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gen/gory-hero.webp" alt="Горы вокруг Алматы" width="1800" height="450" loading="lazy">
-  <div class="th-w th-hero-g">
+  <div class="th-cn th-hero-g">
     <div class="th-hero-copy">
       <p class="th-hero-badge"><span class="th-i th-ic-pin" aria-hidden="true"></span>Алматы и область · доставка по Казахстану</p>
       <h2 class="th-h1 th-hero-h">Климатическая техника в Алматы. Монтаж кондиционера <b>за 1⁠–⁠3 дня</b></h2>
-      <p class="th-hero-sub">Скажите площадь или пришлите фото стены: назовём модель, цену и срок. Отвечаем в рабочее время, <span class="th-hero-nw">Пн–Пт 9:00⁠–⁠18:00</span></p>
+      <p class="th-hero-sub">Скажите площадь или пришлите фото или видео места, где будем ставить: назовём модель, цену и срок. Отвечаем в рабочее время, <span class="th-hero-nw">Пн–Пт 9:00⁠–⁠18:00</span></p>
       <div class="th-hero-btns">
         <a class="th-btn" href="#popup:kviz">Подобрать за 5 вопросов <span class="th-i th-ic-arrow" aria-hidden="true"></span></a>
-        <a class="th-btn th-btn--line" href="https://wa.me/77000369369"><span class="th-i th-ic-wa" aria-hidden="true"></span>Прислать фото стены в WhatsApp</a>
+        <a class="th-btn th-btn--line" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D1%81%D1%81%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6.%20%D0%9F%D1%80%D0%B8%D1%81%D1%8B%D0%BB%D0%B0%D1%8E%20%D1%84%D0%BE%D1%82%D0%BE%20%D0%B8%D0%BB%D0%B8%20%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%20%D0%BC%D0%B5%D1%81%D1%82%D0%B0%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8."><span class="th-i th-ic-wa" aria-hidden="true"></span>Прислать фото или видео в WhatsApp</a>
       </div>
       <p class="th-hero-note"><span class="th-i th-ic-checkc" aria-hidden="true"></span>Ни к чему не обязывает: сначала цена и срок, потом решение.</p>
     </div>
@@ -173,7 +173,7 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-ic-truck{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62L18.3 9.38a1 1 0 0 0-.78-.38H14'/%3E%3Ccircle cx='7' cy='18' r='2'/%3E%3Ccircle cx='17' cy='18' r='2'/%3E%3C/svg%3E")}
 .th-ic-badge{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E")}
 </style>
-  <div class="th-w">
+  <div class="th-cn">
     <div class="th-adv-head th-rv">
       <p class="th-lbl">Преимущества</p>
       <h2 class="th-h2">Почему кондиционеры и отопление заказывают у нас</h2>
@@ -236,7 +236,7 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-ic-filter{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 3H2l8 9.46V19l4 2v-8.54L22 3z'/%3E%3C/svg%3E")}
 .th-ic-industry{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 20h20M4 20V9l5 3V9l5 3V4h6v16'/%3E%3Cpath d='M8 16h1M13 16h1M17 16h1'/%3E%3C/svg%3E")}
 </style>
-  <div class="th-w">
+  <div class="th-cn">
     <div class="th-sv-head th-rv">
       <p class="th-lbl">Направления</p>
       <h2 class="th-h2">Кондиционеры, отопление, вентиляция и водонагреватели в Алматы</h2>
@@ -269,7 +269,7 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-ic-arrow{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E")}
 </style>
   <img class="th-qz-bg" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gen/podbor-fon.webp" alt="Светлая гостиная с настенным кондиционером" width="1600" height="900" loading="lazy">
-  <div class="th-w th-qz-g">
+  <div class="th-cn th-qz-g">
     <div class="th-qz-copy th-rv">
       <p class="th-lbl">Подбор</p>
       <h2 class="th-h2">Ответьте на 5 вопросов: назовём модель, цену и срок монтажа</h2>
@@ -312,7 +312,7 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-ic-wrench{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/%3E%3C/svg%3E")}
 .th-ic-arrow{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E")}
 </style>
-  <div class="th-w">
+  <div class="th-cn">
     <div class="th-pr-head th-rv">
       <p class="th-lbl">Цены</p>
       <h2 class="th-h2">Цены на монтаж кондиционера от 45 000 ₸ и что в них входит</h2>
@@ -377,7 +377,7 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-ic-x{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E")}
 .th-ic-arrow{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E")}
 </style>
-  <div class="th-w">
+  <div class="th-cn">
     <div class="th-pf-head th-rv">
       <p class="th-lbl">Работы</p>
       <h2 class="th-h2">Наши работы: монтаж кондиционеров, бризеров и завес</h2>
@@ -443,7 +443,7 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-ic-star{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E")}
 .th-ic-google{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z'/%3E%3C/svg%3E")}
 </style>
-  <div class="th-w">
+  <div class="th-cn">
     <div class="th-rw-head th-rv">
       <div class="th-rw-title">
         <p class="th-lbl">Отзывы</p>
@@ -490,14 +490,14 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-ic-wrench{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/%3E%3C/svg%3E")}
 .th-ic-doc{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M14 2v6h6M16 13H8M16 17H8M10 9H8'/%3E%3C/svg%3E")}
 </style>
-  <div class="th-w th-hw-g">
+  <div class="th-cn th-hw-g">
     <div class="th-hw-head th-rv">
       <p class="th-lbl">Установка</p>
       <h2 class="th-h2">Как проходит установка кондиционера: от заявки до Сервис-карты</h2>
       <div class="th-hw-ph"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/vysota.webp" alt="Бригада ставит наружный блок кондиционера на фасаде дома" width="1200" height="1600" loading="lazy"></div>
     </div>
     <ol class="th-hw-st">
-      <li class="th-hw-s th-rv"><span class="th-hw-n"><span class="th-i th-ic-chat" aria-hidden="true"></span></span><div class="th-hw-b"><h3 class="th-h3">1. Вы пишете или звоните</h3><p>Называете площадь помещения или присылаете фото стены в WhatsApp.</p></div></li>
+      <li class="th-hw-s th-rv"><span class="th-hw-n"><span class="th-i th-ic-chat" aria-hidden="true"></span></span><div class="th-hw-b"><h3 class="th-h3">1. Вы пишете или звоните</h3><p>Называете площадь помещения или присылаете фото или видео места установки в WhatsApp.</p></div></li>
       <li class="th-hw-s th-rv"><span class="th-hw-n"><span class="th-i th-ic-calc" aria-hidden="true"></span></span><div class="th-hw-b"><h3 class="th-h3">2. Мы считаем</h3><p>Подбираем модель, называем стоимость и срок. Отвечаем в рабочее время.</p></div></li>
       <li class="th-hw-s th-rv"><span class="th-hw-n"><span class="th-i th-ic-truck" aria-hidden="true"></span></span><div class="th-hw-b"><h3 class="th-h3">3. Привозим технику</h3><p>По Алматы бесплатно при заказе от 100 000 ₸. В другие города отправляем транспортной компанией.</p></div></li>
       <li class="th-hw-s th-hw-s--key th-rv"><span class="th-hw-n"><span class="th-i th-ic-wrench" aria-hidden="true"></span></span><div class="th-hw-b"><h3 class="th-h3">4. Бригада ставит за 1⁠–⁠3 дня</h3><p>Алматы и область. Бригады работают со строительными пылесосами, отверстия в бетоне делают алмазным бурением, чтобы в комнате не оседала строительная пыль. Мультисплит и крупные системы: сначала замер.</p></div></li>
@@ -530,7 +530,7 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-ic-book{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'/%3E%3Cpath d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'/%3E%3C/svg%3E")}
 .th-ic-wa{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z'/%3E%3C/svg%3E")}
 </style>
-  <div class="th-w">
+  <div class="th-cn">
     <div class="th-gr-head th-rv">
       <p class="th-lbl">Гарантия</p>
       <h2 class="th-h2">Что гарантируем на монтаж и оборудование и на какой срок</h2>
@@ -574,7 +574,7 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-ic-id{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='16' rx='2'/%3E%3Ccircle cx='9' cy='11' r='2'/%3E%3Cpath d='M15 9h3M15 13h3M6 17c.5-2 2-3 3-3s2.5 1 3 3'/%3E%3C/svg%3E")}
 </style>
   <img class="th-bz-bg" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gen/biznes-fon.webp" alt="Светлый офис с потолочными кассетными кондиционерами" width="1600" height="900" loading="lazy">
-  <div class="th-w th-bz-g">
+  <div class="th-cn th-bz-g">
     <div class="th-bz-copy th-rv">
       <p class="th-lbl">Бизнесу</p>
       <h2 class="th-h2">Климатическая техника для бизнеса: работаем с НДС, готовим КП, участвуем в закупках</h2>
@@ -622,7 +622,7 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-ic-phone{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E")}
 .th-ic-plus{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E")}
 </style>
-  <div class="th-w th-fq-g">
+  <div class="th-cn th-fq-g">
     <div class="th-fq-side th-rv">
       <div class="th-fq-h">
         <p class="th-lbl">Вопросы</p>
@@ -682,7 +682,7 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-ic-mail{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='20' height='16' rx='2'/%3E%3Cpath d='m22 7-10 5L2 7'/%3E%3C/svg%3E")}
 .th-ic-arrow{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E")}
 </style>
-  <div class="th-w th-ct-g">
+  <div class="th-cn th-ct-g">
     <div class="th-ct-copy th-rv">
       <p class="th-lbl">Контакты</p>
       <h2 class="th-h2">Позвоните или напишите: подскажем, что выбрать для вашего помещения</h2>
