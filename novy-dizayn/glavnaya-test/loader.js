@@ -20,5 +20,8 @@
         box.appendChild(n);
       }
     });
+    var pp = document.createElement("script");
+    pp.src = BASE + "th-popups.js?v=" + Date.now();
+    document.head.appendChild(pp);
   });
 })();
