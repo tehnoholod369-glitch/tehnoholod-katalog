@@ -70,8 +70,9 @@ return {run:run,vidno:vidno,tiho:tiho};
 <!-- @blk 02 Обложка -->
 <section class="th th-hero" id="hero">
 <style>
-.th-hero{background:linear-gradient(180deg,#fff 0%,var(--lb) 100%);padding:clamp(32px,5vw,72px) 0 clamp(48px,6vw,88px)}
-.th-hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(0,102,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,102,255,.07) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%);pointer-events:none}
+.th-hero{padding:0;background:var(--bd)}
+.th-hero-top{position:relative;background:linear-gradient(180deg,#fff 0%,var(--lb) 100%);padding:clamp(32px,5vw,72px) 0 clamp(88px,10vw,150px)}
+.th-hero-top::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(0,102,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,102,255,.07) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%);pointer-events:none}
 .th-hero-mt{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto;mix-blend-mode:multiply;pointer-events:none}
 .th-hero-g{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,5vw,64px);align-items:center}
 .th-hero-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:99px;background:#fff;color:var(--bd);font:600 13px/1.2 var(--f-body);box-shadow:var(--sh-s);border:1px solid var(--line)}
@@ -81,6 +82,14 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-hero-sub{font-size:clamp(16px,1.5vw,19px);line-height:1.5;color:#334155;max-width:34em}
 .th-hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
 .th-hero-nw{white-space:nowrap}
+.th-hero-band{position:relative;background:var(--bd);color:#fff}
+.th-hero-band::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--bl),#8CC0FF 50%,var(--rd))}
+.th-hero-nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.th-hn{display:flex;flex-direction:column;gap:2px;padding:30px 28px;border-left:1px solid rgba(255,255,255,.2)}
+.th-hn:first-child{border-left:0;padding-left:0}
+.th-hn-s{font:500 15px/1.35 var(--f-body);color:#BFD6FF}
+.th-hn-b{font:800 clamp(46px,5.4vw,72px)/1 var(--f-head);letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:#fff}
+@media (max-width:760px){.th-hero-nums{grid-template-columns:1fr}.th-hn,.th-hn:first-child{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:16px 0;flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 10px}.th-hn:first-child{border-top:0}.th-hn-b{font-size:44px}}
 .th-hero-note{display:inline-flex;align-items:center;gap:8px;font:500 14px/1.4 var(--f-body);color:var(--mut2)}
 .th-hero-note .th-i{width:18px;height:18px;color:var(--ok)}
 .th-hero-fr{position:relative;justify-self:center;width:100%;max-width:460px}
@@ -89,16 +98,10 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-hero-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 28%}
 .th-hero-cap{position:absolute;left:12px;bottom:12px;display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.94);color:var(--bd);font:600 13px/1.2 var(--f-body);box-shadow:var(--sh-m)}
 .th-hero-cap .th-i{width:16px;height:16px;color:var(--rd)}
-.th-hero-pts{position:relative;grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:8px}
-.th-hero-pt{display:flex;align-items:center;gap:14px;padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh-s);position:relative}
-.th-hero-pt::after{content:"";position:absolute;right:10px;top:10px;width:10px;height:10px;border-top:2px solid var(--bl);border-right:2px solid var(--bl);opacity:.4}
-.th-hero-pt .th-i{width:26px;height:26px;color:var(--bl)}
-.th-hero-ic{flex:none;width:48px;height:48px;border-radius:12px;background:var(--lb);display:grid;place-items:center}
-.th-hero-pt p{font:600 16px/1.3 var(--f-head);color:var(--bd)}
 @media (max-width:960px){
   .th-hero-g{grid-template-columns:1fr}
   .th-hero-fr{max-width:420px;order:3;margin-top:8px}
-  .th-hero-pts{grid-template-columns:1fr;order:4}
+
 }
 @media (max-width:640px){
   .th-hero{padding-top:24px}
@@ -116,6 +119,7 @@ return {run:run,vidno:vidno,tiho:tiho};
 .th-ic-shield{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E")}
 .th-ic-card{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='5' width='20' height='14' rx='2'/%3E%3Cpath d='M2 10h20'/%3E%3C/svg%3E")}
 </style>
+  <div class="th-hero-top">
   <img class="th-hero-mt" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/img/gen/gory-hero.webp" alt="Горы вокруг Алматы" width="1800" height="450" loading="lazy">
   <div class="th-cn th-hero-g">
     <div class="th-hero-copy">
@@ -134,10 +138,13 @@ return {run:run,vidno:vidno,tiho:tiho};
         <p class="th-hero-cap"><span class="th-i th-ic-camera" aria-hidden="true"></span>Наш объект: сплит в гостиной</p>
       </div>
     </div>
-    <ul class="th-hero-pts">
-      <li class="th-hero-pt"><span class="th-hero-ic"><span class="th-i th-ic-wrench" aria-hidden="true"></span></span><p>Более 5000 монтажей</p></li>
-      <li class="th-hero-pt"><span class="th-hero-ic"><span class="th-i th-ic-shield" aria-hidden="true"></span></span><p>Гарантия на монтаж от 12 месяцев</p></li>
-      <li class="th-hero-pt"><span class="th-hero-ic"><span class="th-i th-ic-card" aria-hidden="true"></span></span><p>Рассрочка до 24 месяцев, оформляет банк</p></li>
+  </div>
+  </div>
+  <div class="th-hero-band">
+    <ul class="th-cn th-hero-nums">
+      <li class="th-hn"><span class="th-hn-s">Более</span> <b class="th-hn-b">5000</b> <span class="th-hn-s">монтажей</span></li>
+      <li class="th-hn"><span class="th-hn-s">Гарантия на монтаж от</span> <b class="th-hn-b">12</b> <span class="th-hn-s">месяцев</span></li>
+      <li class="th-hn"><span class="th-hn-s">Рассрочка до</span> <b class="th-hn-b">24</b> <span class="th-hn-s">месяцев, оформляет банк</span></li>
     </ul>
   </div>
 </section>
@@ -467,20 +474,25 @@ return {run:run,vidno:vidno,tiho:tiho};
 <!-- @blk 09 Как проходит установка -->
 <section class="th th-hw" id="how-it-works">
 <style>
-.th-hw{background:#fff;padding:clamp(56px,8vw,104px) 0}
+.th-hw{background:var(--bd);padding:clamp(56px,8vw,104px) 0}
+.th-hw-head .th-lbl{color:#8CC0FF}
+.th-hw-head .th-h2{color:#fff}
 .th-hw-g{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:start}
 .th-hw-head{display:grid;gap:14px;position:sticky;top:24px;align-content:start}
-.th-hw-ph{margin-top:18px;aspect-ratio:4/3;border-radius:16px;overflow:hidden;box-shadow:var(--sh-l);background:var(--lb)}
+.th-hw-ph{margin-top:18px;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--lb)}
 .th-hw-ph img{width:100%;height:100%;object-fit:cover;object-position:35% 45%}
 .th-hw-st{position:relative;display:grid;gap:18px;counter-reset:s}
-.th-hw-st::before{content:"";position:absolute;left:27px;top:28px;bottom:28px;width:2px;background:repeating-linear-gradient(180deg,var(--bl) 0 6px,transparent 6px 12px);opacity:.45}
+.th-hw-st::before{content:"";position:absolute;left:27px;top:28px;bottom:28px;width:2px;background:repeating-linear-gradient(180deg,#8CC0FF 0 6px,transparent 6px 12px);opacity:.6}
 .th-hw-s{position:relative;display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start}
-.th-hw-n{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:#fff;border:2px solid var(--bl);color:var(--bl);display:grid;place-items:center}
+.th-hw-n{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:var(--bd);border:2px solid #8CC0FF;color:#fff;display:grid;place-items:center}
 .th-hw-n .th-i{width:24px;height:24px}
-.th-hw-b{background:var(--gr);border:1px solid var(--line);border-radius:14px;padding:18px 22px;display:grid;gap:6px}
-.th-hw-b p{color:#475569;font-size:15px;line-height:1.55}
-.th-hw-s--key .th-hw-n{background:var(--bl);color:#fff}
-.th-hw-s--key .th-hw-b{background:var(--lb);border-color:var(--bl);box-shadow:var(--sh-m)}
+.th-hw-b{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:18px 22px;display:grid;gap:6px}
+.th-hw-b .th-h3{color:#fff}
+.th-hw-b p{color:#DCE8FF;font-size:15px;line-height:1.55}
+.th-hw-s--key .th-hw-n{background:var(--rd);border-color:var(--rd);color:#fff}
+.th-hw-s--key .th-hw-b{background:#fff;border-color:#fff}
+.th-hw-s--key .th-hw-b .th-h3{color:var(--bd)}
+.th-hw-s--key .th-hw-b p{color:#334155}
 @media (max-width:860px){.th-hw-g{grid-template-columns:1fr}.th-hw-head{position:static}.th-hw-ph{display:none}}
 @media (max-width:640px){.th-hw-s{grid-template-columns:44px 1fr;gap:12px}.th-hw-n{width:44px;height:44px}.th-hw-n .th-i{width:20px;height:20px}.th-hw-st::before{left:21px}.th-hw-b{padding:16px}}
 .th-ic-chat{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7.9 20A9 9 0 1 0 4 16.1L2 22Z'/%3E%3C/svg%3E")}
@@ -508,19 +520,28 @@ return {run:run,vidno:vidno,tiho:tiho};
 <!-- @blk 10 Гарантия -->
 <section class="th th-gr" id="guarantee">
 <style>
-.th-gr{background:var(--gr);padding:clamp(56px,8vw,104px) 0}
+.th-gr{background:#fff;padding:clamp(56px,8vw,104px) 0}
 .th-gr-head{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,48px);max-width:860px}
-.th-gr-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.th-gr-c{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 24px 24px;display:grid;gap:10px;align-content:start;box-shadow:var(--sh-s)}
-.th-gr-c::before{content:"";position:absolute;left:18px;right:18px;top:0;border-top:2px dashed var(--line)}
-.th-gr-ic{width:48px;height:48px;border-radius:12px;background:var(--lb);color:var(--bl);display:grid;place-items:center}
+.th-gr-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.th-gr-c:nth-child(1){grid-column:3;grid-row:1}
+.th-gr-c:nth-child(2){grid-column:1/3;grid-row:1}
+.th-gr-c:nth-child(3){grid-column:1;grid-row:2}
+.th-gr-c:nth-child(4){grid-column:2/4;grid-row:2}
+.th-gr-c:nth-child(5){grid-column:1;grid-row:3}
+.th-gr-c:nth-child(6){grid-column:2/4;grid-row:3}
+.th-gr-c{position:relative;background:var(--gr);border:0;border-radius:16px;padding:28px;display:grid;gap:10px;align-content:start}
+.th-gr-ic{width:48px;height:48px;border-radius:12px;background:#fff;color:var(--bl);display:grid;place-items:center}
 .th-gr-ic .th-i{width:24px;height:24px}
 .th-gr-c p{color:#475569;font-size:15px;line-height:1.55}
-.th-gr-c--key{background:var(--lb);border-color:var(--bl)}
-.th-gr-c--key .th-gr-ic{background:var(--bl);color:#fff}
+.th-gr-c--key{color:#fff}
+.th-gr-c:nth-child(2){background:var(--bd)}
+.th-gr-c:nth-child(4){background:var(--bl)}
+.th-gr-c--key .th-h3{color:#fff;font-size:24px;line-height:1.25}
+.th-gr-c--key p{color:#E6EFFF;font-size:16px}
+.th-gr-c--key .th-gr-ic{background:rgba(255,255,255,.16);color:#fff}
 .th-gr-foot{margin-top:clamp(24px,3vw,36px);display:flex}
-@media (max-width:960px){.th-gr-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.th-gr-g{grid-template-columns:1fr;gap:14px}.th-gr-c{padding:26px 20px 20px}}
+@media (max-width:960px){.th-gr-g{grid-template-columns:repeat(2,minmax(0,1fr))}.th-gr-c:nth-child(n){grid-column:auto;grid-row:auto}.th-gr-c.th-gr-c--key{grid-column:1/-1}}
+@media (max-width:640px){.th-gr-g{grid-template-columns:1fr;gap:14px}.th-gr-c{padding:24px 20px}}
 .th-ic-badge{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E")}
 .th-ic-shield{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E")}
 .th-ic-id{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='16' rx='2'/%3E%3Ccircle cx='9' cy='11' r='2'/%3E%3Cpath d='M15 9h3M15 13h3M6 17c.5-2 2-3 3-3s2.5 1 3 3'/%3E%3C/svg%3E")}
