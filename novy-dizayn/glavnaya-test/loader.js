@@ -1,6 +1,6 @@
 /* Тестовая страница новой главной: подгружает блоки из home.html и запускает их скрипты. Только для проверки, в боевой сайт не идёт. */
 (function () {
-  var BASE = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@b6e4891f67a0193bef425cd3f09f7463a32e6258/novy-dizayn/glavnaya-test/";
+  var BASE = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/glavnaya-test/";
   var box = document.getElementById("th-home");
   if (!box) return;
   if (!document.querySelector('link[href*="family=Inter"]')) {
