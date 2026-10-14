@@ -82,7 +82,7 @@
     var h = '<div ' + MARK + '="' + mode + '" style="margin-top:16px;">' +
       '<div style="font-size:12px;font-weight:700;color:#606F85;letter-spacing:0.05em;text-transform:uppercase;">' + esc(head) + "</div>" +
       '<div style="font-size:13px;color:#606F85;line-height:1.55;margin-top:4px;">' + esc(note) + "</div>";
-    list.forEach(function (r) { h += card(r, mode !== "exact"); });
+    list.forEach(function (r) { h += card(r, true); });
     h += '<a href="' + esc(url) + '" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:14px;font-weight:700;color:#0066FF;text-decoration:none;">' + esc(linkText) + " &rarr;</a></div>";
     return h;
   }
@@ -99,7 +99,16 @@
       var it = ITEMS[g].filter(function (x) { return x.sl === sl; })[0];
       if (!it) return "";
       var codes = [it.s, it.nb].map(norm).filter(function (c) { return c.length >= 5; });
-      var exact = DATA.filter(function (r) { var p = norm(r.p); return codes.some(function (c) { return p.indexOf(c) >= 0; }); });
+      // совпадение по артикулу с границами: «BD30T» не должно цепляться за «BD30T CL2», а «55» — за «155»
+      var exact = DATA.filter(function (r) {
+        var p = String(r.p || "").toLowerCase();
+        return [it.s, it.nb].some(function (code) {
+          var toks = String(code || "").toLowerCase().split(/[^a-z0-9а-яё]+/).filter(Boolean);
+          if (!toks.length || norm(code).length < 5) return false;
+          var re = new RegExp("(^|[^a-z0-9а-яё])" + toks.map(function (t) { return t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }).join("[^a-z0-9а-яё]*") + "($|[^a-z0-9а-яё])");
+          return re.test(p);
+        });
+      });
       if (exact.length) return build("exact", pick(exact, 3), "");
       var kinds = GROUP_KINDS[g];
       if (!kinds) return "";
