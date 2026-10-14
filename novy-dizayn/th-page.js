@@ -334,3 +334,13 @@
     })
     .catch(function (e) { fail(String(e && e.message || e)); });
 })();
+
+;(function () {
+  // Отзывы Kaspi на карточке магазина (/tproduct): на /tovar скрипт подключён в head страницы Tilda.
+  if (!window.TH_CARD_EMBED) return;
+  if (document.querySelector('script[src*="card-kaspi-reviews.js"]')) return;
+  var s = document.createElement("script");
+  s.src = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@28b193cca6c18ac2600e4aaa4a16a2cc0f479ad6/novy-dizayn/card-kaspi-reviews.js";
+  s.defer = true;
+  document.head.appendChild(s);
+})();
