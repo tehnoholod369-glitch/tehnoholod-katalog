@@ -27,8 +27,25 @@
     for (var i = 0; i < list.length; i++) conv(list[i]);
   }
 
+  /* Страница /tovar?g=&sl=: если у позиции есть страница магазина, canonical ведёт на неё.
+   * Свой canonical страница ставит после отрисовки, поэтому следим за <head> и возвращаем адрес магазина. */
+  function canon() {
+    if (location.pathname.replace(/\/$/, "") !== "/tovar") return;
+    var q = new URLSearchParams(location.search), g = q.get("g"), s = q.get("sl");
+    if (!g || !s || !map[g + "|" + s]) return;
+    var target = location.origin + "/tproduct/" + map[g + "|" + s];
+    var apply = function () {
+      var l = document.querySelector('link[rel="canonical"]');
+      if (!l) { l = document.createElement("link"); l.setAttribute("rel", "canonical"); document.head.appendChild(l); }
+      if (l.getAttribute("href") !== target) l.setAttribute("href", target);
+    };
+    apply();
+    new MutationObserver(apply).observe(document.head, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
+  }
+
   fetch(MAP_URL).then(function (r) { return r.json(); }).then(function (j) {
     map = j;
+    canon();
     scan();
     var t;
     new MutationObserver(function () {
