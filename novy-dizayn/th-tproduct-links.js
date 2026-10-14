@@ -6,7 +6,7 @@
 (function () {
   if (window.__thTpLinks) return;
   window.__thTpLinks = 1;
-  var MAP_URL = (window.TH_TP_MAP_URL) || "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@563b442deba6b91afca38a2de2ddd29014d97f20/novy-dizayn/data/tproduct-forward.json";
+  var MAP_URL = (window.TH_TP_MAP_URL) || "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@3de9d42bceb72814a1c4a418b6afb048da7b2aa9/novy-dizayn/data/tproduct-forward.json";
   var map = null;
 
   function conv(a) {
