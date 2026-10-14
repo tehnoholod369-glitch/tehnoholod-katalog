@@ -41,6 +41,12 @@
     };
     apply();
     new MutationObserver(apply).observe(document.head, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
+    /* Единый адрес товара: есть страница магазина — уводим на неё (только если она реально открывается; ?nr=1 отключает). */
+    if (q.get("nr") !== "1") {
+      fetch(target, { method: "HEAD", cache: "no-store" }).then(function (r) {
+        if (r.ok) location.replace(target + location.hash);
+      }).catch(function () { /* страница магазина недоступна — остаёмся на карточке */ });
+    }
   }
 
   fetch(MAP_URL).then(function (r) { return r.json(); }).then(function (j) {
