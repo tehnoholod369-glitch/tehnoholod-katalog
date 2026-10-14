@@ -129,16 +129,35 @@
     return null;
   }
 
+  // Если нашли отзывы именно на эту модель, старые подписи «отзывов нет» уже неверны: поправляем их.
+  function patchTexts(box) {
+    var m = box.querySelector("[" + MARK + "]");
+    if (!m || m.getAttribute(MARK) !== "exact") return;
+    var ds = box.querySelectorAll("div");
+    for (var i = 0; i < ds.length; i++) {
+      var d = ds[i];
+      if (d.getAttribute(MARK) || m.contains(d)) continue;
+      var t = d.textContent || "";
+      if (!d.querySelector("div") && /отзывов на эту модель пока нет/.test(t)) {
+        d.innerHTML = '<a href="/otzyvy">Все отзывы о компании →</a> Отзывы покупателей этой модели на Kaspi.kz — публикуем как есть.';
+      } else if (!d.querySelector("div") && /^Оценок по этой модели пока нет/.test(t.trim())) {
+        d.textContent = "Звёзды выше — не наши: их поставили покупатели этой модели на Kaspi.kz после выкупа. Сами себе оценок не рисуем, проверить можно по ссылке на карточку.";
+      } else if (d.firstElementChild && (d.firstElementChild.textContent || "").trim() === "Что вместо отзывов") {
+        d.style.display = "none";
+      }
+    }
+  }
+
   function tick() {
     var p = params();
     if (!p.g || !p.sl) return;
     var box = host();
     if (!box) return;
-    if (/ОТЗЫВЫ ПОКУПАТЕЛЕЙ НА KASPI\.KZ/.test(box.textContent || "")) return; // свои отзывы карточки уже показаны
+    if (/ОТЗЫВЫ ПОКУПАТЕЛЕЙ НА KASPI\.KZ/.test(box.textContent || "") && !box.querySelector("[" + MARK + "]")) return; // свои отзывы карточки уже показаны
     var key = p.g + "|" + p.sl;
-    if (box.querySelector("[" + MARK + "]")) return;
+    if (box.querySelector("[" + MARK + "]")) { patchTexts(box); return; }
     if (state.key === key && state.html !== null) {
-      if (state.html) box.children[0].insertAdjacentHTML("afterend", state.html);
+      if (state.html) { box.children[0].insertAdjacentHTML("afterend", state.html); patchTexts(box); }
       return;
     }
     if (state.loading) return;
@@ -146,7 +165,7 @@
     compute(p.g, p.sl).then(function (html) {
       state.key = key; state.html = html; state.loading = false;
       var b = host();
-      if (b && html && !b.querySelector("[" + MARK + "]")) b.children[0].insertAdjacentHTML("afterend", html);
+      if (b && html && !b.querySelector("[" + MARK + "]")) { b.children[0].insertAdjacentHTML("afterend", html); patchTexts(b); }
     }).catch(function () { state.loading = false; });
   }
 
