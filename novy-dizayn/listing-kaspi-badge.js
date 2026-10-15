@@ -3,7 +3,7 @@
    появляется ссылка на карточку товара, где отзывы показывает card-kaspi-reviews.js.
    Рейтинг не считаем: если оценки одинаковые, показываем её, если разные, диапазон «от и до». Разметку Review не пишем.
    Данные: data/kaspi-reviews.json (тот же файл, что на /otzyvy). Тип техники: камины, инфракрасные и газовые обогреватели,
-   тепловые пушки, конвекторы и масляные радиаторы. Остальные группы подключаются расширением списка HEAT. */
+   тепловые пушки, конвекторы и масляные радиаторы, водонагреватели (с 15.10.2026). Остальные группы подключаются расширением списка HEAT. */
 (function () {
   "use strict";
   var RAW = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/kaspi-reviews.json";
@@ -12,7 +12,8 @@
     /электрокамин|очаг|каминокомплект|\bEFP\//i,
     /инфракрасн|газов.*обогреват|\bBIGH|\bBOGH|\bLQ-H|\bBIH-/i,
     /тепловая пушка|\bBHP-|электрическая\s+BHP/i,
-    /конвектор|\bREC-|масляный радиатор|\bROR-/i
+    /конвектор|\bREC-|масляный радиатор|\bROR-/i,
+    /водонагреватель/i
   ];
   function isHeat(n) { for (var i = 0; i < HEAT.length; i++) if (HEAT[i].test(n || "")) return true; return false; }
   function norm(s) { return String(s || "").toLowerCase().replace(/[^a-z0-9а-яё]+/g, ""); }
