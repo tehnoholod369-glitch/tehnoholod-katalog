@@ -61,6 +61,7 @@
     ".thrv-m{font:400 13px/19px Inter,system-ui,sans-serif;color:#606F85}" +
     ".thrv-m a{color:#0066FF;text-decoration:none;font-weight:600}" +
     ".thrv-m a.thrv-p{color:#0033A0;text-decoration:underline;text-underline-offset:2px}" +
+    ".thrv-co p{white-space:pre-line}" +
     ".thrv-more{display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin-top:16px;padding:0 20px;border:1.5px solid #0066FF;border-radius:8px;background:#fff;color:#0066FF;font:600 15px/1 Inter,system-ui,sans-serif;cursor:pointer}" +
     ".thrv-k{margin-top:16px;font:400 13px/20px Inter,system-ui,sans-serif;color:#606F85}.thrv-k a{color:#0066FF;font-weight:600;text-decoration:none}" +
     "@media(max-width:700px){.thrv{padding:0 16px}.thrv-g{grid-template-columns:1fr}.thrv h2{font-size:20px;line-height:28px}}";
@@ -81,6 +82,11 @@
       var cut = t.indexOf(". ", 150); cut = cut === -1 ? 220 : cut + 1;
       body = "<p>" + esc(t.slice(0, cut)) + "</p><details><summary>Читать полностью</summary><p>" + esc(t.slice(cut).trim()) + "</p></details>";
     } else body = "<p>" + esc(t) + "</p>";
+    if (r.s) { // отзыв о компании с Google или 2ГИС (data/company-reviews.json)
+      return '<div class="thrv-c thrv-co"><div class="thrv-s" aria-label="Оценка ' + esc(r.r) + ' из 5">' + stars(r.r) + "</div>" + body +
+        '<div class="thrv-a"><b>' + esc(r.a) + "</b><span>" + (r.d ? esc(r.d) + ", " : "") + esc(r.s) + "</span></div>" +
+        '<div class="thrv-m">' + (r.u ? '<a href="' + esc(r.u) + '" target="_blank" rel="noopener">Читать на ' + esc(r.s) + " →</a>" : "") + "</div></div>";
+    }
     return '<div class="thrv-c"><div class="thrv-s" aria-label="Оценка ' + esc(r.r) + ' из 5">' + stars(r.r) + "</div>" + body +
       '<div class="thrv-a"><b>' + esc(r.a) + "</b><span>" + esc(r.d) + ", Kaspi</span></div>" +
       '<div class="thrv-m">Купили: ' + (LINKS[r.p] ? '<a class="thrv-p" href="' + esc(LINKS[r.p]) + '">' + esc(shortName(r.p)) + "</a>" : esc(shortName(r.p))) + (r.u ? ' · <a href="' + esc(r.u) + '" target="_blank" rel="noopener">Читать на Kaspi →</a>' : "") + "</div></div>";
@@ -92,7 +98,7 @@
       (rest ? ", " + rest + " с оценкой ниже" : "") + ". Публикуем как есть, автор и дата как на Kaspi; каждый отзыв ведёт на карточку товара в Kaspi.kz.");
     var h = '<div class="thrv"><h2>' + esc(opt.title) + '</h2><p class="thrv-sub">' + esc(sub) + '</p><div class="thrv-g">' + top.map(cardHtml).join("") + "</div>";
     if (more.length) h += '<div class="thrv-g" hidden data-thrv-more>' + more.map(cardHtml).join("") + '</div><button type="button" class="thrv-more" data-thrv-btn>Показать все ' + all.length + "</button>";
-    return h + '<p class="thrv-k"><a href="https://tehnoholod369.kz/otzyvy">Все отзывы о компании →</a></p></div>';
+    return h + (opt.src === "company" ? "" : '<p class="thrv-k"><a href="https://tehnoholod369.kz/otzyvy">Все отзывы о компании →</a></p>') + "</div>";
   }
   function wire(root) {
     var b = root.querySelector("[data-thrv-btn]"), m = root.querySelector("[data-thrv-more]");
@@ -101,6 +107,7 @@
 
   var DATA = null, loading = false, LINKS = {};
   var LINKS_URL = RAW.replace("kaspi-reviews.json", "kaspi-links.json");
+  var COMPANY_URL = RAW.replace("kaspi-reviews.json", "company-reviews.json");
   function load(cb) {
     if (DATA) return cb(DATA);
     if (loading) return setTimeout(function () { load(cb); }, 300);
@@ -142,19 +149,30 @@
         if (el.getAttribute(MARK) === "2") return;
         el.setAttribute(MARK, "2"); // "1" ставит прежняя версия скрипта без ссылок: перерисовываем поверх
         var o = parse(el.getAttribute("data-th-reviews"));
+        if (o.src === "company") { // отзывы о компании с Google и 2ГИС, а не Kaspi
+          if (!o.note) o.note = "Отзывы о компании с Google Карт и 2ГИС, как на площадках: автор, текст и ссылка на оригинал. У Google даты показаны только словами («3 месяца назад»), поэтому здесь их нет. Бывают и оценки без текста — они в рейтинге площадки, но здесь не показаны.";
+          fetch(COMPANY_URL, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }).then(function (cl) {
+            if (!cl.length) return;
+            el.innerHTML = blockHtml(cl, o); wire(el); place(el, o);
+          });
+          return;
+        }
         var list = filter(all, o);
         if (!list.length) return;
         el.innerHTML = blockHtml(list, o); wire(el);
-        // before: CSS-селектор элемента, перед которым показать блок (выше по странице)
-        var tgt = o.before ? document.querySelector(o.before) : null;
-        // beforeh2: начало текста заголовка H2, перед которым показать блок
-        if (!tgt && o.beforeh2) {
-          var h2s = document.querySelectorAll("h2");
-          for (var q = 0; q < h2s.length; q++) if ((h2s[q].textContent || "").trim().indexOf(o.beforeh2) === 0 && !el.contains(h2s[q])) { tgt = h2s[q]; break; }
-        }
-        if (tgt && tgt.parentNode && tgt !== el) tgt.parentNode.insertBefore(el, tgt);
+        place(el, o);
       });
     });
+  }
+  function place(el, o) {
+    // before: CSS-селектор элемента, перед которым показать блок (выше по странице)
+    var tgt = o.before ? document.querySelector(o.before) : null;
+    // beforeh2: начало текста заголовка H2, перед которым показать блок
+    if (!tgt && o.beforeh2) {
+      var h2s = document.querySelectorAll("h2");
+      for (var q = 0; q < h2s.length; q++) if ((h2s[q].textContent || "").trim().indexOf(o.beforeh2) === 0 && !el.contains(h2s[q])) { tgt = h2s[q]; break; }
+    }
+    if (tgt && tgt.parentNode && tgt !== el) tgt.parentNode.insertBefore(el, tgt);
   }
 
   // карточка модели из линейки
