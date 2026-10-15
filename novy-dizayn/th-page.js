@@ -354,3 +354,13 @@
   s.defer = true;
   document.head.appendChild(s);
 })();
+
+;(function () {
+  // Отзывы линеек Royal Clima на карточках магазина (/tproduct): на /tovar скрипт подключён в head страницы Tilda.
+  if (!window.TH_CARD_EMBED) return;
+  if (document.querySelector('script[src*="th-reviews.js"]')) return;
+  var s = document.createElement("script");
+  s.src = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@91b507c831aacb3d26a911be2224d687dcde667f/novy-dizayn/th-reviews.js";
+  s.defer = true;
+  document.head.appendChild(s);
+})();
