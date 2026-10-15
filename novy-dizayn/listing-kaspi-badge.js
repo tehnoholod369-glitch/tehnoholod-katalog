@@ -13,7 +13,8 @@
     /инфракрасн|газов.*обогреват|\bBIGH|\bBOGH|\bLQ-H|\bBIH-/i,
     /тепловая пушка|\bBHP-|электрическая\s+BHP/i,
     /конвектор|\bREC-|масляный радиатор|\bROR-/i,
-    /водонагреватель/i
+    /водонагреватель/i,
+    /\bTAC-FR|Freshin/i
   ];
   function isHeat(n) { for (var i = 0; i < HEAT.length; i++) if (HEAT[i].test(n || "")) return true; return false; }
   function norm(s) { return String(s || "").toLowerCase().replace(/[^a-z0-9а-яё]+/g, ""); }
