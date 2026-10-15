@@ -28,8 +28,8 @@
   var US = /техно ?холод|продав|магазин|менеджер|мастер|бригад/i;
   // линейки для карточек: если у модели нет своих отзывов, показываем отзывы на другие модели линейки
   var LINES = [
-    { rx: /\bRC-AN\d\dHN/i, slug: /^royal-clima-rc-an/, name: "Royal Clima RC-AN" },
-    { rx: /\bRC-GL\d\dHN/i, slug: /^royal-clima-rc-gl/, name: "Royal Clima RC-GL" }
+    { rx: /\bRC-AN\d\dHN/i, slug: /^royal-clima-rc-an/, name: "Royal Clima Attica Nero" },
+    { rx: /\bRC-GL\d\dHN/i, slug: /^royal-clima-rc-gl\d/, name: "Royal Clima Gloria" }
   ];
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
