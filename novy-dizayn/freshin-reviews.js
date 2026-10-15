@@ -23,7 +23,7 @@
   }
 
   var CSS = ".thfr{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1A1A1A;margin:40px 0 0}" +
-    ".thfr *{box-sizing:border-box}" +
+    ".thfr *{box-sizing:border-box}.thfr [hidden]{display:none!important}" +
     ".thfr h2{font:700 24px/32px Inter,system-ui,sans-serif;color:#0033A0;margin:0 0 6px}" +
     ".thfr-sub{font:400 14px/22px Inter,system-ui,sans-serif;color:#606F85;margin:0 0 4px;max-width:760px}" +
     ".thfr-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px;align-items:start}" +
