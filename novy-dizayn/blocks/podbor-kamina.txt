@@ -1,0 +1,184 @@
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+.thpk{max-width:1248px;margin:0 auto;padding:24px 16px 48px;font-family:Inter,TildaSans,'Segoe UI',Arial,sans-serif;color:#1A1A1A;line-height:1.55}
+.thpk *{box-sizing:border-box}
+.thpk h1{font-size:32px;line-height:40px;font-weight:700;color:#0033A0;margin:0 0 12px}
+.thpk h2{font-size:24px;line-height:32px;font-weight:700;color:#0033A0;margin:32px 0 12px}
+.thpk-lead{font-size:16px;line-height:24px;color:#606F85;margin:0 0 20px;max-width:760px}
+.thpk-box{background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:18px 16px;box-shadow:0 3px 14px rgba(0,51,160,.08)}
+.thpk-prog{display:flex;gap:6px;margin:0 0 14px}
+.thpk-prog i{flex:1;height:5px;border-radius:3px;background:#E2E8F0}
+.thpk-prog i.on{background:#0066FF}
+.thpk-q{font-size:20px;line-height:28px;font-weight:600;color:#0033A0;margin:0 0 4px}
+.thpk-h{font-size:14px;color:#606F85;margin:0 0 12px}
+.thpk-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:10px}
+.thpk-opt{display:flex;flex-direction:column;gap:3px;text-align:left;background:#fff;border:1.5px solid #E2E8F0;border-radius:8px;padding:12px 14px;font:inherit;color:inherit;cursor:pointer;min-height:56px}
+.thpk-opt:hover{border-color:#0066FF}
+.thpk-opt b{font-size:16px}
+.thpk-opt span{font-size:13px;color:#606F85}
+.thpk-opt.sel{border-color:#0066FF;background:#E9F4FF}
+.thpk-nav{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0;align-items:center}
+.thpk-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:48px;padding:0 20px;border-radius:8px;border:0;font:inherit;font-weight:600;text-decoration:none;cursor:pointer;background:#0066FF;color:#fff}.thpk-btn:hover{background:#0052D6}.thpk-btn:focus-visible,.thpk-opt:focus-visible{outline:3px solid #0066FF;outline-offset:2px}
+.thpk-btn--g{background:#F1F5F9;color:#1A1A1A}
+.thpk-btn--wa{background:#E81C1C;color:#fff}.thpk-btn--wa:hover{background:#C41212}.thpk-btn--wa:active{background:#A30D0D}
+.thpk-btn[disabled]{opacity:.45;cursor:default}
+.thpk-size{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0;align-items:center;font-size:14px}
+.thpk-size input{width:84px;padding:9px 10px;border:1.5px solid #E2E8F0;border-radius:8px;font:inherit}
+.thpk-sum{font-size:14px;color:#606F85;background:#E9F4FF;border-radius:10px;padding:10px 12px;margin:0 0 12px}
+.thpk-note{font-size:14px;border-left:4px solid #F59E0B;background:#FFF8E6;border-radius:6px;padding:10px 12px;margin:0 0 12px}
+.thpk-warn{font-size:14px;border-left:4px solid #D73D3D;background:#FDF0EE;border-radius:6px;padding:10px 12px;margin:0 0 12px}
+.thpk-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin:12px 0}
+.thpk a{color:#0066FF}.thpk a.thpk-btn{color:#fff}.thpk a.thpk-btn--g{color:#0066FF}.thpk a.thpk-card__n{color:#1A1A1A}.thpk select,.thpk input,.thpk button{font-family:inherit}.thpk-bar select{padding:9px 10px;border:1.5px solid #E2E8F0;border-radius:8px;font:inherit}
+.thpk-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:12px 0}
+.thpk-card{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #E2E8F0;border-radius:12px;overflow:hidden;box-shadow:0 3px 14px rgba(0,51,160,.08)}
+.thpk-card__img{display:block;position:relative;aspect-ratio:4/3;background:#F1F5F9;overflow:hidden}
+.thpk-card__img img{position:absolute;left:12px;top:12px;width:calc(100% - 24px);height:calc(100% - 24px);object-fit:contain}
+.thpk-card__b{display:flex;flex-direction:column;gap:7px;padding:13px 14px 14px;flex:1}
+.thpk-tag{align-self:flex-start;font-size:12px;font-weight:700;padding:3px 9px;border-radius:20px;background:#E7F5EC;color:#178841;font-size:12px}
+.thpk-tag--o{background:#F1F5F9;color:#606F85}
+.thpk-card__n{font-size:15px;font-weight:700;line-height:1.3;text-decoration:none;color:inherit}
+.thpk-card ul{margin:0;padding:0;list-style:none;font-size:13px;color:#606F85}
+.thpk-card li{padding:2px 0;border-bottom:1px dashed #E2E8F0}
+.thpk-card li em{font-style:normal;color:#606F85}
+.thpk-pr{font-size:24px;line-height:32px;font-weight:700;margin-top:auto}
+.thpk-act{display:flex;flex-wrap:wrap;gap:8px}
+.thpk-act .thpk-btn{min-height:44px;padding:0 14px;font-size:14px;flex:1}.thpk-act .thpk-btn--wa{background:#0066FF}.thpk-act .thpk-btn--wa:hover{background:#0052D6}
+.thpk-faq details{border:1px solid #E2E8F0;border-radius:10px;padding:11px 14px;margin:8px 0;background:#fff}
+.thpk-faq summary{font-weight:700;cursor:pointer}
+.thpk-faq p{margin:8px 0 0;color:#606F85}
+@media(min-width:900px){.thpk h1{font-size:48px;line-height:56px}.thpk h2{font-size:32px;line-height:40px}.thpk{padding:32px 24px 56px}}.thpk-links{display:flex;flex-wrap:wrap;gap:10px}@media(max-width:900px){.thpk-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.thpk-cards{grid-template-columns:1fr}.thpk-btn{width:100%}.thpk-act .thpk-btn{width:auto}}
+</style>
+<div class="thpk" id="thpk">
+<h1>Подбор камина в Алматы</h1>
+<p class="thpk-lead">Ответьте на пять коротких вопросов — покажем электрокамины, биокамины и каминокомплекты, которые подходят по типу, площади, месту и бюджету. Размеры очага и комплекта смотрите в карточке: это важно, если камин встраивается в нишу или портал.</p>
+<div class="thpk-box" id="thpk-wiz">
+<div class="thpk-prog" id="thpk-prog"></div>
+<div id="thpk-step"></div>
+</div>
+<div id="thpk-res" style="display:none"></div>
+<h2>Подбор с менеджером</h2>
+<p class="thpk-lead">Не нашли подходящий вариант или сомневаетесь в размерах? Напишите нам в WhatsApp: подберём камин вручную по вашему месту и бюджету, в том числе под заказ.</p>
+<h2>Как выбрать камин</h2>
+<div class="thpk-faq" id="thpk-faq">
+<details open><summary>Греет ли электрокамин?</summary><p>Да, если у модели есть режим обогрева. Ориентир по площади — 1 кВт на 10 м². Это зональное тепло, а не отопление дома. Мощность и площадь по паспорту указаны в карточке.</p></details>
+<details><summary>Можно ли отапливать комнату биокамином?</summary><p>Нет, биокамин даёт живой огонь, а не отопление. В комнате нужно проветривание, ориентир по площади — от 15–20 м². Зазоры до стен и мебели берите из паспорта конкретной модели. Не ставьте биокамин в ванной.</p></details>
+<details><summary>Что такое каминокомплект?</summary><p>Электрический очаг вместе с порталом — рамой в виде камина. Ставится у стены, дымоход не нужен. Размеры комплекта и очага указаны в карточке, где они есть в паспорте.</p></details>
+<details><summary>Как понять, влезет ли очаг в нишу?</summary><p>Сравните размеры очага (высота, ширина, глубина) с проёмом. Если в карточке написано «нет данных», менеджер уточнит размеры по артикулу.</p></details>
+<details><summary>Что делать, если ничего не подошло?</summary><p>Нажмите «Подобрать с менеджером»: ваши ответы уйдут в сообщение, и мы подберём вариант вручную, в том числе под заказ.</p></details>
+<details><summary>Есть ли доставка?</summary><p>Доставляем по Казахстану. Условия и сроки менеджер уточнит при заказе.</p></details>
+</div>
+<h2>Другие разделы</h2>
+<div class="thpk-links"><a class="thpk-btn thpk-btn--g" href="/kaminy-almaty">Камины в Алматы</a><a class="thpk-btn thpk-btn--g" href="/katalog?g=kaminy">Каталог каминов</a><a class="thpk-btn thpk-btn--g" href="/elektrokamin-s-portalom-almaty">Электрокамин с порталом</a><a class="thpk-btn thpk-btn--g" href="/podbor-kondicionera">Подбор кондиционера</a></div>
+</div>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Подбор камина","serviceType":"Подбор электрокамина, биокамина и каминокомплекта","areaServed":{"@type":"City","name":"Алматы"},"provider":{"@type":"Organization","name":"ТехноХолод","url":"https://tehnoholod369.kz"},"url":"https://tehnoholod369.kz/podbor-kamina"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Подбор камина","url":"https://tehnoholod369.kz/podbor-kamina","applicationCategory":"ShoppingApplication","operatingSystem":"Web","inLanguage":"ru","description":"Подбор электрокамина, биокамина и каминокомплекта по типу, площади, месту и бюджету.","provider":{"@type":"Organization","name":"ТехноХолод","url":"https://tehnoholod369.kz"}}</script>
+<script type="application/ld+json">{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://tehnoholod369.kz/"},{"@type":"ListItem","position":2,"name":"Камины","item":"https://tehnoholod369.kz/kaminy-almaty"},{"@type":"ListItem","position":3,"name":"Подбор камина","item":"https://tehnoholod369.kz/podbor-kamina"}],"@context":"https://schema.org"}</script>
+<script type="application/ld+json">{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Греет ли электрокамин?","acceptedAnswer":{"@type":"Answer","text":"Да, если у модели есть режим обогрева. Ориентир по площади — 1 кВт на 10 м². Это зональное тепло, а не отопление дома."}},{"@type":"Question","name":"Можно ли отапливать комнату биокамином?","acceptedAnswer":{"@type":"Answer","text":"Нет, биокамин даёт живой огонь, а не отопление. Нужно проветривание, ориентир по площади — от 15–20 м². Зазоры берите из паспорта модели."}},{"@type":"Question","name":"Что такое каминокомплект?","acceptedAnswer":{"@type":"Answer","text":"Электрический очаг вместе с порталом. Ставится у стены, дымоход не нужен."}},{"@type":"Question","name":"Как понять, влезет ли очаг в нишу?","acceptedAnswer":{"@type":"Answer","text":"Сравните высоту, ширину и глубину очага с проёмом. Если в карточке нет данных, менеджер уточнит размеры по артикулу."}},{"@type":"Question","name":"Что делать, если ничего не подошло?","acceptedAnswer":{"@type":"Answer","text":"Напишите менеджеру: подберём камин вручную, в том числе под заказ."}},{"@type":"Question","name":"Есть ли доставка?","acceptedAnswer":{"@type":"Answer","text":"Доставляем по Казахстану. Условия и сроки менеджер уточнит при заказе."}}],"@context":"https://schema.org"}</script>
+<script>
+(function(){
+var DATA_URL=window.TH_PK_DATA_URL||"https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@60bd532d3058a349228b390a377fc1a79a170dad/novy-dizayn/data/podbor-kamina.json";
+var WA="77000369369";
+var data=null,A={type:null,goal:null,area:null,place:null,budget:null,maxW:null,maxH:null},step=0,sort="def",shown=12;
+var $=function(id){return document.getElementById(id)};
+var esc=function(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
+var money=function(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g," ")+" ₸"};
+var STEPS=[
+ {k:"type",q:"Что вы хотите выбрать?",h:"Тип камина",o:[["hearth","Электроочаг","Встроить в свой портал или нишу"],["kit","Каминокомплект","Очаг и портал вместе, у стены"],["bio","Биокамин","Живой огонь на биотопливе"]]},
+ {k:"goal",q:"Для чего вам камин?",h:"От этого зависит, нужна ли мощность обогрева",o:[["heat","Для тепла","Нужен обогрев помещения"],["look","Для красоты","Огонь и уют, обогрев не главное"]]},
+ {k:"area",q:"Какая площадь помещения?",h:"Ориентир для электрокамина — 1 кВт на 10 м², это зональное тепло",o:[["20","До 20 м²",""],["30","20–30 м²",""],["50","30–50 м²",""],["0","Не знаю","Не учитывать площадь"]]},
+ {k:"place",q:"Где будет стоять камин?",h:"Можно указать предельные размеры места — ширина и высота в сантиметрах",o:[["niche","В нишу или портал","Встраиваемый"],["wall","На стену","Настенный"],["floor","На пол","Напольный"],["side","У стены","Пристенный"],["table","На стол","Настольный биокамин"],["any","Любое место",""]]},
+ {k:"budget",q:"Какой бюджет?",h:"В тенге",o:[["300","До 300 000 ₸",""],["500","300 000 – 500 000 ₸",""],["800","500 000 – 800 000 ₸",""],["9999","Дороже 800 000 ₸",""],["0","Любой",""]]}
+];
+var LBL={type:{hearth:"электроочаг",kit:"каминокомплект",bio:"биокамин"},goal:{heat:"для тепла",look:"для красоты"},place:{niche:"в нишу или портал",wall:"на стену",floor:"на пол",side:"у стены",table:"на стол",any:"любое место"}};
+function prog(){var h="";for(var i=0;i<STEPS.length;i++)h+='<i class="'+(i<=step?"on":"")+'"></i>';$("thpk-prog").innerHTML=h}
+function render(){
+ var st=STEPS[step];prog();
+ var h='<p class="thpk-q">'+(step+1)+". "+st.q+'</p><p class="thpk-h">'+st.h+'</p><div class="thpk-opts">';
+ st.o.forEach(function(o){
+  if(st.k==="place"&&o[0]==="table"&&A.type!=="bio")return;
+  h+='<button type="button" class="thpk-opt'+(A[st.k]===o[0]?" sel":"")+'" data-v="'+o[0]+'"><b>'+o[1]+"</b>"+(o[2]?"<span>"+o[2]+"</span>":"")+"</button>"});
+ h+="</div>";
+ if(st.k==="place")h+='<div class="thpk-size"><span>Место не больше:</span><label>ширина <input id="thpk-w" type="number" min="1" inputmode="numeric" placeholder="см" value="'+(A.maxW||"")+'"></label><label>высота <input id="thpk-hh" type="number" min="1" inputmode="numeric" placeholder="см" value="'+(A.maxH||"")+'"></label></div>';
+ h+='<div class="thpk-nav">'+(step>0?'<button type="button" class="thpk-btn thpk-btn--g" id="thpk-back">Назад</button>':"")+'<button type="button" class="thpk-btn thpk-btn--g" id="thpk-skip">Показать сразу</button></div>';
+ $("thpk-step").innerHTML=h;
+ var b=$("thpk-step").querySelectorAll(".thpk-opt");
+ for(var i=0;i<b.length;i++)b[i].onclick=function(){pick(st.k,this.getAttribute("data-v"))};
+ if($("thpk-back"))$("thpk-back").onclick=function(){step--;render()};
+ $("thpk-skip").onclick=function(){readSize();result()};
+}
+function readSize(){var w=$("thpk-w"),h=$("thpk-hh");if(w)A.maxW=+w.value||null;if(h)A.maxH=+h.value||null}
+function pick(k,v){
+ A[k]=v;if(k==="place")readSize();
+ if(k==="type"&&v!=="bio"&&A.place==="table")A.place=null;
+ if(step<STEPS.length-1){step++;render()}else result()}
+function ok(o,rel){
+ var why=[];
+ if(A.type&&o.t!==A.type)return null;
+ if(A.goal==="heat"&&A.type!=="bio"&&o.h===false)return null;
+ if(A.budget&&A.budget!=="0"){var lo={"300":0,"500":300000,"800":500000,"9999":800000}[A.budget],hi={"300":300000,"500":500000,"800":800000,"9999":1e12}[A.budget];
+  if((o.p<lo||o.p>hi)&&!rel.budget)return null}
+ if(A.place&&A.place!=="any"&&!rel.place){if(o.pl.indexOf(A.place)<0)return null}
+ if(A.area&&A.area!=="0"&&!rel.area&&o.a!=null){
+  var R=+A.area,mid=R===20?15:R===30?25:40;
+  if(o.t==="bio"){if(mid<o.a)return null}else if(A.goal==="heat"&&o.a<mid)return null}
+ var dm=(A.place==="niche"&&o.do)?o.do:o.d,sz=null;
+ if((A.maxW||A.maxH)){
+  if(dm){if((A.maxW&&dm[1]>A.maxW)||(A.maxH&&dm[0]>A.maxH))return null}else sz=1}
+ return{o:o,sz:sz}}
+function pickList(){
+ var rel={},notes=[],r;
+ function run(){var a=[];data.forEach(function(o){var x=ok(o,rel);if(x)a.push(x)});return a}
+ r=run();
+ var order=[["budget","Точно по бюджету позиций нет — показываем варианты за его пределами."],["place","Для выбранного места позиций нет — показываем другие способы установки."],["area","По площади точных вариантов нет — показываем ближайшие, камин будет дополнительным источником тепла."]];
+ for(var i=0;i<order.length&&!r.length;i++){rel[order[i][0]]=1;notes.push(order[i][1]);r=run()}
+ return{list:r,notes:notes}}
+function sortList(l){
+ var c=l.slice();
+ if(sort==="lo")c.sort(function(a,b){return a.o.p-b.o.p});
+ else if(sort==="hi")c.sort(function(a,b){return b.o.p-a.o.p});
+ else c.sort(function(a,b){return (b.o.in-a.o.in)||(a.o.p-b.o.p)});
+ return c}
+function dstr(d){return d?d[0]+" × "+d[1]+" × "+d[2]+" см":"нет данных"}
+function summary(){
+ var p=[];if(A.type)p.push(LBL.type[A.type]);if(A.goal)p.push(LBL.goal[A.goal]);
+ if(A.area&&A.area!=="0")p.push({"20":"до 20 м²","30":"20–30 м²","50":"30–50 м²"}[A.area]);
+ if(A.place)p.push(LBL.place[A.place]);
+ if(A.maxW||A.maxH)p.push("место до "+(A.maxW||"—")+"×"+(A.maxH||"—")+" см (ш×в)");
+ if(A.budget&&A.budget!=="0")p.push({"300":"до 300 000 ₸","500":"300–500 тыс. ₸","800":"500–800 тыс. ₸","9999":"дороже 800 000 ₸"}[A.budget]);
+ return p.join(", ")}
+function waLink(o){
+ var t="Здравствуйте. Подбираю камин: "+(summary()||"параметры не указаны")+"."+(o?" Интересует: "+o.n+(o.p?" ("+money(o.p)+")":"")+". Подскажите актуальную цену и наличие.":" Подберите, пожалуйста, варианты.");
+ return window.TH_LEAD&&TH_LEAD.wa?TH_LEAD.wa(t):"https://wa.me/"+WA+"?text="+encodeURIComponent(t)}
+function card(x){
+ var o=x.o,li=[];
+ if(o.t==="bio"){li.push("<li><em>Рекомендуемая площадь:</em> "+(o.a?"от "+o.a+" м²":"нет данных")+"</li>");if(o.tv)li.push("<li><em>Время горения:</em> "+esc(o.tv)+"</li>");if(o.ln)li.push("<li><em>Линия огня:</em> "+esc(o.ln)+"</li>")}
+ else{li.push("<li><em>Мощность:</em> "+(o.kw?String(o.kw).replace(".",",")+" кВт"+(o.h===false?" (без обогрева)":""):"нет данных")+"</li>");li.push("<li><em>Площадь по паспорту:</em> "+(o.a?"до "+o.a+" м²":"нет данных")+"</li>")}
+ li.push("<li><em>"+(o.t==="kit"?"Комплект В×Ш×Г:":"Размеры В×Ш×Г:")+"</em> "+dstr(o.d)+"</li>");
+ if(o.t==="kit")li.push("<li><em>Очаг В×Ш×Г:</em> "+dstr(o.do)+"</li>");
+ if(o.c)li.push("<li><em>Цвет:</em> "+esc(o.c)+"</li>");
+ if(o.g)li.push("<li><em>Гарантия:</em> "+esc(o.g)+"</li>");
+ return '<div class="thpk-card"><a class="thpk-card__img" href="'+esc(o.u)+'"><img loading="lazy" src="'+esc(o.i)+'" alt="'+esc(o.n)+'"></a><div class="thpk-card__b"><span class="thpk-tag'+(o.in?"":" thpk-tag--o")+'">'+(o.in?"В наличии":"Под заказ")+'</span><a class="thpk-card__n" href="'+esc(o.u)+'">'+esc(o.n)+"</a><ul>"+li.join("")+'</ul>'+(x.sz?'<div class="thpk-h" style="margin:0">Габариты уточним по артикулу</div>':"")+'<div class="thpk-pr">'+money(o.p)+'</div><div class="thpk-act"><a class="thpk-btn thpk-btn--g" href="'+esc(o.u)+'">Подробнее</a><a class="thpk-btn thpk-btn--wa" target="_blank" rel="noopener" href="'+esc(waLink(o))+'">Узнать цену</a></div></div></div>'}
+function result(){
+ $("thpk-wiz").style.display="none";
+ var r=pickList(),l=sortList(r.list),h='<div class="thpk-sum">Ваш выбор: '+esc(summary()||"без ограничений")+' · <a href="#" id="thpk-redo">изменить</a></div>';
+ if(A.type==="bio")h+='<div class="thpk-warn"><b>Биокамин — это живой огонь, а не отопление.</b> Нужно проветривание, ориентир по площади — от 15–20 м². Зазоры до стен и мебели берите из паспорта модели. Не ставьте в ванной, заправляйте только остывшую горелку.</div>';
+ if(A.type==="bio"&&A.goal==="heat")h+='<div class="thpk-note">Вы выбрали «для тепла»: биокамин не греет помещение. Для обогрева лучше электрокамин. <a href="#" id="thpk-toel">Показать каминокомплекты</a></div>';
+ r.notes.forEach(function(n){h+='<div class="thpk-note">'+esc(n)+"</div>"});
+ if(A.type!=="bio"&&A.goal==="heat")h+='<div class="thpk-h">Электрокамин даёт зональное тепло, а не отопление дома. Ориентир — 1 кВт на 10 м².</div>';
+ if(!l.length){h+='<div class="thpk-note">Подходящих позиций не нашлось. Нажмите «Подобрать с менеджером» — подберём вручную, в том числе под заказ.</div>'}
+ else{
+  h+='<div class="thpk-bar"><span>Подходит: '+l.length+'</span><label>Сортировка <select id="thpk-sort"><option value="def"'+(sort==="def"?" selected":"")+'>Сначала в наличии</option><option value="lo"'+(sort==="lo"?" selected":"")+'>Дешевле</option><option value="hi"'+(sort==="hi"?" selected":"")+'>Дороже</option></select></label></div><div class="thpk-cards">';
+  l.slice(0,shown).forEach(function(x){h+=card(x)});h+="</div>";
+  if(l.length>shown)h+='<div class="thpk-nav"><button type="button" class="thpk-btn thpk-btn--g" id="thpk-more">Показать ещё</button></div>'}
+ h+='<div class="thpk-nav"><a class="thpk-btn thpk-btn--wa" target="_blank" rel="noopener" href="'+esc(waLink(null))+'">Подобрать с менеджером →</a><a class="thpk-btn thpk-btn--g" href="tel:+77000369369">Позвонить</a></div>';
+ $("thpk-res").innerHTML=h;$("thpk-res").style.display="block";
+ $("thpk-redo").onclick=function(e){e.preventDefault();$("thpk-res").style.display="none";$("thpk-wiz").style.display="";step=0;shown=12;render()};
+ if($("thpk-toel"))$("thpk-toel").onclick=function(e){e.preventDefault();A.type="kit";shown=12;result()};
+ if($("thpk-sort"))$("thpk-sort").onchange=function(){sort=this.value;result()};
+ if($("thpk-more"))$("thpk-more").onclick=function(){shown+=12;result()};
+ try{window.TH_LEAD&&TH_LEAD.event&&TH_LEAD.event({channel:"подбор камина",ev:"result",val:summary(),type:A.type||""})}catch(e){}
+}
+fetch(DATA_URL).then(function(r){return r.json()}).then(function(j){data=j;render()}).catch(function(){$("thpk-step").innerHTML='<div class="thpk-note">Подбор временно недоступен. Напишите нам в WhatsApp — подберём камин вручную.</div><a class="thpk-btn thpk-btn--wa" target="_blank" rel="noopener" href="'+esc(waLink(null))+'">Подобрать с менеджером →</a>'});
+})();
+</script>
