@@ -344,3 +344,13 @@
   s.defer = true;
   document.head.appendChild(s);
 })();
+
+;(function () {
+  // Отзывы FreshIN 3.0 на карточках других исполнений (/tproduct): на /tovar скрипт подключён в head страницы Tilda.
+  if (!window.TH_CARD_EMBED) return;
+  if (document.querySelector('script[src*="freshin-reviews.js"]')) return;
+  var s = document.createElement("script");
+  s.src = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@8c9ba37d29a07625419722826cd1be180ba3647e/novy-dizayn/freshin-reviews.js";
+  s.defer = true;
+  document.head.appendChild(s);
+})();
