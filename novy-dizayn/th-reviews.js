@@ -45,12 +45,13 @@
       .replace(/\s+(белый|черный|чёрный|серебристый|серый)(,.*)?$/i, "").replace(/\s*\(.*$/, "").trim();
   }
 
-  var CSS = ".thrv{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1A1A1A;margin:40px 0 0}" +
+  var CSS = ".thrv{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1A1A1A;margin:40px auto 0;max-width:1248px;padding:0 24px}" +
     ".thrv *{box-sizing:border-box}.thrv [hidden]{display:none!important}" +
     ".thrv h2{font:700 24px/32px Inter,system-ui,sans-serif;color:#0033A0;margin:0 0 6px}" +
     ".thrv-sub{font:400 14px/22px Inter,system-ui,sans-serif;color:#606F85;margin:0 0 4px;max-width:760px}" +
-    ".thrv-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px;align-items:start}" +
+    ".thrv-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px;align-items:stretch}" +
     ".thrv-c{background:#fff;border:1px solid #E3E8EF;border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:10px}" +
+    ".thrv-c>.thrv-a{margin-top:auto}.thgeo .thrv,.t-container .thrv{padding:0;max-width:none}" +
     ".thrv-s{color:#F59E0B;letter-spacing:2px;font-size:16px;line-height:20px}" +
     ".thrv-c p{margin:0;font:400 15px/23px Inter,system-ui,sans-serif;color:#2b3a52}" +
     ".thrv-c details summary{cursor:pointer;color:#0066FF;font:600 14px/20px Inter,system-ui,sans-serif;margin-top:6px;list-style:none}" +
@@ -61,7 +62,7 @@
     ".thrv-m a{color:#0066FF;text-decoration:none;font-weight:600}" +
     ".thrv-more{display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin-top:16px;padding:0 20px;border:1.5px solid #0066FF;border-radius:8px;background:#fff;color:#0066FF;font:600 15px/1 Inter,system-ui,sans-serif;cursor:pointer}" +
     ".thrv-k{margin-top:16px;font:400 13px/20px Inter,system-ui,sans-serif;color:#606F85}.thrv-k a{color:#0066FF;font-weight:600;text-decoration:none}" +
-    "@media(max-width:700px){.thrv-g{grid-template-columns:1fr}.thrv h2{font-size:20px;line-height:28px}}";
+    "@media(max-width:700px){.thrv{padding:0 16px}.thrv-g{grid-template-columns:1fr}.thrv h2{font-size:20px;line-height:28px}}";
   function injectCss() {
     if (document.getElementById("thrv-css")) return;
     var s = document.createElement("style"); s.id = "thrv-css"; s.textContent = CSS; document.head.appendChild(s);
@@ -140,6 +141,14 @@
         var list = filter(all, o);
         if (!list.length) return;
         el.innerHTML = blockHtml(list, o); wire(el);
+        // before: CSS-селектор элемента, перед которым показать блок (выше по странице)
+        var tgt = o.before ? document.querySelector(o.before) : null;
+        // beforeh2: начало текста заголовка H2, перед которым показать блок
+        if (!tgt && o.beforeh2) {
+          var h2s = document.querySelectorAll("h2");
+          for (var q = 0; q < h2s.length; q++) if ((h2s[q].textContent || "").trim().indexOf(o.beforeh2) === 0 && !el.contains(h2s[q])) { tgt = h2s[q]; break; }
+        }
+        if (tgt && tgt.parentNode && tgt !== el) tgt.parentNode.insertBefore(el, tgt);
       });
     });
   }
