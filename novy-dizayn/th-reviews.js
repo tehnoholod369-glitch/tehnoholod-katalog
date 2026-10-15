@@ -22,7 +22,8 @@
     kamin: /электрокамин|очаг|каминокомплект|\bEFP\//i,
     pushka: /тепловая пушка|\bBHP-|электрическая\s+BHP/i,
     konv: /конвектор|\bREC-|масляный радиатор|\bROR-/i,
-    ochist: /очиститель|бризер|\bASP-/i
+    ochist: /очиститель|бризер|\bASP-/i,
+    rekup: /рекуператор|\bERW-|\bFUNAI Fuji/i
   };
   var INST = /установ|монтаж|смонтир|подключил|подключен|подключили/i;
   var US = /техно ?холод|продав|магазин|менеджер|мастер|бригад/i;
@@ -121,7 +122,7 @@
   function filter(all, o) {
     return all.filter(function (r) {
       var p = r.p || "";
-      if (o.kind && !(KIND[o.kind] && KIND[o.kind].test(p))) return false;
+      if (o.kind && !o.kind.split(",").some(function (k) { k = k.trim(); return KIND[k] && KIND[k].test(p); })) return false;
       if (o.brand && p.toLowerCase().indexOf(o.brand.toLowerCase()) < 0) return false;
       if (o.topic === "install" && !(INST.test(r.t || "") && US.test(r.t || ""))) return false;
       return true;
