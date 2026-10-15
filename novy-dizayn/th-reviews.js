@@ -60,6 +60,7 @@
     ".thrv-a b{font:600 14px/18px Inter,system-ui,sans-serif;color:#0033A0}" +
     ".thrv-m{font:400 13px/19px Inter,system-ui,sans-serif;color:#606F85}" +
     ".thrv-m a{color:#0066FF;text-decoration:none;font-weight:600}" +
+    ".thrv-m a.thrv-p{color:#0033A0;text-decoration:underline;text-underline-offset:2px}" +
     ".thrv-more{display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin-top:16px;padding:0 20px;border:1.5px solid #0066FF;border-radius:8px;background:#fff;color:#0066FF;font:600 15px/1 Inter,system-ui,sans-serif;cursor:pointer}" +
     ".thrv-k{margin-top:16px;font:400 13px/20px Inter,system-ui,sans-serif;color:#606F85}.thrv-k a{color:#0066FF;font-weight:600;text-decoration:none}" +
     "@media(max-width:700px){.thrv{padding:0 16px}.thrv-g{grid-template-columns:1fr}.thrv h2{font-size:20px;line-height:28px}}";
@@ -82,7 +83,7 @@
     } else body = "<p>" + esc(t) + "</p>";
     return '<div class="thrv-c"><div class="thrv-s" aria-label="Оценка ' + esc(r.r) + ' из 5">' + stars(r.r) + "</div>" + body +
       '<div class="thrv-a"><b>' + esc(r.a) + "</b><span>" + esc(r.d) + ", Kaspi</span></div>" +
-      '<div class="thrv-m">Купили: ' + esc(shortName(r.p)) + (r.u ? ' · <a href="' + esc(r.u) + '" target="_blank" rel="noopener">Читать на Kaspi →</a>' : "") + "</div></div>";
+      '<div class="thrv-m">Купили: ' + (LINKS[r.p] ? '<a class="thrv-p" href="' + esc(LINKS[r.p]) + '">' + esc(shortName(r.p)) + "</a>" : esc(shortName(r.p))) + (r.u ? ' · <a href="' + esc(r.u) + '" target="_blank" rel="noopener">Читать на Kaspi →</a>' : "") + "</div></div>";
   }
   function blockHtml(all, opt) {
     var five = all.filter(function (r) { return r.r >= 5; }).length, rest = all.length - five;
@@ -98,7 +99,8 @@
     if (b && m) b.addEventListener("click", function () { m.hidden = false; b.style.display = "none"; });
   }
 
-  var DATA = null, loading = false;
+  var DATA = null, loading = false, LINKS = {};
+  var LINKS_URL = RAW.replace("kaspi-reviews.json", "kaspi-links.json");
   function load(cb) {
     if (DATA) return cb(DATA);
     if (loading) return setTimeout(function () { load(cb); }, 300);
@@ -107,7 +109,9 @@
       loading = false;
       if (!d) return;
       DATA = d.sort(function (a, b) { return dkey(b.d) < dkey(a.d) ? -1 : dkey(b.d) > dkey(a.d) ? 1 : 0; });
-      cb(DATA);
+      // ссылки названий на карточки сайта (data/kaspi-links.json, gen_kaspi_links.py); нет файла — просто текст
+      fetch(LINKS_URL, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
+        .then(function (l) { LINKS = l || {}; cb(DATA); });
     }).catch(function () { loading = false; });
   }
 
