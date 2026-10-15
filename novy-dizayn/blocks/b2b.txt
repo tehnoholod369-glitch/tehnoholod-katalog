@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+﻿<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
 
 <x-dc>
@@ -60,7 +60,40 @@
       </sc-for>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:20px;">
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
+<div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ЧТО ПОСТАВЛЯЕМ БИЗНЕСУ</div>
+<h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Оборудование для офиса, магазина, склада и объекта</h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:14px; margin-top:16px;">
+<div style="background:#F5FAFF; border:1px solid #B9DBF7; border-radius:12px; padding:18px 20px; display:flex; flex-direction:column; gap:8px;">
+<div style="font-family:Inter,sans-serif; font-size:17px; font-weight:700; color:#0033A0;">Кондиционеры для офиса и магазина</div>
+<div style="font-size:14px; color:#1A1A1A; line-height:1.55;">Настенные, кассетные, канальные. Считаем мощность под помещение и назначение.</div>
+<a href="/kondicionery-dlya-ofisa" style="font-size:13px; font-weight:700; color:#0066FF; margin-top:auto;">Смотреть кондиционеры для офиса →</a>
+</div>
+<div style="background:#F5FAFF; border:1px solid #B9DBF7; border-radius:12px; padding:18px 20px; display:flex; flex-direction:column; gap:8px;">
+<div style="font-family:Inter,sans-serif; font-size:17px; font-weight:700; color:#0033A0;">Полупромышленные кондиционеры</div>
+<div style="font-size:14px; color:#1A1A1A; line-height:1.55;">Канальные, кассетные и напольно-потолочные для больших помещений.</div>
+<a href="/poluprom" style="font-size:13px; font-weight:700; color:#0066FF; margin-top:auto;">Смотреть полупромышленные →</a>
+</div>
+<div style="background:#F5FAFF; border:1px solid #B9DBF7; border-radius:12px; padding:18px 20px; display:flex; flex-direction:column; gap:8px;">
+<div style="font-family:Inter,sans-serif; font-size:17px; font-weight:700; color:#0033A0;">Проектные решения</div>
+<div style="font-size:14px; color:#1A1A1A; line-height:1.55;">VRF, чиллеры, фанкойлы, приточно-вытяжные установки. Состав и цену считаем по схеме объекта.</div>
+<a href="/proekt" style="font-size:13px; font-weight:700; color:#0066FF; margin-top:auto;">Проектные системы →</a>
+</div>
+<div style="background:#F5FAFF; border:1px solid #B9DBF7; border-radius:12px; padding:18px 20px; display:flex; flex-direction:column; gap:8px;">
+<div style="font-family:Inter,sans-serif; font-size:17px; font-weight:700; color:#0033A0;">Вентиляция</div>
+<div style="font-size:14px; color:#1A1A1A; line-height:1.55;">Приточные и приточно-вытяжные установки, вытяжные вентиляторы, рекуператоры.</div>
+<a href="/ventilyaciya" style="font-size:13px; font-weight:700; color:#0066FF; margin-top:auto;">Смотреть вентиляцию →</a>
+</div>
+<div style="background:#F5FAFF; border:1px solid #B9DBF7; border-radius:12px; padding:18px 20px; display:flex; flex-direction:column; gap:8px;">
+<div style="font-family:Inter,sans-serif; font-size:17px; font-weight:700; color:#0033A0;">Тепловые завесы и пушки</div>
+<div style="font-size:14px; color:#1A1A1A; line-height:1.55;">Завесы для входной группы магазина, склада, офиса. Пушки для склада, гаража, стройки.</div>
+<div style="display:flex; flex-wrap:wrap; gap:6px 16px; margin-top:auto;"><a href="/teplovye-zavesy-almaty" style="font-size:13px; font-weight:700; color:#0066FF;">Тепловые завесы →</a><a href="/teplovye-pushki-almaty" style="font-size:13px; font-weight:700; color:#0066FF;">Тепловые пушки →</a></div>
+</div>
+</div>
+<div style="font-size:13px; color:#64748B; margin-top:14px; line-height:1.6;">Цены для юрлиц считаем по вашему списку: объём, сроки, условия поставки. Пришлите спецификацию или задачу — ответим ценой и сроком.</div>
+</div>
+
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:20px;">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px;">
         <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;">
           <div>
