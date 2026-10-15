@@ -134,13 +134,13 @@
     });
   }
   function pages() {
-    var ms = document.querySelectorAll("[data-th-reviews]:not([" + MARK + "])");
+    var ms = document.querySelectorAll("[data-th-reviews]:not([" + MARK + '="2"])');
     if (!ms.length) return;
     load(function (all) {
       injectCss();
       [].forEach.call(ms, function (el) {
-        if (el.getAttribute(MARK)) return;
-        el.setAttribute(MARK, "1");
+        if (el.getAttribute(MARK) === "2") return;
+        el.setAttribute(MARK, "2"); // "1" ставит прежняя версия скрипта без ссылок: перерисовываем поверх
         var o = parse(el.getAttribute("data-th-reviews"));
         var list = filter(all, o);
         if (!list.length) return;
