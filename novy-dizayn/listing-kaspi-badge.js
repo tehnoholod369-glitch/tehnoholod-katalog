@@ -70,5 +70,6 @@
       setTimeout(function () { run(D); }, 1500);
     }).catch(function () {});
   }
+  window.__thKaspiBadge = { matches: matches, isHeat: isHeat, label: label };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
 })();
