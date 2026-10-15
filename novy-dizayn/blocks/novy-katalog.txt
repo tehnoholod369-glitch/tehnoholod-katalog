@@ -177,6 +177,9 @@
         <div style="margin:0; font:800 clamp(24px,5.6vw,34px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">{{ heroTitle }}</div>
 </sc-if>
         <div style="font:400 16px/24px Inter,sans-serif; color:#1A1A1A; margin-top:10px;">{{ heroSub }}</div>
+        <sc-if value="{{ kaminyHelp }}" hint-placeholder-val="{{ false }}">
+          <a href="/podbor-kamina" style="display:inline-flex; align-items:center; justify-content:center; min-height:44px; margin-top:14px; padding:0 18px; border-radius:8px; background:#0066FF; color:#fff; font:600 15px/1 Inter,sans-serif; text-decoration:none;">Как выбрать электрокамин →</a>
+        </sc-if>
       </div>
       <sc-if value="{{ hasHeroBrands }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:20px;">
@@ -2363,6 +2366,7 @@ class Component extends DCLogic {
     return {
       gridRef: this.gridRef,
       hubClass: s.hub ? "th-hubmode" : "",
+      kaminyHelp: s.group === "kaminy" && !s.hub,
       hubTiles,
       dirTabs,
       extraTabs: extraTab,
