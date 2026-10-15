@@ -105,8 +105,13 @@
         return [it.s, it.nb].some(function (code) {
           var toks = String(code || "").toLowerCase().split(/[^a-z0-9а-яё]+/).filter(Boolean);
           if (!toks.length || norm(code).length < 5) return false;
-          var re = new RegExp("(^|[^a-z0-9а-яё])" + toks.map(function (t) { return t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }).join("[^a-z0-9а-яё]*") + "($|[^a-z0-9а-яё])");
-          return re.test(p);
+          var re = new RegExp("(^|[^a-z0-9а-яё])(" + toks.map(function (t) { return t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }).join("[^a-z0-9а-яё]*") + ")($|[^a-z0-9а-яё])");
+          var m = re.exec(p);
+          if (!m) return false;
+          // 15.10.2026: за артикулом не должен идти короткий суффикс другой модели («BIGH-55» и «BIGH-55 H»)
+          var rest = p.slice(m.index + m[1].length + m[2].length).replace(/^\s+/, "");
+          var suf = /^([a-z0-9]{1,3})(?=$|[\s(,])/.exec(rest);
+          return !(suf && !/^\d+$/.test(suf[1]));
         });
       });
       if (exact.length) return build("exact", pick(exact, 3), "");
