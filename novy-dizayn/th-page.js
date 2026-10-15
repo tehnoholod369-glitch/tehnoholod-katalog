@@ -360,7 +360,7 @@
   if (!window.TH_CARD_EMBED) return;
   if (document.querySelector('script[src*="th-reviews.js"]')) return;
   var s = document.createElement("script");
-  s.src = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@91b507c831aacb3d26a911be2224d687dcde667f/novy-dizayn/th-reviews.js";
+  s.src = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@59039532b139db620f953d2a65cef628250a3011/novy-dizayn/th-reviews.js";
   s.defer = true;
   document.head.appendChild(s);
 })();
