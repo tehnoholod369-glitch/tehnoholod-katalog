@@ -1,0 +1,267 @@
+<style>
+.thmk{font-family:Inter,system-ui,Arial,sans-serif;color:#1A1A1A;line-height:1.5;font-size:16px;max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.thmk *{box-sizing:border-box}
+.thmk h1{font-size:48px;line-height:56px;font-weight:700;margin:0 0 16px}
+.thmk h2{font-size:32px;line-height:40px;font-weight:700;margin:56px 0 20px}
+.thmk h3{font-size:20px;line-height:28px;font-weight:600;margin:0 0 8px}
+.thmk p{margin:0 0 12px}
+.thmk a{color:#0066FF}
+.thmk a:hover{color:#0052D6}
+.thmk-hero{background:#E9F4FF;border-radius:16px;padding:40px;display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center;margin-top:24px}
+.thmk-lead{font-size:18px;line-height:28px;margin-bottom:24px;max-width:620px}
+.thmk-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.thmk-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:8px;font-weight:600;text-decoration:none;font-size:16px}
+.thmk a.thmk-btn-main{background:#E81C1C;color:#fff}
+.thmk a.thmk-btn-main:hover{background:#C41212;color:#fff}
+.thmk a.thmk-btn-alt{background:#fff;color:#0066FF;border:2px solid #0066FF}
+.thmk a.thmk-btn-alt:hover{background:#0066FF;color:#fff}
+.thmk-chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.thmk-chips li{background:#fff;border:1px solid #DCE5F0;border-radius:4px;padding:6px 12px;font-size:14px;line-height:20px}
+.thmk-scheme{width:100%;height:auto;display:block}
+.thmk-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.thmk-card{background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:20px;box-shadow:0 1px 2px rgba(0,51,160,.06)}
+.thmk-price{font-size:28px;line-height:36px;font-weight:700;color:#0033A0;margin:4px 0 4px}
+.thmk-small{font-size:14px;line-height:20px;color:#606F85}
+.thmk-note{background:#F1F5F9;border-radius:12px;padding:16px 20px;margin-top:16px}
+.thmk-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;list-style:none;padding:0;margin:0;counter-reset:s}
+.thmk-steps li{background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:20px;counter-increment:s}
+.thmk-steps li:before{content:counter(s);display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#0066FF;color:#fff;font-weight:700;margin-bottom:12px}
+.thmk table{width:100%;border-collapse:collapse;border:1px solid #DCE5F0;border-radius:12px;overflow:hidden}
+.thmk th,.thmk td{text-align:left;padding:12px 16px;border-bottom:1px solid #DCE5F0;vertical-align:top}
+.thmk th{background:#E9F4FF;font-weight:600}
+.thmk-two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.thmk-two ul{margin:8px 0 0;padding-left:20px}
+.thmk-two li{margin-bottom:6px}
+.thmk-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.thmk-quote{border-left:4px solid #0066FF;background:#F1F5F9;border-radius:0 12px 12px 0;padding:16px 20px;margin:0 0 12px}
+.thmk-quote span{display:block;margin-top:6px;font-size:14px;color:#606F85}
+.thmk details{border:1px solid #DCE5F0;border-radius:12px;padding:0;margin-bottom:8px;background:#fff}
+.thmk summary{cursor:pointer;font-weight:600;padding:16px 20px;list-style:none}
+.thmk summary::-webkit-details-marker{display:none}
+.thmk summary:after{content:"+";float:right;color:#0066FF;font-size:22px;line-height:24px}
+.thmk details[open] summary:after{content:"\2212"}
+.thmk details p{padding:0 20px 16px;margin:0}
+.thmk-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0;padding:0;list-style:none}
+.thmk-cta{background:#0033A0;color:#fff;border-radius:16px;padding:32px 40px;margin:56px 0 40px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.thmk-cta h2{margin:0 0 4px;color:#fff;font-size:24px;line-height:32px}
+.thmk-cta p{margin:0;color:#E9F4FF}
+.thmk-cta a.thmk-btn-alt{border-color:#fff;color:#0033A0}
+.thmk-cta a.thmk-btn-alt:hover{background:#E9F4FF;color:#0033A0}
+@media(max-width:900px){.thmk-hero{grid-template-columns:1fr;padding:24px}.thmk-grid4,.thmk-steps{grid-template-columns:1fr 1fr}.thmk-tiles{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.thmk{padding:0 16px}.thmk h1{font-size:32px;line-height:40px}.thmk h2{font-size:24px;line-height:32px;margin-top:40px}.thmk-grid4,.thmk-steps,.thmk-two,.thmk-tiles{grid-template-columns:1fr}.thmk-cta{padding:24px}.thmk-btn{width:100%}}
+
+.thmk-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 12px}
+.thmk-pair .thmk-fig{margin:0}
+.thmk-pair .thmk-fig img{aspect-ratio:4/5;object-fit:cover}
+.thmk-pair .thmk-fig figcaption{padding:8px 10px;font-size:13px;line-height:18px}
+.thmk-hero .thmk-fig svg{max-height:none}
+.thmk-fig{margin:0;background:#fff;border:1px solid #DCE5F0;border-radius:12px;overflow:hidden}
+.thmk-fig svg,.thmk-fig img{display:block;width:100%;height:auto}
+.thmk-fig figcaption{padding:10px 14px;font-size:14px;line-height:20px;color:#606F85}
+.thmk-figs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.thmk-figs .thmk-fig svg{max-height:340px}
+.thmk-figs .thmk-fig img{max-height:420px;object-fit:cover}
+.thmk-card .thmk-fig{margin:10px 0 12px}
+@media(max-width:600px){.thmk-figs{grid-template-columns:1fr}}
+
+.thmk-h1v{font-size:44px;line-height:52px;font-weight:700;margin:0 0 16px;color:#0033A0}
+.thmk details h3{display:inline;font-size:17px;line-height:24px;margin:0;font-weight:600}
+.thmk td:first-child{font-weight:600}
+.thmk ul{margin:8px 0 16px;padding-left:20px}
+.thmk li{margin-bottom:6px}
+.thmk-badge{display:inline-block;background:#0066FF;color:#fff;border-radius:4px;padding:4px 10px;font-size:13px;line-height:18px;font-weight:700;margin-bottom:10px}
+.thmk-stages .thmk-card:nth-child(2) .thmk-badge{background:#0033A0}
+.thmk-stages .thmk-card{border-top:4px solid #0066FF}
+.thmk-stages .thmk-card:nth-child(2){border-top-color:#0033A0}
+.thmk-note h3{margin-bottom:6px}
+@media(max-width:600px){.thmk-h1v{font-size:32px;line-height:40px}}
+.thmk ul.thmk-links{padding-left:0}
+/* финальный блок светлый, не тёмно-синий рядом с подвалом (дизайн-код) */
+.thmk-cta{background:#E9F4FF;color:#1A1A1A}
+.thmk-cta h2{color:#0033A0}
+.thmk-cta p{color:#1A1A1A}
+.thmk .thmk-cta a.thmk-btn-alt{border-color:#0066FF;color:#0066FF;background:#fff}
+.thmk .thmk-cta a.thmk-btn-alt:hover{background:#0066FF;color:#fff}
+/* телефон: поля 24 px по дизайн-коду; таблицы строками-карточками, без боковой прокрутки */
+@media(max-width:600px){
+.thmk{padding:0 24px}
+.thmk table,.thmk tbody,.thmk tr,.thmk td{display:block;width:100%}
+.thmk thead{display:none}
+.thmk table{border:0}
+.thmk tr{border:1px solid #DCE5F0;border-radius:12px;padding:12px 16px;margin-bottom:12px;background:#fff}
+.thmk td{border:0;padding:4px 0;font-size:16px;line-height:24px}
+.thmk td:first-child{font-weight:700;padding-bottom:6px;color:#0033A0}
+.thmk td[data-label]{display:flex;justify-content:space-between;gap:16px;text-align:right}
+.thmk td[data-label]::before{content:attr(data-label);flex:0 0 42%;text-align:left;font-weight:500;color:#606F85}
+}
+@media(max-width:480px){
+.thmk-pair{grid-template-columns:1fr}
+.thmk-pair .thmk-fig img{aspect-ratio:4/3;object-position:center 35%}
+.thmk-figs .thmk-fig img{max-height:none}
+}
+</style>
+<div class="thmk">
+
+<section class="thmk-hero">
+<div>
+<div class="thmk-h1v">Мультисплит система на 2 комнаты, оборудование <span data-kit="2">от 404 950 ₸</span></div>
+<p class="thmk-lead">Комнаты по 20 м², цена с НДС, без монтажа. На 3 комнаты <span data-kit="3">от 595 727 ₸</span>. Замер в Алматы бесплатный.</p>
+<div class="thmk-btns"><a class="thmk-btn thmk-btn-main" href="https://tehnoholod369.kz/multisplit">Собрать комплект</a><a class="thmk-btn thmk-btn-alt" href="https://wa.me/77000369369">Прислать план в WhatsApp</a></div>
+<ul class="thmk-chips"><li>Гарантия на установку 12 месяцев</li><li>Рассрочка до 24 месяцев</li><li>Доставка по Казахстану</li><li>Более 5 000 монтажей</li></ul>
+</div>
+<div><figure class="thmk-fig"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/mk/gen-tipy-blokov.jpg" alt="Иллюстрация: один наружный блок и внутренние блоки разных типов: настенный, кассетный, канальный, напольно-потолочный" width="1200" height="800" loading="lazy"><figcaption>Иллюстрация: к одному наружному блоку подключают от 2 до 5 внутренних блоков, разных типов</figcaption></figure></div>
+</section>
+
+<h1 style="margin-top:40px">Мультисплит система на 2 и 3 комнаты в Алматы</h1>
+<p>Мультисплит система на 2 комнаты — это один наружный блок и два внутренних, по одному в каждой комнате. На 3 комнаты внутренних блоков три. Наружный блок стоит на фасаде, его ещё называют внешним. Он соединён трассами, то есть трубками и кабелем, с каждым внутренним блоком. Так на фасаде один блок вместо двух или трёх.</p>
+<p>Перед заказом полезно знать три вещи:</p>
+<ul>
+<li><b>Наружный блок выбирают под число комнат.</b> Бывают рассчитанные на два, на три и до пяти внутренних блоков, от двух до пяти комнат в зависимости от модели. Под две или три комнаты берём блок на два или на три.</li>
+<li><b>Блоки одного бренда.</b> Наружный и внутренние блоки берём из одной линейки, блоки разных брендов не смешиваем. Совместимость сверяем по таблице производителя.</li>
+<li><b>Типы блоков можно сочетать.</b> Внутренние блоки бывают настенные, канальные и кассетные. Внутри одного бренда их ставят вместе.</li>
+</ul>
+<p><b>Больше пяти внутренних блоков к одному наружному не подключить.</b> Если комнат больше, нужна уже другая система, мини-VRF.</p>
+<p>Место для наружного блока и путь трасс смотрим на замере. Замер в Алматы бесплатный. Ставим мультисплит в квартирах, новостройках и частных домах Алматы и области. Монтаж делают бригады АРТЕЛЬ. Цену и состав работ называем до начала работ. Пришлите план квартиры или число комнат в <a href="https://wa.me/77000369369">WhatsApp</a>, и мы подберём комплект. В рабочие часы, пн–пт с 9:00 до 18:00, отвечаем в течение 15 минут. Как мультисплит ставят в два этапа, <a href="#dva-etapa">рассказано ниже</a>.</p>
+
+<h2>Почему у нас без сюрпризов</h2>
+<div class="thmk-two">
+<div class="thmk-card"><h3>Цену оборудования видно сразу</h3><p>Не «по запросу»: комплект собирается в конструкторе из каталога.</p></div>
+<div class="thmk-card"><h3>Замер в Алматы бесплатный</h3><p>Приезжаем, смотрим трассы и называем цену установки до начала работ.</p></div>
+<div class="thmk-card"><h3>Есть из чего выбрать</h3><p>Много брендов и компоновок, от экономичных до премиальных: подберём под ваш бюджет и вкус.</p></div>
+<div class="thmk-card"><h3>Сервис-карта 369</h3><p>Записывает, кто ставил и когда. Обращение по её номеру уходит тому мастеру, который ставил.</p></div>
+</div>
+
+<h2>Цена комплекта мультисплит системы на 2 и 3 комнаты</h2>
+<p>Цену оборудования видно до замера. На две комнаты по 20 м² комплект стоит <span data-kit="2">от 404 950 ₸</span>, на три комнаты по 20 м² <span data-kit="3">от 595 727 ₸</span>. Цены с НДС, без монтажа. Монтаж считаем отдельно: после подбора и замера, до начала работ. Часть оборудования может быть под заказ, наличие уточняем при подборе.</p>
+<table><thead><tr><th>Что в комплекте</th><th>2 комнаты</th><th>3 комнаты</th></tr></thead><tbody>
+<tr><td>Блоки</td><td data-label="2 комнаты">наружный и два внутренних</td><td data-label="3 комнаты">наружный и три внутренних</td></tr>
+<tr><td>Площадь комнат</td><td data-label="2 комнаты">по 20 м²</td><td data-label="3 комнаты">по 20 м²</td></tr>
+<tr><td>Оборудование, с НДС</td><td data-label="2 комнаты"><span data-kit="2">от 404 950 ₸</span></td><td data-label="3 комнаты"><span data-kit="3">от 595 727 ₸</span></td></tr>
+<tr><td>Монтаж</td><td data-label="2 комнаты">после подбора и замера</td><td data-label="3 комнаты">после подбора и замера</td></tr>
+</tbody></table>
+<p style="margin-top:12px">Монтаж зависит от вашего объекта: сколько внутренних блоков, как лягут трассы к комнатам, что в стенах и на фасаде. Поэтому единой цифры нет. Состав работ называем вместе с ценой, до начала работ. Какой бренд и какие блоки стоят за ценой «от», назовём при подборе.</p>
+<div class="thmk-figs"><figure class="thmk-fig"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/mk/gen-plan-2-komnaty.jpg" alt="Иллюстрация: планировка квартиры с двумя комнатами, один наружный блок на балконе и внутренний блок в каждой комнате" width="1200" height="800" loading="lazy"><figcaption>Иллюстрация: 2 комнаты, один наружный блок на балконе</figcaption></figure><figure class="thmk-fig"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/mk/gen-plan-3-komnaty.jpg" alt="Иллюстрация: планировка квартиры с тремя комнатами, один наружный блок на балконе и внутренний блок в каждой комнате" width="1200" height="800" loading="lazy"><figcaption>Иллюстрация: 3 комнаты, один наружный блок на балконе</figcaption></figure></div>
+<p>Комнаты не по 20 м²? Тогда цена другая. Соберите комплект в <a href="https://tehnoholod369.kz/multisplit">конструкторе мульти сплит системы</a>: он покажет цену по числу комнат и их площадям и по разным брендам.</p>
+<p>В Алматы доставка бесплатна от 100 000 ₸, а комплект на две или три комнаты стоит больше этой суммы. В область и по Казахстану доставку считаем отдельно.</p>
+<div class="thmk-btns"><a class="thmk-btn thmk-btn-alt" href="https://tehnoholod369.kz/multisplit">Посчитать мою планировку</a></div>
+
+<section id="dva-etapa">
+<h2>Установка мультисплита в два этапа: что делать до ремонта и что после</h2>
+<p>Мультисплит, как правило, ставят в два этапа. Это не лишние хлопоты, а способ не испортить отделку. Скрытую прокладку удобно сделать, пока идёт ремонт: инсталляцию укладывают в штробу и закрывают штукатуркой. После отделки сделать скрытый монтаж, не повредив её, как правило, уже нельзя.</p>
+<div class="thmk-two thmk-stages" style="margin-top:16px">
+<div class="thmk-card"><div class="thmk-badge">Этап 1 · пока идёт ремонт</div><div class="thmk-pair"><figure class="thmk-fig"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/mk/real-etap1-novostroyka.jpg" alt="Трасса в штробе на стене новостройки до отделки" width="464" height="580" loading="lazy"><figcaption>Новостройка: трасса в штробе до отделки</figcaption></figure><figure class="thmk-fig"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/mk/real-etap1-chastnyi-dom.jpg" alt="Несколько трасс, уложенных в штробу на фасаде частного дома" width="464" height="580" loading="lazy"><figcaption>Частный дом: трассы в штробе на фасаде</figcaption></figure></div><h3>Штробление и скрытая прокладка</h3><ul><li>Штробление стен под трассы к каждой комнате.</li><li>Прокладка инсталляции в штробу.</li><li>Штроба закрывается штукатуркой вместе с остальной отделкой.</li></ul></div>
+<div class="thmk-card"><div class="thmk-badge">Этап 2 · после отделки</div><figure class="thmk-fig"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/mk/real-etap2-vnutrenniy-blok.jpg" alt="Внутренний блок на стене после окончания отделки" width="1200" height="900" loading="lazy"><figcaption>Фото установленного кондиционера: внутренний блок на готовой стене</figcaption></figure><h3>Внутренние блоки и пусконаладка</h3><ul><li>Монтаж внутренних блоков, когда отделка закончена.</li><li>Пусконаладка системы.</li><li>Наружный блок и трассы уже на месте.</li></ul></div>
+</div>
+<div class="thmk-two" style="margin-top:16px">
+<div class="thmk-note"><h3>Что сделать до ремонта</h3><p>Определите, в каких комнатах нужны блоки и сколько их. Запишитесь на замер до того, как закрыты стены: на замере называем цену установки и путь трасс.</p></div>
+<div class="thmk-note"><h3>Что сделать после отделки</h3><p>Дождитесь окончания отделочных работ и договоритесь о втором этапе: монтаж внутренних блоков и пусконаладка.</p></div>
+</div>
+<p class="thmk-small" style="margin-top:8px">Сроки каждого этапа зависят от объекта: называем их на замере. Если ремонт уже закончен, скажем на замере, какой вариант подходит вашему объекту.</p>
+</section>
+
+<h2>Как это проходит</h2>
+<ol class="thmk-steps">
+<li><h3>Заявка</h3><p>Пишете план квартиры или число комнат. В рабочие часы отвечаем в течение 15 минут.</p></li>
+<li><h3>Подбор</h3><p>Подбираем комплект и называем цену оборудования.</p></li>
+<li><h3>Замер</h3><p>Приезжаем, смотрим трассы, считаем установку. В Алматы выезд на замер без оплаты.</p></li>
+<li><h3>Установка</h3><p>Привозим и ставим бригадой АРТЕЛЬ. Вы принимаете работу и получаете Сервис-карту 369.</p></li>
+</ol>
+
+<section class="thmk-note" id="kviz" style="margin-top:32px">
+<h3>Ответьте на 5 вопросов: вернёмся с подбором комплекта</h3>
+<p>Бренд, цена оборудования и цена установки после бесплатного замера в Алматы. Напишите в WhatsApp число комнат, их площади и где вы живёте: новостройка, готовый ремонт или частный дом.</p>
+<div class="thmk-btns" style="margin:0"><a class="thmk-btn thmk-btn-alt" href="https://wa.me/77000369369">Подобрать комплект</a></div>
+</section>
+
+<h2>Что часто делают неправильно с мультисплитом</h2>
+<div class="thmk-two">
+<div class="thmk-card"><h3>Берут блок не под число комнат</h3><p>Наружный блок рассчитан на два, на три или до пяти внутренних. Больше пяти к одному не подключить.</p></div>
+<div class="thmk-card"><h3>Смешивают бренды</h3><p>Наружный и внутренние блоки берём одного бренда, совместимость сверяем по таблице производителя.</p></div>
+<div class="thmk-card"><h3>Откладывают штробу на после ремонта</h3><p>Скрытую прокладку удобно сделать, пока идёт ремонт. После отделки скрытый монтаж, как правило, уже нельзя сделать, не повредив её.</p></div>
+<div class="thmk-card"><h3>Не думают о поломке наружного блока</h3><p>Блок один, поэтому при поломке без холода все комнаты. Сервис выезжает, как правило, в течение 1–3 дней, в сезон до 5.</p></div>
+</div>
+
+<h2>Мультисплит или два отдельных кондиционера</h2>
+<p>Что выгоднее, зависит от ваших комнат и брендов. Мультисплит нужен, когда на фасаде мало места, правила дома не разрешают несколько наружных блоков или не хочется вешать их по всему дому. Оба варианта считает <a href="https://tehnoholod369.kz/multisplit">конструктор на странице подбора мультисплита</a>: цена оборудования видна по вашим комнатам.</p>
+<table><thead><tr><th></th><th>Мультисплит</th><th>Два отдельных кондиционера</th></tr></thead><tbody>
+<tr><td>Наружные блоки на фасаде</td><td data-label="Мультисплит">один</td><td data-label="Отдельные кондиционеры">по одному на комнату</td></tr>
+<tr><td>Цена оборудования</td><td data-label="Мультисплит">в конструкторе по вашим комнатам</td><td data-label="Отдельные кондиционеры">в конструкторе, отдельные системы тех же классов</td></tr>
+<tr><td>Если сломался наружный блок</td><td data-label="Мультисплит">без холода все комнаты</td><td data-label="Отдельные кондиционеры">без холода одна комната</td></tr>
+</tbody></table>
+<div style="margin:16px 0"><figure class="thmk-fig"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/mk/gen-sravnenie-5-okon.jpg" alt="Иллюстрация: слева пять отдельных кондиционеров, пять наружных блоков на фасаде, справа мультисплит, один наружный блок на все комнаты" width="1200" height="800" loading="lazy"><figcaption>Иллюстрация: пять отдельных кондиционеров и мультисплит с одним наружным блоком</figcaption></figure></div>
+<p style="margin-top:12px">Бывает, что все внутренние блоки мультисплита работают в одном режиме: либо холод, либо тепло. У отдельных кондиционеров режим свой у каждого. Как у выбранной модели, уточняем при подборе.</p>
+<p>Наружный блок один, поэтому при его поломке без охлаждения остаются все комнаты. Гарантия на установку у нас 12 месяцев, на оборудование по паспорту модели. Ремонт оборудования делают сервисные центры бренда. Обращение по Сервис-карте 369 принимаем мы: по монтажу его получает мастер, который ставил.</p>
+<p>Сомневаетесь, что выбрать? Пришлите план квартиры в <a href="https://wa.me/77000369369">WhatsApp</a>, покажем оба варианта.</p>
+
+<h2>Гарантия на установку мультисплита 12 месяцев</h2>
+<div class="thmk-tiles">
+<div class="thmk-card"><h3>Установка: 12 месяцев</h3><p>На установку нового оборудования. Обращение по номеру Сервис-карты 369 уходит мастеру, который ставил.</p></div>
+<div class="thmk-card"><h3>Оборудование: по паспорту модели</h3><p>Срок у каждой модели свой. Обращение принимаем мы, ремонт делают сервисные центры бренда.</p></div>
+<div class="thmk-card"><h3>Рассрочка и доставка</h3><p>Рассрочка до 24 месяцев на условиях банка. Доставка по Казахстану, по Алматы бесплатно от 100 000 ₸.</p></div>
+</div>
+
+<h2>Что говорят клиенты</h2>
+<p class="thmk-small">Это отзывы клиентов на кондиционеры, а не на мультисплит-системы. Они об установке и сервисе.</p>
+<blockquote class="thmk-quote">«Цену сказали заранее, без каких-то сюрпризов потом»<span>Отзыв в Google о кондиционере Thaicon SensAIR</span></blockquote>
+<blockquote class="thmk-quote">«Здесь не просто продали кондиционер и забыли, а нормально установили, обслужили и продолжают помогать»<span>Отзыв в Google о кондиционере TCL FreshIN 3.0</span></blockquote>
+<div data-th-reviews="kind:kond|topic:install|limit:3|title:Отзывы с Kaspi на кондиционеры"></div>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-reviews.js"></script>
+
+<h2>Вопросы про мультисплит систему на 2 и 3 комнаты</h2>
+<details><summary><h3>Сколько стоит мультисплит система на 2 и 3 комнаты?</h3></summary><p>Оборудование для двух комнат по 20 м² стоит от 404 950 ₸, для трёх комнат по 20 м² от 595 727 ₸. Цены с НДС, без монтажа. Подробнее в таблице выше. Часть оборудования может быть под заказ, наличие уточняем при подборе.</p></details><details><summary><h3>Сколько стоит установить мультисплит систему?</h3></summary><p>Цену называем после подбора и замера, до начала работ. Замер в Алматы бесплатный. Почему единой цифры нет, объяснили в блоке с ценами выше.</p></details><details><summary><h3>Из скольких этапов состоит установка мультисплит системы?</h3></summary><p>Как правило, из двух. Сначала, пока идёт ремонт, штробление и скрытая прокладка в штробе. Потом, после окончания отделки, монтаж внутренних блоков и пусконаладка. Подробнее в блоке про два этапа выше.</p></details><details><summary><h3>Можно ли смешивать блоки разных брендов в мультисплит системе?</h3></summary><p>Нет. Наружный и внутренние блоки берём одного бренда. Типы блоков одного бренда сочетать можно: настенные, канальные, кассетные. Подробнее в начале страницы.</p></details><details><summary><h3>Сколько комнат можно подключить к одному наружному блоку?</h3></summary><p>От двух до пяти, в зависимости от модели наружного блока. Пять комнат возможны у старших моделей. Для двух или трёх комнат берём блок на два или на три, подбираем под ваши комнаты.</p></details><details><summary><h3>Что будет с мультисплит системой, если сломается наружный блок?</h3></summary><p>Остановятся все комнаты, ведь наружный блок один. Обращение по гарантии принимаем мы. Сервис выезжает, как правило, в течение 1–3 дней, в сезон бывает до 5 дней. Гарантия на установку 12 месяцев, на оборудование по паспорту модели, ремонт делает сервисный центр бренда.</p></details><details><summary><h3>Можно ли поставить один кондиционер на две комнаты?</h3></summary><p>Обычно нет. Внутренний блок рассчитан на одно помещение. Для двух комнат берут два отдельных кондиционера или мультисплит. Что подойдёт вам, смотрите в таблице сравнения выше.</p></details><details><summary><h3>Есть ли рассрочка и доставка мультисплит системы?</h3></summary><p>Рассрочка до 24 месяцев на условиях банка. Размер переплаты и условия назовёт банк. Доставка по Казахстану, по Алматы бесплатно от 100 000 ₸. Стоимость доставки в регионы считаем отдельно.</p></details><details><summary><h3>Замер мультисплит системы платный?</h3></summary><p>В Алматы замер бесплатный. За пределами Алматы условия замера уточняем при заявке: они зависят от удалённости. Монтаж делаем в Алматы и области, а в других городах подтверждаем при заказе.</p></details>
+
+<section class="thmk-cta"><div><h2>Мультисплит на 2 комнаты, оборудование <span data-kit="2">от 404 950 ₸</span></h2><p>Пришлите план или число комнат. Установку считаем после замера, до начала работ. Пн–Пт 9:00–18:00.</p></div>
+<div class="thmk-btns" style="margin:0"><a class="thmk-btn thmk-btn-alt" href="https://wa.me/77000369369">Написать в WhatsApp</a><a class="thmk-btn thmk-btn-alt" href="tel:+77000369369">+77 000 369 369</a></div></section>
+
+<h2 style="margin-top:0">Как с нами связаться</h2>
+<p>ИП «ТехноХолод», Алматы, ул. Какимжана Казыбаева, 286Б. Пн–Пт 9:00–18:00. Телефон и WhatsApp +77 000 369 369.</p>
+<ul class="thmk-links"><li><a href="https://tehnoholod369.kz/multisplit">Конструктор мультисплита</a></li><li><a href="https://tehnoholod369.kz/katalog?g=multisplit">Каталог мультисплитов</a></li><li><a href="https://tehnoholod369.kz/multisplit-sistema">Как выбрать мультисплит</a></li><li><a href="https://tehnoholod369.kz/uslugi">Монтаж и сервис</a></li><li><a href="https://tehnoholod369.kz/kondicionery-almaty">Кондиционеры в Алматы</a></li></ul>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит мультисплит система на 2 и 3 комнаты?", "acceptedAnswer": {"@type": "Answer", "text": "Оборудование для двух комнат по 20 м² стоит от 404 950 ₸, для трёх комнат по 20 м² от 595 727 ₸. Цены с НДС, без монтажа. Подробнее в таблице выше. Часть оборудования может быть под заказ, наличие уточняем при подборе."}}, {"@type": "Question", "name": "Сколько стоит установить мультисплит систему?", "acceptedAnswer": {"@type": "Answer", "text": "Цену называем после подбора и замера, до начала работ. Замер в Алматы бесплатный. Почему единой цифры нет, объяснили в блоке с ценами выше."}}, {"@type": "Question", "name": "Из скольких этапов состоит установка мультисплит системы?", "acceptedAnswer": {"@type": "Answer", "text": "Как правило, из двух. Сначала, пока идёт ремонт, штробление и скрытая прокладка в штробе. Потом, после окончания отделки, монтаж внутренних блоков и пусконаладка. Подробнее в блоке про два этапа выше."}}, {"@type": "Question", "name": "Можно ли смешивать блоки разных брендов в мультисплит системе?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Наружный и внутренние блоки берём одного бренда. Типы блоков одного бренда сочетать можно: настенные, канальные, кассетные. Подробнее в начале страницы."}}, {"@type": "Question", "name": "Сколько комнат можно подключить к одному наружному блоку?", "acceptedAnswer": {"@type": "Answer", "text": "От двух до пяти, в зависимости от модели наружного блока. Пять комнат возможны у старших моделей. Для двух или трёх комнат берём блок на два или на три, подбираем под ваши комнаты."}}, {"@type": "Question", "name": "Что будет с мультисплит системой, если сломается наружный блок?", "acceptedAnswer": {"@type": "Answer", "text": "Остановятся все комнаты, ведь наружный блок один. Обращение по гарантии принимаем мы. Сервис выезжает, как правило, в течение 1–3 дней, в сезон бывает до 5 дней. Гарантия на установку 12 месяцев, на оборудование по паспорту модели, ремонт делает сервисный центр бренда."}}, {"@type": "Question", "name": "Можно ли поставить один кондиционер на две комнаты?", "acceptedAnswer": {"@type": "Answer", "text": "Обычно нет. Внутренний блок рассчитан на одно помещение. Для двух комнат берут два отдельных кондиционера или мультисплит. Что подойдёт вам, смотрите в таблице сравнения выше."}}, {"@type": "Question", "name": "Есть ли рассрочка и доставка мультисплит системы?", "acceptedAnswer": {"@type": "Answer", "text": "Рассрочка до 24 месяцев на условиях банка. Размер переплаты и условия назовёт банк. Доставка по Казахстану, по Алматы бесплатно от 100 000 ₸. Стоимость доставки в регионы считаем отдельно."}}, {"@type": "Question", "name": "Замер мультисплит системы платный?", "acceptedAnswer": {"@type": "Answer", "text": "В Алматы замер бесплатный. За пределами Алматы условия замера уточняем при заявке: они зависят от удалённости. Монтаж делаем в Алматы и области, а в других городах подтверждаем при заказе."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "Кондиционеры", "item": "https://tehnoholod369.kz/kondicionery-almaty"}, {"@type": "ListItem", "position": 3, "name": "Мультисплит на 2 и 3 комнаты", "item": "https://tehnoholod369.kz/multisplit-komplekty-almaty"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Подбор, продажа и монтаж мультисплит-систем на 2 и 3 комнаты", "serviceType": "Мультисплит-системы", "areaServed": {"@type": "City", "name": "Алматы"}, "provider": {"@type": "LocalBusiness", "name": "ИП «ТехноХолод»", "telephone": "+77000369369", "url": "https://tehnoholod369.kz"}, "url": "https://tehnoholod369.kz/multisplit-komplekty-almaty"}</script>
+<script>
+(function(){try{
+var U="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/multisplit-constructor.json";
+function f(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,"\u00a0")+"\u00a0\u20b8"}
+fetch(U,{cache:"force-cache"}).then(function(r){return r.ok?r.json():null}).then(function(d){
+if(!d||!d.outdoor||!d.indoor)return;
+var o=d.outdoor.filter(function(x){return x.ok&&x.p});
+var i=d.indoor.filter(function(x){return x.ok&&x.p&&x.t==="\u041d\u0430\u0441\u0442\u0435\u043d\u043d\u044b\u0439"});
+document.querySelectorAll(".thmk [data-ports]").forEach(function(e){
+var n=+e.getAttribute("data-ports");
+var c=o.filter(function(x){return (x.ports||0)>=n}).map(function(x){return x.p});
+if(c.length)e.textContent="\u043e\u0442 "+f(Math.min.apply(null,c))});
+document.querySelectorAll(".thmk [data-btu]").forEach(function(e){
+var b=+e.getAttribute("data-btu");
+var c=i.filter(function(x){return x.btu===b}).map(function(x){return x.p});
+if(c.length)e.textContent=f(Math.min.apply(null,c))});
+var W="\u041d\u0430\u0441\u0442\u0435\u043d\u043d\u044b\u0439";
+function nb(a){return Math.round((a*2.7*35+200)*3.412)}
+function srt(p,q){return p.btu-q.btu||(p.p||9e9)-(q.p||9e9)}
+function minKit(areas){
+var br={};d.outdoor.concat(d.indoor).forEach(function(x){br[x.b]=1});
+var best=null;
+Object.keys(br).forEach(function(b){
+var ins=d.indoor.filter(function(x){return x.b===b}),outs=d.outdoor.filter(function(x){return x.b===b});
+if(!ins.length||!outs.length)return;
+var sum=0,btu=0,ok=true;
+areas.forEach(function(a){
+var nd=nb(a);
+var fit=ins.filter(function(x){return x.t===W&&x.btu>0&&x.btu>=nd*0.95}).sort(srt)[0];
+if(!fit||!fit.p){ok=false;return}
+sum+=fit.p;btu+=fit.btu});
+if(!ok)return;
+var need=Math.round(btu*0.85);
+var by=outs.filter(function(x){return x.btu>=need&&x.p});
+var sure=by.filter(function(x){return (x.ports||0)>=areas.length}).sort(srt)[0];
+var uns=by.filter(function(x){return !x.ports}).sort(srt)[0];
+var mod=sure||uns;if(!mod)return;
+var tot=sum+mod.p;if(best===null||tot<best)best=tot});
+return best}
+document.querySelectorAll(".thmk [data-kit]").forEach(function(e){
+var n=+e.getAttribute("data-kit"),a=[];for(var k=0;k<n;k++)a.push(20);
+var v=minKit(a);if(v)e.textContent="\u043e\u0442 "+f(v)});
+}).catch(function(){});
+}catch(e){}})();
+</script>
