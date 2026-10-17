@@ -64,7 +64,11 @@
 .thmk-card .thmk-fig{margin:10px 0 12px}
 @media(max-width:600px){.thmk-figs{grid-template-columns:1fr}}
 
-.thmk-h1v{font-size:44px;line-height:52px;font-weight:700;margin:0 0 16px;color:#0033A0}
+.thmk-h1v{font-size:48px;line-height:56px;font-weight:700;margin:0 0 16px;color:#0033A0}
+.thmk h1,.thmk h2{color:#0033A0}
+.thmk-cta h2{color:#0033A0}
+.thmk a.thmk-btn-main:active{background:#A30D0D;color:#fff}
+.thmk a:focus-visible,.thmk summary:focus-visible{outline:3px solid #0066FF;outline-offset:2px}
 .thmk details h3{display:inline;font-size:17px;line-height:24px;margin:0;font-weight:600}
 .thmk td:first-child{font-weight:600}
 .thmk ul{margin:8px 0 16px;padding-left:20px}
@@ -106,7 +110,7 @@
 <div>
 <div class="thmk-h1v">Мультисплит система на 2 комнаты, оборудование <span data-kit="2">от 404 950 ₸</span></div>
 <p class="thmk-lead">Комнаты по 20 м², цена с НДС, без монтажа. На 3 комнаты <span data-kit="3">от 595 727 ₸</span>. Замер в Алматы бесплатный.</p>
-<div class="thmk-btns"><a class="thmk-btn thmk-btn-main" href="https://tehnoholod369.kz/multisplit">Собрать комплект</a><a class="thmk-btn thmk-btn-alt" href="https://wa.me/77000369369">Прислать план в WhatsApp</a></div>
+<div class="thmk-btns"><a class="thmk-btn thmk-btn-main" href="https://tehnoholod369.kz/multisplit">Собрать комплект →</a><a class="thmk-btn thmk-btn-alt" href="https://wa.me/77000369369">Прислать план в WhatsApp</a></div>
 <ul class="thmk-chips"><li>Гарантия на установку 12 месяцев</li><li>Рассрочка до 24 месяцев</li><li>Доставка по Казахстану</li><li>Более 5 000 монтажей</li></ul>
 </div>
 <div><figure class="thmk-fig"><img src="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/mk/gen-tipy-blokov.jpg" alt="Иллюстрация: один наружный блок и внутренние блоки разных типов: настенный, кассетный, канальный, напольно-потолочный" width="1200" height="800" loading="lazy"><figcaption>Иллюстрация: к одному наружному блоку подключают от 2 до 5 внутренних блоков, разных типов</figcaption></figure></div>
