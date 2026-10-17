@@ -171,6 +171,8 @@
 <h3>Ответьте на 5 вопросов: вернёмся с подбором комплекта</h3>
 <p>Бренд, цена оборудования и цена установки после бесплатного замера в Алматы. Напишите в WhatsApp число комнат, их площади и где вы живёте: новостройка, готовый ремонт или частный дом.</p>
 <div class="thmk-btns" style="margin:0"><a class="thmk-btn thmk-btn-alt" href="https://wa.me/77000369369">Подобрать комплект</a></div>
+<p class="thmk-small" style="margin:16px 0 8px">Ремонт уже идёт или скоро начнётся? Скачайте чек-лист на 4 страницы: что сделать с мультисплитом до отделки и что после.</p>
+<div class="thmk-btns" style="margin:0"><a class="thmk-btn thmk-btn-alt" href="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/lead-magnity/tehnoholod-multisplit-pri-remonte.pdf" download>Скачать чек-лист (PDF)</a></div>
 </section>
 
 <h2>Что часто делают неправильно с мультисплитом</h2>
