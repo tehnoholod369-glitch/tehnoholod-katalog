@@ -247,6 +247,51 @@
               </sc-for>
             </div>
             <div style="font-size:13px; color:#606F85; margin-top:14px; line-height:1.6;">{{ specsNote }}</div>
+            <sc-if value="{{ gree.out }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:18px; background:#F4F8FD; border:1px solid #DCE5F0; border-radius:12px; padding:16px 18px;">
+                <div style="font:700 16px/22px Inter,sans-serif; color:#0033A0;">Какие внутренние блоки подключить</div>
+                <div style="font-size:14px; line-height:1.6; color:#1A1A1A; margin-top:6px;">Сумма мощностей внутренних блоков — от 50 до 135 % от {{ gree.kw }} кВт, то есть {{ gree.lo }}–{{ gree.hi }} кВт.</div>
+                <div style="position:relative; height:10px; border-radius:5px; background:#DCE5F0; margin:14px 0 6px;">
+                  <div style="position:absolute; left:33.33%; width:56.67%; height:10px; border-radius:5px; background:#0066FF;"></div>
+                  <div style="position:absolute; left:66.67%; top:-3px; width:2px; height:16px; background:#0033A0;"></div>
+                </div>
+                <div style="display:flex; justify-content:space-between; font-size:12px; color:#606F85;"><span>{{ gree.lo }} кВт</span><span>{{ gree.kw }} кВт</span><span>{{ gree.hi }} кВт</span></div>
+                <sc-if value="{{ gree.hasLimits }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:14px; line-height:1.6; color:#1A1A1A; margin-top:10px;">{{ gree.limits }}</div>
+                </sc-if>
+                <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:12px;">
+                  <span style="font-size:14px; color:#606F85;">Мощности ваших блоков, кВт</span>
+                  <input type="text" inputmode="decimal" placeholder="например, 2,5 3,5 2,5" value="{{ gree.input }}" onInput="{{ gree.onInput }}" aria-label="Мощности внутренних блоков, кВт, через пробел" style="width:190px; border:1px solid #DCE5F0; border-radius:8px; padding:8px 10px; font-family:inherit; font-size:15px; color:#0066FF;" />
+                </div>
+                <sc-if value="{{ gree.hasCalc }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:14px; line-height:1.6; font-weight:700; color:{{ gree.calcColor }}; margin-top:8px;">{{ gree.calcText }}</div>
+                </sc-if>
+                <div style="font-size:13px; color:#606F85; margin-top:12px; line-height:1.6;">Подбор по паспорту GREE. Схему трассы и точное число блоков подтверждаем после замера.</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ gree.inn }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:18px; background:#F4F8FD; border:1px solid #DCE5F0; border-radius:12px; padding:16px 18px;">
+                <div style="font:700 16px/22px Inter,sans-serif; color:#0033A0;">С какими наружными блоками работает</div>
+                <sc-if value="{{ gree.hasFit }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:14px; line-height:1.6; color:#1A1A1A; margin-top:6px;">Подходят по мощности — одним блоком или в сумме с другими:</div>
+                  <div>
+                    <sc-for list="{{ gree.fit }}" as="c" hint-placeholder-count="3">
+                      <a href="{{ c.href }}" style="display:inline-block; font-size:13px; line-height:18px; padding:4px 10px; border-radius:8px; margin:6px 6px 0 0; text-decoration:none; background:#EAF6EE; color:#178841;">{{ c.name }}</a>
+                    </sc-for>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ gree.hasNo }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:14px; line-height:1.6; color:#1A1A1A; margin-top:12px;">Одним блоком не подходят:</div>
+                  <div>
+                    <sc-for list="{{ gree.no }}" as="c" hint-placeholder-count="1">
+                      <a href="{{ c.href }}" style="display:inline-block; font-size:13px; line-height:18px; padding:4px 10px; border-radius:8px; margin:6px 6px 0 0; text-decoration:none; background:#FFF4E0; color:#8A5A00;">{{ c.name }}</a>
+                    </sc-for>
+                  </div>
+                  <div style="font-size:13px; color:#606F85; margin-top:6px; line-height:1.6;">{{ gree.noText }}</div>
+                </sc-if>
+                <div style="font-size:13px; color:#606F85; margin-top:12px; line-height:1.6;">Подбор по паспорту GREE. Окончательную схему подтверждаем после замера.</div>
+              </div>
+            </sc-if>
           </sc-if>
 
           <sc-if value="{{ isDesc }}" hint-placeholder-val="{{ false }}">
@@ -1921,6 +1966,51 @@ class Component extends DCLogic {
       url: "katalog.tehnoholod369.kz/" + s.group + "/" + (it.sl || "model"),
       seoTitle: (it.s ? it.b + " " + it.s : it.n.slice(0, 60)) + " — купить в Алматы, цена и характеристики | ИП «ТехноХолод»",
       canPower,
+      // подсказка совместимости мини-VRF GREE (19.10.2026): окно суммарной мощности внутренних
+      // блоков 50–135 % от номинала наружного — по паспорту GREE (Technical Sales Guide)
+      gree: (() => {
+        const нет = { out: false, inn: false };
+        if (s.group !== "mini-vrf" || !/^GREE$/i.test(String(it.b || ""))) return нет;
+        const kw = +it.num || 0;
+        if (!kw) return нет;
+        const роль = x => String(((x.sp || []).find(r => r && r[0] === "Роль в системе") || [])[1] || "");
+        const fmt = n => String(Math.round(n * 100) / 100).replace(".", ",");
+        const название = x => String(x.nb || x.s || x.n || "");
+        const ссылка = x => "/tovar?g=" + encodeURIComponent(s.group || "") + "&sl=" + encodeURIComponent(x.sl || "");
+        if (роль(it) === "Наружный блок") {
+          const max = specMap["Макс. кол-во внутренних блоков"] || "";
+          const route = specMap["Макс. длина трассы"] || "";
+          const limits = (max ? "До " + max + " внутренних блоков. " : "") + (route ? "Трасса: " + route + "." : "");
+          const raw = String(s.greeIn || "").replace(/,\s+/g, " ").replace(/,/g, ".");
+          const vals = raw.split(/[\s;+]+/).map(v => parseFloat(v)).filter(v => isFinite(v) && v > 0);
+          let calcText = "", calcColor = "#178841";
+          if (vals.length) {
+            const sum = vals.reduce((a, b) => a + b, 0);
+            const pct = Math.round(sum / kw * 100);
+            const head = "Сумма " + fmt(sum) + " кВт — " + pct + " % от номинала. ";
+            if (pct < 50) { calcText = head + "Мало: нужно не меньше 50 %."; calcColor = "#B26A00"; }
+            else if (pct > 135) { calcText = head + "Много: не больше 135 %."; calcColor = "#D0312D"; }
+            else { calcText = head + "Входит в допустимое окно."; }
+            if (+max && vals.length > +max) { calcText += " Блоков больше допустимых: до " + max + "."; calcColor = "#D0312D"; }
+          }
+          return {
+            out: true, inn: false, kw: fmt(kw), lo: fmt(kw * 0.5), hi: fmt(kw * 1.35),
+            limits, hasLimits: !!limits, input: s.greeIn || "", hasCalc: !!calcText, calcText, calcColor,
+            onInput: e => this.setState({ greeIn: String(e.target.value || "").slice(0, 60) })
+          };
+        }
+        if (роль(it) === "Внутренний блок") {
+          const наружные = items.filter(x => /^GREE$/i.test(String(x.b || "")) && роль(x) === "Наружный блок" && +x.num > 0);
+          const fit = наружные.filter(x => kw <= +x.num * 1.35).map(x => ({ name: название(x), href: ссылка(x) }));
+          const no = наружные.filter(x => kw > +x.num * 1.35).map(x => ({ name: название(x), href: ссылка(x) }));
+          if (!fit.length && !no.length) return нет;
+          return {
+            out: false, inn: true, fit, no, hasFit: fit.length > 0, hasNo: no.length > 0,
+            noText: fmt(kw) + " кВт — больше 135 % от номинала такого наружного блока."
+          };
+        }
+        return нет;
+      })(),
       power: (() => {
         if (!canPower) return {};
         const hours = s.hours || 6;              // часов работы в сутки
