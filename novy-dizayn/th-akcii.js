@@ -18,6 +18,7 @@
     var a = document.createElement("a");
     a.href = "/akcii";
     a.textContent = "Акции";
+    a.className = "th-ak";
     a.style.cssText = "color:#E81C1C;font-weight:700";
     бренды.parentNode.insertBefore(a, бренды);
     ГОТОВО.меню = true;
@@ -46,6 +47,13 @@
   (function () {
     var st = document.createElement("style");
     st.textContent = ".ak-fr-ph img{mix-blend-mode:normal !important}";
+    document.head.appendChild(st);
+  })();
+
+  // 19.10.2026: на синей полосе меню (от 1248 px) красный текст не читается, «Акции» — красной плашкой с белым текстом, как в th-shapka-369.js
+  (function () {
+    var st = document.createElement("style");
+    st.textContent = "@media(min-width:1248px){.th-mn a.th-ak{background:#E81C1C;color:#fff !important;height:32px;padding:0 10px;border-radius:4px;margin:0 6px}.th-mn a.th-ak:hover{background:#C41212}}";
     document.head.appendChild(st);
   })();
 })();
