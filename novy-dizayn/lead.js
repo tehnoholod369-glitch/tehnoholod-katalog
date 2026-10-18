@@ -139,7 +139,11 @@
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(body)
       }).then(function (r) { return r.text(); })
-        .then(function (t) { return String(t).indexOf("OK") === 0; })
+        .then(function (t) {
+          var ok = String(t).indexOf("OK") === 0;
+          try { if (ok && window.THTrack) { window.THTrack("lead_submit", { channel: body.channel }); } } catch (e) { /* счётчики не мешают заявке */ }
+          return ok;
+        })
         .catch(function () { return false; });
     },
 
