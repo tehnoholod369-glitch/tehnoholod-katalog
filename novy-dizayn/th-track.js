@@ -60,9 +60,16 @@
     } catch (e) { /* то же */ }
   }
 
+  // Одно и то же событие от двух обработчиков (нижняя панель и этот файл) считаем один раз:
+  // одинаковые имя и place в течение 600 мс пропускаем.
+  var last = {};
   window.THTrack = function (name, p) {
     if (!name) return;
     p = p || {};
+    var key = name + "|" + (p.place || "");
+    var now = Date.now();
+    if (last[key] && now - last[key] < 600) return;
+    last[key] = now;
     ga4(name, p);
     // В Метрику уходят только простые параметры (без массива items).
     var simple = {};
@@ -71,4 +78,19 @@
     }
     ym(name, simple);
   };
+
+  // Свой обработчик кликов по tel: и wa.me. Нужен там, где у посетителя в кеше браузера старая версия
+  // нижней панели (jsDelivr держит файлы до 7 дней), а th-track.js подключён прямо в блоке страницы.
+  // Классификация place та же, что в mobile-bar-369.js.
+  document.addEventListener("click", function (e) {
+    try {
+      var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+      if (!a) return;
+      var h = a.getAttribute("href") || "";
+      var ev = h.indexOf("tel:") === 0 ? "phone_click" : (/^https?:\/\/(wa\.me|api\.whatsapp\.com)\//.test(h) ? "whatsapp_click" : "");
+      if (!ev) return;
+      var где = a.closest("#th-mobile-bar") ? "панель" : (a.closest("header,.th-hd") ? "шапка" : "страница");
+      window.THTrack(ev, { place: где });
+    } catch (x) { /* счётчики не мешают звонку и переходу */ }
+  }, true);
 })();
