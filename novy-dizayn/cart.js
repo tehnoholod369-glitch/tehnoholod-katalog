@@ -122,6 +122,12 @@
         });
       }
       write(list);
+      try {
+        if (window.THTrack) {
+          var q = qty || 1, pr = item.p || 0;
+          window.THTrack("add_to_cart", { currency: "KZT", value: pr * q, items: [{ item_id: item.s || "", item_name: item.n || "", item_brand: item.b || "", item_category: item.g || item.group || "", price: pr, quantity: q }] });
+        }
+      } catch (e) { /* счётчики не мешают корзине */ }
       return count();
     },
 
@@ -302,7 +308,15 @@
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(payload)
       }).then(function (r) { return r.json(); })
-        .then(function (d) { return (d && d.number) ? d.number : ""; })
+        .then(function (d) {
+          try {
+            if (window.THTrack && d && d.number) {
+              var sum = 0; items.forEach(function (x) { sum += (x.price || 0) * (x.qty || 1); });
+              window.THTrack("order_submit", { currency: "KZT", value: sum, items_count: items.length });
+            }
+          } catch (e) { /* то же */ }
+          return (d && d.number) ? d.number : "";
+        })
         .catch(function () { return ""; });
     }
   };
