@@ -123,6 +123,7 @@
       var ev = h.indexOf("tel:") === 0 ? "tel" : (/^https?:\/\/(wa\.me|api\.whatsapp\.com)\//.test(h) ? "whatsapp" : "");
       if (!ev) return;
       var где = a.closest("#th-mobile-bar") ? "панель" : (a.closest("header,.th-hd") ? "шапка" : "страница");
+      try { if (window.THTrack) { window.THTrack(ev === "tel" ? "phone_click" : "whatsapp_click", { place: где }); } } catch (x) { /* счётчики не мешают звонку */ }
       var L = window.TH_LEAD;
       if (L && typeof L.event === "function") { L.event({ ev: ev, val: где }); return; }
       // lead.js на странице нет: шлём напрямую, sendBeacon переживает переход. Адрес тот же, что в lead.js.
@@ -133,6 +134,15 @@
       navigator.sendBeacon("https://script.google.com/macros/s/AKfycbzqoF8JVLc-OjrSLJbwZ8oBi0MbC5p89VHmLY9di3rcaK0TrTdEEPAduBqbYPRqWPwdgA/exec", new Blob([body], { type: "text/plain;charset=utf-8" }));
     } catch (x) { /* учёт не должен мешать звонку и переходу */ }
   }, true);
+
+  // Счётчики GA4 и Метрики (TASK-07, 18.10.2026): отдельный файл, подключается отсюда, потому что эта панель
+  // уже стоит на всех страницах. Без файла клики идут как раньше, только без зеркала в счётчики.
+  if (!window.THTrack && !document.querySelector('script[src*="th-track.js"]')) {
+    var тр = document.createElement("script");
+    тр.src = "https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-track.js?v=20261018";
+    тр.async = true;
+    document.head.appendChild(тр);
+  }
 
   window.addEventListener("resize", sync);
   window.addEventListener("storage", счётчик);
