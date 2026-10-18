@@ -156,6 +156,19 @@
 <p>В Алматы доставка бесплатна от 100 000 ₸, а комплект на две или три комнаты стоит больше этой суммы. В область и по Казахстану доставку считаем отдельно.</p>
 <div class="thmk-btns"><a class="thmk-btn thmk-btn-alt" href="https://tehnoholod369.kz/multisplit">Посчитать мою планировку</a></div>
 
+<section id="ballu-sborki">
+<h2>Готовые сборки Ballu на 2 и 3 комнаты</h2>
+<p>Один бренд, один наружный блок и внутренние блоки одной серии Ballu Free Match. Блоки на 9 000 BTU, по данным карточки, рассчитаны на комнату до 25 м². Цены с НДС, оборудование без монтажа: установку считаем после подбора и замера, до начала работ. Наличие уточняем при подборе.</p>
+<table><thead><tr><th>Состав</th><th>2 комнаты, 9+9</th><th>3 комнаты, 9+9+9</th></tr></thead><tbody>
+<tr><td>Наружный блок</td><td data-label="2 комнаты, 9+9"><span><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=ballu-ba2oi-fm-out-18hn8-eu">BA2OI-FM/out-18HN8/EU</a>, 18 000 BTU, на 2 порта: <b data-sum="BA2OI-FM/out-18HN8/EU">389 990 ₸</b></span></td><td data-label="3 комнаты, 9+9+9"><span><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=ballu-ba3oi-fm-out-27hn8-eu">BA3OI-FM/out-27HN8/EU</a>, 27 000 BTU, на 3 порта: <b data-sum="BA3OI-FM/out-27HN8/EU">530 990 ₸</b></span></td></tr>
+<tr><td>Внутренние блоки</td><td data-label="2 комнаты, 9+9"><span>2 × <a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=ballu-bsui-fm-in-09hn8-eu">BSUI-FM/in-09HN8/EU</a>, 9 000 BTU: <b data-sum="BSUI-FM/in-09HN8/EU*2">177 980 ₸</b></span></td><td data-label="3 комнаты, 9+9+9"><span>3 × <a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=ballu-bsui-fm-in-09hn8-eu">BSUI-FM/in-09HN8/EU</a>, 9 000 BTU: <b data-sum="BSUI-FM/in-09HN8/EU*3">266 970 ₸</b></span></td></tr>
+<tr><td>Оборудование, с НДС</td><td data-label="2 комнаты, 9+9"><span><b data-sum="BA2OI-FM/out-18HN8/EU,BSUI-FM/in-09HN8/EU*2">567 970 ₸</b></span></td><td data-label="3 комнаты, 9+9+9"><span><b data-sum="BA3OI-FM/out-27HN8/EU,BSUI-FM/in-09HN8/EU*3">797 960 ₸</b></span></td></tr>
+<tr><td>Монтаж</td><td data-label="2 комнаты, 9+9"><span>после подбора и замера</span></td><td data-label="3 комнаты, 9+9+9"><span>после подбора и замера</span></td></tr>
+</tbody></table>
+<p class="thmk-small" style="margin-top:8px">Комнаты больше 25 м² или нужны блоки другого типа? Соберите комплект в <a href="https://tehnoholod369.kz/multisplit">конструкторе</a> или пришлите план в <a href="https://wa.me/77000369369">WhatsApp</a>.</p>
+</section>
+
+
 <section id="dva-etapa">
 <h2>Установка мультисплита в два этапа: что делать до ремонта и что после</h2>
 <p>Мультисплит, как правило, ставят в два этапа. Это не лишние хлопоты, а способ не испортить отделку. Скрытую прокладку удобно сделать, пока идёт ремонт: инсталляцию укладывают в штробу и закрывают вместе с отделкой. После отделки сделать скрытый монтаж, не повредив её, как правило, уже нельзя.</p>
@@ -275,6 +288,18 @@ return best}
 document.querySelectorAll(".thmk [data-kit]").forEach(function(e){
 var n=+e.getAttribute("data-kit"),a=[];for(var k=0;k<n;k++)a.push(20);
 var v=minKit(a);if(v)e.textContent="\u043e\u0442 "+f(v)});
+}).catch(function(){});
+}catch(e){}})();
+</script>
+<script>
+(function(){try{
+var U="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/multisplit-constructor.json";
+function f(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g," ")+" ₸"}
+fetch(U,{cache:"force-cache"}).then(function(r){return r.ok?r.json():null}).then(function(d){
+if(!d||!d.outdoor||!d.indoor)return;
+var m={};d.outdoor.concat(d.indoor).forEach(function(x){if(x.ok&&x.p)m[x.s]=x.p});
+function sum(spec){var t=0,ok=true;spec.split(",").forEach(function(p){var a=p.split("*");var v=m[a[0]];if(!v){ok=false;return}t+=v*(+a[1]||1)});return ok?t:null}
+document.querySelectorAll(".thmk [data-sum]").forEach(function(e){var v=sum(e.getAttribute("data-sum"));if(v)e.textContent=f(v)});
 }).catch(function(){});
 }catch(e){}})();
 </script>
