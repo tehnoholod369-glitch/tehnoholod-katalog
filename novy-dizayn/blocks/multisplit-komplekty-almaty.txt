@@ -53,7 +53,7 @@
 .thmk-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 12px}
 .thmk-pair .thmk-fig{margin:0}
 .thmk-pair .thmk-fig img{aspect-ratio:4/5;object-fit:cover}
-.thmk-pair .thmk-fig figcaption{padding:8px 10px;font-size:13px;line-height:18px}
+.thmk-pair .thmk-fig figcaption{padding:8px 10px;font-size:14px;line-height:20px}
 .thmk-hero .thmk-fig svg{max-height:none}
 .thmk-fig{margin:0;background:#fff;border:1px solid #DCE5F0;border-radius:12px;overflow:hidden}
 .thmk-fig svg,.thmk-fig img{display:block;width:100%;height:auto}
@@ -69,15 +69,20 @@
 .thmk-cta h2{color:#0033A0}
 .thmk a.thmk-btn-main:active{background:#A30D0D;color:#fff}
 .thmk a:focus-visible,.thmk summary:focus-visible{outline:3px solid #0066FF;outline-offset:2px}
-.thmk details h3{display:inline;font-size:17px;line-height:24px;margin:0;font-weight:600}
+.thmk details h3{display:inline;font-size:18px;line-height:24px;margin:0;font-weight:600}
 .thmk td:first-child{font-weight:600}
 .thmk ul{margin:8px 0 16px;padding-left:20px}
 .thmk li{margin-bottom:6px}
-.thmk-badge{display:inline-block;background:#0066FF;color:#fff;border-radius:4px;padding:4px 10px;font-size:13px;line-height:18px;font-weight:700;margin-bottom:10px}
+.thmk-badge{display:inline-block;background:#0066FF;color:#fff;border-radius:4px;padding:4px 8px;font-size:12px;line-height:16px;font-weight:600;margin-bottom:10px}
 .thmk-stages .thmk-card:nth-child(2) .thmk-badge{background:#0033A0}
 .thmk-stages .thmk-card{border-top:4px solid #0066FF}
 .thmk-stages .thmk-card:nth-child(2){border-top-color:#0033A0}
 .thmk-note h3{margin-bottom:6px}
+/* карточки этапов одной высоты: фото второго этапа заполняет свободное место */
+.thmk-stages .thmk-card{display:flex;flex-direction:column}
+.thmk-stages .thmk-badge{align-self:flex-start}
+.thmk-stages .thmk-card>.thmk-fig{flex:1;display:flex;flex-direction:column}
+.thmk-stages .thmk-card>.thmk-fig img{flex:1;min-height:220px;height:100%;object-fit:cover}
 @media(max-width:600px){.thmk-h1v{font-size:32px;line-height:40px}}
 .thmk ul.thmk-links,.thmk ul.thmk-chips{padding-left:0}
 .thmk ul.thmk-chips{margin:0}
@@ -153,13 +158,13 @@
 
 <section id="dva-etapa">
 <h2>Установка мультисплита в два этапа: что делать до ремонта и что после</h2>
-<p>Мультисплит, как правило, ставят в два этапа. Это не лишние хлопоты, а способ не испортить отделку. Скрытую прокладку удобно сделать, пока идёт ремонт: инсталляцию укладывают в штробу и закрывают штукатуркой. После отделки сделать скрытый монтаж, не повредив её, как правило, уже нельзя.</p>
+<p>Мультисплит, как правило, ставят в два этапа. Это не лишние хлопоты, а способ не испортить отделку. Скрытую прокладку удобно сделать, пока идёт ремонт: инсталляцию укладывают в штробу и закрывают вместе с отделкой. После отделки сделать скрытый монтаж, не повредив её, как правило, уже нельзя.</p>
 <div class="thmk-two thmk-stages" style="margin-top:16px">
-<div class="thmk-card"><div class="thmk-badge">Этап 1 · пока идёт ремонт</div><div class="thmk-pair"><figure class="thmk-fig"><img src="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/mk/real-etap1-novostroyka.jpg" alt="Трасса в штробе на стене новостройки до отделки" width="464" height="580" loading="lazy"><figcaption>Новостройка: трасса в штробе до отделки</figcaption></figure><figure class="thmk-fig"><img src="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/mk/real-etap1-chastnyi-dom.jpg" alt="Несколько трасс, уложенных в штробу на фасаде частного дома" width="464" height="580" loading="lazy"><figcaption>Частный дом: трассы в штробе на фасаде</figcaption></figure></div><h3>Штробление и скрытая прокладка</h3><ul><li>Штробление стен под трассы к каждой комнате.</li><li>Прокладка инсталляции в штробу.</li><li>Штроба закрывается штукатуркой вместе с остальной отделкой.</li></ul></div>
-<div class="thmk-card"><div class="thmk-badge">Этап 2 · после отделки</div><figure class="thmk-fig"><img src="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/mk/real-etap2-vnutrenniy-blok.jpg" alt="Внутренний блок на стене после окончания отделки" width="1200" height="900" loading="lazy"><figcaption>Фото установленного кондиционера: внутренний блок на готовой стене</figcaption></figure><h3>Внутренние блоки и пусконаладка</h3><ul><li>Монтаж внутренних блоков, когда отделка закончена.</li><li>Пусконаладка системы.</li><li>Наружный блок и трассы уже на месте.</li></ul></div>
+<div class="thmk-card"><div class="thmk-badge">Этап 1 · пока идёт ремонт</div><div class="thmk-pair"><figure class="thmk-fig"><img src="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/mk/real-etap1-novostroyka.jpg" alt="Трасса в штробе на стене новостройки до отделки" width="464" height="580" loading="lazy"><figcaption>Новостройка: трасса в штробе до отделки</figcaption></figure><figure class="thmk-fig"><img src="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/mk/real-etap1-chastnyi-dom.jpg" alt="Несколько трасс, уложенных в штробу на фасаде частного дома" width="464" height="580" loading="lazy"><figcaption>Частный дом: трассы в штробе на фасаде</figcaption></figure></div><h3>Штробление и скрытая прокладка</h3><ul><li>Штробление стен под трассы к каждой комнате.</li><li>Прокладка инсталляции в штробу.</li><li>Штроба закрывается вместе с остальной отделкой.</li></ul></div>
+<div class="thmk-card"><div class="thmk-badge">Этап 2 · после отделки</div><figure class="thmk-fig"><img src="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/mk/real-etap2-vnutrenniy-blok.jpg" alt="Внутренний блок на стене после окончания отделки" width="1200" height="900" loading="lazy"><figcaption>Фото установленного кондиционера: внутренний блок на готовой стене</figcaption></figure><h3>Внутренние блоки и пусконаладка</h3><ul><li>Монтаж внутренних блоков, когда отделка закончена.</li><li>Пусконаладка системы.</li><li>Порядок монтажа наружного блока и трасс согласуем на замере.</li></ul></div>
 </div>
 <div class="thmk-two" style="margin-top:16px">
-<div class="thmk-note"><h3>Что сделать до ремонта</h3><p>Определите, в каких комнатах нужны блоки и сколько их. Запишитесь на замер до того, как закрыты стены: на замере называем цену установки и путь трасс.</p></div>
+<div class="thmk-note"><h3>Что сделать до ремонта</h3><p>Определите, в каких комнатах нужны блоки и сколько их. Запишитесь на замер до того, как закрыты стены: на замере смотрим путь трасс, по его итогам называем цену установки, до начала работ.</p></div>
 <div class="thmk-note"><h3>Что сделать после отделки</h3><p>Дождитесь окончания отделочных работ и договоритесь о втором этапе: монтаж внутренних блоков и пусконаладка.</p></div>
 </div>
 <p class="thmk-small" style="margin-top:8px">Сроки каждого этапа зависят от объекта: называем их на замере. Если ремонт уже закончен, скажем на замере, какой вариант подходит вашему объекту.</p>
