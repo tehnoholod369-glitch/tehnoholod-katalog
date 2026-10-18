@@ -150,14 +150,14 @@
 <tr><td>Оборудование, с НДС</td><td data-label="2 комнаты"><span data-kit="2">от 404 950 ₸</span></td><td data-label="3 комнаты"><span data-kit="3">от 595 727 ₸</span></td></tr>
 <tr><td>Монтаж</td><td data-label="2 комнаты">после подбора и замера</td><td data-label="3 комнаты">после подбора и замера</td></tr>
 </tbody></table>
-<p style="margin-top:12px">Монтаж зависит от вашего объекта: сколько внутренних блоков, как лягут трассы к комнатам, что в стенах и на фасаде. Поэтому единой цифры нет. Состав работ называем вместе с ценой, до начала работ. Какой бренд и какие блоки стоят за ценой «от», назовём при подборе.</p>
+<p style="margin-top:12px">Монтаж мультисплита зависит от вашего объекта: сколько внутренних блоков, как лягут трассы к комнатам, что в стенах и на фасаде. Поэтому единой цифры нет. Состав работ называем вместе с ценой, до начала работ. Какой бренд и какие блоки стоят за ценой «от», назовём при подборе.</p>
 <div class="thmk-figs"><figure class="thmk-fig"><img src="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/mk/gen-plan-2-komnaty.jpg" alt="Иллюстрация: планировка квартиры с двумя комнатами, один наружный блок на балконе и внутренний блок в каждой комнате" width="1200" height="800" loading="lazy"><figcaption>Иллюстрация: 2 комнаты, один наружный блок на балконе</figcaption></figure><figure class="thmk-fig"><img src="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/assets/mk/gen-plan-3-komnaty.jpg" alt="Иллюстрация: планировка квартиры с тремя комнатами, один наружный блок на балконе и внутренний блок в каждой комнате" width="1200" height="800" loading="lazy"><figcaption>Иллюстрация: 3 комнаты, один наружный блок на балконе</figcaption></figure></div>
 <p>Комнаты не по 20 м²? Тогда цена другая. Соберите комплект в <a href="https://tehnoholod369.kz/multisplit">конструкторе мульти сплит системы</a>: он покажет цену по числу комнат и их площадям и по разным брендам.</p>
 <p>В Алматы доставка бесплатна от 100 000 ₸, а комплект на две или три комнаты стоит больше этой суммы. В область и по Казахстану доставку считаем отдельно.</p>
 <div class="thmk-btns"><a class="thmk-btn thmk-btn-alt" href="https://tehnoholod369.kz/multisplit">Посчитать мою планировку</a></div>
 
 <section id="ballu-sborki">
-<h2>Готовые сборки Ballu на 2 и 3 комнаты</h2>
+<h2>Готовые сборки мультисплит Ballu на 2 и 3 комнаты</h2>
 <p>Один бренд, один наружный блок и внутренние блоки одной серии Ballu Free Match. Блоки на 9 000 BTU, по данным карточки, рассчитаны на комнату до 25 м². Цены с НДС, оборудование без монтажа: установку считаем после подбора и замера, до начала работ. Наличие уточняем при подборе.</p>
 <table><thead><tr><th>Состав</th><th>2 комнаты, 9+9</th><th>3 комнаты, 9+9+9</th></tr></thead><tbody>
 <tr><td>Наружный блок</td><td data-label="2 комнаты, 9+9"><span><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=ballu-ba2oi-fm-out-18hn8-eu">BA2OI-FM/out-18HN8/EU</a>, 18 000 BTU, на 2 порта: <b data-sum="BA2OI-FM/out-18HN8/EU">389 990 ₸</b></span></td><td data-label="3 комнаты, 9+9+9"><span><a href="https://tehnoholod369.kz/tovar?g=multisplit&amp;sl=ballu-ba3oi-fm-out-27hn8-eu">BA3OI-FM/out-27HN8/EU</a>, 27 000 BTU, на 3 порта: <b data-sum="BA3OI-FM/out-27HN8/EU">530 990 ₸</b></span></td></tr>
