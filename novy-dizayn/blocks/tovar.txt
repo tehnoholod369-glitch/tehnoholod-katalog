@@ -250,10 +250,10 @@
             <sc-if value="{{ gree.out }}" hint-placeholder-val="{{ false }}">
               <div style="margin-top:18px; background:#F4F8FD; border:1px solid #DCE5F0; border-radius:12px; padding:16px 18px;">
                 <div style="font:700 16px/22px Inter,sans-serif; color:#0033A0;">Какие внутренние блоки подключить</div>
-                <div style="font-size:14px; line-height:1.6; color:#1A1A1A; margin-top:6px;">Сумма мощностей внутренних блоков — от 50 до 135 % от {{ gree.kw }} кВт, то есть {{ gree.lo }}–{{ gree.hi }} кВт.</div>
+                <div style="font-size:14px; line-height:1.6; color:#1A1A1A; margin-top:6px;">Сумма мощностей внутренних блоков — от {{ gree.loP }} до {{ gree.hiP }} % от {{ gree.kw }} кВт, то есть {{ gree.lo }}–{{ gree.hi }} кВт.</div>
                 <div style="position:relative; height:10px; border-radius:5px; background:#DCE5F0; margin:14px 0 6px;">
-                  <div style="position:absolute; left:33.33%; width:56.67%; height:10px; border-radius:5px; background:#0066FF;"></div>
-                  <div style="position:absolute; left:66.67%; top:-3px; width:2px; height:16px; background:#0033A0;"></div>
+                  <div style="position:absolute; left:{{ gree.barL }}%; width:{{ gree.barW }}%; height:10px; border-radius:5px; background:#0066FF;"></div>
+                  <div style="position:absolute; left:{{ gree.barM }}%; top:-3px; width:2px; height:16px; background:#0033A0;"></div>
                 </div>
                 <div style="display:flex; justify-content:space-between; font-size:12px; color:#606F85;"><span>{{ gree.lo }} кВт</span><span>{{ gree.kw }} кВт</span><span>{{ gree.hi }} кВт</span></div>
                 <sc-if value="{{ gree.hasLimits }}" hint-placeholder-val="{{ false }}">
@@ -266,7 +266,7 @@
                 <sc-if value="{{ gree.hasCalc }}" hint-placeholder-val="{{ false }}">
                   <div style="font-size:14px; line-height:1.6; font-weight:700; color:{{ gree.calcColor }}; margin-top:8px;">{{ gree.calcText }}</div>
                 </sc-if>
-                <div style="font-size:13px; color:#606F85; margin-top:12px; line-height:1.6;">Подбор по паспорту GREE. Схему трассы и точное число блоков подтверждаем после замера.</div>
+                <div style="font-size:13px; color:#606F85; margin-top:12px; line-height:1.6;">Подбор по {{ gree.src }}. Схему трассы и точное число блоков подтверждаем после замера.</div>
               </div>
             </sc-if>
             <sc-if value="{{ gree.inn }}" hint-placeholder-val="{{ false }}">
@@ -1970,9 +1970,24 @@ class Component extends DCLogic {
       // блоков 50–135 % от номинала наружного — по паспорту GREE (Technical Sales Guide)
       gree: (() => {
         const нет = { out: false, inn: false };
-        if (s.group !== "mini-vrf" || !/^GREE$/i.test(String(it.b || ""))) return нет;
+        if (s.group !== "mini-vrf") return нет;
         const kw = +it.num || 0;
         if (!kw) return нет;
+        // окно суммарной мощности внутренних блоков, % от номинала наружного: GREE — паспорт
+        // (Technical Sales Guide), Electrolux — каталог 2022 (стр. 20–25), сверено по оригиналу
+        const марка = String(it.b || "");
+        const модель = String(it.s || it.nb || "");
+        let окно = null, src = "";
+        if (/^GREE$/i.test(марка)) { окно = [50, 135]; src = "паспорту GREE"; }
+        else if (/^Electrolux$/i.test(марка)) {
+          if (/^ESVMO-SF-(80|100|125)-H$/i.test(модель)) окно = [50, 125];
+          else if (/^ESVMO-SF-(120|140|160)-(H|SH)$/i.test(модель) || /^ESVMO-SF-(224|280|335)-SH$/i.test(модель)) окно = [50, 150];
+          else if (/^ESVMO-SF-\d+-A$/i.test(модель)) окно = [50, 130];
+          else if (/^ERXY3-\d+$/i.test(модель)) окно = [10, 150];
+          src = "каталогу Electrolux";
+        }
+        if (!окно) return нет;
+        const шкала = окно[1] + 15;
         const роль = x => String(((x.sp || []).find(r => r && r[0] === "Роль в системе") || [])[1] || "");
         const fmt = n => String(Math.round(n * 100) / 100).replace(".", ",");
         const название = x => String(x.nb || x.s || x.n || "");
@@ -1980,7 +1995,7 @@ class Component extends DCLogic {
         if (роль(it) === "Наружный блок") {
           const max = specMap["Макс. кол-во внутренних блоков"] || "";
           const route = specMap["Макс. длина трассы"] || "";
-          const limits = (max ? "До " + max + " внутренних блоков. " : "") + (route ? "Трасса: " + route + "." : "");
+          const limits = ((max ? "До " + max + " внутренних блоков. " : "") + (route ? "Трасса: " + route + "." : "")).trim();
           const raw = String(s.greeIn || "").replace(/,\s+/g, " ").replace(/,/g, ".");
           const vals = raw.split(/[\s;+]+/).map(v => parseFloat(v)).filter(v => isFinite(v) && v > 0);
           let calcText = "", calcColor = "#178841";
@@ -1988,18 +2003,21 @@ class Component extends DCLogic {
             const sum = vals.reduce((a, b) => a + b, 0);
             const pct = Math.round(sum / kw * 100);
             const head = "Сумма " + fmt(sum) + " кВт — " + pct + " % от номинала. ";
-            if (pct < 50) { calcText = head + "Мало: нужно не меньше 50 %."; calcColor = "#B26A00"; }
-            else if (pct > 135) { calcText = head + "Много: не больше 135 %."; calcColor = "#D0312D"; }
+            if (pct < окно[0]) { calcText = head + "Мало: нужно не меньше " + окно[0] + " %."; calcColor = "#B26A00"; }
+            else if (pct > окно[1]) { calcText = head + "Много: не больше " + окно[1] + " %."; calcColor = "#D0312D"; }
             else { calcText = head + "Входит в допустимое окно."; }
             if (+max && vals.length > +max) { calcText += " Блоков больше допустимых: до " + max + "."; calcColor = "#D0312D"; }
           }
           return {
-            out: true, inn: false, kw: fmt(kw), lo: fmt(kw * 0.5), hi: fmt(kw * 1.35),
+            out: true, inn: false, kw: fmt(kw), lo: fmt(kw * окно[0] / 100), hi: fmt(kw * окно[1] / 100),
+            loP: String(окно[0]), hiP: String(окно[1]), src,
+            barL: String(Math.round(окно[0] / шкала * 10000) / 100), barW: String(Math.round((окно[1] - окно[0]) / шкала * 10000) / 100),
+            barM: String(Math.round(100 / шкала * 10000) / 100),
             limits, hasLimits: !!limits, input: s.greeIn || "", hasCalc: !!calcText, calcText, calcColor,
             onInput: e => this.setState({ greeIn: String(e.target.value || "").slice(0, 60) })
           };
         }
-        if (роль(it) === "Внутренний блок") {
+        if (роль(it) === "Внутренний блок" && /^GREE$/i.test(марка)) {
           const наружные = items.filter(x => /^GREE$/i.test(String(x.b || "")) && роль(x) === "Наружный блок" && +x.num > 0);
           const fit = наружные.filter(x => kw <= +x.num * 1.35).map(x => ({ name: название(x), href: ссылка(x) }));
           const no = наружные.filter(x => kw > +x.num * 1.35).map(x => ({ name: название(x), href: ссылка(x) }));
