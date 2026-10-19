@@ -12,6 +12,10 @@
  * самая тихая, самая экономичная. Подписи — факты по данным. Совпадения: тишина = не громче 25 дБ в тихом режиме,
  * экономия = инвертор класса A++ и выше, приток = «да» в данных, Wi-Fi = «встроенный»; «есть, комплектацию уточняйте»
  * считается за половину и подписывается как «уточните комплектацию».
+ * v3.4 (19.10.2026): фильтр «Тип блока» (любой / настенный / напольный / канальный / кассетный); у «Напольного» — подгруппа
+ * (все напольные / напольно-потолочный / колонный / консольный): решение владельца 19.10.2026, напольные включают колонные.
+ * «Любой» работает как раньше (до 70 м² — настенные). Выбран напольный, канальный или кассетный тип — модели берутся
+ * из полупромышленного каталога (data/poluprom.json) по тому же правилу мощности, в том числе для комнат до 70 м².
  * Любая ошибка оставляет страницу рабочей: калькулятор просто не рисуется, текст страницы остаётся.
  */
 (function () {
@@ -25,19 +29,27 @@
   var BUDGETS = [[150000, "до 150 000 ₸"], [250000, "до 250 000 ₸"], [350000, "до 350 000 ₸"], [0, "любой"]];
   var PREFS = [["quiet", "тишина"], ["econ", "экономия"], ["fresh", "приток"], ["wifi", "Wi-Fi"]];
   var QUIET_DB = 25;
-  var S = { area: 25, h: 2.7, sun: false, top: false, kit: false, quiet: false, econ: false, fresh: false, wifi: false, budget: 0, color: "" };
+  // тип блока: значение для адреса -> подпись; какие подтипы полупромышленного каталога входят (настенные — из bytovye.json)
+  var TYPE_OPTS = [["", "Любой"], ["wall", "Настенный"], ["floor", "Напольный"], ["duct", "Канальный"], ["cass", "Кассетный"]];
+  var TYPE_SUBS = { floor: ["Напольно-потолочные", "Колонные", "Консольные"], duct: ["Канальные"], cass: ["Кассетные"] };
+  // подгруппа напольных (адрес: ?type=floor&sub=fc|col|con)
+  var FLOOR_OPTS = [["", "Все напольные"], ["fc", "Напольно-потолочный"], ["col", "Колонный"], ["con", "Консольный"]];
+  var FLOOR_MAP = { fc: ["Напольно-потолочные"], col: ["Колонные"], con: ["Консольные"] };
+  var S = { area: 25, h: 2.7, sun: false, top: false, kit: false, quiet: false, econ: false, fresh: false, wifi: false, budget: 0, color: "", type: "", sub: "" };
   // цвет корпуса: имя -> [код для адреса, цвет кружка-образца]; кружок показывает цвет товара, это не цвет интерфейса
   var COLORS = { "Белый": ["white", "#FFFFFF"], "Чёрный": ["black", "#1A1A1A"], "Серебристый": ["silver", "#C5CCD6"], "Серый": ["gray", "#8A94A3"], "Красный": ["red", "#E81C1C"], "Золотистый": ["gold", "#D4A93A"], "Тёмно-синий": ["navy", "#0B2A6B"], "Бежевый": ["beige", "#E8D9BF"], "Зелёный": ["green", "#3D8F4F"] };
   var DATA = null, DATAP = null, PSTATE = 0;
   var TYPES = { "Кассетные": "кассетный", "Канальные": "канальный", "Напольно-потолочные": "напольно-потолочный", "Колонные": "колонный", "Консольные": "консольный" };
 
-  // Стартовые значения из адреса: ?area=30&h=3&sun=1&top=1&kit=1&quiet=1&econ=1&fresh=1&wifi=1&budget=250000
+  // Стартовые значения из адреса: ?area=30&h=3&sun=1&top=1&kit=1&quiet=1&econ=1&fresh=1&wifi=1&budget=250000&type=floor
   function initFromUrl() {
     try {
       var q = new URLSearchParams(location.search), n;
       n = Math.round(+q.get("area")); if (n >= 5 && n <= 300) S.area = n;
       n = +String(q.get("h") || "").replace(",", "."); if (n >= 2.4 && n <= 4.5) S.h = HEIGHTS.reduce(function (b, a) { return Math.abs(a[0] - n) < Math.abs(b - n) ? a[0] : b; }, 2.7);
       ["sun", "top", "kit", "quiet", "econ", "fresh", "wifi"].forEach(function (k) { if (q.get(k) === "1") S[k] = true; });
+      var tq = q.get("type"); if (TYPE_OPTS.some(function (o) { return o[0] && o[0] === tq; })) S.type = tq;
+      var sq = q.get("sub"); if (S.type === "floor" && FLOOR_MAP[sq]) S.sub = sq;
       var cq = q.get("color"); Object.keys(COLORS).forEach(function (k) { if (COLORS[k][0] === cq) S.color = k; });
       n = +q.get("budget"); if (BUDGETS.some(function (b) { return b[0] === n; })) S.budget = n;
     } catch (e) { /* адрес без параметров — остаются значения по умолчанию */ }
@@ -113,15 +125,26 @@
 
   // Пул моделей: до 70 м² — настенные не ниже потребности и не выше класса + 15 %;
   // 70–150 м² — настенные и полупромышленные в диапазоне [потребность; потребность × 1,4]
+  // Выбран напольный, канальный или кассетный тип — только полупромышленные модели этого типа, мощность по тому же правилу
+  // (до 70 м²: не ниже потребности и не выше класса + 15 %; 70–150 м²: [потребность; потребность × 1,4]).
   function poolFor(c) {
-    var pool = [];
+    var pool = [], t = S.type;
+    if (t && t !== "wall") {
+      (DATAP || []).forEach(function (m) {
+        var v = btuOf(m);
+        if (!m.acc && m.p > 0 && (c.mode !== "std" || m.num > 0) && subsOf().indexOf(m.sub) >= 0 && v >= c.need && v <= (c.mode === "std" ? c.cls * 1.15 : c.need * 1.4)) { m.g = "poluprom"; pool.push(info(m, c)); }
+      });
+      return pool;
+    }
     if (c.mode === "std") {
       DATA.forEach(function (m) {
         var v = btuOf(m);
         if (!m.acc && m.sub === "Настенные" && m.p > 0 && m.num > 0 && v >= c.need && v <= c.cls * 1.15) { m.g = "bytovye"; pool.push(info(m, c)); }
       });
     } else {
-      [[DATA, "bytovye", "Настенные"], [DATAP || [], "poluprom", null]].forEach(function (src) {
+      var srcs = [[DATA, "bytovye", "Настенные"]];
+      if (t !== "wall") srcs.push([DATAP || [], "poluprom", null]);
+      srcs.forEach(function (src) {
         src[0].forEach(function (m) {
           var v = btuOf(m);
           if (!m.acc && m.p > 0 && v >= c.need && v <= c.need * 1.4 && (!src[2] || m.sub === src[2])) { m.g = src[1]; pool.push(info(m, c)); }
@@ -208,6 +231,23 @@
       .catch(function () { DATAP = []; PSTATE = 2; cb(); });
   }
 
+  function subsOf() { return S.type === "floor" && S.sub ? FLOOR_MAP[S.sub] : TYPE_SUBS[S.type]; }
+  function typeName() {
+    var list = S.type === "floor" && S.sub ? FLOOR_OPTS : TYPE_OPTS, cur = S.type === "floor" && S.sub ? S.sub : S.type;
+    var r = list.filter(function (o) { return o[0] === cur; })[0]; return r ? r[1].toLowerCase() : "";
+  }
+  function typeMin() {
+    var mn = 0;
+    (DATAP || []).forEach(function (m) {
+      if (m.acc || !(m.p > 0) || subsOf().indexOf(m.sub) < 0) return;
+      var v = btuOf(m); if (v && (!mn || v < mn)) mn = v;
+    });
+    return mn;
+  }
+  function typeEmpty(c) {
+    var mn = typeMin();
+    return "Моделей типа «" + typeName() + "» на такую мощность в каталоге нет" + (mn && c.need < mn ? ": такие модели начинаются от " + fmt(mn) + " BTU, а для вашей комнаты нужно около " + fmt(Math.round(c.need / 100) * 100) + " BTU" : "") + ". Выберите другой тип или напишите нам в WhatsApp: подберём под заказ.";
+  }
   function pct(v) { return (v >= 0 ? "+" : "") + Math.round(v * 100) + " %"; }
   function facts(x) {
     var m = x.m, f = [];
@@ -296,7 +336,10 @@
       '<label class="pkc-exact">или точнее: <input type="number" inputmode="numeric" min="5" max="300" value="' + (S.area > 300 ? "" : S.area) + '" aria-label="Площадь комнаты в квадратных метрах" data-exact> м²</label>' +
       '<div class="pkc-lab">Высота потолка</div><div class="pkc-chips">' + chips(HEIGHTS, S.h, "h") + "</div>" +
       '<div class="pkc-lab">Условия</div><div class="pkc-chips">' + tog("sun", "Солнечная сторона", S.sun) + tog("top", "Верхний этаж", S.top) + tog("kit", "Кухня или много техники", S.kit) + "</div></div>" +
-      '<div class="pkc-sec"><div class="pkc-step"><i>2</i><b>Что для вас важно</b></div><div class="pkc-opts">' +
+      '<div class="pkc-sec"><div class="pkc-step"><i>2</i><b>Что для вас важно</b></div>' +
+      '<div class="pkc-lab">Тип блока</div><div class="pkc-chips">' + chips(TYPE_OPTS, S.type, "type") + "</div>" +
+      (S.type === "floor" ? '<div class="pkc-lab">Какие напольные</div><div class="pkc-chips">' + chips(FLOOR_OPTS, S.sub, "fsub") + "</div>" : "") +
+      '<div class="pkc-opts">' +
       opt("quiet", "Тихая работа", "не громче " + QUIET_DB + " дБ") + opt("econ", "Экономия", "инвертор A++ и выше") + opt("fresh", "Свежий воздух", "приток с улицы") + opt("wifi", "Wi-Fi", "встроенный модуль") + "</div>" +
       colorRow(cols) + "</div>" +
       '<div class="pkc-sec"><div class="pkc-step"><i>3</i><b>Бюджет</b></div><div class="pkc-chips">' + chips(BUDGETS, S.budget, "budget") + "</div></div>";
@@ -304,7 +347,8 @@
 
   function render() {
     var c = calc(), p = null, res, models = "";
-    if (c.mode === "big" && !DATAP) {
+    var needP = (c.mode === "big" && S.type !== "wall") || (c.mode === "std" && S.type && S.type !== "wall");
+    if (needP && !DATAP) {
       ensureP(render);
       ROOT.innerHTML = '<div class="pkc-grid"><div class="pkc-card">' + stepsHtml([]) + '</div><aside class="pkc-res"><div class="pkc-k">Считаем</div><div class="pkc-kw">Подбираем модели для большого помещения…</div></aside></div>';
       return;
@@ -325,10 +369,10 @@
         (btus.length ? '<div class="pkc-cls">Подходят модели на: <b>' + btus.slice(0, 5).map(fmt).join(" · ") + "</b> BTU" + (btus.length > 5 ? " и больше" : "") + "</div>" : "") +
         '<div class="pkc-how"><b>Как посчитано</b>' + howRows(c) + (c.mode === "big" ? "Для таких площадей подходят полупромышленные кондиционеры (кассетные, канальные, напольно-потолочные, колонные) и крупные настенные." : "Берём ближайший стандартный класс не ниже этого значения.") + "</div>" +
         '<div class="pkc-note">Это ориентир. Точный расчёт подтвердим при замере.</div></aside>';
-      var grp = c.mode === "big" ? "poluprom" : "bytovye";
+      var grp = S.type === "wall" ? "bytovye" : (c.mode === "big" || S.type) ? "poluprom" : "bytovye";
       models = '<div class="pkc-models"><h3 class="pkc-h">Подходящие модели</h3>' + (p.note ? '<p class="pkc-info">' + esc(p.note) + "</p>" : "") + (p.strict ? '<p class="pkc-info">Показаны только модели, которые закрывают все выбранные пожелания.</p>' : "") +
         (p.list.length ? '<div class="pkc-cards">' + p.list.map(card).join("") + "</div>" :
-          '<p class="pkc-info">' + (S.color ? "Подходящей мощности в цвете «" + esc(S.color) + "» сейчас нет. Выберите другой цвет или напишите нам в WhatsApp: подберём под заказ." : "Модели этого класса сейчас не найдены. Напишите нам в WhatsApp, подберём.") + '</p>') +
+          '<p class="pkc-info">' + (S.color ? "Подходящей мощности в цвете «" + esc(S.color) + "» сейчас нет. Выберите другой цвет или напишите нам в WhatsApp: подберём под заказ." : (S.type && S.type !== "wall") ? esc(typeEmpty(c)) : "Модели этого класса сейчас не найдены. Напишите нам в WhatsApp, подберём.") + '</p>') +
         '<div class="pkc-more"><a class="pkc-btn pkc-btn--line" href="/katalog?g=' + grp + "&btu=" + (cls || c.btu) + '&stock=in">Все подходящие модели в каталоге →</a>' +
         '<a class="pkc-btn pkc-btn--line" href="https://wa.me/77000369369">Нужна помощь? WhatsApp</a></div></div>';
     }
@@ -341,6 +385,8 @@
     else if (b.hasAttribute("data-h")) S.h = +b.getAttribute("data-h");
     else if (b.hasAttribute("data-budget")) S.budget = +b.getAttribute("data-budget");
     else if (b.hasAttribute("data-color")) S.color = b.getAttribute("data-color");
+    else if (b.hasAttribute("data-fsub")) { S.sub = b.getAttribute("data-fsub"); S.color = ""; }
+    else if (b.hasAttribute("data-type")) { S.type = b.getAttribute("data-type"); S.sub = ""; S.color = ""; }
     else if (b.hasAttribute("data-tog")) { var k = b.getAttribute("data-tog"); S[k] = !S[k]; }
     else return;
     render();
