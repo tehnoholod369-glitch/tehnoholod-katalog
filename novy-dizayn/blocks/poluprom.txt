@@ -1,293 +1,253 @@
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
-
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<style>
-  body { margin: 0; background: #F1F5F9; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #1A1A1A; }
-  h1, h2, h3 { font-family: "Inter", "Segoe UI", sans-serif; }
-  a { color: #0066FF; text-decoration: none; }
-  a:hover { color: #0052D6; }
-</style>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-track.js?v=20261018" async></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar-369.js?v=20261018"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
-</helmet>
-
-<div style="min-height:100vh; background:#F1F5F9;">
-
-  <div class="th-t1"><div class="th-w"><b>Доставка по Казахстану</b><span><a href="tel:+77000369369">+77 000 369 369</a> · пн–пт 9:00–18:00 · <a href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B2%D0%BE%D0%BD%D0%B8%D1%82%D1%8C.">Заказать звонок</a></span></div></div>
-<header class="th-hd"><div class="th-w"><button type="button" class="th-bg" data-th-burger aria-label="Меню">☰<span>Меню</span></button><a class="th-lg" href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-horizontal-compact.png" alt="ТЕХНОХОЛОД 369" /></a><button type="button" class="th-sr" data-th-search aria-label="Поиск по каталогу"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" /><path d="M20 20l-4-4" /></svg><span>Поиск по каталогу</span></button><nav class="th-ic"><a href="/izbrannoe"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg><span>Избранное</span><i class="th-bd" data-th-fav-count style="display:none"></i></a><a href="/sravnenie"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 20V10M12 20V4M18 20v-7" /></svg><span>Сравнение</span><i class="th-bd" data-th-cmp-count style="display:none"></i></a><a href="/korzina"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h2l2.4 11h10.2L20 8H6.2" /><circle cx="9" cy="19" r="1.5" /><circle cx="17" cy="19" r="1.5" /></svg><span>Корзина</span><i class="th-bd" data-th-cart-count></i></a></nav></div></header>
-<nav class="th-mn"><div class="th-w"><a class="th-home" href="/" aria-label="На главную" title="На главную"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 11l9-7 9 7" /><path d="M5 10v10h5v-6h4v6h5V10" /></svg><span>Главная</span></a><a class="th-cat" href="/katalog" data-th-cat aria-expanded="false" aria-controls="th-panel"><span class="th-ci">☰</span><span class="th-ct">Каталог товаров</span></a><div class="th-dd"><a href="/kondicionery-almaty">Кондиционирование</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Кондиционирование" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div></div><div class="th-dd"><a href="/otoplenie">Отопление</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Отопление" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div></div><div class="th-dd"><a href="/ventilyaciya">Вентиляция</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Вентиляция" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div></div><div class="th-dd"><a href="/vodonagrevateli">Водонагреватели</a><button type="button" class="th-dt" data-th-dd aria-label="Подразделы: Водонагреватели" aria-expanded="false">▾</button><div class="th-dm"><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div></div><a href="/katalog?g=avtonomnoe-pitanie">Автономное питание</a><a href="/brendy">Бренды</a><a href="/baza-znaniy">База знаний</a><a href="/kontakty">Контакты</a></div><div class="th-pn" id="th-panel"><div class="th-w th-pg"><div class="th-pc"><b>Кондиционирование</b><a href="/katalog?g=bytovye">Бытовые сплит-системы</a><a href="/poluprom">Полупромышленные</a><a href="/multisplit">Мультисплит-системы</a><a href="/katalog?g=mobilnye">Мобильные</a><a href="/katalog?g=prom-mobilnye">Промышленные мобильные</a><a href="/katalog?g=vozduhoohladiteli">Воздухоохладители</a></div><div class="th-pc"><b>Отопление</b><a href="/katalog?g=radiatory">Радиаторы Royal Thermo</a><a href="/katalog?g=teplovye-pushki">Тепловые пушки</a><a href="/katalog?g=teplovye-zavesy">Тепловые завесы</a><a href="/katalog?g=infrakrasnye-obogrevateli">Инфракрасные обогреватели</a><a href="/katalog?g=vodyanye-teploventilyatory">Водяные тепловентиляторы</a><a href="/katalog?g=kaminy">Камины и электроочаги</a><a href="/katalog?g=obogrevateli">Конвекторы и обогреватели</a><a href="/katalog?g=teplovye-nasosy">Тепловые насосы</a></div><div class="th-pc"><b>Вентиляция</b><a href="/katalog?g=ventilyaciya">Приточные и приточно-вытяжные установки</a><a href="/katalog?g=ventilyatory-prom">Промышленные вентиляторы</a><a href="/katalog?g=osushiteli">Осушители воздуха</a><a href="/katalog?g=uvlazhniteli">Промышленные увлажнители</a><a href="/katalog?g=ventilyaciya&sub=%D0%A0%D0%B5%D0%BA%D1%83%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B">Рекуператоры</a></div><div class="th-pc"><b>Водонагреватели и водоочистка</b><a href="/katalog?g=vodonagrevateli">Водонагреватели и бойлеры</a><a href="/katalog?g=vodoochistka">Водоочистка и фильтры</a></div><div class="th-pc"><b>Автономное питание</b><a href="/katalog?g=avtonomnoe-pitanie">Зарядные станции и солнечные панели</a></div><div class="th-pc"><b>VRF, фанкойлы, чиллеры</b><a href="/katalog?g=mini-vrf">Мини-VRF и мультизональные</a><a href="/katalog?g=fankoyly">Фанкойлы</a><a href="/katalog?g=chillery">Чиллеры</a><a href="/katalog?g=precizionnye">Прецизионные кондиционеры</a><a href="/proekt">Расчёт под объект</a></div></div><div class="th-w th-pf"><a href="/katalog">Весь каталог →</a></div></div></nav>
-
-  <div style="max-width:1248px; box-sizing:border-box; margin:0 auto; padding:20px 24px 72px 24px;">
-    <div style="font-size:13px; color:#64748B;"><a href="/">Главная</a> → <a href="/katalog">Каталог</a> → <span style="color:#1A1A1A;">Полупромышленное оборудование</span></div>
-
-    <div style="background:linear-gradient(125deg,#0033A0,#0033A0 78%); color:#fff; border-radius:16px; padding:36px; margin-top:12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:28px; align-items:center;">
-      <div>
-        <div style="font-size:13px; font-weight:700; letter-spacing:0.12em; color:#E9F4FF;">ДЛЯ МАГАЗИНОВ, ОФИСОВ И ПРОИЗВОДСТВ</div>
-        <h1 style="margin:14px 0 0 0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em;">Полупромышленный климат: кассетные, канальные, колонные системы</h1>
-        <div style="font-size:17px; line-height:1.55; color:rgba(255,255,255,0.88); margin-top:14px;">Оборудование на площади, где бытовой сплит не справляется: торговые залы, опенспейсы, серверные, цеха. Подбираем по теплопритокам объекта, а не по метражу «на глаз».</div>
-        <div style="display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;">
-          <a href="/katalog?g=poluprom" style="background:#0066FF; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">{{ ctaLabel }}</a>
-          <a href="/b2b" style="border:2px solid rgba(255,255,255,0.55); color:#fff; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Запросить прайс</a>
-        </div>
-      </div>
-      <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); border-radius:12px; padding:22px;">
-        <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#E9F4FF;">ЧТО В КАТАЛОГЕ</div>
-        <div style="display:flex; flex-direction:column; gap:11px; margin-top:14px; font-size:14px;">
-          <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
-            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:14px; border-bottom:1px solid rgba(255,255,255,0.14); padding-bottom:9px;">
-              <span style="color:rgba(255,255,255,0.78);">{{ s.k }}</span><b style="text-align:right; font-variant-numeric:tabular-nums;">{{ s.v }}</b>
-            </div>
-          </sc-for>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:24px;">
-      <h2 style="margin:0; font-size:26px; font-weight:800; letter-spacing:-0.018em; color:#0033A0;">Типы систем и когда какая нужна</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:16px; margin-top:16px;">
-        <sc-for list="{{ types }}" as="t" hint-placeholder-count="4">
-          <div style="background:#fff; border:1px solid #DCE5F0; border-radius:14px; padding:22px; display:flex; flex-direction:column;">
-            <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-              <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">{{ t.title }}</div>
-              <div style="font-size:12px; font-weight:700; color:#0033A0; background:#E9F4FF; border-radius:5px; padding:4px 9px; font-variant-numeric:tabular-nums; white-space:nowrap;">{{ t.count }}</div>
-            </div>
-            <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:10px;">{{ t.text }}</div>
-            <div style="background:#F1F5F9; border-radius:10px; padding:12px 14px; margin-top:12px;">
-              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#64748B;">ГДЕ СТАВИТЬ</div>
-              <div style="font-size:14px; color:#1A1A1A; line-height:1.5; margin-top:4px;">{{ t.where }}</div>
-            </div>
-            <div style="font-size:13px; color:#B25200; line-height:1.5; margin-top:10px;">{{ t.limit }}</div>
-            <a href="{{ t.href }}" style="font-size:13px; font-weight:700; color:#0066FF; margin-top:12px;">Смотреть позиции →</a>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-
-    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
-      <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px;">
-        <div>
-          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#64748B;">ПОДБОР ПО ОБЪЕКТУ</div>
-          <h2 style="margin:6px 0 0 0; font-size:24px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Какой объект нужно охладить?</h2>
-        </div>
-        <div style="font-size:14px; color:#64748B;">Расчёт предварительный — точный делаем на объекте</div>
-      </div>
-
-      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:16px;">
-        <sc-for list="{{ objects }}" as="o" hint-placeholder-count="5">
-          <div onClick="{{ o.pick }}" style="border:1px solid {{ o.border }}; background:{{ o.bg }}; color:{{ o.fg }}; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600; cursor:pointer;">{{ o.label }}</div>
-        </sc-for>
-      </div>
-
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:20px; margin-top:20px; align-items:stretch;">
-        <div style="background:#F9FBFE; border:1px solid #DCE5F0; border-radius:12px; padding:22px;">
-          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; align-items:baseline; gap:12px;">
-            <label style="font-size:14px; font-weight:600;" for="poluprom-area">Площадь объекта</label>
-            <span style="display:flex; align-items:center; gap:6px; font-size:17px; font-weight:700; color:#0033A0;">
-              <span onClick="{{ areaMinus }}" role="button" aria-label="Меньше на 10 м²" style="width:44px; height:44px; flex:none; display:flex; align-items:center; justify-content:center; border:1px solid #DCE5F0; background:#F9FBFE; border-radius:10px; font-size:20px; cursor:pointer; user-select:none;">−</span>
-              <input id="poluprom-area" type="text" inputmode="numeric" autocomplete="off" aria-label="Площадь объекта в квадратных метрах" value="{{ areaRaw }}" onInput="{{ onAreaText }}" onBlur="{{ onAreaBlur }}" style="width:86px; box-sizing:border-box; text-align:right; border:1px solid #DCE5F0; border-radius:8px; padding:11px 10px; font-family:inherit; font-size:17px; font-weight:700; font-variant-numeric:tabular-nums; color:#0033A0; outline:none;" />
-              <span onClick="{{ areaPlus }}" role="button" aria-label="Больше на 10 м²" style="width:44px; height:44px; flex:none; display:flex; align-items:center; justify-content:center; border:1px solid #DCE5F0; background:#F9FBFE; border-radius:10px; font-size:20px; cursor:pointer; user-select:none;">+</span>
-              <span>м²</span>
-            </span>
-          </div>
-          <div style="font-size:13px; color:#64748B; line-height:1.6; margin-top:10px;">{{ objectNote }}</div>
-        </div>
-
-        <div style="background:#0033A0; color:#fff; border-radius:12px; padding:22px;">
-          <div style="font-size:12px; font-weight:700; letter-spacing:0.1em; color:#E9F4FF;">ПРЕДВАРИТЕЛЬНЫЙ РАСЧЁТ</div>
-          <div style="display:flex; flex-wrap:wrap; gap:20px 30px; margin-top:14px;">
-            <div>
-              <div style="font-size:13px; color:rgba(255,255,255,0.78);">Требуемая мощность</div>
-              <div style="font-family:Inter,sans-serif; font-size:26px; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-0.02em;">{{ kwLabel }}</div>
-            </div>
-            <div>
-              <div style="font-size:13px; color:rgba(255,255,255,0.78);">Рекомендуемая схема</div>
-              <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; margin-top:4px;">{{ scheme }}</div>
-            </div>
-          </div>
-          <div style="font-size:14px; color:rgba(255,255,255,0.88); line-height:1.6; margin-top:12px;">{{ explain }}</div>
-          <a href="https://wa.me/77000369369" style="display:block; background:#0066FF; color:#fff; border-radius:8px; padding:13px; text-align:center; font-size:15px; font-weight:700; margin-top:16px;">Отправить параметры объекта</a>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:16px; margin-top:20px;">
-      <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:24px;">
-        <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">Как ведём объект</div>
-        <div style="display:flex; flex-direction:column; gap:14px; margin-top:14px;">
-          <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
-            <div style="display:flex; gap:12px; align-items:flex-start;">
-              <div style="width:26px; height:26px; border-radius:50%; background:#E9F4FF; color:#0033A0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; flex:none;">{{ st.n }}</div>
-              <div>
-                <div style="font-size:15px; font-weight:600;">{{ st.title }}</div>
-                <div style="font-size:13px; color:#64748B; line-height:1.55; margin-top:3px;">{{ st.text }}</div>
-              </div>
-            </div>
-          </sc-for>
-        </div>
-      </div>
-      <div style="background:#FDECEA; border:1px solid #F8CBBE; border-radius:16px; padding:24px;">
-        <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#D73D3D;">Что удорожает объект — говорим заранее</div>
-        <div style="display:flex; flex-direction:column; gap:9px; margin-top:12px; font-size:14px; color:#1A1A1A; line-height:1.55;">
-          <div>· Кассетным блокам нужен подвесной потолок и место над ним — если потолка нет, схема меняется.</div>
-          <div>· Канальные требуют места под воздуховоды и проекта разводки.</div>
-          <div>· Трёхфазное питание есть не на каждом объекте: подключение считается отдельно.</div>
-          <div>· Работа на высоте и в действующем зале — ночные смены и допуски, это влияет на смету.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{}">
-class Component extends DCLogic {
-  state = { items: null, object: "Магазин или торговый зал", area: 120, areaRaw: "120" };
-
-  componentDidMount() {
-    fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/poluprom.json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []).then(items => this.setState({ items })).catch(() => this.setState({ items: [] }));
-  }
-
-  fmt(n) { return String(n).replace(".", ","); }
-
-  // Кнопка шага правит и число, и показанное в поле: иначе после «−» в поле
-  // осталось бы прежнее, набранное руками.
-  шагПлощади(д) {
-    this.setState(st => {
-      const v = Math.min(600, Math.max(30, st.area + д));
-      return { area: v, areaRaw: String(v) };
-    });
-  }
-
-  renderVals() {
-    const s = this.state;
-    const items = s.items || [];
-    // Считаем по РАЗДЕЛУ выдачи (поле sub), а не по вхождению слова в тип и название:
-    // «колонн» ловило и «колонный/напольный», и слово «колонный», случайно попавшее
-    // в заголовок консольной модели. Раздел — то же поле, по которому фильтрует выдача,
-    // поэтому число на плитке и число в выдаче теперь не могут разойтись (28.08.2026).
-    const has = t => items.filter(x => (x.sub || "") === t).length;
-    // «94 моделей» вместо «94 модели» — склонение считаем, а не приписываем (26.08.2026)
-    const cnt = n => {
-      if (!items.length) return "загружаем";
-      const a = n % 10, b = n % 100;
-      const w = (a === 1 && b !== 11) ? "модель"
-        : (a >= 2 && a <= 4 && (b < 10 || b >= 20)) ? "модели" : "моделей";
-      return n + " " + w;
-    };
-
-    const kinds = Array.from(new Set(items.map(x => x.sub))).filter(Boolean).length;
-    const brands = Array.from(new Set(items.map(x => x.b))).filter(Boolean).length;
-    // !x.acc — то же правило, что на Главной: цена «от» считается по ОБОРУДОВАНИЮ.
-    // Сейчас аксессуаров с ценой в полупроме нет и число не меняется, но условие
-    // ставится заранее: заведут один расходник — и «от» уедет на его цену, как это
-    // случилось на Главной с фильтрами TCL FreshIN (9 000 ₸ вместо 323 942 ₸).
-    const priced = items.filter(x => x.p && !x.acc);
-    const minPrice = priced.length ? Math.min.apply(null, priced.map(x => x.p)) : 0;
-
-    const href = "/katalog?g=poluprom";
-    // Плитки вели на общий адрес без фильтра: нажимаешь «Кассетные» — открывается
-    // весь полупром вперемешку. Выдача принимает раздел параметром sub (28.08.2026).
-    const разделHref = имя => href + "&sub=" + encodeURIComponent(имя);
-
-    const objects = ["Магазин или торговый зал", "Офис, опенспейс", "Кафе или ресторан", "Серверная", "Цех или склад"].map(o => ({
-      label: o,
-      pick: () => this.setState({ object: o }),
-      border: s.object === o ? "#0066FF" : "#DCE5F0",
-      bg: s.object === o ? "#E9F4FF" : "#fff",
-      fg: s.object === o ? "#0033A0" : "#64748B"
-    }));
-
-    const load = {
-      "Магазин или торговый зал": { w: 100, note: "Витрины, освещение и поток людей дают заметный теплоприток — берём 100 Вт на м² и распределяем несколько блоков по залу, чтобы не дуло в кассира и покупателей." },
-      "Офис, опенспейс": { w: 90, note: "Компьютеры и люди: 90 Вт на м². Важнее не мощность, а распределение потока — иначе часть сотрудников мёрзнет, а часть жалуется на духоту." },
-      "Кафе или ресторан": { w: 120, note: "Кухня, гости и оборудование: 120 Вт на м². Зал и кухню считаем раздельно — на кухне обычная система долго не живёт." },
-      "Серверная": { w: 400, note: "Оборудование работает круглосуточно: 400 Вт на м² и выше по фактической нагрузке стоек. Нужна круглогодичная работа на холод и резервирование." },
-      "Цех или склад": { w: 80, note: "Высокие потолки и большой объём: 80 Вт на м², но решает не площадь, а объём и тепловыделение оборудования. Часто выгоднее канальная схема или несколько колонных." }
-    };
-
-    const conf = load[s.object];
-    const kw = Math.ceil(s.area * conf.w / 100) / 10;
-    const scheme = s.area <= 60 ? "1 блок" : s.area <= 150 ? "2–3 блока" : s.area <= 300 ? "3–5 блоков или канальная система" : "мультизональная система (VRF)";
-
-    return {
-      ctaLabel: items.length ? "Все " + items.length + " моделей" : "Открыть каталог",
-      stats: [
-        { k: "Позиций в группе", v: items.length || "—" },
-        { k: "Конструктивов", v: kinds || "—" },
-        { k: "Брендов", v: brands || "—" },
-        { k: "Цены от", v: minPrice ? String(minPrice).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009") + " ₸" : "по запросу" }
-      ],
-      types: [
-        {
-          title: "Кассетные", count: cnt(has("Кассетные")),
-          text: "Встраиваются в подвесной потолок, раздают воздух в четыре стороны. Виден только декоративный экран.",
-          where: "Магазины, офисы, кафе с потолком «армстронг»",
-          limit: "Нужен подвесной потолок и 25–35 см запаса над ним",
-          href: разделHref("Кассетные")
-        },
-        {
-          title: "Канальные", count: cnt(has("Канальные")),
-          text: "Полностью скрыты за потолком, воздух подаётся через решётки. Можно организовать приток свежего воздуха.",
-          where: "Квартиры с дизайнерским ремонтом, офисы, рестораны",
-          limit: "Требуется проект разводки воздуховодов",
-          href: разделHref("Канальные")
-        },
-        {
-          title: "Напольно-потолочные", count: cnt(has("Напольно-потолочные")),
-          text: "Ставятся под потолок или у пола, поток идёт вдоль поверхности. Не требуют подвесного потолка.",
-          where: "Помещения без запаса по высоте, вытянутые залы",
-          limit: "Блок виден в интерьере",
-          href: разделHref("Напольно-потолочные")
-        },
-        {
-          title: "Колонные", count: cnt(has("Колонные")),
-          text: "Мощные напольные блоки на большой объём, ставятся у стены. Быстро охлаждают зал.",
-          where: "Торговые залы, холлы, производственные помещения",
-          limit: "Занимают место в помещении, шумнее кассетных",
-          href: разделHref("Колонные")
-        },
-        {
-          // Пятый конструктив добавлен 26.08.2026: три позиции считались в «Позициях
-          // в группе», но карточки не имели, и сумма по карточкам не сходилась с итогом.
-          // Текст по факту данных: AERONIK ASI-COHMZ, 9000–18000 BTU, все под заказ.
-          title: "Консольные", count: cnt(has("Консольные")),
-          text: "Компактные блоки под потолок или к полу на небольшую площадь — переходное решение между бытовым сплитом и напольно-потолочным. В каталоге AERONIK на 9000–18 000 BTU.",
-          where: "Небольшие залы, кабинеты, подсобные помещения",
-          limit: "Позиции идут под заказ — уточняйте срок поставки",
-          href: разделHref("Консольные")
-        }
-      ],
-      objects,
-      area: s.area,
-      areaRaw: s.areaRaw,
-      areaMinus: () => this.шагПлощади(-10),
-      areaPlus: () => this.шагПлощади(10),
-      onAreaText: e => {
-        const raw = e.target.value;
-        const n = parseFloat(String(raw).replace(",", ".").replace(/\s/g, ""));
-        this.setState(isFinite(n)
-          ? { areaRaw: raw, area: Math.min(600, Math.max(30, Math.round(n))) }
-          : { areaRaw: raw });
-      },
-      onAreaBlur: () => this.setState(st => ({ areaRaw: String(st.area) })),
-      objectNote: conf.note,
-      kwLabel: this.fmt(kw) + " кВт",
-      scheme,
-      explain: "Для объекта «" + s.object.toLowerCase() + "» площадью " + s.area + " м² при нагрузке " + conf.w + " Вт на м² нужно около " + this.fmt(kw) + " кВт холода. Точная мощность зависит от остекления, высоты потолков и оборудования — считаем на выезде.",
-      steps: [
-        { n: "1", title: "Выезд и обмеры", text: "Смотрим объект, замеряем, уточняем электрику и место под трассы. Для тендера — по спецификации без выезда." },
-        { n: "2", title: "Схема и спецификация", text: "Считаем мощность и количество блоков, даём спецификацию с ценами и сроками поставки." },
-        { n: "3", title: "Поставка и монтаж", text: "Отгружаем партиями под график работ, монтируем сертифицированными бригадами, при необходимости ночными смены." },
-        { n: "4", title: "Сдача и сервис", text: "Пусконаладка, инструктаж персонала, «Сервис-карта 369» и договор на обслуживание." }
-      ]
-    };
-  }
+<section class="thpp" id="poluprom"><style>.thpp{--blue:#0066FF;--blue-h:#0052D6;--blue-p:#003FA8;--navy:#0033A0;--red:#E81C1C;--red-h:#C41212;--red-p:#A30D0D;--ink:#1A1A1A;--mut-t:#606F85;--tint:#E9F4FF;--gray:#F1F5F9;--line:#DCE5F0;--btn-h:48px;--s1:0 1px 2px rgba(0,51,160,.06);--s2:0 4px 12px rgba(0,51,160,.08)}
+.thpp{display:block;position:relative;overflow:clip;font-family:Inter,system-ui,Arial,sans-serif;font-size:16px;line-height:24px;color:var(--ink);background:#fff;-webkit-text-size-adjust:100%}
+.thpp *,.thpp *::before,.thpp *::after{box-sizing:border-box}
+.thpp :where(h1,h2,h3,p,ul,ol,figure,dl,dd){margin:0;padding:0}
+.thpp :where(ul,ol){list-style:none}
+.thpp :where(svg){display:block}
+.thpp-wrap{max-width:1248px;margin:0 auto;padding:0 24px}
+.thpp-band{padding:72px 0}
+.thpp-band--gray{background:var(--gray)}
+.thpp-band--tint{background:var(--tint)}
+.thpp-h1{font-size:48px;line-height:56px;font-weight:700;color:var(--navy);margin:0 0 20px}
+.thpp-cover{font-size:48px;line-height:56px;font-weight:700;color:var(--navy);margin:0 0 20px}
+.thpp-h2{font-size:32px;line-height:40px;font-weight:700;color:var(--navy);margin:0 0 16px}
+.thpp-h3{font-size:20px;line-height:28px;font-weight:600;color:var(--ink);margin:0 0 8px}
+.thpp-lead{font-size:16px;line-height:24px;max-width:820px}
+.thpp-lead+*{margin-top:32px}
+.thpp-note{font-size:16px;line-height:24px;color:var(--mut-t);margin:0 0 32px;max-width:820px}
+.thpp-mut{color:var(--mut-t)}
+.thpp-crumbs{font-size:14px;line-height:20px;color:var(--mut-t);margin-bottom:24px}
+.thpp-crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px}
+.thpp-crumbs li+li::before{content:"/";margin-right:8px;color:var(--mut-t)}
+.thpp a.thpp-a{color:var(--blue-h);text-decoration:underline;text-underline-offset:3px}
+.thpp a.thpp-a:hover{color:var(--blue-p)}
+.thpp a:focus-visible,.thpp summary:focus-visible{outline:3px solid #0066FF;outline-offset:2px}
+.thpp-btns{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;margin-top:28px}
+.thpp a.thpp-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:var(--btn-h);padding:10px 24px;border:2px solid transparent;border-radius:8px;font:600 16px/24px Inter,system-ui,Arial,sans-serif;text-decoration:none;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s}
+.thpp a.thpp-btn--red{background:var(--red);color:#fff}
+.thpp a.thpp-btn--red:hover{background:var(--red-h);color:#fff}
+.thpp a.thpp-btn--red:active{background:var(--red-p);color:#fff}
+.thpp a.thpp-btn--red::after{content:"\2192";font-weight:600}
+.thpp a.thpp-btn--blue{background:var(--blue);color:#fff}
+.thpp a.thpp-btn--blue:hover{background:var(--blue-h);color:#fff}
+.thpp a.thpp-btn--blue:active{background:var(--blue-p);color:#fff}
+.thpp a.thpp-btn--outline{background:#fff;color:var(--blue);border-color:var(--blue)}
+.thpp a.thpp-btn--outline:hover{background:var(--blue);color:#fff}
+.thpp a.thpp-btn--outline:active{background:var(--blue-p);border-color:var(--blue-p);color:#fff}
+.thpp a.thpp-more{display:inline-flex;gap:6px;align-items:center;font-weight:600;color:var(--blue-h);text-decoration:none;padding:8px 0;min-height:40px}
+.thpp a.thpp-more:hover{color:var(--blue-p);text-decoration:underline;text-underline-offset:3px}
+.thpp-ic{width:24px;height:24px;flex:none}
+.thpp-tile{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:12px;background:var(--tint);color:var(--blue);margin-bottom:16px;flex:none}
+.thpp-band--tint .thpp-tile{background:#fff}
+.thpp-grid{display:grid;gap:24px}
+.thpp-grid--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.thpp-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.thpp-grid--4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.thpp-grid--5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.thpp-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:var(--s1);min-width:0}
+.thpp-media{position:relative;overflow:hidden;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:var(--s2)}
+.thpp-media--hero{aspect-ratio:4/3}
+.thpp-media>svg{position:absolute;inset:0;width:100%;height:100%}
+.thpp-fig figcaption{font-size:14px;line-height:20px;color:var(--mut-t);margin-top:8px}
+.thpp-eyebrow{font-size:14px;line-height:20px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-h);margin:0 0 16px}
+.thpp-photo{position:relative;overflow:hidden;border-radius:12px;background:var(--tint);aspect-ratio:3/2}
+.thpp-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.thpp-choosegrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.9fr);gap:32px;align-items:start}
+.thpp-media--schema{aspect-ratio:4/3}
+.thpp-type--ph{padding:0;overflow:hidden}
+.thpp-type--ph .thpp-photo{border-radius:0;aspect-ratio:3/2;margin:0 0 20px}
+.thpp-type--ph>:not(.thpp-photo){margin-left:24px;margin-right:24px}
+.thpp-type--ph>.thpp-more{margin-bottom:16px}
+.thpp-sub3>div{padding:0;overflow:hidden}
+.thpp-sub3 .thpp-photo{border-radius:0;margin:0 0 12px}
+.thpp-sub3>div>:not(.thpp-photo){margin-left:16px;margin-right:16px}
+.thpp-sub3>div>.thpp-more{margin-bottom:8px}
+.thpp-type--wide>h3,.thpp-type--wide>p{margin-left:24px;margin-right:24px}
+.thpp-type--wide>h3{margin-top:24px}
+.thpp-type--wide>.thpp-sub3{margin:8px 24px 24px}
+.thpp-scene{position:relative;aspect-ratio:3/2;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--s2);background:linear-gradient(180deg,#DCE5F0 0,#DCE5F0 11%,#E9F4FF 11%,#E9F4FF 84%,#DCE5F0 84%,#DCE5F0 100%)}
+.thpp-scene .it{position:absolute}
+.thpp-scene .it img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.thpp-scene .it b,.thpp-pn{position:absolute;left:-6px;top:-6px;width:24px;height:24px;border-radius:12px;background:var(--navy);color:#fff;font:700 14px/24px Inter,system-ui,Arial,sans-serif;text-align:center;z-index:2}
+.thpp-lbl{position:absolute;left:10px;font-size:14px;line-height:20px;font-weight:600;color:var(--navy);z-index:2}
+.thpp-lbl--t{top:calc(5.5% - 10px)}
+.thpp-lbl--b{bottom:calc(8% - 10px)}
+.thpp-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 20px;margin-top:16px;font-size:14px;line-height:20px;color:var(--ink)}
+.thpp-legend li{display:flex;gap:8px;align-items:flex-start}
+.thpp-legend li b{flex:none;width:20px;height:20px;border-radius:8px;background:var(--navy);color:#fff;font-size:14px;line-height:20px;text-align:center;font-weight:700}
+.thpp-photo--ceil{background:linear-gradient(180deg,#DCE5F0 0,#DCE5F0 13%,#E9F4FF 13%)}
+.thpp-photo--floor{background:linear-gradient(180deg,#E9F4FF 0,#E9F4FF 86%,#DCE5F0 86%)}
+.thpp-photo .thpp-prod{position:absolute;left:50%;transform:translateX(-50%);height:auto;width:auto;mix-blend-mode:multiply;object-fit:contain}
+.thpp-photo--ceil .thpp-prod{top:19%}
+.thpp-photo--floor .thpp-prod{bottom:15%}
+.thpp-ours{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.7fr);gap:24px;align-items:start}
+.thpp-ours figure img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
+.thpp-ours figcaption{font-size:14px;line-height:20px;color:var(--mut-t);margin-top:8px}
+.thpp-hero{background:linear-gradient(180deg,var(--tint) 0,#fff 100%);padding:40px 0 72px}
+.thpp-herogrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center}
+.thpp-sub{font-size:16px;line-height:24px;max-width:640px}
+.thpp-strip{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 24px;color:var(--ink);font-size:16px;line-height:24px}
+.thpp-strip span{display:inline-flex;align-items:center;gap:8px}
+.thpp-strip span::before{content:"";width:8px;height:8px;border-radius:4px;background:var(--blue);flex:none}
+.thpp-pick{display:flex;flex-direction:column;gap:8px}
+.thpp-pick .thpp-chip{align-self:flex-start}
+.thpp-chip{display:inline-block;background:var(--tint);color:var(--navy);border-radius:4px;padding:2px 10px;font-size:14px;line-height:20px;font-weight:600}
+.thpp-band--tint .thpp-chip{background:#fff}
+.thpp-for{font-size:14px;line-height:20px;color:var(--mut-t);font-weight:600;text-transform:none}
+.thpp-prose p+p{margin-top:16px}
+.thpp-price{font-size:24px;line-height:32px;font-weight:700;color:var(--navy);margin:0 0 8px}
+.thpp-type{display:flex;flex-direction:column}
+.thpp-type .thpp-price{margin-top:4px}
+.thpp-type p{color:var(--ink)}
+.thpp-type .thpp-more{margin-top:auto;align-self:flex-start}
+.thpp-type--wide{grid-column:span 2}
+.thpp-sub3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:8px}
+.thpp-sub3>div{background:var(--gray);border-radius:8px;padding:16px;min-width:0;display:flex;flex-direction:column}
+.thpp-sub3 h4{font:600 16px/24px Inter,system-ui,Arial,sans-serif;margin:0 0 4px}
+.thpp-sub3 .thpp-price{font-size:20px;line-height:28px}
+.thpp-sub3 p{font-size:14px;line-height:20px}
+.thpp-sub3 .thpp-more{margin-top:auto;padding:6px 0;min-height:32px}
+.thpp-steps{counter-reset:s;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.thpp-steps li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:var(--s1);min-width:0}
+.thpp-steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:var(--blue);color:#fff;font-weight:700;margin-bottom:12px}
+.thpp-guar{margin-top:24px;background:#fff;border-left:4px solid var(--blue);border-radius:4px;padding:16px 24px;max-width:820px}
+.thpp-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:32px}
+.thpp-list{display:grid;gap:10px}
+.thpp-list li{display:flex;gap:12px;align-items:flex-start}
+.thpp-list li::before{content:"";width:8px;height:8px;border-radius:4px;background:var(--blue);margin-top:8px;flex:none}
+.thpp-list--minus li::before{background:var(--mut-t)}
+.thpp-facts{margin-top:32px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.thpp-facts>div{background:var(--tint);border-radius:12px;padding:16px 24px}
+.thpp-facts b{display:block;font-size:14px;line-height:20px;color:var(--mut-t);font-weight:600;margin-bottom:4px}
+.thpp-faq{display:grid;gap:12px;max-width:900px}
+.thpp-faq details{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--s1)}
+.thpp-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 24px;min-height:56px}
+.thpp-faq summary::-webkit-details-marker{display:none}
+.thpp-faq summary::after{content:"+";font-size:24px;line-height:24px;color:var(--blue);flex:none}
+.thpp-faq details[open] summary::after{content:"\2212"}
+.thpp-faq summary h3{font-size:18px;line-height:24px;font-weight:600;margin:0}
+.thpp-faq .thpp-ans{padding:0 24px 24px}
+.thpp-cta{background:var(--navy);color:#fff;padding:64px 0}
+.thpp-cta .thpp-h2{color:#fff}
+.thpp-cta p{max-width:720px}
+.thpp-cta a.thpp-btn--outline{background:transparent;color:#fff;border-color:#fff}
+.thpp-cta a.thpp-btn--outline:hover{background:#fff;color:var(--navy)}
+.thpp-art{display:flex;flex-direction:column}
+.thpp-art .thpp-more{margin-top:auto;align-self:flex-start}
+@media(max-width:1100px){
+.thpp-choosegrid{grid-template-columns:minmax(0,1fr)}
+.thpp-grid--4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.thpp-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+.thpp-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-</script>
+@media(max-width:900px){
+.thpp-band{padding:56px 0}
+.thpp-herogrid{grid-template-columns:minmax(0,1fr);gap:32px}
+.thpp-grid--3{grid-template-columns:minmax(0,1fr)}
+.thpp-two{grid-template-columns:minmax(0,1fr)}
+.thpp-h1,.thpp-cover{font-size:32px;line-height:40px}
+}
+@media(max-width:700px){
+.thpp-type--wide{grid-column:auto}
+.thpp-sub3{grid-template-columns:minmax(0,1fr)}
+.thpp-ours{grid-template-columns:minmax(0,1fr)}
+.thpp-legend{grid-template-columns:minmax(0,1fr)}
+.thpp-wrap{padding:0 16px}
+.thpp-band{padding:48px 0}
+.thpp-hero{padding:24px 0 48px}
+.thpp-h1,.thpp-cover{font-size:32px;line-height:40px}
+.thpp-h2{font-size:24px;line-height:32px}
+.thpp-lead,.thpp-sub{font-size:16px;line-height:24px}
+.thpp-grid--2,.thpp-grid--4,.thpp-steps,.thpp-facts{grid-template-columns:minmax(0,1fr)}
+.thpp-btns a.thpp-btn{width:100%;padding:10px 12px}
+.thpp-card{padding:16px}
+.thpp-card.thpp-type--ph{padding:0}
+.thpp-cta{padding:48px 0}
+}
+@media(prefers-reduced-motion:reduce){.thpp *{transition:none!important}}</style><div class="thpp-hero" id="top"><div class="thpp-wrap">
+<nav class="thpp-crumbs" aria-label="Хлебные крошки"><ol><li><a class="thpp-a" href="/">Главная</a></li><li><a class="thpp-a" href="/kondicionery-almaty">Кондиционирование</a></li><li aria-current="page">Полупромышленные</li></ol></nav>
+<div class="thpp-herogrid"><div>
+<p class="thpp-eyebrow">Полупромышленные кондиционеры · Алматы</p>
+<p class="thpp-cover">Кондиционеры для офиса, магазина и зала в Алматы: монтаж от 60 000 ₸</p>
+<p class="thpp-sub">Полупромышленные кондиционеры: кассетные, канальные и напольные, включая колонные. Выберите тип по помещению. Цена оборудования «от» названа по каждому типу, итог по монтажу называют МАСТЕРА после осмотра.</p>
+<div class="thpp-btns"><a class="thpp-btn thpp-btn--red" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D0%BD%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F.%20%D0%A2%D0%B8%D0%BF%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B8%20%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C%3A%20">Подобрать тип по помещению</a><a class="thpp-btn thpp-btn--outline" href="https://wa.me/77000369369">Написать в WhatsApp</a></div>
+<div class="thpp-strip"><span>Осмотр бесплатный</span><span>Гарантия на монтаж 12 месяцев</span><span>Рассрочка до 24 месяцев, условия банка</span><span>Доставка по Казахстану</span></div>
+</div>
+<figure class="thpp-fig"><div class="thpp-scene" role="img" aria-label="Схема помещения: где стоят кассетный, канальный, напольно-потолочный, консольный и колонный кондиционеры">
+<span class="thpp-lbl thpp-lbl--t">потолок</span><span class="thpp-lbl thpp-lbl--b">пол</span>
+<div class="it" style="left:4%;top:12%;width:31%"><b>1</b><img src="https://img.tehnoholod369.kz/img/poluprom/tip-kassetnyj.webp" width="580" height="373" alt="Кассетный кондиционер, вид снизу" fetchpriority="high"></div>
+<div class="it" style="left:41%;top:13%;width:31%"><b>2</b><img src="https://img.tehnoholod369.kz/img/poluprom/tip-kanalnyj.webp" width="580" height="245" alt="Канальный кондиционер"></div>
+<div class="it" style="left:6%;bottom:16%;width:26%"><b>3</b><img src="https://img.tehnoholod369.kz/img/poluprom/tip-napolno-potolochnyj.webp" width="840" height="655" alt="Напольно-потолочный кондиционер"></div>
+<div class="it" style="left:41%;bottom:16%;width:19%"><b>4</b><img src="https://img.tehnoholod369.kz/img/poluprom/tip-konsolnyj.webp" width="451" height="434" alt="Консольный кондиционер"></div>
+<div class="it" style="left:84%;bottom:16%;width:10.5%"><b>5</b><img src="https://img.tehnoholod369.kz/img/poluprom/tip-kolonnyj.webp" width="147" height="392" alt="Колонный кондиционер"></div>
+</div><ol class="thpp-legend"><li><b>1</b>Кассетный: в потолке</li><li><b>2</b>Канальный: над потолком</li><li><b>3</b>Напольно-потолочный: на полу или под потолком</li><li><b>4</b>Консольный: у стены, у самого пола</li><li><b>5</b>Колонный: на полу, высокий шкаф</li></ol><figcaption>Фото моделей из каталога, схема помещения</figcaption></figure>
+</div></div></div>
+<div class="thpp-band" id="choose"><div class="thpp-wrap">
+<h1 class="thpp-h1">Полупромышленные кондиционеры в Алматы</h1>
+<p class="thpp-lead">Полупромышленный кондиционер ставят там, где бытового сплита мало: в офисе, магазине, кафе, зале и большом доме. Он бывает кассетным, канальным и напольным. Напольные: колонные, напольно-потолочные и консольные. Вид выбирают по потолку и помещению, а не по бренду. Мы подберём тип, назовём цену оборудования и итог по монтажу до начала работ.</p>
+<h2 class="thpp-h2" style="margin-top:40px">Какой тип нужен вашему помещению</h2>
+<div class="thpp-grid thpp-grid--4"><div class="thpp-card thpp-pick"><div class="thpp-tile"><svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><rect x="8" y="8" width="8" height="8" rx="1"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div><span class="thpp-for">У вас: Подвесной потолок, офис или торговый зал</span><h3 class="thpp-h3">Кассетный</h3><p>Блок стоит в потолке, воздух идёт на четыре стороны. Стены свободны.</p></div><div class="thpp-card thpp-pick"><div class="thpp-tile"><svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18v6H3z"/><path d="M7 15v4M12 15v4M17 15v4"/></svg></div><span class="thpp-for">У вас: Нужно спрятать технику, несколько кабинетов или комнат</span><h3 class="thpp-h3">Канальный</h3><p>Блок над потолком, воздух раздают воздуховоды. Снаружи видны только решётки.</p></div><div class="thpp-card thpp-pick"><div class="thpp-tile"><svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M10 7h4M10 11h4"/></svg></div><span class="thpp-for">У вас: Подвесного потолка нет, нужна большая мощность</span><h3 class="thpp-h3">Напольный: колонный или напольно-потолочный</h3><p>Стоит на полу у стены или висит под потолком. Потолок не трогаем.</p></div><div class="thpp-card thpp-pick"><div class="thpp-tile"><svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14h18v6H3z"/><path d="M7 17h10"/></svg></div><span class="thpp-for">У вас: Мало места под потолком, блок нужен у стены</span><h3 class="thpp-h3">Напольный: консольный</h3><p>Низкий блок у стены.</p></div></div>
+<div class="thpp-prose" style="margin-top:32px;max-width:820px"><p>Мощность считаем не только по площади. Учитываем тепло от техники, число людей и высоту потолка. Поэтому в одном и том же офисе на 50 м² и в магазине на 50 м² могут понадобиться разные модели. Пришлите планировку и фото потолка в WhatsApp, и мы скажем, какой тип подойдёт именно вам.</p></div>
+<div class="thpp-btns"><a class="thpp-btn thpp-btn--blue" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D0%BD%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F.%20%D0%A2%D0%B8%D0%BF%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B8%20%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C%3A%20">Подобрать тип по моему помещению</a></div>
+</div></div>
+<div class="thpp-band thpp-band--gray" id="types"><div class="thpp-wrap">
+<h2 class="thpp-h2">Полупромышленные кондиционеры по типам: что внутри и сколько стоит</h2>
+<p class="thpp-note">Цена «от» — минимум по типу в нашем каталоге на момент просмотра. Точная цена конкретной модели: в каталоге. Цену и срок поставки подтверждаем до оплаты. На фото примеры моделей из каталога.</p>
+<div class="thpp-grid thpp-grid--2">
+<div class="thpp-card thpp-type thpp-type--ph"><div class="thpp-photo thpp-photo--ceil"><span class="thpp-lbl thpp-lbl--t">потолок</span><img class="thpp-prod" src="https://img.tehnoholod369.kz/img/poluprom/tip-kassetnyj.webp" width="580" height="373" alt="Кассетный кондиционер, вид снизу" style="width:58%" loading="lazy" decoding="async"></div><h3 class="thpp-h3">Кассетные</h3><p class="thpp-price">от 220 800 ₸</p><p>Ставят в подвесной потолок офиса, магазина, ресторана. Не подойдёт, если потолок глухой и над ним нет места. В каталоге есть модели на площадь до 180 м².</p><a class="thpp-more" href="/kassetnye-kondicionery-almaty">Кассетные кондиционеры<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div class="thpp-card thpp-type thpp-type--ph"><div class="thpp-photo thpp-photo--ceil"><span class="thpp-lbl thpp-lbl--t">потолок</span><img class="thpp-prod" src="https://img.tehnoholod369.kz/img/poluprom/tip-kanalnyj.webp" width="580" height="245" alt="Канальный кондиционер, внутренний блок" style="width:68%" loading="lazy" decoding="async"></div><h3 class="thpp-h3">Канальные</h3><p class="thpp-price">от 167 400 ₸</p><p>Прячутся за подвесным потолком, воздух расходится по воздуховодам. Нужны запас высоты над потолком и место для воздуховодов. В каталоге есть модели на площадь до 400 м².</p><a class="thpp-more" href="/kanalnye-kondicionery-almaty">Канальные кондиционеры<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div class="thpp-card thpp-type thpp-type--wide"><h3 class="thpp-h3">Напольные</h3><p>Для помещений без подвесного потолка. У каждого вида своя цена «от»:</p>
+<div class="thpp-sub3">
+<div><div class="thpp-photo thpp-photo--floor"><span class="thpp-lbl thpp-lbl--b">пол</span><img class="thpp-prod" src="https://img.tehnoholod369.kz/img/poluprom/tip-kolonnyj.webp" width="147" height="392" alt="Колонный кондиционер, стоит на полу" style="height:80%" loading="lazy" decoding="async"></div><h4>Колонные</h4><p class="thpp-price">от 399 900 ₸</p><p>Вертикальный шкаф для больших залов. В каталоге есть модели на площадь до 290 м².</p><a class="thpp-more" href="/katalog?g=poluprom&amp;sub=%D0%9A%D0%BE%D0%BB%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5">Колонные<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div><div class="thpp-photo thpp-photo--floor"><span class="thpp-lbl thpp-lbl--b">пол</span><img class="thpp-prod" src="https://img.tehnoholod369.kz/img/poluprom/tip-napolno-potolochnyj.webp" width="840" height="655" alt="Напольно-потолочный кондиционер, стоит на полу или крепится под потолком" style="width:64%" loading="lazy" decoding="async"></div><h4>Напольно-потолочные</h4><p class="thpp-price">от 338 712 ₸</p><p>Стоят на полу или висят под потолком. В каталоге есть модели на площадь до 180 м².</p><a class="thpp-more" href="/napolno-potolochnye-kondicionery-almaty">Напольно-потолочные<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div><div class="thpp-photo thpp-photo--floor"><span class="thpp-lbl thpp-lbl--b">пол</span><img class="thpp-prod" src="https://img.tehnoholod369.kz/img/poluprom/tip-konsolnyj.webp" width="451" height="434" alt="Консольный кондиционер, стоит у стены у пола" style="width:56%" loading="lazy" decoding="async"></div><h4>Консольные</h4><p class="thpp-price">от 193 800 ₸</p><p>Низкий блок у стены. В каталоге есть модели на площадь до 54 м².</p><a class="thpp-more" href="/katalog?g=poluprom&amp;sub=%D0%9A%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5">Консольные<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</div></div>
+</div>
+<div class="thpp-btns"><a class="thpp-btn thpp-btn--blue" href="/katalog?g=poluprom">Открыть каталог</a><span class="thpp-mut">Все полупромышленные модели с ценами</span></div>
+</div></div>
+<div class="thpp-band" id="how"><div class="thpp-wrap">
+<h2 class="thpp-h2">Как мы ставим полупромышленный кондиционер: пять шагов</h2>
+<ol class="thpp-steps"><li>Вы присылаете планировку, площадь и фото потолка или места под блок.</li><li>МАСТЕРА бесплатно осматривают объект и считают итог: тип блока, трасса, дренаж, питание.</li><li>Монтаж по согласованному графику.</li><li>Пусконаладка с проверкой режимов. Вакуумирование входит в монтаж.</li><li>Сервис-карта 369: гарантийная карта, в ней записано, кто и когда ставил.</li></ol>
+<p class="thpp-guar">Гарантия на монтаж 12 месяцев. От обращения до монтажа 1–3 дня. Оборудование с гарантией по паспорту изделия, срок у каждого свой.</p>
+<div class="thpp-btns" style="margin-top:20px"><a class="thpp-more" href="/ustanovka-kondicionerov-almaty">Установка кондиционеров в Алматы<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="thpp-more" href="/skolko-stoit-ustanovka-kondicionera">Сколько стоит установка кондиционера<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</div></div>
+<div class="thpp-band thpp-band--gray" id="ours"><div class="thpp-wrap">
+<h2 class="thpp-h2">Наши монтажи: колонный в кафе и канальный в серверной</h2>
+<div class="thpp-ours">
+<figure><img src="https://img.tehnoholod369.kz/img/poluprom/nash-kanalnyj-servernaya.webp" width="1200" height="900" alt="Канальный кондиционер, подвешенный под потолком серверной" loading="lazy" decoding="async"><figcaption>Канальный кондиционер в серверной</figcaption></figure>
+<figure><img src="https://img.tehnoholod369.kz/img/poluprom/nash-kolonnyj-kafe.webp" width="720" height="1280" alt="Колонный кондиционер у стены в кафе" loading="lazy" decoding="async"><figcaption>Колонный кондиционер в кафе</figcaption></figure>
+</div>
+</div></div>
+<div class="thpp-band thpp-band--tint" id="price"><div class="thpp-wrap">
+<h2 class="thpp-h2">Сколько стоит кондиционер для офиса или магазина с установкой</h2>
+<p class="thpp-lead">Итог складывается из двух частей: оборудование и монтаж. Оборудование: цены «от» по типам в блоке выше. Монтаж полупромышленного кондиционера любого типа стоит от 60 000 ₸. Итог называют МАСТЕРА после осмотра. Осмотр бесплатный. Итог зависит от типа блока, потолка и трассы. Без осмотра точную сумму не назвать, поэтому до осмотра мы называем только «от».</p>
+<div class="thpp-two"><div class="thpp-card"><h3 class="thpp-h3">Что входит в базовый монтаж</h3><ul class="thpp-list "><li>выбор места для блоков;</li><li>алмазное бурение отверстия с пылесосом;</li><li>монтаж внутреннего и наружного блоков;</li><li>прокладка трассы: трубы и кабель между блоками, расходные материалы оплачиваются по факту;</li><li>прокладка дренажа и проверка проливом;</li><li>подключение к питанию;</li><li>вакуумирование, опрессовка, пусконаладка и проверка режимов;</li><li>инструктаж по эксплуатации и уходу.</li></ul></div><div class="thpp-card"><h3 class="thpp-h3">Что считается отдельно</h3><ul class="thpp-list thpp-list--minus"><li>расходные материалы по факту;</li><li>штробление стен и скрытая прокладка трассы;</li><li>работа по монолиту, стена толще 500 мм, каждое дополнительное отверстие;</li><li>высотные работы: альпинизм или автовышка;</li><li>монтаж на вентилируемый фасад;</li><li>демонтаж старого кондиционера;</li><li>дренажный насос;</li><li>нестандартные и сложные условия.</li></ul></div></div>
+<div class="thpp-facts"><div><b>Срок</b>От обращения до монтажа 1–3 дня</div><div><b>Гарантия</b>На монтаж нового оборудования 12 месяцев, на оборудование по паспорту изделия</div><div><b>Доставка</b>По Казахстану, по Алматы бесплатно от 100 000 ₸</div><div><b>Рассрочка</b>До 24 месяцев, условия на стороне банка</div></div>
+<div class="thpp-btns"><a class="thpp-btn thpp-btn--red" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D0%BD%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F.%20%D0%A2%D0%B8%D0%BF%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B8%20%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C%3A%20">Рассчитать по моему помещению</a></div>
+</div></div>
+<div class="thpp-band" id="notneeded"><div class="thpp-wrap">
+<h2 class="thpp-h2">Когда полупромышленный кондиционер не нужен</h2>
+<p class="thpp-lead">Если помещение небольшое и потолок обычный, часто хватает настенного. Он проще и обычно дешевле, и мы скажем это прямо.</p>
+<div class="thpp-grid thpp-grid--3">
+<div class="thpp-card thpp-art"><h3 class="thpp-h3">Нужен настенный</h3><a class="thpp-more" href="/podbor-kondicionera">Подбор кондиционера по площади<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div class="thpp-card thpp-art"><h3 class="thpp-h3">Нужен переносной на лето</h3><a class="thpp-more" href="/katalog?g=mobilnye">Мобильные кондиционеры<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div class="thpp-card thpp-art"><h3 class="thpp-h3">Нужна система по проекту на много зон</h3><a class="thpp-more" href="/proekt">Расчёт по проекту<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</div></div></div>
+<div class="thpp-band thpp-band--gray" id="b2b" style="padding:40px 0"><div class="thpp-wrap">
+<h2 class="thpp-h2" style="font-size:24px;line-height:32px">Кондиционеры для бизнеса: счёт, договор, акты</h2>
+<p>Оплата по счёту, договор, накладная, счёт-фактура, акты. Реквизиты ИП «ТехноХолод» открыты.</p>
+<a class="thpp-more" href="/b2b">Условия для юрлиц<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div></div>
+<div class="thpp-band" id="articles"><div class="thpp-wrap">
+<h2 class="thpp-h2">Разбираем подробнее</h2>
+<div class="thpp-grid thpp-grid--3"><div class="thpp-card thpp-art"><span class="thpp-chip" style="align-self:flex-start;margin-bottom:12px">Монтаж · 6 мин чтения</span><h3 class="thpp-h3">Кассетный кондиционер: потолочный на 4 стороны для офиса и магазина</h3><a class="thpp-more" href="/kassetny-kondicioner">Читать<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="thpp-card thpp-art"><span class="thpp-chip" style="align-self:flex-start;margin-bottom:12px">Монтаж · 6 мин чтения</span><h3 class="thpp-h3">Канальный кондиционер: скрытое кондиционирование квартиры и дома</h3><a class="thpp-more" href="/kanalny-kondicioner">Читать<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="thpp-card thpp-art"><span class="thpp-chip" style="align-self:flex-start;margin-bottom:12px">Проектные решения · 5 мин чтения</span><h3 class="thpp-h3">Кондиционер для офиса: как рассчитать и что выбрать</h3><a class="thpp-more" href="/kak-vybrat-kondicioner-dlya-ofisa">Читать<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+</div></div>
+<div class="thpp-band thpp-band--gray" id="faq"><div class="thpp-wrap">
+<h2 class="thpp-h2">Вопросы про полупромышленные кондиционеры</h2>
+<div class="thpp-faq"><details><summary><h3>Сколько стоит кондиционер для офиса или магазина?</h3></summary><div class="thpp-ans"><p>Оборудование: от 167 400 ₸ у канальных, от 220 800 ₸ у кассетных, от 399 900 ₸ у колонных. Монтаж: от  60 000 ₸, итог называют МАСТЕРА после осмотра.</p></div></details><details><summary><h3>Чем кассетный отличается от канального?</h3></summary><div class="thpp-ans"><p>Кассетный виден в потолке: решётка, воздух идёт на четыре стороны. Канальный спрятан над потолком, видны только решётки воздуховодов. Кассетный проще, канальный незаметнее.</p></div></details><details><summary><h3>Как устанавливают кассетный и канальный кондиционер?</h3></summary><div class="thpp-ans"><p>МАСТЕРА осматривают потолок и место под блоки, прокладывают трассу и дренаж, ставят внутренний и наружный блоки, делают вакуумирование и пусконаладку. Что входит в монтаж, написано выше.</p></div></details><details><summary><h3>Какой кондиционер ставить, если нет подвесного потолка?</h3></summary><div class="thpp-ans"><p>Напольный: колонный для больших залов или напольно-потолочный, который стоит на полу или висит под потолком.</p></div></details><details><summary><h3>Чем колонный отличается от консольного?</h3></summary><div class="thpp-ans"><p>Колонный стоит вертикально, как шкаф, и подходит для больших залов. Консольный ниже, он стоит у стены.</p></div></details><details><summary><h3>Как рассчитать мощность?</h3></summary><div class="thpp-ans"><p>По площади, теплу от техники, числу людей и высоте потолка. Пришлите планировку в WhatsApp, и мы скажем, какая мощность нужна.</p></div></details><details><summary><h3>Как быстро вы приедете?</h3></summary><div class="thpp-ans"><p>От обращения до монтажа 1–3 дня. Длительность самого монтажа называем после осмотра.</p></div></details><details><summary><h3>Какая гарантия?</h3></summary><div class="thpp-ans"><p>На монтаж нового оборудования 12 месяцев. На оборудование по паспорту изделия, срок у каждой модели свой.</p></div></details><details><summary><h3>Есть ли рассрочка и доставка?</h3></summary><div class="thpp-ans"><p>Рассрочка до 24 месяцев, условия на стороне банка. Доставка по Казахстану, по Алматы бесплатно от 100 000 ₸.</p></div></details></div>
+</div></div>
+<div class="thpp-cta" id="request"><div class="thpp-wrap">
+<h2 class="thpp-h2">Пришлите планировку, назовём тип и цену</h2>
+<p>Напишите в WhatsApp или оставьте телефон. МАСТЕРА осмотрят объект и назовут итог до начала работ.</p>
+<div class="thpp-btns"><a class="thpp-btn thpp-btn--red" href="https://wa.me/77000369369">Написать в WhatsApp</a><a class="thpp-btn thpp-btn--outline" href="/proekt">Оставить заявку</a><a class="thpp-btn thpp-btn--outline" href="tel:+77000369369">+77 000 369 369</a></div>
+</div></div><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит кондиционер для офиса или магазина?", "acceptedAnswer": {"@type": "Answer", "text": "Оборудование: от 167 400 ₸ у канальных, от 220 800 ₸ у кассетных, от 399 900 ₸ у колонных. Монтаж: от  60 000 ₸, итог называют МАСТЕРА после осмотра."}}, {"@type": "Question", "name": "Чем кассетный отличается от канального?", "acceptedAnswer": {"@type": "Answer", "text": "Кассетный виден в потолке: решётка, воздух идёт на четыре стороны. Канальный спрятан над потолком, видны только решётки воздуховодов. Кассетный проще, канальный незаметнее."}}, {"@type": "Question", "name": "Как устанавливают кассетный и канальный кондиционер?", "acceptedAnswer": {"@type": "Answer", "text": "МАСТЕРА осматривают потолок и место под блоки, прокладывают трассу и дренаж, ставят внутренний и наружный блоки, делают вакуумирование и пусконаладку. Что входит в монтаж, написано выше."}}, {"@type": "Question", "name": "Какой кондиционер ставить, если нет подвесного потолка?", "acceptedAnswer": {"@type": "Answer", "text": "Напольный: колонный для больших залов или напольно-потолочный, который стоит на полу или висит под потолком."}}, {"@type": "Question", "name": "Чем колонный отличается от консольного?", "acceptedAnswer": {"@type": "Answer", "text": "Колонный стоит вертикально, как шкаф, и подходит для больших залов. Консольный ниже, он стоит у стены."}}, {"@type": "Question", "name": "Как рассчитать мощность?", "acceptedAnswer": {"@type": "Answer", "text": "По площади, теплу от техники, числу людей и высоте потолка. Пришлите планировку в WhatsApp, и мы скажем, какая мощность нужна."}}, {"@type": "Question", "name": "Как быстро вы приедете?", "acceptedAnswer": {"@type": "Answer", "text": "От обращения до монтажа 1–3 дня. Длительность самого монтажа называем после осмотра."}}, {"@type": "Question", "name": "Какая гарантия?", "acceptedAnswer": {"@type": "Answer", "text": "На монтаж нового оборудования 12 месяцев. На оборудование по паспорту изделия, срок у каждой модели свой."}}, {"@type": "Question", "name": "Есть ли рассрочка и доставка?", "acceptedAnswer": {"@type": "Answer", "text": "Рассрочка до 24 месяцев, условия на стороне банка. Доставка по Казахстану, по Алматы бесплатно от 100 000 ₸."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "Кондиционирование", "item": "https://tehnoholod369.kz/kondicionery-almaty"}, {"@type": "ListItem", "position": 3, "name": "Полупромышленные", "item": "https://tehnoholod369.kz/poluprom"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Подбор и монтаж полупромышленных кондиционеров", "serviceType": "Монтаж кассетных, канальных, напольных и колонных кондиционеров", "description": "Подбор типа полупромышленного кондиционера по помещению и монтаж. Итог по монтажу называют МАСТЕРА после осмотра, гарантия на монтаж 12 месяцев.", "provider": {"@type": "LocalBusiness", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/", "telephone": "+77000369369"}, "areaServed": {"@type": "City", "name": "Алматы"}, "offers": {"@type": "Offer", "priceCurrency": "KZT", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 60000, "priceCurrency": "KZT"}}}</script></section>
