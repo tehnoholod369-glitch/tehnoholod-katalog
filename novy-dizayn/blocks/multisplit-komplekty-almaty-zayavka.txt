@@ -1,0 +1,202 @@
+<style>.thmz{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;font-family:Inter,"Segoe UI",sans-serif;color:#1A1A1A;box-sizing:border-box}.thmz[hidden]{display:none}.thmz *{box-sizing:border-box}.thmz-ov{position:absolute;inset:0;background:rgba(0,51,160,.55)}.thmz-box{position:relative;width:100%;max-width:520px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow:auto;background:#fff;border-radius:16px;padding:32px 24px 24px;box-shadow:0 8px 32px rgba(0,51,160,.24);outline:0}.thmz-x{position:absolute;top:8px;right:8px;width:48px;height:48px;border:0;border-radius:8px;background:transparent;color:#475569;font-size:32px;line-height:1;cursor:pointer}.thmz-x:hover{background:#F1F5F9;color:#0033A0}.thmz-h{margin:0 40px 8px 0;font:700 24px/32px Inter,sans-serif;color:#0033A0}.thmz-ctx{margin:0 0 8px;padding:8px 12px;background:#E9F4FF;border-radius:8px;font:600 14px/20px Inter,sans-serif;color:#0033A0}.thmz-lead{margin:0 0 16px;font:400 16px/24px Inter,sans-serif;color:#1A1A1A}.thmz-row{margin:0 0 16px}.thmz-lab{display:block;margin:0 0 4px;font:600 14px/20px Inter,sans-serif;color:#1A1A1A;padding:0}.thmz-in{display:block;width:100%;height:48px;padding:0 16px;border:1px solid #64748B;border-radius:8px;background:#fff;font:400 16px/24px Inter,sans-serif;color:#1A1A1A}.thmz-in::placeholder{color:#64748B}.thmz-in:focus,.thmz-x:focus-visible,.thmz-go:focus-visible,.thmz-close2:focus-visible,.thmz-or a:focus-visible,.thmz-pol summary:focus-visible,.thmz-e-all a:focus-visible{outline:3px solid #0066FF;outline-offset:2px}.thmz-in[aria-invalid="true"]{border-color:#C41212}.thmz-err{margin:4px 0 0;min-height:0;font:400 14px/20px Inter,sans-serif;color:#C41212}.thmz-err:empty{display:none}.thmz-fs{margin:0 0 16px;padding:0;border:0;min-width:0}.thmz-chips{display:flex;flex-wrap:wrap;gap:8px}.thmz-chip{position:relative}.thmz-chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}.thmz-chip label{display:flex;align-items:center;min-height:48px;padding:8px 16px;border:1px solid #64748B;border-radius:8px;background:#fff;font:500 16px/24px Inter,sans-serif;color:#1A1A1A;cursor:pointer}.thmz-chip input:checked+label{background:#E9F4FF;border:2px solid #0066FF;padding:7px 15px;color:#0033A0;font-weight:600}.thmz-chip input:focus-visible+label{outline:3px solid #0066FF;outline-offset:2px}.thmz-hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}.thmz-consent{display:flex;gap:12px;align-items:flex-start;margin-bottom:8px}.thmz-consent input{flex:none;width:24px;height:24px;margin:2px 0 0;accent-color:#0066FF}.thmz-consent label{font:400 14px/20px Inter,sans-serif;color:#1A1A1A}.thmz-pol{margin:0 0 8px;font:400 14px/20px Inter,sans-serif;color:#475569}.thmz-pol summary{cursor:pointer;color:#0052D6;padding:4px 0}.thmz-pol p{margin:4px 0 0}.thmz-e-all{margin:8px 0 0}.thmz-go{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;margin-top:16px;padding:12px 24px;border:0;border-radius:8px;background:#E81C1C;color:#fff;font:700 16px/24px Inter,sans-serif;cursor:pointer}.thmz-go:hover{background:#C41212}.thmz-go:active{background:#A30D0D}.thmz-go:disabled{opacity:.7;cursor:default}.thmz-or{margin:16px 0 0;text-align:center;font:400 14px/20px Inter,sans-serif;color:#475569}.thmz-or a{color:#0052D6;font-weight:600}.thmz-done{outline:0}.thmz-done p{margin:8px 0 0;font:400 16px/24px Inter,sans-serif}.thmz-close2{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;margin-top:16px;border:2px solid #0066FF;border-radius:8px;background:#fff;color:#0066FF;font:600 16px/24px Inter,sans-serif;cursor:pointer}html.thmz-lock,html.thmz-lock body{overflow:hidden}@media(max-width:600px){.thmz{padding:0;align-items:flex-end}.thmz-box{max-width:none;border-radius:16px 16px 0 0;max-height:100vh;max-height:100dvh;padding:32px 16px 24px}.thmz-chip label{font-size:15px;padding:8px 12px}.thmz-chip input:checked+label{padding:7px 11px}}@media(prefers-reduced-motion:no-preference){.thmz-box{animation:thmzin .18s ease-out}@keyframes thmzin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}}</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/lead.js"></script>
+<script>(function(){
+"use strict";
+if(window.__thmzInit){return;}window.__thmzInit=1;
+var WA="https://wa.me/77000369369";
+var CHANNEL="сайт: мультисплит, комплекты";
+var STAGES=["Новостройка, идёт ремонт","После отделки","Трасса уже проложена застройщиком","Не знаю"];
+var ROOMS=["2","3","4 и больше"];
+var root=null,lastFocus=null,openedAt=0,ctx=null,sending=false;
+
+function el(tag,attrs,html){var e=document.createElement(tag);if(attrs){for(var k in attrs){if(Object.prototype.hasOwnProperty.call(attrs,k)){e.setAttribute(k,attrs[k]);}}}if(html!=null){e.innerHTML=html;}return e;}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function txt(n){return n?String(n.textContent||"").replace(/[\s ]+/g," ").trim():"";}
+
+function cardContext(a){
+  var card=a.closest?a.closest(".thbs-card"):null;
+  var c={source:"страница: комплекты мультисплита",title:"",kind:"",price:"",parts:"",rooms:""};
+  if(card){
+    var t=card.querySelector(".thbs-t"),k=card.querySelector(".thbs-k"),p=card.querySelector(".thbs-p"),s=card.querySelector(".thbs-s");
+    var links=card.querySelectorAll(".thbs-dl li a");
+    c.title=txt(t);c.kind=txt(k);c.price=txt(p);c.sub=txt(s);
+    var arts=[];for(var i=0;i<links.length;i++){arts.push(txt(links[i]));}
+    c.parts=arts.join(" + ");
+    c.source="карточка: "+c.title+(c.kind?" ("+c.kind+")":"");
+    var m=c.title.match(/^(\d)/);if(m){c.rooms=m[1]==="2"||m[1]==="3"?m[1]:"4 и больше";}
+  }else{
+    c.source="кнопка «"+txt(a)+"»";
+  }
+  return c;
+}
+
+function waText(c,form){
+  var s="Здравствуйте! Хочу подобрать мультисплит.";
+  if(c&&c.title){s+=" Комплект Ballu: "+c.title+(c.kind?", "+c.kind:"")+(c.price?", "+c.price+" (оборудование с НДС)":"")+".";}
+  if(form){
+    if(form.rooms){s+=" Комнат: "+form.rooms+".";}
+    if(form.area){s+=" Площадь: "+form.area+".";}
+    if(form.stage){s+=" Объект: "+form.stage+".";}
+  }
+  return WA+"?text="+encodeURIComponent(s);
+}
+
+function digits(v){return String(v||"").replace(/\D/g,"");}
+function fmtPhone(v){
+  var s=String(v||""),d=digits(s);
+  if(/^\s*\+7/.test(s)){d=d.slice(1);}
+  else if(d.length>10&&(d.charAt(0)==="7"||d.charAt(0)==="8")){d=d.slice(1);}
+  d=d.slice(0,10);
+  var o="+7";
+  if(d.length){o+=" "+d.slice(0,3);}
+  if(d.length>3){o+=" "+d.slice(3,6);}
+  if(d.length>6){o+=" "+d.slice(6,8);}
+  if(d.length>8){o+=" "+d.slice(8,10);}
+  return {text:o,count:d.length};
+}
+
+function build(){
+  if(root){return;}
+  var radios=function(name,list,legend,idp){
+    var h='<fieldset class="thmz-fs"><legend class="thmz-lab">'+legend+'</legend><div class="thmz-chips">';
+    for(var i=0;i<list.length;i++){
+      var id=idp+i;
+      h+='<span class="thmz-chip"><input type="radio" name="'+name+'" id="'+id+'" value="'+esc(list[i])+'"><label for="'+id+'">'+esc(list[i])+'</label></span>';
+    }
+    return h+'</div></fieldset>';
+  };
+  var h=''
+  +'<div class="thmz-ov" data-thmz-close="1"></div>'
+  +'<div class="thmz-box" role="dialog" aria-modal="true" aria-labelledby="thmz-h" tabindex="-1">'
+  +'<button type="button" class="thmz-x" aria-label="Закрыть окно" data-thmz-close="1">&times;</button>'
+  +'<form class="thmz-form" novalidate autocomplete="on">'
+  +'<h2 id="thmz-h" class="thmz-h">Подобрать мой вариант</h2>'
+  +'<p class="thmz-ctx" id="thmz-ctx" hidden></p>'
+  +'<p class="thmz-lead">Оставьте контакты, ответим и подберём комплект. Цену установки называем после замера.</p>'
+  +'<div class="thmz-row"><label class="thmz-lab" for="thmz-name">Имя</label>'
+  +'<input class="thmz-in" id="thmz-name" name="name" type="text" autocomplete="name" maxlength="60" aria-describedby="thmz-e-name">'
+  +'<p class="thmz-err" id="thmz-e-name" role="alert"></p></div>'
+  +'<div class="thmz-row"><label class="thmz-lab" for="thmz-phone">Телефон</label>'
+  +'<input class="thmz-in" id="thmz-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="+7 700 000 00 00" maxlength="17" aria-describedby="thmz-e-phone">'
+  +'<p class="thmz-err" id="thmz-e-phone" role="alert"></p></div>'
+  +radios("rooms",ROOMS,"Сколько комнат кондиционировать","thmz-r")
+  +'<div class="thmz-row"><label class="thmz-lab" for="thmz-area">Площадь комнат, приблизительно</label>'
+  +'<input class="thmz-in" id="thmz-area" name="area" type="text" inputmode="text" maxlength="60" placeholder="например, 18 и 22 м²"></div>'
+  +radios("stage",STAGES,"На каком этапе объект","thmz-s")
+  +'<div class="thmz-hp" aria-hidden="true"><label>Сайт<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>'
+  +'<div class="thmz-row thmz-consent"><input type="checkbox" id="thmz-ok" name="ok" aria-describedby="thmz-e-ok">'
+  +'<label for="thmz-ok">Согласен на обработку моих персональных данных, чтобы со мной связались по заявке</label></div>'
+  +'<details class="thmz-pol"><summary>Какие данные и зачем</summary><p>Имя, телефон и ответы из этой формы записываются в таблицу заявок и приходят на электронную почту ИП «ТехноХолод». Используем их только чтобы связаться с вами по этой заявке.</p></details>'
+  +'<p class="thmz-err" id="thmz-e-ok" role="alert"></p>'
+  +'<p class="thmz-err thmz-e-all" id="thmz-e-all" role="alert"></p>'
+  +'<button type="submit" class="thmz-go">Отправить заявку</button>'
+  +'<p class="thmz-or">или <a id="thmz-wa" href="'+WA+'" target="_blank" rel="noopener">напишите в WhatsApp</a></p>'
+  +'</form>'
+  +'<div class="thmz-done" id="thmz-done" hidden tabindex="-1"><h2 class="thmz-h">Заявка принята</h2>'
+  +'<p>Спасибо! Свяжемся в течение часа в рабочее время.</p>'
+  +'<p class="thmz-or"><a id="thmz-wa2" href="'+WA+'" target="_blank" rel="noopener">Или напишите нам в WhatsApp</a></p>'
+  +'<button type="button" class="thmz-close2" data-thmz-close="1">Закрыть</button></div>'
+  +'</div>';
+  root=el("div",{"class":"thmz","hidden":"hidden"},h);
+  document.body.appendChild(root);
+  root.addEventListener("click",function(e){
+    var t=e.target;
+    while(t&&t!==root){if(t.getAttribute&&t.getAttribute("data-thmz-close")){close();return;}t=t.parentNode;}
+  });
+  root.addEventListener("keydown",onKey);
+  var form=root.querySelector("form");
+  form.addEventListener("submit",onSubmit);
+  var ph=root.querySelector("#thmz-phone");
+  ph.addEventListener("input",function(){var f=fmtPhone(ph.value);ph.value=digits(ph.value).length?f.text:"";});
+  ph.addEventListener("focus",function(){if(!ph.value){ph.value="+7 ";}});
+  ph.addEventListener("blur",function(){if(digits(ph.value).length<=1){ph.value="";}});
+  form.addEventListener("input",function(e){var n=e.target&&e.target.id;if(n==="thmz-name"){setErr("name","");}if(n==="thmz-phone"){setErr("phone","");}if(n==="thmz-ok"){setErr("ok","");}document.getElementById("thmz-e-all").textContent="";});
+}
+
+function setErr(k,msg){
+  var p=document.getElementById("thmz-e-"+k);if(p){p.textContent=msg;}
+  var inp={name:"thmz-name",phone:"thmz-phone",ok:"thmz-ok"}[k];
+  var i=inp&&document.getElementById(inp);
+  if(i){if(msg){i.setAttribute("aria-invalid","true");}else{i.removeAttribute("aria-invalid");}}
+}
+
+function focusables(){
+  var n=root.querySelectorAll('button,[href],input,summary,[tabindex]:not([tabindex="-1"])');
+  var out=[];for(var i=0;i<n.length;i++){var e=n[i];if(e.disabled){continue;}if(e.closest&&e.closest("[hidden]")){continue;}if(e.getAttribute("tabindex")==="-1"){continue;}if(e.offsetParent===null&&e.tagName!=="SUMMARY"){continue;}out.push(e);}
+  return out;
+}
+function onKey(e){
+  if(e.key==="Escape"||e.keyCode===27){e.preventDefault();close();return;}
+  if(e.key==="Tab"||e.keyCode===9){
+    var f=focusables();if(!f.length){return;}
+    var first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&(document.activeElement===first||document.activeElement===root.querySelector(".thmz-box"))){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+  }
+}
+
+function open(c,trigger){
+  build();ctx=c||{};lastFocus=trigger||document.activeElement;openedAt=Date.now();sending=false;
+  var form=root.querySelector("form"),done=document.getElementById("thmz-done");
+  done.hidden=true;form.hidden=false;form.reset();
+  ["name","phone","ok"].forEach(function(k){setErr(k,"");});
+  document.getElementById("thmz-e-all").textContent="";
+  var go=root.querySelector(".thmz-go");go.disabled=false;go.textContent="Отправить заявку";
+  var cx=document.getElementById("thmz-ctx");
+  if(ctx.title){cx.hidden=false;cx.textContent="Комплект: "+ctx.title+(ctx.kind?", "+ctx.kind:"")+(ctx.price?", "+ctx.price:"");}else{cx.hidden=true;cx.textContent="";}
+  if(ctx.rooms){var r=root.querySelectorAll('input[name="rooms"]');for(var i=0;i<r.length;i++){if(r[i].value===ctx.rooms){r[i].checked=true;}}}
+  var wa=waText(ctx,null);document.getElementById("thmz-wa").href=wa;document.getElementById("thmz-wa2").href=wa;
+  root.hidden=false;document.documentElement.classList.add("thmz-lock");
+  setTimeout(function(){var n=document.getElementById("thmz-name");if(n){n.focus();}},30);
+}
+function close(){
+  if(!root||root.hidden){return;}
+  root.hidden=true;document.documentElement.classList.remove("thmz-lock");
+  if(lastFocus&&lastFocus.focus){try{lastFocus.focus();}catch(e){}}
+}
+
+function val(n){var e=root.querySelector('[name="'+n+'"]');return e?String(e.value||"").trim():"";}
+function checked(n){var e=root.querySelector('input[name="'+n+'"]:checked');return e?e.value:"";}
+
+function onSubmit(e){
+  e.preventDefault();if(sending){return;}
+  var name=val("name"),phone=fmtPhone(val("phone")),ok=root.querySelector("#thmz-ok").checked,bad=false;
+  setErr("name","");setErr("phone","");setErr("ok","");
+  if(!name){setErr("name","Укажите, как к вам обращаться");bad=true;}
+  if(phone.count!==10){setErr("phone","Введите номер полностью: +7 и 10 цифр");bad=true;}
+  if(!ok){setErr("ok","Нужно согласие на обработку данных, иначе мы не сможем вам перезвонить");bad=true;}
+  if(bad){var f=root.querySelector('[aria-invalid="true"]');if(f){f.focus();}return;}
+  var form={rooms:checked("rooms"),area:val("area"),stage:checked("stage")};
+  var go=root.querySelector(".thmz-go");
+  // ловушка для ботов: заполненная скрытая графа или заявка быстрее секунды после открытия окна, показываем «успех» и ничего не шлём
+  if(val("website")||Date.now()-openedAt<1000){showDone();return;}
+  if(!window.TH_LEAD||!window.TH_LEAD.send){failMsg(form);return;}
+  sending=true;go.disabled=true;go.textContent="Отправляем…";
+  var comment="Мультисплит, страница комплектов."
+    +(ctx.title?" Выбран комплект Ballu: "+ctx.title+(ctx.kind?" ("+ctx.kind+")":"")+(ctx.price?", "+ctx.price+" (оборудование с НДС)":"")+(ctx.parts?"; состав: "+ctx.parts:"")+".":" Кнопка: "+(ctx.source||"")+".")
+    +(form.stage?" Этап объекта: "+form.stage+".":"")
+    +(form.rooms?" Комнат: "+form.rooms+".":"")
+    +(form.area?" Площадь: "+form.area+".":"")
+    +" Источник: "+(ctx.source||"")+".";
+  window.TH_LEAD.send({channel:CHANNEL,name:name,phone:phone.text,room:form.rooms,area:form.area,install:form.stage,comment:comment})
+    .then(function(okk){sending=false;if(okk){showDone();}else{go.disabled=false;go.textContent="Отправить заявку";failMsg(form);}})
+    .catch(function(){sending=false;go.disabled=false;go.textContent="Отправить заявку";failMsg(form);});
+}
+function failMsg(form){
+  var m=document.getElementById("thmz-e-all");
+  m.innerHTML="Не удалось отправить заявку. Попробуйте ещё раз или <a href=\""+esc(waText(ctx,form))+"\" target=\"_blank\" rel=\"noopener\">напишите в WhatsApp</a>.";
+}
+function showDone(){
+  root.querySelector("form").hidden=true;
+  var d=document.getElementById("thmz-done");d.hidden=false;d.focus();
+}
+
+document.addEventListener("click",function(e){
+  var a=e.target&&e.target.closest?e.target.closest("a[data-lead]"):null;
+  if(!a){return;}
+  if(e.defaultPrevented||e.ctrlKey||e.metaKey||e.shiftKey||e.button===1){return;}
+  e.preventDefault();open(cardContext(a),a);
+});
+window.THMZ={open:function(c){open(c||{},document.activeElement);},close:close};
+})();
+</script>
