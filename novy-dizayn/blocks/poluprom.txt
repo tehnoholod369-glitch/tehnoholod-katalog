@@ -211,13 +211,6 @@
 <p class="thpp-guar">Гарантия на монтаж 12 месяцев. От обращения до монтажа 1–3 дня. Оборудование с гарантией по паспорту изделия, срок у каждого свой.</p>
 <div class="thpp-btns" style="margin-top:20px"><a class="thpp-more" href="/ustanovka-kondicionerov-almaty">Установка кондиционеров в Алматы<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="thpp-more" href="/skolko-stoit-ustanovka-kondicionera">Сколько стоит установка кондиционера<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 </div></div>
-<div class="thpp-band thpp-band--gray" id="ours"><div class="thpp-wrap">
-<h2 class="thpp-h2">Наши монтажи: колонный в кафе и канальный в серверной</h2>
-<div class="thpp-ours">
-<figure><img src="https://img.tehnoholod369.kz/img/poluprom/nash-kanalnyj-servernaya.webp" width="1200" height="900" alt="Канальный кондиционер, подвешенный под потолком серверной" loading="lazy" decoding="async"><figcaption>Канальный кондиционер в серверной</figcaption></figure>
-<figure><img src="https://img.tehnoholod369.kz/img/poluprom/nash-kolonnyj-kafe.webp" width="720" height="1280" alt="Колонный кондиционер у стены в кафе" loading="lazy" decoding="async"><figcaption>Колонный кондиционер в кафе</figcaption></figure>
-</div>
-</div></div>
 <div class="thpp-band thpp-band--tint" id="price"><div class="thpp-wrap">
 <h2 class="thpp-h2">Сколько стоит кондиционер для офиса или магазина с установкой</h2>
 <p class="thpp-lead">Итог складывается из двух частей: оборудование и монтаж. Оборудование: цены «от» по типам в блоке выше. Монтаж полупромышленного кондиционера любого типа стоит от 60 000 ₸. Итог называют МАСТЕРА после осмотра. Осмотр бесплатный. Итог зависит от типа блока, потолка и трассы. Без осмотра точную сумму не назвать, поэтому до осмотра мы называем только «от».</p>
