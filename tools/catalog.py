@@ -119,6 +119,19 @@ def _num(text):
     return float(m.group(0).replace(",", ".")) if m else None
 
 
+# pn в витрине = число для сортировки по цене. 1000000000 при пустой цене текстом —
+# заглушка, а не цена (Д-07 в otdel-prodazh/reestr-oshibok.md).
+PN_STUB = 1_000_000_000
+
+
+def _price_kzt(raw):
+    """Цена в ₸ из позиции витрины; нет цены или заглушка — None («нет данных»)."""
+    pn = raw.get("pn")
+    if isinstance(pn, (int, float)) and not isinstance(pn, bool):
+        return pn if 0 < pn < PN_STUB else None
+    return _num(raw.get("price"))
+
+
 def _specs_dict(specs):
     out = {}
     for kv in specs or []:
@@ -198,7 +211,8 @@ def _normalize(group, raw, seq):
         "name": name,
         "art": str(art).strip() if art else None,
         "type": str(raw.get("type") or raw.get("case") or "").strip() or None,
-        "price_kzt": raw.get("pn") if isinstance(raw.get("pn"), (int, float)) else _num(raw.get("price")),
+        "price_kzt": _price_kzt(raw),
+        "price_stub": (isinstance(raw.get("pn"), (int, float)) and raw["pn"] >= PN_STUB) or None,
         "price_text": str(raw.get("price") or "").strip() or None,
         "rassrochka": str(raw.get("rassr") or "").strip() or None,
         "stock": stock or None,
@@ -293,8 +307,9 @@ def _index_stale():
     if not os.path.exists(INDEX_PATH):
         return True
     made = os.path.getmtime(INDEX_PATH)
-    return any(os.path.getmtime(p) > made
-               for p in glob.glob(os.path.join(ROOT, "katalog-*.html")))
+    # Сам разборщик новее индекса — правила разбора изменились, индекс пересобрать.
+    sources = glob.glob(os.path.join(ROOT, "katalog-*.html")) + [os.path.abspath(__file__)]
+    return any(os.path.getmtime(p) > made for p in sources)
 
 
 def load():
@@ -566,6 +581,7 @@ def cmd_doctor(a):
     rows = load()
     problems = {
         "без цены": [r for r in rows if not r["price_kzt"]],
+        "заглушка вместо цены (pn >= 1e9)": [r for r in rows if r.get("price_stub")],
         "без фото": [r for r in rows if not r["img"]],
         "артикул не выведен в витрину": [r for r in rows if not r["art"]],
         "площадь витрины спорит с ТТХ": [r for r in rows if r.get("area_conflict")],
