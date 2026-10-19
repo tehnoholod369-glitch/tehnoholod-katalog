@@ -236,7 +236,7 @@
 <div class="thpp-band thpp-band--gray" id="b2b" style="padding:40px 0"><div class="thpp-wrap">
 <h2 class="thpp-h2" style="font-size:24px;line-height:32px">Кондиционеры для бизнеса: счёт, договор, акты</h2>
 <p>Оплата по счёту, договор, накладная, счёт-фактура, акты. Реквизиты ИП «ТехноХолод» открыты.</p>
-<a class="thpp-more" href="/b2b">Условия для юрлиц<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<div class="thpp-btns" style="margin-top:8px"><a class="thpp-more" href="/b2b">Условия для юрлиц<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="thpp-more" href="/kondicionery-dlya-ofisa">Кондиционеры для офиса<svg class="thpp-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 </div></div>
 <div class="thpp-band" id="articles"><div class="thpp-wrap">
 <h2 class="thpp-h2">Разбираем подробнее</h2>
