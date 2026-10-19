@@ -129,7 +129,7 @@
 #pvrf .pv-heat-t{font-size:15px;font-weight:700;color:var(--pv-deep);margin:0 0 4px}
 #pvrf .pv-heat-p{font-size:15px;line-height:1.6;color:var(--pv-text);margin:0}
 #pvrf .pv-note a{color:var(--pv-blue);text-decoration:underline}
-@media(max-width:640px){#pvrf{padding:24px 0 0}#pvrf h2{font-size:24px}#pvrf .pv-grid{grid-template-columns:minmax(0,1fr) 44px}#pvrf .pv-grid .pv-g-name{grid-column:1/-1}#pvrf .pv-types{gap:6px}#pvrf .pv-res-photo{width:72px;height:72px}#pvrf .pv-btn{width:100%}#pvrf .pv-links{flex-direction:column}}
+@media(max-width:640px){#pvrf{padding:24px 0 0}#pvrf h2{font-size:24px}#pvrf .pv-grid{grid-template-columns:minmax(0,1fr) 44px}#pvrf .pv-grid .pv-g-name{grid-column:1/-1}#pvrf .pv-types{gap:8px;grid-template-columns:repeat(2,minmax(0,1fr))}#pvrf .pv-ty{font-size:14px;padding:8px 6px 10px}#pvrf .pv-res-photo{width:72px;height:72px}#pvrf .pv-btn{width:100%}#pvrf .pv-links{flex-direction:column}}
 </style>
 
 <!-- Блок 1 · H1 и лид -->
