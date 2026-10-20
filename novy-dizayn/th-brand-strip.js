@@ -5,7 +5,7 @@
    Атрибуты:
      data-th-brands="vodonagrevateli,vodoochistka"   группы каталога; бренды складываются, повторы убираются
      data-title="Текст"                              заголовок над логотипами (по умолчанию «Бренды в каталоге»)
-   Без правки блока: в head страницы window.THBS = {after:".селектор", groups:"g1,g2", title:"Текст", brands:"Ballu,Electrolux"} (или массив; brands — необязательный список, чтобы показать только эти бренды) — полоса встанет после этого элемента.
+   Без правки блока: в head страницы window.THBS = {after:".селектор", groups:"g1,g2", title:"Текст", brands:"Ballu,Electrolux", style:"max-width:1200px"} (или массив; brands — необязательный список, чтобы показать только эти бренды; style — необязательный inline-стиль) — полоса встанет после этого элемента.
    Логотипы и подпись всегда по центру (правило владельца от 20.10.2026).
    Логотип ведёт в /katalog?g=<группа>&brand=<бренд>. Счётчиков наличия и числа моделей нет: см. правило владельца от 06.10.2026.
    Меньше двух брендов с логотипом — блок не рисуется (одна марка в полосе выглядит пусто).
@@ -115,6 +115,7 @@
         d.setAttribute("data-th-brands", c.groups);
         if (c.title) d.setAttribute("data-title", c.title);
         if (c.brands) d.setAttribute("data-brands", c.brands);
+        if (c.style) d.setAttribute("style", c.style);   // например "max-width:1200px" на страницах, где контейнер шире текста
         anchor.parentNode.insertBefore(d, anchor.nextSibling);
         init();
       };
