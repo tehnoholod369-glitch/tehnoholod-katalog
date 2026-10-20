@@ -108,23 +108,22 @@
       if (!c || !c.after || !c.groups) return;
       var put = function () {
         var anchor = document.querySelector(c.after);
-        if (!anchor) return false;
+        if (!anchor) return;
         var nx = anchor.nextElementSibling;
-        if (nx && nx.hasAttribute("data-th-brands")) return true;
+        if (nx && nx.hasAttribute("data-th-brands")) return;
         var d = document.createElement("div");
         d.setAttribute("data-th-brands", c.groups);
         if (c.title) d.setAttribute("data-title", c.title);
         if (c.brands) d.setAttribute("data-brands", c.brands);
         anchor.parentNode.insertBefore(d, anchor.nextSibling);
         init();
-        return true;
       };
-      if (put()) return;
-      // DC-страницы рисуются скриптом долго (до 20–30 с на медленной сети): ждём появления элемента до минуты
+      put();
+      // DC-страницы рисуются скриптом долго и могут перерисовать блок заново (тогда наша вставка пропадает): следим до полутора минут и ставим полосу снова
       if (!window.MutationObserver) return;
-      var mo = new MutationObserver(function () { if (put()) mo.disconnect(); });
+      var t = 0, mo = new MutationObserver(function () { clearTimeout(t); t = setTimeout(put, 150); });
       mo.observe(document.documentElement, { childList: true, subtree: true });
-      setTimeout(function () { mo.disconnect(); }, 60000);
+      setTimeout(function () { mo.disconnect(); }, 90000);
     });
   }
 
