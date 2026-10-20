@@ -1,58 +1,89 @@
 <style>
-.thpol{font-family:Inter,system-ui,Arial,sans-serif;color:#1A1A1A;font-size:16px;line-height:24px;max-width:800px;margin:0 auto;padding:48px 24px 64px;box-sizing:border-box}
+.thpol{font-family:Inter,system-ui,Arial,sans-serif;color:#1A1A1A;font-size:16px;line-height:24px;margin:0;padding:0;box-sizing:border-box;background:#fff}
 .thpol *{box-sizing:border-box}
+.thpol-in{max-width:880px;margin:0 auto;padding:0 24px}
+.thpol-hero{background:#E9F4FF;padding:64px 0 48px}
+.thpol-tag{display:inline-block;background:#fff;color:#0033A0;border-radius:4px;padding:4px 12px;font-size:12px;line-height:16px;font-weight:600;margin:0 0 16px}
 .thpol h1{font-size:48px;line-height:56px;font-weight:700;color:#0033A0;margin:0 0 16px}
-.thpol .thpol-lead{font-size:16px;line-height:24px;color:#334155;margin:0 0 16px}
-.thpol .thpol-meta{font-size:14px;line-height:20px;color:#606F85;margin:0 0 32px}
-.thpol h2{font-size:20px;line-height:28px;font-weight:700;color:#0033A0;margin:40px 0 8px}
-.thpol p{margin:0 0 16px}
-.thpol ul{margin:0 0 16px;padding:0 0 0 24px}
-.thpol li{margin:0 0 8px}
+.thpol .thpol-lead{font-size:16px;line-height:24px;color:#334155;margin:0 0 32px;max-width:720px}
+.thpol-sum{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.thpol-sc{background:#fff;border-radius:12px;padding:16px;box-shadow:0 1px 2px rgba(0,51,160,.08)}
+.thpol-sc svg{display:block;margin:0 0 8px}
+.thpol-sc b{display:block;font-size:16px;line-height:24px;color:#0033A0;margin:0 0 4px}
+.thpol-sc span{display:block;font-size:14px;line-height:20px;color:#475569}
+.thpol-nav{display:flex;flex-wrap:wrap;gap:8px;padding:32px 0 8px}
+.thpol-nav a{display:inline-block;background:#F1F5F9;color:#0033A0;text-decoration:none;border-radius:8px;padding:8px 12px;font-size:14px;line-height:20px;font-weight:600}
+.thpol-nav a:hover{background:#E9F4FF;color:#0052D6}
+.thpol-main{padding:24px 0 64px}
+.thpol-sec{background:#fff;border:1px solid #DCE5F0;border-radius:16px;padding:32px;margin:0 0 24px;scroll-margin-top:96px;box-shadow:0 1px 2px rgba(0,51,160,.06)}
+.thpol-sh{display:flex;align-items:center;gap:16px;margin:0 0 16px}
+.thpol-n{flex:none;width:40px;height:40px;border-radius:50%;background:#0033A0;color:#fff;font-size:16px;line-height:40px;font-weight:700;text-align:center}
+.thpol h2{font-size:20px;line-height:28px;font-weight:700;color:#0033A0;margin:0}
+.thpol-sec p{margin:0 0 16px}
+.thpol-sec ul{margin:0 0 16px;padding:0 0 0 24px}
+.thpol-sec li{margin:0 0 8px}
+.thpol-sec > :last-child{margin-bottom:0}
 .thpol a{color:#0052D6;text-decoration:underline}
 .thpol a:focus-visible{outline:3px solid #0066FF;outline-offset:2px}
-.thpol .thpol-box{background:#F1F5F9;border-radius:12px;padding:24px;margin:0 0 24px}
-.thpol .thpol-box p{margin:0 0 8px}
-.thpol .thpol-box p:last-child{margin:0}
-.thpol .thpol-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:0 0 24px}
-.thpol .thpol-card{border:1px solid #DCE5F0;border-radius:12px;padding:16px 24px}
+.thpol-sec.thpol-dark{background:#0033A0;border-color:#0033A0;color:#fff}
+.thpol-dark h2{color:#fff}
+.thpol-dark .thpol-n{background:#fff;color:#0033A0}
+.thpol-dark a{color:#fff}
+.thpol-dark p{color:#fff}
+.thpol-dark .thpol-box{background:rgba(255,255,255,.1);border-radius:12px;padding:24px;margin:0}
+.thpol-dark .thpol-box p{margin:0 0 8px;color:#fff}
+.thpol-dark .thpol-box p:last-child{margin:0}
+.thpol .thpol-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:0 0 16px}
+.thpol .thpol-card{background:#F1F5F9;border:0;border-radius:12px;padding:16px 24px}
 .thpol .thpol-card h3{font-size:16px;line-height:24px;font-weight:700;color:#0033A0;margin:0 0 8px}
 .thpol .thpol-card p{margin:0 0 8px}
 .thpol .thpol-card p:last-child{margin:0}
-.thpol .thpol-k{color:#606F85;font-size:14px;line-height:20px}
-.thpol .thpol-s{font-size:14px;line-height:20px;color:#606F85}
-@media(max-width:600px){.thpol{padding:32px 16px 48px}.thpol h1{font-size:32px;line-height:40px}.thpol .thpol-box{padding:16px}.thpol .thpol-card{padding:16px}}
+.thpol .thpol-k{color:#475569;font-size:14px;line-height:20px}
+.thpol-cta{background:#E9F4FF;border-radius:16px;padding:32px;text-align:center}
+.thpol-cta h2{font-size:20px;line-height:28px;margin:0 0 8px}
+.thpol-cta p{margin:0 0 24px;color:#334155}
+.thpol-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.thpol-b{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:8px;font-size:16px;line-height:24px;font-weight:600;text-decoration:none!important}
+.thpol a.thpol-b1{background:#0066FF;color:#fff}
+.thpol a.thpol-b1:hover{background:#0052D6}
+.thpol a.thpol-b2{background:#fff;color:#0066FF;border:2px solid #0066FF}
+.thpol a.thpol-b2:hover{background:#0066FF;color:#fff}
+@media(max-width:900px){.thpol-sum{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.thpol-hero{padding:40px 0 32px}.thpol h1{font-size:32px;line-height:40px}.thpol-in{padding:0 16px}.thpol-sum{grid-template-columns:1fr}.thpol-sec{padding:24px 16px}.thpol-dark .thpol-box{padding:16px}.thpol .thpol-card{padding:16px}.thpol-cta{padding:24px 16px}.thpol-b{width:100%}}
 </style>
+
 <section class="thpol" id="politika">
+<div class="thpol-hero"><div class="thpol-in">
+<span class="thpol-tag">Документ · Редакция 2</span>
 <h1>Политика обработки персональных данных</h1>
 <p class="thpol-lead">Документ описывает, какие персональные данные ИП «ТехноХолод» собирает на сайте tehnoholod369.kz, для чего, на каком основании, кому передаёт и как вы можете ими управлять.</p>
-<p class="thpol-meta">Редакция 2. Действует с момента публикации на этой странице.</p>
-
-<h2>1. Общие положения</h2>
-<p>1.1. Политика составлена в соответствии с Законом Республики Казахстан от 21 мая 2013 года № 94-V «О персональных данных и их защите» (далее: Закон) и иным законодательством Республики Казахстан.</p>
+<div class="thpol-sum">
+<div class="thpol-sc"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg><b>Что берём</b><span>Имя, телефон и ответы из формы. Паспорт, платежи и здоровье не запрашиваем.</span></div>
+<div class="thpol-sc"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg><b>Зачем</b><span>Чтобы связаться по заявке: ответить, подобрать оборудование, договориться о замере и монтаже.</span></div>
+<div class="thpol-sc"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.5-3.2 7.6-8 9-4.8-1.4-8-4.5-8-9V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg><b>Кому передаём</b><span>Не продаём и не публикуем. Только сервисам, без которых заявка не дойдёт.</span></div>
+<div class="thpol-sc"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0066FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/><circle cx="12" cy="12" r="9"/></svg><b>Ваши права</b><span>Отозвать согласие, уточнить или удалить данные, получить сведения о них.</span></div>
+</div></div></div>
+<div class="thpol-in">
+<nav class="thpol-nav" aria-label="Содержание"><a href="#p1">1. Общие положения</a><a href="#p2">2. Кто мы</a><a href="#p3">3. Принципы</a><a href="#p4">4. Данные и цели</a><a href="#p5">5. Согласие</a><a href="#p6">6. Хранение</a><a href="#p7">7. Передача</a><a href="#p8">8. Cookie</a><a href="#p9">9. Права</a><a href="#p10">10. Третьи лица</a><a href="#p11">11. Сторонние сайты</a><a href="#p12">12. Изменения</a></nav>
+<div class="thpol-main">
+<div class="thpol-sec" id="p1"><div class="thpol-sh"><span class="thpol-n">1</span><h2>Общие положения</h2></div><p>1.1. Политика составлена в соответствии с Законом Республики Казахстан от 21 мая 2013 года № 94-V «О персональных данных и их защите» (далее: Закон) и иным законодательством Республики Казахстан.</p>
 <p>1.2. Политика действует для сайта tehnoholod369.kz и всех форм заявки и связи на нём.</p>
 <p>1.3. Используемые понятия («персональные данные», «оператор», «субъект», «сбор», «обработка», «трансграничная передача») понимаются так, как они определены в Законе.</p>
-<p>1.4. Отправляя форму на сайте и отмечая согласие, вы подтверждаете, что прочитали Политику и принимаете её условия.</p>
-
-<h2>2. Оператор</h2>
+<p>1.4. Отправляя форму на сайте и отмечая согласие, вы подтверждаете, что прочитали Политику и принимаете её условия.</p></div>
+<div class="thpol-sec thpol-dark" id="p2"><div class="thpol-sh"><span class="thpol-n">2</span><h2>Кто мы</h2></div><p>Сайт tehnoholod369.kz принадлежит индивидуальному предпринимателю, который и обрабатывает данные из ваших заявок.</p>
 <div class="thpol-box">
 <p><b>ИП «ТехноХолод»</b>, ИИН/БИН 770313000379</p>
 <p>Адрес: г. Алматы, ул. Какимжана Казыбаева, 286Б</p>
-<p>Почта для обращений: <a href="mailto:tehnoholod369@gmail.com">tehnoholod369@gmail.com</a></p>
-<p>Телефон и WhatsApp: <a href="tel:+77000369369">+77 000 369 369</a></p>
-<p>Лицо, ответственное за организацию обработки персональных данных: руководитель ИП «ТехноХолод» Истигечев Вячеслав Викторович</p>
-</div>
-
-<h2>3. Принципы обработки</h2>
-<ul>
+<p>По вопросам данных: <a href="mailto:tehnoholod369@gmail.com">tehnoholod369@gmail.com</a></p>
+</div></div>
+<div class="thpol-sec" id="p3"><div class="thpol-sh"><span class="thpol-n">3</span><h2>Принципы обработки</h2></div><ul>
 <li>обработка законна и ведётся только с вашего согласия или по иному основанию, которое допускает Закон;</li>
 <li>данные собираются для конкретных заранее названных целей и не используются для несовместимых с ними;</li>
 <li>объём данных ограничен тем, что нужно для цели: паспортные данные, платёжные данные и сведения о состоянии здоровья мы не запрашиваем;</li>
 <li>данные хранятся не дольше, чем это нужно для цели или требует закон;</li>
 <li>доступ к данным ограничен: их видят только те, кто обрабатывает заявки.</li>
-</ul>
-
-<h2>4. Какие данные, для чего и на каком основании</h2>
-<div class="thpol-grid">
+</ul></div>
+<div class="thpol-sec" id="p4"><div class="thpol-sh"><span class="thpol-n">4</span><h2>Какие данные, для чего и на каком основании</h2></div><div class="thpol-grid">
 <div class="thpol-card">
 <h3>Данные из формы заявки</h3>
 <p>Имя, номер телефона, ответы на вопросы формы (например, количество комнат, площадь, этап ремонта), комментарий, название формы или страницы, откуда пришла заявка, дата и номер заявки.</p>
@@ -73,22 +104,16 @@
 </div>
 </div>
 <p>4.1. Просим не указывать в комментарии лишних сведений о себе, особенно о здоровье, финансах и документах. Они нам не нужны.</p>
-<p>4.2. Рекламные сообщения мы отправляем только при вашем отдельном согласии на это.</p>
-
-<h2>5. Согласие</h2>
-<p>5.1. Согласие даётся добровольно отметкой в форме перед отправкой. Без отметки форма не отправляется.</p>
+<p>4.2. Рекламные сообщения мы отправляем только при вашем отдельном согласии на это.</p></div>
+<div class="thpol-sec" id="p5"><div class="thpol-sh"><span class="thpol-n">5</span><h2>Согласие</h2></div><p>5.1. Согласие даётся добровольно отметкой в форме перед отправкой. Без отметки форма не отправляется.</p>
 <p>5.2. Отметкой вы разрешаете ИП «ТехноХолод» собирать, записывать, хранить, использовать и передавать перечисленным в разделе 7 получателям данные из пункта 4 для указанных целей, в том числе с передачей за пределы Республики Казахстан.</p>
 <p>5.3. Согласие действует до достижения целей обработки либо до его отзыва. Мы фиксируем номер и время заявки, отправленной с отметкой согласия.</p>
-<p>5.4. Вы можете отозвать согласие в любой момент, написав нам способом из раздела 9. После отзыва мы прекращаем обработку и удаляем данные в сроки, установленные Законом, кроме данных, которые обязаны хранить по закону. Отзыв не влияет на законность обработки до отзыва. Если вы откажетесь дать или отзовёте согласие, мы не сможем обработать вашу заявку.</p>
-
-<h2>6. Хранение, сроки и защита</h2>
-<p>6.1. Заявка записывается в таблицу заявок ИП «ТехноХолод» и направляется нам на электронную почту.</p>
+<p>5.4. Вы можете отозвать согласие в любой момент, написав нам способом из раздела 9. После отзыва мы прекращаем обработку и удаляем данные в сроки, установленные Законом, кроме данных, которые обязаны хранить по закону. Отзыв не влияет на законность обработки до отзыва. Если вы откажетесь дать или отзовёте согласие, мы не сможем обработать вашу заявку.</p></div>
+<div class="thpol-sec" id="p6"><div class="thpol-sh"><span class="thpol-n">6</span><h2>Хранение, сроки и защита</h2></div><p>6.1. Заявка записывается в таблицу заявок ИП «ТехноХолод» и направляется нам на электронную почту.</p>
 <p>6.2. Данные хранятся, пока нужны для ответа на ваш запрос и исполнения заказа, а также в течение срока, который закон устанавливает для хранения документов по сделкам. Если заявка не привела к сделке и вы не просили иного, мы удаляем её, когда в ней исчезает необходимость.</p>
 <p>6.3. Мы принимаем организационные и технические меры защиты: ограничиваем круг лиц с доступом, защищаем учётные записи, передаём данные из формы по защищённому соединению (HTTPS).</p>
-<p>6.4. Если произойдёт утечка данных, мы уведомим уполномоченный орган и вас в порядке и сроки, установленные законодательством.</p>
-
-<h2>7. Передача данных третьим лицам</h2>
-<p>7.1. Мы не продаём персональные данные и не публикуем их.</p>
+<p>6.4. Если произойдёт утечка данных, мы уведомим уполномоченный орган и вас в порядке и сроки, установленные законодательством.</p></div>
+<div class="thpol-sec" id="p7"><div class="thpol-sh"><span class="thpol-n">7</span><h2>Передача данных третьим лицам</h2></div><p>7.1. Мы не продаём персональные данные и не публикуем их.</p>
 <p>7.2. Для работы формы, почты, сайта и связи мы пользуемся сервисами, которым данные передаются или доступны:</p>
 <ul>
 <li>Google LLC (США): электронная почта и облачная таблица заявок, сервис аналитики Google Analytics;</li>
@@ -98,14 +123,10 @@
 <li>исполнители работ по вашему заказу (замер, монтаж): только имя, телефон и адрес выезда, и только когда вы заказываете такую услугу.</li>
 </ul>
 <p>7.3. Серверы части этих сервисов находятся за пределами Республики Казахстан. Передача данных за рубеж происходит с вашего согласия по пункту 5.2. Страны, где расположены серверы, могут не иметь такого уровня защиты персональных данных, как в Республике Казахстан.</p>
-<p>7.4. Государственным органам данные передаются только в случаях и порядке, предусмотренных законом.</p>
-
-<h2>8. Файлы cookie и аналитика</h2>
-<p>8.1. Сайт использует файлы cookie и сервисы статистики Яндекс.Метрика, Google Analytics и статистику платформы Tilda. Они помогают считать посещения и находить ошибки на сайте.</p>
-<p>8.2. Вы можете запретить или удалить cookie в настройках браузера. Сайт продолжит работать, но статистика будет неполной.</p>
-
-<h2>9. Ваши права и как ими воспользоваться</h2>
-<p>9.1. Вы вправе:</p>
+<p>7.4. Государственным органам данные передаются только в случаях и порядке, предусмотренных законом.</p></div>
+<div class="thpol-sec" id="p8"><div class="thpol-sh"><span class="thpol-n">8</span><h2>Файлы cookie и аналитика</h2></div><p>8.1. Сайт использует файлы cookie и сервисы статистики Яндекс.Метрика, Google Analytics и статистику платформы Tilda. Они помогают считать посещения и находить ошибки на сайте.</p>
+<p>8.2. Вы можете запретить или удалить cookie в настройках браузера. Сайт продолжит работать, но статистика будет неполной.</p></div>
+<div class="thpol-sec" id="p9"><div class="thpol-sh"><span class="thpol-n">9</span><h2>Ваши права и как ими воспользоваться</h2></div><p>9.1. Вы вправе:</p>
 <ul>
 <li>узнать, обрабатываем ли мы ваши данные, и получить сведения о целях, способах, получателях и сроках обработки;</li>
 <li>требовать уточнить, обновить, заблокировать или удалить данные, если они неполны, устарели или обрабатываются с нарушением закона;</li>
@@ -113,17 +134,12 @@
 <li>обратиться в уполномоченный государственный орган или в суд, если считаете, что ваши права нарушены.</li>
 </ul>
 <p>9.2. Для этого напишите на <a href="mailto:tehnoholod369@gmail.com">tehnoholod369@gmail.com</a> или в WhatsApp на <a href="tel:+77000369369">+77 000 369 369</a>. Укажите имя и номер телефона из заявки. Чтобы не передать данные постороннему человеку, мы можем попросить подтвердить, что обращаетесь вы.</p>
-<p>9.3. Мы отвечаем на обращение в сроки, установленные Законом.</p>
-
-<h2>10. Данные третьих лиц и возраст</h2>
-<p>10.1. Указывая в форме данные другого человека, вы подтверждаете, что имеете на это его согласие или иное законное право.</p>
-<p>10.2. Сайт предназначен для лиц старше 18 лет. Мы сознательно не собираем данные несовершеннолетних. Если такие данные попали к нам, мы удалим их по обращению законного представителя.</p>
-
-<h2>11. Сторонние сайты</h2>
-<p>На сайте могут быть ссылки на другие ресурсы (маркетплейсы, мессенджеры, карты). Мы не отвечаем за их политику обработки данных, поэтому рекомендуем читать её отдельно.</p>
-
-<h2>12. Изменение Политики и применимое право</h2>
-<p>12.1. Мы можем изменять Политику. Новая редакция публикуется на этой странице и применяется с момента публикации. В отношении уже полученных данных условия изменяются только в пределах, допустимых Законом.</p>
+<p>9.3. Мы отвечаем на обращение в сроки, установленные Законом.</p></div>
+<div class="thpol-sec" id="p10"><div class="thpol-sh"><span class="thpol-n">10</span><h2>Данные третьих лиц и возраст</h2></div><p>10.1. Указывая в форме данные другого человека, вы подтверждаете, что имеете на это его согласие или иное законное право.</p>
+<p>10.2. Сайт предназначен для лиц старше 18 лет. Мы сознательно не собираем данные несовершеннолетних. Если такие данные попали к нам, мы удалим их по обращению законного представителя.</p></div>
+<div class="thpol-sec" id="p11"><div class="thpol-sh"><span class="thpol-n">11</span><h2>Сторонние сайты</h2></div><p>На сайте могут быть ссылки на другие ресурсы (маркетплейсы, мессенджеры, карты). Мы не отвечаем за их политику обработки данных, поэтому рекомендуем читать её отдельно.</p></div>
+<div class="thpol-sec" id="p12"><div class="thpol-sh"><span class="thpol-n">12</span><h2>Изменение Политики и применимое право</h2></div><p>12.1. Мы можем изменять Политику. Новая редакция публикуется на этой странице и применяется с момента публикации. В отношении уже полученных данных условия изменяются только в пределах, допустимых Законом.</p>
 <p>12.2. К Политике и отношениям по обработке данных применяется законодательство Республики Казахстан.</p>
-<p class="thpol-s">Вопросы по Политике и обработке данных: tehnoholod369@gmail.com.</p>
-</section>
+<p class="thpol-s">Вопросы по Политике и обработке данных: tehnoholod369@gmail.com.</p></div>
+<div class="thpol-cta"><h2>Остались вопросы по данным?</h2><p>Напишем ответ в рабочее время: пн–пт 9:00–18:00.</p><div class="thpol-btns"><a class="thpol-b thpol-b1" href="mailto:tehnoholod369@gmail.com">Написать на почту</a><a class="thpol-b thpol-b2" href="https://wa.me/77000369369" target="_blank" rel="noopener">Написать в WhatsApp</a></div></div>
+</div></div></section>
