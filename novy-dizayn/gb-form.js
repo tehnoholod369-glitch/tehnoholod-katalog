@@ -187,6 +187,30 @@
   }
   var tries = 0, iv = setInterval(function () { if (initAnim() || ++tries > 40) { clearInterval(iv); } }, 150);
 
+  // живая шкала «набрано N из 9»: данные из файла прогресса (только код товара и число штук подтверждённых участников).
+  // Пока файла нет, он недоступен или у товара 0 штук, шкала скрыта и страница выглядит как обычно.
+  var PROGRESS = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/groupbuy-progress.json";
+  function initProgress() {
+    var boxes = document.querySelectorAll("[data-gbp]");
+    if (!boxes.length) { return false; }
+    if (document.documentElement.__gbp) { return true; }
+    document.documentElement.__gbp = 1;
+    fetch(PROGRESS + "?x=" + Math.floor(Date.now() / 300000)).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) {
+      Array.prototype.forEach.call(boxes, function (b) {
+        var n = parseInt(d[b.getAttribute("data-gbp")], 10);
+        if (!(n > 0)) { return; }
+        var msg;
+        if (n >= 9) { msg = "Группа набрала " + n + " шт.: скидка 9 % у всех участников"; }
+        else if (n >= 6) { msg = "Набрано " + n + " из 9 шт. До скидки 9 % ещё " + (9 - n); }
+        else { msg = "Набрано " + n + " из 9 шт. До скидки 6 % ещё " + (6 - n); }
+        b.innerHTML = '<span class="vd-pgt">' + msg + '</span><span class="vd-pgb"><i style="width:' + Math.min(100, Math.round(n / 9 * 100)) + '%"></i></span>';
+        b.hidden = false;
+      });
+    }).catch(function () {});
+    return true;
+  }
+  var tries2 = 0, iv2 = setInterval(function () { if (initProgress() || ++tries2 > 60) { clearInterval(iv2); } }, 250);
+
   document.addEventListener("click", function (e) {
     var a = e.target && e.target.closest ? e.target.closest("a[data-gb]") : null;
     if (!a || e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) { return; }
