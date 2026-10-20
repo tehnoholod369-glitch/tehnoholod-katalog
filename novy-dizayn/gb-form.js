@@ -129,7 +129,7 @@
       st.appendChild(document.createTextNode("@keyframes gbfConf{0%{transform:translate(0,0) rotate(0);opacity:1}100%{transform:translate(var(--dx),105vh) rotate(var(--rot));opacity:.9}}.gbf-cf{position:fixed;top:-12px;z-index:100000;width:9px;height:14px;border-radius:2px;animation:gbfConf 1.8s ease-in forwards;pointer-events:none}"));
       document.head.appendChild(st);
     }
-    var cols = ["#E81C1C", "#F59E0B", "#0066FF", "#178841", "#FFFFFF", "#0033A0"], wrap = document.body;
+    var cols = ["#E81C1C", "#8A35D6", "#0066FF", "#178841", "#FFFFFF", "#0033A0"], wrap = document.body;
     for (var i = 0; i < 46; i++) {
       var p = document.createElement("i");
       p.className = "gbf-cf";
