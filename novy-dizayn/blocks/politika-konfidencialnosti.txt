@@ -50,6 +50,14 @@
 .thpol a.thpol-b2:hover{background:#0066FF;color:#fff}
 @media(max-width:900px){.thpol-sum{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.thpol-hero{padding:40px 0 32px}.thpol h1{font-size:32px;line-height:40px}.thpol-in{padding:0 16px}.thpol-sum{grid-template-columns:1fr}.thpol-sec{padding:24px 16px}.thpol-dark .thpol-box{padding:16px}.thpol .thpol-card{padding:16px}.thpol-cta{padding:24px 16px}.thpol-b{width:100%}}
+.thpol-in{max-width:1200px}
+.thpol-hero .thpol-lead{max-width:760px}
+.thpol-lay{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start;padding:48px 0 0}
+.thpol-lay .thpol-nav{display:flex;flex-direction:column;flex-wrap:nowrap;gap:4px;position:sticky;top:96px;padding:0;border-left:2px solid #DCE5F0}
+.thpol-lay .thpol-nav a{display:block;background:none;border-radius:0 8px 8px 0;padding:8px 16px;margin-left:-2px;border-left:2px solid transparent;font-weight:600}
+.thpol-lay .thpol-nav a:hover{background:#E9F4FF;border-left-color:#0066FF}
+.thpol-lay .thpol-main{padding:0 0 64px}
+@media(max-width:1023px){.thpol-lay{grid-template-columns:1fr;gap:24px;padding-top:32px}.thpol-lay .thpol-nav{position:static;flex-direction:row;flex-wrap:wrap;border-left:0;gap:8px}.thpol-lay .thpol-nav a{background:#F1F5F9;border-radius:8px;border-left:0;margin:0}}
 </style>
 
 <section class="thpol" id="politika">
@@ -58,7 +66,7 @@
 <h1>Политика обработки персональных данных</h1>
 <p class="thpol-lead" style="margin-bottom:0">Какие данные мы получаем из заявок на сайте, для чего, кому передаём и как вы можете ими управлять.</p>
 </div></div>
-<div class="thpol-in">
+<div class="thpol-in"><div class="thpol-lay">
 <nav class="thpol-nav" aria-label="Содержание"><a href="#p1">1. Оператор</a><a href="#p2">2. Общие положения</a><a href="#p3">3. Какие данные и зачем</a><a href="#p4">4. Согласие и отзыв</a><a href="#p5">5. Хранение и защита</a><a href="#p6">6. Передача данных</a><a href="#p7">7. Ваши права</a><a href="#p8">8. Изменения и применимое право</a></nav>
 <div class="thpol-main">
 <div class="thpol-sec thpol-dark" id="p1"><div class="thpol-sh"><span class="thpol-n">1</span><h2>Оператор</h2></div><p>Данные из заявок на сайте tehnoholod369.kz обрабатывает:</p><div class="thpol-box"><p><b>ИП «ТехноХолод»</b>, ИИН/БИН 770313000379</p><p>Адрес: г. Алматы, ул. Какимжана Казыбаева, 286Б</p><p>По вопросам данных: <a href="mailto:tehnoholod369@gmail.com">tehnoholod369@gmail.com</a></p></div></div>
@@ -69,4 +77,4 @@
 <div class="thpol-sec" id="p6"><div class="thpol-sh"><span class="thpol-n">6</span><h2>Передача данных</h2></div><p>Мы не продаём персональные данные и не публикуем их. Для работы сайта, форм, почты и связи данные передаются или доступны сервисам:</p><ul><li>Google LLC (США): электронная почта, облачная таблица заявок, Google Analytics;</li><li>Tilda Publishing: платформа сайта и её статистика;</li><li>Яндекс: Яндекс.Метрика;</li><li>WhatsApp (Meta Platforms, Inc.): если вы пишете нам через мессенджер;</li><li>исполнители замера и монтажа: имя, телефон и адрес выезда, только если вы заказываете такую услугу.</li></ul><p>Серверы части этих сервисов находятся за пределами Республики Казахстан. Передача за рубеж происходит с вашего согласия. Государственным органам данные передаются только в случаях, предусмотренных законом.</p></div>
 <div class="thpol-sec" id="p7"><div class="thpol-sh"><span class="thpol-n">7</span><h2>Ваши права</h2></div><p>Вы вправе узнать, обрабатываем ли мы ваши данные, и получить сведения об их обработке; требовать уточнить, заблокировать или удалить данные, если они неполны, устарели или обрабатываются с нарушением закона; отозвать согласие; обратиться в уполномоченный государственный орган или в суд.</p><p>Напишите на <a href="mailto:tehnoholod369@gmail.com">tehnoholod369@gmail.com</a>, укажите имя и номер телефона из заявки. Чтобы не передать данные постороннему, мы можем попросить подтвердить личность. Отвечаем в сроки, установленные Законом.</p></div>
 <div class="thpol-sec" id="p8"><div class="thpol-sh"><span class="thpol-n">8</span><h2>Изменения и применимое право</h2></div><p>Новая редакция Политики публикуется на этой странице и применяется с момента публикации. К Политике применяется законодательство Республики Казахстан.</p></div>
-</div></div></section>
+</div></div></div></section>
