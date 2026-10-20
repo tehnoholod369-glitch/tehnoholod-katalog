@@ -75,12 +75,19 @@
     Array.prototype.forEach.call(boxes, function (box) {
       box.setAttribute(MARK, "1");
       var run = function () { loadData().then(function (d) { build(box, d); }); };
-      if ("IntersectionObserver" in window) {
-        var io = new IntersectionObserver(function (es) {
-          if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); run(); }
-        }, { rootMargin: "600px 0px" });
-        io.observe(box);
-      } else run();
+      // пустой блок нулевого размера IntersectionObserver не замечает (на DC-страницах он так и не срабатывал), поэтому смотрим на положение сами
+      var near = function () { var r = box.getBoundingClientRect(); return r.top < (window.innerHeight || 800) + 600; };
+      if (near()) { run(); return; }
+      var busy = false, check = function () {
+        if (busy) return; busy = true;
+        requestAnimationFrame(function () {
+          busy = false;
+          if (!near()) return;
+          window.removeEventListener("scroll", check); window.removeEventListener("resize", check); run();
+        });
+      };
+      window.addEventListener("scroll", check, { passive: true });
+      window.addEventListener("resize", check);
     });
   }
 
