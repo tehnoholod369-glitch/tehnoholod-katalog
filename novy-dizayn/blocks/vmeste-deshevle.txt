@@ -86,7 +86,7 @@
 .vd-video,.vd-yt-w iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;background:#000;display:block}
 .vd-yt-w{max-width:640px;margin:22px auto 0;text-align:left}.vd-yt{position:relative;display:block;width:100%;padding:0;border:0;border-radius:12px;overflow:hidden;cursor:pointer;aspect-ratio:16/9;background:#000}
 .vd-yt-w p{margin:8px 2px 0;font:500 14px/20px Inter,sans-serif;color:#475569}
-.vd-bdg{background:#F59E0B;color:#1A1A1A}
+.vd-bdg{background:#178841;color:#fff}
 @keyframes vdUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes vdPulse{0%{box-shadow:0 0 0 0 rgba(232,28,28,.55)}70%{box-shadow:0 0 0 16px rgba(232,28,28,0)}100%{box-shadow:0 0 0 0 rgba(232,28,28,0)}}
 .vd-hero .vd-hero-t>*{animation:vdUp .6s ease backwards}.vd-hero .vd-hero-t>*:nth-child(2){animation-delay:.08s}.vd-hero .vd-hero-t>*:nth-child(3){animation-delay:.16s}.vd-hero .vd-hero-t>*:nth-child(4){animation-delay:.24s}.vd-hero .vd-hero-t>*:nth-child(5){animation-delay:.32s}
