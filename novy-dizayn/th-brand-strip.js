@@ -5,7 +5,7 @@
    Атрибуты:
      data-th-brands="vodonagrevateli,vodoochistka"   группы каталога; бренды складываются, повторы убираются
      data-title="Текст"                              заголовок над логотипами (по умолчанию «Бренды в каталоге»)
-   Без правки блока: в head страницы window.THBS = {after:".селектор", groups:"g1,g2", title:"Текст"} (или массив) — полоса встанет после этого элемента.
+   Без правки блока: в head страницы window.THBS = {after:".селектор", groups:"g1,g2", title:"Текст", brands:"Ballu,Electrolux"} (или массив; brands — необязательный список, чтобы показать только эти бренды) — полоса встанет после этого элемента.
    Логотипы и подпись всегда по центру (правило владельца от 20.10.2026).
    Логотип ведёт в /katalog?g=<группа>&brand=<бренд>. Счётчиков наличия и числа моделей нет: см. правило владельца от 06.10.2026.
    Меньше двух брендов с логотипом — блок не рисуется (одна марка в полосе выглядит пусто).
@@ -51,11 +51,14 @@
     if (clean && clean.logos) for (k in clean.logos) L[k] = clean.logos[k];
     // бренд → первая из заданных групп, где он есть (туда и ведёт ссылка)
     var from = {}, order = [];
+    // data-brands="Ballu,Electrolux" — оставить только эти бренды (страницы одного типа товара внутри группы: проточные, накопительные)
+    var only = String(box.getAttribute("data-brands") || "").split(",").map(function (x) { return x.trim(); }).filter(Boolean);
     want.forEach(function (slug) {
       var g = (idx.groups || []).filter(function (x) { return x.slug === slug; })[0];
       if (!g) return;
       (g.brandList || []).forEach(function (b) {
         if (!b || /^без марки$/i.test(b) || !L[b] || from[b]) return;
+        if (only.length && only.indexOf(b) < 0) return;
         from[b] = slug; order.push(b);
       });
     });
@@ -112,6 +115,7 @@
         var d = document.createElement("div");
         d.setAttribute("data-th-brands", c.groups);
         if (c.title) d.setAttribute("data-title", c.title);
+        if (c.brands) d.setAttribute("data-brands", c.brands);
         anchor.parentNode.insertBefore(d, anchor.nextSibling);
         init();
       })();
