@@ -106,19 +106,25 @@
     var cfg = window.THBS; if (!cfg) return;
     (Array.isArray(cfg) ? cfg : [cfg]).forEach(function (c) {
       if (!c || !c.after || !c.groups) return;
-      var tries = 0;
-      (function put() {
+      var put = function () {
         var anchor = document.querySelector(c.after);
-        if (!anchor) { if (++tries < 100) setTimeout(put, 100); return; }
+        if (!anchor) return false;
         var nx = anchor.nextElementSibling;
-        if (nx && nx.hasAttribute("data-th-brands")) return;
+        if (nx && nx.hasAttribute("data-th-brands")) return true;
         var d = document.createElement("div");
         d.setAttribute("data-th-brands", c.groups);
         if (c.title) d.setAttribute("data-title", c.title);
         if (c.brands) d.setAttribute("data-brands", c.brands);
         anchor.parentNode.insertBefore(d, anchor.nextSibling);
         init();
-      })();
+        return true;
+      };
+      if (put()) return;
+      // DC-страницы рисуются скриптом долго (до 20–30 с на медленной сети): ждём появления элемента до минуты
+      if (!window.MutationObserver) return;
+      var mo = new MutationObserver(function () { if (put()) mo.disconnect(); });
+      mo.observe(document.documentElement, { childList: true, subtree: true });
+      setTimeout(function () { mo.disconnect(); }, 60000);
     });
   }
 
