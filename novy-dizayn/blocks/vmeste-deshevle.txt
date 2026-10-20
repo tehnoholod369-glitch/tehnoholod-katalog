@@ -71,9 +71,9 @@
 .vd-ic--c{width:44px;height:44px;border-radius:12px;background:#E9F4FF;color:#0066FF;margin-bottom:10px}.vd-ic--c svg{width:24px;height:24px}
 .vd-step b{font:700 12px/16px Inter,sans-serif;color:#606F85;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
 .vd-ladder{align-items:end}
-.vd-rung:nth-child(1){min-height:132px;justify-content:flex-end}.vd-rung:nth-child(2){min-height:176px;justify-content:flex-end;background:#EAF3FF;border-top-color:#E81C1C}.vd-rung:nth-child(2) em{color:#E81C1C}.vd-rung:nth-child(1){border-top-color:#0066FF}
-.vd-rung:nth-child(3){min-height:220px;justify-content:flex-end;background:#F5EDFC;border-color:#E3D0F7;border-top-color:#8A35D6}
-.vd-rung:nth-child(3) em{color:#8A35D6}
+.vd-rung:nth-child(1){min-height:132px;justify-content:flex-end}.vd-rung:nth-child(2){min-height:176px;justify-content:flex-end;background:#EAF3FF}.vd-rung:nth-child(1){border-top-color:#0066FF}
+.vd-rung:nth-child(3){min-height:220px;justify-content:flex-end;background:#0033A0;border-color:#0033A0;border-top-color:#0066FF}
+.vd-rung:nth-child(3) b,.vd-rung:nth-child(3) em{color:#fff}.vd-rung:nth-child(3) span{color:#DCE8FF}
 .vd-lad li:last-child{background:#E9F4FF;border-radius:8px;border-top:0;padding:8px 10px;margin-top:4px}
 .vd-c{transition:transform .18s ease,box-shadow .18s ease}.vd-c:hover{transform:translateY(-3px);box-shadow:0 4px 12px rgba(0,51,160,.12)}
 @media(prefers-reduced-motion:reduce){.vd-c{transition:none}.vd-c:hover{transform:none}}
@@ -87,7 +87,7 @@
 .vd-yt-w{max-width:640px;margin:22px auto 0;text-align:left}.vd-yt{position:relative;display:block;width:100%;padding:0;border:0;border-radius:12px;overflow:hidden;cursor:pointer;aspect-ratio:16/9;background:#000}
 .vd-yt-w p{margin:8px 2px 0;font:500 14px/20px Inter,sans-serif;color:#475569}
 .vd-bdg{background:#22C55E;color:#0A1F4D}
-.vd-tp{font-style:normal;font-weight:800}.vd-tp3{color:#0066FF}.vd-tp6{color:#E81C1C}.vd-tp9{color:#8A35D6}
+.vd-tp{font-style:normal;font-weight:800}.vd-tp3,.vd-tp6,.vd-tp9{color:#0033A0}
 @keyframes vdUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes vdPulse{0%{box-shadow:0 0 0 0 rgba(232,28,28,.55)}70%{box-shadow:0 0 0 16px rgba(232,28,28,0)}100%{box-shadow:0 0 0 0 rgba(232,28,28,0)}}
 .vd-hero .vd-hero-t>*{animation:vdUp .6s ease backwards}.vd-hero .vd-hero-t>*:nth-child(2){animation-delay:.08s}.vd-hero .vd-hero-t>*:nth-child(3){animation-delay:.16s}.vd-hero .vd-hero-t>*:nth-child(4){animation-delay:.24s}.vd-hero .vd-hero-t>*:nth-child(5){animation-delay:.32s}
@@ -107,10 +107,10 @@
 .vd-ex2-r .vd-rp{font:800 28px/34px Inter,sans-serif;color:#0033A0;text-align:right}
 .vd-ex2-r .vd-sv{grid-column:2/4;font:700 14px/20px Inter,sans-serif;color:#178841;font-style:normal;text-align:right}
 .vd-pc{display:inline-flex;justify-content:center;font:800 18px/24px Inter,sans-serif;font-style:normal;border-radius:10px;padding:6px 8px}
-.vd-pc3{background:#0066FF;color:#fff}.vd-pc6{background:#E81C1C;color:#fff}.vd-pc9{background:#8A35D6;color:#fff}
-.vd-ex2-r .vd-best{background:#fff;border:2px solid #8A35D6;padding:18px 16px 16px;box-shadow:0 6px 18px rgba(138,53,214,.25)}
-.vd-ex2-r .vd-best .vd-rp{font-size:38px;line-height:44px;color:#8A35D6}.vd-ex2-r .vd-best .vd-rl{font-weight:800}
-.vd-rib{position:absolute;right:14px;top:-12px;background:#8A35D6;color:#fff;text-decoration:none;border-radius:8px;padding:3px 10px;font:800 12px/18px Inter,sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.vd-pc3{background:#CFE3FA;color:#0033A0}.vd-pc6{background:#0066FF;color:#fff}.vd-pc9{background:#0033A0;color:#fff}
+.vd-ex2-r .vd-best{background:#fff;border:2px solid #0066FF;padding:18px 16px 16px;box-shadow:0 6px 18px rgba(0,102,255,.2)}
+.vd-ex2-r .vd-best .vd-rp{font-size:38px;line-height:44px;color:#0033A0}.vd-ex2-r .vd-best .vd-rl{font-weight:800}
+.vd-rib{position:absolute;right:14px;top:-12px;background:#0033A0;color:#fff;text-decoration:none;border-radius:8px;padding:3px 10px;font:800 12px/18px Inter,sans-serif;text-transform:uppercase;letter-spacing:.05em}
 .vd-ex2-f{grid-column:1/-1;margin:0;padding:14px 22px;background:#E9F4FF;font:600 15px/22px Inter,sans-serif;color:#0033A0}
 .vd-g3 .vd-c{width:calc((100% - 40px)/3)}
 .vd-g2 .vd-c{width:calc((100% - 20px)/2);max-width:420px}
