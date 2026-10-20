@@ -5,6 +5,8 @@
    Атрибуты:
      data-th-brands="vodonagrevateli,vodoochistka"   группы каталога; бренды складываются, повторы убираются
      data-title="Текст"                              заголовок над логотипами (по умолчанию «Бренды в каталоге»)
+   Без правки блока: в head страницы window.THBS = {after:".селектор", groups:"g1,g2", title:"Текст"} (или массив) — полоса встанет после этого элемента.
+   Логотипы и подпись всегда по центру (правило владельца от 20.10.2026).
    Логотип ведёт в /katalog?g=<группа>&brand=<бренд>. Счётчиков наличия и числа моделей нет: см. правило владельца от 06.10.2026.
    Меньше двух брендов с логотипом — блок не рисуется (одна марка в полосе выглядит пусто).
    Данные грузятся, когда блок подходит к экрану: brand-logos.json тяжёлый (~640 КБ), на первом экране он не нужен. */
@@ -13,12 +15,12 @@
   var BASE = "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/";
   var MARK = "data-th-bs-done";
 
-  var CSS = ".thbs{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;margin:24px 0 0;max-width:1248px;box-sizing:border-box}" +
+  var CSS = ".thbs{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;margin:24px auto 0;max-width:1248px;box-sizing:border-box}" +
     ".thbs *{box-sizing:border-box}" +
     ".thbs-box{background:#E9F4FF;border:1px solid #DCE5F0;border-radius:16px;padding:20px 24px}" +
-    ".thbs-t{margin:0 0 14px;font:600 14px/20px Inter,system-ui,sans-serif;color:#0033A0;letter-spacing:.02em}" +
+    ".thbs-t{margin:0 0 14px;font:600 14px/20px Inter,system-ui,sans-serif;color:#0033A0;letter-spacing:.02em;text-align:center}" +
     ".thbs-pre{min-height:140px}" +
-    ".thbs-g{display:flex;flex-wrap:wrap;gap:16px}" +
+    ".thbs-g{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}" +
     ".thbs-a{display:flex;align-items:center;justify-content:center;width:132px;height:64px;padding:8px 12px;background:#fff;border:1px solid #DCE5F0;border-radius:12px;transition:.15s}" +
     ".thbs-a:hover{border-color:#0066FF;box-shadow:0 4px 16px rgba(0,102,255,.12)}" +
     ".thbs-a img{display:block;max-width:100%;width:auto;object-fit:contain}" +
@@ -95,7 +97,29 @@
     });
   }
 
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+  // Режим без правки блока: в head страницы задаётся window.THBS = {after:"селектор", groups:"g1,g2", title:"Текст"} (или массив таких),
+  // скрипт сам ставит полосу после найденного элемента (ждёт его до 10 секунд — на DC-страницах блок рисуется скриптом)
+  function auto() {
+    var cfg = window.THBS; if (!cfg) return;
+    (Array.isArray(cfg) ? cfg : [cfg]).forEach(function (c) {
+      if (!c || !c.after || !c.groups) return;
+      var tries = 0;
+      (function put() {
+        var anchor = document.querySelector(c.after);
+        if (!anchor) { if (++tries < 100) setTimeout(put, 100); return; }
+        var nx = anchor.nextElementSibling;
+        if (nx && nx.hasAttribute("data-th-brands")) return;
+        var d = document.createElement("div");
+        d.setAttribute("data-th-brands", c.groups);
+        if (c.title) d.setAttribute("data-title", c.title);
+        anchor.parentNode.insertBefore(d, anchor.nextSibling);
+        init();
+      })();
+    });
+  }
+
+  function start() { auto(); init(); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
   // блоки Тильды и DC-страниц дорисовываются позже: один повторный проход
   setTimeout(init, 1500);
 })();
