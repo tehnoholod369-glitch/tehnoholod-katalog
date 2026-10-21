@@ -37,10 +37,18 @@
         if (!d) return;
         var by = {};
         d.forEach(function (x) { if (x.sl) by[x.sl] = x; });
-        // скрипт страницы ставит свои цены, когда догрузит те же данные; поправляем сразу и ещё два раза
+        // скрипт страницы ставит свои цены, когда догрузит те же данные, и на медленной сети делает это позже нас.
+        // Поэтому поправляем сразу и потом следим за страницей две минуты: любая перезапись цены правится обратно
+        // (fix меняет текст только при расхождении, так что цикла нет).
         fix(g, by);
-        setTimeout(function () { fix(g, by); }, 1500);
-        setTimeout(function () { fix(g, by); }, 4000);
+        if (window.MutationObserver) {
+          var t = 0, mo = new MutationObserver(function () { clearTimeout(t); t = setTimeout(function () { fix(g, by); }, 60); });
+          mo.observe(document.body, { childList: true, subtree: true, characterData: true });
+          setTimeout(function () { mo.disconnect(); }, 120000);
+        } else {
+          setTimeout(function () { fix(g, by); }, 1500);
+          setTimeout(function () { fix(g, by); }, 4000);
+        }
       }).catch(function () {});
     });
   }
