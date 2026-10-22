@@ -248,6 +248,10 @@
       + '.th-foot a:hover{color:#fff}'
       + '.th-foot img{height:44px;width:auto;display:block}'
       + '.th-foot .th-ph{font:800 22px/30px Inter,TildaSans,Arial,sans-serif;color:#fff;margin-top:14px;display:block}'
+      + '.th-foot .th-phs{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 24px;margin-top:14px}.th-foot .th-phs .th-ph{margin-top:0;display:inline-block;white-space:nowrap}'
+      + '@media(min-width:1180px){.th-foot__cols{grid-template-columns:2fr 1fr 1fr 1fr}}'
+      + '@media(min-width:761px) and (max-width:1179px){.th-foot__cols{grid-template-columns:1fr 1fr 1fr}.th-foot__cols>div:first-child{grid-column:1/-1}}'
+      + '@media(max-width:420px){.th-foot .th-phs{gap:4px 14px}.th-foot .th-phs .th-ph{font-size:17px;line-height:26px}}'
       + '.th-foot .th-sm{color:#CFE3FA;font-size:13px}'
       + '.th-foot .th-sl{margin-top:12px;max-width:17em;font:600 15px/22px Inter,TildaSans,Arial,sans-serif;color:#fff}'
       + '.th-foot__req{margin:0 36px;padding:18px 0;border-top:1px solid rgba(255,255,255,.18);display:flex;flex-wrap:wrap;gap:6px 22px;font-size:13px;color:#CFE3FA;box-sizing:border-box}'
@@ -257,9 +261,8 @@
       + '<div class="th-foot"><div class="th-foot__card"><div class="th-foot__cols">'
       + '<div><img src="' + CDN + 'assets/logo-369-horizontal-compact-dark.png" alt="ТЕХНОХОЛОД 369">'
       + '<div class="th-sl">Комфорт сегодня. Здоровый климат завтра.</div>'
-      + '<a class="th-ph" href="tel:' + ТЕЛЕФОН_МАШИНЕ + '">' + ТЕЛЕФОН_ЛЮДЯМ + '</a><span class="th-sm">Звонки и WhatsApp</span>'
-      // второй рабочий номер (владелец, 06.10.2026): принимает звонки и WhatsApp; главный остаётся в шапке и кнопках
-      + '<a class="th-sm" href="tel:+77000336699" style="margin-top:6px">Второй номер: +77 000 33 66 99</a>'
+      // два номера рядом, один размер (решение владельца 23.10.2026); второй рабочий номер принимает звонки и WhatsApp (06.10.2026)
+      + '<div class="th-phs"><a class="th-ph" href="tel:' + ТЕЛЕФОН_МАШИНЕ + '">' + ТЕЛЕФОН_ЛЮДЯМ + '</a><a class="th-ph" href="tel:+77000336699">+77 000 33 66 99</a></div><span class="th-sm">Звонки и WhatsApp</span>'
       + '</div>'
       + колонка("Каталог", [["/kondicionery-almaty", "Кондиционирование"], ["/otoplenie", "Отопление"], ["/ventilyaciya", "Вентиляция"], ["/vodonagrevateli", "Водонагреватели"]])
       + колонка("Компания", [["/brendy", "Бренды"], ["/baza-znaniy", "База знаний"], ["/kontakty", "Контакты"]])
