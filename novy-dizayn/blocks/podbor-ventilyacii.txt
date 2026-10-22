@@ -103,7 +103,7 @@
 .thvc .card{box-shadow:none;border:1px solid #ddd;page-break-inside:avoid;}
 .thvc .model{page-break-inside:avoid;}}
 .thvc .kpbar{display:none!important}
-.thvc{display:block;min-height:0;justify-content:normal;padding:18px 24px 40px;}.thvc .wrap{min-width:0;max-width:min(1200px,100%);margin-left:auto;margin-right:auto;}.thvc .card{min-width:0;max-width:100%;overflow-wrap:break-word;}.thvc .foot{min-width:0;max-width:100%;overflow-wrap:break-word;}.thvc .wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;column-gap:32px;align-items:start;}.thvc .wrap>*{grid-column:1/-1;min-width:0;}.thvc .wrap>.card,.thvc .wrap>#out{grid-column:1;}.thvc .wrap>.side{grid-column:2;grid-row:5/span 3;position:sticky;top:96px;}.thvc .grid2:has(#customer){display:none;}@media(max-width:900px){.thvc .wrap{display:block;}.thvc .wrap>.side{position:static;margin-bottom:16px;}}.thvc .head{display:none;}.thvc .thvc-crumbs{font-size:14px;color:var(--muted);margin:0 0 12px;line-height:1.5;}.thvc .thvc-crumbs a{color:var(--blue-d);text-decoration:none;}@media(max-width:640px){.thvc table.calc{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}.thvc table.calc th,.thvc table.calc td{padding:7px 8px;min-width:112px;}.thvc .card{padding:16px;}}</style>
+.thvc{display:block;min-height:0;justify-content:normal;padding:18px 24px 40px;}.thvc .wrap{min-width:0;max-width:min(1200px,100%);margin-left:auto;margin-right:auto;}.thvc .card{min-width:0;max-width:100%;overflow-wrap:break-word;}.thvc .foot{min-width:0;max-width:100%;overflow-wrap:break-word;}.thvc .wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;column-gap:32px;align-items:start;}.thvc .wrap>*{grid-column:1/-1;min-width:0;}.thvc .wrap>.card,.thvc .wrap>#out{grid-column:1;}.thvc .wrap>.side{grid-column:2;grid-row:5/span 3;position:sticky;top:96px;}.thvc .grid2:has(#customer){display:none;}@media(max-width:900px){.thvc .wrap{display:block;}.thvc .wrap>.side{position:static;margin-bottom:16px;}}.thvc .head{display:none;}.thvc .thvc-crumbs{font-size:14px;color:var(--muted);margin:0 0 12px;line-height:1.5;}.thvc .thvc-crumbs a{color:var(--blue-d);text-decoration:none;}@media(max-width:640px){.thvc table.calc{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}.thvc table.calc th,.thvc table.calc td{padding:7px 8px;min-width:112px;}.thvc .card{padding:16px;}}@media print{.thvc{display:block!important;padding:0!important;}.thvc .wrap{display:block!important;max-width:100%!important;}.thvc .side{display:none!important;}.thvc .mtop{flex-wrap:wrap;}.thvc .price{white-space:normal;}.thvc .ttx{width:100%;table-layout:fixed;}.thvc .ttx td{word-break:break-word;overflow-wrap:anywhere;}.thvc .photo img{max-height:130px;width:auto;}.thvc .model{margin-bottom:10px;padding:12px;}}</style>
 <div class="thvc">
 <div class="wrap">
 <nav class="thvc-crumbs" aria-label="Навигация"><a href="/">Главная</a> › <a href="/ventilyaciya">Вентиляция</a> › <span>Подбор приточно-вытяжной системы</span></nav>
@@ -233,9 +233,8 @@ const BADGE = {norm:'<span class="badge b-norm">норма</span>', orient:'<spa
   if (BUILD.iso) {
     const days = Math.floor((Date.now() - new Date(BUILD.iso + 'T00:00:00').getTime()) / 86400000);
     if (days > STALE_DAYS) {
-      $('staleBanner').innerHTML = '<div class="err" style="margin:0 0 16px">' +
-        'Цены и остатки в расчёте могли измениться. ' +
-        'Уточните цену и наличие у нас — по телефону или в WhatsApp.</div>';
+      // Плашка убрана по решению владельца 22.10.2026: предупреждение о цене остаётся в шагах «Уточните у нас».
+      $('staleBanner').innerHTML = '';
     } else if (days > 0) {
       $('staleBanner').innerHTML = '' +
         '';
@@ -505,19 +504,27 @@ function card(m, role, why, req){
   h += '<table class="ttx">';
   h += '<tr><td>Расход воздуха</td><td><b>' + fmt(m.q) + ' м³/ч</b>' + (req ? ' <span style="color:#6b7682">(требуется ' + fmt(req) + ')</span>' : '') + '</td></tr>';
   
-  h += '<tr><td>Серия</td><td>' + nd(m.s) + '</td></tr>';
-  h += '<tr><td>Тип оборудования</td><td>' + nd(m.t) + '</td></tr>';
-  h += '<tr><td>Тип нагревателя</td><td>' + nd(m.heater) + '</td></tr>';
-  h += '<tr><td>Мощность нагревателя</td><td>' + nd(m.hp) + '</td></tr>';
-  h += '<tr><td>Тип рекуператора</td><td>' + nd(m.recup) + '</td></tr>';
-  h += '<tr><td>Уровень шума</td><td>' + nd(m.noise) + '</td></tr>';
-  h += '<tr><td>Вариант размещения</td><td>' + nd(m.place) + '</td></tr>';
-  h += '<tr><td>Ступеней фильтрации</td><td>' + nd(m.filt) + '</td></tr>';
-  h += '<tr><td>Габариты</td><td>' + nd(m.dim) + '</td></tr>';
-  const war = (m.war && /^\d+$/.test(String(m.war)))
-      ? esc(m.war) + ' <span style="color:#b0b8c2">(единица не указана)</span>'
-      : nd(m.war);
-  h += '<tr><td>Гарантия</td><td>' + war + '</td></tr>';
+  const row = (label, v) => (v === null || v === undefined || v === '' || v === 'нет данных') ? '' : '<tr><td>' + label + '</td><td>' + esc(v) + '</td></tr>';
+  h += row('Серия', m.s);
+  h += row('Тип оборудования', m.t);
+  h += row('Тип нагревателя', m.heater);
+  h += row('Мощность нагревателя', m.hp);
+  h += row('Тип рекуператора', m.recup);
+  h += row('Уровень шума', m.noise);
+  h += row('Вариант размещения', m.place);
+  h += row('Ступеней фильтрации', m.filt);
+  h += row('Габариты', m.dim);
+  // Гарантия: в данных бывает «3 года», «12 мес.» и голые числа 12/24/36.
+  // Голое число читаем как месяцы: ряд 12/24/36 совпадает с «12 мес.», «2 года», «3 года» у других позиций.
+  let warTxt = null;
+  if (m.war) {
+    const ws = String(m.war).trim();
+    if (/^\d+$/.test(ws)) {
+      const mo = parseInt(ws, 10);
+      warTxt = mo + ' мес.' + (mo >= 24 && mo % 12 === 0 ? ' (' + (mo / 12) + (mo / 12 < 5 ? ' года' : ' лет') + ')' : '');
+    } else { warTxt = ws; }
+  }
+  h += row('Гарантия', warTxt);
   h += '<tr><td>Почему предложено</td><td>' + esc(why) + '</td></tr>';
   h += '</table>';
   if (m.p) {
