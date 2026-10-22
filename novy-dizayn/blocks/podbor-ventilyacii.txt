@@ -234,6 +234,13 @@ function guardPrices() {
   }
 }
 guardPrices();
+const KEEP_TOVAR = { 'royal-clima-rcs-650-u': 1, 'royal-clima-rcs-800-u': 1 };
+document.addEventListener('click', function (e) {
+  const a = e.target && e.target.closest ? e.target.closest('a[data-keep]') : null;
+  if (!a) return;
+  e.preventDefault();
+  window.open(a.getAttribute('data-keep'), '_blank', 'noopener');
+}, true);
 const CATALOG_URL = 'https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/ventilyaciya.json';
 const catalogLoad = fetch(CATALOG_URL).then(r => r.json()).then(list => {
   const by = {};
@@ -539,12 +546,13 @@ function fallback(txt, done){
 function card(m, role, why, req){
   const cls = role === 'Минимальная цена' ? 'budget' : role === 'С запасом' ? 'reserve' : role === 'Ближайший по расходу' ? 'best' : '';
   const href = m.sl ? '/tovar?g=ventilyaciya&sl=' + encodeURIComponent(m.sl) : '';
+  const kp = (m.sl && KEEP_TOVAR[m.sl]) ? ' data-keep="' + href + '&nr=1"' : '';
   let h = '<div class="model ' + cls + '">';
   h += '<div class="role">' + esc(role) + '</div>';
-  h += '<div class="mtop"><div><div class="mbrand">' + nd(m.b) + '</div><div class="mname">' + (href ? '<a class="mlink" href="' + href + '" target="_blank" rel="noopener">' + nd(m.m) + '</a>' : nd(m.m)) + '</div>';
+  h += '<div class="mtop"><div><div class="mbrand">' + nd(m.b) + '</div><div class="mname">' + (href ? '<a class="mlink" href="' + href + '"' + kp + ' target="_blank" rel="noopener">' + nd(m.m) + '</a>' : nd(m.m)) + '</div>';
   h += '<div class="stock ' + (m.in ? 'in' : 'out') + '">' + nd(stk(m.st)) + '</div></div>';
   h += '<div><div class="price">' + (m.p ? fmt(m.p) + ' ₸' : '<span class="nd">нет цены</span>') + '</div></div></div>';
-  h += '<div class="photo">' + (href ? '<a class="plink" href="' + href + '" target="_blank" rel="noopener" aria-label="Открыть карточку товара">' : '') + (m.ph
+  h += '<div class="photo">' + (href ? '<a class="plink" href="' + href + '"' + kp + ' target="_blank" rel="noopener" aria-label="Открыть карточку товара">' : '') + (m.ph
       ? '<img src="' + esc(m.ph) + '" alt="' + esc(m.m || '') + '" loading="lazy" onerror="this.parentNode.innerHTML=\'<div class=&quot;ph&quot;>фото не загрузилось</div>\'">'
       : '<div class="ph">фото не заведено</div>') + (href ? '</a>' : '') + '</div>';
   h += '<table class="ttx">';
@@ -566,7 +574,7 @@ function card(m, role, why, req){
   h += '<tr><td>Почему предложено</td><td>' + esc(why) + '</td></tr>';
   h += '</table>';
   if (href) {
-    h += '<a class="btn ghost more noprint" href="' + href + '" target="_blank" rel="noopener">Открыть карточку товара →</a>';
+    h += '<a class="btn ghost more noprint" href="' + href + '"' + kp + ' target="_blank" rel="noopener">Открыть карточку товара →</a>';
   }
   if (m.p) {
     h += '<div class="kpbar noprint">' +
