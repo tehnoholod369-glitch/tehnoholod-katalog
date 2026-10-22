@@ -224,6 +224,8 @@ const stk = s => (s === null || s === undefined) ? s : String(s)
   .replace(/\s*\((?:прайс|на)?\s*\d{2}\.\d{2}\.\d{4}\)/gi, '')
   .replace(/\s*прайс\s*\d{2}\.\d{2}\.\d{4}/gi, '')
   .replace(/\s*\d{2}\.\d{2}\.\d{4}/g, '')
+  .replace(/\s*\(\s*\d+\s*шт\.?\s*\)/gi, '')
+  .replace(/[:,]?\s*осталось\s*:?\s*\d+\s*шт\.?/gi, '')
   .replace(/\s*\(\s*\)/g, '').trim();
 const nd = v => (v === null || v === undefined || v === '') ? '<span class="nd">нет данных</span>' : esc(v);
 const BADGE = {norm:'<span class="badge b-norm">норма</span>', orient:'<span class="badge b-orient">ориентир</span>', check:'<span class="badge b-check">сверить</span>'};
