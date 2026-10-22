@@ -197,12 +197,21 @@
     document.documentElement.__gbp = 1;
     fetch(PROGRESS + "?x=" + Math.floor(Date.now() / 300000)).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) {
       Array.prototype.forEach.call(boxes, function (b) {
+        var gg = d._g && d._g[b.getAttribute("data-gbp")];
+        var dayNow = gg ? (gg.day || 1) + Math.floor((Date.now() / 1000 - (gg.t0 || 0)) / 86400) : 0;
+        if (gg && (gg.closed || dayNow > 9)) {  // закрыта досрочно (лимит товара) или срок вышел: кнопку прячем
+          b.innerHTML = '<span class="vd-pgt">Набор закрыт: ' + (gg.closed ? "лимит товара набран" : "группа завершена") + '. У всех участников скидка 9 %</span>';
+          b.hidden = false;
+          var art = b.parentNode, jb = art && art.querySelector ? art.querySelector("a[data-gb]") : null;
+          if (jb) { jb.style.display = "none"; }
+          return;
+        }
         var n = parseInt(d[b.getAttribute("data-gbp")], 10);
         if (!(n > 0)) { return; }
         var msg;
-        if (n >= 9) { msg = "Группа набрала " + n + " шт.: скидка 9 % у всех участников"; }
-        else if (n >= 6) { msg = "Набрано " + n + " из 9 шт. До скидки 9 % ещё " + (9 - n); }
-        else { msg = "Набрано " + n + " из 9 шт. До скидки 6 % ещё " + (6 - n); }
+        if (n >= 9) { msg = "В группе " + n + " шт.: скидка 9 % уже действует у всех участников"; }
+        else if (n >= 6) { msg = "В группе " + n + " шт.: скидка 6 % уже действует, до 9 % ещё " + (9 - n); }
+        else { msg = "В группе " + n + " шт., до скидки 6 % раньше срока ещё " + (6 - n); }
         b.innerHTML = '<span class="vd-pgt">' + msg + '</span><span class="vd-pgb"><i style="width:' + Math.min(100, Math.round(n / 9 * 100)) + '%"></i></span>';
         b.hidden = false;
       });
@@ -227,16 +236,20 @@
       var units = parseInt(d[code], 10) || 0;
       var day = (g.day || 1) + Math.floor((Date.now() / 1000 - (g.t0 || 0)) / 86400);
       if (day < 1) { day = 1; }
-      var closed = day > 9, left = Math.max(0, 9 - day);
-      var tier = units >= 9 ? 9 : units >= 6 ? 6 : day >= 3 ? 3 : 0;
+      var early = !!g.closed;  // закрыта досрочно: набран лимит товара
+      var closed = day > 9 || early, left = Math.max(0, 9 - day);
+      // календарная лестница 369: 3, 6 и 9 % гарантированы всем по дням, штуки группы открывают ступень раньше срока
+      var tierDay = day >= 9 ? 9 : day >= 6 ? 6 : day >= 3 ? 3 : 0;
+      var tierUnits = units >= 9 ? 9 : units >= 6 ? 6 : 0;
+      var tier = closed ? 9 : Math.max(tierDay, tierUnits);
       var dayEl = q("day"), bar = q("bar"), leftEl = q("left"), un = q("units"), join = q("join");
       if (closed) {
-        dayEl.innerHTML = "<b>Набор закрыт</b>";
+        dayEl.innerHTML = "<b>" + (early ? "Набор закрыт досрочно" : "Набор закрыт") + "</b>";
         bar.hidden = true;
-        leftEl.textContent = "Набор в группу закрыт.";
+        leftEl.textContent = early ? "Лимит товара набран. У всех участников скидка 9 %, цена зафиксирована." : "Набор в группу закрыт.";
         if (join) { join.hidden = true; }
       } else {
-        dayEl.innerHTML = "<b>День " + day + " из 9</b><span>" + (day >= 3 ? "Скидка 3 % уже действует" : "Скидка 3 % включится с 3-го дня") + "</span>";
+        dayEl.innerHTML = "<b>День " + day + " из 9</b><span>" + (tier ? "Сейчас скидка " + tier + " %" : "Скидка 3 % включится с 3-го дня") + "</span>";
         var seg = bar.children;
         for (var k = 0; k < seg.length; k++) { seg[k].className = k < Math.min(day, 9) ? "on" : ""; }
         bar.hidden = false;
@@ -244,10 +257,10 @@
       }
       dayEl.hidden = false; leftEl.hidden = false;
       if (units > 0) {
-        var more = closed ? "Итоговая скидка группы " + (tier || 3) + " %." : units >= 9 ? "Максимальная скидка 9 % у всех участников." : units >= 6 ? "До скидки 9 % ещё " + (9 - units) + " шт." : "До скидки 6 % ещё " + (6 - units) + " шт.";
+        var more = closed ? "Итоговая скидка группы 9 %." : units >= 9 ? "Скидка 9 % уже действует у всех участников." : units >= 6 ? "До скидки 9 % раньше срока ещё " + (9 - units) + " шт." : "До скидки 6 % раньше срока ещё " + (6 - units) + " шт.";
         un.innerHTML = "<b>" + (closed ? "В группе" : "Присоединились") + ": " + units + " шт.</b>" + more + '<span class="fg-pb"><i style="width:' + Math.min(100, Math.round(units / 9 * 100)) + '%"></i></span>';
       } else {
-        un.innerHTML = "<b>Участников пока нет</b>Станьте первым. Скидка 3 % действует с 3-го дня работы группы.";
+        un.innerHTML = "<b>Участников пока нет</b>Станьте первым: заявки подтверждаем по порядку подачи, товар бронируем до закрытия группы.";
       }
       if (!closed || units > 0) { un.hidden = false; }
       var rungs = f.querySelectorAll("[data-t]");
