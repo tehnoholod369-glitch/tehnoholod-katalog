@@ -220,6 +220,20 @@ const MODELS = /*__VENT_DATA__*/[{"b":"Ballu","dim":"35.2 см×26.2 см×14 с
  * Зашитые в блок цены и остатки старели (сборка 06.10.2026). Теперь при открытии страницы берём
  * цену и наличие из каталога сайта по слагу (sl). Не загрузилось за 2,5 с — работаем с зашитыми, как раньше.
  * Наличие: «В наличии» только если так написано в каталоге, иначе «под заказ» (решение владельца 4П). */
+function guardPrices() {
+  const per = {};
+  MODELS.forEach(m => { if (m.q && m.p) (per[m.t] = per[m.t] || []).push(m.p / m.q); });
+  const med = {};
+  Object.keys(per).forEach(k => {
+    const a = per[k].slice().sort((x, y) => x - y);
+    if (a.length >= 5) med[k] = a[Math.floor(a.length / 2)];
+  });
+  for (let i = MODELS.length - 1; i >= 0; i--) {
+    const m = MODELS[i], md = med[m.t];
+    if (md && m.q && m.p && (m.p / m.q) < md * 0.25) MODELS.splice(i, 1);
+  }
+}
+guardPrices();
 const CATALOG_URL = 'https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/ventilyaciya.json';
 const catalogLoad = fetch(CATALOG_URL).then(r => r.json()).then(list => {
   const by = {};
@@ -231,6 +245,7 @@ const catalogLoad = fetch(CATALOG_URL).then(r => r.json()).then(list => {
     m.in = (c.st === 'В наличии');
     m.st = m.in ? 'в наличии' : 'под заказ';
   });
+  guardPrices();
 }).catch(() => {});
 const catalogReady = Promise.race([catalogLoad, new Promise(res => setTimeout(res, 2500))]);
 
