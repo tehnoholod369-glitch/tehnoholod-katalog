@@ -90,9 +90,9 @@
         try { if (ok && window.THTrack) { window.THTrack("lead_submit", { channel: "gb" }); } } catch (x) { /* счётчики не мешают */ }
         var text = "Здравствуйте. Хочу в группу «Вместе дешевле»: " + title + ", " + q + " шт. Меня зовут " + name + "." + (zy ? " Заявка " + zy + "." : "");
         var href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(text);
-        box.innerHTML = "<div class='gbf-ok'><h3>" + (ok ? "Заявка принята" : late ? "Заявка отправляется" : "Откройте WhatsApp") + "</h3>" +
+        box.innerHTML = "<div class='gbf-ok'><h3>" + (ok ? "Спасибо, заявка принята" : late ? "Заявка отправляется" : "Откройте WhatsApp") + "</h3>" +
           (zy ? "<b>" + esc(zy) + "</b>" : "") +
-          "<p class='gbf-p'>" + (ok ? "Менеджер подтвердит участие и количество в WhatsApp." : late ?
+          "<p class='gbf-p'>" + (ok ? "Менеджер подтвердит участие и количество в WhatsApp по порядку подачи заявок. Платить сейчас не нужно." : late ?
             "Номер заявки придёт чуть позже. Напишите нам в WhatsApp, менеджер найдёт её по вашему номеру телефона." :
             "Заявка в таблицу не дошла, напишите нам в WhatsApp: так её не потеряем.") + "</p>" +
           "<a class='gbf-b' style='text-decoration:none' target='_blank' rel='noopener' href='" + esc(href) + "'>Открыть WhatsApp</a>" +
