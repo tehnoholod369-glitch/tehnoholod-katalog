@@ -211,6 +211,52 @@
   }
   var tries2 = 0, iv2 = setInterval(function () { if (initProgress() || ++tries2 > 60) { clearInterval(iv2); } }, 250);
 
+  // «Группа №1» вверху страницы: день группы и число участников из того же файла прогресса.
+  // Пока данных нет, блок показывает только название, ступени цен и кнопку; день и участники скрыты.
+  function plDays(n) { var m = n % 10, h = n % 100; return (m === 1 && h !== 11) ? "день" : (m >= 2 && m <= 4 && (h < 12 || h > 14)) ? "дня" : "дней"; }
+  function initFeatured() {
+    var f = document.querySelector("[data-gbf]");
+    if (!f) { return false; }
+    if (document.documentElement.__gbf) { return true; }
+    document.documentElement.__gbf = 1;
+    var code = f.getAttribute("data-gbf");
+    fetch(PROGRESS + "?x=" + Math.floor(Date.now() / 300000)).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) {
+      var g = d && d._g && d._g[code];
+      if (!g) { return; }
+      function q(n) { return f.querySelector('[data-fg="' + n + '"]'); }
+      var units = parseInt(d[code], 10) || 0;
+      var day = (g.day || 1) + Math.floor((Date.now() / 1000 - (g.t0 || 0)) / 86400);
+      if (day < 1) { day = 1; }
+      var closed = day > 9, left = Math.max(0, 9 - day);
+      var tier = units >= 9 ? 9 : units >= 6 ? 6 : day >= 3 ? 3 : 0;
+      var dayEl = q("day"), bar = q("bar"), leftEl = q("left"), un = q("units"), join = q("join");
+      if (closed) {
+        dayEl.innerHTML = "<b>Набор закрыт</b>";
+        bar.hidden = true;
+        leftEl.textContent = "Набор в группу закрыт.";
+        if (join) { join.hidden = true; }
+      } else {
+        dayEl.innerHTML = "<b>День " + day + " из 9</b><span>" + (day >= 3 ? "Скидка 3 % уже действует" : "Скидка 3 % включится с 3-го дня") + "</span>";
+        var seg = bar.children;
+        for (var k = 0; k < seg.length; k++) { seg[k].className = k < Math.min(day, 9) ? "on" : ""; }
+        bar.hidden = false;
+        leftEl.textContent = (left > 0 ? "До закрытия группы " + left + " " + plDays(left) + "." : "Группа закрывается сегодня.") + " Платить нужно после закрытия.";
+      }
+      dayEl.hidden = false; leftEl.hidden = false;
+      if (units > 0) {
+        var more = closed ? "Итоговая скидка группы " + (tier || 3) + " %." : units >= 9 ? "Максимальная скидка 9 % у всех участников." : units >= 6 ? "До скидки 9 % ещё " + (9 - units) + " шт." : "До скидки 6 % ещё " + (6 - units) + " шт.";
+        un.innerHTML = "<b>" + (closed ? "В группе" : "Присоединились") + ": " + units + " шт.</b>" + more + '<span class="fg-pb"><i style="width:' + Math.min(100, Math.round(units / 9 * 100)) + '%"></i></span>';
+      } else {
+        un.innerHTML = "<b>Участников пока нет</b>Станьте первым. Скидка 3 % действует с 3-го дня работы группы.";
+      }
+      if (!closed || units > 0) { un.hidden = false; }
+      var rungs = f.querySelectorAll("[data-t]");
+      for (var j = 0; j < rungs.length; j++) { rungs[j].className = parseInt(rungs[j].getAttribute("data-t"), 10) === tier ? "now" : ""; }
+    }).catch(function () {});
+    return true;
+  }
+  var tries3 = 0, iv3 = setInterval(function () { if (initFeatured() || ++tries3 > 60) { clearInterval(iv3); } }, 250);
+
   document.addEventListener("click", function (e) {
     var a = e.target && e.target.closest ? e.target.closest("a[data-gb]") : null;
     if (!a || e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) { return; }
