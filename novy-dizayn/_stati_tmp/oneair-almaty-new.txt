@@ -1,0 +1,439 @@
+<div data-th-server="1" data-th-shapka="1"><div style="background:#071C3B;color:#fff;padding:9px 0;font-size:13px;font-family:TildaSans,Arial,sans-serif;"><div style="max-width:1240px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;"><span style="opacity:.85;">Алматы · доставка по Казахстану</span><span style="margin-left:auto;opacity:.85;">Продажа · монтаж · сервис</span><a href="tel:+77000369369" style="color:#fff;font-weight:700;text-decoration:none;">+77 000 369 369</a></div></div><div style="background:#fff;border-bottom:1px solid #DCE5F0;font-family:TildaSans,Arial,sans-serif;"><div style="max-width:1240px;margin:0 auto;padding:12px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;"><a href="/" style="text-decoration:none;"><img alt="ИП «ТехноХолод»" height="40" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-369-compact-original.png" style="height:40px;width:auto;display:block;" width="173"/></a><a href="/katalog" style="display:flex;align-items:center;gap:8px;background:#0872D3;color:#fff;border-radius:8px;padding:10px 15px;font-size:15px;font-weight:600;text-decoration:none;"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="1.7" style="display:block;flex:none;" viewbox="0 0 24 24" width="18"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17"></path></svg>Каталог</a><div style="flex:1;"></div><a href="/korzina" style="color:#0A4EA7;font-size:15px;font-weight:600;text-decoration:none;">Корзина</a><a href="/baza-znaniy" style="color:#0A4EA7;font-size:15px;font-weight:600;text-decoration:none;">База знаний</a><a href="/kontakty" style="color:#0A4EA7;font-size:15px;font-weight:600;text-decoration:none;">Контакты</a><a href="https://wa.me/77000369369" style="background:#E6F2FD;color:#0A4EA7;border-radius:8px;padding:10px 16px;font-size:15px;font-weight:700;text-decoration:none;">WhatsApp</a></div></div></div>
+<style>
+.thgeo{max-width:1060px;margin:0 auto;padding:24px 16px 40px;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1a2330;line-height:1.55}
+.thgeo-arts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:12px;margin-top:12px}
+.thgeo-art{display:flex;flex-direction:column;gap:6px;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:16px;text-decoration:none;color:inherit}
+.thgeo-art__r{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#0A4EA7}
+.thgeo-art__t{font-size:16px;font-weight:700;line-height:1.3}
+.thgeo-art__s{font-size:13px;color:#5A6675;line-height:1.5}
+.thgeo h1,.thgeo h2{font-size:clamp(19px,4.6vw,24px);margin:28px 0 10px}
+.thgeo h1{font-size:clamp(21px,5.6vw,34px);margin:0 0 12px}
+.thgeo-cta{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 8px}
+.thgeo-cta a{display:inline-block;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.thgeo-cta .tg1{background:#0e7d3f;color:#fff}
+.thgeo-cta .tg2{background:#eef3f8;color:#1a2330}
+.thgeo-tw{overflow-x:auto}
+.thgeo-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:12px 0 18px}
+.thgeo-card{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #DCE5F0;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(21,43,68,.06)}
+.thgeo-card__img{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:#f7f9fc;padding:12px;text-decoration:none}
+
+.thgeo-card__img img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}
+.thgeo-card__img--empty{color:#7a8796;font-size:13px}
+.thgeo-card__body{display:flex;flex-direction:column;gap:7px;padding:13px 14px 14px;min-height:220px}
+.thgeo-card__brand{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#5A6675}
+.thgeo-card__name{font-size:17px;font-weight:700;line-height:1.3;color:#17324d;text-decoration:none}
+.thgeo-card__spec{display:flex;flex-wrap:wrap;gap:6px}
+.thgeo-card__spec span{font-size:12px;line-height:1.2;padding:5px 8px;border-radius:999px;background:#f1f5f9;color:#46566a}
+.thgeo-card__stock{font-size:12px;color:#5a6675}
+.thgeo-card__price{margin-top:auto;font-size:20px;font-weight:800;line-height:1.2}
+.thgeo-card__actions{display:grid;grid-template-columns:1fr;gap:7px;margin-top:3px}
+.thgeo-card__actions a{display:flex;align-items:center;justify-content:center;min-height:42px;border-radius:9px;padding:8px 10px;text-decoration:none;font-weight:700;font-size:14px}
+.thgeo-card__more{background:#eef3f8;color:#17324d!important}
+.thgeo-card__wa{background:#0e7d3f;color:#fff!important}
+.thgeo-rev{background:#f4f9ff;border:1px solid #cfe3f7;border-radius:12px;padding:14px 16px;margin:14px 0}
+.thgeo-rev__t{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0a4ea7}
+.thgeo-rev__q{font-size:16px;line-height:1.55;margin-top:6px}
+.thgeo-rev__a{font-size:13px;color:#5a6b80;margin-top:8px}
+.thgeo table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+.thgeo th,.thgeo td{text-align:left;padding:8px 10px;border-bottom:1px solid #e3e9f0;white-space:nowrap}
+.thgeo td:first-child{white-space:normal}
+.thgeo a{color:#0b62c4}
+.thgeo-note{color:#5a6676;font-size:13px;margin-top:6px}
+.thgeo-faq{border-bottom:1px solid #e3e9f0;padding:10px 0}
+.thgeo-faq summary{font-weight:600;cursor:pointer}
+.thgeo-also{margin-top:26px}
+.thgeo-also p{font-size:14px;line-height:2;color:#5a6676}
+.thgeo-mont{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:12px;margin:14px 0}
+.thgeo-mont__c{background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:14px 16px}
+.thgeo-mont__t{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0A4EA7;margin-bottom:8px}
+.thgeo-mont__c--out .thgeo-mont__t{color:#9a5b00}
+.thgeo-mont ul{margin:0;padding-left:18px}
+.thgeo-mont li{font-size:14px;line-height:1.65;color:#3a4653}
+.thgeo-area{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.thgeo-area a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #cfe0f3;border-radius:22px;background:#f4f9ff;color:#0b62c4;text-decoration:none;font-weight:600;font-size:15px}
+.thgeo-mobile-catalog{display:none}
+@media (max-width:480px){
+.thgeo-cards{grid-template-columns:1fr;gap:12px}
+.thgeo-card{display:grid;grid-template-columns:112px minmax(0,1fr)}
+
+.thgeo-card__img{aspect-ratio:1/1;align-self:start;min-height:0;padding:8px}
+.thgeo-card__body{min-height:0;padding:11px 12px}
+.thgeo-card__name{font-size:16px}
+.thgeo-card__price{font-size:19px}
+.thgeo--mobile-catalog-first .thgeo-products{display:none}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog{display:block;background:#f4f9ff;border:1px solid #cfe3f7;border-radius:14px;padding:16px;margin:18px 0}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog h2{margin:0 0 6px;font-size:20px}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog p{margin:0 0 12px;color:#46566a}
+.thgeo--mobile-catalog-first .thgeo-mobile-catalog a{display:block;min-height:48px;padding:12px 16px;border-radius:10px;background:#0b62c4;color:#fff;text-decoration:none;font-weight:700;text-align:center}
+.thgeo-tw{overflow-x:visible}
+.thgeo table{min-width:0;width:100%}
+.thgeo thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.thgeo tbody tr{display:block;background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.thgeo tbody td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;white-space:normal}
+.thgeo tbody td::before{content:attr(data-label);color:#5A6675;font-size:13px;flex:0 0 auto}
+.thgeo tbody td:first-child{display:block;padding:0}
+.thgeo tbody td:first-child::before{content:none}
+.thgeo tbody td:first-child a{display:block;min-height:44px;padding:8px 0;font-size:16px;font-weight:600;line-height:1.35}
+.thgeo tbody td.thgeo-p{font-weight:700;font-size:17px}
+}
+</style>
+<style>
+.thv{max-width:1200px;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#1A1A1A;padding:0 16px 40px}
+.thv h1,.thv h2,.thv h3{color:#0033A0;font-family:Inter,system-ui,sans-serif}
+.thv a{color:#0066FF}
+.thv-hero{background:#E9F4FF;padding:20px 16px 26px;margin:0 -16px}
+.thv-hero h1{font:700 30px/38px Inter,sans-serif;margin:0}
+.thv-lead{font:400 17px/26px Inter,sans-serif;color:#2b3a52;margin:12px 0 18px}
+.thv-cta{display:grid;gap:10px}
+.thv-btn{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:8px;font:600 16px/1 Inter,sans-serif;text-decoration:none;padding:0 18px;box-sizing:border-box}
+.thv .thv-red{background:#E81C1C;color:#fff}
+.thv .thv-out{background:#fff;color:#0066FF;border:1.5px solid #0066FF}
+.thv .thv-blue{background:#0066FF;color:#fff}
+.thv-fine{font:400 13px/18px Inter,sans-serif;color:#475569;margin:12px 0 0}
+.thv-facts{display:grid;gap:12px;margin-top:20px}
+.thv-fact{background:#fff;border:1px solid #cfe3ff;border-radius:12px;padding:14px 16px}
+.thv-fact b{display:block;font:800 24px/30px Inter,sans-serif;color:#0033A0}
+.thv-fact span{font:400 14px/20px Inter,sans-serif;color:#475569}
+.thv-fact b .thgeo-pmin{display:inline;font:inherit;color:inherit}
+.thv-sec{padding-top:32px}
+.thv-sec h2{font:700 24px/32px Inter,sans-serif;margin:0 0 6px}
+.thv-sub{margin:0 0 16px;color:#475569;font:400 15px/22px Inter,sans-serif}
+.thv-routes{display:grid;gap:12px}
+.thv-route{border:1px solid #DCE5F0;border-radius:12px;box-shadow:0 1px 2px rgba(0,51,160,.06);background:#fff;min-width:0}
+.thv-row{display:flex;align-items:center;gap:12px;min-height:76px;padding:12px 16px;text-decoration:none;color:#0033A0}
+.thv-row b{display:block;font:600 17px/24px Inter,sans-serif}
+.thv-row small{display:block;font:400 14px/20px Inter,sans-serif;color:#475569}
+.thv-row .thv-ar{margin-left:auto;color:#0066FF;font-size:22px;flex:none}
+.thv-route .thv-more{display:block;padding:0 16px 12px;font:600 14px/20px Inter,sans-serif;text-decoration:none}
+.thv-pl{display:grid;gap:12px}
+.thv-card{display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-areas:"im pb" "pf pf";grid-template-rows:1fr auto;gap:0 12px;border:1px solid #DCE5F0;border-radius:12px;background:#fff;padding:12px;min-width:0}
+.thv-im{grid-area:im;display:grid;place-items:center;height:140px;align-self:start}
+.thv-im img{max-width:100%;max-height:140px;width:auto;height:auto;object-fit:contain}
+.thv-pb{grid-area:pb;display:flex;flex-direction:column;gap:3px;min-width:0}
+.thv-pb small{font:600 12px/16px Inter,sans-serif;color:#475569}
+.thv-pn{font:700 16px/22px Inter,sans-serif;color:#0033A0;text-decoration:none}
+.thv-mk{display:flex;gap:6px;flex-wrap:wrap}
+.thv-tag--ord{color:#475569!important;border-color:#CBD5E1!important;background:#F1F5F9!important}
+.thv-tag--stock{color:#127139!important;border-color:#B7E3C6!important;background:#EAF7EE!important}
+.thv-tag--stock::before,.thv-tag--ord::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:currentColor;margin-right:6px;vertical-align:1px}
+.thv-tag{padding:2px 10px;border-radius:12px;color:#0066FF;border:1px solid #B8D4FF;background:#E9F4FF;font:600 12px/20px Inter,sans-serif;white-space:nowrap}
+.thv-sp{border-collapse:collapse;width:100%;margin-top:4px;min-width:0!important;font-size:13px}
+.thv-sp td{font:400 13px/18px Inter,sans-serif;padding:3px 0!important;border:0;border-top:1px solid #F1F5F9;vertical-align:top;white-space:normal!important}
+.thv-sp td:first-child{color:#475569;width:46%;padding-right:6px!important}
+.thv-sp td:last-child{color:#1A1A1A;font-weight:500}
+.thv-pf{grid-area:pf;margin-top:10px;padding-top:10px;border-top:1px solid #DCE5F0}
+.thv-pp{font:800 22px/28px Inter,sans-serif;color:#1A1A1A}
+.thv-av{font:400 12px/16px Inter,sans-serif;color:#475569;margin-top:2px}
+.thv-bs{display:flex;gap:8px;margin-top:8px}
+.thv-bs .thv-btn{flex:1;min-height:44px;font-size:15px;padding:0 8px}
+.thv-steps{display:grid;gap:10px}
+.thv-step{display:flex;gap:14px;padding:14px 16px;border:1px solid #DCE5F0;border-radius:12px;background:#fff}
+.thv-step i{flex:none;width:32px;height:32px;border-radius:50%;background:#0066FF;color:#fff;display:grid;place-items:center;font:700 15px/1 Inter,sans-serif;font-style:normal}
+.thv-step b{display:block;font:700 16px/22px Inter,sans-serif;color:#0033A0}
+.thv-step span{font:400 15px/22px Inter,sans-serif;color:#223046}
+.thv .thgeo-faq{border:1px solid #DCE5F0;border-radius:12px;padding:0 16px;margin-bottom:10px;background:#fff}
+.thv .thgeo-faq summary{min-height:52px;display:flex;align-items:center;font:600 16px/22px Inter,sans-serif;color:#0033A0}
+.thv .thgeo-faq p{margin:0 0 14px;font:400 15px/24px Inter,sans-serif;color:#223046}
+.thv .thgeo-final{background:#0033A0;border:0;border-radius:16px;padding:20px 16px;color:#fff;margin-top:28px}
+.thv .thgeo-final h2{color:#fff;font:700 20px/28px Inter,sans-serif;margin:0 0 8px}
+.thv .thgeo-final p{color:#dbe7ff;font:400 14px/20px Inter,sans-serif;margin:0 0 14px}
+.thv .thgeo-final .thgeo-cta{display:grid;gap:10px;margin:0}
+.thv .thgeo-final .thgeo-cta a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:8px;font:600 16px/1 Inter,sans-serif;text-decoration:none}
+.thv .thgeo-final .tg1{background:#fff;color:#0033A0}
+.thv .thgeo-final .tg2{background:transparent;color:#fff;border:1.5px solid #fff}
+.thv h2{font:700 24px/32px Inter,sans-serif;margin:32px 0 10px}
+.thv .thgeo-note,.thv .thgeo-also p{font:400 13px/20px Inter,sans-serif;color:#475569}
+[data-th-shapka] div[style*="max-width:1240px"]{box-sizing:border-box!important;max-width:1232px!important;padding-left:16px!important;padding-right:16px!important}
+.thv-live{margin:0 0 14px}
+.thv-live:empty{display:none}
+.thv-live:not(:empty){border-left:4px solid #E81C1C;background:#FFF4F4;border-radius:0 12px 12px 0;padding:12px 16px;font:500 14px/22px Inter,sans-serif;color:#7A1111}
+@media(min-width:900px){
+ .thv-hero{padding:48px 40px 52px;margin:0;border-radius:0 0 24px 24px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+ .thv-hero h1{font:800 44px/52px Inter,sans-serif}
+ .thv-cta{grid-template-columns:1fr 1fr;max-width:520px}
+ .thv-sec{padding:56px 40px 0}
+ .thv-routes{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .thv-pl{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .thv-card{grid-template-columns:96px minmax(0,1fr)}
+ .thv-im img{max-height:120px}
+ .thv-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .thv-faqwrap,.thv .thgeo-final,.thv .thgeo-also{margin-left:40px;margin-right:40px}
+ .thv .thgeo-final{display:grid;grid-template-columns:1fr auto;grid-template-areas:"t c" "p c";column-gap:40px;row-gap:6px;align-items:center;padding:32px 40px}
+ .thv .thgeo-final h2{grid-area:t;margin:0}
+ .thv .thgeo-final p{grid-area:p;margin:0;font-size:15px;line-height:22px}
+ .thv .thgeo-final .thgeo-cta{grid-area:c;grid-template-columns:auto auto}
+ .thv .thgeo-final .thgeo-cta a{white-space:nowrap;padding:0 28px}
+}
+</style>
+<style>
+.thv-crumbs{font:400 13px/20px Inter,sans-serif;color:#475569;padding:12px 0 0}
+.thv-crumbs a{color:#475569;text-decoration:none}
+.thv-meta{font:500 13px/20px Inter,sans-serif;color:#475569;margin:12px 0 0}
+.thv-tiles{display:grid;gap:12px;margin-top:20px}
+.thv-prose p,.thv-prose li{font:400 16px/26px Inter,sans-serif;color:#223046}
+.thv-prose p{margin:0 0 14px}
+.thv-prose ul{margin:0 0 14px;padding-left:20px}
+.thv-prose li{margin:0 0 6px}
+.thv-prose h3{font:700 20px/28px Inter,sans-serif;color:#0033A0;margin:24px 0 10px}
+.thv-note{border-left:4px solid #0066FF;background:#F1F5F9;border-radius:0 12px 12px 0;padding:14px 16px;margin:0 0 14px;font:400 15px/24px Inter,sans-serif;color:#223046}
+.thv-next{display:grid;gap:10px}
+.thv-next a{display:block;border:1px solid #DCE5F0;border-radius:12px;padding:14px 16px;text-decoration:none;font:600 16px/22px Inter,sans-serif;color:#0033A0;background:#fff}
+.thv-next small{display:block;font:400 14px/20px Inter,sans-serif;color:#475569;margin-top:2px}
+@media(min-width:900px){
+ .thv-hero--model{grid-template-columns:1.05fr 1fr!important;align-items:start!important}
+ .thv-keyfacts{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .thv-hero h1{font-size:36px;line-height:44px}
+ .thv-next{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .thv-prose{max-width:820px}
+}
+.thv-modelcol{display:grid;gap:12px;align-content:start}
+.thv-photo{background:#fff;border:1px solid #DCE5F0;border-radius:16px;padding:16px;display:grid;place-items:center}
+.thv-photo img{width:100%;max-width:420px;height:auto;aspect-ratio:1/1;object-fit:contain;display:block}
+.thv-buy{background:#fff;border:1px solid #DCE5F0;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.thv-buy .thv-pp{font:800 30px/36px Inter,sans-serif}
+.thv-keyfacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.thv .thv-spec{border-collapse:collapse;width:100%;min-width:0;max-width:860px;font-size:15px}
+.thv .thv-spec td{padding:11px 12px;border-bottom:1px solid #E2E8F0;font:400 15px/22px Inter,sans-serif;white-space:normal;vertical-align:top}
+.thv .thv-spec td:first-child{color:#475569;width:42%}
+.thv .thv-spec td:last-child{color:#1A1A1A;font-weight:500}
+.thv-video{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#0f172a;margin:0 0 8px}
+.thv-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+</style>
+<style>
+.thgeo.thv{padding-bottom:56px}
+.thgeo.thv .thv-hero{background:#fff;border-radius:0;margin:0;padding:24px 0 32px}
+.thgeo.thv .thv-hero h1{font:700 32px/40px Inter,sans-serif}
+.thgeo.thv .thx-dealer{display:flex;align-items:center;gap:12px;margin:14px 0 14px}
+.thgeo.thv .thx-dealer img{height:30px;width:auto;display:block}
+.thgeo.thv .thx-dealer span{font:600 13px/18px Inter,sans-serif;color:#606F85;border-left:1px solid #E3E8EF;padding-left:12px}
+.thgeo.thv .thv-fact{border-color:#E3E8EF}
+.thgeo.thv .thv-fact b{font-weight:700}
+.thgeo.thv .thv-photo{border:0;border-radius:16px;box-shadow:0 4px 12px rgba(0,51,160,.08)}
+.thgeo.thv .thv-buy,.thgeo.thv .thv-card,.thgeo.thv .thv-route,.thgeo.thv .thv-step,.thgeo.thv .thgeo-faq,.thgeo.thv .thv-next a{border-color:#E3E8EF}
+.thgeo.thv .thv-step i{background:#0033A0}
+.thgeo.thv .thx-ph{margin:0;border-radius:16px;overflow:hidden;box-shadow:0 4px 12px rgba(0,51,160,.08);background:#fff}
+.thgeo.thv .thx-ph img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.thgeo.thv .thx-ph figcaption{font:400 12px/16px Inter,sans-serif;color:#606F85;padding:6px 12px}
+.thgeo.thv .thx-facts{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+.thgeo.thv .thx-facts .thv-fact{display:grid;grid-template-columns:28px 1fr;column-gap:14px;align-items:center}
+.thgeo.thv .thx-facts .thv-fact svg{grid-row:1/span 2}
+.thgeo.thv .thx-facts .thv-fact b,.thgeo.thv .thx-facts .thv-fact span{grid-column:2}
+.thgeo.thv .thx-brand{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;border:1px solid #E3E8EF;border-radius:12px;padding:20px 28px}
+.thgeo.thv .thx-brand img{height:44px;width:auto;display:block}
+.thgeo.thv .thx-brand b{display:block;font:600 17px/24px Inter,sans-serif;color:#0033A0}
+.thgeo.thv .thx-brand span{font:400 14px/20px Inter,sans-serif;color:#606F85}
+.thgeo.thv .thx-brand .rd{font:600 13px/18px Inter,sans-serif;color:#0033A0;border:1px solid #E3E8EF;border-radius:999px;padding:6px 12px;white-space:nowrap;text-decoration:none}
+.thgeo.thv .thx-rl{display:inline-flex;align-items:center;gap:6px;font:600 13px/18px Inter,sans-serif;color:#0033A0;text-decoration:none;margin-top:4px}
+.thgeo.thv .thx-rl:before{content:"★";color:#F59E0B;font-size:15px}
+.thgeo.thv .eyebrow{font:600 12px/16px Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#606F85;margin:0 0 10px}
+.thgeo.thv .rvgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px;align-items:start}
+.thgeo.thv .rvc{border:1px solid #E3E8EF;border-radius:12px;padding:22px;background:#fff;display:flex;flex-direction:column;gap:12px}
+.thgeo.thv .rvs{display:flex;gap:2px}
+.thgeo.thv .rvc p{margin:0;color:#2b3a52;font:400 15px/23px Inter,sans-serif}
+.thgeo.thv .rvc details summary{cursor:pointer;color:#0066FF;font:600 14px/20px Inter,sans-serif;margin-top:8px;list-style:none}
+.thgeo.thv .rvc details[open] summary{display:none}
+.thgeo.thv .rva{display:flex;justify-content:space-between;gap:12px;font:400 13px/18px Inter,sans-serif;color:#606F85;border-top:1px solid #E3E8EF;padding-top:12px}
+.thgeo.thv .rva b{font:600 14px/18px Inter,sans-serif;color:#0033A0}
+.thgeo.thv .rvsrc{font:400 13px/18px Inter,sans-serif;color:#606F85;margin-top:14px}
+@media(min-width:900px){
+ .thgeo.thv .thv-hero{padding:40px 0 48px;gap:48px}
+ .thgeo.thv .thv-hero h1{font:700 48px/56px Inter,sans-serif}
+ .thgeo.thv .thv-sec{padding-left:0;padding-right:0}
+ .thgeo.thv .thgeo-final,.thgeo.thv .thgeo-also{margin-left:0;margin-right:0}
+ .thgeo.thv h2{font:700 32px/40px Inter,sans-serif}
+ .thgeo.thv .thgeo-final h2{font:700 28px/36px Inter,sans-serif}
+}
+@media(max-width:480px){.thgeo.thv .thv-sp{display:table}.thgeo.thv .thv-sp tbody{display:table-row-group}.thgeo.thv .thv-sp tr{display:table-row;border:0;padding:0;margin:0;background:none}.thgeo.thv .thv-sp td{display:table-cell}.thgeo.thv .thv-sp td::before{content:none}}
+@media(max-width:900px){.thgeo.thv .thx-brand{grid-template-columns:1fr}.thgeo.thv .thx-facts{grid-template-columns:1fr;gap:12px}.thgeo.thv .rvgrid{grid-template-columns:1fr}.thgeo.thv .thx-ph{margin-top:18px}}
+</style>
+<div class="thgeo thv">
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<section class="thv-hero"><div><div class="thv-crumbs"><a href="https://tehnoholod369.kz/">Главная</a> › <a href="https://tehnoholod369.kz/ventilyaciya">Вентиляция</a> › Ballu ONEAIR</div><div class="thx-dealer"><img alt="Ballu" height="30" src="https://img.tehnoholod369.kz/img/logos/Ballu.webp" width="86"/></div><h1>Бризеры Ballu ONEAIR в Алматы</h1><p class="thv-lead">Свежий воздух с улицы при закрытых окнах. Подберём модель и комплектацию под вашу комнату. Монтаж рассчитаем отдельно.</p><div class="thv-cta"><a class="thv-btn thv-red" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D0%B1%D0%B5%D1%80%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%B8%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%20Ballu%20ONEAIR.%0A%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%2C%20%D0%BC%C2%B2%3A%20%0A%D0%9A%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%B0%3A%20">Подобрать модель в WhatsApp</a><a class="thv-btn thv-out" href="#oneair-compare">Сравнить модели</a></div><p class="thv-fine">Для установки нужно отверстие в наружной стене. Подогрев и датчик CO₂ зависят от комплектации.</p></div><div><figure class="thx-ph thx-ph--oa"><picture><source media="(max-width:959px)" srcset="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/oneair/hero-mobile.webp" width="600" height="748"><img alt="Приточный очиститель Ballu ONEAIR на стене в гостиной" decoding="async" fetchpriority="high" loading="eager" height="748" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/oneair/hero-desktop.webp" width="1000"></picture><figcaption>Иллюстрация производителя; показана одна из моделей серии</figcaption></figure></div></section>
+<section class="thv-sec" style="padding-top:24px"><div class="thx-brand"><img alt="Ballu" height="44" src="https://img.tehnoholod369.kz/img/logos/Ballu.webp" width="105"/><div><b>ONEAIR — серия приточных очистителей воздуха Ballu</b><span>Дизайн серии отмечен Red Dot Design Awards (по данным производителя).</span></div><a class="rd" href="https://tehnoholod369.kz/brizery-almaty">Бризеры в Алматы →</a></div></section>
+<section class="thv-sec oneair-compare" id="oneair-compare"><h2>Сравните семейства ONEAIR</h2><p>Подогрев и датчик CO₂ проверяйте в составе выбранного артикула. Возможность подключения датчика не означает, что он входит в комплект.</p><div aria-label="Сравнение моделей Ballu ONEAIR" class="thgeo-tw" role="region" tabindex="0">
+<table>
+<thead><tr><th scope="col">Модель</th><th scope="col">Воздухообмен</th><th scope="col">Площадь</th><th scope="col">Очистка</th><th scope="col">Шум</th><th scope="col">Датчик CO₂</th></tr></thead>
+<tbody>
+<tr><td data-label="Модель">ONEAIR ASP-80</td><td data-label="Воздухообмен">до 80 м³/ч</td><td data-label="Площадь">Уточним по комнате</td><td data-label="Очистка">2 ступени, HEPA H13</td><td data-label="Шум">от 24 дБ(А)</td><td data-label="Датчик CO₂">нет</td></tr><tr><td data-label="Модель">ONEAIR ASP-100 · ASP-100W</td><td data-label="Воздухообмен">до 125 м³/ч</td><td data-label="Площадь">до 40 м²</td><td data-label="Очистка">2 ступени, HEPA H13</td><td data-label="Шум">от 19 дБ(А)</td><td data-label="Датчик CO₂">Опция</td></tr><tr><td data-label="Модель">ONEAIR ASP-200S · ASP-200SP</td><td data-label="Воздухообмен">до 200 м³/ч</td><td data-label="Площадь">до 75 м²</td><td data-label="Очистка">6 ступеней, приток и рециркуляция</td><td data-label="Шум">от 19 дБ(А)</td><td data-label="Датчик CO₂">Проверить комплектацию</td></tr>
+</tbody>
+</table>
+</div><p class="thv-fine">Площадь сама по себе не определяет выбор. Учитываются число людей, режим работы и условия монтажа.</p><nav aria-label="Семейства моделей" class="oneair-jump"><a href="#asp80">ASP-80</a><a href="#asp100">ASP-100</a><a href="#asp200">ASP-200</a><a href="#asp90">ASP-90</a><a href="#oneair-install">Монтаж</a></nav></section><section class="thv-sec thgeo-products" id="oneair-models"><h2>Выберите модель и комплектацию</h2><p class="thv-sub">Сначала выберите семейство. Затем откройте карточку нужной комплектации: состав, цена оборудования и наличие указаны для каждого артикула отдельно.</p><p class="thv-live thgeo-live" role="status"></p><section class="oneair-family" id="asp80"><h3>ASP-80</h3><p>Компактная модель серии.</p><div class="thv-pl"><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-80"><img alt="Ballu ONEAIR ASP-80" decoding="async" height="800" loading="lazy" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/oneair/card-asp80.webp" width="800"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-80">ONEAIR ASP-80</a><div class="thv-mk"><span class="thv-tag thv-tag--stock">В наличии</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>80 м³/ч</td></tr><tr><td>Мощность</td><td>15 Вт (макс. 615 Вт)</td></tr><tr><td>Шум</td><td>24–36 дБ</td></tr><tr><td>Гарантия</td><td>12 мес</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-80">114 990 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-80">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-80">Выбрать</a></div></div></article></div></section><section class="oneair-family" id="asp100"><h3>ASP-100</h3><p>ASP-100 и ASP-100W, комплектации H и M.</p><div class="thv-pl"><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100"><img alt="Ballu ONEAIR ASP-100" decoding="async" height="450" loading="lazy" src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-100.jpg" width="600"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100">ONEAIR ASP-100</a><div class="thv-mk"><span class="thv-tag thv-tag--stock">В наличии</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>125 м³/ч</td></tr><tr><td>Мощность</td><td>24 Вт (макс. 1024 Вт)</td></tr><tr><td>Шум</td><td>19–47 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-100">203 390 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100w"><img alt="Ballu ONEAIR ASP-100W, белый корпус" decoding="async" height="800" loading="lazy" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/oneair/card-asp100.webp" width="800"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100w">ONEAIR ASP-100W</a><div class="thv-mk"><span class="thv-tag thv-tag--stock">В наличии</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>125 м³/ч</td></tr><tr><td>Мощность</td><td>24 Вт (макс. 1024 Вт)</td></tr><tr><td>Шум</td><td>19–47 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-100W">203 390 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100w">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100w">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100h"><img alt="Ballu ONEAIR ASP-100H" decoding="async" height="450" loading="lazy" src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-100h.jpg" width="600"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100h">ONEAIR ASP-100H</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>125 м³/ч</td></tr><tr><td>Мощность</td><td>24 Вт (макс. 1024 Вт)</td></tr><tr><td>Шум</td><td>19–47 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-100H">218 190 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100h">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100h">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100wh"><img alt="Ballu ONEAIR ASP-100WH" decoding="async" height="450" loading="lazy" src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-100wh.jpg" width="600"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100wh">ONEAIR ASP-100WH</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>125 м³/ч</td></tr><tr><td>Мощность</td><td>24 Вт (макс. 1024 Вт)</td></tr><tr><td>Шум</td><td>19–47 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-100WH">218 190 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100wh">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100wh">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100m"><img alt="Ballu ONEAIR ASP-100M" decoding="async" height="450" loading="lazy" src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-100m.jpg" width="600"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100m">ONEAIR ASP-100M</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>125 м³/ч</td></tr><tr><td>Мощность</td><td>24 Вт (макс. 1024 Вт)</td></tr><tr><td>Шум</td><td>19–47 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-100M">254 390 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100m">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100m">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100wm"><img alt="Ballu ONEAIR ASP-100WM" decoding="async" height="450" loading="lazy" src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-100wm.jpg" width="600"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100wm">ONEAIR ASP-100WM</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>125 м³/ч</td></tr><tr><td>Мощность</td><td>24 Вт (макс. 1024 Вт)</td></tr><tr><td>Шум</td><td>19–47 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-100WM">254 390 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100wm">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-100wm">Выбрать</a></div></div></article></div></section><section class="oneair-family" id="asp200"><h3>ASP-200</h3><p>ASP-200S и ASP-200SP, комплектации W, M и MAX.</p><div class="thv-pl"><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200s"><img alt="Ballu ONEAIR ASP-200S, серая нижняя панель" decoding="async" height="800" loading="lazy" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/oneair/card-asp200s.webp" width="800"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200s">ONEAIR ASP-200S</a><div class="thv-mk"><span class="thv-tag thv-tag--stock">В наличии</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>200 м³/ч</td></tr><tr><td>Мощность</td><td>85 Вт (макс. 1285 Вт)</td></tr><tr><td>Шум</td><td>19–45 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-200S">327 590 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200s">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200s">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sp"><img alt="Ballu ONEAIR ASP-200SP, белый корпус" decoding="async" height="800" loading="lazy" src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/oneair/card-asp200sp.webp" width="800"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sp">ONEAIR ASP-200SP</a><div class="thv-mk"><span class="thv-tag thv-tag--stock">В наличии</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>200 м³/ч</td></tr><tr><td>Мощность</td><td>85 Вт (макс. 1285 Вт)</td></tr><tr><td>Шум</td><td>19–45 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-200SP">327 590 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sp">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sp">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sw"><img alt="Ballu ONEAIR ASP-200SW" decoding="async" height="450" loading="lazy" src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-200sw.jpg" width="600"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sw">ONEAIR ASP-200SW</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>200 м³/ч</td></tr><tr><td>Мощность</td><td>85 Вт (макс. 1285 Вт)</td></tr><tr><td>Шум</td><td>19–45 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-200SW">345 490 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sw">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sw">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200spw"><img alt="Ballu ONEAIR ASP-200SPW" decoding="async" height="450" loading="lazy" src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-200spw.jpg" width="600"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200spw">ONEAIR ASP-200SPW</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>200 м³/ч</td></tr><tr><td>Мощность</td><td>85 Вт (макс. 1285 Вт)</td></tr><tr><td>Шум</td><td>19–45 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-200SPW">345 490 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200spw">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200spw">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sm"><img alt="Ballu ONEAIR ASP-200SM" decoding="async" height="450" loading="lazy" src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-200sm.jpg" width="600"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sm">ONEAIR ASP-200SM</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>200 м³/час</td></tr><tr><td>Мощность</td><td>85 Вт (макс. 1285 Вт)</td></tr><tr><td>Шум</td><td>45 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-200SM">381 590 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sm">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200sm">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200spm"><img alt="Ballu ONEAIR ASP-200SPM" decoding="async" height="450" loading="lazy" src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-200spm.jpg" width="600"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200spm">ONEAIR ASP-200SPM</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>200 м³/час</td></tr><tr><td>Мощность</td><td>85 Вт (макс. 1285 Вт)</td></tr><tr><td>Шум</td><td>45 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-200SPM">381 590 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200spm">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200spm">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200smax"><img alt="Ballu ONEAIR ASP-200SMAX" decoding="async" height="450" loading="lazy" src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-200smax.jpg" width="600"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200smax">ONEAIR ASP-200SMAX</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>200 м³/ч</td></tr><tr><td>Мощность</td><td>85 Вт (макс. 1285 Вт)</td></tr><tr><td>Шум</td><td>19–45 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-200SMAX">381 690 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200smax">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200smax">Выбрать</a></div></div></article><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200spmax"><img alt="Ballu ONEAIR ASP-200SPMAX" decoding="async" height="450" loading="lazy" src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-200spmax.jpg" width="600"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200spmax">ONEAIR ASP-200SPMAX</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>200 м³/ч</td></tr><tr><td>Мощность</td><td>85 Вт (макс. 1285 Вт)</td></tr><tr><td>Шум</td><td>19–45 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-200SPMAX">381 690 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200spmax">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-200spmax">Выбрать</a></div></div></article></div></section><section class="oneair-family" id="asp90"><h3>Другие модели: ASP-90</h3><p>Отдельное семейство в каталоге.</p><div class="thv-pl"><article class="thv-card"><a class="thv-im" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-90wb"><img alt="Ballu ONEAIR ASP-90WB" decoding="async" height="450" loading="lazy" src="https://img.tehnoholod369.kz/img/ventilyaciya/ballu-oneair-asp-90wb.jpg" width="600"/></a><div class="thv-pb"><small>Ballu</small><a class="thv-pn" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-90wb">ONEAIR ASP-90WB</a><div class="thv-mk"><span class="thv-tag thv-tag--ord">Под заказ</span></div><table class="thv-sp"><tr><td>Подача воздуха</td><td>90 м³/ч</td></tr><tr><td>Шум</td><td>19–40 дБ</td></tr><tr><td>Гарантия</td><td>2 года</td></tr></table></div><div class="thv-pf"><div class="thv-pp thgeo-p" data-art="ASP-90WB">184 790 ₸</div><small class="oneair-price-note">Оборудование. Монтаж отдельно.</small><div class="thv-bs"><a class="thv-btn thv-out" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-90wb">Подробнее</a><a class="thv-btn thv-blue thgeo-cart" href="https://tehnoholod369.kz/tovar?g=ventilyaciya&amp;sl=ballu-asp-90wb">Выбрать</a></div></div></article></div></section><a class="thv-btn thv-blue thv-more-btn" href="https://tehnoholod369.kz/katalog?g=ventilyaciya">Весь каталог приточной вентиляции</a><p class="thv-fine">Цена оборудования и наличие загружаются из каталога. Перед заказом уточните состав комплекта и срок поставки.</p></section><section class="thv-sec thv-prose" id="oneair-filtration"><h2>Шесть ступеней очистки в ASP-200S и ASP-200SP</h2><div class="oa-two"><figure class="oa-fig"><a href="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/oneair/filtration-asp200.webp" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/oneair/filtration-asp200.webp" width="815" height="815" loading="lazy" decoding="async" alt="Схема шести ступеней фильтрации Ballu ONEAIR ASP-200"></a><figcaption>Схема производителя для серии ASP-200. Нажмите, чтобы открыть крупнее.</figcaption></figure><div><ol class="oa-stages"><li><b>Фильтр грубой очистки HD Prefilter</b> — задерживает насекомых, пух, крупные частицы.</li><li><b>Фильтр тонкой очистки M5</b> — пыль, пух, сажа, микроволокна, аллергены.</li><li><b>Фильтр HEPA класса H11</b> — мельчайшая пыль, аллергены, бактерии, вирусы, плесневые грибы.</li><li><b>Угольный фильтр CARBON</b> — выхлопные газы, гарь, дым, неприятные запахи.</li><li><b>УФ-лампа</b> — обеззараживание воздуха.</li><li><b>Генератор холодной плазмы</b> — дополнительное обеззараживание.</li></ol><p class="oa-fine">Состав сверен с руководством по эксплуатации ASP-200S / ASP-200SP. У ASP-80 и ASP-100 две ступени очистки, а не шесть: не переносите эту схему на них.</p></div></div></section><section class="thv-sec thv-prose" id="oneair-room"><h2>Как прибор выглядит в комнате</h2><figure class="oa-fig oa-fig--wide"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/oneair/interior-bedroom.webp" width="1000" height="748" loading="lazy" decoding="async" alt="Приточный очиститель Ballu ONEAIR на стене в спальне"><figcaption>Иллюстрация производителя, не фотография нашего объекта. Прибор крепится на стену; место выбираем по расположению наружной стены и розетки.</figcaption></figure></section><section class="thv-sec thv-prose" id="oneair-scheme"><h2>Как воздух попадает в комнату</h2><div class="oa-two"><figure class="oa-fig"><a href="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/oneair/installation-wall-section.webp" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/oneair/installation-wall-section.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="Схема в разрезе: приточный очиститель Ballu ONEAIR на стене, воздух поступает через отверстие в наружной стене"></a><figcaption>Схема производителя в разрезе. Это иллюстрация, а не фотография выполненного нами монтажа. Нажмите, чтобы открыть крупнее.</figcaption></figure><figure class="oa-fig"><a href="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/oneair/scheme-asp100.webp" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/oneair/scheme-asp100.webp" width="720" height="720" loading="lazy" decoding="async" alt="Схема принципа работы Ballu ONEAIR ASP-100"></a><figcaption>Принцип работы ASP-100, схема производителя. Температуры на рисунке — иллюстрация; рабочий диапазон смотрите в инструкции своей модели.</figcaption></figure></div></section><section class="thv-sec" id="oneair-install"><h2>Сколько стоит оборудование с монтажом</h2><div class="oneair-cost"><div><h3>Оборудование</h3><p>Цена показана у конкретной модели. Проверьте состав комплектации в карточке.</p></div><div><h3>Монтаж</h3><p>Рассчитывается отдельно. Для оценки нужны материал и толщина наружной стены, место установки, доступ снаружи и расположение розетки. Смету согласуем до начала работ.</p></div></div><p>Итоговая стоимость: выбранный комплект оборудования + согласованные монтажные работы и материалы.</p><a class="thv-btn thv-out" href="https://wa.me/77000369369?text=Здравствуйте.%20Рассчитайте%20Ballu%20ONEAIR%20с%20монтажом.%20Площадь%20комнаты:%20">Рассчитать с монтажом</a></section>
+<section class="thv-sec"><h2>Видео от производителя</h2><div class="thv-video"><iframe allow="clipboard-write; autoplay" allowfullscreen="" loading="lazy" src="https://rutube.ru/play/embed/5dd0969e5feeef5afa9222b74a802354" title="Официальное видео Ballu ONEAIR"></iframe></div><p class="thv-fine">Официальный ролик серии Ballu ONEAIR с сайта производителя, на видео модель ASP-200.</p></section>
+<!-- РАЗРЕЗ: если Tilda обрезала вставку, делить блок здесь на два T123 -->
+<section class="thv-sec thv-prose">
+
+
+<p>ASP-100W отличается от ASP-100 только исполнением корпуса: белая
+ткань вместо серой. Воздухообмен, площадь и фильтрация у них одинаковые.
+ASP-200SP отличается от ASP-200S тем же — отделкой корпуса.
+В серии ASP-200 продаются модели с литерой S: ASP-200S и ASP-200SP.</p>
+<h2>Какую брать под комнату</h2>
+<p>Напишите площадь комнаты и сколько человек в ней бывает. Подберём подачу воздуха и комплектацию. Для спальни отдельно обсудим рабочую скорость и шум.</p>
+<p>Подробно про Ballu ONEAIR
+ASP-80 — характеристики, работа зимой в Алматы, монтаж и замена
+фильтров. У остальных моделей серии подробности — в карточках выше.</p>
+<h2>Что проверить в комплектации</h2>
+<p>Цена и статус указаны для каждого артикула в карточке выше. Перед заказом проверьте нагреватель, датчик CO₂, фильтры и исполнение корпуса. Срок поставки комплектаций под заказ уточняется отдельно.</p>
+<h2>Что нужно для установки</h2>
+<p>Сквозное отверстие в наружной стене, розетка рядом и место на стене
+под сам прибор. Разводка воздуховодов и подвесной потолок не нужны —
+этим серия и отличается от приточных установок с разводкой.
+Бурят алмазной коронкой с пылесосом, отверстие делают с уклоном
+наружу, чтобы внутрь не затекали осадки. Отверстие в стене —
+обязательная часть монтажа. Капитальный ремонт и переделка отделки
+при аккуратной работе обычно не нужны, но это зависит от материала
+стены, отделки и доступа к месту: бригада оценивает их на объекте
+до начала работ. Если нужна вентиляция
+на несколько комнат сразу, смотрите
+<a href="https://tehnoholod369.kz/pritochno-vytyazhnye-ustanovki-almaty">приточно-вытяжные
+установки с рекуперацией</a>.</p></section>
+<section class="thv-sec"><h2>Бризер или кондиционер с притоком</h2><p>Эти приборы решают одну задачу по-разному. Бризер (приточный очиститель) подаёт и очищает уличный воздух, но не охлаждает: ASP-80 работает на трёх скоростях, 40, 60 или 80 м³/ч. Кондиционер с притоком охлаждает и греет и заодно подмешивает уличный воздух: от 40 до 60 м³/ч у моделей на нашем сайте (данные производителей). Сравнение по цифрам — в статье <a href="https://tehnoholod369.kz/brizer-ili-konditsioner-s-pritokom">«Бризер или кондиционер с притоком»</a>, модели с притоком — на странице <a href="https://tehnoholod369.kz/kondicioner-s-pritokom">кондиционеры с притоком свежего воздуха</a>.</p></section>
+<section class="thv-sec" id="rv"><h2>Отзывы о Ballu ASP-80</h2><p>Посмотрите отзывы покупателей на Kaspi. Они относятся к ASP-80, а не ко всей серии.</p><a class="thv-btn thv-out" href="https://kaspi.kz/shop/p/ochistitel-vozduha-ballu-asp-80-belyi-112047655/" rel="noopener" target="_blank">Открыть отзывы на Kaspi</a></section>
+<section class="thv-sec"><h2>Вопросы и ответы</h2><details class="thgeo-faq"><summary>Чем бризер отличается от приточной установки?</summary><p>Это одно и то же по сути: прибор подаёт в комнату уличный воздух через отверстие в стене, фильтрует его и зимой подогревает. «Бризер» — разговорное название, которым пользуются покупатели в Казахстане; производитель называет серию приточными очистителями воздуха. Отличие от приточной установки с воздуховодами — в том, что ONEAIR обслуживает одну комнату и работает без разводки воздуховодов: нужно одно сквозное отверстие в наружной стене.</p></details>
+<details class="thgeo-faq"><summary>Какую модель ONEAIR выбрать под комнату?</summary><p>При выборе учитываются площадь, число людей и режим работы. Подогрев и датчик CO₂ зависят от комплектации. Напишите параметры комнаты: поможем выбрать модель.</p></details>
+<details class="thgeo-faq"><summary>Нужен ли ремонт, чтобы поставить ONEAIR?</summary><p>Разводка воздуховодов и подвесной потолок не нужны. Нужны сквозное отверстие в наружной стене, розетка рядом и место на стене под прибор — отверстие обязательно. Его бурят алмазной коронкой с пылесосом, поэтому при аккуратном монтаже капитальный ремонт и переделка отделки обычно не требуются. Насколько это верно для вашей квартиры, зависит от стены, отделки и доступа к месту установки — бригада оценивает это на объекте до начала работ.</p></details>
+<details class="thgeo-faq"><summary>Работают ли эти приборы зимой в Алматы?</summary><p>Зимняя эксплуатация зависит от модели, наличия нагревателя и допустимого диапазона температуры в её паспорте. Перед заказом проверим эти условия для выбранного артикула.</p></details>
+<details class="thgeo-faq"><summary>Как узнать актуальную цену и наличие?</summary><p>Цена и наличие указаны в карточках моделей на этой странице и обновляются автоматически. Стоимость монтажа зависит от стены и объёма работ — напишите в WhatsApp или позвоните по номеру +77 000 369 369.</p></details>
+<details class="thgeo-faq"><summary>Кто даёт гарантию на оборудование и монтаж?</summary><p>Гарантия на оборудование определяется паспортом выбранной модели. Условия и срок гарантии монтажных работ указываются отдельно в документах исполнителя.</p></details></section>
+<section class="thgeo-final"><h2>Подберём модель под вашу комнату</h2><p>Напишите площадь помещения и где расположено окно или наружная стена: подскажем модель.</p><div class="thgeo-cta"><a class="tg1" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%9F%D0%BE%D0%B4%D0%B1%D0%B5%D1%80%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%B8%D1%82%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%20Ballu%20ONEAIR.%0A%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C%20%D0%BF%D0%BE%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%2C%20%D0%BC%C2%B2%3A%20%0A%D0%9A%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%B0%3A%20">Написать в WhatsApp</a><a class="tg2" href="tel:+77000369369">+77 000 369 369</a></div></section>
+<nav aria-label="Другие подборки" class="thgeo-also"><h2>Другие подборки</h2><p><a href="https://tehnoholod369.kz/ventilyaciya">Вентиляция</a> · <a href="https://tehnoholod369.kz/pritochnaya-ustanovka-almaty">Приточные установки</a> · <a href="https://tehnoholod369.kz/pritochno-vytyazhnye-ustanovki-almaty">Приточно-вытяжные установки с рекуперацией</a> · <a href="https://tehnoholod369.kz/vytyazhnye-ventilyatory-almaty">Вытяжные вентиляторы</a></p></nav>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "Вентиляция", "item": "https://tehnoholod369.kz/ventilyaciya"}, {"@type": "ListItem", "position": 3, "name": "Ballu ONEAIR", "item": "https://tehnoholod369.kz/ballu-oneair-almaty"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Приточные очистители Ballu ONEAIR в Алматы", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ballu ONEAIR ASP-80", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-80"}, {"@type": "ListItem", "position": 2, "name": "Ballu ONEAIR ASP-100", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-100"}, {"@type": "ListItem", "position": 3, "name": "Ballu ONEAIR ASP-100W", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-100w"}, {"@type": "ListItem", "position": 4, "name": "Ballu ONEAIR ASP-200S", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200s"}, {"@type": "ListItem", "position": 5, "name": "Ballu ONEAIR ASP-200SP", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200sp"}, {"@type": "ListItem", "position": 6, "name": "Ballu ONEAIR ASP-90WB", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-90wb"}, {"@type": "ListItem", "position": 7, "name": "Ballu ONEAIR ASP-100H", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-100h"}, {"@type": "ListItem", "position": 8, "name": "Ballu ONEAIR ASP-100WH", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-100wh"}, {"@type": "ListItem", "position": 9, "name": "Ballu ONEAIR ASP-100M", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-100m"}, {"@type": "ListItem", "position": 10, "name": "Ballu ONEAIR ASP-100WM", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-100wm"}, {"@type": "ListItem", "position": 11, "name": "Ballu ONEAIR ASP-200SW", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200sw"}, {"@type": "ListItem", "position": 12, "name": "Ballu ONEAIR ASP-200SPW", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200spw"}, {"@type": "ListItem", "position": 13, "name": "Ballu ONEAIR ASP-200SM", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200sm"}, {"@type": "ListItem", "position": 14, "name": "Ballu ONEAIR ASP-200SPM", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200spm"}, {"@type": "ListItem", "position": 15, "name": "Ballu ONEAIR ASP-200SMAX", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200smax"}, {"@type": "ListItem", "position": 16, "name": "Ballu ONEAIR ASP-200SPMAX", "url": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200spmax"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чем бризер отличается от приточной установки?", "acceptedAnswer": {"@type": "Answer", "text": "Это одно и то же по сути: прибор подаёт в комнату уличный воздух через отверстие в стене, фильтрует его и зимой подогревает. «Бризер» — разговорное название, которым пользуются покупатели в Казахстане; производитель называет серию приточными очистителями воздуха. Отличие от приточной установки с воздуховодами — в том, что ONEAIR обслуживает одну комнату и работает без разводки воздуховодов: нужно одно сквозное отверстие в наружной стене."}}, {"@type": "Question", "name": "Какую модель ONEAIR выбрать под комнату?", "acceptedAnswer": {"@type": "Answer", "text": "При выборе учитываются площадь, число людей и режим работы. Подогрев и датчик CO₂ зависят от комплектации. Напишите параметры комнаты: поможем выбрать модель."}}, {"@type": "Question", "name": "Нужен ли ремонт, чтобы поставить ONEAIR?", "acceptedAnswer": {"@type": "Answer", "text": "Разводка воздуховодов и подвесной потолок не нужны. Нужны сквозное отверстие в наружной стене, розетка рядом и место на стене под прибор — отверстие обязательно. Его бурят алмазной коронкой с пылесосом, поэтому при аккуратном монтаже капитальный ремонт и переделка отделки обычно не требуются. Насколько это верно для вашей квартиры, зависит от стены, отделки и доступа к месту установки — бригада оценивает это на объекте до начала работ."}}, {"@type": "Question", "name": "Работают ли эти приборы зимой в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "Зимняя эксплуатация зависит от модели, наличия нагревателя и допустимого диапазона температуры в её паспорте. Перед заказом проверим эти условия для выбранного артикула."}}, {"@type": "Question", "name": "Как узнать актуальную цену и наличие?", "acceptedAnswer": {"@type": "Answer", "text": "Цена и наличие указаны в карточках моделей на этой странице и обновляются автоматически. Стоимость монтажа зависит от стены и объёма работ — напишите в WhatsApp или позвоните по номеру +77 000 369 369."}}, {"@type": "Question", "name": "Кто даёт гарантию на оборудование и монтаж?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия на оборудование определяется паспортом выбранной модели. Условия и срок гарантии монтажных работ указываются отдельно в документах исполнителя."}}]}</script>
+<script>
+(function(){
+  var srcs=["https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/ventilyaciya.json"];
+  var bad=false;
+  Promise.all(srcs.map(function(u){
+    return fetch(u,{cache:"no-cache"}).then(function(r){
+      if(!r.ok) throw 0;
+      return r.json();
+    }).catch(function(){bad=true; return []});
+  })).then(function(all){
+    if(bad){
+      document.querySelectorAll(".thgeo-live").forEach(function(el){
+        el.textContent="обновить цены сейчас не удалось — уточните актуальную цену "
+          +"по телефону или в WhatsApp";
+      });
+      return;
+    }
+    var by={},min=null;
+    all.forEach(function(d){(d||[]).forEach(function(x){
+      if(x.s)by[x.s]=x;
+      if(x.st==="В наличии"&&x.p&&(min===null||x.p<min))min=x.p;
+    })});
+    document.querySelectorAll(".thgeo-p").forEach(function(td){
+      var x=by[td.getAttribute("data-art")];
+      if(x&&x.pt)td.textContent=x.pt;
+    });
+    document.querySelectorAll(".thgeo-pmin").forEach(function(el){
+      var a=el.getAttribute("data-min-art"), x=a?by[a]:null, v=(x&&x.p)?x.p:null;
+      if(v===null){
+        [].forEach.call(document.querySelectorAll(".thgeo-p"),function(td){
+          var y=by[td.getAttribute("data-art")];
+          if(y&&y.p&&(v===null||y.p<v))v=y.p;
+        });
+      }
+      if(v)el.textContent=v.toLocaleString("ru-RU").replace(/ /g," ");
+    });
+  });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/cart.js?v=be2fdc8d"></script>
+<script>
+(function(){
+  var URL="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/ventilyaciya.json", GROUP="ventilyaciya";
+  function norm(s){return String(s||"").replace(/[\u00a0\u202f]/g," ")}
+  function status(card,x){
+    var mk=card.querySelector(".thv-mk");
+    if(!mk||!x) return;
+    var inStock=(x.st==="В наличии");
+    var wifi=[].filter.call(mk.children,function(k){ return k.textContent==="Wi-Fi"; });
+    mk.innerHTML="";
+    var s=document.createElement("span");
+    s.className="thv-tag "+(inStock?"thv-tag--stock":"thv-tag--ord"); s.textContent=inStock?"В наличии":"Под заказ"; mk.appendChild(s);
+    wifi.forEach(function(w){ mk.appendChild(w); });
+  }
+  function cartBtn(btn,x){
+    if(!btn||!x||!x.p||!x.sl||!window.CART) return;
+    function label(){ btn.textContent=window.CART.has(x.sl)?"Оформить":"В корзину"; }
+    label();
+    btn.addEventListener("click",function(e){
+      if(!window.CART) return;
+      e.preventDefault();
+      if(window.CART.has(x.sl)){ location.href="/korzina"; return; }
+      window.CART.add(Object.assign({},x,{g:GROUP}),1);
+      label();
+    });
+    window.addEventListener("th-cart",label);
+  }
+  function go(all){
+    var by={}; all.forEach(function(x){ if(x.s) by[norm(x.s)]=x; });
+    var allOrder=true;
+    [].forEach.call(document.querySelectorAll(".thgeo-p"),function(pe){
+      var x=by[norm(pe.getAttribute("data-art"))], card=pe.closest("article");
+      if(!card||!x) return;
+      status(card,x);
+      if(x.st==="В наличии") allOrder=false;
+      cartBtn(card.querySelector(".thgeo-cart"),x);
+    });
+    if(!allOrder){
+      [].forEach.call(document.querySelectorAll(".thgeo-ord"),function(el){ el.textContent=el.getAttribute("data-alt"); });
+    }
+  }
+  var tries=0;
+  function start(){
+    if(!window.CART&&tries++<15){ return setTimeout(start,200); }
+    fetch(URL,{cache:"no-cache"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(go).catch(function(){});
+  }
+  start();
+})();
+</script>
+<style>
+.thgeo.thv{--oa-blue:#0066FF;--oa-dark:#0033A0;--oa-red:#E81C1C;--oa-light:#E9F4FF;--oa-muted:#606F85}
+.thgeo.thv .thv-hero h1{font-size:48px;line-height:1.15}
+.thgeo.thv .thv-lead{font-size:18px;line-height:1.5;max-width:560px}
+.thgeo.thv .thv-cta{display:flex;flex-wrap:wrap;gap:12px}
+.thgeo.thv .thv-cta a{padding:14px 18px;line-height:1.3}
+.oneair-family{padding-top:28px;scroll-margin-top:24px}
+.oneair-family h3{font-size:24px;margin:0 0 8px}
+.oneair-jump{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.oneair-jump a{padding:12px 16px;border:1px solid var(--oa-blue);border-radius:8px;text-decoration:none}
+.oneair-cost{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.oneair-cost>div{padding:24px;background:var(--oa-light);border-radius:12px}
+.oneair-price-note{color:var(--oa-muted);font-size:13px}
+.oneair-compare .thgeo-tw{overflow-x:auto}
+.oneair-compare table{min-width:760px}
+.thgeo.thv a:focus-visible,.thgeo.thv summary:focus-visible{outline:3px solid var(--oa-blue);outline-offset:4px}
+@media(max-width:600px){
+.thgeo.thv .thv-hero{padding-top:12px}
+.thgeo.thv .thv-hero h1{font-size:32px;line-height:1.2}
+.thgeo.thv .thv-lead{font-size:16px;line-height:1.5;margin:12px 0}
+.thgeo.thv .thv-cta{display:grid;gap:8px}
+.thgeo.thv .thv-cta a{font-size:15px;min-height:48px}
+.thgeo.thv .thx-dealer{margin:8px 0}
+.oneair-cost{grid-template-columns:1fr}
+.oneair-compare table{min-width:0}
+.oneair-compare .thgeo-tw{overflow:visible}
+}
+</style><style>
+.thgeo.thv .thx-ph.thx-ph--oa img{aspect-ratio:auto;object-fit:contain;background:#fff}
+.thx-ph--oa picture{display:block}
+.thgeo.thv .oa-fig{margin:0}
+.thgeo.thv .oa-fig img{display:block;width:100%;height:auto;object-fit:contain;background:#fff;border:1px solid #DCE5F0;border-radius:12px}
+.thgeo.thv .oa-fig a{display:block}
+.thgeo.thv .oa-fig figcaption{font:400 12px/18px Inter,sans-serif;color:#606F85;margin:8px 0 0}
+.thgeo.thv .oa-two{display:grid;gap:16px;margin:0 0 16px}
+.thgeo.thv .oa-stages{margin:0 0 14px;padding-left:22px}
+.thgeo.thv .oa-stages li{font:400 15px/24px Inter,sans-serif;color:#223046;margin:0 0 8px}
+.thgeo.thv .oa-fine{font:400 13px/20px Inter,sans-serif;color:#606F85}
+.thgeo.thv .thv-card{grid-template-columns:124px minmax(0,1fr)}
+.thgeo.thv .thv-im{width:100%;height:auto;aspect-ratio:1/1;background:#fff}
+.thgeo.thv .thv-im img{width:100%;height:100%;max-height:none;object-fit:contain}
+@media(min-width:900px){.thgeo.thv .thv-card{grid-template-columns:132px minmax(0,1fr)}}
+@media(min-width:960px){
+ .thgeo.thv .oa-two{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+ .thgeo.thv .oa-fig--wide{max-width:820px}
+}
+</style>
