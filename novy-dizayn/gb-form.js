@@ -200,7 +200,7 @@
         var gg = d._g && d._g[b.getAttribute("data-gbp")];
         var dayNow = gg ? (gg.day || 1) + Math.floor((Date.now() / 1000 - (gg.t0 || 0)) / 86400) : 0;
         if (gg && (gg.closed || dayNow > 9)) {  // закрыта досрочно (лимит товара) или срок вышел: кнопку прячем
-          b.innerHTML = '<span class="vd-pgt">Набор закрыт: ' + (gg.closed ? "лимит товара набран" : "группа завершена") + '. У всех участников скидка 9 %</span>';
+          b.innerHTML = '<span class="vd-pgt">Набор закрыт: ' + (gg.closed ? "лимит товара набран" : "группа завершена") + '. Цена зафиксирована</span>';
           b.hidden = false;
           var art = b.parentNode, jb = art && art.querySelector ? art.querySelector("a[data-gb]") : null;
           if (jb) { jb.style.display = "none"; }
@@ -209,9 +209,9 @@
         var n = parseInt(d[b.getAttribute("data-gbp")], 10);
         if (!(n > 0)) { return; }
         var msg;
-        if (n >= 9) { msg = "В группе " + n + " шт.: скидка 9 % уже действует у всех участников"; }
-        else if (n >= 6) { msg = "В группе " + n + " шт.: скидка 6 % уже действует, до 9 % ещё " + (9 - n); }
-        else { msg = "В группе " + n + " шт., до скидки 6 % раньше срока ещё " + (6 - n); }
+        if (n >= 9) { msg = "В группе " + n + " шт.: скидка 9 % действует у всех участников"; }
+        else if (n >= 6) { msg = "В группе " + n + " шт.: скидка 6 % уже действует, до 9 % ещё " + (9 - n) + " шт."; }
+        else { msg = "В группе " + n + " шт., до скидки 6 % ещё " + (6 - n) + " шт."; }
         b.innerHTML = '<span class="vd-pgt">' + msg + '</span><span class="vd-pgb"><i style="width:' + Math.min(100, Math.round(n / 9 * 100)) + '%"></i></span>';
         b.hidden = false;
       });
@@ -238,15 +238,15 @@
       if (day < 1) { day = 1; }
       var early = !!g.closed;  // закрыта досрочно: набран лимит товара
       var closed = day > 9 || early, left = Math.max(0, 9 - day);
-      // календарная лестница 369: 3, 6 и 9 % гарантированы всем по дням, штуки группы открывают ступень раньше срока
-      var tierDay = day >= 9 ? 9 : day >= 6 ? 6 : day >= 3 ? 3 : 0;
+      // счёт по группе (решение владельца 26.10.2026): 3 % со 3-го дня всем, 6 и 9 % только по штукам всей группы
+      var tierDay = day >= 3 ? 3 : 0;
       var tierUnits = units >= 9 ? 9 : units >= 6 ? 6 : 0;
-      var tier = closed ? 9 : Math.max(tierDay, tierUnits);
+      var tier = Math.max(tierDay, tierUnits);
       var dayEl = q("day"), bar = q("bar"), leftEl = q("left"), un = q("units"), join = q("join");
       if (closed) {
         dayEl.innerHTML = "<b>" + (early ? "Набор закрыт досрочно" : "Набор закрыт") + "</b>";
         bar.hidden = true;
-        leftEl.textContent = early ? "Лимит товара набран. У всех участников скидка 9 %, цена зафиксирована." : "Набор в группу закрыт.";
+        leftEl.textContent = early ? "Лимит товара набран, цена зафиксирована." : "Набор в группу закрыт.";
         if (join) { join.hidden = true; }
       } else {
         dayEl.innerHTML = "<b>День " + day + " из 9</b><span>" + (tier ? "Сейчас скидка " + tier + " %" : "Скидка 3 % включится с 3-го дня") + "</span>";
@@ -257,7 +257,7 @@
       }
       dayEl.hidden = false; leftEl.hidden = false;
       if (units > 0) {
-        var more = closed ? "Итоговая скидка группы 9 %." : units >= 9 ? "Скидка 9 % уже действует у всех участников." : units >= 6 ? "До скидки 9 % раньше срока ещё " + (9 - units) + " шт." : "До скидки 6 % раньше срока ещё " + (6 - units) + " шт.";
+        var more = closed ? "Итоговая скидка группы " + tier + " %." : units >= 9 ? "Скидка 9 % действует у всех участников." : units >= 6 ? "Скидка 6 % уже действует, до 9 % ещё " + (9 - units) + " шт." : "До скидки 6 % ещё " + (6 - units) + " шт.";
         un.innerHTML = "<b>" + (closed ? "В группе" : "Присоединились") + ": " + units + " шт.</b>" + more + '<span class="fg-pb"><i style="width:' + Math.min(100, Math.round(units / 9 * 100)) + '%"></i></span>';
       } else {
         un.innerHTML = "<b>Участников пока нет</b>Станьте первым: заявки подтверждаем по порядку подачи, товар бронируем до закрытия группы.";
