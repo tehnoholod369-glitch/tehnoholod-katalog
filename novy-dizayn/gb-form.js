@@ -270,6 +270,15 @@
   }
   var tries3 = 0, iv3 = setInterval(function () { if (initFeatured() || ++tries3 > 60) { clearInterval(iv3); } }, 250);
 
+  // «Показать все» в длинных разделах (THAICON, TCL LCAC): раскрывает остальные карточки
+  document.addEventListener("click", function (e) {
+    var sb = e.target && e.target.closest ? e.target.closest(".vd-showall") : null;
+    if (!sb) { return; }
+    var sec = sb.closest(".vd-sec");
+    if (sec) { sec.classList.remove("vd-collapsed"); }
+    if (sb.parentNode) { sb.parentNode.style.display = "none"; }
+  });
+
   document.addEventListener("click", function (e) {
     var a = e.target && e.target.closest ? e.target.closest("a[data-gb]") : null;
     if (!a || e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) { return; }
