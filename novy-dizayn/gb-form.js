@@ -238,8 +238,8 @@
       if (day < 1) { day = 1; }
       var early = !!g.closed;  // закрыта досрочно: набран лимит товара
       var closed = day > 9 || early, left = Math.max(0, 9 - day);
-      // счёт по группе (решение владельца 26.10.2026): 3 % с 3-го дня всем, 6 и 9 % только по штукам всей группы
-      var tierDay = day >= 3 ? 3 : 0;
+      // решение владельца 27.10.2026: 3 % сразу при вступлении всем, 6 и 9 % только по штукам всей группы
+      var tierDay = 3;
       var tierUnits = units >= 9 ? 9 : units >= 6 ? 6 : 0;
       var tier = Math.max(tierDay, tierUnits);
       var dayEl = q("day"), bar = q("bar"), leftEl = q("left"), un = q("units"), join = q("join");
@@ -249,7 +249,7 @@
         leftEl.textContent = early ? "Лимит товара набран, цена зафиксирована." : "Набор в группу закрыт.";
         if (join) { join.hidden = true; }
       } else {
-        dayEl.innerHTML = "<b>День " + day + " из 9</b><span>" + (tier ? "Сейчас скидка " + tier + " %" : "Скидка 3 % включится с 3-го дня") + "</span>";
+        dayEl.innerHTML = "<b>День " + day + " из 9</b><span>" + ("Сейчас скидка " + tier + " %") + "</span>";
         var seg = bar.children;
         for (var k = 0; k < seg.length; k++) { seg[k].className = k < Math.min(day, 9) ? "on" : ""; }
         bar.hidden = false;
