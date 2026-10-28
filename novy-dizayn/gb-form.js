@@ -245,6 +245,8 @@
       var tierDay = 3;
       var tierUnits = units >= 9 ? 9 : units >= 6 ? 6 : 0;
       var tier = Math.max(tierDay, tierUnits);
+      var ge = document.querySelectorAll("[data-gbend]");
+      for (var gi = 0; gi < ge.length; gi++) { ge[gi].textContent = "до " + endTxt; }
       var dayEl = q("day"), bar = q("bar"), leftEl = q("left"), un = q("units"), join = q("join");
       if (closed) {
         dayEl.innerHTML = "<b>" + (early ? "Набор закрыт досрочно" : "Набор закрыт") + "</b>";
