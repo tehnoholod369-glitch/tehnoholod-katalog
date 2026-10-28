@@ -235,6 +235,9 @@
       function q(n) { return f.querySelector('[data-fg="' + n + '"]'); }
       var units = parseInt(d[code], 10) || 0;
       var day = (g.day || 1) + Math.floor((Date.now() / 1000 - (g.t0 || 0)) / 86400);
+      // дата окончания набора: последний (9-й) день группы, показываем календарной датой, без счёта дней
+      var endDate = new Date(((g.t0 || 0) + (9 - (g.day || 1)) * 86400) * 1000);
+      var endTxt = endDate.toLocaleDateString("ru-RU", { day: "numeric", month: "long", timeZone: "Asia/Almaty" });
       if (day < 1) { day = 1; }
       var early = !!g.closed;  // закрыта досрочно: набран лимит товара
       var closed = day > 9 || early, left = Math.max(0, 9 - day);
@@ -245,15 +248,12 @@
       var dayEl = q("day"), bar = q("bar"), leftEl = q("left"), un = q("units"), join = q("join");
       if (closed) {
         dayEl.innerHTML = "<b>" + (early ? "Набор закрыт досрочно" : "Набор закрыт") + "</b>";
-        bar.hidden = true;
+        if (bar) { bar.hidden = true; }
         leftEl.textContent = early ? "Лимит товара набран, цена зафиксирована." : "Набор в группу закрыт.";
         if (join) { join.hidden = true; }
       } else {
-        dayEl.innerHTML = "<b>День " + day + " из 9</b><span>" + ("Сейчас скидка " + tier + " %") + "</span>";
-        var seg = bar.children;
-        for (var k = 0; k < seg.length; k++) { seg[k].className = k < Math.min(day, 9) ? "on" : ""; }
-        bar.hidden = false;
-        leftEl.textContent = (left > 0 ? "До закрытия группы " + left + " " + plDays(left) + "." : "Группа закрывается сегодня.") + " Платить нужно после закрытия.";
+        dayEl.innerHTML = "<b>Набор до " + endTxt + "</b><span>" + ("Сейчас скидка " + tier + " %") + "</span>";
+        leftEl.textContent = (left > 0 ? "Осталось " + left + " " + plDays(left) + ". " : "Набор заканчивается сегодня. ") + "Платить нужно после закрытия набора.";
       }
       dayEl.hidden = false; leftEl.hidden = false;
       if (units > 0) {
