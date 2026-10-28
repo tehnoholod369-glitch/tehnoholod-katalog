@@ -1914,7 +1914,7 @@ class Component extends DCLogic {
       hasVy: (((s.vypuski || {})[it.s || ""]) || []).length > 0,
       docs: [
         det.mn
-          ? { title: "Руководство по эксплуатации", note: "PDF на русском", state: "есть", fg: "#0E9F6E", bg: "#E7F7F0", href: det.mn, hasHref: true }
+          ? { title: (/ballu\.ru\/upload\//.test(det.mn) ? "Руководство по эксплуатации и гарантийный талон" : "Руководство по эксплуатации"), note: "PDF на русском", state: "есть", fg: "#0E9F6E", bg: "#E7F7F0", href: det.mn, hasHref: true }
           : { title: "Руководство по эксплуатации", note: "PDF на русском", state: "нужен файл", fg: "#B25200", bg: "#FFF1E3", href: "", hasHref: false },
         { title: "Сервис-карта 369", note: "номер продажи, дата монтажа, активация по QR", state: "есть", fg: "#0E9F6E", bg: "#E7F7F0" }
       ],
