@@ -1,0 +1,413 @@
+<style>
+.kk{box-sizing:border-box;max-width:1248px;margin:0 auto;padding:24px 24px 48px;font-family:'Inter','Segoe UI',Arial,sans-serif;color:#1A1A1A;line-height:1.55;background:#F1F5F9;box-shadow:0 0 0 100vmax #F1F5F9;clip-path:inset(0 -100vmax)}
+.kk *{box-sizing:border-box}
+@media(max-width:760px){.kk{padding:16px 16px 40px}}
+.kk h1{margin:0 0 12px;font-size:48px;line-height:56px;font-weight:700;color:#0033A0;letter-spacing:-.02em}
+.kk h2{margin:48px 0 12px;font-size:32px;line-height:40px;font-weight:700;color:#0033A0;letter-spacing:-.015em;scroll-margin-top:72px}
+.kk h3{margin:0 0 6px;font-size:20px;line-height:28px;font-weight:600;color:#0033A0}
+@media(max-width:760px){.kk h1{font-size:32px;line-height:40px}.kk h2{font-size:24px;line-height:32px;margin-top:36px}.kk h3{font-size:18px;line-height:24px}}
+.kk p{margin:0 0 12px}
+.kk a{color:#0052D6}
+.kk a:hover{color:#0033A0}
+.kk-bc{font-size:14px;line-height:20px;color:#606F85;margin:0 0 12px}.kk-bc a{color:#606F85;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.kk-lead{max-width:760px;font-size:18px;line-height:26px;margin:0 0 16px}
+.kk-note{color:#606F85;font-size:14px;line-height:20px}
+.kk-cta{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 0}
+.kk-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border:0;border-radius:8px;font:600 16px/1 'Inter','Segoe UI',Arial,sans-serif;text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s}
+.kk a.kk-btn{color:#FFFFFF}
+.kk-btn--main{background:#E81C1C;color:#FFFFFF}
+.kk-btn--main:hover{background:#C41212}
+.kk-btn--main:active{background:#A30D0D}
+.kk-btn--alt{background:#0066FF;color:#FFFFFF}
+.kk-btn--alt:hover{background:#0052D6}
+.kk-btn--alt:active{background:#003FA8}
+.kk a.kk-btn--out,.kk-btn--out{background:#FFFFFF;color:#0033A0;border:1px solid #0066FF}
+.kk-btn--out:hover{background:#E9F4FF}
+.kk-btn:disabled{background:#E5E9F0;color:#606F85;cursor:not-allowed}
+.kk a:focus-visible,.kk button:focus-visible,.kk input:focus-visible,.kk select:focus-visible,.kk summary:focus-visible{outline:3px solid #0066FF;outline-offset:2px}
+.kk-trust{display:flex;flex-wrap:wrap;gap:8px 24px;margin:20px 0 0;padding:0;list-style:none;font-size:14px;color:#1A1A1A}
+.kk-trust li{position:relative;padding-left:18px}
+.kk-trust li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:4px;background:#0066FF}
+.kk-card{background:#FFFFFF;border:1px solid #DCE5F0;border-radius:16px;padding:24px}
+@media(max-width:760px){.kk-card{padding:16px}}
+.kk-form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.kk-step{grid-column:1/-1;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0066FF;margin:8px 0 -4px}
+.kk-form label{display:flex;flex-direction:column;gap:4px;font-size:14px;font-weight:600;color:#606F85}
+.kk-form input[type=number],.kk-form select{width:100%;min-height:48px;padding:8px 12px;border:1px solid #DCE5F0;border-radius:8px;background:#FFFFFF;font:400 16px/1.3 'Inter','Segoe UI',Arial,sans-serif;color:#1A1A1A}
+.kk-form input:hover,.kk-form select:hover{border-color:#0066FF}
+.kk-chk{flex-direction:row!important;align-items:center;gap:8px!important;min-height:48px;font-size:15px!important;font-weight:500!important;color:#1A1A1A!important}
+.kk-chk input{width:20px;height:20px;accent-color:#0066FF}
+.kk-formact{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+@media(max-width:900px){.kk-form{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.kk-form{grid-template-columns:1fr}.kk-formact .kk-btn{width:100%}}
+.kk-res{margin-top:20px}
+.kk-need{background:#E9F4FF;border:1px solid #DCE5F0;border-radius:12px;padding:16px;font-size:16px;line-height:24px}
+.kk-warn{background:#FFFFFF;border-left:4px solid #E81C1C;border-radius:0 12px 12px 0;padding:12px 16px;margin-top:12px;font-size:15px;line-height:22px;box-shadow:0 1px 2px rgba(0,51,160,.08)}
+.kk-vars{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:16px;margin-top:16px}
+.kk-var{background:#FFFFFF;border:1px solid #DCE5F0;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.kk-var--top{border-color:#0066FF}
+.kk-var__tag{align-self:flex-start;background:#E9F4FF;color:#0033A0;border-radius:8px;padding:2px 8px;font-size:12px;font-weight:700}
+.kk-var__t{font-size:18px;font-weight:700;color:#0033A0}
+.kk-var ul{margin:0;padding-left:20px;font-size:15px}
+.kk-var__sum{font-size:14px;color:#606F85}
+.kk-var__price{font-size:24px;font-weight:700}
+.kk-var__why{font-size:14px;line-height:20px;color:#1A1A1A}
+.kk-var__st{font-size:13px;font-weight:600;color:#178841}
+.kk-var__st--order{color:#606F85}
+.kk-var__act{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+.kk-var__act .kk-btn{min-height:44px;padding:0 16px;font-size:14px}
+.kk-filters{display:grid;gap:12px;margin:16px 0}
+.kk-fg{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.kk-fg__l{flex:0 0 auto;min-width:92px;font-size:13px;font-weight:700;color:#606F85}
+.kk-chip{min-height:44px;padding:0 16px;border:1px solid #DCE5F0;border-radius:12px;background:#FFFFFF;color:#0033A0;font:600 14px/1 'Inter','Segoe UI',Arial,sans-serif;cursor:pointer;transition:background .15s,border-color .15s}
+.kk-chip:hover{border-color:#0066FF;background:#E9F4FF}
+.kk-chip[aria-pressed=true]{background:#0066FF;border-color:#0066FF;color:#FFFFFF}
+.kk-sortrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:8px 0 16px}
+.kk-sortrow label{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#606F85}
+.kk-sortrow select{min-height:48px;padding:8px 12px;border:1px solid #DCE5F0;border-radius:8px;background:#FFFFFF;font:400 16px/1.3 'Inter','Segoe UI',Arial,sans-serif;color:#1A1A1A}
+.kk-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media(max-width:900px){.kk-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.kk-cards{grid-template-columns:1fr}}
+.kk-pc{display:flex;flex-direction:column;background:#FFFFFF;border:1px solid #DCE5F0;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,51,160,.08);transition:transform .15s,box-shadow .15s}
+.kk-pc:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,51,160,.12)}
+.kk-pc__img{display:block;aspect-ratio:4/3;background:#FFFFFF;border-bottom:1px solid #DCE5F0}
+.kk-pc__img img{display:block;width:100%;height:100%;object-fit:contain;padding:8px}
+.kk-pc__body{display:flex;flex-direction:column;gap:8px;padding:12px 16px 16px;flex:1}
+.kk a.kk-pc__name{display:inline-flex;align-items:center;min-height:44px;font-size:16px;font-weight:600;color:#0033A0;text-decoration:none;line-height:1.3}
+.kk-pc__spec{display:flex;flex-wrap:wrap;gap:8px}
+.kk-pc__spec span{font-size:12px;line-height:1.2;padding:4px 8px;border-radius:8px;background:#F1F5F9;color:#606F85}
+.kk-pc__price{margin-top:auto;font-size:24px;font-weight:700;line-height:1.2}
+.kk-pc__st{font-size:13px;font-weight:600;color:#178841}
+.kk-pc__st--order{color:#606F85}
+.kk-pc__act{display:flex;flex-wrap:wrap;gap:8px}
+.kk-pc__act .kk-btn{min-height:44px;padding:0 16px;font-size:14px;flex:1 1 auto}
+@media(max-width:560px){.kk-pc{display:grid;grid-template-columns:112px minmax(0,1fr)}.kk-pc__img{aspect-ratio:1/1;border-bottom:0;border-right:1px solid #DCE5F0}.kk-pc__act{grid-column:1/-1}}
+.kk-more{margin:16px 0 0;text-align:center}
+.kk-types{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:16px;margin-top:16px}
+.kk-type{background:#FFFFFF;border:1px solid #DCE5F0;border-radius:12px;padding:16px}
+.kk-type h3{font-size:18px}
+.kk-type p{font-size:15px;margin:0}
+.kk-rules{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+.kk-rules li{background:#FFFFFF;border:1px solid #DCE5F0;border-radius:12px;padding:16px;font-size:16px}
+.kk-faq{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;align-items:start;margin-top:16px}
+@media(max-width:760px){.kk-faq{grid-template-columns:1fr}}
+.kk-q{border-bottom:1px solid #DCE5F0;padding:8px 0}
+.kk-q summary{min-height:44px;display:flex;align-items:center;font-weight:600;cursor:pointer;color:#1A1A1A}
+.kk-q p{margin:0 0 8px;font-size:16px}
+.kk-cond{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:16px;margin-top:16px}
+.kk-cond div{background:#FFFFFF;border:1px solid #DCE5F0;border-radius:12px;padding:16px;font-size:15px}
+.kk-cond b{display:block;color:#0033A0;margin-bottom:4px;font-size:16px}
+.kk-final{margin-top:48px;border:1px solid #DCE5F0;border-radius:16px;padding:24px}
+.kk-final h2{margin:0 0 8px}
+.kk-also{display:flex;flex-wrap:wrap;gap:0 24px;margin-top:12px;font-size:15px}.kk-also a{display:inline-flex;align-items:center;min-height:44px}
+.kk-tbl{overflow-x:auto;margin-top:12px}
+.kk-tbl table{border-collapse:collapse;width:100%;min-width:480px;font-size:15px}
+.kk-tbl th,.kk-tbl td{text-align:left;padding:8px 12px;border-bottom:1px solid #DCE5F0}
+.kk details.kk-det{background:#FFFFFF;border:1px solid #DCE5F0;border-radius:12px;padding:0 16px;margin-top:16px}
+.kk details.kk-det summary{min-height:48px;display:flex;align-items:center;font-weight:600;cursor:pointer}
+.kk-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:center}
+.kk-hero__img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid #DCE5F0;box-shadow:0 4px 12px rgba(0,51,160,.08)}
+@media(max-width:860px){.kk-hero{grid-template-columns:1fr;gap:16px}.kk-hero__img{max-height:220px;object-fit:cover}}
+.kk-ico{display:block;width:64px;height:64px;flex:none;margin:0 0 8px;border-radius:12px;background:#FFFFFF}
+.kk-rules li{display:flex;gap:16px;align-items:flex-start}
+.kk-rules li .kk-ico{margin:0}
+
+.kk-pc__type{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#0066FF}
+.kk-why{margin:16px 0 0;font-size:15px;line-height:22px}
+.kk-cards--top{margin-top:12px}
+.kk-res__more{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin:16px 0 0}
+.kk-res__more a{display:inline-flex;align-items:center;min-height:44px}
+.kk-heroside{display:grid;gap:12px}
+.kk-hs{background:#FFFFFF;border:1px solid #DCE5F0;border-radius:12px;padding:16px;display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.kk-hs b{color:#0033A0;font-size:16px}
+.kk-hs span{font-size:20px;font-weight:700;white-space:nowrap}
+.kk-hs small{display:block;width:100%;color:#606F85;font-size:13px;line-height:18px}
+.kk-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:center}
+@media(max-width:860px){.kk-hero{grid-template-columns:1fr;gap:16px}}
+.kk-hs em{font-style:normal;font-size:12px;color:#606F85;width:100%}
+.kk-static{margin-top:16px}
+</style>
+<div class="kk">
+<nav class="kk-bc" aria-label="Хлебные крошки"><a href="https://tehnoholod369.kz/">Главная</a> › <a href="https://tehnoholod369.kz/otoplenie">Отопление</a> › Камины</nav>
+<div class="kk-hero"><div class="kk-hero__t">
+<h1>Электрокамины в Алматы: очаги, комплекты и биокамины</h1>
+<p class="kk-lead">Electrolux, Royal Thermo и Firelight: от настольного биокамина до каминокомплекта с порталом. Ответьте на три вопроса, и мы покажем подходящие модели с ценой из каталога. Цену и наличие подтверждаем до заказа.</p>
+<div class="kk-cta">
+<a class="kk-btn kk-btn--main" href="#podbor">Подобрать камин</a>
+<a class="kk-btn kk-btn--out" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+</div>
+<ul class="kk-trust"><li>Доставка по Казахстану</li><li>Рассрочка до 24 месяцев</li><li>Гарантия по гарантийному талону</li></ul>
+</div>
+<div class="kk-heroside" aria-label="Цены по типам">
+<div class="kk-hs"><b>Биокамины</b><span>от <i class="kk-from-bio" style="font-style:normal">99 990</i>&nbsp;₸</span><small>живое пламя, без дымохода</small></div>
+<div class="kk-hs"><b>Электроочаги</b><span>от <i class="kk-from-hearth" style="font-style:normal">291 190</i>&nbsp;₸</span><small>пламя и обогрев от розетки, ставятся в портал или нишу</small></div>
+<div class="kk-hs"><b>Каминокомплекты</b><span>от <i class="kk-from-kit" style="font-style:normal">364 255</i>&nbsp;₸</span><small>очаг вместе с порталом</small></div>
+<em>Цена «от» считается по моделям в наличии.</em>
+</div>
+</div>
+
+<section id="podbor" aria-labelledby="kk-h-podbor">
+<h2 id="kk-h-podbor">Быстрый подбор: три вопроса</h2>
+<div class="kk-card">
+<p class="kk-note" style="margin:0">Подберём три подходящие модели и покажем, чем они отличаются. По площади комнаты и размерам ниши точнее подберёт страница <a href="https://tehnoholod369.kz/podbor-kamina">«Как выбрать электрокамин»</a>.</p>
+<form class="kk-form" id="kk-form" novalidate>
+<label>Что нужно<select id="kk-q-type"><option value="">Пока не знаю</option><option value="kit">Камин с порталом (комплект)</option><option value="hearth">Только очаг: в готовый портал или нишу</option><option value="bio">Живой огонь (биокамин)</option></select></label>
+<label>Обогрев комнаты<select id="kk-q-heat"><option value="">Не важно</option><option value="yes">Нужен обогрев</option></select></label>
+<label>Бюджет<select id="kk-q-bud"><option value="">Любой</option><option value="0">до 300 000 ₸</option><option value="1">300 000 – 500 000 ₸</option><option value="2">500 000 – 800 000 ₸</option><option value="3">от 800 000 ₸</option></select></label>
+<div class="kk-formact"><button type="submit" class="kk-btn kk-btn--main">Показать модели</button></div>
+</form>
+<div class="kk-res" id="kk-res" aria-live="polite"></div>
+</div>
+</section>
+
+<section id="katalog" aria-labelledby="kk-h-kat">
+<h2 id="kk-h-kat">Каталог каминов</h2>
+<p class="kk-lead" style="font-size:16px;line-height:26px">Знаете, что нужно? Отфильтруйте по типу, бренду, цене и способу установки. Цены и наличие берутся из каталога.</p>
+<div class="kk-filters" id="kk-filters" role="group" aria-label="Фильтры каталога"></div>
+<div class="kk-sortrow"><label>Сортировка<select id="kk-sort"><option value="stock">Сначала в наличии</option><option value="price-asc">Цена по возрастанию</option><option value="price-desc">Цена по убыванию</option></select></label><button type="button" class="kk-btn kk-btn--out" id="kk-reset" style="min-height:48px">Сбросить фильтры</button></div>
+<div class="kk-cards" id="kk-cards"></div>
+<p class="kk-more"><button type="button" class="kk-btn kk-btn--out" id="kk-morebtn" hidden>Показать ещё</button></p>
+<p class="kk-note" id="kk-empty" hidden>По этим фильтрам моделей нет. Сбросьте часть фильтров или напишите нам: подберём вручную.</p>
+<p class="kk-note">Аксессуары для биокаминов (наборы керамических дров и камней) и все остальные позиции группы: <a href="https://tehnoholod369.kz/katalog?g=kaminy">каталог каминов</a>. Цену и наличие подтверждаем при заказе. Часть моделей под заказ: срок ориентировочно до 14 дней, точный подтвердим в WhatsApp.</p>
+<div class="kk-tbl kk-static" id="kk-static"><table><thead><tr><th>Модель</th><th>Тип</th><th>Цена</th><th>Наличие</th></tr></thead><tbody><tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&sl=elektrokamin-072222843">Электрокамин 396S</a></td><td>Каминокомплект</td><td>364 255 ₸</td><td>В наличии</td></tr><tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&sl=392s">Электрокамин 392S</a></td><td>Каминокомплект</td><td>485 957 ₸</td><td>В наличии</td></tr><tr><td><a href="https://tehnoholod369.kz/tovar?g=kaminy&sl=390s">Электрокамин 390S</a></td><td>Каминокомплект</td><td>485 957 ₸</td><td>В наличии</td></tr><tr><td><a href="https://tehnoholod369.kz/tproduct/611444664544-kaminokomplekt-ochag-royal-thermo-aurora">Очаг Royal Thermo Aurora RTFP/P-AR40LS, портал California 40, белый</a></td><td>Каминокомплект</td><td>489 990 ₸</td><td>В наличии</td></tr><tr><td><a href="https://tehnoholod369.kz/tproduct/282874523104-ultra-shirokii-ochag-efpp-3020ls-n-diago">Electrolux ультра-широкий очаг EFP/P - 3020LS N (диагональ -31 дюйм)</a></td><td>Электроочаг 2D</td><td>291 190 ₸</td><td>В наличии</td></tr><tr><td><a href="https://tehnoholod369.kz/tproduct/449475714854-panoramnii-ochag-sphere-plus-efpp-3320rl">Electrolux ПАНОРАМНЫЙ очаг Sphere Plus EFP/P - 3320RLS N (диагональ -33 дюйма)</a></td><td>Электроочаг 2D</td><td>299 990 ₸</td><td>В наличии</td></tr><tr><td><a href="https://tehnoholod369.kz/tproduct/536747226894-ultra-shirokii-ochag-efpp-4220ls-diagona">Electrolux ультра-широкий очаг EFP/P-4220LS (диагональ -42 дюйма)</a></td><td>Электроочаг 2D</td><td>309 990 ₸</td><td>В наличии</td></tr><tr><td><a href="https://tehnoholod369.kz/tproduct/275010969874-ochag-elektricheskii-royal-thermo-rtfpp1">Очаг электрический Royal Thermo RTFP/P1000M 3D Cassette Mystery</a></td><td>Электроочаг 3D паровой</td><td>599 990 ₸</td><td>В наличии</td></tr><tr><td><a href="https://tehnoholod369.kz/tproduct/357165399374-ochag-elektricheskii-royal-thermo-rtfpp5">Очаг электрический Royal Thermo RTFP/P500MR 3D Cassette Mystery Round</a></td><td>Электроочаг 3D паровой</td><td>699 990 ₸</td><td>В наличии</td></tr><tr><td><a href="https://tehnoholod369.kz/tproduct/657275212764-biokamin-firelight-bfpt-2525-cup">Биокамин Firelight BFP/T-2525 Cup</a></td><td>Биокамин</td><td>99 990 ₸</td><td>В наличии</td></tr><tr><td><a href="https://tehnoholod369.kz/tproduct/113036060644-biokamin-firelight-bfpt-3520-glass">Биокамин Firelight BFP/T-3520 Glass</a></td><td>Биокамин</td><td>99 990 ₸</td><td>В наличии</td></tr><tr><td><a href="https://tehnoholod369.kz/tproduct/180986696624-biokamin-firelight-bfpt-4025-wood">Биокамин Firelight BFP/T-4025 Wood</a></td><td>Биокамин</td><td>149 990 ₸</td><td>В наличии</td></tr><tr><td><a href="https://tehnoholod369.kz/tproduct/816600367614-tumba-s-biokaminom-firelight-bfp-p1600-b">Тумба с биокамином Firelight BFP-P1600 белая</a></td><td>Тумба с биокамином</td><td>279 990 ₸</td><td>Под заказ</td></tr></tbody></table></div>
+</section>
+
+<section aria-labelledby="kk-h-types">
+<h2 id="kk-h-types">Чем отличаются электроочаг, каминокомплект и биокамин</h2>
+<div class="kk-types">
+<div class="kk-type"><svg class="kk-ico" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#0066FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="16" width="48" height="32" rx="3" stroke="#0033A0"/><path d="M32 42c-6 0-9-4-8-8 1-4 4-5 4-9 3 2 8 6 8 11 0 3-1 6-4 6z"/></svg><h3>Электроочаг 2D</h3><p>Обогреватель с имитацией пламени. Включается в розетку, ставится в готовый портал или нишу. Режим обогрева и подсветку можно использовать отдельно. Размеры очага и ниши указаны в характеристиках.</p></div>
+<div class="kk-type"><svg class="kk-ico" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#0066FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="16" width="48" height="32" rx="3" stroke="#0033A0"/><path d="M18 42c3-4 3-8 0-12M32 42c3-4 3-8 0-12M46 42c3-4 3-8 0-12"/></svg><h3>Электроочаг 3D паровой</h3><p>Холодный пар, подсвеченный светодиодами, имитирует пламя. По каталогу производителя у серии Mystery заявлены функция увлажнения и система автозалива и слива воды. Режима обогрева нет. Мощность от 0,15 до 0,52 кВт.</p></div>
+<div class="kk-type"><svg class="kk-ico" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#0066FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="3" stroke="#0033A0"/><rect x="17" y="22" width="30" height="24" rx="2"/><path d="M32 42c-4 0-6-3-5-6 1-3 3-3 3-6 3 1 6 4 6 7 0 3-1 5-4 5z"/></svg><h3>Каминокомплект</h3><p>Очаг вместе с порталом: готовое решение для установки у стены. Портал выбирается по цвету и отделке, размеры и вес указаны в карточке. Обогрев есть у моделей с режимом обогрева.</p></div>
+<div class="kk-type"><svg class="kk-ico" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#0066FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 44h40l-4 10H16z" stroke="#0033A0"/><path d="M32 40c-5 0-7-3-6-6 1-3 3-4 3-7 3 2 6 5 6 8 0 3-1 5-3 5z"/></svg><h3>Биокамин и тумба с биокамином</h3><p>Живое пламя на биотопливе. Дымоход и вытяжка не нужны, но по руководству производителя биокамин ставят в помещении достаточного размера с системой вентиляции. Это не электрический прибор, режима обогрева нет. Время горения заправки в карточках от 1,5 до 4 часов. Тумба с биокамином — мебельный вариант.</p></div>
+</div>
+<p style="margin-top:16px"><a class="kk-btn kk-btn--alt" href="#podbor">Подобрать камин</a></p>
+</section>
+
+<section aria-labelledby="kk-h-heat">
+<h2 id="kk-h-heat">Греет ли электрокамин и сколько он потребляет</h2>
+<div class="kk-tbl"><table>
+<thead><tr><th>Тип</th><th>Обогрев</th><th>Мощность по каталогу</th></tr></thead>
+<tbody>
+<tr><td>Электроочаг 2D, каминокомплект</td><td>Есть режим обогрева у большинства моделей, указано в карточке</td><td>от 1 до 2,5 кВт, у большинства 2 кВт</td></tr>
+<tr><td>Электроочаг 3D паровой</td><td>Режима обогрева нет</td><td>0,15–0,52 кВт</td></tr>
+<tr><td>Биокамин, тумба с биокамином</td><td>Не электрический прибор, режима обогрева нет; рекомендуемая площадь указана в карточке</td><td>от розетки не работает</td></tr>
+</tbody></table></div>
+<ol class="kk-rules">
+<li><div><b>Расход электроэнергии.</b> Электроочаг на 2 кВт при полной мощности потребляет 2 кВт·ч за час. По тарифу 37,92 ₸ за кВт·ч это около 76 ₸ в час работы с обогревом. Без обогрева потребление ниже: значение указано в характеристиках, если производитель его даёт.</div></li>
+<li><div><b>Розетка и проводка.</b> Электроочаг на 2 кВт даёт ток около 9 А (мощность в ваттах, делённая на 220 В). Не подключайте его через удлинитель с другими мощными приборами и проверьте, что линия выдерживает нагрузку.</div></li>
+<li><div><b>Ниша и портал.</b> Габариты очага и портала указаны в характеристиках каждой модели: сверьте их с нишей до заказа. Каминокомплекты часто ставят под телевизор, но допустимую нагрузку на портал в данных не указывают: нет данных, спросите нас в WhatsApp.</div></li>
+<li><div><b>Биокамин.</b> Биокамин сжигает биотопливо и расходует кислород: по руководству производителя его ставят в помещении достаточного размера с системой вентиляции, вдали от сквозняков, источников влаги и горючих материалов. Размеры помещения и расстояния указаны в руководстве модели.</div></li>
+</ol>
+<p class="kk-note" style="margin-top:12px">Площадь помещения в карточке указана производителем. Электроочаг даёт тепло в зоне, а не отопление дома.</p>
+</section>
+
+<section aria-labelledby="kk-h-faq">
+<h2 id="kk-h-faq">Частые вопросы</h2>
+<div class="kk-faq">
+<details class="kk-q"><summary>Сколько стоит электрокамин в Алматы?</summary><p>Цена зависит от типа: биокамины, электроочаги, каминокомплекты (очаг с порталом) и тумбы с биокамином стоят по-разному. Актуальные цены в каталоге на этой странице берутся из каталога автоматически. Цену и наличие конкретной модели подтверждаем до заказа.</p></details>
+<details class="kk-q"><summary>Где заказать электрокамин в Алматы?</summary><p>Выберите модель в каталоге на этой странице и нажмите «Уточнить в WhatsApp» или оставьте заявку: ответим по цене, наличию и доставке. Доставка по Казахстану, рассрочка до 24 месяцев, условия по модели уточним до заказа.</p></details>
+<details class="kk-q"><summary>Какие бывают электрокамины?</summary><p>В каталоге четыре группы. Электроочаг 2D: обогреватель с имитацией пламени, ставится в портал или нишу. Паровой электроочаг 3D: объёмный эффект пламени. Каминокомплект: очаг вместе с порталом. Биокамин: живое пламя на биотопливе, не электрический прибор. Отдельно есть тумбы с биокамином.</p></details>
+<details class="kk-q"><summary>Какой электрокамин выбрать?</summary><p>Ответьте себе на несколько вопросов: нужен обогрев или только пламя, где он будет стоять (портал, ниша, у стены, на столе), какая площадь комнаты и какой бюджет. Быстрый подбор на этой странице сужает каталог по типу, обогреву и бюджету, а подбор из пяти шагов по площади и размерам ниши есть на странице «Как выбрать электрокамин».</p></details>
+<details class="kk-q"><summary>Греет ли электрокамин?</summary><p>Электроочаг греет, если у модели есть режим обогрева: это указано в карточке. Он работает как обычный электрический обогреватель, то есть даёт тепло в зоне, а не отопление дома. У паровых очагов 3D режима обогрева в характеристиках нет. Площадь помещения в карточке указана по данным производителя.</p></details>
+<details class="kk-q"><summary>Сколько потребляет электрокамин?</summary><p>У большинства электроочагов и каминокомплектов с обогревом в каталоге максимальная мощность 2 кВт (у отдельных моделей от 1 до 2,5 кВт). При полной мощности это 2 кВт·ч за час работы: по тарифу 37,92 ₸ за кВт·ч около 76 ₸ в час. Паровые очаги 3D потребляют меньше, от 0,15 до 0,52 кВт по характеристикам. Мощность каждой модели указана в карточке.</p></details>
+<details class="kk-q"><summary>Нужен ли дымоход для электрокамина и биокамина?</summary><p>Электроочагу дымоход не нужен: он работает от розетки. Биокамину дымоход и вытяжка тоже не нужны, но по руководству производителя его ставят в помещении достаточного размера с системой вентиляции: при горении расходуется кислород. Размеры помещения и расстояния до горючих материалов указаны в руководстве модели.</p></details>
+<details class="kk-q"><summary>Можно ли поставить телевизор над электрокамином или на каминокомплект?</summary><p>Каминокомплекты часто ставят под телевизор. Допустимую нагрузку на портал и расстояние до телевизора в данных каталога не указывают: нет данных. Напишите модель в WhatsApp, мы сверим по руководству по эксплуатации.</p></details>
+<details class="kk-q"><summary>Есть ли электрокамин с увлажнителем воздуха?</summary><p>Есть: паровые электроочаги 3D Royal Thermo. Пламя у них имитирует холодный пар, и по каталогу производителя у серии Mystery заявлены функция увлажнения и система автозалива и слива воды. Режима обогрева у них нет. Очистка воздуха в характеристиках не заявлена: нет данных.</p></details>
+<details class="kk-q"><summary>Какая гарантия на электрокамин?</summary><p>Гарантия по гарантийному талону производителя, срок зависит от модели: в карточках каталога указано 12 месяцев или 2 года.</p></details>
+<details class="kk-q"><summary>Делаете ли вы монтаж камина?</summary><p>Нет, монтаж каминов мы не выполняем: продаём и доставляем по Казахстану. Электроочаги работают от розетки 220 В (напряжение указано в карточке), сборка портала и установка очага — по руководству модели.</p></details>
+<details class="kk-q"><summary>Есть ли доставка и рассрочка?</summary><p>Да. Доставка по Казахстану, рассрочка до 24 месяцев. Стоимость и срок доставки, условия рассрочки по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp.</p></details>
+</div>
+</section>
+
+<section aria-labelledby="kk-h-cond">
+<h2 id="kk-h-cond">Доставка, рассрочка, гарантия</h2>
+<div class="kk-cond">
+<div><b>Доставка по Казахстану</b>Стоимость и срок подтверждаем при заказе.</div>
+<div><b>Рассрочка до 24 месяцев</b>Условия по конкретной модели уточните по телефону или в WhatsApp.</div>
+<div><b>Гарантия по талону</b>Срок зависит от модели: в карточках 12 месяцев или 2 года.</div>
+<div><b>Монтаж</b>Мы продаём и доставляем камины, монтаж не выполняем. Порядок установки указан в руководстве модели.</div>
+</div>
+<p class="kk-note" style="margin-top:12px">Цену и наличие подтверждаем при заказе. Для позиций «под заказ» срок ориентировочно до 14 дней, точный подтвердим в WhatsApp.</p>
+</section>
+
+<section class="kk-final" aria-labelledby="kk-h-final">
+<h2 id="kk-h-final">Не уверены, какой камин нужен?</h2>
+<p>Напишите, куда будете ставить камин, какая комната и какой бюджет: подскажем тип и модели. Заявка ни к чему не обязывает.</p>
+<div class="kk-cta">
+<a class="kk-btn kk-btn--main" href="#popup:zayavka">Получить подбор</a>
+<a class="kk-btn kk-btn--alt" href="https://wa.me/77000369369">Написать в WhatsApp</a>
+<a class="kk-btn kk-btn--out" href="tel:+77000369369">+77 000 369 369</a>
+</div>
+</section>
+
+<nav class="kk-also" aria-label="Читайте также">
+<a href="https://tehnoholod369.kz/podbor-kamina">Как выбрать электрокамин: подбор по площади и бюджету</a>
+<a href="https://tehnoholod369.kz/elektrokamin-s-portalom-almaty">Электрокамин с порталом</a>
+<a href="https://tehnoholod369.kz/elektrokamin">Электрокамин: как выбрать для квартиры</a>
+<a href="https://tehnoholod369.kz/konvektory-almaty">Электрические конвекторы</a>
+<a href="https://tehnoholod369.kz/otoplenie">Все разделы отопления</a>
+</nav>
+</div>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Электрокамины, каминокомплекты и биокамины в Алматы","itemListElement":[{"@type":"ListItem","position":1,"name":"Электрокамин 396S","url":"https://tehnoholod369.kz/tovar?g=kaminy&sl=elektrokamin-072222843"},{"@type":"ListItem","position":2,"name":"Электрокамин 392S","url":"https://tehnoholod369.kz/tovar?g=kaminy&sl=392s"},{"@type":"ListItem","position":3,"name":"Электрокамин 390S","url":"https://tehnoholod369.kz/tovar?g=kaminy&sl=390s"},{"@type":"ListItem","position":4,"name":"Очаг Royal Thermo Aurora RTFP/P-AR40LS, портал California 40, белый","url":"https://tehnoholod369.kz/tproduct/611444664544-kaminokomplekt-ochag-royal-thermo-aurora"},{"@type":"ListItem","position":5,"name":"Electrolux ультра-широкий очаг EFP/P - 3020LS N (диагональ -31 дюйм)","url":"https://tehnoholod369.kz/tproduct/282874523104-ultra-shirokii-ochag-efpp-3020ls-n-diago"},{"@type":"ListItem","position":6,"name":"Electrolux ПАНОРАМНЫЙ очаг Sphere Plus EFP/P - 3320RLS N (диагональ -33 дюйма)","url":"https://tehnoholod369.kz/tproduct/449475714854-panoramnii-ochag-sphere-plus-efpp-3320rl"},{"@type":"ListItem","position":7,"name":"Electrolux ультра-широкий очаг EFP/P-4220LS (диагональ -42 дюйма)","url":"https://tehnoholod369.kz/tproduct/536747226894-ultra-shirokii-ochag-efpp-4220ls-diagona"},{"@type":"ListItem","position":8,"name":"Очаг электрический Royal Thermo RTFP/P1000M 3D Cassette Mystery","url":"https://tehnoholod369.kz/tproduct/275010969874-ochag-elektricheskii-royal-thermo-rtfpp1"},{"@type":"ListItem","position":9,"name":"Очаг электрический Royal Thermo RTFP/P500MR 3D Cassette Mystery Round","url":"https://tehnoholod369.kz/tproduct/357165399374-ochag-elektricheskii-royal-thermo-rtfpp5"},{"@type":"ListItem","position":10,"name":"Биокамин Firelight BFP/T-2525 Cup","url":"https://tehnoholod369.kz/tproduct/657275212764-biokamin-firelight-bfpt-2525-cup"},{"@type":"ListItem","position":11,"name":"Биокамин Firelight BFP/T-3520 Glass","url":"https://tehnoholod369.kz/tproduct/113036060644-biokamin-firelight-bfpt-3520-glass"},{"@type":"ListItem","position":12,"name":"Биокамин Firelight BFP/T-4025 Wood","url":"https://tehnoholod369.kz/tproduct/180986696624-biokamin-firelight-bfpt-4025-wood"},{"@type":"ListItem","position":13,"name":"Тумба с биокамином Firelight BFP-P1600 белая","url":"https://tehnoholod369.kz/tproduct/816600367614-tumba-s-biokaminom-firelight-bfp-p1600-b"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://tehnoholod369.kz/"},{"@type":"ListItem","position":2,"name":"Отопление","item":"https://tehnoholod369.kz/otoplenie"},{"@type":"ListItem","position":3,"name":"Камины","item":"https://tehnoholod369.kz/kaminy-almaty"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Сколько стоит электрокамин в Алматы?","acceptedAnswer":{"@type":"Answer","text":"Цена зависит от типа: биокамины, электроочаги, каминокомплекты (очаг с порталом) и тумбы с биокамином стоят по-разному. Актуальные цены в каталоге на этой странице берутся из каталога автоматически. Цену и наличие конкретной модели подтверждаем до заказа."}},{"@type":"Question","name":"Где заказать электрокамин в Алматы?","acceptedAnswer":{"@type":"Answer","text":"Выберите модель в каталоге на этой странице и нажмите «Уточнить в WhatsApp» или оставьте заявку: ответим по цене, наличию и доставке. Доставка по Казахстану, рассрочка до 24 месяцев, условия по модели уточним до заказа."}},{"@type":"Question","name":"Какие бывают электрокамины?","acceptedAnswer":{"@type":"Answer","text":"В каталоге четыре группы. Электроочаг 2D: обогреватель с имитацией пламени, ставится в портал или нишу. Паровой электроочаг 3D: объёмный эффект пламени. Каминокомплект: очаг вместе с порталом. Биокамин: живое пламя на биотопливе, не электрический прибор. Отдельно есть тумбы с биокамином."}},{"@type":"Question","name":"Какой электрокамин выбрать?","acceptedAnswer":{"@type":"Answer","text":"Ответьте себе на несколько вопросов: нужен обогрев или только пламя, где он будет стоять (портал, ниша, у стены, на столе), какая площадь комнаты и какой бюджет. Быстрый подбор на этой странице сужает каталог по типу, обогреву и бюджету, а подбор из пяти шагов по площади и размерам ниши есть на странице «Как выбрать электрокамин»."}},{"@type":"Question","name":"Греет ли электрокамин?","acceptedAnswer":{"@type":"Answer","text":"Электроочаг греет, если у модели есть режим обогрева: это указано в карточке. Он работает как обычный электрический обогреватель, то есть даёт тепло в зоне, а не отопление дома. У паровых очагов 3D режима обогрева в характеристиках нет. Площадь помещения в карточке указана по данным производителя."}},{"@type":"Question","name":"Сколько потребляет электрокамин?","acceptedAnswer":{"@type":"Answer","text":"У большинства электроочагов и каминокомплектов с обогревом в каталоге максимальная мощность 2 кВт (у отдельных моделей от 1 до 2,5 кВт). При полной мощности это 2 кВт·ч за час работы: по тарифу 37,92 ₸ за кВт·ч около 76 ₸ в час. Паровые очаги 3D потребляют меньше, от 0,15 до 0,52 кВт по характеристикам. Мощность каждой модели указана в карточке."}},{"@type":"Question","name":"Нужен ли дымоход для электрокамина и биокамина?","acceptedAnswer":{"@type":"Answer","text":"Электроочагу дымоход не нужен: он работает от розетки. Биокамину дымоход и вытяжка тоже не нужны, но по руководству производителя его ставят в помещении достаточного размера с системой вентиляции: при горении расходуется кислород. Размеры помещения и расстояния до горючих материалов указаны в руководстве модели."}},{"@type":"Question","name":"Можно ли поставить телевизор над электрокамином или на каминокомплект?","acceptedAnswer":{"@type":"Answer","text":"Каминокомплекты часто ставят под телевизор. Допустимую нагрузку на портал и расстояние до телевизора в данных каталога не указывают: нет данных. Напишите модель в WhatsApp, мы сверим по руководству по эксплуатации."}},{"@type":"Question","name":"Есть ли электрокамин с увлажнителем воздуха?","acceptedAnswer":{"@type":"Answer","text":"Есть: паровые электроочаги 3D Royal Thermo. Пламя у них имитирует холодный пар, и по каталогу производителя у серии Mystery заявлены функция увлажнения и система автозалива и слива воды. Режима обогрева у них нет. Очистка воздуха в характеристиках не заявлена: нет данных."}},{"@type":"Question","name":"Какая гарантия на электрокамин?","acceptedAnswer":{"@type":"Answer","text":"Гарантия по гарантийному талону производителя, срок зависит от модели: в карточках каталога указано 12 месяцев или 2 года."}},{"@type":"Question","name":"Делаете ли вы монтаж камина?","acceptedAnswer":{"@type":"Answer","text":"Нет, монтаж каминов мы не выполняем: продаём и доставляем по Казахстану. Электроочаги работают от розетки 220 В (напряжение указано в карточке), сборка портала и установка очага — по руководству модели."}},{"@type":"Question","name":"Есть ли доставка и рассрочка?","acceptedAnswer":{"@type":"Answer","text":"Да. Доставка по Казахстану, рассрочка до 24 месяцев. Стоимость и срок доставки, условия рассрочки по конкретной модели уточните по телефону +77 000 369 369 или в WhatsApp."}}]}</script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@2569a651d64110f2b499b3e2a2097e3845ce15ec/novy-dizayn/glavnaya/th-popups.js" defer></script>
+<script>
+(function(){
+  "use strict";
+  var URL_DATA="https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/podbor-kamina.json";
+  var SITE="https://tehnoholod369.kz";
+  var WA="https://wa.me/77000369369?text=";
+  var data=null, models=[], failed=false;
+  var SUB={kit:"Каминокомплект",h2d:"Электроочаг 2D",h3d:"Электроочаг 3D паровой",bio:"Биокамин",tumba:"Тумба с биокамином"};
+  var PL={side:"Пристенный",niche:"В нишу",floor:"Напольный",table:"Настольный",wall:"Настенный"};
+  var BUD=[["до 300 тыс.",0,300000],["300–500 тыс.",300000,500000],["500–800 тыс.",500000,800000],["от 800 тыс.",800000,1e12]];
+  function $(id){return document.getElementById(id)}
+  function fmt(n){return Math.round(n).toLocaleString("ru-RU").replace(/\s/g," ")}
+  function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function num1(n){return (Math.round(n*10)/10).toString().replace(".",",")}
+  function waLink(t){return WA+encodeURIComponent(t)}
+  function inStock(x){return x["in"]===1}
+  function sub(x){
+    if(x.t==="kit") return "kit";
+    if(x.t==="bio") return /[Тт]умб/.test(x.n)?"tumba":"bio";
+    return /3D|Cassette|Mystery/.test(x.n)?"h3d":"h2d";
+  }
+  var NAME_FIX={"Электрокамин 072222843":"Электрокамин 396S"};
+  function title(x){var n=NAME_FIX[x.n]||x.n; if(x.b&&n.indexOf(x.b)<0) n=x.b+" "+n; return n}
+  function link(x){return SITE+x.u}
+  function load(cb){
+    if(data||failed) return cb();
+    fetch(URL_DATA,{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+      data=d;
+      models=d.filter(function(x){return x.p>0&&x.u}).map(function(x){x._s=sub(x);return x});
+      cb();
+    }).catch(function(){failed=true;cb()});
+  }
+  function minPrice(list){var m=0;list.forEach(function(x){if(!m||x.p<m)m=x.p});return m}
+  function fillFrom(){
+    var by={bio:[],hearth:[],kit:[]};
+    models.forEach(function(x){if(by[x.t]&&inStock(x)) by[x.t].push(x)});
+    var all=minPrice(models.filter(inStock));
+    var map={"kk-from-all":all,"kk-from-bio":minPrice(by.bio),"kk-from-hearth":minPrice(by.hearth),"kk-from-kit":minPrice(by.kit)};
+    for(var id in map){var els=document.querySelectorAll("."+id);for(var i=0;i<els.length;i++){if(map[id]) els[i].textContent=fmt(map[id])}}
+  }
+
+  /* ---------- Каталог: фильтры ---------- */
+  var F={sub:{},brand:{},bud:null,heat:false,place:null,stock:false}, shown=12;
+  function chip(g,v,label,pressed){return '<button type="button" class="kk-chip" data-g="'+g+'" data-v="'+v+'" aria-pressed="'+(pressed?"true":"false")+'">'+label+'</button>'}
+  function drawFilters(){
+    var h='<div class="kk-fg"><span class="kk-fg__l">Тип</span>';
+    ["kit","h2d","h3d","bio","tumba"].forEach(function(k){h+=chip("sub",k,SUB[k],!!F.sub[k])});
+    h+='</div><div class="kk-fg"><span class="kk-fg__l">Бренд</span>';
+    ["Electrolux","Royal Thermo","Firelight"].forEach(function(b){h+=chip("brand",b,b,!!F.brand[b])});
+    h+='</div><div class="kk-fg"><span class="kk-fg__l">Цена</span>';
+    BUD.forEach(function(b,i){h+=chip("bud",i,b[0],F.bud===i)});
+    h+='</div><div class="kk-fg"><span class="kk-fg__l">Ещё</span>'+chip("heat",1,"Есть обогрев",F.heat);
+    ["niche","wall","floor","table"].forEach(function(p){h+=chip("place",p,PL[p],F.place===p)});
+    h+=chip("stock",1,"Только в наличии",F.stock)+'</div>';
+    $("kk-filters").innerHTML=h;
+  }
+  function pass(x,f){
+    var sk=Object.keys(f.sub).filter(function(k){return f.sub[k]});
+    if(sk.length&&sk.indexOf(x._s)<0) return false;
+    var bk=Object.keys(f.brand).filter(function(k){return f.brand[k]});
+    if(bk.length&&bk.indexOf(x.b)<0) return false;
+    if(f.bud!==null&&!(x.p>=BUD[f.bud][1]&&x.p<BUD[f.bud][2])) return false;
+    if(f.heat&&x.h!==true) return false;
+    if(f.place&&(x.pl||[]).indexOf(f.place)<0) return false;
+    if(f.stock&&!inStock(x)) return false;
+    return true;
+  }
+  function sorter(s){
+    return function(a,b){
+      if(s==="price-asc") return a.p-b.p;
+      if(s==="price-desc") return b.p-a.p;
+      var sa=inStock(a)?0:1, sb=inStock(b)?0:1; if(sa!==sb) return sa-sb; return a.p-b.p;
+    };
+  }
+  function chips(x){
+    var c=[];
+    if(x.kw!=null) c.push(num1(x.kw)+"&nbsp;кВт");
+    if(x.a) c.push((x._s==="bio"||x._s==="tumba"?"рекомендуемая площадь ":"до&nbsp;")+Math.round(x.a)+"&nbsp;м²");
+    if(x._s==="bio"||x._s==="tumba"){ if(x.tv) c.push("горение "+esc(x.tv)); }
+    else if(x.h===true) c.push("есть обогрев");
+    else if(x.h===false) c.push("только пламя");
+    var pls=(x.pl||[]).map(function(p){return PL[p]}).filter(Boolean);
+    if(pls.length) c.push(esc(pls.slice(0,2).join(" / ")));
+    return c.map(function(t){return "<span>"+t+"</span>"}).join("");
+  }
+  function card(x){
+    var t=title(x), msg="Здравствуйте! Цена и наличие: "+t+".";
+    return '<article class="kk-pc"><a class="kk-pc__img" href="'+link(x)+'"><img src="'+esc(x.i)+'" alt="'+esc(t)+'" width="600" height="450" loading="lazy" decoding="async"></a><div class="kk-pc__body"><span class="kk-pc__type">'+SUB[x._s]+'</span><a class="kk-pc__name" href="'+link(x)+'">'+esc(t)+'</a><div class="kk-pc__spec">'+chips(x)+'</div><div class="kk-pc__price">'+esc(x.pt)+'</div><div class="kk-pc__st'+(inStock(x)?'':' kk-pc__st--order')+'">'+(inStock(x)?'В наличии':'Под заказ')+'</div><div class="kk-pc__act"><a class="kk-btn kk-btn--alt" href="'+link(x)+'">Подробнее</a><a class="kk-btn kk-btn--out" href="'+waLink(msg)+'">Уточнить в WhatsApp</a></div></div></article>';
+  }
+  function drawCards(){
+    var list=models.filter(function(x){return pass(x,F)}).sort(sorter($("kk-sort").value));
+    $("kk-cards").innerHTML=list.slice(0,shown).map(card).join("");
+    $("kk-empty").hidden=list.length>0;
+    $("kk-morebtn").hidden=list.length<=shown;
+    var st=$("kk-static"); if(st) st.hidden=true;
+  }
+  document.addEventListener("click",function(e){
+    var b=e.target.closest&&e.target.closest("#kk-filters .kk-chip"); if(!b) return;
+    var g=b.getAttribute("data-g"), v=b.getAttribute("data-v");
+    if(g==="sub") F.sub[v]=!F.sub[v];
+    else if(g==="brand") F.brand[v]=!F.brand[v];
+    else if(g==="bud") F.bud=(F.bud===parseInt(v,10)?null:parseInt(v,10));
+    else if(g==="heat") F.heat=!F.heat;
+    else if(g==="place") F.place=(F.place===v?null:v);
+    else if(g==="stock") F.stock=!F.stock;
+    shown=12; drawFilters(); drawCards();
+    var again=document.querySelector('#kk-filters .kk-chip[data-g="'+g+'"][data-v="'+v+'"]'); if(again&&again.focus) again.focus();
+  });
+
+  /* ---------- Быстрый подбор ---------- */
+  var WHY={
+    kit:"Каминокомплект: очаг (или биокамин) уже вместе с порталом, готово к установке у стены. Габариты указаны в карточке.",
+    tumba:"Тумба с биокамином: мебельный вариант с живым пламенем. Помещение нужно с системой вентиляции.",
+    h2d:"Электроочаг без портала: ставится в готовый портал или нишу. Проверьте размеры ниши в карточке.",
+    h3d:"Паровой электроочаг даёт объёмный эффект пламени. По характеристикам режима обогрева у этих моделей нет.",
+    bio:"Биокамин: живой огонь на биотопливе, дымоход не нужен. По руководству производителя ставят в помещении с системой вентиляции."
+  };
+  function quick(){
+    var type=$("kk-q-type").value, heat=$("kk-q-heat").value, bud=$("kk-q-bud").value, res=$("kk-res");
+    var f={sub:{},brand:{},bud:bud===""?null:parseInt(bud,10),heat:heat==="yes",place:null,stock:false};
+    if(type==="kit") f.sub.kit=true;
+    else if(type==="hearth"){f.sub.h2d=true;f.sub.h3d=true}
+    else if(type==="bio"){f.sub.bio=true;f.sub.tumba=true}
+    if(heat==="yes"&&type==="bio"){
+      res.innerHTML='<div class="kk-warn">Биокамин даёт живой огонь, но это не электрический обогреватель: режима обогрева в характеристиках нет, рекомендуемая площадь указана в карточке. Если нужно тепло, выберите электроочаг или каминокомплект.</div>';
+      return;
+    }
+    var list=models.filter(function(x){return pass(x,f)}).sort(sorter("stock"));
+    if(!list.length){res.innerHTML='<div class="kk-warn">По этим условиям моделей нет. Попробуйте другой бюджет или напишите нам: подберём вручную.</div><p><a class="kk-btn kk-btn--alt" href="'+waLink("Здравствуйте! Помогите подобрать камин.")+'">Написать в WhatsApp</a></p>';return}
+    var top=[], seen={};
+    list.forEach(function(x){if(top.length<3&&!seen[x._s]){seen[x._s]=1;top.push(x)}});
+    list.forEach(function(x){if(top.length<3&&top.indexOf(x)<0) top.push(x)});
+    var types={};
+    top.forEach(function(x){types[x._s]=1});
+    var h='<p class="kk-why">'+Object.keys(types).map(function(k){return WHY[k]}).join(" ")+'</p><div class="kk-cards kk-cards--top">'+top.map(card).join("")+'</div>';
+    h+='<p class="kk-res__more"><button type="button" class="kk-btn kk-btn--out" id="kk-toCat">Показать все подходящие в каталоге</button> <a href="'+SITE+'/podbor-kamina">Подбор по площади и размеру ниши</a></p>';
+    res.innerHTML=h;
+    $("kk-toCat").addEventListener("click",function(){
+      F={sub:f.sub,brand:{},bud:f.bud,heat:f.heat,place:null,stock:false};
+      shown=12;drawFilters();drawCards();
+      var c=$("katalog"); if(c&&c.scrollIntoView) c.scrollIntoView({behavior:"smooth"});
+    });
+  }
+  function init(){
+    var f=$("kk-form"); if(!f) return;
+    f.addEventListener("submit",function(e){e.preventDefault();load(function(){if(failed){$("kk-res").innerHTML='<p class="kk-note">Каталог сейчас не загрузился. Напишите в <a href="https://wa.me/77000369369">WhatsApp</a>.</p>';return}quick()})});
+    $("kk-sort").addEventListener("change",function(){shown=12;drawCards()});
+    $("kk-reset").addEventListener("click",function(){F={sub:{},brand:{},bud:null,heat:false,place:null,stock:false};shown=12;$("kk-sort").value="stock";drawFilters();drawCards()});
+    $("kk-morebtn").addEventListener("click",function(){shown+=12;drawCards()});
+    drawFilters();
+    load(function(){
+      if(failed){$("kk-cards").innerHTML='<p class="kk-note">Каталог сейчас не загрузился. Откройте <a href="https://tehnoholod369.kz/katalog?g=kaminy">каталог каминов</a> или напишите в <a href="https://wa.me/77000369369">WhatsApp</a>.</p>';return}
+      fillFrom();drawCards();
+    });
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",init); else init();
+})();
+</script>
