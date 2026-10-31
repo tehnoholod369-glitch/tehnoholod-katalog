@@ -180,6 +180,7 @@
         <div style="font:400 16px/24px Inter,sans-serif; color:#1A1A1A; margin-top:10px;">{{ heroSub }}</div>
         <sc-if value="{{ kaminyHelp }}" hint-placeholder-val="{{ false }}">
           <a href="/podbor-kamina" style="display:inline-flex; align-items:center; justify-content:center; min-height:44px; margin-top:14px; padding:0 18px; border-radius:8px; background:#0066FF; color:#fff; font:600 15px/1 Inter,sans-serif; text-decoration:none;">Как выбрать электрокамин →</a>
+          <a href="/kaminy-almaty" style="display:inline-flex; align-items:center; justify-content:center; min-height:44px; margin-top:14px; margin-left:12px; padding:0 18px; border-radius:8px; background:#fff; color:#0033A0; border:1px solid #0066FF; font:600 15px/1 Inter,sans-serif; text-decoration:none;">Купить электрокамин: цены и подбор →</a>
         </sc-if>
       </div>
       <sc-if value="{{ hasHeroBrands }}" hint-placeholder-val="{{ false }}">
