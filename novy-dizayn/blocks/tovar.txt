@@ -509,7 +509,7 @@
             </div>
             <div ref="{{ analogRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr)); gap:14px; margin-top:16px;">
               <sc-for list="{{ analogs }}" as="a" hint-placeholder-count="4">
-                <div onClick="{{ a.open }}" style="border:1px solid #DCE5F0; border-radius:12px; padding:14px; cursor:pointer; display:flex; flex-direction:column;">
+                <a href="{{ a.href }}" style="border:1px solid #DCE5F0; border-radius:12px; padding:14px; cursor:pointer; display:flex; flex-direction:column; text-decoration:none; color:inherit;">
                   <div style="height:110px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:8px;">
                     <img data-url="{{ a.img }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:contain; display:block;" />
                   </div>
@@ -520,7 +520,7 @@
                   <div style="font-size:13px; font-weight:600; line-height:1.35; margin-top:5px;">{{ a.name }}</div>
                   <div style="font-size:17px; font-weight:700; font-variant-numeric:tabular-nums; margin-top:8px;">{{ a.price }}</div>
                   <div style="font-size:12px; color:{{ a.diffFg }}; margin-top:2px;">{{ a.diff }}</div>
-                </div>
+                </a>
               </sc-for>
             </div>
           </div>
@@ -645,14 +645,14 @@
           </div>
           <div ref="{{ relRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr)); gap:14px; margin-top:14px;">
             <sc-for list="{{ related }}" as="r" hint-placeholder-count="4">
-              <div onClick="{{ r.open }}" style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:14px; cursor:pointer; display:flex; flex-direction:column;">
+              <a href="{{ r.href }}" style="background:#fff; border:1px solid #DCE5F0; border-radius:12px; padding:14px; cursor:pointer; display:flex; flex-direction:column; text-decoration:none; color:inherit;">
                 <div style="height:120px; background:#F9FBFE; border:1px solid #E9EFF7; border-radius:8px; display:flex; align-items:center; justify-content:center; padding:8px;">
                   <img data-url="{{ r.img }}" alt="{{ r.name }}" loading="lazy" style="width:100%; height:100%; object-fit:contain; display:block;" />
                 </div>
                 <div style="font-size:12px; font-weight:700; color:#0066FF; letter-spacing:0.06em; margin-top:10px;">{{ r.brand }}</div>
                 <div style="font-size:13px; font-weight:600; line-height:1.35; margin-top:4px;">{{ r.name }}</div>
                 <div style="font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; margin-top:8px;">{{ r.price }}</div>
-              </div>
+              </a>
             </sc-for>
           </div>
         </div>
@@ -1505,7 +1505,7 @@ class Component extends DCLogic {
           stockFg: /налич/i.test(o.x.st || "") ? "#0E9F6E" : "#B25200",
           diff: !it.p ? "" : diff === 0 ? "та же цена" : diff < 0 ? "дешевле на " + money(-diff) : "дороже на " + money(diff),
           diffFg: diff < 0 ? "#0E9F6E" : diff > 0 ? "#606F85" : "#606F85",
-          open: () => this.go(o.i)
+          href: "/tovar?g=" + s.group + "&sl=" + encodeURIComponent(o.x.sl || "")
         };
       });
 
@@ -1518,7 +1518,7 @@ class Component extends DCLogic {
         name: o.x.n.length > 52 ? o.x.n.slice(0, 52) + "…" : o.x.n,
         img: this.ph(o.x.i),
         price: o.x.pt || "Цена по запросу",
-        open: () => this.go(o.i)
+        href: "/tovar?g=" + s.group + "&sl=" + encodeURIComponent(o.x.sl || "")
       }));
 
     // ── Кто смонтирует: бригады под этот товар и выбранный город ──────────────
