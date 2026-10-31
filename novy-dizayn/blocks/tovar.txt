@@ -1745,7 +1745,7 @@ class Component extends DCLogic {
                          + (b.docs ? " · " + b.docs : "") } : null,
           b.el ? { v: "Электрика: допуск " + b.el.gr + " группы"
                       + (b.el.v ? ", " + b.el.v : "") } : null,
-          b.since ? { v: "В сети с " + b.since + " года" } : null,
+          b.since ? { v: "Опыт работы: с " + b.since + " года" } : null,
           (b.langs || []).length ? { v: "Языки: " + this.langCodes(b.langs) } : null,
           (b.osn || []).length ? { v: "Оснащение: " + b.osn.join(" · ") } : null
         ].filter(Boolean);
