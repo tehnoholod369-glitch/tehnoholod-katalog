@@ -1,0 +1,346 @@
+<style>
+.bl-page{--bl-blue:#0066FF;--bl-blue-d:#0033A0;--bl-navy:#0033A0;--bl-red:#E81C1C;--bl-ink:#1A1A1A;--bl-mute:#606F85;--bl-line:#DCE5F0;--bl-bg:#F1F5F9;--bl-tint:#E9F4FF;--bl-white:#fff;--bl-ok:#178841;--bl-warn:#606F85}
+.bl-page,.bl-page *{box-sizing:border-box}
+.bl-page{font-family:Inter,system-ui,"Segoe UI",sans-serif;color:var(--bl-ink);background:var(--bl-bg);line-height:1.5}
+.bl-w{max-width:1200px;margin:0 auto;padding:0 20px}
+.bl-crumbs{font-size:13px;color:var(--bl-mute);padding:14px 0 0}
+.bl-crumbs a{color:var(--bl-blue)}
+.bl-sec{padding:44px 0}
+.bl-sec--white{background:#fff}
+.bl-h2{font-size:32px;line-height:40px;margin:0 0 10px;font-weight:700;color:var(--bl-blue-d)}
+.bl-lead{color:var(--bl-mute);margin:0 0 24px;max-width:760px}
+.bl-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 22px;border-radius:8px;border:0;font:600 15px Inter,sans-serif;cursor:pointer;text-decoration:none;transition:.15s}
+.bl-btn--red{background:var(--bl-red);color:#fff}.bl-btn--red:hover{background:#c91414}
+.bl-btn--blue{background:var(--bl-blue);color:#fff}.bl-btn--blue:hover{background:#0053d1}
+.bl-btn--ghost{background:#fff;color:var(--bl-blue);border:1.5px solid var(--bl-blue)}.bl-btn--ghost:hover{background:var(--bl-tint)}
+.bl-row{display:flex;gap:12px;flex-wrap:wrap}
+/* 1 hero */
+.bl-hero{padding:26px 0 40px}
+.bl-hero-g{display:grid;grid-template-columns:1.35fr .9fr;gap:28px;align-items:start}
+.bl-h1{font-size:48px;line-height:56px;margin:12px 0 14px;font-weight:700;color:var(--bl-blue-d)}
+.bl-sub{font-size:18px;color:#33415c;margin:0 0 22px;max-width:620px}
+.bl-fact{background:#fff;border:1px solid var(--bl-line);border-radius:16px;padding:20px 22px}
+.bl-fact h2{margin:0 0 12px;font-size:20px;color:var(--bl-blue-d)}
+.bl-fact dl{margin:0}.bl-fact dt{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--bl-mute);font-weight:700;margin-top:12px}
+.bl-fact dd{margin:2px 0 0;font-weight:600}
+/* 2 cards */
+.bl-g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.bl-pick{display:block;background:#fff;border:1px solid var(--bl-line);border-radius:16px;padding:20px;text-decoration:none;color:inherit;transition:.15s}
+.bl-pick:hover{border-color:var(--bl-blue);transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,51,160,.10)}
+.bl-pick svg{width:40px;height:40px;stroke:var(--bl-blue);fill:none;stroke-width:1.7;margin-bottom:10px}
+.bl-pick b{display:block;font-size:16px;margin-bottom:4px}.bl-pick span{font-size:14px;color:var(--bl-mute)}
+/* 3 series */
+.bl-g2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.bl-ser{background:#fff;border:1px solid var(--bl-line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.bl-ser-ph{background:linear-gradient(180deg,#fff,#EEF3FA);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:12px}
+.bl-ser-ph img{max-width:100%;max-height:100%;object-fit:contain}
+.bl-ser-b{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.bl-ser h3{margin:0;font-size:22px;color:var(--bl-blue-d)}
+.bl-tags{display:flex;gap:6px;flex-wrap:wrap}
+.bl-tag{font-size:12px;font-weight:600;border-radius:8px;padding:4px 10px;background:var(--bl-tint);color:var(--bl-blue-d)}
+.bl-tag--g{background:#E3F6EC;color:var(--bl-ok)}
+.bl-ser p{margin:0;color:#33415c}
+.bl-price{font-size:26px;font-weight:800;color:var(--bl-ink)}.bl-price small{font-size:13px;font-weight:600;color:var(--bl-mute)}
+.bl-spec{font-size:14px;color:var(--bl-mute)}
+/* 4 table */
+.bl-tw{background:#fff;border:1px solid var(--bl-line);border-radius:16px;overflow:hidden}
+table.bl-t{width:100%;border-collapse:collapse;font-size:15px}
+.bl-t th{background:var(--bl-navy);color:#fff;text-align:left;padding:12px 14px;font-size:13px;font-weight:600}
+.bl-t td{padding:12px 14px;border-top:1px solid var(--bl-line)}
+.bl-t td.n{text-align:right;font-variant-numeric:tabular-nums}
+.bl-t th.n{text-align:right}
+.bl-t td.a .mo,.bl-t td.sp{display:none}
+.bl-t td.a .se{font-weight:700}
+.bl-t tr:hover td{background:#F7FAFF}
+.bl-st{font-size:12px;font-weight:600;padding:4px 10px;border-radius:8px;white-space:nowrap}
+.bl-st--in{background:#E3F6EC;color:var(--bl-ok)}.bl-st--ord{background:#E5E9F0;color:var(--bl-warn)}
+.bl-tnote{font-size:14px;color:var(--bl-mute);margin:12px 0 18px}
+/* 5 universal */
+.bl-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bl-u{background:#fff;border:1px solid var(--bl-line);border-radius:16px;overflow:hidden}
+.bl-u .bl-ser-ph{aspect-ratio:16/10}
+.bl-u div.b{padding:16px 18px 20px}.bl-u h3{margin:0 0 6px;font-size:18px}
+.bl-u .bl-price{font-size:20px}
+.bl-box{background:var(--bl-tint);border-radius:12px;padding:16px 18px;margin-top:18px;font-size:15px;color:var(--bl-blue-d)}
+/* 6 free match */
+.bl-fm{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:center;background:#fff;border:1px solid var(--bl-line);border-radius:16px;padding:26px}
+.bl-fm-ph{display:flex;gap:14px;align-items:flex-end;justify-content:center;background:linear-gradient(180deg,#fff,#EEF3FA);border-radius:12px;padding:18px;min-height:230px}
+.bl-fm-ph img{max-height:210px;max-width:48%;object-fit:contain}
+/* 7 mobile */
+.bl-g4m{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bl-m{background:#fff;border:1px solid var(--bl-line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.bl-m .ph{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#fff,#EEF3FA);padding:10px}
+.bl-m .ph img{max-width:100%;max-height:100%;object-fit:contain}
+.bl-m .ph .ph-x{font-size:12px;color:var(--bl-mute);text-align:center;border:1.5px dashed #B8C6DA;border-radius:10px;padding:18px 10px}
+.bl-m .b{padding:12px 14px 14px}.bl-m h3{margin:0 0 2px;font-size:16px}.bl-m .s{font-size:13px;color:var(--bl-mute)}.bl-m .p{font-weight:800;margin-top:6px}
+/* 8 includes */
+.bl-inc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.bl-i{background:#fff;border:1px solid var(--bl-line);border-radius:12px;padding:18px}
+.bl-i b{display:block;margin-bottom:4px}.bl-i span{font-size:14px;color:var(--bl-mute)}
+.bl-i .big{font-size:22px;font-weight:800;color:var(--bl-blue-d);display:block;margin-bottom:4px}
+/* 9 why */
+.bl-why{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.bl-w1{background:#fff;border:1px solid var(--bl-line);border-radius:12px;padding:16px;text-align:left}
+.bl-w1 svg{width:30px;height:30px;stroke:var(--bl-blue);fill:none;stroke-width:1.7;margin-bottom:8px}
+.bl-w1 b{display:block;font-size:15px;margin-bottom:2px}.bl-w1 span{font-size:13px;color:var(--bl-mute)}
+.bl-cred{margin-top:18px;font-weight:600;color:var(--bl-blue-d)}
+/* 10 power */
+.bl-pw{display:grid;grid-template-columns:1.2fr 1fr;gap:26px;align-items:center}
+.bl-pw svg{width:100%;height:auto}
+/* 11 faq */
+.bl-faq details{background:#fff;border:1px solid var(--bl-line);border-radius:12px;margin-bottom:10px;padding:0}
+.bl-faq summary{cursor:pointer;list-style:none;padding:16px 20px;font-weight:700;font-size:16px;display:flex;justify-content:space-between;gap:12px}
+.bl-faq summary::-webkit-details-marker{display:none}
+.bl-faq summary::after{content:"+";font-size:22px;color:var(--bl-blue);line-height:1}
+.bl-faq details[open] summary::after{content:"−"}
+.bl-faq details p{margin:0;padding:0 20px 18px;color:#33415c}
+/* 12 other */
+.bl-oth{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.bl-oth a{background:#fff;border:1px solid var(--bl-line);border-radius:12px;padding:14px 16px;font-weight:600;color:var(--bl-blue-d);text-decoration:none;display:flex;justify-content:space-between}
+.bl-oth a:hover{border-color:var(--bl-blue)}
+/* 13 cta */
+.bl-cta{background:var(--bl-navy);color:#fff;border-radius:16px;padding:34px;display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:center}
+.bl-cta h2{margin:0 0 8px;font-size:32px;line-height:40px}.bl-cta p{margin:0;color:#C7D6EE}
+.bl-cta .bl-row{justify-content:flex-end}
+.bl-cta small{display:block;margin-top:10px;color:#9FB4D6}
+/* tablet */
+@media(max-width:1024px){
+ .bl-h1{font-size:40px;line-height:48px}.bl-hero-g{grid-template-columns:1fr}
+ .bl-g4,.bl-g4m,.bl-inc,.bl-oth{grid-template-columns:repeat(2,1fr)}
+ .bl-why{grid-template-columns:repeat(3,1fr)}
+ .bl-g3{grid-template-columns:1fr 1fr}.bl-pw,.bl-cta,.bl-fm{grid-template-columns:1fr}
+ .bl-cta .bl-row{justify-content:flex-start}
+}
+/* phone */
+@media(max-width:640px){
+ .bl-w{padding:0 16px}.bl-sec{padding:32px 0}
+ .bl-h1{font-size:32px;line-height:40px}.bl-sub{font-size:16px}.bl-h2{font-size:24px;line-height:32px}
+ .bl-g2,.bl-g3{grid-template-columns:1fr}
+ .bl-g4,.bl-g4m,.bl-inc,.bl-oth{grid-template-columns:1fr 1fr;gap:10px}
+ .bl-why{grid-template-columns:1fr 1fr}
+ .bl-btn{width:100%}.bl-row{flex-direction:column}
+ .bl-pick,.bl-i,.bl-w1{padding:14px}
+ table.bl-t,.bl-t thead{display:block}.bl-t thead{display:none}
+ .bl-t tbody{display:block}.bl-t tr{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:12px 14px;border-top:1px solid var(--bl-line)}
+ .bl-t tr:first-child{border-top:0}
+ .bl-t td{border:0;padding:0}.bl-t td.a{grid-column:1}.bl-t td.a .mo{display:block;font-size:13px;color:var(--bl-mute);font-weight:500}
+ .bl-t td.pr{grid-column:2;grid-row:1;text-align:right;font-weight:800}
+ .bl-t td.sp{display:block;grid-column:1;color:var(--bl-mute);font-size:13px}.bl-t td.stt{grid-column:2;grid-row:2;text-align:right}
+ .bl-t td.m,.bl-t td.bt,.bl-t td.ar{display:none}
+ .bl-fm{padding:18px}.bl-cta{padding:24px}.bl-cta h2{font-size:24px;line-height:32px}
+ .bl-price{font-size:22px}
+}
+</style>
+<div class="bl-page">
+<section class="bl-hero" id="top">
+<div class="bl-w">
+ <div class="bl-crumbs"><a href="https://tehnoholod369.kz/">Главная</a> › <a href="https://tehnoholod369.kz/brendy">Бренды</a> › Кондиционеры Ballu</div>
+ <div class="bl-hero-g">
+  <div>
+   <h1 class="bl-h1">Кондиционеры Ballu в Алматы</h1>
+   <p class="bl-sub">Настенные, мобильные, мультисплит и полупромышленные. Подберём по комнате, привезём по Казахстану, поставим своей бригадой.</p>
+   <div class="bl-row">
+    <a class="bl-btn bl-btn--red" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9A%D0%BE%D0%BD%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D1%8B%20Ballu%3A%20%D0%BF%D0%BE%D0%B4%D0%B1%D0%B5%D1%80%D0%B8%D1%82%D0%B5%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%20%D0%B8%20%D0%BF%D0%BE%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D1%82%D0%B5%20%D1%81%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BE%D0%BC">Написать в WhatsApp</a>
+    <a class="bl-btn bl-btn--ghost" href="https://tehnoholod369.kz/podbor-kondicionera">Подобрать по площади</a>
+   </div>
+  </div>
+  <aside class="bl-fact" aria-label="Коротко">
+   <h2>Коротко</h2>
+   <dl>
+    <dt>Дилер</dt><dd>Официальный дилер Ballu</dd>
+    <dt>Гарантия</dt><dd>По гарантийному документу производителя</dd>
+    <dt>Монтаж</dt><dd>От 45 000 ₸ за настенный сплит, с кронштейном и 3 м трассы</dd>
+    <dt>Рассрочка</dt><dd>До 24 месяцев</dd>
+    <dt>Доставка</dt><dd>По Алматы и по Казахстану</dd>
+   </dl>
+  </aside>
+ </div>
+</div>
+</section>
+
+<section class="bl-sec bl-sec--white" id="start">
+<div class="bl-w">
+ <h2 class="bl-h2">С чего начать</h2>
+ <p class="bl-lead">Что вам нужно.</p>
+ <div class="bl-g4">
+  <a class="bl-pick" href="#split"><svg viewBox="0 0 40 40"><rect x="5" y="8" width="30" height="12" rx="3"/><path d="M10 26c2 3 4 3 6 0m4 0c2 3 4 3 6 0"/></svg><b>Одна комната или квартира</b><span>Настенные сплит-системы Tessey DC и Olympio Pro</span></a>
+  <a class="bl-pick" href="#semi"><svg viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="3"/><circle cx="20" cy="20" r="7"/><path d="M20 13v14M13 20h14"/></svg><b>Офис, магазин, зал</b><span>Полупромышленные UNIVERSAL III: напольно-потолочные, кассетные, канальные</span></a>
+  <a class="bl-pick" href="#multi"><svg viewBox="0 0 40 40"><rect x="4" y="6" width="14" height="8" rx="2"/><rect x="22" y="6" width="14" height="8" rx="2"/><rect x="13" y="24" width="14" height="10" rx="2"/><path d="M11 14v6h18v-6M20 20v4"/></svg><b>Несколько комнат, один наружный блок</b><span>Мультисплит Free Match R32</span></a>
+  <a class="bl-pick" href="#mobile"><svg viewBox="0 0 40 40"><rect x="10" y="4" width="20" height="32" rx="4"/><circle cx="14" cy="32" r="1.5"/><circle cx="26" cy="32" r="1.5"/><path d="M15 12h10M15 17h10"/></svg><b>Без монтажа и сверления</b><span>Мобильные кондиционеры</span></a>
+ </div>
+</div>
+</section>
+
+<section class="bl-sec" id="split">
+<div class="bl-w">
+ <h2 class="bl-h2">Настенные сплит-системы Ballu</h2>
+ <p class="bl-lead">Две серии, у каждой своя задача.</p>
+ <div class="bl-g2">
+  <article class="bl-ser">
+   <div class="bl-ser-ph"><img src="https://img.tehnoholod369.kz/img/bytovye/ballu-bsti-12hn8-ik.jpg" alt="Кондиционер Ballu Tessey DC BSTI-12HN8/IK" loading="lazy"></div>
+   <div class="bl-ser-b">
+    <div class="bl-tags"><span class="bl-tag">Инвертор</span><span class="bl-tag bl-tag--g">Wi‑Fi в комплекте</span><span class="bl-tag">Класс A++</span></div>
+    <h3>Tessey DC</h3>
+    <p>Инвертор работает без остановки и поэтому тихо. Включился и работает. Греет и охлаждает, тепло до −15 °C. Класс A++. Управление с телефона по Wi‑Fi, модуль в комплекте.</p>
+    <div class="bl-price"><small>от</small> 141 990 ₸</div>
+    <div class="bl-spec">От 7 000 до 24 000 BTU, на 27–74 м². Гарантия по документу производителя.</div>
+    <a class="bl-btn bl-btn--ghost" href="https://tehnoholod369.kz/podbor-kondicionera">Подобрать по площади</a>
+   </div>
+  </article>
+  <article class="bl-ser">
+   <div class="bl-ser-ph"><img src="https://img.tehnoholod369.kz/img/bytovye/ballu-bso-12hn8-ik.jpg" alt="Кондиционер Ballu Olympio Pro BSO-12HN8/IK" loading="lazy"></div>
+   <div class="bl-ser-b">
+    <div class="bl-tags"><span class="bl-tag">Без инвертора</span></div>
+    <h3>Olympio Pro</h3>
+    <p>Обычный кондиционер: включился, остыл, выключился. Надёжная модель по понятной цене. Wi‑Fi нет.</p>
+    <div class="bl-price"><small>от</small> 125 990 ₸</div>
+    <div class="bl-spec">От 7 000 до 24 000 BTU, на 22–70 м². Гарантия по документу производителя.</div>
+    <a class="bl-btn bl-btn--ghost" href="https://tehnoholod369.kz/podbor-kondicionera">Подобрать по площади</a>
+   </div>
+  </article>
+ </div>
+</div>
+</section>
+
+<section class="bl-sec bl-sec--white" id="models">
+<div class="bl-w">
+ <h2 class="bl-h2">Модели и цены</h2>
+ <p class="bl-tnote">Цена в таблице за кондиционер, без монтажа. Монтаж считаем отдельно: см. блок «Что входит в цену».</p>
+ <div class="bl-tw"><table class="bl-t">
+  <thead><tr><th>Серия</th><th>Модель</th><th class="n">BTU</th><th class="n">До, м²</th><th class="n">Цена, ₸</th><th>Статус</th></tr></thead>
+  <tbody><tr><td class="a"><span class="se">Tessey DC</span><span class="mo">BSTI-07HN8/IK</span></td><td class="m">BSTI-07HN8/IK</td><td class="n bt">7 000</td><td class="n ar">27</td><td class="n pr">141 990</td><td class="stt"><span class="bl-st bl-st--ord">Под заказ</span></td><td class="sp">7 000 BTU · до 27 м²</td></tr><tr><td class="a"><span class="se">Tessey DC</span><span class="mo">BSTI-09HN8/IK</span></td><td class="m">BSTI-09HN8/IK</td><td class="n bt">9 000</td><td class="n ar">32</td><td class="n pr">158 990</td><td class="stt"><span class="bl-st bl-st--ord">Под заказ</span></td><td class="sp">9 000 BTU · до 32 м²</td></tr><tr><td class="a"><span class="se">Tessey DC</span><span class="mo">BSTI-12HN8/IK</span></td><td class="m">BSTI-12HN8/IK</td><td class="n bt">12 000</td><td class="n ar">36</td><td class="n pr">189 990</td><td class="stt"><span class="bl-st bl-st--in">В наличии</span></td><td class="sp">12 000 BTU · до 36 м²</td></tr><tr><td class="a"><span class="se">Tessey DC</span><span class="mo">BSTI-18HN8/IK</span></td><td class="m">BSTI-18HN8/IK</td><td class="n bt">18 000</td><td class="n ar">53</td><td class="n pr">295 990</td><td class="stt"><span class="bl-st bl-st--in">В наличии</span></td><td class="sp">18 000 BTU · до 53 м²</td></tr><tr><td class="a"><span class="se">Tessey DC</span><span class="mo">BSTI-24HN8/IK</span></td><td class="m">BSTI-24HN8/IK</td><td class="n bt">24 000</td><td class="n ar">74</td><td class="n pr">369 990</td><td class="stt"><span class="bl-st bl-st--in">В наличии</span></td><td class="sp">24 000 BTU · до 74 м²</td></tr><tr><td class="a"><span class="se">Olympio Pro</span><span class="mo">BSO-07HN8/IK</span></td><td class="m">BSO-07HN8/IK</td><td class="n bt">7 000</td><td class="n ar">22</td><td class="n pr">125 990</td><td class="stt"><span class="bl-st bl-st--in">В наличии</span></td><td class="sp">7 000 BTU · до 22 м²</td></tr><tr><td class="a"><span class="se">Olympio Pro</span><span class="mo">BSO-09HN8/IK</span></td><td class="m">BSO-09HN8/IK</td><td class="n bt">9 000</td><td class="n ar">26</td><td class="n pr">140 990</td><td class="stt"><span class="bl-st bl-st--in">В наличии</span></td><td class="sp">9 000 BTU · до 26 м²</td></tr><tr><td class="a"><span class="se">Olympio Pro</span><span class="mo">BSO-12HN8/IK</span></td><td class="m">BSO-12HN8/IK</td><td class="n bt">12 000</td><td class="n ar">35</td><td class="n pr">179 990</td><td class="stt"><span class="bl-st bl-st--in">В наличии</span></td><td class="sp">12 000 BTU · до 35 м²</td></tr><tr><td class="a"><span class="se">Olympio Pro</span><span class="mo">BSO-18HN8/IK</span></td><td class="m">BSO-18HN8/IK</td><td class="n bt">18 000</td><td class="n ar">52</td><td class="n pr">285 990</td><td class="stt"><span class="bl-st bl-st--in">В наличии</span></td><td class="sp">18 000 BTU · до 52 м²</td></tr><tr><td class="a"><span class="se">Olympio Pro</span><span class="mo">BSO-24HN8/IK</span></td><td class="m">BSO-24HN8/IK</td><td class="n bt">24 000</td><td class="n ar">70</td><td class="n pr">359 990</td><td class="stt"><span class="bl-st bl-st--ord">Под заказ</span></td><td class="sp">24 000 BTU · до 70 м²</td></tr></tbody>
+ </table></div>
+ <p class="bl-tnote">Статус: «в наличии» или «под заказ». Если модели нет на складе, привезём под заказ. Срок скажем после заявки.</p>
+ <div class="bl-row"><a class="bl-btn bl-btn--red" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9A%D0%BE%D0%BD%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D1%8B%20Ballu%3A%20%D0%BF%D0%BE%D0%B4%D0%B1%D0%B5%D1%80%D0%B8%D1%82%D0%B5%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%20%D0%B8%20%D0%BF%D0%BE%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D1%82%D0%B5%20%D1%81%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BE%D0%BC">Узнать наличие в WhatsApp</a></div>
+</div>
+</section>
+
+<section class="bl-sec" id="semi">
+<div class="bl-w">
+ <h2 class="bl-h2">Полупромышленные UNIVERSAL III</h2>
+ <p class="bl-lead">Три типа под одну задачу: потолок, пол или скрытая установка.</p>
+ <div class="bl-g3">
+  <article class="bl-u"><div class="bl-ser-ph"><img src="https://img.tehnoholod369.kz/img/poluprom/ballu-blc-cf-24hn1-21y.jpg" alt="Напольно-потолочный кондиционер Ballu UNIVERSAL III CF" loading="lazy"></div><div class="b"><h3>Напольно-потолочные</h3><div class="bl-spec">От 18 000 до 60 000 BTU, на 53–161 м²</div><div class="bl-price"><small>от</small> 380 474 ₸</div></div></article>
+  <article class="bl-u"><div class="bl-ser-ph"><img src="https://img.tehnoholod369.kz/img/poluprom/ballu-blc-c-24hn1-21y.jpg" alt="Кассетный кондиционер Ballu UNIVERSAL III C" loading="lazy"></div><div class="b"><h3>Кассетные</h3><div class="bl-spec">От 12 000 до 60 000 BTU, на 35–161 м²</div><div class="bl-price"><small>от</small> 292 092 ₸</div></div></article>
+  <article class="bl-u"><div class="bl-ser-ph"><img src="https://img.tehnoholod369.kz/img/poluprom/ballu-blc-d-24hn1-21y.jpg" alt="Канальный кондиционер Ballu UNIVERSAL III D" loading="lazy"></div><div class="b"><h3>Канальные</h3><div class="bl-spec">От 18 000 до 60 000 BTU, на 53–161 м². Есть высоконапорный на 100 000 BTU, цену называем в WhatsApp</div><div class="bl-price"><small>от</small> 341 665 ₸</div></div></article>
+ </div>
+ <div class="bl-box">Wi‑Fi опцией: модуль HOMMYN. Гарантия по документу производителя. Монтаж полупромышленных считаем по смете после осмотра, цену мастера называют на месте.</div>
+ <div class="bl-row" style="margin-top:18px"><a class="bl-btn bl-btn--blue" href="https://tehnoholod369.kz/poluprom?brand=ballu">Все модели в каталоге</a></div>
+</div>
+</section>
+
+<section class="bl-sec bl-sec--white" id="multi">
+<div class="bl-w">
+ <h2 class="bl-h2">Мультисплит Free Match R32</h2>
+ <div class="bl-fm">
+  <div class="bl-fm-ph"><img src="https://img.tehnoholod369.kz/img/ballu/ballu-ba2oi-fm-out-18hn8-eu.jpg" alt="Наружный блок Ballu Free Match R32" loading="lazy"><img src="https://img.tehnoholod369.kz/img/ballu/ballu-bsui-fm-in-12hn8-eu.jpg" alt="Внутренний блок Ballu Free Match R32" loading="lazy"></div>
+  <div>
+   <p style="margin-top:0;font-size:17px">Один наружный блок, до нескольких внутренних. Инвертор, хладагент R32, класс A++.</p>
+   <div class="bl-tags" style="margin-bottom:12px"><span class="bl-tag">Наружные блоки от 351 990 ₸</span><span class="bl-tag">Внутренние блоки от 81 990 ₸</span></div>
+   <p>Это части комплекта, а не цена целого. Состав и цену комплекта посчитаем под вашу квартиру. Гарантия по документу производителя. Wi‑Fi у внутренних блоков опцией.</p>
+   <div class="bl-row"><a class="bl-btn bl-btn--red" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9A%D0%BE%D0%BD%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D1%8B%20Ballu%3A%20%D0%BF%D0%BE%D0%B4%D0%B1%D0%B5%D1%80%D0%B8%D1%82%D0%B5%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%20%D0%B8%20%D0%BF%D0%BE%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D1%82%D0%B5%20%D1%81%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BE%D0%BC">Посчитать комплект</a><a class="bl-btn bl-btn--ghost" href="https://tehnoholod369.kz/multisplit?brand=ballu">Все о мультисплите</a></div>
+  </div>
+ </div>
+</div>
+</section>
+
+<section class="bl-sec" id="mobile">
+<div class="bl-w">
+ <h2 class="bl-h2">Мобильные кондиционеры Ballu</h2>
+ <p class="bl-lead">Не нужен монтаж и сверление стены. Серии и цены (от). Гарантия по документу производителя.</p>
+ <div class="bl-g4m">
+  <article class="bl-m"><div class="ph"><img src="https://img.tehnoholod369.kz/img/mobilnye/ballu-ballu-aura-bpac-09-cp-n1.jpg" alt="Мобильный кондиционер Ballu Aura" loading="lazy"></div><div class="b"><h3>Aura</h3><div class="s">24–30 м²</div><div class="p"><small>от</small> 178 990 ₸</div></div></article>
+  <article class="bl-m"><div class="ph"><img src="https://img.tehnoholod369.kz/img/mobilnye/mob_1598899.jpg" alt="Мобильный кондиционер Ballu Orbis" loading="lazy"></div><div class="b"><h3>Orbis</h3><div class="s">18–23 м²</div><div class="p"><small>от</small> 147 990 ₸</div></div></article>
+  <article class="bl-m"><div class="ph"><img src="https://img.tehnoholod369.kz/img/mobilnye/mob_1599256.jpg" alt="Мобильный кондиционер Ballu Eclipse Black" loading="lazy"></div><div class="b"><h3>Eclipse Black</h3><div class="s">18–24 м²</div><div class="p"><small>от</small> 185 990 ₸</div></div></article>
+  <article class="bl-m"><div class="ph"><img src="https://img.tehnoholod369.kz/img/mobilnye/mob_1606625.jpg" alt="Мобильный кондиционер Ballu Velure" loading="lazy"></div><div class="b"><h3>Velure</h3><div class="s">30–35 м²</div><div class="p"><small>от</small> 269 990 ₸</div></div></article>
+  <article class="bl-m"><div class="ph"><img src="https://img.tehnoholod369.kz/img/mobilnye/mob_1763482.jpg" alt="Мобильный кондиционер Ballu Smart Inverter EVO" loading="lazy"></div><div class="b"><h3>Smart Inverter EVO</h3><div class="s">Инвертор, 30–35 м²</div><div class="p"><small>от</small> 295 990 ₸</div></div></article>
+  <article class="bl-m"><div class="ph"><img src="https://img.tehnoholod369.kz/img/mobilnye/mob_1767725.jpg" alt="Мобильный кондиционер Ballu Eco Cool" loading="lazy"></div><div class="b"><h3>Eco Cool</h3><div class="s">Без воздуховода, 10 м²</div><div class="p">189 990 ₸</div></div></article>
+ </div>
+ <p class="bl-tnote">Промышленные мобильные Heavy Pro на 50–180 м²: цену называем в WhatsApp.</p>
+ <div class="bl-row"><a class="bl-btn bl-btn--blue" href="https://tehnoholod369.kz/mobilnye-kondicionery-almaty">Все мобильные Ballu</a></div>
+</div>
+</section>
+
+<section class="bl-sec bl-sec--white" id="install">
+<div class="bl-w">
+ <h2 class="bl-h2">Что входит в цену и монтаж</h2>
+ <p class="bl-lead">Цена кондиционера и цена монтажа это разные строки. Так честнее: видно, за что вы платите.</p>
+ <div class="bl-inc">
+  <div class="bl-i"><span class="big">от 45 000 ₸</span><b>Настенный сплит</b><span>Монтаж с кронштейном и 3 м трассы</span></div>
+  <div class="bl-i"><span class="big">по смете</span><b>Канальные, кассетные, мультисплит</b><span>Цену называют мастера после осмотра</span></div>
+  <div class="bl-i"><span class="big">без монтажа</span><b>Мобильный кондиционер</b><span>Монтаж не нужен</span></div>
+  <div class="bl-i"><span class="big">12 месяцев</span><b>Гарантия на монтаж</b><span>Обращение принимаем мы по Сервис-карте 369</span></div>
+ </div>
+ <div class="bl-row" style="margin-top:20px"><a class="bl-btn bl-btn--ghost" href="https://tehnoholod369.kz/ustanovka-kondicionerov-almaty">Как мы устанавливаем</a></div>
+</div>
+</section>
+
+<section class="bl-sec" id="why">
+<div class="bl-w">
+ <h2 class="bl-h2">Почему у нас</h2>
+ <div class="bl-why">
+  <div class="bl-w1"><svg viewBox="0 0 30 30"><path d="M15 3l10 4v7c0 6-4 10-10 13C9 24 5 20 5 14V7z"/><path d="M10 15l4 4 7-8"/></svg><b>Официальный дилер Ballu</b></div>
+  <div class="bl-w1"><svg viewBox="0 0 30 30"><circle cx="15" cy="9" r="4"/><path d="M6 26c0-5 4-8 9-8s9 3 9 8"/></svg><b>Своя бригада</b><span>Ставят наши мастера</span></div>
+  <div class="bl-w1"><svg viewBox="0 0 30 30"><rect x="5" y="4" width="20" height="22" rx="3"/><path d="M10 11h10M10 16h10M10 21h6"/></svg><b>Сервис-карта 369</b><span>В ней записано, кто и когда ставил кондиционер</span></div>
+  <div class="bl-w1"><svg viewBox="0 0 30 30"><rect x="3" y="8" width="24" height="15" rx="3"/><circle cx="15" cy="15.5" r="3.5"/></svg><b>Рассрочка до 24 месяцев</b></div>
+  <div class="bl-w1"><svg viewBox="0 0 30 30"><path d="M3 20V9h14v11M17 13h6l4 4v3H17"/><circle cx="8" cy="22" r="2.2"/><circle cx="22" cy="22" r="2.2"/></svg><b>Доставка по Казахстану</b></div>
+ </div>
+ <p class="bl-cred">Мы своих клиентов не бросаем. Ведём до конца.</p>
+ <div class="bl-row" style="margin-top:16px"><a class="bl-btn bl-btn--red" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9A%D0%BE%D0%BD%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D1%8B%20Ballu%3A%20%D0%BF%D0%BE%D0%B4%D0%B1%D0%B5%D1%80%D0%B8%D1%82%D0%B5%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%20%D0%B8%20%D0%BF%D0%BE%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D1%82%D0%B5%20%D1%81%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BE%D0%BC">Оставить заявку</a></div>
+</div>
+</section>
+
+<section class="bl-sec bl-sec--white" id="power">
+<div class="bl-w">
+ <h2 class="bl-h2">Как выбрать мощность</h2>
+ <div class="bl-pw">
+  <div>
+   <p style="margin-top:0;font-size:17px">Смотрите на столбец «До, м²» в таблице: площадь комнаты должна быть не больше. Высота потолков и солнечная сторона тоже влияют. Не уверены, напишите площадь и этаж, подберём.</p>
+   <div class="bl-row"><a class="bl-btn bl-btn--ghost" href="https://tehnoholod369.kz/kak-vybrat-moshchnost-konditsionera">Как выбрать мощность по площади</a><a class="bl-btn bl-btn--blue" href="https://tehnoholod369.kz/podbor-kondicionera">Подобрать по площади</a></div>
+  </div>
+  <svg viewBox="0 0 420 150" role="img" aria-label="Площадь комнаты не больше значения «До, м²»"><rect x="10" y="14" width="400" height="122" rx="14" fill="#F0F5FA" stroke="#DCE5F0"/><rect x="28" y="40" width="230" height="70" rx="8" fill="#fff" stroke="#0066FF" stroke-width="2"/><text x="143" y="80" text-anchor="middle" font-family="Inter,sans-serif" font-size="18" font-weight="700" fill="#0033A0">комната, м²</text><text x="143" y="102" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#64748B">площадь пола</text><path d="M268 75h40" stroke="#0033A0" stroke-width="2.5"/><text x="338" y="70" text-anchor="middle" font-family="Inter,sans-serif" font-size="26" font-weight="800" fill="#0033A0">≤</text><rect x="305" y="82" width="90" height="34" rx="8" fill="#E81C1C"/><text x="350" y="105" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#fff">До, м²</text></svg>
+ </div>
+</div>
+</section>
+
+<section class="bl-sec" id="faq">
+<div class="bl-w bl-faq">
+ <h2 class="bl-h2">Частые вопросы</h2>
+ <details open><summary>Чем Tessey DC отличается от Olympio Pro?</summary><p>Tessey инверторный: работает без остановки, тише, греет до −15 °C, Wi‑Fi в комплекте. Olympio Pro без инвертора, зато дешевле.</p></details>
+ <details><summary>Есть ли Wi‑Fi?</summary><p>У Tessey DC в комплекте. У UNIVERSAL III и внутренних блоков Free Match модуль опцией. У Olympio Pro нет. По остальным сериям данных нет, уточним в WhatsApp.</p></details>
+ <details><summary>Какая гарантия?</summary><p>Срок и условия гарантии на оборудование: по гарантийному документу производителя. На монтаж 12 месяцев.</p></details>
+ <details><summary>Сколько стоит установка?</summary><p>Настенный сплит от 45 000 ₸ с кронштейном и 3 м трассы. Канальные, кассетные и мультисплит считают мастера после осмотра.</p></details>
+ <details><summary>Можно в рассрочку?</summary><p>Да, до 24 месяцев.</p></details>
+ <details><summary>Что лучше, Ballu или Haier?</summary><p>Мы не ставим одну марку выше другой. Выбор зависит от площади и задачи. Haier у нас тоже есть.</p></details>
+ <details><summary>Привезёте в другой город?</summary><p>Доставка по Казахстану. Монтаж делаем в Алматы. Выезд за город есть, доплата зависит от удалённости. По другим городам уточним.</p></details>
+</div>
+</section>
+
+<section class="bl-sec bl-sec--white" id="other">
+<div class="bl-w">
+ <h2 class="bl-h2">Другая техника Ballu</h2>
+ <p class="bl-lead">Ballu делает не только кондиционеры. Что ещё есть в каталоге:</p>
+ <div class="bl-oth">
+  <a href="https://tehnoholod369.kz/teplovye-zavesy-almaty">Тепловые завесы <span>→</span></a>
+  <a href="https://tehnoholod369.kz/teplovye-pushki-almaty">Тепловые пушки <span>→</span></a>
+  <a href="https://tehnoholod369.kz/infrakrasnye-obogrevateli-almaty">Инфракрасные обогреватели <span>→</span></a>
+  <a href="https://tehnoholod369.kz/osushiteli-vozduha-almaty">Осушители воздуха <span>→</span></a>
+  <a href="https://tehnoholod369.kz/vodonagrevateli">Водонагреватели <span>→</span></a>
+  <a href="https://tehnoholod369.kz/ballu-oneair-almaty">Бризеры ONEAIR <span>→</span></a>
+  <a href="https://tehnoholod369.kz/brendy">Все бренды <span>→</span></a>
+ </div>
+</div>
+</section>
+
+<section class="bl-sec" id="contact">
+<div class="bl-w">
+ <div class="bl-cta">
+  <div><h2>Написать нам</h2><p>Скажите площадь комнаты и этаж. Подберём модель и назовём цену вместе с монтажом.</p><small>Телефон: +77 000 369 369, пн–пт 9:00–18:00</small></div>
+  <div class="bl-row"><a class="bl-btn bl-btn--red" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9A%D0%BE%D0%BD%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D1%8B%20Ballu%3A%20%D0%BF%D0%BE%D0%B4%D0%B1%D0%B5%D1%80%D0%B8%D1%82%D0%B5%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%20%D0%B8%20%D0%BF%D0%BE%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D1%82%D0%B5%20%D1%81%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BE%D0%BC">Написать в WhatsApp</a><a class="bl-btn bl-btn--ghost" style="background:transparent;color:#fff;border-color:#fff" href="https://wa.me/77000369369?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9A%D0%BE%D0%BD%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D1%8B%20Ballu%3A%20%D0%BF%D0%BE%D0%B4%D0%B1%D0%B5%D1%80%D0%B8%D1%82%D0%B5%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%20%D0%B8%20%D0%BF%D0%BE%D1%81%D1%87%D0%B8%D1%82%D0%B0%D0%B9%D1%82%D0%B5%20%D1%81%20%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BE%D0%BC">Оставить заявку</a></div>
+ </div>
+</div>
+</section>
+</div>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "Бренды", "item": "https://tehnoholod369.kz/brendy"}, {"@type": "ListItem", "position": 3, "name": "Кондиционеры Ballu", "item": "https://tehnoholod369.kz/kondicionery-ballu"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Кондиционеры Ballu Tessey DC и Olympio Pro", "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=ballu-bsti-07hn8-ik", "name": "Кондиционер Ballu Tessey DC BSTI-07HN8/IK"}, {"@type": "ListItem", "position": 2, "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=ballu-bsti-09hn8-ik", "name": "Кондиционер Ballu Tessey DC BSTI-09HN8/IK"}, {"@type": "ListItem", "position": 3, "url": "https://tehnoholod369.kz/tovar?g=bytovye&sl=ballu-bsti-12hn8-ik", "name": "Кондиционер Ballu Tessey DC BSTI-12HN8/IK"}, {"@type": "ListItem", "position": 4, "url": "https://tehnoholod369.kz/tproduct/720631057224-konditsioner-ballu-tessey-dc-bsti-18hn8i", "name": "Кондиционер Ballu Tessey DC BSTI-18HN8/IK"}, {"@type": "ListItem", "position": 5, "url": "https://tehnoholod369.kz/tproduct/897626999324-konditsioner-ballu-tessey-dc-bsti-24hn8i", "name": "Кондиционер Ballu Tessey DC BSTI-24HN8/IK"}, {"@type": "ListItem", "position": 6, "url": "https://tehnoholod369.kz/tproduct/726801290294-konditsioner-ballu-olympio-pro-bso-07hn8", "name": "Кондиционер Ballu Olympio Pro BSO-07HN8/IK"}, {"@type": "ListItem", "position": 7, "url": "https://tehnoholod369.kz/tproduct/978844238624-konditsioner-ballu-olympio-pro-bso-09hn8", "name": "Кондиционер Ballu Olympio Pro BSO-09HN8/IK"}, {"@type": "ListItem", "position": 8, "url": "https://tehnoholod369.kz/tproduct/468720878014-konditsioner-ballu-olympio-pro-bso-12hn8", "name": "Кондиционер Ballu Olympio Pro BSO-12HN8/IK"}, {"@type": "ListItem", "position": 9, "url": "https://tehnoholod369.kz/tproduct/723073327394-konditsioner-ballu-olympio-pro-bso-18hn8", "name": "Кондиционер Ballu Olympio Pro BSO-18HN8/IK"}, {"@type": "ListItem", "position": 10, "url": "https://tehnoholod369.kz/tproduct/540720253274-konditsioner-ballu-olympio-pro-bso-24hn8", "name": "Кондиционер Ballu Olympio Pro BSO-24HN8/IK"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чем Tessey DC отличается от Olympio Pro?", "acceptedAnswer": {"@type": "Answer", "text": "Tessey инверторный: работает без остановки, тише, греет до −15 °C, Wi‑Fi в комплекте. Olympio Pro без инвертора, зато дешевле."}}, {"@type": "Question", "name": "Есть ли Wi‑Fi?", "acceptedAnswer": {"@type": "Answer", "text": "У Tessey DC в комплекте. У UNIVERSAL III и внутренних блоков Free Match модуль опцией. У Olympio Pro нет. По остальным сериям данных нет, уточним в WhatsApp."}}, {"@type": "Question", "name": "Какая гарантия?", "acceptedAnswer": {"@type": "Answer", "text": "Срок и условия гарантии на оборудование: по гарантийному документу производителя. На монтаж 12 месяцев."}}, {"@type": "Question", "name": "Сколько стоит установка?", "acceptedAnswer": {"@type": "Answer", "text": "Настенный сплит от 45 000 ₸ с кронштейном и 3 м трассы. Канальные, кассетные и мультисплит считают мастера после осмотра."}}, {"@type": "Question", "name": "Можно в рассрочку?", "acceptedAnswer": {"@type": "Answer", "text": "Да, до 24 месяцев."}}, {"@type": "Question", "name": "Что лучше, Ballu или Haier?", "acceptedAnswer": {"@type": "Answer", "text": "Мы не ставим одну марку выше другой. Выбор зависит от площади и задачи. Haier у нас тоже есть."}}, {"@type": "Question", "name": "Привезёте в другой город?", "acceptedAnswer": {"@type": "Answer", "text": "Доставка по Казахстану. Монтаж делаем в Алматы. Выезд за город есть, доплата зависит от удалённости. По другим городам уточним."}}]}</script>
