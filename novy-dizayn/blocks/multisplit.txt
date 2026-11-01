@@ -520,7 +520,7 @@ class Component extends DCLogic {
     if (!inPool.length || !outPool.length) return null;
     const types = ["Настенный", "Кассетный", "Канальный", "Напольно-потолочный", "Консольный", "Внутренний блок"]
       .filter(t => inPool.some(x => x.t === t));
-    let sum = 0, btu = 0, swapped = 0, unknownType = 0, ok = true, noBlock = false;
+    let sum = 0, btu = 0, swapped = 0, unknownType = 0, ok = true, noBlock = false, blocksOk = true;
     roomSpecs.forEach(rs => {
       const type = types.indexOf(rs.type) >= 0 ? rs.type : types[0];
       // «Внутренний блок» — незаполненное поле в данных, а не тип монтажа
@@ -529,6 +529,8 @@ class Component extends DCLogic {
       if (!pick || !pick.exact || !pick.it.p) { ok = false; noBlock = true; return; }
       sum += pick.it.p;
       btu += pick.it.btu;
+      // наличие комплекта считаем по всем звеньям: и внутренние блоки, и наружный модуль
+      if (!pick.it.ok) blocksOk = false;
     });
     if (!ok) return { brand: brandName, ok: false, why: "block" };
     const need = Math.round(btu * factor);
@@ -539,7 +541,7 @@ class Component extends DCLogic {
     const unsure = byPower.filter(x => !x.ports).sort(sortFn)[0];
     const mod = sure || unsure;
     if (!mod) return { brand: brandName, ok: false, why: byPower.length ? "portsShort" : "power" };
-    return { brand: brandName, ok: true, total: sum + mod.p, mod, swapped, unknownType, portsSure: !!sure };
+    return { brand: brandName, ok: true, total: sum + mod.p, mod, swapped, unknownType, portsSure: !!sure, blocksOk };
   }
 
   colorDot(x) {
@@ -804,17 +806,25 @@ class Component extends DCLogic {
       verdict = "Часть позиций идёт по запросу — точную разницу назовём при расчёте комплекта.";
     }
 
-    const brands = brandList.map(b => {
-      const oi = data.outdoor.filter(x => x.b === b).length + data.indoor.filter(x => x.b === b).length;
-      const inst = data.outdoor.concat(data.indoor).filter(x => x.b === b && x.ok).length;
-      return this.chip(brand === b, b, () => this.setState({ brand: b }), inst ? "в наличии" : "под заказ");
-    });
-
     // тот же набор комнат во всех брендах — цена комплекта на равных условиях
     const roomSpecs = rooms.map(r => ({ type: r.typeKey, area: r.area }));
     const kits = brandList
       .map(b => this.buildKit(data, b, roomSpecs, factor))
       .filter(Boolean);
+
+    // наличие у бренда — для выбранной конфигурации, а не «есть хоть одна позиция в наличии»
+    const brands = brandList.map(b => {
+      let label;
+      if (b === brand) {
+        // текущий бренд: по фактически выбранным блокам (с учётом цвета) и подобранному модулю
+        const parts = rooms.map(r => r.stockOk).filter(x => x !== undefined);
+        label = outOk && out && out.ok && parts.length && parts.every(Boolean) ? "в наличии" : "под заказ";
+      } else {
+        const kit = kits.find(k => k.brand === b);
+        label = !kit ? "нет комплекта" : (kit.ok && kit.mod.ok && kit.blocksOk ? "в наличии" : "под заказ");
+      }
+      return this.chip(brand === b, b, () => this.setState({ brand: b }), label);
+    });
     const priced = kits.filter(k => k.ok).sort((a, b) => a.total - b.total);
     const why = { block: [], power: [], portsShort: [] };
     kits.filter(k => !k.ok).forEach(k => { (why[k.why] || why.block).push(k.brand); });
@@ -839,8 +849,11 @@ class Component extends DCLogic {
         showName: !wide,
         price: this.money(k.total),
         mod: k.mod.s + " · " + k.mod.btu + " BTU",
-        stock: k.mod.ok ? "модуль в наличии" : "модуль под заказ",
-        stockFg: k.mod.ok ? "#178841" : "#B25200",
+        stock: k.mod.ok && k.blocksOk ? "блоки и модуль в наличии"
+          : k.mod.ok ? "модуль в наличии, блоки под заказ"
+          : k.blocksOk ? "блоки в наличии, модуль под заказ"
+          : "блоки и модуль под заказ",
+        stockFg: k.mod.ok && k.blocksOk ? "#178841" : "#B25200",
         diff: diff ? "+" + this.money(diff) : "самый доступный",
         diffFg: diff ? "#64748B" : "#178841",
         swapNote: [
