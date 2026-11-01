@@ -106,7 +106,7 @@
 
     <div style="background:#E9F4FF; border:1px solid #B9DBF7; border-radius:8px; padding:22px 24px; margin-top:28px;">
       <div style="font-family:Inter,sans-serif; font-size:18px; font-weight:700; color:#0033A0;">Нужен бренд, которого здесь нет?</div>
-      <div style="font-size:15px; color:#1A1A1A; line-height:1.6; margin-top:6px;">В каталоге {{ brandsTotal }} — от TCL и Midea до SHUFT и DITREEX. Напишите модель или задачу, подберём из того, что есть в наличии, либо привезём под заказ.</div>
+      <div style="font-size:15px; color:#1A1A1A; line-height:1.6; margin-top:6px;">В каталоге бренды от TCL и Midea до SHUFT и DITREEX. Напишите модель или задачу, подберём из того, что есть в наличии, либо привезём под заказ.</div>
       <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
         <a href="https://wa.me/77000369369" style="background:#0066FF; color:#fff; border-radius:8px; padding:12px 20px; font-size:15px; font-weight:700;">Написать в WhatsApp</a>
         <a href="/katalog" style="border:2px solid #0066FF; color:#0033A0; border-radius:8px; padding:10px 20px; font-size:15px; font-weight:700;">Открыть каталог</a>
