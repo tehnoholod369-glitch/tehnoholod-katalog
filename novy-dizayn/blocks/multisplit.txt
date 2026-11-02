@@ -368,7 +368,7 @@ class Component extends DCLogic {
   state = {
     data: null, prices: null,
     brand: "MDV",
-    rooms: [{ area: 20, type: "Настенный" }, { area: 30, type: "Настенный" }],
+    rooms: [{ area: 21, type: "Настенный" }, { area: 30, type: "Настенный" }],
     mode: "По очереди",
     playing: {}
   };
@@ -934,7 +934,7 @@ class Component extends DCLogic {
       addLabel: ports < 5 ? "+ Добавить комнату" : "Больше 5 блоков — это уже VRF-система, посчитаем отдельно",
       addBorder: ports < 5 ? "#B9DBF7" : "#DCE5F0",
       addFg: ports < 5 ? "#0033A0" : "#64748B",
-      addRoom: () => { if (ports < 5) this.setState({ rooms: s.rooms.concat([{ area: 20, type: types[0] || "Настенный" }]) }); },
+      addRoom: () => { if (ports < 5) this.setState({ rooms: s.rooms.concat([{ area: 21, type: types[0] || "Настенный" }]) }); },
       modes: ["По очереди", "Все сразу"].map(m => this.chip(s.mode === m, m, () => this.setState({ mode: m }))),
       modeNote: s.mode === "Все сразу"
         ? "Наружный модуль подбираем на полную суммарную мощность блоков — дороже, но выдержит одновременную работу всех комнат в жару."
