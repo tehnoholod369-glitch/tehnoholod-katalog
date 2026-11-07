@@ -293,6 +293,16 @@
                   </div>
                 </sc-if>
 
+                <sc-if value="{{ showRayon }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:13px; font-weight:700; letter-spacing:0.05em; color:#606F85; margin-top:14px;">ВАШ РАЙОН — НЕОБЯЗАТЕЛЬНО</div>
+                  <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
+                    <sc-for list="{{ rayonChips }}" as="r" hint-placeholder-count="3">
+                      <div onClick="{{ r.pick }}" style="border:1px solid {{ r.border }}; background:{{ r.bg }}; color:{{ r.fg }}; border-radius:999px; padding:8px 15px; font-size:14px; font-weight:600; cursor:pointer;">{{ r.label }}</div>
+                    </sc-for>
+                  </div>
+                  <div style="font-size:12px; color:#606F85; line-height:1.5; margin-top:7px;">{{ rayonNote }}</div>
+                </sc-if>
+
                 <sc-if value="{{ showSort }}" hint-placeholder-val="{{ false }}">
                   <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:12px;">
                     <div style="font-size:13px; color:#606F85;">Порядок:</div>
@@ -674,7 +684,7 @@
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
   state = { group: "bytovye", idx: 0, items: null, details: null, index: null, loading: true, photo: 0, tab: 0, zoom: false,
-            crewCity: "", crewData: null, crewFailed: false, crewSort: "rating", crewDocs: false,
+            crewCity: "", crewRayon: "", crewData: null, crewFailed: false, crewSort: "rating", crewDocs: false,
             vypuski: null, sale: {}, postSaleProduct: null, postSaleSku: "", postSaleProductFailed: false };
   photoRef = React.createRef();
   zoomRef = React.createRef();
@@ -784,7 +794,18 @@ class Component extends DCLogic {
     let city = this.state.crewCity;
     if (!city) { try { city = localStorage.getItem("th_city") || ""; } catch (_) {} }
     if (city && !d.brigady.some(b => b.region === city)) { city = ""; }
-    this.setState({ crewData: d, crewFailed: false, crewCity: city });
+    // Район помним ВМЕСТЕ с городом: «Алмалинский» в Астане обещал бы приоритет,
+    // которого там нет. И только если такой район у бригад этого города
+    // действительно есть — иначе выбор висел бы невидимым, без чипа.
+    let rayon = this.state.crewRayon || "";
+    if (!rayon && city) {
+      try {
+        const пара = String(localStorage.getItem("th_rayon") || "").split("|");
+        if (пара.length === 2 && пара[0] === city) { rayon = пара[1]; }
+      } catch (_) {}
+    }
+    if (rayon && !d.brigady.some(b => b.region === city && this.нормРайон(b.rayon) === rayon)) { rayon = ""; }
+    this.setState({ crewData: d, crewFailed: false, crewCity: city, crewRayon: city ? rayon : "" });
   }
 
   // Повтор — только по кнопке. Сам по себе перезапрос не идёт: render дёргает
@@ -798,7 +819,34 @@ class Component extends DCLogic {
 
   pickCity(code) {
     try { localStorage.setItem("th_city", code); } catch (_) {}
-    this.setState({ crewCity: code });
+    // Район привязан к городу: при смене города прежний выбор не переносим.
+    this.setState({ crewCity: code, crewRayon: "" });
+  }
+
+  pickRayon(key) {
+    const стало = this.state.crewRayon === key ? "" : key;
+    try { localStorage.setItem("th_rayon", стало ? (this.state.crewCity + "|" + стало) : ""); } catch (_) {}
+    this.setState({ crewRayon: стало });
+  }
+
+  // Бригада пишет район свободным текстом («Алмалинский район», «Алмалинский
+  // р-н», «Алмалы ауданы»), и без приведения к одному виду чип клиента не
+  // совпал бы с её записью. Отбираем токены, а не режем регекспом по \b:
+  // в JS \b — граница \w, кириллица в \w не входит, и слово «район»
+  // таким выражением не вырезается вовсе (проверено в node 05.11.2026).
+  нормРайон(v) {
+    const шум = { "район": 1, "рн": 1, "р": 1, "н": 1, "ауданы": 1, "аудан": 1 };
+    return String(v || "").toLowerCase().replace(/ё/g, "е")
+             .replace(/[^a-zа-я0-9]+/g, " ")
+             .split(" ")
+             .filter(с => с && !шум[с])
+             .join(" ");
+  }
+
+  // Подпись чипа: «Алмалинский р-н» на кнопке читается хуже, чем «Алмалинский».
+  подписьРайона(v) {
+    const t = this.нормРайон(v);
+    return t ? t.charAt(0).toUpperCase() + t.slice(1) : "";
   }
   // Сортировка списка бригад: по рейтингу (по умолчанию) или сначала дешевле.
   // Сортируем на клиенте — данные уже здесь, лишний запрос к приёмнику не нужен.
@@ -1541,13 +1589,25 @@ class Component extends DCLogic {
     const crewCity = s.crewCity || "";
     const inCityAll = crewCity ? crewAll.filter(b => b.region === crewCity) : [];
     const inCity = s.crewDocs ? inCityAll.filter(b => b.docsOk) : inCityAll;
+    const rayonList = [];
+    inCity.forEach(b => {
+      const key = this.нормРайон(b.rayon);
+      if (!key) { return; }
+      const hit = rayonList.find(x => x.key === key);
+      if (hit) { hit.n++; } else { rayonList.push({ key, label: this.подписьРайона(b.rayon), n: 1 }); }
+    });
+    rayonList.sort((a, b) => b.n - a.n || (a.label < b.label ? -1 : 1));
+    // Выбор показываем только когда он способен изменить порядок: один район
+    // на весь город или единственная бригада — кнопка без последствий.
+    const showRayon = rayonList.length > 0 && inCity.length >= 2 && rayonList[0].n < inCity.length;
+    const crewRayon = showRayon ? (s.crewRayon || "") : "";
     const priced = inCity.filter(b => b.ot && (b.ot.cena || b.ot.poObj));
     const showPrices = priced.length >= ((cd && cd.pricesMin) || 2);
     // Порядок: по рейтингу (как отдал приёмник) или сначала дешевле. Бригады
     // без цены и «по объекту» уходят вниз — сравнивать у них нечего, а наверх
     // они попали бы просто потому, что молчат.
     const crewSort = s.crewSort || "rating";
-    const inCitySorted = (showPrices && crewSort === "cena")
+    const поПорядку = (showPrices && crewSort === "cena")
       ? inCity.slice().sort((x, y) => {
           const xc = x.ot && x.ot.cena ? x.ot.cena : null;
           const yc = y.ot && y.ot.cena ? y.ot.cena : null;
@@ -1557,6 +1617,16 @@ class Component extends DCLogic {
           return xc - yc;
         })
       : inCity;
+    // Свой район впереди — первым ключом, как в приёмнике: поправкой к рейтингу
+    // правило «из вашего района» выполнялось бы через раз, и объяснить порядок
+    // было бы нечем. В сортировке по цене район не участвует: там клиент ищет
+    // цену (то же решение, что на сервере). Сортировка стабильная, поэтому
+    // внутри своих и внутри остальных порядок приёмника сохраняется.
+    const inCitySorted = (crewRayon && crewSort !== "cena")
+      ? поПорядку.slice().sort((x, y) =>
+          (this.нормРайон(y.rayon) === crewRayon ? 1 : 0)
+          - (this.нормРайон(x.rayon) === crewRayon ? 1 : 0))
+      : поПорядку;
 
     return {
       loading: false,
@@ -1733,6 +1803,17 @@ class Component extends DCLogic {
         fg: crewSort === o.key ? "#0066FF" : "#1A1A1A",
         pick: () => this.pickSort(o.key)
       })),
+      showRayon,
+      rayonChips: rayonList.map(x => ({
+        label: x.label,
+        border: crewRayon === x.key ? "#0066FF" : "#DCE5F0",
+        bg: crewRayon === x.key ? "#E9F4FF" : "#fff",
+        fg: crewRayon === x.key ? "#0066FF" : "#1A1A1A",
+        pick: () => this.pickRayon(x.key)
+      })),
+      rayonNote: crewRayon
+        ? "Бригады из вашего района — первыми: дорога короче, выезд быстрее."
+        : "Выберите свой район — поднимем тех, кому до вас ближе. Вашего района в списке нет — значит в нём пока нет бригады, порядок останется по рейтингу.",
       crewCities: cityList.map(x => ({
         label: x.label + " · " + x.n,
         border: crewCity === x.key ? "#0066FF" : "#DCE5F0",
