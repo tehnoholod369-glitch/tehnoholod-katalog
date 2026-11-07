@@ -139,7 +139,7 @@
 <div class="thk-o-cr"><a href="/">Главная</a> › О компании</div>
 <div class="thk-o-hgrid"><div>
 <div class="thk-o-pill"><svg><use href="#i-pin"/></svg>Алматы и область · доставка по Казахстану</div>
-<h1 class="thk-o-h1">ТехноХолод 369 — климатические решения от подбора до обслуживания</h1>
+<h2 class="thk-o-h1">ТехноХолод 369 — климатические решения от подбора до обслуживания</h2>
 <div class="thk-o-sub">Кондиционеры, вентиляция и обогрев для квартир, домов, офисов и коммерческих объектов. Подбираем оборудование под задачу и условия эксплуатации.</div>
 <div class="thk-o-cta"><a class="thk-o-btn thk-o-btn-red" href="/podbor">Подобрать решение →</a><a class="thk-o-btn thk-o-btn-out" href="/kontakty#kontakty">Обсудить задачу</a></div>
 </div>
