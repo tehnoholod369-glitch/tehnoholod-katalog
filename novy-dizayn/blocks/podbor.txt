@@ -30,7 +30,7 @@
     <div style="font-size:16px; color:#64748B; margin-top:10px; line-height:1.6; max-width:820px;">Выберите направление: у каждого свой подбор, со своими вопросами и расчётом. Окончательный подбор и мощность подтверждаем при замере.</div>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:24px;">
-      <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="10">
+      <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="9">
         <a class="ph-tile" href="{{ t.href }}">
           <b style="display:block; font-size:18px; color:#0033A0;">{{ t.title }}</b>
           <span style="display:block; font-size:14px; color:#64748B; margin-top:6px; line-height:1.55;">{{ t.text }}</span>
@@ -49,12 +49,11 @@
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
   // Хаб подборщиков (31.10.2026). Состав плиток — тот же, что в окне «Что подбираем?» на главной
-  // (podbor-menu.js, массив ITEMS); расчёт мощности добавлен отдельной плиткой.
+  // (podbor-menu.js, массив ITEMS); расчёт мощности — не плитка, а ссылка внутри /podbor-kondicionera (решение владельца 08.11.2026).
   renderVals() {
     return {
       tiles: [
-        { title: "Кондиционер: подобрать модель", text: "Площадь и бюджет: модели с ценой и наличием.", href: "/podbor-kondicionera" },
-        { title: "Кондиционер: расчёт мощности", text: "Окна, солнце, люди и техника: диапазон в кВт и класс. Для угловых и застеклённых помещений, кухонь и мастерских.", href: "/raschet-moshchnosti" },
+        { title: "Кондиционер: подобрать модель", text: "Площадь и бюджет: модели с ценой и наличием. Для угловых и застеклённых комнат внутри есть точный расчёт мощности.", href: "/podbor-kondicionera" },
         { title: "Мультисплит", text: "Несколько комнат — один наружный блок.", href: "/multisplit" },
         { title: "Вентиляция", text: "Приток, вытяжка, расчёт по площади.", href: "/podbor-ventilyacii" },
         { title: "Тепловые завесы", text: "Для входа, ворот и склада: электрическая, водяная или без нагрева.", href: "/podbor-teplovoj-zavesy" },
