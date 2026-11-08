@@ -223,6 +223,23 @@
     var btus = pool.length ? pool.map(function (x) { return x.btu; }).filter(function (v, i, a) { return a.indexOf(v) === i; }).sort(function (a, b) { return a - b; }) : [];
     return { list: best.concat(rest), note: note, strict: strict, colors: colors, poolN: poolAll.length, total: cand.length, btus: btus, cls: btus.length ? btus[0] : null };
   }
+  // «больше 150 м²»: модели из полупрома. Точная площадь (151–300 м²) — не ниже потребности; чип без площади — от 60 000 BTU.
+  // Сначала в наличии, затем ближайшие по мощности (вверх), затем дешевле. Запас мощности не показываем: потребность грубая.
+  function bigModels(c) {
+    var exact = S.area <= 300, need = exact ? c.need : 60000, arr = [];
+    (DATAP || []).forEach(function (m) {
+      var v = btuOf(m);
+      if (!m.acc && m.p > 0 && v >= need) { m.g = "poluprom"; var x = info(m, { need: 0 }); x.noMarg = true; arr.push(x); }
+    });
+    if (!arr.length) return "";
+    arr.sort(function (a, b) { return (a.m.st === "В наличии" ? 0 : 1) - (b.m.st === "В наличии" ? 0 : 1) || a.btu - b.btu || a.m.p - b.m.p; });
+    var tag = exact ? "Подходит по мощности" : "Большая мощность";
+    return '<div class="pkc-models"><h3 class="pkc-h">' + (exact ? "Модели от " + fmt(Math.round(need / 100) * 100) + " BTU" : "Самые мощные модели в каталоге") + '</h3>' +
+      '<p class="pkc-info">Полупромышленные кондиционеры. Подходящую модель и мощность подтверждаем после замера.</p>' +
+      '<div class="pkc-cards">' + arr.slice(0, 3).map(function (x) { return card({ x: x, tag: tag, best: false }); }).join("") + "</div>" +
+      '<div class="pkc-more"><a class="pkc-btn pkc-btn--line" href="/katalog?g=poluprom&btu=' + (exact ? need : 60000) + '&stock=in">Все полупромышленные в каталоге →</a>' +
+      '<a class="pkc-btn pkc-btn--line" href="https://wa.me/77000369369">Нужна помощь? WhatsApp</a></div></div>';
+  }
   function ensureP(cb) {
     if (DATAP || PSTATE === 1) return;
     PSTATE = 1;
@@ -284,7 +301,7 @@
     return '<article class="pkc-m' + (o.best ? " pkc-m--best" : "") + '"><a class="pkc-ph" href="' + href + '"><img src="' + esc(photo(m.i)) + '" alt="' + esc(name) + '" loading="lazy" onerror="this.style.display=\'none\'"></a>' +
       '<div class="pkc-tag' + (o.best ? " pkc-tag--best" : "") + '">' + esc(o.tag) + '</div><h3><a href="' + href + '">' + esc(name) + "</a></h3>" +
       '<ul class="pkc-facts">' + facts(x).map(function (t) { return "<li" + (t[1] ? ' class="m"' : "") + ">" + esc(t[0]) + "</li>"; }).join("") + "</ul>" +
-      matchRow(x) + margLine(x) +
+      matchRow(x) + (x.noMarg ? "" : margLine(x)) +
       '<div class="pkc-price">' + esc(fmt(m.p)) + ' ₸</div>' +
       '<div class="pkc-stock' + (m.st === "В наличии" ? "" : " pkc-stock--o") + '">' + esc(m.st) + "</div>" +
       '<a class="pkc-btn" href="' + href + '">Подробнее</a></article>';
@@ -347,7 +364,7 @@
 
   function render() {
     var c = calc(), p = null, res, models = "";
-    var needP = (c.mode === "big" && S.type !== "wall") || (c.mode === "std" && S.type && S.type !== "wall");
+    var needP = c.mode === "proj" || (c.mode === "big" && S.type !== "wall") || (c.mode === "std" && S.type && S.type !== "wall");
     if (needP && !DATAP) {
       ensureP(render);
       ROOT.innerHTML = '<div class="pkc-grid"><div class="pkc-card">' + stepsHtml([]) + '</div><aside class="pkc-res"><div class="pkc-k">Считаем</div><div class="pkc-kw">Подбираем модели для большого помещения…</div></aside></div>';
@@ -357,6 +374,7 @@
     var steps = stepsHtml(p ? p.colors : []);
     if (!p || (!p.list.length && c.mode !== "std" && !p.poolN)) {
       if (c.mode === "proj") {
+        models = bigModels(c);
         // «больше 150 м²»: чип ставит условные 999 м², цифру не показываем; точная площадь 151–300 м² даёт только ориентир
         var exact = S.area <= 300;
         res = '<aside class="pkc-res"><div class="pkc-k">' + (exact ? "Площадь " + S.area + " м²" : "Больше 150 м²") + '</div>' +
