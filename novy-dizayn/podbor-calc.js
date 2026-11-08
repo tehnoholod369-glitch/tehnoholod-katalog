@@ -359,12 +359,13 @@
       if (c.mode === "proj") {
         // «больше 150 м²»: чип ставит условные 999 м², цифру не показываем; точная площадь 151–300 м² даёт только ориентир
         var exact = S.area <= 300;
-        res = '<aside class="pkc-res"><div class="pkc-k">Для такой площади</div><div class="pkc-kw">Подберём полупромышленную систему</div>' +
-          '<div class="pkc-cls">Для помещений больше 150 м² обычно ставят кассетные, канальные и колонные кондиционеры или систему из нескольких блоков. Модели есть в каталоге, состав и цену подтверждаем после замера.</div>' +
-          (exact ? '<div class="pkc-how"><b>Ориентир по нагрузке</b>' + howRows(c) + "</div>" : "") +
+        res = '<aside class="pkc-res"><div class="pkc-k">' + (exact ? "Площадь " + S.area + " м²" : "Больше 150 м²") + '</div>' +
+          '<div class="pkc-kw" style="font-size:18px;line-height:26px;font-weight:700;color:#0033A0">Что ставят на такую площадь</div>' +
+          '<div class="pkc-cls">Обычно это кассетные, канальные или колонные кондиционеры. Состав и цену называем после замера.</div>' +
+          (exact ? '<div class="pkc-how"><b>Ориентир по нагрузке</b>' + howRows(c) + "Это грубая оценка: для таких площадей точный расчёт делаем после замера.</div>" : "") +
           '<a class="pkc-btn" href="/katalog?g=poluprom">Полупромышленные в каталоге</a>' +
           '<a class="pkc-btn pkc-btn--line" href="/proekt">Рассчитать под объект</a>' +
-          '<div class="pkc-note">Или напишите в <a href="https://wa.me/77000369369">WhatsApp</a>, позвоните +77 000 369 369. Для нескольких комнат подойдёт <a href="/multisplit">мультисплит</a> или <a href="/vrf-sistemy-almaty">VRF-система</a>.</div></aside>';
+          '<div class="pkc-note" style="font-size:13px;line-height:20px">Или напишите в <a style="color:#0033A0" href="https://wa.me/77000369369">WhatsApp</a>, или позвоните <a style="color:#0033A0" href="tel:+77000369369">+77 000 369 369</a>.</div></aside>';
       } else {
       res = '<aside class="pkc-res"><div class="pkc-k">Для такой площади</div><div class="pkc-kw">Нужен расчёт по проекту</div>' +
         '<div class="pkc-how"><b>Как посчитано</b>' + howRows(c) + 'Для больших помещений и нескольких комнат подбираем <a href="/multisplit">мультисплит</a>, <a href="/katalog?g=poluprom">полупромышленные</a> и <a href="/vrf-sistemy-almaty">VRF-системы</a>: состав и цену считаем по проекту.</div>' +
