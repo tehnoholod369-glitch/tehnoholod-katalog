@@ -302,7 +302,7 @@
     var on = S[key];
     return '<button type="button" class="pkc-opt' + (on ? " on" : "") + '" aria-pressed="' + on + '" data-tog="' + key + '"><b>' + title + "</b><span>" + sub + "</span></button>";
   }
-  function areaCur() { for (var i = 0; i < AREAS.length; i++) { if (S.area === AREAS[i][0]) return S.area; } return -1; }
+  function areaCur() { if (S.area > 150) return 999; for (var i = 0; i < AREAS.length; i++) { if (S.area === AREAS[i][0]) return S.area; } return -1; }
   function howRows(c) {
     var rows = [["Площадь", S.area + " м² × 100 Вт", fmt(Math.round(S.area * 100)) + " Вт"]];
     if (S.h !== 2.7) rows.push(["Потолок " + String(S.h).replace(".", ",") + " м", "× " + String((S.h / 2.7).toFixed(2)).replace(".", ","), ""]);
