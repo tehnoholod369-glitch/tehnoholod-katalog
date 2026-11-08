@@ -1,0 +1,259 @@
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  
+
+  body { margin: 0; background: #F3F7FB; font-family: "Inter", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; color: #18212F; }
+  h1, h2, h3 { font-family: "Montserrat", "Inter", sans-serif; }
+  a { color: #0A4EA7; text-decoration: none; }
+  a:hover { color: #0872D3; }
+
+  
+  .art-page-main {
+    width: 100%;
+    max-width: 888px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 18px 24px 72px;
+  }
+  .art-page-main > h1 { max-width: none !important; overflow-wrap: anywhere; }
+  .art-page-lead { max-width: none !important; }
+  .art { width: 100%; max-width: none; }
+
+  
+  .t-body .art-local-chrome { display: none !important; }
+
+  .art h2 { margin: 34px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.015em; color: #071C3B; }
+  .art h3 { margin: 22px 0 0; font-size: 17px; font-weight: 800; color: #071C3B; }
+  .art p { margin: 12px 0 0; font-size: 16px; line-height: 1.7; color: #2C3846; }
+  .art ul, .art ol { margin: 12px 0 0; padding-left: 22px; }
+  .art li { font-size: 16px; line-height: 1.7; color: #2C3846; margin-top: 6px; }
+  .art b, .art strong { color: #18212F; }
+
+  
+  .art-tw { overflow-x: auto; margin-top: 14px; border: 1px solid #DCE5F0; border-radius: 12px; background: #fff; }
+  .art-t { border-collapse: collapse; width: 100%; min-width: 420px; font-size: 15px; }
+  .art-t th { background: #F3F7FB; text-align: left; padding: 11px 14px; font-weight: 700; color: #071C3B; border-bottom: 1px solid #DCE5F0; white-space: nowrap; }
+  .art-t td { padding: 11px 14px; color: #2C3846; border-bottom: 1px solid #EDF2F8; }
+  .art-t tr:last-child td { border-bottom: none; }
+  .art-t td:first-child { font-weight: 600; color: #18212F; }
+  .art-n { font-variant-numeric: tabular-nums; }
+
+  
+  .art-note { background: #E6F2FD; border: 1px solid #B9DBF7; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-warn { background: #FDECEA; border: 1px solid #F6C8C0; border-radius: 12px; padding: 15px 17px; margin-top: 18px; font-size: 15px; line-height: 1.65; color: #2C3846; }
+  .art-note b, .art-warn b { color: #071C3B; }
+
+  
+  .art-tldr { background: #fff; border: 1px solid #DCE5F0; border-left: 4px solid #0872D3; border-radius: 12px; padding: 16px 18px; margin-top: 18px; }
+  .art-tldr__t { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #0872D3; }
+  .art-tldr__b { font-size: 16px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
+  .art-card { background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 18px; display: block; color: inherit; transition: .15s; }
+  .art-card:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-card__t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: #071C3B; }
+  .art-card__s { font-size: 14px; color: #5A6675; margin-top: 6px; line-height: 1.55; }
+  .art-card__go { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0872D3; }
+  .art-card__n { font-variant-numeric: tabular-nums; font-weight: 800; color: #0A4EA7; }
+
+  
+  .art-q { background: #fff; border: 1px solid #DCE5F0; border-radius: 12px; padding: 16px 18px; margin-top: 12px; }
+  .art-q__q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; color: #071C3B; }
+  .art-q__a { font-size: 15px; line-height: 1.65; color: #2C3846; margin-top: 7px; }
+
+  
+  .art-src { font-size: 13px; color: #8593A6; line-height: 1.55; margin-top: 10px; }
+
+  
+  .art-pick { display: none; flex-wrap: wrap; align-items: center; gap: 16px;
+              background: #fff; border: 1px solid #DCE5F0; border-radius: 14px; padding: 16px 18px;
+              margin-top: 14px; color: inherit; transition: .15s; }
+  
+  .art-pick.art-pick--on { display: flex; }
+  .art-pick:hover { border-color: #0872D3; box-shadow: 0 2px 14px rgba(8,114,211,.10); color: inherit; }
+  .art-pick__img { width: 92px; height: 92px; object-fit: contain; flex: none; }
+  .art-pick__b { flex: 1; min-width: 200px; }
+  .art-pick__tag { display: inline-block; background: #0872D3; color: #fff; border-radius: 5px;
+                   padding: 3px 8px; font-size: 12px; font-weight: 700; }
+  .art-pick__brand { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #0872D3; margin-top: 8px; }
+  .art-pick__name { font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 700; color: #071C3B; line-height: 1.35; margin-top: 4px; }
+  .art-pick__price { font-size: 18px; font-weight: 800; color: #071C3B; font-variant-numeric: tabular-nums; margin-top: 6px; }
+  .art-pick__go { font-size: 14px; font-weight: 700; color: #0872D3; flex: none; }
+
+  @media (max-width: 640px) {
+    .art-page-main { padding: 14px 16px 56px; }
+    .art-page-main > h1 { font-size: clamp(25px, 7vw, 30px) !important; line-height: 1.16; }
+    .art-page-lead { font-size: 16px !important; line-height: 1.6 !important; }
+    .art h2 { margin-top: 28px; font-size: 20px; line-height: 1.3; }
+    .art h3 { font-size: 17px; line-height: 1.35; }
+    .art p, .art li { font-size: 16px; line-height: 1.65; }
+    .art-note, .art-warn, .art-tldr, .art-q { padding: 14px 15px; }
+    .art-cta { padding: 20px !important; gap: 18px !important; }
+    .art-cta__actions { display: grid !important; grid-template-columns: 1fr; width: 100%; }
+    .art-cta__actions > a { width: 100%; box-sizing: border-box; text-align: center; }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar.js?v=2001d3df"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=6ae050cd"></script>
+</helmet>
+
+<div style="min-height:100vh; background:#F3F7FB;">
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#fff; padding:9px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 22px;">
+      <span style="opacity:0.85;">Алматы · доставка по Казахстану</span>
+      <span style="margin-left:auto; opacity:0.85;">Продажа · монтаж · сервис</span>
+      <a href="tel:+77000369369" style="color:#fff; font-weight:700;">+77 000 369 369</a>
+    </div>
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#fff; border-bottom:1px solid #DCE5F0;">
+    <div style="max-width:1240px; margin:0 auto; padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px;">
+      <a href="/"><img src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/assets/logo-horizontal.png" alt="ИП «ТехноХолод»" style="height:40px; width:auto; display:block;" /></a>
+      <a href="/katalog" style="display:flex; align-items:center; gap:8px; background:#0872D3; color:#fff; border-radius:8px; padding:10px 15px; font-size:15px; font-weight:600;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="display:block; flex:none;"><path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" /></svg>Каталог
+      </a>
+      <div style="flex:1;"></div>
+      <a href="https://wa.me/77000369369" style="background:#E6F2FD; color:#0A4EA7; border-radius:8px; padding:10px 16px; font-size:15px; font-weight:700;">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="art-page-main">
+
+    
+    <div style="font-size:13px; color:#8593A6;">
+      <a href="/">Главная</a> → <a href="/uslugi">Монтаж и сервис</a> → <span style="color:#18212F;">Чистка и заправка кондиционера</span>
+    </div>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; margin-top:16px; font-size:13px;">
+      <span style="background:#E6F2FD; color:#0A4EA7; border-radius:6px; padding:4px 10px; font-weight:700;">Сервис</span>
+      <span style="color:#8593A6;">Алматы и область</span>
+      <span style="color:#8593A6;">от 35 000 ₸</span>
+    </div>
+
+    <h1 style="margin:12px 0 0; font-size:clamp(21px,5.6vw,32px); font-weight:800; letter-spacing:-0.025em; max-width:820px;">Чистка и заправка кондиционера в Алматы</h1>
+
+    <div class="art-page-lead" style="font-size:17px; color:#2C3846; line-height:1.65; margin-top:14px; max-width:780px;">
+      Чистку с заправкой делаем одной работой — от 35 000 ₸. Приезжают МАСТЕРА, смотрят аппарат и называют итог до начала. Если кондиционер плохо холодит, дело чаще в грязи, а не во фреоне.
+    </div>
+
+    <div class="art">
+      
+      <p>Чистка с заправкой — одна работа и одна цена, <b>от 35 000 ₸</b>: отдельных цен на чистку и на заправку у нас нет. Если кондиционер стал хуже холодить, виноват чаще забитый фильтр и запылённый теплообменник, а не фреон — поэтому сначала смотрим аппарат и только потом решаем, нужна ли заправка.</p>
+
+      <h2>Цена: от 35 000 ₸ за чистку с заправкой</h2>
+      <p>Делить эту работу надвое незачем: систему всё равно открывают и проверяют давление. Слово «от» значит, что это начало счёта — итог МАСТЕРА называют на месте, когда увидят аппарат. Запись в WhatsApp: <a href="https://wa.me/77000369369">+77 000 369 369</a>.</p>
+      <div class="art-note">Цену по телефону, не видя кондиционера, мы не называем. Насколько забит теплообменник, есть ли доступ к наружному блоку, в каком состоянии дренаж — это видно только на объекте, а названная наугад сумма всё равно изменится.</div>
+
+      <h2>Сначала грязь, потом фреон</h2>
+      <p>Самая частая просьба в сезон звучит так: «заправьте, он плохо холодит». В большинстве случаев хладагент тут ни при чём. Забитый фильтр и запылённый теплообменник душат поток воздуха: аппарат работает на полную, гудит, а холода в комнате нет. Вымыли — и мощность вернулась, без единого грамма фреона.</p>
+      <p>Хладагент в закрытом контуре не расходуется и не выгорает. Если его стало меньше, значит он ушёл: через вальцовку, через трубку, через золотник. Долить поверх утечки можно, и первые недели будет холодно — а потом вы позвоните снова. Поэтому мы сначала ищем, куда уходит, и говорим как есть: иногда нужна пайка и опрессовка, а не заправка.</p>
+      <div class="art-warn">Если МАСТЕР подключил баллон, долил и уехал, не выяснив, почему фреона стало меньше, — через сезон всё повторится. Заправка без поиска утечки лечит симптом, а не причину.</div>
+
+      <h2>Когда пора звать МАСТЕРОВ</h2>
+      <ul>
+        <li>Холодит слабее, чем в прошлом сезоне, при тех же настройках.</li>
+        <li>При включении идёт запах — затхлый, сырой, «подвальный».</li>
+        <li>Из внутреннего блока капает или течёт по стене.</li>
+        <li>На трубках или на штуцерах наружного блока появилась наледь.</li>
+        <li>Аппарат стал громче: гудит, щёлкает, свистит.</li>
+        <li>С последнего сервиса прошёл год и больше.</li>
+      </ul>
+
+      <h2>Как часто нужно обслуживание</h2>
+      <div class="art-tw"><sc-raw-table class="art-t">
+        <sc-raw-thead><sc-raw-tr><sc-raw-th>Где стоит кондиционер</sc-raw-th><sc-raw-th>Как часто</sc-raw-th></sc-raw-tr></sc-raw-thead>
+        <sc-raw-tbody>
+          <sc-raw-tr><sc-raw-td>Квартира, обычная пыль</sc-raw-td><sc-raw-td>раз в год, перед сезоном</sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td>Нижние этажи, вдоль дороги, тополь под окном</sc-raw-td><sc-raw-td>раз в год, лучше весной до жары</sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td>Офис, салон, кабинет</sc-raw-td><sc-raw-td>раз в год; фильтры чаще, своими силами</sc-raw-td></sc-raw-tr>
+          <sc-raw-tr><sc-raw-td>Магазин, кафе, полупром</sc-raw-td><sc-raw-td>раз в год и чаще — по месту</sc-raw-td></sc-raw-tr>
+        </sc-raw-tbody>
+      </sc-raw-table></div>
+      <p>Это ориентир, а не норматив: интервал зависит от пыли, этажа и того, сколько часов в сутки аппарат работает. Моющийся фильтр грубой очистки хозяин снимает и промывает сам — раз в 2–4 недели в сезон, этого хватает между выездами. Подробный регламент по фильтрам и по HEPA-элементам разобран отдельно: <a href="https://tehnoholod369.kz/obsluzhivanie-konditsionera-zamena-filtra">обслуживание кондиционера, чистка и замена фильтров</a>.</p>
+
+      <h2>Что входит в работу</h2>
+      <p>Состав работ МАСТЕРА называют до начала — по вашему аппарату, а не по общему списку. Фиксированного перечня «что входит в 35 000 ₸» мы не публикуем намеренно: у настенного блока в спальне и у кассеты в кафе это разные работы разного объёма, и готовый список обещал бы вам не то, что приедут делать.</p>
+      <p>Что скажут обязательно: что нашли, что собираются делать и сколько это стоит.</p>
+
+      <h2>Полупром, магазины и кафе</h2>
+      <p>Кассетный блок в потолке, канальный за гипсокартоном, напольно-потолочный в зале — доступ к ним другой, и работы больше, чем у настенного. В магазине и в кафе техника работает с открытия до закрытия, а в воздухе больше пыли и жира, поэтому сервис там нужен не реже раза в год, а по месту бывает и чаще. Для объектов считаем отдельно — напишите, сколько аппаратов, какого типа и на какой высоте. Что мы ставим и обслуживаем из полупрома, видно на странице <a href="/poluprom">полупромышленного оборудования</a>.</p>
+
+      <h2>Куда обращаться</h2>
+      <p>Работаем в Алматы и Алматинской области. Выезд за город возможен, доплата зависит от удалённости — считаем индивидуально.</p>
+      <p>Быстрее всего написать в WhatsApp: модель аппарата (она на шильдике внутреннего блока или на пульте), этаж и что беспокоит. Модель не видно — пришлите фото блока, этого достаточно.</p>
+
+      <h2>Частые вопросы</h2>
+      <div class="art-q"><div class="art-q__q">Сколько стоит чистка кондиционера в Алматы?</div><div class="art-q__a">Чистка с заправкой — от 35 000 ₸. Отдельной цены на чистку у нас нет: это одна работа. Итог МАСТЕРА называют после осмотра аппарата.</div></div>
+      <div class="art-q"><div class="art-q__q">Что входит в чистку кондиционера?</div><div class="art-q__a">Состав работ зависит от аппарата и его состояния, поэтому МАСТЕРА называют его до начала работ. Единого списка «что входит» мы не публикуем: у настенного блока и у кассетного он разный.</div></div>
+      <div class="art-q"><div class="art-q__q">Нужно ли заправлять кондиционер каждый год?</div><div class="art-q__a">Нет. Хладагент в закрытом контуре не расходуется. Если его стало меньше — есть утечка, и сначала надо найти её, а не доливать фреон поверх.</div></div>
+      <div class="art-q"><div class="art-q__q">Кондиционер не холодит — это фреон?</div><div class="art-q__a">Чаще нет. Сначала смотрят фильтры и теплообменники: забитый аппарат гонит мало воздуха и не отдаёт тепло. Хладагент проверяют после.</div></div>
+      <div class="art-q"><div class="art-q__q">Чем заправляют домашний кондиционер?</div><div class="art-q__a">Тем хладагентом, который указан на шильдике наружного блока — чаще это R32 или R410A. Другой лить нельзя: смесь ведёт себя иначе и может повредить компрессор.</div></div>
+      <div class="art-q"><div class="art-q__q">Сколько фреона в домашнем кондиционере?</div><div class="art-q__a">Заводская заправка написана в паспорте и на шильдике наружного блока, у каждой модели своя. На глаз это не определяется.</div></div>
+      <div class="art-q"><div class="art-q__q">Нужно ли обслуживать кондиционер в квартире?</div><div class="art-q__a">Да. Фильтры забиваются пылью в любой квартире, а грязный теплообменник хуже отдаёт тепло: аппарат греется и работает дольше на тот же результат.</div></div>
+      <div class="art-q"><div class="art-q__q">Кто приедет на чистку?</div><div class="art-q__a">МАСТЕРА АРТЕЛИ — объединения монтажников, которое работает с нами. Те же люди, что ставят технику нашим покупателям.</div></div>
+    </div>
+
+    
+    <div class="art-cta" style="background:#E6F2FD; border:1px solid #B9DBF7; border-radius:16px; padding:26px; margin-top:30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
+      <div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:#071C3B; letter-spacing:-0.015em;">Записаться на чистку с заправкой</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.6; margin-top:8px;">Напишите модель кондиционера, этаж и что беспокоит — МАСТЕРА скажут, что нужно делать и сколько это будет стоить. От 35 000 ₸.</div>
+        <div style="font-size:15px; color:#2C3846; line-height:1.8; margin-top:12px;">Телефон и WhatsApp: <a href="tel:+77000369369" style="font-weight:700;">+77 000 369 369</a><br />Дополнительный: <a href="tel:+77000336699" style="font-weight:700;">+77 000 33 66 99</a></div>
+      </div>
+      <div class="art-cta__actions" style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Написать в WhatsApp</a>
+        <a href="/uslugi" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Все услуги</a>
+      </div>
+    </div>
+
+    
+    <h2 style="margin:34px 0 0; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#071C3B;">Читайте дальше</h2>
+    <div class="art-cards">
+        <a class="art-card" href="https://tehnoholod369.kz/obsluzhivanie-konditsionera-zamena-filtra"><div class="art-card__t">Обслуживание кондиционера: чистка и замена фильтров</div><div class="art-card__s">Как часто мыть фильтр грубой очистки и менять HEPA-элемент, что входит в ежегодное ТО и что лучше не делать самостоятельно.</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="https://tehnoholod369.kz/skolko-stoit-ustanovka-kondicionera"><div class="art-card__t">Сколько стоит установка кондиционера</div><div class="art-card__s">Из чего складывается цена монтажа, что входит в стандартную установку и за что считают отдельно.</div><div class="art-card__go">Читать →</div></a>
+        <a class="art-card" href="/uslugi"><div class="art-card__t">Монтаж, сервис и гарантия</div><div class="art-card__s">Что делают МАСТЕРА, как считается работа и что такое Сервис-карта 369.</div><div class="art-card__go">Открыть раздел →</div></a>
+    </div>
+
+  </div>
+
+  
+  <div class="art-local-chrome" style="background:#071C3B; color:#9FB0C4; padding:26px 0; font-size:13px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;">
+      <span>ИП «ТехноХолод» · Алматы, ул. Какимжана Казыбаева, 286Б · Пн–Пт 9:00–18:00</span>
+      <span style="margin-left:auto;"><a href="/" style="color:#fff;">Главная</a> · <a href="/katalog" style="color:#fff;">Каталог</a> · <a href="/baza-znaniy" style="color:#fff;">База знаний</a> · <a href="/uslugi" style="color:#fff;">Монтаж и сервис</a></span>
+    </div>
+    </div>
+  </div>
+
+  
+  <div data-th-copyright style="max-width:888px; margin:0 auto; padding:18px 24px 40px; font-size:12px; line-height:1.7; color:#6B7C93;">
+    © 2026 ИП «ТехноХолод». Тексты и таблицы базы знаний — наши собственные.
+    Перепечатка целиком или существенной частью — только с письменного разрешения.
+    Цитата с активной ссылкой на источник разрешена без запроса.
+    <a href="/usloviya-ispolzovaniya" style="color:#6B7C93; text-decoration:underline;">Условия использования</a>
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/dir-counts.js?v=f7d07d46"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-offers.js?v=aa7da59c"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/art-next.js?v=1543bbf5"></script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "serviceType": "Чистка и заправка кондиционера", "name": "Чистка и заправка кондиционера в Алматы", "description": "Чистка кондиционера с заправкой одной работой, от 35 000 ₸. Итог называют МАСТЕРА после осмотра аппарата. Алматы и Алматинская область.", "inLanguage": "ru-KZ", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tehnoholod369.kz/chistka-i-zapravka-kondicionera-almaty"}, "provider": {"@type": "Organization", "name": "ИП «ТехноХолод»", "url": "https://tehnoholod369.kz/", "telephone": "+77000369369"}, "areaServed": [{"@type": "City", "name": "Алматы"}, {"@type": "AdministrativeArea", "name": "Алматинская область"}], "offers": {"@type": "Offer", "url": "https://tehnoholod369.kz/chistka-i-zapravka-kondicionera-almaty", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 35000, "priceCurrency": "KZT", "valueAddedTaxIncluded": true}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://tehnoholod369.kz/"}, {"@type": "ListItem", "position": 2, "name": "Монтаж и сервис", "item": "https://tehnoholod369.kz/uslugi"}, {"@type": "ListItem", "position": 3, "name": "Чистка и заправка кондиционера в Алматы", "item": "https://tehnoholod369.kz/chistka-i-zapravka-kondicionera-almaty"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит чистка кондиционера в Алматы?", "acceptedAnswer": {"@type": "Answer", "text": "Чистка с заправкой — от 35 000 ₸. Отдельной цены на чистку у нас нет: это одна работа. Итог МАСТЕРА называют после осмотра аппарата."}}, {"@type": "Question", "name": "Что входит в чистку кондиционера?", "acceptedAnswer": {"@type": "Answer", "text": "Состав работ зависит от аппарата и его состояния, поэтому МАСТЕРА называют его до начала работ. Единого списка «что входит» мы не публикуем: у настенного блока и у кассетного он разный."}}, {"@type": "Question", "name": "Нужно ли заправлять кондиционер каждый год?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Хладагент в закрытом контуре не расходуется. Если его стало меньше — есть утечка, и сначала надо найти её, а не доливать фреон поверх."}}, {"@type": "Question", "name": "Кондиционер не холодит — это фреон?", "acceptedAnswer": {"@type": "Answer", "text": "Чаще нет. Сначала смотрят фильтры и теплообменники: забитый аппарат гонит мало воздуха и не отдаёт тепло. Хладагент проверяют после."}}, {"@type": "Question", "name": "Чем заправляют домашний кондиционер?", "acceptedAnswer": {"@type": "Answer", "text": "Тем хладагентом, который указан на шильдике наружного блока — чаще это R32 или R410A. Другой лить нельзя: смесь ведёт себя иначе и может повредить компрессор."}}, {"@type": "Question", "name": "Сколько фреона в домашнем кондиционере?", "acceptedAnswer": {"@type": "Answer", "text": "Заводская заправка написана в паспорте и на шильдике наружного блока, у каждой модели своя. На глаз это не определяется."}}, {"@type": "Question", "name": "Нужно ли обслуживать кондиционер в квартире?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Фильтры забиваются пылью в любой квартире, а грязный теплообменник хуже отдаёт тепло: аппарат греется и работает дольше на тот же результат."}}, {"@type": "Question", "name": "Кто приедет на чистку?", "acceptedAnswer": {"@type": "Answer", "text": "МАСТЕРА АРТЕЛИ — объединения монтажников, которое работает с нами. Те же люди, что ставят технику нашим покупателям."}}]}</script>
+</x-dc>
