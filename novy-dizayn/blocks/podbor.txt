@@ -30,7 +30,7 @@
     <div style="font-size:16px; color:#64748B; margin-top:10px; line-height:1.6; max-width:820px;">Выберите направление: у каждого свой подбор, со своими вопросами и расчётом. Окончательный подбор и мощность подтверждаем при замере.</div>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:16px; margin-top:24px;">
-      <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="7">
+      <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="10">
         <a class="ph-tile" href="{{ t.href }}">
           <b style="display:block; font-size:18px; color:#0033A0;">{{ t.title }}</b>
           <span style="display:block; font-size:14px; color:#64748B; margin-top:6px; line-height:1.55;">{{ t.text }}</span>
@@ -53,11 +53,14 @@ class Component extends DCLogic {
   renderVals() {
     return {
       tiles: [
-        { title: "Кондиционер", text: "Квартира, дом, офис: площадь и модель с ценами.", href: "/podbor-kondicionera" },
-        { title: "Расчёт мощности кондиционера", text: "Теплопритоки по слагаемым: диапазон в кВт и нужный класс.", href: "/raschet-moshchnosti" },
+        { title: "Кондиционер: подобрать модель", text: "Площадь и бюджет: модели с ценой и наличием.", href: "/podbor-kondicionera" },
+        { title: "Кондиционер: расчёт мощности", text: "Окна, солнце, люди и техника: диапазон в кВт и класс. Для угловых и застеклённых помещений, кухонь и мастерских.", href: "/raschet-moshchnosti" },
         { title: "Мультисплит", text: "Несколько комнат — один наружный блок.", href: "/multisplit" },
         { title: "Вентиляция", text: "Приток, вытяжка, расчёт по площади.", href: "/podbor-ventilyacii" },
-        { title: "Отопление и камины", text: "Радиаторы, котлы, электрокамины.", href: "/otoplenie" },
+        { title: "Тепловые завесы", text: "Для входа, ворот и склада: электрическая, водяная или без нагрева.", href: "/podbor-teplovoj-zavesy" },
+        { title: "Тепловые пушки", text: "Электрические, газовые, дизельные: как выбрать для склада, цеха, стройки.", href: "/teplovaya-pushka" },
+        { title: "Камины", text: "Электроочаг, каминокомплект или биокамин: по площади, месту и бюджету.", href: "/podbor-kamina" },
+        { title: "Обогреватели и радиаторы", text: "Радиаторы, инфракрасные обогреватели, конвекторы: общая витрина.", href: "/otoplenie" },
         { title: "Водонагреватель", text: "Накопительный и проточный.", href: "/vodonagrevateli" },
         { title: "Офис, объект, проект", text: "Полупром, VRF, расчёт под ключ.", href: "/proekt" }
       ],
