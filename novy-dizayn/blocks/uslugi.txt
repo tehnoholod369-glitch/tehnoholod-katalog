@@ -147,6 +147,7 @@
               </div>
             </sc-for>
           </div>
+          <a href="/chistka-i-zapravka-kondicionera-almaty" style="font-size:13px; font-weight:700; color:#0066FF; display:inline-block; margin-top:14px;">Чистка и заправка кондиционера в Алматы — от 35 000 ₸ →</a>
         </div>
       </sc-if>
 
