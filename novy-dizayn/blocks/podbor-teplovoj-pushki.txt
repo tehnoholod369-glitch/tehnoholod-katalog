@@ -1,0 +1,230 @@
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+.thpp{max-width:1248px;margin:0 auto;padding:24px 16px 48px;font-family:Inter,TildaSans,'Segoe UI',Arial,sans-serif;color:#1A1A1A;line-height:1.55}
+.thpp *{box-sizing:border-box}
+.thpp h1{font-size:32px;line-height:40px;font-weight:700;color:#0033A0;margin:0 0 12px}
+.thpp h2{font-size:24px;line-height:32px;font-weight:700;color:#0033A0;margin:32px 0 12px}
+.thpp-lead{font-size:16px;line-height:24px;color:#64748B;margin:0 0 20px;max-width:760px}
+.thpp-box{background:#fff;border:1px solid #DCE5F0;border-radius:16px;padding:18px 16px;box-shadow:0 4px 12px rgba(0,51,160,.08)}
+.thpp-prog{display:flex;gap:6px;margin:0 0 14px}
+.thpp-prog i{flex:1;height:5px;border-radius:3px;background:#DCE5F0}
+.thpp-prog i.on{background:#0066FF}
+.thpp-q{font-size:20px;line-height:28px;font-weight:600;color:#0033A0;margin:0 0 4px}
+.thpp-h{font-size:14px;line-height:20px;color:#64748B;margin:0 0 12px}
+.thpp-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:10px}
+.thpp-opt{display:flex;flex-direction:column;gap:3px;text-align:left;background:#fff;border:1.5px solid #DCE5F0;border-radius:8px;padding:12px 14px;font:inherit;color:inherit;cursor:pointer;min-height:56px}
+.thpp-opt:hover{border-color:#0066FF}
+.thpp-opt b{font-size:16px}
+.thpp-opt span{font-size:14px;line-height:20px;color:#64748B}
+.thpp-opt.sel{border-color:#0066FF;background:#E9F4FF}
+.thpp-nav{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0;align-items:center}
+.thpp-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:48px;padding:0 20px;border-radius:8px;border:0;font:inherit;font-weight:600;text-decoration:none;cursor:pointer;background:#0066FF;color:#fff}.thpp-btn:hover{background:#0052D6}.thpp-btn:focus-visible,.thpp-opt:focus-visible{outline:3px solid #0066FF;outline-offset:2px}
+.thpp-btn--g{background:#fff;color:#0066FF;border:1.5px solid #0066FF}.thpp-btn--g:hover{background:#E9F4FF}
+.thpp-btn--wa{background:#E81C1C;color:#fff}.thpp-btn--wa:hover{background:#C41212}
+.thpp-btn[disabled]{opacity:.45;cursor:default}.thpp button,.thpp input{color:inherit}.thpp a{color:#0066FF}.thpp .thpp-btn{color:#fff}.thpp .thpp-btn--g{color:#0066FF}.thpp .thpp-back{color:#0066FF}.thpp a.thpp-card__n{color:#1A1A1A}.thpp-sum{display:flex;flex-wrap:wrap;align-items:center;gap:0 12px}.thpp-sum a{display:inline-flex;align-items:center;min-height:44px;color:#0052D6;text-decoration:underline}.thpp-opt.sel span{color:#606F85}
+.thpp-size{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px;margin:6px 0 0}
+.thpp-fld label{display:block;font-weight:600;font-size:16px;line-height:24px;margin:0 0 4px}
+.thpp-fld small{display:block;color:#64748B;font-size:14px;line-height:20px;margin:0 0 6px}
+.thpp-fld input{width:120px;height:48px;padding:0 12px;border:1px solid #DCE5F0;border-radius:8px;font:inherit;font-size:16px;color:#1A1A1A;background:#fff}.thpp-fld input:focus-visible{outline:3px solid #0066FF;outline-offset:2px}
+.thpp-chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0}
+.thpp-chip{border:1px solid #DCE5F0;background:#fff;color:#1A1A1A;border-radius:8px;min-height:44px;padding:0 14px;font:inherit;font-size:14px;cursor:pointer}.thpp-chip:focus-visible{outline:3px solid #0066FF;outline-offset:2px}
+.thpp-chip:hover{border-color:#0066FF}
+.thpp-checks{display:flex;flex-direction:column;gap:8px;margin:14px 0 0}
+.thpp-checks label{display:flex;gap:10px;align-items:flex-start;min-height:44px;font-size:16px;line-height:24px;color:#1A1A1A;cursor:pointer}
+.thpp-checks input{margin-top:3px;width:18px;height:18px;accent-color:#0066FF}
+.thpp-checks small{display:block;color:#64748B;font-size:14px;line-height:20px}
+.thpp-sum{font-size:14px;color:#606F85;background:#E9F4FF;border-radius:10px;padding:10px 12px;margin:0 0 12px}
+.thpp-note{font-size:14px;line-height:20px;border-left:4px solid #F59E0B;background:#FFF8E6;border-radius:6px;padding:10px 12px;margin:0 0 12px}
+.thpp-info{font-size:14px;line-height:20px;border-left:4px solid #0066FF;background:#E9F4FF;border-radius:6px;padding:10px 12px;margin:0 0 12px}
+.thpp-warn{font-size:14px;line-height:20px;border-left:4px solid #D73D3D;background:#F1F5F9;border-radius:6px;padding:10px 12px;margin:0 0 12px}
+.thpp-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:12px 0}
+@media(max-width:860px){.thpp-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.thpp-cards{grid-template-columns:1fr}}
+.thpp-card{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #DCE5F0;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,51,160,.08)}
+.thpp-card__role{background:#0033A0;color:#fff;font-size:14px;line-height:20px;font-weight:600;padding:6px 14px}
+.thpp-card__img{display:block;position:relative;aspect-ratio:4/3;background:#F1F5F9;overflow:hidden}
+.thpp-card__img img{position:absolute;left:12px;top:12px;width:calc(100% - 24px);height:calc(100% - 24px);object-fit:contain}
+.thpp-card__b{display:flex;flex-direction:column;gap:7px;padding:13px 14px 14px;flex:1}
+.thpp-tag{align-self:flex-start;font-size:12px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:4px;background:#fff;border:1px solid #178841;color:#178841}
+.thpp-tag--o{background:#F1F5F9;border-color:#F1F5F9;color:#606F85}
+.thpp-card__n{display:block;font-size:16px;line-height:24px;font-weight:600;padding:10px 0;margin:-10px 0;text-decoration:none;color:#1A1A1A}
+.thpp-why{font-size:14px;line-height:20px;color:#1A1A1A;background:#F1F5F9;border-radius:8px;padding:8px 10px}
+.thpp-card ul{margin:0;padding:0;list-style:none;font-size:14px;line-height:20px;color:#64748B}
+.thpp-card li{padding:2px 0;border-bottom:1px dashed #DCE5F0;display:flex;justify-content:space-between;gap:8px}
+.thpp-card li b{color:#1A1A1A;font-weight:600;text-align:right}
+.thpp-pr{font-size:24px;line-height:32px;font-weight:700;margin-top:auto}
+.thpp-act{display:flex;flex-wrap:wrap;gap:8px}
+.thpp-act .thpp-btn{min-height:48px;padding:0 12px;font-size:16px;flex:1}
+.thpp details{background:#fff;border:1px solid #DCE5F0;border-radius:12px;padding:0 14px 8px;margin:8px 0}
+.thpp summary{cursor:pointer;font-weight:600;min-height:48px;display:flex;align-items:center}
+.thpp details p{margin:0 0 8px;color:#64748B;font-size:14px;line-height:20px}
+.thpp-back{background:none;border:0;color:#0066FF;font:inherit;cursor:pointer;padding:0;min-height:44px}
+.thpp-faq details{border:1px solid #DCE5F0;border-radius:12px;padding:0 14px 8px;margin:8px 0;background:#fff}.thpp-faq summary{font-weight:600;cursor:pointer;min-height:48px;display:flex;align-items:center}.thpp-faq p{margin:0 0 8px;color:#64748B;font-size:16px;line-height:24px}.thpp p.thpp-t{font-size:16px;line-height:24px;margin:0 0 12px;max-width:760px}.thpp-links{display:flex;flex-wrap:wrap;gap:10px}@media(min-width:900px){.thpp h1{font-size:48px;line-height:56px}.thpp h2{font-size:32px;line-height:40px}.thpp{padding:32px 24px 56px}}@media(max-width:560px){.thpp-btn{width:100%}.thpp-act .thpp-btn{width:auto}}</style>
+<div class="thpp" id="thpp">
+<h1>Подбор тепловой пушки Ballu</h1>
+<p class="thpp-lead">Тепловая пушка греет цех, склад, стройку или гараж. Ответьте на три вопроса: где она будет работать, какая площадь и что есть на объекте, электричество, газ или дизель. Подберём пушку и покажем, что есть в Алматы.</p>
+<div class="thpp-box" id="thpp-box"></div>
+<h2>Как мы подбираем пушку</h2>
+<p class="thpp-t">Берём паспорт каждой модели: мощность, паспортную площадь, тип топлива или сеть. Сверяем с вашей площадью и условиями работы.</p>
+<p class="thpp-t">Нужная мощность зависит от помещения. В закрытом утеплённом помещении берём модель с паспортной площадью не меньше вашей. В складе или ангаре с воротами нужен запас в полтора раза, на открытой площадке вдвое. Это наш ориентир, окончательно мощность подтверждает менеджер.</p>
+<p class="thpp-t">Если в паспорте площадь не указана, считаем 10 м² на 1 кВт: так указано в паспортах большинства моделей. Товар в наличии показываем первым.</p>
+<h2>Электрическая, газовая или дизельная</h2>
+<p class="thpp-t"><b>Электрическая</b> работает от сети и не даёт продуктов горения. Мощные модели требуют 380 В, проверьте щит до заказа.</p>
+<p class="thpp-t"><b>Газовая</b> работает на пропан-бутане из баллона или на природном газе. Она мощная и мобильная, но нагрев прямой: нужна вентиляция.</p>
+<p class="thpp-t"><b>Дизельная</b> автономна: ей не нужны ни сеть, ни газ. Прямого нагрева — для открытых и проветриваемых объектов. Непрямого нагрева отводит продукты горения по дымоходу и подходит для закрытых помещений.</p>
+<h2>Для организаций</h2>
+<p class="thpp-t">Нужны коммерческое предложение, счёт и договор поставки? Нажмите «Запросить КП» в результате подбора. Доставляем по Казахстану, условия и сроки менеджер уточнит при заказе.</p>
+<h2>Частые вопросы про тепловые пушки</h2>
+<div class="thpp-faq">
+<details open><summary>Чем тепловая пушка отличается от тепловой завесы?</summary><p>Пушка греет помещение: цех, склад, стройку, гараж. Завеса стоит над проёмом и держит поток воздуха, чтобы не пускать холод. Нужно закрыть вход или ворота? Берите тепловую завесу.</p></details>
+<details><summary>Какую пушку выбрать: электрическую, газовую или дизельную?</summary><p>Электрическая работает от сети и не даёт продуктов горения. Газовая работает на пропан-бутане из баллона или на природном газе. Дизельная автономна, ей не нужны ни сеть, ни газ. Если есть щит и помещение закрытое, начинайте с электрической. Если сети нет или нужна большая мощность, смотрите газовую и дизельную.</p></details>
+<details><summary>Чем дизельная пушка прямого нагрева отличается от непрямого?</summary><p>У прямого нагрева продукты горения выходят в помещение вместе с тёплым воздухом: такую пушку ставят на открытых и хорошо проветриваемых объектах. У непрямого нагрева продукты горения уходят наружу по дымоходу, поэтому она подходит для закрытых помещений.</p></details>
+<details><summary>Сколько мощности нужно на мою площадь?</summary><p>Смотрите на паспортную площадь модели: у большинства моделей около 10 м² на 1 кВт. Для закрытого утеплённого помещения берите модель с паспортной площадью не меньше вашей. Для склада или ангара с воротами нужен запас в полтора раза, для открытой площадки вдвое. Это наш ориентир, окончательно мощность подтверждает менеджер.</p></details>
+<details><summary>Можно ли использовать газовую или дизельную пушку прямого нагрева в закрытом помещении?</summary><p>Только с вентиляцией. Продукты горения остаются в воздухе, поэтому закрытое помещение без притока свежего воздуха не подходит. Для постоянной работы людей внутри берите электрическую пушку или дизельную непрямого нагрева.</p></details>
+<details><summary>Как получить коммерческое предложение?</summary><p>Нажмите «Запросить КП» в результате подбора: ваши условия и подобранные модели уйдут нам в WhatsApp, и мы подготовим предложение на ваш объект. Подбор можно также сохранить в PDF: это справка с характеристиками моделей, а не коммерческое предложение.</p></details>
+<details><summary>Есть ли доставка?</summary><p>Доставляем по Казахстану. Условия и сроки менеджер уточнит при заказе.</p></details>
+<details><summary>Что делать, если ничего не подошло?</summary><p>Нажмите «Подобрать с менеджером»: ваши ответы уйдут в сообщение, и мы подберём вариант вручную, в том числе под заказ.</p></details>
+</div>
+<h2>Подобрать с менеджером</h2>
+<p class="thpp-t">Не нашли подходящий вариант? Напишите нам в WhatsApp. Ваши ответы уйдут в сообщение, переспрашивать не будем.</p>
+<p class="thpp-t">Подберём вручную, в том числе под заказ. Нужно коммерческое предложение? Нажмите «Запросить КП» в результате подбора.</p>
+<a class="thpp-btn thpp-btn--wa" target="_blank" rel="noopener" href="https://wa.me/77000369369">Подобрать с менеджером →</a>
+<h2>Другие разделы</h2>
+<div class="thpp-links"><a class="thpp-btn thpp-btn--g" href="/teplovye-pushki-almaty">Тепловые пушки в Алматы</a><a class="thpp-btn thpp-btn--g" href="/katalog?g=teplovye-pushki">Каталог тепловых пушек</a><a class="thpp-btn thpp-btn--g" href="/teplovaya-pushka">Как выбрать тепловую пушку</a><a class="thpp-btn thpp-btn--g" href="/podbor-teplovoj-zavesy">Подбор тепловой завесы</a><a class="thpp-btn thpp-btn--g" href="/otoplenie">Отопление</a><a class="thpp-btn thpp-btn--g" href="/podbor">Все подборщики</a></div>
+</div>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Подбор тепловой пушки Ballu","serviceType":"Подбор тепловой пушки по площади, типу помещения и источнику энергии","areaServed":{"@type":"City","name":"Алматы"},"provider":{"@type":"Organization","name":"ТехноХолод","url":"https://tehnoholod369.kz"},"url":"https://tehnoholod369.kz/podbor-teplovoj-pushki"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Подбор тепловой пушки Ballu","url":"https://tehnoholod369.kz/podbor-teplovoj-pushki","applicationCategory":"ShoppingApplication","operatingSystem":"Web","inLanguage":"ru","description":"Подбор тепловой пушки Ballu по площади, типу помещения и источнику энергии: электричество, газ или дизельное топливо.","provider":{"@type":"Organization","name":"ТехноХолод","url":"https://tehnoholod369.kz"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://tehnoholod369.kz/"},{"@type":"ListItem","position":2,"name":"Тепловые пушки","item":"https://tehnoholod369.kz/teplovye-pushki-almaty"},{"@type":"ListItem","position":3,"name":"Подбор тепловой пушки","item":"https://tehnoholod369.kz/podbor-teplovoj-pushki"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Чем тепловая пушка отличается от тепловой завесы?","acceptedAnswer":{"@type":"Answer","text":"Пушка греет помещение: цех, склад, стройку, гараж. Завеса стоит над проёмом и держит поток воздуха, чтобы не пускать холод. Нужно закрыть вход или ворота? Берите тепловую завесу."}},{"@type":"Question","name":"Какую пушку выбрать: электрическую, газовую или дизельную?","acceptedAnswer":{"@type":"Answer","text":"Электрическая работает от сети и не даёт продуктов горения. Газовая работает на пропан-бутане из баллона или на природном газе. Дизельная автономна, ей не нужны ни сеть, ни газ. Если есть щит и помещение закрытое, начинайте с электрической. Если сети нет или нужна большая мощность, смотрите газовую и дизельную."}},{"@type":"Question","name":"Чем дизельная пушка прямого нагрева отличается от непрямого?","acceptedAnswer":{"@type":"Answer","text":"У прямого нагрева продукты горения выходят в помещение вместе с тёплым воздухом: такую пушку ставят на открытых и хорошо проветриваемых объектах. У непрямого нагрева продукты горения уходят наружу по дымоходу, поэтому она подходит для закрытых помещений."}},{"@type":"Question","name":"Сколько мощности нужно на мою площадь?","acceptedAnswer":{"@type":"Answer","text":"Смотрите на паспортную площадь модели: у большинства моделей около 10 м² на 1 кВт. Для закрытого утеплённого помещения берите модель с паспортной площадью не меньше вашей. Для склада или ангара с воротами нужен запас в полтора раза, для открытой площадки вдвое. Это наш ориентир, окончательно мощность подтверждает менеджер."}},{"@type":"Question","name":"Можно ли использовать газовую или дизельную пушку прямого нагрева в закрытом помещении?","acceptedAnswer":{"@type":"Answer","text":"Только с вентиляцией. Продукты горения остаются в воздухе, поэтому закрытое помещение без притока свежего воздуха не подходит. Для постоянной работы людей внутри берите электрическую пушку или дизельную непрямого нагрева."}},{"@type":"Question","name":"Как получить коммерческое предложение?","acceptedAnswer":{"@type":"Answer","text":"Нажмите «Запросить КП» в результате подбора: ваши условия и подобранные модели уйдут нам в WhatsApp, и мы подготовим предложение на ваш объект. Подбор можно также сохранить в PDF: это справка с характеристиками моделей, а не коммерческое предложение."}},{"@type":"Question","name":"Есть ли доставка?","acceptedAnswer":{"@type":"Answer","text":"Доставляем по Казахстану. Условия и сроки менеджер уточнит при заказе."}},{"@type":"Question","name":"Что делать, если ничего не подошло?","acceptedAnswer":{"@type":"Answer","text":"Нажмите «Подобрать с менеджером»: ваши ответы уйдут в сообщение, и мы подберём вариант вручную, в том числе под заказ."}}]}</script>
+<script>
+(function(){
+var DATA=window.TH_PP_DATA||null;var DATA_URL=window.TH_PP_DATA_URL||"https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/podbor-pushek.json";
+var PHONE="77000369369";
+var $=function(i){return document.getElementById(i)};
+var S={step:"place",place:null,area:null,fuel:null,volt:null};
+var PLACE=[
+ {k:"in",t:"Закрытое помещение, люди внутри",s:"мастерская, магазин, гараж, где работают постоянно",f:1},
+ {k:"vent",t:"Склад, цех, ангар",s:"большой объём, ворота открываются, есть вентиляция",f:1.5},
+ {k:"open",t:"Стройка или открытая площадка",s:"продувается, стен нет или они временные",f:2}
+];
+var FUEL=[
+ {k:"e",t:"Электричество",s:"есть щит, нужна пушка без продуктов горения"},
+ {k:"gas",t:"Газ",s:"баллон пропан-бутан или природный газ"},
+ {k:"dis",t:"Дизельное топливо",s:"автономно, без сети и газа"},
+ {k:"?",t:"Не знаю",s:"покажем все подходящие, подскажем"}
+];
+var VOLT=[
+ {k:220,t:"Только обычная сеть 220 В",s:"розетки, однофазный щит"},
+ {k:380,t:"Есть трёхфазная сеть 380 В",s:"промышленный щит"},
+ {k:0,t:"Не знаю",s:"покажем оба варианта, уточним"}
+];
+function seq(){var a=["place","area","fuel"];if(S.fuel==="e"||S.fuel==="?")a.push("volt");return a}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function money(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g," ")+" ₸"}
+function nm(x){return String(x).replace(".",",")}
+function lab(list,k){var r=list.filter(function(o){return o.k===k})[0];return r?r.t:""}
+function fac(){var r=PLACE.filter(function(o){return o.k===S.place})[0];return r?r.f:1}
+function prog(){var q=seq(),i=q.indexOf(S.step),h="";for(var j=0;j<q.length;j++)h+='<i class="'+(j<=i?"on":"")+'"></i>';return'<div class="thpp-prog">'+h+"</div>"}
+function opts(list,key){var h='<div class="thpp-opts">';list.forEach(function(o){h+='<button type="button" class="thpp-opt'+(S[key]===o.k?" sel":"")+'" data-k="'+esc(o.k)+'"><b>'+esc(o.t)+"</b><span>"+esc(o.s)+"</span></button>"});return h+"</div>"}
+function bindOpts(key,conv,after){var b=document.querySelectorAll(".thpp-opt");for(var i=0;i<b.length;i++)b[i].onclick=function(){var v=this.getAttribute("data-k");S[key]=conv?conv(v):v;after()}}
+function nav(){var q=seq();return q.indexOf(S.step)>0?'<div class="thpp-nav"><button type="button" class="thpp-back" id="thpp-back">← Назад</button></div>':""}
+function go(k){S.step=k;render()}
+function next(){var q=seq();go(q[q.indexOf(S.step)+1]||"result")}
+function chips(id,inp,vals){var c=$(id),h="";vals.forEach(function(v){h+='<button type="button" class="thpp-chip" data-v="'+v+'">'+v+"</button>"});c.innerHTML=h;var b=c.querySelectorAll("button");for(var i=0;i<b.length;i++)b[i].onclick=function(){$(inp).value=this.getAttribute("data-v")}}
+function render(){
+ var box=$("thpp-box"),h=prog(),st=S.step;
+ if(st==="place"){h+='<p class="thpp-q">Где будет работать пушка?</p><p class="thpp-h">От этого зависит нужный запас по мощности и тип пушки: в закрытом помещении с людьми продукты горения недопустимы.</p>'+opts(PLACE,"place");box.innerHTML=h;bindOpts("place",null,next)}
+ else if(st==="area"){h+='<p class="thpp-q">Какую площадь нужно греть?</p><p class="thpp-h">Площадь пола в квадратных метрах. Если помещение с высокими потолками, берите с запасом.</p><div class="thpp-size"><div class="thpp-fld"><label for="thpp-a">Площадь, м²</label><small>например, 100 или 300</small><input id="thpp-a" inputmode="numeric" value="'+(S.area?S.area:"")+'"><div class="thpp-chips" id="thpp-ca"></div></div></div><div id="thpp-err"></div><div class="thpp-nav"><button type="button" class="thpp-btn" id="thpp-n1">Дальше</button></div>'+nav();box.innerHTML=h;
+   chips("thpp-ca","thpp-a",[30,50,100,200,300,500,1000]);
+   $("thpp-n1").onclick=function(){var a=parseFloat($("thpp-a").value.replace(",","."));
+     if(!(a>=5&&a<=5000)){$("thpp-err").innerHTML='<div class="thpp-note">Проверьте площадь: от 5 до 5000 м². Для большего объекта напишите менеджеру.</div>';return}
+     S.area=Math.round(a);next()}}
+ else if(st==="fuel"){h+='<p class="thpp-q">Что есть на объекте?</p><p class="thpp-h">Электричество, газ или дизельное топливо. Если не знаете, покажем все подходящие.</p>'+opts(FUEL,"fuel");box.innerHTML=h+nav();bindOpts("fuel",null,function(){if(S.fuel==="gas"||S.fuel==="dis")S.volt=null;next()})}
+ else if(st==="volt"){h+='<p class="thpp-q">Какая электросеть?</p><p class="thpp-h">Мощные электрические пушки работают от 380 В. Если сеть только 220 В, выберем из доступных.</p>'+opts(VOLT,"volt");box.innerHTML=h+nav();bindOpts("volt",function(v){return +v},next)}
+ else{result(box,h);return}
+ var bb=$("thpp-back");if(bb)bb.onclick=function(){var q=seq(),i=q.indexOf(S.step);go(i>0?q[i-1]:"place")}
+}
+function tw(o){return o.area||(o.kw?o.kw*10:0)}
+function est(o){return !o.area}
+function pick(){
+ var need=S.area*fac(),res={need:need,list:[],multi:false};
+ function okType(o){
+  if(S.fuel!=="?"&&o.fuel!==S.fuel)return false;
+  if(S.place==="in"&&(o.fuel==="gas"||(o.fuel==="dis"&&o.heat!=="i")))return false;
+  if(o.fuel==="e"&&S.volt===220&&o.v===380)return false;
+  return true}
+ var all=DATA.filter(okType),priced=all.filter(function(o){return !o.tmp});if(priced.length)all=priced;
+ function units(o,mult){return mult?Math.ceil(need/tw(o)):1}
+ var multi=false,a=all.filter(function(o){return tw(o)>=need});
+ if(!a.length){a=all.filter(function(o){var t=tw(o);return t>0&&Math.ceil(need/t)<=4&&Math.ceil(need/t)>=2});multi=true}
+ if(!a.length)return res;
+ res.multi=multi;
+ function tot(o){return o.p*units(o,multi)}
+ a.sort(function(x,y){return multi?(tot(x)-tot(y)):((tw(x)-tw(y))||(x.p-y.p))});
+ var st=a.filter(function(o){return o.in}),pool=st.length?st:a;
+ if(!st.length)res.noStock=true;
+ var min=pool[0],rec=null;
+ if(!multi){for(var i=0;i<pool.length;i++)if(tw(pool[i])>=need*1.2){rec=pool[i];break}}
+ if(!rec)rec=min;
+ var more=null;
+ if(!multi)for(var j=0;j<a.length;j++)if(tw(a[j])>tw(rec)*1.3&&a[j].id!==rec.id&&a[j].p<=rec.p*2.5){more=a[j];break}
+ function put(role,why,o){if(!o)return;for(var i=0;i<res.list.length;i++)if(res.list[i].o.id===o.id)return;res.list.push({role:role,why:why,o:o,u:units(o,multi)})}
+ if(multi){put("Рекомендуем","Одна пушка не закрывает вашу площадь, поэтому считаем несколько приборов этой модели. Количество уточнит менеджер.",rec);
+  var alt=null;for(var k=0;k<pool.length;k++)if(pool[k].id!==rec.id){alt=pool[k];break}
+  put("Вариант","Другая модель: количество приборов считаем так же.",alt)}
+ else{
+  put(min.id===rec.id?"Рекомендуем":"Рекомендуем",tw(rec)>=need*1.2?"Закрывает вашу площадь с небольшим запасом по паспорту.":"Закрывает вашу площадь по паспорту, запаса почти нет.",rec);
+  if(min.id!==rec.id)put("Минимум","Закрывает вашу площадь по паспорту без запаса: нижняя граница.",min);
+  put("С запасом","Мощнее: подойдёт, если помещение будет больше или потери тепла выше.",more);
+  if(!st.length){var mm=all.filter(function(o){var t=tw(o);return o.in&&t>0&&Math.ceil(need/t)>=2&&Math.ceil(need/t)<=4}).sort(function(x,y){return x.p*Math.ceil(need/tw(x))-y.p*Math.ceil(need/tw(y))});
+   if(mm.length){var o2=mm[0];res.list.push({role:"В наличии",why:"Одной пушки в наличии на вашу площадь нет, поэтому считаем несколько приборов этой модели. Количество уточнит менеджер.",o:o2,u:Math.ceil(need/tw(o2))})}}}
+ return res}
+function conditions(){
+ var c=[["Где работает",lab(PLACE,S.place)],["Площадь",S.area+" м²"],["Что есть на объекте",lab(FUEL,S.fuel)]];
+ if(S.fuel==="e"||S.fuel==="?")c.push(["Электросеть",S.volt===220?"220 В":S.volt===380?"380 В":"не знаю"]);
+ return c}
+function waLink(r){
+ var t=["Здравствуйте! Подбор тепловой пушки Ballu с сайта."].concat(conditions().map(function(x){return x[0]+": "+x[1]}));
+ if(r)t.push((r.kp?"Прошу подготовить КП: ":"Интересует: ")+r.n+(r.u>1?" ×"+r.u:""));
+ return"https://wa.me/"+PHONE+"?text="+encodeURIComponent(t.join("\n"))}
+var FUELN={e:"электрическая",gas:"газовая",dis:"дизельная"};
+function typ(o){return o.t||(FUELN[o.fuel]+" пушка")}
+function heatLab(o){return o.heat==="d"?"прямой":(o.heat==="i"?"непрямой":"")}
+function passport(o,u){
+ var r=[["Тип",typ(o)],["Модель","Ballu "+o.n],o.ser?["Серия",o.ser]:null,o.kw?["Тепловая мощность",nm(o.kw)+" кВт"]:null,tw(o)?["Площадь помещения до",(est(o)?"≈ ":"")+tw(o)+" м²"+(est(o)?" (по мощности)":" (по паспорту)")]:null,o.air?["Расход воздуха",o.air+" м³/ч"]:null,o.fuel==="e"&&o.v?["Электросеть",o.v+" В"]:null,o.fuel!=="e"?["Топливо",o.fuel==="dis"?"дизельное":"газ"]:null,heatLab(o)?["Нагрев",heatLab(o)]:null,o.ctl?["Управление",o.ctl]:null,o.th?["Термостат",o.th]:null,o.ip?["Класс защиты",o.ip]:null,o.inst?["Установка",o.inst]:null,o.dim?["Габариты В×Ш×Г, см",o.dim]:null,o.wt?["Вес",o.wt]:null,o.g?["Гарантия",o.g]:null,u>1?["Количество в расчёте",u+" шт."]:null];
+ return r.filter(Boolean)}
+function kp(list){
+ var w=window.open("","_blank");if(!w){alert("Разрешите всплывающее окно для сайта и повторите.");return}
+ var css="body{font-family:Inter,Arial,sans-serif;color:#1A1A1A;max-width:820px;margin:0 auto;padding:28px 24px;line-height:1.5}.ttl{color:#0033A0;font-size:24px;font-weight:700;margin:0 0 4px}h2{color:#0033A0;font-size:17px;margin:22px 0 8px;border-bottom:2px solid #0066FF;padding-bottom:4px}.sub{color:#606F85;margin:0 0 14px}table{border-collapse:collapse;width:100%;font-size:14px}td{padding:5px 8px;border-bottom:1px solid #DCE5F0;vertical-align:top}td:first-child{color:#606F85;width:42%}.pr{font-size:20px;font-weight:700;margin:8px 0}.tag{display:inline-block;background:#fff;border:1px solid #178841;color:#178841;font-size:12px;font-weight:600;padding:2px 8px;border-radius:4px}.tag.o{background:#F1F5F9;border-color:#F1F5F9;color:#606F85}.note{font-size:12px;line-height:16px;color:#64748B;margin-top:18px;border-top:1px solid #DCE5F0;padding-top:10px}.btn{margin:0 0 16px;padding:10px 18px;background:#0066FF;color:#fff;border:0;border-radius:8px;font:600 14px Inter,Arial,sans-serif;cursor:pointer}@media print{.btn{display:none}}";
+ var h="<!doctype html><html lang=ru><head><meta charset=utf-8><title>Подбор тепловой пушки Ballu</title><style>"+css+"</style></head><body><button class=btn onclick=window.print()>Печать / сохранить как PDF</button><div class=ttl>Подбор тепловой пушки Ballu</div><p class=sub>Характеристики моделей под ваш объект · ИП «ТехноХолод»</p><h2>Ваши условия</h2><table>";
+ conditions().forEach(function(x){h+="<tr><td>"+esc(x[0])+"</td><td>"+esc(x[1])+"</td></tr>"});
+ h+="</table>";
+ list.forEach(function(x,i){var o=x.o;
+  h+="<h2>Вариант "+(i+1)+": "+esc(x.role)+" — Ballu "+esc(o.n)+(x.u>1?" × "+x.u+" шт.":"")+"</h2><span class='tag"+(o.in?"":" o")+"'>"+(o.in?"В наличии":"Под заказ")+"</span><div class=pr>"+(o.tmp?"Цена уточняется":money(o.p*x.u))+"</div><table>";
+  passport(o,x.u).forEach(function(p){h+="<tr><td>"+esc(p[0])+"</td><td>"+esc(p[1])+"</td></tr>"});
+  h+="</table>"});
+ h+="<p class=note>Это предварительная справка по вашему запросу, а не коммерческое предложение. Параметры приведены по паспортным данным производителя; срок гарантии указан по паспорту изделия; пригодность модели для вашего объекта подтверждает менеджер. Цена указана за оборудование; монтаж, доставка и налоги в справку не включены, итог и условия поставки назовёт менеджер в коммерческом предложении. Для связи: WhatsApp и телефон +7 700 036-93-69.</p></body></html>";
+ w.document.open();w.document.write(h);w.document.close()}
+function result(box,h){
+ var r=pick(),sum="Площадь "+S.area+" м² · "+lab(PLACE,S.place).toLowerCase()+" · "+lab(FUEL,S.fuel).toLowerCase()+(S.fuel==="e"||S.fuel==="?"?" · "+(S.volt===220?"220 В":S.volt===380?"380 В":"сеть уточним"):"");
+ h+='<div class="thpp-sum">'+esc(sum)+'<a href="#" id="thpp-redo">изменить ответы</a></div>';
+ h+='<div class="thpp-info">Нужна мощность пушки с паспортной площадью не меньше '+Math.round(r.need)+' м²'+(fac()>1?" (ваша площадь с запасом ×"+nm(fac())+" для этого места)":"")+'. Это наш ориентир, окончательно подтверждает менеджер.</div>';
+ if(!r.list.length){h+='<div class="thpp-note">Под такие параметры готовых вариантов в каталоге не нашлось'+(S.place==="in"&&S.fuel==="gas"?": для закрытых помещений с людьми газовые пушки прямого нагрева не подходят":"")+'. Нажмите «Подобрать с менеджером»: подберём вручную, в том числе под заказ.</div>'}
+ else{
+  if(r.multi)h+='<div class="thpp-info">Одна пушка не закрывает вашу площадь. Показываем вариант из нескольких приборов: так делают на больших объектах. Количество уточнит менеджер.</div>';
+  if(r.noStock)h+='<div class="thpp-note">Подходящих моделей в наличии сейчас нет. Показываем под заказ: менеджер назовёт срок поставки.</div>';
+  var direct=r.list.some(function(x){return x.o.fuel!=="e"&&x.o.heat!=="i"});
+  if(direct)h+='<div class="thpp-warn">Пушки прямого нагрева выпускают продукты горения в помещение. Используйте их на открытом воздухе или в помещении с вентиляцией. В закрытом помещении без притока воздуха их включать нельзя.</div>';
+  if(S.volt===0&&(S.fuel==="e"||S.fuel==="?"))h+='<div class="thpp-note">Вы не знаете тип сети. Мощные электрические пушки работают только от 380 В — проверьте щит до заказа.</div>';
+  if(S.fuel==="?")h+='<div class="thpp-info">Вы не выбрали источник энергии: показаны подходящие электрические, газовые и дизельные пушки.</div>';
+  if(r.list.some(function(x){return est(x.o)}))h+='<div class="thpp-info">У части моделей в паспорте нет площади. Для них считаем 10 м² на 1 кВт, это помечено значком ≈.</div>';
+  h+='<div class="thpp-cards">';
+  r.list.forEach(function(x){var o=x.o,url=o.url;
+   h+='<div class="thpp-card"><div class="thpp-card__role">'+esc(x.role)+'</div><a class="thpp-card__img" href="'+esc(url)+'"><img loading="lazy" src="'+esc(o.img)+'" alt="Ballu '+esc(o.n)+'"></a><div class="thpp-card__b"><span class="thpp-tag'+(o.in?"":" thpp-tag--o")+'">'+(o.in?"В наличии":"Под заказ")+'</span><a class="thpp-card__n" href="'+esc(url)+'">Ballu '+esc(o.n)+(x.u>1?" × "+x.u+" шт.":"")+'</a>'+(x.why?'<div class="thpp-why">'+esc(x.why)+'</div>':"")+'<ul><li>Тип<b>'+esc(typ(o))+'</b></li>'+(o.kw?'<li>Мощность<b>'+nm(o.kw)+' кВт</b></li>':"")+(tw(o)?'<li>Площадь до<b>'+(est(o)?"≈ ":"")+tw(o)+' м²</b></li>':"")+(o.air?'<li>Расход воздуха<b>'+o.air+' м³/ч</b></li>':"")+(o.fuel==="e"&&o.v?'<li>Сеть<b>'+o.v+' В</b></li>':"")+(o.fuel!=="e"?'<li>Топливо<b>'+(o.fuel==="dis"?"дизельное":"газ")+'</b></li>':"")+(heatLab(o)?'<li>Нагрев<b>'+heatLab(o)+'</b></li>':"")+'</ul><div class="thpp-pr">'+(o.tmp?'<span style="font-size:16px;line-height:24px;font-weight:400;color:#64748B">Цена уточняется</span>':money(o.p*x.u))+'</div><div class="thpp-act"><a class="thpp-btn thpp-btn--g" href="'+esc(url)+'">Подробнее</a><a class="thpp-btn" target="_blank" rel="noopener" href="'+esc(waLink({n:"Ballu "+o.n,u:x.u}))+'">Узнать цену</a></div></div></div>'});
+  h+="</div>";}
+ h+='<div class="thpp-nav">'+(r.list.length?'<a class="thpp-btn thpp-btn--wa" target="_blank" rel="noopener" href="'+esc(waLink({kp:1,n:r.list.map(function(x){return"Ballu "+x.o.n+(x.u>1?" ×"+x.u:"")}).join(", "),u:1}))+'">Запросить КП →</a><button type="button" class="thpp-btn thpp-btn--g" id="thpp-kp">Сохранить подбор в PDF</button>':'<a class="thpp-btn thpp-btn--wa" target="_blank" rel="noopener" href="'+esc(waLink(null))+'">Подобрать с менеджером →</a>')+'<a class="thpp-btn thpp-btn--g" href="tel:+'+PHONE+'">Позвонить</a></div><div class="thpp-nav"><button type="button" class="thpp-back" id="thpp-back">← Назад</button></div>';
+ box.innerHTML=h;$("thpp-redo").onclick=function(e){e.preventDefault();go("place")};var kb=$("thpp-kp");if(kb)kb.onclick=function(){kp(r.list)};
+ var bb=$("thpp-back");if(bb)bb.onclick=function(){var q=seq();go(q[q.length-1])}}
+if(DATA){render()}else{fetch(DATA_URL,{cache:"no-cache"}).then(function(r){return r.json()}).then(function(j){DATA=j;render()}).catch(function(){$("thpp-box").innerHTML='<div class="thpp-note">Подбор временно недоступен. Напишите нам в WhatsApp: подберём пушку вручную.</div><a class="thpp-btn thpp-btn--wa" target="_blank" rel="noopener" href="https://wa.me/77000369369">Подобрать с менеджером →</a>'})}
+})();
+</script>
