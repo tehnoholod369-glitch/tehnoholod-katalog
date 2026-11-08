@@ -114,7 +114,7 @@
           </div>
           <a href="/brigady" style="font-size:14px; font-weight:700; color:#0066FF;">Бригады и оценки →</a>
         </div>
-        <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px; max-width:900px;">Оценки работы монтажных бригад от клиентов, у которых есть Сервис-карта 369 на этот монтаж.</div>
+        <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px; max-width:900px;">Оценки работы МАСТЕРОВ АРТЕЛИ от клиентов, у которых есть Сервис-карта 369 на этот монтаж.</div>
         <sc-for list="{{ mnReviews }}" as="r" hint-placeholder-count="2">
           <div style="background:#F7F9FC; border:1px solid #E5EAF1; border-radius:12px; padding:16px 18px; margin-top:14px;">
             <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">

@@ -28,7 +28,7 @@
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:12px; align-items:stretch;">
       <div>
         <h1 style="margin:0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Кто приедет на монтаж</h1>
-        <div style="font-size:16px; color:#64748B; margin-top:10px; line-height:1.6;">В АРТЕЛЬ каждая допущенная бригада имеет номер сертификата. Для монтажа нового оборудования действует единый обязательный стандарт — 12 месяцев гарантии на монтажные работы. Каждый монтаж фиксируется в «Сервис-карте 369»: кто выполнял работу и когда. Здесь тот же список, что и в нашем реестре, с оценками клиентов.</div>
+        <div style="font-size:16px; color:#64748B; margin-top:10px; line-height:1.6;">В АРТЕЛИ каждая допущенная бригада имеет номер сертификата. Для монтажа нового оборудования действует единый обязательный стандарт — 12 месяцев гарантии на монтажные работы. Каждый монтаж фиксируется в «Сервис-карте 369»: кто выполнял работу и когда. Здесь тот же список, что и в нашем реестре, с оценками клиентов.</div>
       </div>
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#64748B;">ПОЧЕМУ НОМЕР, А НЕ ИМЯ И ТЕЛЕФОН</div>
@@ -62,7 +62,7 @@
     <sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
       <div style="background:#fff; border:1px solid #D73D3D; border-radius:16px; padding:26px; margin-top:16px;">
         <div style="font-size:17px; font-weight:700; color:#D73D3D;">Список бригад сейчас не загрузился</div>
-        <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">Это сбой на нашей стороне, а не признак того, что бригад нет. Напишите нам — назначим бригаду и назовём её номер в ответе.</div>
+        <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">Это сбой на нашей стороне, а не признак того, что бригад нет. Напишите нам — назначим МАСТЕРОВ и назовём номер бригады в ответе.</div>
         <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;">
           <a href="https://wa.me/77000369369" style="background:#0066FF; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700;">Написать в WhatsApp</a>
           <a href="tel:+77000369369" style="border:2px solid #0066FF; color:#0033A0; border-radius:8px; padding:11px 20px; font-size:15px; font-weight:700;">+77 000 369 369</a>
@@ -73,7 +73,7 @@
     <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:16px;">
         <div style="font-size:17px; font-weight:700;">Реестр бригад заполняется</div>
-        <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Пока в реестре нет ни одной активной бригады. Мы не показываем выдуманные карточки, чтобы страница выглядела наполненной — вернитесь позже или напишите нам, бригаду на монтаж назначим в любом случае.</div>
+        <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:8px;">Пока в реестре нет ни одной активной бригады. Мы не показываем выдуманные карточки, чтобы страница выглядела наполненной — вернитесь позже или напишите нам, МАСТЕРОВ на монтаж назначим в любом случае.</div>
         <a href="https://wa.me/77000369369" style="display:inline-block; background:#0066FF; color:#fff; border-radius:8px; padding:13px 20px; font-size:15px; font-weight:700; margin-top:14px;">Написать в WhatsApp</a>
       </div>
     </sc-if>
@@ -363,7 +363,7 @@
           <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:6px;">Срок гарантии — в карточке модели и в паспорте изделия. Гарантийный ремонт — в сертифицированных центрах бренда.</div>
         </div>
         <div style="background:#F1F5F9; border-radius:12px; padding:18px 20px;">
-          <div style="font-size:15px; font-weight:700;">Монтаж — бригада АРТЕЛЬ</div>
+          <div style="font-size:15px; font-weight:700;">Монтаж — бригада АРТЕЛИ</div>
           <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:6px;">Герметичность, крепления, дренаж и пусконаладка. Для монтажа нового оборудования действует единый срок гарантии — 12 месяцев; обращение направляется тому же МАСТЕРУ или бригаде, которые выполняли работу.</div>
         </div>
         <div style="background:#F1F5F9; border-radius:12px; padding:18px 20px;">
@@ -718,7 +718,7 @@ class Component extends DCLogic {
         const ready = f.score >= 1 && f.text.trim().length >= 2;
         const factsShort = [
           c.city     ? { k: "ВЫЕЗД", v: c.city + (c.zone ? " · до " + c.zone : "") } : null,
-          { k: "ГАРАНТИЯ НА МОНТАЖ", v: "12 мес — стандарт АРТЕЛЬ" },
+          { k: "ГАРАНТИЯ НА МОНТАЖ", v: "12 мес — стандарт АРТЕЛИ" },
           c.since    ? { k: "ОПЫТ РАБОТЫ", v: "с " + c.since + " года" } : null,
           (c.withUsSince && (new Date().getFullYear() - c.withUsSince) >= 1)
             ? { k: "РАБОТАЕТ С НАМИ",
