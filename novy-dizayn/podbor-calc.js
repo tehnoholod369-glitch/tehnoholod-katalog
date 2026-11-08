@@ -165,6 +165,9 @@
   }
   function pick(c) {
     var poolAll = poolFor(c), cc = {};
+    // «Свежий воздух» — жёсткое условие: модель без притока не показываем ни при каком цвете или бюджете,
+    // и цвета в списке берём только у моделей с притоком (иначе выбор цвета приводил к модели без притока).
+    if (S.fresh) poolAll = poolAll.filter(function (x) { return x.hit.fresh === 1; });
     poolAll.forEach(function (x) { if (x.color) cc[x.color] = (cc[x.color] || 0) + 1; });
     var colors = Object.keys(cc).sort(function (a, b) { return cc[b] - cc[a]; });
     var pool = S.color ? poolAll.filter(function (x) { return x.color === S.color; }) : poolAll;
@@ -402,7 +405,7 @@
       var grp = S.type === "wall" ? "bytovye" : (c.mode === "big" || S.type) ? "poluprom" : "bytovye";
       models = '<div class="pkc-models"><h3 class="pkc-h">Подходящие модели</h3>' + (p.note ? '<p class="pkc-info">' + esc(p.note) + "</p>" : "") + (p.strict ? '<p class="pkc-info">Показаны только модели, которые закрывают все выбранные пожелания.</p>' : "") +
         (p.list.length ? '<div class="pkc-cards">' + p.list.map(card).join("") + "</div>" :
-          '<p class="pkc-info">' + (S.color ? "Подходящей мощности в цвете «" + esc(S.color) + "» сейчас нет. Выберите другой цвет или напишите нам в WhatsApp: подберём под заказ." : (S.type && S.type !== "wall") ? esc(typeEmpty(c)) : "Модели этого класса сейчас не найдены. Напишите нам в WhatsApp, подберём.") + '</p>') +
+          '<p class="pkc-info">' + (S.color ? (S.fresh ? "С притоком воздуха в цвете «" + esc(S.color) + "» моделей этой мощности нет. Выберите другой цвет или снимите «Свежий воздух»." : "Подходящей мощности в цвете «" + esc(S.color) + "» сейчас нет. Выберите другой цвет или напишите нам в WhatsApp: подберём под заказ.") : (S.type && S.type !== "wall") ? esc(typeEmpty(c)) : S.fresh ? "С притоком воздуха моделей этой мощности в каталоге нет. Снимите «Свежий воздух» или напишите нам в WhatsApp, подберём." : "Модели этого класса сейчас не найдены. Напишите нам в WhatsApp, подберём.") + '</p>') +
         '<div class="pkc-more"><a class="pkc-btn pkc-btn--line" href="/katalog?g=' + grp + "&btu=" + (cls || c.btu) + '&stock=in">Все подходящие модели в каталоге →</a>' +
         '<a class="pkc-btn pkc-btn--line" href="https://wa.me/77000369369">Нужна помощь? WhatsApp</a></div></div>';
     }
