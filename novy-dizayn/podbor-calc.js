@@ -226,18 +226,18 @@
   // «больше 150 м²»: модели из полупрома. Точная площадь (151–300 м²) — не ниже потребности; чип без площади — от 60 000 BTU.
   // Сначала в наличии, затем ближайшие по мощности (вверх), затем дешевле. Запас мощности не показываем: потребность грубая.
   function bigModels(c) {
-    var exact = S.area <= 300, need = exact ? c.need : 60000, arr = [];
+    var exact = S.area <= 300, need = exact ? c.need : 0, arr = [];
     (DATAP || []).forEach(function (m) {
       var v = btuOf(m);
-      if (!m.acc && m.p > 0 && v >= need) { m.g = "poluprom"; var x = info(m, { need: 0 }); x.noMarg = true; arr.push(x); }
+      if (!m.acc && m.p > 0 && (exact ? v >= need : parseFloat(m.num) > 150)) { m.g = "poluprom"; var x = info(m, { need: 0 }); x.noMarg = true; arr.push(x); }
     });
     if (!arr.length) return "";
     arr.sort(function (a, b) { return (a.m.st === "В наличии" ? 0 : 1) - (b.m.st === "В наличии" ? 0 : 1) || a.btu - b.btu || a.m.p - b.m.p; });
-    var tag = exact ? "Подходит по мощности" : "Большая мощность";
-    return '<div class="pkc-models"><h3 class="pkc-h">' + (exact ? "Модели от " + fmt(Math.round(need / 100) * 100) + " BTU" : "Самые мощные модели в каталоге") + '</h3>' +
+    var tag = exact ? "Подходит по мощности" : "Для помещений больше 150 м²";
+    return '<div class="pkc-models"><h3 class="pkc-h">' + (exact ? "Модели от " + fmt(Math.round(need / 100) * 100) + " BTU" : "Модели для помещений больше 150 м²") + '</h3>' +
       '<p class="pkc-info">Полупромышленные кондиционеры. Подходящую модель и мощность подтверждаем после замера.</p>' +
       '<div class="pkc-cards">' + arr.slice(0, 3).map(function (x) { return card({ x: x, tag: tag, best: false }); }).join("") + "</div>" +
-      '<div class="pkc-more"><a class="pkc-btn pkc-btn--line" href="/katalog?g=poluprom&btu=' + (exact ? need : 60000) + '&stock=in">Все полупромышленные в каталоге →</a>' +
+      '<div class="pkc-more"><a class="pkc-btn pkc-btn--line" href="/katalog?g=poluprom' + (exact ? "&btu=" + need : "") + '&stock=in">Все полупромышленные в каталоге →</a>' +
       '<a class="pkc-btn pkc-btn--line" href="https://wa.me/77000369369">Нужна помощь? WhatsApp</a></div></div>';
   }
   function ensureP(cb) {
