@@ -229,7 +229,7 @@
     var exact = S.area <= 300, need = exact ? c.need : 0, arr = [];
     (DATAP || []).forEach(function (m) {
       var v = btuOf(m);
-      if (!m.acc && m.p > 0 && (exact ? v >= need : parseFloat(m.num) > 150)) { m.g = "poluprom"; var x = info(m, { need: 0 }); x.noMarg = true; arr.push(x); }
+      if (!m.acc && m.p > 0 && v > 0 && (exact ? v >= need : parseFloat(m.num) > 150)) { m.g = "poluprom"; var x = info(m, { need: 0 }); x.noMarg = true; arr.push(x); }
     });
     if (!arr.length) return "";
     arr.sort(function (a, b) { return (a.m.st === "В наличии" ? 0 : 1) - (b.m.st === "В наличии" ? 0 : 1) || a.btu - b.btu || a.m.p - b.m.p; });
