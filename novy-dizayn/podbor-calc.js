@@ -356,9 +356,20 @@
     if (c.mode !== "proj") p = pick(c);
     var steps = stepsHtml(p ? p.colors : []);
     if (!p || (!p.list.length && c.mode !== "std" && !p.poolN)) {
-      res = '<aside class="pkc-res"><div class="pkc-k">Для такой площади</div><div class="pkc-kw">Нужен расчёт по проекту</div>' + (c.mode === "proj" ? "" : "") +
+      if (c.mode === "proj") {
+        // «больше 150 м²»: чип ставит условные 999 м², цифру не показываем; точная площадь 151–300 м² даёт только ориентир
+        var exact = S.area <= 300;
+        res = '<aside class="pkc-res"><div class="pkc-k">Для такой площади</div><div class="pkc-kw">Подберём полупромышленную систему</div>' +
+          '<div class="pkc-cls">Для помещений больше 150 м² обычно ставят кассетные, канальные и колонные кондиционеры или систему из нескольких блоков. Модели есть в каталоге, состав и цену подтверждаем после замера.</div>' +
+          (exact ? '<div class="pkc-how"><b>Ориентир по нагрузке</b>' + howRows(c) + "</div>" : "") +
+          '<a class="pkc-btn" href="/katalog?g=poluprom">Полупромышленные в каталоге</a>' +
+          '<a class="pkc-btn pkc-btn--line" href="/proekt">Рассчитать под объект</a>' +
+          '<div class="pkc-note">Или напишите в <a href="https://wa.me/77000369369">WhatsApp</a>, позвоните +77 000 369 369. Для нескольких комнат подойдёт <a href="/multisplit">мультисплит</a> или <a href="/vrf-sistemy-almaty">VRF-система</a>.</div></aside>';
+      } else {
+      res = '<aside class="pkc-res"><div class="pkc-k">Для такой площади</div><div class="pkc-kw">Нужен расчёт по проекту</div>' +
         '<div class="pkc-how"><b>Как посчитано</b>' + howRows(c) + 'Для больших помещений и нескольких комнат подбираем <a href="/multisplit">мультисплит</a>, <a href="/katalog?g=poluprom">полупромышленные</a> и <a href="/vrf-sistemy-almaty">VRF-системы</a>: состав и цену считаем по проекту.</div>' +
         '<div class="pkc-note">Напишите в <a href="https://wa.me/77000369369">WhatsApp</a> или позвоните +77 000 369 369.</div></aside>';
+      }
     } else {
       var btus = p.btus.length ? p.btus : (c.cls ? [c.cls] : []);
       var cls = c.mode === "std" ? c.cls : p.cls;
