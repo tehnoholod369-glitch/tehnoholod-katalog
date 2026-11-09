@@ -1,6 +1,7 @@
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/support.js?v=2e38395c"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/status-caps.js?v=05ddb2a9"></script>
 
+
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,10 +14,10 @@
   a:hover { color: #0052D6; }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/photo-base.js?v=873e3496"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-track.js?v=20261018" async></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar-369.js?v=20261018"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-track.js?v=15c0976b" async></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar-369.js?v=c64cd745"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2bce89da"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=6ae050cd"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-share.js?v=7ae04008"></script>
 </helmet>
 
@@ -217,7 +218,7 @@
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px;">
         <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:700; color:#0033A0;">Чем отличается чёрная серия</div>
         <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:10px;">Чёрная серия — это не тот же аппарат в другом корпусе, а отдельный ряд мощностей: вместо 9 000 и 12 000 BTU в ней 10 000 и 13 000, площадь и потребление тоже другие. Белая и серебристая серии между собой совпадают по технике и различаются только ценой.</div>
-        <div style="overflow-x:auto; margin-top:12px;"><table style="width:100%; border-collapse:collapse; font-size:14px; color:#1A1A1A;"><tr><th style="text-align:left; padding:0 8px 8px 0;"></th><th style="text-align:left; padding:0 8px 8px; color:#0033A0;">Белый и серебристый</th><th style="text-align:left; padding:0 0 8px 8px; color:#0033A0;">Чёрный</th></tr><tr><td style="padding:10px 8px 10px 0; color:#64748B; border-top:1px solid #DCE5F0;">Младшая модель</td><td style="padding:10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">FR09 · 9 000 BTU · до 25 м²</td><td style="padding:10px 0 10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">FR10 · 10 000 BTU · до 28 м²</td></tr><tr><td style="padding:10px 8px 10px 0; color:#64748B; border-top:1px solid #DCE5F0;">Средняя модель</td><td style="padding:10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">FR12 · 12 000 BTU · до 35 м²</td><td style="padding:10px 0 10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">FR13 · 13 000 BTU · до 38 м²</td></tr><tr><td style="padding:10px 8px 10px 0; color:#64748B; border-top:1px solid #DCE5F0;">Старшая модель</td><td style="padding:10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">FR18 · 18 000 BTU · до 50 м²</td><td style="padding:10px 0 10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">FR18 · 18 000 BTU · до 50 м²</td></tr><tr><td style="padding:10px 8px 10px 0; color:#64748B; border-top:1px solid #DCE5F0;">SEER младшей модели</td><td style="padding:10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">9,00</td><td style="padding:10px 0 10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">7,60</td></tr><tr><td style="padding:10px 8px 10px 0; color:#64748B; border-top:1px solid #DCE5F0;">Охлаждение старшей FR18</td><td style="padding:10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">5,40 кВт</td><td style="padding:10px 0 10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">5,57 кВт</td></tr></table></div>
+        <div style="overflow-x:auto; margin-top:12px;"><sc-raw-table style="width:100%; border-collapse:collapse; font-size:14px; color:#1A1A1A;"><sc-raw-tr><sc-raw-th style="text-align:left; padding:0 8px 8px 0;"></sc-raw-th><sc-raw-th style="text-align:left; padding:0 8px 8px; color:#0033A0;">Белый и серебристый</sc-raw-th><sc-raw-th style="text-align:left; padding:0 0 8px 8px; color:#0033A0;">Чёрный</sc-raw-th></sc-raw-tr><sc-raw-tr><sc-raw-td style="padding:10px 8px 10px 0; color:#64748B; border-top:1px solid #DCE5F0;">Младшая модель</sc-raw-td><sc-raw-td style="padding:10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">FR09 · 9 000 BTU · до 25 м²</sc-raw-td><sc-raw-td style="padding:10px 0 10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">FR10 · 10 000 BTU · до 28 м²</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td style="padding:10px 8px 10px 0; color:#64748B; border-top:1px solid #DCE5F0;">Средняя модель</sc-raw-td><sc-raw-td style="padding:10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">FR12 · 12 000 BTU · до 35 м²</sc-raw-td><sc-raw-td style="padding:10px 0 10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">FR13 · 13 000 BTU · до 38 м²</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td style="padding:10px 8px 10px 0; color:#64748B; border-top:1px solid #DCE5F0;">Старшая модель</sc-raw-td><sc-raw-td style="padding:10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">FR18 · 18 000 BTU · до 50 м²</sc-raw-td><sc-raw-td style="padding:10px 0 10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">FR18 · 18 000 BTU · до 50 м²</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td style="padding:10px 8px 10px 0; color:#64748B; border-top:1px solid #DCE5F0;">SEER младшей модели</sc-raw-td><sc-raw-td style="padding:10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">9,00</sc-raw-td><sc-raw-td style="padding:10px 0 10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">7,60</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td style="padding:10px 8px 10px 0; color:#64748B; border-top:1px solid #DCE5F0;">Охлаждение старшей FR18</sc-raw-td><sc-raw-td style="padding:10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">5,40 кВт</sc-raw-td><sc-raw-td style="padding:10px 0 10px 8px; font-weight:600; border-top:1px solid #DCE5F0;">5,57 кВт</sc-raw-td></sc-raw-tr></sc-raw-table></div>
       </div>
       <div style="background:#0033A0; color:#fff; border-radius:16px; padding:26px;">
         <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:700;">Монтаж приточной системы</div>
@@ -273,6 +274,24 @@
         <div style="font-size:13px; color:#64748B; margin-top:12px;">{{ revNote }}</div>
       </div>
     </sc-if>
+
+    
+    <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px;">
+      <div style="font-family:Inter,sans-serif; font-size:22px; font-weight:800; letter-spacing:-0.015em; color:#0033A0;">Частые вопросы</div>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:16px;">
+        <sc-for list="{{ faq }}" as="f" hint-placeholder-count="5">
+          <div onClick="{{ f.toggle }}" style="border:1px solid #DCE5F0; border-radius:10px; padding:15px 17px; cursor:pointer;">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; overflow-wrap:anywhere; gap:12px; align-items:flex-start;">
+              <div style="font-size:15px; font-weight:600; line-height:1.4;">{{ f.q }}</div>
+              <div style="font-size:18px; color:#0066FF; font-weight:700; line-height:1;">{{ f.sign }}</div>
+            </div>
+            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size:14px; color:#64748B; line-height:1.65; margin-top:9px;">{{ f.a }}</div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
 
     <div style="background:#E9F4FF; border:1px solid #DCE5F0; border-radius:16px; padding:26px; margin-top:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:24px; align-items:center;">
       <div>
