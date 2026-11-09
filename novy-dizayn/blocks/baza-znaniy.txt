@@ -51,6 +51,15 @@
       <div>
         <h1 style="margin:0; font-size:clamp(21px,5.6vw,34px); font-weight:800; letter-spacing:-0.025em;">База знаний</h1>
         <div style="font-size:16px; color:#5A6675; margin-top:10px; line-height:1.6;">Разбираемся в климатической технике до покупки: как выбрать мощность, чем приток отличается от проветривания, что делать с фильтрами. Коротко и без продающих обещаний.</div>
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:16px;">
+          <span style="font-size:13px; font-weight:700; color:#8593A6; letter-spacing:0.04em;">ПОДОБРАТЬ ТЕХНИКУ:</span>
+          <a href="/podbor-kondicionera" style="border:1px solid #B9DBF7; background:#E6F2FD; color:#0A4EA7; border-radius:999px; padding:8px 14px; font-size:14px; font-weight:600;">Кондиционер</a>
+          <a href="/podbor-ventilyacii" style="border:1px solid #B9DBF7; background:#E6F2FD; color:#0A4EA7; border-radius:999px; padding:8px 14px; font-size:14px; font-weight:600;">Вентиляция</a>
+          <a href="/podbor-teplovoj-zavesy" style="border:1px solid #B9DBF7; background:#E6F2FD; color:#0A4EA7; border-radius:999px; padding:8px 14px; font-size:14px; font-weight:600;">Тепловая завеса</a>
+          <a href="/teplovye-pushki-almaty#podbor" style="border:1px solid #B9DBF7; background:#E6F2FD; color:#0A4EA7; border-radius:999px; padding:8px 14px; font-size:14px; font-weight:600;">Тепловая пушка</a>
+          <a href="/podbor-kamina" style="border:1px solid #B9DBF7; background:#E6F2FD; color:#0A4EA7; border-radius:999px; padding:8px 14px; font-size:14px; font-weight:600;">Камин</a>
+          <a href="/podbor" style="color:#0872D3; font-size:14px; font-weight:700; padding:8px 4px;">Все подборщики →</a>
+        </div>
       </div>
       <div style="display:flex; gap:8px; flex-wrap:wrap;">
         <sc-for list="{{ rubrics }}" as="r" hint-placeholder-count="4">
@@ -101,7 +110,7 @@
       </div>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
         <a href="https://wa.me/77000369369" style="background:#0872D3; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Задать вопрос</a>
-        <a href="/kontakty#podbor" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Подбор по площади</a>
+        <a href="/podbor" style="border:2px solid #0872D3; color:#0A4EA7; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Подобрать модель</a>
       </div>
     </div>
   </div>
