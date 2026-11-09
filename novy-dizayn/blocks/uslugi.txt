@@ -12,11 +12,11 @@
   a { color: #0066FF; text-decoration: none; }
   a:hover { color: #0052D6; }
 </style>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-track.js?v=20261018" async></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar-369.js?v=20261018"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-track.js?v=15c0976b" async></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/mobile-bar-369.js?v=c64cd745"></script>
 <script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-mobile.js?v=af67d782"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=2defb6c8"></script>
-<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/lead.js?v=20261018"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/th-plashka.js?v=6ae050cd"></script>
+<script src="https://cdn.jsdelivr.net/gh/tehnoholod369-glitch/tehnoholod-katalog@main/novy-dizayn/lead.js?v=5c4686e2"></script>
 </helmet>
 
 <div style="min-height:100vh; background:#F1F5F9;">
@@ -36,6 +36,8 @@
         <a href="https://wa.me/77000369369" style="background:#0066FF; color:#fff; border-radius:8px; padding:14px 22px; font-size:16px; font-weight:700;">Вызвать замерщика</a>
         <a href="https://wa.me/77000369369" style="border:2px solid rgba(255,255,255,0.55); color:#fff; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:700;">Записаться на ТО</a>
       </div>
+      
+      <div style="font-size:14px; color:#D5E9FA; margin-top:18px;">Частая сервисная работа: <a href="/chistka-i-zapravka-kondicionera-almaty" style="color:#fff; font-weight:700; text-decoration:underline;">чистка и заправка кондиционера в Алматы — от 35 000 ₸ →</a></div>
     </div>
 
     <div style="display:flex; gap:0 26px; border-bottom:2px solid #DCE5F0; margin-top:30px; flex-wrap:wrap; font-size:16px; font-weight:600;">
@@ -147,6 +149,7 @@
               </div>
             </sc-for>
           </div>
+          
           <a href="/chistka-i-zapravka-kondicionera-almaty" style="font-size:13px; font-weight:700; color:#0066FF; display:inline-block; margin-top:14px;">Чистка и заправка кондиционера в Алматы — от 35 000 ₸ →</a>
         </div>
       </sc-if>
