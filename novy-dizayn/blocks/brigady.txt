@@ -861,17 +861,21 @@ class Component extends DCLogic {
           badges: badges,
 
           vremya: !!c.vremya,
-          // Две графы, как просил владелец: годы и монтажи по отдельности —
-          // это разные факты, и складывать их в одну строку значит прятать,
-          // какой именно из них сработал.
           vremyaFacts: c.vremya
             ? [c.vremya.let_ >= 1
                  ? { k: "НА РЫНКЕ", v: c.vremya.let_ + " " + this.letWord(c.vremya.let_) } : null,
-               c.vremya.montazhey >= 1
-                 ? { k: "МОНТАЖЕЙ С КАРТОЙ 369", v: c.vremya.montazhey + " шт" } : null
+               c.vremya.poKartam >= 1
+                 ? { k: "МОНТАЖЕЙ С КАРТОЙ 369", v: c.vremya.poKartam + " шт" } : null,
+               (c.vremya.montazhey - c.vremya.poKartam) >= 1
+                 ? { k: "МОНТАЖЕЙ ДО КАРТЫ 369",
+                     v: (c.vremya.montazhey - c.vremya.poKartam) + " шт" } : null
               ].filter(Boolean)
             : [],
-          vremyaNote: "Оценка ниже — от клиентов, её мы не ставим.",
+          vremyaNote: ((c.vremya && (c.vremya.montazhey - c.vremya.poKartam) >= 1)
+            ? "Монтажи до карты 369 — наш зачёт за работу бригады до появления "
+              + "карты: число ставим мы сами, документа по каждому монтажу "
+              + "у клиента нет. С картой 369 — только закрытые документом. " : "")
+            + "Оценка ниже — от клиентов, её мы не ставим.",
 
           hasSkills: !!(c.skills && c.skills.length),
           skills: (c.skills || []).map(s => ({ title: s.title, items: (s.items || []).join(" · ") })),
