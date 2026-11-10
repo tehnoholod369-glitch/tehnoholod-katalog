@@ -28,11 +28,11 @@
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:24px; margin-top:12px; align-items:stretch;">
       <div>
         <h1 style="margin:0; font:800 clamp(26px,5vw,36px)/1.15 Inter,sans-serif; letter-spacing:-0.02em; color:#0033A0;">Кто приедет на монтаж</h1>
-        <div style="font-size:16px; color:#64748B; margin-top:10px; line-height:1.6;">В АРТЕЛИ каждая допущенная бригада имеет номер сертификата. Для монтажа нового оборудования действует единый обязательный стандарт — 12 месяцев гарантии на монтажные работы. Каждый монтаж фиксируется в «Сервис карте»: кто выполнял работу и когда. Здесь тот же список, что и в нашем реестре, с оценками клиентов.</div>
+        <div style="font-size:16px; color:#64748B; margin-top:10px; line-height:1.6;">В АРТЕЛИ каждая допущенная бригада имеет номер сертификата. Для монтажа нового оборудования действует единый обязательный стандарт — 12 месяцев гарантии на монтажные работы. Каждый монтаж фиксируется в «Сервис-карте 369»: кто выполнял работу и когда. Здесь тот же список, что и в нашем реестре, с оценками клиентов.</div>
       </div>
       <div style="background:#fff; border:1px solid #DCE5F0; border-radius:16px; padding:22px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#64748B;">ПОЧЕМУ НОМЕР, А НЕ ИМЯ И ТЕЛЕФОН</div>
-        <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">До заказа бригада на витрине — это номер сертификата, специализация и оценки: так выбирают по работе, а не по знакомому имени. После монтажа в «Сервис карте» остаются конкретный МАСТЕР или бригада. Гарантия на монтаж нового оборудования — 12 месяцев, а обращение по номеру карты направляется именно тому исполнителю, который выполнял работу.</div>
+        <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">До заказа бригада на витрине — это номер сертификата, специализация и оценки: так выбирают по работе, а не по знакомому имени. После монтажа в «Сервис-карте 369» остаются конкретный МАСТЕР или бригада. Гарантия на монтаж нового оборудования — 12 месяцев, а обращение по номеру карты направляется именно тому исполнителю, который выполнял работу.</div>
       </div>
     </div>
 
@@ -46,7 +46,7 @@
         </div>
         <div style="background:#F1F5F9; border-radius:12px; padding:18px 20px;">
           <div style="font-size:15px; font-weight:700;">В рейтинг идут только подтверждённые оценки</div>
-          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:6px;">Оценка засчитывается бригаде, когда по работе заполнена «Сервис карта» — монтаж это, сервис или ремонт: работа подтверждена документом, а не словами. Отзывы без карты публикуются с пометкой, но в цифру рейтинга не входят.</div>
+          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:6px;">Оценка засчитывается бригаде, когда по работе заполнена «Сервис-карта 369» — монтаж это, сервис или ремонт: работа подтверждена документом, а не словами. Отзывы без карты публикуются с пометкой, но в цифру рейтинга не входят.</div>
         </div>
         <div style="background:#F1F5F9; border:1px solid #DCE5F0; border-radius:12px; padding:18px 20px;">
           <div style="font-size:15px; font-weight:700; color:#0033A0;">Цифру показываем после {{ pubMinLabel }}</div>
@@ -54,9 +54,9 @@
         </div>
       </div>
       <div style="background:#F1F5F9; border-radius:12px; padding:18px 20px; margin-top:16px;">
-        <div style="font-size:15px; font-weight:700;">Сервис карта: с каких пор и зачем</div>
-        <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:6px;">Мы запустили «Сервис карту» в сентябре 2026 года. Это именная электронная карта покупателя: по её номеру мы находим продажу, модель, дату монтажа и бригаду. Завели мы её затем, чтобы по каждой работе оставался документ, а не слова: клиент знает, к кому обращаться по гарантии на монтаж, а оценка бригаде засчитывается только по работе с картой.</div>
-        <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">Поэтому монтажи бригады показаны двумя числами. «Монтажей с Сервис картой» — работы после запуска: за каждой стоит карта, её номер есть у клиента. «Монтажей через нас до Сервис карты» — работы, которые прошли через нас раньше, когда карт ещё не было; в рейтинг они не входят.</div>
+        <div style="font-size:15px; font-weight:700;">Сервис-карта 369: с каких пор и зачем</div>
+        <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:6px;">Мы запустили «Сервис-карту 369» в сентябре 2026 года. Это именная электронная карта покупателя: по её номеру мы находим продажу, модель, дату монтажа и бригаду. Завели мы её затем, чтобы по каждой работе оставался документ, а не слова: клиент знает, к кому обращаться по гарантии на монтаж, а оценка бригаде засчитывается только по работе с картой.</div>
+        <div style="font-size:14px; color:#1A1A1A; line-height:1.6; margin-top:8px;">Поэтому монтажи бригады показаны двумя числами. «Монтажей с Сервис-картой 369» — работы после запуска: за каждой стоит карта, её номер есть у клиента. «Монтажей через нас до Сервис-карты 369» — работы, которые прошли через нас раньше, когда карт ещё не было; в рейтинг они не входят.</div>
       </div>
     </div>
 
@@ -164,7 +164,7 @@
                   <div style="background:{{ c.levelBg }}; border:1px solid {{ c.levelBd }}; border-radius:6px; padding:6px 10px; font-size:12px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:{{ c.levelFg }};">{{ c.levelName }}</div>
                 </sc-if>
               </div>
-              <div style="font-size:12px; color:#64748B; margin-top:5px;">сертификация ИП «ТехноХолод», реестр «Сервис карта»<sc-if value="{{ c.canVerify }}" hint-placeholder-val="{{ true }}"> · <a href="{{ c.verifyHref }}" style="color:#0066FF; font-weight:600;">проверить сертификат</a></sc-if></div>
+              <div style="font-size:12px; color:#64748B; margin-top:5px;">сертификация ИП «ТехноХолод», реестр «Сервис-карта 369»<sc-if value="{{ c.canVerify }}" hint-placeholder-val="{{ true }}"> · <a href="{{ c.verifyHref }}" style="color:#0066FF; font-weight:600;">проверить сертификат</a></sc-if></div>
             </div>
             <div style="text-align:right; flex:none; width:176px;">
               <sc-if value="{{ c.hasRating }}" hint-placeholder-val="{{ true }}">
@@ -305,7 +305,7 @@
                     <div style="display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;">
                       <div style="font-size:14px; font-weight:700;">{{ r.name }}</div>
                       <sc-if value="{{ r.verified }}" hint-placeholder-val="{{ false }}">
-                        <span style="font-size:12px; font-weight:700; color:#178841; background:#F1F5F9; border-radius:4px; padding:2px 7px;">✓ монтаж по Сервис карте</span>
+                        <span style="font-size:12px; font-weight:700; color:#178841; background:#F1F5F9; border-radius:4px; padding:2px 7px;">✓ монтаж по Сервис-карте 369</span>
                       </sc-if>
                       <sc-if value="{{ r.plain }}" hint-placeholder-val="{{ false }}">
                         <span style="font-size:12px; color:#64748B;">без подтверждения покупки</span>
@@ -325,14 +325,14 @@
                 </sc-if>
                 <sc-if value="{{ c.formOpen }}" hint-placeholder-val="{{ true }}">
                   <div style="font-size:15px; font-weight:700;">Принимали работу этой бригады? Оцените</div>
-                  <div style="font-size:13px; color:#1A1A1A; line-height:1.55; margin-top:5px;">Телефон не спрашиваем и не храним. Укажите номер «Сервис карты» — тогда оценка войдёт в рейтинг как подтверждённая.</div>
+                  <div style="font-size:13px; color:#1A1A1A; line-height:1.55; margin-top:5px;">Телефон не спрашиваем и не храним. Укажите номер «Сервис-карты 369» — тогда оценка войдёт в рейтинг как подтверждённая.</div>
                   <div style="display:flex; gap:7px; flex-wrap:wrap; margin-top:12px;">
                     <sc-for list="{{ c.scoreButtons }}" as="s" hint-placeholder-count="5">
                       <div onClick="{{ s.pick }}" style="border:1px solid {{ s.border }}; background:{{ s.bg }}; color:{{ s.fg }}; border-radius:8px; padding:8px 14px; font-size:14px; font-weight:700; cursor:pointer;">{{ s.label }}</div>
                     </sc-for>
                   </div>
                   <input type="text" placeholder="Как вас зовут" value="{{ c.formName }}" onInput="{{ c.onName }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#1A1A1A; outline:none; margin-top:10px; background:#fff;" />
-                  <input type="text" placeholder="Номер Сервис карты (если есть) — 369-…" value="{{ c.formCard }}" onInput="{{ c.onCard }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#1A1A1A; outline:none; margin-top:8px; background:#fff;" />
+                  <input type="text" placeholder="Номер Сервис-карты 369 (если есть) — 369-…" value="{{ c.formCard }}" onInput="{{ c.onCard }}" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#1A1A1A; outline:none; margin-top:8px; background:#fff;" />
                   <textarea placeholder="Что делали, как приехали, что понравилось и что нет" value="{{ c.formText }}" onInput="{{ c.onText }}" rows="3" style="width:100%; box-sizing:border-box; border:1px solid #DCE5F0; border-radius:8px; padding:11px 13px; font-family:inherit; font-size:14px; color:#1A1A1A; outline:none; margin-top:8px; resize:vertical; background:#fff;"></textarea>
                   
                   <div style="font-size:13px; font-weight:700; margin-top:12px;">Оцените и купленную технику — по желанию</div>
@@ -373,7 +373,7 @@
         </div>
         <div style="background:#F1F5F9; border-radius:12px; padding:18px 20px;">
           <div style="font-size:15px; font-weight:700;">Сопровождение — мы</div>
-          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:6px;">«Сервис карта» фиксирует, что куплено, когда установлено и кем. По её номеру принимаем обращение и направляем его нужной стороне: заводской случай — в сервисный центр бренда, монтажный — бригаде, которая ставила. Оформляем и ведём обращение; оборудование в сервисный центр не перевозим.</div>
+          <div style="font-size:14px; color:#64748B; line-height:1.6; margin-top:6px;">«Сервис-карта 369» фиксирует, что куплено, когда установлено и кем. По её номеру принимаем обращение и направляем его нужной стороне: заводской случай — в сервисный центр бренда, монтажный — бригаде, которая ставила. Оформляем и ведём обращение; оборудование в сервисный центр не перевозим.</div>
         </div>
       </div>
       <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
@@ -382,7 +382,7 @@
       </div>
     </div>
 
-    <div style="font-size:13px; color:#64748B; line-height:1.6; margin-top:18px;">Оценки бригад собраны нами и проходят модерацию — это не независимая площадка, и мы её так не называем. В рейтинг входят только оценки, подтверждённые «Сервис картой». Оценку компании смотрите в Google и 2ГИС, ссылки на странице «Отзывы».</div>
+    <div style="font-size:13px; color:#64748B; line-height:1.6; margin-top:18px;">Оценки бригад собраны нами и проходят модерацию — это не независимая площадка, и мы её так не называем. В рейтинг входят только оценки, подтверждённые «Сервис-картой 369». Оценку компании смотрите в Google и 2ГИС, ссылки на странице «Отзывы».</div>
   </div>
 </div>
 
@@ -870,9 +870,9 @@ class Component extends DCLogic {
             ? [c.vremya.let_ >= 1
                  ? { k: "НА РЫНКЕ", v: c.vremya.let_ + " " + this.letWord(c.vremya.let_) } : null,
                c.vremya.poKartam >= 1
-                 ? { k: "МОНТАЖЕЙ С СЕРВИС КАРТОЙ", v: c.vremya.poKartam + " шт" } : null,
+                 ? { k: "МОНТАЖЕЙ С СЕРВИС-КАРТОЙ 369", v: c.vremya.poKartam + " шт" } : null,
                (c.vremya.montazhey - c.vremya.poKartam) >= 1
-                 ? { k: "МОНТАЖЕЙ ЧЕРЕЗ НАС ДО СЕРВИС КАРТЫ",
+                 ? { k: "МОНТАЖЕЙ ЧЕРЕЗ НАС ДО СЕРВИС-КАРТЫ 369",
                      v: (c.vremya.montazhey - c.vremya.poKartam) + " шт" } : null
               ].filter(Boolean)
             : [],
@@ -881,11 +881,11 @@ class Component extends DCLogic {
             var tail = "Оценка ниже — от клиентов, её мы не ставим.";
             if (doKarty < 1) { return tail; }
             // Подпись говорит ровно то, что подтверждено: эти монтажи прошли
-            // через нас до запуска «Сервис карты» (сентябрь 2026). Расчёт «темп × стаж»
+            // через нас до запуска «Сервис-карты 369» (сентябрь 2026). Расчёт «темп × стаж»
             // не печатаем: стаж на рынке и работа через нас — не одно и то же.
-            return "Монтажи через нас до «Сервис карты» — работы, которые прошли до "
+            return "Монтажи через нас до «Сервис-карты 369» — работы, которые прошли до "
               + "её запуска в сентябре 2026 года, поэтому карт по ним нет. "
-              + "С «Сервис картой» — только закрытые документом. " + tail;
+              + "С «Сервис-картой 369» — только закрытые документом. " + tail;
           }).call(this, c.vremya),
 
           hasSkills: !!(c.skills && c.skills.length),
