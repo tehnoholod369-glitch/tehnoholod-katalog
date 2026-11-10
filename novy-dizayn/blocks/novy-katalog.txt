@@ -2327,7 +2327,7 @@ class Component extends DCLogic {
       const cartIt = salePrice ? Object.assign({}, it, { p: pNow, pt: ptNow, promoWas: it.p, promoTill: sale.till || "" }) : it;
       const monthlyBase = pNow ? (salePrice ? pNow * 1.175 : (this.num(it.r) || pNow * 1.175)) : 0;
       return {
-        href: "/tovar?g=" + s.group + "&sl=" + encodeURIComponent(it.sl || "") + "&i=" + o.i,
+        href: it.tp ? ("/tproduct/" + it.tp) /* 10.11.2026: адрес карточки магазина приходит в данных (поле tp); нет пары — прежняя ссылка на витрину */ : ("/tovar?g=" + s.group + "&sl=" + encodeURIComponent(it.sl || "") + "&i=" + o.i),
         // корзина общая: состояние кнопки читаем из неё, а не держим второй список
         cartLabel: !pNow ? "Уточнить цену" : (window.CART && window.CART.has(it.sl) ? "В корзине ✓" : "В корзину"),
         cartBg: !pNow ? "#fff" : (window.CART && window.CART.has(it.sl) ? "#fff" : "#0066FF"),
