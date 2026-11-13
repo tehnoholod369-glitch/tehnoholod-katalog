@@ -2085,6 +2085,17 @@ class Component extends DCLogic {
       fg: s.group === "multisplit" ? "#0066FF" : "#0033A0",
       countFg: "#606F85", order: 1
     }] : [];
+    if (curDir === "climate") {
+      const vg = groups.find(g => g.slug === "ventilyaciya");
+      const bz = vg && (vg.subs || []).find(x => x.name === "Бризеры");
+      if (bz && bz.n > 0) {
+        extraTab.push({
+          title: "Бризеры", count: String(bz.n),
+          href: "/katalog?g=ventilyaciya&sub=" + encodeURIComponent("Бризеры"),
+          border: "#DCE5F0", bg: "#fff", fg: "#0033A0", countFg: "#606F85", order: 2
+        });
+      }
+    }
     [
       { title: "Уценённый товар", n: s.ucenkaN, href: "/ucenka",
         border: "#F3D9B0", bg: "#FFF6E9", fg: "#B25200", countFg: "#B25200", order: 900 },
