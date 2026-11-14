@@ -116,8 +116,22 @@
               <div style="margin-top:16px;">
                 <div style="font-family:'Inter',sans-serif; font-size:16px; font-weight:700; color:#0033A0;">Видеообзор</div>
                 <sc-if value="{{ hasEmbed }}" hint-placeholder-val="{{ false }}">
-                  <div style="margin-top:10px; border-radius:12px; overflow:hidden; background:#E9F4FF; aspect-ratio:16/9;">
-                    <iframe src="{{ videoEmbed }}" title="Видеообзор" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="display:block; width:100%; height:100%; border:0;"></iframe>
+                  
+                  <div style="margin-top:10px; border-radius:12px; overflow:hidden; background:#E9F4FF; aspect-ratio:16/9; position:relative;">
+                    <sc-if value="{{ videoPlaying }}" hint-placeholder-val="{{ false }}">
+                      <iframe src="{{ videoPlayUrl }}" title="Видеообзор" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="display:block; width:100%; height:100%; border:0;"></iframe>
+                    </sc-if>
+                    <sc-if value="{{ videoIdle }}" hint-placeholder-val="{{ true }}">
+                      <button type="button" onClick="{{ playVideo }}" aria-label="Смотреть видеообзор" style="position:absolute; top:0; left:0; width:100%; height:100%; padding:0; margin:0; border:0; cursor:pointer; display:flex; align-items:center; justify-content:center; background:#0B1F3A; font-family:inherit;">
+                        <sc-if value="{{ hasVideoPoster }}" hint-placeholder-val="{{ false }}">
+                          <img src="{{ videoPoster }}" alt="" loading="lazy" decoding="async" fetchpriority="low" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; display:block;" />
+                        </sc-if>
+                        <span style="position:relative; display:flex; align-items:center; justify-content:center; width:68px; height:68px; border-radius:50%; background:rgba(0,102,255,0.92); box-shadow:0 4px 18px rgba(0,0,0,0.35);">
+                          <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff" style="display:block; margin-left:3px;"><path d="M8 5.5v13l11-6.5z" /></svg>
+                        </span>
+                        <span style="position:absolute; left:12px; bottom:10px; color:#fff; font-size:12px; font-weight:600; background:rgba(7,28,59,0.72); border-radius:6px; padding:3px 8px;">Смотреть обзор · {{ videoSource }}</span>
+                      </button>
+                    </sc-if>
                   </div>
                 </sc-if>
                 <sc-if value="{{ noEmbed }}" hint-placeholder-val="{{ false }}">
@@ -683,7 +697,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
 class Component extends DCLogic {
-  state = { group: "bytovye", idx: 0, items: null, details: null, index: null, loading: true, photo: 0, tab: 0, zoom: false,
+  state = { group: "bytovye", idx: 0, items: null, details: null, index: null, loading: true, photo: 0, tab: 0, zoom: false, videoPlay: false,
             crewCity: "", crewRayon: "", crewData: null, crewFailed: false, crewSort: "rating", crewDocs: false,
             vypuski: null, sale: {}, postSaleProduct: null, postSaleSku: "", postSaleProductFailed: false };
   photoRef = React.createRef();
@@ -885,7 +899,7 @@ class Component extends DCLogic {
   componentWillUnmount() { window.removeEventListener("th-cart", this.__onCart); }
 
   load(group, idx, sl) {
-    this.setState({ loading: true, group, idx, photo: 0 });
+    this.setState({ loading: true, group, idx, photo: 0, videoPlay: false });
     Promise.all([
       fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/" + group + ".json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []),
       fetch("https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/main/novy-dizayn/data/details/" + group + ".json", {cache:"no-cache"}).then(r => r.ok ? r.json() : []),
@@ -916,7 +930,7 @@ class Component extends DCLogic {
     const items = this.state.items || [];
     if (!items.length) return;
     const next = (idx + items.length) % items.length;
-    this.setState({ idx: next, photo: 0, tab: 0 });
+    this.setState({ idx: next, photo: 0, tab: 0, videoPlay: false });
     this.loadPostSaleProduct(items[next] && items[next].s);
     if (window.TH_LEAD && items[next]) window.TH_LEAD.event({ channel:"карточка товара", ev:"view_item", val:items[next].n || "", brand:items[next].b, type:this.state.group, model:items[next].s });
     const url = location.pathname + "?g=" + this.state.group + "&i=" + next;
@@ -937,11 +951,16 @@ class Component extends DCLogic {
     if (!this.photoReady()) return;
     const item = (this.state.items || [])[this.state.idx];
     const det = (this.state.details || [])[this.state.idx];
+    const mainEl = this.photoRef.current;
     if (item) {
       const gal = (det && det.gl && det.gl.length ? det.gl : (item.i ? [item.i] : []));
       const main = this.ph(gal[Math.min(this.state.photo, gal.length - 1)]);
-      const el = this.photoRef.current;
-      if (el && main && el.getAttribute("src") !== main) el.setAttribute("src", main);
+      // Главный кадр — первым в очереди (14.11.2026, скорость карточки): остальные кадры ждут
+      // его загрузки и не отнимают у него канал. Атрибут ставим ДО src, иначе он не успевает.
+      if (mainEl && main && mainEl.getAttribute("src") !== main) {
+        mainEl.setAttribute("fetchpriority", "high");
+        mainEl.setAttribute("src", main);
+      }
     }
     const fallback = el => {
       const parent = el.parentNode;
@@ -965,15 +984,40 @@ class Component extends DCLogic {
         box.appendChild(note);
       };
     };
-    if (item) {
-      const el = this.photoRef.current;
-      if (el) fallback(el);
-    }
+    if (item && mainEl) fallback(mainEl);
+    // Когда можно грузить второстепенные кадры: главный уже загружен (или не загрузится вовсе),
+    // но не позже чем через 2,5 с — иначе при медленной сети миниатюры не появились бы совсем.
+    const послеГлавного = fn => {
+      if (!mainEl || !mainEl.getAttribute("src") || (mainEl.complete && mainEl.naturalWidth > 0)) { fn(); return; }
+      let done = false;
+      const go = () => { if (!done) { done = true; fn(); } };
+      mainEl.addEventListener("load", go, { once: true });
+      mainEl.addEventListener("error", go, { once: true });
+      setTimeout(go, 2500);
+    };
     [this.galRef.current, this.relRef.current, this.zoomRef.current, this.analogRef.current, this.accRef.current].forEach(box => {
       if (!box) return;
+      const миниатюры = box === this.galRef.current;
+      // «похожие», аналоги и аксессуары лежат ниже первого экрана — ленивые; миниатюры уже ждут
+      // главный кадр; лайтбокс открывают нарочно — там грузим сразу
+      const ленивые = box !== this.zoomRef.current && !миниатюры;
       box.querySelectorAll("img[data-url]").forEach(el => {
         const u = el.getAttribute("data-url");
-        if (u && u.indexOf("{{") < 0 && el.getAttribute("src") !== u) { fallback(el); el.setAttribute("src", u); }
+        if (!u || u.indexOf("{{") >= 0 || el.getAttribute("src") === u) return;
+        const поставить = () => {
+          if (el.getAttribute("data-url") !== u || el.getAttribute("src") === u) return;
+          fallback(el);
+          el.setAttribute("src", u);
+        };
+        if (ленивые) { el.setAttribute("loading", "lazy"); el.setAttribute("decoding", "async"); }
+        if (миниатюры) {
+          if (el.__thQ === u) return;
+          el.__thQ = u;
+          el.setAttribute("fetchpriority", "low");
+          послеГлавного(поставить);
+        } else {
+          поставить();
+        }
       });
     });
   }
@@ -1493,6 +1537,15 @@ class Component extends DCLogic {
     const _видео = _ролики[0] || "";
     const _встройка = _ролики.map(_встроить).find(x => x) || "";
     const _видео2 = _встройка ? _ролики.find(u => _встроить(u) === _встройка) : _видео;
+    // обложка и адрес запуска (14.11.2026): у YouTube обложка берётся у YouTube, у остальных
+    // площадок — спокойная заглушка без лишнего запроса; автозапуск — там, где площадка его знает
+    const _ютуб = (_встройка.match(/youtube\.com\/embed\/([\w-]{6,})/) || [])[1] || "";
+    const _постер = _ютуб ? "https://i.ytimg.com/vi/" + _ютуб + "/hqdefault.jpg" : "";
+    const _площадка = _ютуб ? "YouTube" : /rutube\.ru/.test(_встройка) ? "Rutube" : /vk(video)?\.(ru|com)/.test(_встройка) ? "VK Видео" : "видео";
+    const _запуск = !_встройка ? "" : _ютуб ? _встройка + "&autoplay=1&playsinline=1"
+      : /vk(video)?\.(ru|com)/.test(_встройка) ? _встройка + (_встройка.indexOf("?") < 0 ? "?" : "&") + "autoplay=1"
+      : /rutube\.ru/.test(_встройка) ? _встройка + (_встройка.indexOf("?") < 0 ? "?" : "&") + "autoplay=true"
+      : _встройка;
 
     // вкладки собираем ключами: вкладка монтажа есть не у всех, а на номера завязаны
     // «Документы» и «Гарантия» — сдвиг ломал бы их молча.
@@ -1902,6 +1955,13 @@ class Component extends DCLogic {
       noEmbed: !!_видео && !_встройка,
       videoEmbed: _встройка,
       videoHref: _видео2,
+      videoPlaying: !!s.videoPlay,
+      videoIdle: !s.videoPlay,
+      videoPlayUrl: _запуск,
+      videoPoster: _постер,
+      hasVideoPoster: !!_постер,
+      videoSource: _площадка,
+      playVideo: () => this.setState({ videoPlay: true }),
       manualHref: det.mn || "",
       hasManual: !!det.mn,
       // Подтверждённые post-sale отзывы именно этого SKU.
