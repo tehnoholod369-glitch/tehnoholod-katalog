@@ -198,12 +198,19 @@
     fetch(PROGRESS + "?x=" + Math.floor(Date.now() / 300000)).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) {
       Array.prototype.forEach.call(boxes, function (b) {
         var gg = d._g && d._g[b.getAttribute("data-gbp")];
+        if (!gg) {
+          b.innerHTML = '<span class="vd-pgt">Статус набора не подтверждён. Уточните доступность у менеджера.</span>';
+          b.hidden = false;
+          var unknownArt = b.parentNode, unknownLink = unknownArt && unknownArt.querySelector ? unknownArt.querySelector("a[data-gb]") : null;
+          if (unknownLink) { unknownLink.style.display = "none"; unknownLink.setAttribute("aria-disabled", "true"); }
+          return;
+        }
         var dayNow = gg ? (gg.day || 1) + Math.floor((Date.now() / 1000 - (gg.t0 || 0)) / 86400) : 0;
         if (gg && (gg.closed || dayNow > 9)) {  // закрыта досрочно (лимит товара) или срок вышел: кнопку прячем
           b.innerHTML = '<span class="vd-pgt">Набор закрыт: ' + (gg.closed ? "лимит товара набран" : "группа завершена") + '. Цена зафиксирована</span>';
           b.hidden = false;
           var art = b.parentNode, jb = art && art.querySelector ? art.querySelector("a[data-gb]") : null;
-          if (jb) { jb.style.display = "none"; }
+          if (jb) { jb.style.display = "none"; jb.setAttribute("aria-disabled", "true"); }
           return;
         }
         var n = parseInt(d[b.getAttribute("data-gbp")], 10);
@@ -215,7 +222,13 @@
         b.innerHTML = '<span class="vd-pgt">' + msg + '</span><span class="vd-pgb"><i style="width:' + Math.min(100, Math.round(n / 9 * 100)) + '%"></i></span>';
         b.hidden = false;
       });
-    }).catch(function () {});
+    }).catch(function () {
+      Array.prototype.forEach.call(boxes, function(b) {
+        b.textContent = "Статус набора временно недоступен. Уточните у менеджера."; b.hidden = false;
+        var link = b.parentNode && b.parentNode.querySelector ? b.parentNode.querySelector("a[data-gb]") : null;
+        if (link) { link.style.display = "none"; link.setAttribute("aria-disabled", "true"); }
+      });
+    });
     return true;
   }
   var tries2 = 0, iv2 = setInterval(function () { if (initProgress() || ++tries2 > 60) { clearInterval(iv2); } }, 250);
@@ -229,10 +242,16 @@
     if (document.documentElement.__gbf) { return true; }
     document.documentElement.__gbf = 1;
     var code = f.getAttribute("data-gbf");
+    function unavailableFeatured(message) {
+      var dayEl = f.querySelector('[data-fg="day"]'), leftEl = f.querySelector('[data-fg="left"]'), join = f.querySelector('[data-fg="join"]');
+      if (dayEl) { dayEl.innerHTML = "<b>" + message + "</b>"; dayEl.hidden = false; }
+      if (leftEl) { leftEl.textContent = "Уточните возможность участия у менеджера."; leftEl.hidden = false; }
+      if (join) { join.hidden = true; }
+    }
     fetch(PROGRESS + "?x=" + Math.floor(Date.now() / 300000)).then(function (r) { return r.ok ? r.json() : {}; }).then(function (d) {
       var g = d && d._g && d._g[code];
-      if (!g) { return; }
       function q(n) { return f.querySelector('[data-fg="' + n + '"]'); }
+      if (!g) { unavailableFeatured("Статус набора не подтверждён"); return; }
       var units = parseInt(d[code], 10) || 0;
       var day = (g.day || 1) + Math.floor((Date.now() / 1000 - (g.t0 || 0)) / 86400);
       // дата окончания набора: последний (9-й) день группы, показываем календарной датой, без счёта дней
@@ -246,7 +265,7 @@
       var tierUnits = units >= 9 ? 9 : units >= 6 ? 6 : 0;
       var tier = Math.max(tierDay, tierUnits);
       var ge = document.querySelectorAll("[data-gbend]");
-      for (var gi = 0; gi < ge.length; gi++) { ge[gi].textContent = "до " + endTxt; }
+      for (var gi = 0; gi < ge.length; gi++) { ge[gi].textContent = closed ? "завершён" : "до " + endTxt; }
       var dayEl = q("day"), bar = q("bar"), leftEl = q("left"), un = q("units"), join = q("join");
       if (closed) {
         dayEl.innerHTML = "<b>" + (early ? "Набор закрыт досрочно" : "Набор закрыт") + "</b>";
@@ -267,7 +286,7 @@
       if (!closed || units > 0) { un.hidden = false; }
       var rungs = f.querySelectorAll("[data-t]");
       for (var j = 0; j < rungs.length; j++) { rungs[j].className = parseInt(rungs[j].getAttribute("data-t"), 10) === tier ? "now" : ""; }
-    }).catch(function () {});
+    }).catch(function () { unavailableFeatured("Статус набора временно недоступен"); });
     return true;
   }
   var tries3 = 0, iv3 = setInterval(function () { if (initFeatured() || ++tries3 > 60) { clearInterval(iv3); } }, 250);
@@ -284,6 +303,7 @@
   document.addEventListener("click", function (e) {
     var a = e.target && e.target.closest ? e.target.closest("a[data-gb]") : null;
     if (!a || e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) { return; }
+    if (a.getAttribute("aria-disabled") === "true" || a.style.display === "none") { e.preventDefault(); return; }
     e.preventDefault();
     openForm(a.getAttribute("data-gb"), a.getAttribute("data-gbn") || "", a.getAttribute("href"));
   });
