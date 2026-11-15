@@ -1,0 +1,26 @@
+{
+ "n": 23,
+ "link200": 23,
+ "img_ok": 23,
+ "formula_ok": 23,
+ "verdicts": {
+  "SKU_NAMED_IN_RESPONSE": 20,
+  "UNVERIFIED_GENERIC_SHELL_JS_RENDERED_200_DOES_NOT_PROVE_SKU": 3
+ },
+ "shared_images": {
+  "4ea80c511baf": [
+   "p01",
+   "p02"
+  ],
+  "83a490a00e65": [
+   "p03",
+   "p04",
+   "p05"
+  ],
+  "faa1405c3ed0": [
+   "p06",
+   "p07",
+   "p08"
+  ]
+ }
+}
