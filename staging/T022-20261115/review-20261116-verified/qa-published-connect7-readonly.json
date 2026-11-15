@@ -1,0 +1,83 @@
+{
+  "url": "https://tehnoholod369.kz/vmeste-deshevle-t022-test-20261115",
+  "at": "2026-11-15T22:20:51.893Z",
+  "checks": {
+    "320": {
+      "title": "ТЕСТ — Вместе дешевле · T-022 · 15.11.2026",
+      "width": 320,
+      "overflow": false,
+      "ready": "1",
+      "cards": 23,
+      "pimLabels": 23,
+      "kaspiReviews": 4,
+      "meterHidden": true,
+      "noindex": true,
+      "testOnly": true,
+      "allowRealSubmit": true,
+      "groupApiEmpty": true,
+      "marker": true
+    },
+    "390": {
+      "title": "ТЕСТ — Вместе дешевле · T-022 · 15.11.2026",
+      "width": 390,
+      "overflow": false,
+      "ready": "1",
+      "cards": 23,
+      "pimLabels": 23,
+      "kaspiReviews": 4,
+      "meterHidden": true,
+      "noindex": true,
+      "testOnly": true,
+      "allowRealSubmit": true,
+      "groupApiEmpty": true,
+      "marker": true
+    },
+    "768": {
+      "title": "ТЕСТ — Вместе дешевле · T-022 · 15.11.2026",
+      "width": 768,
+      "overflow": false,
+      "ready": "1",
+      "cards": 23,
+      "pimLabels": 23,
+      "kaspiReviews": 4,
+      "meterHidden": true,
+      "noindex": true,
+      "testOnly": true,
+      "allowRealSubmit": true,
+      "groupApiEmpty": true,
+      "marker": true
+    },
+    "1024": {
+      "title": "ТЕСТ — Вместе дешевле · T-022 · 15.11.2026",
+      "width": 1024,
+      "overflow": false,
+      "ready": "1",
+      "cards": 23,
+      "pimLabels": 23,
+      "kaspiReviews": 4,
+      "meterHidden": true,
+      "noindex": true,
+      "testOnly": true,
+      "allowRealSubmit": true,
+      "groupApiEmpty": true,
+      "marker": true
+    },
+    "1440": {
+      "title": "ТЕСТ — Вместе дешевле · T-022 · 15.11.2026",
+      "width": 1440,
+      "overflow": false,
+      "ready": "1",
+      "cards": 23,
+      "pimLabels": 23,
+      "kaspiReviews": 4,
+      "meterHidden": true,
+      "noindex": true,
+      "testOnly": true,
+      "allowRealSubmit": true,
+      "groupApiEmpty": true,
+      "marker": true
+    }
+  },
+  "scope": "actual published test; passive read only; no form submission",
+  "pass": true
+}
