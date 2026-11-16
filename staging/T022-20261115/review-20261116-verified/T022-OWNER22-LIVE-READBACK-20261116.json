@@ -1,0 +1,3124 @@
+{
+  "url": "https://tehnoholod369.kz/vmeste-deshevle-t022-test-20261115",
+  "at": "2026-11-16T06:51:52.048Z",
+  "checks": {
+    "320": {
+      "title": "ТЕСТ — Вместе дешевле · T-022 · 15.11.2026",
+      "ready": "1",
+      "width": 320,
+      "viewport": 320,
+      "docWidth": 320,
+      "overflow": false,
+      "marker": true,
+      "noindex": true,
+      "leadDisabled": true,
+      "meterHidden": true,
+      "groupApiEmpty": true,
+      "groupNote": "ТЕСТ: Счётчик скрыт: подтверждённого списка участников нет, без подтверждённых записей группы показания не публикуются. Номер группы — по решению владельца 15.11.2026.",
+      "groupNumber": [
+        "12",
+        "12",
+        "12"
+      ],
+      "cards": 23,
+      "pimCount": 23,
+      "reviews": 4,
+      "faq": [
+        {
+          "question": "Нужно ли платить при вступлении в группу?",
+          "answer": "Нет. Сначала согласовываются состав заказа, итоговая стоимость и условия. Оплата — после набора группы и подтверждения менеджера.",
+          "tap": {
+            "top": 23782,
+            "bottom": 23826,
+            "height": 44,
+            "width": 296,
+            "left": 12,
+            "right": 308
+          }
+        },
+        {
+          "question": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "answer": "Нет. Штуки считаются по всей группе, из любых товаров акции. Каждый берёт столько, сколько ему нужно, хоть одну штуку.",
+          "tap": {
+            "top": 23835,
+            "bottom": 23879,
+            "height": 44,
+            "width": 296,
+            "left": 12,
+            "right": 308
+          }
+        },
+        {
+          "question": "Что если группа набирается долго?",
+          "answer": "Заявка остаётся в группе, платить до набора не нужно. Подтверждённому участнику товар бронируем до закрытия группы.",
+          "tap": {
+            "top": 23888,
+            "bottom": 23932,
+            "height": 44,
+            "width": 296,
+            "left": 12,
+            "right": 308
+          }
+        },
+        {
+          "question": "Можно ли вступить в группу в любой день?",
+          "answer": "Да. Набор идёт постоянно, вступить можно в любой день. Когда группа набирает 9 штук, открывается следующая.",
+          "tap": {
+            "top": 23941,
+            "bottom": 23985,
+            "height": 44,
+            "width": 296,
+            "left": 12,
+            "right": 308
+          }
+        },
+        {
+          "question": "Есть ли наценка сверху?",
+          "answer": "Нет. Скидка считается от цены на сайте. Если цена на сайте вырастет, группа считает по прежней.",
+          "tap": {
+            "top": 23994,
+            "bottom": 24038,
+            "height": 44,
+            "width": 296,
+            "left": 12,
+            "right": 308
+          }
+        },
+        {
+          "question": "Что если товар закончится?",
+          "answer": "Подберём альтернативу или дождёмся поступления. Цену для вас зафиксируем.",
+          "tap": {
+            "top": 24047,
+            "bottom": 24091,
+            "height": 44,
+            "width": 296,
+            "left": 12,
+            "right": 308
+          }
+        },
+        {
+          "question": "Монтаж входит в групповую цену?",
+          "answer": "Нет. Оборудование и монтаж рассчитываются отдельно. Гарантия на монтаж — 12 месяцев, на оборудование — по паспорту изделия.",
+          "tap": {
+            "top": 24100,
+            "bottom": 24144,
+            "height": 44,
+            "width": 296,
+            "left": 12,
+            "right": 308
+          }
+        },
+        {
+          "question": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "answer": "Напишите нам в WhatsApp: посчитаем цену на всю группу. Монтаж согласуем одной бригадой или несколькими, по числу заявок. Документы — по запросу.",
+          "tap": {
+            "top": 24153,
+            "bottom": 24197,
+            "height": 44,
+            "width": 296,
+            "left": 12,
+            "right": 308
+          }
+        }
+      ],
+      "more": [
+        {
+          "title": "Подробные условия",
+          "body": "Штуки считаются по всей группе, из любых товаров акции. Каждый берёт столько, сколько нужно, хоть одну штуку.Когда группа набирает 9 штук, она закрывается. Цена для всех участников — со скидкой 9 %.Скидка считается от цены на сайте, наценки сверху нет. Если цена на сайте вырастет, группа считает по прежней.Оплата и поставка — после набора группы и подтверждения менеджера."
+        },
+        {
+          "title": "Пример расчёта",
+          "body": "TCL FreshIN 3.0 (белый) TAC-FR09HSV/P7W, цена на сайте 323 942 ₸ с НДС.Цена в группе, −9 %294 787 ₸экономия 29 155 ₸"
+        }
+      ],
+      "products": [
+        {
+          "id": "p01",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (белый) TAC-FR09HSV/P7W",
+          "price": 323942,
+          "priceGroup": 294787,
+          "saving": 29155,
+          "url": "tproduct/649355257894-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "img": "freshin-plus-white-6.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR09HSV/P7W",
+            "sl": "tcl-tac-fr09hsv-p7w"
+          }
+        },
+        {
+          "id": "p02",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (белый) TAC-FR12HSV/P7W",
+          "price": 340992,
+          "priceGroup": 310303,
+          "saving": 30689,
+          "url": "tproduct/350950348204-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "img": "freshin-plus-white-6.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR12HSV/P7W",
+            "sl": "tcl-tac-fr12hsv-p7w"
+          }
+        },
+        {
+          "id": "p03",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро) TAC-FR09HSV/P7S",
+          "price": 340992,
+          "priceGroup": 310303,
+          "saving": 30689,
+          "url": "tproduct/938910378214-konditsioner-tcl-freshin-30-serebro-tac",
+          "img": "tcl-tac-fr09hsv-p7s.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR09HSV/P7S",
+            "sl": "tcl-tac-fr09hsv-p7s"
+          }
+        },
+        {
+          "id": "p04",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро) TAC-FR12HSV/P7S",
+          "price": 375092,
+          "priceGroup": 341334,
+          "saving": 33758,
+          "url": "tproduct/506426247284-konditsioner-tcl-freshin-30-serebro-tac",
+          "img": "tcl-tac-fr09hsv-p7s.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR12HSV/P7S",
+            "sl": "tcl-tac-fr12hsv-p7s"
+          }
+        },
+        {
+          "id": "p05",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро) TAC-FR18HSV/P7S",
+          "price": 409192,
+          "priceGroup": 372365,
+          "saving": 36827,
+          "url": "tproduct/992907639604-konditsioner-tcl-freshin-30-serebro-tac",
+          "img": "tcl-tac-fr09hsv-p7s.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR18HSV/P7S",
+            "sl": "tcl-tac-fr18hsv-p7s"
+          }
+        },
+        {
+          "id": "p06",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B",
+          "price": 340992,
+          "priceGroup": 310303,
+          "saving": 30689,
+          "url": "tproduct/401535714334-konditsioner-tcl-freshin-30-chyornii-tac",
+          "img": "tcl-tac-fr10hsv-p7b.png",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR10HSV/P7B",
+            "sl": "tcl-tac-fr10hsv-p7b"
+          }
+        },
+        {
+          "id": "p07",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B",
+          "price": 383617,
+          "priceGroup": 349091,
+          "saving": 34526,
+          "url": "tproduct/964967300964-konditsioner-tcl-freshin-30-chyornii-tac",
+          "img": "tcl-tac-fr10hsv-p7b.png",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR13HSV/P7B",
+            "sl": "tcl-tac-fr13hsv-p7b"
+          }
+        },
+        {
+          "id": "p08",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B",
+          "price": 426242,
+          "priceGroup": 387880,
+          "saving": 38362,
+          "url": "tproduct/474881833054-konditsioner-tcl-freshin-30-chyornii-tac",
+          "img": "tcl-tac-fr10hsv-p7b.png",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR18HSV/P7B",
+            "sl": "tcl-tac-fr18hsv-p7b"
+          }
+        },
+        {
+          "id": "p09",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3",
+          "price": 340766,
+          "priceGroup": 310097,
+          "saving": 30669,
+          "url": "tproduct/118900810324-konditsioner-tcl-freshin-30-serebro-2025",
+          "img": "tcl-tac-fr12inv-r3.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR12INV/R3",
+            "sl": "tcl-tac-fr12inv-r3"
+          }
+        },
+        {
+          "id": "p10",
+          "brand": "Royal Clima",
+          "title": "GLORIA Inverter RCI-GLE35HN",
+          "price": 203500,
+          "priceGroup": 185185,
+          "saving": 18315,
+          "url": "tproduct/783965063854-konditsioner-royal-clima-gloria-inverter",
+          "img": "rci-gle22hn.jpg",
+          "category": "split",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "RCI-GLE35HN",
+            "sl": "royal-clima-rci-gle35hn"
+          }
+        },
+        {
+          "id": "p11",
+          "brand": "Ballu",
+          "title": "Free Match: мультисплит на 2 комнаты",
+          "price": 567970,
+          "priceGroup": 516853,
+          "saving": 51117,
+          "url": "multisplit-komplekty-almaty",
+          "img": "ballu-ba2oi-fm-out-18hn8-eu.jpg",
+          "category": "split",
+          "pimAllow": null
+        },
+        {
+          "id": "p12",
+          "brand": "Royal Thermo",
+          "title": "Водонагреватель RWH 80 Optimal",
+          "price": 71750,
+          "priceGroup": 65293,
+          "saving": 6457,
+          "url": "tproduct/348776780514-rwh-80-optimal",
+          "img": "royal-thermo-rwh-80-optimal.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "vodonagrevateli",
+            "s": "RWH 80 Optimal",
+            "sl": "royal-thermo-rwh-80-optimal"
+          }
+        },
+        {
+          "id": "p13",
+          "brand": "Ballu",
+          "title": "Завеса тепловая BHC-L15-S09-M (пульт BRC-S)",
+          "price": 181690,
+          "priceGroup": 165338,
+          "saving": 16352,
+          "url": "tproduct/602341374234-ballu-bhc-l15-s09-m-pult-brc-s",
+          "img": "tz_1485658.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "teplovye-zavesy",
+            "s": "BHC-L15-S09-M (BRC-S)",
+            "sl": "ballu-bhc-l15-s09-m-brc-s"
+          }
+        },
+        {
+          "id": "p14",
+          "brand": "Ballu",
+          "title": "Завеса тепловая BHC-L10-S06 (пульт BRC-S)",
+          "price": 144990,
+          "priceGroup": 131941,
+          "saving": 13049,
+          "url": "tproduct/363930138874-ballu-bhc-l10-s06-pult-brc-s",
+          "img": "tz_1485649.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "teplovye-zavesy",
+            "s": "BHC-L10-S06 (BRC-S)",
+            "sl": "ballu-bhc-l10-s06-brc-s"
+          }
+        },
+        {
+          "id": "p15",
+          "brand": "Ballu",
+          "title": "ONEAIR ASP-200S",
+          "price": 327590,
+          "priceGroup": 298107,
+          "saving": 29483,
+          "url": "tovar?g=ventilyaciya&sl=ballu-asp-200s",
+          "img": "ballu-oneair-asp-200s.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "ventilyaciya",
+            "s": "ASP-200S",
+            "sl": "ballu-asp-200s"
+          }
+        },
+        {
+          "id": "p16",
+          "brand": "Ballu",
+          "title": "ONEAIR ASP-80",
+          "price": 114990,
+          "priceGroup": 104641,
+          "saving": 10349,
+          "url": "tovar?g=ventilyaciya&sl=ballu-asp-80",
+          "img": "ballu-oneair-asp-80.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "ventilyaciya",
+            "s": "ASP-80",
+            "sl": "ballu-asp-80"
+          }
+        },
+        {
+          "id": "p17",
+          "brand": "Ballu",
+          "title": "ONEAIR ASP-100",
+          "price": 203390,
+          "priceGroup": 185085,
+          "saving": 18305,
+          "url": "tovar?g=ventilyaciya&sl=ballu-asp-100",
+          "img": "ballu-oneair-asp-100.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "ventilyaciya",
+            "s": "ASP-100",
+            "sl": "ballu-asp-100"
+          }
+        },
+        {
+          "id": "p18",
+          "brand": "Electrolux",
+          "title": "Водонагреватель EWH 100 Major LZR 3",
+          "price": 209034,
+          "priceGroup": 190221,
+          "saving": 18813,
+          "url": "tproduct/680059508224-ewh-100-major-lzr-3",
+          "img": "electrolux-ewh-100-major-lzr-3.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "vodonagrevateli",
+            "s": "EWH 100 Major LZR 3",
+            "sl": "electrolux-ewh-100-major-lzr-3"
+          }
+        },
+        {
+          "id": "p19",
+          "brand": "Royal Thermo",
+          "title": "Очаг электрический Aurora RTFP/P-AR50LS",
+          "price": 429990,
+          "priceGroup": 391291,
+          "saving": 38699,
+          "url": "tproduct/579347838434-ochag-elektricheskii-royal-thermo-aurora",
+          "img": "royal-thermo-rtfp-p-ar50ls.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "RTFP/P-AR50LS",
+            "sl": "royal-thermo-rtfp-p-ar50ls"
+          }
+        },
+        {
+          "id": "p20",
+          "brand": "Royal Thermo",
+          "title": "Очаг электрический RTFP/P1000M 3D Cassette Mystery",
+          "price": 599990,
+          "priceGroup": 545991,
+          "saving": 53999,
+          "url": "tproduct/275010969874-ochag-elektricheskii-royal-thermo-rtfpp1",
+          "img": "royal-thermo-rtfp-p1000m.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "RTFP/P1000M",
+            "sl": "royal-thermo-rtfp-p1000m"
+          }
+        },
+        {
+          "id": "p21",
+          "brand": "Firelight",
+          "title": "Биокамин BFP/P-3020",
+          "price": 399990,
+          "priceGroup": 363991,
+          "saving": 35999,
+          "url": "tproduct/599405216204-biokamin-firelight-bfpp-3020",
+          "img": "firelight-bfp-p-3020.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "BFP/P-3020",
+            "sl": "firelight-bfp-p-3020"
+          }
+        },
+        {
+          "id": "p22",
+          "brand": "Firelight",
+          "title": "Биокамин BFP/W-110",
+          "price": 279990,
+          "priceGroup": 254791,
+          "saving": 25199,
+          "url": "tproduct/693039877204-biokamin-firelight-bfpw-110",
+          "img": "firelight-bfp-w-110.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "BFP/W-110",
+            "sl": "firelight-bfp-w-110"
+          }
+        },
+        {
+          "id": "p23",
+          "brand": "Electrolux",
+          "title": "Панорамный очаг Sphere Plus EFP/P-3320RLS N",
+          "price": 299990,
+          "priceGroup": 272991,
+          "saving": 26999,
+          "url": "tproduct/449475714854-panoramnii-ochag-sphere-plus-efpp-3320rl",
+          "img": "electrolux-panoramnyy-ochag-sphere-plus-efp-p-3320rls-n-diagonal-33-dy.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "EFP/P-3320RLS N",
+            "sl": "electrolux-efp-p-3320rls-n"
+          }
+        }
+      ],
+      "rendered": [
+        {
+          "title": "FreshIN 3.0 (белый) TAC-FR09HSV/P7W",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие не подтверждено: владелец сообщает, что P7W отсутствует, а снимок PIM показывает «В наличии» — нужно подтверждение менеджера",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/649355257894-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "displayed": [
+            "323 942 ₸",
+            "294 787 ₸"
+          ]
+        },
+        {
+          "title": "ONEAIR ASP-200S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-200s.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200s",
+          "displayed": [
+            "327 590 ₸",
+            "298 107 ₸"
+          ]
+        },
+        {
+          "title": "Панорамный очаг Sphere Plus EFP/P-3320RLS N",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-panoramnyy-ochag-sphere-plus-efp-p-3320rls-n-diagonal-33-dy.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/449475714854-panoramnii-ochag-sphere-plus-efpp-3320rl",
+          "displayed": [
+            "299 990 ₸",
+            "272 991 ₸"
+          ]
+        },
+        {
+          "title": "GLORIA Inverter RCI-GLE35HN",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/rci-gle22hn.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/783965063854-konditsioner-royal-clima-gloria-inverter",
+          "displayed": [
+            "203 500 ₸",
+            "185 185 ₸"
+          ]
+        },
+        {
+          "title": "Free Match: мультисплит на 2 комнаты",
+          "pim": "Комплект: единого SKU в PIM нет — цена и наличие уточняются у менеджера",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-ba2oi-fm-out-18hn8-eu.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/multisplit-komplekty-almaty",
+          "displayed": [
+            "567 970 ₸",
+            "516 853 ₸"
+          ]
+        },
+        {
+          "title": "Водонагреватель RWH 80 Optimal",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rwh-80-optimal.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/348776780514-rwh-80-optimal",
+          "displayed": [
+            "71 750 ₸",
+            "65 293 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (белый) TAC-FR12HSV/P7W",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/350950348204-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "displayed": [
+            "340 992 ₸",
+            "310 303 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро) TAC-FR09HSV/P7S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/938910378214-konditsioner-tcl-freshin-30-serebro-tac",
+          "displayed": [
+            "340 992 ₸",
+            "310 303 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро) TAC-FR12HSV/P7S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/506426247284-konditsioner-tcl-freshin-30-serebro-tac",
+          "displayed": [
+            "375 092 ₸",
+            "341 334 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро) TAC-FR18HSV/P7S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/992907639604-konditsioner-tcl-freshin-30-serebro-tac",
+          "displayed": [
+            "409 192 ₸",
+            "372 365 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/401535714334-konditsioner-tcl-freshin-30-chyornii-tac",
+          "displayed": [
+            "340 992 ₸",
+            "310 303 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/964967300964-konditsioner-tcl-freshin-30-chyornii-tac",
+          "displayed": [
+            "383 617 ₸",
+            "349 091 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/474881833054-konditsioner-tcl-freshin-30-chyornii-tac",
+          "displayed": [
+            "426 242 ₸",
+            "387 880 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr12inv-r3.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/118900810324-konditsioner-tcl-freshin-30-serebro-2025",
+          "displayed": [
+            "340 766 ₸",
+            "310 097 ₸"
+          ]
+        },
+        {
+          "title": "Завеса тепловая BHC-L15-S09-M (пульт BRC-S)",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485658.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/602341374234-ballu-bhc-l15-s09-m-pult-brc-s",
+          "displayed": [
+            "181 690 ₸",
+            "165 338 ₸"
+          ]
+        },
+        {
+          "title": "Завеса тепловая BHC-L10-S06 (пульт BRC-S)",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485649.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/363930138874-ballu-bhc-l10-s06-pult-brc-s",
+          "displayed": [
+            "144 990 ₸",
+            "131 941 ₸"
+          ]
+        },
+        {
+          "title": "ONEAIR ASP-80",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-80.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-80",
+          "displayed": [
+            "114 990 ₸",
+            "104 641 ₸"
+          ]
+        },
+        {
+          "title": "ONEAIR ASP-100",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-100.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-100",
+          "displayed": [
+            "203 390 ₸",
+            "185 085 ₸"
+          ]
+        },
+        {
+          "title": "Водонагреватель EWH 100 Major LZR 3",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-ewh-100-major-lzr-3.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/680059508224-ewh-100-major-lzr-3",
+          "displayed": [
+            "209 034 ₸",
+            "190 221 ₸"
+          ]
+        },
+        {
+          "title": "Очаг электрический Aurora RTFP/P-AR50LS",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p-ar50ls.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/579347838434-ochag-elektricheskii-royal-thermo-aurora",
+          "displayed": [
+            "429 990 ₸",
+            "391 291 ₸"
+          ]
+        },
+        {
+          "title": "Очаг электрический RTFP/P1000M 3D Cassette Mystery",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p1000m.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/275010969874-ochag-elektricheskii-royal-thermo-rtfpp1",
+          "displayed": [
+            "599 990 ₸",
+            "545 991 ₸"
+          ]
+        },
+        {
+          "title": "Биокамин BFP/P-3020",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-p-3020.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/599405216204-biokamin-firelight-bfpp-3020",
+          "displayed": [
+            "399 990 ₸",
+            "363 991 ₸"
+          ]
+        },
+        {
+          "title": "Биокамин BFP/W-110",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-w-110.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/693039877204-biokamin-firelight-bfpw-110",
+          "displayed": [
+            "279 990 ₸",
+            "254 791 ₸"
+          ]
+        }
+      ],
+      "maxSave": "53 999 ₸",
+      "maxSaveStyle": {
+        "fontSize": "22px",
+        "color": "rgb(80, 41, 188)",
+        "fontWeight": "800"
+      },
+      "ctaMobile": {
+        "top": 873,
+        "bottom": 937,
+        "height": 64,
+        "width": 304,
+        "left": 8,
+        "right": 312
+      },
+      "tildaBottom": [],
+      "nav": {
+        "top": 160,
+        "bottom": 204,
+        "height": 44,
+        "width": 296,
+        "left": 12,
+        "right": 308
+      },
+      "tapFailures": [],
+      "tapChecked": 42,
+      "heroText": "ГРУППОВЫЕ ПОКУПКИ · АЛМАТЫ\nКомфорт для дома.\nВместе выгоднее.\n\nОбъединяйте заказы на климатическую технику и получайте групповые условия на участвующие модели. Сначала согласуем цену и комплектацию — платить сразу не нужно.\n\nГруппа №12 · идёт набор\n\nЭкономия до 53 999 ₸\nна одной модели — скидка группы 9 %\n\nВыбрать и присоединиться\n↓\nПосмотреть оборудование\n↓\nДЛЯ НОВОЙ КВАРТИРЫ\nПрохлада + свежий воздух\nКлимат под вашу задачу\n\nПодбор техники и монтаж\n\nПодбор · доставка · монтаж\nВ одном месте",
+      "phoneExample": "+7 000 000 00 00",
+      "p7wConflict": true
+    },
+    "768": {
+      "title": "ТЕСТ — Вместе дешевле · T-022 · 15.11.2026",
+      "ready": "1",
+      "width": 768,
+      "viewport": 768,
+      "docWidth": 768,
+      "overflow": false,
+      "marker": true,
+      "noindex": true,
+      "leadDisabled": true,
+      "meterHidden": true,
+      "groupApiEmpty": true,
+      "groupNote": "ТЕСТ: Счётчик скрыт: подтверждённого списка участников нет, без подтверждённых записей группы показания не публикуются. Номер группы — по решению владельца 15.11.2026.",
+      "groupNumber": [
+        "12",
+        "12",
+        "12"
+      ],
+      "cards": 23,
+      "pimCount": 23,
+      "reviews": 4,
+      "faq": [
+        {
+          "question": "Нужно ли платить при вступлении в группу?",
+          "answer": "Нет. Сначала согласовываются состав заказа, итоговая стоимость и условия. Оплата — после набора группы и подтверждения менеджера.",
+          "tap": {
+            "top": 15165,
+            "bottom": 15209,
+            "height": 44,
+            "width": 720,
+            "left": 24,
+            "right": 744
+          }
+        },
+        {
+          "question": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "answer": "Нет. Штуки считаются по всей группе, из любых товаров акции. Каждый берёт столько, сколько ему нужно, хоть одну штуку.",
+          "tap": {
+            "top": 15218,
+            "bottom": 15262,
+            "height": 44,
+            "width": 720,
+            "left": 24,
+            "right": 744
+          }
+        },
+        {
+          "question": "Что если группа набирается долго?",
+          "answer": "Заявка остаётся в группе, платить до набора не нужно. Подтверждённому участнику товар бронируем до закрытия группы.",
+          "tap": {
+            "top": 15271,
+            "bottom": 15315,
+            "height": 44,
+            "width": 720,
+            "left": 24,
+            "right": 744
+          }
+        },
+        {
+          "question": "Можно ли вступить в группу в любой день?",
+          "answer": "Да. Набор идёт постоянно, вступить можно в любой день. Когда группа набирает 9 штук, открывается следующая.",
+          "tap": {
+            "top": 15324,
+            "bottom": 15368,
+            "height": 44,
+            "width": 720,
+            "left": 24,
+            "right": 744
+          }
+        },
+        {
+          "question": "Есть ли наценка сверху?",
+          "answer": "Нет. Скидка считается от цены на сайте. Если цена на сайте вырастет, группа считает по прежней.",
+          "tap": {
+            "top": 15377,
+            "bottom": 15421,
+            "height": 44,
+            "width": 720,
+            "left": 24,
+            "right": 744
+          }
+        },
+        {
+          "question": "Что если товар закончится?",
+          "answer": "Подберём альтернативу или дождёмся поступления. Цену для вас зафиксируем.",
+          "tap": {
+            "top": 15430,
+            "bottom": 15474,
+            "height": 44,
+            "width": 720,
+            "left": 24,
+            "right": 744
+          }
+        },
+        {
+          "question": "Монтаж входит в групповую цену?",
+          "answer": "Нет. Оборудование и монтаж рассчитываются отдельно. Гарантия на монтаж — 12 месяцев, на оборудование — по паспорту изделия.",
+          "tap": {
+            "top": 15483,
+            "bottom": 15527,
+            "height": 44,
+            "width": 720,
+            "left": 24,
+            "right": 744
+          }
+        },
+        {
+          "question": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "answer": "Напишите нам в WhatsApp: посчитаем цену на всю группу. Монтаж согласуем одной бригадой или несколькими, по числу заявок. Документы — по запросу.",
+          "tap": {
+            "top": 15536,
+            "bottom": 15580,
+            "height": 44,
+            "width": 720,
+            "left": 24,
+            "right": 744
+          }
+        }
+      ],
+      "more": [
+        {
+          "title": "Подробные условия",
+          "body": "Штуки считаются по всей группе, из любых товаров акции. Каждый берёт столько, сколько нужно, хоть одну штуку.Когда группа набирает 9 штук, она закрывается. Цена для всех участников — со скидкой 9 %.Скидка считается от цены на сайте, наценки сверху нет. Если цена на сайте вырастет, группа считает по прежней.Оплата и поставка — после набора группы и подтверждения менеджера."
+        },
+        {
+          "title": "Пример расчёта",
+          "body": "TCL FreshIN 3.0 (белый) TAC-FR09HSV/P7W, цена на сайте 323 942 ₸ с НДС.Цена в группе, −9 %294 787 ₸экономия 29 155 ₸"
+        }
+      ],
+      "products": [
+        {
+          "id": "p01",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (белый) TAC-FR09HSV/P7W",
+          "price": 323942,
+          "priceGroup": 294787,
+          "saving": 29155,
+          "url": "tproduct/649355257894-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "img": "freshin-plus-white-6.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR09HSV/P7W",
+            "sl": "tcl-tac-fr09hsv-p7w"
+          }
+        },
+        {
+          "id": "p02",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (белый) TAC-FR12HSV/P7W",
+          "price": 340992,
+          "priceGroup": 310303,
+          "saving": 30689,
+          "url": "tproduct/350950348204-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "img": "freshin-plus-white-6.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR12HSV/P7W",
+            "sl": "tcl-tac-fr12hsv-p7w"
+          }
+        },
+        {
+          "id": "p03",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро) TAC-FR09HSV/P7S",
+          "price": 340992,
+          "priceGroup": 310303,
+          "saving": 30689,
+          "url": "tproduct/938910378214-konditsioner-tcl-freshin-30-serebro-tac",
+          "img": "tcl-tac-fr09hsv-p7s.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR09HSV/P7S",
+            "sl": "tcl-tac-fr09hsv-p7s"
+          }
+        },
+        {
+          "id": "p04",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро) TAC-FR12HSV/P7S",
+          "price": 375092,
+          "priceGroup": 341334,
+          "saving": 33758,
+          "url": "tproduct/506426247284-konditsioner-tcl-freshin-30-serebro-tac",
+          "img": "tcl-tac-fr09hsv-p7s.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR12HSV/P7S",
+            "sl": "tcl-tac-fr12hsv-p7s"
+          }
+        },
+        {
+          "id": "p05",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро) TAC-FR18HSV/P7S",
+          "price": 409192,
+          "priceGroup": 372365,
+          "saving": 36827,
+          "url": "tproduct/992907639604-konditsioner-tcl-freshin-30-serebro-tac",
+          "img": "tcl-tac-fr09hsv-p7s.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR18HSV/P7S",
+            "sl": "tcl-tac-fr18hsv-p7s"
+          }
+        },
+        {
+          "id": "p06",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B",
+          "price": 340992,
+          "priceGroup": 310303,
+          "saving": 30689,
+          "url": "tproduct/401535714334-konditsioner-tcl-freshin-30-chyornii-tac",
+          "img": "tcl-tac-fr10hsv-p7b.png",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR10HSV/P7B",
+            "sl": "tcl-tac-fr10hsv-p7b"
+          }
+        },
+        {
+          "id": "p07",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B",
+          "price": 383617,
+          "priceGroup": 349091,
+          "saving": 34526,
+          "url": "tproduct/964967300964-konditsioner-tcl-freshin-30-chyornii-tac",
+          "img": "tcl-tac-fr10hsv-p7b.png",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR13HSV/P7B",
+            "sl": "tcl-tac-fr13hsv-p7b"
+          }
+        },
+        {
+          "id": "p08",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B",
+          "price": 426242,
+          "priceGroup": 387880,
+          "saving": 38362,
+          "url": "tproduct/474881833054-konditsioner-tcl-freshin-30-chyornii-tac",
+          "img": "tcl-tac-fr10hsv-p7b.png",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR18HSV/P7B",
+            "sl": "tcl-tac-fr18hsv-p7b"
+          }
+        },
+        {
+          "id": "p09",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3",
+          "price": 340766,
+          "priceGroup": 310097,
+          "saving": 30669,
+          "url": "tproduct/118900810324-konditsioner-tcl-freshin-30-serebro-2025",
+          "img": "tcl-tac-fr12inv-r3.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR12INV/R3",
+            "sl": "tcl-tac-fr12inv-r3"
+          }
+        },
+        {
+          "id": "p10",
+          "brand": "Royal Clima",
+          "title": "GLORIA Inverter RCI-GLE35HN",
+          "price": 203500,
+          "priceGroup": 185185,
+          "saving": 18315,
+          "url": "tproduct/783965063854-konditsioner-royal-clima-gloria-inverter",
+          "img": "rci-gle22hn.jpg",
+          "category": "split",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "RCI-GLE35HN",
+            "sl": "royal-clima-rci-gle35hn"
+          }
+        },
+        {
+          "id": "p11",
+          "brand": "Ballu",
+          "title": "Free Match: мультисплит на 2 комнаты",
+          "price": 567970,
+          "priceGroup": 516853,
+          "saving": 51117,
+          "url": "multisplit-komplekty-almaty",
+          "img": "ballu-ba2oi-fm-out-18hn8-eu.jpg",
+          "category": "split",
+          "pimAllow": null
+        },
+        {
+          "id": "p12",
+          "brand": "Royal Thermo",
+          "title": "Водонагреватель RWH 80 Optimal",
+          "price": 71750,
+          "priceGroup": 65293,
+          "saving": 6457,
+          "url": "tproduct/348776780514-rwh-80-optimal",
+          "img": "royal-thermo-rwh-80-optimal.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "vodonagrevateli",
+            "s": "RWH 80 Optimal",
+            "sl": "royal-thermo-rwh-80-optimal"
+          }
+        },
+        {
+          "id": "p13",
+          "brand": "Ballu",
+          "title": "Завеса тепловая BHC-L15-S09-M (пульт BRC-S)",
+          "price": 181690,
+          "priceGroup": 165338,
+          "saving": 16352,
+          "url": "tproduct/602341374234-ballu-bhc-l15-s09-m-pult-brc-s",
+          "img": "tz_1485658.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "teplovye-zavesy",
+            "s": "BHC-L15-S09-M (BRC-S)",
+            "sl": "ballu-bhc-l15-s09-m-brc-s"
+          }
+        },
+        {
+          "id": "p14",
+          "brand": "Ballu",
+          "title": "Завеса тепловая BHC-L10-S06 (пульт BRC-S)",
+          "price": 144990,
+          "priceGroup": 131941,
+          "saving": 13049,
+          "url": "tproduct/363930138874-ballu-bhc-l10-s06-pult-brc-s",
+          "img": "tz_1485649.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "teplovye-zavesy",
+            "s": "BHC-L10-S06 (BRC-S)",
+            "sl": "ballu-bhc-l10-s06-brc-s"
+          }
+        },
+        {
+          "id": "p15",
+          "brand": "Ballu",
+          "title": "ONEAIR ASP-200S",
+          "price": 327590,
+          "priceGroup": 298107,
+          "saving": 29483,
+          "url": "tovar?g=ventilyaciya&sl=ballu-asp-200s",
+          "img": "ballu-oneair-asp-200s.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "ventilyaciya",
+            "s": "ASP-200S",
+            "sl": "ballu-asp-200s"
+          }
+        },
+        {
+          "id": "p16",
+          "brand": "Ballu",
+          "title": "ONEAIR ASP-80",
+          "price": 114990,
+          "priceGroup": 104641,
+          "saving": 10349,
+          "url": "tovar?g=ventilyaciya&sl=ballu-asp-80",
+          "img": "ballu-oneair-asp-80.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "ventilyaciya",
+            "s": "ASP-80",
+            "sl": "ballu-asp-80"
+          }
+        },
+        {
+          "id": "p17",
+          "brand": "Ballu",
+          "title": "ONEAIR ASP-100",
+          "price": 203390,
+          "priceGroup": 185085,
+          "saving": 18305,
+          "url": "tovar?g=ventilyaciya&sl=ballu-asp-100",
+          "img": "ballu-oneair-asp-100.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "ventilyaciya",
+            "s": "ASP-100",
+            "sl": "ballu-asp-100"
+          }
+        },
+        {
+          "id": "p18",
+          "brand": "Electrolux",
+          "title": "Водонагреватель EWH 100 Major LZR 3",
+          "price": 209034,
+          "priceGroup": 190221,
+          "saving": 18813,
+          "url": "tproduct/680059508224-ewh-100-major-lzr-3",
+          "img": "electrolux-ewh-100-major-lzr-3.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "vodonagrevateli",
+            "s": "EWH 100 Major LZR 3",
+            "sl": "electrolux-ewh-100-major-lzr-3"
+          }
+        },
+        {
+          "id": "p19",
+          "brand": "Royal Thermo",
+          "title": "Очаг электрический Aurora RTFP/P-AR50LS",
+          "price": 429990,
+          "priceGroup": 391291,
+          "saving": 38699,
+          "url": "tproduct/579347838434-ochag-elektricheskii-royal-thermo-aurora",
+          "img": "royal-thermo-rtfp-p-ar50ls.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "RTFP/P-AR50LS",
+            "sl": "royal-thermo-rtfp-p-ar50ls"
+          }
+        },
+        {
+          "id": "p20",
+          "brand": "Royal Thermo",
+          "title": "Очаг электрический RTFP/P1000M 3D Cassette Mystery",
+          "price": 599990,
+          "priceGroup": 545991,
+          "saving": 53999,
+          "url": "tproduct/275010969874-ochag-elektricheskii-royal-thermo-rtfpp1",
+          "img": "royal-thermo-rtfp-p1000m.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "RTFP/P1000M",
+            "sl": "royal-thermo-rtfp-p1000m"
+          }
+        },
+        {
+          "id": "p21",
+          "brand": "Firelight",
+          "title": "Биокамин BFP/P-3020",
+          "price": 399990,
+          "priceGroup": 363991,
+          "saving": 35999,
+          "url": "tproduct/599405216204-biokamin-firelight-bfpp-3020",
+          "img": "firelight-bfp-p-3020.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "BFP/P-3020",
+            "sl": "firelight-bfp-p-3020"
+          }
+        },
+        {
+          "id": "p22",
+          "brand": "Firelight",
+          "title": "Биокамин BFP/W-110",
+          "price": 279990,
+          "priceGroup": 254791,
+          "saving": 25199,
+          "url": "tproduct/693039877204-biokamin-firelight-bfpw-110",
+          "img": "firelight-bfp-w-110.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "BFP/W-110",
+            "sl": "firelight-bfp-w-110"
+          }
+        },
+        {
+          "id": "p23",
+          "brand": "Electrolux",
+          "title": "Панорамный очаг Sphere Plus EFP/P-3320RLS N",
+          "price": 299990,
+          "priceGroup": 272991,
+          "saving": 26999,
+          "url": "tproduct/449475714854-panoramnii-ochag-sphere-plus-efpp-3320rl",
+          "img": "electrolux-panoramnyy-ochag-sphere-plus-efp-p-3320rls-n-diagonal-33-dy.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "EFP/P-3320RLS N",
+            "sl": "electrolux-efp-p-3320rls-n"
+          }
+        }
+      ],
+      "rendered": [
+        {
+          "title": "FreshIN 3.0 (белый) TAC-FR09HSV/P7W",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие не подтверждено: владелец сообщает, что P7W отсутствует, а снимок PIM показывает «В наличии» — нужно подтверждение менеджера",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/649355257894-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "displayed": [
+            "323 942 ₸",
+            "294 787 ₸"
+          ]
+        },
+        {
+          "title": "ONEAIR ASP-200S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-200s.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200s",
+          "displayed": [
+            "327 590 ₸",
+            "298 107 ₸"
+          ]
+        },
+        {
+          "title": "Панорамный очаг Sphere Plus EFP/P-3320RLS N",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-panoramnyy-ochag-sphere-plus-efp-p-3320rls-n-diagonal-33-dy.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/449475714854-panoramnii-ochag-sphere-plus-efpp-3320rl",
+          "displayed": [
+            "299 990 ₸",
+            "272 991 ₸"
+          ]
+        },
+        {
+          "title": "GLORIA Inverter RCI-GLE35HN",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/rci-gle22hn.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/783965063854-konditsioner-royal-clima-gloria-inverter",
+          "displayed": [
+            "203 500 ₸",
+            "185 185 ₸"
+          ]
+        },
+        {
+          "title": "Free Match: мультисплит на 2 комнаты",
+          "pim": "Комплект: единого SKU в PIM нет — цена и наличие уточняются у менеджера",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-ba2oi-fm-out-18hn8-eu.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/multisplit-komplekty-almaty",
+          "displayed": [
+            "567 970 ₸",
+            "516 853 ₸"
+          ]
+        },
+        {
+          "title": "Водонагреватель RWH 80 Optimal",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rwh-80-optimal.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/348776780514-rwh-80-optimal",
+          "displayed": [
+            "71 750 ₸",
+            "65 293 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (белый) TAC-FR12HSV/P7W",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/350950348204-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "displayed": [
+            "340 992 ₸",
+            "310 303 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро) TAC-FR09HSV/P7S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/938910378214-konditsioner-tcl-freshin-30-serebro-tac",
+          "displayed": [
+            "340 992 ₸",
+            "310 303 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро) TAC-FR12HSV/P7S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/506426247284-konditsioner-tcl-freshin-30-serebro-tac",
+          "displayed": [
+            "375 092 ₸",
+            "341 334 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро) TAC-FR18HSV/P7S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/992907639604-konditsioner-tcl-freshin-30-serebro-tac",
+          "displayed": [
+            "409 192 ₸",
+            "372 365 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/401535714334-konditsioner-tcl-freshin-30-chyornii-tac",
+          "displayed": [
+            "340 992 ₸",
+            "310 303 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/964967300964-konditsioner-tcl-freshin-30-chyornii-tac",
+          "displayed": [
+            "383 617 ₸",
+            "349 091 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/474881833054-konditsioner-tcl-freshin-30-chyornii-tac",
+          "displayed": [
+            "426 242 ₸",
+            "387 880 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr12inv-r3.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/118900810324-konditsioner-tcl-freshin-30-serebro-2025",
+          "displayed": [
+            "340 766 ₸",
+            "310 097 ₸"
+          ]
+        },
+        {
+          "title": "Завеса тепловая BHC-L15-S09-M (пульт BRC-S)",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485658.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/602341374234-ballu-bhc-l15-s09-m-pult-brc-s",
+          "displayed": [
+            "181 690 ₸",
+            "165 338 ₸"
+          ]
+        },
+        {
+          "title": "Завеса тепловая BHC-L10-S06 (пульт BRC-S)",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485649.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/363930138874-ballu-bhc-l10-s06-pult-brc-s",
+          "displayed": [
+            "144 990 ₸",
+            "131 941 ₸"
+          ]
+        },
+        {
+          "title": "ONEAIR ASP-80",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-80.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-80",
+          "displayed": [
+            "114 990 ₸",
+            "104 641 ₸"
+          ]
+        },
+        {
+          "title": "ONEAIR ASP-100",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-100.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-100",
+          "displayed": [
+            "203 390 ₸",
+            "185 085 ₸"
+          ]
+        },
+        {
+          "title": "Водонагреватель EWH 100 Major LZR 3",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-ewh-100-major-lzr-3.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/680059508224-ewh-100-major-lzr-3",
+          "displayed": [
+            "209 034 ₸",
+            "190 221 ₸"
+          ]
+        },
+        {
+          "title": "Очаг электрический Aurora RTFP/P-AR50LS",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p-ar50ls.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/579347838434-ochag-elektricheskii-royal-thermo-aurora",
+          "displayed": [
+            "429 990 ₸",
+            "391 291 ₸"
+          ]
+        },
+        {
+          "title": "Очаг электрический RTFP/P1000M 3D Cassette Mystery",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p1000m.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/275010969874-ochag-elektricheskii-royal-thermo-rtfpp1",
+          "displayed": [
+            "599 990 ₸",
+            "545 991 ₸"
+          ]
+        },
+        {
+          "title": "Биокамин BFP/P-3020",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-p-3020.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/599405216204-biokamin-firelight-bfpp-3020",
+          "displayed": [
+            "399 990 ₸",
+            "363 991 ₸"
+          ]
+        },
+        {
+          "title": "Биокамин BFP/W-110",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-w-110.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/693039877204-biokamin-firelight-bfpw-110",
+          "displayed": [
+            "279 990 ₸",
+            "254 791 ₸"
+          ]
+        }
+      ],
+      "maxSave": "53 999 ₸",
+      "maxSaveStyle": {
+        "fontSize": "22px",
+        "color": "rgb(80, 41, 188)",
+        "fontWeight": "800"
+      },
+      "ctaMobile": {
+        "top": 0,
+        "bottom": 0,
+        "height": 0,
+        "width": 0,
+        "left": 0,
+        "right": 0
+      },
+      "tildaBottom": [],
+      "nav": {
+        "top": 193,
+        "bottom": 237,
+        "height": 44,
+        "width": 578,
+        "left": 24,
+        "right": 602
+      },
+      "tapFailures": [],
+      "tapChecked": 42,
+      "heroText": "ГРУППОВЫЕ ПОКУПКИ · АЛМАТЫ\nКомфорт для дома.\nВместе выгоднее.\n\nОбъединяйте заказы на климатическую технику и получайте групповые условия на участвующие модели. Сначала согласуем цену и комплектацию — платить сразу не нужно.\n\nГруппа №12 · идёт набор\n\nЭкономия до 53 999 ₸\nна одной модели — скидка группы 9 %\n\nВыбрать и присоединиться\n↓\nПосмотреть оборудование\n↓\nИндивидуальный заказ\nЦены с НДС\nМАСТЕР-монтаж\nДЛЯ НОВОЙ КВАРТИРЫ\nПрохлада + свежий воздух\nКлимат под вашу задачу\n\nПодбор техники и монтаж\n\nПодбор · доставка · монтаж\nВ одном месте",
+      "phoneExample": "+7 000 000 00 00",
+      "p7wConflict": true
+    },
+    "1024": {
+      "title": "ТЕСТ — Вместе дешевле · T-022 · 15.11.2026",
+      "ready": "1",
+      "width": 1024,
+      "viewport": 1024,
+      "docWidth": 1009,
+      "overflow": false,
+      "marker": true,
+      "noindex": true,
+      "leadDisabled": true,
+      "meterHidden": true,
+      "groupApiEmpty": true,
+      "groupNote": "ТЕСТ: Счётчик скрыт: подтверждённого списка участников нет, без подтверждённых записей группы показания не публикуются. Номер группы — по решению владельца 15.11.2026.",
+      "groupNumber": [
+        "12",
+        "12",
+        "12"
+      ],
+      "cards": 23,
+      "pimCount": 23,
+      "reviews": 4,
+      "faq": [
+        {
+          "question": "Нужно ли платить при вступлении в группу?",
+          "answer": "Нет. Сначала согласовываются состав заказа, итоговая стоимость и условия. Оплата — после набора группы и подтверждения менеджера.",
+          "tap": {
+            "top": 11358,
+            "bottom": 11402,
+            "height": 44,
+            "width": 509,
+            "left": 476,
+            "right": 985
+          }
+        },
+        {
+          "question": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "answer": "Нет. Штуки считаются по всей группе, из любых товаров акции. Каждый берёт столько, сколько ему нужно, хоть одну штуку.",
+          "tap": {
+            "top": 11411,
+            "bottom": 11455,
+            "height": 44,
+            "width": 509,
+            "left": 476,
+            "right": 985
+          }
+        },
+        {
+          "question": "Что если группа набирается долго?",
+          "answer": "Заявка остаётся в группе, платить до набора не нужно. Подтверждённому участнику товар бронируем до закрытия группы.",
+          "tap": {
+            "top": 11464,
+            "bottom": 11508,
+            "height": 44,
+            "width": 509,
+            "left": 476,
+            "right": 985
+          }
+        },
+        {
+          "question": "Можно ли вступить в группу в любой день?",
+          "answer": "Да. Набор идёт постоянно, вступить можно в любой день. Когда группа набирает 9 штук, открывается следующая.",
+          "tap": {
+            "top": 11517,
+            "bottom": 11561,
+            "height": 44,
+            "width": 509,
+            "left": 476,
+            "right": 985
+          }
+        },
+        {
+          "question": "Есть ли наценка сверху?",
+          "answer": "Нет. Скидка считается от цены на сайте. Если цена на сайте вырастет, группа считает по прежней.",
+          "tap": {
+            "top": 11570,
+            "bottom": 11614,
+            "height": 44,
+            "width": 509,
+            "left": 476,
+            "right": 985
+          }
+        },
+        {
+          "question": "Что если товар закончится?",
+          "answer": "Подберём альтернативу или дождёмся поступления. Цену для вас зафиксируем.",
+          "tap": {
+            "top": 11623,
+            "bottom": 11667,
+            "height": 44,
+            "width": 509,
+            "left": 476,
+            "right": 985
+          }
+        },
+        {
+          "question": "Монтаж входит в групповую цену?",
+          "answer": "Нет. Оборудование и монтаж рассчитываются отдельно. Гарантия на монтаж — 12 месяцев, на оборудование — по паспорту изделия.",
+          "tap": {
+            "top": 11676,
+            "bottom": 11720,
+            "height": 44,
+            "width": 509,
+            "left": 476,
+            "right": 985
+          }
+        },
+        {
+          "question": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "answer": "Напишите нам в WhatsApp: посчитаем цену на всю группу. Монтаж согласуем одной бригадой или несколькими, по числу заявок. Документы — по запросу.",
+          "tap": {
+            "top": 11729,
+            "bottom": 11773,
+            "height": 44,
+            "width": 509,
+            "left": 476,
+            "right": 985
+          }
+        }
+      ],
+      "more": [
+        {
+          "title": "Подробные условия",
+          "body": "Штуки считаются по всей группе, из любых товаров акции. Каждый берёт столько, сколько нужно, хоть одну штуку.Когда группа набирает 9 штук, она закрывается. Цена для всех участников — со скидкой 9 %.Скидка считается от цены на сайте, наценки сверху нет. Если цена на сайте вырастет, группа считает по прежней.Оплата и поставка — после набора группы и подтверждения менеджера."
+        },
+        {
+          "title": "Пример расчёта",
+          "body": "TCL FreshIN 3.0 (белый) TAC-FR09HSV/P7W, цена на сайте 323 942 ₸ с НДС.Цена в группе, −9 %294 787 ₸экономия 29 155 ₸"
+        }
+      ],
+      "products": [
+        {
+          "id": "p01",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (белый) TAC-FR09HSV/P7W",
+          "price": 323942,
+          "priceGroup": 294787,
+          "saving": 29155,
+          "url": "tproduct/649355257894-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "img": "freshin-plus-white-6.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR09HSV/P7W",
+            "sl": "tcl-tac-fr09hsv-p7w"
+          }
+        },
+        {
+          "id": "p02",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (белый) TAC-FR12HSV/P7W",
+          "price": 340992,
+          "priceGroup": 310303,
+          "saving": 30689,
+          "url": "tproduct/350950348204-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "img": "freshin-plus-white-6.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR12HSV/P7W",
+            "sl": "tcl-tac-fr12hsv-p7w"
+          }
+        },
+        {
+          "id": "p03",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро) TAC-FR09HSV/P7S",
+          "price": 340992,
+          "priceGroup": 310303,
+          "saving": 30689,
+          "url": "tproduct/938910378214-konditsioner-tcl-freshin-30-serebro-tac",
+          "img": "tcl-tac-fr09hsv-p7s.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR09HSV/P7S",
+            "sl": "tcl-tac-fr09hsv-p7s"
+          }
+        },
+        {
+          "id": "p04",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро) TAC-FR12HSV/P7S",
+          "price": 375092,
+          "priceGroup": 341334,
+          "saving": 33758,
+          "url": "tproduct/506426247284-konditsioner-tcl-freshin-30-serebro-tac",
+          "img": "tcl-tac-fr09hsv-p7s.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR12HSV/P7S",
+            "sl": "tcl-tac-fr12hsv-p7s"
+          }
+        },
+        {
+          "id": "p05",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро) TAC-FR18HSV/P7S",
+          "price": 409192,
+          "priceGroup": 372365,
+          "saving": 36827,
+          "url": "tproduct/992907639604-konditsioner-tcl-freshin-30-serebro-tac",
+          "img": "tcl-tac-fr09hsv-p7s.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR18HSV/P7S",
+            "sl": "tcl-tac-fr18hsv-p7s"
+          }
+        },
+        {
+          "id": "p06",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B",
+          "price": 340992,
+          "priceGroup": 310303,
+          "saving": 30689,
+          "url": "tproduct/401535714334-konditsioner-tcl-freshin-30-chyornii-tac",
+          "img": "tcl-tac-fr10hsv-p7b.png",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR10HSV/P7B",
+            "sl": "tcl-tac-fr10hsv-p7b"
+          }
+        },
+        {
+          "id": "p07",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B",
+          "price": 383617,
+          "priceGroup": 349091,
+          "saving": 34526,
+          "url": "tproduct/964967300964-konditsioner-tcl-freshin-30-chyornii-tac",
+          "img": "tcl-tac-fr10hsv-p7b.png",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR13HSV/P7B",
+            "sl": "tcl-tac-fr13hsv-p7b"
+          }
+        },
+        {
+          "id": "p08",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B",
+          "price": 426242,
+          "priceGroup": 387880,
+          "saving": 38362,
+          "url": "tproduct/474881833054-konditsioner-tcl-freshin-30-chyornii-tac",
+          "img": "tcl-tac-fr10hsv-p7b.png",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR18HSV/P7B",
+            "sl": "tcl-tac-fr18hsv-p7b"
+          }
+        },
+        {
+          "id": "p09",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3",
+          "price": 340766,
+          "priceGroup": 310097,
+          "saving": 30669,
+          "url": "tproduct/118900810324-konditsioner-tcl-freshin-30-serebro-2025",
+          "img": "tcl-tac-fr12inv-r3.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR12INV/R3",
+            "sl": "tcl-tac-fr12inv-r3"
+          }
+        },
+        {
+          "id": "p10",
+          "brand": "Royal Clima",
+          "title": "GLORIA Inverter RCI-GLE35HN",
+          "price": 203500,
+          "priceGroup": 185185,
+          "saving": 18315,
+          "url": "tproduct/783965063854-konditsioner-royal-clima-gloria-inverter",
+          "img": "rci-gle22hn.jpg",
+          "category": "split",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "RCI-GLE35HN",
+            "sl": "royal-clima-rci-gle35hn"
+          }
+        },
+        {
+          "id": "p11",
+          "brand": "Ballu",
+          "title": "Free Match: мультисплит на 2 комнаты",
+          "price": 567970,
+          "priceGroup": 516853,
+          "saving": 51117,
+          "url": "multisplit-komplekty-almaty",
+          "img": "ballu-ba2oi-fm-out-18hn8-eu.jpg",
+          "category": "split",
+          "pimAllow": null
+        },
+        {
+          "id": "p12",
+          "brand": "Royal Thermo",
+          "title": "Водонагреватель RWH 80 Optimal",
+          "price": 71750,
+          "priceGroup": 65293,
+          "saving": 6457,
+          "url": "tproduct/348776780514-rwh-80-optimal",
+          "img": "royal-thermo-rwh-80-optimal.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "vodonagrevateli",
+            "s": "RWH 80 Optimal",
+            "sl": "royal-thermo-rwh-80-optimal"
+          }
+        },
+        {
+          "id": "p13",
+          "brand": "Ballu",
+          "title": "Завеса тепловая BHC-L15-S09-M (пульт BRC-S)",
+          "price": 181690,
+          "priceGroup": 165338,
+          "saving": 16352,
+          "url": "tproduct/602341374234-ballu-bhc-l15-s09-m-pult-brc-s",
+          "img": "tz_1485658.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "teplovye-zavesy",
+            "s": "BHC-L15-S09-M (BRC-S)",
+            "sl": "ballu-bhc-l15-s09-m-brc-s"
+          }
+        },
+        {
+          "id": "p14",
+          "brand": "Ballu",
+          "title": "Завеса тепловая BHC-L10-S06 (пульт BRC-S)",
+          "price": 144990,
+          "priceGroup": 131941,
+          "saving": 13049,
+          "url": "tproduct/363930138874-ballu-bhc-l10-s06-pult-brc-s",
+          "img": "tz_1485649.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "teplovye-zavesy",
+            "s": "BHC-L10-S06 (BRC-S)",
+            "sl": "ballu-bhc-l10-s06-brc-s"
+          }
+        },
+        {
+          "id": "p15",
+          "brand": "Ballu",
+          "title": "ONEAIR ASP-200S",
+          "price": 327590,
+          "priceGroup": 298107,
+          "saving": 29483,
+          "url": "tovar?g=ventilyaciya&sl=ballu-asp-200s",
+          "img": "ballu-oneair-asp-200s.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "ventilyaciya",
+            "s": "ASP-200S",
+            "sl": "ballu-asp-200s"
+          }
+        },
+        {
+          "id": "p16",
+          "brand": "Ballu",
+          "title": "ONEAIR ASP-80",
+          "price": 114990,
+          "priceGroup": 104641,
+          "saving": 10349,
+          "url": "tovar?g=ventilyaciya&sl=ballu-asp-80",
+          "img": "ballu-oneair-asp-80.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "ventilyaciya",
+            "s": "ASP-80",
+            "sl": "ballu-asp-80"
+          }
+        },
+        {
+          "id": "p17",
+          "brand": "Ballu",
+          "title": "ONEAIR ASP-100",
+          "price": 203390,
+          "priceGroup": 185085,
+          "saving": 18305,
+          "url": "tovar?g=ventilyaciya&sl=ballu-asp-100",
+          "img": "ballu-oneair-asp-100.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "ventilyaciya",
+            "s": "ASP-100",
+            "sl": "ballu-asp-100"
+          }
+        },
+        {
+          "id": "p18",
+          "brand": "Electrolux",
+          "title": "Водонагреватель EWH 100 Major LZR 3",
+          "price": 209034,
+          "priceGroup": 190221,
+          "saving": 18813,
+          "url": "tproduct/680059508224-ewh-100-major-lzr-3",
+          "img": "electrolux-ewh-100-major-lzr-3.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "vodonagrevateli",
+            "s": "EWH 100 Major LZR 3",
+            "sl": "electrolux-ewh-100-major-lzr-3"
+          }
+        },
+        {
+          "id": "p19",
+          "brand": "Royal Thermo",
+          "title": "Очаг электрический Aurora RTFP/P-AR50LS",
+          "price": 429990,
+          "priceGroup": 391291,
+          "saving": 38699,
+          "url": "tproduct/579347838434-ochag-elektricheskii-royal-thermo-aurora",
+          "img": "royal-thermo-rtfp-p-ar50ls.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "RTFP/P-AR50LS",
+            "sl": "royal-thermo-rtfp-p-ar50ls"
+          }
+        },
+        {
+          "id": "p20",
+          "brand": "Royal Thermo",
+          "title": "Очаг электрический RTFP/P1000M 3D Cassette Mystery",
+          "price": 599990,
+          "priceGroup": 545991,
+          "saving": 53999,
+          "url": "tproduct/275010969874-ochag-elektricheskii-royal-thermo-rtfpp1",
+          "img": "royal-thermo-rtfp-p1000m.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "RTFP/P1000M",
+            "sl": "royal-thermo-rtfp-p1000m"
+          }
+        },
+        {
+          "id": "p21",
+          "brand": "Firelight",
+          "title": "Биокамин BFP/P-3020",
+          "price": 399990,
+          "priceGroup": 363991,
+          "saving": 35999,
+          "url": "tproduct/599405216204-biokamin-firelight-bfpp-3020",
+          "img": "firelight-bfp-p-3020.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "BFP/P-3020",
+            "sl": "firelight-bfp-p-3020"
+          }
+        },
+        {
+          "id": "p22",
+          "brand": "Firelight",
+          "title": "Биокамин BFP/W-110",
+          "price": 279990,
+          "priceGroup": 254791,
+          "saving": 25199,
+          "url": "tproduct/693039877204-biokamin-firelight-bfpw-110",
+          "img": "firelight-bfp-w-110.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "BFP/W-110",
+            "sl": "firelight-bfp-w-110"
+          }
+        },
+        {
+          "id": "p23",
+          "brand": "Electrolux",
+          "title": "Панорамный очаг Sphere Plus EFP/P-3320RLS N",
+          "price": 299990,
+          "priceGroup": 272991,
+          "saving": 26999,
+          "url": "tproduct/449475714854-panoramnii-ochag-sphere-plus-efpp-3320rl",
+          "img": "electrolux-panoramnyy-ochag-sphere-plus-efp-p-3320rls-n-diagonal-33-dy.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "EFP/P-3320RLS N",
+            "sl": "electrolux-efp-p-3320rls-n"
+          }
+        }
+      ],
+      "rendered": [
+        {
+          "title": "FreshIN 3.0 (белый) TAC-FR09HSV/P7W",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие не подтверждено: владелец сообщает, что P7W отсутствует, а снимок PIM показывает «В наличии» — нужно подтверждение менеджера",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/649355257894-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "displayed": [
+            "323 942 ₸",
+            "294 787 ₸"
+          ]
+        },
+        {
+          "title": "ONEAIR ASP-200S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-200s.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200s",
+          "displayed": [
+            "327 590 ₸",
+            "298 107 ₸"
+          ]
+        },
+        {
+          "title": "Панорамный очаг Sphere Plus EFP/P-3320RLS N",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-panoramnyy-ochag-sphere-plus-efp-p-3320rls-n-diagonal-33-dy.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/449475714854-panoramnii-ochag-sphere-plus-efpp-3320rl",
+          "displayed": [
+            "299 990 ₸",
+            "272 991 ₸"
+          ]
+        },
+        {
+          "title": "GLORIA Inverter RCI-GLE35HN",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/rci-gle22hn.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/783965063854-konditsioner-royal-clima-gloria-inverter",
+          "displayed": [
+            "203 500 ₸",
+            "185 185 ₸"
+          ]
+        },
+        {
+          "title": "Free Match: мультисплит на 2 комнаты",
+          "pim": "Комплект: единого SKU в PIM нет — цена и наличие уточняются у менеджера",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-ba2oi-fm-out-18hn8-eu.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/multisplit-komplekty-almaty",
+          "displayed": [
+            "567 970 ₸",
+            "516 853 ₸"
+          ]
+        },
+        {
+          "title": "Водонагреватель RWH 80 Optimal",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rwh-80-optimal.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/348776780514-rwh-80-optimal",
+          "displayed": [
+            "71 750 ₸",
+            "65 293 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (белый) TAC-FR12HSV/P7W",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/350950348204-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "displayed": [
+            "340 992 ₸",
+            "310 303 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро) TAC-FR09HSV/P7S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/938910378214-konditsioner-tcl-freshin-30-serebro-tac",
+          "displayed": [
+            "340 992 ₸",
+            "310 303 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро) TAC-FR12HSV/P7S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/506426247284-konditsioner-tcl-freshin-30-serebro-tac",
+          "displayed": [
+            "375 092 ₸",
+            "341 334 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро) TAC-FR18HSV/P7S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/992907639604-konditsioner-tcl-freshin-30-serebro-tac",
+          "displayed": [
+            "409 192 ₸",
+            "372 365 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/401535714334-konditsioner-tcl-freshin-30-chyornii-tac",
+          "displayed": [
+            "340 992 ₸",
+            "310 303 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/964967300964-konditsioner-tcl-freshin-30-chyornii-tac",
+          "displayed": [
+            "383 617 ₸",
+            "349 091 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/474881833054-konditsioner-tcl-freshin-30-chyornii-tac",
+          "displayed": [
+            "426 242 ₸",
+            "387 880 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr12inv-r3.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/118900810324-konditsioner-tcl-freshin-30-serebro-2025",
+          "displayed": [
+            "340 766 ₸",
+            "310 097 ₸"
+          ]
+        },
+        {
+          "title": "Завеса тепловая BHC-L15-S09-M (пульт BRC-S)",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485658.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/602341374234-ballu-bhc-l15-s09-m-pult-brc-s",
+          "displayed": [
+            "181 690 ₸",
+            "165 338 ₸"
+          ]
+        },
+        {
+          "title": "Завеса тепловая BHC-L10-S06 (пульт BRC-S)",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485649.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/363930138874-ballu-bhc-l10-s06-pult-brc-s",
+          "displayed": [
+            "144 990 ₸",
+            "131 941 ₸"
+          ]
+        },
+        {
+          "title": "ONEAIR ASP-80",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-80.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-80",
+          "displayed": [
+            "114 990 ₸",
+            "104 641 ₸"
+          ]
+        },
+        {
+          "title": "ONEAIR ASP-100",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-100.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-100",
+          "displayed": [
+            "203 390 ₸",
+            "185 085 ₸"
+          ]
+        },
+        {
+          "title": "Водонагреватель EWH 100 Major LZR 3",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-ewh-100-major-lzr-3.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/680059508224-ewh-100-major-lzr-3",
+          "displayed": [
+            "209 034 ₸",
+            "190 221 ₸"
+          ]
+        },
+        {
+          "title": "Очаг электрический Aurora RTFP/P-AR50LS",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p-ar50ls.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/579347838434-ochag-elektricheskii-royal-thermo-aurora",
+          "displayed": [
+            "429 990 ₸",
+            "391 291 ₸"
+          ]
+        },
+        {
+          "title": "Очаг электрический RTFP/P1000M 3D Cassette Mystery",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p1000m.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/275010969874-ochag-elektricheskii-royal-thermo-rtfpp1",
+          "displayed": [
+            "599 990 ₸",
+            "545 991 ₸"
+          ]
+        },
+        {
+          "title": "Биокамин BFP/P-3020",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-p-3020.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/599405216204-biokamin-firelight-bfpp-3020",
+          "displayed": [
+            "399 990 ₸",
+            "363 991 ₸"
+          ]
+        },
+        {
+          "title": "Биокамин BFP/W-110",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-w-110.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/693039877204-biokamin-firelight-bfpw-110",
+          "displayed": [
+            "279 990 ₸",
+            "254 791 ₸"
+          ]
+        }
+      ],
+      "maxSave": "53 999 ₸",
+      "maxSaveStyle": {
+        "fontSize": "22px",
+        "color": "rgb(80, 41, 188)",
+        "fontWeight": "800"
+      },
+      "ctaMobile": {
+        "top": 0,
+        "bottom": 0,
+        "height": 0,
+        "width": 0,
+        "left": 0,
+        "right": 0
+      },
+      "tildaBottom": [],
+      "nav": {
+        "top": 131,
+        "bottom": 175,
+        "height": 44,
+        "width": 608,
+        "left": 377,
+        "right": 985
+      },
+      "tapFailures": [],
+      "tapChecked": 42,
+      "heroText": "ГРУППОВЫЕ ПОКУПКИ · АЛМАТЫ\nКомфорт для дома.\nВместе выгоднее.\n\nОбъединяйте заказы на климатическую технику и получайте групповые условия на участвующие модели. Сначала согласуем цену и комплектацию — платить сразу не нужно.\n\nГруппа №12 · идёт набор\n\nЭкономия до 53 999 ₸\nна одной модели — скидка группы 9 %\n\nВыбрать и присоединиться\n↓\nПосмотреть оборудование\n↓\nИндивидуальный заказ\nЦены с НДС\nМАСТЕР-монтаж\nДЛЯ НОВОЙ КВАРТИРЫ\nПрохлада + свежий воздух\nКлимат под вашу задачу\n\nПодбор техники и монтаж\n\nПодбор · доставка · монтаж\nВ одном месте",
+      "phoneExample": "+7 000 000 00 00",
+      "p7wConflict": true
+    },
+    "1440": {
+      "title": "ТЕСТ — Вместе дешевле · T-022 · 15.11.2026",
+      "ready": "1",
+      "width": 1440,
+      "viewport": 1440,
+      "docWidth": 1425,
+      "overflow": false,
+      "marker": true,
+      "noindex": true,
+      "leadDisabled": true,
+      "meterHidden": true,
+      "groupApiEmpty": true,
+      "groupNote": "ТЕСТ: Счётчик скрыт: подтверждённого списка участников нет, без подтверждённых записей группы показания не публикуются. Номер группы — по решению владельца 15.11.2026.",
+      "groupNumber": [
+        "12",
+        "12",
+        "12"
+      ],
+      "cards": 23,
+      "pimCount": 23,
+      "reviews": 4,
+      "faq": [
+        {
+          "question": "Нужно ли платить при вступлении в группу?",
+          "answer": "Нет. Сначала согласовываются состав заказа, итоговая стоимость и условия. Оплата — после набора группы и подтверждения менеджера.",
+          "tap": {
+            "top": 10436,
+            "bottom": 10480,
+            "height": 44,
+            "width": 642,
+            "left": 671,
+            "right": 1312
+          }
+        },
+        {
+          "question": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "answer": "Нет. Штуки считаются по всей группе, из любых товаров акции. Каждый берёт столько, сколько ему нужно, хоть одну штуку.",
+          "tap": {
+            "top": 10489,
+            "bottom": 10533,
+            "height": 44,
+            "width": 642,
+            "left": 671,
+            "right": 1312
+          }
+        },
+        {
+          "question": "Что если группа набирается долго?",
+          "answer": "Заявка остаётся в группе, платить до набора не нужно. Подтверждённому участнику товар бронируем до закрытия группы.",
+          "tap": {
+            "top": 10542,
+            "bottom": 10586,
+            "height": 44,
+            "width": 642,
+            "left": 671,
+            "right": 1312
+          }
+        },
+        {
+          "question": "Можно ли вступить в группу в любой день?",
+          "answer": "Да. Набор идёт постоянно, вступить можно в любой день. Когда группа набирает 9 штук, открывается следующая.",
+          "tap": {
+            "top": 10595,
+            "bottom": 10639,
+            "height": 44,
+            "width": 642,
+            "left": 671,
+            "right": 1312
+          }
+        },
+        {
+          "question": "Есть ли наценка сверху?",
+          "answer": "Нет. Скидка считается от цены на сайте. Если цена на сайте вырастет, группа считает по прежней.",
+          "tap": {
+            "top": 10648,
+            "bottom": 10692,
+            "height": 44,
+            "width": 642,
+            "left": 671,
+            "right": 1312
+          }
+        },
+        {
+          "question": "Что если товар закончится?",
+          "answer": "Подберём альтернативу или дождёмся поступления. Цену для вас зафиксируем.",
+          "tap": {
+            "top": 10701,
+            "bottom": 10745,
+            "height": 44,
+            "width": 642,
+            "left": 671,
+            "right": 1312
+          }
+        },
+        {
+          "question": "Монтаж входит в групповую цену?",
+          "answer": "Нет. Оборудование и монтаж рассчитываются отдельно. Гарантия на монтаж — 12 месяцев, на оборудование — по паспорту изделия.",
+          "tap": {
+            "top": 10754,
+            "bottom": 10798,
+            "height": 44,
+            "width": 642,
+            "left": 671,
+            "right": 1312
+          }
+        },
+        {
+          "question": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "answer": "Напишите нам в WhatsApp: посчитаем цену на всю группу. Монтаж согласуем одной бригадой или несколькими, по числу заявок. Документы — по запросу.",
+          "tap": {
+            "top": 10807,
+            "bottom": 10851,
+            "height": 44,
+            "width": 642,
+            "left": 671,
+            "right": 1312
+          }
+        }
+      ],
+      "more": [
+        {
+          "title": "Подробные условия",
+          "body": "Штуки считаются по всей группе, из любых товаров акции. Каждый берёт столько, сколько нужно, хоть одну штуку.Когда группа набирает 9 штук, она закрывается. Цена для всех участников — со скидкой 9 %.Скидка считается от цены на сайте, наценки сверху нет. Если цена на сайте вырастет, группа считает по прежней.Оплата и поставка — после набора группы и подтверждения менеджера."
+        },
+        {
+          "title": "Пример расчёта",
+          "body": "TCL FreshIN 3.0 (белый) TAC-FR09HSV/P7W, цена на сайте 323 942 ₸ с НДС.Цена в группе, −9 %294 787 ₸экономия 29 155 ₸"
+        }
+      ],
+      "products": [
+        {
+          "id": "p01",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (белый) TAC-FR09HSV/P7W",
+          "price": 323942,
+          "priceGroup": 294787,
+          "saving": 29155,
+          "url": "tproduct/649355257894-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "img": "freshin-plus-white-6.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR09HSV/P7W",
+            "sl": "tcl-tac-fr09hsv-p7w"
+          }
+        },
+        {
+          "id": "p02",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (белый) TAC-FR12HSV/P7W",
+          "price": 340992,
+          "priceGroup": 310303,
+          "saving": 30689,
+          "url": "tproduct/350950348204-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "img": "freshin-plus-white-6.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR12HSV/P7W",
+            "sl": "tcl-tac-fr12hsv-p7w"
+          }
+        },
+        {
+          "id": "p03",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро) TAC-FR09HSV/P7S",
+          "price": 340992,
+          "priceGroup": 310303,
+          "saving": 30689,
+          "url": "tproduct/938910378214-konditsioner-tcl-freshin-30-serebro-tac",
+          "img": "tcl-tac-fr09hsv-p7s.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR09HSV/P7S",
+            "sl": "tcl-tac-fr09hsv-p7s"
+          }
+        },
+        {
+          "id": "p04",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро) TAC-FR12HSV/P7S",
+          "price": 375092,
+          "priceGroup": 341334,
+          "saving": 33758,
+          "url": "tproduct/506426247284-konditsioner-tcl-freshin-30-serebro-tac",
+          "img": "tcl-tac-fr09hsv-p7s.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR12HSV/P7S",
+            "sl": "tcl-tac-fr12hsv-p7s"
+          }
+        },
+        {
+          "id": "p05",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро) TAC-FR18HSV/P7S",
+          "price": 409192,
+          "priceGroup": 372365,
+          "saving": 36827,
+          "url": "tproduct/992907639604-konditsioner-tcl-freshin-30-serebro-tac",
+          "img": "tcl-tac-fr09hsv-p7s.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR18HSV/P7S",
+            "sl": "tcl-tac-fr18hsv-p7s"
+          }
+        },
+        {
+          "id": "p06",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B",
+          "price": 340992,
+          "priceGroup": 310303,
+          "saving": 30689,
+          "url": "tproduct/401535714334-konditsioner-tcl-freshin-30-chyornii-tac",
+          "img": "tcl-tac-fr10hsv-p7b.png",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR10HSV/P7B",
+            "sl": "tcl-tac-fr10hsv-p7b"
+          }
+        },
+        {
+          "id": "p07",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B",
+          "price": 383617,
+          "priceGroup": 349091,
+          "saving": 34526,
+          "url": "tproduct/964967300964-konditsioner-tcl-freshin-30-chyornii-tac",
+          "img": "tcl-tac-fr10hsv-p7b.png",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR13HSV/P7B",
+            "sl": "tcl-tac-fr13hsv-p7b"
+          }
+        },
+        {
+          "id": "p08",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B",
+          "price": 426242,
+          "priceGroup": 387880,
+          "saving": 38362,
+          "url": "tproduct/474881833054-konditsioner-tcl-freshin-30-chyornii-tac",
+          "img": "tcl-tac-fr10hsv-p7b.png",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR18HSV/P7B",
+            "sl": "tcl-tac-fr18hsv-p7b"
+          }
+        },
+        {
+          "id": "p09",
+          "brand": "TCL",
+          "title": "FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3",
+          "price": 340766,
+          "priceGroup": 310097,
+          "saving": 30669,
+          "url": "tproduct/118900810324-konditsioner-tcl-freshin-30-serebro-2025",
+          "img": "tcl-tac-fr12inv-r3.jpg",
+          "category": "fresh",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "TAC-FR12INV/R3",
+            "sl": "tcl-tac-fr12inv-r3"
+          }
+        },
+        {
+          "id": "p10",
+          "brand": "Royal Clima",
+          "title": "GLORIA Inverter RCI-GLE35HN",
+          "price": 203500,
+          "priceGroup": 185185,
+          "saving": 18315,
+          "url": "tproduct/783965063854-konditsioner-royal-clima-gloria-inverter",
+          "img": "rci-gle22hn.jpg",
+          "category": "split",
+          "pimAllow": {
+            "g": "bytovye",
+            "s": "RCI-GLE35HN",
+            "sl": "royal-clima-rci-gle35hn"
+          }
+        },
+        {
+          "id": "p11",
+          "brand": "Ballu",
+          "title": "Free Match: мультисплит на 2 комнаты",
+          "price": 567970,
+          "priceGroup": 516853,
+          "saving": 51117,
+          "url": "multisplit-komplekty-almaty",
+          "img": "ballu-ba2oi-fm-out-18hn8-eu.jpg",
+          "category": "split",
+          "pimAllow": null
+        },
+        {
+          "id": "p12",
+          "brand": "Royal Thermo",
+          "title": "Водонагреватель RWH 80 Optimal",
+          "price": 71750,
+          "priceGroup": 65293,
+          "saving": 6457,
+          "url": "tproduct/348776780514-rwh-80-optimal",
+          "img": "royal-thermo-rwh-80-optimal.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "vodonagrevateli",
+            "s": "RWH 80 Optimal",
+            "sl": "royal-thermo-rwh-80-optimal"
+          }
+        },
+        {
+          "id": "p13",
+          "brand": "Ballu",
+          "title": "Завеса тепловая BHC-L15-S09-M (пульт BRC-S)",
+          "price": 181690,
+          "priceGroup": 165338,
+          "saving": 16352,
+          "url": "tproduct/602341374234-ballu-bhc-l15-s09-m-pult-brc-s",
+          "img": "tz_1485658.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "teplovye-zavesy",
+            "s": "BHC-L15-S09-M (BRC-S)",
+            "sl": "ballu-bhc-l15-s09-m-brc-s"
+          }
+        },
+        {
+          "id": "p14",
+          "brand": "Ballu",
+          "title": "Завеса тепловая BHC-L10-S06 (пульт BRC-S)",
+          "price": 144990,
+          "priceGroup": 131941,
+          "saving": 13049,
+          "url": "tproduct/363930138874-ballu-bhc-l10-s06-pult-brc-s",
+          "img": "tz_1485649.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "teplovye-zavesy",
+            "s": "BHC-L10-S06 (BRC-S)",
+            "sl": "ballu-bhc-l10-s06-brc-s"
+          }
+        },
+        {
+          "id": "p15",
+          "brand": "Ballu",
+          "title": "ONEAIR ASP-200S",
+          "price": 327590,
+          "priceGroup": 298107,
+          "saving": 29483,
+          "url": "tovar?g=ventilyaciya&sl=ballu-asp-200s",
+          "img": "ballu-oneair-asp-200s.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "ventilyaciya",
+            "s": "ASP-200S",
+            "sl": "ballu-asp-200s"
+          }
+        },
+        {
+          "id": "p16",
+          "brand": "Ballu",
+          "title": "ONEAIR ASP-80",
+          "price": 114990,
+          "priceGroup": 104641,
+          "saving": 10349,
+          "url": "tovar?g=ventilyaciya&sl=ballu-asp-80",
+          "img": "ballu-oneair-asp-80.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "ventilyaciya",
+            "s": "ASP-80",
+            "sl": "ballu-asp-80"
+          }
+        },
+        {
+          "id": "p17",
+          "brand": "Ballu",
+          "title": "ONEAIR ASP-100",
+          "price": 203390,
+          "priceGroup": 185085,
+          "saving": 18305,
+          "url": "tovar?g=ventilyaciya&sl=ballu-asp-100",
+          "img": "ballu-oneair-asp-100.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "ventilyaciya",
+            "s": "ASP-100",
+            "sl": "ballu-asp-100"
+          }
+        },
+        {
+          "id": "p18",
+          "brand": "Electrolux",
+          "title": "Водонагреватель EWH 100 Major LZR 3",
+          "price": 209034,
+          "priceGroup": 190221,
+          "saving": 18813,
+          "url": "tproduct/680059508224-ewh-100-major-lzr-3",
+          "img": "electrolux-ewh-100-major-lzr-3.jpg",
+          "category": "water",
+          "pimAllow": {
+            "g": "vodonagrevateli",
+            "s": "EWH 100 Major LZR 3",
+            "sl": "electrolux-ewh-100-major-lzr-3"
+          }
+        },
+        {
+          "id": "p19",
+          "brand": "Royal Thermo",
+          "title": "Очаг электрический Aurora RTFP/P-AR50LS",
+          "price": 429990,
+          "priceGroup": 391291,
+          "saving": 38699,
+          "url": "tproduct/579347838434-ochag-elektricheskii-royal-thermo-aurora",
+          "img": "royal-thermo-rtfp-p-ar50ls.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "RTFP/P-AR50LS",
+            "sl": "royal-thermo-rtfp-p-ar50ls"
+          }
+        },
+        {
+          "id": "p20",
+          "brand": "Royal Thermo",
+          "title": "Очаг электрический RTFP/P1000M 3D Cassette Mystery",
+          "price": 599990,
+          "priceGroup": 545991,
+          "saving": 53999,
+          "url": "tproduct/275010969874-ochag-elektricheskii-royal-thermo-rtfpp1",
+          "img": "royal-thermo-rtfp-p1000m.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "RTFP/P1000M",
+            "sl": "royal-thermo-rtfp-p1000m"
+          }
+        },
+        {
+          "id": "p21",
+          "brand": "Firelight",
+          "title": "Биокамин BFP/P-3020",
+          "price": 399990,
+          "priceGroup": 363991,
+          "saving": 35999,
+          "url": "tproduct/599405216204-biokamin-firelight-bfpp-3020",
+          "img": "firelight-bfp-p-3020.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "BFP/P-3020",
+            "sl": "firelight-bfp-p-3020"
+          }
+        },
+        {
+          "id": "p22",
+          "brand": "Firelight",
+          "title": "Биокамин BFP/W-110",
+          "price": 279990,
+          "priceGroup": 254791,
+          "saving": 25199,
+          "url": "tproduct/693039877204-biokamin-firelight-bfpw-110",
+          "img": "firelight-bfp-w-110.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "BFP/W-110",
+            "sl": "firelight-bfp-w-110"
+          }
+        },
+        {
+          "id": "p23",
+          "brand": "Electrolux",
+          "title": "Панорамный очаг Sphere Plus EFP/P-3320RLS N",
+          "price": 299990,
+          "priceGroup": 272991,
+          "saving": 26999,
+          "url": "tproduct/449475714854-panoramnii-ochag-sphere-plus-efpp-3320rl",
+          "img": "electrolux-panoramnyy-ochag-sphere-plus-efp-p-3320rls-n-diagonal-33-dy.jpg",
+          "category": "fire",
+          "pimAllow": {
+            "g": "kaminy",
+            "s": "EFP/P-3320RLS N",
+            "sl": "electrolux-efp-p-3320rls-n"
+          }
+        }
+      ],
+      "rendered": [
+        {
+          "title": "FreshIN 3.0 (белый) TAC-FR09HSV/P7W",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие не подтверждено: владелец сообщает, что P7W отсутствует, а снимок PIM показывает «В наличии» — нужно подтверждение менеджера",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/649355257894-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "displayed": [
+            "323 942 ₸",
+            "294 787 ₸"
+          ]
+        },
+        {
+          "title": "ONEAIR ASP-200S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-200s.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-200s",
+          "displayed": [
+            "327 590 ₸",
+            "298 107 ₸"
+          ]
+        },
+        {
+          "title": "Панорамный очаг Sphere Plus EFP/P-3320RLS N",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-panoramnyy-ochag-sphere-plus-efp-p-3320rls-n-diagonal-33-dy.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/449475714854-panoramnii-ochag-sphere-plus-efpp-3320rl",
+          "displayed": [
+            "299 990 ₸",
+            "272 991 ₸"
+          ]
+        },
+        {
+          "title": "GLORIA Inverter RCI-GLE35HN",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/rci-gle22hn.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/783965063854-konditsioner-royal-clima-gloria-inverter",
+          "displayed": [
+            "203 500 ₸",
+            "185 185 ₸"
+          ]
+        },
+        {
+          "title": "Free Match: мультисплит на 2 комнаты",
+          "pim": "Комплект: единого SKU в PIM нет — цена и наличие уточняются у менеджера",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-ba2oi-fm-out-18hn8-eu.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/multisplit-komplekty-almaty",
+          "displayed": [
+            "567 970 ₸",
+            "516 853 ₸"
+          ]
+        },
+        {
+          "title": "Водонагреватель RWH 80 Optimal",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rwh-80-optimal.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/348776780514-rwh-80-optimal",
+          "displayed": [
+            "71 750 ₸",
+            "65 293 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (белый) TAC-FR12HSV/P7W",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
+          "imageOk": true,
+          "link": "https://tehnoholod369.kz/tproduct/350950348204-konditsioner-tcl-freshin-30-belii-tac-fr",
+          "displayed": [
+            "340 992 ₸",
+            "310 303 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро) TAC-FR09HSV/P7S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/938910378214-konditsioner-tcl-freshin-30-serebro-tac",
+          "displayed": [
+            "340 992 ₸",
+            "310 303 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро) TAC-FR12HSV/P7S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/506426247284-konditsioner-tcl-freshin-30-serebro-tac",
+          "displayed": [
+            "375 092 ₸",
+            "341 334 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро) TAC-FR18HSV/P7S",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/992907639604-konditsioner-tcl-freshin-30-serebro-tac",
+          "displayed": [
+            "409 192 ₸",
+            "372 365 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/401535714334-konditsioner-tcl-freshin-30-chyornii-tac",
+          "displayed": [
+            "340 992 ₸",
+            "310 303 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/964967300964-konditsioner-tcl-freshin-30-chyornii-tac",
+          "displayed": [
+            "383 617 ₸",
+            "349 091 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/474881833054-konditsioner-tcl-freshin-30-chyornii-tac",
+          "displayed": [
+            "426 242 ₸",
+            "387 880 ₸"
+          ]
+        },
+        {
+          "title": "FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr12inv-r3.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/118900810324-konditsioner-tcl-freshin-30-serebro-2025",
+          "displayed": [
+            "340 766 ₸",
+            "310 097 ₸"
+          ]
+        },
+        {
+          "title": "Завеса тепловая BHC-L15-S09-M (пульт BRC-S)",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485658.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/602341374234-ballu-bhc-l15-s09-m-pult-brc-s",
+          "displayed": [
+            "181 690 ₸",
+            "165 338 ₸"
+          ]
+        },
+        {
+          "title": "Завеса тепловая BHC-L10-S06 (пульт BRC-S)",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485649.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/363930138874-ballu-bhc-l10-s06-pult-brc-s",
+          "displayed": [
+            "144 990 ₸",
+            "131 941 ₸"
+          ]
+        },
+        {
+          "title": "ONEAIR ASP-80",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-80.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-80",
+          "displayed": [
+            "114 990 ₸",
+            "104 641 ₸"
+          ]
+        },
+        {
+          "title": "ONEAIR ASP-100",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-100.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-100",
+          "displayed": [
+            "203 390 ₸",
+            "185 085 ₸"
+          ]
+        },
+        {
+          "title": "Водонагреватель EWH 100 Major LZR 3",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-ewh-100-major-lzr-3.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/680059508224-ewh-100-major-lzr-3",
+          "displayed": [
+            "209 034 ₸",
+            "190 221 ₸"
+          ]
+        },
+        {
+          "title": "Очаг электрический Aurora RTFP/P-AR50LS",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p-ar50ls.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/579347838434-ochag-elektricheskii-royal-thermo-aurora",
+          "displayed": [
+            "429 990 ₸",
+            "391 291 ₸"
+          ]
+        },
+        {
+          "title": "Очаг электрический RTFP/P1000M 3D Cassette Mystery",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p1000m.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/275010969874-ochag-elektricheskii-royal-thermo-rtfpp1",
+          "displayed": [
+            "599 990 ₸",
+            "545 991 ₸"
+          ]
+        },
+        {
+          "title": "Биокамин BFP/P-3020",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-p-3020.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/599405216204-biokamin-firelight-bfpp-3020",
+          "displayed": [
+            "399 990 ₸",
+            "363 991 ₸"
+          ]
+        },
+        {
+          "title": "Биокамин BFP/W-110",
+          "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
+          "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-w-110.jpg",
+          "imageOk": false,
+          "link": "https://tehnoholod369.kz/tproduct/693039877204-biokamin-firelight-bfpw-110",
+          "displayed": [
+            "279 990 ₸",
+            "254 791 ₸"
+          ]
+        }
+      ],
+      "maxSave": "53 999 ₸",
+      "maxSaveStyle": {
+        "fontSize": "22px",
+        "color": "rgb(80, 41, 188)",
+        "fontWeight": "800"
+      },
+      "ctaMobile": {
+        "top": 0,
+        "bottom": 0,
+        "height": 0,
+        "width": 0,
+        "left": 0,
+        "right": 0
+      },
+      "tildaBottom": [],
+      "nav": {
+        "top": 215,
+        "bottom": 259,
+        "height": 44,
+        "width": 608,
+        "left": 704,
+        "right": 1313
+      },
+      "tapFailures": [],
+      "tapChecked": 42,
+      "heroText": "ГРУППОВЫЕ ПОКУПКИ · АЛМАТЫ\nКомфорт для дома.\nВместе выгоднее.\n\nОбъединяйте заказы на климатическую технику и получайте групповые условия на участвующие модели. Сначала согласуем цену и комплектацию — платить сразу не нужно.\n\nГруппа №12 · идёт набор\n\nЭкономия до 53 999 ₸\nна одной модели — скидка группы 9 %\n\nВыбрать и присоединиться\n↓\nПосмотреть оборудование\n↓\nИндивидуальный заказ\nЦены с НДС\nМАСТЕР-монтаж\nДЛЯ НОВОЙ КВАРТИРЫ\nПрохлада + свежий воздух\nКлимат под вашу задачу\n\nПодбор техники и монтаж\n\nПодбор · доставка · монтаж\nВ одном месте",
+      "phoneExample": "+7 000 000 00 00",
+      "p7wConflict": true
+    }
+  },
+  "scope": "published test read-only, no form POST",
+  "pass": true
+}
