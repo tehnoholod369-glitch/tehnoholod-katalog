@@ -1,6 +1,6 @@
 {
   "url": "https://tehnoholod369.kz/vmeste-deshevle-t022-test-20261115",
-  "at": "2026-11-16T06:51:52.048Z",
+  "at": "2026-11-16T07:06:42.865Z",
   "checks": {
     "320": {
       "title": "ТЕСТ — Вместе дешевле · T-022 · 15.11.2026",
@@ -499,6 +499,7 @@
       ],
       "rendered": [
         {
+          "productId": "p01",
           "title": "FreshIN 3.0 (белый) TAC-FR09HSV/P7W",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие не подтверждено: владелец сообщает, что P7W отсутствует, а снимок PIM показывает «В наличии» — нужно подтверждение менеджера",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
@@ -510,6 +511,7 @@
           ]
         },
         {
+          "productId": "p15",
           "title": "ONEAIR ASP-200S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-200s.jpg",
@@ -521,6 +523,7 @@
           ]
         },
         {
+          "productId": "p23",
           "title": "Панорамный очаг Sphere Plus EFP/P-3320RLS N",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-panoramnyy-ochag-sphere-plus-efp-p-3320rls-n-diagonal-33-dy.jpg",
@@ -532,6 +535,7 @@
           ]
         },
         {
+          "productId": "p10",
           "title": "GLORIA Inverter RCI-GLE35HN",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/rci-gle22hn.jpg",
@@ -543,6 +547,7 @@
           ]
         },
         {
+          "productId": "p11",
           "title": "Free Match: мультисплит на 2 комнаты",
           "pim": "Комплект: единого SKU в PIM нет — цена и наличие уточняются у менеджера",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-ba2oi-fm-out-18hn8-eu.jpg",
@@ -554,6 +559,7 @@
           ]
         },
         {
+          "productId": "p12",
           "title": "Водонагреватель RWH 80 Optimal",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rwh-80-optimal.jpg",
@@ -565,6 +571,7 @@
           ]
         },
         {
+          "productId": "p02",
           "title": "FreshIN 3.0 (белый) TAC-FR12HSV/P7W",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
@@ -576,6 +583,7 @@
           ]
         },
         {
+          "productId": "p03",
           "title": "FreshIN 3.0 (серебро) TAC-FR09HSV/P7S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
@@ -587,6 +595,7 @@
           ]
         },
         {
+          "productId": "p04",
           "title": "FreshIN 3.0 (серебро) TAC-FR12HSV/P7S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
@@ -598,6 +607,7 @@
           ]
         },
         {
+          "productId": "p05",
           "title": "FreshIN 3.0 (серебро) TAC-FR18HSV/P7S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
@@ -609,6 +619,7 @@
           ]
         },
         {
+          "productId": "p06",
           "title": "FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
@@ -620,6 +631,7 @@
           ]
         },
         {
+          "productId": "p07",
           "title": "FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
@@ -631,6 +643,7 @@
           ]
         },
         {
+          "productId": "p08",
           "title": "FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
@@ -642,6 +655,7 @@
           ]
         },
         {
+          "productId": "p09",
           "title": "FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr12inv-r3.jpg",
@@ -653,6 +667,7 @@
           ]
         },
         {
+          "productId": "p13",
           "title": "Завеса тепловая BHC-L15-S09-M (пульт BRC-S)",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485658.jpg",
@@ -664,6 +679,7 @@
           ]
         },
         {
+          "productId": "p14",
           "title": "Завеса тепловая BHC-L10-S06 (пульт BRC-S)",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485649.jpg",
@@ -675,6 +691,7 @@
           ]
         },
         {
+          "productId": "p16",
           "title": "ONEAIR ASP-80",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-80.jpg",
@@ -686,6 +703,7 @@
           ]
         },
         {
+          "productId": "p17",
           "title": "ONEAIR ASP-100",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-100.jpg",
@@ -697,6 +715,7 @@
           ]
         },
         {
+          "productId": "p18",
           "title": "Водонагреватель EWH 100 Major LZR 3",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-ewh-100-major-lzr-3.jpg",
@@ -708,6 +727,7 @@
           ]
         },
         {
+          "productId": "p19",
           "title": "Очаг электрический Aurora RTFP/P-AR50LS",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p-ar50ls.jpg",
@@ -719,6 +739,7 @@
           ]
         },
         {
+          "productId": "p20",
           "title": "Очаг электрический RTFP/P1000M 3D Cassette Mystery",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p1000m.jpg",
@@ -730,6 +751,7 @@
           ]
         },
         {
+          "productId": "p21",
           "title": "Биокамин BFP/P-3020",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-p-3020.jpg",
@@ -741,6 +763,7 @@
           ]
         },
         {
+          "productId": "p22",
           "title": "Биокамин BFP/W-110",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-w-110.jpg",
@@ -1278,6 +1301,7 @@
       ],
       "rendered": [
         {
+          "productId": "p01",
           "title": "FreshIN 3.0 (белый) TAC-FR09HSV/P7W",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие не подтверждено: владелец сообщает, что P7W отсутствует, а снимок PIM показывает «В наличии» — нужно подтверждение менеджера",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
@@ -1289,6 +1313,7 @@
           ]
         },
         {
+          "productId": "p15",
           "title": "ONEAIR ASP-200S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-200s.jpg",
@@ -1300,6 +1325,7 @@
           ]
         },
         {
+          "productId": "p23",
           "title": "Панорамный очаг Sphere Plus EFP/P-3320RLS N",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-panoramnyy-ochag-sphere-plus-efp-p-3320rls-n-diagonal-33-dy.jpg",
@@ -1311,6 +1337,7 @@
           ]
         },
         {
+          "productId": "p10",
           "title": "GLORIA Inverter RCI-GLE35HN",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/rci-gle22hn.jpg",
@@ -1322,6 +1349,7 @@
           ]
         },
         {
+          "productId": "p11",
           "title": "Free Match: мультисплит на 2 комнаты",
           "pim": "Комплект: единого SKU в PIM нет — цена и наличие уточняются у менеджера",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-ba2oi-fm-out-18hn8-eu.jpg",
@@ -1333,6 +1361,7 @@
           ]
         },
         {
+          "productId": "p12",
           "title": "Водонагреватель RWH 80 Optimal",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rwh-80-optimal.jpg",
@@ -1344,6 +1373,7 @@
           ]
         },
         {
+          "productId": "p02",
           "title": "FreshIN 3.0 (белый) TAC-FR12HSV/P7W",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
@@ -1355,6 +1385,7 @@
           ]
         },
         {
+          "productId": "p03",
           "title": "FreshIN 3.0 (серебро) TAC-FR09HSV/P7S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
@@ -1366,6 +1397,7 @@
           ]
         },
         {
+          "productId": "p04",
           "title": "FreshIN 3.0 (серебро) TAC-FR12HSV/P7S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
@@ -1377,6 +1409,7 @@
           ]
         },
         {
+          "productId": "p05",
           "title": "FreshIN 3.0 (серебро) TAC-FR18HSV/P7S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
@@ -1388,6 +1421,7 @@
           ]
         },
         {
+          "productId": "p06",
           "title": "FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
@@ -1399,6 +1433,7 @@
           ]
         },
         {
+          "productId": "p07",
           "title": "FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
@@ -1410,6 +1445,7 @@
           ]
         },
         {
+          "productId": "p08",
           "title": "FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
@@ -1421,6 +1457,7 @@
           ]
         },
         {
+          "productId": "p09",
           "title": "FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr12inv-r3.jpg",
@@ -1432,6 +1469,7 @@
           ]
         },
         {
+          "productId": "p13",
           "title": "Завеса тепловая BHC-L15-S09-M (пульт BRC-S)",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485658.jpg",
@@ -1443,6 +1481,7 @@
           ]
         },
         {
+          "productId": "p14",
           "title": "Завеса тепловая BHC-L10-S06 (пульт BRC-S)",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485649.jpg",
@@ -1454,6 +1493,7 @@
           ]
         },
         {
+          "productId": "p16",
           "title": "ONEAIR ASP-80",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-80.jpg",
@@ -1465,6 +1505,7 @@
           ]
         },
         {
+          "productId": "p17",
           "title": "ONEAIR ASP-100",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-100.jpg",
@@ -1476,6 +1517,7 @@
           ]
         },
         {
+          "productId": "p18",
           "title": "Водонагреватель EWH 100 Major LZR 3",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-ewh-100-major-lzr-3.jpg",
@@ -1487,6 +1529,7 @@
           ]
         },
         {
+          "productId": "p19",
           "title": "Очаг электрический Aurora RTFP/P-AR50LS",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p-ar50ls.jpg",
@@ -1498,6 +1541,7 @@
           ]
         },
         {
+          "productId": "p20",
           "title": "Очаг электрический RTFP/P1000M 3D Cassette Mystery",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p1000m.jpg",
@@ -1509,6 +1553,7 @@
           ]
         },
         {
+          "productId": "p21",
           "title": "Биокамин BFP/P-3020",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-p-3020.jpg",
@@ -1520,6 +1565,7 @@
           ]
         },
         {
+          "productId": "p22",
           "title": "Биокамин BFP/W-110",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-w-110.jpg",
@@ -2057,6 +2103,7 @@
       ],
       "rendered": [
         {
+          "productId": "p01",
           "title": "FreshIN 3.0 (белый) TAC-FR09HSV/P7W",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие не подтверждено: владелец сообщает, что P7W отсутствует, а снимок PIM показывает «В наличии» — нужно подтверждение менеджера",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
@@ -2068,6 +2115,7 @@
           ]
         },
         {
+          "productId": "p15",
           "title": "ONEAIR ASP-200S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-200s.jpg",
@@ -2079,6 +2127,7 @@
           ]
         },
         {
+          "productId": "p23",
           "title": "Панорамный очаг Sphere Plus EFP/P-3320RLS N",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-panoramnyy-ochag-sphere-plus-efp-p-3320rls-n-diagonal-33-dy.jpg",
@@ -2090,6 +2139,7 @@
           ]
         },
         {
+          "productId": "p10",
           "title": "GLORIA Inverter RCI-GLE35HN",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/rci-gle22hn.jpg",
@@ -2101,6 +2151,7 @@
           ]
         },
         {
+          "productId": "p11",
           "title": "Free Match: мультисплит на 2 комнаты",
           "pim": "Комплект: единого SKU в PIM нет — цена и наличие уточняются у менеджера",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-ba2oi-fm-out-18hn8-eu.jpg",
@@ -2112,6 +2163,7 @@
           ]
         },
         {
+          "productId": "p12",
           "title": "Водонагреватель RWH 80 Optimal",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rwh-80-optimal.jpg",
@@ -2123,6 +2175,7 @@
           ]
         },
         {
+          "productId": "p02",
           "title": "FreshIN 3.0 (белый) TAC-FR12HSV/P7W",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
@@ -2134,6 +2187,7 @@
           ]
         },
         {
+          "productId": "p03",
           "title": "FreshIN 3.0 (серебро) TAC-FR09HSV/P7S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
@@ -2145,6 +2199,7 @@
           ]
         },
         {
+          "productId": "p04",
           "title": "FreshIN 3.0 (серебро) TAC-FR12HSV/P7S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
@@ -2156,6 +2211,7 @@
           ]
         },
         {
+          "productId": "p05",
           "title": "FreshIN 3.0 (серебро) TAC-FR18HSV/P7S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
@@ -2167,6 +2223,7 @@
           ]
         },
         {
+          "productId": "p06",
           "title": "FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
@@ -2178,6 +2235,7 @@
           ]
         },
         {
+          "productId": "p07",
           "title": "FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
@@ -2189,6 +2247,7 @@
           ]
         },
         {
+          "productId": "p08",
           "title": "FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
@@ -2200,6 +2259,7 @@
           ]
         },
         {
+          "productId": "p09",
           "title": "FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr12inv-r3.jpg",
@@ -2211,6 +2271,7 @@
           ]
         },
         {
+          "productId": "p13",
           "title": "Завеса тепловая BHC-L15-S09-M (пульт BRC-S)",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485658.jpg",
@@ -2222,6 +2283,7 @@
           ]
         },
         {
+          "productId": "p14",
           "title": "Завеса тепловая BHC-L10-S06 (пульт BRC-S)",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485649.jpg",
@@ -2233,6 +2295,7 @@
           ]
         },
         {
+          "productId": "p16",
           "title": "ONEAIR ASP-80",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-80.jpg",
@@ -2244,6 +2307,7 @@
           ]
         },
         {
+          "productId": "p17",
           "title": "ONEAIR ASP-100",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-100.jpg",
@@ -2255,6 +2319,7 @@
           ]
         },
         {
+          "productId": "p18",
           "title": "Водонагреватель EWH 100 Major LZR 3",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-ewh-100-major-lzr-3.jpg",
@@ -2266,6 +2331,7 @@
           ]
         },
         {
+          "productId": "p19",
           "title": "Очаг электрический Aurora RTFP/P-AR50LS",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p-ar50ls.jpg",
@@ -2277,6 +2343,7 @@
           ]
         },
         {
+          "productId": "p20",
           "title": "Очаг электрический RTFP/P1000M 3D Cassette Mystery",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p1000m.jpg",
@@ -2288,6 +2355,7 @@
           ]
         },
         {
+          "productId": "p21",
           "title": "Биокамин BFP/P-3020",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-p-3020.jpg",
@@ -2299,6 +2367,7 @@
           ]
         },
         {
+          "productId": "p22",
           "title": "Биокамин BFP/W-110",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-w-110.jpg",
@@ -2836,6 +2905,7 @@
       ],
       "rendered": [
         {
+          "productId": "p01",
           "title": "FreshIN 3.0 (белый) TAC-FR09HSV/P7W",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие не подтверждено: владелец сообщает, что P7W отсутствует, а снимок PIM показывает «В наличии» — нужно подтверждение менеджера",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
@@ -2847,6 +2917,7 @@
           ]
         },
         {
+          "productId": "p15",
           "title": "ONEAIR ASP-200S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-200s.jpg",
@@ -2858,6 +2929,7 @@
           ]
         },
         {
+          "productId": "p23",
           "title": "Панорамный очаг Sphere Plus EFP/P-3320RLS N",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-panoramnyy-ochag-sphere-plus-efp-p-3320rls-n-diagonal-33-dy.jpg",
@@ -2869,6 +2941,7 @@
           ]
         },
         {
+          "productId": "p10",
           "title": "GLORIA Inverter RCI-GLE35HN",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/rci-gle22hn.jpg",
@@ -2880,6 +2953,7 @@
           ]
         },
         {
+          "productId": "p11",
           "title": "Free Match: мультисплит на 2 комнаты",
           "pim": "Комплект: единого SKU в PIM нет — цена и наличие уточняются у менеджера",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-ba2oi-fm-out-18hn8-eu.jpg",
@@ -2891,6 +2965,7 @@
           ]
         },
         {
+          "productId": "p12",
           "title": "Водонагреватель RWH 80 Optimal",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rwh-80-optimal.jpg",
@@ -2902,6 +2977,7 @@
           ]
         },
         {
+          "productId": "p02",
           "title": "FreshIN 3.0 (белый) TAC-FR12HSV/P7W",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/freshin-plus-white-6.jpg",
@@ -2913,10 +2989,11 @@
           ]
         },
         {
+          "productId": "p03",
           "title": "FreshIN 3.0 (серебро) TAC-FR09HSV/P7S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/938910378214-konditsioner-tcl-freshin-30-serebro-tac",
           "displayed": [
             "340 992 ₸",
@@ -2924,10 +3001,11 @@
           ]
         },
         {
+          "productId": "p04",
           "title": "FreshIN 3.0 (серебро) TAC-FR12HSV/P7S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/506426247284-konditsioner-tcl-freshin-30-serebro-tac",
           "displayed": [
             "375 092 ₸",
@@ -2935,10 +3013,11 @@
           ]
         },
         {
+          "productId": "p05",
           "title": "FreshIN 3.0 (серебро) TAC-FR18HSV/P7S",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr09hsv-p7s.jpg",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/992907639604-konditsioner-tcl-freshin-30-serebro-tac",
           "displayed": [
             "409 192 ₸",
@@ -2946,10 +3025,11 @@
           ]
         },
         {
+          "productId": "p06",
           "title": "FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/401535714334-konditsioner-tcl-freshin-30-chyornii-tac",
           "displayed": [
             "340 992 ₸",
@@ -2957,10 +3037,11 @@
           ]
         },
         {
+          "productId": "p07",
           "title": "FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/964967300964-konditsioner-tcl-freshin-30-chyornii-tac",
           "displayed": [
             "383 617 ₸",
@@ -2968,10 +3049,11 @@
           ]
         },
         {
+          "productId": "p08",
           "title": "FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr10hsv-p7b.png",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/474881833054-konditsioner-tcl-freshin-30-chyornii-tac",
           "displayed": [
             "426 242 ₸",
@@ -2979,10 +3061,11 @@
           ]
         },
         {
+          "productId": "p09",
           "title": "FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tcl-tac-fr12inv-r3.jpg",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/118900810324-konditsioner-tcl-freshin-30-serebro-2025",
           "displayed": [
             "340 766 ₸",
@@ -2990,10 +3073,11 @@
           ]
         },
         {
+          "productId": "p13",
           "title": "Завеса тепловая BHC-L15-S09-M (пульт BRC-S)",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485658.jpg",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/602341374234-ballu-bhc-l15-s09-m-pult-brc-s",
           "displayed": [
             "181 690 ₸",
@@ -3001,10 +3085,11 @@
           ]
         },
         {
+          "productId": "p14",
           "title": "Завеса тепловая BHC-L10-S06 (пульт BRC-S)",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/tz_1485649.jpg",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/363930138874-ballu-bhc-l10-s06-pult-brc-s",
           "displayed": [
             "144 990 ₸",
@@ -3012,10 +3097,11 @@
           ]
         },
         {
+          "productId": "p16",
           "title": "ONEAIR ASP-80",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-80.jpg",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-80",
           "displayed": [
             "114 990 ₸",
@@ -3023,10 +3109,11 @@
           ]
         },
         {
+          "productId": "p17",
           "title": "ONEAIR ASP-100",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/ballu-oneair-asp-100.jpg",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tovar?g=ventilyaciya&sl=ballu-asp-100",
           "displayed": [
             "203 390 ₸",
@@ -3034,10 +3121,11 @@
           ]
         },
         {
+          "productId": "p18",
           "title": "Водонагреватель EWH 100 Major LZR 3",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/electrolux-ewh-100-major-lzr-3.jpg",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/680059508224-ewh-100-major-lzr-3",
           "displayed": [
             "209 034 ₸",
@@ -3045,10 +3133,11 @@
           ]
         },
         {
+          "productId": "p19",
           "title": "Очаг электрический Aurora RTFP/P-AR50LS",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p-ar50ls.jpg",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/579347838434-ochag-elektricheskii-royal-thermo-aurora",
           "displayed": [
             "429 990 ₸",
@@ -3056,10 +3145,11 @@
           ]
         },
         {
+          "productId": "p20",
           "title": "Очаг электрический RTFP/P1000M 3D Cassette Mystery",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/royal-thermo-rtfp-p1000m.jpg",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/275010969874-ochag-elektricheskii-royal-thermo-rtfpp1",
           "displayed": [
             "599 990 ₸",
@@ -3067,10 +3157,11 @@
           ]
         },
         {
+          "productId": "p21",
           "title": "Биокамин BFP/P-3020",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-p-3020.jpg",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/599405216204-biokamin-firelight-bfpp-3020",
           "displayed": [
             "399 990 ₸",
@@ -3078,10 +3169,11 @@
           ]
         },
         {
+          "productId": "p22",
           "title": "Биокамин BFP/W-110",
           "pim": "цена совпадает с PIM от 14.11.2026; наличие: В наличии",
           "image": "https://raw.githubusercontent.com/tehnoholod369-glitch/tehnoholod-katalog/t022-preview-20261115/staging/T022-20261115/assets/firelight-bfp-w-110.jpg",
-          "imageOk": false,
+          "imageOk": true,
           "link": "https://tehnoholod369.kz/tproduct/693039877204-biokamin-firelight-bfpw-110",
           "displayed": [
             "279 990 ₸",
