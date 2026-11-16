@@ -1,0 +1,45 @@
+{
+  "task": "T-022 HEADER_FOOTER",
+  "scope": "test page only",
+  "at": "2026-11-16",
+  "checked": {
+    "390": {
+      "header_before_px": 45,
+      "header_after_px": 45,
+      "nav_px": 44,
+      "nav_links": 6,
+      "identity_before": "none",
+      "identity_after": "removed",
+      "local_footer_before_px": 248,
+      "local_footer_after": "removed",
+      "site_mobile_bar_before": true,
+      "site_mobile_bar_after": false,
+      "own_bar_height_px": 64,
+      "doc_width": 390,
+      "viewport_width": 390
+    },
+    "1440": {
+      "header_before_px": 73,
+      "header_after_px": 49,
+      "nav_px": 48,
+      "nav_links": 6,
+      "identity_before": "flex",
+      "identity_after": "removed",
+      "local_footer_before_px": 75,
+      "local_footer_after": "removed",
+      "site_mobile_bar_before": false,
+      "site_mobile_bar_after": false,
+      "own_bar_height_px": 0,
+      "doc_width": 1425,
+      "viewport_width": 1440
+    }
+  },
+  "scoped_site_bar_rule": true,
+  "mobile_red_button": "#E81C1C",
+  "production_main_sha256": "2788ec4d558336349886fc61fa1874fc5a593516ac8b292cfbf73fc86cb97aef",
+  "production_hash_matched": true,
+  "test_nofollow_noindex_preserved": true,
+  "global_site_header_footer_sources_edited": false,
+  "footer_spacing": "48px visually and in section-specific CSS; no shared site footer modifications",
+  "pass": true
+}
