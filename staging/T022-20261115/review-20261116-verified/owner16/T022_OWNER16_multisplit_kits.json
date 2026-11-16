@@ -1,0 +1,631 @@
+[
+ {
+  "id": "m01",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "MDV",
+  "title": "Мультисплит: наружный MD3O-18HFN8 + 2 внутр.",
+  "spec": "Внутренние: MDSAI2-09HRFN8 ×2 (9000 + 9000 BTU), наружный 18000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 568750,
+  "img": "https://img.tehnoholod369.kz/img/mdv/mdv-md3o-18hfn8.png",
+  "href": "tproduct/959062882004-naruzhnii-blok-multi-split-mdv-free-matc",
+  "kit": {
+   "outdoor": "MD3O-18HFN8",
+   "indoor": [
+    "MDSAI2-09HRFN8",
+    "MDSAI2-09HRFN8"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "INTEGRA PRO",
+   "components": [
+    {
+     "sku": "MD3O-18HFN8",
+     "price": 443750,
+     "st": "В наличии"
+    },
+    {
+     "sku": "MDSAI2-09HRFN8",
+     "price": 62500,
+     "st": "В наличии"
+    },
+    {
+     "sku": "MDSAI2-09HRFN8",
+     "price": 62500,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m02",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "MDV",
+  "title": "Мультисплит: наружный MD3O-21HFN8 + 2 внутр.",
+  "spec": "Внутренние: MDSAI2-09HRFN8 и MDSAI2-12HRFN8 (9000 + 12000 BTU), наружный 21000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 603750,
+  "img": "https://img.tehnoholod369.kz/img/mdv/mdv-md3o-18hfn8.png",
+  "href": "tproduct/224046856954-naruzhnii-blok-multi-split-mdv-free-matc",
+  "kit": {
+   "outdoor": "MD3O-21HFN8",
+   "indoor": [
+    "MDSAI2-09HRFN8",
+    "MDSAI2-12HRFN8"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "INTEGRA PRO",
+   "components": [
+    {
+     "sku": "MD3O-21HFN8",
+     "price": 460000,
+     "st": "В наличии"
+    },
+    {
+     "sku": "MDSAI2-09HRFN8",
+     "price": 62500,
+     "st": "В наличии"
+    },
+    {
+     "sku": "MDSAI2-12HRFN8",
+     "price": 81250,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m03",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "MDV",
+  "title": "Мультисплит: наружный MD4O-28HFN8 + 2 внутр.",
+  "spec": "Внутренние: MDSAI2-09HRFN8 и MDSAI2-18HRFN8 (9000 + 18000 BTU), наружный 28000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 681250,
+  "img": "https://img.tehnoholod369.kz/img/mdv/mdv-md3o-18hfn8.png",
+  "href": "tproduct/328152832604-naruzhnii-blok-multi-split-mdv-free-matc",
+  "kit": {
+   "outdoor": "MD4O-28HFN8",
+   "indoor": [
+    "MDSAI2-09HRFN8",
+    "MDSAI2-18HRFN8"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "INTEGRA PRO",
+   "components": [
+    {
+     "sku": "MD4O-28HFN8",
+     "price": 506250,
+     "st": "В наличии"
+    },
+    {
+     "sku": "MDSAI2-09HRFN8",
+     "price": 62500,
+     "st": "В наличии"
+    },
+    {
+     "sku": "MDSAI2-18HRFN8",
+     "price": 112500,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m04",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "MDV",
+  "title": "Мультисплит: наружный MD4O-36HFN8 + 2 внутр.",
+  "spec": "Внутренние: MDSAI2-12HRFN8 и MDSAI2-24HRFN8 (12000 + 24000 BTU), наружный 36000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 992500,
+  "img": "https://img.tehnoholod369.kz/img/mdv/mdv-md3o-18hfn8.png",
+  "href": "tproduct/509887493764-naruzhnii-blok-multi-split-mdv-free-matc",
+  "kit": {
+   "outdoor": "MD4O-36HFN8",
+   "indoor": [
+    "MDSAI2-12HRFN8",
+    "MDSAI2-24HRFN8"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "INTEGRA PRO",
+   "components": [
+    {
+     "sku": "MD4O-36HFN8",
+     "price": 771250,
+     "st": "В наличии"
+    },
+    {
+     "sku": "MDSAI2-12HRFN8",
+     "price": 81250,
+     "st": "В наличии"
+    },
+    {
+     "sku": "MDSAI2-24HRFN8",
+     "price": 140000,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m05",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "MDV",
+  "title": "Мультисплит: наружный MD5OB-42HFN8 + 2 внутр.",
+  "spec": "Внутренние: MDSAL-18HRFN8 и MDSAL-24HRFN8 (18000 + 24000 BTU), наружный 42000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 1153750,
+  "img": "https://img.tehnoholod369.kz/img/mdv/mdv-md3o-18hfn8.png",
+  "href": "tproduct/722328230774-naruzhnii-blok-multi-split-mdv-free-matc",
+  "kit": {
+   "outdoor": "MD5OB-42HFN8",
+   "indoor": [
+    "MDSAL-18HRFN8",
+    "MDSAL-24HRFN8"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "INFINI Uvpro",
+   "components": [
+    {
+     "sku": "MD5OB-42HFN8",
+     "price": 906250,
+     "st": "В наличии"
+    },
+    {
+     "sku": "MDSAL-18HRFN8",
+     "price": 111250,
+     "st": "В наличии"
+    },
+    {
+     "sku": "MDSAL-24HRFN8",
+     "price": 136250,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m06",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "AERONIK",
+  "title": "Мультисплит: наружный ASO-24HMZK1(GWHD(24)NK6NO) + 2 внутр.",
+  "spec": "Внутренние: ASI-12 ILK4 ×2 (12000 + 12000 BTU), наружный 24000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 678500,
+  "img": "https://img.tehnoholod369.kz/img/realcon/Realcon_AERONIK_12.jpg",
+  "href": "tproduct/289626873654-konditsioner-aeronik-aso-24hmzk1gwhd24nk",
+  "kit": {
+   "outdoor": "ASO-24HMZK1(GWHD(24)NK6NO)",
+   "indoor": [
+    "ASI-12 ILK4",
+    "ASI-12 ILK4"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "Внутренний блок (мульти-сплит)",
+   "components": [
+    {
+     "sku": "ASO-24HMZK1(GWHD(24)NK6NO)",
+     "price": 504300,
+     "st": "В наличии"
+    },
+    {
+     "sku": "ASI-12 ILK4",
+     "price": 87100,
+     "st": "В наличии"
+    },
+    {
+     "sku": "ASI-12 ILK4",
+     "price": 87100,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m07",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "AERONIK",
+  "title": "Мультисплит: наружный ASO-28HMZK1(GWHD(28)NK6NO) + 2 внутр.",
+  "spec": "Внутренние: ASI-09 ILK3 и ASI-18 ILK3 (9000 + 18000 BTU), наружный 28000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 731800,
+  "img": "https://img.tehnoholod369.kz/img/realcon/Realcon_AERONIK_12.jpg",
+  "href": "tproduct/403056586884-konditsioner-aeronik-aso-28hmzk1gwhd28nk",
+  "kit": {
+   "outdoor": "ASO-28HMZK1(GWHD(28)NK6NO)",
+   "indoor": [
+    "ASI-09 ILK3",
+    "ASI-18 ILK3"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "Внутренний блок (мульти-сплит)",
+   "components": [
+    {
+     "sku": "ASO-28HMZK1(GWHD(28)NK6NO)",
+     "price": 529200,
+     "st": "В наличии"
+    },
+    {
+     "sku": "ASI-09 ILK3",
+     "price": 81700,
+     "st": "В наличии"
+    },
+    {
+     "sku": "ASI-18 ILK3",
+     "price": 120900,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m08",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "AERONIK",
+  "title": "Мультисплит: наружный ASO-36HMZK(GWHD(36)NK6NO) + 2 внутр.",
+  "spec": "Внутренние: ASI-18 ILK3 ×2 (18000 + 18000 BTU), наружный 36000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 1012700,
+  "img": "https://img.tehnoholod369.kz/img/realcon/Realcon_AERONIK_12.jpg",
+  "href": "tproduct/354315826944-konditsioner-aeronik-aso-36hmzkgwhd36nk6",
+  "kit": {
+   "outdoor": "ASO-36HMZK(GWHD(36)NK6NO)",
+   "indoor": [
+    "ASI-18 ILK3",
+    "ASI-18 ILK3"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "Внутренний блок (мульти-сплит)",
+   "components": [
+    {
+     "sku": "ASO-36HMZK(GWHD(36)NK6NO)",
+     "price": 770900,
+     "st": "В наличии"
+    },
+    {
+     "sku": "ASI-18 ILK3",
+     "price": 120900,
+     "st": "В наличии"
+    },
+    {
+     "sku": "ASI-18 ILK3",
+     "price": 120900,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m09",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "AERONIK",
+  "title": "Мультисплит: наружный ASO-42HMZK(GWHD(42)NK6NO) + 2 внутр.",
+  "spec": "Внутренние: ASI-18 ILK3 и ASI-24 ILK3 (18000 + 24000 BTU), наружный 42000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 1127400,
+  "img": "https://img.tehnoholod369.kz/img/realcon/Realcon_AERONIK_12.jpg",
+  "href": "tproduct/278293176344-konditsioner-aeronik-aso-42hmzkgwhd42nk6",
+  "kit": {
+   "outdoor": "ASO-42HMZK(GWHD(42)NK6NO)",
+   "indoor": [
+    "ASI-18 ILK3",
+    "ASI-24 ILK3"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "Внутренний блок (мульти-сплит)",
+   "components": [
+    {
+     "sku": "ASO-42HMZK(GWHD(42)NK6NO)",
+     "price": 850500,
+     "st": "В наличии"
+    },
+    {
+     "sku": "ASI-18 ILK3",
+     "price": 120900,
+     "st": "В наличии"
+    },
+    {
+     "sku": "ASI-24 ILK3",
+     "price": 156000,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m10",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "AUX",
+  "title": "Мультисплит: наружный AM2-H18/4DR3 + 2 внутр.",
+  "spec": "Внутренние: AMWM-H09/4R3A(HA) ×2 (9000 + 9000 BTU), наружный 18000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 546462,
+  "img": "https://img.tehnoholod369.kz/img/aux-air/am2-h14-4dr3.jpg",
+  "href": "tproduct/619641052044-naruzhnii-modul-aux-free-match-am2-h184d",
+  "kit": {
+   "outdoor": "AM2-H18/4DR3",
+   "indoor": [
+    "AMWM-H09/4R3A(HA)",
+    "AMWM-H09/4R3A(HA)"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "Free Match R32 DC инвертор",
+   "components": [
+    {
+     "sku": "AM2-H18/4DR3",
+     "price": 382506,
+     "st": "В наличии"
+    },
+    {
+     "sku": "AMWM-H09/4R3A(HA)",
+     "price": 81978,
+     "st": "В наличии"
+    },
+    {
+     "sku": "AMWM-H09/4R3A(HA)",
+     "price": 81978,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m11",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "AUX",
+  "title": "Мультисплит: наружный AM3-H27/4DR3 + 2 внутр.",
+  "spec": "Внутренние: AMWM-H09/4R3C(HA） и AMWM-H18/4R3C(HA) (9000 + 18000 BTU), наружный 27000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 688275,
+  "img": "https://img.tehnoholod369.kz/img/aux-air/am3-h21-4dr3.jpg",
+  "href": "tproduct/275162617174-naruzhnii-modul-aux-free-match-am3-h274d",
+  "kit": {
+   "outdoor": "AM3-H27/4DR3",
+   "indoor": [
+    "AMWM-H09/4R3C(HA）",
+    "AMWM-H18/4R3C(HA)"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "Free Match R32 DC инвертор",
+   "components": [
+    {
+     "sku": "AM3-H27/4DR3",
+     "price": 497022,
+     "st": "В наличии"
+    },
+    {
+     "sku": "AMWM-H09/4R3C(HA）",
+     "price": 85001,
+     "st": "В наличии"
+    },
+    {
+     "sku": "AMWM-H18/4R3C(HA)",
+     "price": 106252,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m12",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "AUX",
+  "title": "Мультисплит: наружный AM5-H42/4DR1B + 2 внутр.",
+  "spec": "Внутренние: AMSD-H12/4R1 ×2 (12000 + 12000 BTU), наружный 42000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 1444216,
+  "img": "https://img.tehnoholod369.kz/img/aux-air/am5-h42-4dr1b.jpg",
+  "href": "tproduct/467632900524-naruzhnii-modul-aux-free-match-am5-h424d",
+  "kit": {
+   "outdoor": "AM5-H42/4DR1B",
+   "indoor": [
+    "AMSD-H12/4R1",
+    "AMSD-H12/4R1"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "Free Match R410A DC инвертор",
+   "components": [
+    {
+     "sku": "AM5-H42/4DR1B",
+     "price": 1104344,
+     "st": "В наличии"
+    },
+    {
+     "sku": "AMSD-H12/4R1",
+     "price": 169936,
+     "st": "В наличии"
+    },
+    {
+     "sku": "AMSD-H12/4R1",
+     "price": 169936,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m13",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "ROYAL CLIMA",
+  "title": "Мультисплит: наружный 4RMX-28HN/OUT + 2 внутр.",
+  "spec": "Внутренние: RCI-VT12HN ×2 (12000 + 12000 BTU), наружный 28000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 805200,
+  "img": "https://img.tehnoholod369.kz/img/royal-clima/2rmn-14hn-out.jpg",
+  "href": "tproduct/601072724894-naruzhnii-blok-royal-clima-4rmx-28hnout",
+  "kit": {
+   "outdoor": "4RMX-28HN/OUT",
+   "indoor": [
+    "RCI-VT12HN",
+    "RCI-VT12HN"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "VENTURO NERO MULTI FLEXI EU ERP",
+   "components": [
+    {
+     "sku": "4RMX-28HN/OUT",
+     "price": 578600,
+     "st": "В наличии"
+    },
+    {
+     "sku": "RCI-VT12HN",
+     "price": 113300,
+     "st": "В наличии"
+    },
+    {
+     "sku": "RCI-VT12HN",
+     "price": 113300,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m14",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "ROYAL CLIMA",
+  "title": "Мультисплит: наружный 4RMX-36HN/OUT + 2 внутр.",
+  "spec": "Внутренние: RCI-TM18HN ×2 (18000 + 18000 BTU), наружный 36000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 1005800,
+  "img": "https://img.tehnoholod369.kz/img/royal-clima/2rmn-14hn-out.jpg",
+  "href": "tproduct/473572334214-naruzhnii-blok-royal-clima-4rmx-36hnout",
+  "kit": {
+   "outdoor": "4RMX-36HN/OUT",
+   "indoor": [
+    "RCI-TM18HN",
+    "RCI-TM18HN"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "TRIUMPH MULTI FLEXI EU ERP",
+   "components": [
+    {
+     "sku": "4RMX-36HN/OUT",
+     "price": 776600,
+     "st": "В наличии"
+    },
+    {
+     "sku": "RCI-TM18HN",
+     "price": 114600,
+     "st": "В наличии"
+    },
+    {
+     "sku": "RCI-TM18HN",
+     "price": 114600,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m15",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "DITREEX",
+  "title": "Мультисплит: наружный DTXM-27KD6F3/O + 2 внутр.",
+  "spec": "Внутренние: DTXM-12K6XAC1/I ×2 (12000 + 12000 BTU), наружный 27000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 539720,
+  "img": "https://img.tehnoholod369.kz/img/multisplit/ditreex-dtxm-27kd6f3-o_01.png",
+  "href": "tproduct/263669768454-naruzhnii-blok-ditreex-dtxm-27kd6f3o-270",
+  "kit": {
+   "outdoor": "DTXM-27KD6F3/O",
+   "indoor": [
+    "DTXM-12K6XAC1/I",
+    "DTXM-12K6XAC1/I"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "Настенный внутренний блок (мульти-сплит)",
+   "components": [
+    {
+     "sku": "DTXM-27KD6F3/O",
+     "price": 354320,
+     "st": "В наличии"
+    },
+    {
+     "sku": "DTXM-12K6XAC1/I",
+     "price": 92700,
+     "st": "В наличии"
+    },
+    {
+     "sku": "DTXM-12K6XAC1/I",
+     "price": 92700,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m16",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "DITREEX",
+  "title": "Мультисплит: наружный DTXM-32KD6F4/O + 2 внутр.",
+  "spec": "Внутренние: DTXM-12K6XAC1/I и DTXM-18K6XAC1/I (12000 + 18000 BTU), наружный 32000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 758982,
+  "img": "https://img.tehnoholod369.kz/img/multisplit/ditreex-dtxm-32kd6f4-o_01.png",
+  "href": "tproduct/738061452094-naruzhnii-blok-ditreex-dtxm-32kd6f4o-320",
+  "kit": {
+   "outdoor": "DTXM-32KD6F4/O",
+   "indoor": [
+    "DTXM-12K6XAC1/I",
+    "DTXM-18K6XAC1/I"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "Настенный внутренний блок (мульти-сплит)",
+   "components": [
+    {
+     "sku": "DTXM-32KD6F4/O",
+     "price": 547188,
+     "st": "В наличии"
+    },
+    {
+     "sku": "DTXM-12K6XAC1/I",
+     "price": 92700,
+     "st": "В наличии"
+    },
+    {
+     "sku": "DTXM-18K6XAC1/I",
+     "price": 119094,
+     "st": "В наличии"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m17",
+  "cat": "multi",
+  "tag": "Мультисплит на 2 комнаты",
+  "brand": "GREE",
+  "title": "Мультисплит: наружный GWHD(24)NK6OO + 2 внутр.",
+  "spec": "Внутренние: GWH12QC-K6DNB6D ×2 (12000 + 12000 BTU), наружный 24000 BTU. Комплект собран из PIM, все три позиции в наличии.",
+  "price": 729756,
+  "img": "https://img.tehnoholod369.kz/img/multisplit/gree-naruzhnyy-blok_01.png",
+  "href": "tproduct/441452314914-naruzhnii-blok-gree-gwhd24nk6oo-24000-bt",
+  "kit": {
+   "outdoor": "GWHD(24)NK6OO",
+   "indoor": [
+    "GWH12QC-K6DNB6D",
+    "GWH12QC-K6DNB6D"
+   ],
+   "pimUpdated": "2026-11-14",
+   "series": "Lomo",
+   "components": [
+    {
+     "sku": "GWHD(24)NK6OO",
+     "price": 508820,
+     "st": "В наличии"
+    },
+    {
+     "sku": "GWH12QC-K6DNB6D",
+     "price": 110468,
+     "st": "В наличии"
+    },
+    {
+     "sku": "GWH12QC-K6DNB6D",
+     "price": 110468,
+     "st": "В наличии"
+    }
+   ]
+  }
+ }
+]
