@@ -1,0 +1,1926 @@
+{
+  "url": "https://tehnoholod369.kz/vmeste-deshevle-t022-test-20261115",
+  "checkedAt": "2026-11-16T06:59:12.927Z",
+  "widths": {
+    "320": {
+      "viewport": 320,
+      "docWidth": 320,
+      "docHeight": 13541,
+      "ready": "1",
+      "marker": true,
+      "noindex": true,
+      "hero": {
+        "text": "Групповые покупки · АлматыКомфорт для дома.Вместе выгоднее.Объединяйте заказы на климатическую технику и получайте групповые условия на учас",
+        "x": 12,
+        "y": 213.2,
+        "w": 296,
+        "h": 927.5,
+        "display": "grid",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "relative"
+      },
+      "heroHeadline": {
+        "text": "Комфорт для дома.Вместе выгоднее.",
+        "x": 30,
+        "y": 253.8,
+        "w": 260,
+        "h": 64,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "26px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "heroStatus": {
+        "text": "Текущий набор завершён",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "inline-flex",
+        "visibility": "visible",
+        "color": "rgb(89, 62, 128)",
+        "fontSize": "12px",
+        "background": "rgba(255, 255, 255, 0.6)",
+        "position": "static"
+      },
+      "saving": {
+        "text": "Экономия до 53 999 ₸на одной модели — скидка группы 9 %",
+        "x": 30,
+        "y": 369.8,
+        "w": 260,
+        "h": 49.9,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "savingStrong": {
+        "text": "Экономия до 53 999 ₸",
+        "x": 30,
+        "y": 369.8,
+        "w": 240.9,
+        "h": 26.4,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(80, 41, 188)",
+        "fontSize": "22px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "heroActions": {
+        "text": "Уточнить следующий набор ↗Выбрать и присоединиться ↓Сообщить о старте набора ↓Посмотреть оборудование ↓",
+        "x": 30,
+        "y": 429.7,
+        "w": 260,
+        "h": 118,
+        "display": "grid",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "heroCTA": {
+        "text": "Уточнить следующий набор ↗",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "inline-flex",
+        "visibility": "visible",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "14px",
+        "background": "rgb(232, 28, 28)",
+        "position": "static"
+      },
+      "heroVisual": {
+        "text": "Для новой квартирыПрохлада + свежий воздухКлимат под вашу задачуПодбор техники и монтажПодбор · доставка · монтажВ одном месте",
+        "x": 30,
+        "y": 699.7,
+        "w": 260,
+        "h": 426,
+        "display": "grid",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "relative"
+      },
+      "heroCaption": {
+        "text": "Для новой квартиры",
+        "x": 45.3,
+        "y": 722.9,
+        "w": 99.8,
+        "h": 37.7,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(58, 84, 117)",
+        "fontSize": "12px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "floatingBadge": {
+        "text": "Подбор · доставка · монтажВ одном месте",
+        "x": 40.4,
+        "y": 1065.7,
+        "w": 239.2,
+        "h": 60,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "relative"
+      },
+      "mobileCTA": {
+        "text": "Набор завершёнУточнить набор ↗Группа №12 · идёт наборПрисоединиться ↓Набор готовитсяСообщить о старте ↓",
+        "x": 8,
+        "y": 873.4,
+        "w": 304,
+        "h": 64,
+        "display": "flex",
+        "visibility": "hidden",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgb(255, 255, 255)",
+        "position": "fixed"
+      },
+      "mobileCTAButton": {
+        "text": "Уточнить набор ↗",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "flex",
+        "visibility": "hidden",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "13px",
+        "background": "rgb(0, 102, 255)",
+        "position": "static"
+      },
+      "nav": {
+        "text": "УсловияГруппыОборудованиеКак участвоватьДоставка и монтажВопросы",
+        "x": 12,
+        "y": 160.2,
+        "w": 296,
+        "h": 44,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "headerLogo": null,
+      "headerBrandFallback": {
+        "text": "ТехноХолод 369",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "inline",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "20px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "firstRedCTA": [
+        {
+          "text": "Уточнить следующий набор ↗",
+          "top": 0
+        },
+        {
+          "text": "Выбрать и присоединиться\n↓",
+          "top": 430
+        },
+        {
+          "text": "Сообщить о старте набора ↓",
+          "top": 0
+        },
+        {
+          "text": "Присоединиться к группе",
+          "top": 12174
+        }
+      ],
+      "fixed": [
+        {
+          "class": "",
+          "text": "Главная\nКаталог\nКорзина\nПозвонить\nWhatsApp",
+          "top": 843,
+          "bottom": 900,
+          "h": 57
+        }
+      ],
+      "faqCount": 8,
+      "details": [
+        {
+          "i": 0,
+          "title": "Подробные условия",
+          "text": "Подробные условия",
+          "open": false
+        },
+        {
+          "i": 1,
+          "title": "Пример расчёта",
+          "text": "Пример расчёта",
+          "open": false
+        },
+        {
+          "i": 2,
+          "title": "Нужно ли платить при вступлении в группу?",
+          "text": "Нужно ли платить при вступлении в группу?",
+          "open": false
+        },
+        {
+          "i": 3,
+          "title": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "text": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "open": false
+        },
+        {
+          "i": 4,
+          "title": "Что если группа набирается долго?",
+          "text": "Что если группа набирается долго?",
+          "open": false
+        },
+        {
+          "i": 5,
+          "title": "Можно ли вступить в группу в любой день?",
+          "text": "Можно ли вступить в группу в любой день?",
+          "open": false
+        },
+        {
+          "i": 6,
+          "title": "Есть ли наценка сверху?",
+          "text": "Есть ли наценка сверху?",
+          "open": false
+        },
+        {
+          "i": 7,
+          "title": "Что если товар закончится?",
+          "text": "Что если товар закончится?",
+          "open": false
+        },
+        {
+          "i": 8,
+          "title": "Монтаж входит в групповую цену?",
+          "text": "Монтаж входит в групповую цену?",
+          "open": false
+        },
+        {
+          "i": 9,
+          "title": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "text": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "open": false
+        }
+      ],
+      "faq": [
+        {
+          "n": 1,
+          "q": "Нужно ли платить при вступлении в группу?",
+          "a": "Нужно ли платить при вступлении в группу?"
+        },
+        {
+          "n": 2,
+          "q": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "a": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?"
+        },
+        {
+          "n": 3,
+          "q": "Что если группа набирается долго?",
+          "a": "Что если группа набирается долго?"
+        },
+        {
+          "n": 4,
+          "q": "Можно ли вступить в группу в любой день?",
+          "a": "Можно ли вступить в группу в любой день?"
+        },
+        {
+          "n": 5,
+          "q": "Есть ли наценка сверху?",
+          "a": "Есть ли наценка сверху?"
+        },
+        {
+          "n": 6,
+          "q": "Что если товар закончится?",
+          "a": "Что если товар закончится?"
+        },
+        {
+          "n": 7,
+          "q": "Монтаж входит в групповую цену?",
+          "a": "Монтаж входит в групповую цену?"
+        },
+        {
+          "n": 8,
+          "q": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "a": "Нас много: жильцы дома, ЖК или офис. Как быть?"
+        }
+      ],
+      "products": 3,
+      "pim": 3,
+      "reviews": 4,
+      "meterHidden": true,
+      "groupNote": "ТЕСТ: Счётчик скрыт: подтверждённого списка участников нет, без подтверждённых записей группы показания не публикуются. Номер группы — по решению владельца 15.11.2026.",
+      "formPhone": {
+        "text": "",
+        "x": 50,
+        "y": 11881.2,
+        "w": 220,
+        "h": 48,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "16px",
+        "background": "rgb(255, 255, 255)",
+        "position": "static"
+      },
+      "catalogLink": {
+        "text": "Каталог ↗",
+        "x": 78.4,
+        "y": 6315.2,
+        "w": 71,
+        "h": 44,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "14px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "moreLink": null,
+      "mobileColor": "rgb(0, 102, 255)",
+      "sectionScrollbars": [
+        {
+          "class": "",
+          "scrollWidth": 588,
+          "clientWidth": 296,
+          "scrollbarWidth": "none"
+        },
+        {
+          "class": "chips",
+          "scrollWidth": 1159,
+          "clientWidth": 296,
+          "scrollbarWidth": "none"
+        }
+      ]
+    },
+    "768": {
+      "viewport": 768,
+      "docWidth": 768,
+      "docHeight": 11046,
+      "ready": "1",
+      "marker": true,
+      "noindex": true,
+      "hero": {
+        "text": "Групповые покупки · АлматыКомфорт для дома.Вместе выгоднее.Объединяйте заказы на климатическую технику и получайте групповые условия на учас",
+        "x": 24,
+        "y": 295.4,
+        "w": 720,
+        "h": 1059,
+        "display": "grid",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "relative"
+      },
+      "heroHeadline": {
+        "text": "Комфорт для дома.Вместе выгоднее.",
+        "x": 60,
+        "y": 362,
+        "w": 648,
+        "h": 90.4,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "40px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "heroStatus": {
+        "text": "Текущий набор завершён",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "inline-flex",
+        "visibility": "visible",
+        "color": "rgb(89, 62, 128)",
+        "fontSize": "13px",
+        "background": "rgba(255, 255, 255, 0.6)",
+        "position": "static"
+      },
+      "saving": {
+        "text": "Экономия до 53 999 ₸на одной модели — скидка группы 9 %",
+        "x": 60,
+        "y": 635.4,
+        "w": 648,
+        "h": 26.5,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "savingStrong": {
+        "text": "Экономия до 53 999 ₸",
+        "x": 60,
+        "y": 635.4,
+        "w": 240.9,
+        "h": 26.4,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(80, 41, 188)",
+        "fontSize": "22px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "heroActions": {
+        "text": "Уточнить следующий набор ↗Выбрать и присоединиться ↓Сообщить о старте набора ↓Посмотреть оборудование ↓",
+        "x": 60,
+        "y": 681.9,
+        "w": 648,
+        "h": 50.5,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "heroCTA": {
+        "text": "Уточнить следующий набор ↗",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "inline-flex",
+        "visibility": "visible",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "15px",
+        "background": "rgb(232, 28, 28)",
+        "position": "static"
+      },
+      "heroVisual": {
+        "text": "Для новой квартирыПрохлада + свежий воздухКлимат под вашу задачуПодбор техники и монтажПодбор · доставка · монтажВ одном месте",
+        "x": 60,
+        "y": 821.9,
+        "w": 648,
+        "h": 496.5,
+        "display": "grid",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "relative"
+      },
+      "heroCaption": {
+        "text": "Для новой квартиры",
+        "x": 119,
+        "y": 852.7,
+        "w": 161.2,
+        "h": 20.8,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(58, 84, 117)",
+        "fontSize": "12px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "floatingBadge": {
+        "text": "Подбор · доставка · монтажВ одном месте",
+        "x": 174,
+        "y": 1245.9,
+        "w": 420,
+        "h": 72.5,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "relative"
+      },
+      "mobileCTA": {
+        "text": "Набор завершёнУточнить набор ↗Группа №12 · идёт наборПрисоединиться ↓Набор готовитсяСообщить о старте ↓",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "none",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "mobileCTAButton": {
+        "text": "Уточнить набор ↗",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "inline",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "nav": {
+        "text": "УсловияГруппыОборудованиеКак участвоватьДоставка и монтажВопросы",
+        "x": 24,
+        "y": 193.4,
+        "w": 578.2,
+        "h": 44,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "headerLogo": null,
+      "headerBrandFallback": {
+        "text": "ТехноХолод 369",
+        "x": 24,
+        "y": 136.4,
+        "w": 172.1,
+        "h": 30,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "20px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "firstRedCTA": [
+        {
+          "text": "Уточнить следующий набор ↗",
+          "top": 0
+        },
+        {
+          "text": "Выбрать и присоединиться\n↓",
+          "top": 682
+        },
+        {
+          "text": "Сообщить о старте набора ↓",
+          "top": 0
+        },
+        {
+          "text": "Присоединиться к группе",
+          "top": 10146
+        }
+      ],
+      "fixed": [],
+      "faqCount": 8,
+      "details": [
+        {
+          "i": 0,
+          "title": "Подробные условия",
+          "text": "Подробные условия",
+          "open": false
+        },
+        {
+          "i": 1,
+          "title": "Пример расчёта",
+          "text": "Пример расчёта",
+          "open": false
+        },
+        {
+          "i": 2,
+          "title": "Нужно ли платить при вступлении в группу?",
+          "text": "Нужно ли платить при вступлении в группу?",
+          "open": false
+        },
+        {
+          "i": 3,
+          "title": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "text": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "open": false
+        },
+        {
+          "i": 4,
+          "title": "Что если группа набирается долго?",
+          "text": "Что если группа набирается долго?",
+          "open": false
+        },
+        {
+          "i": 5,
+          "title": "Можно ли вступить в группу в любой день?",
+          "text": "Можно ли вступить в группу в любой день?",
+          "open": false
+        },
+        {
+          "i": 6,
+          "title": "Есть ли наценка сверху?",
+          "text": "Есть ли наценка сверху?",
+          "open": false
+        },
+        {
+          "i": 7,
+          "title": "Что если товар закончится?",
+          "text": "Что если товар закончится?",
+          "open": false
+        },
+        {
+          "i": 8,
+          "title": "Монтаж входит в групповую цену?",
+          "text": "Монтаж входит в групповую цену?",
+          "open": false
+        },
+        {
+          "i": 9,
+          "title": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "text": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "open": false
+        }
+      ],
+      "faq": [
+        {
+          "n": 1,
+          "q": "Нужно ли платить при вступлении в группу?",
+          "a": "Нужно ли платить при вступлении в группу?"
+        },
+        {
+          "n": 2,
+          "q": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "a": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?"
+        },
+        {
+          "n": 3,
+          "q": "Что если группа набирается долго?",
+          "a": "Что если группа набирается долго?"
+        },
+        {
+          "n": 4,
+          "q": "Можно ли вступить в группу в любой день?",
+          "a": "Можно ли вступить в группу в любой день?"
+        },
+        {
+          "n": 5,
+          "q": "Есть ли наценка сверху?",
+          "a": "Есть ли наценка сверху?"
+        },
+        {
+          "n": 6,
+          "q": "Что если товар закончится?",
+          "a": "Что если товар закончится?"
+        },
+        {
+          "n": 7,
+          "q": "Монтаж входит в групповую цену?",
+          "a": "Монтаж входит в групповую цену?"
+        },
+        {
+          "n": 8,
+          "q": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "a": "Нас много: жильцы дома, ЖК или офис. Как быть?"
+        }
+      ],
+      "products": 6,
+      "pim": 6,
+      "reviews": 4,
+      "meterHidden": true,
+      "groupNote": "ТЕСТ: Счётчик скрыт: подтверждённого списка участников нет, без подтверждённых записей группы показания не публикуются. Номер группы — по решению владельца 15.11.2026.",
+      "formPhone": {
+        "text": "",
+        "x": 88,
+        "y": 9938.6,
+        "w": 592,
+        "h": 48,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "16px",
+        "background": "rgb(255, 255, 255)",
+        "position": "static"
+      },
+      "catalogLink": {
+        "text": "Каталог ↗",
+        "x": 573.2,
+        "y": 6022.6,
+        "w": 71,
+        "h": 44,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "14px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "moreLink": null,
+      "mobileColor": "rgba(0, 0, 0, 0)",
+      "sectionScrollbars": [
+        {
+          "class": "",
+          "scrollWidth": 578,
+          "clientWidth": 578,
+          "scrollbarWidth": "none"
+        },
+        {
+          "class": "chips",
+          "scrollWidth": 720,
+          "clientWidth": 720,
+          "scrollbarWidth": "none"
+        }
+      ]
+    },
+    "1024": {
+      "viewport": 1024,
+      "docWidth": 1009,
+      "docHeight": 8918,
+      "ready": "1",
+      "marker": true,
+      "noindex": true,
+      "hero": {
+        "text": "Групповые покупки · АлматыКомфорт для дома.Вместе выгоднее.Объединяйте заказы на климатическую технику и получайте групповые условия на учас",
+        "x": 24,
+        "y": 235.4,
+        "w": 961,
+        "h": 672.6,
+        "display": "grid",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "relative"
+      },
+      "heroHeadline": {
+        "text": "Комфорт для дома.Вместе выгоднее.",
+        "x": 61,
+        "y": 309,
+        "w": 421,
+        "h": 90.4,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "40px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "heroStatus": {
+        "text": "Текущий набор завершён",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "inline-flex",
+        "visibility": "visible",
+        "color": "rgb(89, 62, 128)",
+        "fontSize": "13px",
+        "background": "rgba(255, 255, 255, 0.6)",
+        "position": "static"
+      },
+      "saving": {
+        "text": "Экономия до 53 999 ₸на одной модели — скидка группы 9 %",
+        "x": 61,
+        "y": 609.6,
+        "w": 421,
+        "h": 49.9,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "savingStrong": {
+        "text": "Экономия до 53 999 ₸",
+        "x": 61,
+        "y": 609.6,
+        "w": 240.9,
+        "h": 26.4,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(80, 41, 188)",
+        "fontSize": "22px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "heroActions": {
+        "text": "Уточнить следующий набор ↗Выбрать и присоединиться ↓Сообщить о старте набора ↓Посмотреть оборудование ↓",
+        "x": 61,
+        "y": 679.5,
+        "w": 421,
+        "h": 109.5,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "heroCTA": {
+        "text": "Уточнить следующий набор ↗",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "inline-flex",
+        "visibility": "visible",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "15px",
+        "background": "rgb(232, 28, 28)",
+        "position": "static"
+      },
+      "heroVisual": {
+        "text": "Для новой квартирыПрохлада + свежий воздухКлимат под вашу задачуПодбор техники и монтажПодбор · доставка · монтажВ одном месте",
+        "x": 527,
+        "y": 323.4,
+        "w": 421,
+        "h": 496.5,
+        "display": "grid",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "relative"
+      },
+      "heroCaption": {
+        "text": "Для новой квартиры",
+        "x": 547,
+        "y": 352.9,
+        "w": 161.2,
+        "h": 20.8,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(58, 84, 117)",
+        "fontSize": "12px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "floatingBadge": {
+        "text": "Подбор · доставка · монтажВ одном месте",
+        "x": 543.8,
+        "y": 747.4,
+        "w": 387.3,
+        "h": 72.5,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "relative"
+      },
+      "mobileCTA": {
+        "text": "Набор завершёнУточнить набор ↗Группа №12 · идёт наборПрисоединиться ↓Набор готовитсяСообщить о старте ↓",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "none",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "mobileCTAButton": {
+        "text": "Уточнить набор ↗",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "inline",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "nav": {
+        "text": "УсловияГруппыОборудованиеКак участвоватьДоставка и монтажВопросы",
+        "x": 376.8,
+        "y": 131.4,
+        "w": 608.2,
+        "h": 44,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "headerLogo": null,
+      "headerBrandFallback": {
+        "text": "ТехноХолод 369",
+        "x": 24,
+        "y": 138.4,
+        "w": 172.1,
+        "h": 30,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "20px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "firstRedCTA": [
+        {
+          "text": "Уточнить следующий набор ↗",
+          "top": 0
+        },
+        {
+          "text": "Выбрать и присоединиться\n↓",
+          "top": 679
+        },
+        {
+          "text": "Сообщить о старте набора ↓",
+          "top": 0
+        },
+        {
+          "text": "Присоединиться к группе",
+          "top": 8063
+        }
+      ],
+      "fixed": [],
+      "faqCount": 8,
+      "details": [
+        {
+          "i": 0,
+          "title": "Подробные условия",
+          "text": "Подробные условия",
+          "open": false
+        },
+        {
+          "i": 1,
+          "title": "Пример расчёта",
+          "text": "Пример расчёта",
+          "open": false
+        },
+        {
+          "i": 2,
+          "title": "Нужно ли платить при вступлении в группу?",
+          "text": "Нужно ли платить при вступлении в группу?",
+          "open": false
+        },
+        {
+          "i": 3,
+          "title": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "text": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "open": false
+        },
+        {
+          "i": 4,
+          "title": "Что если группа набирается долго?",
+          "text": "Что если группа набирается долго?",
+          "open": false
+        },
+        {
+          "i": 5,
+          "title": "Можно ли вступить в группу в любой день?",
+          "text": "Можно ли вступить в группу в любой день?",
+          "open": false
+        },
+        {
+          "i": 6,
+          "title": "Есть ли наценка сверху?",
+          "text": "Есть ли наценка сверху?",
+          "open": false
+        },
+        {
+          "i": 7,
+          "title": "Что если товар закончится?",
+          "text": "Что если товар закончится?",
+          "open": false
+        },
+        {
+          "i": 8,
+          "title": "Монтаж входит в групповую цену?",
+          "text": "Монтаж входит в групповую цену?",
+          "open": false
+        },
+        {
+          "i": 9,
+          "title": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "text": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "open": false
+        }
+      ],
+      "faq": [
+        {
+          "n": 1,
+          "q": "Нужно ли платить при вступлении в группу?",
+          "a": "Нужно ли платить при вступлении в группу?"
+        },
+        {
+          "n": 2,
+          "q": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "a": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?"
+        },
+        {
+          "n": 3,
+          "q": "Что если группа набирается долго?",
+          "a": "Что если группа набирается долго?"
+        },
+        {
+          "n": 4,
+          "q": "Можно ли вступить в группу в любой день?",
+          "a": "Можно ли вступить в группу в любой день?"
+        },
+        {
+          "n": 5,
+          "q": "Есть ли наценка сверху?",
+          "a": "Есть ли наценка сверху?"
+        },
+        {
+          "n": 6,
+          "q": "Что если товар закончится?",
+          "a": "Что если товар закончится?"
+        },
+        {
+          "n": 7,
+          "q": "Монтаж входит в групповую цену?",
+          "a": "Монтаж входит в групповую цену?"
+        },
+        {
+          "n": 8,
+          "q": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "a": "Нас много: жильцы дома, ЖК или офис. Как быть?"
+        }
+      ],
+      "products": 6,
+      "pim": 6,
+      "reviews": 4,
+      "meterHidden": true,
+      "groupNote": "ТЕСТ: Счётчик скрыт: подтверждённого списка участников нет, без подтверждённых записей группы показания не публикуются. Номер группы — по решению владельца 15.11.2026.",
+      "formPhone": {
+        "text": "",
+        "x": 545.5,
+        "y": 7855.9,
+        "w": 375.5,
+        "h": 48,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "16px",
+        "background": "rgb(255, 255, 255)",
+        "position": "static"
+      },
+      "catalogLink": {
+        "text": "Каталог ↗",
+        "x": 814.2,
+        "y": 4740.3,
+        "w": 71,
+        "h": 44,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "14px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "moreLink": null,
+      "mobileColor": "rgba(0, 0, 0, 0)",
+      "sectionScrollbars": [
+        {
+          "class": "",
+          "scrollWidth": 608,
+          "clientWidth": 608,
+          "scrollbarWidth": "none"
+        },
+        {
+          "class": "chips",
+          "scrollWidth": 961,
+          "clientWidth": 961,
+          "scrollbarWidth": "none"
+        }
+      ]
+    },
+    "1440": {
+      "viewport": 1440,
+      "docWidth": 1425,
+      "docHeight": 7982,
+      "ready": "1",
+      "marker": true,
+      "noindex": true,
+      "hero": {
+        "text": "Групповые покупки · АлматыКомфорт для дома.Вместе выгоднее.Объединяйте заказы на климатическую технику и получайте групповые условия на учас",
+        "x": 112.5,
+        "y": 319.2,
+        "w": 1200,
+        "h": 602.5,
+        "display": "grid",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "relative"
+      },
+      "heroHeadline": {
+        "text": "Комфорт для дома.Вместе выгоднее.",
+        "x": 173.5,
+        "y": 421.2,
+        "w": 557.8,
+        "h": 108.5,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "48px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "heroStatus": {
+        "text": "Текущий набор завершён",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "inline-flex",
+        "visibility": "visible",
+        "color": "rgb(89, 62, 128)",
+        "fontSize": "13px",
+        "background": "rgba(255, 255, 255, 0.6)",
+        "position": "static"
+      },
+      "saving": {
+        "text": "Экономия до 53 999 ₸на одной модели — скидка группы 9 %",
+        "x": 173.5,
+        "y": 712.8,
+        "w": 557.8,
+        "h": 26.5,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "savingStrong": {
+        "text": "Экономия до 53 999 ₸",
+        "x": 173.5,
+        "y": 712.8,
+        "w": 240.9,
+        "h": 26.4,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(80, 41, 188)",
+        "fontSize": "22px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "heroActions": {
+        "text": "Уточнить следующий набор ↗Выбрать и присоединиться ↓Сообщить о старте набора ↓Посмотреть оборудование ↓",
+        "x": 173.5,
+        "y": 759.3,
+        "w": 557.8,
+        "h": 50.5,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "heroCTA": {
+        "text": "Уточнить следующий набор ↗",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "inline-flex",
+        "visibility": "visible",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "15px",
+        "background": "rgb(232, 28, 28)",
+        "position": "static"
+      },
+      "heroVisual": {
+        "text": "Для новой квартирыПрохлада + свежий воздухКлимат под вашу задачуПодбор техники и монтажПодбор · доставка · монтажВ одном месте",
+        "x": 776.3,
+        "y": 374.2,
+        "w": 475.2,
+        "h": 496.5,
+        "display": "grid",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "relative"
+      },
+      "heroCaption": {
+        "text": "Для новой квартиры",
+        "x": 796.3,
+        "y": 404.2,
+        "w": 161.2,
+        "h": 20.8,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(58, 84, 117)",
+        "fontSize": "12px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "floatingBadge": {
+        "text": "Подбор · доставка · монтажВ одном месте",
+        "x": 803.9,
+        "y": 798.2,
+        "w": 420,
+        "h": 72.5,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "relative"
+      },
+      "mobileCTA": {
+        "text": "Набор завершёнУточнить набор ↗Группа №12 · идёт наборПрисоединиться ↓Набор готовитсяСообщить о старте ↓",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "none",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "mobileCTAButton": {
+        "text": "Уточнить набор ↗",
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "inline",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "nav": {
+        "text": "УсловияГруппыОборудованиеКак участвоватьДоставка и монтажВопросы",
+        "x": 704.3,
+        "y": 215.2,
+        "w": 608.2,
+        "h": 44,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(26, 26, 26)",
+        "fontSize": "16px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "headerLogo": null,
+      "headerBrandFallback": {
+        "text": "ТехноХолод 369",
+        "x": 112.5,
+        "y": 222.2,
+        "w": 172.1,
+        "h": 30,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "20px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "firstRedCTA": [
+        {
+          "text": "Уточнить следующий набор ↗",
+          "top": 0
+        },
+        {
+          "text": "Выбрать и присоединиться\n↓",
+          "top": 759
+        },
+        {
+          "text": "Сообщить о старте набора ↓",
+          "top": 0
+        },
+        {
+          "text": "Присоединиться к группе",
+          "top": 7303
+        }
+      ],
+      "fixed": [],
+      "faqCount": 8,
+      "details": [
+        {
+          "i": 0,
+          "title": "Подробные условия",
+          "text": "Подробные условия",
+          "open": false
+        },
+        {
+          "i": 1,
+          "title": "Пример расчёта",
+          "text": "Пример расчёта",
+          "open": false
+        },
+        {
+          "i": 2,
+          "title": "Нужно ли платить при вступлении в группу?",
+          "text": "Нужно ли платить при вступлении в группу?",
+          "open": false
+        },
+        {
+          "i": 3,
+          "title": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "text": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "open": false
+        },
+        {
+          "i": 4,
+          "title": "Что если группа набирается долго?",
+          "text": "Что если группа набирается долго?",
+          "open": false
+        },
+        {
+          "i": 5,
+          "title": "Можно ли вступить в группу в любой день?",
+          "text": "Можно ли вступить в группу в любой день?",
+          "open": false
+        },
+        {
+          "i": 6,
+          "title": "Есть ли наценка сверху?",
+          "text": "Есть ли наценка сверху?",
+          "open": false
+        },
+        {
+          "i": 7,
+          "title": "Что если товар закончится?",
+          "text": "Что если товар закончится?",
+          "open": false
+        },
+        {
+          "i": 8,
+          "title": "Монтаж входит в групповую цену?",
+          "text": "Монтаж входит в групповую цену?",
+          "open": false
+        },
+        {
+          "i": 9,
+          "title": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "text": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "open": false
+        }
+      ],
+      "faq": [
+        {
+          "n": 1,
+          "q": "Нужно ли платить при вступлении в группу?",
+          "a": "Нужно ли платить при вступлении в группу?"
+        },
+        {
+          "n": 2,
+          "q": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+          "a": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?"
+        },
+        {
+          "n": 3,
+          "q": "Что если группа набирается долго?",
+          "a": "Что если группа набирается долго?"
+        },
+        {
+          "n": 4,
+          "q": "Можно ли вступить в группу в любой день?",
+          "a": "Можно ли вступить в группу в любой день?"
+        },
+        {
+          "n": 5,
+          "q": "Есть ли наценка сверху?",
+          "a": "Есть ли наценка сверху?"
+        },
+        {
+          "n": 6,
+          "q": "Что если товар закончится?",
+          "a": "Что если товар закончится?"
+        },
+        {
+          "n": 7,
+          "q": "Монтаж входит в групповую цену?",
+          "a": "Монтаж входит в групповую цену?"
+        },
+        {
+          "n": 8,
+          "q": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+          "a": "Нас много: жильцы дома, ЖК или офис. Как быть?"
+        }
+      ],
+      "products": 6,
+      "pim": 6,
+      "reviews": 4,
+      "meterHidden": true,
+      "groupNote": "ТЕСТ: Счётчик скрыт: подтверждённого списка участников нет, без подтверждённых записей группы показания не публикуются. Номер группы — по решению владельца 15.11.2026.",
+      "formPhone": {
+        "text": "",
+        "x": 759.5,
+        "y": 7095.3,
+        "w": 477,
+        "h": 48,
+        "display": "block",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "16px",
+        "background": "rgb(255, 255, 255)",
+        "position": "static"
+      },
+      "catalogLink": {
+        "text": "Каталог ↗",
+        "x": 1141.7,
+        "y": 4151.3,
+        "w": 71,
+        "h": 44,
+        "display": "flex",
+        "visibility": "visible",
+        "color": "rgb(0, 51, 160)",
+        "fontSize": "14px",
+        "background": "rgba(0, 0, 0, 0)",
+        "position": "static"
+      },
+      "moreLink": null,
+      "mobileColor": "rgba(0, 0, 0, 0)",
+      "sectionScrollbars": [
+        {
+          "class": "",
+          "scrollWidth": 608,
+          "clientWidth": 608,
+          "scrollbarWidth": "none"
+        },
+        {
+          "class": "chips",
+          "scrollWidth": 1159,
+          "clientWidth": 1159,
+          "scrollbarWidth": "none"
+        }
+      ]
+    }
+  },
+  "data": {
+    "products": [
+      {
+        "id": "p01",
+        "cat": "fresh",
+        "tag": "Кондиционер с притоком",
+        "brand": "TCL",
+        "title": "FreshIN 3.0 (белый) TAC-FR09HSV/P7W",
+        "spec": "9000 BTU, до 25 м², приток свежего воздуха",
+        "price": 323942,
+        "img": "freshin-plus-white-6.jpg",
+        "href": "tproduct/649355257894-konditsioner-tcl-freshin-30-belii-tac-fr",
+        "top": 1,
+        "allowlist": {
+          "g": "bytovye",
+          "s": "TAC-FR09HSV/P7W",
+          "sl": "tcl-tac-fr09hsv-p7w"
+        },
+        "priceGroup": 294787
+      },
+      {
+        "id": "p02",
+        "cat": "fresh",
+        "tag": "Кондиционер с притоком",
+        "brand": "TCL",
+        "title": "FreshIN 3.0 (белый) TAC-FR12HSV/P7W",
+        "spec": "12000 BTU, до 35 м², приток свежего воздуха",
+        "price": 340992,
+        "img": "freshin-plus-white-6.jpg",
+        "href": "tproduct/350950348204-konditsioner-tcl-freshin-30-belii-tac-fr",
+        "allowlist": {
+          "g": "bytovye",
+          "s": "TAC-FR12HSV/P7W",
+          "sl": "tcl-tac-fr12hsv-p7w"
+        },
+        "priceGroup": 310303
+      },
+      {
+        "id": "p03",
+        "cat": "fresh",
+        "tag": "Кондиционер с притоком",
+        "brand": "TCL",
+        "title": "FreshIN 3.0 (серебро) TAC-FR09HSV/P7S",
+        "spec": "9000 BTU, до 25 м², приток свежего воздуха",
+        "price": 340992,
+        "img": "tcl-tac-fr09hsv-p7s.jpg",
+        "href": "tproduct/938910378214-konditsioner-tcl-freshin-30-serebro-tac",
+        "allowlist": {
+          "g": "bytovye",
+          "s": "TAC-FR09HSV/P7S",
+          "sl": "tcl-tac-fr09hsv-p7s"
+        },
+        "priceGroup": 310303
+      },
+      {
+        "id": "p04",
+        "cat": "fresh",
+        "tag": "Кондиционер с притоком",
+        "brand": "TCL",
+        "title": "FreshIN 3.0 (серебро) TAC-FR12HSV/P7S",
+        "spec": "12000 BTU, до 35 м², приток свежего воздуха",
+        "price": 375092,
+        "img": "tcl-tac-fr09hsv-p7s.jpg",
+        "href": "tproduct/506426247284-konditsioner-tcl-freshin-30-serebro-tac",
+        "allowlist": {
+          "g": "bytovye",
+          "s": "TAC-FR12HSV/P7S",
+          "sl": "tcl-tac-fr12hsv-p7s"
+        },
+        "priceGroup": 341334
+      },
+      {
+        "id": "p05",
+        "cat": "fresh",
+        "tag": "Кондиционер с притоком",
+        "brand": "TCL",
+        "title": "FreshIN 3.0 (серебро) TAC-FR18HSV/P7S",
+        "spec": "18000 BTU, до 50 м², приток свежего воздуха",
+        "price": 409192,
+        "img": "tcl-tac-fr09hsv-p7s.jpg",
+        "href": "tproduct/992907639604-konditsioner-tcl-freshin-30-serebro-tac",
+        "allowlist": {
+          "g": "bytovye",
+          "s": "TAC-FR18HSV/P7S",
+          "sl": "tcl-tac-fr18hsv-p7s"
+        },
+        "priceGroup": 372365
+      },
+      {
+        "id": "p06",
+        "cat": "fresh",
+        "tag": "Кондиционер с притоком",
+        "brand": "TCL",
+        "title": "FreshIN 3.0 (чёрный) TAC-FR10HSV/P7B",
+        "spec": "10000 BTU, до 28 м², приток свежего воздуха",
+        "price": 340992,
+        "img": "tcl-tac-fr10hsv-p7b.png",
+        "href": "tproduct/401535714334-konditsioner-tcl-freshin-30-chyornii-tac",
+        "allowlist": {
+          "g": "bytovye",
+          "s": "TAC-FR10HSV/P7B",
+          "sl": "tcl-tac-fr10hsv-p7b"
+        },
+        "priceGroup": 310303
+      },
+      {
+        "id": "p07",
+        "cat": "fresh",
+        "tag": "Кондиционер с притоком",
+        "brand": "TCL",
+        "title": "FreshIN 3.0 (чёрный) TAC-FR13HSV/P7B",
+        "spec": "13000 BTU, до 38 м², приток свежего воздуха",
+        "price": 383617,
+        "img": "tcl-tac-fr10hsv-p7b.png",
+        "href": "tproduct/964967300964-konditsioner-tcl-freshin-30-chyornii-tac",
+        "allowlist": {
+          "g": "bytovye",
+          "s": "TAC-FR13HSV/P7B",
+          "sl": "tcl-tac-fr13hsv-p7b"
+        },
+        "priceGroup": 349091
+      },
+      {
+        "id": "p08",
+        "cat": "fresh",
+        "tag": "Кондиционер с притоком",
+        "brand": "TCL",
+        "title": "FreshIN 3.0 (чёрный) TAC-FR18HSV/P7B",
+        "spec": "18000 BTU, до 50 м², приток свежего воздуха",
+        "price": 426242,
+        "img": "tcl-tac-fr10hsv-p7b.png",
+        "href": "tproduct/474881833054-konditsioner-tcl-freshin-30-chyornii-tac",
+        "allowlist": {
+          "g": "bytovye",
+          "s": "TAC-FR18HSV/P7B",
+          "sl": "tcl-tac-fr18hsv-p7b"
+        },
+        "priceGroup": 387880
+      },
+      {
+        "id": "p09",
+        "cat": "fresh",
+        "tag": "Кондиционер с притоком",
+        "brand": "TCL",
+        "title": "FreshIN 3.0 (серебро 2025) TAC-FR12INV/R3",
+        "spec": "12000 BTU, до 35 м², приток свежего воздуха",
+        "price": 340766,
+        "img": "tcl-tac-fr12inv-r3.jpg",
+        "href": "tproduct/118900810324-konditsioner-tcl-freshin-30-serebro-2025",
+        "allowlist": {
+          "g": "bytovye",
+          "s": "TAC-FR12INV/R3",
+          "sl": "tcl-tac-fr12inv-r3"
+        },
+        "priceGroup": 310097
+      },
+      {
+        "id": "p10",
+        "cat": "split",
+        "tag": "Инверторный",
+        "brand": "Royal Clima",
+        "title": "GLORIA Inverter RCI-GLE35HN",
+        "spec": "12000 BTU, до 36 м²",
+        "price": 203500,
+        "img": "rci-gle22hn.jpg",
+        "href": "tproduct/783965063854-konditsioner-royal-clima-gloria-inverter",
+        "top": 4,
+        "allowlist": {
+          "g": "bytovye",
+          "s": "RCI-GLE35HN",
+          "sl": "royal-clima-rci-gle35hn"
+        },
+        "priceGroup": 185185
+      },
+      {
+        "id": "p11",
+        "cat": "split",
+        "tag": "Мультисплит",
+        "brand": "Ballu",
+        "title": "Free Match: мультисплит на 2 комнаты",
+        "spec": "Наружный блок на 2 комнаты и два внутренних блока",
+        "price": 567970,
+        "img": "ballu-ba2oi-fm-out-18hn8-eu.jpg",
+        "href": "multisplit-komplekty-almaty",
+        "top": 5,
+        "allowlist": null,
+        "priceGroup": 516853
+      },
+      {
+        "id": "p12",
+        "cat": "water",
+        "tag": "Горячая вода",
+        "brand": "Royal Thermo",
+        "title": "Водонагреватель RWH 80 Optimal",
+        "spec": "80 л, 1,5 кВт",
+        "price": 71750,
+        "img": "royal-thermo-rwh-80-optimal.jpg",
+        "href": "tproduct/348776780514-rwh-80-optimal",
+        "top": 6,
+        "allowlist": {
+          "g": "vodonagrevateli",
+          "s": "RWH 80 Optimal",
+          "sl": "royal-thermo-rwh-80-optimal"
+        },
+        "priceGroup": 65293
+      },
+      {
+        "id": "p13",
+        "cat": "water",
+        "tag": "Тепловая завеса",
+        "brand": "Ballu",
+        "title": "Завеса тепловая BHC-L15-S09-M (пульт BRC-S)",
+        "spec": "9,8 кВт",
+        "price": 181690,
+        "img": "tz_1485658.jpg",
+        "href": "tproduct/602341374234-ballu-bhc-l15-s09-m-pult-brc-s",
+        "allowlist": {
+          "g": "teplovye-zavesy",
+          "s": "BHC-L15-S09-M (BRC-S)",
+          "sl": "ballu-bhc-l15-s09-m-brc-s"
+        },
+        "priceGroup": 165338
+      },
+      {
+        "id": "p14",
+        "cat": "water",
+        "tag": "Тепловая завеса",
+        "brand": "Ballu",
+        "title": "Завеса тепловая BHC-L10-S06 (пульт BRC-S)",
+        "spec": "6 кВт",
+        "price": 144990,
+        "img": "tz_1485649.jpg",
+        "href": "tproduct/363930138874-ballu-bhc-l10-s06-pult-brc-s",
+        "allowlist": {
+          "g": "teplovye-zavesy",
+          "s": "BHC-L10-S06 (BRC-S)",
+          "sl": "ballu-bhc-l10-s06-brc-s"
+        },
+        "priceGroup": 131941
+      },
+      {
+        "id": "p15",
+        "cat": "water",
+        "tag": "Приточный очиститель",
+        "brand": "Ballu",
+        "title": "ONEAIR ASP-200S",
+        "spec": "",
+        "price": 327590,
+        "img": "ballu-oneair-asp-200s.jpg",
+        "href": "tovar?g=ventilyaciya&sl=ballu-asp-200s",
+        "top": 2,
+        "allowlist": {
+          "g": "ventilyaciya",
+          "s": "ASP-200S",
+          "sl": "ballu-asp-200s"
+        },
+        "priceGroup": 298107
+      },
+      {
+        "id": "p16",
+        "cat": "water",
+        "tag": "Приточный очиститель",
+        "brand": "Ballu",
+        "title": "ONEAIR ASP-80",
+        "spec": "",
+        "price": 114990,
+        "img": "ballu-oneair-asp-80.jpg",
+        "href": "tovar?g=ventilyaciya&sl=ballu-asp-80",
+        "allowlist": {
+          "g": "ventilyaciya",
+          "s": "ASP-80",
+          "sl": "ballu-asp-80"
+        },
+        "priceGroup": 104641
+      },
+      {
+        "id": "p17",
+        "cat": "water",
+        "tag": "Приточный очиститель",
+        "brand": "Ballu",
+        "title": "ONEAIR ASP-100",
+        "spec": "",
+        "price": 203390,
+        "img": "ballu-oneair-asp-100.jpg",
+        "href": "tovar?g=ventilyaciya&sl=ballu-asp-100",
+        "allowlist": {
+          "g": "ventilyaciya",
+          "s": "ASP-100",
+          "sl": "ballu-asp-100"
+        },
+        "priceGroup": 185085
+      },
+      {
+        "id": "p18",
+        "cat": "water",
+        "tag": "Горячая вода",
+        "brand": "Electrolux",
+        "title": "Водонагреватель EWH 100 Major LZR 3",
+        "spec": "100 л, 2 кВт",
+        "price": 209034,
+        "img": "electrolux-ewh-100-major-lzr-3.jpg",
+        "href": "tproduct/680059508224-ewh-100-major-lzr-3",
+        "allowlist": {
+          "g": "vodonagrevateli",
+          "s": "EWH 100 Major LZR 3",
+          "sl": "electrolux-ewh-100-major-lzr-3"
+        },
+        "priceGroup": 190221
+      },
+      {
+        "id": "p19",
+        "cat": "fire",
+        "tag": "Электроочаг",
+        "brand": "Royal Thermo",
+        "title": "Очаг электрический Aurora RTFP/P-AR50LS",
+        "spec": "",
+        "price": 429990,
+        "img": "royal-thermo-rtfp-p-ar50ls.jpg",
+        "href": "tproduct/579347838434-ochag-elektricheskii-royal-thermo-aurora",
+        "allowlist": {
+          "g": "kaminy",
+          "s": "RTFP/P-AR50LS",
+          "sl": "royal-thermo-rtfp-p-ar50ls"
+        },
+        "priceGroup": 391291
+      },
+      {
+        "id": "p20",
+        "cat": "fire",
+        "tag": "Электроочаг",
+        "brand": "Royal Thermo",
+        "title": "Очаг электрический RTFP/P1000M 3D Cassette Mystery",
+        "spec": "",
+        "price": 599990,
+        "img": "royal-thermo-rtfp-p1000m.jpg",
+        "href": "tproduct/275010969874-ochag-elektricheskii-royal-thermo-rtfpp1",
+        "allowlist": {
+          "g": "kaminy",
+          "s": "RTFP/P1000M",
+          "sl": "royal-thermo-rtfp-p1000m"
+        },
+        "priceGroup": 545991
+      },
+      {
+        "id": "p21",
+        "cat": "fire",
+        "tag": "Биокамин",
+        "brand": "Firelight",
+        "title": "Биокамин BFP/P-3020",
+        "spec": "",
+        "price": 399990,
+        "img": "firelight-bfp-p-3020.jpg",
+        "href": "tproduct/599405216204-biokamin-firelight-bfpp-3020",
+        "allowlist": {
+          "g": "kaminy",
+          "s": "BFP/P-3020",
+          "sl": "firelight-bfp-p-3020"
+        },
+        "priceGroup": 363991
+      },
+      {
+        "id": "p22",
+        "cat": "fire",
+        "tag": "Биокамин",
+        "brand": "Firelight",
+        "title": "Биокамин BFP/W-110",
+        "spec": "",
+        "price": 279990,
+        "img": "firelight-bfp-w-110.jpg",
+        "href": "tproduct/693039877204-biokamin-firelight-bfpw-110",
+        "allowlist": {
+          "g": "kaminy",
+          "s": "BFP/W-110",
+          "sl": "firelight-bfp-w-110"
+        },
+        "priceGroup": 254791
+      },
+      {
+        "id": "p23",
+        "cat": "fire",
+        "tag": "Электроочаг",
+        "brand": "Electrolux",
+        "title": "Панорамный очаг Sphere Plus EFP/P-3320RLS N",
+        "spec": "Диагональ 33 дюйма",
+        "price": 299990,
+        "img": "electrolux-panoramnyy-ochag-sphere-plus-efp-p-3320rls-n-diagonal-33-dy.jpg",
+        "href": "tproduct/449475714854-panoramnii-ochag-sphere-plus-efpp-3320rl",
+        "top": 3,
+        "allowlist": {
+          "g": "kaminy",
+          "s": "EFP/P-3320RLS N",
+          "sl": "electrolux-efp-p-3320rls-n"
+        },
+        "priceGroup": 272991
+      }
+    ],
+    "faq": [
+      {
+        "number": 1,
+        "question": "Нужно ли платить при вступлении в группу?",
+        "answer": "Нужно ли платить при вступлении в группу?\n\nНет. Сначала согласовываются состав заказа, итоговая стоимость и условия. Оплата — после набора группы и подтверждения менеджера."
+      },
+      {
+        "number": 2,
+        "question": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?",
+        "answer": "Нужно ли купить 9 штук, чтобы получить скидку 9 %?\n\nНет. Штуки считаются по всей группе, из любых товаров акции. Каждый берёт столько, сколько ему нужно, хоть одну штуку."
+      },
+      {
+        "number": 3,
+        "question": "Что если группа набирается долго?",
+        "answer": "Что если группа набирается долго?\n\nЗаявка остаётся в группе, платить до набора не нужно. Подтверждённому участнику товар бронируем до закрытия группы."
+      },
+      {
+        "number": 4,
+        "question": "Можно ли вступить в группу в любой день?",
+        "answer": "Можно ли вступить в группу в любой день?\n\nДа. Набор идёт постоянно, вступить можно в любой день. Когда группа набирает 9 штук, открывается следующая."
+      },
+      {
+        "number": 5,
+        "question": "Есть ли наценка сверху?",
+        "answer": "Есть ли наценка сверху?\n\nНет. Скидка считается от цены на сайте. Если цена на сайте вырастет, группа считает по прежней."
+      },
+      {
+        "number": 6,
+        "question": "Что если товар закончится?",
+        "answer": "Что если товар закончится?\n\nПодберём альтернативу или дождёмся поступления. Цену для вас зафиксируем."
+      },
+      {
+        "number": 7,
+        "question": "Монтаж входит в групповую цену?",
+        "answer": "Монтаж входит в групповую цену?\n\nНет. Оборудование и монтаж рассчитываются отдельно. Гарантия на монтаж — 12 месяцев, на оборудование — по паспорту изделия."
+      },
+      {
+        "number": 8,
+        "question": "Нас много: жильцы дома, ЖК или офис. Как быть?",
+        "answer": "Нас много: жильцы дома, ЖК или офис. Как быть?\n\nНапишите нам в WhatsApp: посчитаем цену на всю группу. Монтаж согласуем одной бригадой или несколькими, по числу заявок. Документы — по запросу."
+      }
+    ],
+    "other": [
+      {
+        "heading": "Подробные условия",
+        "body": "Подробные условия\nШтуки считаются по всей группе, из любых товаров акции. Каждый берёт столько, сколько нужно, хоть одну штуку.\nКогда группа набирает 9 штук, она закрывается. Цена для всех участников — со скидкой 9 %.\nСкидка считается от цены на сайте, наценки сверху нет. Если цена на сайте вырастет, группа считает по прежней.\nОплата и поставка — после набора группы и подтверждения менеджера."
+      },
+      {
+        "heading": "Пример расчёта",
+        "body": "Пример расчёта\n\nTCL FreshIN 3.0 (белый) TAC-FR09HSV/P7W, цена на сайте 323 942 ₸ с НДС.\n\nЦена в группе, −9 %\n294 787 ₸\nэкономия 29 155 ₸"
+      }
+    ],
+    "phoneText": [
+      "+7 700 036 93 69"
+    ],
+    "sections": [
+      "Выгода — не только в цене",
+      "Общая группа «Вместе дешевле»",
+      "Выберите оборудование",
+      "Как проходит покупка",
+      "Доставка, МАСТЕР-монтаж и гарантия",
+      "Кто продаёт и что говорят покупатели",
+      "Вопросы перед покупкой",
+      "Присоединяйтесь к группе",
+      "Узнайте о следующем наборе первыми"
+    ],
+    "head": " <meta charset=\"utf-8\"> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <meta name=\"yandex-verification\" content=\"e7d25db86c15a464\"> <!--metatextblock--> <title>ТЕСТ — Вместе дешевле · T-022 · 15.11.2026</title> <meta name=\"description\" content=\"Тестовая копия. Демоданные; заявки не отправляются. Не для индексации.\"> <meta property=\"og:url\" content=\"https://tehnoholod369.kz/vmeste-deshevle-t022-test-20261115\"> <meta property=\"og:title\" content=\"ТЕСТ — Вместе дешевле · T-022 · 15.11.2026\"> <meta property=\"og:description\" content=\"Тестовая копия. Демоданные; заявки не отправляются. Не для индексации.\"> <"
+  }
+}
