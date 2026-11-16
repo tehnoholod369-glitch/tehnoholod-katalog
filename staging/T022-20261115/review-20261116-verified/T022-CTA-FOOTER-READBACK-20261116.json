@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-16T06:56:20.954Z",
+  "mid": {
+    "scrollY": 6295,
+    "ctaVisible": true,
+    "ctaDisplay": "flex",
+    "ctaTop": 771,
+    "ctaBottom": 835,
+    "bottomSource": "detected",
+    "otherFixed": [
+      {
+        "text": "Главная\nКаталог\nКорзина\nПозвонить\nWhatsApp",
+        "top": 843,
+        "bottom": 900
+      }
+    ],
+    "ctaOverlapsSite": false,
+    "edgeElement": "<a href=\"/korzina\" style=\"position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 2px 9px;color:#0033A0;"
+  },
+  "bottom": {
+    "scrollY": 12541,
+    "ctaVisible": false,
+    "bottomSource": "detected",
+    "siteFooter": "Корзина"
+  },
+  "pass": true
+}
