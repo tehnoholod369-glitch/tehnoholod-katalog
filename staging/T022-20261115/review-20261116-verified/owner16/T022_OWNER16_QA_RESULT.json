@@ -1,0 +1,342 @@
+{
+ "url": "file:///C:/Users/tehno/OneDrive/THE369_SUPERVISOR_TRANSFER/vmeste-deshevle-maket-20261115/tilda-test/out/index.html",
+ "checks": [
+  {
+   "n": "w320: нет горизонтального переполнения",
+   "ok": true,
+   "d": "320/320"
+  },
+  {
+   "n": "w320: страница готова",
+   "ok": true,
+   "d": ""
+  },
+  {
+   "n": "w390: нет горизонтального переполнения",
+   "ok": true,
+   "d": "390/390"
+  },
+  {
+   "n": "w390: страница готова",
+   "ok": true,
+   "d": ""
+  },
+  {
+   "n": "w390: группа №12, счётчик 5 из 9, источник owner_reported",
+   "ok": true,
+   "d": "{\"cnt\":\"5\",\"src\":\"owner_reported\",\"num\":[\"12\",\"12\",\"12\",\"12\"]}"
+  },
+  {
+   "n": "w390: «ещё 4 шт.» до скидки",
+   "ok": true,
+   "d": "До скидки 9 % — ещё 4 шт."
+  },
+  {
+   "n": "w390: в тексте нет запрещённых слов",
+   "ok": true,
+   "d": ""
+  },
+  {
+   "n": "w390: пояснение группы пустое/скрыто",
+   "ok": true,
+   "d": ""
+  },
+  {
+   "n": "w768: нет горизонтального переполнения",
+   "ok": true,
+   "d": "768/768"
+  },
+  {
+   "n": "w768: страница готова",
+   "ok": true,
+   "d": ""
+  },
+  {
+   "n": "w1024: нет горизонтального переполнения",
+   "ok": true,
+   "d": "1009/1009"
+  },
+  {
+   "n": "w1024: страница готова",
+   "ok": true,
+   "d": ""
+  },
+  {
+   "n": "w1440: нет горизонтального переполнения",
+   "ok": true,
+   "d": "1425/1425"
+  },
+  {
+   "n": "w1440: страница готова",
+   "ok": true,
+   "d": ""
+  },
+  {
+   "n": "w1440: группа №12, счётчик 5 из 9, источник owner_reported",
+   "ok": true,
+   "d": "{\"cnt\":\"5\",\"src\":\"owner_reported\",\"num\":[\"12\",\"12\",\"12\",\"12\"]}"
+  },
+  {
+   "n": "w1440: «ещё 4 шт.» до скидки",
+   "ok": true,
+   "d": "До скидки 9 % — ещё 4 шт."
+  },
+  {
+   "n": "w1440: в тексте нет запрещённых слов",
+   "ok": true,
+   "d": ""
+  },
+  {
+   "n": "w1440: пояснение группы пустое/скрыто",
+   "ok": true,
+   "d": ""
+  },
+  {
+   "n": "каталог: чип «Мультисплит-комплекты» с числом",
+   "ok": true,
+   "d": "Все · 40 | FreshIN с притоком · 9 | Инвертор и мультисплит · 2 | Мультисплит-комплекты · 17 | Вода, отопление, вентиляция · 7 | Электроочаги и биокамины · 5"
+  },
+  {
+   "n": "каталог: карточки комплектов с тремя позициями и ценой",
+   "ok": true,
+   "d": "17 шт"
+  },
+  {
+   "n": "каталог: картинки комплектов загрузились по https (абсолютный адрес)",
+   "ok": true,
+   "d": ""
+  },
+  {
+   "n": "каталог: только разрешённые бренды, без THAICON",
+   "ok": true,
+   "d": "AERONIK,AUX,DITREEX,GREE,MDV,ROYAL CLIMA"
+  },
+  {
+   "n": "P7W белый остаётся в каталоге, без пометки расхождения",
+   "ok": true,
+   "d": "КОНДИЦИОНЕР С ПРИТОКОМ TCL FreshIN 3.0 (белый) TAC-FR09HSV/P7W  9000 BTU, до 25 "
+  },
+  {
+   "n": "форма: настоящая отправка — ровно один POST на приёмник gb-form",
+   "ok": true,
+   "d": "{\"n\":1,\"m\":\"POST\",\"ct\":\"text/plain;charset=utf-8\"}"
+  },
+  {
+   "n": "форма: kind=lead, телефон 7XXXXXXXXXX, согласие в комментарии, нет метки теста",
+   "ok": true,
+   "d": "GROUP BUY | p01 | 1 шт | TCL FreshIN 3.0 (белый) TAC-FR09HSV/P7W | consent=yes"
+  },
+  {
+   "n": "форма: после ответа OK показано «принято»",
+   "ok": true,
+   "d": "{\"sent\":true,\"accepted\":true,\"blocked\":\"\",\"ticket\":\"ЗЯ-QA0-0001\",\"test\":false}"
+  },
+  {
+   "n": "форма: повтор той же заявки в сеть не уходит (дедупликация)",
+   "ok": true,
+   "d": "calls=1"
+  },
+  {
+   "n": "форма: тест-режим (?vd_test=1) помечает заявку TEST T022 / NOT A PURCHASE",
+   "ok": true,
+   "d": "TEST T022 | NOT A PURCHASE | GROUP BUY | p01 | 1 шт | TCL FreshIN 3.0 (белый) TAC-FR09HSV/P7W | consent=yes"
+  },
+  {
+   "n": "форма: UTM в комментарии",
+   "ok": true,
+   "d": "GROUP BUY | p01 | 1 шт | TCL FreshIN 3.0 (белый) TAC-FR09HSV/P7W | consent=yes | utm: utm_medium=t&utm_source=qa"
+  },
+  {
+   "n": "noindex сохранён в предпросмотре",
+   "ok": true,
+   "d": ""
+  },
+  {
+   "n": "title без «ТЕСТ»",
+   "ok": true,
+   "d": "Вместе дешевле — общий заказ техники"
+  }
+ ],
+ "widths": {
+  "320": {
+   "sw": 320,
+   "cw": 320,
+   "ready": "1"
+  },
+  "390": {
+   "sw": 390,
+   "cw": 390,
+   "ready": "1"
+  },
+  "768": {
+   "sw": 768,
+   "cw": 768,
+   "ready": "1"
+  },
+  "1024": {
+   "sw": 1009,
+   "cw": 1009,
+   "ready": "1"
+  },
+  "1440": {
+   "sw": 1425,
+   "cw": 1425,
+   "ready": "1"
+  }
+ },
+ "kitCards": [
+  {
+   "id": "m01",
+   "brand": "MDV",
+   "price": "568 750 ₸",
+   "grp": "517 563 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/mdv/mdv-md3o-18hfn8.png",
+   "link": "https://tehnoholod369.kz/tproduct/959062882004-naruzhnii-blok-multi-split-mdv-free-matc"
+  },
+  {
+   "id": "m02",
+   "brand": "MDV",
+   "price": "603 750 ₸",
+   "grp": "549 413 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/mdv/mdv-md3o-18hfn8.png",
+   "link": "https://tehnoholod369.kz/tproduct/224046856954-naruzhnii-blok-multi-split-mdv-free-matc"
+  },
+  {
+   "id": "m03",
+   "brand": "MDV",
+   "price": "681 250 ₸",
+   "grp": "619 938 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/mdv/mdv-md3o-18hfn8.png",
+   "link": "https://tehnoholod369.kz/tproduct/328152832604-naruzhnii-blok-multi-split-mdv-free-matc"
+  },
+  {
+   "id": "m04",
+   "brand": "MDV",
+   "price": "992 500 ₸",
+   "grp": "903 175 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/mdv/mdv-md3o-18hfn8.png",
+   "link": "https://tehnoholod369.kz/tproduct/509887493764-naruzhnii-blok-multi-split-mdv-free-matc"
+  },
+  {
+   "id": "m05",
+   "brand": "MDV",
+   "price": "1 153 750 ₸",
+   "grp": "1 049 913 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/mdv/mdv-md3o-18hfn8.png",
+   "link": "https://tehnoholod369.kz/tproduct/722328230774-naruzhnii-blok-multi-split-mdv-free-matc"
+  },
+  {
+   "id": "m06",
+   "brand": "AERONIK",
+   "price": "678 500 ₸",
+   "grp": "617 435 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/realcon/Realcon_AERONIK_12.jpg",
+   "link": "https://tehnoholod369.kz/tproduct/289626873654-konditsioner-aeronik-aso-24hmzk1gwhd24nk"
+  },
+  {
+   "id": "m07",
+   "brand": "AERONIK",
+   "price": "731 800 ₸",
+   "grp": "665 938 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/realcon/Realcon_AERONIK_12.jpg",
+   "link": "https://tehnoholod369.kz/tproduct/403056586884-konditsioner-aeronik-aso-28hmzk1gwhd28nk"
+  },
+  {
+   "id": "m08",
+   "brand": "AERONIK",
+   "price": "1 012 700 ₸",
+   "grp": "921 557 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/realcon/Realcon_AERONIK_12.jpg",
+   "link": "https://tehnoholod369.kz/tproduct/354315826944-konditsioner-aeronik-aso-36hmzkgwhd36nk6"
+  },
+  {
+   "id": "m09",
+   "brand": "AERONIK",
+   "price": "1 127 400 ₸",
+   "grp": "1 025 934 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/realcon/Realcon_AERONIK_12.jpg",
+   "link": "https://tehnoholod369.kz/tproduct/278293176344-konditsioner-aeronik-aso-42hmzkgwhd42nk6"
+  },
+  {
+   "id": "m10",
+   "brand": "AUX",
+   "price": "546 462 ₸",
+   "grp": "497 280 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/aux-air/am2-h14-4dr3.jpg",
+   "link": "https://tehnoholod369.kz/tproduct/619641052044-naruzhnii-modul-aux-free-match-am2-h184d"
+  },
+  {
+   "id": "m11",
+   "brand": "AUX",
+   "price": "688 275 ₸",
+   "grp": "626 330 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/aux-air/am3-h21-4dr3.jpg",
+   "link": "https://tehnoholod369.kz/tproduct/275162617174-naruzhnii-modul-aux-free-match-am3-h274d"
+  },
+  {
+   "id": "m12",
+   "brand": "AUX",
+   "price": "1 444 216 ₸",
+   "grp": "1 314 237 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/aux-air/am5-h42-4dr1b.jpg",
+   "link": "https://tehnoholod369.kz/tproduct/467632900524-naruzhnii-modul-aux-free-match-am5-h424d"
+  },
+  {
+   "id": "m13",
+   "brand": "ROYAL CLIMA",
+   "price": "805 200 ₸",
+   "grp": "732 732 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/royal-clima/2rmn-14hn-out.jpg",
+   "link": "https://tehnoholod369.kz/tproduct/601072724894-naruzhnii-blok-royal-clima-4rmx-28hnout"
+  },
+  {
+   "id": "m14",
+   "brand": "ROYAL CLIMA",
+   "price": "1 005 800 ₸",
+   "grp": "915 278 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/royal-clima/2rmn-14hn-out.jpg",
+   "link": "https://tehnoholod369.kz/tproduct/473572334214-naruzhnii-blok-royal-clima-4rmx-36hnout"
+  },
+  {
+   "id": "m15",
+   "brand": "DITREEX",
+   "price": "539 720 ₸",
+   "grp": "491 145 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/multisplit/ditreex-dtxm-27kd6f3-o_01.png",
+   "link": "https://tehnoholod369.kz/tproduct/263669768454-naruzhnii-blok-ditreex-dtxm-27kd6f3o-270"
+  },
+  {
+   "id": "m16",
+   "brand": "DITREEX",
+   "price": "758 982 ₸",
+   "grp": "690 674 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/multisplit/ditreex-dtxm-32kd6f4-o_01.png",
+   "link": "https://tehnoholod369.kz/tproduct/738061452094-naruzhnii-blok-ditreex-dtxm-32kd6f4o-320"
+  },
+  {
+   "id": "m17",
+   "brand": "GREE",
+   "price": "729 756 ₸",
+   "grp": "664 078 ₸",
+   "parts": 3,
+   "img": "https://img.tehnoholod369.kz/img/multisplit/gree-naruzhnyy-blok_01.png",
+   "link": "https://tehnoholod369.kz/tproduct/441452314914-naruzhnii-blok-gree-gwhd24nk6oo-24000-bt"
+  }
+ ]
+}
