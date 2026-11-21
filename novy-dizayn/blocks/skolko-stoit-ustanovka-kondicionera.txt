@@ -151,43 +151,15 @@
     </div>
 
     <div class="art">
-      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">стандартный монтаж сплит-системы в Алматы — от 45 000 ₸ для моделей 7–12k BTU, от 55 000 ₸ для 18k и от 70 000 ₸ для 24k. В стандарт входят кронштейн, трасса до 3 метров, одно бурение стены, дренаж самотёком и пусконаладка. Всё, что диктует объект — монолит, длинная трасса, высота, — считается отдельной строкой. Точную сумму называем после замера, чтобы в день установки не было сюрпризов. Ниже — что входит в стандарт, цены на доплаты и как понять заранее, попадёте вы в базовый вариант или нет.</div></div>
+      <div class="art-tldr"><div class="art-tldr__t">КОРОТКО</div><div class="art-tldr__b">цена монтажа складывается из стандартного набора работ плюс всё, что диктует конкретный объект — материал стены, длина трассы, высота, доступ к наружному блоку.** Поэтому честную сумму называют после замера, а не по телефону. Ниже — что входит в стандартную установку, за что берут отдельно и как понять заранее, попадёте вы в базовый вариант или нет.</div></div>
       <h2>Почему «монтаж от 25 000» — почти всегда не ваша цена</h2>
       <p>Объявление с ценой «от» считает идеальный объект: кирпичная стена, наружный блок в метре от внутреннего, розетка рядом, первый этаж. В реальной квартире почти всегда есть что-то ещё: монолит вместо кирпича, семь метров трассы до балкона, штробление под дренаж, кронштейны на фасад.</p>
       <p>Итог знаком каждому, кто заказывал монтаж по объявлению: бригада приезжает, пересчитывает на месте, и сумма отличается от обещанной в полтора-два раза. Формально никто не обманул — цена и была «от».</p>
-      <p>Мы называем <b>состав работ и стартовые цены</b> заранее, а итоговую сумму — после замера. Так у вас есть, с чем сравнивать предложения, и нет неприятного сюрприза в день установки.</p>
+      <p>Мы называем <b>состав работ</b> заранее, а цену — после замера. Так у вас есть, с чем сравнивать предложения, и нет неприятного сюрприза в день установки.</p>
       <h2>Что входит в стандартный монтаж</h2>
       <p>Это набор, который нужен любой сплит-системе независимо от модели:</p>
       <ul><li>выезд на замер и выбор места установки блоков;</li><li>установка внутреннего и наружного блоков;</li><li><b>трасса до 3 метров</b> (диаметр 6/10);</li><li>одно бурение стены;</li><li>дренаж самотёком;</li><li>подключение к розетке рядом — до 1,5 метра;</li><li>пусконаладка с проверкой режимов;</li><li>сухая уборка за собой.</li></ul>
       <p>Если ваш объект укладывается в этот список — вы в базовом варианте. На практике так бывает, когда внутренний блок вешают на внешнюю стену, а наружный — сразу за ней.</p>
-      <h2>Ориентиры по цене</h2>
-      <p>Это стартовые цены на стандартный монтаж: кронштейн, трасса до 3 метров, одно бурение, дренаж самотёком, пусконаладка. Итоговую сумму называем после замера.</p>
-      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table style="width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:16px;">
-        <tr><th style="background:#F3F6FA;text-align:left;padding:10px 12px;border-bottom:2px solid #D5DDE8;">Что монтируем</th><th style="background:#F3F6FA;text-align:right;padding:10px 12px;border-bottom:2px solid #D5DDE8;white-space:nowrap;">Цена, от</th></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Сплит-система 7–12k BTU</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">45 000 ₸</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Сплит-система 18k BTU</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">55 000 ₸</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Сплит-система 24k BTU</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">70 000 ₸</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Сплит-система 28–30k BTU</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">80 000 ₸</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Сплит-система с притоком воздуха (типа TCL FreshIN)</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">75 000 ₸</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Мультисплит: наружный блок и 2 внутренних</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">70 000 ₸</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Мультисплит: наружный блок и 3 внутренних</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">90 000 ₸</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Мультисплит: наружный блок и 4 внутренних</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">110 000 ₸</td></tr>
-      </table></div>
-      <p>Что считается отдельно, когда объект не укладывается в стандарт:</p>
-      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table style="width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:16px;">
-        <tr><th style="background:#F3F6FA;text-align:left;padding:10px 12px;border-bottom:2px solid #D5DDE8;">Работа</th><th style="background:#F3F6FA;text-align:right;padding:10px 12px;border-bottom:2px solid #D5DDE8;white-space:nowrap;">Цена</th></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Дополнительный метр трассы, модели 7–12k (6/10)</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">7 000 ₸/м</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Дополнительный метр трассы, модели 18–24k (10/16)</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">10 000 ₸/м</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Дополнительный метр трассы 12/19 и крупнее</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">12 000 ₸/м</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Штробление по кирпичу, газоблоку или бетону</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">6 000 ₸/м</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Отдельная штроба под дренаж</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">3 000 ₸/м</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Дополнительное или алмазное бурение отверстия</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">20 000 ₸</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Каждый следующий внутренний блок мультисплита</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">20 000 ₸</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Демонтаж сплит-системы</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">20 000 ₸</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Демонтаж одного блока</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">15 000 ₸</td></tr>
-        <tr><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;">Перенос сплит-системы, до 3 метров трассы</td><td style="padding:10px 12px;border-bottom:1px solid #E3E8EF;text-align:right;white-space:nowrap;font-weight:600;">70 000 ₸</td></tr>
-      </table></div>
-      <p>Кронштейны на фасад, корзина под наружный блок, дренажная помпа, декоративный короб, подъём блока верёвкой, выезд за город и срочный выезд считаем по замеру: цена зависит от объекта.</p>
       <h2>Что считается отдельной строкой</h2>
       <p>Всё остальное — это не «накрутка», а работы, которых в базовом варианте физически нет. Самые частые:</p>
       <p><b>Стена и отверстия.</b> Надбавка за монолит — бурение и штробление по железобетону идут тяжелее кирпича. Дополнительное бурение перфоратором, алмазное бурение для стен до 500 мм и свыше 500 мм, штробление по бетону или по кирпичу и газоблоку, отдельная штроба под дренаж.</p>
@@ -234,7 +206,6 @@
         <div class="art-pick__go">Открыть карточку →</div>
       </a>
       <h2>Частые вопросы</h2>
-      <div class="art-q"><div class="art-q__q">Сколько стоит установка кондиционера в Алматы?</div><div class="art-q__a">Стандартный монтаж сплит-системы — от 45 000 ₸ для моделей 7–12k BTU, от 55 000 ₸ для 18k и от 70 000 ₸ для 24k. В стандарт входят кронштейн, трасса до 3 метров, одно бурение, дренаж самотёком и пусконаладка. Доплаты — отдельными строками, итог называем после замера.</div></div>
       <div class="art-q"><div class="art-q__q">Почему нельзя назвать точную цену монтажа по телефону?</div><div class="art-q__a">Потому что цену определяет объект: материал стены, длина трассы, высота, доступ к наружному блоку. По телефону называют состав работ, точную сумму — после замера.</div></div>
       <div class="art-q"><div class="art-q__q">Сколько метров трассы входит в стандартный монтаж?</div><div class="art-q__a">Три метра диаметром 6/10. Каждый следующий метр считается отдельной строкой, тариф зависит от диаметра трассы под мощность модели.</div></div>
       <div class="art-q"><div class="art-q__q">Дороже ли монтаж в новостройке?</div><div class="art-q__a">Обычно да: в новостройках Алматы стены монолитные, а бурение и штробление по железобетону идут отдельной надбавкой.</div></div>
@@ -296,7 +267,6 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Сколько стоит установка кондиционера в Алматы?","acceptedAnswer":{"@type":"Answer","text":"Стандартный монтаж сплит-системы — от 45 000 ₸ для моделей 7–12k BTU, от 55 000 ₸ для 18k и от 70 000 ₸ для 24k. В стандарт входят кронштейн, трасса до 3 метров, одно бурение, дренаж самотёком и пусконаладка. Доплаты — отдельными строками, итог называем после замера."}},
     {"@type":"Question","name":"Почему нельзя назвать точную цену монтажа по телефону?","acceptedAnswer":{"@type":"Answer","text":"Цену определяет объект: материал стены, длина трассы, высота, доступ к наружному блоку. По телефону называют состав работ, точную сумму — после замера."}},
     {"@type":"Question","name":"Сколько метров трассы входит в стандартный монтаж?","acceptedAnswer":{"@type":"Answer","text":"Три метра диаметром 6/10. Каждый следующий метр считается отдельной строкой, тариф зависит от диаметра трассы под мощность модели."}},
     {"@type":"Question","name":"Дороже ли монтаж в новостройке?","acceptedAnswer":{"@type":"Answer","text":"Обычно да: в новостройках Алматы стены монолитные, а бурение и штробление по железобетону идут отдельной надбавкой."}},
