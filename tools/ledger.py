@@ -281,7 +281,10 @@ def _catalog():
 
 
 def _unknown_skus(skus):
-    ids = {r["id"] for r in _catalog()}
+    rows = _catalog()
+    # legacy_id — id из прежней сборки каталога (по katalog-*.html): сделки, записанные
+    # по нему, не должны вдруг стать «нет в каталоге» (catalog.py, Д-08).
+    ids = {r["id"] for r in rows} | {r["legacy_id"] for r in rows if r.get("legacy_id")}
     return [s for s in skus if s not in ids]
 
 
@@ -404,7 +407,11 @@ def cmd_kp_json(a):
         # выбор, а не спецификация. Количество всё равно называет человек.
         pairs = [(sku, 1) for sku in podbory[-1]["skus"]]
 
-    by_id = {r["id"]: r for r in _catalog()}
+    rows = _catalog()
+    by_id = {r["id"]: r for r in rows}
+    for r in rows:                                   # id прежней сборки каталога (см. _unknown_skus)
+        if r.get("legacy_id") and r["legacy_id"] not in by_id:
+            by_id[r["legacy_id"]] = r
     equipment, bez_ceny = [], []
     for sku, qty in pairs:
         rec = by_id.get(sku)
