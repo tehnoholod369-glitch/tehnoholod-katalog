@@ -155,7 +155,7 @@ def deals_state(events):
         d = deals.setdefault(did, {
             "deal": did, "stage": "новый", "created": ev["ts"], "updated": ev["ts"],
             "client": None, "contact": None, "source": None, "city": None,
-            "need": None, "budget": None, "skus": [], "kp_summa": None,
+            "need": None, "budget": None, "gruppa": None, "skus": [], "kp_summa": None,
             "voprosy": [], "probely": [], "sobytij": 0, "itog_prichina": None,
             "otpravleno": 0, "s_pravkami": 0,
         })
@@ -163,7 +163,7 @@ def deals_state(events):
         d["sobytij"] += 1
         t = ev.get("type")
         if t == "lead":
-            for k in ("client", "contact", "source", "city", "need", "budget"):
+            for k in ("client", "contact", "source", "city", "need", "budget", "gruppa"):
                 if ev.get(k):
                     d[k] = ev[k]
         elif t == "podbor":
@@ -238,13 +238,31 @@ def money(v):
 # Команды записи
 # --------------------------------------------------------------------------- #
 
+def _group_codes():
+    """Коды групп сайта (index.json) — единственное допустимое значение для lead --gruppa."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import catalog
+    _updated, groups = catalog._site_groups()
+    return [slug for slug, _title, _count in groups]
+
+
 def cmd_lead(a):
+    if a.gruppa is not None:
+        codes = _group_codes()
+        if a.gruppa not in codes:
+            # Поле принимает только код. Свободный текст сюда не пускаем: именно так в журнал
+            # попали бы имена и адреса, а сводка по группам перестала бы считаться.
+            # Само значение в ответ не печатаем: в нём могло быть что угодно.
+            print("--gruppa принимает только код группы сайта, а переданное значение не код "
+                  "(%d знаков).\nДопустимые коды: %s" % (len(a.gruppa), ", ".join(codes)),
+                  file=sys.stderr)
+            return 2
     events = read_events()
     did = a.deal or next_deal_id(events)
     ev = append_event({
         "type": "lead", "deal": did, "by": a.by,
         "client": a.client, "contact": a.contact, "source": a.source,
-        "city": a.city, "need": a.need, "budget": a.budget,
+        "city": a.city, "need": a.need, "budget": a.budget, "gruppa": a.gruppa,
     })
     print("Заведена сделка %s" % did)
     print(json.dumps(ev, ensure_ascii=False, indent=1))
@@ -578,6 +596,7 @@ def cmd_show(a):
           % (d["client"] or "нет данных", d["contact"] or "нет данных",
              d["city"] or "нет данных", d["source"] or "нет данных"))
     print("Задача: %s" % (d["need"] or "нет данных"))
+    print("Группа: %s" % (d["gruppa"] or "нет данных"))
     if d["budget"]:
         print("Бюджет: %s" % money(d["budget"]))
     if d["skus"]:
@@ -627,6 +646,11 @@ def cmd_report(a):
         [d for d in otkrytye if (now - parse_ts(d["updated"])).days >= a.stale],
         key=lambda d: d["updated"])
 
+    novye_po_gruppam = {}
+    for e in novye:
+        g = e.get("gruppa") or "не указана"
+        novye_po_gruppam[g] = novye_po_gruppam.get(g, 0) + 1
+
     summa_kp = sum(float(e["summa"]) for e in kp_events if e.get("summa"))
     summa_win = sum(float(deals[e["deal"]]["kp_summa"] or 0) for e in vyigrano
                     if e.get("deal") in deals)
@@ -634,6 +658,7 @@ def cmd_report(a):
     data = {
         "period": a.period, "sformirovan": now_iso(),
         "novyh_obrascheniy": len(novye),
+        "novyh_po_gruppam": novye_po_gruppam,
         "vystavleno_kp": len(kp_events), "summa_kp": summa_kp,
         "vyigrano": len(vyigrano), "summa_vyigrannyh": summa_win,
         "proigrano": len(proigrano),
@@ -661,6 +686,8 @@ def cmd_report(a):
     print()
     print("Движение %s:" % label)
     print("  новых обращений      %d" % len(novye))
+    for g, n in sorted(novye_po_gruppam.items(), key=lambda kv: -kv[1]):
+        print("      по группе %-26s %d" % (g, n))
     print("  выставлено КП        %d на %s" % (len(kp_events), money(summa_kp)))
     print("  выиграно             %d на %s" % (len(vyigrano), money(summa_win)))
     print("  проиграно            %d" % len(proigrano))
@@ -737,6 +764,8 @@ def main(argv=None):
     l.add_argument("--city")
     l.add_argument("--need", required=True, help="что нужно клиенту, его словами")
     l.add_argument("--budget", type=float)
+    l.add_argument("--gruppa", help="код группы сайта (python3 tools/catalog.py groups), "
+                                    "например vodonagrevateli; ничего, кроме кода")
     l.add_argument("--deal", help="задать ID вручную (по умолчанию присваивается)")
 
     pb = with_by(sub.add_parser("podbor", help="записать подбор"))
