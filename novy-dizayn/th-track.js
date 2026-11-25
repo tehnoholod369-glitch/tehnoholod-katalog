@@ -22,7 +22,15 @@
 (function () {
   if (window.THTrack) return;
 
-  var YM_ID = 109494414;          // счётчик Яндекс.Метрики сайта
+  // Счётчик Яндекс.Метрики: берём номер у самой страницы. Tilda кладёт его в window.mainMetrikaId
+  // (поле «Настройки сайта → Аналитика → Яндекс.Метрика»), поэтому цель уходит в тот счётчик,
+  // который на этой странице реально запущен. Если номера нет — запасной 114662925 (замена 109494414, 25.11.2026).
+  // Читаем в момент события, а не при загрузке файла: файл подключается async, раньше inline-кода Tilda.
+  var YM_ID_DEFAULT = 114662925;
+  function ymId() {
+    var v = window.mainMetrikaId;
+    return (v !== undefined && v !== null && /^\d+$/.test(String(v))) ? Number(v) : YM_ID_DEFAULT;
+  }
   var GA4_ID = "G-Q8G1ECPC0W";    // потоковый идентификатор GA4
   // Tilda подключает GA старой библиотекой analytics.js (ga('create','G-…')): для GA4 она не годится.
   // Поэтому загружаем штатный gtag.js. Просмотры страниц здесь НЕ шлём (send_page_view: false),
@@ -50,7 +58,7 @@
 
   function ym(name, p) {
     try {
-      if (typeof window.ym === "function") { window.ym(YM_ID, "reachGoal", name, p || {}); }
+      if (typeof window.ym === "function") { window.ym(ymId(), "reachGoal", name, p || {}); }
     } catch (e) { /* счётчик не должен мешать действию */ }
   }
 

@@ -19,7 +19,10 @@
   if (!/^\/tproduct\//.test(location.pathname)) return;
   window.__thCardSeo = 1;
 
-  var YM_ID = 109494414;
+  // Номер счётчика: window.mainMetrikaId страницы, если он есть и состоит из цифр; иначе 114662925 (замена 109494414, 25.11.2026).
+  // На карточках /tproduct у Tilda mainMetrikaId нет, там сработает запасной номер.
+  var YM_ID = (window.mainMetrikaId !== undefined && window.mainMetrikaId !== null && /^\d+$/.test(String(window.mainMetrikaId)))
+    ? Number(window.mainMetrikaId) : 114662925;
 
   try { document.documentElement.setAttribute("lang", "ru"); } catch (e) {}
 
